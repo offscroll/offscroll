@@ -21,61 +21,13 @@
 #masthead([Atlantic Wire], [Vol. 1, No. 013], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Verge Select connects three weathering-steel volumes for Ontario painting studio],
-  kicker: [Cover Story],
-  author: [Ellen Eberhardt],
-  source-name: [Dezeen Architecture],
-  deck: [Verge Select has completed a painter's studio in Ontario 
-
-Located in a forested glade, the structure is composed of three square volumes of varying size.],
-  lead-pre: [],
-  lead-cap: [s],
-  lead-rest: [tyle="margin-bottom: 15px;"\>],
-  body-paragraphs: (
-  [Canadian design studio Verge Select has designed a studio for painter Janna Watson in Ontario , composed of three square volumes fused together to form a secluded forest retreat.],
-  [The Grey County studio is located in the county of the same name in Ontario , and, unlike a second, more urban studio operated by Watson, provides a space that "slows time".],
-  [Verge Select has completed a painter's studio in Ontario],
-  [Located in a forested glade, the structure is composed of three square volumes of varying size. They are slightly askew of one another and fuse where they meet.],
-  [The entire studio is clad in weathering steel , which will patina over time and " allow the building to recede chromatically into the forest floor" according to Verge Select .],
-  [The structure is clad in weathering steel],
-  [Watson's programmatic needs largely informed the distinct shape.],
-  ["The studio takes shape as three distinct yet connected outcrops each responding to Watson's brief for service functions, a light-filled workspace, and a flexible zone for photography and rest," said the studio.],
-  [An elevated steel catwalk leads to an entrance],
-  ["The volumes nest around a central service core, opening outward through generous glazing that frames views of moss-covered stone and woodland canopy."],
-  [On the interior, two of the cubes are largely open-plan, while the other is separated by a wall.],
-  [Another door leads into the forest],
-  [Watson's painting area sits in the middle volume, surrounded by wide-open glazing. On one side, the central space steps up into the lounge area, while the service wing is off to the other side.],
-  [This service space includes a washing area tucked into a sharp corner, and also a bathroom shaped like a right triangle.],
-  [The central volume is wide open and wrapped in floor-to-ceiling windows],
-  [Across a central corridor is the main entrance to the studio via a steel catwalk, while a door on the other side of the structure also leads outside.],
-  ["Two arrival sequences – one compressed and inward-facing, the other emerging from the forest via a steel catwalk – establish a rhythm of transition that echoes the artist's working process," said the studio.],
-  [A wash area is tucked into one corner],
-  [The studio's ceilings reach ten feet high at their tallest, and are lined with "a gallery-style lighting system" for Watson's work.],
-  [The space also contains a wood-burning fireplace and reflective, contemporary lounge chairs by designer Paolo Ferrari .],
-  [Read:],
-  [Cordero Pardee juxtaposes "old and new material cultures" for Vermont barn conversion],
-  ["Here, observation, walking, and seasonal change become active components of the creative cycle," said the studio.],
-  [Verge Select is based in Thornbury, Ontario and was founded in 2009 by Michael Curtis. The studio specialises in architectural, furniture, lighting and interior design.],
-  [Other recent studio projects include a Vermont barn conversion for a photographer and painter and a garden studio in London by Delve Architects .],
-  [The post Verge Select connects three weathering-steel volumes for Ontario painting studio appeared first on Dezeen .],
-),
-  edited-for-length: false,
-)
-
-#pull-quote([Another door leads into the forest   Watson's painting area sits in the middle volume, surrounded by wide-open glazing.], [Ellen Eberhardt])
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Photos reveal Ole Scheeren's Róng Museum of Art under construction in Shenzhen],
   author: [Tom Ravenscroft],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [Architecture studio Büro Ole Scheeren has revealed photos and renders of the Róng Museum of Arts, which is currently under construction in Shenzhen , China.],
   [Designed for Tenova Future – a private venture of Ma Huateng, the founder of technology company Tencent – the museum will focus on the visual culture of the 20th and 21st centuries.],
   [It will be located alongside the Shenzhen Bay Culture Park by MAD , which will be topped by two pavilions designed to resemble stones and near a bullet-shaped skyscraper designed by KPF .],
@@ -113,16 +65,13 @@ Located in a forested glade, the structure is composed of three square volumes o
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Snøhetta transforms Théâtre Nanterre-Amandiers in France into "urban lantern"],
   author: [Jon Astbury],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [Architecture studio Snøhetta has completed the renovation of Théâtre Nanterre-Amandiers in France , unifying its performance spaces around a tilted glass hall that overlooks a landscaped plaza.],
   [The theatre in the Paris suburb of Nanterre dates back to the 1965 Festival de Nanterre, when it began life as a circus tent and subsequently a temporary warehouse. The permanent building was designed in 1976 by the architect Jacques Kalisz.],
   [Snøhetta has renovated Théâtre Nanterre-Amandiers in France],
@@ -154,10 +103,8 @@ Located in a forested glade, the structure is composed of three square volumes o
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Information is a battlefield: 4 questions you can ask to judge the reliability of news reports and social posts about the US-Iran war],
   author: [Andrea Hickerson, Dean and Professor, School of Journalism and New Media, University of Mississippi],
   source-name: [The Conversation (Politics)],
@@ -199,7 +146,7 @@ Located in a forested glade, the structure is composed of three square volumes o
   [And sometimes traditional news organizations do similar types of investigations, such as this example of The Associated Press debunking video misinformation in Iran .],
   [The transparent methods of fact-checking and open-source sites can also serve as interactive exercises in media literacy. Both Bellingcat and Indicator regularly showcase information validation tools that readers can use.],
   [Regardless of how much effort readers choose to spend on evaluating the accuracy of reporting on Iran, none of us are watching the battle from the sidelines.],
-  [class="fine-print"\> Andrea Hickerson does not work for, consult, own shares in or receive funding from any company or organization that would benefit from this article, and has disclosed no relevant affiliations beyond their academic appointment.],
+  [Andrea Hickerson does not work for, consult, own shares in or receive funding from any company or organization that would benefit from this article, and has disclosed no relevant affiliations beyond their academic appointment.],
 ),
   insert-map: (:),
   word-count: 1192,
@@ -207,10 +154,8 @@ Located in a forested glade, the structure is composed of three square volumes o
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How hatred of Jews became a common ground for Islamic terrorists and left-wing extremists, fueling domestic terrorism],
   author: [Arie Perliger, Director of Security Studies and Professor of Criminology and Justice Studies, UMass Lowell],
   source-name: [The Conversation (Politics)],
@@ -263,6 +208,7 @@ Located in a forested glade, the structure is composed of three square volumes o
   [Meanwhile, civil rights agencies and nonprofit advocacy groups struggle to name progressive antisemitism for what it is , caught between legitimate commitments to anti-racism and the uncomfortable recognition that some anti-racist discourse has itself become bigotry.],
   [Addressing the feedback loop between Middle East escalation and domestic antisemitic violence requires an honest reckoning with all of its sources – not only the familiar threats from jihadist networks and white supremacist cells, but also the ideological currents within progressive spaces that make hatred of Jews newly respectable.],
   [Until policymakers, educators and leaders of civil society confront this threat’s full topology, Jewish Americans will continue to face a reality in which more than half report experiencing antisemitism in the past year and nearly half doubt that their neighbors would stand with them if the worst were to come.],
+  [Arie Perliger receives funding from Federal grants affiliated with DHS and DOJ.],
 ),
   insert-map: (:),
   word-count: 1569,
@@ -270,10 +216,8 @@ Located in a forested glade, the structure is composed of three square volumes o
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Dublin Coddle],
   author: [Melissa Nolan],
   source-name: [Budget Bytes],
@@ -289,13 +233,39 @@ Located in a forested glade, the structure is composed of three square volumes o
   [Adjust the liquid. I added only two cups of broth to my Dublin coddle recipe. If you want a more soup-like coddle, add another cup of broth to the pot.],
   [Print 
  Add to Collection Go to Collections],
-  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\>On the stovetop, heat the Dutch oven over medium heat. Once hot, add the bacon and render for about 10-15 minutes, stirring occasionally, until crispy. Using a slotted spoon, remove the bacon and set it aside, leaving the grease in the pan.],
-  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\>After 1 hour and 30 minutes, remove the lid from the Dutch oven and continue cooking for an additional 30 minutes to crisp up the top of the coddle.],
+  [Make this easy Dublin Coddle recipe with bacon, sausage, potatoes, and onions simmered in broth for a cozy Irish-inspired dinner!],
+  [Total Cost \$11.31 recipe \/ \$2.26 serving],
+  [Prep Time 15 minutes minutes],
+  [Cook Time 2 hours hours 30 minutes minutes],
+  [Total Time 2 hours hours 45 minutes minutes],
+  [Servings 5 servings (1 Brat each with veg)],
+  [Calories 577 kcal],
+  [Dutch Oven with Lid],
+  [8 oz. bacon chopped, \$2.34],
+  [5 beer brats \$4.97\*],
+  [2 onions medium dice, (3 cups, 750g) \$1.45],
+  [4 garlic cloves minced (2 Tbsp) \$0.24],
+  [1½ tsp salt \$0.06],
+  [1 tsp black pepper freshly cracked, \$0.16],
+  [2 lb. gold potatoes washed, roughly peeled, and 1-2 inch cubed, (907g) \$1.79\*\*],
+  [2 cups chicken broth 16oz., \$0.26\*\*\*],
+  [1 tsp dried parsley \$0.02],
+  [½ tsp dried thyme \$0.02],
+  [Gather and prepare all ingredients. Move a rack to the bottom of the oven with enough room to fit the Dutch oven. Preheat the oven to 300°F.],
+  [On the stovetop, heat the Dutch oven over medium heat. Once hot, add the bacon and render for about 10-15 minutes, stirring occasionally, until crispy. Using a slotted spoon, remove the bacon and set it aside, leaving the grease in the pan.],
+  [Next, place the brats in the pan and sear each side for 3-4 minutes, until browned. Remove the brats from the Dutch oven and set aside.],
+  [Add the onions, garlic, salt, and pepper, and cook for about 3 minutes until the onions have softened.],
+  [Top the onions with the cut potatoes, chicken broth, dried parsley, and dried thyme. Stir to combine.],
+  [Place the brats, bacon, and any drippings on top of the potatoes and onions blend.],
+  [Lid the Dutch oven and place it in the preheated oven for 1 hour and 30 minutes.],
+  [After 1 hour and 30 minutes, remove the lid from the Dutch oven and continue cooking for an additional 30 minutes to crisp up the top of the coddle.],
+  [Remove the Dutch oven from the oven. Skim excess oil from the top if desired. Divide the potatoes, onions, brats, and broth evenly between five plates and enjoy.],
   [See how we calculate recipe costs here .],
-  [class="wprm-recipe-notes"\> \* Traditional Dublin coddle uses Irish sausage , which can be difficult to find. I decided on beer brats instead. They add a subtle beer flavor without needing to deglaze the pan with beer/ale. Feel free to use whatever brats or pork sausage you like.],
+  [\* Traditional Dublin coddle uses Irish sausage , which can be difficult to find. I decided on beer brats instead. They add a subtle beer flavor without needing to deglaze the pan with beer/ale. Feel free to use whatever brats or pork sausage you like.],
   [\*\*I chose to use gold potatoes because they’re some of the best for stewing. They offer a creamy, buttery texture and hold their shape. Red bliss and fingerling potatoes also work well. Make sure to cut the potatoes into 1-2 inch chunks , so they don’t break down as easily.],
   [\*\*\*Some recipes use just water,  but I prefer the added flavor of the chicken broth . I like to use Better Than Bouillon to make broths to keep costs low. Beef or vegetable broth will also work.],
-  [class="wprm-nutrition-label-container wprm-nutrition-label-container-simple wprm-block-text-normal" style="text-align: left;"\> Serving: 1 serving | Calories: 577 kcal | Carbohydrates: 40 g | Protein: 20 g | Fat: 38 g | Sodium: 1918 mg | Fiber: 5 g],
+  [Serving: 1 serving | Calories: 577 kcal | Carbohydrates: 40 g | Protein: 20 g | Fat: 38 g | Sodium: 1918 mg | Fiber: 5 g],
+  [how to make Dublin Coddle step-by-step photos],
   [Gather all of your ingredients. Move a rack to the bottom of the oven to ensure there’s enough room to fit the Dutch oven, then preheat your oven to 300°F.],
   [Cook the bacon: Heat a Dutch oven over medium heat on the stovetop. Once hot, add the chopped 8 oz. bacon and cook for 10 to 15 minutes, stirring occasionally, until the bacon is crisp and the fat has rendered. Use a slotted spoon to remove the bacon and set it aside, leaving the grease in the pot.],
   [Brown the sausages: Add 5 beer brats to the bacon grease and sear for 3-4 minutes per side, until browned all over. Remove the brats from the Dutch oven and set aside.],
@@ -305,11 +275,14 @@ Located in a forested glade, the structure is composed of three square volumes o
   [Finish and serve: After 1 hour and 30 minutes, remove the lid and continue baking for 30 more minutes to brown and crisp the top.],
   [Then, carefully remove the Dutch oven from the oven. Skim off any excess oil from the surface, if desired, and divide the potatoes, onions, brats, and broth evenly among 5 bowls or plates and serve warm. Enjoy!],
   [I like to serve my Dublin coddle with a cold Guinness and soda bread for a meal that feels straight out of an Irish pub! The soda bread is perfect for soaking up any leftover broth, and if I want to round things out, I’ll sometimes add a side of fried cabbage or roasted Brussels sprouts . A fresh salad like our apple Dijon kale salad works really well with the rich flavor of the stew, too.],
+  [Storage & Reheating],
   [Leftover Dublin coddle will keep well in an airtight container in the refrigerator for 3-4 days. I don’t recommend freezing this one, since the potatoes can become grainy and change texture once thawed. To reheat, warm it gently on the stovetop over medium-low heat or microwave individual portions until heated through, adding a splash of broth or water as needed.],
+  [Try These Irish-Inspired Recipes Next!],
   [If I’ve got any sausages left, I’ll happily make Bangers and Mash the next day because those meaty sausages and rich onion gravy are hard to resist!],
   [Colcannon is a simple Irish side dish that combines mashed potatoes and cabbage into something hearty, filling, and budget-friendly.],
   [Our Corned Beef and Cabbage is a slow-baked dinner with tender slices of corned beef and skillet-cooked cabbage that keeps the whole meal hearty without turning mushy.],
   [\$16.53 recipe \/ \$2.75 serving],
+  [Lentil and Sausage Stew],
   [\$7.11 recipe \/ \$0.88 serving],
   [\$11.97 recipe \/ \$1.99 serving],
   [\$13.05 recipe \/ \$2.18 serving],
@@ -321,11 +294,10 @@ Located in a forested glade, the structure is composed of three square volumes o
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The 13 Best Office Pranks for Torturing Your Coworkers on April Fool's Day],
   author: [Gabrielle Taylor],
   source-name: [WonderHowTo],
@@ -342,7 +314,7 @@ Located in a forested glade, the structure is composed of three square volumes o
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Best 2015 April Fool's Day Pranks from Around the Web],
   author: [Faisal Hussain],
   source-name: [WonderHowTo],
@@ -362,7 +334,7 @@ Located in a forested glade, the structure is composed of three square volumes o
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Water, Lemon Juice, Vinegar, or Nothing: Should You Even Bother Rinsing Chicken?],
   author: [Karen Ahn],
   source-name: [WonderHowTo],
@@ -379,7 +351,7 @@ Located in a forested glade, the structure is composed of three square volumes o
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [8 Last Minute Fixes for Common Thanksgiving Cooking Disasters],
   author: [Yumi Sakugawa],
   source-name: [WonderHowTo],
@@ -399,7 +371,7 @@ Located in a forested glade, the structure is composed of three square volumes o
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [banana chocolate chip cake],
   author: [deb],
   source-name: [Smitten Kitchen],
@@ -416,7 +388,7 @@ Located in a forested glade, the structure is composed of three square volumes o
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [10 Truly Last-Minute Halloween Costume Ideas for the Cheap & Lazy],
   author: [Yumi Sakugawa],
   source-name: [WonderHowTo],
@@ -436,7 +408,7 @@ Located in a forested glade, the structure is composed of three square volumes o
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [DIY Olaf Costumes: Low-Cost Halloween Looks for Frozen's Silly Snowman],
   author: [Osas Obaiza],
   source-name: [WonderHowTo],
@@ -453,7 +425,7 @@ Located in a forested glade, the structure is composed of three square volumes o
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [How to Make Bread Crumbs],
   author: [Kathryne Taylor],
   source-name: [Cookie and Kate],
@@ -475,7 +447,7 @@ Located in a forested glade, the structure is composed of three square volumes o
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [How to Make Perfect Mashed Potatoes on Thanksgiving],
   author: [Yumi Sakugawa],
   source-name: [WonderHowTo],
@@ -492,7 +464,7 @@ Located in a forested glade, the structure is composed of three square volumes o
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [miso chicken and rice],
   author: [deb],
   source-name: [Smitten Kitchen],
@@ -512,7 +484,7 @@ Located in a forested glade, the structure is composed of three square volumes o
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [This Thanksgiving, You Can Have Your Booze & Eat It, Too],
   author: [Nick & Bay Nigro],
   source-name: [WonderHowTo],
@@ -529,7 +501,7 @@ Located in a forested glade, the structure is composed of three square volumes o
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [How to Carve, Char, & Contort a Creepy Miniature Jack-O'-Lantern for Halloween],
   author: [WonderHowTo],
   source-name: [WonderHowTo],
@@ -548,7 +520,7 @@ Located in a forested glade, the structure is composed of three square volumes o
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [If You've Run Out of Shaving Cream, Give These 10 Household Items a Try],
   author: [Heather Fishel],
   source-name: [WonderHowTo],
@@ -565,7 +537,7 @@ Located in a forested glade, the structure is composed of three square volumes o
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Throw on Regular Clothes for Halloween & Still Terrify Everyone as the Characters from 'Get Out' (Group Costume Guide)],
   author: [Jaira Koh],
   source-name: [WonderHowTo],
@@ -583,15 +555,13 @@ Located in a forested glade, the structure is composed of three square volumes o
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [AIA sues Donald Trump over Kennedy Center renovation in unprecedented coalition],
   author: [Ben Dreith],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [US organisations the American Institute of Architects and Docomomo US are among the plaintiffs in a lawsuit suing US president Donald Trump over his proposed renovations for the Edward Durell Stone-designed Kennedy Center.],
   [Eight plaintiffs submitted a lawsuit this morning in an attempt to pause proposed renovations to the John F Kennedy Center for the Performing Arts in Washington DC.],
   [The plaintiffs include the American Institute of Architects (AIA), Docomomo US , t he Cultural Landscape Foundation , the American Society of Landscape Architects , the Committee of 100 on the Federal City , DC Preservation League , the National Trust for Historic Preservation and the Society of Architectural Historians .],
@@ -628,10 +598,8 @@ Located in a forested glade, the structure is composed of three square volumes o
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Trump plans to redesign D.C.’s public golf course on top of East Wing rubble],
   author: [Hunter Schwarz],
   source-name: [Fast Company Design],
@@ -655,10 +623,8 @@ Located in a forested glade, the structure is composed of three square volumes o
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Losing Connie],
   author: [Jodi Ettenberg],
   source-name: [Legal Nomads],
@@ -689,6 +655,7 @@ Located in a forested glade, the structure is composed of three square volumes o
   [Outside the leak experts, patients report that doctors still think a lumbar puncture leak is “self-limiting” (i.e., that it goes away on its own — I wish!). Many still doubt the existence of spontaneous intracranial hypotension (SIH), where a leak can occur suddenly; this can be due to a bone spur or calcified disc gnawing into the dura til it tears, or a coughing fit, or lifting heavy weights, or something else being the last straw for a weakness in the dura mater the patient wasn’t aware of. And a more recently-discovered type of leak, a CSF-venous fistula, can be elusive on existing imaging types, though a newer photon counting CT machine is spotting them more frequently. Canada doesn’t have one, and the US only has a few.],
   [The brutality of this condition is hard to accurately put into words. Not only the pain itself but the uncertainty and uphill battle in getting care. It’s commonly misdiagnosed and under-diagnosed. The mental health burden is also significant: a quality of life study in spinal CSF leak patients from 2023 found that over half of the respondents (64.2%) endorsed suicidality, and 22.4% had demonstrated suicidal behaviour. A 2024 study about quality of life in chronic post puncture patients (like me) found substantial mental health challenges with depression, anxiety and stress experienced by 83%, 98%, and 88% of the respondents, respectively.],
   [It’s like a big cosmic joke, “hey, there’s a condition that often does not show on imaging, where specialized imaging also involves making a new hole in the dura mater to look for the original leak, where the vast majority of medical students don’t learn specifics of SIH or long-term puncture leaks in in current med school curricula, and where we can’t yet figure out why chronic patients have a really hard time getting sealed and sometimes end up with new leaks after treatment.”],
+  [\*\*\*],
   [August 2025 will mark 8 years of leaking for me.],
   [In these very difficult intervening years, I’ve learned a lot of things about myself, and about my body. About the illusions of safety I used to have. About how life just isn’t fair.],
   [The part that hits hardest has always been that stability feels like an illusion. It’s so tenuous. Moments where I get respite from the pain are so few and far between, but with frequent anaphylaxis and severe MCAS in the mix, it feels like the edge of that knife is so thin. I often joke that I’m in bed now, but we will all be in bed eventually as we age. I just got there first. Underneath the humour is the knowledge that Connie’s story is sadly not the exception. That there are other patients barely hanging on as they wait for science to evolve and be able to bring them lasting relief.],
@@ -706,23 +673,21 @@ Located in a forested glade, the structure is composed of three square volumes o
 ),
   insert-map: (:),
   inline-pq: pull-quote([That’s part of what leaves me rattled, for anyone with this condition or other invisible conditions where metrics for diagnosis and treatment are not cut and dry.], [Jodi Ettenberg]),
-  inline-pq-idx: 15,
+  inline-pq-idx: 16,
   word-count: 2489,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [PichiAvo builds wooden temple to burn down for Valencia's Fallas festival],
   author: [Amy Peacock],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [Local art studio PichiAvo used wood and paper to create a pavilion based on an Ancient Greek temple, which was set ablaze for the Fallas celebrations in Valencia .],
   [Named Per Ofrenar, which means "to offer" in Catalan, the installation had a classical design that drew upon the Temple of Athena Nike in Athens .],
   [PichiAvo designed a temple-like pavilion to be burnt as part of Fallas festival],
@@ -750,7 +715,7 @@ Located in a forested glade, the structure is composed of three square volumes o
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Big Dune],
   author: [Stu Davidson],
   source-name: [Stuck in Customs],
@@ -780,13 +745,12 @@ Located in a forested glade, the structure is composed of three square volumes o
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Over 40,000 civilian buildings in Iran reportedly damaged in ongoing war],
   author: [Amy Peacock],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [Humanitarian group Iranian Red Crescent Society has reported that 42,914 civilian buildings in Iran have been damaged by US-Israeli airstrikes, including more than 36,000 homes.],
   [Announced on X last week, the Iranian Red Crescent Society – a non-governmental group affiliated with the International Federation of Red Cross and Red Crescent Societies (IFRC) – calculated that US-Israeli airstrikes have caused damage to 42,914 civilian buildings in Iran.],
   [This includes 36,489 residential units and 6,179 commercial units.],
@@ -810,7 +774,7 @@ Located in a forested glade, the structure is composed of three square volumes o
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [How to Fold an Origami Camera Using Nothing but a Dollar Bill],
   author: [Reform Ed],
   source-name: [WonderHowTo],
@@ -829,7 +793,7 @@ Located in a forested glade, the structure is composed of three square volumes o
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [12 Hilarious Emblem Designs for Call of Duty: Black Ops 2 (And How to Make Them)],
   author: [Osas Obaiza],
   source-name: [WonderHowTo],
@@ -846,7 +810,7 @@ Located in a forested glade, the structure is composed of three square volumes o
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [45 Vegetable Side Dishes],
   author: [Kathryne Taylor],
   source-name: [Cookie and Kate],
@@ -867,8 +831,7 @@ Located in a forested glade, the structure is composed of three square volumes o
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [How to Roll Sushi — The Ultimate Guide],
   author: [Kris Wu],
   source-name: [WonderHowTo],
@@ -883,28 +846,26 @@ Located in a forested glade, the structure is composed of three square volumes o
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([Jules Yap], source-name: [IKEA Hackers], [In a culinary competition that brought together IKEA co-workers from six countries, Malaysia has emerged victorious. I’ve always been a little biased that Malaysian food is the best in the world—turns out I was right. On February 4th in Älmhult, Sweden—IKEA’s birthplace—Fatin Badrul Hisham and Nurul Fatihah Binti Rosli from IKEA Malaysia won the 2026 IKEA Talents global food contest with their stuffed fried tofu dish. The win marks a proud moment for Malaysian cuisine on the international stage, beating \[…\]])],
-    [#brief-item([Zain Zaidi], source-name: [SitePoint], [Check out how easier it has become to go from doc to design and prototype with Claude's latest model: Sonnet 3.5
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([Jules Yap], source-name: [IKEA Hackers], [In a culinary competition that brought together IKEA co-workers from six countries, Malaysia has emerged victorious. I’ve always been a little biased that Malaysian food is the best in the world—turns out I was right. On February 4th in Älmhult, Sweden—IKEA’s birthplace—Fatin Badrul Hisham and Nurul Fatihah Binti Rosli from IKEA Malaysia won the 2026 IKEA Talents global food contest with their stuffed fried tofu dish. The win marks a proud moment for Malaysian cuisine on the international stage, beating \[…\]])],
+  [#brief-item([Zain Zaidi], source-name: [SitePoint], [Check out how easier it has become to go from doc to design and prototype with Claude's latest model: Sonnet 3.5
 
  Continue reading
  From Idea to Prototype in Minutes: Claude Sonnet 3.5 
  on SitePoint .])],
-    [#brief-item([Matt Mickiewicz], source-name: [SitePoint], [Learn DeepSeek API integration in React and Next.js. Build a streaming AI chat app with the OpenAI SDK, route handlers, validation, and Vercel deployment. 
+  [#brief-item([Matt Mickiewicz], source-name: [SitePoint], [Learn DeepSeek API integration in React and Next.js. Build a streaming AI chat app with the OpenAI SDK, route handlers, validation, and Vercel deployment. 
 
  Continue reading
  DeepSeek API Integration with React and Next.js 
  on SitePoint .])],
-    [#brief-item([SitePoint Sponsors], source-name: [SitePoint], [Best Payment Gateway for Subscriptions & Recurring Payment: 2026. Find the best payment gateway for your subscription business in 2026! Process recurring payments and transactions easily.
+  [#brief-item([SitePoint Sponsors], source-name: [SitePoint], [Best Payment Gateway for Subscriptions & Recurring Payment: 2026. Find the best payment gateway for your subscription business in 2026! Process recurring payments and transactions easily.
 
  Continue reading
  Best Payment Gateway for Subscriptions & Recurring Payment: 2026 
  on SitePoint .])],
-    [#brief-item([SitePoint Team], source-name: [SitePoint], [A guide for DevOps engineers on orchestrating LLMs availability and scaling using Kubernetes.
+  [#brief-item([SitePoint Team], source-name: [SitePoint], [A guide for DevOps engineers on orchestrating LLMs availability and scaling using Kubernetes.
 
 Key Sections:
 1. \*\*Prerequisites:\*\* GPU Operator setup, Nvidia Container Toolkit.
@@ -918,50 +879,55 @@ Key Sections:
  Continue reading
  Deploy Local LLMs on Kubernetes: Complete vLLM + Helm Guid 
  on SitePoint .])],
-    [#brief-item([SitePoint Team], source-name: [SitePoint], [Deploy a local AI server for \$1,500 using consumer GPUs. Step-by-step guide on building with DeepSeek-R1, RTX 4090, tensor parallelism & cost ROI.
+  [#brief-item([SitePoint Team], source-name: [SitePoint], [Deploy a local AI server for \$1,500 using consumer GPUs. Step-by-step guide on building with DeepSeek-R1, RTX 4090, tensor parallelism & cost ROI.
 
  Continue reading
  Build \$1,500 AI Server: DeepSeek on RTX 4090 
  on SitePoint .])],
-    [#brief-item([SitePoint Team], source-name: [SitePoint], [Calculate the true cost of self-hosted LLMs in 2026. Hardware, electricity, maintenance, and comparison with API alternatives.
+  [#brief-item([SitePoint Team], source-name: [SitePoint], [Calculate the true cost of self-hosted LLMs in 2026. Hardware, electricity, maintenance, and comparison with API alternatives.
 
  Continue reading
  Self-Hosted LLM Costs: Complete 2026 Pricing Guide 
  on SitePoint .])],
-    [#brief-item([Joel Bruner], source-name: [Migrationology (Mark Wiens)], [Brazilian Beef Ribs just may be the newest top item (our opinion) at Brazil’s board of tourism’s ‘Top 10 Reasons to travel to Brazil.’ What is not a secret to eaters at Costelão Do Gaúcho though, is that this BBQ destination... 
+  [#brief-item([Joel Bruner], source-name: [Migrationology (Mark Wiens)], [Brazilian Beef Ribs just may be the newest top item (our opinion) at Brazil’s board of tourism’s ‘Top 10 Reasons to travel to Brazil.’ What is not a secret to eaters at Costelão Do Gaúcho though, is that this BBQ destination... 
 
 The post Brazilian Beef and GIGANTIC Ribs – Costelão Do Gaúcho (Curitiba) appeared first on Migrationology - Food Travel Blog .])],
-    [#brief-item([SitePoint Team], source-name: [SitePoint], [Running a reasoning model locally doesn't require a \$10,000 workstation. Here's how to build a capable DeepSeek-R1 setup on a budget.
+  [#brief-item([SitePoint Team], source-name: [SitePoint], [Running a reasoning model locally doesn't require a \$10,000 workstation. Here's how to build a capable DeepSeek-R1 setup on a budget.
 
  Continue reading
  The \$1,500 Local AI Setup: DeepSeek-R1 on Consumer Hardware 
  on SitePoint .])],
-    [#brief-item([Craig Blair], source-name: [Canon Rumors], [B&H Photo has the extra long Gitzo GT3543XLS Systematic Series 3 Carbon Fiber Tripod in their DealZone for only \$719 (Reg \$1419) today. If you're a taller person and are looking for the last tripid you'll ever buy, this is a great option Gitzo GT3543XLS Systematic Series 3 10 features Load Capacity: 61.7 lb Max \[…\]])],
-    [#brief-item([Craig Blair], source-name: [Canon Rumors], [I have been writing a fair bit about the EOS R7 Mark II in recent weeks, and with good reason. It's good clickbait, and many people who may be interested haven't been following along yet.. That said, I am trying to be as truthful as I possibly can while stoking the rumors. A little hype \[…\]])],
-    [#brief-item([Into the Gloss], source-name: [Into the Gloss], ["It’s fun trying new products, but I had to accept that my skin can’t take a lot. And honestly? It’s fine. I don’t know what I’m doing anyway."])],
-    [#brief-item([Matt Mickiewicz], source-name: [SitePoint], [In-depth developer comparison of Seedance 2.0, OpenAI Sora, and Runway Gen-4 AI video APIs. Covers API architecture, latency benchmarks, pricing, rate limits, SDK support, code examples, and a decision framework for production integration.
+  [#brief-item([Craig Blair], source-name: [Canon Rumors], [B&H Photo has the extra long Gitzo GT3543XLS Systematic Series 3 Carbon Fiber Tripod in their DealZone for only \$719 (Reg \$1419) today. If you're a taller person and are looking for the last tripid you'll ever buy, this is a great option Gitzo GT3543XLS Systematic Series 3 10 features Load Capacity: 61.7 lb Max \[…\]])],
+  [#brief-item([Craig Blair], source-name: [Canon Rumors], [I have been writing a fair bit about the EOS R7 Mark II in recent weeks, and with good reason. It's good clickbait, and many people who may be interested haven't been following along yet.. That said, I am trying to be as truthful as I possibly can while stoking the rumors. A little hype \[…\]])],
+  [#brief-item([Into the Gloss], source-name: [Into the Gloss], ["It’s fun trying new products, but I had to accept that my skin can’t take a lot. And honestly? It’s fine. I don’t know what I’m doing anyway."])],
+  [#brief-item([Matt Mickiewicz], source-name: [SitePoint], [In-depth developer comparison of Seedance 2.0, OpenAI Sora, and Runway Gen-4 AI video APIs. Covers API architecture, latency benchmarks, pricing, rate limits, SDK support, code examples, and a decision framework for production integration.
 
  Continue reading
  Seedance 2.0 vs. Sora 2 vs. Runway Gen-4: AI Video API Comparison for Developers (2026) 
  on SitePoint .])],
-    [#brief-item([SitePoint Team], source-name: [SitePoint], [Stop buying GPUs for everyone. Here's how to set up a shared local AI infrastructure that serves your entire engineering team from a single workstation.
+  [#brief-item([SitePoint Team], source-name: [SitePoint], [Stop buying GPUs for everyone. Here's how to set up a shared local AI infrastructure that serves your entire engineering team from a single workstation.
 
  Continue reading
  Team Local AI: Sharing One GPU Across Multiple Developers 
  on SitePoint .])],
-    [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [Successful companies understand that to stay relevant, they must continually evolve, adapt, and introduce fresh pieces. It’s always exciting to see what’s entering the scene, and IKEA’s new products are certainly making a big impression. The megastore has new arrivals in numerous categories, including storage, furniture, kitchenware, and decor. We’re talking hundreds of pieces. My family’s planning an impromptu trip to Austin soon, so I started scrolling through IKEA’s latest line-up to see what things I’m bringing home. All I \[…\]])],
-    [#brief-item([Stu Davidson], source-name: [Stuck in Customs], [Made with the new Midjourney…
+  [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [Successful companies understand that to stay relevant, they must continually evolve, adapt, and introduce fresh pieces. It’s always exciting to see what’s entering the scene, and IKEA’s new products are certainly making a big impression. The megastore has new arrivals in numerous categories, including storage, furniture, kitchenware, and decor. We’re talking hundreds of pieces. My family’s planning an impromptu trip to Austin soon, so I started scrolling through IKEA’s latest line-up to see what things I’m bringing home. All I \[…\]])],
+  [#brief-item([Stu Davidson], source-name: [Stuck in Customs], [Made with the new Midjourney…
 
-class="jetpack-video-wrapper"\>
+
 
 The post A collection of the surreal… appeared first on Stuck in Customs .])],
-    [#brief-item([SitePoint Team], source-name: [SitePoint], [Master token optimization with context compression techniques. Reduce LLM API costs by 50% using extraction vs selection methods and practical RAG optimization strategies.
+  [#brief-item([SitePoint Team], source-name: [SitePoint], [Master token optimization with context compression techniques. Reduce LLM API costs by 50% using extraction vs selection methods and practical RAG optimization strategies.
 
  Continue reading
  Optimizing Token Usage: Context Compression Techniques 
  on SitePoint .])],
-    [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [Whoa, whoa, whoa, back up a second, those are BILLY bookcases?! (That’s what you’re thinking right now, isn’t it?) I get it; I did a double-take, too. This built-in bookcase hack from Reddit user Floyd (u/DisastrousPipe8192) is next-level. I mean, it doesn’t even look like the same room when you see the finished product. Granted, he also changed the flooring, furniture, and wall color, but the built-ins undoubtedly steal the show. Floyd shared that he’s learned most of his home \[…\]])],
-  ))
-}
+  [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [Whoa, whoa, whoa, back up a second, those are BILLY bookcases?! (That’s what you’re thinking right now, isn’t it?) I get it; I did a double-take, too. This built-in bookcase hack from Reddit user Floyd (u/DisastrousPipe8192) is next-level. I mean, it doesn’t even look like the same room when you see the finished product. Granted, he also changed the flooring, furniture, and wall color, but the built-ins undoubtedly steal the show. Floyd shared that he’s learned most of his home \[…\]])],
+))
+
+// --- Notable Quotes ---
+#block(above: 0.2in, stroke: (top: 1pt + luma(26)), inset: (top: 0.1in))[
+  #pull-quote([Another door leads into the forest   Watson's painting area sits in the middle volume, surrounded by wide-open glazing.], [Ellen Eberhardt])
+
+]
 
 #colophon([Atlantic Wire], [Vol. 1, No. 013], [2026-03-30])

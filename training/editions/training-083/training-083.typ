@@ -21,76 +21,8 @@
 #masthead([The Urban Examiner], [Vol. 1, No. 083], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Python in Visual Studio Code – September 2025 Release],
-  kicker: [Cover Story],
-  author: [Luciana Abud],
-  source-name: [Microsoft Python Blog],
-  deck: [We’re excited to announce the September 2025 release of the Python , Pylance and Jupyter extensions for Visual Studio Code!],
-  lead-pre: [],
-  lead-cap: [T],
-  lead-rest: [his release includes the following announcements:],
-  body-paragraphs: (
-  [Experimental AI-powered hover summaries with Pylance],
-  [Run Code Python Snippet AI tool],
-  [Python Environments extension improvements, including pipenv support],
-  [If you’re interested, you can check the full list of improvements in our changelogs for the Python , Jupyter and Pylance extensions.],
-  [This month you can also help shape the future of Python typing by filling out the 2025 Python Type System and Tooling Survey: https:\/\/jb.gg/d7dqty],
-  [Experimental AI-powered hover summaries with Pylance],
-  [A new experimental AI Hover Summaries feature is now available for Python files when using the pre-release version of Pylance with GitHub Copilot . When you enable the setting(python.analysis.aiHoverSummaries ) setting, you can get helpful summaries on the fly for symbols that do not already have documentation. This makes it easier to understand unfamiliar code and boosts productivity as you explore Python projects. At the moment, AI Hover Summaries are currently available to GitHub Copilot Pro, Pro+, and Enterprise users.],
-  [We look forward to bringing this experimental experience to the stable version soon!],
-  [Run Code Snippet AI tool],
-  [The Pylance Run Code Snippets tool is a powerful feature designed to streamline your Python experience with GitHub Copilot. Instead of relying on terminal commands like python -c "code" or creating temporary files to be executed, this tool allows GitHub Copilot to execute Python snippets entirely in memory. It automatically uses the correct Python interpreter configured for your workspace, and it eliminates common issues with shell escaping and quoting that sometimes arise during terminal execution.],
-  [One of the standout benefits is the clean, well-formatted output it provides, with both stdout and stderr interleaved for clarity. This makes it ideal when using Agent mode with GitHub Copilot to test small blocks of code, run quick scripts, validate Python expressions, or checking imports, all within the context of your workspace.],
-  [To try it out, make sure you’re using the latest pre-release version of Pylance. Then, you can select the pylancerunCodeSnippet tool via the Add context… menu in the VS Code Chat panel.],
-  [Note : As with all AI-generated code, please make sure to inspect the generated code before allowing this tool to be executed. Reviewing the logic and intent of the code ensures it aligns with your project’s goals and maintains safety and correctness.],
-  [pylance-run-code-snippet],
-  [Python Environments extension improvements],
-  [We appreciate your feedback and are excited to share several enhancements to the Python Environments extension. Thank you to everyone who submitted bug reports and suggestions to help us improve!],
-  [Improvements to Conda experience],
-  [We focused on removing friction and unexpected behavior when working with Conda environments:],
-  [When creating a new Conda environment through the UI, you can now pick the Python version up front.],
-  [Conda activation and sourcing has been improved across different OS and shell types, with clearer logging.],
-  [The Copy Interpreter Path action now returns the actual Python binary instead of a conda run wrapper],
-  [The proper Conda and Pixi executables are used when debugging.],
-  [Pipenv support],
-  [Pipenv environments are now discovered and listed in the Environments Manager view.],
-  [Better diagnostics and control],
-  [We’ve made it easier to identify and resolve environment-related issues. When there are issues with the default environment manager, such as missing executables, clear warnings are now surfaced to guide you through resolution.],
-  [Additionally, there’s a new Run Python Environment Tool (PET) in Terminal command which gives you direct access to running the back-end environment tooling by hand. This tool simplifies troubleshooting by allowing you to manually trigger detection operations, making it easier to diagnose and fix edge cases in environment setup.],
-  [Quality of life improvements],
-  [We also reduced paper cuts to make your experience with the extension smoother. These include:],
-  [Add as Python project menu item is now always available, enabling a more consistent flow for setting a folder as a Python project.],
-  [Interpreter paths with spaces are now properly handled when debugging.],
-  [Environments are now always refreshed on new project creation.],
-  [Conda activation logic is consolidated with clearer logging.],
-  [We audited and removed shell profile edits which are outdated or no longer needed given VS Code core shell integration improvements.],
-  [We tightened the logic that resolves the default interpreter so it honors your defaultInterpreterPath (including script wrappers) without silently “correcting” it.],
-  [We have a new setting called python.useEnvFile which controls whether environment variables from .env files and the python.envFile setting are injected into terminals when the Python Environments extension is enabled.],
-  [venvFolders are now included in the extension’s search path. Please note that we plan to deprecate the python.venvFolders setting in favour of a new one in the future, to enable better flexibility when setting up environment search paths.],
-  [We are continuing to roll-out the extension. To use it, make sure the extension is installed and add the following to your VS Code settings.json file: "python.useEnvironmentsExtension": true . If you are experiencing issues with the extension, please report issues in our repo , and you can disable the extension by setting "python.useEnvironmentsExtension": false in your settings.json file.],
-  [Call for Community Feedback],
-  [This month, the Python community is coming together to gather insights on how type annotations are used in Python. Whether you’re a seasoned user or have never used types at all, your input is valuable!
-Take a few minutes to help shape the future of Python typing by participating in the 2025 Python Type System and Tooling Survey: https:\/\/jb.gg/d7dqty .],
-  [Other Changes and Enhancements],
-  [We have also added small enhancements and fixed issues requested by users that should improve your experience working with Python and Jupyter Notebooks in Visual Studio Code. Some notable changes include:],
-  [The python.analysis.supportAllPythonDocuments setting has been removed, making Pylance IntelliSense now enabled in all Python documents by default, including diff views and Python terminals.],
-  [We would also like to extend special thanks to this month’s contributors:],
-  [\@almarouk Enhanced conda executable retrieval with path existence checks in vscode-python-environments\#677],
-  [\@osiewicz Fixed prefix of attach shared library for Windows in debugpy\#1939],
-  [\@sjsikora Stricter pip list Package Parsing in vscode-python-environments\#698],
-  [\@timrid Check if os.\_\_file\_\_ is available before using it in debugpy\#1944],
-  [Try out the new improvements by downloading the Python extension and the Jupyter extension from the Marketplace, or install them directly from the extensions view in Visual Studio Code (Ctrl + Shift + X or ⌘ + ⇧ + X). You can learn more about Python support in Visual Studio Code in the documentation. If you run into any problems or have suggestions, please file an issue on the Python VS Code GitHub page .],
-  [The post Python in Visual Studio Code – September 2025 Release appeared first on Microsoft for Python Developers Blog .],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [White House delays permanent CDC director pick],
   author: [Peter Sullivan],
   source-name: [Axios],
@@ -113,13 +45,11 @@ Take a few minutes to help shape the future of Python typing by participating in
   debug-mode: false,
 )
 
-  #pull-quote([However, there is a balancing act in the need to find someone who can work with Health Secretary Robert F.], [Peter Sullivan])
+#pull-quote([However, there is a balancing act in the need to find someone who can work with Health Secretary Robert F.], [Peter Sullivan])
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [A Day in Class With Plato, the Melania Trump–Mandated Robot Teacher],
   author: [Alexandra Petri],
   source-name: [The Atlantic],
@@ -151,10 +81,8 @@ Take a few minutes to help shape the future of Python typing by participating in
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Trump considers "winding down" Iran war without opening Hormuz Strait],
   author: [Barak Ravid],
   source-name: [Axios],
@@ -189,12 +117,10 @@ Take a few minutes to help shape the future of Python typing by participating in
   debug-mode: false,
 )
 
-  #pull-quote([military is striking hard and continuously.], [Barak Ravid])
+#pull-quote([military is striking hard and continuously.], [Barak Ravid])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [\#Addiction],
   author: [Elizabeth Nolan Brown],
   source-name: [Reason],
@@ -207,7 +133,7 @@ Take a few minutes to help shape the future of Python typing by participating in
   [Absolving parents (and ourselves) of blame: The implications of this verdict go way beyond Kaley, and even way beyond those thousands of current plaintiffs. This case—and one decided earlier this week in New Mexico —represent a legal and conceptual paradigm shift in how we consider social media.],
   [Many people seem (or want) to believe that it's simply not possible to exercise restraint when it comes to smartphones and social media, or that parents bear any responsibility for controlling their kids' use and exposure. The shift showcases an embrace of powerlessness and corporate blame when it comes to tech habits, and a rejection of ideas like personal and parental responsibility. We've imbued these platforms with an almost magical status, while expecting their proprietors to perform superhuman feats of saving people from themselves.],
   [In this case, Kaley testified to heavy use of social media from a young age. But she also suffered from school and home life problems and was exposed to domestic violence at a young age. To say that social media caused her problems is to rule out significant life stressors that can cause adolescents pain. It's to assume a causality that goes one way (heavy social media causes issues) when it could just as likely go the other way (girl turns to too much social media in the face of problems at home and school). It's to assign a massive and mystical power to smartphones and corporations, while utterly rejecting more mundane vectors or responsibility.],
-  [dir="ltr" lang="en"\>Her mother beat her, abused her, weighed her daily, called her fat, her sister tried to take her own life and her father abandoned her. Yet none of that apparently led to this poor girl's anxiety, depression and body dysmorphia, it was lip gloss review videos on youtube https:\/\/t.co/g8mBUwUym2],
+  [Her mother beat her, abused her, weighed her daily, called her fat, her sister tried to take her own life and her father abandoned her. Yet none of that apparently led to this poor girl's anxiety, depression and body dysmorphia, it was lip gloss review videos on youtube https:\/\/t.co/g8mBUwUym2],
   [— Taylor Lorenz (\@TaylorLorenz) March 25, 2026],
   [Tort lawyers rejoice: This could be a gold rush for personal injury lawyers. Bad personal choices? Poor parenting? Material factors? Nah—must be the Reels!],
   ["Cases like this will likely unleash a trial lawyer bonanza via a much broader wave of (mostly frivolous) lawsuits," predicts R Street Institute policy analyst Adam Thierer. "Every tort lawyer in America is probably thinking about ripping down their 'Been in a Crash?' billboards right now and replacing them with 'Addicted to the Internet?' signs."],
@@ -219,7 +145,7 @@ Take a few minutes to help shape the future of Python typing by participating in
   [If social media platforms are legally liable for any and all vague harms that someone could blame on their content, serious crackdowns on all sorts of material could become warranted. That means speech around controversial issues, diet and fitness, mental health topics, sexuality, and so much more will be suppressed.],
   [And if social media platforms are a "product," rather than a venue for speech, we open the way for so much more government regulation of what can and cannot be said online.],
   ["Many are cheering the \[California and New Mexico\] decisions, likening them to landmark lawsuits against Big Tobacco," notes Ari Cohn of the Foundation for Individual Rights and Expression (FIRE) on X. But "social media platforms and the information, ideas, and entertainment they connect people to aren't tangible items that inherently and invariably have physical impacts on the human body" and "the minute we start treating speech as if it were just another physical product is the minute we hand the government the power to decide what we can read, watch, and say."],
-  [dir="ltr" lang="en"\>As Will points out below, the president of the United States is in court RIGHT NOW trying to recast speech as a product in order to sidestep the strictures of the First Amendment and punish his perceived critics.],
+  [As Will points out below, the president of the United States is in court RIGHT NOW trying to recast speech as a product in order to sidestep the strictures of the First Amendment and punish his perceived critics.],
   [Beware this dangerous path! https:\/\/t.co/z53bJSDizs],
   [— Nico Perrino (\@NicoPerrino) March 25, 2026],
   [Scenes from Cincinnati: An Ohio Congressional candidate has visually modeled her campaign website after OnlyFans , after her Republican primary opponent, Rep. Dave Joyce, reportedly criticized her for visiting a nude beach. Niki Frenchko's website features nude images discreetly covered in spots with campaign text, as well as the wacky mix of big government and limited government proposals that's come to characterize populist candidates—abolishing property taxes, protecting 2nd Amendment rights, and opposing AI data centers are all on the agenda. Frenchko told The Enquire r she was a "Thomas Massie-style Republican," and one of her campaign planks relates to releasing the Epstein files.],
@@ -236,38 +162,34 @@ Take a few minutes to help shape the future of Python typing by participating in
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Engineering VP Josh Clemm on how we use knowledge graphs, MCP, and DSPy in Dash],
   author: [Ishan Mishra,Eric Wang,Dmitriy Meyerzon,Dmitriy Meyerzon,Hicham Badri,Appu Shaji,Craig Wilhite,Josh Clemm],
   source-name: [Dropbox Tech],
   images: (),
   paragraphs: (
   [I was recently a guest speaker in Jason Liu’s online course on RAG offered by the education platform Maven. I did some mini deep-dives into what we’ve been doing at Dropbox with knowledge graphs; how we’re thinking about indexes, MCP, and tool calling in general; some of the work we do with LLM as a judge; and how we use prompt optimizers like DSPy. This is an edited and condensed version of my talk. Visit Maven to watch the full video and hear my Q&A with Jason and his students. — Josh Clemm, vice president of engineering for Dropbox Dash],
-  [style="text-align: center;"\>~ ~ ~],
+  [~ ~ ~],
   [I don't know about you, but I probably have about 50 tabs open right now—and at least another 50 accounts for other SaaS apps. It’s completely overwhelming. It means your content is all over the place, and that makes it very, very hard to find what you're looking for. The good news is we have all these amazing LLMs coming out every day that can tell you about quantum physics . But the bad news is they don’t have access to your content. All of your work content is proprietary. It's within your walled garden. It means most LLMs can’t help when it comes to your work.],
   [That’s why we’ve been building Dropbox Dash . It doesn't just look at your Dropbox content. It connects to all your third-party apps and brings it into one place, so you can search, get answers, and do the agentic queries that you want to do at work.],
   [Here’s a brief primer on our tech stack and how Dash works.],
-  [--\>],
+  [The context engine that makes Dash possible],
   [First, we have our connectors . This is where we're building custom crawlers and connecting to all these different third-party apps. It’s not easy. Everything has its own rate limit, each has its own unique API quirks, each has its own ACL and permission system, etc. But getting that right is essential and getting all that content in one place is the goal.],
   [Next, we're doing a lot of content understanding —and in certain cases, enriching the content itself. So, first we normalize a lot of the different files that come in and get it into a format like markdown. Then, we’re looking at extracting key information. We're going to be looking at titles, metadata, trying to extract links, and generate different embeddings.],
   [For documents, this is fairly straightforward. Just grab the text, extract it, throw it in the index, and you're done. Images require media understanding. CLIP-based models are a good start, but complex images need true multimodal understanding. Then you get to PDFs, which might have text and figures and more. Audio clips need to be transcribed. And then finally you get to videos. What if a client has a video like this very famous scene from Jurassic Park . How would you find this later? There's no dialogue, so you can't really rely on pure transcription. This is where you would need to use a multimodal model and extract certain scenes, generate understanding for each one, and then store that.],
-  [id="cta"\>],
-  [id="cta-box"\>],
-  [id="cta-indent"\>],
-  [id="cta-hed"\> Dropbox Dash: The AI teammate that understands your work],
+  [Dropbox Dash: The AI teammate that understands your work],
   [Dash knows your context, your team, and your work, so your team can stay organized, easily find and share knowledge, and keep projects secure, all from one place. And soon, Dash is coming to Dropbox.],
+  [Learn more →],
   [After we understand the incoming content, we take it a step further to model all these pieces of information together as a graph. Meetings may have associated documents, associated people, transcripts, or prior notes. Building that cross-app intelligence is essential to providing better context for our users. This is where we're going to start to do the knowledge graph bundle that I'll talk more about later in depth.],
   [From there, all that information (embeddings, chunks, contextual graph representations) flows into our highly secure data stores . Today we use both a lexical index—using BM25—and then store everything as dense vectors in a vector store. While this allows us to do hybrid retrieval, we found BM25 was very effective on its own with some relevant signals. It’s an amazing workhorse for building out an index.],
   [Finally, we apply multiple ranking passes on any retrieved results so they are personalized and ACL’d to you.],
-  [--\>],
   [Altogether, this is what we call our context engine . And once you have that, you can introduce APIs on top of it and build entire products like Dash .],
+  [Why we chose index-based retrieval],
   [Okay, but why build an index? Why did we even go down this route in the first place? Well, there's a bit of a choose-your-fighter kind of mentality in the world right now between federated retrieval and indexed retrieval. The difference is very classic software engineering. Are you going to process everything on the fly? That’s federated retrieval. Or are you going to try to pre-process it all at ingestion time? That's index-based retrieval. And there are pros and cons to each approach.],
   [Federated retrieval is very easy to get up and running. You don't have to worry about storage costs. The data is mostly fresh. You can keep adding more MCP servers and new connectors. But there are some big-time weaknesses here. You're at the mercy of all these different APIs or MCP servers which are going to differ in speed, quality, and ranking. You’re also limited in what you can access. You can access your information, but you probably don’t have access to company-wide connectors—meaning you can’t access content that’s shared across the whole company. And you have to do a lot of work on-the-fly in the post-processing. Once the data comes back, you have to merge information and potentially do re-ranking. And if you're using a lot of chatbots today with MCP, you're going to see that token count go up and up. It takes a lot of tokens to reason over this amount of information.],
   [On the flip side, with index-based retrieval, you do now have access to those company connectors. And because you have time on your side, you can pre-process that content and create these really interesting enriched data sets that don't exist on their own. You can also do a lot more offline ranking experiments. You can try different methods to improve your recall, and it’s very, very fast. But it's also a ton of work—and a lot of custom work. This is not for the faint of heart. You have to write a lot of custom connectors. As for ingestion time, you're going to have freshness issues if you're not good with understanding rate limits. It can also be extremely expensive to host this information, and then you have to decide how to store it. Am I using a vector database, like classic RAG from many years ago? Am I going the BM25 route? Do I want to do hybrid? Do I want to do a full graph RAG, which is what we ended up going with? There are a lot of decisions you have to make.],
-  [--\>],
+  [Making MCP work at Dropbox scale],
   [Now what about MCP? There was a lot of hype when MCP burst onto the scene about a year ago. Everybody was talking about it: “You don't need any of these APIs anymore, you just add MCP to your agent.” Sounds great, right? But there are some major challenges with how MCP is typically implemented.],
   [MCP tool definitions, in particular, take up valuable real estate in your context window . We’re noticing quite a bit of degradation in the effectiveness of our chat and agents (very classic context rot). So with Dash, we're trying to cap things to about 100,000 tokens. But those tool definitions do fill up quickly. The results are quite significant, especially if you're doing retrieval. You're getting a lot of content back, and you're immediately going to fill up that context window. It's going to be very problematic. It’s also incredibly slow. So, if you’re using MCP with some agents today, even a simple query can take up to 45 seconds—whereas with the raw index, you're getting all the content coming back very quickly, within seconds.],
   [Here are some of the ways we’ve solved for that:],
@@ -275,27 +197,26 @@ Take a few minutes to help shape the future of Python typing by participating in
   [Modeling data within knowledge graphs can significantly cut our token usage as well, because you're really just getting the most relevant information for the query.],
   [Tool results come back with a huge amount of context, so we actually choose to store that locally. We do not put that in the LLM context window.],
   [Finally, we use a lot of sub-agents for very complex agentic queries, and have a classifier effectively pick the sub-agent with a much more narrow set of tools.],
-  [--\>],
+  [Our approach to knowledge graphs],
   [The next question that comes up a lot: are knowledge graphs worth it? Well, let’s look at how a knowledge graph works.],
   [You start by modeling these different relationships across these various apps. For example, say you've got a calendar invite. It might have attachments, meeting minutes, a transcript. Of course, it also has all the attendees, and maybe there's even a Jira project associated. Every app that we connect with has its own concept or definition of people, and so coming up with a canonical ID for who someone is is very, very impactful for us overall. Being able to model something like that is incredibly powerful. You can go view somebody's profile on Dash today, but it also helps a ton in relevance and retrieval.],
-  [--\>],
   [Say that I want to find all the past context engineering talks from Jason. But who is Jason? How do you know that? Well, if you have this graph—this people model—you can then go ahead and fetch that and add that to the context, and it's not having to do a ton of different retrieval overall. Fantastic. And we use normalized discounted cumulative gain (NDCG) a lot to score the results to retrieve. But just by doing this people-based result we saw some really nice wins.],
   [The architecture itself is complicated. I won't talk a ton here, but it's important to realize we're not just storing a one-to-one mapping of source doc to end doc. We do want to derive and create more unique characteristics. And the other key insight here is we're not storing these graphs in a graph database. We did experiment with that. The latency and query pattern were a challenge. Trying to figure out that hybrid retrieval was a challenge. And so we ended up building these graphs in a more unique way. We’re staging it more asynchronously, we're building out these relationships, and then we create these knowledge bundles. So again, it's not necessarily a graph, but think of it almost like an embedding—like a summary of that graph. And it becomes these little contexts that contain all this information. And with that context, we actually just send it on through the exact same index pipeline that we have for all the other content. So things will get chunked and things will generate embeddings for both lexical as well as semantic retrieval.],
-  [--\>],
+  [Using an LLM to judge relevancy],
   [Alright, we've indexed all this content. We've got content understanding. We've done a ton of work on trying to model these relationships. But did the retrieval quality actually improve? How do we know?],
   [Take Google search, for example. You have your 10 blue links, and the audience for those results are humans. If your results are high quality, the humans will tell you by clicking. You can quickly get some amazing signal this way. The model is either working or it isn’t.],
   [In the world of chat, you're still retrieving results, but it's not for the human. It's for this large language model. And so you no longer have those humans to help us out. So what do you do? That's where you want to use LLMs as a judge . Broadly speaking, what you're trying to do is judge how relevant a piece of information is between, say, one and five, and then use that to improve over time.],
   [Humans can still help here. Sometimes they give you thumbs ups and thumbs down on the quality of your results. You can also bring in human evaluators to help you. When we started these experiments, we asked ourselves: How accurate can we get our judge to match what a human will do? And so we had a bunch of our engineers label a ton of documents to see how much of a disagreement there was between the human and the LLM as a judge. The first prompt for our judge wasn’t bad—8% disagreed—but the lower, the better.],
   [Next, we continued to refine the prompt. You know, classic prompt tuning like “provide explanations for what you're doing.” And sure enough, disagreements went down. Then, we just upgraded the model itself to OpenAI’s o3. It's a reasoning model, far more powerful, and guess what? Disagreements with the humans went down further.],
   [Finally, a big problem with using an LLM as a judge in a work context is that it doesn't know things like acronyms. If I were to say, “What is RAG?”—and hopefully it knows what RAG is—what if it hasn’t been trained on that? Sometimes, the judge needs to go get that context. And so, this is a little tongue-in-cheek, but we call this RAG as a judge. It can't just be using pre-computed information. Sometimes it has to go fetch some context itself. And with that, we dropped disagreements even further.],
-  [--\>],
+  [Prompt optimization with DSPy],
   [There's a growing community around prompt optimizers, and one of the technologies in particular we've been using is DSPy. It helps optimize your prompts. It tries to get the most accurate information based on a set of evals. So by bringing in DSPy, we got even better results overall.],
   [It might be impossible to get to zero disagreements. Even humans—multiple humans—will disagree on the relevance set. But we're going to keep grinding on this. And even if we can't get to zero, we're actually quite pleased with some of the results we're getting with DSPy.],
   [One thing to note: We saw some really interesting emergent behavior happening with DSPy. Instead of simply telling us what the improvements could be, we noticed we could create bullet points with the different disagreements and then have DSPy try to optimize the bullets themselves. So if there were multiple disagreements, it would try to reduce those disagreements overall, and we started to create this really nice flywheel and ended up getting some nice results.],
-  [--\>],
   [There are some other benefits of DSPy. So first, obviously, is prompt optimization. It helped us quite a bit in our LLM-as-a-judge area. Again, that's a prime place to think about DSPy right now, because LLMs as a judge have very crystal clear rubrics and evals. You know exactly what the outcome should be. You just need to have the ultimate prompt, and it’s really good for that. We're going to start to experiment with DSPy across our entire stack. We have over 30 different prompts today throughout the Dash stack, whether that's in the ingest path, LLMs as a judge, some offline evals, as well as our online agentic platform approach.],
   [The next one is prompt management at scale. I mentioned we've got about 30 prompts overall, and at any given time we might have 5 to 15 different engineers tweaking these prompts and trying to get more improvements. And it's a little silly if you think about it. You've got this text string that you've checked in to your code repository; but then there's an edge case, this chat session didn't work. So you go in and fix it, but then something else breaks, and it becomes a bit of a whack-a-mole. And so it's very powerful to just define things in a more of a programmatic way and let these tools spit out the actual prompt themselves. It just works better at scale.],
   [And the last really great benefit we like is around model switching. So, every model out there is a bit unique. They have their own quirks, and there's always different ways to prompt them. And anytime you bring in a new model, you have to spend a bunch of time optimizing the prompt again. But with DSPy, you just plug the model in, define your goals, and out spits the prompt that works. So you can do this model switching far more rapidly—and this is really beneficial for modern agentic systems, because you just don't have one giant LLM. You're going to have a planning LLM, you're going to have all these smaller sub-agents, and those sub-agents might be very narrowly focused. You probably want to pick a model that's highly tuned to that particular task, so having something like a prompt optimizer is really powerful.],
+  [Make it work, then make it better],
   [To wrap things up, here are some key takeaways:],
   [We do find the index is superior. It is a lot of work, so don’t approach this lightly. Understand that you have to build up quite a bit of infrastructure and different data pipelines to get this working. Thinking through your data, storage, how you want to index, the retrieval—it's a lot of work, but worth it at scale.],
   [Cross-app intelligence absolutely does work. You want to create those relationships. You want to be able to bring in the org chart whenever you're adding different prompts. But it also isn't easy. If I knew the exact prompts everybody was going to ask 10 times a day, I would go build a more optimal bundle of that knowledge and store that, so it's very, very fast and accurate. You just don't have that benefit all the time.],
@@ -303,7 +224,7 @@ Take a few minutes to help shape the future of Python typing by participating in
   [Investing in effective LLM judges is incredibly important. A lot of times that initial prompt is all people do. They're like, “Alright, good. Done. It's good enough.” But if you can grind that down and get the accuracy to improve, it really lifts all boats—and you're going to see some really nice outcomes across the board.],
   [Prompt optimizers do work at scale. They work at any scale, but they’re absolutely essential at scale.],
   [My final, overall takeaway is the classic software engineering concept of: make it work, then make it better. A lot of the techniques and things I've described here are things that we've been doing over the last few years with a big engineering team working on this day-in and day-out. If you're just getting started, absolutely invest in those MCP tools and everything on the real-time side. And then, over time, as you start to see what your customers are doing and you start to get some more scale, look for opportunities to optimize overall.],
-  [style="text-align: center;"\>~ ~ ~],
+  [~ ~ ~],
   [If building innovative products, experiences, and infrastructure excites you, come build the future with us! Visit jobs.dropbox.com to see our open roles.],
 ),
   insert-map: (:),
@@ -312,24 +233,24 @@ Take a few minutes to help shape the future of Python typing by participating in
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [An Interview with Nvidia CEO Jensen Huang About Accelerated Computing],
   author: [Ben Thompson],
   source-name: [Stratechery],
   images: (),
   paragraphs: (
+  [Listen to this post:],
   [Good morning,],
   [This week’s Stratechery Interview is running early this week, as I had the chance to speak in person with Nvidia CEO Jensen Huang at the conclusion of his GTC 2026 keynote , which took place yesterday in San Jose . I have spoken to Huang four times previously, in May 2025 , March 2023 , September 2022 , and March 2022 .],
   [In this interview we talk about a keynote that came across like a bit of a history lesson, and what that says about a company that still feels small even as it’s the most valuable in the world, as well as what has changed in AI over the last year. Then we discuss a number of announcements that might feel like a change in approach (although Huang disagrees), including Nvidia’s burgeoning CPU business and the Groq acquisition. Finally we discuss scarcity in the AI stack and how that affects Nvidia, the China question, and Huang’s frustration with doomers and their influence in Washington.],
   [As a reminder, all Stratechery content, including interviews, is available as a podcast; click the link at the top of this email to add Stratechery to your podcast player.],
   [On to the Interview:],
+  [An Interview with Nvidia CEO Jensen Huang About Accelerated Computing],
   [This interview is lightly edited for clarity.],
-  [style="text-align: center;"\>],
   [Topics:],
   [Nvidia’s CUDA Core | Reasoning and Coding | The Role of CPUs in Accelerated Computing | Groq | China and the Doomers | Nvidia’s Nature],
+  [Nvidia’s CUDA Core],
   [Jensen Huang, welcome back to Stratechery.],
   [JH: It’s great to be with you.],
   [You literally just walked off the stage, went a little long, I think, but you spent a lot of this keynote , which I quite enjoyed, explaining what Nvidia is, starting with the history of the programmable shader, the launch of CUDA 20 years ago. We don’t need to spend too much time recounting this, you did a good job, and Stratechery readers are certainly familiar — sorry, this is a bit of a lead up here — Stratechery readers are familiar , and I remember this exactly, someone asked me to explain how is it that Nvidia can announce so many things at a single GTC, this is like six, seven years ago, maybe even longer than that, and I explained the whole thing with CUDA and all the libraries is it’s just sort of doing the same thing again and again , but for specific industries. That’s the story you told today, and it’s kind of a back-to-the-future moment after the last few GTC keynotes have kind of just been pretty AI-centered, CES was pretty AI-centered . Why did you feel the need tell that story now? To recast CUDA and why is it important?],
@@ -358,6 +279,7 @@ Take a few minutes to help shape the future of Python typing by participating in
   [Another example is coming up with models that are geometry aware, meaning a lot of things in life, in nature, are symmetrical. And so when you’re generating these models, you don’t want it to generate what is just statistically plausible, it has to also be physically based, and so it has to come out symmetrical. And so cuEquivariance , for example, allows you to do things like that.],
   [So we have all these different technologies that are designed — or, for example, when we’re generating tokens in words, it comes out in chunks at a time, little bits, tokens at a time, when you’re generating motion, you need it to be continuous. And so there’s discrete information that you generate and understand, and there’s continuous information that you want to generate and understand. Transformers is not ideal for both.],
   [Right, that makes sense.],
+  [Reasoning and Coding],
   [One more quote from the piece, you write, “In the past year, AI crossed an important threshold. Models became good enough to be useful at scale. Reasoning improved. Hallucinations dropped. Grounding improved dramatically. For the first time, applications built on AI began generating real economic value”. What specifically was that change? Because I think about the timing, I feel like this upcoming year is definitely about agents, I just wrote about it today — but for last year, was that the reasoning? Was that the big breakthrough?],
   [JH: Generative, of course, was a big breakthrough, but it hallucinated a lot and so we had to ground it, and the way to ground it is reasoning, reflection, retrieval, search, so we helped it ground. Without reasoning, you couldn’t do any of that, and so reasoning allowed us to ground the generative AI.],
   [And once you ground it, then you could use that system to reason through problems and decompose it, and decompose it into things that you could actually do something about, and so the next generation was tool use. Turns out it probably tells you something that search was a service that nobody paid for, and the reason for that is getting information is very important and very useful but it’s not something you pay for. The bar to reach to get somebody to pay you for something has to be higher than just information. “Where’s a good restaurant?” — information is just, I don’t think is worthy enough to get paid for. Some people pay for it, I pay for it.],
@@ -369,6 +291,7 @@ Take a few minutes to help shape the future of Python typing by participating in
   [However, you could give an example. You say, “these are the styles I’m looking for, I want it to be aesthetic like that”. Because the agent is able to reflect, is able to compare its quality of code, its quality of result against some reference, it could say, “You know what, it didn’t turn out as well as I hope, I’m going to go back at it again”, and so it iterates. It doesn’t have to be fully executable, in fact, the more probabilistic, the more aesthetic, the more subjective, if you will, AI actually does better.],
   [Right, well that’s why you almost have two extremes. You have generating images where there’s no right answer and then you have coding where there is a right answer and AI seems to do good on those sides and the question is how much will it collapse into the middle there.],
   [JH: We’re fairly certain it could do architecture now, we’re fairly certain it could design kitchens and living rooms.],
+  [The Role of CPUs in Accelerated Computing],
   [Well, to this point, one of the big things with agents coming online is, you’ve talked a lot about accelerated computing, I think you’ve trash talked as it were, maybe the CPUs to the day, they’re all gonna be removed, like everything’s gonna be accelerated. Suddenly CPUs are hot again. It turns out they’re pretty useful and important to the extent you are selling CPUs now, how’s it feel to be a CPU salesman ?],
   [JH: There’s no question that Moore’s law is over. Accelerated computing is not parallel computing. Go back in time — 30 years ago, there were probably 10, 20, 30 parallel computing companies, only one survived, Nvidia and the reason why is because we had the good wisdom of recognizing the goal wasn’t to get rid of the CPU, the goal was to accelerate the application.],
   [So what I just falsely accused you of was actually true for everybody else.],
@@ -422,6 +345,7 @@ Take a few minutes to help shape the future of Python typing by participating in
   [JH: It really depends on the kind of products they have. Suppose you really don’t have enterprise use cases at the moment, I don’t really think that adding Groq makes much sense, and the reason for that is because most of your customers are free tier customers, and they’re moving towards paying. So it might be two-thirds free tier, one-third paid, in that case, adding Groq to it, you’re adding a lot of expense. You’re taking some power, it’s not worth it.],
   [Complexity. And you’re taking away servers, the opportunity cost.],
   [JH: What you could actually be serving the free tier, yeah. However, if you have Anthropic-like business and you have OpenAI-like business where Codex is capturing really great economics, but you just wish you could generate more tokens, this is where adding that accelerator can really boost your revenues.],
+  [China and the Doomers],
   [Are we actually constrained by power right now in 2026 or by fab capacity or what? Everyone’s saying we don’t have enough supply. What’s the actual limiting factor?],
   [JH: I think it’s probably close on everything. You couldn’t double anything, really.],
   [Because you’ll hit some other constraints.],
@@ -452,6 +376,7 @@ Take a few minutes to help shape the future of Python typing by participating in
   [JH: Yeah, and somehow it makes them sound smarter.],
   [People love to sound smart.],
   [JH: Sometimes it’s maybe, and we now know, it helps them with their fundraising and sometimes it helps them secure regulatory capture. So there’s a lot of different reasons why they do it, and these are incredibly smart people but I would just warn them that most of these things will likely backlash and will likely come back and they’ll be probably disappointed that they did it someday.],
+  [Nvidia’s Nature],
   [I’m gonna tie a few questions together because I know we’re a little short on time. In the self-driving car space , you’re working with multiple automakers, you have your Alpamayo model , while still supplying chips to Tesla. You had a big bit about OpenClaw today in your presentation — meanwhile, a huge thing driving the Vera chips, for example, we talk about agents, is what’s happening with say, Claude Code and happening with Codex from OpenAI.],
   [Am I right to tease out a consistent element here, and your investment in your open source models goes with that, where you’re happy to supply the leading provider, or the inventor in a space with chips, but then you’re going to fast follow what they do for everyone else that is threatened by them? So you simultaneously broaden your customer base, you’re not just dependent on the leaders, but then also the leaders are helping you sell to everyone else because they’re worried about being left behind.],
   [JH: No, nothing like that. We’re at the frontier on so many different domains. In a lot of ways, we are the leader in many of these domains, but we never turn them into products. We’re a technology stack and so we have to be at the frontier, we have to be the world leader of the technology stack, but we’re not a solutions manufacturer, we’re not a service provider. And so that’s number one.],
@@ -483,16 +408,14 @@ Take a few minutes to help shape the future of Python typing by participating in
 ),
   insert-map: (:),
   inline-pq: pull-quote([JH: That was done completely independent of us and frankly, I didn’t even know about it, but it wouldn’t have changed anything.], [Ben Thompson]),
-  inline-pq-idx: 63,
+  inline-pq-idx: 66,
   word-count: 7261,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Behind the Curtain: How Anthropic's Pentagon deal could get revived],
   author: [Mike Allen],
   source-name: [Axios],
@@ -525,10 +448,8 @@ Take a few minutes to help shape the future of Python typing by participating in
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Inside the feature store powering real-time AI in Dropbox Dash],
   author: [Ishan Mishra,Eric Wang,Dmitriy Meyerzon,Dmitriy Meyerzon,Hicham Badri,Appu Shaji,Craig Wilhite,Josh Clemm,Jason Shang,Artem Nabirkin],
   source-name: [Dropbox Tech],
@@ -537,38 +458,40 @@ Take a few minutes to help shape the future of Python typing by participating in
   [Dropbox Dash uses AI to understand questions about your files, work chats, and company content, bringing everything together in one place for deeper, more focused work. With tens of thousands of potential work documents to consider, both search and agents rely on a ranking system powered by real-time machine learning to find the right files fast. At the core of that ranking in Dash is our feature store , a system that manages and delivers the data signals (“features”) our models use to predict relevance.],
   [To help users find exactly what they need, Dash has to read between the lines of user behavior across file types, company content, and the messy, fragmented realities of collaboration. Then it has to surface the most relevant documents, images, and conversations when and how they’re needed. The feature store is a critical part of how we rank and retrieve the right context across your work. It’s built to serve features quickly, keep pace as user behavior changes, and let engineers move fast from idea to production. (For more on how feature stores connect to context engineering in Dash, check out our deep dive on context engineering right here .)],
   [In this post, we’ll walk through how we built the feature store behind Dash’s ranking system, why off-the-shelf solutions didn’t fit, how we designed for speed and scale, and what it takes to keep features fresh as user behavior changes. Along the way, we’ll share the tradeoffs we made and the lessons that shaped our approach.],
-  [id="cta"\>],
-  [id="cta-box"\>],
-  [id="cta-indent"\>],
-  [id="cta-hed"\> Dropbox Dash: The AI teammate that understands your work],
+  [Dropbox Dash: The AI teammate that understands your work],
   [Dash knows your context, your team, and your work, so your team can stay organized, easily find and share knowledge, and keep projects secure, all from one place. And soon, Dash is coming to Dropbox.],
+  [Learn more →],
+  [Our goals and requirements],
   [Building a feature store for Dash wasn’t just a matter of picking something off the shelf, and there are a few reasons why. For one, our infrastructure is split across two very different worlds: an on-premises ecosystem designed for low-latency service-to-service communication, and a Spark-native cloud environment where feature engineering and large-scale data processing happens. This split ruled out standard cloud-native feature stores and forced us to find a way to bridge both systems without slowing down development velocity.],
   [On top of that, Dash’s search ranking system brought its own scaling challenge. A single user query doesn’t just pull up one document. Instead, it triggers our ranker to evaluate many files, each requiring dozens of behavioral and contextual features. What starts as one search quickly fans out into thousands of feature lookups across interaction history, metadata, collaboration patterns, and real-time signals. Ultimately, our feature store had to handle those kinds of massive parallel reads while still meeting strict, sub-100ms latency budgets.],
   [Relevance also depends on speed and capturing user intent in real-time. If a user opens a document or joins a Slack channel, that signal should show up in their next search—within a few seconds—which meant building an ingestion pipeline that could keep up with user behavior at scale.],
   [Finally, we had to reconcile two very different computation patterns. Some features naturally fit real-time streaming, while others depend on batch processing of historical data. We needed a unified framework that could support both efficiently, thereby reducing cognitive load for engineers and giving them a faster path from idea to production-ready features.],
+  [Designing our hybrid feature store],
   [After surveying the feature store landscape—Feast, Hopsworks, Featureform, Feathr, Databricks, and Tecton— Feast stood out for two reasons. First, its clear separation between feature definitions and infrastructure concerns meant our machine learning engineers could focus purely on writing PySpark transformations rather than the serving, storage, or orchestration complexity. Second, Feast’s modular architecture and extensive adapter ecosystem made it straightforward to integrate with our existing infrastructure. (An adapter refers to a Feast-provided interface that integrates its framework with different backend systems.) Its AWS DynamoDB adapter was particularly crucial, allowing us to leverage Dynovault—our in-house DynamoDB-compatible storage solution—to meet latency requirements while lowering costs.],
   [Our Feast-based architecture combines three key components, each optimized for its role.],
   [Feast gave us the orchestration layer and serving APIs, but we swapped out its Python online serving path for our own Go service so we could actually hit the concurrency and latency numbers we needed.],
   [Cloud-based storage took care of the heavy lifting of offline indexing and storage, while Spark jobs handled feature ingestion and computation.],
   [Dynovault handled the instant feature lookups needed for each search query. Co-located with inference workloads and leveraging Dropbox’s hybrid cloud infrastructure , Dynovault avoids the delay of public internet calls and reliably delivers ~20ms client-side latency while balancing cost and geographic scalability.],
   [Around this core architecture, we added observability through job failure monitoring, freshness tracking, and data lineage visibility. The result is a streamlined experience: engineers choose a data source, write PySpark transformations, and request features where needed, while the infrastructure abstracts away offline and online data management, pipeline orchestration, low-latency serving, and data freshness guarantees.],
-  [--\>],
+  [Making search fast],
   [With the architecture in place, the next challenge was meeting Dash’s sub-100ms latency requirements. Feature retrieval sits directly on the critical path of search and LLM answer generation, so even small delays compound quickly at scale and degrade Dash’s snappy search retrieval experience.],
   [Our initial feature-serving implementation was built in Python using the Feast SDK. While parallelism helped at moderate scale, profiling revealed that CPU-bound JSON parsing and Python’s Global Interpreter Lock became the dominant bottlenecks under higher concurrency. Moving to multiple processes temporarily improved latency, but introduced coordination overhead that limited scalability.],
   [To remove these constraints, we rewrote the feature serving layer in Go . Using lightweight goroutines, shared memory, and faster JSON parsing, the Go service delivers true concurrency without the coordination costs we hit in Python. Today, it handles thousands of requests per second while adding only ~5–10ms of processing overhead on top of Dynovault’s client latency, consistently achieving p95 latencies in the ~25–35ms range.],
   [This shift allowed us to meet Dash’s latency targets reliably and ensured that feature serving wouldn’t become the limiting factor as search traffic and feature complexity continued to grow.],
+  [Keeping features fresh],
   [Speed matters only when the data itself is fresh. Stale features can lower ranking quality and hurt user experience, so our feature store had to reflect new signals as soon as possible, often within minutes of user actions.],
   [The challenge was scale. Many of Dash’s most important features depend on large joins, aggregations, and historical context, which makes fully real-time computation impractical. We needed an ingestion strategy that balanced freshness with reliability, without overwhelming our infrastructure or slowing development. To do that, we built a three-part ingestion system.],
   [Batch ingestion handles complex, high-volume transformations built atop the medallion architecture (a layered data model that organizes data from raw to refined stages). Rather than rewriting every feature on each run, we added intelligent change detection so only modified records are written to the online store. This reduced write volumes from hundreds of millions to under one million records per run and cut update times from more than an hour to under five minutes.],
   [Streaming ingestion captures fast-moving signals such as collaboration activity or content interactions. By processing unbounded datasets in near-real time, it ensures features stay aligned with what users are doing in the moment.],
   [Direct writes handle lightweight or precomputed features by bypassing batch pipelines entirely. For example, relevance scores produced by a separate LLM evaluation pipeline can be written directly to the online store in seconds instead of waiting for the next batch cycle.],
   [Together, these approaches allow Dash to keep feature values fresh without forcing all computation onto a single ingestion path, maintaining ranking quality while scaling to real-world usage.],
+  [What we learned],
   [Building a feature store at Dropbox scale reinforced a few hard-earned lessons about systems design. On the serving side, Python’s concurrency model became a limiting factor for high-throughput, mixed CPU and I/O workloads. Even with careful parallelism, the Global Interpreter Lock capped performance for CPU-bound work like JSON parsing, and moving to multiple processes introduced new coordination bottlenecks. Rewriting the serving layer in Go allowed us to remove those tradeoffs and scale concurrency more predictably.],
   [On the data side, infrastructure changes mattered, but understanding access patterns mattered just as much. By recognizing that only 1–5% of feature values change in a typical 15-minute window, we were able to dramatically reduce write volumes and ingestion time. This shift turned hour-long batch cycles into five-minute updates, improving freshness without increasing system load.],
   [These optimizations came together in a hybrid architecture that balances flexibility and performance: Feast for orchestration and consistency, Spark for large-scale computation, and Dynovault for low-latency online serving. Rather than relying on a single vendor solution, this approach let us tune each layer to its strengths while keeping training and serving aligned.],
   [Ultimately, this work underscored the value of a middle path between building everything from scratch and adopting off-the-shelf systems wholesale. By combining open source foundations with internal infrastructure and tailoring them to real constraints, we were able to build a feature store that fits the needs of Dash today and, ultimately, can evolve with it in the future.],
   [Acknowledgments: Special thanks to all current and past members of the AI/ML Platform and Data Platform teams for their contributions, as well as our lovely machine learning engineers who spin up the magic with the tooling we build.],
-  [style="text-align: center;"\>~ ~ ~],
+  [~ ~ ~],
   [If building innovative products, experiences, and infrastructure excites you, come build the future with us! Visit jobs.dropbox.com to see our open roles.],
 ),
   insert-map: (:),
@@ -577,10 +500,8 @@ Take a few minutes to help shape the future of Python typing by participating in
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Trump’s Iran war has no clear endgame],
   author: [Brian Karem],
   source-name: [Salon],
@@ -589,7 +510,7 @@ Take a few minutes to help shape the future of Python typing by participating in
   [There is nothing more frightening than a commander-in-chief who has no idea what he’s doing, and many in Congress fear that’s exactly what we face as Donald Trump continues to prosecute his war in Iran .],
   [After a House Armed Services Committee briefing on Iran, Rep. Nancy Mace , R-S. C., put it as bluntly as she could while expressing the fears of a growing majority of lawmakers: “Let me repeat: I will not support troops on the ground in Iran, even more so after this briefing.” Alabama Rep. Mike Rogers, the Republican chair of the committee, echoed Mace’s thoughts, telling reporters, “We want to know more about what’s going on, what the options are, and why they’re being considered.”],
   [Members of Congress on both sides of the political aisle say that Trump has withheld information, including with whom the administration is negotiating inside Iran, and other basic details. “We just wanted them to tell us what’s the plan,” Rogers said , “and we didn’t get any answers.”],
-  [class="insert-quote"\>Reporters were told the briefing would address dozens of questions we had about the war, but White House Pep Secretary Karoline Leavitt skirted questions about Iran and said she wasn’t going to “negotiate for the president” in the briefing room. Whatever Trump says, she told us, is “obviously true.”],
+  [Reporters were told the briefing would address dozens of questions we had about the war, but White House Pep Secretary Karoline Leavitt skirted questions about Iran and said she wasn’t going to “negotiate for the president” in the briefing room. Whatever Trump says, she told us, is “obviously true.”],
   [That sentiment was echoed by reporters and others in Congress after a hastily-called press briefing at the White House on Wednesday. Reporters were told the briefing would address dozens of questions we had about the war, but White House Pep Secretary Karoline Leavitt skirted questions about Iran and said she wasn’t going to “negotiate for the president” in the briefing room. Whatever Trump says, she told us, is “obviously true.”],
   [Trump said Tuesday in a gaggle outside Air Force One that there is a 15-point plan for peace. Leavitt followed his comments by saying on Wednesday that anyone who reports that isn’t reporting the truth, but only part of the truth. That’s an odd way of saying the president isn’t telling the truth. It took two Pakistani officials to describe the broad strokes of the 15-point plan on Wednesday, revealing it addressed sanctions relief, a roll back of Iran’s nuclear program, limits on missiles and — wait for it — reopening the Strait of Hormuz .],
   [Somehow, even after Leavitt said that Iran has no military capabilities left and U. S. forces have hit more than 10,000 targets, we still need help reopening the Strait of Hormuz. Our allies “ are lining up behind Trump ” to help. But why would we need it, if the U. S. and Israel had “obliterated” their ability to make war as Trump constantly claims?],
@@ -597,13 +518,14 @@ Take a few minutes to help shape the future of Python typing by participating in
   [But so is Iran. Trump claimed someone inside the Iranian government gave him a “very big present”: allowing 10 oil tankers to pass through the strait. “Well, I guess we’re dealing with the right people,” Trump said during a Cabinet meeting Thursday. If true, clearly someone with some clout in Iran is talking to someone inside the Trump administration. Iran also rejected the “15-point plan,” responding instead with a five-point plan of their own. But according to Iranian officials, “we do not plan on any negotiations” with the United States and will fight “until complete victory.”],
   [Sure. And the checks in the mail. The only conclusion we can logically draw is that with the Pakistani presence, China is obviously interested in peace in Iran. Might have something to do with oil.],
   [The lies are compounding daily, and the fear of an escalating war continues to mount as other countries in the region say attacks by Iran and its allied groups “must stop.” The death toll has risen to more than 1,500 people in Iran and over 1,000 in Lebanon, as well as 16 in Israel and 13 U. S. service members.],
+  [Evidence of insider trading on Iran war grows],
   [Trump is now preparing to send 2,000 to 3,000 troops from the 82nd Airborne to the Middle East. He’s already committed 5,000 Marines , and there are roughly 50,000 troops already in the Middle East, despite Trump’s claim last week that he’s “not putting troops anywhere.”],
   [“The question isn’t whether or not he’s lying,” a former Pentagon insider told me Wednesday. “It’s why is he lying?” Otherwise, they said, “we’re in it now and we have to let the military accomplish their objectives.”],
   [The trouble is very few know what those objectives are, if there are any and “what resources will they require to be met.” In addition, my defense department source explained that “Trump can call it quits, but that doesn’t mean the regime will. Attacks on the Gulf states and in the Gulf itself could continue for quite some time. How will we deal with that?”],
   [We are “ahead of schedule” in fighting the war, Trump has claimed. His continued public confidence — despite the war expanding into Lebanon and other Arab countries, while Iran continues to trap 20,000 people and hundreds of oil tankers in the Strait of Hormuz — is what is bothering most members of the GOP and everyone else in the world. Except Secretary of Defense Pete Hegseth. On Tuesday he called Trump a man of bold action, even as he prayed for violence “against those who deserve no mercy.”],
   [Trump, for his part, said Hegseth wanted to destroy boats and take lives “for the fun of it.”],
   [Some think Trump and Hegseth are insane, juvenile or both – but others who know Trump say he’s banking on U. S. superiority in firepower as the basis for his confidence. “He might actually think that he can threaten to send in troops without ever having to do it,” my Pentagon source explained. “We wouldn’t be the first to mistakenly think a smarter bomb will keep us from putting boots on the ground.”],
-  [class="insert-quote"\>Israeli Prime Minister Benjamin Netanyahu, whom many believe is driving the war and its objectives, has said it won’t be finished until ground troops are deployed. According to the defense department insider, “the other thing Trump may be gambling on is putting Israeli troops on the ground.”],
+  [Israeli Prime Minister Benjamin Netanyahu, whom many believe is driving the war and its objectives, has said it won’t be finished until ground troops are deployed. According to the defense department insider, “the other thing Trump may be gambling on is putting Israeli troops on the ground.”],
   [Israeli Prime Minister Benjamin Netanyahu , whom many believe is driving the war and its objectives, has said it won’t be finished until ground troops are deployed. According to the defense department insider, “the other thing Trump may be gambling on is putting Israeli troops on the ground.”],
   [But the president could also be betting on autonomous swarms of drones to carry out deadly attacks while keeping our troops out of combat. The Israel Defense Forces used the first combat-drone swarm in Gaza in 2021 to track down Hamas groups firing rockets. But the real innovation with drone warfare in combat has occurred in Ukraine. President Volodymyr Zelenskyy said last week that Ukraine would provide assistance to the U. S. and other allies in ​response to requests for support in dealing with Iran’s Shahed drones, which are manufactured both in the Islamic Republic and Russia, while at the same time providing the U. S. and Israel information on autonomous drones.],
   [“If there is any sense to Trump’s confidence that he can call off the war whenever he wants, then it has to be something like that which he’s banking on,” my Pentagon source explained. “Otherwise he’s just nuts.”],
@@ -613,12 +535,16 @@ Take a few minutes to help shape the future of Python typing by participating in
   [Then there’s Sen. John Kennedy. “The president didn’t start a war,” the Louisiana Republican told Fox News Wednesday. “He was trying to stop a war.”],
   [Of course Trump, the winner of the first-ever FIFA Peace Prize , would probably agree with Kennedy, especially since he claims to have stopped eight wars already and a few “pre-wars” as well.],
   [Now the president is engaged in a war that is spreading even as he says it is ending. His exit ramps, at the very least, do not include the “unconditional surrender” that he demanded from Iran when he started the war to “stop a war.”],
+  [We need your help to stay independent],
+  [Subscribe today to support Brian Karem’s commentary],
   [Remember: Leavitt told us Wednesday that if Trump says it then it’s obviously true. At the NRCC dinner later that evening he told us that Democrats are lunatics and our true enemy in America, and real polls show he is loved all over the world.],
   [According to the BBC , that’s definitely not true. Citing sources in the Danish government, it reported that soldiers, medical supplies and blood were flown into Greenland in January to blow up key airport runways over fears that Trump would invade the arctic island.],
   [These are our allies — and they don’t trust us.],
   [A high-ranking Danish security source said that “when Trump keeps saying he wants to take over Greenland, and then what happened in Venezuela happened, we had to take all scenarios seriously.”],
   [With Trump brashly claiming victory in Iran, you have to wonder how long it will be before he gets back to threatening Greenland or Cuba. “That’s very frightening to a lot of people,” my Pentagon source said.],
   [Perhaps the fear of additional wars, combined with concerns about Trump’s increasingly transparent ineptitude, will drive more Republicans to speak out. We can only hope it isn’t too late.],
+  [Read more],
+  [about Iran],
   [Trump’s war may hasten the end of oil and gas dependence],
   [How Iran emasculated JD Vance],
   [Tulsi Gabbard’s Iran pivot comes with contradictions],
@@ -630,10 +556,8 @@ Take a few minutes to help shape the future of Python typing by participating in
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [AI Relies on Data Centers. Bernie Sanders and AOC Want To Freeze Their Construction.],
   author: [Jack Nicastro],
   source-name: [Reason],
@@ -659,10 +583,8 @@ Take a few minutes to help shape the future of Python typing by participating in
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Consumers caught in triple stack of pain],
   author: [Neil Irwin],
   source-name: [Axios],
@@ -693,10 +615,8 @@ Take a few minutes to help shape the future of Python typing by participating in
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [America's arsenal of tomorrow: Divergent 3D-prints cruise missiles],
   author: [Mike Allen],
   source-name: [Axios],
@@ -726,10 +646,8 @@ Take a few minutes to help shape the future of Python typing by participating in
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Marc Andreessen’s Mistake],
   author: [David Brooks],
   source-name: [The Atlantic],
@@ -772,11 +690,10 @@ Take a few minutes to help shape the future of Python typing by participating in
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [“Hitting Iran hard”: Trump soft-sells “troops on the ground” via Fox News],
   author: [Alex Galbraith],
   source-name: [Salon],
@@ -786,12 +703,15 @@ Take a few minutes to help shape the future of Python typing by participating in
   [“Watch Mark Levin interview of Brilliant Marc Thiessen tonight,” Trump wrote on Truth Social . “Will discuss the importance of hitting Iran, HARD!!!”],
   [Viewers who took the president’s advice were pitched on sending small teams of “specialized” soldiers to Iran, with the hopes of removing enriched uranium from the country.],
   [“Why would we need troops on the ground? Well, there’s a lot of reasons—and we wouldn’t need 300,000 of them,” Levin said. “\[Trump’s\] not talking about sending regular Army infantry in by the hundreds of thousands. The men he’s talking about, the units he’s talking about, they are specialized.”],
+  [Iran is right: Trump has already lost this war],
   [As the war in Iran stretches past the one-month mark, it’s unclear whether Trump’s hinting indicates a real desire for escalation or a negotiation tactic. Pentagon insiders who spoke to Salon said that the president “might actually think that he can threaten to send in troops without ever having to do it,” betting on the U. S. superior firepower to cause Iran to fold.],
   [“We wouldn’t be the first to mistakenly think a smarter bomb will keep us from putting boots on the ground,” the source said.],
-  [style="text-align: center;"\> Start your day with essential news from Salon.],
+  [Start your day with essential news from Salon.],
   [The speaker of the Iranian parliament warned U. S. officials against the idea of an invasion on Sunday, saying that their military was “waiting” for a “ground attack.”],
   [“Our men are waiting for the arrival of the American soldiers on the ground to set them on fire and punish their regional allies once and for all,” said Mohammad Bagher Qalibaf.],
   [Watch Levin’s pitch via YouTube below:],
+  [Read more],
+  [about this topic],
   [Trump’s Iran war has no clear endgame],
   [Saudi Arabia tells Trump to seize “historic moment” and continue war on Iran: report],
   [How Iran emasculated JD Vance],
@@ -805,7 +725,7 @@ Take a few minutes to help shape the future of Python typing by participating in
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Musk offers to pay TSA salaries, as Trump floats ICE at airports],
   author: [Ben Berkowitz],
   source-name: [Axios],
@@ -835,7 +755,7 @@ Take a few minutes to help shape the future of Python typing by participating in
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Wall Street bonus bonanza],
   author: [Emily Peck],
   source-name: [Axios],
@@ -861,7 +781,7 @@ Take a few minutes to help shape the future of Python typing by participating in
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Trump tells Iran to "get serious" in negotiations "before it is too late"],
   author: [Barak Ravid],
   source-name: [Axios],
@@ -894,7 +814,7 @@ Take a few minutes to help shape the future of Python typing by participating in
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Late night Senate vote puts DHS shutdown one step closer to largely ending],
   author: [Andrew Solender],
   source-name: [Axios],
@@ -923,7 +843,7 @@ Take a few minutes to help shape the future of Python typing by participating in
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Judge questions Pentagon's "troubling" Anthropic actions],
   author: [Maria Curi],
   source-name: [Axios],
@@ -954,9 +874,8 @@ Take a few minutes to help shape the future of Python typing by participating in
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: ["He needs to go": Fetterman's fellow Democrats rage over his vote on Mullin for DHS],
   author: [Andrew Solender],
   source-name: [Axios],
@@ -987,12 +906,10 @@ Take a few minutes to help shape the future of Python typing by participating in
   debug-mode: false,
 )
 
-  #pull-quote([), who had urged constituents ahead of the vote to call Fetterman's office and ask him to oppose Mullin's nomination, compared him negatively to Sen.], [Andrew Solender])
+#pull-quote([), who had urged constituents ahead of the vote to call Fetterman's office and ask him to oppose Mullin's nomination, compared him negatively to Sen.], [Andrew Solender])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [SCOTUS set to deal major blow to mail voting ahead of midterms],
   author: [Jelinda Montes],
   source-name: [Salon],
@@ -1001,17 +918,20 @@ Take a few minutes to help shape the future of Python typing by participating in
   [In the 2024 election, nearly one in three Americans voted using mail-in or absentee ballots, accounting for some 48 million votes. And despite persistent rhetoric against it, even President Donald Trump votes by mail . Nevertheless, Trump further admonished mail voting while pushing the SAVE America Act , which could radically change how people vote ahead of the midterms. “Mail-in voting means mail-in cheating,” he said to press in Memphis, Tenn., Monday. “I call it mail-in cheating, and we got to do something about it all.”],
   [Outside of the legislature, another body is doing something about mail ballots that may change how millions of Americans vote. The U. S. Supreme Court began oral arguments Monday on Watson v. RNC , a case determining if Mississippi allowing late mail-in ballots violates federal law establishing a specific election day. The largest question in this case is whether ballots need to be received by Election Day or just be cast by Election Day and allowed to be received later.],
   [“ I don’t think it’s a coincidence that you’re seeing the Trump administration talk about mail-in ballots in the SAVE Act at the same time that that case is going to be heard by the Supreme Court,” Travis Crum, an election law professor at the Washington University in St. Louis, said.],
+  [The conservative woman cracking down on conservative women],
   [The Supreme Court seems poised to reject the Mississippi law based on oral arguments where justices were particularly incisive about the potential to recall a ballot and concerns of perceived fraud.],
   [Washington, D. C. and 13 other states have similar laws to Mississippi in which ballots postmarked on or before Election Day will be counted within a certain period of time after Election Day. In Mississippi’s case, ballots can be received within five business days after the election so long as they’re sent by Election Day.],
   [The Republican National Convention challenged this law in Mississippi, arguing it violates the 1845 Presidential Election Day Act that established a single election day as the Tuesday after the first Monday in November. They posit that Congress choosing one specific election day overrides a state’s ability to accept ballots afterward, even if they’re postmarked by Election Day.],
   [“ One of the interesting things here is we are debating the meaning of a law that was passed 180 years ago,” Michael Morley, the director of the Florida State University’s Election Law Center, said in an interview with Salon.],
+  [“I think it’s pretty hard to argue that all of the election was happening on Election Day.”],
   [Morley, who filed a friend of the court brief in this case for neither party, argues that, in the modern day, no one reads the Presidential Election Day act literally. The law says Election Day is when each state shall appoint their electors for president and vice president, which is no longer done on actual Election Day due to the amount of time it takes to process and organize ballots and electors.],
   [“ I think it’s pretty hard to argue that all of the election was happening on Election Day,” Morley said. He believes the Supreme Court needs to resolve the “vagueness and ambiguity” of the Election Day laws and possibly remand it back to a lower court before it can make a decision regarding the Mississippi late ballots law.],
   [Others say history and the text are clear in demonstrating that Mississippi doesn’t violate federal law. Throughout this nearly two century period, Congress has not acted to prevent states from accepting Election Day postmarked ballots in the days following the election.],
   [“ There’s just no question that Congress has always been aware of the variability in state ballot laws and has never acted to disrupt that,” Anna Baldwin, the Campaign Legal Center’s director of voting rights litigation, told Salon. Campaign Legal Center also filed a friend of the court brief in the case, this time in support of Mississippi.],
-  [style="text-align: center;"\> Start your day with essential news from Salon.],
+  [Start your day with essential news from Salon.],
   [“ If Congress had wanted to make a change, where you would’ve expected them to say something about that, it would have been in Electoral Account Reform Act,” Baldwin said. “The fact that they didn’t just is even more evidence that they intended to maintain the status quo.”],
   [The Electoral Count Account Reform Act of 2022 updated the 1887 Electoral Count Act, making clarifications around ambiguous language on the casting and counting of electoral votes. The law did not prohibit state statutes around ballot receipt deadlines. Another law, the 1986 Uniformed and Overseas Citizens Absentee Voting Act, allows for military and abroad citizens to vote. Twenty-nine states allow those absentee ballots to be postmarked and received after Election Day, and it is unclear if the case against Mississippi will affect these state laws and abroad voters.],
+  [“The Supreme Court shouldn’t be considering those kinds of policy considerations in making its determination.”],
   [Throughout the oral arguments, various justices brought up concerns about the potential for absentee voters to recall their ballots to change or alter them in some type of way. Common delivery services like UPS or FedEx typically allow users to recall mail they sent and have it returned to them. Baldwin argues claims around the possibility of recall are outlandish, but also something that the court shouldn’t be addressing.],
   [“Mail voting law plays an important role for a number of constituencies, including military and overseas voters, and there’s just no valid reason based on fraud to limit it, and at any rate that’s a policy matter,” Baldwin said. “The Supreme Court shouldn’t be considering those kinds of policy considerations in making its determination.”],
   [Nevertheless, Morley recognized that the public’s concern around election integrity could be an important factor for the justices.],
@@ -1019,12 +939,16 @@ Take a few minutes to help shape the future of Python typing by participating in
   [Amidst the oral argument’s discussion of recall and what makes a ballot final, Caren Short of the League of Women Voters was disappointed how little they discussed potential impacts on voters.],
   [“ It really highlighted how disconnected these justices are from real people and from the impact their decisions have on real people — if they decide this the wrong way it will have a devastating impact,” Short, the organization’s director of legal and research, said to Salon. The League of Women voters has been involved in the case as a friend of the court since the initial lawsuit.],
   [The case has further implications for other alternative types of ballot casting like early voting. While the RNC insisted early voting was not part of their concern, Associate Justice Elena Kagan asked “Why this practice and no other practice?”],
+  [We need your help to stay independent],
+  [Subscribe today to support Salon’s progressive journalism],
   [”Even though many of the justices and attorneys said that it would not impact early voting, I do believe that it could,” Short said, “because a negative decision would say that ballots must be counted on election day.”],
   [Morley also noted the discrepancy, saying “ accepting ballots that are early seem to raise the same type of tensions.”],
   [If the court continues to move in favor of striking down the Mississippi law, shockwaves of change will echo across the country, leaving election administrators scrambling to communicate new rules to voters accustomed to mailing their ballots on Election Day.],
   [To make matters more confusing, the U. S. Postal Service recently changed the rules on when mail is considered postmarked . Sophia Lin Lakin, director of the ACLU’s voting rights project, stressed best practices for voters that are looking to ensure that their ballot is counted when voting by mail. “It is always recommended that voters submit their mail ballots as early as possible,” Lin Lakin told Salon in January.],
   [While the RNC argued there’s more than enough time between the Supreme Court’s usual opinion announcements in June to November, many are concerned of the ramifications.],
   [“ If this were to change, if the court were to accept the RNCs absurd argument, what would happen would be chaos and discrimination,” Short said. “It would fall the hardest on those who are already facing incredible hardship and who have been historically disenfranchised.”],
+  [Read more],
+  [about elections],
   [Conservatives cried voter fraud long before Trump],
   [“I would not participate”: Gabbard defends presence at FBI election center raid in Georgia],
   [Both parties at odds with own voters over Middle East policy],
@@ -1036,10 +960,8 @@ Take a few minutes to help shape the future of Python typing by participating in
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [What to know about Iran's military as the U.S. weighs ground operations],
   author: [Avery Lotz],
   source-name: [Axios],
@@ -1084,10 +1006,8 @@ Take a few minutes to help shape the future of Python typing by participating in
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [“The Forsyte Saga” is about hot men and the money they love],
   author: [Melanie McFarland],
   source-name: [Salon],
@@ -1097,23 +1017,30 @@ Take a few minutes to help shape the future of Python typing by participating in
   [The dread comes from fears of a reinterpretation of John Galsworthy’s Nobel Prize-winning books, collectively known as “The Forsyte Saga,” to suit an audience besotted with “ Bridgerton ” and other sensual period adaptations. Still, most who try to define a Forsyte do so because they aren’t familiar with these stories. At least, not in book form.],
   [That benign ignorance will serve PBS’ highly liberal adaptation of the series very well.],
   [“The Forsytes” is inspired by Galsworthy’s family of extremely wealthy stockbrokers in late-Victorian London, an age in which nobility’s influence and social dominance receded with the rise of new money. Nominally headed by its matriarch, Ann Forsyte (Francesca Annis), the series looks at how the overwhelming expectations of the older generation, led by Ann’s two ornery middle-aged sons, bring strife on their offspring.],
+  [Watching “Bridgerton” in a “Heated Rivalry” world],
   [Jolyon (Danny Griffin) is expected to assume leadership of the family firm, per tradition. But his uncle sees Jolyon as too soft to keep the firm competitive, believing his own son Soames (Joshua Orpin) to be a more suitably hard-nosed successor.],
   [Sounds like “ The Gilded Age ,” right? That it does, which is why these books have been unearthed from the stacks yet again. “The Forsytes” is a clunky visual feast, but it’s also a new hot dish in an expanding buffet of eat-the-rich takes that materializes what one imagines a serialized adaptation of Gentlemen’s Quarterly would look like.],
   [Galsworthy’s stories always had suds around the edges, but these new episodes are also a good deal hornier. Jolyon is played by a male model whose lustrous mane gets more of a workout than his emotional range. His character also boxes, preferring to spar shirtless.],
   [Meanwhile, Orpin’s muscular flexing in Soames’ fitted T-shirts rivals anything Jeremy Allen White serves in “The Bear.” Even their rich daddies (played by Stephen Moyer and Jack Davenport) can still get it. Doubt me? Compare them to the grizzled, huffy statesmen who previously played those roles, especially in the 2002 ITV adaptation. Seriously, see for yourself — it’s currently streaming on Netflix. Unless you have a kink for Milburn Pennybags, aka the Monopoly man, my opinion stands.],
+  [(PBS) Joshua Orrin as Soames Forsyte and Danny Griffin as Jolyon Forsyte in “The Forsytes”],
   [Debbie Horsfield, who made millions swoon with “Poldark” before taking on this adaptation for PBS, recognizes the place that “The Forsyte Saga” holds in TV history. Every miniseries and period piece that came after the 1967 adaptation looks and feels the way they do because of what that series achieved. It brought the bootstrapping fantasy of this rising family, a few generations removed from the toiling class, into Britain’s living rooms with the right blend of serious theatricality and soapy splendor.],
   [But the sensibilities of corset-and-bustle dramas have vastly changed since the first “Forsyte Saga” enthralled 18 million U. K. viewers nearly 60 years ago. (Once the world got in on the phenomenon — including, in a historic first for the BBC, the Soviet Union — viewership swelled to an estimated 160 million .)],
-  [style="text-align: center;"\> Want more from culture than just the latest trend? The Swell highlights art made to last.],
+  [Want more from culture than just the latest trend? The Swell highlights art made to last.],
   [Sign up here],
   [From age to age, defining what makes a Forsyte has grown trickier. Galsworthy’s heroes represent the way new money can be trapped between stifling tradition and modern realities, but our social boundaries are constantly shifting. And while previous TV adaptations root into the emotional interiority of their male characters while sidelining female desire, “The Forsytes” places more narrative purpose in the hands of its women.],
   [That idea starts with Ann Forsyte’s table-setting narration, a la Lady Whistledown in “Bridgerton.” But it also plays out in the storyline between Jolyon, the favorite son, and Louisa Byrne (“Poldark” star Eleanor Tomlinson), a figure from his bohemian past. Once upon a time, he lived out his starving artist fantasies abroad before putting that aside to join the family business. He pretends to be content with all the trappings of wealth, but Louisa’s accidental reemergence makes him question everything – including his otherwise happy union with his carefully chosen wife (Tuppence Middleton), who understands the Forsytes’ ambition better than he does.],
+  [(PBS) Millie Gibson as Irene Heron and Joshua Orrin as Soames Forsyte in “The Forsytes”],
   [While Jolyon is a central character in “The Forsytes,” Soames’ inner conflict is Galsworthy’s cynosure: He’s a man who prizes acquisition and possession to the extent that he cannot love. As he’s classically rendered, Soames verges on unpalatable.],
   [That also makes him a challenge for any actor to take on. Errol Flynn’s rendition in 1949’s “That Forsyte Woman” is viewed as one of his best performances. Damian Lewis’ 2002 version, captured fresh off his career-making work in “Band of Brothers,” shivers with trussed-up desire gone spoiled and toxic. And yet, in the end, you can’t help but pity the man.],
   [Orpin initially presents Soames as a dutiful son eager to live up to his father’s demanding expectations until he meets Irene Heron (Millie Gibson), a penniless beauty grieving her recently deceased father. Irene’s artistic ambition and free-spirited nature draw Soames to her. When he falls for her, he claims he’ll give up anything to be at her side.],
+  [We need your help to stay independent],
+  [Subscribe today to support Salon’s progressive journalism],
   [But he is still a Forsyte, and that makes Irene just another collectible.],
   [The everlasting draw of “The Forsyte Saga” to both men and women, then, is in the way these stories capture the plight of patriarchal pressures, spoken and implied. Ultimately, though, Galsworthy’s question is much simpler than such a heady proposition. Is life richer with a fortuneless love match, or with all the wealth in the world and a stable union devoid of romantic passion?],
   [How we’d answer that explains why this family keeps showing up on our TVs. Horsfield’s version shows the kind of sumptuous cage many aspire to live in, revealing why some people prefer to remain lavishly trapped, and others rattle the bars, hoping for escape. Today’s red-pilled men would find much in common with Soames’ worldview, while women may recognize him as a bouquet of red flags wrapped in a bespoke suit.],
   [You can follow your happiness or aim for stability, but rarely do we get both in life. We’d like to imagine that’s especially true for the one percent; since they own much of the world, why should they also be lucky in love?],
+  [Read more],
+  [from Salon’s culture newsletter, The Swell],
   [The useful rage of Godzilla],
   [The most powerful Oscar nominee you didn’t see],
   [“All the President’s Men” was a warning],
@@ -1125,10 +1052,8 @@ Take a few minutes to help shape the future of Python typing by participating in
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [White House AI rollout exposes widening rift],
   author: [Ashley Gold],
   source-name: [Axios],
@@ -1160,10 +1085,8 @@ Take a few minutes to help shape the future of Python typing by participating in
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Meta and YouTube found negligent in landmark social media addiction trial],
   author: [Ashley Gold],
   source-name: [Axios],
@@ -1196,10 +1119,8 @@ Take a few minutes to help shape the future of Python typing by participating in
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Trump's team game planning for potential Iran peace talks],
   author: [Barak Ravid],
   source-name: [Axios],
@@ -1240,10 +1161,8 @@ Take a few minutes to help shape the future of Python typing by participating in
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The New Forever War in Iran Keeps the Dog Wagging],
   author: [Katherine Mangu-Ward],
   source-name: [Reason],
@@ -1271,12 +1190,10 @@ Take a few minutes to help shape the future of Python typing by participating in
   debug-mode: false,
 )
 
-  #pull-quote([Even when wars are unpopular or divisive, they command attention and can reframe political discourse away from domestic grievances and toward questions of national security.], [Katherine Mangu-Ward])
+#pull-quote([Even when wars are unpopular or divisive, they command attention and can reframe political discourse away from domestic grievances and toward questions of national security.], [Katherine Mangu-Ward])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [I Spent Over 3 Hours in a TSA Line. Why Haven't We Abolished This Agency?],
   author: [Billy Binion],
   source-name: [Reason],
@@ -1300,11 +1217,10 @@ Take a few minutes to help shape the future of Python typing by participating in
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Scoop: Rubio and EU official had heated exchange on Russia at G7 meeting],
   author: [Barak Ravid],
   source-name: [Axios],
@@ -1337,7 +1253,7 @@ Take a few minutes to help shape the future of Python typing by participating in
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [No Kings Rallygoers in New York Share Their Biggest Fears—and Greatest Hopes],
   author: [James West],
   source-name: [Mother Jones],
@@ -1361,7 +1277,7 @@ Take a few minutes to help shape the future of Python typing by participating in
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Oil prices rise as Iran war escalates with Houthi attacks],
   author: [Chuck McCutcheon],
   source-name: [Axios],
@@ -1395,7 +1311,7 @@ Take a few minutes to help shape the future of Python typing by participating in
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [House says “No deal!” as long lines at TSA continue to grow],
   author: [CK Smith],
   source-name: [Salon],
@@ -1408,9 +1324,11 @@ Take a few minutes to help shape the future of Python typing by participating in
   [After working without pay and facing the prospect of missing a second paycheck, Transportation Security Administration agents have been calling out sick or quitting in growing numbers. Staffing shortages have pushed absentee rates sharply higher, leaving major airports scrambling to maintain basic operations as spring travel ramps up.],
   [At hubs like Houston , Atlanta and New York, wait times have ballooned to hours, with viral videos showing passengers winding through snaking lines that stretch far beyond normal TSA checkpoints. The disruptions have become one of the most visible signs of the shutdown’s real-world impact.],
   [In response, President Donald Trump signed an executive order to ensure TSA agents are paid, an emergency measure aimed at stabilizing the workforce before conditions deteriorate further. But the move does little to resolve the underlying funding fight and raises new questions about how long such payments can continue without congressional action.],
-  [style="text-align: center;"\> Start your day with essential news from Salon.],
+  [Start your day with essential news from Salon.],
   [Meanwhile, attempts to plug the gaps have taken on a surreal quality. Immigration and Customs Enforcement personnel have been deployed to assist at airports, even as the agency itself remains at the center of the political standoff.],
   [The broader picture is increasingly hard to ignore: a fight in Washington over immigration security policy has morphed into a nationwide disruption, where the dysfunction is no longer confined to Capitol Hill but playing out in real time, in security lines that show no clear end in sight.],
+  [Read more],
+  [about this topic],
   [ICE at the airport is just the beginning],
   [“No more games”: Trump threatens to deploy ICE at airports amid government shutdown],
   [DHS to shut down, but ICE won’t stop],
@@ -1427,8 +1345,7 @@ Take a few minutes to help shape the future of Python typing by participating in
 #pull-quote([At hubs like Houston , Atlanta and New York, wait times have ballooned to hours, with viral videos showing passengers winding through snaking lines that stretch far beyond normal TSA checkpoints.], [CK Smith])
 
 
-{
-  #standard-article(
+#standard-article(
   title: [“No blank check for a lawless ICE”: House rejects Senate plan to fund TSA without ICE],
   author: [Jelinda Montes],
   source-name: [Salon],
@@ -1437,12 +1354,15 @@ Take a few minutes to help shape the future of Python typing by participating in
   [The U. S. Senate voted early Friday to partially fund the Department of Homeland Security , providing much needed relief to the Transportation Security Administration and travelers across the country. Notably, the funding excluded immigration enforcement groups like Border Patrol and Immigration and Customs Enforcement.],
   [“In the wake of the murders of Renee Good and Alex Pretti, Senate Democrats were clear. No blank check for a lawless ICE and Border Patrol,” Senate Minority Leader Chuck Schumer , D-N. Y., said to press following the vote.],
   [Schumer said the funding “could have been accomplished weeks ago if Republicans hadn’t stood in the way.”],
+  [DHS funding lapse fuels fear of domestic attacks],
   [Senate Majority Leader John Thune , R-S. D., took his own shot at the other side of the aisle after the vote. “President Trump should never have had to step in to rescue TSA workers and U. S. air travel. We are here because, thanks to Democrats’ determined refusal to reach an agreement, there will be no Homeland Security funding bill this year,” he said.],
   [TSA, the Coast Guard, the Federal Emergency Management Agency and the Cybersecurity and Infrastructure Security Agency will all receive funding from this bill. The deadlock on immigration enforcement reforms remains stagnant with Democrats’ demands for ICE agents to stop masking their faces and provide judicial warrants on arrests still unfulfilled. The newly appointed DHS secretary, Markwayne Mullin , who replaced Kristi Noem , said he’s open to ending administrative warrants.],
-  [style="text-align: center;"\> Start your day with essential news from Salon.],
+  [Start your day with essential news from Salon.],
   [House Speaker Mike Johnson , R-La., met with the Freedom Caucus, the ultra-conservative coalition of Republican representatives, to discuss the bill. Rep. Chip Roy , R-Texas, called the bill an “absurdity,” and the Freedom Caucus is likely to hold up the bill using it as leverage to pass the Senate-stalled voter ID bill, the SAVE America Act, which could substantially change how millions of Americans vote before the 2026 midterms .],
   [The bill was almost immediately rejected by the House of Representatives on Friday. Instead, they offered an alternative plan that included funding for all of DHS, including ICE, according to reporting from the Washington Post .],
   [“The bottom line is, this deal is bad for Americans,” House Freedom Caucus Chairman Andy Harris, R-Md., told reporters Friday.],
+  [Read more],
+  [about politics],
   [SCOTUS set to deal major blow to mail voting ahead of midterms],
   [Environmental groups and states sue EPA over Trump’s emissions rollback],
   [The conservative woman cracking down on conservative women],
@@ -1454,56 +1374,53 @@ Take a few minutes to help shape the future of Python typing by participating in
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([Esraa Abo Qamar], source-name: [The Nation], [Esraa Abo Qamar
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([Esraa Abo Qamar], source-name: [The Nation], [Esraa Abo Qamar
 
-class="wp-block-the-nation-dek article-title\_\_dek"\>
+
 
 For these medical students in Gaza, completing their studies was an act of defiance.
 
 The post “I Refused to Let the Genocide Steal My Dreams” appeared first on The Nation .])],
-    [#brief-item([Harrison Stetler], source-name: [The Nation], [Harrison Stetler
+  [#brief-item([Harrison Stetler], source-name: [The Nation], [Harrison Stetler
 
-class="wp-block-the-nation-dek article-title\_\_dek"\>
+
 
 Barring a few big-ticket victories in this month’s local elections, the French left is more divided than ever—one year from a pivotal fight for the presidency
 
 The post Paris, a Capital in “Resistance”? appeared first on The Nation .])],
-    [#brief-item([BBC News], source-name: [BBC News], [Fans believe VAR is ruining goal celebrations and has not improved football since its introduction, according to a Football Supporters' Association survey.])],
-    [#brief-item([BBC News], source-name: [BBC News], [Chief executive Vinai Venkatesham and sporting director Johan Lange must get the next Tottenham appointment correct or else they could follow Igor Tudor, writes Phil McNulty.])],
-    [#brief-item([By Kiley Price], source-name: [Inside Climate News], [Citing national security, the Trump administration wants to exempt all federally regulated offshore oil from protections for endangered animals—even if it could cause their extinction. 
+  [#brief-item([BBC News], source-name: [BBC News], [Fans believe VAR is ruining goal celebrations and has not improved football since its introduction, according to a Football Supporters' Association survey.])],
+  [#brief-item([BBC News], source-name: [BBC News], [Chief executive Vinai Venkatesham and sporting director Johan Lange must get the next Tottenham appointment correct or else they could follow Igor Tudor, writes Phil McNulty.])],
+  [#brief-item([By Kiley Price], source-name: [Inside Climate News], [Citing national security, the Trump administration wants to exempt all federally regulated offshore oil from protections for endangered animals—even if it could cause their extinction. 
 
-class="byline" style="color: \#888888; font-family: 'Open Sans',sans-serif; font-size: 10px; line-height: 12px; margin: 1em 0; font-weight: bold;"\>By Kiley Price
+By Kiley Price
 
 The Trump administration is turning to the nuclear option on endangered-species protections in the name of national security.])],
-    [#brief-item([Anthony Conwright], source-name: [The Nation], [Anthony Conwright
+  [#brief-item([Anthony Conwright], source-name: [The Nation], [Anthony Conwright
 
-class="wp-block-the-nation-dek article-title\_\_dek"\>
+
 
 After you strip away the lies about rampant voter fraud, the GOP bill is a frontal assault on hard-won protections of the franchise.
 
 The post How the SAVE Act Seeks to Undermine the Right to Vote appeared first on The Nation .])],
-    [#brief-item([Pepper Stetler], source-name: [The Nation], [Pepper Stetler
+  [#brief-item([Pepper Stetler], source-name: [The Nation], [Pepper Stetler
 
-class="wp-block-the-nation-dek article-title\_\_dek"\>
+
 
 Gregory Javier Laguna, who has Down syndrome, and his brother have been detained for almost five months. Under Trump, "it feels like we have no recourse," said one advocate.
 
 The post The Overlooked Crisis Facing Immigrants With Disabilites appeared first on The Nation .])],
-    [#brief-item([BBC News], source-name: [BBC News], [The Israeli PM said Cardinal Pierbattista Pizzaballa had been asked not to enter the church out of concern for his safety.])],
-    [#brief-item([BBC News], source-name: [BBC News], [Having recovered from brain surgery and battled PTSD, an emotional Gary Woodland seals his first win in seven years at the Houston Open.])],
-    [#brief-item([Car and Driver], source-name: [Car and Driver], [They'll join a new plug-in-hybrid model and a body-on-frame pickup, which are both scheduled to arrive in the next three years.])],
-    [#brief-item([BBC News], source-name: [BBC News], [Fans believe VAR is ruining goal celebrations and has not improved football since its introduction, according to a Football Supporters' Association survey.])],
-    [#brief-item([Darknet], source-name: [Darknet (security news)], [DumpBrowserSecrets extracts saved passwords, cookies, OAuth tokens and autofill data from Chrome, Edge, Firefox, Opera and Vivaldi, bypassing App-Bound Encryption via Early Bird APC injection.])],
-    [#brief-item([Darknet], source-name: [Darknet (security news)], [Initial access brokers in 2025, how dark web access listings feed ransomware supply chain events like JLR, and what CISOs can do to detect and disrupt them])],
-    [#brief-item([Josh Blackman], source-name: [Reason], [3/29/1937: West Coast Hotel v. Parrish decided.
+  [#brief-item([BBC News], source-name: [BBC News], [The Israeli PM said Cardinal Pierbattista Pizzaballa had been asked not to enter the church out of concern for his safety.])],
+  [#brief-item([BBC News], source-name: [BBC News], [Having recovered from brain surgery and battled PTSD, an emotional Gary Woodland seals his first win in seven years at the Houston Open.])],
+  [#brief-item([Car and Driver], source-name: [Car and Driver], [They'll join a new plug-in-hybrid model and a body-on-frame pickup, which are both scheduled to arrive in the next three years.])],
+  [#brief-item([BBC News], source-name: [BBC News], [Fans believe VAR is ruining goal celebrations and has not improved football since its introduction, according to a Football Supporters' Association survey.])],
+  [#brief-item([Darknet], source-name: [Darknet (security news)], [DumpBrowserSecrets extracts saved passwords, cookies, OAuth tokens and autofill data from Chrome, Edge, Firefox, Opera and Vivaldi, bypassing App-Bound Encryption via Early Bird APC injection.])],
+  [#brief-item([Darknet], source-name: [Darknet (security news)], [Initial access brokers in 2025, how dark web access listings feed ransomware supply chain events like JLR, and what CISOs can do to detect and disrupt them])],
+  [#brief-item([Josh Blackman], source-name: [Reason], [3/29/1937: West Coast Hotel v. Parrish decided.
 
 The post Today in Supreme Court History: March 29, 1937 appeared first on Reason.com .])],
-  ))
-}
+))
 
 #colophon([The Urban Examiner], [Vol. 1, No. 083], [2026-03-30])

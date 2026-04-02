@@ -21,43 +21,8 @@
 #masthead([The Local Star], [Vol. 1, No. 084], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Rare Rides Icons: The Jeep Wagoneer, The First Luxury SUV Ever (Part VI)],
-  kicker: [Cover Story],
-  author: [Corey Lewis],
-  source-name: [The Truth About Cars],
-  deck: [In our last Wagoneer installment of Rare Rides Icons, we began the journey through the frequent and sometimes confusing updates Jeep made to its flagship utility wagon.],
-  lead-pre: [],
-  lead-cap: [E],
-  lead-rest: [dits to the SJ Wagoneer began in 1964 and continued through the end of its life at the 1991 model year. However, the most important change to the Wagoneer occurred as a side-effect of Jeep’s ownership. We pick up in early 1970.],
-  body-paragraphs: (
-  [Kaiser Jeep had a narrow product line, and limited funds with which to develop new models. The company’s only new product in the second half of the Sixties was the new Jeepster Commando , a rework of the basic idea behind the 1940s Jeepster. The market was changing, and the light duty recreational utility vehicle was becoming popular. Vehicles like the Jeepster, IH Scout, and Ford Bronco offered more compact dimensions than traditional utility wagons.],
-  [Kenosha, Wisconsin based American Motors Corporation showed some interest in Kaiser Jeep throughout the Sixties, and talks advanced to negotiations as the decade drew to a close. AMC saw the value in the Jeep brand, and the opportunity the recreational vehicle market presented for additional breadth in passenger-oriented utility vehicles. Jeep vehicles were already on sale, key to a company like AMC which had never built utility vehicles. And unusually for AMC, they were flush with cash from the success of their smaller, fuel efficient vehicles.],
-  [The company purchased Kaiser Jeep Corporation in February of 1970, for roughly \$70 million (\$601.9m adj.). Jeep was then renamed to Jeep Corporation. AMC would focus immediately on the expansion of Jeep’s successful passenger utility vehicles. Given the ownership change, from 1972 until its conclusion the SJ Wagoneer used only AMC engines.],
-  [The change in Jeep’s ownership meant an altered direction for the Wagoneer. AMC had more resources to fund Jeep, but also focused on parts and engine consolidation for cost saving. The Kaiser Jeep years were always an amalgam of parts from different suppliers, like an AMC engine here and GM transmission there.],
-  [The 1970s would see multiple developments in the Wagoneer to improve its livability and make it more luxurious. Developing the existing platform, AMC’s engineers reduced NVH in the Wagoneer. They also made one visual change immediately, partway through the 1970 model year.],
-  [AMC put a new face on Jeep’s largest SUV: The metal grille with vertical bars was removed, and replaced by a plastic grille that wore an eggcrate design. The vertical bars were a Kaiser Jeep touch, and would not return through the rest of the Wagoneer’s run. The eggcrate design was also grafted onto the tailgate as a trim panel, outlined in black. New square indicator lamps appeared beneath the original tail lamps, surrounded in chrome.],
-  [AMC also experimented with a luxury trim Wagoneer in 1971, as the Super Wagoneer was a thing of the past and discontinued after 1969. That year the so-called X-Code Wagoneer arrived. Examples were originally finished in a light green color called Golden Lime, and the model featured the first exterior wood grain on a Wagoneer. Available with a high level of standard features and power equipment, the X-Code could be identified by its color and a thick chrome strip that ran along the upper character line and wrapped around just under the door handles.],
-  [X-Code examples of today have largely been painted different colors, or do not maintain their faux wood trim as it would require custom fabrication. We can show you an X-Code example here repainted in blue. There was also a Golden Lime example sans wood on BaT last year . Priced a generous \$1,000 (\$8,210 adj.) above a standard Custom trim, the X-Code was a single-year Wagoneer. Wood exterior trim would become an option on the Wagoneer by 1973.],
-  [In 1972 and 1973 there were a couple notable mechanical changes for the Wagoneer. The Buick V8 went away as an option in 1972, and was replaced by the AMC 360 (5.9L) V8. AMC developed a new full-time four-wheel drive system the following year and debuted it on the Wagoneer.],
-  [Branded as Quadra-Trac, the system used a Borg-Warner transfer case (BW1339). A chain-drive system paired to GM’s THM400 automatic, Quadra-Trac had five different modes: 4WD Hi Locked, 4WD Hi Open, Neutral, 4WD Low Open, and 4WD Low Locked. The system broadened the consumer appeal of the Wagoneer and other Jeep products as it removed the manual 4WD transfer case, and eliminated the manual locking hubs.],
-  [As the popularity of the utility vehicle grew, the SJ platform branched outward. With a revised two-door window line and fewer features, the Cherokee debuted in 1974 and coined the SUV moniker in its marketing. Its popularity caused Jeep to introduce the four-door Cherokee in 1977. Both models were differentiated from the more expensive Wagoneer by emphasis on their utility features. Cherokee was a replacement for the Jeepster commando, which proved to be too impractical to appeal to most consumers.],
-  [Wagoneer received front disc brakes as standard in 1974, which were granted to the Cherokee as an optional extra. Both models were upgraded in 1976 with strengthened frames that used upgraded cross members, and boxed side rail construction. Both the Wagoneer and Cherokee were built at Jeep’s Toledo Complex.],
-  [The development and success of the Cherokee as a standalone model with clear differentiation to the Wagoneer was important. Though the two shared a platform and major mechanical parts, the Cherokee’s arrival allowed the Wagoneer more freedom to move upmarket. With the debut of the four-door Cherokee in 1977, the last piece fell into place.],
-  [Beginning in 1978, Jeep would push the options and trims of the Wagoneer to ever more luxurious places. The first of which would include a trim level that persists as a Jeep staple today. We’ll pick up there in our next installment, with the introduction of Limited .],
-  [\[Images: Jeep, seller , seller \]],
-  [Become a TTAC insider. Get the latest news, features, TTAC takes, and everything else that gets to the truth about cars first by subscribing to our newsletter .],
-),
-  inline-pq: pull-quote([) above a standard Custom trim, the X-Code was a single-year Wagoneer.], [Corey Lewis]),
-  inline-pq-idx: 6,
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [Native To Hybrid And Back Again],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -74,11 +39,9 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Rare Rides Icons: The Jeep Wagoneer, The First Luxury SUV Ever (Part VII)],
   author: [Corey Lewis],
   source-name: [The Truth About Cars],
@@ -107,10 +70,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Mercury Bobcat - Why It's Not As Bad As It's Reputation],
   author: [Tony's Fords and Mustangs | TTAC Creator],
   source-name: [The Truth About Cars],
@@ -136,11 +97,10 @@
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Sending and Requesting Data from MongoDB in a Unity Game],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -159,7 +119,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Working With Shared Providers In An Ionic 2 Mobile App],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -177,7 +137,7 @@
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([Bethany Mavis], source-name: [Triathlete Magazine], [The pre-race favorites delivered in Oceanside with a late lead change on the run for Blummenfelt, while Knibb held off a fast-charging Solveig Løvseth after a blistering bike course record ride.
 
 Read the full article at Kristian Blummenfelt and Taylor Knibb Smash Course Records at 2026 Ironman 70.3 Oceanside on Triathlete .])],
@@ -216,7 +176,7 @@ Read the full article at Kat Matthews Prioritizes Sleep Above Training. You Shou
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Recall Alert: 2020-2026 Ford Explorer, Lincoln Aviator],
   author: [TTAC Staff],
   source-name: [The Truth About Cars],
@@ -236,7 +196,7 @@ Read the full article at Kat Matthews Prioritizes Sleep Above Training. You Shou
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Convert A Node.js RESTful API To Serverless With OpenWhisk],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -257,7 +217,7 @@ Read the full article at Kat Matthews Prioritizes Sleep Above Training. You Shou
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [1985 Ford Ranger 4×4 5-Speed at No Reserve],
   author: [bringatrailer],
   source-name: [Bring a Trailer],
@@ -280,7 +240,7 @@ Read the full article at Kat Matthews Prioritizes Sleep Above Training. You Shou
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Implement A Barcode Scanner Using Ionic Framework],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -309,7 +269,7 @@ Read the full article at Kat Matthews Prioritizes Sleep Above Training. You Shou
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Add Music, Sounds, and Other Audio to a Phaser Game],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -328,7 +288,7 @@ Read the full article at Kat Matthews Prioritizes Sleep Above Training. You Shou
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Creating a Multiplayer Drawing Game with Phaser and MongoDB],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -351,7 +311,7 @@ Read the full article at Kat Matthews Prioritizes Sleep Above Training. You Shou
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Communicate With Websockets In A NativeScript Angular Application],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -369,7 +329,7 @@ Read the full article at Kat Matthews Prioritizes Sleep Above Training. You Shou
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [2009 Toyota Vellfire at No Reserve],
   author: [bringatrailer],
   source-name: [Bring a Trailer],
@@ -397,7 +357,7 @@ Read the full article at Kat Matthews Prioritizes Sleep Above Training. You Shou
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Create Paper Wallets For Stellar XLM Coins With Angular],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -415,7 +375,7 @@ Read the full article at Kat Matthews Prioritizes Sleep Above Training. You Shou
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Earn Extra Money As A Programmer With A Developer Blog],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -437,7 +397,7 @@ Read the full article at Kat Matthews Prioritizes Sleep Above Training. You Shou
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [10 cool interior spaces that stood out this week],
   author: [Nathaniel Bahadursingh],
   source-name: [Archinect News],
@@ -462,7 +422,7 @@ Read the full article at Kat Matthews Prioritizes Sleep Above Training. You Shou
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [QOTD: What Do The Exotics Know That We Don't?],
   author: [Tim Healey],
   source-name: [The Truth About Cars],
@@ -489,7 +449,7 @@ Read the full article at Kat Matthews Prioritizes Sleep Above Training. You Shou
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Connect To Multiple Wireless Networks With A Raspberry Pi],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -508,7 +468,7 @@ Read the full article at Kat Matthews Prioritizes Sleep Above Training. You Shou
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [TPDP Episode \#1: The Requirements for Developing Mobile Applications],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -532,7 +492,7 @@ Read the full article at Kat Matthews Prioritizes Sleep Above Training. You Shou
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Configuring Visual Studio Code for Arduino Development],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -551,7 +511,7 @@ Read the full article at Kat Matthews Prioritizes Sleep Above Training. You Shou
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Use Visually Appealing Fancy Alerts In A NativeScript Angular Application],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -572,7 +532,7 @@ Read the full article at Kat Matthews Prioritizes Sleep Above Training. You Shou
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Manage Files In Android And iOS Using Ionic Framework],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -590,7 +550,7 @@ Read the full article at Kat Matthews Prioritizes Sleep Above Training. You Shou
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Capturing Hacker News Mentions with Node.js and MongoDB],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -623,7 +583,7 @@ We’re going to do it all with Node.js and some simple pipelines.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Track The Device Geolocation In A NativeScript Angular Mobile Application],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -642,7 +602,7 @@ We’re going to do it all with Node.js and some simple pipelines.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Three Simple Ways To Get Online With A Raspberry Pi Zero IoT Device],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -663,7 +623,7 @@ We’re going to do it all with Node.js and some simple pipelines.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [QOTD: What Other Brand Showcase Events Should There Be?],
   author: [Tim Healey],
   source-name: [The Truth About Cars],
@@ -684,7 +644,7 @@ We’re going to do it all with Node.js and some simple pipelines.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Alias URLS In Hugo Websites Using RewriteRule For Htaccess],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -705,7 +665,7 @@ We’re going to do it all with Node.js and some simple pipelines.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Jeep Unveils 2026 Easter Safari Vehicles],
   author: [Tim Healey],
   source-name: [The Truth About Cars],
@@ -730,7 +690,7 @@ We’re going to do it all with Node.js and some simple pipelines.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Install A Better Custom ROM On The Amazon Kindle Fire],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -752,7 +712,7 @@ We’re going to do it all with Node.js and some simple pipelines.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Build An Alexa Skill With Golang And AWS Lambda],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -770,7 +730,7 @@ We’re going to do it all with Node.js and some simple pipelines.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Tour Of Heroes As A NativeScript With Angular Android And iOS Application],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -791,7 +751,7 @@ We’re going to do it all with Node.js and some simple pipelines.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Monitor MySQL And Auto Recover From A Crash],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -810,7 +770,7 @@ We’re going to do it all with Node.js and some simple pipelines.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Using Couchbase With Docker And Deploying A Containerized NoSQL Cluster],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -828,5 +788,11 @@ We’re going to do it all with Node.js and some simple pipelines.],
 
   ],
 ), ruled-indices: (1,))
+
+// --- Notable Quotes ---
+#block(above: 0.2in, stroke: (top: 1pt + luma(26)), inset: (top: 0.1in))[
+  #pull-quote([) above a standard Custom trim, the X-Code was a single-year Wagoneer.], [Corey Lewis])
+
+]
 
 #colophon([The Local Star], [Vol. 1, No. 084], [2026-03-30])

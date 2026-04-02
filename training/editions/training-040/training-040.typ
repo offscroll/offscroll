@@ -21,58 +21,14 @@
 #masthead([Northern Ledger], [Vol. 1, No. 040], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [The climate crisis: how do we show we care?],
-  kicker: [Cover Story],
-  author: [julietwalker],
-  source-name: [The BMJ Blog],
-  deck: [But perhaps we’re missing a trick. Perhaps we each have a tiny bit of the answer at our fingertips.],
-  lead-pre: [“],
-  lead-cap: [N],
-  lead-rest: [ot everything that is faced can be changed, but nothing can be changed until it is faced” — James Baldwin],
-  body-paragraphs: (
-  [Bad news about our planet can be overwhelming and can make us feel helpless. But perhaps we’re missing a trick. Perhaps we each have a tiny bit of the answer at our fingertips. Far from having to become a climate expert, maybe offering what we already know is enough.],
-  [When a child walks into a child and adolescent mental health services (CAMHS) clinic we need to be ready to listen. Really listen. This means knowing ourselves well enough to realise if we’re distracted or upset. We let the reality of the situation be heard, and we may witness extreme distress. The very act of doing this can facilitate change. However troubling the story, we do not get up and walk out of the room.],
-  [Over time, among risk and uncertainty, we work alongside the child to help find a way through what they are facing; exploring what interconnecting issues are causing the distress, supporting their wisdom and perspective, calling on our own skills and others’ as required.],
-  [And if the child tells us about something that is causing them harm, we act to do everything we can to safeguard that child.],
-  [A recent UNICEF report estimates that one billion children are at “extremely high risk” due to the climate crisis. In a recent survey of 10,000 children and young people in 10 countries, 75% believe “the future is frightening” and 64% say their governments are not doing enough to avoid a climate catastrophe. And something that adds a completely preventable exacerbation of distress: nearly half say they’ve been ignored or dismissed when they try to talk about it. Despite being exposed to these multiple layers of harm, children and young people are showing courage and resilience as they lead on climate solutions .],
-  [As Paul Hoggett eloquently describes, “ We are living in a time when a tragedy which is without precedent is unfolding in front of our eyes.” On some level we all know what the science is saying, but a lot of us are acting as if we are separate from this reality. To not do so is extremely painful.],
-  [How can we each learn to bear the unbearable, so that we can hear — really hear — what our children are telling us? And to respond in a way that makes them want to tell us more? By amplifying their voices, supporting their actions, while stepping up ourselves to show that this is not their responsibility to fix. As mental health practitioners in the global North we carry influence that we can opt in to, or opt out of, using to this end.],
-  [We can acknowledge the power of our collective voice and focus on the systemic nature of the problem to “prescribe” the right treatment: drastic, just, climate action from the world’s most powerful.],
-  [The very act of making space for the reality of the situation to be heard, and bearing witness to the distress, in ourselves, in people who seek our support or on a wider stage, will facilitate change.],
-  [And there is a lot of distress right now.],
-  [If we could imagine the planet has feelings, I think we could imagine the pitch of her scream.],
-  [We don’t need to imagine the pain of young people. They have had to march the streets and take governments to court to ask to be protected.],
-  [What do we imagine is the next step for them if they continue to feel frightened, betrayed, and abandoned?],
-  [We can validate feelings of fear, grief, anger, panic, and sadness as understandable responses to the threat we are facing. We can help raise awareness that this is a sign of connection and compassion. This is not mental disorder. However, we can speak up to say that an enormous source of stress like the climate crisis will trigger or exacerbate serious mental illness in some.],
-  [We can find training to better understand the issues and to develop additional skills and strengths we will need in this unfolding crisis. We can seek to understand our own feelings better and reach out for support if required.],
-  [We can work across professional and generational boundaries to develop communities and resources of support. To find ways together to transform what individually can feel like overwhelming pain, distress, and grief about our predicament; from a draining, debilitating force into unquenchable fires in our bellies that connect us to each other and to what we love. A feeling of connection to the millions of other people across the world who are developing beautiful, creative, climate solutions and the optimism this brings is one of the surprisingly life-affirming elements of facing the reality of this crisis.],
-  [No one of us knows what lies ahead, nor what’s the “best thing” to do. However, once we have started to face the reality, standing shoulder to shoulder with other people, we will see things more clearly.],
-  [We need to show in how we act and what we say that we’re in this together. That we care about the world, we care about our young people and future generations, and that, however bad it feels, we won’t walk out of the room.],
-  [Catriona Mellor is a child and adolescent psychiatrist with an interest in the mental health impacts of the eco-crisis on children and young people as well as what nature-based practices and insights can add to mental health care. Catriona is co-author on a 2021 quantitative global study into children and young people’s emotions and thoughts about climate change to be published in The Lancet Planetary Health. She is currently riding from London to Glasgow to raise awareness around air pollution and the climate health emergency on Ride for their Lives https:\/\/climateacceptancestudios.com/ridefortheirlives],
-  [Competing interests : none declared.],
-  [References :],
-  [style="font-weight: 400;"\> UNICEF. One billion children at ‘extremely high risk’ of the impacts of the climate crisis. UNICEF 2021. Available at: https:\/\/www.unicef.org/press-releases/one-billion-children-extremely-high-risk-impacts-climate-crisis-unicef (accessed 15 Oct 2021).],
-  [style="font-weight: 400;"\>Hickman C. & Marks E., Pihkala P., Clayton S., Lewandowski E., Mayal E., Wray B., Mellor C., van Susteren L. (2021) A global survey of climate anxiety in children and young people and their beliefs about government responses to climate change . Pre-print available at Lancet Planetary Health https:\/\/papers.ssrn.com/sol3/papers.cfm?abstract\_id=3918955],
-  [style="font-weight: 400;"\> The \#Youth4ClimateLive Series https:\/\/youth4climate.live/],
-  [style="font-weight: 400;"\> Hoggett, Paul,(Ed.) (2019). Climate Psychology: On Indifference to Disaster. Palgrave Macmillan.],
-  [The post The climate crisis: how do we show we care? appeared first on The BMJ .],
-),
-  inline-pq: pull-quote([As Paul Hoggett eloquently describes, “ We are living in a time when a tragedy which is without precedent is unfolding in front of our eyes.], [julietwalker]),
-  inline-pq-idx: 10,
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Government indecision is still costing lives in the UK],
   author: [kellybrendel],
   source-name: [The BMJ Blog],
   images: (),
   paragraphs: (
+  [The government must act now, or be faced with much tougher decisions and less popular choices as the winter kicks in, says John Middleton],
   [One person in 55 is now infected with coronavirus in the UK . The odds are that every time you step onto a crowded bus or train carriage you meet someone who is infected with covid-19. Every time you are sitting in a restaurant maybe, or walking down a supermarket aisle, you will likely meet someone who is infected too. In early October one in 12 children were estimated to have had covid, and on 22 October there were 180 deaths in the UK. Every four hours, as many deaths are occurring in the UK as New Zealand has had for the whole pandemic.],
   [We are still in groundhog day , with a few new repeating scenes. The secretary of state for health and social care, Sajid Javid, has repeated what he said when first taking up the role: that “ there could be 100 000 cases a day ,” yet he doesn’t see this as a need to act, either then or now. English directors of public healt h have again broken from national guidance that they know is inadequate for their areas. NHS leaders and the BMA have called for urgent action “to protect the NHS.”],
   [Plan A of the government’s winter plan has only ever been the “do as little as possible” option. The government’s eggs are all in the vaccination basket: offer flu vaccination and a third dose of the covid vaccine as a booster ( or not ) then let everything else run loose and it’s the people’s fault if they get ill or infect others.],
@@ -93,28 +49,31 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Download: reawakening frozen brains, and the AI Hype Index returns],
   author: [Thomas Macaulay],
   source-name: [MIT Technology Review],
   images: (),
   paragraphs: (
   [This is today’s edition of The Download , our weekday newsletter that provides a daily dose of what’s going on in the world of technology.],
+  [This scientist rewarmed and studied pieces of his friend’s cryopreserved brain],
   [L. Stephen Coles’s brain sits in a vat at a storage facility in Arizona. It has been held there at a temperature of around −146 degrees °C for over a decade, largely undisturbed. Before he died in 2014, Coles had the brain frozen with an ambitious goal in mind: reanimation.],
   [His friend, cryobiologist Greg Fahy, believes it could be revived one day. But other experts are less optimistic.],
   [Still, Fahy’s research could lead to new ways to study the brain. And using cryopreservation for organ transplantation is becoming a viable reality.],
   [Read the full story to find out what the future holds for the technology .],
   [—Jessica Hamzelou],
+  [The AI Hype Index],
   [Separating AI reality from hyped-up fiction isn’t always easy. That’s why we’ve created the AI Hype Index—a simple, at-a-glance summary of everything you need to know about the state of the industry. Take a look at this month’s edition .],
+  [MIT Technology Review Narrated: how Pokémon Go is giving delivery robots an inch-perfect view of the world],
   [Pokémon Go was the world’s first augmented-reality megahit. Released in 2016 by Niantic, the AR twist on the juggernaut Pokémon franchise fast became a global phenomenon. “500 million people installed that app in 60 days,” says Brian McClendon, CTO at Niantic Spatial, an AI company that Niantic spun out last year.],
   [Now Niantic Spatial is using that vast trove of crowdsourced data  to build a kind of world model —a buzzy new technology that grounds the smarts of LLMs in real environments. The firm wants to use it to help robots navigate more precisely.],
   [—Will Douglas Heaven],
   [This is our latest story to be turned into an MIT Technology Review Narrated podcast, which we’re publishing each week on Spotify and Apple Podcasts . Just navigate to MIT Technology Review Narrated on either platform, and follow us to get all our new content as it’s released.],
+  [The next era of space exploration],
   [Our footprint in the solar system is rapidly expanding. Programs to build permanent Moon bases and find life on Mars have transitioned from science fiction to active space agency missions. The scientists behind them will not only shed new light on the cosmos, but also reveal where humanity is headed.],
   [To examine what the future holds in store, MIT Technology Review features editor Amanda Silverman will sit down today with award-winning science journalist and author Robin George Andrews for an exclusive subscriber-only Roundtable conversation about “The Next Era of Space Exploration.”  Register here  to join the session at 16:00 GMT \/ 12:00 PM ET \/ 9:00 AM PT.],
+  [The must-reads],
   [I’ve combed the internet to find you today’s most fun/important/scary/fascinating stories about technology.],
   [1 OpenAI is shutting down AI video generator Sora 
 The app attracted at least as much controversy as acclaim. ( CNBC ) 
@@ -146,10 +105,15 @@ It fills the gap left by Iran’s lack of a public emergency alert tool. ( Wired
  + Here’s where OpenAI’s tech could show up in Iran. ( MIT Technology Review )],
   [10 A nonprofit is sending basic income payments to AI-impacted workers 
 It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
+  [Quote of the day],
+  [“I am first and foremost a scientist. My goal is to understand nature. But doing science is, sort of, like reading the mind of God.”],
   [—DeepMind CEO Demis Hassabis shares his approach to AI strategy with  the FT .],
+  [EVA REDAMONTI],
+  [Inside the hunt for the most dangerous asteroid ever],
   [As asteroid 2024 YR4 hurtled toward Earth, astronomers determined that this massive rock posed a higher risk of impact than any object of its size in recorded history. Then, just as quickly as history was made, experts declared that the danger had passed.],
   [This is the inside story of the network of global scientists who found, followed, planned for, and finally dismissed the most dangerous asteroid ever found—all under the tightest of timelines and with the highest of stakes.  Find out how they did it .],
   [—Robin George Andrews],
+  [We can still have nice things],
   [A place for comfort, fun and distraction to brighten up your day. (Got any ideas? Drop me a line .) 
  
 + Soothe subscription fatigue with this simple cancellation tool . 
@@ -163,10 +127,8 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Academic medicine and publishing from developing countries],
   author: [kellybrendel],
   source-name: [The BMJ Blog],
@@ -204,10 +166,8 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Third cousin couples have the most children and grandchildren],
   author: [Ed Yong],
   source-name: [Not Exactly Rocket Science (Ed Yong archive)],
@@ -223,7 +183,7 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
   [Earlier studies have done little to clear the confusion. They have mostly been conducted in parts of the world like India, Pakistan and the Middle East where marriage between close relatives is relatively frequent, but which are also home to enormous gulfs between the richest and poorest members of society. With demographics like these, sorting out the relative contribution of socioeconomics and biology is difficult.],
   [To do that, what you need is a country with a small population where couples are reasonably closely related and with a very shallow gradient between rich and poor. Ideally, you’d also want this country to have excellent family records dating back several years. In short, you’d want to base your study in a country almost exactly like Iceland.],
   [200 years of Iceland],
-  [align="left"\> Iceland is home to a tiny population of just over 300,000 people who enjoy a level of social equality that is almost unparalleled elsewhere in the world. Wealth, family size and cultural practices are fairly uniform. The country is also home to uniquely impressive geneaological records that allow today’s Icelanders to track their family trees with exacting precision for centuries. These records are supplemented by thorough medical records and thousands of willingly donated genetic samples.],
+  [Iceland is home to a tiny population of just over 300,000 people who enjoy a level of social equality that is almost unparalleled elsewhere in the world. Wealth, family size and cultural practices are fairly uniform. The country is also home to uniquely impressive geneaological records that allow today’s Icelanders to track their family trees with exacting precision for centuries. These records are supplemented by thorough medical records and thousands of willingly donated genetic samples.],
   [Agnar Helgason from deCODE Genetics , a pharmaceutical company located in Reykjavik, made good use of these records to study over 160,000 Icelandic couples since 1800. At this time, Iceland was still a poor agricultural nation and close-knit rural communities meant that on average, couples were related at the level of third or fourth cousins.],
   [Since then, the country has prospered into a wealthy industrial one and the growing population has shifted to a mainly urban way of life. In doing so, people became more likely to find partners who were more distantly related and by 1965, couples were only related at the level of fifth cousins on average],
   [As expected, Helgarson’s study unveiled the dangers of close inbreeding. While the most closely related couples had the highest number of children, many of them failed to live long enough to have children of their own and in the long run these couples had the fewest grandchildren.],
@@ -241,10 +201,8 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Turning the tide: The Obesity Health Alliance’s healthy weight strategy],
   author: [julietwalker],
   source-name: [The BMJ Blog],
@@ -257,10 +215,10 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
   [The evidence is clear that the drivers of healthy weight are even more complex than those involved in tobacco use. The obesogenic environment , to which we are all exposed to from infancy onwards, whereby calorie-dense, nutrient poor food is readily accessible, abundant, affordable, and normalised, and physical activity opportunities are not easily available, affects us all. The pervasive and ubiquitous advertising and promotion of unhealthy food and drinks allows industry to “set the tone” of our food environment, creating, and maintaining this obesogenic environment that makes it inherently difficult to achieve a healthy diet.],
   [Obesity cannot be addressed one person at a time, and behind the statistics are people living with obesity who often experience stigma and discrimination that can affect their mental health and willingness to access healthcare. Stigma stands in the way of public health and must be eradicated.],
   [The strategy makes recommendations across key areas: 1) stigma; 2) food and drink products; 3) the marketing mix; 4) pricing; 5) the environment; 6) advertising and promotions; 7) early years; 8) management, treatment and support; and 9) improved policymaking processes. Each of these areas require addressing in their own right, but combined the recommendations set the clear, long-term, evidence-informed agenda needed to turn the tide and improve healthy weight across the UK population. The 30 recommendations made are set out in a “KIND” framework, aimed at building on existing policy progress as well as identifying new routes for action. The KIND framework includes:],
-  [style="font-weight: 400;"\> Keep policies already in place or that are due to be implemented that supports a healthy weight environment;],
-  [style="font-weight: 400;"\> Intensify existing policies or approaches to increase impact;],
-  [style="font-weight: 400;"\> New proposals that are recommended for evidence-informed actions;],
-  [style="font-weight: 400;"\> Develop policies based on the results of new, promising areas for research and investment.],
+  [Keep policies already in place or that are due to be implemented that supports a healthy weight environment;],
+  [Intensify existing policies or approaches to increase impact;],
+  [New proposals that are recommended for evidence-informed actions;],
+  [Develop policies based on the results of new, promising areas for research and investment.],
   [The framework sets out not only the stage of policy development in which each recommendation sits, but also the actor(s) that should enact that recommendation. It is not enough to simply name route for action, but we need to establish clear directives for those bodies and organisations responsible to implement necessary change.],
   [The role of industry is not absent here, and it is vitally important that we acknowledge the power that companies currently has over our food environment, as well as the regulation of the environment. We have clear evidence demonstrating that industry involvement in policy-making designed to remedy the harms industry products contribute to is not conducive to the creation of healthy public policy, and this must be actively managed throughout the policy process.],
   [As we look ahead to recovery from the covid-19 pandemic, progressing efforts to achieve a healthy weight across the UK population must be at the heart of public health. It is time to move beyond individual-level policy recommendations, and implement wide-ranging changes to the system that got us here in the first place. This will not only save lives in the short and medium term, but will also serve to create a better and healthier future for our children and grandchildren, something they most surely deserve.],
@@ -289,72 +247,74 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Dependency Injection in Typescript with tsyringe],
   author: [GameChanger],
   source-name: [GameChanger Tech],
   images: (),
   paragraphs: (
-  [id="why-dependency-injection"\>Why Dependency Injection],
   [In any large object oriented codebase, managing dependencies can get difficult. Each class can require any number of third parties or other classes to function, and it can be hard to test the behavior of a single class with mocks if those dependencies aren’t easy to provide.],
   [Fortunately, there’s a popular design pattern that can be applied to solve this problem, and that is dependency injection.],
   [When using dependency injection, classes can be provided their dependencies through a constructor, and those dependencies can be swapped out easily for other implmentations. In tests, mocks can simply be substituted in to test class behavior.],
   [While most of the time, this pattern is implemented with a framework, even without one manual dependency injection can give you some of these benefits.],
   [Here at Gamechanger, we previously had a form of manual dependency injection in our typescript codebase. Each class would have a constructor that accepted its dependencies, which could be swapped out with mocks or a real implementation.],
-  [private void foo () { 
+  [class BusinessLogic \{ 
+ constructor ( dependencyA : DependencyA , dependencyB : DependencyB ) \{\}],
+  [private void foo () \{ 
  this . dependencyA . action (); 
- } 
- }],
+ \} 
+ \}],
   [\/\\/ To instantiate this class, both dependencies must be created 
  const businessLogic = new BusinessLogic ( new DependencyA (), new DependencyB ());],
   [\/\\/ to test this class, mocks can be passed in 
  const testBusinessLogic = new BusinessLogic ( new MockDependencyA (), new MockDependencyB ());],
   [In this example, if you need to replace a dependency, you can just supply a different class in the constructor for BusinessLogic .],
   [This can work great for a small number of classes with a tiny dependency tree, but as your codebase’s number of dependencies grow, it can become difficult to manage. Once your dependencies have dependencies, its not as straightforward to get an instance of a class.],
-  [} 
- }],
-  [class DependencyA { 
- constructor ( dependencyC : DependencyC , dependencyD : DependencyD ) {],
-  [} 
- }],
+  [class DependencyC \{ 
+ constructor ( dependencyE , DepedencyE ) \{],
+  [\} 
+ \}],
+  [class DependencyA \{ 
+ constructor ( dependencyC : DependencyC , dependencyD : DependencyD ) \{],
+  [\} 
+ \}],
   [\/\\/ Now, to instantiate BusinessLogic, we need to create a tree of instances. 
  const dependencyC = new DependencyC ( new DependencyE ()); 
  const businessLogic = new BusinessLogic ( new MockDependencyA ( dependencyC , new DependencyD ()), new MockDependencyB ());],
   [Even in this relatively mild example, it’s starting to get complicated to manage the dependency tree. If you want to mock dependency C in the business logic dependency chain, you have to create all of the dependencies around it and pass those in.],
   [When you need to test a particularly complicated class, setting up all its dependencies can take more time that writing the test itself! If you only need to mock a single subdependency, you need to instantiate everything all the way down until the mock is required, and then pass it in there.],
   [Fortunately, there are dependency injection frameworks for typescript that can simplify the work that needs to be done.],
-  [id="using-tsyringe"\>Using Tsyringe],
   [Since we use typescript, we’ve moved to using https:\/\/github.com/microsoft/tsyringe],
   [Tysringe allows you to tag a particular dependency as injectable with a decorator, and then very easily get an instance of it.],
   [At its core, tsyringe provides you a dependency container that keeps track of all your dependencies. When you need to create an instance of a class, you can call resolve on the the container with an injection token and it will return you the right dependency registered under that token.],
   [Our previous example becomes much easier to manage with this:],
+  [import \{ container , injectable \} from ' tsyringe ' ;],
   [\@ injectable () 
- class DependencyC { 
- constructor ( dependencyE , DepedencyE ) {],
-  [} 
- }],
+ class DependencyC \{ 
+ constructor ( dependencyE , DepedencyE ) \{],
+  [\} 
+ \}],
   [\@ injectable () 
- class DependencyA { 
- constructor ( dependencyC : DependencyC , dependencyD : DependencyD ) {],
-  [} 
- }],
+ class DependencyA \{ 
+ constructor ( dependencyC : DependencyC , dependencyD : DependencyD ) \{],
+  [\} 
+ \}],
   [\@ injectable () 
- class BusinessLogic { 
- constructor ( dependencyA : DependencyA , dependencyB : DependencyB ) {}],
-  [private void foo () { 
+ class BusinessLogic \{ 
+ constructor ( dependencyA : DependencyA , dependencyB : DependencyB ) \{\}],
+  [private void foo () \{ 
  this . dependencyA . action (); 
- } 
- }],
+ \} 
+ \}],
   [\/\\/ Now, all we need to do if we need an instance of business logic, is resolve it 
  const businessLogicInstance = container . resolve ( BusinessLogic );],
   [That’s it! All you need to do is tag your classes as injectable and tsyringe can take care of instantiating the whole dependency tree.],
   [Writing tests also becomes much easier with the framework, when you need to mock a low level dependency, you can just register it with the dependency container, and leave everything else in place.],
   [To register a mock, you can call registerInstance on the container, and provide it with the injection token you want to replace, and what you want to replace it with. Once you’re done with the mock it can be cleared with clearInstances on the container.],
-  [describe ( ' BusinessLogic ' , () =\> { 
- it ( ' should call action on dependencyA when foo is called ' , () =\> { 
+  [import \{ container \} from ' tsyringe ' ;],
+  [describe ( ' BusinessLogic ' , () =\> \{ 
+ it ( ' should call action on dependencyA when foo is called ' , () =\> \{ 
  \/\\/ We can mock a class at any level in the dependency tree without touching anything else 
  container . registerInstance ( DependencyC , mock ());],
   [\/\\/ dependency A gets a mock version of dependency C during this resolution. 
@@ -363,40 +323,37 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
  \/\\/ When we resolve the instance after this, we get the original dependencies. 
  \/\\/ In practice, we've found it's easy to just place this in your afterEach block. 
  container . clearInstances () 
- }); 
- });],
+ \}); 
+ \});],
   [Here, DependencyC will be replaced with a mock for the duration of this test, and at the end, when clearInstances is called, it will return to its original form.],
   [Tsyringe provides some great utilities we’ve been able to leverage to deal with common dependency problems. For instance, its fairly common to have classes that are singletons, and while managing that manually can be a bit difficult, its virtually painless with tsyringe.],
+  [import \{ singleton \} from ' tysringe ' ;],
   [\/\\/ This class will be a singleton, when container.resolve is called 
  \/\\/ All calls will return the same instance. 
  \@ singleton () 
- class MySingleton {],
-  [}],
+ class MySingleton \{],
+  [\}],
   [Tsyringe also contains some great tools for managing the lifecycle of a given dependency. Dependencies can be scoped in a number of different ways. By default, dependencies have the transient scope, which means that every time you resolve this dependency a new instance is created. This can make sense, but also has some performance and memory implications, especially if you have some classes that are large and expensive to construct that aren’t singletons.],
   [For our dependencies, we found that ResolutionScoped worked in reducing our memory usage. Resolution Scoping means that the same dependency will be reused during a resolution chain, so if you have a class that could need a dependency more than once in its dependency tree, it will only ever be instantiated once.],
-  [id="potential-issues"\>Potential Issues],
   [There’s a few quirks we’ve learned to navigate with using tsyringe, mostly related to how to register mocks. There are a few ways to register something with the dependency container, the easiest of which is adding the \@injectable() decorator, but you can also manually register something with a call to container.register . This can be useful if you need to register something that’s not a class. An additional note that’s useful in this case, is that your injection token can be a string which can also be helpful if you’re not registering a class.],
+  [container . register ( ' NonClassDependency ' , \{ useValue : nonClassObject \});],
   [If you need to resolve something from a string token in a contstructor, there’s an \@inject decorator you can use to make sure the dependency is automatically resolved.],
-  [class MyClass { 
- constructor (\@ inject ( ' NonClassDependency ' ) nonClassDependency : NonClassDependencyInterface ) {],
-  [} 
- }],
+  [import \{ inject \} from ' tsyringe ' ;],
+  [class MyClass \{ 
+ constructor (\@ inject ( ' NonClassDependency ' ) nonClassDependency : NonClassDependencyInterface ) \{],
+  [\} 
+ \}],
   [One problem with dependencies registered manually can be cleared unintentionally by a call to clearInstances which should be used in-betweeen tests.],
   [To register a dependency that is unclearable without the decorator, it needs to be registered with useFactory . The factory should be a function that returns the item you want injected.],
-  [describe ( ' MyDependency ' , () =\> {],
-  [it ( ' should not be mocked ' , () =\> { 
- container . resolve ( MyDependency ); 
- container . resolve ( OtherDependency );],
   [container . clearInstances (); 
  \/\\/ This will fail! 
  \/\\/ OtherDependency is no longer registered with the container. 
  container . resolve ( OtherDependency )],
   [\/\\/ This will be fine, the dependency remains registered after clears 
  container . resolve ( MyDependency ); 
- }); 
- });],
+ \}); 
+ \});],
   [This allows you to register whatever classes or objects you want managed by the dependency container in your application code, and then selectively replace them with mocks, in a given test, and then revert back to the original when the test is done.],
-  [id="wrapping-up"\>Wrapping Up],
   [Adding tsyringe has definitely made managing our application dependencies and testing code much easier, with a dependency injection framework, we now have a much more manageable solution to dealing with our large dependency tree.],
 ),
   insert-map: (:),
@@ -405,10 +362,8 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Tinder API Style Guide — Part 1],
   author: [Tinder],
   source-name: [Tinder Tech],
@@ -465,19 +420,19 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
   [Important URI Path Design Guidelines],
   [Keep Path Segments Short: Ensure that URI path segments are concise and easy to understand.],
   [Use Plural Names for Resources : Represent collections with plural names (e.g., /resources). This convention signifies that the endpoint represents the entire collection of resources.],
-  [For example, performing a GET /resources will typically return the full collection. Conversely, a GET /resources/{id} will retrieve a specific resource from that collection. Additionally, POST /resources is used to add a new item to the collection, reinforcing the idea that the URI represents a group of related entities.],
+  [For example, performing a GET /resources will typically return the full collection. Conversely, a GET /resources/\{id\} will retrieve a specific resource from that collection. Additionally, POST /resources is used to add a new item to the collection, reinforcing the idea that the URI represents a group of related entities.],
   [Follow Kebab-Casing: Kebab casing enhances the readability of URIs by clearly separating words with hyphens (-). Therefore adopt kebab-casing for URI paths (e.g., word1-word2).],
   [Avoid Implementation-Specific Extensions: Do not include implementation-specific extensions in URIs (e.g., .php, .html, .py).],
   [Below is an example of forming a URI based on above guidelines:],
-  [GET /v1/consent-management/consents/{consent-id}],
+  [GET /v1/consent-management/consents/\{consent-id\}],
   [In this example, v1 is the version of the endpoint, consent-management is the service name, consents is a resource. This API will retrieve a specific consent corresponding to the consent-id from the consents collection.],
   [Use of Nouns in URIs],
   [When designing URIs, use nouns for resources and sub-resources, not verbs. HTTP methods (GET, PATCH, POST, PUT, DELETE) already define the action (CRUD operations) on the resource. Including verbs like “get,” “update,” or “delete” in the URI makes the HTTP method redundant.],
   [Path Suffix — Path Parameters and Query Parameters],
   [Path parameters are used to locate a resource. Below are a few examples of using path parameters.],
-  [GET /v1/passport/locations/{location-id}],
+  [GET /v1/passport/locations/\{location-id\}],
   [In this example, passport is the service name, locations is the resource, location-id is a path parameter, and it locates a unique location. We can also have more than one path parameter in the URI.],
-  [GET /v1/passport/locations/{location-id}/profiles/{profile-id}],
+  [GET /v1/passport/locations/\{location-id\}/profiles/\{profile-id\}],
   [In this example, location-id and profile-id are both path parameters. It locates a specific profile for a particular location. Also note that locations is a resource and profiles is a sub-resource under locations.],
   [Query parameters are used mainly for providing additional attributes for querying i.e. query resources with additional conditions. Below are some examples of using query parameters.],
   [GET /v1/users?status=active],
@@ -529,10 +484,8 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Practising medicine in the virtual world—continuity of care is even more important],
   author: [julietwalker],
   source-name: [The BMJ Blog],
@@ -559,24 +512,32 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [An electric day 3 of TEDNext 2025],
   author: [Brian Greene],
   source-name: [TED Blog],
   images: (),
   paragraphs: (
+  [TED’s Monique Ruff-Bell (left) and Helen Walters (right) host Session 5 of TEDNext on November 11, 2025, in Atlanta, GA. (Photo: Ryan Lash \/ TED)],
   [For day 3 of TEDNext 2025, two magical sessions of talks put forward ideas on how to grow thoughtfully, think radically and redesign a better world. With stories from our AI-powered present (and future) as well as a healthy dose of ingenious human problem-solving, the talks of day 3 surprised, delighted and shed new light on what it means to be human right now.],
   [What exactly is TEDNext? A vibrant, three-day exploration of what’s next, propelling the “future you” to think expansively at every level, from personal to global. The second-ever TEDNext conference, held in Atlanta, continues an expansion of the annual slate of conferences from TED, with a conference designed to spark imagination, embrace possibility and foster dreams about what the next version of “you” can be.],
   [Watch TEDNext 2025 on TED Live , check out more photos from the event and learn more about attending a future TED conference .],
   [Some key takeaways from day 3:],
+  [Amanda Montell speaks at TEDNext on November 11, 2025, in Atlanta, GA. (Photo: Ryan Lash \/ TED)],
   [The line between awe and indoctrination — and how to actually seek happiness. Writer and podcaster Amanda Montell thinks we’re living through the “cult-iest” era on record, as the hard-wired cognitive biases that helped early humans survive brush up against Information Age tools and communication tactics. She shares how to recognize the strategies and language tricks cults use to coerce — from thought-terminating clichés designed to shut down independent reflection to loaded buzzwords that feel like enlightenment — as well as some crucial tips to help you preserve the ability to think for yourself. Approaching our need for fulfillment from a different angle, happiness scientist Sonja Lyubomirsky distills the essential lessons from scientific research into humanity’s most sought-after emotion: happiness. Her number one hack? To approach conversations with others as experiences designed to take walls down, not changes to share your highlight reel. By sharing deeply and listening to learn, Lyubomirsky thinks we can all unlock the potential for happiness inside of us.],
+  [Nayeema Raza speaks at TEDNext on November 11, 2025, in Atlanta, GA. (Photo: Erin Lubin \/ TED)],
   [Some pro-human takes on AI and algorithms. How do we stay “real” when algorithms and chatbots are constantly influencing our behavior to the benefit of platforms like ChatGPT, Spotify, X and others? Etymologist and content creator Adam Aleksic sounds the alarm on how AI tools are changing how we communicate — down to our very word choices — and, possibly, rewiring the underlying patterns of our thoughts, encouraging us to remember that these emerging tools aren’t neutral. Self-described “dumb questions” advocate Nayeema Raza picks up the thread of AI tools hijacking our lives — not with an anti-tech tech, but with a pro-human one. She makes a case for the return of three old habits — to pause and notice our urge to reach for our devices, to live in wonder and to ask questions out loud instead of in private — to reconnect with what actually matters in our lives.],
+  [John Mills speaks at TEDNext on November 11, 2025, in Atlanta, GA. (Photo: Erin Lubin \/ TED)],
   [Tech meets the natural world. After watching a series of wildfires rage around his home in Northern California in 2019, civic tech pioneer John Mills had a simple question: Where is the information? With firefighters relying on communications technology from the 1930s, often the answer was: too little, too late and too sporadic. Enter Watch Duty, a non-profit alert system Mills created with the help of a few radio operators and volunteer engineers from Silicon Valley. Developed in an 80-day sprint, Watch Duty beat government alert systems by nearly an hour just a handful of days after it launched, and it has continued to provide residents and first responders with the life-saving heads-up they need to escape danger, proving that a small group of thoughtful, committed citizens can indeed change the world. Telling another story from the positive side of tech, ocean explorer Eric Stackpole takes us into the murky depths to explore the mysterious worlds of sperm whales. Sequestered aboard a ship filming a show for National Geographic during the early days of the COVID pandemic, Stackpole and his colleagues concocted a “very maker-y” camera rig that ended up revealing a previously unreachable world — capturing footage of sperm whales communicating and coordinating for the first time on camera. “The question isn’t: ‘What can we explore?'” Stackpole says. “The real question is: ‘What will we wonder about next?'”],
+  [Manoush Zomorodi speaks at TEDNext on November 11, 2025, in Atlanta, GA. (Photo: Erin Lubin \/ TED)],
   [New thinking on pain, the mind and body. We’ve let our screens quietly train our days into locked-down stillness, says journalist and host of NPR’s TED Radio Hour , Manoush Zomorodi , and it’s led to many of us feeling exhausted most of the time. She makes the case that tiny, regular bursts of activity baked into our days — known as “movement breaks” — can flip the body’s switches, brightening mood, sharpening focus and even regulating blood sugar. That same spirit of rethinking the obvious extends to how we think itself: in a personal talk exploring the mind’s eye, puzzle wizard and editorial director of TED-Ed Animations Alex Rosenthal shows how our inner worlds can vary wildly, and that when we build teams across those differences, creativity and problem‑solving multiply. Taking that openness into the clinic, Dr. Sanjay Gupta explores new thoughts on pain — how it isn’t just a signal in tissue but a story shaped by environment, history, sleep and support. He reveals how light, movement and connection might be as therapeutic as medicine.],
+  [Tom Sullam speaks at TEDNext on November 11, 2025, in Atlanta, GA. (Photo: Ryan Lash \/ TED)],
   [The signs are everywhere — we need to stop and appreciate the wonder of the world. For a dash of whimsy, photographer and wildlife enthusiast Tom Sullam embarks on a romp through a series of ever-more-amusing wildlife photos, explaining how a sense of humor could help us get more connected to nature. In another hilarious photographic journey, designer and professor Kate Canales shares her obsession with hand-made signs — the subtle, helpful and oftentimes hysterical extra instructions we add to point-of-sale machines, doors and conspicuously in bathrooms. “No matter how you might feel about the advancement of technology in our everyday lives, these signs are evidence that humans still need each other in real life to do some of the simplest things,” she says.],
+  [Brady Forrest (left) and Elise Hu (right) host Session 4 of TEDNext on November 11, 2025, in Atlanta, GA. (Photo: Ryan Lash \/ TED)],
+  [ELEW performs at TEDNext on November 11, 2025, in Atlanta, GA. (Photo: Erin Lubin \/ TED)],
+  [Attendees practice their “movement breaks” at TEDNext on November 11, 2025, in Atlanta, GA. (Photo: Ryan Lash \/ TED)],
+  [Charlene Kaye performs at TEDNext on November 11, 2025, in Atlanta, GA. (Photo: Ryan Lash \/ TED)],
   [Watch TEDNext 2025 on TED Live , check out more photos from the event and learn more about attending a future TED conference .],
 ),
   insert-map: (:),
@@ -585,10 +546,8 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Apache Airflow on AWS ECS],
   author: [GameChanger],
   source-name: [GameChanger Tech],
@@ -604,7 +563,7 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
   [Setting up Airflow tasks on ECS],
   [Learnings from Airflow and ECS],
   [tl;dr Running Airflow’s infrastructure on ECS is super easy but running the ECS operator needs hecka help setting up.],
-  [id="what-is-ecs"\>What is ECS?],
+  [What is ECS?],
   [ECS is AWS’s Elastic Container Service , designed to let you run containers without worrying about servers. You do this by creating a cluster for your system, define task definitions for the tasks you want to run, and possibly group your tasks into services. You can also choose if you want to have your containers fully managed (ECS on Fargate), kind of managed but kind of not (ECS on EC2), or if you’d like to use Kubernetes.],
   [If all of that made sense to you, congratulations: you can skip to the next section! If you need a bit more of a breakdown, here’s what you need to know:],
   [A container is like a snapshot of a tiny computer that you can run anywhere. If, for example, you have some Docker containers to run, you can run them on my mac Mac, my father’s Mac, my mother’s Windows, my sister’s Linux, a server in a public cloud, a server in a private data center with an undisclosed location for security reasons — anywhere there’s a computer that supports the container’s setup can run that container, and you’ll get the same result from the container every time.],
@@ -614,7 +573,7 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
   [That’s where ECS comes in. Instead of running servers ( EC2 ) where you do all the above things to to get your containers running, you can use ECS with Fargate to worry only about the containers: here’s the CPU and memory it needs, here’s the start command, here’s a health check, give it these environment values, and I want two of these running at all times. Boom: your containers are running, and restart as needed, and things are kept up to date for you, and there’s monitoring built in.],
   [There’s a lot more nuance that goes into picking if you want to run ECS on Fargate or EC2 or Kubernetes, but if you’re still reading this, you probably want Fargate: with Fargate, you only need to worry about your containers, and the rest is taken care of for you.],
   [Now that we’re all caught up…],
-  [id="ecs-with-terraform"\>ECS with Terraform],
+  [ECS with Terraform],
   [As discussed in a previous post , we’re huge fans of using Terraform for our team’s infrastructure, especially modules to keep systems in line across environments; I’ll let you read that post if you’d like some background knowledge on how we use Terraform modules and have them interact with Consul for sharing values. The short story though is, as with the above, it keeps the setup easy for our data team so we can continue to focus on our data.],
   [For our workflow system, as with our data pipeline, we started by setting up a new Terraform module that contains],
   [input values like configurations for the infrastructure or pass through values (we’ll discuss those later)],
@@ -627,81 +586,81 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
   [our main ECS tasks, for the basic Airflow infrastructure (discussed in the next section)],
   [That might seem like a big list to you but remember, this is for a fully functional, production ready Airflow setup: you can start much simpler with just the cluster and its tasks, and add on as you go.],
   [To start our ECS setup, we first needed a cluster with a capacity provider, ie the management style we want:],
-  [resource "aws\_ecs\_cluster" "airflow-cluster" { 
+  [resource "aws\_ecs\_cluster" "airflow-cluster" \{ 
  name = "airflow-test" 
  capacity\_providers = \[ "FARGATE" \] 
- }],
+ \}],
   [Our cluster also needed a role, which you can define through Terraform or create manually through the AWS console and then connect in Terraform, so it can have permissions to do things like talk to Redshift :],
-  [data "aws\_iam\_role" "airflow-role" { 
+  [data "aws\_iam\_role" "airflow-role" \{ 
  name = "test.workflow" 
- }],
+ \}],
   [(If you didn’t catch it, that’s a data block instead of a resource block, so it’s fetching what already exists and making it usable within Terraform. This is especially helpful if you have existing infrastructure that hasn’t been fully ported over yet but want to set up new infrastructure in Terraform.)],
   [The other big thing our clusters needed regardless of its tasks is to control who can talk to it and getting permission to talk to others, since we want to tightly control who can access our data:],
-  [resource "aws\_security\_group" "airflow-sg" { 
+  [resource "aws\_security\_group" "airflow-sg" \{ 
  name = "Airflow" 
  description = "Airflow test security group" 
  vpc\_id = var . vpc\_id],
-  [ingress { 
+  [ingress \{ 
  from\_port = 0 
  to\_port = 0 
  protocol = "-1"],
   [self = true 
  security\_groups = var . security\_groups\_access\_workflow 
- }],
-  [egress { 
+ \}],
+  [egress \{ 
  from\_port = 0 
  to\_port = 0 
  protocol = "-1" 
  cidr\_blocks = \[ "0.0.0.0/0" \] 
- } 
- }],
+ \} 
+ \}],
   [You can see we take in the VPC and security groups from whoever is invoking the module, and then expose elsewhere this Airflow security group for other systems to allow access to.],
   [Beautiful, now we have an ECS cluster. We can look at it, we can marvel at it, we can say, “Oh yes, I don’t worry about servers anymore, for I have transcended and run my containers directly.” But of course, just because we have a cluster doesn’t mean it does anything: you need to define task definitions for actual work to be done, and possibly services too if you’d like. (Tasks, as we’ll see later, can be run outside services.) However this does give us the framework now to set up the rest of our Airflow infrastructure within.],
-  [id="setting-up-airflow-infrastructure-on-ecs"\>Setting up Airflow infrastructure on ECS],
+  [Setting up Airflow infrastructure on ECS],
   [The two main pieces of Airflow infrastructure we needed were dubbed “the controller” and “the scheduler.” (Later additions to our setup like Celery workers, nicknamed “stalks,” followed the same setup pattern so I won’t include them here.) Now, you might understand immediatley what the scheduler is doing: it’s in charge of the Airflow scheduler ( airflow scheduler ). That leaves the controller as a new addition to the Airflow vocabulary.],
   [We use the controller to run the UI ( airflow webserver ), make sure the database is all set up ( airflow initdb ), set up our root users ( airflow create\_user … ), and create pools to throttle access to certain resources ( airflow pool --import throttling\_pools.json ). Since it’s in charge of controlling all these pieces, we have dubbed it the controller, and when more work is needed, it is where we add this work to.],
   [(Sidenote: as a team we prefer to use controller/worker language across our systems, with the controller name coming from Kafka where the lead broker is dubbed the controller, since leader refers to a different part of the system and is an easily overloaded term. It works well for nearly all systems we’ve applied it to, and might work well for your systems as well.)],
   [Despite these differences between what the controller and scheduler do, they actually have almost identical setups within ECS and use a lot of the same inputs, so I’ll show the scheduler to start with since it has less pieces.],
   [The first thing our scheduler needed was a task definition:],
-  [resource "aws\_ecs\_task\_definition" "scheduler-definition" { 
+  [resource "aws\_ecs\_task\_definition" "scheduler-definition" \{ 
  family = "scheduler-test" 
  container\_definitions = jsonencode ( 
  \[ 
- { 
+ \{ 
  "name" = "scheduler" , 
  "image" = format ( "%s/%s" , var . docker\_address , var . controller\_container ), 
- "portMappings" = \[{ "containerPort" = var . controller\_port }\], 
+ "portMappings" = \[\{ "containerPort" = var . controller\_port \}\], 
  "command" = \[ "sh" , "start\_scheduler.sh" \], 
  "environment" = \[ 
- { "name" = "ENVIRONMENT" , "value" = var . environment }, 
- { "name" = "LOG\_LEVEL" , "value" = var . log\_level }, 
- { "name" = "CONSUL\_ADDRESS" , "value" = var . consul\_address }, 
- { "name" = "DOCKER\_ADDRESS" , "value" = var . docker\_address },],
-  [{ "name" = "AIRFLOW\_\_CORE\_\_SQL\_ALCHEMY\_SCHEMA" , "value" = var . database\_schema },],
-  [{ "name" = "AIRFLOW\_\_CORE\_\_DAGS\_ARE\_PAUSED\_AT\_CREATION" , "value" = "False" }],
+ \{ "name" = "ENVIRONMENT" , "value" = var . environment \}, 
+ \{ "name" = "LOG\_LEVEL" , "value" = var . log\_level \}, 
+ \{ "name" = "CONSUL\_ADDRESS" , "value" = var . consul\_address \}, 
+ \{ "name" = "DOCKER\_ADDRESS" , "value" = var . docker\_address \},],
+  [\{ "name" = "AIRFLOW\_\_CORE\_\_SQL\_ALCHEMY\_SCHEMA" , "value" = var . database\_schema \},],
+  [\{ "name" = "AIRFLOW\_\_CORE\_\_DAGS\_ARE\_PAUSED\_AT\_CREATION" , "value" = "False" \}],
   [\],],
   ["secrets" = \[],
-  [{ "name" = "AIRFLOW\_\_CORE\_\_SQL\_ALCHEMY\_CONN" , "valueFrom" = aws\_ssm\_parameter . metadata\_connection . arn },],
-  [{ "name" = "AWS\_ACCESS\_KEY\_ID" , "valueFrom" = data . aws\_ssm\_parameter . aws\_access\_key\_id . arn },],
-  [{ "name" = "AWS\_SECRET\_ACCESS\_KEY" , "valueFrom" = data . aws\_ssm\_parameter . aws\_secret\_access\_key . arn }],
+  [\{ "name" = "AIRFLOW\_\_CORE\_\_SQL\_ALCHEMY\_CONN" , "valueFrom" = aws\_ssm\_parameter . metadata\_connection . arn \},],
+  [\{ "name" = "AWS\_ACCESS\_KEY\_ID" , "valueFrom" = data . aws\_ssm\_parameter . aws\_access\_key\_id . arn \},],
+  [\{ "name" = "AWS\_SECRET\_ACCESS\_KEY" , "valueFrom" = data . aws\_ssm\_parameter . aws\_secret\_access\_key . arn \}],
   [\],],
-  ["logConfiguration" = {],
+  ["logConfiguration" = \{],
   ["logDriver" = "awslogs" ,],
-  ["options" = {],
+  ["options" = \{],
   ["awslogs-create-group" = "true" ,],
   ["awslogs-region" = var . region ,],
   ["awslogs-group" = "/ecs/airflow/test/scheduler" ,],
   ["awslogs-stream-prefix" = "ecs"],
-  [}],
-  [},],
-  ["healthCheck" = {],
+  [\}],
+  [\},],
+  ["healthCheck" = \{],
   ["command" = var . scheduler\_health\_command\_list ,],
   ["startPeriod" = var . controller\_grace\_period ,],
   ["interval" = var . controller\_healtch\_check\_interval ,],
   ["retries" = var . controller\_healtch\_check\_retries ,],
   ["timeout" = var . controller\_healtch\_check\_timeout],
-  [}],
-  [}],
+  [\}],
+  [\}],
   [\]],
   [)],
   [requires\_compatibilities = \[ "FARGATE" \] 
@@ -709,99 +668,99 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
   [execution\_role\_arn = data . aws\_iam\_role . airflow - ecs - role . arn],
   [cpu = var . scheduler\_cpus \* 1024.0 
  memory = var . scheduler\_memory \* 1024.0 
- }],
+ \}],
   [The majority of this is the task definition, mainly what container to run, what environment values and secret values to set up, how to log and perform health checks, and what command to run. Then we linked that up with Fargate and our role we created earlier, specify the CPU and memory we want, and we have something that can run the scheduler.],
   [(Note that right now, this is not tied to our cluster: task definitions are cluster agnostic, should you have a task you want to run in multiple clusters.)],
   [Now, since we always want a scheduler running, we created a service around this task definition to ensure it’s able to do its job:],
-  [resource "aws\_ecs\_service" "scheduler-service" { 
+  [resource "aws\_ecs\_service" "scheduler-service" \{ 
  name = "scheduler" 
  cluster = aws\_ecs\_cluster . airflow - cluster . arn 
  launch\_type = "FARGATE" 
  platform\_version = "LATEST" 
  task\_definition = aws\_ecs\_task\_definition . scheduler - definition . arn 
  desired\_count = 1],
-  [network\_configuration { 
+  [network\_configuration \{ 
  subnets = var . subnets 
  security\_groups = \[ aws\_security\_group . airflow - sg . id \] 
- }],
+ \}],
   [enable\_ecs\_managed\_tags = true 
  propagate\_tags = "TASK\_DEFINITION" 
- }],
+ \}],
   [This service wraps our task definition, pulling it into the cluster which will always make sure one task is running based on it. This takes care of running our Airflow scheduler, nothing else needed, boom we’re golden.],
   [The controller has an almost identical task definition and service setup, sharing nearly all values. What we added to it though was a nice DNS record that can be accessed while on our VPN and the option to run multiple web servers if we wanted to through a load balancer:],
-  [resource "aws\_ecs\_service" "controller-service" { 
+  [resource "aws\_ecs\_service" "controller-service" \{ 
  name = "controller" 
  cluster = aws\_ecs\_cluster . airflow - cluster . arn 
  launch\_type = "FARGATE" 
  platform\_version = "LATEST" 
  task\_definition = aws\_ecs\_task\_definition . controller - definition . arn 
  desired\_count = 1],
-  [load\_balancer { 
+  [load\_balancer \{ 
  target\_group\_arn = aws\_lb\_target\_group . controller - target . arn 
  container\_name = local . controller\_definition\_name 
  container\_port = var . controller\_port 
- } 
+ \} 
  health\_check\_grace\_period\_seconds = var . controller\_grace\_period],
-  [network\_configuration { 
+  [network\_configuration \{ 
  subnets = var . subnets 
  security\_groups = \[ aws\_security\_group . airflow - sg . id \] 
- }],
+ \}],
   [enable\_ecs\_managed\_tags = true 
  propagate\_tags = "TASK\_DEFINITION" 
- }],
-  [resource "aws\_route53\_record" "controller-dns" { 
+ \}],
+  [resource "aws\_route53\_record" "controller-dns" \{ 
  zone\_id = var . dns\_zone 
  name = var . controller\_address 
  type = "A"],
-  [alias { 
+  [alias \{ 
  name = aws\_lb . controller - lb . dns\_name 
  zone\_id = aws\_lb . controller - lb . zone\_id 
  evaluate\_target\_health = false 
- } 
- }],
-  [resource "aws\_lb" "controller-lb" { 
+ \} 
+ \}],
+  [resource "aws\_lb" "controller-lb" \{ 
  name = "controller-test" 
  subnets = var . subnets 
  load\_balancer\_type = "application" 
  internal = true 
  security\_groups = \[ aws\_security\_group . airflow - sg . id \] 
- }],
-  [resource "aws\_lb\_target\_group" "controller-target" { 
+ \}],
+  [resource "aws\_lb\_target\_group" "controller-target" \{ 
  name = "controller-test" 
  port = var . controller\_port 
  protocol = local . controller\_protocol 
  vpc\_id = var . vpc\_id 
  target\_type = "ip"],
-  [health\_check { 
+  [health\_check \{ 
  path = var . controller\_health\_endpoint 
  matcher = "200" 
  interval = var . controller\_grace\_period 
- } 
- }],
-  [resource "aws\_lb\_listener" "controller-listener" { 
+ \} 
+ \}],
+  [resource "aws\_lb\_listener" "controller-listener" \{ 
  load\_balancer\_arn = aws\_lb . controller - lb . arn 
  port = var . controller\_port 
  protocol = local . controller\_protocol],
-  [default\_action { 
+  [default\_action \{ 
  target\_group\_arn = aws\_lb\_target\_group . controller - target . arn 
  type = "forward" 
- } 
- }],
-  [resource "aws\_lb\_listener\_rule" "controller-listener-rule" { 
+ \} 
+ \}],
+  [resource "aws\_lb\_listener\_rule" "controller-listener-rule" \{ 
  listener\_arn = aws\_lb\_listener . controller - listener . arn],
-  [action { 
+  [action \{ 
  type = "forward" 
  target\_group\_arn = aws\_lb\_target\_group . controller - target . arn 
- }],
-  [condition { 
+ \}],
+  [condition \{ 
  field = "host-header" 
  values = \[ aws\_route53\_record . controller - dns . name \] 
- } 
- }],
+ \} 
+ \}],
   [(If you’ve never connected a DNS record, load balancer, and auto scaling group in EC2 before, the above might look like a lot of work, but it’s a pretty standard if verbose setup.)],
   [And with that, we now have Airflow up and running: the database can be setup and configured as desired, the scheduler will run, the controller will prep the system if needed before starting the web server, and we’re good to roll this out for testing. Of course you might choose to pass in your secrets in a different way, or add way more Airflow configurations, but it should be simple no matter what.],
   [You might have noticed that I did sneak in a few extra environment variables in those Airflow task definitions: the environment, the log level, the Consul address, and the Docker address. We found that having those always available helped our jobs to run (for example, we know every job can always check the environment it’s in) and allowed us to build custom utilities, especially around running Airflow tasks on ECS.],
-  [id="setting-up-airflow-tasks-on-ecs"\>Setting up Airflow tasks on ECS],
+  [Setting up Airflow tasks on ECS],
   [Airflow has an ECS operator that seems great to start with: run this little bit of code and you’re done! But… not quite.],
   [Unfortunately, Airflow’s ECS operator assumes you already have your task definitions setup and waiting to be run. If you do, then go ahead and use the operator to run tasks within your Airflow cluster, you are ready to move on. If however you need to define those dynamically with your jobs, like we did, then it’s time for some Python.],
   [Remember how before I said we had pass through values in our Terraform module? That’s where those come in. Terraform is where we know things like the address for our Docker Registry, or how to connect to our data pipeline and data warehouse. By having Terraform pass those values into Consul, we can then write Python to pull it down and make use of it, same as with our data pipeline setup . See: logic to the madness!],
@@ -867,7 +826,7 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
   [Alright, at this point we have a task definition but we haven’t registered it yet. AWS’s boto3 library provides a way to interact with ECS ; what we do is check for a current version of the task and pull it down. If there’s no task definition or, and this is the crucial part, if the task definition we just generated is different from what ECS currently knows about , we register a new version; otherwise we let it be. (We founded we needed deepdiff to do this comparison effectively as there’s no upsert method, so our system… yeah it registered hundreds of thousands of task definitions for no reason. 🤦🏻‍♀️) So, let’s say you have a data scientist on your team who changes a job so that a container’s start command and a few of the input values are different: this will detect that and push up an update to the task definition without the data scientist even having to know what a task definition is.],
   [It’s now and only now that we can finally invoke the ECS operator Airflow provides, putting any last minute overrides like just in time values (maybe input from the user triggering the job) into the operator and adding it to any pools as needed (for example, only letting so many systems interact with the warehouse at once). From there, Airflow handles telling ECS to spin up this task and execute, watching it until it’s done, and reporting back.],
   [That’s all a lot of work and you might be asking yourself, what’s the point? Well for our team, the point is that we already have a lot of containers and setup around them: a Docker Compose file , for example, to tell us how to run every task. By running these containers locally and in the workflow system, we know we will have consistent results, and we can extend our utilities to do things like read in the Docker Compose file (it’s just a YAML, after all) to help us generate our remote operator (what’s the container name, or startup command, or values needed?) with a bit more ease. For heavy duty, long running operations that might require a lot of CPU or memory, this gives us flexibility. (Currently Fargate doesn’t support GPUs but that’s on the roadmap and other ECS capacity providers do support it, which might be of particular interest to data teams.)],
-  [id="learnings-from-airflow-and-ecs"\>Learnings from Airflow and ECS],
+  [Learnings from Airflow and ECS],
   [Picking up ECS was quite the challenge sometimes, and I’m not sure we would have made it ourselves without writeups from the community about how they managed it and AWS sending some lovely folks to visit us several months ago and answer our questions. Tasks and services, for example, were very confusing at the start and we couldn’t get our head around what we were suppose to be doing with them.],
   [We’d discovered ECS at the start of our journey as something people talked about running their Airflow setup on, but hadn’t found a lot of detail around how to actually do that, especially for working with ECS operators in Airflow. It’s been our goal from the start to not only get Airflow running and learn how to work with ECS for other systems the data team might have, but to also provide what we learned and did for others to have an easier time getting their system set up and running. If people want to know more than I’ve already written, we can post follow ups; just let us know!],
   [Our Airflow setup actually arrived just in time for Jenkins going hard down. We were able to spin up our Airflow production with less than a day’s notice and start using it. Sure, it still has some quirks the team needs to get used to as Airflow is a hecka quirky system, but for the moment it’s taken over better than anyone could have anticipated. The rest of the team is quickly getting accustomed to how ECS works, where logs are, how to monitor it — everything we’d hoped for.],
@@ -880,101 +839,112 @@ It’s starting by giving 25-50 people \$1,000 per month. ( Gizmodo )],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The AI boom has plunged a small Pennsylvania town into chaos],
   author: [Rebecca Egan McCarthy],
   source-name: [Grist],
   images: (),
   paragraphs: (
-  [class="has-drop-cap has-default-font-family"\>“I don’t like to see anyone upset,” said Nick Farris of Provident Real Estate Advisors. He was sitting in the front of a crowd of roughly 150 inside Valley View High School’s auditorium in Archbald, a town of about 7,500, huddled between two mountain ranges in Pennsylvania’s Lackawanna Valley. Farris was there to represent the developer for Project Scott, one of many data center campuses coming to town. “However,” he said. “I think that this is the best data center site in this area of the country, by far.” The audience had been fairly quiet, bundled in thick coats against the late January cold. But as Farris spoke about data centers as a boon for communities, they began to laugh, drawing a rebuke from town officials.],
-  [class="has-default-font-family"\>“What about the children?” someone shouted from the crowd. The children were watching from the walls; long banners of Valley View Performing Arts students hanging around the auditorium like championship pennants. Project Scott and four other data facilities will sit just a few thousand feet from the middle and high schools.],
-  [class="has-default-font-family"\>“Isn’t there a missile plant next door?” Farris said, getting aggravated. He was referring to Lockheed Martin’s 350,000-square-foot Missiles and Fire Control facility directly next to the high school, parts of which are highly contaminated .],
-  [class="has-default-font-family"\>“That sucks too!” another attendee yelled back. This was nothing to worry about, Farris tried to convince the audience. This would bring in tax revenue, he said. It was just an office park, albeit one with roughly 450 diesel backup generators.],
-  [class="has-default-font-family"\>“It’s going to be away from everyone,” Farris kept repeating, to rising jeers. He was wearing a knit turtleneck with a large American flag emblazoned across the chest.  “It’s not going to bother anyone.”],
-  [class="has-default-font-family"\>The specifications say something different: Five developers are planning to build six data center campuses in Archbald, which will cover a full 14 percent of the town, evict a trailer park, and border many residential properties. One campus alone, as The Scranton Times-Tribune reporter Frank Lefneskey pointed out, is expected to use more power than the region’s largest power plant is able to produce.],
-  [class="has-default-font-family"\>Pennsylvania has become an epicenter of the data center boom in the United States, with over 50 campuses in development. Eleven of them are slated for Lackawanna County alone. Archbald, with six campuses composed of 51 massive buildings, has the most of any municipality in Pennsylvania.],
-  [class="has-default-font-family"\>Despite the public outcry, it has been surprisingly difficult to learn what Archbald’s elected officials think of the massive industry moving in. None of the town’s seven council members responded to my emails, so I stopped by the borough administration building in person a few weeks before Christmas, and was told to wait in the lobby while they held an informal closed meeting in council chambers. When the door opened, it was clear that anyone who actually had the power to make or break the data center plans had quietly filed out the back, leaving me with Archbald’s unelected borough manager, Dan Markey, who essentially runs the town, but cannot vote for or against development.],
-  [class="has-default-font-family"\>What did he think about artificial general intelligence, or AGI — the idea that eventually these efforts will produce something like a “computer god” capable of solving climate change, ending hunger, revealing the full breadth of science, and performing any number of other miracles? “I believe in one God, and it’s not a computer,” Markey told me evenly. By now, hundreds of towns across the country have been caught up in the rush to build large language models that can parse unfathomable amounts of data to write copy, answer any query, develop new vaccines, and likely render a large number of jobs obsolete. That rush accelerated into an all-out arms race over the past year. What it means in practice is an enormous amount of data centers — enough to approximate a minor deity and enough, as OpenAI co-founder and former chief scientist Ilya Sutskever once speculated, to “cover the Earth.” Markey told me he had ChatGPT on his phone, but didn’t use it much.],
-  [class="has-default-font-family"\>“I don’t think anyone in their right mind wants to see the world covered in data centers,” Markey said. “\[But\], according to Pennsylvania law, we have to have a zone for everything. An adult bookstore, a strip club, a concrete and asphalt plant — anything that wants to come here. We have to have a zone for it. If it’s not zoned, it’s allowed to go anywhere.”],
-  [class="has-default-font-family"\>In most states, towns have the right to exclude businesses that they find disagreeable — a wealthy suburb, for example, would likely reject a landfill or gas plant — but in Pennsylvania, towns must allocate some patch of land to these “undesirable industries.” Some municipalities deal with this by forming what are called zoning collaboratives, which allow them to plan as a region for pollution. One town might get data centers, another gas plants, another a landfill. Markey approached the nearby boroughs of Blakely and Dickson City to discuss the possibility, but the data center development rush has outpaced him.],
-  [class="has-default-font-family"\>Whatever’s attracting data centers to the area, it’s forced Markey to answer for a rush of development, unprecedented since the town was settled in the 1840s in service of an industry that will bring vanishingly few jobs. Residents kept bringing up the threat of collapse — the network of empty mine shafts running underground, the town beneath the town, the structural instability that would accompany these massive buildings. The data centers would drive bears into town, they said, rattlesnakes into yards, and without trees to stabilize them, the mountains themselves would begin to crumble, sending landslides into the valley.],
-  [class="has-default-font-family"\>“I just try to listen, and I try to separate the valid concerns from the things that just sound like the sky is falling,” said Markey. “I was approached at a gas station a couple months ago and was told that I was going to kill everyone who lived in Archbald. I don’t think that’s valid. I don’t think that’s a reasonable argument to have with me.”],
-  [class="has-default-font-family"\>But the anger and suspicion directed towards town officials, incoming tech companies, and a powerful local businessman with reported mafia connections show no signs of abating. The AI rush is often spoken of in terms of grand harms or potential social goods that feel entirely divorced from the way it’s playing out on the ground — as an unmitigated mess, breeding confusion, paranoia, and fury.],
+  [“I don’t like to see anyone upset,” said Nick Farris of Provident Real Estate Advisors. He was sitting in the front of a crowd of roughly 150 inside Valley View High School’s auditorium in Archbald, a town of about 7,500, huddled between two mountain ranges in Pennsylvania’s Lackawanna Valley. Farris was there to represent the developer for Project Scott, one of many data center campuses coming to town. “However,” he said. “I think that this is the best data center site in this area of the country, by far.” The audience had been fairly quiet, bundled in thick coats against the late January cold. But as Farris spoke about data centers as a boon for communities, they began to laugh, drawing a rebuke from town officials.],
+  [“What about the children?” someone shouted from the crowd. The children were watching from the walls; long banners of Valley View Performing Arts students hanging around the auditorium like championship pennants. Project Scott and four other data facilities will sit just a few thousand feet from the middle and high schools.],
+  [“Isn’t there a missile plant next door?” Farris said, getting aggravated. He was referring to Lockheed Martin’s 350,000-square-foot Missiles and Fire Control facility directly next to the high school, parts of which are highly contaminated .],
+  [“That sucks too!” another attendee yelled back. This was nothing to worry about, Farris tried to convince the audience. This would bring in tax revenue, he said. It was just an office park, albeit one with roughly 450 diesel backup generators.],
+  [“It’s going to be away from everyone,” Farris kept repeating, to rising jeers. He was wearing a knit turtleneck with a large American flag emblazoned across the chest.  “It’s not going to bother anyone.”],
+  [The specifications say something different: Five developers are planning to build six data center campuses in Archbald, which will cover a full 14 percent of the town, evict a trailer park, and border many residential properties. One campus alone, as The Scranton Times-Tribune reporter Frank Lefneskey pointed out, is expected to use more power than the region’s largest power plant is able to produce.],
+  [Pennsylvania has become an epicenter of the data center boom in the United States, with over 50 campuses in development. Eleven of them are slated for Lackawanna County alone. Archbald, with six campuses composed of 51 massive buildings, has the most of any municipality in Pennsylvania.],
+  [Despite the public outcry, it has been surprisingly difficult to learn what Archbald’s elected officials think of the massive industry moving in. None of the town’s seven council members responded to my emails, so I stopped by the borough administration building in person a few weeks before Christmas, and was told to wait in the lobby while they held an informal closed meeting in council chambers. When the door opened, it was clear that anyone who actually had the power to make or break the data center plans had quietly filed out the back, leaving me with Archbald’s unelected borough manager, Dan Markey, who essentially runs the town, but cannot vote for or against development.],
+  [What did he think about artificial general intelligence, or AGI — the idea that eventually these efforts will produce something like a “computer god” capable of solving climate change, ending hunger, revealing the full breadth of science, and performing any number of other miracles? “I believe in one God, and it’s not a computer,” Markey told me evenly. By now, hundreds of towns across the country have been caught up in the rush to build large language models that can parse unfathomable amounts of data to write copy, answer any query, develop new vaccines, and likely render a large number of jobs obsolete. That rush accelerated into an all-out arms race over the past year. What it means in practice is an enormous amount of data centers — enough to approximate a minor deity and enough, as OpenAI co-founder and former chief scientist Ilya Sutskever once speculated, to “cover the Earth.” Markey told me he had ChatGPT on his phone, but didn’t use it much.],
+  [“I don’t think anyone in their right mind wants to see the world covered in data centers,” Markey said. “\[But\], according to Pennsylvania law, we have to have a zone for everything. An adult bookstore, a strip club, a concrete and asphalt plant — anything that wants to come here. We have to have a zone for it. If it’s not zoned, it’s allowed to go anywhere.”],
+  [In most states, towns have the right to exclude businesses that they find disagreeable — a wealthy suburb, for example, would likely reject a landfill or gas plant — but in Pennsylvania, towns must allocate some patch of land to these “undesirable industries.” Some municipalities deal with this by forming what are called zoning collaboratives, which allow them to plan as a region for pollution. One town might get data centers, another gas plants, another a landfill. Markey approached the nearby boroughs of Blakely and Dickson City to discuss the possibility, but the data center development rush has outpaced him.],
+  [Whatever’s attracting data centers to the area, it’s forced Markey to answer for a rush of development, unprecedented since the town was settled in the 1840s in service of an industry that will bring vanishingly few jobs. Residents kept bringing up the threat of collapse — the network of empty mine shafts running underground, the town beneath the town, the structural instability that would accompany these massive buildings. The data centers would drive bears into town, they said, rattlesnakes into yards, and without trees to stabilize them, the mountains themselves would begin to crumble, sending landslides into the valley.],
+  [“I just try to listen, and I try to separate the valid concerns from the things that just sound like the sky is falling,” said Markey. “I was approached at a gas station a couple months ago and was told that I was going to kill everyone who lived in Archbald. I don’t think that’s valid. I don’t think that’s a reasonable argument to have with me.”],
+  [But the anger and suspicion directed towards town officials, incoming tech companies, and a powerful local businessman with reported mafia connections show no signs of abating. The AI rush is often spoken of in terms of grand harms or potential social goods that feel entirely divorced from the way it’s playing out on the ground — as an unmitigated mess, breeding confusion, paranoia, and fury.],
   [The small town of Archbald, Pennsylvania, has found itself at the center of an AI boom. Rebecca Egan McCarthy \/ Grist],
-  [class="has-drop-cap has-default-font-family"\>Millions of years ago the Lackawanna Valley was an intertidal zone: swamp land bordering a shallow sea that stretched out to Central Pennsylvania. That sea was forced skyward as the African and North American continents collided, raising the mountains from the earth and crumpling and compressing the valley’s dying plant life in tight laminations, until it finally hardened into what’s considered the gold standard for coal — smokeless, slow-burning anthracite.],
-  [class="has-default-font-family"\>Anthracite is rare: Almost 90 percent of the world’s recoverable deposits lie buried in Northeastern Pennsylvania, and it represents only 1 percent of global coal stocks (the majority being the soft, sooty bituminous coal that you find in the western half of the state and across West Virginia), but it was the most in-demand fuel for household heating for over a century. Its discovery brought a rush of mining companies to the region, transforming the Lackawanna Valley from a mass of overgrown forest into a crucial coal production and transportation hub for New York and Philadelphia’s energy markets.],
-  [class="has-default-font-family"\>Coal patch towns — in which everything,  the stores, the schools, the houses, were owned by coal companies — sprang up across the valley. Scranton became known as the “Electric City,” with the region’s bountiful fuel reserves powering some of the first street lamps and electric trolleys. The economic boom was short-lived though. Oil quickly outpaced coal, and a devastating flood in the 1960s effectively ended the industry, by which time the region was so thoroughly hollowed out that the Pennsylvania secretary of mining warned the city of Scranton “was sitting on toothpicks” and would be more cost-effective to abandon than reclaim.],
-  [class="has-default-font-family"\>The drive into Archbald is especially beautiful in fall — gently rolling hills covered in foliage, rivers winding lazily past clapboard houses — but winter brings a low, fixed gray sky and a perpetual blanket of snow. Without the forgiving cover of leaves, it’s easier for the old industrial history to lurch into view. The ground gives way occasionally, and huge, black mountains of mining waste called culm (pronounced “column”) dot the landscape.],
-  [class="has-default-font-family"\>By now, the culm piles are covered in vegetation and appear almost natural, but you can tell something is off if you look closely — their slope is too abrupt; their backs covered by spindly, young trees, slipping downhill. They’re enormous health hazards, sending fine particulate matter into the surrounding neighborhoods and leeching toxins into the groundwater, but they’ve become familiar enough, a woman named Tiffany told me, that people hike on them and kids play on them. We were at the end of her block, looking up at a massive culm pile. “I’ve never walked back there,” she said. “It’s kind of creepy.”],
-  [class="has-default-font-family"\>The land on the other side of the heap has been sold to Project Gravity, whose developers intend to build seven 138,000-square-foot buildings along Eynon-Jermyn Road. It will be bordered by two more data center campuses, known as Project Scott and Project North; across the road will be yet another campus called Project Boson. Further down Eynon-Jermyn Road is the Wildcat Ridge AI Center. Tiffany lives just over the town line in Jermyn, meaning she won’t benefit from the increased tax income, nor can she voice an opinion at the Archbald town meetings, even though the data centers are effectively in her backyard.],
-  [class="has-default-font-family"\>I’d met Tiffany a few months earlier in a nearby park, along with other members of a fast-growing group of locals fighting the new developments. I’d reached out to them through the Stop Archbald Data Centers Facebook group, which now has over 5,000 members, equal to nearly two-thirds the size of the town. Local opposition to data centers has swept the nation this year, with concerns over rising electricity costs, reliance on fossil fuels, excess water use and noise, pollution, and their placement in or near residential areas. These fights have forged unlikely political alliances and will potentially imperil incumbents come this year’s midterm elections. According to a Financial Times analysis , at least 370 measures to regulate the AI industry were introduced in state legislatures this past year, and roughly 80 percent of Republicans and Democrats believe the industry needs more regulation.],
-  [class="has-default-font-family"\>“We moved from a couple towns over and built a new house, thinking this was a good place to go,” said Archbald resident Ann Beynon, who grew up by a Superfund site in nearby Throop. She’d been looking to settle down somewhere in the area where her kids wouldn’t be at risk of lead poisoning. There was a landfill in Throop and a gas plant in Jessup. “And now this is happening” in Archbald, she said while gathered in the park.],
-  [class="has-default-font-family"\>Tiffany, Ann, and the others had brought maps to our meeting to demonstrate the scale of the problem. They were not, they explained, asking for the data centers to leave entirely — they just wanted them confined to industrial zones. They felt town council members were unprepared and ill-informed on this issue, ready to jump at the prospect of tax money without looking at the long term implications. When the first data centers began to arrive in early 2025, Archbald’s zoning code classified them as roughly on par with commercial office buildings, allowing them to be built in some commercial zones. Residents fought back, demanding new zoning laws that would limit data centers to fully industrial areas away from the center of town, but the updated zoning ordinance passed last November wouldn’t go that far. Instead, they still allow facilities to be built next to residential neighborhoods — such as the Highlands, a condo complex occupied largely by retirees, and a trailer park called Valley View Estates, whose owner has agreed to sell the land to a data center developer. Residents are set to be evicted next month, on April 15.],
-  [class="has-default-font-family"\>Developers moved to purchase land before the ordinance went into effect, leaving Archbald with little recourse to stop them, said Brigitte Meyer, an attorney at PennFuture, a nonprofit environmental advocacy organization. Meyer has been sounding the alarm for a year now, warning municipalities across Pennsylvania that if they don’t get out in front of the data center boom, they could be overrun.],
-  [class="has-default-font-family"\>“The tragic irony is that it’s really hard to get the community activated at this on the front end, when things are more hypothetical,” she said. “People’s interest gets piqued when there’s a specific proposal. But by the time it gets to that point, the period has already passed where the municipality has the most power to actually affect how that’s going to go.”],
-  [class="has-default-font-family"\>Valley View Estates isn’t far from Tiffany’s house, just up Eynon-Jermyn Road. Residents received their eviction notice last July, shortly after Project Gravity was announced. The facilities would cover the surrounding woods; more buildings would replace the junkyard down the street. They were hemmed in, and the park owner wanted out. When reports of the eviction hit local news, “people were so horrible,” said Matthew Bucksbee, a Valley View resident. “One of the kids that commented, he’s like ‘Yeah, just get rid of that place, it’s infested with drugs.’”],
-  [class="has-default-font-family"\>Many residents, Bucksbee’s fiancée, Candace May, explained, are disabled or caretakers for disabled relatives; many don’t even have cars and subsist largely off the one Dollar General within walking distance. They’ve been told they cannot legally challenge the eviction notice until the land is actually sold, and they’ve received little to no information from the owner since — although they were warned, May said, that anyone withholding rent in the interim would be evicted immediately.],
-  [class="has-default-font-family"\>May’s mother, Sharon Williams, works as a home health aid for three disabled men, making \$17.50 an hour. It’s enough for her to live on — she’s paid off her car, she can swing groceries, her internet, her phone, her healthcare costs, and the lot rent for her trailer, but it doesn’t leave her with much left over at the end of every month. She can’t afford a more expensive place, nor does she qualify for Section 8 housing, putting her in an impossible situation as the April eviction deadline looms.],
-  [class="has-default-font-family"\>Despite their name, mobile homes are not really mobile. Most will fall apart if you try to relocate them, and although residents generally own their trailers, they pay nominal rent to a park owner, who owns the land — in this case, a couple who run a beer store outside Philadelphia. As the cost of living skyrockets, it’s the only stable, affordable housing many are able to find.  According to Princeton’s Eviction Lab , the average lot rent nationwide was only \$470 a month in 2023; Williams pays just \$390, but residents are uniquely vulnerable to displacement. When a trailer park closes, many people are forced to abandon their homes or sell them for next to nothing. If they don’t own their trailer outright, they can find themselves homeless and still paying off a mortgage.],
-  [class="has-default-font-family"\>The county’s public housing is roughly 98 percent occupied at the moment, according to a representative from the Lackawanna County Housing Authority. Placements are allocated by a point system, wherein victims of domestic violence, the homeless, and the disabled get first priority, but waitlists for one, two, and three bedrooms are currently closed. Waitlists for studios and four-bedroom apartments remain open, but it can take anywhere between one to five years to get into housing. For now at least, Valley View residents have few good options.],
-  [class="has-drop-cap has-default-font-family"\>Tech companies are clearly coming to Archbald for the Susquehanna-Roseland powerline, a \$1.4 billion high-voltage transmission line, which would give them access to bulk power. But locals also suspect that the area’s cheap land, lax zoning laws, and centralized capital also appealed to developers. This is old coal territory, and when the mines closed down, a lot of land wound up concentrated in just a few hands.],
-  [class="has-default-font-family"\>“Who runs everything with a lot of money? The name DeNaples is on a lot of these buildings,” one Archbald resident told me, after speaking out against the data centers at a utility hearing at the University of Scranton in December. “He’s got his tentacles all over the place.”],
-  [class="has-default-font-family"\>DeNaples is Louis DeNaples, an enormously powerful businessman infamous in the Lackawanna Valley , who has long been plagued by accusations of connections to organized crime — specifically to the late mob boss of Northeastern Pennsylvania, Russell Bufalino, who served as counsel to Jimmy Hoffa and may have had him killed , according to some popular accounts. Bufalino was thrust onto the national stage most recently by Martin Scorsese’s 2019 magnum opus, The Irishman , played by a quietly sinister Joe Pesci, but DeNaples himself has no such Hollywood notoriety. He remains a grim specter across the region though — some residents say they are scared of him and attribute a great deal of power to him. “If your little league team needs jerseys, \[DeNaples\] provides them,” another local explained. “If the local police department needs a new car, he donates.”],
-  [class="has-default-font-family"\>DeNaples was one of nine children and grew up poor, selling Christmas trees with his brother Dominick in a vacant lot and reselling junk cars for parts. He reportedly bought his first car for \$18 and hauled it himself up the steep hill to his family’s house over the course of two days. Countless cars later, he opened the Keystone Sanitary Landfill, swallowing vast amounts of garbage from New York and Philadelphia, and making DeNaples a millionaire. Eventually, he expanded into real estate, then outwards and upwards from there.],
-  [class="has-default-font-family"\>In the late 70s, he pleaded no contest to a conspiracy charge of defrauding the federal government out of over half a million dollars for cleanup work after Hurricane Agnes, but was never convicted. One dissenting juror forced an acquittal, and a Bufalino family underboss was later sent to prison for witness tampering. The charge would come back to haunt him though. In 2006, DeNaples purchased nearby Mount Airy Casino, but was forced to hand control over to his daughter after it was revealed that he’d lied about his relationship to organized crime.],
-  [class="has-default-font-family"\>Decades later, he remains a major power broker in the area: one of the largest landowners, the proprietor of many businesses, and the chairman of First National Bank. His name is not just on buildings, but on billboards all across the metro area. DeNaples hasn’t sold any land directly to the data centers, but in 2023 he sold a 186-acre parcel to another local businessman, Jim Marzolino of Kriger Construction, who then sold it to Project Gravity for over \$12 million, according to public records . The transaction has raised hackles locally, although there is no evidence DeNaples saw any benefit from the heavy markup of his former land. More recently, DeNaples’ nephew sold land to a proposed data center in nearby Olyphant.],
-  [class="has-default-font-family"\>But plenty of other local businessmen, without the alleged mob ties, are more directly involved in the data center boom — Marzolino, for example, or Anthony Domiano Jr., whose family runs a chain of local car dealerships, and who sold a large amount of land to Project South and Project North. Alpesh “Al” Patel, who runs the Al’s Quick Stop convenience store chain in the region, has partnered with Marzolino on development plans for Project Boson.],
-  [class="has-drop-cap has-default-font-family"\>On a freezing night a couple weeks before Christmas, locals gathered at The University of Scranton for a public hearing on their electricity bills. PPL Electric Utilities had announced a rate hike for the fourth time in two years — this one, raising consumer electricity prices by 7 percent.],
-  [class="has-default-font-family"\>“I make about triple the Pennsylvania minimum wage — and I still freeze in my house,” said Jordan Moran, a student in cybersecurity at Lackawanna College, who also works a full-time job. “My thermostat is at 60 degrees, and my PPL bill is still nearly 20 percent of my monthly income.”],
-  [class="has-default-font-family"\>
-PPL serves about 1.5 million ratepayers in Pennsylvania, and its territory has been overrun by data center proposals in recent years, significantly raising electricity prices in certain areas of the country. But under the utility’s proposed plan, data centers would receive a rate cut , which rankled attendees. Although the region needs jobs, “there’s no potential job growth really, for the local people. I’m one of the few people who would actually be qualified to even apply for a job there once they put \[the data centers\] up,” Moran told me after the hearing. “We don’t have a lot of computer science majors out there.”],
-  [class="slide-content"\> Does your community have a data center ordinance in place? 
+  [Millions of years ago the Lackawanna Valley was an intertidal zone: swamp land bordering a shallow sea that stretched out to Central Pennsylvania. That sea was forced skyward as the African and North American continents collided, raising the mountains from the earth and crumpling and compressing the valley’s dying plant life in tight laminations, until it finally hardened into what’s considered the gold standard for coal — smokeless, slow-burning anthracite.],
+  [Anthracite is rare: Almost 90 percent of the world’s recoverable deposits lie buried in Northeastern Pennsylvania, and it represents only 1 percent of global coal stocks (the majority being the soft, sooty bituminous coal that you find in the western half of the state and across West Virginia), but it was the most in-demand fuel for household heating for over a century. Its discovery brought a rush of mining companies to the region, transforming the Lackawanna Valley from a mass of overgrown forest into a crucial coal production and transportation hub for New York and Philadelphia’s energy markets.],
+  [Coal patch towns — in which everything,  the stores, the schools, the houses, were owned by coal companies — sprang up across the valley. Scranton became known as the “Electric City,” with the region’s bountiful fuel reserves powering some of the first street lamps and electric trolleys. The economic boom was short-lived though. Oil quickly outpaced coal, and a devastating flood in the 1960s effectively ended the industry, by which time the region was so thoroughly hollowed out that the Pennsylvania secretary of mining warned the city of Scranton “was sitting on toothpicks” and would be more cost-effective to abandon than reclaim.],
+  [The drive into Archbald is especially beautiful in fall — gently rolling hills covered in foliage, rivers winding lazily past clapboard houses — but winter brings a low, fixed gray sky and a perpetual blanket of snow. Without the forgiving cover of leaves, it’s easier for the old industrial history to lurch into view. The ground gives way occasionally, and huge, black mountains of mining waste called culm (pronounced “column”) dot the landscape.],
+  [By now, the culm piles are covered in vegetation and appear almost natural, but you can tell something is off if you look closely — their slope is too abrupt; their backs covered by spindly, young trees, slipping downhill. They’re enormous health hazards, sending fine particulate matter into the surrounding neighborhoods and leeching toxins into the groundwater, but they’ve become familiar enough, a woman named Tiffany told me, that people hike on them and kids play on them. We were at the end of her block, looking up at a massive culm pile. “I’ve never walked back there,” she said. “It’s kind of creepy.”],
+  [The land on the other side of the heap has been sold to Project Gravity, whose developers intend to build seven 138,000-square-foot buildings along Eynon-Jermyn Road. It will be bordered by two more data center campuses, known as Project Scott and Project North; across the road will be yet another campus called Project Boson. Further down Eynon-Jermyn Road is the Wildcat Ridge AI Center. Tiffany lives just over the town line in Jermyn, meaning she won’t benefit from the increased tax income, nor can she voice an opinion at the Archbald town meetings, even though the data centers are effectively in her backyard.],
+  [I’d met Tiffany a few months earlier in a nearby park, along with other members of a fast-growing group of locals fighting the new developments. I’d reached out to them through the Stop Archbald Data Centers Facebook group, which now has over 5,000 members, equal to nearly two-thirds the size of the town. Local opposition to data centers has swept the nation this year, with concerns over rising electricity costs, reliance on fossil fuels, excess water use and noise, pollution, and their placement in or near residential areas. These fights have forged unlikely political alliances and will potentially imperil incumbents come this year’s midterm elections. According to a Financial Times analysis , at least 370 measures to regulate the AI industry were introduced in state legislatures this past year, and roughly 80 percent of Republicans and Democrats believe the industry needs more regulation.],
+  [“We moved from a couple towns over and built a new house, thinking this was a good place to go,” said Archbald resident Ann Beynon, who grew up by a Superfund site in nearby Throop. She’d been looking to settle down somewhere in the area where her kids wouldn’t be at risk of lead poisoning. There was a landfill in Throop and a gas plant in Jessup. “And now this is happening” in Archbald, she said while gathered in the park.],
+  [Tiffany, Ann, and the others had brought maps to our meeting to demonstrate the scale of the problem. They were not, they explained, asking for the data centers to leave entirely — they just wanted them confined to industrial zones. They felt town council members were unprepared and ill-informed on this issue, ready to jump at the prospect of tax money without looking at the long term implications. When the first data centers began to arrive in early 2025, Archbald’s zoning code classified them as roughly on par with commercial office buildings, allowing them to be built in some commercial zones. Residents fought back, demanding new zoning laws that would limit data centers to fully industrial areas away from the center of town, but the updated zoning ordinance passed last November wouldn’t go that far. Instead, they still allow facilities to be built next to residential neighborhoods — such as the Highlands, a condo complex occupied largely by retirees, and a trailer park called Valley View Estates, whose owner has agreed to sell the land to a data center developer. Residents are set to be evicted next month, on April 15.],
+  [Candace May stands outside her home in the Valley View Estates. May and other residents have been told they will be evicted in April. Rebecca Egan McCarthy \/ Grist],
+  [“These people have no resources,” said Beynon. “They can’t just get up and move — they’re really scared.”],
+  [Developers moved to purchase land before the ordinance went into effect, leaving Archbald with little recourse to stop them, said Brigitte Meyer, an attorney at PennFuture, a nonprofit environmental advocacy organization. Meyer has been sounding the alarm for a year now, warning municipalities across Pennsylvania that if they don’t get out in front of the data center boom, they could be overrun.],
+  [“The tragic irony is that it’s really hard to get the community activated at this on the front end, when things are more hypothetical,” she said. “People’s interest gets piqued when there’s a specific proposal. But by the time it gets to that point, the period has already passed where the municipality has the most power to actually affect how that’s going to go.”],
+  [Valley View Estates isn’t far from Tiffany’s house, just up Eynon-Jermyn Road. Residents received their eviction notice last July, shortly after Project Gravity was announced. The facilities would cover the surrounding woods; more buildings would replace the junkyard down the street. They were hemmed in, and the park owner wanted out. When reports of the eviction hit local news, “people were so horrible,” said Matthew Bucksbee, a Valley View resident. “One of the kids that commented, he’s like ‘Yeah, just get rid of that place, it’s infested with drugs.’”],
+  [Many residents, Bucksbee’s fiancée, Candace May, explained, are disabled or caretakers for disabled relatives; many don’t even have cars and subsist largely off the one Dollar General within walking distance. They’ve been told they cannot legally challenge the eviction notice until the land is actually sold, and they’ve received little to no information from the owner since — although they were warned, May said, that anyone withholding rent in the interim would be evicted immediately.],
+  [May’s mother, Sharon Williams, works as a home health aid for three disabled men, making \$17.50 an hour. It’s enough for her to live on — she’s paid off her car, she can swing groceries, her internet, her phone, her healthcare costs, and the lot rent for her trailer, but it doesn’t leave her with much left over at the end of every month. She can’t afford a more expensive place, nor does she qualify for Section 8 housing, putting her in an impossible situation as the April eviction deadline looms.],
+  [Despite their name, mobile homes are not really mobile. Most will fall apart if you try to relocate them, and although residents generally own their trailers, they pay nominal rent to a park owner, who owns the land — in this case, a couple who run a beer store outside Philadelphia. As the cost of living skyrockets, it’s the only stable, affordable housing many are able to find.  According to Princeton’s Eviction Lab , the average lot rent nationwide was only \$470 a month in 2023; Williams pays just \$390, but residents are uniquely vulnerable to displacement. When a trailer park closes, many people are forced to abandon their homes or sell them for next to nothing. If they don’t own their trailer outright, they can find themselves homeless and still paying off a mortgage.],
+  [The county’s public housing is roughly 98 percent occupied at the moment, according to a representative from the Lackawanna County Housing Authority. Placements are allocated by a point system, wherein victims of domestic violence, the homeless, and the disabled get first priority, but waitlists for one, two, and three bedrooms are currently closed. Waitlists for studios and four-bedroom apartments remain open, but it can take anywhere between one to five years to get into housing. For now at least, Valley View residents have few good options.],
+  [“Everybody’s worried about where they’re going to go,” said Bucksbee.],
+  [A “no data centers” sign sits in front of a home in Valley View Estates, which is set to be surrounded by data centers. Rebecca Egan McCarthy \/ Grist],
+  [Tech companies are clearly coming to Archbald for the Susquehanna-Roseland powerline, a \$1.4 billion high-voltage transmission line, which would give them access to bulk power. But locals also suspect that the area’s cheap land, lax zoning laws, and centralized capital also appealed to developers. This is old coal territory, and when the mines closed down, a lot of land wound up concentrated in just a few hands.],
+  [“Who runs everything with a lot of money? The name DeNaples is on a lot of these buildings,” one Archbald resident told me, after speaking out against the data centers at a utility hearing at the University of Scranton in December. “He’s got his tentacles all over the place.”],
+  [DeNaples is Louis DeNaples, an enormously powerful businessman infamous in the Lackawanna Valley , who has long been plagued by accusations of connections to organized crime — specifically to the late mob boss of Northeastern Pennsylvania, Russell Bufalino, who served as counsel to Jimmy Hoffa and may have had him killed , according to some popular accounts. Bufalino was thrust onto the national stage most recently by Martin Scorsese’s 2019 magnum opus, The Irishman , played by a quietly sinister Joe Pesci, but DeNaples himself has no such Hollywood notoriety. He remains a grim specter across the region though — some residents say they are scared of him and attribute a great deal of power to him. “If your little league team needs jerseys, \[DeNaples\] provides them,” another local explained. “If the local police department needs a new car, he donates.”],
+  [DeNaples was one of nine children and grew up poor, selling Christmas trees with his brother Dominick in a vacant lot and reselling junk cars for parts. He reportedly bought his first car for \$18 and hauled it himself up the steep hill to his family’s house over the course of two days. Countless cars later, he opened the Keystone Sanitary Landfill, swallowing vast amounts of garbage from New York and Philadelphia, and making DeNaples a millionaire. Eventually, he expanded into real estate, then outwards and upwards from there.],
+  [In the late 70s, he pleaded no contest to a conspiracy charge of defrauding the federal government out of over half a million dollars for cleanup work after Hurricane Agnes, but was never convicted. One dissenting juror forced an acquittal, and a Bufalino family underboss was later sent to prison for witness tampering. The charge would come back to haunt him though. In 2006, DeNaples purchased nearby Mount Airy Casino, but was forced to hand control over to his daughter after it was revealed that he’d lied about his relationship to organized crime.],
+  [Louis DeNaples, a regional power broker in the Lackawanna Valley, speaks to a colleague at the Mount Airy Casino Resort. 
+ Steve Klaver \/ AP],
+  [Decades later, he remains a major power broker in the area: one of the largest landowners, the proprietor of many businesses, and the chairman of First National Bank. His name is not just on buildings, but on billboards all across the metro area. DeNaples hasn’t sold any land directly to the data centers, but in 2023 he sold a 186-acre parcel to another local businessman, Jim Marzolino of Kriger Construction, who then sold it to Project Gravity for over \$12 million, according to public records . The transaction has raised hackles locally, although there is no evidence DeNaples saw any benefit from the heavy markup of his former land. More recently, DeNaples’ nephew sold land to a proposed data center in nearby Olyphant.],
+  [But plenty of other local businessmen, without the alleged mob ties, are more directly involved in the data center boom — Marzolino, for example, or Anthony Domiano Jr., whose family runs a chain of local car dealerships, and who sold a large amount of land to Project South and Project North. Alpesh “Al” Patel, who runs the Al’s Quick Stop convenience store chain in the region, has partnered with Marzolino on development plans for Project Boson.],
+  [As for Marzalino, he told The Scranton Times-Tribune his interest in data centers was spurred by a Bitcoin mining hobby.],
+  [Neither DeNaples nor Marzolino responded to repeated requests for comment from Grist.],
+  [On a freezing night a couple weeks before Christmas, locals gathered at The University of Scranton for a public hearing on their electricity bills. PPL Electric Utilities had announced a rate hike for the fourth time in two years — this one, raising consumer electricity prices by 7 percent.],
+  [“I make about triple the Pennsylvania minimum wage — and I still freeze in my house,” said Jordan Moran, a student in cybersecurity at Lackawanna College, who also works a full-time job. “My thermostat is at 60 degrees, and my PPL bill is still nearly 20 percent of my monthly income.”],
+  [PPL serves about 1.5 million ratepayers in Pennsylvania, and its territory has been overrun by data center proposals in recent years, significantly raising electricity prices in certain areas of the country. But under the utility’s proposed plan, data centers would receive a rate cut , which rankled attendees. Although the region needs jobs, “there’s no potential job growth really, for the local people. I’m one of the few people who would actually be qualified to even apply for a job there once they put \[the data centers\] up,” Moran told me after the hearing. “We don’t have a lot of computer science majors out there.”],
+  [Three questions to prepare for data center development in your community],
+  [Does your community have a data center ordinance in place? 
 An ordinance passed by your local elected representatives (your city council, for example) can restrict data centers to industrial areas, without overhauling the entire zoning code. However, an ordinance may not be able to restrict a data center developer that has already submitted an application to begin construction.],
-  [class="slide-content"\> Who is developing the data center, and on what timeline? 
+  [Who is developing the data center, and on what timeline? 
 If developers have applied to build data centers in your community, you can submit a right-to-know request to your local open records office. You can ask for site plans, conditional use applications, noise studies, and “will serve” letters from your local water and electric utility. The application should have contact information for the developers and/or their lawyers.],
-  [class="slide-content"\> How is it being cooled and powered? 
+  [How is it being cooled and powered? 
 Although data centers all have different ways of cooling and powering their campuses, local ordinances can steer a project in a community’s desired direction. The Sierra Club of Virginia, for example, recommends performing a water impact study, requiring any buildings to adhere to the highest heating and cooling standards, and — if possible — prohibiting cooling water discharge into the municipal water supply to minimize pollution.],
-  [class="has-default-font-family"\>As several people at the utility hearing pointed out, Trump was scheduled to speak the following night in the conference room at the DeNaples’ family casino, to begin what the president claimed would be a series of rallies across the country. Concerns of affordability — lost jobs, hiring freezes, inflation, skyrocketing bills, the kind of concerns that had brought people out to that utility meeting the night before — the president called, “a myth.” Something incredible was just over the horizon, he promised, growing closer by the day. “You’re going to see what happens over the next two years. It’s like a miracle is taking place,” he said, as he opened the rally. “All of the companies that are pouring their money into building right now — building plants in Pennsylvania and many other states — auto plants, AI plants, plants of every type.”],
-  [class="has-default-font-family"\>At this point, it appears all six data centers coming to the borough will pull from the grid. According to Archbald’s updated zoning agreement, oil, gas, and nuclear plants will not be allowed to co-locate alongside data centers. But the facilities are likely to fuel a fracking surge across Western Pennsylvania, and new buildings will bring hundreds of diesel backup generators to town. Should unsustainable power demands regularly force data centers off the grid, those generators could be running with relative frequency — emitting pollutants that have been linked to heart disease and cancer and generating noise that can disturb neighborhoods.],
-  [class="has-default-font-family"\>To make matters more complicated, Archbald’s water system is privately owned and operated by American Water, the nation’s largest private water company. Residents are concerned the town’s data center boom will also affect these bills and threaten their drinking supply. Project Gravity alone is expected to pump 360,000 gallons of water a day from Lake Scranton, which serves 134,570 people across Lackawanna County. Developers of  the Wildcat Ridge Data Center are proposing to pump up to 3.3 million gallons per day — some of it potentially from the minor sea of ground and rainwater that now fills the empty coal mines beneath the building site. The developer’s plans include a subsidence contingency, but looking over the scale of the place, it’s not hard to see where the residents are coming from when they talk of colossal buildings collapsing and the ready-made grave the mining industry left beneath the town.],
-  [class="has-default-font-family"\>All of this assumes these facilities actually get built. Experts have speculated that half of data center proposals could be duplicative , meaning developers are applying in multiple places across the country but will ultimately only build a single campus. It’s also unclear who the tenants will be at this point, and according to Markey, developers have been tight-lipped. “They’ll say cryptic things like, ‘You know of this company. You probably use them every day,” he told me. “They all say the same thing — that they’re next in line for power.”],
-  [class="has-default-font-family"\>Battery storage could replace some of those backup generators, closed-loop cooling (in which water is endlessly recycled) could reduce water usage, and harmful chemicals could be swapped out, but there’s really no way to know for sure until the tech company that will be leasing the space is known, making approving these projects a significant gamble.],
-  [class="has-default-font-family"\>There are few guardrails for the industry at the moment. In February, the Trump administration rolled out the Ratepayer Protection Pledge, an initiative that asks tech companies to voluntarily agree to pay the cost of upgrading transmission lines and building power plants — rather than having those costs passed along to the average consumer. It was almost immediately derided as “smoke and mirrors” and “a toothless, empty promise” by Democratic congressman Frank Pallone, the ranking member of the House Energy and Commerce Committee. Governor Shapiro, who has championed AI’s rush into Pennsylvania, recently proposed an initiative that would incentivize responsible data center development. Projects that agreed to bring their own transmission, offer transparent community engagement, and clear community benefits agreements would qualify for the state’s Permit Fast Track Program , which can significantly speed up the building process.],
-  [class="has-default-font-family"\>Critics pointed out that this would still incentivize developers to build gas plants, rather than switch to renewable energy, and that it’s difficult to enforce. “The developer gets all the benefits on the front end and bears none of the risk,” Emma Bast, a lawyer at PennFuture, told Spotlight PA . “And if the developer doesn’t follow through on the voluntary things, there are not a lot of options for the state.”],
-  [class="has-default-font-family"\>Some residents are reluctantly making plans to move. “These data centers have to go somewhere,” said Jim Schaback, who told me he would likely rent out his house in Archbald if the developments go through. “I hate that they’re going here.” Matthew Bucksbee and Candace May recently got word that they may be able to move to a plot of land owned by a friend in Forest City, about 20 minutes north. “We’ll be moving into another trailer for the time being, but once that’s paid off, we could build up there,” said May. She was excited about the prospect of having a bunch of land for their sons to roam around. Tiffany, whose property in Jermyn borders Project Gravity, said that she would consider moving if data center developers began building in Jermyn or neighboring Mayfield to avoid being sandwiched between the buildings.],
-  [class="wp-block-ups-image-inner"\> Candace May holds her daughter, Nova, in their home at Valley View Estates. May and other residents are making plans for where they will live after their eviction in April. 
+  [1 of 3],
+  [As several people at the utility hearing pointed out, Trump was scheduled to speak the following night in the conference room at the DeNaples’ family casino, to begin what the president claimed would be a series of rallies across the country. Concerns of affordability — lost jobs, hiring freezes, inflation, skyrocketing bills, the kind of concerns that had brought people out to that utility meeting the night before — the president called, “a myth.” Something incredible was just over the horizon, he promised, growing closer by the day. “You’re going to see what happens over the next two years. It’s like a miracle is taking place,” he said, as he opened the rally. “All of the companies that are pouring their money into building right now — building plants in Pennsylvania and many other states — auto plants, AI plants, plants of every type.”],
+  [At this point, it appears all six data centers coming to the borough will pull from the grid. According to Archbald’s updated zoning agreement, oil, gas, and nuclear plants will not be allowed to co-locate alongside data centers. But the facilities are likely to fuel a fracking surge across Western Pennsylvania, and new buildings will bring hundreds of diesel backup generators to town. Should unsustainable power demands regularly force data centers off the grid, those generators could be running with relative frequency — emitting pollutants that have been linked to heart disease and cancer and generating noise that can disturb neighborhoods.],
+  [To make matters more complicated, Archbald’s water system is privately owned and operated by American Water, the nation’s largest private water company. Residents are concerned the town’s data center boom will also affect these bills and threaten their drinking supply. Project Gravity alone is expected to pump 360,000 gallons of water a day from Lake Scranton, which serves 134,570 people across Lackawanna County. Developers of  the Wildcat Ridge Data Center are proposing to pump up to 3.3 million gallons per day — some of it potentially from the minor sea of ground and rainwater that now fills the empty coal mines beneath the building site. The developer’s plans include a subsidence contingency, but looking over the scale of the place, it’s not hard to see where the residents are coming from when they talk of colossal buildings collapsing and the ready-made grave the mining industry left beneath the town.],
+  [All of this assumes these facilities actually get built. Experts have speculated that half of data center proposals could be duplicative , meaning developers are applying in multiple places across the country but will ultimately only build a single campus. It’s also unclear who the tenants will be at this point, and according to Markey, developers have been tight-lipped. “They’ll say cryptic things like, ‘You know of this company. You probably use them every day,” he told me. “They all say the same thing — that they’re next in line for power.”],
+  [Battery storage could replace some of those backup generators, closed-loop cooling (in which water is endlessly recycled) could reduce water usage, and harmful chemicals could be swapped out, but there’s really no way to know for sure until the tech company that will be leasing the space is known, making approving these projects a significant gamble.],
+  [There are few guardrails for the industry at the moment. In February, the Trump administration rolled out the Ratepayer Protection Pledge, an initiative that asks tech companies to voluntarily agree to pay the cost of upgrading transmission lines and building power plants — rather than having those costs passed along to the average consumer. It was almost immediately derided as “smoke and mirrors” and “a toothless, empty promise” by Democratic congressman Frank Pallone, the ranking member of the House Energy and Commerce Committee. Governor Shapiro, who has championed AI’s rush into Pennsylvania, recently proposed an initiative that would incentivize responsible data center development. Projects that agreed to bring their own transmission, offer transparent community engagement, and clear community benefits agreements would qualify for the state’s Permit Fast Track Program , which can significantly speed up the building process.],
+  [Critics pointed out that this would still incentivize developers to build gas plants, rather than switch to renewable energy, and that it’s difficult to enforce. “The developer gets all the benefits on the front end and bears none of the risk,” Emma Bast, a lawyer at PennFuture, told Spotlight PA . “And if the developer doesn’t follow through on the voluntary things, there are not a lot of options for the state.”],
+  [Some residents are reluctantly making plans to move. “These data centers have to go somewhere,” said Jim Schaback, who told me he would likely rent out his house in Archbald if the developments go through. “I hate that they’re going here.” Matthew Bucksbee and Candace May recently got word that they may be able to move to a plot of land owned by a friend in Forest City, about 20 minutes north. “We’ll be moving into another trailer for the time being, but once that’s paid off, we could build up there,” said May. She was excited about the prospect of having a bunch of land for their sons to roam around. Tiffany, whose property in Jermyn borders Project Gravity, said that she would consider moving if data center developers began building in Jermyn or neighboring Mayfield to avoid being sandwiched between the buildings.],
+  [“Where would you go though?” she said. “Because everywhere just sucks.”],
+  [Candace May holds her daughter, Nova, in their home at Valley View Estates. May and other residents are making plans for where they will live after their eviction in April. 
  Rebecca Egan McCarthy \/ Grist],
-  [class="has-drop-cap has-default-font-family"\>Before Farris spoke at the Project South hearing in January, community members gathered outside the auditorium, some distributing pamphlets, others gossiping. Among the crowd were Jack and Amy Swingle, who told me they moved to the area to be close to their children. They recently signed on to a lawsuit appealing the updated data center zoning, arguing it does not adequately protect residents. But neither of them had high hopes for the night. At the previous hearing, they explained, developers had tried to soften the blow by promising that the data centers would bring more retail to the area — a Trader Joe’s, for example, which could potentially accompany the construction of the Wildcat Ridge AI center. “That’s one of the things I have \[to say\] in here,” said another woman standing nearby, gesturing to her notes. “Don’t be so condescending.”],
-  [class="has-default-font-family"\>But the revenue that the building boom promises the region is real enough. The data centers would bring roughly \$20 million in property taxes for Archbald, Farris said to the audience gathered, \$50 million for Lackawanna County, and \$100 million for the Valley View School District every year. Many municipalities were throwing tax breaks at developers, hoping to attract their attention. Archbald is not. Its abundant fiber-optic cables, high voltage electrical lines, nearby gas pipelines, and its proximity to Secaucus, New Jersey (a “pairing point” for data centers, where they exchange information) make it attractive regardless. Farris had sought this place out himself, but other nearby towns looked nearly as appealing as Archbald, he explained. Should the opposition continue to grow, developers might take their projects elsewhere — maybe to Berwick, about an hour away.],
-  [class="has-default-font-family"\>“They’re going to get all the benefit, and you guys aren’t going to get anything,” Farris told the crowd. “\[Data centers\] are a necessity in life, and the decision has come down to, ‘Do you want to benefit from that necessity?”],
-  [class="has-default-font-family"\>Archbald resident, Tamara Healy, asked about Community Benefit Agreements — she’d googled them, and it seemed to her that something like that should be in place before things proceeded any further. “Now, it’s ironic that you’re Googling stuff and you’re against data centers,” said Farris. “Just for the record.”],
-  [class="has-default-font-family"\>Still, the town needs tax revenue, and it’s true that no other industry of this size and scale seems interested in the area. “We have just enough money in our checking account to pay payroll and keep the lights on, but every month we have a debate about canceling or suspending music or art,” said a solicitor, speaking on behalf of Valley View School District administrators in November 2025.],
-  [class="has-default-font-family"\>Documents first published last week by DeSmog show that developers played a significant role in determining the terms of the data center overlay ordinance that ultimately passed in November 2025. Council President Dave Moran requested a 1000-yard buffer zone between data centers and adjacent properties. That was whittled down to just 300 yards in the final language.],
-  [class="has-default-font-family"\>The area of the updated data center district that was ultimately passed was determined by the existing industrial zones in the town, and “the rest of the lines drawn were property lines of property owners looking to develop or sell to developers,” according to an email from Markey. “They were pretty much all specific requests.”],
-  [class="has-default-font-family"\>Armed with proof that town officials and wealthy landowners were seemingly working against them, the Stop Archbald Data Centers Facebook group erupted, organizing a petition to immediately relieve Dan Markey, zoning officer Brian Dulay, council president Dave Moran, and Archbald borough solicitor Jay O’Connor of their duties. But, as PennFuture attorney Brigitte Meyer explained, negotiating with the developer is fairly standard in cases such as these, especially given the fact that data centers were technically permitted in certain commercial zones. Had the borough tried to exclude the data centers on the basis of something like height restrictions, developers could have taken them to court over what’s called “de facto exclusionary zoning” — arguing that the restrictions betrayed an antiquated understanding of data centers and were unduly constrictive],
-  [class="has-default-font-family"\>“That is a valid type of legal challenge,” explained Meyer. It wouldn’t be a guaranteed win for developers, but nor would Archbald be assured of victory. The only certainty is that it would be a costly legal fight. “The borough may have looked at it and thought, ‘Well, our chances of winning a challenge like this aren’t so good.’” Other areas that rejected data center proposals, such as nearby Ransom township, have faced lawsuits. Clifton township, which rushed to get a data center overlay in place when they got wind of developer interest last year, is still locked in a lawsuit, filed by the developer mere hours before the ordinance was adopted.],
-  [class="has-default-font-family"\>Whether borough officials made things too easy for developers or felt their hands were tied isn’t totally clear. As of this writing, most of them have refused to speak to me, even though the most damning evidence against them to date is their secrecy. But council member Erin Owen, who has opposed the data centers since the outset, did return my calls last week. She had not been happy with the data center overlay and said she was shut out of private meetings — like the one I stumbled on back in December — to lay out the terms of the ordinance. “They made a big mistake in doing that, because it does not seem transparent at all,” she said. “They only picked the council members that they wanted to know.”],
-  [class="has-default-font-family"\>Council has had little luck helping Valley View Estates residents find alternative housing as of this writing, she told me, and although gas and nuclear plants are not allowed to co-locate alongside data centers, there is industrial land available in town where she believes developers will build their own gas plants.],
-  [class="has-default-font-family"\>“All the impacts will be terrible,” she said. Owen is a fourth-generation resident of Archbald and has served on the borough council for the past ten years. “A lot of trees will be lost. A lot of wildlife will be lost. Homes are going to be last. Pollutants in the air, pollutants in the soil, and then the water, the noise — it’s just going to be very disturbing.”],
-  [class="has-default-font-family"\>The only hope at this point seems to be drastic action on the state level. Legislators on both sides of the aisle have taken notice of the problems facing Pennsylvania as the tech industry moves in. Republican State Representative Jamie Walsh announced he would soon be introducing a suite of bills to better regulate development. Democratic State Senator Katie Muth released a memo announcing that she plans to propose a three-year moratorium on data center development, calling it a “necessary step to protect public health, safety, fiscal stability, and environmental integrity.”],
-  [class="has-default-font-family"\>Even so, it may not be enough to help Archbald, given how eager data centers are to set up shop in the area. It was nearly impossible to find anyone in town who was pro-data center development, although I asked around widely. Some said they weren’t against it, but wouldn’t explain further. Older residents tended to be the least troubled about the data centers, but in a fairly fatalistic way. “I’m going to die tomorrow,” one woman told me at Barrett’s Pub on Main Street. Barrett’s used to be owned by the mayor, and I’d stopped to grab some dinner. The woman told me she used to do nails; now she works for Lockheed Martin. “I don’t know what the data centers want. I don’t know what they do to you. I don’t know what they do to your children,” she said. “Younger people — do they know what’s happening?”],
-  [class="has-default-font-family"\>I wasn’t sure what to tell her, other than that the town was once again being targeted because of an accident of geography and moneyed interests. The longer I spent reporting on this, the more I felt no one had the full picture, not the developers, not the bankers facilitating the baffling circular investments financing the boom, not the chip manufacturers or software engineers, certainly not the tech CEOs. A few weeks earlier, while visiting San Francisco, I’d watched a dog riding in a driverless taxi — paws hanging out the window, tongue waving in the wind, seemingly ferried around by a ghost. This is where those ghosts would come from.],
+  [Before Farris spoke at the Project South hearing in January, community members gathered outside the auditorium, some distributing pamphlets, others gossiping. Among the crowd were Jack and Amy Swingle, who told me they moved to the area to be close to their children. They recently signed on to a lawsuit appealing the updated data center zoning, arguing it does not adequately protect residents. But neither of them had high hopes for the night. At the previous hearing, they explained, developers had tried to soften the blow by promising that the data centers would bring more retail to the area — a Trader Joe’s, for example, which could potentially accompany the construction of the Wildcat Ridge AI center. “That’s one of the things I have \[to say\] in here,” said another woman standing nearby, gesturing to her notes. “Don’t be so condescending.”],
+  [But the revenue that the building boom promises the region is real enough. The data centers would bring roughly \$20 million in property taxes for Archbald, Farris said to the audience gathered, \$50 million for Lackawanna County, and \$100 million for the Valley View School District every year. Many municipalities were throwing tax breaks at developers, hoping to attract their attention. Archbald is not. Its abundant fiber-optic cables, high voltage electrical lines, nearby gas pipelines, and its proximity to Secaucus, New Jersey (a “pairing point” for data centers, where they exchange information) make it attractive regardless. Farris had sought this place out himself, but other nearby towns looked nearly as appealing as Archbald, he explained. Should the opposition continue to grow, developers might take their projects elsewhere — maybe to Berwick, about an hour away.],
+  [“They’re going to get all the benefit, and you guys aren’t going to get anything,” Farris told the crowd. “\[Data centers\] are a necessity in life, and the decision has come down to, ‘Do you want to benefit from that necessity?”],
+  [Archbald resident, Tamara Healy, asked about Community Benefit Agreements — she’d googled them, and it seemed to her that something like that should be in place before things proceeded any further. “Now, it’s ironic that you’re Googling stuff and you’re against data centers,” said Farris. “Just for the record.”],
+  [Tamara Misewicz-Healey speaks at a town hall meeting about proposed data centers in Archbald, Pennsylvania. Rebecca Egan McCarthy \/ Grist],
+  [Still, the town needs tax revenue, and it’s true that no other industry of this size and scale seems interested in the area. “We have just enough money in our checking account to pay payroll and keep the lights on, but every month we have a debate about canceling or suspending music or art,” said a solicitor, speaking on behalf of Valley View School District administrators in November 2025.],
+  [Documents first published last week by DeSmog show that developers played a significant role in determining the terms of the data center overlay ordinance that ultimately passed in November 2025. Council President Dave Moran requested a 1000-yard buffer zone between data centers and adjacent properties. That was whittled down to just 300 yards in the final language.],
+  [The area of the updated data center district that was ultimately passed was determined by the existing industrial zones in the town, and “the rest of the lines drawn were property lines of property owners looking to develop or sell to developers,” according to an email from Markey. “They were pretty much all specific requests.”],
+  [Armed with proof that town officials and wealthy landowners were seemingly working against them, the Stop Archbald Data Centers Facebook group erupted, organizing a petition to immediately relieve Dan Markey, zoning officer Brian Dulay, council president Dave Moran, and Archbald borough solicitor Jay O’Connor of their duties. But, as PennFuture attorney Brigitte Meyer explained, negotiating with the developer is fairly standard in cases such as these, especially given the fact that data centers were technically permitted in certain commercial zones. Had the borough tried to exclude the data centers on the basis of something like height restrictions, developers could have taken them to court over what’s called “de facto exclusionary zoning” — arguing that the restrictions betrayed an antiquated understanding of data centers and were unduly constrictive],
+  [“That is a valid type of legal challenge,” explained Meyer. It wouldn’t be a guaranteed win for developers, but nor would Archbald be assured of victory. The only certainty is that it would be a costly legal fight. “The borough may have looked at it and thought, ‘Well, our chances of winning a challenge like this aren’t so good.’” Other areas that rejected data center proposals, such as nearby Ransom township, have faced lawsuits. Clifton township, which rushed to get a data center overlay in place when they got wind of developer interest last year, is still locked in a lawsuit, filed by the developer mere hours before the ordinance was adopted.],
+  [Whether borough officials made things too easy for developers or felt their hands were tied isn’t totally clear. As of this writing, most of them have refused to speak to me, even though the most damning evidence against them to date is their secrecy. But council member Erin Owen, who has opposed the data centers since the outset, did return my calls last week. She had not been happy with the data center overlay and said she was shut out of private meetings — like the one I stumbled on back in December — to lay out the terms of the ordinance. “They made a big mistake in doing that, because it does not seem transparent at all,” she said. “They only picked the council members that they wanted to know.”],
+  [Council has had little luck helping Valley View Estates residents find alternative housing as of this writing, she told me, and although gas and nuclear plants are not allowed to co-locate alongside data centers, there is industrial land available in town where she believes developers will build their own gas plants.],
+  [“All the impacts will be terrible,” she said. Owen is a fourth-generation resident of Archbald and has served on the borough council for the past ten years. “A lot of trees will be lost. A lot of wildlife will be lost. Homes are going to be last. Pollutants in the air, pollutants in the soil, and then the water, the noise — it’s just going to be very disturbing.”],
+  [What’s behind your eye-popping power bill? We broke it down, region by region.],
+  [Naveena Sadasivam & Clayton Aldern],
+  [The only hope at this point seems to be drastic action on the state level. Legislators on both sides of the aisle have taken notice of the problems facing Pennsylvania as the tech industry moves in. Republican State Representative Jamie Walsh announced he would soon be introducing a suite of bills to better regulate development. Democratic State Senator Katie Muth released a memo announcing that she plans to propose a three-year moratorium on data center development, calling it a “necessary step to protect public health, safety, fiscal stability, and environmental integrity.”],
+  [Even so, it may not be enough to help Archbald, given how eager data centers are to set up shop in the area. It was nearly impossible to find anyone in town who was pro-data center development, although I asked around widely. Some said they weren’t against it, but wouldn’t explain further. Older residents tended to be the least troubled about the data centers, but in a fairly fatalistic way. “I’m going to die tomorrow,” one woman told me at Barrett’s Pub on Main Street. Barrett’s used to be owned by the mayor, and I’d stopped to grab some dinner. The woman told me she used to do nails; now she works for Lockheed Martin. “I don’t know what the data centers want. I don’t know what they do to you. I don’t know what they do to your children,” she said. “Younger people — do they know what’s happening?”],
+  [I wasn’t sure what to tell her, other than that the town was once again being targeted because of an accident of geography and moneyed interests. The longer I spent reporting on this, the more I felt no one had the full picture, not the developers, not the bankers facilitating the baffling circular investments financing the boom, not the chip manufacturers or software engineers, certainly not the tech CEOs. A few weeks earlier, while visiting San Francisco, I’d watched a dog riding in a driverless taxi — paws hanging out the window, tongue waving in the wind, seemingly ferried around by a ghost. This is where those ghosts would come from.],
+  [Editor’s Note: Pennsylvania has cities, boroughs, townships, and a single town. Because this article is intended for a national audience, we sometimes refer to Archbald colloquially as a “town.”],
+  [Correction : An earlier of version of this article misstated the status of the Clifton Township legal dispute.],
 ),
   insert-map: (:),
   inline-pq: pull-quote([He reportedly bought his first car for \$18 and hauled it himself up the steep hill to his family’s house over the course of two days.], [Rebecca Egan McCarthy]),
-  inline-pq-idx: 27,
+  inline-pq-idx: 33,
   word-count: 6348,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Building Obsidian, Tinder’s Design System],
   author: [Tinder],
   source-name: [Tinder Tech],
@@ -1032,15 +1002,14 @@ Although data centers all have different ways of cooling and powering their camp
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Healthcare in our hands: Putting babies, children, and young people at the centre of their care],
   author: [kellybrendel],
   source-name: [The BMJ Blog],
   images: (),
   paragraphs: (
+  [Everyone is entitled to a say in the healthcare services they use and a child or young person is no different, say Aishah Farooq, Emma Beeden, and Catherine White],
   [Accessing healthcare services can be daunting at any age, but even more so as a baby, child, or young person. Can you imagine being told life changing information and not having any idea of what’s going on? It’s a difficult and helpless position to be in, and we felt overwhelmed, anxious, and vulnerable when we experienced this as children and young people. When all your decisions are made for you, albeit with the best of intentions, and you don’t have much involvement apart from receiving the treatment, it’s easy to feel fearful and powerless. Yet everyone is entitled to a say in the healthcare services that they use and a child or young person is no different.],
   [The United Nations Convention on the Rights of the Child states every “child who is capable of forming his or her own views has the right to express those views freely in all matters affecting the child.” The National Institute for Health and Care Excellence (NICE) recently published guidance on Babies, Children, and Young People’s Experience of Healthcare, and this principle has been embedded throughout the guideline. By actively involving the views of children, young people, and the parents and carers of babies and young children, this guidance truly represents those who use the service and will mean it can make a real difference.],
   [The recognition that children and young people have a right to share their perspectives is not only woven throughout the recommendations, but was also remembered all the way through the guideline development. From scope development to publication, young people with personal experiences of accessing healthcare have been involved in this guideline.],
@@ -1058,16 +1027,14 @@ Although data centers all have different ways of cooling and powering their camp
 ),
   insert-map: (:),
   inline-pq: pull-quote([At this age we can have little involvement and voice in our healthcare, but shared decision making helps to position us in the centre of our care.], [kellybrendel]),
-  inline-pq-idx: 5,
+  inline-pq-idx: 6,
   word-count: 1085,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Jeffrey Aronson: When I Use a Word . . . Snowflakes],
   author: [jross],
   source-name: [The BMJ Blog],
@@ -1096,10 +1063,8 @@ Although data centers all have different ways of cooling and powering their camp
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Climate emergency: it is time for the aggressive, life saving interventions],
   author: [julietwalker],
   source-name: [The BMJ Blog],
@@ -1120,10 +1085,8 @@ Although data centers all have different ways of cooling and powering their camp
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [We must protect our planet for our children’s future],
   author: [julietwalker],
   source-name: [The BMJ Blog],
@@ -1137,8 +1100,8 @@ Although data centers all have different ways of cooling and powering their camp
   [Ella Kissi-Debrah isn’t roaring. She died in 2013 from severe asthma, exacerbated by her chronic exposure to high levels of air pollution in her neighbourhood by London’s South Circular road. We must roar on her behalf, and on behalf of all the other millions of children whose lives we are destroying. Call the global social services department and report ourselves for failing to change our ways, even when we knew we should. We are all perpetrators. At home, at work, weekdays, weekends, holidays, celebrations, with families, with friends—consuming, consuming, consuming. Depleting the global commons of natural resources our children will need, and increasing the burden of pollutants in our air, our water, and our land. We do this directly—sometimes burning fuel for the most frivolous of reasons, such as to avoid wearing another layer of clothing, or for our car to make the right vroom vroom noise. We do it indirectly too—we have learned to derive gratification from acquiring products whose manufacture, packaging, distribution, and disposal depletes and pollutes beyond our field of vision. Shortage of toys for Christmas? Fantastic—let’s do what genuinely makes us happy instead.],
   [We have to change. We have to tackle climate change bottom up, top down, any which way we can. Child protection is everyone’s business, and climate protection is child protection. Climate risk assessments and mitigation protocols must be ubiquitous—every business, service, school, university, sports club, choir, band, event and so on should have these and be reviewed and audited against them.],
   [Health professionals, who fully understand the implications of destroying the ecological determinants of health, must lead from the front. People noticed when we all stopped smoking. They will notice when we take climate change seriously.],
-  [style="font-weight: 400;"\>The UN must be our global safeguarding committee. Each Conference of the Parties should include a child protection meeting, at which data and narratives on child suffering and deaths due to climate change are reviewed. At COP26 we must all be held to account.],
-  [style="font-weight: 400;"\>There is no place of safety to which we can remove our children — no alternative world where climate change has been arrested and there is safe air, water, soil, food, and shelter for all. Everyone must play their part in rescuing this world to make it safe for children, and I for one will continue to roar until we do.],
+  [The UN must be our global safeguarding committee. Each Conference of the Parties should include a child protection meeting, at which data and narratives on child suffering and deaths due to climate change are reviewed. At COP26 we must all be held to account.],
+  [There is no place of safety to which we can remove our children — no alternative world where climate change has been arrested and there is safe air, water, soil, food, and shelter for all. Everyone must play their part in rescuing this world to make it safe for children, and I for one will continue to roar until we do.],
   [Lucy Reynolds is a community paediatrician living and working in Glasgow. Through the climate change and child health webinars run by the International Society for Social Paediatrics and Child Health she became involved in the Ride for Their Lives initiative and the RCPCH climate change working group.],
   [Competing interests : none declared.],
   [The post We must protect our planet for our children’s future appeared first on The BMJ .],
@@ -1149,98 +1112,96 @@ Although data centers all have different ways of cooling and powering their camp
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Learning Kotlin Constructor as a Java Developer],
   author: [GameChanger],
   source-name: [GameChanger Tech],
   images: (),
   paragraphs: (
   [I have been developing Android apps in Java for years. I recently joined GameChanger and was excited to learn that GameChanger is using Kotlin. I originally thought that moving to Kotlin would be as simple as learning some new syntax, but I discovered that there was more to it. After a brief learning period, I’m up and running working in Kotlin. In this article, I’ll save you some of the trial-and-error by introducing some important concepts about constructors for those making the jump from Java to Kotlin.],
-  [id="not-all-constructors-are-created-equal-in-kotlin"\>Not All Constructors are Created Equal in Kotlin],
+  [Not All Constructors are Created Equal in Kotlin],
   [In Java, all constructors are equal in a sense.],
-  [public class Person {],
+  [public class Person \{],
   [String name ; 
  int age ;],
-  [public Person ( Person p ) { 
+  [public Person ( Person p ) \{ 
  name = p . name ; 
  age = p . age ; 
- }],
-  [public Person ( String n , int a ) { 
+ \}],
+  [public Person ( String n , int a ) \{ 
  name = n ; 
  age = a ; 
- } 
- }],
+ \} 
+ \}],
   [Take the above example, Person(Person p) and Person(String name, int age) can be used independently. Of course, you can choose to have one calling another, but it’s not required by the language.],
   [In Kotlin there is always a primary constructor. Any additional constructors are secondary constructors. The primary constructor is always incorporated into the class header.],
-  [class Person ( n : String , a : Int ) { 
+  [class Person ( n : String , a : Int ) \{ 
  var name : String = n 
  var age : Int = a 
- }],
+ \}],
   [The variables name and age are initialized with n and a . In fact, n and a are available anywhere in the class for variable initialization.],
-  [class Person ( n : String , a : Int ) { 
+  [class Person ( n : String , a : Int ) \{ 
  var name : String = n 
  var age : Int = a 
  var nameX2 : String = n + n],
-  [init { 
+  [init \{ 
  println ( "The age is: " + a ) 
- } 
- }],
+ \} 
+ \}],
   [Any other constructors would become secondary constructors which are required to call the primary constructor in the very beginning.],
-  [class Person ( n : String , a : Int ) { 
+  [class Person ( n : String , a : Int ) \{ 
  var name : String = n 
  var age : Int = a],
-  [constructor ( p : Person ) : this ( p . name , p . age ) { } 
- }],
-  [id="the-order-of-creation"\>The Order of Creation],
+  [constructor ( p : Person ) : this ( p . name , p . age ) \{ \} 
+ \}],
+  [The Order of Creation],
   [So, what is the order of processing when calling a secondary constructor? The primary constructor is invoked first, which triggers all the initialization from top to bottom. Then, the body of the secondary constructor is executed.],
-  [class Person ( n : String , a : Int ) { 
- init { 
+  [class Person ( n : String , a : Int ) \{ 
+ init \{ 
  println ( "1st: initialization block 1 run" ) 
- }],
-  [var name : String = n . apply { println ( "2nd: initialization lines run" ) } 
+ \}],
+  [var name : String = n . apply \{ println ( "2nd: initialization lines run" ) \} 
  var age : Int],
-  [init { 
+  [init \{ 
  age = a 
  println ( "3rd: initialization block 2 run" ) 
- }],
-  [constructor ( p : Person ) : this ( p . name , p . age ) { 
+ \}],
+  [constructor ( p : Person ) : this ( p . name , p . age ) \{ 
  println ( "4th: secondary constructor run" ) 
- } 
- }],
-  [id="can-i-skip-the-primary-constructor"\>Can I Skip the Primary Constructor?],
+ \} 
+ \}],
+  [Can I Skip the Primary Constructor?],
   [No, a default primary constructor is still there even when you don’t write it and you are still required to call it in the secondary constructor. Also, you cannot initialize the variables in the secondary constructor because it has already passed the initialization timeframe. (Well, they are actually properties, but they behave just like variables in this case.)],
-  [class Person () { 
+  [class Person () \{ 
  var name : String \/\\/ Compile Error: Property must be initialized 
  var age : Int \/\\/ Compile Error: Property must be initialized],
-  [constructor ( n : String , a : Int ) : this () { 
+  [constructor ( n : String , a : Int ) : this () \{ 
  name = n 
  age = a 
- } 
- }],
+ \} 
+ \}],
   [OK, if you really want to fake it like a Java constructor, here is the hack. It’s NOT recommended and I wrote it just for the learning purpose.],
-  [class Person () { 
+  [class Person () \{ 
  var name : String = "" 
  var age : Int = 0],
-  [constructor ( n : String , a : Int ) : this () { 
+  [constructor ( n : String , a : Int ) : this () \{ 
  name = n 
  age = a 
- } 
- }],
+ \} 
+ \}],
   [What happened above is that we initialized name and age with a default value and assigned them to a new value in the secondary constructor. However, it doesn’t work when you replace var with val because Kotlin does not allow variable initialization in a secondary constructor.],
-  [id="overloading-arguments-with-default-value"\>Overloading Arguments with Default Value],
+  [Overloading Arguments with Default Value],
   [Last, but not the least. Kotlin has this elegant way to overload arguments with default values.],
-  [class Person ( n : String = "Nameless" , a : Int = 1 ) { 
+  [class Person ( n : String = "Nameless" , a : Int = 1 ) \{ 
  var name : String = n 
  var age : Int = a 
- }],
-  [fun main ( args : Array ) { 
+ \}],
+  [fun main ( args : Array ) \{ 
  var p1 = Person () \/\\/ name: Nameless, age: 1 
  var p2 = Person ( "Tom" ) \/\\/ name: Tom, age: 1 
  var p3 = Person ( a = 5 ) \/\\/ name: Nameless, age: 5 
- }],
+ \}],
   [The primary constructor is actually a sweet requirement in Kotlin. You will always know what is expected to create the object by scanning the the primary constructor without having to look at all the constructors as you would in Java, because constructors are no longer independent of each other. The primary constructor is also easy to spot because it is the first line of the class. If you are starting on learning Kotlin, I think the constructor is a good starting point. I hope you find this post helpful.],
 ),
   insert-map: (:),
@@ -1249,11 +1210,10 @@ Although data centers all have different ways of cooling and powering their camp
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Rocket Report: Russia reopens gateway to ISS; Cape Canaveral hosts missile test],
   author: [Stephen Clark],
   source-name: [Ars Technica OpenForum],
@@ -1272,7 +1232,7 @@ Although data centers all have different ways of cooling and powering their camp
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [10 films. 10 visionaries. Season 2 of TED Fellows Films is here!],
   author: [TED Staff],
   source-name: [TED Blog],
@@ -1297,7 +1257,7 @@ Although data centers all have different ways of cooling and powering their camp
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [“Begin PHASE TWO!” – I’m moving to ScienceBlogs…],
   author: [Ed Yong],
   source-name: [Not Exactly Rocket Science (Ed Yong archive)],
@@ -1308,7 +1268,6 @@ Although data centers all have different ways of cooling and powering their camp
   [I still have full freedom to write about whatever I like and if anything, I’m hoping that the scrutiny of a tight community of experienced bloggers, many of whom are hardcore scientists, will push me to ensure an even higher level of accuracy in what I’m putting out.],
   [So for the moment a massive round of thanks to everyone who continues to read and support this blog. The growing traffic and the generally positive comments from people are really gratifying and I’m really excited about the next step.],
   [In a couple of weeks, the new blog should be ready, I’ll post up the new URL, raise my hands in the air, say “Begin Phase Two!” and cackle maniacally.],
-  [style="text-align: center;"\>],
 ),
   insert-map: (:),
   word-count: 214,
@@ -1318,7 +1277,7 @@ Although data centers all have different ways of cooling and powering their camp
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [How chemists turned bourbon waste into supercapacitors],
   author: [Jennifer Ouellette],
   source-name: [Ars Technica OpenForum],
@@ -1340,7 +1299,7 @@ Although data centers all have different ways of cooling and powering their camp
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [A bit of good news: It's possible to turn around a groundwater crisis],
   author: [Scott K. Johnson],
   source-name: [Ars Technica OpenForum],
@@ -1359,7 +1318,7 @@ Although data centers all have different ways of cooling and powering their camp
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [A unique NASA satellite is falling out of orbit—this team is trying to rescue it],
   author: [Stephen Clark],
   source-name: [Ars Technica OpenForum],
@@ -1379,18 +1338,15 @@ Although data centers all have different ways of cooling and powering their camp
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Ed vs. Gravity],
   author: [Ed Yong],
   source-name: [Not Exactly Rocket Science (Ed Yong archive)],
   images: (),
   paragraphs: (
-  [align="right"\>],
   [For the next week, you’ll hear tumbleweeds blowing through this blog as I will be on holiday. I’m going to Whistler, Vancouver, where I will be sticking two flimsy strips of wood to my feet and throwing myself down a mountain at high speed. I see it as a challenge to both cold and gravity.],
   [I’ll be writing a few things while I’m there so expect some good stuff the week after. For the moment, feel free to scour the Site Index for oldies-but-goodies or have a look at my Review of 2007 for more focused recommendations.],
   [A word about comments: This blog’s comments policy are set so that anyone who’s had a comment previously approved can post more, but any newbies have to be moderated first. If you’ve never commented here before and your comment doesn’t show up until next week, that’s why.],
-  [style="text-align: center;"\>],
 ),
   insert-map: (:),
   word-count: 147,
@@ -1398,59 +1354,62 @@ Although data centers all have different ways of cooling and powering their camp
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([BBC Sport], source-name: [BBC Sport], [Four-time F1 world champion Max Verstappen tells BBC Sport he is "not enjoying" the sport after changes to the rules this season.])],
-    [#brief-item([BBC Sport], source-name: [BBC Sport], [Mary Rand, the first British woman to win athletics gold at the Olympics, was described as "Marilyn Monroe on spikes".])],
-    [#brief-item([James I. DunlopPeter A. ThomasonLeo M. CarlinBenjamin G. DavisStephen D. CarteraMedical Research Council-University of Glasgow Centre for Virus Research, School of Infection & Immunity, Glasgow G61 1QH, United KingdombCancer Research UK Scotland Institute, Glasgow G61 1BD, United KingdomcSchool of Cancer Sciences, University of Glasgow, Glasgow G12 0ZD, United KingdomdThe Rosalind Franklin Institute, Didcot OX11 0QX, United KingdomeDepartment of Chemistry, Chemistry Research Laboratory, University of Oxford, Oxford OX1 3TA, United Kingdom], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([BBC Sport], source-name: [BBC Sport], [Four-time F1 world champion Max Verstappen tells BBC Sport he is "not enjoying" the sport after changes to the rules this season.])],
+  [#brief-item([BBC Sport], source-name: [BBC Sport], [Mary Rand, the first British woman to win athletics gold at the Olympics, was described as "Marilyn Monroe on spikes".])],
+  [#brief-item([James I. DunlopPeter A. ThomasonLeo M. CarlinBenjamin G. DavisStephen D. CarteraMedical Research Council-University of Glasgow Centre for Virus Research, School of Infection & Immunity, Glasgow G61 1QH, United KingdombCancer Research UK Scotland Institute, Glasgow G61 1BD, United KingdomcSchool of Cancer Sciences, University of Glasgow, Glasgow G12 0ZD, United KingdomdThe Rosalind Franklin Institute, Didcot OX11 0QX, United KingdomeDepartment of Chemistry, Chemistry Research Laboratory, University of Oxford, Oxford OX1 3TA, United Kingdom], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 A defining feature of Rift Valley fever virus (RVFV) is the incorporation of the NSs protein into large filamentous assemblies inside infected nuclei \[R. Swanepoel, N. K. Blackburn,J. Gen. Virol.34, 557–561 (1977).\], as judged from fixed specimens. To ...])],
-    [#brief-item([Alexandra LeeAutumn GentzlerDeclan FitzpatrickSithara Raju PonnyOzkan AydemirMyoung Sook HanCaroline A. LewisGuangping GaoRoger J. DavisaProgram in Molecular Medicine, University of Massachusetts Chan Medical School, Worcester, MA 01605bHorae Gene Therapy Center, Department of Genetic and Cellular Medicine, University of Massachusetts Chan Medical School, Worcester, MA 01605], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+  [#brief-item([Alexandra LeeAutumn GentzlerDeclan FitzpatrickSithara Raju PonnyOzkan AydemirMyoung Sook HanCaroline A. LewisGuangping GaoRoger J. DavisaProgram in Molecular Medicine, University of Massachusetts Chan Medical School, Worcester, MA 01605bHorae Gene Therapy Center, Department of Genetic and Cellular Medicine, University of Massachusetts Chan Medical School, Worcester, MA 01605], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 SignificanceThe hepatic JUN NH2-terminal kinase (JNK) exhibits mutually exclusive alternative pre-mRNA splicing that results in the expression of JNK spliceoforms. We show that the hepatic adaptive response to the consumption of a high fat diet requires ...])],
-    [#brief-item([TED Staff], source-name: [TED Blog], [Can’t make it to Atlanta for TEDNext? TED Live brings the minute-by-minute excitement from the TED Theater to your home, school or office. Be one of the first to experience talks from visionary speakers like music mogul Jermaine Dupri, ballerina & activist Misty Copeland, neurosurgeon & reporter Sanjay Gupta, financial educator Vivian Tu and so many more.
+  [#brief-item([TED Staff], source-name: [TED Blog], [Can’t make it to Atlanta for TEDNext? TED Live brings the minute-by-minute excitement from the TED Theater to your home, school or office. Be one of the first to experience talks from visionary speakers like music mogul Jermaine Dupri, ballerina & activist Misty Copeland, neurosurgeon & reporter Sanjay Gupta, financial educator Vivian Tu and so many more.
 
  Get your TED Live pass to stream the unedited talks in real time starting November 9 , or later on with the on-demand archive.])],
-    [#brief-item([Jason W. RocksDat P. TruongDmitrij RappoportSamuel Maddrell-ManderDaniel A. Martin-AlarconToni M. LeeSteven CrossanJoshua E. GoldfordaDayhoff Labs, Inc., Cambridge, MA 02140], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+  [#brief-item([Jason W. RocksDat P. TruongDmitrij RappoportSamuel Maddrell-ManderDaniel A. Martin-AlarconToni M. LeeSteven CrossanJoshua E. GoldfordaDayhoff Labs, Inc., Cambridge, MA 02140], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 SignificanceWhile nature has evolved enzymes to carry out a vast array of chemical transformations, selecting the ideal protein to initiate an enzyme engineering campaign often presents a significant challenge, slowing progress across biocatalysis and ...])],
-    [#brief-item([Yingke LiangStephanie A. BuelerJohn L. RubinsteinaMolecular Medicine Program, The Hospital for Sick Children, Toronto, ON M5G 0A4, CanadabDepartment of Biochemistry, The University of Toronto, Toronto, ON M5S 1A8, CanadacDepartment of Medical Biophysics, The University of Toronto, Toronto, ON M5G 2C4, Canada], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+  [#brief-item([Yingke LiangStephanie A. BuelerJohn L. RubinsteinaMolecular Medicine Program, The Hospital for Sick Children, Toronto, ON M5G 0A4, CanadabDepartment of Biochemistry, The University of Toronto, Toronto, ON M5S 1A8, CanadacDepartment of Medical Biophysics, The University of Toronto, Toronto, ON M5G 2C4, Canada], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 SignificanceMycobacterium tuberculosisand related pathogens possess an unusual cell wall, rich in mycolic acid, that protects them from antibiotics and the host immune system. This study presents the structure of the mycobacterial long-chain acyl-CoA ...])],
-    [#brief-item([Stephen Clark], source-name: [Ars Technica OpenForum], [Jupiter's colossal storms generate lightning flashes at least 100 times more powerful than those on Earth, according to scientists analyzing data from NASA's Juno spacecraft.
+  [#brief-item([Stephen Clark], source-name: [Ars Technica OpenForum], [Jupiter's colossal storms generate lightning flashes at least 100 times more powerful than those on Earth, according to scientists analyzing data from NASA's Juno spacecraft.
 
 Questions about the future of Juno and more than a dozen other robotic science missions began swirling nearly a year ago, when the Trump administration asked mission leaders to submit "closeout" plans for how to turn off their spacecraft. Ars first reported the news soon after the White House released a budget request that called for slashing NASA's science budget by nearly half.
 
  Read full article 
 
  Comments])],
-    [#brief-item([BBC Sport], source-name: [BBC Sport], [Donegal manager Jim McGuinness is "delighted" as his team claim the county's first National Football League title in 19 years and second overall with a thumping 3-20 to 2-10 win over Kerry at Croke Park.])],
-    [#brief-item([BBC Sport], source-name: [BBC Sport], [Scotland continue their World Cup preparations with a friendly against Ivory Coast on Tuesday, but why is this away game being played at Everton's new stadium in Liverpool?])],
-    [#brief-item([Vladislav MyrovAlina SuleimanovaSamanta KnapičPaula PartanenMaria VesterinenWenya LiuSatu PalvaJ. Matias PalvaaDepartment of Neuroscience and Biomedical Engineering, Aalto University, Espoo FI-00076, FinlandbNeuroscience Center, Helsinki Institute of Life Science, University of Helsinki, Helsinki FI-00014, FinlandcDivision of Psychology, VISE, Faculty of Education and Psychology, University of Oulu, Oulu G12 8QB, FinlanddBioMag Laboratory, Uusimaa Hospital Diagnostic Center, Helsinki FI-90014, FinlandeSchool of Psychology and Neuroscience, University of Glasgow, Glasgow FI-00029, United Kingdom], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+  [#brief-item([BBC Sport], source-name: [BBC Sport], [Donegal manager Jim McGuinness is "delighted" as his team claim the county's first National Football League title in 19 years and second overall with a thumping 3-20 to 2-10 win over Kerry at Croke Park.])],
+  [#brief-item([BBC Sport], source-name: [BBC Sport], [Scotland continue their World Cup preparations with a friendly against Ivory Coast on Tuesday, but why is this away game being played at Everton's new stadium in Liverpool?])],
+  [#brief-item([Vladislav MyrovAlina SuleimanovaSamanta KnapičPaula PartanenMaria VesterinenWenya LiuSatu PalvaJ. Matias PalvaaDepartment of Neuroscience and Biomedical Engineering, Aalto University, Espoo FI-00076, FinlandbNeuroscience Center, Helsinki Institute of Life Science, University of Helsinki, Helsinki FI-00014, FinlandcDivision of Psychology, VISE, Faculty of Education and Psychology, University of Oulu, Oulu G12 8QB, FinlanddBioMag Laboratory, Uusimaa Hospital Diagnostic Center, Helsinki FI-90014, FinlandeSchool of Psychology and Neuroscience, University of Glasgow, Glasgow FI-00029, United Kingdom], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 SignificanceNested neuronal networks exhibit scale-free activity in vivo, but there is a shortage of mechanistic models linking such hierarchical architectures with measurable dynamics. We advance here a Hierarchical Kuramoto model that directly links ...])],
-    [#brief-item([BBC Sport], source-name: [BBC Sport], [Before Carlos Alcaraz became the youngest man to complete the career Grand Slam, he was simply Carlitos from Murcia. This is his story.])],
-    [#brief-item([Jing LiuAn MuShaojie MaYi LiuJing ZhangJun-zhuo ZhaoJian WangXia-lian WuJun-xia LuaInterdisciplinary Institute of NMR and Molecular Sciences, Wuhan University of Science and Technology, Wuhan 430081, ChinabSchool of Life Science and Technology, ShanghaiTech University, Shanghai 201210, ChinacSchool of Pharmacy, Jiangsu Ocean University, Lianyungang 222005, ChinadHubei Province for Coal Conversion and New Carbon Materials, School of Chemistry and Chemical Engineering, Wuhan University of Science and Technology, Wuhan 430081, China], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+  [#brief-item([BBC Sport], source-name: [BBC Sport], [Before Carlos Alcaraz became the youngest man to complete the career Grand Slam, he was simply Carlitos from Murcia. This is his story.])],
+  [#brief-item([Jing LiuAn MuShaojie MaYi LiuJing ZhangJun-zhuo ZhaoJian WangXia-lian WuJun-xia LuaInterdisciplinary Institute of NMR and Molecular Sciences, Wuhan University of Science and Technology, Wuhan 430081, ChinabSchool of Life Science and Technology, ShanghaiTech University, Shanghai 201210, ChinacSchool of Pharmacy, Jiangsu Ocean University, Lianyungang 222005, ChinadHubei Province for Coal Conversion and New Carbon Materials, School of Chemistry and Chemical Engineering, Wuhan University of Science and Technology, Wuhan 430081, China], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 SignificanceProtein high-order assembly with a hierarchical organization is intrinsically difficult to study. To fully explore its functions and carry out further structure-based design, a thorough understanding of how the material is structured at the ...])],
-    [#brief-item([BBC Sport], source-name: [BBC Sport], [On the latest episode of The Chequered Flag Podcast, 1996 F1 world champion Damon Hill thinks that if Max Verstappen is not enjoying the sport any more following regulation changes then perhaps he needs to take a break.])],
-    [#brief-item([Md. Hassan uz-ZamanHoward OchmanaDepartment of Molecular Biosciences, University of Texas at Austin, Austin, TX 78712], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+  [#brief-item([BBC Sport], source-name: [BBC Sport], [On the latest episode of The Chequered Flag Podcast, 1996 F1 world champion Damon Hill thinks that if Max Verstappen is not enjoying the sport any more following regulation changes then perhaps he needs to take a break.])],
+  [#brief-item([Md. Hassan uz-ZamanHoward OchmanaDepartment of Molecular Biosciences, University of Texas at Austin, Austin, TX 78712], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 SignificanceBacteria often contain large numbers of unique genes not present in other genomes. Because most new genes arise by duplication and divergence, they are expected to resemble existing genes, so the origin of these unique “orphan” genes (“ORFans”)...])],
-    [#brief-item([Donald P. McDonnellaDepartment of Pharmacology and Cancer Biology, Duke University School of Medicine, Durham, NC 27710], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+  [#brief-item([Donald P. McDonnellaDepartment of Pharmacology and Cancer Biology, Duke University School of Medicine, Durham, NC 27710], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 Bert W. O’Malley, the “father/grandfather” of the field of molecular endocrinology passed away on November 11, 2025, at the age of 88. In a distinguished career that spanned over 60 years, he probed fundamental aspects of steroid hormone action, work that ...])],
-    [#brief-item([Eugene MalthouseCharlie PilgrimDaniel SgroiMichela AccerenziAntonio AlfonsoRana Umair AshrafMax BaardSanchayan BanerjeeAlexis BelianinSwagata BhattacharjeeMihir BhattacharyaPablo Brañas-GarzaJuan-Camilo CárdenasMiguel CarriquirySyngjoo ChoiGwen-Jiro ClochardEduardo Ezekiel DenzonBartlomiej Dessoulavy-SliwinskiGiorgio DiniLu DongAntal ErtlFilippos ExadaktylosEmel Filiz-OzbaySarah Lynn FleckeFabio GaleottiTeresa Garcia-MuñozNobuyuki HanakiGuillaume HollardDaniel HornLingbo HuangDoruk İrişHubert Janos KissJuliane KochJaromír KováříkOsbert Kwabena Boadi KwartengAndreas LangeMartin LeitesThomas Ho-Fung LeungWooyoung LimMeike MorrenLaila NockurCharles Yaw OkyereMayada OudahAli I. OzkesLionel PageJunghyun ParkStefan PfattheicherAntonios ProestakisCarlos RamosMapi Ramos-SosaMuhammad Saeed AshrafMuhammad Ryan SanjayaRene SchwaigerOmar SeneFei SongSarah SpycherRostislav StaněkNorman TanchingcoAlessandro TavoniVera te VeldeMaría José Vázquez-De FranciscoMartine VisserJoseph Tao-Yi WangWilly WangWei-Chien WengKatharina WernerAmanda WijayantiRalph WinklerJohn WoodersLi YingWei ZhenThomas HillsaCentre for Decision Research and Experimental Economics, School of Economics, University of Nottingham, Nottingham NR7 2QX, United KingdombSchool of Mathematics, University of Leeds, Leeds LS2 9JT, United KingdomcDepartment of Economics, University of Warwick, Coventry CV4 7AL, United KingdomdFundación ETEA—Development Institute of Universidad Loyola Andalucía, Córdoba 14004, SpaineDepartment of Applied Economics I, University of Seville, Sevilla 41018, SpainfFaculty of Economic Sciences, University of Warsaw, Warsaw 00-241, PolandgEnvironmental Policy Research Unit, University of Cape Town, Cape Town 7700, South AfricahSchool for Government, The Policy Institute, King’s College London, London WC2B 4LL, United KingdomiNational Research University Higher School of Economics, Moscow 101000, RussiajAlmaty Management University, Almaty 050060, KazakhstankJindal School of Government and Public Policy, O.P. Jindal Global University, Haryana 131001, IndialDepartment of Economics, Ashoka University, Haryana 131029, IndiamLoyolaBehLAB, Department of Finance, Universidad Loyola Andalucía, Córdoba 14004, SpainnFacultad de Economía, Universidad de los Andes, Cundinamarca, Bogotá 111711, ColombiaoDepartment of Economics, University of Massachusetts Amherst, Amherst, MA 01003pInstituto de Economía, Universidad de la República de Uruguay, Montevideo 11200, UruguayqDepartment of Economics, Seoul National University, Seoul 08826, Republic of KorearInstitute of Social and Economics Research, University of Osaka, Osaka 567-0047, JapansJoint Initiative for Latin American Experimental Economics, Buenos Aires C1054 AAF, ArgentinatJohn Gokongwei School of Management, Ateneo de Manila University, Metro Manila 1108, PhilippinesuDepartment of Economics, University of Bologna, Bologna 40126, ItalyvSouthern University of Science and Technology, Guangdong Province 518055, ChinawELTE Centre for Economic and Regional Studies, Budapest 1097, HungaryxSchool of Social Sciences, University of Iceland, Reykjavík 102, IcelandyUniversidad de Barcelona, Barcelona 08007, SpainzDepartment of Economics, University of Maryland, College Park, MD 20742aaDepartment of Experimental Psychology, University College London, London WC1H 0AP, United KingdombbCNRS, Université Lumière Lyon 2, Université Jean Monnet Saint-Etienne, Emlyon Business School, GATE, Lyon 69007, FranceccUniversity of Granada, Granada 18012, SpainddUniversity of Limassol, Limassol 3020, CypruseeCenter for Research in Economics and Statistics, École Polytechnique, Institut Polytechnique de Paris, Palaiseau 91120, FranceffCNRS, Paris Cedex 16 75794, FranceggCorvinus University of Budapest, Budapest 1093, HungaryhhShandong University, Jinan, Licheng District 250100, ChinaiiDepartment of Economics, Sogang University, Seoul 08826, Republic of KoreajjEconomics Department at Lund University School of Economics and Management, Lund 223 63, SwedenkkDepartamento de Análisis Económico, University of the Basque Country (UPV/EHU), Bilbao 48015, SpainllFaculty of Economics, University of West Bohemia, Plzeň 306 14, Czech RepublicmmDepartment of Agricultural Economics and Agribusiness, College of Basic and Applied Sciences, University of Ghana, Legon-Accra GA-489-1402, GhanannDepartment of Economics, Faculty of Business, Economics and Social Sciences of the University of Hamburg, Hamburg 20146, GermanyooUniversidad de la República de Uruguay, Montevideo 11200, UruguayppUniversity of Arizona, Tucson, AZ 85721qqThe Hong Kong University of Science and Technology, Kowloon, Hong KongrrDepartment of Marketing, Vrije Universiteit Amsterdam, Amsterdam 1081 HV, NetherlandsssDepartment of Psychology and Behavioural Sciences, Aarhus University, Aarhus 8000, DenmarkttDivision of Social Science, New York University Abu Dhabi, Abu Dhabi PO Box 129188, United Arab EmiratesuuCenter for Behavioral Institutional Design, New York University Abu Dhabi Research Institute, New York University Abu Dhabi, Abu Dhabi PO Box 129188, United Arab EmiratesvvSKEMA Business School, Groupe de Recherche en Droit, Économie et Gestion, Université Côte d’Azur, Lille 59777, FrancewwVienna University of Economics and Business, Vienna 1020, AustriaxxSchool of Economics, University of Queensland, Brisbane QLD 4072, AustraliayySeoul National University, Seoul 04107, Republic of KoreazzDepartment of Nutrition and Dietetics Sciences, Hellenic Mediterranean University, Sitia 72300, GreeceaaaInstituto Tecnológico de Santo Domingo, Santo Domingo 10602, Dominican RepublicbbbDepartment of Applied Economic Analysis, Universidad de Las Palmas de Gran Canaria, Las Palmas 35017, SpaincccSchool of Tourism Management, Hengxing University of Science and Technology, Qingdao, Shandong 266100, ChinadddUniversitas Gadjah Mada, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281, IndonesiaeeeDepartment of Banking and Finance, University of Innsbruck, Innsbruck 6020, AustriafffAlioune Diop University of Bambey, Bambey BP 16617, SenegalgggTed Rogers School of Management, Toronto Metropolitan University, Toronto, ON M5B 2K3, CanadahhhDepartment of Management, Technology, and Economics, ETH Zurich, Zürich 8092, SwitzerlandiiiFaculty of Economics and Administration, Masaryk University, Brno 601 77, CzechiajjjGrantham Research Institute on Climate Change and the Environment, London School of Economics, London WC2A 2AE, United KingdomkkkUniversity of Cape Town, Cape Town 7700, South AfricalllDepartment of Economics, National Taiwan University, Taipei 106, TaiwanmmmTaiwan Social Resilience Research Center, National Taiwan University, Taipei 106, TaiwannnnSchool of Information, University of Michigan, Ann Arbor, MI 48109oooDepartment of Economics, University of Cologne, Cologne D-50937, GermanypppSchool of Business, Economics, and Information Systems, University of Passau, Passau D-94032, GermanyqqqDepartment of Economics and Oeschger Centre for Climate Change Research, University of Bern, Bern CH-3012, SwitzerlandrrrInstitute of Psychology, Chinese Academy of Sciences, Beijing 100101, ChinasssDepartment of Psychology, University of Warwick, Coventry CV4 7AL, United Kingdom], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+  [#brief-item([Eugene MalthouseCharlie PilgrimDaniel SgroiMichela AccerenziAntonio AlfonsoRana Umair AshrafMax BaardSanchayan BanerjeeAlexis BelianinSwagata BhattacharjeeMihir BhattacharyaPablo Brañas-GarzaJuan-Camilo CárdenasMiguel CarriquirySyngjoo ChoiGwen-Jiro ClochardEduardo Ezekiel DenzonBartlomiej Dessoulavy-SliwinskiGiorgio DiniLu DongAntal ErtlFilippos ExadaktylosEmel Filiz-OzbaySarah Lynn FleckeFabio GaleottiTeresa Garcia-MuñozNobuyuki HanakiGuillaume HollardDaniel HornLingbo HuangDoruk İrişHubert Janos KissJuliane KochJaromír KováříkOsbert Kwabena Boadi KwartengAndreas LangeMartin LeitesThomas Ho-Fung LeungWooyoung LimMeike MorrenLaila NockurCharles Yaw OkyereMayada OudahAli I. OzkesLionel PageJunghyun ParkStefan PfattheicherAntonios ProestakisCarlos RamosMapi Ramos-SosaMuhammad Saeed AshrafMuhammad Ryan SanjayaRene SchwaigerOmar SeneFei SongSarah SpycherRostislav StaněkNorman TanchingcoAlessandro TavoniVera te VeldeMaría José Vázquez-De FranciscoMartine VisserJoseph Tao-Yi WangWilly WangWei-Chien WengKatharina WernerAmanda WijayantiRalph WinklerJohn WoodersLi YingWei ZhenThomas HillsaCentre for Decision Research and Experimental Economics, School of Economics, University of Nottingham, Nottingham NR7 2QX, United KingdombSchool of Mathematics, University of Leeds, Leeds LS2 9JT, United KingdomcDepartment of Economics, University of Warwick, Coventry CV4 7AL, United KingdomdFundación ETEA—Development Institute of Universidad Loyola Andalucía, Córdoba 14004, SpaineDepartment of Applied Economics I, University of Seville, Sevilla 41018, SpainfFaculty of Economic Sciences, University of Warsaw, Warsaw 00-241, PolandgEnvironmental Policy Research Unit, University of Cape Town, Cape Town 7700, South AfricahSchool for Government, The Policy Institute, King’s College London, London WC2B 4LL, United KingdomiNational Research University Higher School of Economics, Moscow 101000, RussiajAlmaty Management University, Almaty 050060, KazakhstankJindal School of Government and Public Policy, O.P. Jindal Global University, Haryana 131001, IndialDepartment of Economics, Ashoka University, Haryana 131029, IndiamLoyolaBehLAB, Department of Finance, Universidad Loyola Andalucía, Córdoba 14004, SpainnFacultad de Economía, Universidad de los Andes, Cundinamarca, Bogotá 111711, ColombiaoDepartment of Economics, University of Massachusetts Amherst, Amherst, MA 01003pInstituto de Economía, Universidad de la República de Uruguay, Montevideo 11200, UruguayqDepartment of Economics, Seoul National University, Seoul 08826, Republic of KorearInstitute of Social and Economics Research, University of Osaka, Osaka 567-0047, JapansJoint Initiative for Latin American Experimental Economics, Buenos Aires C1054 AAF, ArgentinatJohn Gokongwei School of Management, Ateneo de Manila University, Metro Manila 1108, PhilippinesuDepartment of Economics, University of Bologna, Bologna 40126, ItalyvSouthern University of Science and Technology, Guangdong Province 518055, ChinawELTE Centre for Economic and Regional Studies, Budapest 1097, HungaryxSchool of Social Sciences, University of Iceland, Reykjavík 102, IcelandyUniversidad de Barcelona, Barcelona 08007, SpainzDepartment of Economics, University of Maryland, College Park, MD 20742aaDepartment of Experimental Psychology, University College London, London WC1H 0AP, United KingdombbCNRS, Université Lumière Lyon 2, Université Jean Monnet Saint-Etienne, Emlyon Business School, GATE, Lyon 69007, FranceccUniversity of Granada, Granada 18012, SpainddUniversity of Limassol, Limassol 3020, CypruseeCenter for Research in Economics and Statistics, École Polytechnique, Institut Polytechnique de Paris, Palaiseau 91120, FranceffCNRS, Paris Cedex 16 75794, FranceggCorvinus University of Budapest, Budapest 1093, HungaryhhShandong University, Jinan, Licheng District 250100, ChinaiiDepartment of Economics, Sogang University, Seoul 08826, Republic of KoreajjEconomics Department at Lund University School of Economics and Management, Lund 223 63, SwedenkkDepartamento de Análisis Económico, University of the Basque Country (UPV/EHU), Bilbao 48015, SpainllFaculty of Economics, University of West Bohemia, Plzeň 306 14, Czech RepublicmmDepartment of Agricultural Economics and Agribusiness, College of Basic and Applied Sciences, University of Ghana, Legon-Accra GA-489-1402, GhanannDepartment of Economics, Faculty of Business, Economics and Social Sciences of the University of Hamburg, Hamburg 20146, GermanyooUniversidad de la República de Uruguay, Montevideo 11200, UruguayppUniversity of Arizona, Tucson, AZ 85721qqThe Hong Kong University of Science and Technology, Kowloon, Hong KongrrDepartment of Marketing, Vrije Universiteit Amsterdam, Amsterdam 1081 HV, NetherlandsssDepartment of Psychology and Behavioural Sciences, Aarhus University, Aarhus 8000, DenmarkttDivision of Social Science, New York University Abu Dhabi, Abu Dhabi PO Box 129188, United Arab EmiratesuuCenter for Behavioral Institutional Design, New York University Abu Dhabi Research Institute, New York University Abu Dhabi, Abu Dhabi PO Box 129188, United Arab EmiratesvvSKEMA Business School, Groupe de Recherche en Droit, Économie et Gestion, Université Côte d’Azur, Lille 59777, FrancewwVienna University of Economics and Business, Vienna 1020, AustriaxxSchool of Economics, University of Queensland, Brisbane QLD 4072, AustraliayySeoul National University, Seoul 04107, Republic of KoreazzDepartment of Nutrition and Dietetics Sciences, Hellenic Mediterranean University, Sitia 72300, GreeceaaaInstituto Tecnológico de Santo Domingo, Santo Domingo 10602, Dominican RepublicbbbDepartment of Applied Economic Analysis, Universidad de Las Palmas de Gran Canaria, Las Palmas 35017, SpaincccSchool of Tourism Management, Hengxing University of Science and Technology, Qingdao, Shandong 266100, ChinadddUniversitas Gadjah Mada, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281, IndonesiaeeeDepartment of Banking and Finance, University of Innsbruck, Innsbruck 6020, AustriafffAlioune Diop University of Bambey, Bambey BP 16617, SenegalgggTed Rogers School of Management, Toronto Metropolitan University, Toronto, ON M5B 2K3, CanadahhhDepartment of Management, Technology, and Economics, ETH Zurich, Zürich 8092, SwitzerlandiiiFaculty of Economics and Administration, Masaryk University, Brno 601 77, CzechiajjjGrantham Research Institute on Climate Change and the Environment, London School of Economics, London WC2A 2AE, United KingdomkkkUniversity of Cape Town, Cape Town 7700, South AfricalllDepartment of Economics, National Taiwan University, Taipei 106, TaiwanmmmTaiwan Social Resilience Research Center, National Taiwan University, Taipei 106, TaiwannnnSchool of Information, University of Michigan, Ann Arbor, MI 48109oooDepartment of Economics, University of Cologne, Cologne D-50937, GermanypppSchool of Business, Economics, and Information Systems, University of Passau, Passau D-94032, GermanyqqqDepartment of Economics and Oeschger Centre for Climate Change Research, University of Bern, Bern CH-3012, SwitzerlandrrrInstitute of Psychology, Chinese Academy of Sciences, Beijing 100101, ChinasssDepartment of Psychology, University of Warwick, Coventry CV4 7AL, United Kingdom], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 SignificanceOne of the main goals of international climate change negotiations is to distribute the economic burden of limiting global warming. A central challenge is that some countries are wealthier than others and may therefore be better able to invest ...])],
-    [#brief-item([BBC Sport], source-name: [BBC Sport], [Willie Peters will leave Super League champions Hull KR at the end of the season to coach in his native Australia.])],
-    [#brief-item([BBC Sport], source-name: [BBC Sport], [British Ice Skating appeals after Lilah Fear and Lewis Gibson miss out on an ice dance bronze medal at the World Figure Skating Championships.])],
-    [#brief-item([Keyu ChenYu DengTianming HuJichun LiXin-Yu HuangChengcheng ZhuHonggang ChenMeihua ChenLimin WuYonghui DengWenhe XieaDepartment of Chemistry, Shanghai Stomatological Hospital and School of Stomatology, State Key Laboratory of Coatings for Advanced Equipment, Shanghai Key Laboratory of Molecular Catalysis and Innovative Materials, Fudan University, Shanghai 200433, P. R. ChinabState Key Laboratory of Advanced Fiber Materials, Department of Materials Science and Engineering, College of Materials Science and Engineering, Donghua University, Shanghai 201620, P. R. ChinacInstitute of Energy and Materials Chemistry, Inner Mongolia University, Hohhot 010021, P. R. China], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+  [#brief-item([BBC Sport], source-name: [BBC Sport], [Willie Peters will leave Super League champions Hull KR at the end of the season to coach in his native Australia.])],
+  [#brief-item([BBC Sport], source-name: [BBC Sport], [British Ice Skating appeals after Lilah Fear and Lewis Gibson miss out on an ice dance bronze medal at the World Figure Skating Championships.])],
+  [#brief-item([Keyu ChenYu DengTianming HuJichun LiXin-Yu HuangChengcheng ZhuHonggang ChenMeihua ChenLimin WuYonghui DengWenhe XieaDepartment of Chemistry, Shanghai Stomatological Hospital and School of Stomatology, State Key Laboratory of Coatings for Advanced Equipment, Shanghai Key Laboratory of Molecular Catalysis and Innovative Materials, Fudan University, Shanghai 200433, P. R. ChinabState Key Laboratory of Advanced Fiber Materials, Department of Materials Science and Engineering, College of Materials Science and Engineering, Donghua University, Shanghai 201620, P. R. ChinacInstitute of Energy and Materials Chemistry, Inner Mongolia University, Hohhot 010021, P. R. China], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 SignificanceInspired by the periodic porous membrane and breathing process of the mammalian respiratory system, a steady nonequilibrium sensing process is established to achieve high-accuracy gas discrimination based on artificial periodic porous ...])],
-    [#brief-item([Satoru FujiiScott T. EspenschiedVibha AnandJoao Bettencourt-SilvaYi HanGo ItoAkira KosekiAkihiro KosugiJames KozloskiRyoma MatsumotoShanshan MengNatasha MulliganRyan J. MusichKevin P. NewhallEri OshinaShuhei SekiguchiYi WangJianying HuMatthew CiorbaL. David SibleyRyuichi OkamotoThaddeus S. StappenbeckaDepartment of Gastroenterology and Hepatology, Institute of Science Tokyo, Tokyo 113-8510, JapanbDepartment of Inflammation and Immunity, Cleveland Clinic Research, The Cleveland Clinic, Cleveland, OH 44195cHealthcare and Life Sciences, International Business Machines Corporation Research, Yorktown Heights, NY 10598dHealthcare and Life Sciences, International Business Machines Corporation Research, Cambridge, MA 02142eHealthcare and Life Sciences, International Business Machines Corporation Research, Dublin 2 D02 F6N2, IrelandfHealthcare and Life Sciences, International Business Machines Corporation Research, Tokyo 103-8510, JapangMedical Scientist Training Program, Case Western Reserve School of Medicine, Cleveland, OH 44195hDepartment of Pathology and Immunology, Washington University School of Medicine, St. Louis, MO 63110iDivision of Gastroenterology and the Inflammatory Bowel Diseases Center, Department of Internal Medicine, Washington University School of Medicine, St. Louis, MO 63110jDeparment of Molecular Microbiology, Washington University School of Medicine, St. Louis, MO 63110], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+  [#brief-item([Satoru FujiiScott T. EspenschiedVibha AnandJoao Bettencourt-SilvaYi HanGo ItoAkira KosekiAkihiro KosugiJames KozloskiRyoma MatsumotoShanshan MengNatasha MulliganRyan J. MusichKevin P. NewhallEri OshinaShuhei SekiguchiYi WangJianying HuMatthew CiorbaL. David SibleyRyuichi OkamotoThaddeus S. StappenbeckaDepartment of Gastroenterology and Hepatology, Institute of Science Tokyo, Tokyo 113-8510, JapanbDepartment of Inflammation and Immunity, Cleveland Clinic Research, The Cleveland Clinic, Cleveland, OH 44195cHealthcare and Life Sciences, International Business Machines Corporation Research, Yorktown Heights, NY 10598dHealthcare and Life Sciences, International Business Machines Corporation Research, Cambridge, MA 02142eHealthcare and Life Sciences, International Business Machines Corporation Research, Dublin 2 D02 F6N2, IrelandfHealthcare and Life Sciences, International Business Machines Corporation Research, Tokyo 103-8510, JapangMedical Scientist Training Program, Case Western Reserve School of Medicine, Cleveland, OH 44195hDepartment of Pathology and Immunology, Washington University School of Medicine, St. Louis, MO 63110iDivision of Gastroenterology and the Inflammatory Bowel Diseases Center, Department of Internal Medicine, Washington University School of Medicine, St. Louis, MO 63110jDeparment of Molecular Microbiology, Washington University School of Medicine, St. Louis, MO 63110], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 SignificanceThis manuscript addresses challenges in quantitative comparisons of cell types grown in vitro vs. in vivo counterparts. Here, we use the intestinal epithelium as a model system to address this challenge. We devised an in vitro culture platform ...])],
-    [#brief-item([Alec M. BevisKathryn J. L. H. RosaNancy SchwartingTammy R. CockerhamCatherine M. KerrSunil MoreAnthony R. FehrRobin C. OrozcoaDepartment of Molecular Biosciences, University of Kansas, Lawrence, KS 66045bDepartment of Veterinary Pathobiology, Oklahoma State University, Stillwater, OK 74078], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+  [#brief-item([Alec M. BevisKathryn J. L. H. RosaNancy SchwartingTammy R. CockerhamCatherine M. KerrSunil MoreAnthony R. FehrRobin C. OrozcoaDepartment of Molecular Biosciences, University of Kansas, Lawrence, KS 66045bDepartment of Veterinary Pathobiology, Oklahoma State University, Stillwater, OK 74078], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 SignificanceApproximately 5 to 15% of the North American population has thePTPN221858C\>T allele, which has been linked with numerous autoimmune diseases and is considered the highest non-HLA risk allele for autoimmunity. Due to this link, thePTPN22...])],
-    [#brief-item([Nathan Yau], source-name: [FlowingData], [Getting pregnant and having a child is typically described as an effortless process where you try and then you succeed. However, the process is often not so direct. For the Pudding, Lam Thuy Vo, with help from Jan Diehm and Michelle Pera-McGhee, and illustrations by Rose Wong, describes the journey of infertility and IVF .
+  [#brief-item([Nathan Yau], source-name: [FlowingData], [Getting pregnant and having a child is typically described as an effortless process where you try and then you succeed. However, the process is often not so direct. For the Pudding, Lam Thuy Vo, with help from Jan Diehm and Michelle Pera-McGhee, and illustrations by Rose Wong, describes the journey of infertility and IVF .
 
 You are able to move through from the point of view of parent or child. Switch back and forth or go all the way with each separately.
 
  Tags: children , infertility , Lam Thuy Vo , Pudding])],
-  ))
-}
+))
+
+// --- Notable Quotes ---
+#block(above: 0.2in, stroke: (top: 1pt + luma(26)), inset: (top: 0.1in))[
+  #pull-quote([As Paul Hoggett eloquently describes, “ We are living in a time when a tragedy which is without precedent is unfolding in front of our eyes.], [julietwalker])
+
+]
 
 #colophon([Northern Ledger], [Vol. 1, No. 040], [2026-03-30])

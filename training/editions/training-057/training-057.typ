@@ -21,51 +21,8 @@
 #masthead([The Northern Bulletin], [Vol. 1, No. 057], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Kizik’s next big step is a slip-on running shoe],
-  kicker: [Cover Story],
-  author: [Grace Snelling],
-  source-name: [Fast Company Design],
-  deck: [When it was founded in 2017, the shoe brand Kizik was on a mission to bring hands-free shoe technology into the mainstream.],
-  lead-pre: [],
-  lead-cap: [I],
-  lead-rest: [t’s now taking two big steps to further that goal.],
-  body-paragraphs: (
-  [Kizik’s parent company HandsFree Labs is announcing a licensing deal with New Balance that will leverage its hands-free technology. Kizik is also announcing a new shoe, the \$149.95 Kizik Freedom Run, which debuts on April 17. Together, the moves represent an expansion of its existing licensing agreements strategy and of its tech into the performance category for the first time.],
-  [\[Photo: Kizik\]],
-  [At its core, Kizik’s tech has always focused on the experience of putting on a shoe in the first place—the company designs slip-on models that cut lace-tying out of the equation through a variety of patented hands-free footwear mechanics. These designs are accessible to those who have trouble tying their shoes, including children, the elderly, and those with disabilities.],
-  [But the brand has broad ambitions. “We think of the problem this way: Our shoes are for everyone, but they are life-changing for some,” then-CEO Monte Deere explained to Fast Company in 2023 . Entering the running space meant the company had to adapt its designs for higher intensity use cases, but it also expands its reach.],
-  [Kizik can build brand association with its own technology, and jockey for market share among slip-on running shoes that are already on the market: Its ongoing collaborator, Nike, launched a pair in 2021 , On manufactures a line of athletic shoes with kick-down heels, and Skechers has a whole series of shoes in its “Slip-Ins” category.],
-  [\[Photo: Kizik\]],
-  [The Freedom Run is Kizik’s latest demonstration of its design prowess.],
-  [id="h-"\>The brand’s in-house team, HandsFree Lab, manages more than 200 issued and pending patents related to hands-free footwear mechanics, from extra-pliable tongues to shoes that open with a squeeze and multiple different heel configurations that allow wearers to simply slide their foot into the shoe.],
-  [\[Photo: Kizik\]],
-  [As its first foray into performance, Kizik’s design team decided to start with a mid-market running shoe that would be accessible for most athletes. The Freedom Run isn’t an elite game-day shoe, but rather a reliable training shoe that’s built to last.],
-  [The concept of a slip-on running shoe presents an obvious challenge: pairing a step-on heel with the snug, compressive fit that athletes need. The heel would need to be flexible enough to slip on and off, but rigid enough to keep the foot from sliding out of the shoe with every stride. To address this challenge, the Kizik team opted for the Internal Flex Arc, one of the brand’s lesser-used step-in technologies. It’s composed of two rigid components on the top and bottom, with a tented heel pocket sandwiched in between them.],
-  [“When you combine those, it enables you to step into the running shoe because it compresses very well,” Hosford says. “The other thing it does when it bounces back is grab your heel. For a running shoe, that’s fantastic because it minimizes heel slippage.”],
-  [\[Photo: Kizik\]],
-  [The Kizik team designed the rest of the Freedom Run’s architecture, like the arch and toe-box, to work in tandem with the Internal Flex Arc to keep the foot stable inside the shoe. As an added detail, the team also created a custom foam, called Viva Foam, to serve as the base of the shoe.],
-  [It’s designed to be compression-resistant to absorb the runner’s stride, as well as ultra-lightweight to avoid adding extra bulk to the shoe. Hosford says the lifespan of this design was tested in a machine that literally slammed the heel component over and over again to assess its durability. The Freedom Run lasted for literally thousands of compressions before it gave out.],
-  [\[Photo: Kizik\]],
-  [For now, the Freedom Run stands in its own category for Kizik—but Hosford says that the brand expects to expand its footprint in performance gear in the near future to meet its fans’ demands, the growth opportunity of a large category, and to prove that its hands-free technology can work across a wide range of use cases.],
-  [Running shoes with step-in functionality fit within an obvious category of innovation: people are always looking for products that will make their life just a bit easier, according to Hosford. “Our founder \[Mike Pratt\] says, ‘No one winds up their windows in the car anymore. It’s all electric buttons that save 30 seconds, but it’s 30 seconds every day.’ Once that tech has been proven, you just don’t want to go back. It’s kind of the same thing with shoes.”],
-  [\[Photo: Kizik\]],
-  [Since 2019, Kizik has worked with Nike to license its hands-free technology on a number of different shoes in Nike’s portfolio. That work has been so successful, according to Kizik CEO Gareth Hosford, that, now, its parent company HandsFree Labs is teaming up with New Balance via a licensing agreement that leverages the company’s technology to help it create its own step-in footwear, expected to debut in 2027.],
-  [Through its licensing agreements with Nike—and now New Balance—Hosford says these big name brands gain access to a selection of those patents. Then, they work closely with Kizik’s design team to incorporate the tech into their existing styles.],
-  [“This is a joint effort—we don’t throw it over the wall, we partner with them,” Hosford says, adding, “We sit down with them and go, ‘Okay, which shoes are you trying to deploy this hands-free technology in? What’s the technology that best marries what you’re trying to do? And then we work with them to connect all those dots both through development and then getting them ready for mass manufacturing.”],
-  [For Kizik, licensing serves the brand’s original purpose of making hands-free technology accessible to as many customers as possible, while also helping the company scale financially. At the same time, Hosford says, the brand wants to maintain its own identity by debuting new, exclusive product innovations under its own name.],
-  [“We have a great product engine and a great product team ourselves, and we believe that we are coming to market with innovative solutions that enable us to compete,” Hosford says. “Even if we’re also deploying our technology to other companies as well, we still can stand on our own.”],
-),
-  inline-pq: pull-quote([It’s composed of two rigid components on the top and bottom, with a tented heel pocket sandwiched in between them.], [Grace Snelling]),
-  inline-pq-idx: 9,
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Whole-Grain Vegan Carrot Cake Loaf with Lemon Glaze],
   author: [Angela Liddon (Oh She Glows)],
   source-name: [Oh She Glows],
@@ -79,10 +36,44 @@
   [Ok, ok, it also helped that I took a nibble of this loaf and it tasted great!],
   [I kept telling myself, do not eat the slice, do not eat the slice …and then I was like ‘forget that’ and I took a bite! I think it gives the picture more character anyways. ;)],
   [If your hesitant about cake for breakfast, maybe try my Heavenly Carrot Cake Baked Oatmeal or my Oh Mega Carrot Cake Breakfast Cookies — they won’t disappoint!],
-  [class="osg\_book\_hero\_\_desc"\>Featuring all new, protein-packed salads, hearty toppers, flavour boosters, and dressings you'll want to drink, my new cookbook will transform the way you think about salads. Oh, and be sure to flip to the back for a surprise dessert chapter!],
+  [Featuring all new, protein-packed salads, hearty toppers, flavour boosters, and dressings you'll want to drink, my new cookbook will transform the way you think about salads. Oh, and be sure to flip to the back for a surprise dessert chapter!],
+  [Pre-Order Now],
+  [% 
+ OFF],
+  [Whole-Grain Carrot Cake Loaf with Lemon Glaze],
+  [Vegan, refined sugar-free, soy-free],
+  [★ ★ ★ ★ ★ 
+4.8 from 9 reviews],
+  [Yield
+ 10 slices, plus 1/2 cup + 2 tbsp (155 mL) glaze],
+  [Prep time
+ 20 minutes],
+  [Cook time
+ 45 minutes],
+  [Total time
+ 1 hour, 5 minutes],
   [A carrot cake loaf that’s wholesome enough to enjoy for breakfast?! Yes please! Spiced with cinnamon, vanilla, and ginger, this beauty will fill your house with a delicious scent as it bakes. The loaf is naturally sweetened with maple syrup, and a lemon-cashew-coconut glaze gives the whole thing a fresh, zingy kick. This recipe is a revamp of my 2011 carrot cake loaf, which was originally adapted from Sweet Freedom.],
   [For the loaf:],
+  [1 1/2 cups (185 g) finely grated peeled carrot \*],
+  [1 tablespoon (7 g) ground flax seed],
+  [1/2 cup plus 1 tablespoon (140 mL) pure maple syrup],
+  [3/4 cup (185 mL) almond milk or other plant milk],
+  [1/3 cup (80 mL) grapeseed oil or melted coconut oil \* \*],
+  [1 1/2 teaspoons pure vanilla extract],
+  [1 teaspoon apple cider vinegar],
+  [2 teaspoons ground cinnamon],
+  [1 teaspoon ground ginger],
+  [2 teaspoons baking powder],
+  [1/2 teaspoon baking soda],
+  [1/2 teaspoon fine sea salt],
+  [1 1/2 cups (230 g) whole-grain spelt flour \* \* \*],
+  [1 cup (100 g) walnuts, chopped],
   [For the glaze:],
+  [1/4 cup (60 mL) raw cashew butter],
+  [1/4 cup (60 mL) full-fat coconut cream, at room temperature \* \* \* \*],
+  [2 tablespoons (30 mL) pure maple syrup, at room temperature],
+  [1 tablespoon (15 mL) fresh lemon zest, or to taste],
+  [Dash fine sea salt],
   [Preheat the oven to 350°F (180°C) and line a lightly oiled 8x4-inch loaf pan with parchment paper.],
   [In a large bowl, mix the grated carrot, ground flax, maple syrup, almond milk, oil, vanilla, and vinegar until thoroughly combined.],
   [In that same bowl, one-by-one, stir in the dry ingredients: cinnamon, ginger, baking powder, baking soda, salt, flour, and half of the chopped walnuts. Mix until just combined.],
@@ -98,11 +89,14 @@
   [\* \* \* \* Please use the thick, full-fat white cream found at the top of the can.],
   [Make it nut-free: Omit the walnuts to make this loaf nut-free. For a super-fast, nut-free lemon glaze you can whisk 1/2 cup powdered icing sugar with 1 tablespoon fresh lemon juice (or more to taste).],
   [(click to expand)],
-  [style="display: none;"\>Serving Size 1 of 10 slices | Calories 350 calories | Total Fat 19 grams
+  [Serving Size 1 of 10 slices | Calories 350 calories | Total Fat 19 grams
 Saturated Fat 3 grams | Sodium 200 milligrams | Total Carbohydrates 39 grams
 Fiber 5 grams | Sugar 15 grams | Protein 6 grams],
   [Nutritional info includes lemon glaze and walnuts. If serving without glaze (but with walnuts) each slice (1 of 10) is 290 calories. If making without glaze and without walnuts, each slice is 230 calories. 
  \* Nutrition data is approximate and is for informational purposes only.],
+  [PRINT EMAIL 
+ SHARE 
+ REVIEW],
   [Pinterest 
  
  
@@ -112,6 +106,7 @@ Fiber 5 grams | Sugar 15 grams | Protein 6 grams],
   [If you've made this recipe I'd love to see it.],
   [Tag \@ohsheglows on Instagram and hashtag \#ohsheglows so that we can all take a look!],
   [The original recipe is below:],
+  [Whole-Grain Vegan Carrot Cake Loaf with Lemon Glaze],
   [Lightly adapted from Sweet Freedom. Glaze from Blissfully Vegan .],
   [Yield: 1 small loaf, eight 1-inch slices],
   [Ingredients:],
@@ -150,10 +145,8 @@ Fiber 5 grams | Sugar 15 grams | Protein 6 grams],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Mastering French Verb Conjugation: Common Verbs Ending in -Er, -Ir And -Re],
   author: [Thomas Devlin],
   source-name: [Babbel Tech Blog],
@@ -315,16 +308,13 @@ Fiber 5 grams | Sugar 15 grams | Protein 6 grams],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Vancouver's first supertall skyscraper informed by "ancient glass sea sponge reefs"],
   author: [Ben Dreith],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [Local studio Henriquez Partners Architects has designed a trio of skyscrapers in Vancouver , Canada, including the city's first supertall skyscraper .],
   [Part of the larger Georgia & Abbott development for developer Holborn Group, the trio of skyscrapers set to be built in the middle of the dense Canadian city will be anchored by a 1,033-foot-tall (314 metre-tall) skyscraper.],
   [When completed, 595 West Georgia Street will be the first supertall skyscraper in the city – defined as a building exceeding 984 feet (300 metres).],
@@ -345,6 +335,8 @@ Fiber 5 grams | Sugar 15 grams | Protein 6 grams],
   [Canada's tallest skyscraper becomes first in country above 100 storeys],
   [.],
   [The studio said that the project was meant to bring further density into the expensive metropolis.],
+  ["This transformative project will serve as a major economic catalyst for downtown Vancouver, creating thousands of construction and permanent jobs," said the studio.],
+  ["By bringing a critical mass of residents, workers, and visitors into the core, the project will contribute to the creation of a more vibrant, welcoming, and safer downtown."],
   [A fourth building will be constructed to fulfil social housing commitments],
   [Georgia & Abbott recently received "unanimous" support from the powerful Urban Design Panel of the City of Vancouver, it will move to approvals from Public Hearing and City Council Approval this summer.],
   [The project could be read as a response to current developments in Toronto, which include the country's tallest building, nearing completion , and other in-progress supertall skyscrapers such as one by Foster + Partners .],
@@ -357,16 +349,13 @@ Fiber 5 grams | Sugar 15 grams | Protein 6 grams],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [TIMM Architecture fronts House of Iron Doors with weathered steel shutters],
   author: [Jon Astbury],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [Georgian studio TIMM Architecture has completed House of Iron Doors, a home on the outskirts of Tbilisi that features an openable facade of perforated weathered steel shutters.],
   [TIMM Architecture aimed to transform the aesthetic of high fences and walls of man homes in the neighbourhood into "an architectural experience rather than a defensive barrier" for this house in the village of Okrokana.],
   [TIMM Architecture has created a house in Georgia],
@@ -397,10 +386,8 @@ Fiber 5 grams | Sugar 15 grams | Protein 6 grams],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [United upgraded the economy flight experience with this brilliant new seat design],
   author: [Hunter Schwarz],
   source-name: [Fast Company Design],
@@ -410,12 +397,14 @@ Fiber 5 grams | Sugar 15 grams | Protein 6 grams],
   [This week, the airline announced what it calls “United Relax Row,” a row of three seats that transform into a single lie-flat space. The seats will begin appearing on United aircraft in 2027. Reaction online to the airline’s announcement was joyous.],
   [“United built the product that everyone who has ever been on an airplane has wanted!” John Collison, president of the payments and financial services company Stripe, wrote on X.],
   [\[United Relax Row seats in action. Photo: United\]],
+  [How does the Relax Row work?],
   [The Relax Row is designed with armrests that go up all the way and adjustable leg rests that fold up to 90 degrees, giving fliers a wider flat surface to lie upon. United says booking the row will get you a custom-fitted mattress pad to go with the seats, plus blankets, extra pillows, and a plush toy for kids. The company plans to offer as many as 12 of these Relax Row sections per plane and roll them out to more than 200 aircraft by 2030.],
   [Premium customers already have the option to lie down during long flights in United’s Polaris business class seating, which comes with a custom Saks Fifth Avenue sleep set. In 2021, the German air carrier Lufthansa allowed customers to pay extra to book a row of three economy seats to themselves and get a mattress topper for their flight.],
   [United channeled these trends into its new cabin design. By putting the new seats in economy and pitching it to customers as “premium for all,” the airline can characterize the move as one that’s looking out for everyone in the back of the plane and not just those in first class—while still increasing profit margins.],
   [The company is the first North American airline to offer lie-down coach seating, and the company says the option is geared toward families with young kids, couples, and solo travelers who want more space.],
   [\[Photo: United\]],
   [Already, United offers complimentary kids meals, a Sesame Street -branded travel kit for children, and free family seating to seat families together. Giving customers with young kids the option to let them sleep soundly on a flat surface during a long-haul flight could further curry favor with families.],
+  [Why better economy seating is good for business],
   [As fuel costs rise and lower-income customers pressured by years of inflation make up a smaller share of revenue, the K-shaped economic recovery from the COVID pandemic is showing up in the design of airline cabins in other ways, too.],
   [Southwest Airlines added skinnier seats that weigh less , while Frontier Airlines made bigger seats with extra cushions and wider armrests to upsell its budget flights. For United, the second-biggest airline by revenue behind Delta Air Lines , its challenge is the premiumization of an already premium brand.],
   [\[Photo: United\]],
@@ -428,10 +417,8 @@ Fiber 5 grams | Sugar 15 grams | Protein 6 grams],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Perfect Little Pumpkin Cookies with Spiced Buttercream],
   author: [Angela Liddon (Oh She Glows)],
   source-name: [Oh She Glows],
@@ -441,11 +428,44 @@ Fiber 5 grams | Sugar 15 grams | Protein 6 grams],
   [First, I want to thank you all so much for your support for Oh She Glows for Dinner ! I’m immensely grateful for each and every one of you who believe in me and in what I create. It’s sounding like cozy, plant-based meals to enjoy at home is a theme you’re really eager for, and hearing this makes me so happy because this book was almost the end of little ‘ol me…hah ;) jk. Well, it was my biggest challenge to date, but sooo worth it and I’m thrilled with how it all came together. Now that I get to cook from this book in my own kitchen, it’s pretty darn special. I can’t wait for you to be able to do so as well.],
   [Okay, now it’s time to ring in the fall season with a brand-new, lightly spiced, and completely addictive frosted pumpkin cookie.],
   [Sending you all my love and good vibes for the new season ahead!],
-  [class="osg\_book\_hero\_\_desc"\>Featuring all new, protein-packed salads, hearty toppers, flavour boosters, and dressings you'll want to drink, my new cookbook will transform the way you think about salads. Oh, and be sure to flip to the back for a surprise dessert chapter!],
+  [Featuring all new, protein-packed salads, hearty toppers, flavour boosters, and dressings you'll want to drink, my new cookbook will transform the way you think about salads. Oh, and be sure to flip to the back for a surprise dessert chapter!],
+  [Pre-Order Now],
+  [% 
+ OFF],
+  [Perfect Little Pumpkin Cookies with Spiced Buttercream],
+  [Vegan, soy-free],
+  [★ ★ ★ ★ ★ 
+4.8 from 17 reviews],
+  [Yield
+ 20 cookies],
+  [Prep time
+ 25 minutes],
+  [Cook time
+ 13 minutes],
+  [Total time
+ 38 minutes],
   [Why hello there, beautiful pumpkin season! These lovely pumpkin cookies are lightly crispy around the edges, tender and chewy in the middle, and the perfect light-tasting base for my Fluffy Pumpkin Pie Spice Buttercream. My recipe tester, Nicole, says they are like “airy, pumpkin spiced clouds with a delightful outer shell to sink your teeth into!” If you aren’t in the mood for frosting, and prefer a lightly sweet, wholesome-tasting cookie, they also taste great without the buttercream. You can use store bought pumpkin pie spice for convenience, or this recipe for Homemade Pumpkin Pie Spice Mix . In the Tips section, I’ve provided sifted whole-grain spelt and all-purpose white flour swap options for the white/light spelt flour. Be sure to check them out before you begin as the flour substitutions aren’t direct 1:1 swaps. This recipe is adapted from my Easy Vegan Sugar Cookies with Pink Frosting .],
   [For the wet ingredients:],
+  [3 tablespoons (45 mL) grapeseed oil],
+  [3 tablespoons (45 mL) pure maple syrup],
+  [1/4 cup (60 mL) unsweetened pumpkin purée],
+  [2 tablespoons (30 mL) brown rice syrup],
+  [1 1/2 teaspoons ground flaxseed],
+  [1/2 teaspoon pure vanilla extract],
   [For the dry ingredients:],
+  [3/4 cup plus 1 tablespoon (83 g) almond flour \*],
+  [1 cup plus 1 tablespoon (127 g) white/light all-purpose spelt flour \* \*],
+  [3 tablespoons (27 g) arrowroot starch],
+  [1/4 cup (60 g) natural cane sugar],
+  [1 teaspoon pumpkin pie spice],
+  [1/4 teaspoon fine sea salt],
+  [1/2 teaspoon baking soda],
   [For the Fluffy Pumpkin Pie Spice Buttercream:],
+  [1/4 cup plus 2 tablespoons (75 g) soy-free vegan butter],
+  [1 1/2 cups (190 g) powdered icing sugar, sifted if necessary],
+  [1/2 teaspoon pumpkin pie spice],
+  [Pinch fine sea salt],
+  [Cinnamon or pumpkin pie spice, for garnish (optional)],
   [Preheat the oven to 350°F (180°C) and line one extra-large baking sheet (or two medium-sized sheets) with parchment paper.],
   [To a small bowl, add the wet ingredients: grapeseed oil, maple syrup, pumpkin purée, brown rice syrup, ground flax, and vanilla. Whisk until combined.],
   [To a large bowl, add the dry ingredients: almond flour, spelt flour, arrowroot starch, cane sugar, pumpkin pie spice, salt, and baking soda. Whisk until combined.],
@@ -459,11 +479,14 @@ Fiber 5 grams | Sugar 15 grams | Protein 6 grams],
   [\* \* I prefer the white/light spelt version. If you can find some, it’s so lovely in these! If you can’t find it in the store, though, you can sift whole-grain spelt flour before using. The flour won’t be as fine and delicate as white/light spelt flour, but it will work in a pinch. To sift: place a large bowl on top of a kitchen scale, and tare the scale to zero. Spoon flour into a fine mesh sieve, and gently shake the sieve side-to-side until you have about 127 grams of sifted flour in the bowl. Discard the coarse flakes that remain in the sieve. Using sifted whole-grain spelt flour produces a more wholesome flavour and texture. Alternatively, you can use 3/4 cup plus 2 tablespoons (127 grams) all-purpose white flour instead of white/light spelt flour. When using all-purpose white flour, the cookies will taste a bit less sweet and complex compared to spelt flour.],
   [Flours are measured using the “scoop and shake until level” method, where you scoop the measuring cup directly into the flour and shake the cup side to side until the flour is level. I recommend weighing the flour whenever possible for the most accuracy.],
   [(click to expand)],
-  [style="display: none;"\>Serving Size 1 of 20 cookies (with frosting) | Calories 148 calories | Total Fat 6.6 grams
+  [Serving Size 1 of 20 cookies (with frosting) | Calories 148 calories | Total Fat 6.6 grams
 Saturated Fat 1.3 grams | Sodium 91 milligrams | Total Carbohydrates 21 grams
 Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   [1 of 20 cookies (without frosting): 88 calories, 3.6 grams total fat, 0.3 grams saturated fat, 59 milligrams sodium, 12.7 grams carbohydrates, 0.9 grams fibre, 3.3 grams sugar, 1.6 grams protein. 
  \* Nutrition data is approximate and is for informational purposes only.],
+  [PRINT EMAIL 
+ SHARE 
+ REVIEW],
   [Pinterest 
  
  
@@ -480,10 +503,8 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Who is the Kimwolf Botmaster “Dort”?],
   author: [BrianKrebs],
   source-name: [Krebs on Security],
@@ -491,6 +512,7 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   paragraphs: (
   [In early January 2026, KrebsOnSecurity revealed how a security researcher disclosed a vulnerability that was used to build Kimwolf , the world’s largest and most disruptive botnet. Since then, the person in control of Kimwolf — who goes by the handle “ Dort ” — has coordinated a barrage of distributed denial-of-service (DDoS), doxing and email flooding attacks against the researcher and this author, and more recently caused a SWAT team to be sent to the researcher’s home. This post examines what is knowable about Dort based on public information.],
   [A public “dox” created in 2020 asserted Dort was a teenager from Canada (DOB August 2003) who used the aliases “ CPacket ” and “ M1ce .” A search on the username CPacket at the open source intelligence platform OSINT Industries finds a GitHub account under the names Dort and CPacket that was created in 2017 using the email address jay.miner232\@gmail.com .],
+  [Image: osint.industries.],
   [The cyber intelligence firm Intel 471 says jay.miner232\@gmail.com was used between 2015 and 2019 to create accounts at multiple cybercrime forums, including Nulled (username “Uubuntuu”) and Cracked (user “Dorted”); Intel 471 reports that both of these accounts were created from the same Internet address at Rogers Canada (99.241.112.24).],
   [Dort was an extremely active player in the Microsoft game Minecraft who gained notoriety for their “ Dortware ” software that helped players cheat. But somewhere along the way, Dort graduated from hacking Minecraft games to enabling far more serious crimes.],
   [Dort also used the nickname DortDev , an identity that was active in March 2022 on the chat server for the prolific cybercrime group known as LAPSUS\$ . Dort peddled a service for registering temporary email addresses, as well as “ Dortsolver ,” code that could bypass various CAPTCHA services designed to prevent automated account abuse. Both of these offerings were advertised in 2022 on SIM Land , a Telegram channel dedicated to SIM-swapping and account takeover activity.],
@@ -503,9 +525,12 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   [The open source intelligence service Epieos finds jacobbutler803\@gmail.com created the GitHub account “ MemeClient .” Meanwhile, Flashpoint indexed a deleted anonymous Pastebin.com post from 2017 declaring that MemeClient was the creation of a user named CPacket — one of Dort’s early monikers.],
   [Why is Dort so mad? On January 2, KrebsOnSecurity published The Kimwolf Botnet is Stalking Your Local Network , which explored research into the botnet by Benjamin Brundage , founder of the proxy tracking service Synthient . Brundage figured out that the Kimwolf botmasters were exploiting a little-known weakness in residential proxy services to infect poorly-defended devices — like TV boxes and digital photo frames — plugged into the internal, private networks of proxy endpoints.],
   [By the time that story went live, most of the vulnerable proxy providers had been notified by Brundage and had fixed the weaknesses in their systems. That vulnerability remediation process massively slowed Kimwolf’s ability to spread, and within hours of the story’s publication Dort created a Discord server in my name that began publishing personal information about and violent threats against Brundage, Yours Truly, and others.],
+  [Dort and friends incriminating themselves by planning swatting attacks in a public Discord server.],
   [Last week, Dort and friends used that same Discord server (then named “Krebs’s Koinbase Kallers”) to threaten a swatting attack against Brundage, again posting his home address and personal information. Brundage told KrebsOnSecurity that local police officers subsequently visited his home in response to a swatting hoax which occurred around the same time that another member of the server posted a door emoji and taunted Brundage further.],
+  [Dort, using the alias “Meow,” taunts Synthient founder Ben Brundage with a picture of a door.],
   [Someone on the server then linked to a cringeworthy (and NSFW) new Soundcloud diss track recorded by the user DortDev that included a stickied message from Dort saying, “Ur dead nigga. u better watch ur fucking back. sleep with one eye open. bitch.”],
   [“It’s a pretty hefty penny for a new front door,” the diss track intoned. “If his head doesn’t get blown off by SWAT officers. What’s it like not having a front door?”],
+  [With any luck, Dort will soon be able to tell us all exactly what it’s like.],
   [Update, 10:29 a.m.: Jacob Butler responded to requests for comment, speaking with KrebsOnSecurity briefly via telephone. Butler said he didn’t notice earlier requests for comment because he hasn’t really been online since 2021, after his home was swatted multiple times. He acknowledged making and distributing a Minecraft cheat long ago, but said he hasn’t played the game in years and was not involved in Dortsolver or any other activity attributed to the Dort nickname after 2021.],
   [“It was a really old cheat and I don’t remember the name of it,” Butler said of his Minecraft modification. “I’m very stressed, man. I don’t know if people are going to swat me again or what. After that, I pretty much walked away from everything, logged off and said fuck that. I don’t go online anymore. I don’t know why people would still be going after me, to be completely honest.”],
   [When asked what he does for a living, Butler said he mostly stays home and helps his mom around the house because he struggles with autism and social interaction. He maintains that someone must have compromised one or more of his old accounts and is impersonating him online as Dort.],
@@ -520,10 +545,8 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Is Banyan Tree Mayakoba Worth It? Our Full Review],
   author: [Kristin Addis],
   source-name: [Be My Travel Muse],
@@ -531,6 +554,7 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   paragraphs: (
   [Banyan Tree Mayakoba is one of those resorts where you feel immersed in nature, far away from any parties or crowds, and that’s exactly the point. It hits you with a big arrival moment at a dramatic lobby, then quietly pulls you into a slower rhythm almost immediately.],
   [If you’re looking for a place that feels private, green, and genuinely restful, especially when traveling with kids, this one stands out in a way that’s hard to replicate elsewhere in the Riviera Maya.],
+  [Booking Through Us and Banyan Tree Benefits],
   [When you book Banyan Tree Mayakoba through Muse Bespoke Escapes , you receive preferred partner benefits that are simple but meaningful and tend to make the stay feel easier rather than more complicated.],
   [🍳 Daily breakfast for two],
   [💸 Resort credit to use on dining or spa treatments],
@@ -538,22 +562,29 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   [⏰ Early check-in and late checkout when possible],
   [🌿 Priority VIP treatment at the resort],
   [There’s no script or upsell attached to this. Things just tend to flow better, and staff are aware you’re arriving through a preferred channel.],
+  [Get in touch to book.],
+  [Arrival and Overall Feel],
   [You don’t walk into Banyan Tree so much as you’re eased into it. Located around 45 minutes from Cancun airport, just past the Ruta de Cenotes towards Playa del Carmen , Mayakoba is a serene getaway tucked behind several miles of mangrove. Check-in happens calmly, seated, and without a lot of back and forth. From there, everything is water, greenery, and quiet pathways.],
   [The resort is built around lagoons and mangroves, so even moving from place to place feels peaceful. You hear birds constantly. Mornings are especially calm, and evenings feel unhurried.],
   [Despite being part of the larger Mayakoba complex, Banyan Tree feels entirely separate once you’re inside, yet you can easily take a duffy boat or golf cart to any of the other resorts and their restaurants as well – Rosewood Mayakoba, Fairmont Mayakoba, and soon to be the Alila Mayakoba.],
+  [The Villas and Living Space],
   [Every guest stays in a private villa with its own pool, and that single detail shapes the entire experience.],
   [Our villa — one of the newly renovated 3 bedroom villas — felt more like a small residence than a hotel room. High ceilings, lots of space, and a layout that made sense for spending real time there. There was an indoor living area, outdoor space, and a pool that felt secluded rather than on display.],
   [There were 4 bathrooms, the main with a deep soaking tub and plenty of room to spread out. It was the kind of space you actually want to use, not just pass through.],
   [Traveling with a child, this setup made everything easier. Naps didn’t require tiptoeing around. Early bedtimes didn’t mean the night was over for us. We could order room service, swim outside, and still feel relaxed.],
+  [Getting Around the Resort],
   [The resort is spread out, but moving around never felt inconvenient. You get around by bike or boat, and both quickly become part of the rhythm of the stay rather than something to manage. Our toddler loved both the golf carts and the boat, so it was all part of the experience for him.],
   [Boat rides are slow and quiet. Bikes are easy and flat, and kids tend to love them. If you don’t feel like moving at all, staff are quick to come get you. Everyone and everything you need is just a call or Whatsapp message away.],
   [Nothing about the layout feels rushed or chaotic.],
+  [Pools, Beach, and Outdoor Time],
   [The beach area is calm and understated, on a white sand beach with perfectly calm waters that are baby blue hued. No loud music, no packed loungers, and no pressure to claim a spot early. It’s a place where people actually read books and stay a while. It was our favorite spot at the whole resort.],
   [The shared pool areas are lovely, but having a private pool often meant we didn’t feel the need to leave our villa unless we wanted to.],
   [This setup works especially well for families with younger kids. There’s room to splash, play, and relax without constantly packing up and moving locations.],
+  [Food and Dining],
   [Food at Banyan Tree Mayakoba is consistently good, but what stood out more than anything was how unique it felt.],
   [Our favorite experience was dining at Saffron, the Thai restaurant with decks right on the water (both with and without rails depending on what makes you most comfortable with little kids). It was delicious and such a fun experience dining right on the water while looking at sea turtles and fish.],
   [The breakfast (we especially loved the beach club!), Italian restaurant, cello, and room service were great, too.],
+  [What It’s Like With Kids],
   [Banyan Tree Mayakoba works well for families who want calm rather than stimulation.],
   [There’s space to roam, privacy to retreat to, and an overall environment where kids are welcome without the resort being overtly kid focused. That said, there’s a kids club with a little pool, climbing area, daily activities, and in the evenings, the private villa setup does most of the heavy lifting with plenty of room for everyone and the rooftop pool.],
   [Banyan Tree Mayakoba is a large resort that’s part of a larger complex that still somehow feels quiet, spacious, and intentionally designed to slow you down.],
@@ -566,10 +597,8 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [This brilliant browser tool purposely makes AI chatbots worse],
   author: [Grace Snelling],
   source-name: [Fast Company Design],
@@ -582,6 +611,7 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   [Slow LLM is a small yet eye-catching act of digital protest against the proliferation of AI tools, and it joins a growing catalog of similar efforts like “ Your AI slop bores me ,” a human-powered chatbot, and “ Slop Evader ,” a Chrome extension built to turn back the clock to the days before AI-generated search summaries.],
   [\[Image: Slow LLM\]],
   [Those behind these projects, which Lavigne describes as “tiny tools for digital sabotage,” know that they’re not exactly combating the wave of artificial intelligence and large language models. Instead, they’re asking users to reconsider how they’re using AI tools—and what they might be missing out on in the process.],
+  [Designing a tiny tool of digital rebellion],
   [Lavigne is no stranger to creating tools of digital sabotage. His past projects have included “ Slow Hot Computer ,” a website that does exactly what the name suggests; “ Zoom Escaper ,” a tool to help you escape Zoom meetings by self-sabotaging your audio stream; and “ The Good Life ,” an email service that sends you 225,000 emails from the Enron email archive in chronological order. For Lavigne, these sites are all about turning the mission of most web developers on its head by creating more friction rather than removing it.],
   [In the case of Slow LLM, Lavigne explains: “Like many other people, I’ve been thinking a lot lately about the political, financial, ecological, and emotional effects of LLMs. I became interested in exploring ways to disrupt their usage, either as something that people might wish to do to themselves, or as a kindness to others.”],
   [He decided that, to achieve this goal, it would be best to take a softer approach—making LLMs worse, rather than blocking them altogether. In a matter of days, he pulled together Slow LLM.],
@@ -594,10 +624,8 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Big and the Small],
   author: [Tim Urban],
   source-name: [Wait But Why],
@@ -634,16 +662,14 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   [3) This is V1 of the app. As we made the app, we had a constant side conversation going on about possibilities for V2, V3, and beyond. We’re launching today, but this is just the beginning. We want this app to be a brain playground that just keeps getting better and better. And here’s where you come in.],
   [As you use the app, whenever you have an “I wish the app did X” or “It would be so cool if the app could do Y” thought, we want to hear it. As this is V1, we of course also want to know whenever you have a “This isn’t working right” or an “I think this fact is off” thought. In the app’s menu, you’ll see a “feedback” tab, where you can tap the feedback email address and let us know what you’re thinking.],
   [Okay, here you go. Click the left app for iPhone/iPad, the right one for Android.],
-  [id="image-map-pro-3124"\>],
-  [id="appStores"\>],
-  [id="image-map-pro-5888"\>],
-  [style="text-align: center;"\>\_\_\_\_\_\_\_\_\_\_\_],
+  [\_\_\_\_\_\_\_\_\_\_\_],
   [Also: To commemorate the app launch, Kurzgesagt did their own fun room creation today— a delightful video about the sizes of stars .],
-  [style="text-align: center;"\>\_\_\_\_\_\_\_\_\_\_\_],
+  [\_\_\_\_\_\_\_\_\_\_\_],
   [End things:],
   [If you like Wait But Why, sign up for our unannoying-I-promise email list  and we’ll send you new posts when they come out.],
   [To support Wait But Why,  visit our Patreon page .],
-  [style="text-align: center;"\>\_\_\_\_\_\_\_\_\_\_\_],
+  [\_\_\_\_\_\_\_\_\_\_\_],
+  [More trips to the fun room:],
   [The SpaceX Post],
   [The Quadrillion Sour Patch Kids Post],
   [And a trip to the not-so-fun room],
@@ -656,10 +682,8 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [I met my AI twin—and now I’m in an existential crisis],
   author: [Grace Snelling],
   source-name: [Fast Company Design],
@@ -671,6 +695,7 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   [Sentience debuts to the public on March 26 after raising \$6.5 million in an initial seed round led by Bain Capital Ventures. It’s launching for free, but plans to add paid tiers in the coming weeks. Currently, it’s available as a desktop app, mobile app, and an embedded feature in Slack. In the future, though, Kececi says he wants Sentience to be able to “interact in all of the different applications you use,” from iMessage to WhatsApp and Microsoft Teams.],
   [Having tested it for about a week, I can say that it’s the most natural-sounding chatbot I’ve ever talked to. It was able to almost uncannily mimic my writing quirks, predict my opinions on design news, and write its own articles from my perspective. Sentience feels like an inevitable next step in the evolution of AI assistants, where instead of a mass-market chatbot that caters to a generalized “you,” you get a personalized bot that knows almost everything about you—for better and for worse.],
   [\[Image: Sentience\]],
+  [An AI designed to mimic you],
   [As AI models have become exponentially more powerful in recent years, the concept of building digital twins has gained popularity. Last April, Stanford University researchers published a paper in which they used AI to build a “digital twin” of the part of the mouse brain that processes visual information, a breakthrough that they said could be applied to future research on the human brain.],
   [Right now, the average consumer can use a variety of nascent tools to purportedly clone themselves as a means to be more productive. Sentience aims to marry personalization with the functions of a productivity platform, similar to something like Superhuman or Notion.],
   [Kececi first began dreaming of a digital twin while working as the CTO of a software development company called Macro. After spending five years in the position, he started to feel like “a glorified information router.”],
@@ -679,11 +704,13 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   [Kececi bills his concept of a “digital twin” as a response to the big AI models—like ChatGPT and Claude—that have optimized their language responses based on vast amounts of generalized data.. In order to appeal to the broadest user base, many of these tools have developed a standard tone that’s agreeable at best and obsequious at worst (in some cases, to users’ serious detriment ). According to an October analysis from researchers at Harvard and Zurich’s Swiss Federal Institute of Technology, AI models are, on average, 50% more sycophantic than humans.],
   [“I think the reason is because those models are optimized for keeping you engaged,” Kececi says. “ChatGPT is designed to literally keep you for the maximum amount of time. It turns out that if a language model is complimenting you all the time, then you’re going to use it more. But this is not fundamentally how humans work.”],
   [Unlike these bigger models, he explains, Sentience is trained almost exclusively to parse through and digest data about you, the user.],
+  [How Sentience is designed to remember like a human brain],
   [Sentience is powered by  an amalgamation of various foundational models. Claude is the main AI powering the program, but it also incorporates other tools like Gemini Flash for heftier queries and WhisperX for transcription. These components are like the bones and muscles powering Sentience—but its custom memory layer is the brain.],
   [Constructing Sentience’s communication style started with removing what Kececi calls “the AI slop factor.” Essentially, this stage looked like repeated prompting to strip away the base models’ tendencies toward people pleasing, as well as other AI giveaways like overuse of the em dash and choppy sentence structures. Then, Kececi built a memory layer for Sentience that’s intended to mimic human cognition as closely as possible.],
   [First, Sentience takes in as many inputs from a user’s digital life as possible (depending on what the user grants access to), from Uber receipts to Reddit deep dives, programming projects, and email history. Then it categorizes that data into short-term and long-term memories; short-term being whatever the user is currently working on, and long-term being everything else.],
   [Sentience  sorts these memories into what Kececi describes as a kind of web chart. Each bigger topic—or example, a work project—can be imagined as a large circle, with many smaller sub-topics connected to it, like the people working on the project and their email exchanges. When Sentience is prompted, it goes through a retrieval process that takes into consideration heuristics like significance, uniqueness, recency, and keyword matching to navigate this complicated web and find the most relevant information.],
   [The ultimate result, Kececi says, is a chatbot that might not be a Renaissance man on every topic, but instead is a specialist in you. “The whole bet is that context beats capability,” his AI twin tells me. “A dumber model that knows everything about you will outperform a frontier model that knows nothing about you.”],
+  [I try building my own digital twin],
   [I decided to put that claim to the test. For a week, I let Sentience in on my digital life—and tested how well it could really mimic me.],
   [When you first download Sentience, it appears as an app on your desktop. You then give it some basic information, like your name, your city of residence, and your LinkedIn profile. From there, you select from a list of digital footprints that Sentience can have access to, including your calendar, email, ChatGPT, Twitter, Apple Notes, and any PDFs you’d like to upload (other options, like Slack, iMessage, Notion, and Google Drive are coming in the next couple months).],
   [Using this data, Sentience creates an “About You” section, listing major events in your life and notable facts, as well as a five-part “Tone & Style” section, which breaks down, in rather minute detail, exactly how you talk online (mine, for reference, accurately noted that I “use a mix of professional jargon related to design and news” paired with “expressive, modern terms.”) Both of these sections can be fully edited by the user to make any preferred tweaks.],
@@ -695,6 +722,7 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   [Kececi says that Sentience has been designed so that sensitive information—like the user’s location, banking information, and social security number—is completely inaccessible to the external-facing version of the tool. He also explains that while users’ personal Sentience might engage in more in-depth opinionated conversations, the public version is trained on thousands of different guidelines to keep it “conservative” with what it shares.],
   [\[Screenshot: courtesy of the author\]],
   [I convinced Kececi’s Sentience to share some musings on the afterlife and thoughts he’s previously shared on immigration via his private Twitter account. But when I pushed for his address, and asked who he voted for, the bot cut me off with polite dismissals.],
+  [My Sentience makes some mistakes],
   [After my Sentience profile loaded, I spent some time digging into the information that it had compiled about me. Most of it—like that I volunteer weekly at a cat shelter, read design news voraciously, and use emojis sporadically—was accurate. Some of it, though, was not.],
   [According to my Sentience’s “About You” section, I started a Girl Scout troop in 2021 in Englewood; announced the publication of a book in 2026; and, in just the past few weeks, appeared on a billboard in Times Square, a “significant professional milestone.” None of this actually happened.],
   [\[Screenshot: courtesy of the author\]],
@@ -704,6 +732,7 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   [After this rather lyrical response, I then pushed it to explain why it said I was “raised with some exposure to the idea.” It immediately backtracked: “Ha, fair catch. I genuinely don’t know that about myself—I was kind of freestyling there. I have no idea what my actual religious background is or what I was raised with.” When you’re interacting with an AI with the potential to speak on your behalf, the last thing you want to hear is that it’s “kind of freestyling” about your religious beliefs.],
   [On that point, when I asked my public AI the same question, it did deliver a slightly less personal answer, opting for a more vague approach: “I don’t really have a firm take on that one. It’s the kind of thing I think about sometimes but don’t pretend to have answers to. I think most people are in that same boat whether they admit it or not.” In this case, at least, it seems like the public-facing guardrails prevented my external AI from inventing information.],
   [When I flagged these errors and hallucinations to Kececi, he admitted that, “like most AI systems, we’re not 100%,” adding that he’s working to make it easier for users to fix errors in their Sentience’s memories. Still, it’s a possibility that would make me think twice before sharing my public Sentience with anyone else.],
+  [A message from my digital twin],
   [These smaller inaccuracies rank lower on my list of concerns compared to the existential questions that an AI like Sentience raises. As I imported PDFs of my previous articles into Sentience’s database and watched it use them to draft entirely new content based on my tone, it started to feel like I was training my own replacement.],
   [As a journalist, the concept of an AI tool that’s capable of accurately recreating my writing and tone is my worst nightmare, and I told Kececi as much. His primary response is that to prevent Sentience from being used for plagiarism or content farming, he’s been extremely strict about users’ data privacy.],
   [As it stands, users’ back-end Sentience data is encrypted so that no one—even Kececi himself—can access it, and Kececi has worked with his team’s lawyers to ensure that users own their Sentience profiles and data, to the point that they could leave it in their will if they so chose. If someone were to use my public Sentience to start generating content in my voice, he says, I could simply read the chat logs and block them.],
@@ -716,23 +745,20 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   [I couldn’t have said it better myself.],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([”  class="wp-block-heading" id="h-i-try-building-my-own-digital-twin"\>I try building my own digital twin  I decided to put that claim to the test.], [Grace Snelling]),
-  inline-pq-idx: 19,
+  inline-pq: pull-quote([” I try building my own digital twin  I decided to put that claim to the test.], [Grace Snelling]),
+  inline-pq-idx: 21,
   word-count: 2698,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Construction material costs set to rise if Strait of Hormuz blockade continues],
   author: [Lizzie Crook],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [The continued blockade of the Strait of Hormuz could push up prices of building materials , including steel and cement , a study by global construction consultant Linesight has warned.],
   [If disruption continues in the Strait of Hormuz – a narrow waterway between Iran and the UAE – the construction industry should prepare for higher prices for aluminium , steel, copper and cement, the report states .],
   [Iran is currently restricting access to the waterway used to ship a fifth of the world's oil supply following US and Israeli strikes on the country creating a bottleneck for the oil and gas trade.],
@@ -766,12 +792,10 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   debug-mode: false,
 )
 
-  #pull-quote([While the Gulf region doesn't produce much copper, it is a leading supplier of sulphur, a byproduct of oil and gas production that is essential for sulphuric acid used in copper ore processing.], [Lizzie Crook])
+#pull-quote([While the Gulf region doesn't produce much copper, it is a leading supplier of sulphur, a byproduct of oil and gas production that is essential for sulphuric acid used in copper ore processing.], [Lizzie Crook])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Kimwolf Botnet Swamps Anonymity Network I2P],
   author: [BrianKrebs],
   source-name: [Krebs on Security],
@@ -782,12 +806,15 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   [I2P is a decentralized, privacy-focused network that allows people to communicate and share information anonymously.],
   [“It works by routing data through multiple encrypted layers across volunteer-operated nodes, hiding both the sender’s and receiver’s locations,” the I2P website explains . “The result is a secure, censorship-resistant network designed for private websites, messaging, and data sharing.”],
   [On February 3, I2P users began complaining on the organization’s GitHub page about tens of thousands of routers suddenly overwhelming the network, preventing existing users from communicating with legitimate nodes. Users reported a rapidly increasing number of new routers joining the network that were unable to transmit data, and that the mass influx of new systems had overwhelmed the network to the point where users could no longer connect.],
+  [I2P users complaining about service disruptions from a rapidly increasing number of routers suddenly swamping the network.],
   [When one I2P user asked whether the network was under attack, another user replied, “Looks like it. My physical router freezes when the number of connections exceeds 60,000.”],
-  [class="wp-caption-text" id="caption-attachment-73198"\>A graph shared by I2P developers showing a marked drop in successful connections on the I2P network around the time the Kimwolf botnet started trying to use the network for fallback communications.],
+  [A graph shared by I2P developers showing a marked drop in successful connections on the I2P network around the time the Kimwolf botnet started trying to use the network for fallback communications.],
   [The same day that I2P users began noticing the outages, the individuals in control of Kimwolf posted to their Discord channel that they had accidentally disrupted I2P after attempting to join 700,000 Kimwolf-infected bots as nodes on the network.],
+  [The Kimwolf botmaster openly discusses what they are doing with the botnet in a Discord channel with my name on it.],
   [Although Kimwolf is known as a potent weapon for launching DDoS attacks, the outages caused this week by some portion of the botnet attempting to join I2P are what’s known as a “ Sybil attack ,” a threat in peer-to-peer networks where a single entity can disrupt the system by creating, controlling, and operating a large number of fake, pseudonymous identities.],
   [Indeed, the number of Kimwolf-infected routers that tried to join I2P this past week was many times the network’s normal size. I2P’s Wikipedia page says the network consists of roughly 55,000 computers distributed throughout the world, with each participant acting as both a router (to relay traffic) and a client.],
   [However, Lance James , founder of the New York City based cybersecurity consultancy Unit 221B and the original founder of I2P, told KrebsOnSecurity the entire I2P network now consists of between 15,000 and 20,000 devices on any given day.],
+  [An I2P user posted this graph on Feb. 10, showing tens of thousands of routers — mostly from the United States — suddenly attempting to join the network.],
   [Benjamin Brundage is founder of Synthient , a startup that tracks proxy services and was the first to document Kimwolf’s unique spreading techniques . Brundage said the Kimwolf operator(s) have been trying to build a command and control network that can’t easily be taken down by security companies and network operators that are working together to combat the spread of the botnet.],
   [Brundage said the people in control of Kimwolf have been experimenting with using I2P and a similar anonymity network — Tor — as a backup command and control network, although there have been no reports of widespread disruptions in the Tor network recently.],
   [“I don’t think their goal is to take I2P down,” he said. “It’s more they’re looking for an alternative to keep the botnet stable in the face of takedown attempts.”],
@@ -802,19 +829,17 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   debug-mode: false,
 )
 
-  #pull-quote([class="wp-caption aligncenter" id="attachment\_73195" style="width: 758px;"\>   class="wp-caption-text" id="caption-attachment-73195"\>An I2P user posted this graph on Feb.], [BrianKrebs])
+#pull-quote([class="wp-caption-text" An I2P user posted this graph on Feb.], [BrianKrebs])
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Multiple Neom construction contracts cancelled],
   author: [Amy Peacock],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [A trio of companies have announced the cancellation of contracts to deliver work on the Trojena ski resort and The Line city as the Neom project in Saudi Arabia stalls.],
   [Steel company Eversendai announced this week that its structural steel contract for Neom's Trojena ski village, which is under construction in Saudi Arabia 's mountainous Tabuk region, had been terminated.],
   [Italian contractor Webuild also announced the cancellation of its contract to build three dams for a lake at the resort.],
@@ -843,7 +868,7 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Villa-Worthy Breakfasts We’d Actually Wake Up For],
   author: [Julia Youman],
   source-name: [Food52],
@@ -851,7 +876,6 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   paragraphs: (
   [If you’ve been around literally anyone in the past month, you’ve probably heard chatter about Love Island —whether it’s the UK version or the ever-iconic USA one. Maybe you’re all in. Maybe you’ve only absorbed it passively, against your will. Either way, it’s hard to escape.],
   [As someone who’d never tuned in before, I was surprised by the sudden cultural takeover. In the past few weeks alone, I’ve sat through full dinners where people debated their favorite couples, predicted drama, and ranked bombshells with passionate conviction. I finally had to get up to speed—if only to participate in what feels like a nationwide group project (slash networking event).],
-  [Read More \>\>],
 ),
   insert-map: (:),
   word-count: 111,
@@ -864,13 +888,12 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Over 40,000 civilian buildings in Iran reportedly damaged in ongoing war],
   author: [Amy Peacock],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [Humanitarian group Iranian Red Crescent Society has reported that 42,914 civilian buildings in Iran have been damaged by US-Israeli airstrikes, including more than 36,000 homes.],
   [Announced on X last week, the Iranian Red Crescent Society – a non-governmental group affiliated with the International Federation of Red Cross and Red Crescent Societies (IFRC) – calculated that US-Israeli airstrikes have caused damage to 42,914 civilian buildings in Iran.],
   [This includes 36,489 residential units and 6,179 commercial units.],
@@ -894,7 +917,7 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Hot Honey Peach Bellini],
   author: [Melissa Gaman],
   source-name: [Taste of Home],
@@ -904,21 +927,9 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   [3 tablespoons hot honey],
   [1 can (11.3 ounces) peach nectar, chilled],
   [2 bottles (750 ml each) champagne or sparkling grape juice, chilled],
-  [id="text-ingredients-container"\>
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- Text Ingredients],
-  [class="recipe-directions\_\_item"\> Preheat oven to 375°. Line a baking sheet with a large piece of heavy-duty foil (about 18x12-in.). Place peach halves, cut sides up, on foil; drizzle with hot honey. Fold foil over peaches and seal.],
-  [class="recipe-directions\_\_item"\> Transfer peach puree to a pitcher. Add the nectar and 1 bottle of champagne; stir until combined. Pour into 12 champagne flutes or wine glasses; top with remaining champagne. Serve immediately.],
+  [Preheat oven to 375°. Line a baking sheet with a large piece of heavy-duty foil (about 18x12-in.). Place peach halves, cut sides up, on foil; drizzle with hot honey. Fold foil over peaches and seal.],
+  [Bake for 25-30 minutes or until tender. Cool completely; remove and discard peels. In a food processor, process peaches until smooth.],
+  [Transfer peach puree to a pitcher. Add the nectar and 1 bottle of champagne; stir until combined. Pour into 12 champagne flutes or wine glasses; top with remaining champagne. Serve immediately.],
   [3/4 cup: 129 calories, 0 fat (0 saturated fat), 0 cholesterol, 3mg sodium, 13g carbohydrate (11g sugars, 1g fiber), 0 protein.],
 ),
   insert-map: (:),
@@ -932,13 +943,12 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Dezeen Agenda features SOM-designed glazed towers for new Kazakhstan city],
   author: [Saudatu Bah],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [The latest edition of our weekly Dezeen Agenda newsletter features a pair of towers in Kazakhstan by SOM . Subscribe to Dezeen Agenda now .],
   [Architecture studio SOM designed two stepped, wedge-shaped towers to serve as a landmark for the new city of Alatau in south-eastern Kazakhstan .],
   [Plastic bottles recycled into Parkinson's drug using bacteria],
@@ -955,7 +965,7 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Adidas is bringing back its trefoil logo for the 2026 World Cup],
   author: [Hunter Schwarz],
   source-name: [Fast Company Design],
@@ -965,6 +975,7 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   [The vintage Adidas logo shows three leaf-shaped foils with three parallel horizontal lines that cut through the bottom of the shapes. It previously appeared on Adidas World Cup kits until it was replaced by the brand’s triangular three-bars logo in the 1990s. Now, for the 2026 World Cup, the trefoil logo is making a comeback, appearing on the right chest of away jerseys for 25 countries, including Japan, Mexico, and Ukraine.],
   [Bringing the old logo back is a nostalgia play. Sam Handy, general manager of football for Adidas, said in a statement that the German sportswear brand “felt it was a fitting and inspired moment to bring the trefoil back to the biggest stage in world football.”],
   [The kits pay homage to each respective country with local references, like florals representing local plants for Costa Rica and Chile, and a pattern inspired by artist René Magritte for Belgium . The revived logo instantly gives the kits a classic feel.],
+  [The history of the trefoil],
   [The trefoil logo was introduced in the 1970s , when the brand was in expansion mode. Previously, Adidas had sold only shoes, and its first logo showed a track cleat with three stripes on the side and situated between the two extended tails in the d s in Adidas. When the company started selling apparel in 1972, it rolled out the trefoil created by German designer Hans “Nick” Roericht to symbolize a new era.],
   [The trefoil stuck with the symbolism of the three stripes after founder Adolf Dassler put three stripes on the shoes for attention’s sake as they showed up better in photographs. The trefoil’s shape was inspired by florals, and the logo became a pop culture crossover after rap group Run-D. M. C.’s homage to the brand in the 1986 song “My Adidas.”],
   [The company modernized its visual identity in 1991 with its triangular three-bars performance logo, designed by creative director Peter Moore. It gave Adidas a more simple mark to better compete visually with the American brand Nike’s iconic Swoosh , and it represented the company during a period of rapid growth in the 1990s and 2000s.],
@@ -982,7 +993,7 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Hot Honey Salmon],
   author: [Val Goodrich],
   source-name: [Taste of Home],
@@ -993,20 +1004,8 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   [1 teaspoon pepper],
   [1 medium lemon, zested and juiced],
   [1/3 cup hot honey],
-  [id="text-ingredients-container"\>
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- Text Ingredients],
-  [class="recipe-directions\_\_item"\> Preheat oven to 400°. Place salmon fillets on a parchment-lined baking sheet. Season with salt and pepper. In a small bowl, combine hot honey, lemon zest and juice. Brush over salmon.],
+  [Preheat oven to 400°. Place salmon fillets on a parchment-lined baking sheet. Season with salt and pepper. In a small bowl, combine hot honey, lemon zest and juice. Brush over salmon.],
+  [Bake 7 minutes. Brush again with honey mixture and bake 7-10 minutes longer or until fish flakes easily with a fork.],
   [1 piece: 354 calories, 16g fat (3g saturated fat), 85mg cholesterol, 677mg sodium, 24g carbohydrate (23g sugars, 0 fiber), 29g protein.],
 ),
   insert-map: (:),
@@ -1017,7 +1016,7 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Strawberry Lemon Drop],
   author: [Kate McKiernan],
   source-name: [Taste of Home],
@@ -1030,21 +1029,9 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   [1/4 ounce triple sec],
   [Sugar, for the rim],
   [Lemon wheel or sliced strawberries, for garnish],
-  [id="text-ingredients-container"\>
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- Text Ingredients],
-  [class="recipe-directions\_\_item"\> Fill a cocktail shaker with ice cubes about 3/4 of the way full. Add juice mixture, vodka and triple sec. Shake until the cocktail shaker is cold and icy on the outside, 15-20 seconds.],
-  [class="recipe-directions\_\_item"\> Dip the rim of a martini or coupe glass into lemon juice, then sugar to coat. Pour cocktail into the prepared glass. Garnish with a lemon wheel or strawberry slices, if desired. Serve immediately.],
+  [Place strawberries and lemon juice in a glass; muddle until strawberries are smashed. Strain into a separate container, discarding the strawberry solids.],
+  [Fill a cocktail shaker with ice cubes about 3/4 of the way full. Add juice mixture, vodka and triple sec. Shake until the cocktail shaker is cold and icy on the outside, 15-20 seconds.],
+  [Dip the rim of a martini or coupe glass into lemon juice, then sugar to coat. Pour cocktail into the prepared glass. Garnish with a lemon wheel or strawberry slices, if desired. Serve immediately.],
   [1 cocktail: 156 calories, 0 fat (0 saturated fat), 0 cholesterol, 2mg sodium, 12g carbohydrate (9g sugars, 1g fiber), 0 protein.],
 ),
   insert-map: (:),
@@ -1056,9 +1043,8 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [Why Meta is building its high-tech South Carolina data center with an old-school material],
   author: [Nate Berg],
   source-name: [Fast Company Design],
@@ -1088,12 +1074,10 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   debug-mode: false,
 )
 
-  #pull-quote([Other data centers, currently in a building boom , are likely to follow.], [Nate Berg])
+#pull-quote([Other data centers, currently in a building boom , are likely to follow.], [Nate Berg])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [You might be stuck in TSA lines for hours. Make sure you have these travel gadgets with you],
   author: [Michael Grothaus],
   source-name: [Fast Company Design],
@@ -1102,16 +1086,20 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   [As the government shutdown drags on, having devastating effects on Transportation Security Administration staffing, millions of Americans continue to face long lines at TSA checkpoints at airports nationwide. With the busy Easter holiday travel weekend around the corner, wait times are expected to worsen as the number of travelers increases.],
   [If you have a flight scheduled in the days ahead, here are some travel gadgets that can help make your TSA wait times more bearable.],
   [\[Photo: faraktinov/Adobe Stock\]],
+  [Battery packs for long TSA lines],
   [Thanks to modern smartphone batteries, which can last a day or more, you ordinarily don’t have to worry about your phone running out of juice if you have a direct flight between any two points in the continental United States. But given that many airports are now advising you to get to the airport hours earlier to get through the long TSA checkpoints in time to make your flight, you may be risking a dead phone well before reaching your destination.],
   [If you are planning to watch videos or surf the web on your phone to pass the time spent in TSA lines, make sure you have a battery pack, also known as a power bank, with you. If you’re traveling alone, even a smaller power bank (around 5,000 mAh capacity) will be fine. But if you are traveling with others, a larger power bank (around 20,000 mAh capacity) that can charge multiple devices at once is better.],
   [However, keep in mind that while the TSA allows power banks in checked baggage , the Federal Aviation Administration generally limits power banks aboard aircraft to those rated 100 watt-hours (Wh) per battery (about 27,000 mAh) or lower.],
   [\[Photo: Tramora\]],
+  [Luggage with smartphone or laptop mounts],
   [Speaking of using your devices to pass the time in the TSA line, holding your phone in front of you for hours on end can get exhausting. Whipping out your laptop is even more of a struggle. So why not give your arm a rest and let your luggage do the holding for you?],
   [Several manufacturers now make luggage with built-in smartphone and laptop stands. These stands essentially turn your luggage into a desk that supports your device, giving your arms a rest. One popular luggage with a built-in laptop stand is the Tramora CABIN – T7 . If you’re just looking for smartphone support and don’t feel like buying new luggage, there’s no shortage of smartphone luggage handle mounts on sites like Amazon.],
   [\[Photo: Giraffe Creation/Amazon\]],
+  [Collapsible stools],
   [Even if you use one of the above gadgets to spare your arms while waiting in long TSA lines, your legs still face their own issues—holding you up. That’s where collapsible travel stools come in. They are small, sturdy, and highly portable, and great for giving your legs a rest when you are standing stationary in TSA lines for hours.],
   [The telescoping stools generally extend to about 17 inches high and can collapse into a film canister-like format with a thickness of just a few inches. Most collapsible stools can support hundreds of pounds— some advertise up to 400-pound thresholds. Pair a collapsible stool with luggage that has a laptop stand, and you’ll have a nearly desk-like setup you can work from while your TSA line slowly advances.],
   [\[Photo: Xnmbcre/Amazon\]],
+  [Portable travel fans],
   [While spring has only just arrived, and in many parts of the country the summer heatwave is still a few months away, waiting in stagnant, crowded spaces can still significantly increase ambient air temperature, regardless of climate controls.],
   [That’s why it may be worth bringing a portable travel fan, especially if you already tend to get hot in crowded spaces. Many modern travel fans are small and collapsible, making them easy to travel with. They are also relatively silent, which means they won’t be an annoyance to the hundreds of other people standing in line with you.],
   [Most portable travel fans can be purchased for less than \$20, and many even have USB-C ports , so they can be charged from the same power bank that charges your phone. Speaking of your phone, you can even find a fan that plugs into your Android or iPhone , so you can browse the web and stay cool as the TSA line you’re stuck in slowly inches forward.],
@@ -1122,10 +1110,8 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Best Italian Dictionaries For English Speakers: Apps, Bilingual Options And More],
   author: [Thomas Devlin],
   source-name: [Babbel Tech Blog],
@@ -1159,16 +1145,13 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Brick Bonds book celebrates "the skill and craft of bricklaying"],
   author: [Lizzie Crook],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [Graphic designer Melissa Price shines a light on the anatomy of the humble brick and the variety of bricklaying techniques used in construction in her book Brick Bonds.],
   [Printed to the dimensions of a standard UK brick, the book was designed and printed by Price as a guide that illustrates "the full range of bonds in a simple form".],
   [It follows 10 years of research into the history of bricklaying and the wide range of bond patterns, which she feels are often overlooked or written about in a highly technical way.],
@@ -1203,12 +1186,10 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   debug-mode: false,
 )
 
-  #pull-quote([Price's highlight of the book is the decorative techniques section, and her favourite pattern that she discovered is dogtoothing.], [Lizzie Crook])
+#pull-quote([Price's highlight of the book is the decorative techniques section, and her favourite pattern that she discovered is dogtoothing.], [Lizzie Crook])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Is Miraval Arizona – An Adults Only Retreat Resort Worth It?],
   author: [Kristin Addis],
   source-name: [Be My Travel Muse],
@@ -1230,22 +1211,27 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   [Some activities are included, while others require additional credits or fees. The schedule is packed enough that you could easily fill every hour of the day if you wanted to.],
   [But you don’t have to.],
   [One of the things I appreciated most about Miraval is that it doesn’t pressure you into being constantly productive about your wellness. Some guests are running from class to class. Others are reading by the pool all afternoon. Both approaches fit perfectly.],
+  [Rooms and the Upgrade I Received],
   [Miraval accommodations are designed to be peaceful and understated rather than flashy.],
   [When I booked my stay, I used a combination of Hyatt points and a Hyatt Privé rate , which is a partner program Hyatt offers through select travel advisors (if you’re interested in a Hyatt Prive, booking, get in touch as I’m an advisor).],
   [Even though the stay involved points, the Privé booking still allowed the hotel to prioritize my reservation for upgrades, and I ended up receiving a really lovely room upgrade upon arrival.],
   [That said, I wish I’d opted for a room with a mountain view. I went for the lowest category and I think an upgrade from a mountain view room to a suite would have been even more amazing.],
+  [The Setting: The Sonoran Desert at Its Best],
   [The property sits in a beautiful stretch of the Sonoran Desert with the Santa Catalina Mountains rising behind it just outside of Tucson , right at the bottom of Arizona , meaning winters are mild and summers are HOT. I visited in February and though there was some desert rain, it didn’t bother me at all and added to the coziness of the experience.],
   [This landscape has a very specific energy. It’s quiet, open, and full of subtle colors — soft greens from the cacti , deep rust tones in the rocks, and golden light that seems to last forever in the evenings.],
   [Sunrise hikes quickly became one of my favorite parts of the stay. Watching the desert slowly wake up while the mountains catch the first light is one of those simple experiences that feels grounding.],
+  [The Food (Which Is Surprisingly Good)],
   [One concern people sometimes have about wellness resorts is the food.],
   [You imagine tiny portions of quinoa and kale.],
   [Miraval does focus on nutritious, balanced meals, but the food here is varied and although the breakfast and lunch were fine – nothing out of this world – the dinners were truly delicious.],
   [The approach is more about thoughtful ingredients and balanced cooking rather than strict dieting.],
   [It never felt restrictive.],
+  [The Spa and Wellness Experiences],
   [The Life in Balance Spa is one of the highlights of the property.],
   [Like the rest of Miraval, it’s designed around calm spaces and desert views. There are indoor and outdoor relaxation areas, quiet pools, steam rooms, and a long list of treatments inspired by different wellness traditions.],
   [If you plan to book treatments, it’s worth scheduling them in advance since they fill up quickly.],
   [Even if you skip treatments, the spa facilities alone are worth spending time in as they’re open to anyone staying there. Each night before bed, I did at least an hour of sauna, steam, cold plunge, stargazing, hot tub, repeat.],
+  [Booking Miraval with Hyatt Points],
   [Miraval is one of the Hyatt properties where using points can offer really strong value.],
   [Award stays typically include:],
   [accommodations],
@@ -1254,6 +1240,7 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   [access to the spa facilities],
   [Given how much programming and dining is included, redeeming points here can feel much more valuable than using them at a typical city hotel.],
   [In my case, pairing the points booking with a Hyatt Privé rate helped maximize the overall experience, especially when it came to the room upgrade.],
+  [Is Miraval Arizona Worth It?],
   [If you’re looking for a traditional luxury resort with nightlife and beach clubs, this probably isn’t the right fit.],
   [But if you want a place that genuinely helps you unplug — somewhere you can move your body, learn something new, spend time outside, and leave feeling reset — Miraval does that incredibly well.],
   [It’s not about escaping life completely.],
@@ -1266,10 +1253,8 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The sights and sounds of Bhutan],
   author: [Tim Urban],
   source-name: [Wait But Why],
@@ -1289,6 +1274,7 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   [Sadly, Bhutan’s way of life is threatened now as many of its young people have left to find opportunity elsewhere. The king is attempting to fix this with plans to construct Gelephu Mindfulness City , an economic hub which will center around innovation, while preserving Bhutanese tradition . It looks like it’ll be incredible, though I was told not to hold my breath as it will probably not be finished for 20 more years.],
   [All of this is to say that Bhutan is a special place—remote, mysterious, and breathtakingly beautiful. Which is why it was always prominently on The List.],
   [A trip to Bhutan is better shown than told, so I kept most of the details to this video :],
+  [\_\_\_\_\_\_\_],
   [More posts from The List: 
  Siberia 
  Tokyo 
@@ -1297,6 +1283,7 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
  Greenland 
  North Korea 
  And The genie question],
+  [\_\_\_\_\_\_\_],
   [If you like Wait But Why, sign up for our email list and we’ll send you new posts when they come out.],
   [To support Wait But Why, visit our Patreon page . (During this book-writing phase, I’ve been doing mini-posts every Friday for patrons.)],
   [It is not quick to get from Austin to Bhutan. We had to get there by way of Chicago, Zurich, and Delhi. ↩],
@@ -1309,16 +1296,13 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [AIA sues Donald Trump over Kennedy Center renovation in unprecedented coalition],
   author: [Ben Dreith],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [US organisations the American Institute of Architects and Docomomo US are among the plaintiffs in a lawsuit suing US president Donald Trump over his proposed renovations for the Edward Durell Stone-designed Kennedy Center.],
   [Eight plaintiffs submitted a lawsuit this morning in an attempt to pause proposed renovations to the John F Kennedy Center for the Performing Arts in Washington DC.],
   [The plaintiffs include the American Institute of Architects (AIA), Docomomo US , t he Cultural Landscape Foundation , the American Society of Landscape Architects , the Committee of 100 on the Federal City , DC Preservation League , the National Trust for Historic Preservation and the Society of Architectural Historians .],
@@ -1355,11 +1339,10 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [How to Spend the Perfect Long Weekend in Palm Beach—Like a Local],
   author: [Kim Sunshine],
   source-name: [Food52],
@@ -1367,7 +1350,6 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   paragraphs: (
   [Welcome to Like a Local, our series where writers share how to spend an ideal long weekend in their favorite towns. This time, Kim gives us an insider’s guide to Palm Beach, FL.],
   [What started as yearly visits to Palm Beach turned into biannual trips, and no matter how often I went, I always had a great time. It wasn’t until I was lucky enough to get “stuck” in Palm Beach for months during the pandemic that I began to appreciate all this destination has to offer. Sure, it’s gorgeous ( like stepping into a Slim Aarons imagery time capsule), easy to get to (landing at PBI airport feels intimate, not intimidating) and its food rivals that of NYC and Rome. But living like a local made me appreciate all the nooks and crannies of this island. Here are my best bets for a perfect long weekend in Palm Beach.],
-  [Read More \>\>],
 ),
   insert-map: (:),
   word-count: 153,
@@ -1377,7 +1359,7 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Hot Honey Brussels Sprouts],
   author: [Lindsay D. Mattison],
   source-name: [Taste of Home],
@@ -1392,21 +1374,10 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   [1 teaspoon grated lemon zest],
   [1 tablespoon lemon juice],
   [2 tablespoons hot honey],
-  [id="text-ingredients-container"\>
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- Text Ingredients],
-  [class="recipe-directions\_\_item"\> In a large bowl, toss Brussels sprouts, shallots, oil and 1/4 teaspoon salt. Carefully remove the baking sheet from the oven, and add the Brussels sprouts mixture. Shake to distribute them in an even layer. Roast, stirring halfway through cooking, until sprouts are tender and lightly browned, 20-25 minutes.],
-  [class="recipe-directions\_\_item"\> Meanwhile, place garlic on a cutting board; sprinkle with remaining salt. Mash garlic with flat side of knife blade, forming a smooth paste. Transfer to a large bowl. Add parsley, lemon zest, lemon juice and hot honey.],
+  [Preheat oven to 450°. Place an empty 15x10x1-in. baking sheet in the oven to preheat.],
+  [In a large bowl, toss Brussels sprouts, shallots, oil and 1/4 teaspoon salt. Carefully remove the baking sheet from the oven, and add the Brussels sprouts mixture. Shake to distribute them in an even layer. Roast, stirring halfway through cooking, until sprouts are tender and lightly browned, 20-25 minutes.],
+  [Meanwhile, place garlic on a cutting board; sprinkle with remaining salt. Mash garlic with flat side of knife blade, forming a smooth paste. Transfer to a large bowl. Add parsley, lemon zest, lemon juice and hot honey.],
+  [Toss hot Brussels sprouts with honey mixture until well coated; serve warm.],
   [1 serving: 121 calories, 4g fat (1g saturated fat), 0 cholesterol, 276mg sodium, 21g carbohydrate (11g sugars, 5g fiber), 4g protein.],
 ),
   insert-map: (:),
@@ -1420,7 +1391,7 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Chobani Just Brought Back This Fan-Favorite Seasonal Flavor Earlier Than Ever],
   author: [Hayley Schueneman],
   source-name: [Taste of Home],
@@ -1448,12 +1419,13 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Slow Cooker Masala Chicken and Rice],
   author: [Taste of Home Editorial Team],
   source-name: [Taste of Home],
   images: (),
   paragraphs: (
+  [CHICKEN:],
   [1 tablespoon butter],
   [1 small onion, chopped],
   [1 pound ground chicken],
@@ -1469,25 +1441,14 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   [1/4 teaspoon ground cinnamon],
   [1 bay leaf],
   [1 cup frozen peas],
+  [RICE:],
   [1 cup uncooked basmati rice],
   [1-3/4 cups boiling water],
   [2 tablespoons canola oil or butter],
   [1 teaspoon salt],
-  [id="text-ingredients-container"\>
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- Text Ingredients],
-  [class="recipe-directions\_\_item"\> In a large skillet, heat butter over medium heat. Add chicken and onion, cook until no longer pink, 6-8 minutes, breaking into crumbles. Transfer to a 4-qt. slow cooker. Add tomato sauce, water, salt, garlic powder, cumin, chili powder, turmeric, garam masala, ginger, cinnamon and bay leaf; stir to combine. Cook on low 4-5 hours. Add peas, cook 30 minutes longer. Discard bay leaf.],
-  [class="recipe-directions\_\_item"\> Meanwhile, preheat oven to 375°. Grease a 2-qt. baking dish. Add rice, water, salt and oil; stir to combine. Cover tightly with foil. Bake until water is absorbed, 25-30 minutes. Fluff with a fork.],
+  [In a large skillet, heat butter over medium heat. Add chicken and onion, cook until no longer pink, 6-8 minutes, breaking into crumbles. Transfer to a 4-qt. slow cooker. Add tomato sauce, water, salt, garlic powder, cumin, chili powder, turmeric, garam masala, ginger, cinnamon and bay leaf; stir to combine. Cook on low 4-5 hours. Add peas, cook 30 minutes longer. Discard bay leaf.],
+  [Meanwhile, preheat oven to 375°. Grease a 2-qt. baking dish. Add rice, water, salt and oil; stir to combine. Cover tightly with foil. Bake until water is absorbed, 25-30 minutes. Fluff with a fork.],
+  [Serve chicken over cooked rice.],
   [1 serving: 491 calories, 20g fat (5g saturated fat), 105mg cholesterol, 1590mg sodium, 51g carbohydrate (4g sugars, 4g fiber), 27g protein.],
 ),
   insert-map: (:),
@@ -1499,47 +1460,51 @@ Fiber 0.9 grams | Sugar 11.5 grams | Protein 1.6 grams],
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [Just when you think IKEA’s PAX series has everything you need to create a stellar wardrobe, they come out with a new addition to prove you wrong. Last year, they introduced the brilliant end-unit addition, and now there’s a slim mid-unit add-on designed to fit between two PAX frames, giving you extra storage and display space. Bringing a Brand-New Look to the Reliable PAX System More storage is always a plus, but I have to say, this add-on elevates the \[…\]])],
-    [#brief-item([Jim Hagan], source-name: [New Relic Blog], [A Blueprint for Enterprise Alert Management 
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [Just when you think IKEA’s PAX series has everything you need to create a stellar wardrobe, they come out with a new addition to prove you wrong. Last year, they introduced the brilliant end-unit addition, and now there’s a slim mid-unit add-on designed to fit between two PAX frames, giving you extra storage and display space. Bringing a Brand-New Look to the Reliable PAX System More storage is always a plus, but I have to say, this add-on elevates the \[…\]])],
+  [#brief-item([Jim Hagan], source-name: [New Relic Blog], [A Blueprint for Enterprise Alert Management 
 
-class="b01-text content b01-text--blog"\>
+
  
 
-class="b01-text\_\_text img-longform"\>
+
  
 
 In my observability workshops with enterprise customers, the conversation often shifts from "what and how to instrument" toward the topic of  "How do we manage alert noise created by all this telemetry"])],
-    [#brief-item([Zoe Denenberg, Bon Appétit Staff & Contributors], source-name: [Bon Appétit (magazine)], [Shaved into a salad, roasted until crispy, or puréed into soup, our best asparagus recipes celebrate spring’s most iconic spears.])],
-    [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [A proper foyer or an alternative like a mudroom makes coming and going much easier. Just kick off your shoes, hang your coat, or drop your bag without cluttering your living room. It’s nice to have, so you’re not always aware of the chaos happening by your front door. But what if you don’t have a dedicated entry hall? Well, you make one, of course! JulesButNotVerne (Reddit), inspired by Vitsoe shelving, created a freestanding partition near their door using IKEA \[…\]])],
-    [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [Cluttered countertops are the Achilles’ heel of kitchens. Think about it. It doesn’t matter how amazing your kitchen is; if the counters are packed, any desire you had to meal prep or cook disappears. I mean, who wants to pull out a bunch of stuff to cook when they’re already short on counter space? On top of that, it’s harder to clean, and you just feel overwhelmed. The next thing you know, you’re ordering take-out…again! Franziska found a way to \[…\]])],
-    [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [This Short Rib Ragu is deeply flavorful and impressive, but surprisingly low-maintenance. It’s mostly hands-off thanks to a long oven…
+  [#brief-item([Zoe Denenberg, Bon Appétit Staff & Contributors], source-name: [Bon Appétit (magazine)], [Shaved into a salad, roasted until crispy, or puréed into soup, our best asparagus recipes celebrate spring’s most iconic spears.])],
+  [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [A proper foyer or an alternative like a mudroom makes coming and going much easier. Just kick off your shoes, hang your coat, or drop your bag without cluttering your living room. It’s nice to have, so you’re not always aware of the chaos happening by your front door. But what if you don’t have a dedicated entry hall? Well, you make one, of course! JulesButNotVerne (Reddit), inspired by Vitsoe shelving, created a freestanding partition near their door using IKEA \[…\]])],
+  [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [Cluttered countertops are the Achilles’ heel of kitchens. Think about it. It doesn’t matter how amazing your kitchen is; if the counters are packed, any desire you had to meal prep or cook disappears. I mean, who wants to pull out a bunch of stuff to cook when they’re already short on counter space? On top of that, it’s harder to clean, and you just feel overwhelmed. The next thing you know, you’re ordering take-out…again! Franziska found a way to \[…\]])],
+  [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [This Short Rib Ragu is deeply flavorful and impressive, but surprisingly low-maintenance. It’s mostly hands-off thanks to a long oven…
 
  ( Read more... ) 
 
 Tags: Dinner Dinner Party Pasta ragu short ribs 
 
 The post Slow-Braised Short Rib Ragu appeared first on A Cozy Kitchen .])],
-    [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [This Steak Salad with Creamy Chimichurri Dressing is crisp, herby, and satisfying without feeling heavy. Quick-seared steak, tender greens, and…
+  [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [This Steak Salad with Creamy Chimichurri Dressing is crisp, herby, and satisfying without feeling heavy. Quick-seared steak, tender greens, and…
 
  ( Read more... ) 
 
 Tags: Chimichurri Dinner Dinner for Two Healthy lunch no-toc Salad Steak 
 
 The post Steak Salad with Creamy Chimichurri Dressing appeared first on A Cozy Kitchen .])],
-    [#brief-item([Kate Kassin], source-name: [Bon Appétit (magazine)], [A dynamic Chicago restaurant's next chapter, Northern Thai cooking in DC, and more reasons to dine out this season around the country.])],
-    [#brief-item([Bhavna Sandhu], source-name: [New Relic Blog], [Automate Log Management via Terraform 
+  [#brief-item([Kate Kassin], source-name: [Bon Appétit (magazine)], [A dynamic Chicago restaurant's next chapter, Northern Thai cooking in DC, and more reasons to dine out this season around the country.])],
+  [#brief-item([Bhavna Sandhu], source-name: [New Relic Blog], [Automate Log Management via Terraform 
 
-class="b01-text content b01-text--blog"\>
+
  
 
-class="b01-text\_\_text img-longform"\>
+
  
 
-dir="ltr"\>Maintaining log configurations manually across hundreds of services leads to configuration drift and operational toil. Practicing log management as code allows you to move away from reactive administration and toward a self-governing pipeline that:])],
-  ))
-}
+Maintaining log configurations manually across hundreds of services leads to configuration drift and operational toil. Practicing log management as code allows you to move away from reactive administration and toward a self-governing pipeline that:])],
+))
+
+// --- Notable Quotes ---
+#block(above: 0.2in, stroke: (top: 1pt + luma(26)), inset: (top: 0.1in))[
+  #pull-quote([It’s composed of two rigid components on the top and bottom, with a tented heel pocket sandwiched in between them.], [Grace Snelling])
+
+]
 
 #colophon([The Northern Bulletin], [Vol. 1, No. 057], [2026-03-30])

@@ -21,56 +21,8 @@
 #masthead([The Sentinel], [Vol. 1, No. 042], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Starvation Mode: How Caloric Restriction Affects Your Body],
-  kicker: [Cover Story],
-  author: [Greatist],
-  source-name: [Greatist],
-  deck: [Yep, starvation mode is a thing. But it doesn’t have to halt weight loss.],
-  lead-pre: [],
-  lead-cap: [C],
-  lead-rest: [utting back on calories but not losing weight? You might wonder if you’ve gotten stuck in the twilight zone of so-called “starvation mode.”],
-  body-paragraphs: (
-  [Everyone from your personal trainer to your grandma may have warned you about this metabolic frenemy that keeps your body holding onto weight. But is starvation mode really a thing — or just an urban legend?],
-  [The concept of starvation mode is that when you restrict calories, your body has a “hold it right there” response. To prevent you from losing weight rapidly, your metabolism slows, conserving energy by reducing the calories it burns.],
-  [Research shows starvation mode — formally called adaptive thermogenesis or metabolic adaptation — is a legit phenomenon. It’s well documented that sometimes, the more weight you lose (and the more rapidly you do so), the more your body resists the process.],
-  [Evolutionarily speaking, this may be a holdover from when humans faced food scarcity and needed a mechanism for self-preservation. But in today’s world, starvation mode can be a frustrating roadblock to weight loss.],
-  [What does this metabolic hiccup look like? These symptoms may indicate that starvation mode is becoming a problem for your health:],
-  [fatigue],
-  [hair loss],
-  [irritability],
-  [constipation],
-  [extreme hunger],
-  [feeling unusually cold],
-  [decreased muscle mass],
-  [a weight loss plateau with no change in diet or exercise habits],
-  [Starvation mode isn’t the same thing as actual starving. In today’s modern food environment, true starvation is rare. If you’re eating regularly, you won’t experience life-threatening starvation.],
-  [However, your body might exhibit some of the same early signs as real starvation. These include the symptoms listed above.],
-  [Most commonly, though, starvation mode involves stalled weight loss. You may have hit the wall of adaptive thermogenesis when restricting calories and increasing physical activity without losing weight.],
-  [How long until your body goes into starvation mode?],
-  [Getting into starvation mode can take just a few days , especially if those days involve severe calorie restriction.],
-  [So what counts as severe calorie restriction? Many experts advise not going below 1,200 calories per day for women and 1,500 calories per day for men unless supervised by a doctor. Anything below these numbers could land you in starvation mode faster.],
-  [How do I get my body out of starvation mode?],
-  [Fortunately, getting your body out of starvation mode isn’t complicated.],
-  [First, there’s the obvious solution: Eat a few more calories. But we don’t mean just any calories. By adding a few more nutrient-dense foods (especially those with fiber and protein), you may find weight loss becomes easier, not harder. Both of these nutrients have links to weight loss — so they might help you get out of starvation mode without gaining weight.],
-  [If you’re feeling extremely depleted, you might take a temporary break from a weight loss diet to replenish your nutrient stores.],
-  [Choosing the proper exercise could also bump you out of starvation mode. Resistance exercises like weightlifting, yoga, push-ups, squats, and others build muscle, which increases your metabolic rate.],
-  [According to a 2014 study , people who participated in a 9-month resistance exercise program increased their resting metabolic rate — aka how many calories they burned at rest — by an average of 5%.],
-  [When to see a doctor],
-  [Weight loss is a balancing act. It’s normal to experience physical and emotional ups and downs.],
-  [That said, it’s time to see a doctor if you’re noticing symptoms like extreme fatigue or lethargy, constipation that lasts more than a few days, sensitivity to cold, or unusual mood changes. Your healthcare team can help you hit the sweet spot of weight loss without lingering in starvation mode.],
-  [Despite its name, being in starvation mode doesn’t mean you’ll starve. Instead, it’s a state in which your body has adapted to your weight loss efforts, giving you pushback on how many calories it burns. With strategies like tweaking your calorie intake and adding strength training, you can get out of this mode and back on the path to sustained weight loss.],
-),
-  edited-for-length: false,
-)
-
-#pull-quote([You may have hit the wall of adaptive thermogenesis when restricting calories and increasing physical activity without losing weight.], [Greatist])
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Stopping Ozempic, Wegovy May Reverse Cardiovascular Benefits],
   author: [Healthline],
   source-name: [Healthline],
@@ -120,10 +72,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Millions Are Unaware of Cardiovascular Risks That Start Outside of the Heart],
   author: [Healthline],
   source-name: [Healthline],
@@ -194,10 +144,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Bumps Inside Nose: Common Causes and Top Treatments],
   author: [Greatist],
   source-name: [Greatist],
@@ -207,6 +155,7 @@
   [There are many possible causes for bumps inside your nose — some as harmless as a pimple, others that might need more attention. It’s easy to imagine the worst, but the truth is usually less alarming.],
   [If you’ve got a painful, annoying, or strange bump in your nose, keep reading to learn what it might be, whether it’s worth worrying about, and how to deal with it.],
   [Sergey Mironov/Getty Images],
+  [Bumps inside nose causes],
   [So, what’s behind these bothersome nose bumps? Here are some common culprits:],
   [Nasal vestibulitis],
   [This is inflammation of the nasal vestibule , the area just inside your nostrils, often caused by bacterial infections. It can lead to painful, red bumps sensitive to the touch. Common triggers include frequent nose-picking, blowing too hard, or even plucking nose hairs.],
@@ -227,6 +176,7 @@
   [Discharge. You need to monitor the condition carefully to see if there’s any pus or blood.],
   [Difficulty breathing. If the bump is large enough, it might obstruct your airflow.],
   [Persistent bumps. Anything that doesn’t go away after a week should be checked out.],
+  [How to treat nose bumps],
   [Ready to say goodbye to that pesky bump inside your nose? The proper treatment depends on what’s causing it, but here are some ideas to ease the discomfort and promote healing:],
   [Apply warm compresses. Apply gentle heat to the area to reduce swelling and promote drainage if it’s a pimple or infection.],
   [Use saline rinses. Keep your nasal passages clean with saline spray or a Neti pot.],
@@ -235,6 +185,7 @@
   [Leave ingrown hairs alone. Let them resolve independently or see a doctor if they get infected.],
   [Additionally, if you’re dealing with nasal polyps, a healthcare professional might prescribe steroid sprays to shrink them and reduce inflammation, making breathing easier.],
   [On the other hand, if a bacterial infection is the culprit, as in cases of nasal vestibulitis, your doc may recommend a topical antibiotic like mupirocin. This ointment is applied directly inside the nose to target the infection, reduce redness, and promote healing.],
+  [When to see a doctor],
   [While most nose bumps aren’t a big deal, some need more attention. Here’s when to make that appointment:],
   [Persistent or recurring bumps. If it’s sticking around or keeps coming back, get it checked.],
   [Severe pain. Pain that doesn’t ease up with home treatments is a sign you need professional help.],
@@ -249,10 +200,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [What Is ‘Boy Kibble?’ The Simple High Protein Meal Trend That’s Going Viral],
   author: [Healthline],
   source-name: [Healthline],
@@ -312,10 +261,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Rucking Benefits: Add Weight to Your Walk to Boost Fitness and Strength],
   author: [Greatist],
   source-name: [Greatist],
@@ -325,8 +272,10 @@
   [Weightlifting isn’t the only way to build muscle. Rucking, or walking with a weighted backpack, is also highly effective. It’s easy to start, can be done anywhere, and helps build muscle, burn fat, and boost endurance.],
   [Curious? Keep reading to discover why rucking might become your new favorite workout!],
   [mixetto/Getty Images],
+  [What is rucking?],
   [Rucking is like taking your regular walk and cranking up the intensity with heavy cargo . It’s as simple as strapping on a weighted backpack (aka rucksack) and hitting the pavement, the trail, or wherever you like to roam. Originally dreamed up by the military to toughen up soldiers, rucking, or a rucksack march has, er, marched into civilian life as a killer workout.],
   [What makes it awesome? The extra weight transforms a casual stroll into a workout that means business. Plus, it’s customizable — you can load up as much or as little weight as you want, making it perfect for any fitness level. And the best part is that you can ruck just about anywhere.],
+  [Benefits of rucking],
   [Rucking isn’t just a walk in the park — it’s a powerful workout that packs a punch in all the right places. Here’s why rucking deserves a spot in your fitness routine :],
   [Builds strength and endurance],
   [Think of rucking as the ultimate multitasker for your body. It’s like lifting weights but with cardio to keep your heart pumping.],
@@ -338,18 +287,21 @@
   [If you’ve had a baby, rucking can be a game-changer, helping combat the postural shifts of pregnancy and hauling around kids. Plus, it builds the functional strength you need for everyday life, like lifting groceries or wrangling toddlers.],
   [Accessible and time-efficient],
   [Rucking easily fits into a busy schedule. You don’t need special equipment beyond a sturdy backpack or a gym membership, and you can do it while multitasking — think walking the dog in the morning or pushing a stroller. Plus, the whole family can join in, making it a great way to combine fitness with family time.],
+  [Rucking tips for beginners],
   [Starting rucking is easy, but here are some tips to help you get the most out of your rucks:],
   [Start light. Begin with a challenging but manageable weight, around 10 to 15% of your body weight.],
   [Choose the right backpack. A comfortable, sturdy bag with padded straps is essential to avoid strain and injury.],
   [Focus on form. Keep your shoulders back, engage your core, and maintain a steady pace.],
   [Increase gradually. As your strength and endurance improve, gradually increase the weight and distance.],
   [Stay consistent. Regular rucking sessions will help you build strength and endurance over time.],
+  [Safety tips],
   [Rucking is generally safe, but here’s how to stay injury-free :],
   [Listen to your body. Lighten your load or take a break if you feel pain or discomfort.],
   [Warm up and cool down. Prepare your muscles for the workout and help them recover afterward.],
   [Stay hydrated. Carry water with you, especially on longer rucks.],
   [Wear supportive footwear. Good shoes can prevent foot and ankle injuries.],
   [Be mindful of your surroundings. Pay attention to the terrain, and avoid areas that could be hazardous.],
+  [FAQs],
   [Does rucking build muscle?],
   [Yes, rucking can help build muscle, especially in your legs, core, and back. The added weight provides resistance, similar to strength training.],
   [What is the ideal weight for rucking?],
@@ -366,27 +318,25 @@
   debug-mode: false,
 )
 
-  #pull-quote([Improves posture and core stability   Carrying a weighted backpack helps your posture.], [Greatist])
+#pull-quote([Improves posture and core stability   Carrying a weighted backpack helps your posture.], [Greatist])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Notes on Linear Algebra for Polynomials],
   author: [Eli Bendersky],
   source-name: [Eli Bendersky],
   images: (),
   paragraphs: (
-  [We’ll be working with the set P\_n(\\mathbb{R}), real polynomials
+  [We’ll be working with the set P\_n(\\mathbb\{R\}), real polynomials
 of degree \\leq n. Such polynomials can be expressed using
 n+1 scalar coefficients a\_i as follows:],
   [\\\[p(x)=a\_0+a\_1 x + a\_2 x^2 + \\cdots + a\_n x^n\\\]],
   [Vector space],
-  [The set P\_n(\\mathbb{R}), along with addition of polynomials and
+  [The set P\_n(\\mathbb\{R\}), along with addition of polynomials and
 scalar multiplication form a vector space . As a proof, let’s review
 how the vector space axioms are satisfied. We’ll use p(x),
 q(x) and r(x) as arbitrary polynomials from the set
-P\_n(\\mathbb{R}) for the demonstration. Similarly, a and
+P\_n(\\mathbb\{R\}) for the demonstration. Similarly, a and
 b are arbitrary scalars in .],
   [Associativity of vector addition :],
   [\\\[p(x)+\[q(x)+r(x)\]=p(x)+q(x)+r(x)=\[p(x)+q(x)\]+r(x)\\\]],
@@ -396,7 +346,7 @@ Commutativity is similarly trivial, for the same reason:],
   [\\\[p(x)+q(x)=q(x)+p(x)\\\]],
   [Identity element of vector addition :],
   [The zero polynomial 0 serves as an identity element.
-\\forall p(x)\\in P\_n(\\mathbb{R}), we have
+\\forall p(x)\\in P\_n(\\mathbb\{R\}), we have
 0 + p(x) = p(x).],
   [Inverse element of vector addition :],
   [For each p(x), we can use q(x)=-p(x) as the additive
@@ -414,35 +364,35 @@ For each p(x), it’s true that 1\\cdot p(x)=p(x).],
   [For any scalars a and b and polynomial p(x):],
   [\\\[\[a+b\]\\cdot p(x)=a\\cdot p(x) + b\\cdot p(x)\\\]],
   [Linear independence, span and basis],
-  [Since we’ve shown that polynomials in P\_n(\\mathbb{R}) form a
+  [Since we’ve shown that polynomials in P\_n(\\mathbb\{R\}) form a
 vector space, we can now build additional linear algebraic definitions
 on top of that.],
-  [A set of k polynomials p\_k(x)\\in P\_n(\\mathbb{R}) is said
+  [A set of k polynomials p\_k(x)\\in P\_n(\\mathbb\{R\}) is said
 to be linearly independent if],
-  [\\\[\\sum\_{i=1}^{k}a\_i p\_i(x)=0\\\]],
+  [\\\[\\sum\_\{i=1\}^\{k\}a\_i p\_i(x)=0\\\]],
   [implies a\_i=0 \\quad \\forall i. In words, the only linear
 combination resulting in the zero vector is when all coefficients are 0.],
   [As an example, let’s discuss the fundamental building blocks of
-polynomials in P\_n(\\mathbb{R}): the set
-\\{1, x, x^2, \\dots x^n\\}. These are linearly independent
+polynomials in P\_n(\\mathbb\{R\}): the set
+\\\{1, x, x^2, \\dots x^n\\\}. These are linearly independent
 because:],
   [\\\[a\_0 + a\_1 x + a\_2 x^2 + \\cdots a\_n x^n=0\\\]],
   [is true only for zero polynomial, in which all the coefficients
 a\_i=0. This comes from the very definition of polynomials.
-Moreover, this set spans the entire P\_n(\\mathbb{R}) because
+Moreover, this set spans the entire P\_n(\\mathbb\{R\}) because
 every polynomial can be (by definition) expressed as a linear combination of
-\\{1, x, x^2, \\dots x^n\\}.],
+\\\{1, x, x^2, \\dots x^n\\\}.],
   [Since we’ve shown these basic polynomials are linearly independent and
 span the entire vector space, they are a basis for the space. In fact,
 this set has a special name: the monomial basis (because a monomial is
 a polynomial with a single term).],
   [Checking if an arbitrary set of polynomials is a basis],
   [Suppose we have some set polynomials, and we want to know if these form
-a basis for P\_n(\\mathbb{R}). How do we go about it?],
+a basis for P\_n(\\mathbb\{R\}). How do we go about it?],
   [The idea is using linear algebra the same way we do for any other vector
 space. Let’s use a concrete example to demonstrate:],
-  [\\\[Q=\\{1-x, x, 2x+x^2\\}\\\]],
-  [Is the set Q a basis for P\_n(\\mathbb{R})? We’ll start by
+  [\\\[Q=\\\{1-x, x, 2x+x^2\\\}\\\]],
+  [Is the set Q a basis for P\_n(\\mathbb\{R\})? We’ll start by
 checking whether the members of Q are linearly independent.
 Write:],
   [\\\[a\_0(1-x)+a\_1 x + a\_2(2x+x^2)=0\\\]],
@@ -450,26 +400,26 @@ Write:],
   [\\\[a\_0 + (a\_1-a\_0+2a\_2)x+a\_2 x^2=0\\\]],
   [For this to be true, the coefficient of each monomial has to be zero;
 mathematically:],
-  [\\\[\\begin{aligned}
+  [\\\[\\begin\{aligned\}
  a\_0&=0\\\\
  a\_1-a\_0+2a\_2&=0\\\\
  a2&=0\\\\
-\\end{aligned}\\\]],
+\\end\{aligned\}\\\]],
   [In matrix form:],
-  [\\\[\\begin{bmatrix}
+  [\\\[\\begin\{bmatrix\}
  1 & 0 & 0\\\\
  -1 & 1 & 2\\\\
  0 & 0 & 1\\\\
-\\end{bmatrix}
-\\begin{bmatrix}a\_0\\\\ a\_1\\\\ a\_2\\end{bmatrix}
-=\\begin{bmatrix}0\\\\ 0\\\\ 0\\end{bmatrix}\\\]],
+\\end\{bmatrix\}
+\\begin\{bmatrix\}a\_0\\\\ a\_1\\\\ a\_2\\end\{bmatrix\}
+=\\begin\{bmatrix\}0\\\\ 0\\\\ 0\\end\{bmatrix\}\\\]],
   [We know how to solve this, by reducing the matrix into row-echelon
 form . It’s easy to
 see that the reduced row-echelon form of this specific matrix is
 I, the identity matrix. Therefore, this set of equations has a
 single solution: a\_i=0 \\quad \\forall i \[2\] .],
   [We’ve shown that the set Q is linearly independent. Now let’s
-show that it spans the space P\_n(\\mathbb{R}). We want to
+show that it spans the space P\_n(\\mathbb\{R\}). We want to
 analyze:],
   [\\\[a\_0(1-x)+a\_1 x + a\_2(2x+x^2)=\\alpha +\\beta x + \\gamma x^2\\\]],
   [And find the coefficients a\_i that satisfy this for any
@@ -477,11 +427,11 @@ arbitrary , and \\gamma. We proceed
 just as before, by regrouping on the left side:],
   [\\\[a\_0 + (a\_1-a\_0+2a\_2)x+a\_2 x^2=\\alpha +\\beta x + \\gamma x^2\\\]],
   [and equating the coefficient of each power of separately:],
-  [\\\[\\begin{aligned}
+  [\\\[\\begin\{aligned\}
  a\_0&=\\alpha\\\\
  a\_1-a\_0+2a\_2&=\\beta\\\\
  a2&=\\gamma\\\\
-\\end{aligned}\\\]],
+\\end\{aligned\}\\\]],
   [If we turn this into matrix form, the matrix of coefficients is exactly
 the same as before. So we know there’s a single solution, and by
 rearranging the matrix into I, the solution will appear on the
@@ -489,13 +439,13 @@ right hand side. It doesn’t matter for the moment what the actual
 solution is, as long as it exists and is unique. We’ve shown that
 Q spans the space!],
   [Since the set Q is linearly independent and spans
-P\_n(\\mathbb{R}), it is a basis for the space.],
+P\_n(\\mathbb\{R\}), it is a basis for the space.],
   [Inner product],
   [I’ve discussed inner products for functions in the post about Hilbert
 space .
 Well, polynomials are functions , so we can define an inner product
 using integrals as follows \[3\] :],
-  [\\\[\\langle p, q \\rangle = \\int\_{a}^{b} p(x) q(x) w(x) \\, dx\\\]],
+  [\\\[\\langle p, q \\rangle = \\int\_\{a\}^\{b\} p(x) q(x) w(x) \\, dx\\\]],
   [Where the bounds a and b are arbitrary, and could be
 infinite. Whenever we deal with integrals we worry about convergence; in
 my post on Hilbert spaces, we only talked about L^2 - the square
@@ -508,30 +458,27 @@ w(x)=1.],
   [Let’s use the latter, and restrict the bounds into the range
 \[-1,1\], setting w(x)=1. We have the following inner
 product:],
-  [\\\[\\langle p, q \\rangle = \\int\_{-1}^{1} p(x) q(x) \\, dx\\\]],
+  [\\\[\\langle p, q \\rangle = \\int\_\{-1\}^\{1\} p(x) q(x) \\, dx\\\]],
   [Let’s check that this satisfies the inner product space conditions.],
   [Conjugate symmetry :],
   [Since real multiplication is commutative, we can write:],
-  [\\\[\\langle p, q \\rangle = \\int\_{-1}^{1} p(x) q(x) \\, dx =\\int\_{-1}^{1} q(x) p(x) \\, dx=\\langle q, p \\rangle\\\]],
+  [\\\[\\langle p, q \\rangle = \\int\_\{-1\}^\{1\} p(x) q(x) \\, dx =\\int\_\{-1\}^\{1\} q(x) p(x) \\, dx=\\langle q, p \\rangle\\\]],
   [We deal in the reals here, so we can safely ignore complex conjugation.],
   [Linearity in the first argument :],
-  [Let p\_1,p\_2,q\\in P\_n(\\mathbb{R}) and a,b\\in \\mathbb{R}.
+  [Let p\_1,p\_2,q\\in P\_n(\\mathbb\{R\}) and a,b\\in \\mathbb\{R\}.
 We want to show that],
   [\\\[\\langle ap\_1+bp\_2,q \\rangle = a\\langle p\_1,q\\rangle +b\\langle p\_2,q\\rangle\\\]],
   [Expand the left-hand side using our definition of inner product:],
-  [\\\[\\begin{aligned}
- \\langle ap\_1+bp\_2,q \\rangle&=\\int\_{-1}^{1} (a p\_1(x)+b p\_2(x)) q(x) \\, dx\\\\
- &=a\\int\_{-1}^{1} p\_1(x) q(x) \\, dx+b\\int\_{-1}^{1} p\_2(x) q(x) \\, dx
-\\end{aligned}\\\]],
+  [\\\[\\begin\{aligned\}
+ \\langle ap\_1+bp\_2,q \\rangle&=\\int\_\{-1\}^\{1\} (a p\_1(x)+b p\_2(x)) q(x) \\, dx\\\\
+ &=a\\int\_\{-1\}^\{1\} p\_1(x) q(x) \\, dx+b\\int\_\{-1\}^\{1\} p\_2(x) q(x) \\, dx
+\\end\{aligned\}\\\]],
   [The result is equivalent to
 a\\langle p\_1,q\\rangle +b\\langle p\_2,q\\rangle.],
   [Positive-definiteness :],
-  [We want to show that for nonzero p\\in P\_n(\\mathbb{R}), we have
-\\langle p, p\\rangle \> 0. First of all, since p(x)^2\\geq0
-for all , it’s true that:],
-  [\\\[\\langle p, p\\rangle=\\int\_{-1}^{1}p(x)^2\\, dx\\geq 0\\\]],
+  [\\\[\\langle p, p\\rangle=\\int\_\{-1\}^\{1\}p(x)^2\\, dx\\geq 0\\\]],
   [What about the result 0 though? Well, let’s say that],
-  [\\\[\\int\_{-1}^{1}p(x)^2\\, dx=0\\\]],
+  [\\\[\\int\_\{-1\}^\{1\}p(x)^2\\, dx=0\\\]],
   [Since p(x)^2 is a non-negative function, this means that the
 integral of a non-negative function ends up being 0. But p(x) is
 a polynomial, so it’s continuous , and so is p(x)^2. If the
@@ -540,17 +487,17 @@ function itself is 0. Had it been non-zero in any place, the integral
 would necessarily have to be positive as well.],
   [We’ve proven that \\langle p, p\\rangle=0 only when p is
 the zero polynomial. The positive-definiteness condition is satisfied.],
-  [In conclusion, P\_n(\\mathbb{R}) along with the inner product
+  [In conclusion, P\_n(\\mathbb\{R\}) along with the inner product
 we’ve defined forms an inner product space .],
   [Now that we have an inner product, we can define orthogonality on
 polynomials: two polynomials p,q are orthogonal (w.r.t. our
 inner product) iff],
-  [\\\[\\langle p,q\\rangle=\\int\_{-1}^{1}p(x)q(x)\\, dx=0\\\]],
+  [\\\[\\langle p,q\\rangle=\\int\_\{-1\}^\{1\}p(x)q(x)\\, dx=0\\\]],
   [Contrary to expectation \[4\] , the monomial basis polynomials are not 
 orthogonal using our definition of inner product.],
   [For example, calculating the inner product for 1 and
 x^2:],
-  [\\\[\\langle 1,x^2\\rangle=\\int\_{-1}^{1}x^2\\, dx=\\frac{x^3}{3}\\biggr|\_{-1}^{1}=\\frac{2}{3}\\\]],
+  [\\\[\\langle 1,x^2\\rangle=\\int\_\{-1\}^\{1\}x^2\\, dx=\\frac\{x^3\}\{3\}\\biggr|\_\{-1\}^\{1\}=\\frac\{2\}\{3\}\\\]],
   [There are other sets of polynomials that are orthogonal using our
 inner product. For example, the Legendre
 polynomials ; but
@@ -569,10 +516,10 @@ this is a topic for another post.],
   [that a square matrix is invertible, and in this case has a single],
   [solution of zeroes.],
   [\[3\] And actually with this (or any valid) inner product,],
-  [P\_n(\\mathbb{R}) indeed forms a Hilbert space, because it’s],
+  [P\_n(\\mathbb\{R\}) indeed forms a Hilbert space, because it’s],
   [finite-dimensional, and every finite-dimensional inner product space],
   [is complete.],
-  [\[4\] Because of how naturally this set spans P\_n(\\mathbb{R}). And],
+  [\[4\] Because of how naturally this set spans P\_n(\\mathbb\{R\}). And],
   [indeed, we can define alternative inner products using which],
   [monomials are orthogonal.],
 ),
@@ -582,10 +529,8 @@ this is a topic for another post.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Nicole 'Snooki' Polizzi Urges Cervical Cancer Screening After Diagnosis],
   author: [Healthline],
   source-name: [Healthline],
@@ -628,10 +573,8 @@ this is a topic for another post.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Skin in the Game: Is Adapalene or Salicylic Acid Better for Acne?],
   author: [Greatist],
   source-name: [Greatist],
@@ -641,14 +584,19 @@ this is a topic for another post.],
   [If you have acne, you probably know more about skincare than most people. You might even impress friends with terms like “ adapalene ” and “ salicylic acid .”],
   [But do you know what each treatment does for your skin and if one is better for acne? Let’s find out!],
   [Caroline Tompkins \/ Refinery29 for Getty Images],
+  [Salicylic acid 101],
   [Salicylic acid is a keratolytic agent commonly found in over-the-counter creams, face washes, masks, and gels. While it’s often used for acne, it can also help with dandruff, psoriasis, seborrheic dermatitis, calluses, and warts.],
+  [Adapalene 101],
   [Adapalene, often known by its brand name Differin, is a topical retinoid. It comes in various forms, such as gels, cleansers, and creams. And just like salicylic acid, it’s available over-the-counter without a prescription.],
+  [Adapalene vs. salicylic acid: What’s the difference?],
   [On a chemical level, adapalene and salicylic acid work in different ways to clear acne.],
   [Salicylic acid breaks down a protein called keratin in the outer layer of the skin. Studies show this helps remove the buildup of dead skin cells. It also reduces inflammation in the skin, calming the redness that often comes with breakouts.],
   [Adapalene, on the other hand, is a retinoid . And what, you may ask, is a retinoid? It’s a derivative of vitamin A that attaches to receptors in the skin. Doing so prompts cell turnover to speed up, helping skin regenerate more quickly and lowering the likelihood of clogged pores.],
+  [Acne: Adapalene vs. salicylic acid],
   [So… what do these differences mean for acne? Both adapalene and salicylic acid can treat skin prone to breakouts (though it’s not recommended to use them together since this can over-irritate your skin).],
   [Which one is more potent may depend on your acne type. Research shows that adapalene was among the best treatments for comedonal acne (aka whiteheads and blackheads), whereas salicylic acid was less effective and more affordable.],
   [Long story short: Your dermatologist can help determine which is the smarter choice for your type of acne.],
+  [Blackheads: Adapalene vs. salicylic acid],
   [Studies haven’t directly compared adapalene and salicylic acid for blackheads, but both can help. Blackheads form from plugged hair follicles, and salicylic acid’s exfoliating action can clear clogged pores. Adapalene increases cell turnover, which can also help remove blackheads.],
   [Wrinkles: Adapalene vs. salicylic acid],
   [Adapalene is a retinoid. Retinoids are well-established anti-aging agents because they stimulate new cell growth and promote collagen production. Some  studies  have also shown anti-aging benefits from salicylic acid.],
@@ -670,12 +618,10 @@ this is a topic for another post.],
   debug-mode: false,
 )
 
-  #pull-quote([Which one is more potent may depend on your acne type.], [Greatist])
+#pull-quote([Which one is more potent may depend on your acne type.], [Greatist])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Nearly 6 in 10 Women Will Develop Heart Disease, Stroke by 2050. What to Know],
   author: [Healthline],
   source-name: [Healthline],
@@ -757,10 +703,8 @@ this is a topic for another post.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [7 Common Misdiagnoses for Hidradenitis Suppurativa (HS)],
   author: [Greatist],
   source-name: [Greatist],
@@ -772,22 +716,30 @@ this is a topic for another post.],
   [So, what exactly is HS? It’s a chronic, progressive skin condition that typically appears as boil-like lumps in friction-prone and sweaty areas, where your skin can be sensitive. These lumps can form interconnected tracts underneath your skin (aka “tunneling”) that may become irritated or even infected.],
   [Knowing how the symptoms of HS compare with those of other inflammatory skin conditions can help you advocate for the correct diagnosis and care, which is crucial for staving off disease progression.],
   [Here are 7 conditions that HS commonly gets mistaken for.],
+  [1. Acne vulgaris],
   [HS isn’t rare — it affects up to 4% of the population. But by comparison, acne vulgaris affects more than more than 9% of people worldwide. Sometimes HS can be mistaken for acne simply because acne is more common. But these two conditions are quite different.],
   [Acne typically shows up as papules, pustules, or nodules , which are commonly called zits or blemishes. Acne most often appears on your face but can also affect your back, chest, arms, and buttocks. It occurs when your sebaceous glands have a hypersensitivity to circulating androgens (like testosterone).],
   [By comparison, HS most often appears in sweat- and friction-prone areas, such as your armpits or groin. It occurs when hair follicles become blocked — though more research is needed to learn what causes these blockages.],
+  [2. Acne conglobata],
   [Acne conglobata (AC) is a rare but intense form of nodulocystic acne. With AC, the cysts and nodules connect under your skin, and this can lead to infections and scarring. Since AC features a “tunneling” effect that may appear similar to HS, many people confuse these two otherwise distinct conditions.],
   [One key difference? HS often appears in areas that are subjected to friction from skin-on-skin contact or chafing. AC, on the other hand, can appear anywhere on your body. To further complicate things, many people with HS also have AC, and some research suggests a link between the two conditions .],
+  [3. Cysts],
   [A cyst is a fluid-filled sac. Cysts have many possible causes, including injuries and minor infections. They often go away on their own, but some may require treatment.],
   [HS bumps can resemble cysts — but HS is an ongoing inflammatory condition.],
+  [4. Ingrown hairs],
   [An ingrown hair happens when a strand of hair anywhere on your body grows into your skin instead of out. Ingrown hairs commonly occur after shaving, waxing, or tweezing. After hair removal, a tiny new hair can curl inward, creating a bump (often called a razor bump).],
   [Sometimes people confuse HS bumps for ingrown hairs — especially since HS often occurs in places where hair removal is common, such as the armpits and bikini area. Another confusing factor is that HS develops from blocked follicles. However, the cause of the blockage in HS is more complicated than an ingrown hair.],
+  [5. Folliculitis],
   [Folliculitis is inflammation of hair follicles, usually caused by a bacterial infection. The inflamed hair follicles show up as small bumps and can look like ingrown hairs.],
   [People commonly mistake HS for folliculitis because the conditions often occur in the same skin areas.],
   [Mild folliculitis tends to go away on its own with at-home treatment, though more severe forms may require antibiotics. HS, on the other hand, is a chronic condition.],
+  [6. Boils and carbuncles],
   [A boil (also called a furuncle) is a bump filled with pus . The bump develops from a bacterial infection, often of a hair follicle. The infection causes a buildup of immune and skin cells, which leads to the formation of the bump. A carbuncle is a cluster of boils.],
   [People often confuse HS with boils. However, boils are the result of an infection, and proper treatment typically resolves the issue. Meanwhile, the boil-like bumps of HS often require ongoing treatment.],
+  [7. Herpes],
   [Herpes is a common sexually transmitted infection (STI) caused by the herpes simplex virus. It shows up as painful sores or blisters.],
   [Since herpes often affects the genital area and HS occurs around the groin or bikini line, people may confuse the two conditions. But while herpes can be spread through direct contact, HS is not contagious.],
+  [tl;dr],
   [Other skin conditions can mimic HS, and vice versa. But a misdiagnosis can lead to an incorrect treatment that won’t actually ease your symptoms or slow the condition’s progression. This is true for other skin conditions as well.],
   [That’s why, if you have symptoms of any of the above conditions, you should talk with a knowledgeable dermatologist who can properly diagnose your concerns and find the right treatment plan.],
 ),
@@ -797,10 +749,8 @@ this is a topic for another post.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Mounjaro, Zepbound May Lower Risk of Eye Disease in People With Diabetes],
   author: [Healthline],
   source-name: [Healthline],
@@ -866,10 +816,8 @@ this is a topic for another post.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Ultimate Guide to 4A Hair: Care Tips, Styles, and Maintenance],
   author: [Greatist],
   source-name: [Greatist],
@@ -880,6 +828,7 @@ this is a topic for another post.],
   [Knowing your hair type helps determine the best hair care routine. Caring for 4A hair is essential, whether you’re dealing with dryness or breakage or want to define your curls.],
   [Let’s dive into the world of 4A hair and discover how to keep those curls popping.],
   [Catherine Falls Commercial/Getty Images],
+  [What is 4A hair type?],
   [Alright, curl friends, let’s break it down. Hair type falls into four main categories :],
   [Type 1: Straight],
   [Type 2: Wavy],
@@ -888,6 +837,7 @@ this is a topic for another post.],
   [Now, Type 4 hair is where things get seriously curly and coily . Within this category, we’ve got subtypes A, B, and C,],
   [which refer to the width and density of your curls.],
   [So, what’s the deal with 4A hair? 4A hair is the queen of the fine, loose curl pattern . It forms tight, springy coils that are like tiny, perfect S-shapes. These curls are less dense than their 4B and 4C cousins, making them more defined and delicate. Think of 4A hair as the Goldilocks of coily hair — not too tight, not too loose, but just right.],
+  [How to care for 4A hair],
   [Your hair is unique and gorgeous, but it requires a bit of extra TLC to keep it looking its best . Here’s a straightforward guide to keeping your 4A hair moisturized, healthy, and thriving:],
   [Moisturize regularly],
   [4A hair tends to be dry as its coily structure makes it difficult for natural oils to travel down the hair shaft. Keeping it moisturized is essential , so incorporate a good leave-in conditioner into your daily  shampooing routine.  Us e deep conditioning treatments weekly to replenish moisture and strengthen your curls.],
@@ -904,6 +854,7 @@ this is a topic for another post.],
   [ntain your curl pattern and prevent tangles.],
   [Regular trims],
   [Regular trims are crucial for keeping 4A hair healthy and preventing split ends from traveling up the hair shaft. Aim to trim your hair every 8-12 weeks to remove damaged ends and keep your curls looking fresh and vibrant.],
+  [FAQs],
   [Is 4A hair curly?],
   [Yes, 4A hair is curly and falls under the coily category. It features tight, springy curls that form an S-shape.],
   [Is my hair 4A, 4B, 4C, or 3C?],
@@ -921,10 +872,8 @@ this is a topic for another post.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [FDA Doesn’t Endorse Leucovorin for Autism, OKs It for Rare Brain Disorder],
   author: [Healthline],
   source-name: [Healthline],
@@ -989,15 +938,14 @@ this is a topic for another post.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [noom med epm | GLP-1RX Program],
   author: [Greatist],
   source-name: [Greatist],
   images: (),
   paragraphs: (
+  [Why Noom’s GLP-1 Rx Program is the ‘Hype Friend’ You Didn’t Know You Needed],
   [Why Noom’s GLP-1 Rx Program is the ‘Hype Friend’ You Didn’t Know You Needed],
   [Clinically-Backed, Customized to You],
   [Psychology-based approach + prescription GLP-1s = lose weight and keep it off],
@@ -1007,6 +955,7 @@ this is a topic for another post.],
   [Your Friend is a Proven and Trusted Program],
   [Most weight loss programs give you a prescription or a plan and send you on your way. Not Noom.],
   [Noom Med combines the clinician-prescribed GLP-1 medication with the psychology-based approach that’s already helped millions.],
+  [What to expect: Keep the muscle, lose the fat, develop healthy habits, and find community support.],
   [Noom’s primary goal is to empower everyone everywhere to live better , longer. All of its programs, courses, efforts, clinicians, and team of specialists are designed to help you reach your goal.],
   [All while you have a team of specialists to guide you through the process.],
   [Take A Hand and Jump In],
@@ -1015,12 +964,14 @@ this is a topic for another post.],
   [Connect with a qualified clinician],
   [If you qualify, start a customized treatment plan with medication],
   [Have ongoing access to care and personalized support],
+  [Data from Noom Med Users],
   [Lose 48% more weight with Noom Med than medication alone 1],
   [97% doctors recommend pairing GLP-1s with lifestyle changes 2],
   [9 in 10 doctors recommend combining GLP-1s with nutritional support. That’s why Noom is more than meds and helps you lose weight and keep it off 2],
   [The Companion, GLP-1 Companion],
   [If you qualify for GLP-1 medications, you will have access to Noom’s GLP-1 Companion for no added cost.],
   [GLP-1 Companion is a tool and friend that provides dedicated support from the beginning of your weight-loss journey through long after to help you maintain your weight.],
+  [Most-engaged GLP-1 Companion users show 25% more weight loss than least-engaged members 3],
   [It offers resources and support to guide you on everything related to GLP-1 use to ensure you’re getting the most out of your medication, including:],
   [Smartdose Guidance to support clinician-led treatment],
   [AI Nutrition Guidance helps create personalized plans],
@@ -1030,6 +981,7 @@ this is a topic for another post.],
   [“I had never known the psychology behind the way we eat. This was all new information for me to learn. I had a slow start, but I didn’t give up . I decided to give Wegovy a try a few months back… my weight loss has really improved since that time. My mindset about food and eating has changed a lot since June of 2022.],
   [I’m not done yet. I’m still on my journey!”],
   [— Jennifer L., Noom Med User | Age 53],
+  [In Step With You Along The Way],
   [What’s included in Noom Med?],
   [Noom Med combines personalized medication and its signature psychological support to help make healthy habits last and make transformational weight loss possible.],
   [It also gives you access to 1:1 messaging with expert weight loss clinicians, prescriptions and medications (where clinically appropriate), ongoing medication management, community support, and psychology-backed content to make lasting changes.],
@@ -1045,10 +997,8 @@ this is a topic for another post.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Why Does My Side Hurt When I Run? Causes and Prevention Tips],
   author: [Greatist],
   source-name: [Greatist],
@@ -1059,17 +1009,21 @@ this is a topic for another post.],
   [This pesky prob that plagues runners and athletes all over has a scientific name: Exercise-related transient abdominal pain (ETAP) . Though experts don’t know exactly what causes it, they have some ideas and tips about how to stop it.],
   [Before you double-over during your next marathon , here’s what to know.],
   [KarraStock/Getty Images],
+  [What is a side stitch?],
   [That fateful stab in your side is most likely to happen during exercise where your upper bod says tight and upright for an extended period, such as when you run , jog, bike, hike, play soccer, etc.],
   [This common prob has been around for ages — the first historical mention is from ancient Roman philosopher Pliny the Elder . Yet, scientists still haven’t reached a consensus on its exact cause. We know that it affects up to 70% of runners each year.],
   [It’s also more likely to occur on the right side.],
+  [What causes a side stitch?],
   [A stiff spine or poor posture (according to older research from 2010 ) could contribute to side stitches – but TBH, the pros don’t know for sure.],
   [According to a 2022 review , researchers also think a side stitch might be caused by your right foot hitting the ground while you breathe out, irritating a phrenic nerve. Researchers think this, in turn, may bother the lining of your abdomen (particularly on the lower right side). Since most people are right-foot dominant, this is one possible explanation.],
   [Experts also theorize that it could be triggered by the boost of blood flow around the diaphragm when running .],
   [Furthermore, fueling up before a big race is excellent — but eating or drinking large quantities right before running may boost your risk of getting a side stitch, anecdotal reports suggest.],
+  [How to treat a side stitch],
   [When a side stitch strikes, don’t stress – there are steps you can take, including:],
   [Slowing down , which should help lend some immediate relief. When the pain subsides, you can slowly build your pace back up.],
   [Stretch it out by raising your arms overhead, leaning to the opposite side of the pain, and breathing deeply. That may open up your abdomen and offer some relief.],
   [Apply gentle pressure by pressing your palm into the cramp while breathing deeply.],
+  [How to prevent a side stitch],
   [To stop a side stitch before it begins, here are some ideas FTW:],
   [Practice mindful workout breathing. According to a 2022 review , slower breathing during exercise might “trick” your bod into thinking the exercise is easier, increasing pleasant feelings and reducing stress. While the study doesn’t mention side cramps, it could be worth a try since stitches may be linked to blood flow surrounding the diaphragm.],
   [Avoid big meals or beverages a couple of hours before you run. Though experts don’t know for sure, too much food or liquid in your belly could potentially put extra pressure on your precious organs, leading to a cramp.],
@@ -1091,10 +1045,8 @@ this is a topic for another post.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [28 Best Brunch Recipes For A Crowd],
   author: [Lindsay],
   source-name: [Pinch of Yum],
@@ -1104,9 +1056,105 @@ this is a topic for another post.],
   [These are the brunch recipes I put on the menu when I’m hosting a group – some can be thrown together and served out of one pan for ease, others can be assembled however your guests see fit (LOVE this breakfast sandwich for that), and all of them are simple, easy, and super delicious.],
   [One of my favorite menu combos: this egg and croissant bake , this simple green salad , and this carrot cake coffee cake . The ultimate brunch plate!],
   [Here’s to brunch! Here’s to feeding all our favorite people!],
-  [class="tasty-roundups-description"\>Biscuits and Gravy Egg Bake! YES! a casserole-style dish of fluffy eggs and cheddar baked up with little bites of tender flaky biscuit pieces, and buried under a blanket of creamy green chile sausage gravy.],
-  [class="tasty-roundups-description"\>Crunchy, light, bright, and ultra-fresh. This French-inspired bistro salad is an absolute star as a side for nearly any dinner. Tender greens, fresh herbs, pickled onions, and a delicate vinaigrette on top.],
-  [class="tasty-roundups-description"\>Sweet Cinnamon Rolls! Made with pillowy brioche dough and cinnamon sugar tucked into every nook and cranny. This makes a BIG batch of dough that you can divide and save for later…or make extra all for yourself!],
+  [Carrot Cake Coffee Cake! A super easy batter loaded with shredded carrots, topped with a thick crumbly cinnamony streusel, and finished with a melty sweet honey butter.],
+  [461 reviews \/ 4.8 average],
+  [make this recipe],
+  [The Ultimate Breakfast Sandwich with eggs, bacon, guacamole, chunky tomato sauce, pepper jack cheese, all on a toasted croissant. Kinda spicy. Kinda buttery. Kinda crunchy. Totally over the top.],
+  [16 reviews \/ 5 average],
+  [make this recipe],
+  [Mixed Berry Muffins with Sugary Tops],
+  [Not too sweet, fluffy yet dense, and topped with crunchy sugar. These Mixed Berry Muffins are a house favorite!],
+  [40 reviews \/ 4.6 average],
+  [make this recipe],
+  [Sheet Pan Breakfast Burritos with Creamy Chipotle Sauce],
+  [I absolutely love these breakfast burritos. Creamy scrambled eggs, roasted garlic veggies, smoky cheese, and refried beans all wrapped up in a delicious burrito!],
+  [11 reviews \/ 5 average],
+  [make this recipe],
+  [Blueberry Lemon Bread – loaded with juicy lemon and blueberries. SO YUMMY with the perfect thick, soft texture!],
+  [40 reviews \/ 5 average],
+  [make this recipe],
+  [Biscuits and Gravy Egg Bake],
+  [Biscuits and Gravy Egg Bake! YES! a casserole-style dish of fluffy eggs and cheddar baked up with little bites of tender flaky biscuit pieces, and buried under a blanket of creamy green chile sausage gravy.],
+  [29 reviews \/ 4.7 average],
+  [make this recipe],
+  [Best pancakes I’ve ever made! Super basic, thick and fluffy blueberry pancakes – melt in your mouth, golden brown, and bursting with blueberries.],
+  [378 reviews \/ 4.8 average],
+  [make this recipe],
+  [Egg and Croissant Brunch Bake],
+  [The BEST Croissant Brunch Bake! Cheese, brown sugar ham, caramelized onions, and spinach baked into creamy eggs and topped with a crispy golden croissant topping.],
+  [39 reviews \/ 4.8 average],
+  [make this recipe],
+  [The Best Avocado Egg Salad],
+  [Avocado Egg Salad – no mayo here! just avocados, eggs, herbs, lemon juice, and salt. Especially good on an everything bagel. Just saying.],
+  [44 reviews \/ 4.8 average],
+  [make this recipe],
+  [Liz’s Bistro Salad],
+  [Crunchy, light, bright, and ultra-fresh. This French-inspired bistro salad is an absolute star as a side for nearly any dinner. Tender greens, fresh herbs, pickled onions, and a delicate vinaigrette on top.],
+  [20 reviews \/ 5 average],
+  [make this recipe],
+  [Feel-Good Zucchini Muffins],
+  [The BEST healthy zucchini muffins – made with all the yummy feel-good ingredients: oats, zucchini, dates, maple syrup, and olive oil. Just blitz up in a blender and pour!],
+  [110 reviews \/ 4.7 average],
+  [make this recipe],
+  [Egg Waffles with Romesco and Goat Cheese],
+  [Egg Waffles with Romesco and Goat Cheese! Light puffy scrambled eggs loaded with lots of cheese, veggies, bacon (if you want), romesco sauce, and any other toppings you can imagine.],
+  [12 reviews \/ 4.8 average],
+  [make this recipe],
+  [House Favorite Cinnamon Rolls with Cream Cheese Frosting],
+  [Sweet Cinnamon Rolls! Made with pillowy brioche dough and cinnamon sugar tucked into every nook and cranny. This makes a BIG batch of dough that you can divide and save for later…or make extra all for yourself!],
+  [510 reviews \/ 4.8 average],
+  [make this recipe],
+  [This simple cinnamon sugar apple cake is light and fluffy, loaded with fresh apples, and topped with a crunchy cinnamon sugar layer!],
+  [408 reviews \/ 4.6 average],
+  [make this recipe],
+  [My go-to recipe for Swedish pancakes! Buttery, tender, and thick enough to sink your teeth into but with a nice thin, delicate, lacy edge.],
+  [142 reviews \/ 4.9 average],
+  [make this recipe],
+  [Every table needs this Simple Green Salad! Fresh spring greens drizzled with a maple balsamic dressing and sprinkled with whatever crunchies your salad-loving heart desires.],
+  [28 reviews \/ 4.9 average],
+  [make this recipe],
+  [This Curry Chicken Salad is super clean and SO delicious. Loaded with spiced chicken, golden raisins, pistachios, herbs, and Greek yogurt + olive oil as a stand-in for mayo.],
+  [62 reviews \/ 4.8 average],
+  [make this recipe],
+  [Migas – eggs scrambled with crispy tortillas, garlic, jalapeño, and melted cheese served with black beans and avocado. Quick, easy, and SO DELICIOUS. Breakfast, lunch, dinner, or brunch!],
+  [34 reviews \/ 4.9 average],
+  [make this recipe],
+  [Amazingly Wholesome 5 Ingredient Banana Bread Muffins],
+  [Banana Bread Muffins – made with just 5 wholesome ingredients! no refined sugar, naturally gluten free, and SO yummy!],
+  [106 reviews \/ 4.8 average],
+  [make this recipe],
+  [Ham, Egg, and Cheese Brunch Cups],
+  [Puff pastry, egg, ham, and a creamy cheese sauce make these little brunch cups easy, delicious, and so beautiful! Perfect for effortless entertaining.],
+  [25 reviews \/ 4.8 average],
+  [make this recipe],
+  [Lemon Olive Oil Cake with zucchini, brown sugar, zested lemons, olive oil, ginger, and poppyseeds. The most healing breakfast or snack!],
+  [41 reviews \/ 4.8 average],
+  [make this recipe],
+  [This Chicken Salad is so good! Protein-packed with a delicious creamy dressing, and perfect for an on-the-go lunch in a sandwich or wrap.],
+  [11 reviews \/ 5 average],
+  [make this recipe],
+  [Springy Vegetable Quiche! Fresh sautéed spring vegetables with creamy and cheesy eggs, all baked into a flaky pie crust. Easiest fancy-feeling brunch!],
+  [17 reviews \/ 4.9 average],
+  [make this recipe],
+  [Favorite Carrot Muffins that are warm, cozy, and wholesome! A naturally sweet snacking muffin flecked with tiny bits of carrots and oats, smeared with some butter and honey.],
+  [123 reviews \/ 4.8 average],
+  [make this recipe],
+  [I could (did) stand in front of that pan of silky caramel sauce with a spoon. A straight-up SPOON. This caramel is not messing around.],
+  [18 reviews \/ 4.8 average],
+  [make this recipe],
+  [Ricotta Berry French Toast Casserole],
+  [French Toast Casserole with SUPER EASY 5 minute homemade brioche, ricotta cheese, and berries. No canned biscuits! So delicious!],
+  [15 reviews \/ 4.4 average],
+  [make this recipe],
+  [Breakfast Enchiladas with Roasted Poblano Sauce],
+  [Breakfast Enchiladas – with scrambled eggs, chili potatoes, spicy turkey, cheese, and a homemade roasted poblano sauce. SUPER yummy! Love this recipe for breakfast, brunch, or brinner.],
+  [13 reviews \/ 4.4 average],
+  [make this recipe],
+  [Life Changing Soft Scrambled Eggs],
+  [These soft scrambled eggs are so easy and SO dreamy! Four quick and easy secrets to the best scrambled eggs of your life.],
+  [57 reviews \/ 4.6 average],
+  [make this recipe],
+  [Drink Ideas To Serve With Brunch],
   [One of my most important brunch rules is that it must include multiple drinks – a glass of orange juice, a cup of coffee, and maybe something special, too? Here are some ideas for drinks to serve with brunch, many of which can be scaled up for a crowd!],
   [The post 28 Best Brunch Recipes For A Crowd appeared first on Pinch of Yum .],
 ),
@@ -1116,11 +1164,10 @@ this is a topic for another post.],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The Trip That Changed Me: How Running the World’s Biggest Marathons Pushed AnneMette Bontaites’s Limits],
   author: [AnneMette Bontaites],
   source-name: [Atlas Obscura],
@@ -1149,7 +1196,7 @@ this is a topic for another post.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Buried Church Beneath Musée Rude in Dijon, France],
   author: [Atlas Obscura],
   source-name: [Atlas Obscura],
@@ -1173,7 +1220,7 @@ this is a topic for another post.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [This Intrepid 19th-Century Reporter Refused to Accept the Unacceptable],
   author: [Daniel McDermon],
   source-name: [Atlas Obscura],
@@ -1183,10 +1230,13 @@ this is a topic for another post.],
   [The enterprising 19th-century journalist Nellie Bly didn’t just write stories—she stepped into danger to force readers to see things that they might prefer to ignore. Bly went undercover in the 1880s to expose the asylum system, in which women (with or without mental illness) were often abused or neglected. More than a century later, Bly’s work was honored with a monument near the site of the asylum she investigated, on New York’s Roosevelt Island.],
   [“The Girl Puzzle,” named after one of the journalist’s early works, includes five monumental faces of women, one of them Bly’s, along with four spheres of mirror-polished steel. It’s a reminder on this International Women’s Day that progress has often depended on women who refused to accept the unacceptable.],
   [In Manchester, England, a sculpture of the suffragette Emmeline Pankhurst is frozen mid-speech , rallying an invisible crowd toward votes and visibility. The Musée de La Femme in Marrakesh spotlights Moroccan women’s creative and civic power . In Senegal, the Henriette Bathily Women’s Museum stands as a tribute to women’s cultural contributions . And La Casa Azul in Mexico City preserves Frida Kahlo’s intensely personal world .],
+  [21 Places That Celebrate Female Artists],
   [Female visual artists have long had to struggle, not just to have their work widely seen, but to create at all. But women have made art as long as there’s been art. Many persevered, both through the strength of their work and the force of will, and in celebration of Women’s History Month, we want to highlight some of our favorite places where you can see these contributions in person. SEE THE FULL LIST],
+  [My New Favorites in the Atlas],
   [The Music Box Theatre in Chicago is a historic 1929 cinema showing independent and classic films in an atmospheric setting.],
   [A plane wing with the Mechanics’ Creed written on it is a roadside art installation and monument on a remote stretch of highway in Iceland.],
   [An unexpected mix of medieval buildings and modern art enlivens this street in Morlaix, France.],
+  [Did You Know?],
   [Visitors were drawn to mental institutions out of curiosity and compassion, but they weren’t seeing the full picture—until Nellie Bly revealed it.],
   [The Undercover Woman Who Changed Asylum Tourism Forever],
 ),
@@ -1198,7 +1248,7 @@ this is a topic for another post.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [A Week In The Life, Vol 12.],
   author: [Jessica],
   source-name: [How Sweet Eats],
@@ -1242,9 +1292,8 @@ this is a topic for another post.],
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [Maultaschen],
   author: [Atlas Obscura],
   source-name: [Atlas Obscura],
@@ -1266,10 +1315,8 @@ this is a topic for another post.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [6 Signs Your Skin Needs Medical Attention, Stat],
   author: [Greatist],
   source-name: [Greatist],
@@ -1297,6 +1344,7 @@ this is a topic for another post.],
   [A one-off or temporary rash might result from friction or chafing from a new outfit item. It could also be a heat rash when sweat gets trapped in skinfolds or bodily creases.],
   [A persistent rash could be a sign of eczema or allergies. However, different types of rashes can be a sign of other things. For example, a butterfly-shaped (malar) rash across the face is a common sign of an autoimmune disease known as lupus.],
   [If you frequently experience skin rashes, talk with a dermatologist to help you get to the bottom of the issue.],
+  [Dryness, cracking, or scaling],
   [Dry skin can be just that — dry skin. Common causes include:],
   [cold weather],
   [dry weather],
@@ -1312,11 +1360,13 @@ this is a topic for another post.],
   [Changes in skin color — including red, brown, gray, or purple patches of skin — can be a sign of various skin issues, including eczema, psoriasis, or allergies. But it can also be a sign of rosacea.],
   [Rosacea typically involves persistent redness that looks like a sunburn or blushing. It may also lead to skin thickening.],
   [The good news? Rosacea is highly treatable. So working with a dermatologist can help you address it.],
+  [Acne, cysts, or bumps],
   [No one is immune from developing the occasional pimple or ingrown hair. But sometimes, skin bumps can be a sign that something else is going on.],
   [Acne is one of the most common skin conditions that could bring skin bumps like pimples.],
   [Hidradenitis suppurativa (HS) is another condition that causes painful, boil-like lumps to form underneath the skin. These bumps can turn into pus-filled pockets that may connect via tunnels. HS typically shows up in areas of high friction or where skin meets skin, such as the armpits or groin.],
   [Other types of skin bumps may include ingrown hairs, which can get infected and turn into folliculitis.],
   [Talk with a dermatologist to help you address any bothersome skin bumps you may experience.],
+  [Mole changes],
   [Common moles are growths that develop when pigment cells (melanocytes) grow in clusters. The average adult has between 10 to 40 common moles.],
   [An irregular mole, also known as a dysplastic nevus, is a type of mole that looks different from your common moles. If you have a dysplastic nevus (or several), schedule regular skin checks with a dermatologist to look for anything suspicious. Be sure to mention any changes in:],
   [color],
@@ -1326,6 +1376,7 @@ this is a topic for another post.],
   [oozing],
   [bleeding],
   [These types of changes could be a sign of a form of skin cancer such as melanoma, which occurs in melanocytes. Melanoma can develop anywhere, including on normal-looking skin, a common mole, or a dysplastic nevus.],
+  [tl;dr],
   [Skin symptoms — like rashes, bumps, discoloration, dryness, or itchiness — may come and go. But if symptoms stick around or return frequently, consider seeing a dermatologist for an evaluation. Your skin may be telling you that there’s an underlying issue that needs to be addressed.],
   [A dermatologist can provide a proper diagnosis and treatment plan to help reduce, or, in some cases, resolve your skin symptoms. If you don’t currently have a dermatologist, your primary care physician or nurse practitioner can refer you to one.],
 ),
@@ -1335,10 +1386,8 @@ this is a topic for another post.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Notes on Lagrange Interpolating Polynomials],
   author: [Eli Bendersky],
   source-name: [Eli Bendersky],
@@ -1348,7 +1397,7 @@ this is a topic for another post.],
 that fits a given set of data perfectly. More concretely, suppose we
 have a set of n+1 distinct points \[1\] :],
   [\\\[(x\_0,y\_0), (x\_1, y\_1), (x\_2, y\_2)\\cdots(x\_n, y\_n)\\\]],
-  [And we want to find the polynomial coefficients {a\_0\\cdots a\_n}
+  [And we want to find the polynomial coefficients \{a\_0\\cdots a\_n\}
 such that:],
   [\\\[p(x)=a\_0 + a\_1 x + a\_2 x^2 + \\cdots + a\_n x^n\\\]],
   [Fits all our points; that is p(x\_0)=y\_0, p(x\_1)=y\_1 etc.],
@@ -1357,38 +1406,38 @@ shows why such a polynomial exists and is unique.],
   [Showing existence using linear algebra],
   [When we assign all points (x\_i, y\_i) into the generic polynomial
 p(x), we get:],
-  [\\\[\\begin{aligned}
+  [\\\[\\begin\{aligned\}
 p(x\_0)&=a\_0 + a\_1 x\_0 + a\_2 x\_0^2 + \\cdots a\_n x\_0^n = y\_0\\\\
 p(x\_1)&=a\_0 + a\_1 x\_1 + a\_2 x\_1^2 + \\cdots a\_n x\_1^n = y\_1\\\\
 p(x\_2)&=a\_0 + a\_1 x\_2 + a\_2 x\_2^2 + \\cdots a\_n x\_2^n = y\_2\\\\
 \\cdots \\\\
 p(x\_n)&=a\_0 + a\_1 x\_n + a\_2 x\_n^2 + \\cdots a\_n x\_n^n = y\_n\\\\
-\\end{aligned}\\\]],
+\\end\{aligned\}\\\]],
   [We want to solve for the coefficients a\_i. This is a linear
 system of equations that can be represented by the following matrix
 equation:],
-  [\\\[{\\renewcommand{\\arraystretch}{1.5}\\begin{bmatrix}
+  [\\\[\{\\renewcommand\{\\arraystretch\}\{1.5\}\\begin\{bmatrix\}
  1 & x\_0 & x\_0^2 & \\dots & x\_0^n\\\\
  1 & x\_1 & x\_1^2 & \\dots & x\_1^n\\\\
  1 & x\_2 & x\_2^2 & \\dots & x\_2^n\\\\
  \\vdots & \\vdots & \\vdots & \\ddots &\\vdots \\\\
  1 & x\_n & x\_n^2 & \\dots & x\_n^n
- \\end{bmatrix}
- \\begin{bmatrix}
+ \\end\{bmatrix\}
+ \\begin\{bmatrix\}
  a\_0\\\\
  a\_1\\\\
  a\_2\\\\
  \\vdots\\\\
  a\_n\\\\
- \\end{bmatrix}=
- \\begin{bmatrix}
+ \\end\{bmatrix\}=
+ \\begin\{bmatrix\}
  y\_0\\\\
  y\_1\\\\
  y\_2\\\\
  \\vdots\\\\
  y\_n\\\\
- \\end{bmatrix}
- }\\\]],
+ \\end\{bmatrix\}
+ \}\\\]],
   [The matrix on the left is called the Vandermonde matrix . This matrix
 is known to be invertible (see Appendix for a proof); therefore, this
 system of equations has a single solution that can be calculated by
@@ -1400,51 +1449,51 @@ polynomial coefficients. Several better methods exist.],
 idea. Let’s define the Lagrange basis functions l\_i(x)
 (i \\in \[0, n\]) as follows, given our points (x\_i, y\_i):],
   [\\\[l\_i(x) =
-\\begin{cases}
+\\begin\{cases\}
  1 & x = x\_i \\\\
  0 & x = x\_j \\quad \\forall j \\neq i
-\\end{cases}\\\]],
+\\end\{cases\}\\\]],
   [In words, l\_i(x) is constrained to 1 at and to 0 at
 all other x\_j. We don’t care about its value at any other point.],
   [The linear combination:],
-  [\\\[p(x)=\\sum\_{i=0}^{n}y\_i l\_i(x)\\\]],
+  [\\\[p(x)=\\sum\_\{i=0\}^\{n\}y\_i l\_i(x)\\\]],
   [is then a valid interpolating polynomial for our set of n+1
 points, because it’s equal to at each (take a
 moment to convince yourself this is true).],
   [How do we find l\_i(x)? The key insight comes from studying the
 following function:],
-  [\\\[l'\_i(x)=(x-x\_0)\\cdot (x-x\_1)\\cdots (x-x\_{i-1}) \\cdot (x-x\_{i+1})\\cdots (x-x\_n)=
-\\prod\_{\\substack{0\\leq j \\leq n \\\\ j \\neq i}}(x-x\_j)\\\]],
+  [\\\[l'\_i(x)=(x-x\_0)\\cdot (x-x\_1)\\cdots (x-x\_\{i-1\}) \\cdot (x-x\_\{i+1\})\\cdots (x-x\_n)=
+\\prod\_\{\\substack\{0\\leq j \\leq n \\\\ j \\neq i\}\}(x-x\_j)\\\]],
   [This function has terms (x-x\_j) for all
 j\\neq i. It should be easy to see that l'\_i(x) is 0 at
 all x\_j when j\\neq i.],
   [What about its value at , though? We can just assign
  into l'\_i(x) to get:],
-  [\\\[l'\_i(x\_i)=\\prod\_{\\substack{0\\leq j \\leq n \\\\ j \\neq i}}(x\_i-x\_j)\\\]],
+  [\\\[l'\_i(x\_i)=\\prod\_\{\\substack\{0\\leq j \\leq n \\\\ j \\neq i\}\}(x\_i-x\_j)\\\]],
   [And then normalize l'\_i(x), dividing it by this (constant) value. We get
 the Lagrange basis function l\_i(x):],
-  [\\\[l\_i(x)=\\frac{l'\_i(x)}{l'\_i(x\_i)}=\\prod\_{\\substack{0\\leq j \\leq n \\\\ j \\neq i}}\\frac{x-x\_j}{x\_i-x\_j}\\\]],
+  [\\\[l\_i(x)=\\frac\{l'\_i(x)\}\{l'\_i(x\_i)\}=\\prod\_\{\\substack\{0\\leq j \\leq n \\\\ j \\neq i\}\}\\frac\{x-x\_j\}\{x\_i-x\_j\}\\\]],
   [Let’s use a concrete example to visualize this. Suppose we have the
 following set of points we want to interpolate:
 (1,4), (2,2), (3,3). We can calculate l'\_0(x),
 l'\_1(x) and l'\_2(x), and get the following:],
   [Note where each l'\_i(x) intersects the axis. These
-functions have the right values at all x\_{j\\neq i}. If we
+functions have the right values at all x\_\{j\\neq i\}. If we
 normalize them to obtain l\_i(x), we get these functions:],
   [Note that each polynomial is 1 at the appropriate and 0 at
-all the other x\_{j\\neq i}, as required.],
+all the other x\_\{j\\neq i\}, as required.],
   [With these l\_i(x), we can now plot the interpolating polynomial
-p(x)=\\sum\_{i=0}^{n}y\_i l\_i(x), which fits our set of input points:],
+p(x)=\\sum\_\{i=0\}^\{n\}y\_i l\_i(x), which fits our set of input points:],
   [Polynomial degree and uniqueness],
   [We’ve just seen that the linear combination of Lagrange basis functions:],
-  [\\\[p(x)=\\sum\_{i=0}^{n}y\_i l\_i(x)\\\]],
+  [\\\[p(x)=\\sum\_\{i=0\}^\{n\}y\_i l\_i(x)\\\]],
   [is a valid interpolating polynomial for a set of n+1 distinct
 points (x\_i, y\_i). What is its degree?],
   [Since the degree of each l\_i(x) is , then the degree of
 p(x) is at most . We’ve just derived the first part
 of the Polynomial interpolation theorem :],
   [Polynomial interpolation theorem : for any n+1 data points
-(x\_0,y\_0), (x\_1, y\_1)\\cdots(x\_n, y\_n) \\in \\mathbb{R}^2 where no
+(x\_0,y\_0), (x\_1, y\_1)\\cdots(x\_n, y\_n) \\in \\mathbb\{R\}^2 where no
 two x\_j are the same, there exists a unique polynomial
 p(x) of degree at most that interpolates these points.],
   [We’ve demonstrated existence and degree, but not yet uniqueness . So
@@ -1466,8 +1515,8 @@ distinct points, there’s only one polynomial of degree \\leq n
 that interpolates it. We can find its coefficients by inverting the
 Vandermonde matrix, by using Lagrange basis functions, or
 any other method \[2\] .],
-  [Lagrange polynomials as a basis for P\_n(\\mathbb{R})],
-  [The set P\_n(\\mathbb{R}) consists of all real polynomials of
+  [Lagrange polynomials as a basis for P\_n(\\mathbb\{R\})],
+  [The set P\_n(\\mathbb\{R\}) consists of all real polynomials of
 degree \\leq n. This set - along with addition of polynomials and
 scalar multiplication - forms a vector
 space .],
@@ -1476,7 +1525,7 @@ in fact - form an actual linear algebra basis for this vector space. To
 prove this claim, we need to show that Lagrange polynomials are linearly
 independent and that they span the space.],
   [Linear independence : we have to show that],
-  [\\\[s(x)=\\sum\_{i=0}^{n}a\_i l\_i(x)=0\\\]],
+  [\\\[s(x)=\\sum\_\{i=0\}^\{n\}a\_i l\_i(x)=0\\\]],
   [implies a\_i=0 \\quad \\forall i. Recall that l\_i(x) is 1
 at , while all other l\_j(x) are 0 at that point.
 Therefore, evaluating s(x) at , we get:],
@@ -1485,25 +1534,25 @@ Therefore, evaluating s(x) at , we get:],
 \\blacksquare.],
   [Span : we’ve already demonstrated that the linear combination of
 l\_i(x):],
-  [\\\[p(x)=\\sum\_{i=0}^{n}y\_i l\_i(x)\\\]],
+  [\\\[p(x)=\\sum\_\{i=0\}^\{n\}y\_i l\_i(x)\\\]],
   [is a valid interpolating polynomial for any set of n+1 distinct
 points. Using the polynomial interpolation theorem , this is the unique
 polynomial interpolating this set of points. In other words, for every
-q(x)\\in P\_n(\\mathbb{R}), we can identify any set of n+1 distinct points it passes
+q(x)\\in P\_n(\\mathbb\{R\}), we can identify any set of n+1 distinct points it passes
 through, and then use the technique described in this post to find the coefficients of q(x) in the
 Lagrange basis. Therefore, the set l\_i(x) spans
 the vector space \\blacksquare.],
   [Interpolation matrix in the Lagrange basis],
-  [Previously we’ve seen how to use the \\{1, x, x^2, \\dots x^n\\}
+  [Previously we’ve seen how to use the \\\{1, x, x^2, \\dots x^n\\\}
 basis to write down a system of linear equations that helps us find the
 interpolating polynomial. This results in the Vandermonde matrix .],
   [Using the Lagrange basis, we can get a much nicer matrix representation
 of the interpolation equations.],
   [Recall that our general polynomial using the Lagrange basis is:],
-  [\\\[p(x)=\\sum\_{i=0}^{n}a\_i l\_i(x)\\\]],
+  [\\\[p(x)=\\sum\_\{i=0\}^\{n\}a\_i l\_i(x)\\\]],
   [Let’s build a system of equations for each of the n+1 points
 (x\_i,y\_i). For :],
-  [\\\[p(x\_0)=\\sum\_{i=0}^{n}a\_i l\_i(x\_0)\\\]],
+  [\\\[p(x\_0)=\\sum\_\{i=0\}^\{n\}a\_i l\_i(x\_0)\\\]],
   [By definition of the Lagrange basis functions, all l\_i(x\_0)
 where i\\neq 0 are 0, while l\_0(x\_0) is 1. So this
 simplifies to:],
@@ -1511,80 +1560,80 @@ simplifies to:],
   [But the value at node is , so we’ve just found
 that a\_0=y\_0. We can produce similar equations for the other
 nodes as well, p(x\_1)=a\_1, etc. In matrix form:],
-  [\\\[{\\renewcommand{\\arraystretch}{1.5}\\begin{bmatrix}
+  [\\\[\{\\renewcommand\{\\arraystretch\}\{1.5\}\\begin\{bmatrix\}
  1 & 0 & 0 & \\dots & 0\\\\
  0 & 1 & 0 & \\dots & 0\\\\
  0 & 0 & 1 & \\dots & 0\\\\
  \\vdots & \\vdots & \\vdots & \\ddots &\\vdots \\\\
  0 & 0 & 0 & \\dots & 1
- \\end{bmatrix}
- \\begin{bmatrix}
+ \\end\{bmatrix\}
+ \\begin\{bmatrix\}
  a\_0\\\\
  a\_1\\\\
  a\_2\\\\
  \\vdots\\\\
  a\_n\\\\
- \\end{bmatrix}=
- \\begin{bmatrix}
+ \\end\{bmatrix\}=
+ \\begin\{bmatrix\}
  y\_0\\\\
  y\_1\\\\
  y\_2\\\\
  \\vdots\\\\
  y\_n\\\\
- \\end{bmatrix}
- }\\\]],
+ \\end\{bmatrix\}
+ \}\\\]],
   [We get the identity matrix; this is another way to trivially show that
 a\_0=y\_0, a\_1=y\_1 and so on.],
   [Appendix: Vandermonde matrix],
-  [Given some numbers \\{x\_0 \\dots x\_n\\} a matrix of this form:],
+  [Given some numbers \\\{x\_0 \\dots x\_n\\\} a matrix of this form:],
   [\\\[V=
-{\\renewcommand{\\arraystretch}{1.5}\\begin{bmatrix}
+\{\\renewcommand\{\\arraystretch\}\{1.5\}\\begin\{bmatrix\}
 1 & x\_0 & x\_0^2 & \\dots & x\_0^n\\\\
 1 & x\_1 & x\_1^2 & \\dots & x\_1^n\\\\
 1 & x\_2 & x\_2^2 & \\dots & x\_2^n\\\\
 \\vdots & \\vdots & \\vdots & \\ddots &\\vdots \\\\
 1 & x\_n & x\_n^2 & \\dots & x\_n^n
-\\end{bmatrix}
-}\\\]],
+\\end\{bmatrix\}
+\}\\\]],
   [Is called the Vandermonde matrix. What’s special about a Vandermonde
 matrix is that we know it’s invertible when are distinct.
 This is because its determinant is known to be
 non-zero .
 Moreover, its determinant is \[3\] :],
-  [\\\[\\det(V) = \\prod\_{0 \\le i 1, we’ll
+  [\\\[\\det(V) = \\prod\_\{0 \\le i 1, we’ll
 subtract the value of column k-1 multiplied by from
 it (this is done on all columns simultaneously). The idea is to make the
 first row all zeros after the very first element:],
   [\\\[V=
-{\\renewcommand{\\arraystretch}{1.5}\\begin{bmatrix}
+\{\\renewcommand\{\\arraystretch\}\{1.5\}\\begin\{bmatrix\}
  1 & 0 & 0 & \\dots & 0\\\\
- 1 & x\_1 - x\_0 & x\_1^2 - x\_1 x\_0& \\dots & x\_1^n - x\_1^{n-1} x\_0\\\\
- 1 & x\_2 - x\_0 & x\_2^2 - x\_2 x\_0& \\dots & x\_2^n - x\_2^{n-1} x\_0\\\\
+ 1 & x\_1 - x\_0 & x\_1^2 - x\_1 x\_0& \\dots & x\_1^n - x\_1^\{n-1\} x\_0\\\\
+ 1 & x\_2 - x\_0 & x\_2^2 - x\_2 x\_0& \\dots & x\_2^n - x\_2^\{n-1\} x\_0\\\\
  \\vdots & \\vdots & \\vdots & \\ddots &\\vdots \\\\
- 1 & x\_n - x\_0 & x\_n^2 - x\_n x\_0& \\dots & x\_n^n - x\_n^{n-1} x\_0\\\\
- \\end{bmatrix}
-}\\\]],
+ 1 & x\_n - x\_0 & x\_n^2 - x\_n x\_0& \\dots & x\_n^n - x\_n^\{n-1\} x\_0\\\\
+ \\end\{bmatrix\}
+\}\\\]],
   [Now we factor out x\_1-x\_0 from the second row (after the first
 element), x\_2-x\_0 from the third row and so on, to get:],
   [\\\[V=
-{\\renewcommand{\\arraystretch}{1.5}\\begin{bmatrix}
+\{\\renewcommand\{\\arraystretch\}\{1.5\}\\begin\{bmatrix\}
  1 & 0 & 0 & \\dots & 0\\\\
- 1 & x\_1 - x\_0 & x\_1(x\_1 - x\_0)& \\dots & x\_1^{n-1}(x\_1 - x\_0)\\\\
- 1 & x\_2 - x\_0 & x\_2(x\_2 - x\_0)& \\dots & x\_2^{n-1}(x\_2 - x\_0)\\\\
+ 1 & x\_1 - x\_0 & x\_1(x\_1 - x\_0)& \\dots & x\_1^\{n-1\}(x\_1 - x\_0)\\\\
+ 1 & x\_2 - x\_0 & x\_2(x\_2 - x\_0)& \\dots & x\_2^\{n-1\}(x\_2 - x\_0)\\\\
  \\vdots & \\vdots & \\vdots & \\ddots &\\vdots \\\\
- 1 & x\_n - x\_0 & x\_n(x\_n - x\_0)& \\dots & x\_n^{n-1}(x\_n - x\_0)\\\\
- \\end{bmatrix}
-}\\\]],
+ 1 & x\_n - x\_0 & x\_n(x\_n - x\_0)& \\dots & x\_n^\{n-1\}(x\_n - x\_0)\\\\
+ \\end\{bmatrix\}
+\}\\\]],
   [Imagine we erase the first row and first column of . We’ll call
 the resulting matrix .],
   [\\\[W=
-{\\renewcommand{\\arraystretch}{1.5}\\begin{bmatrix}
- x\_1 - x\_0 & x\_1(x\_1 - x\_0)& \\dots & x\_1^{n-1}(x\_1 - x\_0)\\\\
- x\_2 - x\_0 & x\_2(x\_2 - x\_0)& \\dots & x\_2^{n-1}(x\_2 - x\_0)\\\\
+\{\\renewcommand\{\\arraystretch\}\{1.5\}\\begin\{bmatrix\}
+ x\_1 - x\_0 & x\_1(x\_1 - x\_0)& \\dots & x\_1^\{n-1\}(x\_1 - x\_0)\\\\
+ x\_2 - x\_0 & x\_2(x\_2 - x\_0)& \\dots & x\_2^\{n-1\}(x\_2 - x\_0)\\\\
  \\vdots & \\vdots & \\ddots &\\vdots \\\\
- x\_n - x\_0 & x\_n(x\_n - x\_0)& \\dots & x\_n^{n-1}(x\_n - x\_0)\\\\
- \\end{bmatrix}
-}\\\]],
+ x\_n - x\_0 & x\_n(x\_n - x\_0)& \\dots & x\_n^\{n-1\}(x\_n - x\_0)\\\\
+ \\end\{bmatrix\}
+\}\\\]],
   [Because the first row of is all zeros except the first
 element, we have:],
   [\\\[\\det(V)=\\det(W)\\\]],
@@ -1593,17 +1642,17 @@ x\_1-x\_0, so when calculating \\det(W), we can move this
 common factor out. Same for the common factor x\_2-x\_0 of the
 second row, and so on. Overall, we can write:],
   [\\\[\\det(W)=(x\_1-x\_0)(x\_2-x\_0)\\cdots(x\_n-x\_0)\\cdot \\det
-{\\renewcommand{\\arraystretch}{1.5}\\begin{bmatrix}
- 1 & x\_1 & x\_1^2 & \\dots & x\_1^{n-1}\\\\
- 1 & x\_2 & x\_2^2 & \\dots & x\_2^{n-1}\\\\
+\{\\renewcommand\{\\arraystretch\}\{1.5\}\\begin\{bmatrix\}
+ 1 & x\_1 & x\_1^2 & \\dots & x\_1^\{n-1\}\\\\
+ 1 & x\_2 & x\_2^2 & \\dots & x\_2^\{n-1\}\\\\
  \\vdots & \\vdots & \\vdots & \\ddots &\\vdots \\\\
- 1 & x\_n & x\_n^2 & \\dots & x\_n^{n-1}
- \\end{bmatrix}
-}\\\]],
+ 1 & x\_n & x\_n^2 & \\dots & x\_n^\{n-1\}
+ \\end\{bmatrix\}
+\}\\\]],
   [But the smaller matrix is just the Vandermonde matrix for
-\\{x\_1 \\dots x\_{n}\\}. If we continue this process by induction,
+\\\{x\_1 \\dots x\_\{n\}\\\}. If we continue this process by induction,
 we’ll get:],
-  [\\\[\\det(V) = \\prod\_{0 \\le i \< j \\le n} (x\_j - x\_i)\\\]],
+  [\\\[\\det(V) = \\prod\_\{0 \\le i \< j \\le n\} (x\_j - x\_i)\\\]],
   [If you’re interested, the Wikipedia page for the Vandermonde matrix has a couple of additional
 proofs.],
   [\[1\] The -es here are called nodes and the -s are
@@ -1625,7 +1674,7 @@ is also an option, and there are many other approaches.
 x\_j and where is strictly smaller than
 j. That is, for n=2, the full product is
 (x\_2-x\_1)(x\_2-x\_0)(x\_1-x\_0). For an arbitrary ,
-there are \\frac{n(n-1)}{2} factors in total.],
+there are \\frac\{n(n-1)\}\{2\} factors in total.],
 ),
   insert-map: (:),
   word-count: 1916,
@@ -1633,10 +1682,8 @@ there are \\frac{n(n-1)}{2} factors in total.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [About Me in Dating App: Write the Perfect Profile Bio],
   author: [Greatist],
   source-name: [Greatist],
@@ -1646,6 +1693,7 @@ there are \\frac{n(n-1)}{2} factors in total.],
   [You’ve swiped right and gotten matches, but it’s not working. It might be your profile that’s holding you back. With just seconds to make an impression, your “About Me” section is crucial. Think of it as your personal highlight reel—enticing and leaving them wanting more. If it’s not working its magic, you could be missing out.],
   [Read on to learn how to turn that blank box into a captivating snapshot of your fabulous self.],
   [Sophie Mayanne/Getty Images],
+  [What should I write in my dating profile?],
   [Your dating profile is your chance to show potential matches why you’re a catch. But what should you include? Since everyone is unique, think about what you bring to the table and what you’re looking for. Let’s break it down.],
   [Showcase your personality: Are you a quirky adventurer, a bookworm, or a foodie always on the hunt for the best taco in town? Share your passions and what makes you tick. Be authentic — people can spot a fake from a mile away.],
   [Be specific: Avoid generic statements like “I love to have fun” or “I enjoy hanging out.” Instead, get specific. Do you love hiking? Mention your fave trail. Are you a movie buff? Share your top films. Details increase relatability and spark conversations.],
@@ -1653,6 +1701,7 @@ there are \\frac{n(n-1)}{2} factors in total.],
   [Highlight what you want: Be clear! Do you want a serious relationship or a casual fling? Honesty attracts matches on the same page.],
   [Share a fun fact: Maybe you’ve traveled to 20 countries or once met a celeb in an unexpected place. These tidbits are great icebreakers.],
   [Stay positive : Focus on what you enjoy. Avoid negative statements or listing things you don’t like — it’s far too Debbie Downer.],
+  [What is a good About Me for a dating app?],
   [Your “About Me” section is your dating profile’s elevator pitch. It’s gotta be snappy, sassy, and totally you. Here’s how to make that blurb irresistible:],
   [Create a vivid snapshot: Forget boring lists — paint a picture. Describe a typical weekend or a fave memory.],
   [Share your aspirations: Talk about your dreams and goals. Are you working towards a marathon, planning to write a book, or desperately trying to master a new language?],
@@ -1664,12 +1713,14 @@ there are \\frac{n(n-1)}{2} factors in total.],
   [Here are a couple of examples to get the ball rolling:],
   [“Bookworm by day, Netflix binge-watcher by night. I love curling up with a good novel or debating plot twists over a glass of wine. If you know a killer thriller or have a strong opinion on ‘Stranger Things,’ let’s chat!”],
   [“Aspiring chef with a passion for trying new recipes and hunting down the best food trucks. If you’re into food adventures and don’t mind a little kitchen chaos, swipe right and let’s cook up some fun together!”],
+  [What not to say on a dating app profile],
   [Avoid these common pitfalls to make sure your profile sends the right message:],
   [Negativity: Don’t focus on what you don’t want. Life satisfaction can be attractive !],
   [Desperation: You’re a catch, so avoid looking desperate !],
   [Clichés: Avoid overused phrases like “I live life to the fullest.”],
   [Personal deets: Keep things like your exact job location and home address private.],
   [Demands : Making too many specifications about who you’re looking for can seem rigid.],
+  [Best pictures to use for dating apps],
   [The photos you choose for your dating profile can make or break your online dating success. Here’s what attracts the most positive attention:],
   [High-quality photos : Clear, well-lit images are crucial.],
   [A variety of shots : Include a mix of headshots, full-body images, and activities.],
@@ -1683,10 +1734,8 @@ there are \\frac{n(n-1)}{2} factors in total.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Ultraprocessed Foods As Addictive As Tobacco, Researchers Say],
   author: [Healthline],
   source-name: [Healthline],
@@ -1758,11 +1807,10 @@ there are \\frac{n(n-1)}{2} factors in total.],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The Best of 2025],
   author: [Lindsay Landis],
   source-name: [Love and Olive Oil],
@@ -1794,7 +1842,7 @@ there are \\frac{n(n-1)}{2} factors in total.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Graveyard That Made Me Kiss a Frog],
   author: [Louise Story],
   source-name: [Atlas Obscura],
@@ -1824,8 +1872,7 @@ there are \\frac{n(n-1)}{2} factors in total.],
 #pull-quote([And while I’ve never been the resolutions type, I’ve got a few big goals in addition to trying to develop some better habits this coming year, including:  Draw everyday.], [Lindsay Landis])
 
 
-{
-  #standard-article(
+#standard-article(
   title: [Roman Altars and Tombstones in Talavera de la Reina, Spain],
   author: [Atlas Obscura],
   source-name: [Atlas Obscura],
@@ -1842,35 +1889,38 @@ there are \\frac{n(n-1)}{2} factors in total.],
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([Kaila Yu], source-name: [Condé Nast Traveler], [From the Maldives to Indonesia, more women are scuba diving than ever before—and expanding access for others to experience the sea like they do.])],
-    [#brief-item([Jessica Puckett], source-name: [Condé Nast Traveler], [A basic guide to trip insurance, including a breakdown of “cancel for any reason” (CFAR) upgrades and what's already included in your credit card.])],
-    [#brief-item([Medscape News], source-name: [Medscape News], [Elinzanetant reduces the severity and frequency of hot flushes and night sweats among women with breast cancer regardless of type of endocrine treatment used. 
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([Kaila Yu], source-name: [Condé Nast Traveler], [From the Maldives to Indonesia, more women are scuba diving than ever before—and expanding access for others to experience the sea like they do.])],
+  [#brief-item([Jessica Puckett], source-name: [Condé Nast Traveler], [A basic guide to trip insurance, including a breakdown of “cancel for any reason” (CFAR) upgrades and what's already included in your credit card.])],
+  [#brief-item([Medscape News], source-name: [Medscape News], [Elinzanetant reduces the severity and frequency of hot flushes and night sweats among women with breast cancer regardless of type of endocrine treatment used. 
  Medscape News Europe])],
-    [#brief-item([Medscape News], source-name: [Medscape News], [The findings could fill a treatment gap for patients with EGFR-mutated advanced non-small cell lung cancer (NSCLC) who also carry TP53 mutations. 
+  [#brief-item([Medscape News], source-name: [Medscape News], [The findings could fill a treatment gap for patients with EGFR-mutated advanced non-small cell lung cancer (NSCLC) who also carry TP53 mutations. 
  Medscape Medical News])],
-    [#brief-item([Jamie Spain], source-name: [Condé Nast Traveler], [Upgrade your outdoor setup with a Yeti discount code. Save 20% on premium coolers and drinkware through exclusive community hero offers and new seasonal promotions.])],
-    [#brief-item([Gina Homolka], source-name: [Skinnytaste], [Skip the can and make this cozy one-pan Spaghetti Os and Meatballs instead. Mini turkey meatballs and pasta cook together in one-pot in a simple tomato sauce for an easy comfort food dinner the whole family will love. Homemade Spaghetti-Os Spaghettios and Meatballs might be nostalgic for some, but I’ve never loved canned pasta. This \[…\]])],
-    [#brief-item([Joel Bruner], source-name: [Migrationology (Mark Wiens)], [Feijao Tropeiro is one dish you can’t leave Brazil without having, it is one of the most hearty and satisfying plates of food I can ever remember. The next time you visit Belo Horizonte, don’t miss Bar Do Careca, and... 
+  [#brief-item([Jamie Spain], source-name: [Condé Nast Traveler], [Upgrade your outdoor setup with a Yeti discount code. Save 20% on premium coolers and drinkware through exclusive community hero offers and new seasonal promotions.])],
+  [#brief-item([Gina Homolka], source-name: [Skinnytaste], [Skip the can and make this cozy one-pan Spaghetti Os and Meatballs instead. Mini turkey meatballs and pasta cook together in one-pot in a simple tomato sauce for an easy comfort food dinner the whole family will love. Homemade Spaghetti-Os Spaghettios and Meatballs might be nostalgic for some, but I’ve never loved canned pasta. This \[…\]])],
+  [#brief-item([Joel Bruner], source-name: [Migrationology (Mark Wiens)], [Feijao Tropeiro is one dish you can’t leave Brazil without having, it is one of the most hearty and satisfying plates of food I can ever remember. The next time you visit Belo Horizonte, don’t miss Bar Do Careca, and... 
 
 The post Feijao Tropeiro – Amazing Food in Belo Horizonte, Brazil appeared first on Migrationology - Food Travel Blog .])],
-    [#brief-item([Jessica Sulima], source-name: [Condé Nast Traveler], [Whether you're planning a weekend getaway or a cross-country trip, save on your next vehicle with these Hertz discount codes and member-exclusive offers.])],
-    [#brief-item([Kim Severson], source-name: [NYT Food/Dining], [Raspberry prices can be a harbinger for other food costs. The wholesale price of fresh berries has doubled since January.])],
-    [#brief-item([Joel Bruner], source-name: [Migrationology (Mark Wiens)], [Lima, Peru, is one of the world’s top destinations for travel when it comes to options for exploring delicious local cuisine. Some restaurants in Lima are so well-known for being the absolute best at what they do, a visit is... 
+  [#brief-item([Jessica Sulima], source-name: [Condé Nast Traveler], [Whether you're planning a weekend getaway or a cross-country trip, save on your next vehicle with these Hertz discount codes and member-exclusive offers.])],
+  [#brief-item([Kim Severson], source-name: [NYT Food/Dining], [Raspberry prices can be a harbinger for other food costs. The wholesale price of fresh berries has doubled since January.])],
+  [#brief-item([Joel Bruner], source-name: [Migrationology (Mark Wiens)], [Lima, Peru, is one of the world’s top destinations for travel when it comes to options for exploring delicious local cuisine. Some restaurants in Lima are so well-known for being the absolute best at what they do, a visit is... 
 
 The post Ceviche Chef Legend Javier Wong – Meals of Masterpiece in Lima, Peru appeared first on Migrationology - Food Travel Blog .])],
-    [#brief-item([Medscape News], source-name: [Medscape News], [Ten-year findings suggest some patients may safely receive less treatment, potentially lowering side effects without raising recurrence risk. 
+  [#brief-item([Medscape News], source-name: [Medscape News], [Ten-year findings suggest some patients may safely receive less treatment, potentially lowering side effects without raising recurrence risk. 
  Medscape News Europe])],
-    [#brief-item([Medscape News], source-name: [Medscape News], [A population-based, prospective cohort study conducted in China finds that lung cancer risk remains low until 3 years after a negative low-dose CT screen. 
+  [#brief-item([Medscape News], source-name: [Medscape News], [A population-based, prospective cohort study conducted in China finds that lung cancer risk remains low until 3 years after a negative low-dose CT screen. 
  Medscape Medical News])],
-    [#brief-item([Joel Bruner], source-name: [Migrationology (Mark Wiens)], [Nasi Ulam, or “Herb Rice,” is a favorite of Malaysian food lovers everywhere! This local Kelantanese food alone will be a highlight for you, any time you visit the amazing northernmost state of peninsular Malaysia. In this article we will... 
+  [#brief-item([Joel Bruner], source-name: [Migrationology (Mark Wiens)], [Nasi Ulam, or “Herb Rice,” is a favorite of Malaysian food lovers everywhere! This local Kelantanese food alone will be a highlight for you, any time you visit the amazing northernmost state of peninsular Malaysia. In this article we will... 
 
 The post Nasi Ulam Restaurant for ‘Herb Rice’ (and Wild Budu Fish Sauce) appeared first on Migrationology - Food Travel Blog .])],
-  ))
-}
+))
+
+// --- Notable Quotes ---
+#block(above: 0.2in, stroke: (top: 1pt + luma(26)), inset: (top: 0.1in))[
+  #pull-quote([You may have hit the wall of adaptive thermogenesis when restricting calories and increasing physical activity without losing weight.], [Greatist])
+
+]
 
 #colophon([The Sentinel], [Vol. 1, No. 042], [2026-03-30])

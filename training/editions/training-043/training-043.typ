@@ -21,36 +21,8 @@
 #masthead([Swift Star], [Vol. 1, No. 043], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Damon and Baby: hands-on with the ridiculous twin-stick shooter, out March 26],
-  kicker: [Cover Story],
-  author: [Phil Hornshaw],
-  source-name: [PlayStation Blog],
-  deck: [class=""\>Arc System Works and Executive Director Daisuke Ishiwatari are known for fighting games, and their upcoming game, Damon and Baby, is a huge shift.],
-  lead-pre: [],
-  lead-cap: [I],
-  lead-rest: [t’s an action-adventure game that’s defined by an overhead viewpoint, twin-stick shooter mechanics, a lighthearted, cartoonish art style, and a wry, satirical wit — a departure from series like Guilty Gear and BlazBlue.],
-  body-paragraphs: (
-  [class=""\> Damon and Baby is an expansive game that packs a surprising amount of depth and challenge. I recently played through the first 10 hours of Damon and Baby ahead of its release to get a first-hand feel for its blend of action mechanics and comedy stylings.],
-  [class=""\>You take on the role of Damon, a demon with aspirations for greatness, who has what turns out to be an unfortunate friendship with a priest. At the start of the tale, the priest shows up mortally wounded and entrusts Damon with a baby. Little does Damon know that, through supernatural shenanigans, the two have become inseparable, and if Damon wanders too far away from the baby, he’s instantly teleported back to her.],
-  [class=""\>Stuck with putting his demonic plans on hold to care for a cute child, Damon sets out to find a way to separate himself from the baby. But he quickly discovers that while he wants to get rid of the kid, there are demonic forces, led by Death, who will do anything to claim her. And while Damon is a curmudgeonly demon, it turns out he has a heart of gold, so he grabs some guns and sets about fighting through hordes of supernatural enemies.],
-  [class=""\>Each of the gun archetypes comes in all sorts of variations, sporting different stats and nuanced capabilities. Some guns might add additional bullets to their spread, pierce through enemies, or fire in powerful, short bursts rather than continuously.],
-  [class=""\>Each weapon is good for specific situations, encouraging you to change them up often as you fight all kinds of enemies. From easily-defeated knife-wielding spirits, to giant, flying, shield-wielding fiends, there’s a huge number of threats to deal with and you’ll have to constantly shift strategies in order to stay alive.],
-  [class=""\>Damon and Baby gives you a few interesting tools to help you, as well. Before long, Damon realizes he can use that whole baby curse thing to his advantage, giving you the ability to throw the baby, which causes Damon to teleport to wherever she is and catch her. That move allows you to cover big gaps that you couldn’t normally jump over, and it serves as your primary dodge to escape enemy attacks.],
-  [class=""\>Even normal enemies can be huge and powerful, but the bosses take things up a notch — like a giant, katana-wielding wolf dressed like he belongs in Kill Bill , or a moth who uses a massive sniper rifle against you in a grocery store. They’ll clobber you if you’re not on your game.],
-  [class=""\>Throwing the baby is also just one of the many abilities that help you explore its sprawling areas. As Damon earns a double-jump and wall jump, and “ultimate” abilities that let him do things like smash through certain kinds of objects, you can revisit earlier areas to discover secrets and power-ups, or earn money for buying new weapons. Damon and Baby’s levels are huge, and offer almost as many nooks and crannies to check as demons to shoot.],
-  [class=""\>The thing I liked most in my preview of the game, though, was Damon and Baby’s comedic sensibility. It’s set in a world where demons, angels, and monsters are old hat for normal folks, and dealing with Heaven and Hell is mostly a bureaucratic annoyance, and it’s a paperwork snafu that costs Damon his powers at the start of the game.],
-  [class=""\>Damon’s ultimate goal is to get to Sedona — as in, Arizona — and he’s helped out by a demonic insurance agent, a vampire mafioso who transforms into a bat to help you in combat, and an angelic cook, among other weirdos.],
-  [class=""\>It’s a game that imagines a goofy supernatural world that’s full of spirits and creatures trying to help you save the world, but who still have to work within a society full of mundane tasks and arbitrary rules. The absurdity leads to a lot of good jokes, especially as Damon complains his way through the journey.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [The Sunday Papers],
   author: [Mark Warren],
   source-name: [Rock Paper Shotgun],
@@ -66,11 +38,9 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Achieving Test Reliability for Native E2E Testing: Beyond Fixing Broken Tests],
   author: [Jin Kim],
   source-name: [Docker Blog],
@@ -80,15 +50,18 @@
   [But keeping E2E tests reliable is often more challenging than writing them in the first place.],
   [The fragmented device ecosystem, gaps in test frameworks, network inconsistencies, unstable test environments, and constantly changing UI all contribute to test flakiness. Teams easily get trapped in a cycle of constantly fixing failing tests due to UI changes or environment instability rather than improving the overall reliability of their test infrastructure. They end up frustrated and hesitant to adopt E2E tests in their workflows.],
   [Having led the native E2E testing infrastructure setup at a mid-sized company, I learned the hard way how critical it is to define and implement strategies for test ownership, observability, and notifications in ensuring long-term test stability. In this piece, I discuss the challenges I’ve seen teams face and share lessons on how to build reliable E2E systems that you actually trust.],
+  [Challenges with Reactive Test Maintenance],
   [After setting up periodic E2E runs on the CI, our team initially focused on triaging, investigating, and fixing every failing test to improve test stability. However, even after nearly a year of patching flaky tests, the reliability of our E2E suite didn’t improve, and engineers slowly lost confidence in the usefulness and reliability of the test suite.],
   [I learned that teams that focus primarily on fixing broken tests often end up in a cycle of chasing failures without fixing the root causes of instability. This reactive approach creates several problems:],
   [Test suite fragility : If teams continue patching broken tests without addressing real issues with either the underlying app changes or unstable environments, the test suite becomes increasingly brittle. Over time, tests fail for reasons unrelated to real product defects, making it harder to distinguish genuine regressions from noise.],
   [High maintenance overhead: Debugging and fixing flaky tests often requires a significant amount of developer time and resources. Unlike unit tests, which run quickly and fail in isolation, E2E tests execute against the development, staging, or pre-production environment, making failures harder to reproduce and diagnose. Adjusting E2E tests to work across devices with different screen sizes or OS versions requires additional work, making fixes a non-trivial task.],
   [Reduces trust in the test suites: When failures are common and noisy, teams lose confidence in the E2E suite, and they often start ignoring test failures. This undermines the purpose of having automated tests in the first place. Instead, teams rely on local dev testing or manual QA cycles to validate changes. Over time, the suite becomes more of a liability than a safeguard, slowing down delivery instead of enabling it.],
   [A reactive approach to fixing E2E tests slows down release cycles. Developers must spend significant amounts of time repeatedly fixing and rerunning failing tests, while teams rely on manual QA to catch actual regressions.],
+  [Building a Reliable E2E Infrastructure],
   [When our test suite stability didn’t improve after more than a year of chasing failures, we took a step back to analyze historical results and look for patterns.],
   [We discovered that a significant number of failures could be attributed to an unstable environment or an unexpected state of the test account. For example, spikes in API latencies in the test environment frequently caused false negatives, adding to the noise. Similarly, tests run against existing user accounts could become inconsistent due to a past failure or if multiple tests attempted to use the same account.],
   [I learned that investing in improving your test infrastructure is the only way to get to a stable and reliable native E2E testing workflow. This involves stabilizing the test environment, defining clear test ownership, reducing noisy alerts, and improving observability. Let’s look at each of these in more detail.],
+  [Stabilize the Test Environment],
   [Many flaky E2E tests can be traced back to inconsistencies in the underlying environment, such as sporadic device issues, network instability, or API downtime in a staging environment.],
   [To avoid noisy and unreliable tests, ensure you have a stable and standardized test environment with the following test practices:],
   [Standardize device and environment setup: Device and test environment stability issues heavily impact test stability. To reduce API downtimes, isolate the E2E testing environment from the developer or staging environment to prevent interference from unstable builds and experimental features. Teams could either build a stable pre-prod environment that uses a production-ready artifact or spin up ephemeral environments for each E2E run to ensure consistency. Running tests on standardized device images or containerized emulators with consistent OS versions, configurations, and resources further improves stability. For critical flows, you can schedule periodic runs on physical device farms to validate against real hardware while keeping day-to-day tests stable and cost-effective.],
@@ -98,15 +71,18 @@
   [Assigning ownership of tests based on the ownership of product features can alleviate this problem to some extent. Ideally, the owning team should be responsible for writing, maintaining, and fixing tests for their critical flows. This ownership model ensures that failures are triaged quickly and that tests are updated as the product evolves instead of becoming stale and unstable.],
   [Test ownership becomes challenging in codebases where multiple product teams own parts of a single user flow. For example, in a shopping application, different teams might own the login, product catalog, and checkout experiences. If a checkout flow test fails at the login step, it can be confusing which team should triage the issue. Without a clear policy, the failure might be ignored, or multiple teams might end up duplicating the effort.],
   [To handle these scenarios, set a policy that defines the first point of contact (POC) per test based on the end-user experience. This ensures a single team takes responsibility for triaging the issue, but that fixes can be handed off to upstream dependencies as needed.],
+  [Reduce Noise and Improve Alerting],
   [A common challenge with native E2E testing is noisy alerts due to flaky or failing tests. Teams are often flooded with non-actionable alerts when flaky tests fail because of transient network or device issues. Repeated failure notifications about known bugs can also lead to alert fatigue.],
   [The following techniques reduce this noise so that teams are only notified for actionable failures:],
   [Mute flaky tests and known bugs: Instead of reporting and notifying teams about all test failures, allow alerts from tests that are identified as flaky or linked to known issues to be muted without a code change. You can manage muted tests through a remote configuration, environment variables, or a tool like BrowserStack . Flag them for follow-up work, but let alerts only go out for new or unexpected regressions. Muting is particularly important for E2E tests since fixing failing tests often requires significant developer time and resources. Repeated alerts can be especially distracting for developers.],
   [Enrich notifications with failure details: Instead of generic failure messages, include details such as the failing user flow, commit details, the error message, and links to logs or dashboards in your alerts. These details help developers identify and triage issues quicker, resulting in faster fixes and higher confidence in the suite.],
   [Track test metrics and trends: In addition to test suite level reports, track and analyze the historical results of your tests to understand failure rates, flakiness trends, and failure hotspots. For example, if you observe repeated failures in the login flow, it might indicate unstable tests or sporadic bugs in that flow. Tracking these metrics over time provides visibility into whether the E2E suite is improving or degrading, and it helps you prioritize stabilization efforts based on impact.],
+  [Hybrid Strategies for Scaling E2E with Dockerized Emulators],
   [Running native E2E tests at scale is challenging due to cost and resource constraints. Device farms that provide access to real cloud-based devices are expensive for running a large suite of tests at high frequency. This becomes a constraint for integrating E2E tests with the CI pipeline that executes with every pull request before the changes are merged.],
   [As mentioned earlier, a hybrid testing approach that uses Dockerized emulators for PR builds alongside real devices for periodic runs can help you overcome this challenge. When our team moved PR checks to Dockerized emulators, we got faster feedback and significantly reduced cloud device costs.],
   [Containerized device runners can be spun up quickly in CI. For example, the docker-android image lets you run an Android emulator in a containerized Docker environment. It supports multiple device profiles, OS versions, and UI-testing frameworks such as Appium and Espresso. Teams can easily integrate these emulators into CI pipelines to run E2E tests at scale without investing in a huge testing budget],
   [If you are building E2E tests for mobile web, you can also use containerized browser images to run tests consistently across different environments to further reduce cost and setup complexity.],
+  [There’s Hope!],
   [If your team has been chasing native E2E test failures like we were, you’re probably also burning engineering time and resources without improving test stability. I hope that this article has encouraged you that there’s a better way: improving your test environment, device setup, alerting, and observability.],
   [Your best first step is to analyze your historical test failures and categorize them into buckets. Use these insights to define actionable items for reducing flakiness. Use this roadmap to identify test infrastructure investments or process changes that will deliver the most impact.],
   [After our team invested in test infrastructure improvements, we saw a clear improvement in stability. Developers had a better understanding of real failures, and the number of noisy alerts was reduced. Flakiness didn’t disappear entirely, but the improved reliability of the test suite helped us catch multiple native app regressions before the changes were released to production.],
@@ -118,10 +94,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How architects design airports to handle superlong security lines],
   author: [Nate Berg],
   source-name: [Fast Company Design],
@@ -130,12 +104,14 @@
   [The historically long security lines currently snaking through U. S. airports are the painful result of extreme circumstances. Callouts, no-shows, and resignations by Transportation Security Administration workers fed up with a lack of pay during a partial government shutdown, combined with a bump in spring break travelers, have created unusually congested airport security checkpoints.],
   [For the architects and airport authorities that work together to design these heavily regulated spaces, it’s the kind of convergence you can’t exactly plan for. But, according to some of the designers of these spaces, airports are increasingly incorporating design features that can help them manage extreme security lines in the future.],
   [George Bush Intercontinental Airport (IAH) in Houston \[Image: Stantec, in collaboration with Grimshaw\]],
+  [Flexible space allows for overflows],
   [The lines, though currently caused by TSA worker shortages, are actually governed by the airports themselves and therefore are the airports’ problem. “There are regulations, but what the TSA is really interested in is the point from where you have your last document checked, called the TDC , to the actual \[scanning\] equipment,” says Ty Osbaugh, principal and global aviation leader at Gensler , a design and architecture firm. “That’s their land. How the queue works is purely up to an airport.”],
   [How big that queue gets, though, is out of the airports’ and their designers’ hands.],
   [Controlling the lines leading up to the security checkpoint takes a lot more than setting up a maze of stanchions. Osbaugh says airports carefully plan their pre-security, or landside, spaces to manage flows of passengers that can vary wildly during different times of the day and different days of the year. Building flexibility into this area, which can often share space with ticketing areas, allows for the lines to adapt to the crowds and circumstances.],
   [Gensler is currently working on a \$9.5 billion redesign of Terminal 1 at John F. Kennedy International Airport in New York City, and Osbaugh says the landside space was designed with softer edges to be able to accommodate overflow. “We’ve got a garden that’s \[adjacent\], so if the queue starts to back up—God forbid that it does—now people have that extra space to be able to queue instead of backing into the ticketing areas and everything,” he says.],
   [Other airports, including some currently experiencing incredibly long security lines, don’t have this kind of flexibility. “That’s the problem that we see in Hartsfield right now,” Osbaugh says, referring to the Hartsfield–Jackson International Airport in Atlanta, where travelers have been advised to expect four-hour wait times . “The checkpoints are boxed in by hard elements on both sides. So it’s just trying to figure out how do you have that pressure relief valve in the queue?”],
   [IAH Airport \[Image: Stantec, in collaboration with Grimshaw\]],
+  [Planning, but not building, for the worst],
   [Airports are designed with epic security lines in mind, but that doesn’t mean they are built around the chance that they occur. Jonathan Massey, managing principal and aviation sector leader at the architecture firm Corgan , says his firm’s approach is to understand the existence of outlier events, but to design for more realistic peaks. “You always know something’s going to happen. There’s going to be a snowstorm somewhere, there’s going to be a strike, there’s going to be a terrorist event, there’s going to be a pandemic,” he says.],
   [Airports rarely end up being large enough to handle abnormally high crowds that may only occur once every few years. Massey says airports are designed to accommodate predictable peak surges like spring break, the summer travel season, and Thanksgiving. “We’ll look at those as our planning baseline. Things like pandemics, strikes, government shutdowns, blizzards—those fall outside of that,” he says. “Typically, the industry just isn’t willing to spend \$1,000 a square foot to make a building bigger for what might happen.”],
   [Airports can also be hesitant to try to solve unpredictable crowding problems in facilities that will stand for decades, especially as new security technologies are rapidly changing the checkpoint process. Osbaugh, who’s been designing airport projects since before the September 11, 2001, terrorist attacks, recalls a time when the security screening was an agent waving a metal detecting wand. “The one thing that is constant, and will continue to be constant as it relates to security checkpoints, is they are going to evolve,” he says.],
@@ -144,6 +120,7 @@
   [That approach is getting a test right now. One of the recent projects Stantec is involved in is the redevelopment of the international Terminal E in Houston’s George Bush Intercontinental Airport, one of the airports that has been hardest hit by the TSA worker shortage and partial government shutdown. The terminal, which is now only about half operational as more airlines get ready to move in, is currently seeing security checkpoint wait times of about two hours . (This kind of tech-enabled wait estimate is also on display in many newer airports, giving passengers at least some sense that they won’t—or definitely will—miss their flight.)],
   [The project, and others currently rolling out in another Houston terminal and at Denver International Airport, was designed to ease this rare situation by making space in the central processing area for security lines to spread out without impacting bag-drop and check-in counters, according to Mechlem. Buffer space between each function provides the option for lines to spread past their usual footprint. Under normal circumstances, these areas simply blend into the landside space of the airport, like wide concourses. There are also restrooms located nearby and staff facilities that can be used to assist passengers. “We are looking at the planning of that space as not being just a buffer, but something that you then actually could use as operational for these extended queues,” Mechlem says.],
   [IAH International Terminal \[Image: Stantec, in collaboration with HOK\]],
+  [The art of distraction],
   [“It’s inevitable that you’re going to have some wait period and queue time here, and we’re looking at ways to use architecture to drive that experience and have it be a pleasant, stress-relieving experience,” Mechlem says.],
   [But when lines stretch and wait times grow, there’s only so much a flexible floor plan or a column-free ceiling span can do. “Airport directors are looking for ways to distract the passenger,” Osbaugh says. Art is one option.],
   [Along the wall bordering the security checkpoint at JFK’s Terminal 1, a massive split-flap display board designed by Pentagram and the engineering firm Arup will cycle through large lo-fi artworks of New York landmarks and scenery. In Houston’s Terminal E, there’s a large blown-glass artwork hanging above the checkpoint. At Dallas’s Love Field, a recent Corgan project , the line to the security checkpoint worms along a path directly beneath a huge tiled mosaic of a field of wildflowers.],
@@ -153,17 +130,16 @@
 ),
   insert-map: (:),
   inline-pq: pull-quote([Osbaugh, who’s been designing airport projects since before the September 11, 2001, terrorist attacks, recalls a time when the security screening was an agent waving a metal detecting wand.], [Nate Berg]),
-  inline-pq-idx: 9,
+  inline-pq-idx: 10,
   word-count: 1444,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [I was the untitled goose in Big Walk, the balmy new open world co-op puzzler from House House],
   author: [Edwin Evans-Thirlwell],
   source-name: [Rock Paper Shotgun],
@@ -181,7 +157,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Slay the Spire 2's 'anti-infinite' balance patch has now itself been patched, much to the relief of some Silent and Necrobinder players],
   author: [Edwin Evans-Thirlwell],
   source-name: [Rock Paper Shotgun],
@@ -200,20 +176,19 @@
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [Right, roll call time. "A barbarian (for all the bonk boys in the audience)". Present. A mage who's the smartypants choice. Yeah. A thief, who's both "classic" and "obligatory". Here. "Rat with saxophone". Yup. Right, that's all of the fantasy trope character types accounted for in Dark Scrolls, a roguelike dungeon-running platformer from the devs behind Gunbrella and Gato Roboto .
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [Right, roll call time. "A barbarian (for all the bonk boys in the audience)". Present. A mage who's the smartypants choice. Yeah. A thief, who's both "classic" and "obligatory". Here. "Rat with saxophone". Yup. Right, that's all of the fantasy trope character types accounted for in Dark Scrolls, a roguelike dungeon-running platformer from the devs behind Gunbrella and Gato Roboto .
 
  Read more])],
-    [#brief-item([ScienceDaily], source-name: [ScienceDaily], [Using a smartphone with long nails can be frustrating, forcing people to awkwardly tap with their fingertips instead of their nails. Now, researchers are working on a clear nail polish that could change that by turning fingernails into touchscreen-friendly tools. By experimenting with dozens of formulas, they discovered that combining common compounds like taurine and ethanolamine can help nails carry just enough electrical charge for screens to detect a touch.])],
-    [#brief-item([Robert Purchese], source-name: [Eurogamer], [Hello and welcome back to our regular feature where we write a little about the games we've been playing. This week, Bertie discovers he's not as good at Slay the Spire 2 as he would like to be; Connor continues to fall to the Dark Side and embrace his inner troll; and Marie realises that older games really were more challenging.
+  [#brief-item([ScienceDaily], source-name: [ScienceDaily], [Using a smartphone with long nails can be frustrating, forcing people to awkwardly tap with their fingertips instead of their nails. Now, researchers are working on a clear nail polish that could change that by turning fingernails into touchscreen-friendly tools. By experimenting with dozens of formulas, they discovered that combining common compounds like taurine and ethanolamine can help nails carry just enough electrical charge for screens to detect a touch.])],
+  [#brief-item([Robert Purchese], source-name: [Eurogamer], [Hello and welcome back to our regular feature where we write a little about the games we've been playing. This week, Bertie discovers he's not as good at Slay the Spire 2 as he would like to be; Connor continues to fall to the Dark Side and embrace his inner troll; and Marie realises that older games really were more challenging.
 
  Read more])],
-    [#brief-item([Victoria Phillips Kennedy], source-name: [Eurogamer], [Turns out it is not just studios and live-service projects which are party to Sony's cancellation spree , as last night, it was announced that the PlayStation Remote Play-enabled car known as Afeela 1 has also been nixed.
+  [#brief-item([Victoria Phillips Kennedy], source-name: [Eurogamer], [Turns out it is not just studios and live-service projects which are party to Sony's cancellation spree , as last night, it was announced that the PlayStation Remote Play-enabled car known as Afeela 1 has also been nixed.
 
  Read more])],
-    [#brief-item([Last Week in AI], source-name: [Last Week in AI], [Anthropic releases Sonnet 4.6 
+  [#brief-item([Last Week in AI], source-name: [Last Week in AI], [Anthropic releases Sonnet 4.6 
 
 Related:
 
@@ -225,51 +200,50 @@ Related:
 
  
  Read more])],
-    [#brief-item([James Archer], source-name: [Rock Paper Shotgun], [Perhaps sensing competition in the field of Japan-flavoured arcade racing games , Forza Horizon 6 devs Playground Games have revealed the open-world vroomer’s system requirements. Agreeably, they’re a sensible balance of attainable low-end fare – at 1080p, a GTX 1650 and 16GB of RAM are apparently all that’s needed for 60fps – and the kind of hulking graphics bricks that you’d expect for 4K ray tracing. Only the most baby-oiled of hypercars for the RX 9070 XT owners, you understand, though support for lil’ handhelds like the Steam Deck is confirmed as well.
+  [#brief-item([James Archer], source-name: [Rock Paper Shotgun], [Perhaps sensing competition in the field of Japan-flavoured arcade racing games , Forza Horizon 6 devs Playground Games have revealed the open-world vroomer’s system requirements. Agreeably, they’re a sensible balance of attainable low-end fare – at 1080p, a GTX 1650 and 16GB of RAM are apparently all that’s needed for 60fps – and the kind of hulking graphics bricks that you’d expect for 4K ray tracing. Only the most baby-oiled of hypercars for the RX 9070 XT owners, you understand, though support for lil’ handhelds like the Steam Deck is confirmed as well.
 
  Read more])],
-    [#brief-item([Manuviraj Godara], source-name: [MakeUseOf], [I had tunnel-visioned myself into using Acrobat for everything PDF-related, from reading to highlighting. It was as if I was justifying the cost by using the program. But, as it turns out, Firefox already had all the PDF manipulation features I needed. Also, seeing Adobe's business practices, I'm better off without their tools , especially considering that the free version of Acrobat Reader is practically a running advertisement for Adobe's paid features.])],
-    [#brief-item([Fran Ruiz], source-name: [Eurogamer], [Dragon's Dogma 2 was a very special RPG even if some its bones could've used more work and the New Game Plus loop span its wheels without extra end-game content to give it juice. Still, like the original , it gained a dedicated following, so it's not surprising to read two years later folks asking for a Dark Arisen -like DLC. Now, Capcom has celebrated its second anniversary, but we're left with nothing but disappointment once again... or are we?
+  [#brief-item([Manuviraj Godara], source-name: [MakeUseOf], [I had tunnel-visioned myself into using Acrobat for everything PDF-related, from reading to highlighting. It was as if I was justifying the cost by using the program. But, as it turns out, Firefox already had all the PDF manipulation features I needed. Also, seeing Adobe's business practices, I'm better off without their tools , especially considering that the free version of Acrobat Reader is practically a running advertisement for Adobe's paid features.])],
+  [#brief-item([Fran Ruiz], source-name: [Eurogamer], [Dragon's Dogma 2 was a very special RPG even if some its bones could've used more work and the New Game Plus loop span its wheels without extra end-game content to give it juice. Still, like the original , it gained a dedicated following, so it's not surprising to read two years later folks asking for a Dark Arisen -like DLC. Now, Capcom has celebrated its second anniversary, but we're left with nothing but disappointment once again... or are we?
 
  Read more])],
-    [#brief-item([Last Week in AI], source-name: [Last Week in AI], [China’s Moonshot releases a new open source model Kimi K2.5 and a coding agent 
+  [#brief-item([Last Week in AI], source-name: [Last Week in AI], [China’s Moonshot releases a new open source model Kimi K2.5 and a coding agent 
 
-class="captioned-image-container"\> 
 
-class="image2-inset"\> 
 
-class="image-link-expand"\>
 
-class="pencraft pc-display-flex pc-gap-8 pc-reset"\> 
+
+
+
+
 
 Moonshot AI unveiled Kimi K2.5, an open-source, natively multimodal model trained on 15 trillion mixed visual and text tokens that understands text, images, and video. The company emphasizes strong agentic capabilities, citing “agent swarm” orchestration where multiple agents …
 
  
  Read more])],
-    [#brief-item([Connor Makar], source-name: [Eurogamer], [Warframe 's next update - The Shadowgrapher - is fast approaching. A shot in a new direction for the sci-fi MMO, players will have to navigate through cramped corridors and inky pathways in the game's first explicitly horror-inspired game mode. But how exactly do you make a game with bullet jumping and space ninjas scary ?
+  [#brief-item([Connor Makar], source-name: [Eurogamer], [Warframe 's next update - The Shadowgrapher - is fast approaching. A shot in a new direction for the sci-fi MMO, players will have to navigate through cramped corridors and inky pathways in the game's first explicitly horror-inspired game mode. But how exactly do you make a game with bullet jumping and space ninjas scary ?
 
  Read more])],
-    [#brief-item([Victoria Phillips Kennedy], source-name: [Eurogamer], [Microsoft has announced its next Xbox Partner Preview showcase will take place later this week, and focus on third-party games from the likes of Sega and GSC Game World .
+  [#brief-item([Victoria Phillips Kennedy], source-name: [Eurogamer], [Microsoft has announced its next Xbox Partner Preview showcase will take place later this week, and focus on third-party games from the likes of Sega and GSC Game World .
 
  Read more])],
-    [#brief-item([James Archer], source-name: [Rock Paper Shotgun], [STALKER 2: Heart of Chornobyl is getting its first proper expansion this year, titled Cost of Hope, and it looks stuffed to its icky mutant gills with classic STALKER series beats that the base game – while a powerfully engrossing survival FPS – missed out on. The Chornobyl Nuclear Power Plant returns as an explorable, doubtless horrible addition to the game’s open world, and the story concerns the conflict between the rival Freedom and Duty factions that’s been simmering since the original STALKER .
+  [#brief-item([James Archer], source-name: [Rock Paper Shotgun], [STALKER 2: Heart of Chornobyl is getting its first proper expansion this year, titled Cost of Hope, and it looks stuffed to its icky mutant gills with classic STALKER series beats that the base game – while a powerfully engrossing survival FPS – missed out on. The Chornobyl Nuclear Power Plant returns as an explorable, doubtless horrible addition to the game’s open world, and the story concerns the conflict between the rival Freedom and Duty factions that’s been simmering since the original STALKER .
 
  Read more])],
-    [#brief-item([ScienceDaily], source-name: [ScienceDaily], [Scientists have uncovered a new species of rhinoceros in the Canadian High Arctic, revealing that rhinos once lived far farther north than expected. The fossil, dating back 23 million years, is unusually complete and has helped reshape ideas about how these animals migrated between continents. Evidence suggests rhinos crossed from Europe to North America more recently than scientists once thought.])],
-    [#brief-item([ScienceDaily], source-name: [ScienceDaily], [Scientists have found a clever way to supercharge ultra-thin semiconductors by reshaping the space beneath them rather than altering the material itself. By placing a single-atom-thick layer of tungsten disulfide over tiny air cavities carved into a crystal, they created miniature “light traps” that dramatically boost brightness and optical effects—up to 20 times stronger emission and 25 times stronger nonlinear signals. These hollow structures, called Mie voids, concentrate light exactly where the material sits, overcoming a major limitation of atomically thin devices.])],
-    [#brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [Up until Bethesda's announcement that it'll be getting some robot army DLC next month and the yassification of its faces by Nvidia's DLSS 5 tech , I'd not thought about seeing how Starfield 's modding scene is getting on for a little while. That's now changed, because they've finally gotten seamless custom animations working.
+  [#brief-item([ScienceDaily], source-name: [ScienceDaily], [Scientists have uncovered a new species of rhinoceros in the Canadian High Arctic, revealing that rhinos once lived far farther north than expected. The fossil, dating back 23 million years, is unusually complete and has helped reshape ideas about how these animals migrated between continents. Evidence suggests rhinos crossed from Europe to North America more recently than scientists once thought.])],
+  [#brief-item([ScienceDaily], source-name: [ScienceDaily], [Scientists have found a clever way to supercharge ultra-thin semiconductors by reshaping the space beneath them rather than altering the material itself. By placing a single-atom-thick layer of tungsten disulfide over tiny air cavities carved into a crystal, they created miniature “light traps” that dramatically boost brightness and optical effects—up to 20 times stronger emission and 25 times stronger nonlinear signals. These hollow structures, called Mie voids, concentrate light exactly where the material sits, overcoming a major limitation of atomically thin devices.])],
+  [#brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [Up until Bethesda's announcement that it'll be getting some robot army DLC next month and the yassification of its faces by Nvidia's DLSS 5 tech , I'd not thought about seeing how Starfield 's modding scene is getting on for a little while. That's now changed, because they've finally gotten seamless custom animations working.
 
  Read more])],
-    [#brief-item([Oisin Kuhnke], source-name: [Rock Paper Shotgun], [I'm going to say it: bullet hells are more stressful than Souls-likes. Why are there 10,000 orbs approaching me, promising me misery and death! And I have to both tactfully dodge them while also staging a front myself? The visual information alone is enough to deteriorate the mind, memorising a list of attack patterns from some big dude with a sword seems like chump change by comparison. So this leaves me quite sweet on DeeSicks, a roguelike take on the game with physics-based dice rolling where god has died and you become your own boss.
+  [#brief-item([Oisin Kuhnke], source-name: [Rock Paper Shotgun], [I'm going to say it: bullet hells are more stressful than Souls-likes. Why are there 10,000 orbs approaching me, promising me misery and death! And I have to both tactfully dodge them while also staging a front myself? The visual information alone is enough to deteriorate the mind, memorising a list of attack patterns from some big dude with a sword seems like chump change by comparison. So this leaves me quite sweet on DeeSicks, a roguelike take on the game with physics-based dice rolling where god has died and you become your own boss.
 
  Read more])],
-    [#brief-item([Renee Schettler], source-name: [Yoga Journal], [As you release old, ineffective patterns, you create space for something else to be your reality.
+  [#brief-item([Renee Schettler], source-name: [Yoga Journal], [As you release old, ineffective patterns, you create space for something else to be your reality.
 
 The post Your Weekly Horoscope, March 29-April 4, 2026: Your Desires Taking Shape appeared first on Yoga Journal .])],
-    [#brief-item([Oisin Kuhnke], source-name: [Rock Paper Shotgun], [Project Hadar… It's a completely new game from CD Projekt Red, one that the Cyberpunk 2077 studio has been tinkering away at in the background for a while now . And yet! We know next to nothing about it, not even the genre (yes I know it's probably an RPG given CD Projekt's whole thing, I'm creating mystique here). But today was CD Projekt's most recent earnings report , so now we know… not much much, though we do have a better idea of where it's at.
+  [#brief-item([Oisin Kuhnke], source-name: [Rock Paper Shotgun], [Project Hadar… It's a completely new game from CD Projekt Red, one that the Cyberpunk 2077 studio has been tinkering away at in the background for a while now . And yet! We know next to nothing about it, not even the genre (yes I know it's probably an RPG given CD Projekt's whole thing, I'm creating mystique here). But today was CD Projekt's most recent earnings report , so now we know… not much much, though we do have a better idea of where it's at.
 
  Read more])],
-  ))
-}
+))
 
 #colophon([Swift Star], [Vol. 1, No. 043], [2026-03-30])

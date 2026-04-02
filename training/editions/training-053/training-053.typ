@@ -21,50 +21,18 @@
 #masthead([Quiet Sentinel], [Vol. 1, No. 053], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [I'm Copying You Since You're So Effective],
-  kicker: [Cover Story],
-  author: [Scott Johnson (fuzzyblog)],
-  source-name: [Scott Johnson (fuzzyblog)],
-  deck: [These aren't really in any order other than the order that I chose to finish them.],
-  lead-pre: [],
-  lead-cap: [c],
-  lead-rest: [lass="center"\>],
-  body-paragraphs: (
-  [A close friend recently said to me:],
-  [I'm Copying You Since You're So Effective],
-  [with respect to how much I tend to get done and I thought I'd elaborate on this a bit since I suspect that why I'm effective isn't always apparent. These aren't really in any order other than the order that I chose to finish them. I suspect they are all pretty important.],
-  [id="ten-reasons-why-i-think-im-effective"\>Ten Reasons Why I Think I'm Effective],
-  [Get Rid Of Anything That Pisses You Off . To the outside world, I'm a pretty chill person. I try very, very hard to never lose my cool and there's a reason for that – I have a bad temper. One of the things I learned early on about myself is that getting upset ruins my productivity. And so what I do is when I find that something pisses me off, I get rid of it – by fixing it. See my upcoming post on Url Soup for an example.],
-  [Time is The Only Thing You Have So Do the Math on Everything . I'm a father, a husband and a technologist and I started my first company when I was 19 – and I've pretty much been busy since I was 19. This has always made me very, very aware of just how valuable anyone's time is. I don't waste my time and I hate, hate, hate anything that wastes my time. Just as an example, I used to loathe configuring new laptops. Setting up a new laptop, for a developer, is generally about a week long endeavor until I (or any developer I've ever watched) is really comfortable with it. If you assume that a laptop lasts a developer 3 years and you have 30 years left in your career, that's 10 weeks of your life. Once I did that math then I realized that my figuring out how to configure a laptop quickly and easily was seriously worthwhile and I did (and then I open sourced an example ).],
-  [Find People Smarter than You – And Copy Them . I'd love to tell you that it was my idea for how to configure a laptop automatically but it wasn't. I stole this, shamelessly, from Jeff Geerling ; but I did (and do) credit him . One thing I learned early on is that when you don't know what you are doing, finding people smarter than you in an area and copying \/ learning from them is wise. I did this with Jim Kearny when I bought my first cell phone, I did this with Wolfram Arnold when I needed to learn TDD, I did this with Matt Mullenweg when I needed to learn logical isolation and SAAS apps and so on.],
-  [Messy Beats Perfect Every Damn Time . I write a lot of code and I'll confess something – my code is messy. I fail at coding in all kinds of ways; my Cyclomatic complexity is too high, I use double quoted strings when single quoted are more efficient, I have too much conditional logic and so on. And, in my opinion, that's ok because code is organic and it gets better over time – if it needs to get better. A lot of code doesn't need to get better because most projects, even mine, simply won't succeed. And if it isn't going to succeed then why make it perfect?],
-  [Be a Boy Scout . I doubt it will surprise people that not only was a I a Boy Scout but I was actually an Eagle Scout (and then I discovered girls and, well …). One of the best things that scouting taught me was "leave your campsite better than you found it" and I've been doing that metaphorically ever since. My perspective on coding is often pretty simple – I try to leave things better than I found them. So, yes, I'm going to write messy code (see above) but I'm also going to make it better when I pass back through it.],
-  [Minimize Discouragement . When doing anything, but particularly when you are starting something new, always try and minimize your discouragement. There is nothing worse then putting a ton of effort into something and then, at the very end, realizing that you can't make it work. As an example, I hooked a friend up recently with my Macbook Ansible configuration repository that installs software on your machine and their first reaction was "Well I don't need all this so I need to customize it". My response was "Nope! Find one thing it installs that you actually need and comment everything else out. Then run it and see if it works at all". It doesn't matter what you do with computers, making one thing work is always easier than N things. This approach gives you a small win which you can then use to encourage yourself to get another win. I got into the habit of this when I became a remote worker and I was always alone. When you are always alone, you need to get in the habit of getting yourself wins and managing your own encouragement because there aren't co workers around to help with this.],
-  [Do it the Same Way Personally and Professionally . This was a very, very hard one for me to master. What I've found is that if I do something one way professionally then, well, you do it the same way personally. A good example of that are software development practices with respect to git. My last boss was an absolute perfectionist regarding branch driven development (you always develop in a branch; branches get merged to develop and then develop gets merged to master which then gets deployed). And I've taken that model to heart and now I use it for all my side projects – and I've never been happier.],
-  [Make Anything You Do Regularly Easier. I am a huge believer that if you do anything regularly (and I define regularly as 3 times or more in a short span of time) then you figure out how to make it easier – and you do that. When you don't make things easier, you either waste time or you end up getting pissed off (see \#1 above for how that affects me). When you work with computers, most things can be made easier, even something as relationally complex as " Do I Buy My Wife Flowers This Week? ".],
-  [Tools Matter; Learn Them Well . I grew up in a hardware store and my favorite department was the tool aisle. I grew to know the differences between an Estwing hammer and a True Value hammer and why an SK set of sockets was better than Master Mechanic. When I moved over to computer work, I took that same love of tools with me. I've now been using the same editor since 2006; the same language since 2006. I honestly don't think it really matters what tools you use but it does matter that you learn them well. Steven Jobs used to call computes a bicycle for the mind . Well if you're a software person, learning your tools well gives you a motorcycle for the brain.],
-  [Write It Down If You'll Ever Need It Again . If you've watched my voluminous output , you've started to realize that I'll write about anything. And the reason for that is that writing things down helps me . I'm an IT professional that deals with large scale, complex systems. When I learn something, invariably, I'm going to need to do it again. If I take the time to write it down then not only have I documented it at least fairly well but I've also taken the time to really learn it.],
-  [Note : If I have a favorite one of all of these, it is the last one, write it down. That has likely been the single most profound change in making me effective. And I learned that from Dave Winer ; Thanks Dave.],
-),
-  inline-pq: pull-quote([I write a lot of code and I'll confess something – my code is messy.], [Scott Johnson (fuzzyblog)]),
-  inline-pq-idx: 6,
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Creating a Rails App Using JumpStart Pro],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
   images: (),
   paragraphs: (
+  [The view of the shelling of Kharkiv at 4 am],
+  [Donate Now to Pizza for Ukraine],
   [The following blog post is an excerpt from a series of articles I'm working on about JumpStart Pro. I found myself referring to the steps below that I thought it might be generally useful for people.],
   [I'm going to walk you through the "post purchase" experience with Jump Start Pro (JSP). This will guide you through creating a new app using JSP.],
-  [id="step-1-cloning-an-app-into-your-github"\>Step 1: Cloning an App Into Your Github],
+  [Step 1: Cloning an App Into Your Github],
   [Here's what you do:],
   [Purchase your Jumpstart Pro license.],
   [Log in to https:\/\/Jumpstartrails.com\/ if you haven't already.],
@@ -78,7 +46,7 @@
   [Change the setting to be private .],
   [I checked off \[ \] include all branches (no clue if that was right or not)],
   [Click the green Create repository from template button],
-  [id="step-2-getting-that-cloned-app-onto-your-machine"\>Step 2: Getting that Cloned App Onto Your Machine],
+  [Step 2: Getting that Cloned App Onto Your Machine],
   [Github is going to clone the Jumpstart pro rails repo over to your personal github account. Here's what's next],
   [On your new repo, click the green Code drop down and get the clone url .],
   [On your development machine, change to your local development directory and clone the repo: git clone (what you copied)],
@@ -86,24 +54,35 @@
   [Run a bundle install],
   [Edit config/database.yml and change database names as needed.],
   [Now you want to run:],
-  [id="step-3-setup-and-getting-to-green-tests-in-a-rails-7-world"\>Step 3: Setup and Getting to Green Tests in a Rails 7 World],
+  [bin/rails db:create],
+  [Step 3: Setup and Getting to Green Tests in a Rails 7 World],
   [When you're starting with something complex that someone else built then tests are always, always, always your friend. So this means that you start with:],
+  [bin/rails test],
   [This is going to fail but we're working from failure to success (a red \/ green refactor approach).],
   [Run npm install],
   [Run yarn install –check-files (Disclaimer – the whole asset pipeline largely remains a mystery to me; I think this is needed but, for all I really know, running it could kill Santa's elves and invoke the apocalypse).],
   [Run bin/rails test - if this passes, GREAT! But if you get the error: DRb:: DRbRemoteError: The asset "application.js" is not present in the asset pipeline. then revert your node version back to 16.],
   [Here's how to check your node version:],
+  [❯ node -v
+v18.2.0],
   [Just like ruby has RVM, node has NVM (node version manager) so install that.],
+  [nvm install 16.3.0],
   [and then:],
+  [npm install],
   [Now you need to build the JavaScript for the app:],
+  [rails javascript:build],
   [The next error you will get, if you try to test again, is:],
   [The asset "application.css" is not present in the asset pipeline],
   [so now you need to do:],
+  [rails css:build],
   [And now you can do:],
+  [bin/rails test],
   [and you should have passing tests!],
   [Kudos to: Benjamin Huoy for making this clear to me. Thank you.],
-  [id="step-4-add-your-gems"\>Step 4: Add Your Gems],
+  [Step 4: Add Your Gems],
   [My usual next steps are to add my normal suite of gems:],
+  [bundle add url\_common && bundle add text\_common && bundle add date\_common && bundle add time\_common
+bundle add factory\_bot\_rails --group test],
   [Disclaimer: The gems named something\_common are ones that I wrote. They are on my Github .],
 ),
   insert-map: (:),
@@ -112,28 +91,23 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Filtering as domain logic],
   author: [Mark Seemann],
   source-name: [Mark Seemann (ploeh blog)],
   images: (),
   paragraphs: (
-  [id="post"\>],
   [Performance and correctness are two independent concerns with overlapping solutions.],
   [How do you design, implement, maintain, and test complex filter logic as part of out-of-process (e.g. database) queries?],
   [One option is to implement parts of the filtering logic twice: Once as an easily-testable in-memory implementation to ensure correctness, and another, possibly simpler, query using the query language (usually, SQL ) of the data source.],
   [Does this not imply duplication of effort? Yes, to a degree it does. Should you always do this? No, only when warranted. As usual, I present this idea as an option you may consider; a tool for your software design tool belt. You decide if it's useful in your particular context.],
-  [id="35c355ddcb294fe8b1969866c0ccbfc0"\>
- Motivation \#],
+  [Motivation \#],
   [When extracting data from a data source, an application usually needs some of the data, but not all of it. If the software system in question has a certain size, the subset required for an operation is only a miniscule fraction of the entire database. For example, a user may want to see his or her latest order in a web shop, but the entire system contains millions of orders. Another example could be a system for managing help desk requests: Each supporter may need a dashboard of open cases assigned to him or her, but the system holds millions of tickets, and most of them are closed.],
   [If a data store supports server-side querying, for example with SQL or Cypher , it's reasonable to let the data store itself do the filtering.],
   [As anyone who has worked professionally with SQL can attest, SQL queries can become complicated. When this happens, you may become concerned with the correctness of a query. Does it include all the data it should? Does it exclude irrelevant data? If you later change a query, how can you verify that it still works as intended? How do you even version it?],
   [Automated testing can address several of these concerns, but testing against a real database, while possible, tends to be cumbersome and slow. Do alternatives, or augmentations, exist?],
-  [id="a19c1ec099474e6c8bbf932ec8a9db21"\>
- How it works \#],
+  [How it works \#],
   [If a server-side query threatens to become too complicated, consider shifting some of the work to clients. You may retain some filtering logic in the server-side query, but only enough to keep performance good, and simple enough that you are no longer concerned about its correctness.],
   [Implement the difficult filtering logic in a client-side library. Since you implement this part in a programming language of your choice, you can use any tool or technique available in that context to ensure correctness : Test-driven development, static code analysis, type checking, property-based testing, code coverage , mutation testing, etc.],
   [Using a funnel as a symbol of filtering, this diagram depicts the idea:],
@@ -141,24 +115,20 @@
   [In reality, the two filters will differ, but have overlapping functionality.],
   [If based on a relational database, the server-side query will still hold table joins and column projections that are effectively irrelevant to the client-side Domain Model. On the other hand, while the server-side query may apply a rough filter, the more detailed selection of what is, and is not, included happens in the client.],
   [The server-side query is defined using the query language of the data store, such as SQL or Cypher. The client-side query is part of the application code base, and written in the same programming language.],
-  [id="7deab4b58fc947a981c90692eb1c74c3"\>
- When to use it \#],
+  [When to use it \#],
   [Use this pattern if a server-side query becomes so complicated that you are concerned about its correctness, or if correctness is an essential part of a Domain Model's contract.],
   [While it is conceptually possible to load the entire data store's data into memory , this is often prohibitively expensive in terms of time and memory. It is often necessary to retain some filtering logic (e.g. one or more SQL WHERE clauses) on the server to pare down data to acceptable sizes. This implies a degree of duplicated logic, since the client-side filter shouldn't assume that any filtering has been applied.],
   [Duplication comes with its own set of problems, even if this looks like the benign kind . Alternatives include keeping all logic on the database server, which is viable if the logic is simple, or can be sufficiently simplified. Another alternative is to perform all filtering in the client, which may be an attractive solution if the entire data set is small.],
-  [id="cf56cc6f96e94c11a32e4183079dba28"\>
- Encapsulation \#],
+  [Encapsulation \#],
   [If a Domain Model is composed of pure functions , data must be supplied as normal input arguments. In a more object-oriented style, data may arrive as indirect input . In both object-oriented and functional architecture, encapsulation is important . This entails being explicit about invariants and pre- and postconditions; i.e. contracts .],
   [To enforce preconditions, a Domain Model must ensure that input is correct. While it could choose to reject input if it contains 'too much' data, a Tolerant Reader should instead pare the data down to size. This implies that filtering should be part of a Domain Model's contract.],
   [This further implies that a Domain Model becomes less vulnerable to changes in data access code.],
-  [id="8bf1dfdee19345ec83a378beb74ffe39"\>
- Implementation details \#],
+  [Implementation details \#],
   [Server-side filtering (with e.g. SQL) is often difficult to test with sufficient rigour. The point of moving the complex filtering logic to the Domain Model is that this makes it easier to test, and thereby to maintain.],
   [If no filtering takes place on the server, however, the entire data set of the system would have to be transmitted to, and filtered on, the client. This is usually too expensive, so some filtering must still take place at the data source. The whole point of this exercise is that the 'correct' filtering is too complicated to maintain as a server-side query, so whatever filtering still takes place on the server only happens for performance reasons, and can be simpler, as long as it's wider.],
   [Specifically, the simplified server-side query can (and probably should) be wider, in the sense that it returns more data than is required for the correctness of the overall system. The client, receiving more data than strictly required, can perform more sophisticated (and testable) filtering.],
   [The simplified filtering on the server must not, on the other hand, narrow the result set. If relevant data is left out at the source, the client has no chance to restore it, or even know that it exists.],
-  [id="03f340a6bd8d40999aaafe98dfb622fa"\>
- Motivating example \#],
+  [Motivating example \#],
   [The code base that accompanies Code That Fits in Your Head contains an example. When a user attempts to make a restaurant reservation, the system must look at existing reservations on the same date to check whether it has a free table. Many restaurants operate with seating windows, and the logic involved in figuring out if a time slot is free is easy to get wrong. On top of that, the decision logic needs to take opening hours and last seating into account. The book, as well as the article The Maître d' kata , has more details.],
   [Based on information about seating duration, opening hours, and so on, it seems as though it should be possible to form an exact SQL query that only returns existing reservations that overlap the new reservation. Even so, this struck me as error-prone. Instead, I decided to make input filtering part of the Domain Model.],
   [The Domain Model in question, an immutable class named MaitreD , uses the WillAccept method to decide whether to accept a reservation request. Apart from the candidate reservation, it also takes as parameters existingReservations as well as the current time.],
@@ -172,16 +142,16 @@
      existingReservations . Where ( seating . Overlaps );],
   [As implied by this code snippet, a specialized Domain Model named Seating contains the actual filtering logic:],
   [public   bool   Overlaps ( Reservation   otherReservation )
-{
+\{
      if  ( otherReservation   is   null )
          throw   new   ArgumentNullException ( nameof ( otherReservation ));
  
      var   other  =  new   Seating (SeatingDuration,  otherReservation . At);
      return   Overlaps ( other );
-}
+\}
  
  public   bool   Overlaps ( Seating   other )
-{
+\{
      if  ( other   is   null )
          throw   new   ArgumentNullException ( nameof ( other ));
  
@@ -192,13 +162,12 @@
   [While a Domain Model can implement in-memory filtering, it can only deal with data that is too wide; that is, it can identify and remove superfluous data. If, on the other hand, the dataset passed to the Domain Model lacks relevant records, the Domain Model can't detect that. The above discussion about the reservation system contains a concrete discussion of such a problem. Thus, Domain-based filtering does not alleviate developers from the burden of ensuring that any server-side filtering is sufficiently permissible.],
   [Another consequence of this design is that as server-side queries become more coarse-grained, this could increase potential cache hit ratios. If you somehow cache queries, when queries become more general, there will be less variation, and thus caches will need fewer entries that will statistically be hit more often. This applies to CQRS-style architectures, too.],
   [Consider the restaurant reservation example, above. Since queries are only distinguished by date, you can easily cache query results by date, and all reservation requests for a given date may go through that cache. If, as a counter-example, all filtering took place in the database, a query for a reservation at 18:00 would be different from a query for 18:30, and so on. This would make a hypothetical cache bigger, and decrease the frequency of cache hits.],
-  [id="b94bae149c32415fa8708498c1c4cdbb"\>
- Test evidence \#],
+  [Test evidence \#],
   [When I originally decided that WillAccept should perform in-memory filtering, my motivation was one of correctness. I was concerned whether I could get the seating overlap detection correct without comprehensive testing, and I thought that it would be easier to test a function doing in-memory filtering than to drive all of this via integration tests involving a real SQL Server instance. (Not that I don't know how to do this. The code base accompanying the book has examples of tests that exercise the database. These tests are, however, more work to write and maintain, and they execute slower.)],
   [As discussed in Coupling from a big-O perspective , I much later realized that I actually had no test coverage of edge cases related to querying the database. It was only after attempting to write such a test that I realized that the design had the consequence that a marginal error in the database query had no impact on the correctness of the overall system. Here's that test:],
   [\[ Fact \]],
   [public   async   Task   AttemptEdgeCaseBooking ()],
-  [{],
+  [\{],
   [var   twentyFour7  =  new   Restaurant (],
   [247,],
   ["24/7" ,],
@@ -219,11 +188,10 @@
   [var   ar  =  await   sut . Post ( twentyFour7 . Id,  r2 . ToDto ());],
   [Assert . IsAssignableFrom ( ar );],
   [\/\/ More assertions could go here.],
-  [}],
+  [\}],
   [This test is an attempt to cover the edge case related to how the system queries the database, just like the Moq-based test shown in Greyscale-box test-driven development . The idea is to create a reservation that just barely touches a reservation the following day, and thereby trigger a test failure when a change is made to the query, similar to how the Moq-based test fails. Even with a custom restaurant, I can't, however, get this test to fail, because of the Domain-based filtering, which keeps the system working correctly.],
   [It was then that I realized that what I had inadvertently done was to strengthen the contract of WillAccept , compared to a more stereotypical design. Who knew test-driven development could lead to better encapsulation?],
-  [id="1ba293a2ce314f8291ea0310de461932"\>
- Conclusion \#],
+  [Conclusion \#],
   [Some queries may become so complicated that they are difficult to maintain. Bugs creep in, you address them, only to reanimate regressions. When this happens, consider moving the complicated parts of data filtering to the client, preferably to a Domain Model. This enables you to test the filtering logic with as much rigour as is required.],
   [For small databases, you may read the entire dataset into memory, but usually you will need to retain some coarse-grained filtering on the database server.],
   [This design, while more complicated than letting a query language like SQL handle all filtering, can lead to better encapsulation and separation of concerns.],
@@ -235,10 +203,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Deploying to HatchBox with Rails 5.x],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -246,27 +212,37 @@
   paragraphs: (
   [I just got a database less home page for a future SAAS app deployed via HatchBox under Rails 5.x and I thought the differences were significant enough that I should document it. HatchBox is the best tool I've ever found for Rails deploys but knowing all the steps to follow is key.],
   [elixi: Other than the Rails 5.2 upgrade step, there aren't many differences between this and Rails 6 but it has been long enough since I've done this that writing it down felt right.],
-  [id="1-upgrade-rails-to-52x-if-you-dont-have-rails-credentialsedit"\>1. Upgrade Rails to "5.2.x" if You Don't Have rails credentials:edit],
+  [1. Upgrade Rails to "5.2.x" if You Don't Have rails credentials:edit],
   [If your Rails 5 version is old enough that you get this crap:],
+  [❯ rails credentials:edit
+rails aborted!
+Don't know how to build task 'credentials:edit' (see --tasks)],
   [Here's the line you want to put into your Gemfile:],
   [Once you change your Rails version, you want to use:],
+  [bundle update],
   [to upgrade your Rails installation.],
-  [id="2-there-is-no-true-database-less-deploy-in-hatchbox"\>2. There is No True Database Less Deploy in HatchBox],
+  [2. There is No True Database Less Deploy in HatchBox],
   [HatchBox is designed to work with a database (which is also the Rails default) because it calls database create and database migrate as part of the deploy. The trick here is to use an existing database and set your env variables and database.yml to allow for this],
   [Here's how to set up your database.yml file:],
+  [production:
+ adapter: postgresql
+ url: 
+ encoding: utf8
+ pool: 50],
   [Your env variables are described in the section below.],
   [As long as you don't have migrations or database tables as part of your app, you can use any DATABASE\_URL value (you set this below under environment variables; I just copied one from a different application).],
-  [id="4-run-rails-credentialsedit"\>4. Run rails credentials:edit],
+  [4. Run rails credentials:edit],
   [The command:],
+  [rails credentials:edit],
   [creates the Rails master key and secret key base that you need.],
   [You want to save your master key and secret key base because you need both in the env variables section.],
-  [id="5-hatchbox-setup"\>5. HatchBox Setup],
+  [5. HatchBox Setup],
   [You want to:],
   [Add your app to github or another supported version control system and note the username/repo\_name pairing],
   [Create a new app],
   [Choose the cluster],
   [Add your env variables (see next section)],
-  [id="6-set-your-env-variables-correctly"\>6. Set Your Env Variables Correctly],
+  [6. Set Your Env Variables Correctly],
   [Here are the env variables you want to set:],
   [DATABASE\_URL],
   [RACK\_ENV],
@@ -274,15 +250,15 @@
   [RAILS\_MASTER\_KEY],
   [REDIS\_URL],
   [SECRET\_KEY\_BASE],
-  [id="7-do-a-deploy"\>7. Do a Deploy],
+  [7. Do a Deploy],
   [After you get everything setup you want to do a deploy. This is necessary before you can do the SSL stuff.],
-  [id="8-setup-your-domain"\>8. Setup Your Domain],
+  [8. Setup Your Domain],
   [I added my domain to the Domains section of HatchBox both as the base domain and as the www variant.],
-  [id="9--setup-ssl"\>9. Setup SSL],
+  [9. Setup SSL],
   [The next step is to select the SSL option and then turn on Let's Encrypt.],
-  [id="10--deploy-and-verify"\>10. Deploy and Verify],
+  [10. Deploy and Verify],
   [There are two final steps. At this point everything should be setup so you want to do a final deploy and then verify your site in https mode.],
-  [id="11-turn-on-push-based-deploying"\>11. Turn on Push Based Deploying],
+  [11. Turn on Push Based Deploying],
   [The absolute last step is to turn on git push based deploys so any code changes you make automatically trigger a deploy of your code. HatchBox makes this brilliantly simple:],
   [Go to your app's main page.],
   [Click the Deploy menu item.],
@@ -295,12 +271,10 @@
   debug-mode: false,
 )
 
-  #pull-quote([yml to allow for this  Here's how to set up your database.], [Scott Johnson (fuzzyblog)])
+#pull-quote([yml to allow for this  Here's how to set up your database.], [Scott Johnson (fuzzyblog)])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [What is Machine Learning?],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -317,25 +291,17 @@
   [Running a computer program, the training program , against the data to generate a "neural network", a computational engine that works much like the associative memory in our brains. And, just as we don't understand how our brains work, we often don't understand how a neural network works. This is known as the explainability problem in Machine Learning and I talk about it here .],
   [Now, you have to be careful, because this is a simplification of a very complex technology but the above is the essence of Machine Learning.],
   [Each of the key terms above, as well as a few others relevant to Machine Learning is described below.],
-  [id="gpu"\>GPU],
+  [GPU],
   [A GPU or "Graphics Processing Unit" is a very, very powerful computer chip that is needed to run the training program that trains the neural network. Without a GPU, creating the neural network can literally take weeks. Wikipedia .],
-  [id="neural-network"\>Neural Network],
   [A neural network is an approach to computation that makes a computer work more similarly to a human brain. Wikipedia],
-  [id="corpus"\>Corpus],
   [This is a fancy damn word that means "related collection of stuff". Generally Machine Learning refers to a textual corpus but it could be a collection of images.],
-  [id="labels"\>Labels],
   [Labels are the values applied to training data that represent what you want the machine to learn.],
-  [id="labeling"\>Labeling],
   [Labeling is the process of adding labels to the training data.],
-  [id="labeler"\>Labeler],
   [The labeler is the software that makes applying labels to the training data easier. A labeler might be a special computer program or even Microsoft Excel or something like AirTable.],
-  [id="training-set"\>Training Set],
   [The training set is the collection of data that you use to generate your models. The amount of data in a training set varies but it can often be as much as tens of thousands of labeled examples.],
-  [id="test-set"\>Test Set],
   [The test set is the collection of labeled data that you use to make sure that your trained model learns the way you think it does. After you train your model using the training set then you benchmark your model against the test set. Depending on how you build your models there can actually be many different sets.],
-  [id="precision--recall--f1--auc-and-other-weird-words"\>Precision \/ Recall \/ F1 \/ AUC and Other Weird Words],
+  [Precision \/ Recall \/ F1 \/ AUC and Other Weird Words],
   [These are terms that are used to measure how your model performs and are different mathematical approaches for model performance.],
-  [id="thank-you"\>Thank You],
 ),
   insert-map: (:),
   word-count: 743,
@@ -343,10 +309,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [No More Blue Fridays],
   author: [Brendan Gregg],
   source-name: [Brendan Gregg],
@@ -368,11 +332,10 @@
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Test Amazon Alexa Skills Offline With Mocha And Chai For Node.js],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -390,7 +353,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Tour Of Heroes As A NativeScript With Angular Android And iOS Application],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -408,7 +371,7 @@
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([IPFS Blog], source-name: [IPFS Blog], [The IPFS Newsletter is back, with many exciting updates to share: HTTP support across the IPFS stack, P2P in browsers, Kubo speedup, and more.])],
       [#brief-item([Justin Carter], source-name: [Gizmodo], [Whether you're excited for 'Exodus' or 'The Expanse: Osiris Reborn,' it looks like RPG fans will be eating good next year.])],
       [#brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [I currently have a few Ionic Framework Android and iOS applications on the market. A common request for these apps have been to have a pin code unlock feature for extra security.
@@ -460,7 +423,7 @@ The post Using An SSL Certificate With Apache appeared first on The Polyglot Dev
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Updating to the Latest Version of JumpStart Pro],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -473,7 +436,6 @@ The post Using An SSL Certificate With Apache appeared first on The Polyglot Dev
   [Make a change like updating the README.md and do the add \/ commit dance and push to your repo as git push YOUR\_PROJECT\_NAME master],
   [Even though I've worked with Git for more than a decade now, I've previously only worked with Heroku as a git remote so I missed the implications of this when I originally cloned my first JumpStart Pro app. Sigh.],
   [The critical mistake I made was that I had started my second JumpStart Pro project by copying from the first JumpStart Pro project I had made and the NOT moving over the .git folder. This meant that my new project was now disconnected from the original remote so I couldn't just do a git pull to update it.],
-  [id="fixing-my-own-stupidity"\>Fixing My Own Stupidity],
   [Here's what I did to fix this:],
   [I started by creating a new application cloning into a new location: git clone git\@gitlab.com:gorails/jumpstart-pro.git okrsnow],
   [I created a new git repo for my app],
@@ -481,7 +443,7 @@ The post Using An SSL Certificate With Apache appeared first on The Polyglot Dev
   [I made a change and pushed to git push okrsnow master],
   [I manually copied over all the code from my original JumpStart pro repo. Given that Rails apps have such a clearly defined directory structure, this was tedious but not insurmountable.],
   [I had to adapt my normal development practices so that I remember to always use the remote when workign with branches.],
-  [id="oh-and-about-that-bug"\>Oh and About that Bug],
+  [Oh and About that Bug],
   [I noticed that Chris fixed it within a few hours of my reporting it. Thanks Chris!],
 ),
   insert-map: (:),
@@ -492,7 +454,7 @@ The post Using An SSL Certificate With Apache appeared first on The Polyglot Dev
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Evaluate A Reverse Polish Notation Equation With JavaScript],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -515,17 +477,20 @@ The post Using An SSL Certificate With Apache appeared first on The Polyglot Dev
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Upgrading Python and Pip and VirtualEnv on Ubuntu],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
   images: (),
   paragraphs: (
   [I found myself this morning trying to get a Python stack running on an Ubuntu instance only to hit this crap:],
-  [class="highlight"\> Installing collected packages: numpy, pytz, six, python-dateutil, pandas, nltk, pyparsing, cycler, kiwisolver, matplotlib, kafka-python, pyyaml, murmurhash, zipp, importlib-metadata, catalogue, plac, tqdm, setuptools, srsly, cymem, preshed, blis, wasabi, thinc, idna, urllib3, certifi, chardet, requests, spacy, pluggy, attrs, py, more-itertools, wcwidth, packaging, pytest, langdetect, spacy-langdetect, editorconfig, jsbeautifier, docutils, jmespath, botocore, s3transfer, boto3, torch, dataclasses, tokenizers, click, joblib, regex, sacremoses, filelock, sentencepiece, transformers, scipy, scikit-learn, gunicorn, WebOb, firefly-python, pycparser, cffi, zstandard, lefthook, termcolor, fire, redis, sseclient, absl-py, protobuf, markdown, pyasn1, pyasn1-modules, cachetools, rsa, google-auth, tensorboard-plugin-wit, werkzeug, grpcio, wheel, oauthlib, requests-oauthlib, google-auth-oauthlib, tensorboard, future, pytorch-lightning],
+  [Installing collected packages: numpy, pytz, six, python-dateutil, pandas, nltk, pyparsing, cycler, kiwisolver, matplotlib, kafka-python, pyyaml, murmurhash, zipp, importlib-metadata, catalogue, plac, tqdm, setuptools, srsly, cymem, preshed, blis, wasabi, thinc, idna, urllib3, certifi, chardet, requests, spacy, pluggy, attrs, py, more-itertools, wcwidth, packaging, pytest, langdetect, spacy-langdetect, editorconfig, jsbeautifier, docutils, jmespath, botocore, s3transfer, boto3, torch, dataclasses, tokenizers, click, joblib, regex, sacremoses, filelock, sentencepiece, transformers, scipy, scikit-learn, gunicorn, WebOb, firefly-python, pycparser, cffi, zstandard, lefthook, termcolor, fire, redis, sseclient, absl-py, protobuf, markdown, pyasn1, pyasn1-modules, cachetools, rsa, google-auth, tensorboard-plugin-wit, werkzeug, grpcio, wheel, oauthlib, requests-oauthlib, google-auth-oauthlib, tensorboard, future, pytorch-lightning],
   [Segmentation fault (core dumped)],
   [So I guess it is time to do the Python upgrade dance. Here you go:],
-  [id="stack-overflow-references"\>Stack Overflow References],
+  [pip3 install --upgrade pip
+sudo apt-get update && sudo apt-get upgrade
+sudo apt-get install python3.7
+sudo pip3 install --upgrade virtualenv],
   [Pip upgrade .],
 ),
   insert-map: (:),
@@ -536,7 +501,7 @@ The post Using An SSL Certificate With Apache appeared first on The Polyglot Dev
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Prerender Your AngularJS Apps To Boost SEO],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -557,7 +522,7 @@ The post Using An SSL Certificate With Apache appeared first on The Polyglot Dev
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Use RegEx To Test Password Strength In JavaScript],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -577,7 +542,7 @@ The post Using An SSL Certificate With Apache appeared first on The Polyglot Dev
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Building Amazon Alexa Skills With Node.js, Revisited],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -598,18 +563,24 @@ The post Using An SSL Certificate With Apache appeared first on The Polyglot Dev
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [ruby invalid option dash colon Or When Ruby Goes Insane in the Brain],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
   images: (),
   paragraphs: (
   [This is a short one but a weird one. My main box rebooted today and when I went to create a blog post, I got this madness:],
+  [❯ jekyll post "A Social Media Marketing Strategy that Mom Would Approve"
+ruby: invalid option -: (-h will show valid options) (RuntimeError)],
   [In all my years of ruby, I've never seen -: . All the normal jiggery pokery of:],
   [which ruby],
   [rvm list],
   [etc failed to give me any insights. I finally found the answer on an obscure Github issue that said "unset RUBYOPT" so:],
+  [❯ unset RUBYOPT],
   [And that gave me back:],
+  [blog on  gh-pages \[🤷‍\] via 💎 v2.3.1 on ☁️ us-west-2 
+❯ ruby --version
+ruby 2.3.1p112 (2016-04-26 revision 54768) \[x86\_64-darwin16\]],
   [blog on  gh-pages \[🤷‍\] via 💎 v2.3.1 on ☁️ us-west-2 
 ❯ jekyll post "A Social Marketing Strategy that Mom Would Approve"
 New post created at \_posts/2020-03-24-a-social-marketing-strategy-that-mom-would-approve.md.],
@@ -623,7 +594,7 @@ New post created at \_posts/2020-03-24-a-social-marketing-strategy-that-mom-woul
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Restart ID sequences in Postgres on Truncation],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -631,10 +602,16 @@ New post created at \_posts/2020-03-24-a-social-marketing-strategy-that-mom-woul
   paragraphs: (
   [Note : This is from a real world thing that I'm about to release.],
   [Like a lot of database apps in the world, mine generally tend to use auto incrementing ids for object identifiers. An object identifier is a value in a system which uniquely identifies something. Let's say you have a url like this:],
+  [http:\/\/localhost:3169/locations?country\_id=91],
   [What that is saying, under the hood, is "Get the data from the locations store and give me the object with id value 91". The thing that I'm currently building is populated with a bunch of data which is coming from CSV files that I'm loading from the Internet and I need to wipe the data in the system every time it rebuilds. Now when I say location store, I mean, in this case, a locations table in a Postgres database. When you wipe the contents of a table in Postgres you end up with the next object in the table getting the last ID value plus 1.],
   [The secret is to add this snippet to your truncation routine:],
+  [RESTART IDENTITY],
   [or in full:],
+  [TRUNCATE states RESTART IDENTITY],
   [And in Rails I have this implemented on all my core classes as:],
+  [def self . truncate 
+ ActiveRecord :: Base . connection . execute ( "TRUNCATE states RESTART IDENTITY" ) 
+ end],
   [Since this is a def self., think of it as a C style static thing. By defining it this way, I can simply call it as State.truncate to eliminate all data in my states store (ok its is a table but it could be more complex) and restart my ID sequences. And in cases it wasn't clear exactly why you want this, since I'm processing the same data files in Production as in Development, my bookmarks become consistent allowing easier debugging.],
 ),
   insert-map: (:),
@@ -648,7 +625,7 @@ New post created at \_posts/2020-03-24-a-social-marketing-strategy-that-mom-woul
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Create a Custom Stream Elements Overlay for YouTube Subscribers],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -668,7 +645,7 @@ New post created at \_posts/2020-03-24-a-social-marketing-strategy-that-mom-woul
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [So That One Time You Played With Docker],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -683,7 +660,7 @@ title: So That One Time You Played with Docker
   [Rabbit MQ],
   [And then, as you so often do, we finished up and I got distracted by the next bit of crazy nerd-fu that runs about in my life (server down; wifi crisis; son needing help with his PC; who can remember) and then I went back to my desk, closed my terminal prompt and never thought much more about this.],
   [Lately I've been noticing some slowness on my machine and I just happened to run docker ps and what do I see but:],
-  [class="highlight"\> docker ps
+  [docker ps
 CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES
 b93fbedc58d2 data\_streamer\_to\_sqs\_ruby "ruby ./main.rb" 29 seconds ago Up 27 seconds nice\_torvalds
 605da7fe5159 dsarchive/dsa\_girder:latest "/bin/sh -c 'sudo -E…" 2 weeks ago Up 3 hours 0.0.0.0:8080-\>8080/tcp dsa\_girder
@@ -693,6 +670,7 @@ dc7f57778b4e mongo:latest "docker-entrypoint.s…" 2 weeks ago Up 3 hours 27017/
 863768f4f33f rabbitmq:management "docker-entrypoint.s…" 2 weeks ago Up 3 hours 4369/tcp, 5671-5672/tcp, 15671-15672/tcp, 25672/tcp dsa\_rabbitmq],
   [Yep. That's the whole set of processes that I was using for my federal friend. Sigh. They've been happily sucking up CPU for more than 2 weeks. grumble],
   [The solution:],
+  [docker stop 863768f4f33f dc7f57778b4e df6fd902c11b 0b0eb7730fb0 605da7fe5159],
 ),
   insert-map: (:),
   word-count: 295,
@@ -705,7 +683,7 @@ dc7f57778b4e mongo:latest "docker-entrypoint.s…" 2 weeks ago Up 3 hours 27017/
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Making Ruby Scripts work Under System D Using rbenv],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -713,6 +691,8 @@ dc7f57778b4e mongo:latest "docker-entrypoint.s…" 2 weeks ago Up 3 hours 27017/
   paragraphs: (
   [This has bit me I think every single time I make a SystemD launch script using ruby and rbenv (RVM is worse; imho). Perhaps writing it down for once makes the lesson stick.],
   [Let's start with our SystemD unit file that doesn't work:],
+  [\[Unit\]
+Description=Twitter To Kafka],
   [\[Service\]
 SyslogIdentifier=twitter\_to\_kafka
 User=ubuntu
@@ -725,7 +705,7 @@ Restart=always],
   [\[Install\]
 WantedBy=multi-user.target],
   [This generates errors like these:],
-  [class="highlight"\> ❯ sudo systemctl status twitter\_to\_kafka.service
+  [❯ sudo systemctl status twitter\_to\_kafka.service
 ● twitter\_to\_kafka.service - Twitter To Kafka
  Loaded: loaded (/lib/systemd/system/twitter\_to\_kafka.service; enabled; vendor preset: enabled)
  Active: failed (Result: exit-code) since Thu 2020-02-13 12:57:48 UTC; 1min 54s ago
@@ -740,6 +720,8 @@ WantedBy=multi-user.target],
   [Feb 13 12:57:48 ip-172-31-24-213 systemd\[1\]: twitter\_to\_kafka.service: Failed with result 'exit-code'.],
   [Feb 13 12:57:48 ip-172-31-24-213 systemd\[1\]: Failed to start Twitter To Kafka.],
   [The problem is that rbenv is a shell extension so the shell has to be loaded to run this correctly. Just adding /bin/bash -lc to ExecStart and ExecReload fixes this. Here's the actual working unit file:],
+  [\[Unit\]
+Description=Twitter To Kafka],
   [\[Service\]
 SyslogIdentifier=twitter\_to\_kafka
 User=ubuntu
@@ -761,7 +743,7 @@ WantedBy=multi-user.target],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Check Network Connection With Ionic Framework],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -783,7 +765,7 @@ WantedBy=multi-user.target],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Track The Device Geolocation In A NativeScript Angular Mobile Application],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -802,7 +784,7 @@ WantedBy=multi-user.target],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Why I’ve Gone Hybrid Over Native For Mobile Apps],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -823,7 +805,7 @@ WantedBy=multi-user.target],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Query A GraphQL API With Vue.js And Axios],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -842,7 +824,7 @@ WantedBy=multi-user.target],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [TPDP Episode \#11: Continuous Integration And Deployment For The Polyglot Developer],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -862,7 +844,7 @@ WantedBy=multi-user.target],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Using PassportJS In Your Node.js And Couchbase Web App],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -880,7 +862,7 @@ WantedBy=multi-user.target],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Create Circular Images With Curved Text In Affinity Designer],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -902,7 +884,7 @@ WantedBy=multi-user.target],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Animate HTML Components In An Angular Application],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -920,7 +902,7 @@ WantedBy=multi-user.target],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Syncing Data With Dropbox Using Ionic Framework],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -939,8 +921,7 @@ WantedBy=multi-user.target],
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Create An Email Subscription Popup With jQuery],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -957,6 +938,11 @@ WantedBy=multi-user.target],
   debug-mode: false,
 )
 
-}
+
+// --- Notable Quotes ---
+#block(above: 0.2in, stroke: (top: 1pt + luma(26)), inset: (top: 0.1in))[
+  #pull-quote([I write a lot of code and I'll confess something – my code is messy.], [Scott Johnson (fuzzyblog)])
+
+]
 
 #colophon([Quiet Sentinel], [Vol. 1, No. 053], [2026-03-30])

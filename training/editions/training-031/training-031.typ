@@ -21,50 +21,8 @@
 #masthead([The Clear Sentinel], [Vol. 1, No. 031], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Docker Hub pull rate limits hit Rahti],
-  kicker: [Cover Story],
-  author: [Unknown],
-  source-name: [CSC Cloud Team Blog],
-  deck: [November 2020 was an eventful month for Rahti. Our backend storage had incident that affected our production clusters image repository for many weeks.],
-  lead-pre: [],
-  lead-cap: [T],
-  lead-rest: [hat event is well described in Allas downtime November 2020 - technical deep-dive .],
-  body-paragraphs: (
-  [Just before our storage incident, 2nd of November, Docker applied "rate limiting for Docker container pulls for some users" . When we tried to prepare for this in advance, it was very hard to figure out what the exact effect would be for Rahti. It took longer to resolve than we anticipated.],
-  [style="text-align: left;"\>Limits began],
-  [We were relieved that the first day after pull rates were enforced was peaceful. Rahti was still up and running as it should. Users didn't complain about failing deployment in large amounts. Admins survived another upstream change.],
-  [Eventually we received few tickets on failing builds. Our first approach was to instruct people to change their images away from Docker Hub to alternative repositories which do not have rate limiting enabled. Some users were able to migrate their images but this was not feasible solution for everyone. Still, it was a good opportunity to remind users to check what images they use.],
-  [The error looks like this:],
-  [Pulling image "docker.io/centos/python-38-centos7\@sha256:da83741689a8d7fe1548fefe7e001c45bcc56a08bc03fd3b29a5636163ca0353" ...
-pulling image error : toomanyrequests: You have reached your pull rate limit. You may increase the limit by authenticating and upgrading: https:\/\/www.docker.com/increase-rate-limit],
-  [style="text-align: left;"\>Cumulative issues cause exponential grief],
-  [We gave our users instructions how to move their dependencies from public Docker Hub to Rahti image registry, How to manually cache images in Rahti's registry . This was harder in practice, as we did have issues with our own registry due to our storage incident. There were days when users suffered from both Docker Hub and Rahti internal registry availability. Those days were hard for our Rahti admins, who struggled to meet customer expectations of highly available services.],
-  [After our storage incident was resolved, using images from internal registry was again feasible and reliable alternative to public Docker registry.],
-  [style="text-align: left;"\>Project-specific credentials],
-  [Another approach we tried was to use project-specific credentials. We wrote a guide on it; How to add docker hub credentials to a project .],
-  [This method got mixed results. Some users were able to pull images and others complained they still got \`toomanyrequests\` errors. We never got the instructions fully working for all users (is this even possible in complex systems?). There are still some unknown image magic in OpenShift builds we haven't found yet. In any case, we now have instructions how to apply custom image credentials if users want to pull images from private repositories.],
-  [style="text-align: left;"\>Should we buy Docker subscription?],
-  [The root of this pull rate limiting issue is Docker used to provide free services for many many years and their usage has probably increased a lot over the years. We understand they must had pressure to change their free model and guide their users towards paid subscriptions.],
-  [We did contact Docker sales to pursue better understanding of our choices. Thanks to their helpful salesperson, we got alternatives. We could either buy \`Team\` or \`Large\` subscription.],
-  [Large subscription price was so high we would have to ask budget for it, so we decided to do some testing with Team subscription.],
-  [style="text-align: left;"\>OpenShift cluster configuration],
-  [Cluster-wide credentials/tokens can be applied during installation by setting variable \`openshift\_additional\_registry\_credentials\`. We used this same approach to apply changes to our existing development clusters and verified they worked.],
-  [style="text-align: left;"\>Rolling out changes],
-  [Shared default credentials were tested in our development environment for a while until we were confident enough that they were stable and reliable. In February 2021 they were rolled out to production environments and you Rahti users can finally pull container images from Docker Hub without limits.],
-  [style="text-align: left;"\>Afterthoughts],
-  [These Docker Hub issues were hard to solve. Now that the core components of container cluster is stable again, we can look forward to develop our platform further.],
-  [I believe the changes Docker made to their service policies mark some kind of change in container maturity. They sent a signal that it's no longer okay to use public images without limits. This may not change the behavior of small actors but having a limit forces larger operators to think their image usage. All users who use container images in "production" should review what containers they use.],
-  [We hope Rahti users will be able to leverage our platform to enable their vision and solve their selected problems. For that we need the ability to pull images without daily limits. Rahti could also be the first container platform for students who use our services. We feel it's our duty to make that introduction to containers as smooth as possible. We hope you appreciate our efforts. Now go and use Rahti and create something amazing.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [A better way to track listening],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
@@ -76,30 +34,28 @@ pulling image error : toomanyrequests: You have reached your pull rate limit. Yo
   [We wanted to be fair to ourselves and treat our audio online like we treat audio on the radio. That means placing much more difficult restrictions on what we call a “listener.” In the calculations to follow, we treat listeners as those who listened to at least five minutes of audio, which is how we count listeners in our radio ratings.],
   [Given this calculation, just 10% of our total user base are what we would consider “listeners”. That being said, we haven’t had audio in the experience 24/7, and sometimes we haven’t had audio during high-traffic primary events.],
   [For the purposes of this analysis, I am going to focus on times when we were broadcasting a live election night special, as those are the moments throughout the primary season that we have gotten a significant amount of traffic and we have consistently had audio to work with.],
-  [id="overall-performance"\>Overall performance],
+  [Overall performance],
   [Screenshots of the first two cards of our app during our live broadcast on Mega Tuesday, March 15, 2016.],
   [As of writing, NPR has broadcast 11 election night specials, and we have carried all of them inside of the app. If a user arrived at the app, the special would autoplay upon swiping or clicking past the titlecard.],
   [During times the broadcast was live, we served over 475,000 sessions, and over 100,000 of those sessions were listeners. In other words, 22.4% of live event sessions became listening sessions by listening to at least five minutes of audio. If we look at listen rates across npr.org or consider five minutes as a “view” on a Facebook or YouTube videos, that’s a pretty good number. We’re happy with that number.],
   [But it is a sobering reality: even when we advertise our app as a listening experience (as we often did on social media ) and autoplay the content, only 22% of our users stick around for more than five minutes. Of course, our election app is not exclusively an audio app, and the other 78% of sessions still may have gotten what they needed out of the app, like a quick checkup on the results.],
   [On a given night, our live specials would run anywhere from one hour to four hours. I have data at the hourly level, which means I can analyze the performance of the special hour by hour. Aggregating all of our sessions into hourly blocks, it is clear that performance of our live specials degrades the longer we go on. 26% of our sessions that began in the first hour became listening sessions, while just 18% of the sessions that began in the fourth hour became listening sessions.],
-  [id="responsive-embed-20160516-elections16-audio-hourly"\>],
-  [id="what-do-we-know-about-our-listeners"\>What do we know about our listeners?],
+  [What do we know about our listeners?],
   [We know a whole bunch of other things about our app, most of which are out of scope for this blog post. But since we know which sessions were listening sessions, we can examine the behavior of our listeners as compared to our non-listeners.],
   [The first, most obvious thing we can determine is that our listeners spend more time total on the app than non-listeners. This is not surprising – after all, they spent at least five minutes listening to audio. However, the proportion is surprising.],
   [The average user overall spent an average of about eight minutes on the app, while listeners spent an average of 44 minutes on the app, whether they were listening for all 44 minutes or not.],
   [At the end of February, we added a new type of card to our app: a card that asked users to donate to their local member station. We tested a few different prompts throughout the duration of the primary, but no matter what test we were running, we consistently found that listeners were more likely to click the button than non-listeners.],
   [A simple statistical test evaluation shows that we can say that listeners are 93.9% more likely to click the donate button than non-listeners, and we can say this with 99% confidence.],
-  [id="responsive-embed-20160516-elections16-audio-donate"\>],
   [That being said, because we had far more non-listeners than listeners, we actually got more total clicks from non-listeners. This is worth taking into account.],
   [Finally, we know that our listeners are far more likely to be desktop users than non-listeners. 65% of our listeners were desktop users, compared to just 40% of non-listeners.],
-  [id="what-have-we-learned"\>What have we learned?],
+  [What have we learned?],
   [By limiting our definition of who a listener is, we can know much more about our most engaged users, and we can adjust for the future knowing these new things. While this analysis does not necessarily provide answers, it provokes questions to ask about next steps.],
   [We know that the majority of our users, despite autoplaying the content for them, will not listen long enough to be considered listeners. We also know that the beginnings of our broadcasts perform much better than the end of our broadcasts. How can we make our content more accessible for people jumping in in the middle?],
   [We know that engaging users with our audio makes them more likely to click a donate button. How can we optimize the donation experience for people who are listening to our audio?],
   [At the same time, we have a majority of users who are not listening to our audio. How can we make donation seem more compelling to them?],
   [We know that users engaged with our audio spend a lot more time in general on our app than users who do not. How can we take better advantage of the 44 minutes listeners spend on our app? Again, are there better ways to use that time to prompt them for donations? Can we surface more information in a compelling way to keep them better informed?],
   [We know that listeners are more likely to be desktop users, while nonlisteners are more likely to be mobile users. Knowing from the other data that listeners take more desirable actions, like clicking donate buttons, how can we convert more of our mobile users into listeners?],
-  [id="why-definitions-matter"\>Why definitions matter],
+  [Why definitions matter],
   [Of course, you can do this type of deep analysis with numbers from Facebook or YouTube or SoundCloud or wherever you use your timed media. But definitions matter. Facebook infamously counts three watched seconds as a view, even though they autoplay videos in a user’s timeline. If we went by their lead and defined the baseline metric as three seconds listened, then we would learn to read those numbers first. And then we would optimize content to make that number perform better. Facebook, YouTube, and all the others make it too easy to see their shallow definitions of engagement to ignore it.],
   [The cynical way to interpret this is that timed media platforms are goosing their metrics so that they compete with TV and charge higher advertising rates . It might even be the correct way of interpreting it. What I know is that it doesn’t serve our audience to assume that such a low rate of engagement says anything about what our audience actually values.],
   [With a tougher, better definition of a listener, we can learn more about our audience’s needs and desires. Instead of learning how to hook someone to a page with a headline, or how to catch more people’s eyes in a timeline of autoplaying videos, we will learn what keeps an audience engaged, what makes them share, what makes them learn.],
@@ -111,10 +67,8 @@ pulling image error : toomanyrequests: You have reached your pull rate limit. Yo
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Spyder: Your IDE for Data Science Development in Python],
   author: [Real Python],
   source-name: [Real Python],
@@ -123,11 +77,7 @@ pulling image error : toomanyrequests: You have reached your pull rate limit. Yo
   [There are many different integrated development environments (IDEs) to choose from for Python development. One popular option for data-focused work is Spyder, an open-source Python IDE geared toward scientists, engineers, and data analysts. Its name comes from Scientific PYthon Development EnviRonment .],
   [Out of the box, it has powerful plotting, what-if, and profiling capabilities. It also integrates well with the data science ecosystem, is extensible with first- or third-party plugins, and has a relatively quick learning curve.],
   [How does Spyder stack up against other Python IDEs ? It depends on your use case. It’s not as powerful or customizable as VS Code , nor does it pretend to be. It does, however, excel for data science workflows:],
-  [class="table-responsive"\>
- 
- 
- 
- Use Case 
+  [Use Case 
  Pick Spyder 
  Pick an Alternative 
  
@@ -154,19 +104,22 @@ pulling image error : toomanyrequests: You have reached your pull rate limit. Yo
  Jupyter, VS Code],
   [If you’re focused on data science in Python, Spyder is a strong fit. For a more full-featured IDE or heavy notebook use, consider Jupyter or VS Code instead.],
   [You can get a handy Spyder IDE cheat sheet at the link below:],
-  [class="my-3"\> Take the Quiz: Test your knowledge with our interactive “Spyder: Your IDE for Data Science Development in Python” quiz. You’ll receive a score upon completion to help you track your learning progress:],
+  [Take the Quiz: Test your knowledge with our interactive “Spyder: Your IDE for Data Science Development in Python” quiz. You’ll receive a score upon completion to help you track your learning progress:],
   [Spyder: Your IDE for Data Science Development in Python],
-  [id="start-using-the-spyder-ide"\>Start Using the Spyder IDE],
+  [Test your knowledge of the Spyder IDE for Python data science, including its Variable Explorer, Plots pane, and Profiler.],
+  [Start Using the Spyder IDE],
   [You can install Spyder in a few ways: as a standalone program, through a prepackaged distribution, or from the command line. You can also try out Spyder online .],
   [To install Spyder as a standalone application, go to the Spyder download page . When you visit the site, it detects your operating system and offers the appropriate download. Once you download your install file, open it and follow the directions.],
   [You can also install a Python distribution tailored to data science, such as Anaconda or WinPython . Both of these choices include Spyder in their base installations.],
   [You’ll likely want to install dependencies and useful data libraries in addition to Spyder. In this case, first create a Python virtual environment , then use this command:],
+  [\$ conda create -c conda-forge -n spyder-env spyder numpy scipy pandas matplotlib sympy cython],
   [The install process for pip is similar. To install spyder together with common packages, run:],
+  [\$ python -m pip install spyder numpy scipy pandas matplotlib sympy cython],
   [For more information on installing Spyder, refer to their install guide .],
   [Out of the box, the Spyder interface consists of three panes:],
   [The Spyder IDE Interface],
   [On the left, you see code in the Editor pane. In the bottom right, you’ll find the IPython Console . Here, you can run code and check past commands using the History tab. The top-right area includes tabs such as Help , Debugger , Files , Find , and Code Analysis . You’ll learn about the Variable Explorer , Plots , and Profiler in the upcoming sections.],
-  [id="explore-data-with-the-variable-explorer"\>Explore Data With the Variable Explorer],
+  [Explore Data With the Variable Explorer],
   [Read the full article at https:\/\/realpython.com/spyder-ide\/ »],
 ),
   insert-map: (:),
@@ -175,10 +128,8 @@ pulling image error : toomanyrequests: You have reached your pull rate limit. Yo
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Deploy Safety: Reducing customer impact from change],
   author: [Sam Bailey],
   source-name: [Slack Engineering],
@@ -294,10 +245,8 @@ pulling image error : toomanyrequests: You have reached your pull rate limit. Yo
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Masonry: Things You Won’t Need A Library For Anymore],
   author: [Patrick Brosset],
   source-name: [Smashing Magazine],
@@ -423,38 +372,38 @@ pulling image error : toomanyrequests: You have reached your pull rate limit. Yo
   [For the Masonry JS lib, initialization is a bit complex: it requires a data attribute with a specific syntax, along with hidden HTML elements to set the column and gap sizes.],
   [Plus, if you want to span columns, you need to include the gap size yourself to avoid problems:],
   [.track-sizer,
- .item {
+ .item \{
  width: 20%;
- }
- .gutter-sizer {
+ \}
+ .gutter-sizer \{
  width: 1rem;
- }
- .item {
+ \}
+ .item \{
  height: 100px;
  margin-block-end: 1rem;
- }
- .item:nth-child(odd) {
+ \}
+ .item:nth-child(odd) \{
  height: 200px;
- }
- .item--width2 {
+ \}
+ .item--width2 \{
  width: calc(40% + 1rem);
- }],
+ \}],
   [...],
   [Let’s compare this to what a built-in Masonry implementation would look like:],
-  [.container {
+  [.container \{
  display: grid-lanes;
  grid-lanes: repeat(4, 20%);
  gap: 1rem;
- }
- .item {
+ \}
+ .item \{
  height: 100px;
- }
- .item:nth-child(odd) {
+ \}
+ .item:nth-child(odd) \{
  height: 200px;
- }
- .item--width2 {
+ \}
+ .item--width2 \{
  grid-column: span 2;
- }],
+ \}],
   [...],
   [Simpler, more compact code that can just use things like gap and where spanning tracks is done with span 2 , just like in grid, and doesn’t require you to calculate the right width that includes the gap size.],
   [How To Know What’s Available And When It’s Available?],
@@ -490,10 +439,8 @@ pulling image error : toomanyrequests: You have reached your pull rate limit. Yo
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Bundles and Closures],
   author: [Jacques Lucke],
   source-name: [Blender Dev Blog],
@@ -541,7 +488,8 @@ pulling image error : toomanyrequests: You have reached your pull rate limit. Yo
   [This can also solve cases like having to copy a node group just to change the texture it uses. Additionally, it can also allow creating a bundle with related textures, like a PBR texture set.],
   [The compositor should also support these features eventually, but we’ll likely add support there differently. Similar to Geometry Nodes, its evaluator should support these features out of the box without having to inline everything. The reason being that inlining does come with some limitations like the number of iterations in a repeat zone having to be constant under some circumstances.],
   [Bundles and closures get a good step further on our journey to support building high level tools with Geometry Nodes that all users, regardless of proficiency level, can benefit from. It also opens up many opportunities for features that were very hard to implement before. I’m looking forward to seeing all the ways people will use this.],
-  [id="js-donation-box"\>],
+  [Development requires dedicated design and development resources.],
+  [Donate monthly or one-time to help make this happen.],
 ),
   insert-map: (:),
   word-count: 1392,
@@ -549,10 +497,8 @@ pulling image error : toomanyrequests: You have reached your pull rate limit. Yo
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Retrospective: WBEZ's summer recommendations],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
@@ -561,7 +507,7 @@ pulling image error : toomanyrequests: You have reached your pull rate limit. Yo
   [The News Apps team builds tools for our own use, but we exist in a larger ecosystem of people who use, adapt, and improve those tools–both inside public media and outside. This year, we’re working on initiatives to collaborate more closely with our Member stations, and so we’re pleased to present this guest post from WBEZ, which has been using NPR’s toolset for their big digital projects. If you have a similar story, we’d love to hear from you. Drop us a note at nprapps\@npr.org .],
   [I’m Paula Friedrich, a digital producer at WBEZ in Chicago. I recently built WBEZ’s crowdsourced summer activity guide , which is a filterable list of 400 recommendations we gathered from our audience through a Google Form.],
   [The project was inspired by conversations reporter Natalie Moore and Morning Shift producer Dan Tucker had on Twitter about how many “Best of Chicago” lists gloss over the South and West Sides. In those threads, people eagerly recommended their favorite places in those parts of town, which sparked the idea to make a summer activity guide built in collaboration with our audience.],
-  [id="step-one-framing-the-ask"\>Step One: Framing the ask],
+  [Step One: Framing the ask],
   [When I pitched this project, my editor Shawn Allee had the smart insight that we were essentially offering the audience two products: the experience of making something with us and a tool for summertime inspiration.],
   [A small group of reporters, producers and editors from across the organization helped me come up with a prompt that would make the act of contributing interesting and delightful: Mad Libs style fill in the blanks.],
   [I used Google Forms to collect submissions because it’s free and because it automatically dumps your responses into a Google Sheet. The latter is important because it’s ultimately how I would end up pulling the submissions into the app, thanks to functionality built into NPR Visuals’ Interactive Template . (The Interactive Template is a tool that neatly sets up the foundation of an interactive project, a common workflow in newsrooms .)],
@@ -570,13 +516,13 @@ pulling image error : toomanyrequests: You have reached your pull rate limit. Yo
   [I used a Google’s header module for the question and left the actual question space blank. This allowed me to offer examples in a way that wasn’t visually confusing and didn’t leave users thinking they could click into the blanks.],
   [Here’s a template you can use if you’d like to do a similar fill-in-the-blank project],
   [(That said, if I were to do this project again, I’d probably make a few changes, for reasons I’ll get into below.)],
-  [id="step-two-decide-how-to-present-the-data"\>Step Two: Decide how to present the data],
+  [Step Two: Decide how to present the data],
   [We got responses from some 300 people, each of whom responded to 3 prompts, totalling about 900 submissions.],
   [Given the large number, we knew we wanted to design a way for our audience a way to explore the submissions on their own. I looked at a few different ways others had approached this concept, including NPR’s Book Concierge and Eater’s maps . I also paid close attention to the filtering on shopping sites and read a few blog posts about design patterns for filtering.],
   [These are some of the design ideas we decided against:],
   [Using a map as the main UI. It was important to showcase the goofy, sometimes poetic human nature of what we had to offer rather than hide it behind a map marker.],
   [Using the “It’s a \_\_\_\_\_ day in Chicago” piece of the prompt as a search mechanism. There was no guarantee that someone who found this page would be familiar with our original crowdsourcing campaign, which would make this concept difficult to understand and use. Additionally, we wanted users to be able to see all their filtering options, rather than having to take a stab in the dark. These parts of the submissions ended up informing the filters we added in the final iteration.],
-  [id="step-three-prepare-the-user-generated-data-publication"\>Step Three: Prepare the user-generated data publication],
+  [Step Three: Prepare the user-generated data publication],
   [Editing and cleaning up these responses was the most labor-intensive part of the process.],
   [There were three prompts, meaning we got up to three responses from each person. Each response filled in three blanks: the adjective blank, the activity blank and the place blank. Each submission needed to be its own row and each blank needed to be in its own column.],
   [To start, all three responses were in one row per person. Despite my best efforts, some responses came in as full sentences, while others came in as lists separated by semicolons or commas.],
@@ -586,18 +532,18 @@ pulling image error : toomanyrequests: You have reached your pull rate limit. Yo
   [This got most of the responses into the correct columns. For submissions that were separated by commas or semicolons, I manually added the correct language so that the formula would split them up correctly. Some other hiccups: curly quotes and words with “at” in the middle, like “Garfield Park Conserv at ory.”],
   [Since we had three different prompts, this process was repeated in a separate sheet for each prompt. Once each sheet was cleaned, I combined those into once more sheet called “all\_recs”.],
   [It was important to keep all these steps in separate sheets so I could always refer back to the original sheet with original responses, in case I made a mistake somewhere down the line.],
-  [id="step-four-lots-and-lots-of-manual-editing"\>Step Four: Lots and lots of manual editing],
+  [Step Four: Lots and lots of manual editing],
   [Once everything was split up into different columns and rows, I made one last sheet to start editing out:],
   [Suggestions that were amazing but that we probably shouldn’t actually encourage anyone to do, like: ‘You should hop the fence at the Grant Park Band Shell, focus and give your best “I’m off the deep eeeend..watch as I dive in… I’ll never reach the grooooound…”’],
   [Anything that seemed too self-promotional or like obvious advertising],
   [One-time events],
   [Once we decided which ones to use, I added columns for addresses and latitude and longitude to power a map component in the design.],
   [And then finally: copy edit and fact check every entry.],
-  [id="step-five-putting-it-all-together-with-vue"\>Step Five: Putting it all together with Vue],
+  [Step Five: Putting it all together with Vue],
   [At this point, I had worked through a few edits on wireframes, done some very basic user testing with members of our Sounding Board, and had a pretty good idea how the final product would look. On projects like this, I’m far more confident when I’m designing the thing than when I’m writing the code that’ll make it function. Tools like the Interactive Template are a big help when it comes to understanding how to set up and deploy a project. Another tool that helped ease the development of this project was Vue , a component framework.],
   [The basic concept of a framework like Vue: You describe how you want your page to look once, including variables for elements that may change, and then your page will update when you update variables in your JavaScript code.],
   [With Vue, developing a filterable list felt magically fast, because I didn’t have to worry about getting user input or hiding cards — Vue took care of that for me. I just had to write my template and a little bit of logic to filter my list.],
-  [id="step-six-next-steps-and-more-platforms"\>Step Six: Next steps and more platforms],
+  [Step Six: Next steps and more platforms],
   [The response from our audience has been pretty good: Engaged time on Chartbeat is more than double that of our average story and we’re getting double the typical conversion rate for newsletter subscribers on this story.],
   [There’s a lot of ways to improve and iterate on this project. While we got submissions from all over the city, certain areas were still underrepresented. With a few tweaks, the code for the presentation becomes a pretty solid template, so if we were to do this again, I’d be able to spend less time on the mechanics and design and spend more effort and attention on gathering and categorizing submissions. For example, I’d consider spending some time asking for recommendations in person in the areas that were underrepresented in this iteration. I’d also include fewer prompts on the initial form, instead asking folks to give us an insider tip to go along with their recommendation.],
   [There are also ways to offer this information to our audience with a less heavy design and development lift, so we’ll be experimenting with different platforms and formats throughout the summer. Some ideas we’re playing with: listicles featuring interesting groupings (all the ice cream spots that were recommended, for example), listicles of submissions we had to edit out of the first piece (like one-time events , Instagram stories and live reads of suggestions on air between newscasts.],
@@ -608,10 +554,8 @@ pulling image error : toomanyrequests: You have reached your pull rate limit. Yo
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Introducing xaa.dev: A Playground for Cross App Access],
   author: [Okta Developer Blog],
   source-name: [Okta Developer Blog],
@@ -633,7 +577,7 @@ pulling image error : toomanyrequests: You have reached your pull rate limit. Yo
   [Why we built a testing site for cross app access],
   [Inspect the XAA flow],
   [Learn more],
-  [id="what-is-cross-app-access"\>What is Cross App Access?],
+  [What is Cross App Access?],
   [Cross App Access refers to a typical enterprise pattern: one application accesses another application’s resources on behalf of a user.],
   [For example:],
   [An internal AI assistant fetching updates from a project management system],
@@ -650,8 +594,9 @@ pulling image error : toomanyrequests: You have reached your pull rate limit. Yo
   [Clear, auditable trust boundaries],
   [Complete administrative control over app-to-app access],
   [For a deeper dive into why this matters for enterprise AI, read more about Cross App Access in this post:],
+  [Integrate Your Enterprise AI Tools with Cross-App Access],
   [Manage user and non-human identities, including AI in the enterprise with Cross App Access],
-  [id="the-problem-testing-xaa-is-hard"\>The problem: testing XAA is hard],
+  [The problem: testing XAA is hard],
   [XAA is built on an emerging OAuth extension called the Identity Assertion JWT Authorization Grant – an IETF draft that Okta, along with public and industry contributors, has been actively contributing to. It’s powerful, but it’s also new, and new protocols need experimentation.],
   [Here’s the challenge: to test XAA locally, you’d need to spin up:],
   [An Identity Provider (IdP)],
@@ -662,19 +607,16 @@ pulling image error : toomanyrequests: You have reached your pull rate limit. Yo
   [xaa.dev changes that.],
   [We pre-configured all the components so you can focus on understanding the flow, not debugging dev environments. Go from zero to a working XAA token exchange in under 60 seconds.],
   [Launch the playground . It’s free and requires no signup.],
-  [id="what-you-can-do-on-xaadev"\>What you can do on xaa.dev],
+  [What you can do on xaa.dev],
   [The playground gives you hands-on access to every role in the Cross App Access flow:],
-  [id="requesting-app"\>Requesting App],
   [Step into the shoes of an AI agent or client application. Authenticate a user, request an ID-JAG from the IdP, and exchange it for an access token at the resource server.],
-  [id="resource-app"\>Resource App],
   [See the other side of the transaction. Watch how a resource server validates the identity assertion, verifies the trust relationship, and issues scoped access tokens.],
-  [id="identity-provider"\>Identity Provider],
   [We’ve built a simulated IdP with pre-configured test users. Log in, see how ID-JAGs are minted, and inspect the cryptographic claims that make XAA secure.],
-  [id="resource-mcp-server"\>Resource MCP Server],
+  [Resource MCP Server],
   [Connect your AI agents using the Model Context Protocol (MCP). The playground provides a ready-to-use MCP server that acts as a resource application, letting you test how AI agents can securely access protected resources through the Cross App Access flow.],
-  [id="bring-your-own-requesting-app"\>Bring your own Requesting App],
+  [Bring your own Requesting App],
   [The built-in Requesting App is great for learning, but the real power comes when you test with your own application, whether it’s a traditional app or an MCP client. Register a client on the playground, grab the configuration, and integrate it into your local app. This lets you validate your XAA implementation against a working IdP and Resource App without spinning up your own infrastructure. The playground documentation walks you through the setup step-by-step.],
-  [id="how-to-get-started"\>How to get started],
+  [How to get started],
   [Getting started with xaa.dev takes less than a minute:],
   [Step 1: Open the playground],
   [Visit xaa.dev . No account required.],
@@ -684,15 +626,15 @@ pulling image error : toomanyrequests: You have reached your pull rate limit. Yo
   [Walk through the four steps of the XAA flow: User Authentication (SSO), Token Exchange, Access Token Request, and Access Resource. Inspect the requests and responses at each step to see exactly how XAA works under the hood.],
   [That’s it. No local tools installations, Docker containers, environment variables, or CORS headaches.],
   [Watch this walkthrough video of the playground if you’d like a guided tour:],
-  [id="why-we-built-a-testing-site-for-cross-app-access"\>Why we built a testing site for cross app access],
+  [Why we built a testing site for cross app access],
   [XAA is built on an emerging IETF specification, the Identity Assertion JWT Authorization Grant. As enterprise AI adoption accelerates, there’s a clear need: developers want to understand XAA, but the barrier to entry is too high.],
   [xaa.dev lowers the barrier. It helps you:],
   [Learn faster – See the protocol in action before writing any code],
   [Build confidently – Understand exactly what tokens to expect and validate],
   [Experiment safely – Test edge cases without affecting production systems],
-  [id="inspect-the-xaa-flow"\>Inspect the XAA flow],
+  [Inspect the XAA flow],
   [XAA is how enterprise applications will securely connect in an AI-first world. Whether you’re building agents, integrating SaaS tools, or just curious about modern OAuth patterns, xaa.dev gives you a risk-free environment to learn. Check it out and let us know how it works for you!],
-  [id="learn-more"\>Learn more],
+  [Learn more],
   [Ready to go deeper? Check out these resources:],
   [Checkout Cross App Access Integration in Okta – Securing AI-driven access together],
   [Build Secure Agent-to-App Connections with Cross App Access – Hands-on implementation guide],
@@ -705,80 +647,91 @@ pulling image error : toomanyrequests: You have reached your pull rate limit. Yo
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Animations in VueJS],
   author: [Ashish Bardhan],
   source-name: [Wingify Engineering],
   images: (),
   paragraphs: (
-  [id="problem-statement---why-animation"\> Problem Statement - Why Animation?],
+  [Problem Statement - Why Animation?],
   [Website UI Development is not about making things beautiful. It’s all about website performance and customer experience. According to studies from Amazon and Walmart , they discovered a drop of conversion rate/revenue on increasing the user interaction time as the user feels interrupted during the interaction. Another study discovered that a customised animated loader made a higher wait time and lower abandon rate compared to generic one as the user felt more interactive with the former loader.],
   [In a nutshell, the animation of your application should be more interactive and engaging for the user, kind of like a cinema booking application and a form inside a location tag for example.],
-  [id="what-is-vuejs"\> What is VueJS?],
+  [What is VueJS?],
   [For those who are familiar with Angular and ReactJS , VueJS is a progressive JavaScript framework that supports some features:],
   [A virtual DOM],
   [Computed properties],
   [Reactive components],
   [Conditional rendering … to name a few],
   [Some of these features are quite similar to what Angular and ReactJS already provide. However, you can check its comparison with other frameworks .],
-  [id="todo-list-example"\> Todo List Example],
   [Let’s take a simple example of Todo list , containing a list of tasks with the functionality of adding/removing a task to/from the list.],
   [This will be our view in HTML file, assuming that you’ve included VueJS in a script tag already.],
+  [\{% raw %\}\{\{ todo \}\}\{% endraw %\}],
   [Meanwhile, our JS file looks like this.],
-  [class="gatsby-highlight"\> var app = new Vue ( { 
+  [var app = new Vue ( \{ 
  el : '\#app' , 
- data : { 
+ data : \{ 
  task : 'my first task' , 
  todoList : \[ \] 
- } , 
- methods : { 
- addTaskToList : function ( ) { 
+ \} , 
+ methods : \{ 
+ addTaskToList : function ( ) \{ 
  this . todoList . push ( this . task ) ; 
- } , 
- removeTaskFromList : function ( index ) { 
+ \} , 
+ removeTaskFromList : function ( index ) \{ 
  this . todoList . splice ( index , 1 ) ; 
- } 
- } 
- } ) ;],
+ \} 
+ \} 
+ \} ) ;],
   [The code itself is self-explanatory. It simply adds a task inside the todoList using addTaskToList method and removes from the list using removeTaskFromList .],
   [The event binding and loops syntax in the HTML looks similar to what you see in AngularJS . However, the syntax of variables and methods is different in VueJS, which reminds you of private variables and public methods you used to code in C++ . You can view the demo .],
   [Let’s add more interaction in this. A confirmation pop-up should appear with OK and Cancel options. Regardless of the option chosen, the pop-up should be closed later on.],
   [In HTML , let’s modify the list element],
+  [\{% raw %\}\{\{ todo \}\}\{% endraw %\}],
   [And add a new pop-up element],
+  [Are you sure you want to remove this from Todo List?],
   [Meanwhile in JS , initialize new data variables inside],
+  [data : \{ 
+ isPopupOpen : false , 
+ currentIndex : - 1 
+ \}],
   [And also, add some methods],
-  [class="gatsby-highlight"\> methods : { 
- onRemoveTask : function ( index ) { 
+  [methods : \{ 
+ onRemoveTask : function ( index ) \{ 
  this . isPopupOpen = true ; 
  this . currentIndex = index ; 
- } , 
- confirmRemove : function ( ) { 
+ \} , 
+ confirmRemove : function ( ) \{ 
  this . removeTaskFromList ( this . currentIndex ) ; 
  this . isPopupOpen = false ; 
- } , 
- cancelRemove : function ( ) { 
+ \} , 
+ cancelRemove : function ( ) \{ 
  this . isPopupOpen = false ; 
- } 
- }],
+ \} 
+ \}],
   [Let’s add some animation into it.],
   [For the fading-in/out the pop-up, you need to wrap our pop-up inside transition tag.],
+  [… Pop-up element content],
   [This element takes care of the transition logic. You don’t need to bother when to start or stop transition. All you’ve to mention is what kind of transition you want to see and for how long. This can be done using some CSS classes provided by VueJS.],
-  [.fade-enter, .fade-leave-to { 
+  [.fade-enter-active, .fade-leave-active \{ 
+ transition : opacity 0.5s ease-out ; 
+ \}],
+  [.fade-enter, .fade-leave-to \{ 
  opacity : 0 ; 
- }],
+ \}],
   [Note: The fade prefix used in this class should match the name attribute of the transition component.],
   [For blurring the form and the list elements once the pop-up appears, they should be wrapped inside a contained conditionally bounded using v-bind attribute.],
+  [… Form and Todo List element content],
   [And add the required CSS],
-  [.disabled { 
+  [.container \{ 
+ transition : all 0.05s ease-out ; 
+ \}],
+  [.disabled \{ 
  filter : blur ( 2px ) ; 
  opacity : 0.4 ; 
  pointer-events : none ; \/\\/ This makes sure that nothing else is clicked other than pop-up options
- }],
+ \}],
   [You can check the complete code and view demo .],
-  [id="advantages"\> Advantages],
   [This is how you can create applications and make animations in more simpler and semantic way. However, you must have intermediate knowledge of HTML , CSS and JavaScript . If you think VueJS is promising, go ahead and try it out. There is much more that you will love to learn about. Check out the official documentation .],
 ),
   insert-map: (:),
@@ -787,10 +740,8 @@ pulling image error : toomanyrequests: You have reached your pull rate limit. Yo
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [What makes a great photo editing intern (Apply now for Winter/spring 2017!)],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
@@ -799,17 +750,16 @@ pulling image error : toomanyrequests: You have reached your pull rate limit. Yo
   [This is not your standard photo internship!],
   [This internship is an opportunity to learn more about the world of photo editing. Our goal isn’t to make you into a photo editor; we view this internship as a chance for you to understand what it is like to be an editor and improve your visual literacy , which can help you become a better photographer.],
   [The internship runs from January 9, 2017 to April 21, 2017. Applications are due Sunday, November 6, 2016 at 11:59pm eastern .],
-  [id="what-you-will-be-doing"\>What you will be doing],
+  [What you will be doing],
   [Editing: You’ll be working closely with the Visuals Team’s photo editors (Ariel and Emily) on fast-paced deadlines – we’re talking anywhere from 15 minutes to publication, to short-term projects that are a week out. You’ll dig into news coverage and photo research, learning how to communicate about what makes a good image across a range of news topics, including international, national, technology, arts and more.],
   [Photography: Depending on the news cycle, there may be opportunities to photograph DC-area assignments. This can mean you’d have one or two shoots in a week, or maybe just a couple shoots in a month. You’ll work closely with a radio or web reporter while out in the field, and a photo editor will go through your work and provide feedback for each assignment. There will also be a chance to work on portraiture and still lifes in our studio.],
   [We also encourage each intern to create a self-directed project to work on throughout the semester. It can be an Instagram series , video , photo essay , text story or anything in-between. You can work independently or with another intern or reporter .],
   [You will be part of NPR’s intern program, which includes 40-50 interns each semester, across different departments. There will be coordinated training and intern-focused programming throughout the semester, which includes meeting NPR radio hosts, career development and other opportunities. As an intern, you will be treated as a member of the team. Many NPR employees are former interns and they’re always willing to help current interns.],
-  [id="eligibility"\>Eligibility],
   [Any student (undergraduate or graduate), or person who has graduated no more than 12 months prior to the start of the internship period to which he/she is applying is eligible. Interns must be authorized to work in the United States.],
-  [id="who-should-apply"\>Who should apply],
+  [Who should apply],
   [We’re looking for candidates that have a strong photojournalism background. An interest in editing, or experience with video/photo editing is a nice plus. It’s also helpful if you’ve completed at least one photojournalism-focused internship prior to applying (let us know if you have!), though it’s not necessary. A portfolio , however, is required.],
   [We also want folks who can tell us what they would like to accomplish during their time at NPR. What do you want to learn? What do you want to try? We try to shape each internship around our intern, so we rely on you to tell us what goals you have for your time with us!],
-  [id="so-how-do-i-apply"\>So how do I apply?],
+  [So how do I apply?],
   [Does this sound like you? Read about our expectations and selection process and then apply now!],
   [Into code, design, and data? Check out our design/development internship .],
 ),
@@ -819,12 +769,10 @@ pulling image error : toomanyrequests: You have reached your pull rate limit. Yo
   debug-mode: false,
 )
 
-  #pull-quote([We also encourage each intern to create a self-directed project to work on throughout the semester.], [NPR Apps Blog])
+#pull-quote([We also encourage each intern to create a self-directed project to work on throughout the semester.], [NPR Apps Blog])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Clojure: Testing The Creation Of A Partial Function],
   author: [Jay],
   source-name: [Jay Fields],
@@ -850,7 +798,7 @@ pulling image error : toomanyrequests: You have reached your pull rate limit. Yo
 (expect
  true
  (with-redefs
- \[state (atom {})\]
+ \[state (atom \{\})\]
  (update-bac 0.01)
  (legally-drunk? 0.07)))],
   [expected: true 
@@ -858,10 +806,10 @@ pulling image error : toomanyrequests: You have reached your pull rate limit. Yo
 There's not much in that failure report to point us in the right direction. The unit-level-expectations provide significantly more information, and the details that should make it immediately obvious where the typo is.
  failure in (unit\_level\_expectations.clj:8) : expectations.unit-level-expectations
 (expect
- {:legally-drunk?\* \[pure-legally-drunk? 0.04\]}
- (with-redefs \[state (atom {}) partial vector\] (update-bac 0.04)))],
-  [expected: {:legally-drunk?\* \[\# 0.04\]} 
- was: {:legally-drunk?\*\* \[\# 0.04\]}
+ \{:legally-drunk?\* \[pure-legally-drunk? 0.04\]\}
+ (with-redefs \[state (atom \{\}) partial vector\] (update-bac 0.04)))],
+  [expected: \{:legally-drunk?\* \[\# 0.04\]\} 
+ was: \{:legally-drunk?\*\* \[\# 0.04\]\}
  
  :legally-drunk?\*\* with val \[\# 0.04\] 
  is in actual, but not in expected
@@ -875,6 +823,7 @@ The above output points us directly to the extra asterisk in update-bac that cau
 In our examples the high level tests require redef'ing one bit of state. If that grew to a few pieces of state and/or a large increase in the complexity of the state, then I may be forced to move towards more unit-level tests. A rule of thumb I use: If a significant amount of the code within a test is setting up the test context, there's probably a smaller function and a set of associated tests waiting to be extracted.],
   [By definition, the unit-level tests don't test the integration of the various functions. When I'm using unit-level tests, I'll often test the various code paths at the unit level and then have a happy-path high-level test that verifies integration of the various functions. My desire to have more high-level tests increases as the integration complexity increases, and at some point it makes sense to simply convert all of the tests to high-level tests.],
   [If you constantly re-evaluate which tests will be more appropriate and switch when necessary, you'll definitely come out ahead in the long run.],
+  [© Jay Fields - www.jayfields.com],
 ),
   insert-map: (:),
   word-count: 951,
@@ -882,28 +831,32 @@ In our examples the high level tests require redef'ing one bit of state. If that
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Let’s tesselate: Hexagons for tile grid maps],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
   images: (),
   paragraphs: (
+  [A hexagon tile grid, square tile grid and geographic choropleth map. Maps by Danny DeBelius and Alyson Hurt.],
   [As the saying goes, nothing is certain in this life but death, taxes and requests for geographic data to be represented on a map.],
   [For area data, the choropleth map is a tried and true visualization technique, but not without significant dangers depending on the nature of the data and map areas represented. Clarity of mapped state-level data, for instance, is frequently complicated by the reality that most states in the western U. S. carry far more visual weight than the northeastern states.],
+  [Are more northeastern states shaded than western? That’s hard to say with this type of choropleth. Whatever, though. West coast, best coast, right?],
   [While this presentation is faithful to my Californian perception of the U. S. where the northeast is a distant jumble of states I pay little attention to, I’ve learned in four years of living in D. C. that there are actually a lot of people walking around that jumble, and they’d prefer not to be ignored in mapped data visualizations. There are approximately 74 million people living in the thirteen states the U. S. Census Bureau defines as the Western United States, while around 42 million people live just in the combined metropolitan statistical areas of New York, Washington, Boston and Philadelphia.],
   [One popular solution to this problem is the cartogram — maps where geography is distorted to correspond with some data variable (frequently population). By shading and sizing map areas, a cartogram can display two variables simultaneously. In this New York Times example from the 2012 election, the size of the squares corresponds to the number of electoral votes assigned to each state, while the shade represents possible vote outcomes. NPR’s Adam Cole used this technique to size states according to electoral votes and ad spending , as seen in the map below. Cartograms can be a great solution with some data sets, but they introduce complexity that might not serve our ultimate goal of clarity.],
+  [A cartogram of the U. S. with states sized proportionally by electoral votes. Map by Adam Cole.],
   [Recently, a third variation of choropleth has gained popularity — the tile grid map. In this version, the map areas are reduced to a uniform size and shape (typically a square) and the tiles are arranged to roughly approximate their real-world geographic locations. It’s still a cartogram of sorts, but where the area sizing is based on the shared value of one “map unit.” Tile grid maps avoid the visual imbalances inherent to traditional choropleths, while keeping the map a quick read by forgoing the complexity of cartograms with map areas sized by a variable data point.],
   [Tile grid maps are a great option for mapped state data where population figures are not part of the story we’re trying to tell with the map. Several news organizations have used this approach to great effect, including FiveThirtyEight , Bloomberg Business , The Guardian , The Washington Post and The New York Times .],
+  [A square tile grid map.],
   [Here at NPR, we recently set out to create a template for quickly producing this type of map, but early in the process my editor Brian asked, “Do the tiles have to be squares?”],
   [More specifically, Brian was interested in exploring the possibility of using hexagons instead of squares, with the assumption that two additional sides would offer greater flexibility in arranging the tiles and a better chance at maintaining as many border adjacencies as possible.],
   [The idea was intriguing, but I had questions about sacrifices we might make in scanability by trading the squares for hexagons. The columns and rows of a square grid lend to easy vertical and horizontal scanning, and I wondered if the tessellation of hexagons would provide a comfortable reading experience for the audience.],
   [Here is Brian’s first quick pencil sketch of a possible state layout using hexagons:],
+  [Brian’s hex grid sketch.],
   [That proof of concept was enough to convince me that the idea was worth exploring further. I opened up Sketch and redrew Brian’s map with the polygon tool so we could drag the states around to experiment with the tile layout more easily. We tried several approaches in building the layout, starting from each coast and building from the midwest out, to varying degrees of success.],
   [Ultimately, I decided to prioritize accuracy in representing the unique geographic features of the U. S. border (Texas and Florida as the southernmost tips, notches for the Great Lakes) and making sure the four “corners” of the country were recognizable for orientation.],
   [The final layout that will power our tile grid map template looks like this:],
+  [Six sides instead of four! That means it’s two better.],
   [This map still has many of the same problems that other attempts at a tile layout of the U. S. have fallen into — the relationship of North and South Carolina, for one example — but we like the increased fidelity of the country’s shape the hex grid makes possible.],
   [In case you were wondering, news dev Twitter loves talking about maps:],
   [We recently published our first use of the hexagon tile grid map to show the states that currently have laws restricting discrimination in employment, housing and public accommodations based on sexual orientation, gender identity and gender expression. The hex grid tile map also made appearances in several presentations of last week’s U. K. election results, including those by The Guardian , Bloomberg Business and The Economist .],
@@ -915,32 +868,28 @@ In our examples the high level tests require redef'ing one bit of state. If that
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A layout trick],
   author: [Kushagra Gour],
   source-name: [Wingify Engineering],
   images: (),
   paragraphs: (
   [Few weeks ago, we did a redesign of our product - VWO. It wasn't a complete overhaul from scratch, but some major design decisions were taken in the existing design based on the feedback we have received from users since we launched v3.0. This post is about a cool trick we used to achieve a task in that redesign project.],
-  [id="the-task-or-issue"\> The task (or issue)],
+  [The task (or issue)],
   [One of the most principle decisions we made was regarding the main layout of the app. It wasn't about changes in placement of content, but actually about the UI semantics. It mostly translated to color changes to bring a sense of how any screen in the app is structured and how all components on the page relate to each other. Here is a comparison of the before & after designs:],
-  [id="old-design"\> Old Design],
-  [id="new-design"\> New Design],
   [Note in the new design how different sections on the screen are more distinguished with definite boundaries and background in contrast to old design where all the page content was on a single grey surface. The old design reflected in the architecture as well - every main module got the complete page structure (except the main top header and left navigation) along with it. Eg. A Campaign module (page) in the above screenshot comprises markup of the page title section, tab menu, main content and sidebar. What I am trying to put forth is that a transition between modules causes the complete module content (mentioned sections) to disappear and appear again. This was fine with old design as we need to keep the base layout (the single grey surface) intact and custom content can transition over it. But the new design bought an issue with this approach. The base layout was no more just a single grey surface, rather it got split into 4 separate distinguishable sections :],
   [white page title section],
   [grey tab menu],
   [white main content section],
   [grey sidebar],
   [And all these section's markup being part of every main module's markup, would fade in/out during page transitions which was unacceptable as the common page layout (white grey sections) would itself keep getting fade in/out along with the custom content inside them - bad experience!],
-  [id="the-trick"\> The "Trick"],
+  [The "Trick"],
   [The most trivial approach to retaining the page layout sections during transitions would have been to create those sections in the main markup instead of every module bringing its own 4 sections. And every module change would have simply substituted appropriate custom content inside those constant 4 sections on the page. But this would have meant a major change in the module architecture increasing the scope of the redesign project. Heres how we tackled this issue...],
   [We used the above mentioned solution but instead of dividing the content into 4 sections at root level, we created an illusion of having 4 sections always present on the page - using pseudo element & background gradients! Heres how:],
   [So basically the pseudo structure always stays on the screen with all the custom content going and coming over it and giving an illusion that custom content renders inside those sections - just what we wanted for the end user!],
-  [id="final-result-and-code"\> Final result and code],
-  [id="in-the-end"\> In the End],
+  [Final result and code],
+  [In the End],
   [This trick (or hack as one may call) helped us achieve the desired UX without actually modifying the base module architecture and it has been working really great so far without any compromises made. Hacks are not always bad after all...its just about evaluating what is best when.],
 ),
   insert-map: (:),
@@ -949,10 +898,8 @@ In our examples the high level tests require redef'ing one bit of state. If that
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Why we've removed Inheritance/Extend from SASS & you should do the same!],
   author: [Chhavi Khandelwal],
   source-name: [Wingify Engineering],
@@ -963,101 +910,121 @@ In our examples the high level tests require redef'ing one bit of state. If that
 But its usage can have adverse effects when used with bigger projects. Lets see how.],
   [In VWO’s SASS code, we have more than 50 files. The need of inheritance removal came when the code started to become unpredictable and difficult to debug. Difficulty in debugging made us override the CSS as and when new requirement came; otherwise it requires a lot of time to understand existing code of inheritance before starting, so that any new rule addition does not break the existing CSS. That’s how the need of \@extend removal came.],
   [Here are the reasons why we discarded \@extend.],
-  [id="high-maintainability"\> High maintainability],
-  [label { 
+  [High maintainability],
+  [.title \{ 
+ text-transform : uppercase ; 
+ font-size : 11px ; 
+ \}],
+  [label \{ 
  \@extend .title ; 
  font-size : 13px ; 
- }],
+ \}],
   […and in the end of the file somewhere adding,],
+  [.title \{ 
+ font-size : 12px ; 
+ \}],
   [If this file is opened and looked up for the label rules, one would expect it to be of 13px but in reality, it will be of 12px.
  I will always be 12px],
   [This is because on compilation the result looks like this:],
-  [label { 
+  [.title , label \{ 
+ text-transform : uppercase ; 
+ \}],
+  [label \{ 
  font-size : 13px ; 
- }],
-  [.title , label { 
+ \}],
+  [.title , label \{ 
  font-size : 12px ; 
- }],
+ \}],
   [label shares the rules at the last definition of .title .],
   [If someone tries to override title and is not aware of the fact that it has been extended in some other class, the person might end up adding some wrong rules unintentionally.],
-  [id="difficult-debugging"\> Difficult debugging],
+  [Difficult debugging],
   [It becomes difficult to debug if the project’s CSS is large because you need to keep track of every extended class. If we consider the above example of label and .title , looking at the CSS in browser, it will be difficult for us to figure out the reason of font-size being 12px for label . It requires a lot of time of debug such code, especially if you have multiple SASS files.],
-  [id="increased-file-size"\> Increased file size],
-  [After we removed \@extend from all our sass files, size got reduced from 164KB =\> 154KB],
-  [id="distributed-code"\> Distributed Code],
+  [Increased file size],
   [The code for one class should be contained at one place rather than distributed at many places. Classes or Placeholders extended in virtue of maintaining the code actually make it untidy and difficult to understand in case of multiple CSS files or long CSS code.
 Here’s an example:],
-  [.tile { 
+  [.font--13 \{ 
+ font-size : 13px ; 
+ \}],
+  [.tile \{ 
  display : inline-block ; 
  border : 1px solid ; 
  \@extend .font--13 ; 
- }],
-  [%size--200 { 
+ \}],
+  [%size--200 \{ 
  width : 200px ; 
  height : 200px ; 
- }],
-  [.tile--200 { 
+ \}],
+  [.tile--200 \{ 
  \@extend .tile ; 
  \@extend %size--200 ; 
  font-size : 14px ; 
- }],
-  [.circle--200 { 
+ \}],
+  [.circle--200 \{ 
  \@extend %size--200 ; 
- }],
+ \}],
   [Generated Code:],
-  [.tile, .tile--200 { 
+  [.font--13, .tile, .tile--200 \{ 
+ font-size : 13px ; 
+ \}],
+  [.tile, .tile--200 \{ 
  display : inline-block ; 
  border : 1px solid ; 
- }],
-  [.tile--200, .circle--200 { 
+ \}],
+  [.tile--200, .circle--200 \{ 
  width : 200px ; 
  height : 200px ; 
- }],
-  [.tile--200 { 
+ \}],
+  [.tile--200 \{ 
  font-size : 14px ; 
- }],
+ \}],
   [The generated code is highly unreadable and not at all lucid. This particular code has rules staggered at 4 places just for class .tile--200.],
-  [id="solution-to-extend"\> Solution to \@extend],
+  [Solution to \@extend],
   [We solved these problems with the help of mixins or directly writing the rule if it’s a one liner.],
   [For e.g. in above example: SASS would be],
-  [\@mixin tile { 
+  [.font--13 \{ 
+ font-size : 13px ; 
+ \}],
+  [\@mixin tile \{ 
  display : inline-block ; 
  border : 1px solid ; 
  font-size : 13px ; 
- }],
-  [.tile { 
+ \}],
+  [.tile \{ 
  \@include tile ; 
- }],
-  [\@mixin size--200 { 
+ \}],
+  [\@mixin size--200 \{ 
  width : 200px ; 
  height : 200px ; 
- }],
-  [.tile--200 { 
+ \}],
+  [.tile--200 \{ 
  \@include tile ; 
  \@include size--200 ; 
  font-size : 14px ; 
- }],
-  [.circle--200 { 
+ \}],
+  [.circle--200 \{ 
  \@include size--200 ; 
- }],
+ \}],
   [Generated CSS code will be:],
-  [.tile { 
+  [.font--13 \{ 
+ font-size : 13px ; 
+ \}],
+  [.tile \{ 
  display : inline-block ; 
  border : 1px solid ; 
  font-size : 13px ; 
- }],
-  [.tile--200 { 
+ \}],
+  [.tile--200 \{ 
  display : inline-block ; 
  border : 1px solid ; 
  font-size : 13px ; 
  width : 200px ; 
  height : 200px ; 
  font-size : 14px ; 
- }],
-  [.circle--200 { 
+ \}],
+  [.circle--200 \{ 
  width : 200px ; 
  height : 200px ; 
- }],
+ \}],
   [This code has rules for every class maintained at just one place making it easier to understand and lucid which results in easy debugging and requires low maintenance.],
   [All these reasons forced us to remove \@extend from our SASS and hence our code and coders lived happily ever after!],
   [Cheers!],
@@ -1068,10 +1035,8 @@ Here’s an example:],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Check Every Box In Cypress Tests Without Flake],
   author: [Gleb Bahmutov],
   source-name: [Gleb Bahmutov],
@@ -1093,18 +1058,18 @@ Here’s an example:],
  10 
  11 
  12 
- it ( 'are completed by checking the boxes' , function ( ) { 
+ it ( 'are completed by checking the boxes' , function ( ) \{ 
  const todos = '.todo-list li' 
  cy. visit ( '/' ) 
  cy. get (todos). should ( 'have.length' , this . n ) 
  \/\\/ complete all todos by clicking the checkboxes 
- cy. get ( '.todo-list li .toggle' ). click ({ multiple : true }) 
+ cy. get ( '.todo-list li .toggle' ). click (\{ multiple : true \}) 
  \/\\/ confirm all todos are marked as completed 
  \/\\/ after reloading the page 
  cy. reload () 
  cy. get ( '.loaded' ) 
  cy. get ( '\[data-cy="remaining-count"\]' ). should ( 'have.text' , '0' ) 
- })],
+ \})],
   [This test starts by creating a random number of Todo items, something I covered in the "Cypress Vs Playwright" online course available at cypress.tips/courses .],
   [Ok, there seems to be some flake, and we know how to solve end-to-end testing flake pretty well . We start adding assertions, trying to confirm that our commands have finished successfully before reloading the page.],
   [1 
@@ -1123,12 +1088,12 @@ Here’s an example:],
  14 
  15 
  16 
- it ( 'are completed by checking the boxes' , function ( ) { 
+ it ( 'are completed by checking the boxes' , function ( ) \{ 
  const todos = '.todo-list li' 
  cy. visit ( '/' ) 
  cy. get (todos). should ( 'have.length' , this . n ) 
  \/\\/ complete all todos by clicking the checkboxes 
- cy. get ( '.todo-list li .toggle' ). click ({ multiple : true }) 
+ cy. get ( '.todo-list li .toggle' ). click (\{ multiple : true \}) 
  
  \/\\/ confirm all todos are done 
  cy. get ( '\[data-cy="remaining-count"\]' ). should ( 'have.text' , '0' ) 
@@ -1138,7 +1103,7 @@ Here’s an example:],
  cy. reload () 
  cy. get ( '.loaded' ) 
  cy. get ( '\[data-cy="remaining-count"\]' ). should ( 'have.text' , '0' ) 
- })],
+ \})],
   [We inserted the "0 todos" check before the cy.reload command, and ... it did not solve the problem!],
   [What is happening, how can the same assertion pass once, but then immediately fail? The clue is in the number of network calls shown int the Command Log. In this instance, we have 4 todos to complete. Yet, there are only 3 "PATCH" network calls!],
   [This is typical web app behavior: update the local state immediately, and send the update to the backend. But what happens if the app does not have time to send the network call before the page reloads? The network call does not happen, and the backend does not "see" one or more "PATCH" network calls. Checking just the page UI using cy.get('\[data-cy="remaining-count"\]').should('have.text', '0') does not solve the problem: the problem is that the backend still has not been updated.],
@@ -1165,7 +1130,7 @@ Here’s an example:],
  17 
  18 
  19 
- it ( 'are completed by checking the boxes (N network calls)' , function ( ) { 
+ it ( 'are completed by checking the boxes (N network calls)' , function ( ) \{ 
  const todos = '.todo-list li' 
  cy. visit ( '/' ) 
  cy. get (todos). should ( 'have.length' , this . n ) 
@@ -1173,7 +1138,7 @@ Here’s an example:],
  cy. intercept ( 'PATCH' , '/todos/\*' ). as ( 'updateTodo' ) 
  
  \/\\/ complete all todos by clicking the checkboxes 
- cy. get ( '.todo-list li .toggle' ). click ({ multiple : true }) 
+ cy. get ( '.todo-list li .toggle' ). click (\{ multiple : true \}) 
  
  \/\\/ confirm all network calls have finished 
  cy. get ( '\@updateTodo.all' ). should ( 'have.length' , this . n ) 
@@ -1183,10 +1148,10 @@ Here’s an example:],
  cy. reload () 
  cy. get ( '.loaded' ) 
  cy. get ( '\[data-cy="remaining-count"\]' ). should ( 'have.text' , '0' ) 
- })],
+ \})],
   [We spy on the PATCH /todos/\* calls using the cy.intercept command before we start clicking. Then we check the count of intercepts calls using the cy.get('\@updateTodo.all').should('have.length', this.n) command and assertion combo, which retries. Even if the app takes a few seconds to fire the network call, the test will be flake-free.],
   [Observe each network call],
-  [Instead of using .click({ multiple: true }) , we could click each box individually and confirm its network calls finished. I like this approach even more than the "click multiple elements" option, since it works for any action, not just cy.click , For example, let's use cy.check command, which does not have multiple: true option.],
+  [Instead of using .click(\{ multiple: true \}) , we could click each box individually and confirm its network calls finished. I like this approach even more than the "click multiple elements" option, since it works for any action, not just cy.click , For example, let's use cy.check command, which does not have multiple: true option.],
   [1 
  2 
  3 
@@ -1206,25 +1171,25 @@ Here’s an example:],
  17 
  18 
  19 
- it ( 'are completed by checking the boxes (one at a time)' , function ( ) { 
+ it ( 'are completed by checking the boxes (one at a time)' , function ( ) \{ 
  const todos = '.todo-list li' 
  cy. visit ( '/' ) 
  cy. get (todos). should ( 'have.length' , this . n ) 
  
  cy. intercept ( 'PATCH' , '/todos/\*' ). as ( 'updateTodo' ) 
  
- cy. get ( '.todo-list li .toggle' ). each ( ( \$el ) =\> { 
- cy. wrap (\$el, { log : false }). check () 
+ cy. get ( '.todo-list li .toggle' ). each ( ( \$el ) =\> \{ 
+ cy. wrap (\$el, \{ log : false \}). check () 
  \/\\/ confirm a single network call has finished 
  cy. wait ( '\@updateTodo' ) 
- }) 
+ \}) 
  
  \/\\/ confirm all todos are marked as completed 
  \/\\/ after reloading the page 
  cy. reload () 
  cy. get ( '.loaded' ) 
  cy. get ( '\[data-cy="remaining-count"\]' ). should ( 'have.text' , '0' ) 
- })],
+ \})],
   [We are using cy.each command. It gives us each element as a jQuery object. To properly click it using Cypress, simply cy.wrap silently to avoid Command Log noise and run the cy.check , followed by cy.wait command with a network alias - it waits for 1 network call. If you want to confirm the call was successful, add an assertion.],
   [1 
  2 
@@ -1233,13 +1198,13 @@ Here’s an example:],
  5 
  6 
  7 
- cy. get ( '.todo-list li .toggle' ). each ( ( \$el ) =\> { 
- cy. wrap (\$el, { log : false }). check () 
+ cy. get ( '.todo-list li .toggle' ). each ( ( \$el ) =\> \{ 
+ cy. wrap (\$el, \{ log : false \}). check () 
  \/\\/ confirm a single network call has finished successfully 
  cy. wait ( '\@updateTodo' ) 
  . its ( 'response' ) 
  . should ( 'have.property' , 'statusCode' , 200 ) 
- })],
+ \})],
   [Ask the server],
   [If we are not sure when the application has finished updating the backend, why not ask the backend directly? We can ping the backend ourselves, just like the app does using the cy.request command. To ping the server multiple times until all todos are completed, we can use my plugin cypress-recurse :],
   [1],
@@ -1270,30 +1235,27 @@ Here’s an example:],
   [26],
   [27],
   [28],
-  [import { recurse } from 'cypress-recurse'],
-  [it ( 'are completed by checking the boxes (check the backend)' , function ( ) {],
+  [import \{ recurse \} from 'cypress-recurse'],
+  [it ( 'are completed by checking the boxes (check the backend)' , function ( ) \{],
   [const todos = '.todo-list li'],
   [cy. visit ( '/' )],
   [cy. get (todos). should ( 'have.length' , this . n )],
-  [cy. get ( '.todo-list li .toggle' ). each ( ( \$el ) =\> {],
-  [cy. wrap (\$el, { log : false }). check ()],
-  [})],
+  [cy. wrap (\$el, \{ log : false \}). check ()],
+  [\})],
   [\/\\/ confirm the backend has only completed todos],
   [recurse (],
-  [() =\> cy. request ( '/todos' ). its ( 'body' ),],
-  [( todos ) =\> todos. every ( ( todo ) =\> todo. completed ),],
-  [{],
+  [\{],
   [log : 'All todos are completed on the server' ,],
   [timeout : 30\_000 ,],
   [delay : 1000 ,],
-  [},],
+  [\},],
   [)],
   [\/\\/ confirm all todos are marked as completed],
   [\/\\/ after reloading the page],
   [cy. reload ()],
   [cy. get ( '.loaded' )],
   [cy. get ( '\[data-cy="remaining-count"\]' ). should ( 'have.text' , '0' )],
-  [})],
+  [\})],
   [The important part is the recurse call with two functions: fetching the list of todos and the predicate to know when to stop pinging:],
   [1 
  2 
@@ -1309,11 +1271,11 @@ Here’s an example:],
  () =\> cy. request ( '/todos' ). its ( 'body' ), \/\\/ produce the values 
  ( todos ) =\> todos. every ( ( todo ) =\> todo. completed ), \/\\/ check the value 
  \/\\/ options: how many times to check, how long to wait between the checks, etc 
- { 
+ \{ 
  log : 'All todos are completed on the server' , 
  timeout : 30\_000 , 
  delay : 1000 , 
- }, 
+ \}, 
  )],
   [The recurse calls the first function repeatedly, passes the yielded value into the predicate, and stops the iteration when the predicate returns a truthy value. We use 1 second delays for clarity, and I slowed down the web app to space out network calls. You can see several REQUEST /todos commands - this is our check working],
   [Map chain],
@@ -1349,30 +1311,28 @@ Here’s an example:],
   [28],
   [29],
   [import 'cypress-map'],
-  [beforeEach ( function createRandomTodos ( ) {],
+  [beforeEach ( function createRandomTodos ( ) \{],
   [const n = Cypress . \_ . random ( 1 , 3 )],
   [...],
   [\/\\/ save created ids for later],
-  [cy. wrap (todos. map ( ( t ) =\> t. id )). as ( 'ids' )],
-  [})],
-  [it ( 'are completed by checking the boxes (collect their ids)' , function ( ) {],
+  [\})],
+  [it ( 'are completed by checking the boxes (collect their ids)' , function ( ) \{],
   [const todos = '.todo-list li'],
   [cy. visit ( '/' )],
   [cy. get (todos). should ( 'have.length' , this . n )],
   [cy. intercept ( 'PATCH' , '/todos/\*' ). as ( 'updateTodo' )],
   [cy. get ( '.todo-list li .toggle' )],
-  [. mapChain ( ( \$el ) =\> {],
-  [cy. wrap (\$el, { log : false }). check ()],
+  [cy. wrap (\$el, \{ log : false \}). check ()],
   [\/\\/ from each network call, grab the id of the updated todo],
   [cy. wait ( '\@updateTodo' ). its ( 'response.body.id' )],
-  [})],
+  [\})],
   [. should ( 'deep.equal' , this . ids )],
   [\/\\/ confirm all todos are marked as completed],
   [\/\\/ after reloading the page],
   [cy. reload ()],
   [cy. get ( '.loaded' )],
   [cy. get ( '\[data-cy="remaining-count"\]' ). should ( 'have.text' , '0' )],
-  [})],
+  [\})],
   [The command .mapChain(fn) runs the commands inside the function and collects all yielded values into an array that it will yield to the next assertion. Thus our code works, here is the relevant part:],
   [1 
  2 
@@ -1380,11 +1340,11 @@ Here’s an example:],
  4 
  5 
  6 
- . mapChain ( ( \$el ) =\> { 
- cy. wrap (\$el, { log : false }). check () 
+ . mapChain ( ( \$el ) =\> \{ 
+ cy. wrap (\$el, \{ log : false \}). check () 
  \/\\/ from each network call, grab the id of the updated todo 
  cy. wait ( '\@updateTodo' ). its ( 'response.body.id' ) 
- }) 
+ \}) 
  . should ( 'deep.equal' , this . ids )],
   [You can see the original ids in the "BEFORE EACH" hook, and you can see the array assertion inside the test; these are the same ids, and the order is correct.],
   [Nice. I must say these tests and how they interact with this example application are better shown than explained in a blog post. I will record a video showing these tests in action and will post on my youtube.com/\@gleb channel, stay tuned.],
@@ -1395,10 +1355,8 @@ Here’s an example:],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Starting a New Engagement as a Lead Consultant],
   author: [Jay],
   source-name: [Jay Fields],
@@ -1415,6 +1373,7 @@ Here’s an example:],
   [If I were going into a new engagement these days, I would split my time between training and delivery initially. After figuring out which is the bigger problem, you can spend more or less time on training or delivery.],
   [I would also keep a spreadsheet with every client employee and their talents; every one of those employees will impact your success. If you find what they're good at and get them doing that, you may have found an ally and advocate. Every employee that has no talents listed in your spreadsheet is not only slowing you down, but is also likely (consciously or unconsciously) sabotaging you in every discussion you aren't a part of. Assume you cannot get rid of them, and don't bother trying; spending political capital managing client staff is a bad investment. Keep them on your sheet and make finding their talent a top priority.],
   [Good luck, it's not an easy gig. Then again, if things don't go well you can always move on to another client. That was what always kept me sane. I always did the best job I could, but I also knew if I failed at an impossible task it wasn't the end of the world. There's an endless stream of impossible tasks available.],
+  [© Jay Fields - www.jayfields.com],
 ),
   insert-map: (:),
   word-count: 828,
@@ -1422,10 +1381,8 @@ Here’s an example:],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [CSS \<code\>\@scope\</code\>: An Alternative To Naming Conventions And Heavy Abstractions],
   author: [Blake Lundquist],
   source-name: [Smashing Magazine],
@@ -1450,132 +1407,114 @@ Here’s an example:],
   [Plus, it has excellent browser coverage . In fact, Firefox 146 added support for \@scope in December, making it Baseline compatible for the first time. Here is a simple comparison between a button using the BEM pattern versus the \@scope rule:],
   [Click me 
  →],
-  [.button .button\_\_text { /\* button text styles \*\/ }
- .button .button\_\_icon { /\* button icon styles \*\/ }
- .button--primary { primary button styles \*\/ }],
+  [.button .button\_\_text \{ /\* button text styles \*\/ \}
+ .button .button\_\_icon \{ /\* button icon styles \*\/ \}
+ .button--primary \{ primary button styles \*\/ \}],
   [Click me 
  →],
-  [\@scope (.primary-button) {
- span:first-child { /\* button text styles \*\/ }
- span:last-child { /\* button icon styles \*\/ }
- }],
+  [\@scope (.primary-button) \{
+ span:first-child \{ /\* button text styles \*\/ \}
+ span:last-child \{ /\* button icon styles \*\/ \}
+ \}],
   [The \@scope rule allows for precision with less complexity . The developer no longer needs to create boundaries using class names, which, in turn, allows them to write selectors based on native HTML elements, thereby eliminating the need for prescriptive CSS class name patterns. By simply removing the need for class name management, \@scope can alleviate the fear associated with CSS in large projects.],
   [To get started, add the \@scope rule to your CSS and insert a root selector to which styles will be scoped:],
-  [\@scope ( ) {
+  [\@scope ( ) \{
  /\* Styles scoped to the \*/
-}],
+\}],
   [So, for example, if we were to scope styles to a element, it may look something like this:],
-  [\@scope (nav) {
- a { /\* Link styles within nav scope \*\/ }],
-  [a:active { /\* Active link styles \*\/ }],
-  [a:active::before { /\* Active link with pseudo-element for extra styling \*\/ }],
-  [\@media (max-width: 768px) {
- a { /\* Responsive adjustments \*\/ }
- }
-}],
+  [\@scope (nav) \{
+ a \{ /\* Link styles within nav scope \*\/ \}],
+  [a:active \{ /\* Active link styles \*\/ \}],
+  [a:active::before \{ /\* Active link with pseudo-element for extra styling \*\/ \}],
+  [\@media (max-width: 768px) \{
+ a \{ /\* Responsive adjustments \*\/ \}
+ \}
+\}],
   [This, on its own, is not a groundbreaking feature. However, a second argument can be added to the scope to create a lower boundary , effectively defining the scope’s start and end points.],
   [/\* Any a element inside ul will not have the styles applied \*/
-\@scope (nav) to (ul) {
- a {
+\@scope (nav) to (ul) \{
+ a \{
  font-size: 14px;
- }
-}],
+ \}
+\}],
   [This practice is called donut scoping , and there are several approaches one could use, including a series of similar, highly specific selectors coupled tightly to the DOM structure, a :not pseudo-selector, or assigning specific class names to elements within the to handle the differing CSS.],
   [Regardless of those other approaches, the \@scope method is much more concise. More importantly, it prevents the risk of broken styles if classnames change or are misused or if the HTML structure were to be modified. Now that \@scope is Baseline compatible, we no longer need workarounds!],
   [We can take this idea further with multiple end boundaries to create a “style figure eight”:],
   [/\* Any or element inside or will not have the styles applied \*/
-\@scope (main) to (aside, nav) {
- a {
+\@scope (main) to (aside, nav) \{
+ a \{
  font-size: 14px;
- }
- p {
+ \}
+ p \{
  line-height: 16px;
  color: darkgrey;
- }
-}],
+ \}
+\}],
   [Compare that to a version handled without the \@scope rule, where the developer has to “reset” styles to their defaults:],
-  [main a {
+  [main a \{
  font-size: 14px;
-}],
-  [main p {
+\}],
+  [main p \{
  line-height: 16px;
  color: darkgrey;
-}],
+\}],
   [main aside a,
-main nav a {
+main nav a \{
  font-size: inherit; /\* or whatever the default should be \*/
-}],
+\}],
   [main aside p,
-main nav p {
+main nav p \{
  line-height: inherit; /\* or whatever the default should be \*/
  color: inherit; /\* or a specific color \*/
-}],
+\}],
   [Check out the following example. Do you notice how simple it is to target some nested selectors while exempting others?],
   [Consider a scenario where unique styles need to be applied to slotted content within web components . When slotting content into a web component, that content becomes part of the Shadow DOM, but still inherits styles from the parent document. The developer might want to implement different styles depending on which web component the content is slotted into:],
-  [content, different contexts --\>
- 
- 
- 
- Jane Doe],
   [In this example, the developer might want the to have distinct styles only if it is rendered inside :],
-  [\@scope (team-roster) {
- user-card {
+  [\@scope (team-roster) \{
+ user-card \{
  display: inline-flex;
  align-items: center;
  gap: 0.5rem;
- }],
-  [user-card img {
+ \}],
+  [user-card img \{
  border-radius: 50%;
  width: 40px;
  height: 40px;
- }
-}],
+ \}
+\}],
   [There are additional ways that \@scope can remove the need for class management without resorting to utilities or JavaScript-generated class names. For example, \@scope opens up the possibility to easily target descendants of any selector , not just class names:],
-  [/\* Only div elements with a direct child button are included in the root scope \*/
-\@scope (div:has(\> button)) {
- p {
- font-size: 14px;
- }
-}],
   [And they can be nested , creating scopes within scopes:],
-  [\@scope (main) {
- p {
+  [\@scope (main) \{
+ p \{
  font-size: 16px;
  color: black;
- }
- \@scope (section) {
- p {
+ \}
+ \@scope (section) \{
+ p \{
  font-size: 14px;
  color: blue;
- }
- \@scope (.highlight) {
- p {
+ \}
+ \@scope (.highlight) \{
+ p \{
  background-color: yellow;
  font-weight: bold;
- }
- }
- }
-}],
+ \}
+ \}
+ \}
+\}],
   [Plus, the root scope can be easily referenced within the \@scope rule:],
   [/\* Applies to elements inside direct child section elements of main , but stops at any direct aside that is a direct chiled of those sections \*/
-\@scope (main \> section) to (:scope \> aside) {
- p {
+\@scope (main \> section) to (:scope \> aside) \{
+ p \{
  background-color: lightblue;
  color: blue;
- }
+ \}
  /\* Applies to ul elements that are immediate siblings of root scope \*/
- :scope + ul {
+ :scope + ul \{
  list-style: none;
- }
-}],
+ \}
+\}],
   [The \@scope at-rule also introduces a new proximity dimension to CSS specificity resolution. In traditional CSS, when two selectors match the same element, the selector with the higher specificity wins. With \@scope , when two elements have equal specificity, the one whose scope root is closer to the matched element wins. This eliminates the need to override parent styles by manually increasing an element’s specificity, since inner components naturally supersede outer element styles.],
-  [\@scope (.container) {
- .title { color: green; } 
- }
- is closer to .container than to .sidebar so "color: green" wins. --\>
- \@scope (.sidebar) {
- .title { color: red; }
- }],
   [Utility-first CSS frameworks, such as Tailwind, work well for prototyping and smaller projects. Their benefits quickly diminish, however, when used in larger projects involving more than a couple of developers.],
   [Front-end development has become increasingly overcomplicated in the last few years, and CSS is no exception. While the \@scope rule isn’t a cure-all, it can reduce the need for complex tooling. When used in place of, or alongside strategic class naming, \@scope can make it easier and more fun to write maintainable CSS.],
   [CSS \@scope (MDN)],
@@ -1588,16 +1527,14 @@ main nav p {
 ),
   insert-map: (:),
   inline-pq: pull-quote([Instead of carefully considered naming conventions, we allow build tools to autogenerate selectors and identifiers for us (e.], [Blake Lundquist]),
-  inline-pq-idx: 25,
+  inline-pq-idx: 24,
   word-count: 1786,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [String Types For E2E Tests],
   author: [Gleb Bahmutov],
   source-name: [Gleb Bahmutov],
@@ -1610,7 +1547,7 @@ main nav p {
  3 
  4 
  5 
- type ItemId = \`m \${ number } \` 
+ type ItemId = \`m \$\{ number \} \` 
  
  const id1 : ItemId = 'm123' \/\\/ valid 
  const id2 : ItemId = 'x123' \/\\/ invalid, does not start with 'm' 
@@ -1632,20 +1569,20 @@ main nav p {
  12 
  13 
  14 
- type ItemId = \`m \${ number } \` 
+ type ItemId = \`m \$\{ number \} \` 
  
  const id1 : ItemId = 'm123' \/\\/ valid 
  
- function isItemId ( value: string ): value is ItemId { 
+ function isItemId ( value: string ): value is ItemId \{ 
  return /^m\\d+\$\/ . test (value) 
- } 
+ \} 
  
- if ( isItemId (id1)) { 
- console . log ( \` \${id1} is a valid ItemId\` ) 
- } else { 
+ if ( isItemId (id1)) \{ 
+ console . log ( \` \$\{id1\} is a valid ItemId\` ) 
+ \} else \{ 
  \/\\/ never happens 
  console . log ( 'invalid id1' , id1) 
- }],
+ \}],
   [If we look at the "else" branch, we can see the type inference; TS can safely say that "id1" in the "else" branch has "never" type, meaning this code should be unreachable.],
   [We can go beyond a predicate, we can write a utility function that throws an exception if it is given an invalid string value; and this function tells TypeScript compiler that the input has certain type afterwards.],
   [1 
@@ -1661,15 +1598,15 @@ main nav p {
  11 
  12 
  13 
- type ItemId = \`m \${ number } \` 
+ type ItemId = \`m \$\{ number \} \` 
  
  const id1 : ItemId = 'm123' \/\\/ valid 
  
- function assertItemId ( id: string ): asserts id is ItemId { 
- if (! /^m\\d+\$\/ . test (id)) { 
- throw new Error ( \`Invalid ItemId: \${id} \` ) 
- } 
- } 
+ function assertItemId ( id: string ): asserts id is ItemId \{ 
+ if (! /^m\\d+\$\/ . test (id)) \{ 
+ throw new Error ( \`Invalid ItemId: \$\{id\} \` ) 
+ \} 
+ \} 
  
  const id2 : string = 'm123' 
  assertItemId (id2) \/\\/ Type assertion 
@@ -1680,7 +1617,7 @@ main nav p {
  3 
  4 
  5 
- type PhoneNumber = \`+1- \${ number } - \${ number } - \${ number } \` 
+ type PhoneNumber = \`+1- \$\{ number \} - \$\{ number \} - \$\{ number \} \` 
  
  const phone1 : PhoneNumber = '+1-123-456-7890' \/\\/ valid 
  const phone2 : PhoneNumber = '123-456-7890' \/\\/ invalid, missing country code 
@@ -1691,11 +1628,11 @@ main nav p {
  2 
  3 
  4 
- type PhoneNumber = \`+1- \${ number } - \${ number } - \${ number } \` 
+ type PhoneNumber = \`+1- \$\{ number \} - \$\{ number \} - \$\{ number \} \` 
  
  const phone1 : PhoneNumber = '+1-123-456-7890' \/\\/ valid 
  const phone2 : PhoneNumber = '+1-1-2-3' \/\\/ no TS errors!],
-  [Look at the PhoneNumber type definition: +1-\${number}-\${number}-\${number} says nothing about how many digits each number part should have. Thus the string "+1-1-2-3" satisfies the type, yet it is a bad phone number string.],
+  [Look at the PhoneNumber type definition: +1-\$\{number\}-\$\{number\}-\$\{number\} says nothing about how many digits each number part should have. Thus the string "+1-1-2-3" satisfies the type, yet it is a bad phone number string.],
   [Let's step back for a second and look at the bank card codes or credit card CVV codes. We can define a type for a string that is just 4 digits in a row:],
   [1 
  2 
@@ -1706,7 +1643,7 @@ main nav p {
  7 
  type digit = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' 
  
- type PinCode = \` \${digit} \${digit} \${digit} \${digit} \` 
+ type PinCode = \` \$\{digit\} \$\{digit\} \$\{digit\} \$\{digit\} \` 
  
  const pin1 : PinCode = '1234' \/\\/ valid 
  const pin2 : PinCode = '123' \/\\/ invalid, too short 
@@ -1727,7 +1664,7 @@ main nav p {
  
  \/\\/ more accurate phone number type DOES NOT WORK 
  type PhoneNumber = 
- \`+1- \${digit} \${digit} \${digit} - \${digit} \${digit} \${digit} - \${digit} \${digit} \${digit} \${digit} \` 
+ \`+1- \$\{digit\} \$\{digit\} \$\{digit\} - \$\{digit\} \$\{digit\} \$\{digit\} - \$\{digit\} \$\{digit\} \$\{digit\} \$\{digit\} \` 
  
  const phone1 : PhoneNumber = '+1-123-456-7890' \/\\/ valid? 
  const phone2 : PhoneNumber = '123-456-7890' \/\\/ invalid? 
@@ -1755,12 +1692,12 @@ main nav p {
  \] 
  \/\\/ confirm that entering invalid phone number 
  \/\\/ leads the app to show an error message 
- invalidNumbers. forEach ( number =\> { 
+ invalidNumbers. forEach ( number =\> \{ 
  cy. get ( '\#error' ). should ( 'not.exist' ) 
  cy. get ( '\#phone' ). clear (). type ( number ) 
  cy. get ( '\#error' ). should ( 'be.visible' ) 
  cy. get ( '\#phone' ). clear () 
- })],
+ \})],
   [The above Cypress test simply verifies that entering a bad phone number string is handled by the app. Aside from this test, your testing code probably should only accept PhoneNumber . If you must make an exception (for checking the error handling for example), you can be explicit and use \@ts-expect-error when calling it:],
   [1 
  2 
@@ -1770,11 +1707,11 @@ main nav p {
  6 
  7 
  8 
- const ItemPage = { 
- visit ( id: ItemId, errorPage: boolean = false ) { 
+ const ItemPage = \{ 
+ visit ( id: ItemId, errorPage: boolean = false ) \{ 
  ... 
- } 
- } 
+ \} 
+ \} 
  
  \/\\/ \@ts-expect-error - confirm the error is shown for non-existent item ids 
  ItemPage . visit ( 'invalid-item-id' , true )],
@@ -1788,10 +1725,8 @@ main nav p {
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Email Marketing Costs: 5 Ways To Save Money In 2024],
   author: [Rachael O'Flaherty],
   source-name: [GoSquared Blog],
@@ -1802,6 +1737,7 @@ main nav p {
   [That said, email marketing platforms can be expensive. Add in poor marketing techniques, and your campaigns will cost even more to send.],
   [But things don’t have to be that way!],
   [Cut your email marketing costs today with these 5 top tips.],
+  [Tip \#1 – Compare Email Marketing Providers],
   [You can’t look to save money unless you know where things stand.],
   [Therefore, your first step is to compare other providers within the email marketing space.],
   [If you’ve been with your current email marketing provider for some time, you may not have the best deal going. Likewise, if you’ve only researched the Mailchimps and HubSpots of the marketing world, you may not know what else exists.],
@@ -1809,6 +1745,7 @@ main nav p {
   [After all, why put up with constant price hikes, to the point where your current package just isn’t affordable anymore?],
   [This is a common problem with other email providers at the minute. For you the customer, this just won’t do.],
   [Psst: Don’t have time to research? We’ve done all the work for you for free!: Every Email Platform Ranked From Cheapest To Most Expensive In 2023],
+  [Tip \#2 – Only Choose The Features You Really Need],
   [Like with any kind of software you need to purchase for your business, it’s easy to over-egg things.],
   [The simple fact is that if you’re not actively using or benefiting from certain features within your email marketing platform, you’re paying too much.],
   [To save money, you can either downgrade your subscription or stop paying for any non-essential features.],
@@ -1821,6 +1758,7 @@ main nav p {
   [Remember, email marketing offers a typical \$36 for every \$1 spent.],
   [In addition, the email marketing industry will reach \$17.9 billion by 2027, up from an expected \$10.8 billion in 2023.],
   [So if a boost in email ROI could solve the cost of your email marketing from being so expensive, some simple product education to get you there would be the cheapest solution of all!],
+  [Tip \#3 – Try Free Template Builders],
   [There might not be such a thing as a free lunch, but there are definitely free email template builders out there including the one we made here at GoSquared .],
   [Other free email template builders & general tools to try:],
   [Email automation for SaaS businesses (e-book)],
@@ -1829,10 +1767,12 @@ main nav p {
   [Email subject line tester],
   [Use free email tools to get started with your email marketing campaigns, or quit paying for costly tools that just don’t make good business sense.],
   [Are there any free email marketing platforms too you ask? Why yes there are!],
+  [Tip \#4 – Segment Your Lists],
   [How email marketing software works is that you pay for the number of contacts you have, plus the number of email sends you need.],
   [Needless to say, sending a message to EVERY subscriber for each campaign can soon eat away at your send limits. Plus, it’s going to be way more expensive to market your products and services this way.],
   [What we know about send-to-all email blasts is that they actually don’t work. Instead, A-grade marketers segment their lists by sending the right message to the right person at the right time.],
   [Segmentation is one of the easiest ways to save money on your email marketing without having to switch providers or upgrade. It will likely earn you better conversions too!],
+  [Tip \#5 – Clean Your List (Remove Inactive Contacts)],
   [Emailing anyone who never opens your emails is pouring money down the drain.],
   [Cleaning up your email list with a bit of email scrubbing will instantly save you cash in the email marketing department. The trouble is, nobody thinks to do it, or even realises they need to!],
   [That’s not going to be you now you’ve read this post.],
@@ -1840,6 +1780,7 @@ main nav p {
   [You’ll send a re-engagement email just to see if they are interested in hearing from you after all. If you get nada back, those contacts need to be removed from your list.],
   [Having a clean email list ensures only those most likely to read your emails, and also convert from email are left on your list.],
   [All of which avoids you paying to send emails which will never provide a return on that investment.],
+  [GoSquared – Start Your Free Trial Of Our Email Marketing Platform],
   [Having an email marketing platform which is catered to your exact needs is how to stop wasting money on email marketing.],
   [Let us help you with that one! We have two email marketing tools GoSquared Engage and EcoSend by GoSquared .],
   [Engage is our original email marketing tool, and EcoSend is our new sustainable email marketing tool. Both are available with a free trial on all plans, and a free plan geared towards smaller usage needs over on EcoSend.],
@@ -1853,11 +1794,10 @@ main nav p {
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Working With APIs in Python: Reading Public Data],
   author: [Real Python],
   source-name: [Real Python],
@@ -1880,7 +1820,7 @@ main nav p {
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [My Challenge to the Web Performance Community],
   author: [Erik Runyon],
   source-name: [Erik Runyon],
@@ -1901,7 +1841,7 @@ main nav p {
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [We're hiring a web developer],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
@@ -1912,19 +1852,19 @@ main nav p {
   [The visuals team (formerly known as news applications) is a crew of developers, designers, photojournalists and videographers in the newsroom at NPR headquarters in sunny Washington, DC — and we’re hiring.],
   [We work closely with editors and reporters to create data-driven news applications ( Playgrounds For Everyone ), fun and informative websites ( NPR’s Book Concierge ), web-native documentaries ( Planet Money Makes A T-shirt ), and charts and maps and videos and pictures and lots of things in-between .],
   [It’s great fun.],
-  [id="we-believe-strongly-in"\>We believe strongly in…],
+  [We believe strongly in…],
   [User-centered design],
   [Agile software development],
   [Open-source software, and being transparent in our methods],
-  [id="you-must-have"\>You must have…],
+  [You must have…],
   [Experience making things for the web (We’ve got a way we like to do things , but we love to meet folks with new talents!)],
   [Attention to detail and love for making things],
   [A genuine and friendly disposition],
-  [id="bonus-points-for"\>Bonus points for…],
+  [Bonus points for…],
   [An uncontrollable urge to write code to test your code],
   [Love for making audio and video experiences that are of the web, not just on the web],
   [Deep knowledge of Javascript and functional programming for the web],
-  [id="allow-me-to-persuade-you"\>Allow me to persuade you],
+  [Allow me to persuade you],
   [The newsroom is a crucible. We work on tight schedules with hard deadlines. That may sound stressful, but check this out: With every project we learn from our mistakes and refine our methods. It’s a fast-moving, volatile environment that drives you to be better at what you do, every day. It’s awesome. Job perks include…],
   [Live music at the Tiny Desk],
   [All the tote bags you can eat],
@@ -1941,7 +1881,7 @@ main nav p {
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Pym.js security alert],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
@@ -1951,19 +1891,19 @@ main nav p {
   [Note that if you’re using our Pym.js CDN , you’re good. We’ve already pushed out a fix.],
   [The severity of the security vulnerability is high. You should upgrade all projects that use Pym.js as soon as possible .],
   [We will file a public distributed CVE (Common Vulnerabilities and Exposures) early on the week of Feb 19th 2018 with more details about the vulnerability.],
-  [id="how-do-i-fix-it"\>How do I fix it?],
+  [How do I fix it?],
   [All users of pym.js must upgrade to 1.3.2. The easiest way to ensure you’re up-to-date is to use our CDN version that’s already patched and will continue to be updated.],
   [Pym.js most recent version is backwards compatible to all previous versions until version 0.1.1 (Released in June 18th 2014)],
-  [id="scenario-1---your-projects-use-a-pym-version-newer-than-release-011"\>Scenario 1 - Your projects use a pym version newer than release 0.1.1:],
+  [Scenario 1 - Your projects use a pym version newer than release 0.1.1:],
   [Replace your pym.js library reference ( both in the parent and the child ) with the minified or unminified version in the CDN (recommended to stay up-to-date with patches and new functionality). If you still prefer to use a local version of Pym then replace your Pym.js library with the new version 1.3.2 .],
   [Redeploy your projects],
-  [id="scenario-2---your-projects-use-a-pym-version-older-than-release-011"\>Scenario 2 - Your projects use a pym version older than release 0.1.1:],
+  [Scenario 2 - Your projects use a pym version older than release 0.1.1:],
   [Replace your pym.js library reference ( both in the parent and the child ) with the minified or unminified version in the CDN (recommended to stay up-to-date with patches and new functionality).],
   [If you still prefer to use a local version of Pym then replace your Pym.js library with the new version 1.3.2 .],
   [Since the functionality of this version of pym was more limited but incompatible you’ll need to go through your child (the embedded page) javascript code and search for sendHeightToParent() calls and replace them with sendHeight() that should be all in terms of code changes.],
   [Redeploy your projects],
   [Note: If you can not do any of the things above please remove your code from production until you can address it.],
-  [id="i-do-not-have-access-to-my-cms-what-should-i-do"\>I do not have access to my CMS what should I do?],
+  [I do not have access to my CMS what should I do?],
   [Contact your sysadmins/technical support and send them a link to this post giving it the maximum priority.],
 ),
   insert-map: (:),
@@ -1975,23 +1915,19 @@ main nav p {
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [HighEdWeb 2024],
   author: [Erik Runyon],
   source-name: [Erik Runyon],
   images: (),
   paragraphs: (
   [My presentation for HighEdWeb 2024 was an overview of many recent and forthcoming additions to the web platform, specifically HTML and CSS.],
-  [id="description"\>Description],
-  [id="css-is-awesome"\>CSS is Awesome],
+  [CSS is Awesome],
   [Over the past few years, CSS has been gaining features at a rate that is almost impossible to follow. Features that once required pre-processors are now native to the platform. Variables? Check. Nesting? Check. And now there’s even whispers of mixins.],
   [During this presentation we will examine many of the latest features added to CSS including layers, container queries, subgrid, nesting, and probably the dozens of others added since this presentation was submitted. We will discuss the syntax and look at real-world use-cases. We will also briefly cover what’s on the horizon for CSS.],
-  [id="presentation-links"\>Presentation Links],
   [Conference presentation details],
-  [id="web-platform-info"\>Web Platform Info],
   [Interop 2024 Dashboard],
-  [id="keeping-up-with-new-features"\>Keeping up with new features],
+  [Keeping up with new features],
   [New to the web platform],
   [Kevin Powell (YouTube)],
 ),
@@ -2001,11 +1937,9 @@ main nav p {
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [Streamlining Security Investigations with Agents],
   author: [Dominic Marks],
   source-name: [Slack Engineering],
@@ -2015,11 +1949,11 @@ main nav p {
   [We’re going to show you how we’re using AI agents to optimize our working efficiency and strengthen Slack’s security defenses. This post is the first in a series that will unpack some of the design choices we’ve made and the many things we’ve learnt along the way.],
   [At the end of May 2025 we had a rudimentary prototype of what would grow into our service. Initially, the service was not much more than a 300 word prompt.],
   [The prompt consisted of five sections:],
-  [style="font-weight: 400;"\> Orientation : “You are a security analyst that investigates security alerts \[…\]”],
-  [style="font-weight: 400;"\> Manifest : “You have access to the following data sources: \[…\]”],
-  [style="font-weight: 400;"\> Methodology : “Your investigation should follow these steps: \[…\] ”],
-  [style="font-weight: 400;"\> Formatting : “Produce a markdown report of the investigation: \[…\]”],
-  [style="font-weight: 400;"\> Classification : “Choose a response classification from: \[…\]”],
+  [Orientation : “You are a security analyst that investigates security alerts \[…\]”],
+  [Manifest : “You have access to the following data sources: \[…\]”],
+  [Methodology : “Your investigation should follow these steps: \[…\] ”],
+  [Formatting : “Produce a markdown report of the investigation: \[…\]”],
+  [Classification : “Choose a response classification from: \[…\]”],
   [We implemented a simple “stdio” mode MCP server to safely expose a subset of our data sources through the tool call interface. We repurposed a coding agent CLI as an execution environment for our prototype.],
   [The performance of our prototype implementation was highly variable: sometimes it would produce excellent, insightful results with an impressive ability to cross-reference evidence across different data sources. However, sometimes it would quickly jump to a convenient or spurious conclusion without adequately questioning its own methods. For the tool to be useful, we needed consistent performance. We needed greater control over the investigation process.],
   [We spent some time trying to refine our prompt, stressing the need to question assumptions, to verify data from multiple sources, and to make use of the complete set of data sources. While we did have some success with this approach, ultimately prompts are just guidelines; they’re not an effective method for achieving fine-grained control.],
@@ -2029,8 +1963,8 @@ main nav p {
   [This approach gave us more precise control at each step of the investigation process.],
   [From Prototype to Production],
   [While reviewing the literature, two papers particularly influenced our thinking:],
-  [style="font-weight: 400;"\> Meta-Prompting: Enhancing Language Models with Task-Agnostic Scaffolding (Stanford, OpenAI)],
-  [style="font-weight: 400;"\> Unleashing the Emergent Cognitive Synergy in Large Language Models: A Task-Solving Agent through Multi-Persona Self-Collaboration (Microsoft Research)],
+  [Meta-Prompting: Enhancing Language Models with Task-Agnostic Scaffolding (Stanford, OpenAI)],
+  [Unleashing the Emergent Cognitive Synergy in Large Language Models: A Task-Solving Agent through Multi-Persona Self-Collaboration (Microsoft Research)],
   [These papers describe prompting techniques that introduce multiple personas in the context of a single model invocation . The idea of modelling the investigation using defined personas was intriguing, but in order to maintain control we needed to represent our personas as independent model invocations. Security tabletop exercises, and how we might adapt their conventions to our application, were also a major source of inspiration during the design process.],
   [Our chosen design is built around a team of personas (agents) and the tasks they can perform in the investigation process. Each agent/task pair is modelled with a carefully defined structured output, and our application orchestrates the model invocations, propagating just the right context at each stage.],
   [The Director agent poses a question and domain expert agents respond, generating findings. The Critic agent reviews findings for quality and assembles a timeline using the most credible. The Director uses the high-quality findings and timeline to determine how to progress the investigation.],
@@ -2038,10 +1972,10 @@ main nav p {
   [The Investigation Director. The Director’s responsibility is to progress the investigation from start to finish. The Director interrogates the experts by forming a question, or set of questions, which become the expert’s prompt. The Director uses a journaling tool for planning and organizing the investigation as it progresses.],
   [A domain expert. Each domain expert has a unique set of domain knowledge and data sources. The experts’ responsibility is to produce findings from their data sources in response to the Director’s questions.],
   [We currently have four experts in our team:],
-  [style="font-weight: 400;"\> Access : Authentication, authorization and perimeter services.],
-  [style="font-weight: 400;"\> Cloud : Infrastructure, compute, orchestration, and networking.],
-  [style="font-weight: 400;"\> Code : Analysis of source code and configuration management.],
-  [style="font-weight: 400;"\> Threat : Threat analysis and intelligence data sources.],
+  [Access : Authentication, authorization and perimeter services.],
+  [Cloud : Infrastructure, compute, orchestration, and networking.],
+  [Code : Analysis of source code and configuration management.],
+  [Threat : Threat analysis and intelligence data sources.],
   [The Critic is a “meta-expert”. The Critic’s responsibility is to assess and quantify the quality of findings made by domain experts using a rubric we’ve defined. The Critic annotates the experts’ findings with its own analysis and a credibility score for each finding. The Critic’s conclusions are passed back to the Director, closing the loop. The weakly adversarial relationship between the Critic and the expert group helps to mitigate against hallucinations and variability in the interpretation of evidence.],
   [Because each agent/task pair is a separate model invocation we can vary all of the inputs, including the model version, output format, prompts, instructions, and tools. One of many ways we’re using this capability is to create a “knowledge pyramid”.],
   [At the bottom of the knowledge pyramid, domain experts generate investigation findings by interrogating complex data sources, requiring many tool calls. Analyzing the returned data can be very token-intensive. Next, the Critic’s review identifies the most interesting findings from that set. During the review process the Critic inspects the experts’ claims and the tool calls and tool results used to support them, which also incurs a significant token overhead. Once the Critic has completed its review, it assembles an up to date investigation timeline, integrating the running investigation timeline and newly gathered findings into a coherent narrative. The condensed timeline, consisting only of the most credible findings, is then passed back to the Director. This design allows us to strategically use low, medium, and high-cost models for the expert, critic, and director functions, respectively.],
@@ -2061,19 +1995,15 @@ main nav p {
   [Investigation Report : Credential Exposure in Monitoring Workflow \[ESCALATE\]],
   [Summary : While investigating \[command sequence\], the investigation uncovered a credential exposure elsewhere in the process ancestry chain.],
   [The investigation confirmed that the command execution on \[TIMESTAMP\] was part of a legitimate monitoring workflow using \[diagnostic tool\]. The process ancestry shows the expected execution chain. However, critical security concerns were identified:],
-  [style="font-weight: 400;"\> Credential Exposure : A credential was exposed in process command line parameters within the ancestry chain, creating significant security risk.],
-  [style="font-weight: 400;"\> Expert-Critic Contradiction : The expert incorrectly assessed credential handling as secure while the critic correctly identified exposed credentials, indicating analysis blind spots that require attention.],
+  [Credential Exposure : A credential was exposed in process command line parameters within the ancestry chain, creating significant security risk.],
+  [Expert-Critic Contradiction : The expert incorrectly assessed credential handling as secure while the critic correctly identified exposed credentials, indicating analysis blind spots that require attention.],
   [What is notable about this result is that the expert did not raise the credential exposure in its findings; the Critic noticed it as part of its meta-analysis of the expert’s work. The Director then chose to pivot the investigation to focus on this issue instead. In the report, the Director highlights both the need to mitigate the security issue, and to follow-up on the expert’s failure to properly identify the risk. We referred the credential exposure to the service owning team to resolve.],
   [We’re still at an early phase of our journey to streamline security investigations using AI agents, but we’re starting to see meaningful benefits. Our web-based dashboard allows us to launch and watch investigations in real time, and investigations yield interactive, verifiable reports that show how evidence was collected, interpreted, and judged. During our on-call shifts, we’re switching to supervising investigation teams, rather than doing the laborious work of gathering evidence. Unlike static detection rules, our agents often make spontaneous and unprompted discoveries, as we demonstrated in our example report. We’ve seen this occur many times, from highlighting weakness in IAM policies, to identifying problematic code and more.],
   [There’s a great deal more to say. We look forward to sharing more details of how our system works in future blog posts. As a preview of some future content from the series:],
-  [style="font-weight: 400;"\> Maintaining alignment and orientation during multi-persona investigations],
-  [style="font-weight: 400;"\> Using artifacts as a communication channel between investigation participants],
-  [style="font-weight: 400;"\> Human in the loop: human \/ agent collaboration in security investigations],
+  [Maintaining alignment and orientation during multi-persona investigations],
+  [Using artifacts as a communication channel between investigation participants],
+  [Human in the loop: human \/ agent collaboration in security investigations],
   [We wanted to give a shout out to all the people that have contributed to this journey:],
-  [style="font-weight: 400;"\> Chris Smith],
-  [style="font-weight: 400;"\> Abhi Rathod],
-  [style="font-weight: 400;"\> Dave Russell],
-  [style="font-weight: 400;"\> Nate Reeves],
   [Interested in taking on interesting projects, making people’s work lives easier, or just building some pretty cool forms? We’re hiring!],
   [Apply now],
 ),
@@ -2083,10 +2013,8 @@ main nav p {
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Testing Bash applications],
   author: [Nikita Sobolev],
   source-name: [Wemake Services],
@@ -2134,18 +2062,18 @@ all 4 examples tests passed in 0.014s.],
   [Installing shunit2 is not as easy as the previous tool. I was unable to find an adequate repository — there is some project on Google Code, there are a few on Github, left at various stages 3 and 5 years ago, and there are even some svn repositories. Consequently, it is impossible to make sense which release is the latest and how to download it. But those are small inconveniences.],
   [How do the tests themselves look? Here is a simplified example from the documentation:],
   [testAdding()
-{
+\{
  result=\`expr 1 + 2\`
  assertEquals \\
- "the result of '\${result}' was wrong" \\
- 3 "\${result}"
-}],
+ "the result of '\$\{result\}' was wrong" \\
+ 3 "\$\{result\}"
+\}],
   [And then running it:],
   [/bin/bash math\_test.sh testAdding Ran 1 test. OK],
   [This framework boasts of some unique features for its class:],
   [Ability to create test suites inside the code. This feature can be handy when you have tests for certain platforms or shells. In this case, you can use your own namespaces, such as zsh\_, debian\_, etc],
   [There setUp and teardown functions, which are run for each test; as well as oneTimeSetUp and oneTimeTearDown, which are run in the beginning and at the end of the testing session],
-  [Wide selection of various asserts, with the possibility of inputting numbers of the lines where the test fails, using \${\_ASSERT\_EQUALS\_}, however, this works only for the shells which support line numbering: bash (\>=3.0), ksh, pdksh, and zsh],
+  [Wide selection of various asserts, with the possibility of inputting numbers of the lines where the test fails, using \$\{\_ASSERT\_EQUALS\_\}, however, this works only for the shells which support line numbering: bash (\>=3.0), ksh, pdksh, and zsh],
   [You can skip tests],
   [Still, there are a few considerable disadvantages, which have pushed me away in the end:],
   [The project is almost inactive],
@@ -2155,13 +2083,13 @@ all 4 examples tests passed in 0.014s.],
   [Conclusion : it is a serious tool, which should be setup in a flexible enough way and make an indispensable part of your project. However, lack of structure in the shunit2 project itself is scary, so I decided to continue my search.],
   [roundup],
   [Initially, I was intrigued by this framework because it was written by the author of Sinatra for ruby. I also liked test syntax, which resembles the well-known mocha. All functions starting with it\_ inside the file are considered as tests and run by default. Interestingly, all tests run in their own sandbox, which allows avoiding extra errors. Here is how an example from the documentation looks:],
-  [describe "roundup(5)" before() {
+  [describe "roundup(5)" before() \{
  foo="bar"
-} after() {
+\} after() \{
  rm -f foo.txt
-} it\_runs\_before() {
+\} it\_runs\_before() \{
  test "\$foo" "=" "bar"
-}],
+\}],
   [There are no examples of the output. You need to install it and check by yourself, which is not that good, actually. On the plus side, though:],
   [Each test runs in its own sandbox, which is very convenient],
   [It is easy to use],
@@ -2176,13 +2104,13 @@ all 4 examples tests passed in 0.014s.],
   [I say it straight away — I chose this framework in the end. There is a lot to like. First of all, great documentation: examples of use, semantic versioning; and I would like to specifically point out the list of projects using bats. 
  
 bats uses the following approach: the test is considered complete if all the commands inside return code 0 (like set –e does). Here is how test written on bats look like:],
-  [\#!/usr/bin/env bats \@test "addition using bc" {
+  [\#!/usr/bin/env bats \@test "addition using bc" \{
  result="\$(echo 2+2 | bc)"
  \[ "\$result" -eq 4 \]
-} \@test "addition using dc" {
+\} \@test "addition using dc" \{
  result="\$(echo 2 2+p | dc)"
  \[ "\$result" -eq 4 \]
-}],
+\}],
   [And the output:],
   [\$ bats addition.bats
  ✓ addition using bc
@@ -2210,10 +2138,8 @@ Apart from peculiar test syntax, there are other interesting things about bats:]
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Mock The Location Href Property],
   author: [Gleb Bahmutov],
   source-name: [Gleb Bahmutov],
@@ -2235,10 +2161,10 @@ Apart from peculiar test syntax, there are other interesting things about bats:]
  2 
  3 
  4 
- setTimeout ( () =\> { 
+ setTimeout ( () =\> \{ 
  console . log ( 'changing window location to acme.com' ) 
  location. href = 'https:\/\/acme.com' 
- }, 1000 )],
+ \}, 1000 )],
   [The initial Cypress test does not prevent the navigation to "acme.com"],
   [cypress/e2e/spec.cy.js 1 
  2 
@@ -2247,13 +2173,13 @@ Apart from peculiar test syntax, there are other interesting things about bats:]
  5 
  6 
  7 
- it ( 'sets the location HREF' , () =\> { 
+ it ( 'sets the location HREF' , () =\> \{ 
  cy. visit ( 'index.html' ) 
  cy. contains ( 'h1' , 'Hello World' ) 
  \/\\/ confirm but do not allow the application 
  \/\\/ to navigate away to the new URL 
  \/\\/ Tip: app sets it using "location.href = ..." command 
- })],
+ \})],
   [🎁 The source code for this blog post is located in the repo bahmutov/with-window .],
   [I have recorded a short video going through this example and my solution],
   [Cannot stub Location object],
@@ -2267,9 +2193,9 @@ Apart from peculiar test syntax, there are other interesting things about bats:]
   [1 
  2 
  3 
- with (expression) { 
+ with (expression) \{ 
  ... 
- }],
+ \}],
   [The above syntax adds the expression result into the variable lookup chain. For example:],
   [1 
  2 
@@ -2283,12 +2209,12 @@ Apart from peculiar test syntax, there are other interesting things about bats:]
  let a, x, y; 
  const r = 10 ; 
  
- with ( Math ) { 
+ with ( Math ) \{ 
  \/\\/ where is PI, cos, and sin defined? 
  a = PI \* r \* r; 
  x = r \* cos ( PI ); 
  y = r \* sin ( PI \/ 2 ); 
- }],
+ \}],
   [In the example above, the PI , cos , and sin are properties of the Math object. By using with (Math) we are forcing the browser to look up these identifiers in the Math object (before going up to the window object).],
   [Tip: the with (expression) syntax is hard to read and understand. A simple spread operator would be much more preferable way of coding the above example:],
   [1 
@@ -2299,7 +2225,7 @@ Apart from peculiar test syntax, there are other interesting things about bats:]
  6 
  let a, x, y; 
  const r = 10 ; 
- const { PI , cos, sin } = Math 
+ const \{ PI , cos, sin \} = Math 
  a = PI \* r \* r; 
  x = r \* cos ( PI ); 
  y = r \* sin ( PI \/ 2 );],
@@ -2326,27 +2252,27 @@ Apart from peculiar test syntax, there are other interesting things about bats:]
  19 
  20 
  21 
- it ( 'sets the location HREF' , () =\> { 
- cy. intercept ( 'GET' , 'app.js' , ( req ) =\> { 
- req. continue ( ( res ) =\> { 
+ it ( 'sets the location HREF' , () =\> \{ 
+ cy. intercept ( 'GET' , 'app.js' , ( req ) =\> \{ 
+ req. continue ( ( res ) =\> \{ 
  \/\\/ wrap app's code with a fake window object 
  \/\\/ that has overwritten location object 
  res. body = \` 
- const fakeWindowObject = { 
- location: { 
+ const fakeWindowObject = \{ 
+ location: \{ 
  href: '', 
- }, 
- } 
- with (fakeWindowObject) { 
- \${res.body} 
- } 
+ \}, 
+ \} 
+ with (fakeWindowObject) \{ 
+ \$\{res.body\} 
+ \} 
  \` 
- }) 
- }). as ( 'appJs' ) 
+ \}) 
+ \}). as ( 'appJs' ) 
  cy. visit ( 'index.html' ) 
  cy. wait ( '\@appJs' ) 
  cy. contains ( 'h1' , 'Hello World' ) 
- })],
+ \})],
   [When the test runs, the application loads app.js and receives the following (modified) script],
   [app.js 1 
  2 
@@ -2359,17 +2285,17 @@ Apart from peculiar test syntax, there are other interesting things about bats:]
  9 
  10 
  11 
- const fakeWindowObject = { 
- location : { 
+ const fakeWindowObject = \{ 
+ location : \{ 
  href : '' , 
- }, 
- } 
- with (fakeWindowObject) { 
- setTimeout ( () =\> { 
+ \}, 
+ \} 
+ with (fakeWindowObject) \{ 
+ setTimeout ( () =\> \{ 
  console . log ( 'changing window location to acme.com' ) 
  location. href = 'https:\/\/acme.com' 
- }, 1000 ) 
- }],
+ \}, 1000 ) 
+ \}],
   [The test stays on the same page, but we do see the application printing "changing window location to acme.com".],
   [We need to verify the location.href property really changes to acme.com string. We can put the fake window object on the real window object. Then we can get its value using the cy.window command.],
   [One last tip: the browser caches the app.js resource, thus we need to remove the caching headers in order to receive the full JavaScript source code:],
@@ -2393,26 +2319,26 @@ Apart from peculiar test syntax, there are other interesting things about bats:]
  18 
  19 
  20 
- cy. intercept ( 'GET' , 'app.js' , ( req ) =\> { 
+ cy. intercept ( 'GET' , 'app.js' , ( req ) =\> \{ 
  \/\\/ delete common cache headers 
  \/\\/ so the browser gets the real app.js source code 
  delete req. headers \[ 'if-none-match' \] 
  delete req. headers \[ 'if-modified-since' \] 
- req. continue ( ( res ) =\> { 
+ req. continue ( ( res ) =\> \{ 
  \/\\/ wrap app's code with a fake window object 
  \/\\/ that has overwritten location object 
  res. body = \` 
- window.fakeWindowObject = { 
- location: { 
+ window.fakeWindowObject = \{ 
+ location: \{ 
  href: '', 
- }, 
- } 
- with (window.fakeWindowObject) { 
- \${res.body} 
- } 
+ \}, 
+ \} 
+ with (window.fakeWindowObject) \{ 
+ \$\{res.body\} 
+ \} 
  \` 
- }) 
- }). as ( 'appJs' )],
+ \}) 
+ \}). as ( 'appJs' )],
   [Proxy to the real location],
   [We don't want to create a completely fake location object, since we want to be able to use the real properties and methods in Location.prototype . Instead of plain object, our fake location can proxy to the real thing:],
   [1],
@@ -2465,43 +2391,40 @@ Apart from peculiar test syntax, there are other interesting things about bats:]
   [48],
   [49],
   [50],
-  [it ( 'sets the location HREF' , () =\> {],
-  [cy. intercept ( 'GET' , 'app.js' , ( req ) =\> {],
   [\/\\/ delete common cache headers],
   [\/\\/ so the browser gets the real app.js source code],
   [delete req. headers \[ 'if-none-match' \]],
   [delete req. headers \[ 'if-modified-since' \]],
-  [req. continue ( ( res ) =\> {],
   [\/\\/ wrap app's code with a fake window object],
   [\/\\/ that has overwritten location object],
   [res. body = \`],
   [let href = ''],
-  [const fakeLocation = new Proxy(location, {],
-  [set(target, prop, value) {],
-  [if (prop === 'href') {],
+  [const fakeLocation = new Proxy(location, \{],
+  [set(target, prop, value) \{],
+  [if (prop === 'href') \{],
   [href = value],
   [\/\\/ do not allow the app to navigate away],
   [return false],
-  [}],
+  [\}],
   [target\[prop\] = value],
   [return true],
-  [},],
-  [get(target, prop) {],
-  [if (prop === 'href') {],
+  [\},],
+  [get(target, prop) \{],
+  [if (prop === 'href') \{],
   [return href],
-  [}],
+  [\}],
   [return target\[prop\]],
-  [},],
-  [})],
-  [window.fakeWindowObject = {],
+  [\},],
+  [\})],
+  [window.fakeWindowObject = \{],
   [location: fakeLocation,],
-  [}],
-  [with (window.fakeWindowObject) {],
-  [\${res.body}],
-  [}],
+  [\}],
+  [with (window.fakeWindowObject) \{],
+  [\$\{res.body\}],
+  [\}],
   [\`],
-  [})],
-  [}). as ( 'appJs' )],
+  [\})],
+  [\}). as ( 'appJs' )],
   [cy. visit ( 'index.html' )],
   [cy. wait ( '\@appJs' )],
   [cy. contains ( 'h1' , 'Hello World' )],
@@ -2514,7 +2437,7 @@ Apart from peculiar test syntax, there are other interesting things about bats:]
   [\/\\/ and the test passes],
   [. its ( 'location' )],
   [. should ( 'have.property' , 'href' , 'https:\/\/acme.com' )],
-  [})],
+  [\})],
   [To see the proxy in action, I will modify the console.log message the application prints:],
   [app.js 1 
  2 
@@ -2523,13 +2446,13 @@ Apart from peculiar test syntax, there are other interesting things about bats:]
  5 
  6 
  7 
- setTimeout ( () =\> { 
+ setTimeout ( () =\> \{ 
  console . log ( 
  'changing window location from %s to acme.com' , 
  location. hostname , 
  ) 
  location. href = 'https:\/\/acme.com' 
- }, 1000 )],
+ \}, 1000 )],
   [The test runs and we see the real host name, yet href = ... assignment is trapped.],
   [Tip: if you do not know the URL value, simply request it to make sure it is valid using cy.request command],
   [1 
@@ -2551,16 +2474,14 @@ Apart from peculiar test syntax, there are other interesting things about bats:]
 ),
   insert-map: (:),
   inline-pq: pull-quote([By using with (Math) we are forcing the browser to look up these identifiers in the Math object (before going up to the window object).], [Gleb Bahmutov]),
-  inline-pq-idx: 56,
+  inline-pq-idx: 54,
   word-count: 1393,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Thousands of elderly twins assure me that my kids will be alright],
   author: [Robert Heaton],
   source-name: [Robert Heaton],
@@ -2572,13 +2493,13 @@ Apart from peculiar test syntax, there are other interesting things about bats:]
   [Caplan presents his arguments as a gift, one that frees parents from eighteen years of guilt and wasted effort. In his telling there’s little that parents can do to influence their children in the long-run, so there’s no point and no duty for them to try. Kids have genes and free will; now let go and enjoy your time together.],
   [Caplan knows that some parents will rebel against his arguments. I certainly did. I heard him telling me that I don’t matter, at least not in the ways that I’d hoped. I want parenting to be a deep, complex vocation, and I want to spend the coming decades playing a domestic game of skill and consequence. The idea of having children who I have no influence over is scary, like living with werewolves. Randomness and outside forces are everywhere and the kids are mutating while I sleep.],
   [But even though I want to be relevant, I don’t want to waste my time. Begrudgingly, I kept reading.],
-  [id="whats-the-evidence"\>What’s the evidence?],
+  [What’s the evidence?],
   [Caplan’s claim that parents have little long-term influence on their children seems absurd at first. Contra Caplan, I see my influence in my children every day. Oscar likes the same music as me. He used to be terrified of playgrounds but Gaby screwed a wooden ladder to his bedroom wall and now he’s mostly normal. I stubbed my toe and shouted “fuck!” and he whispered “fuck indeed daddy, you sound frustrated,” failing to calm me in the same way that I fail to calm him. This is surely common sense.],
   [But common sense grows in unscientific environments. Nature and nurture are conflated, we don’t see the aggregates, and we don’t see the long-term. Kaplan agrees that parents have huge influence over their children in the short-term, but he also argues that this influence fades, sometimes fast, sometimes slow, but it does fade, and it vanishes completely when they grow up and finish becoming whoever they are. Kids are resilient to setbacks, but they’re resilient to assistance too.],
   [In order to rigorously test theories like this, researchers study large groups of children. However, most kids are useless to them. Suppose that two happy parents have and raise a child. The child grows up with their parents, and in time they become a happy adult too. It’s impossible to know whether the child’s happiness comes from happy genes that they inherited from their happy parents, or from the happy environment that their happy parents raised them in. Their parents’ genes and choices are irreversibly mixed together. Even with a huge database of children, parents, and measurements of happiness, causalities are impossible to itemise.],
   [Fortunately, researchers can still extract good data from special children, like identical twins who were separated at birth. These kids give researchers two copies of the same genes, raised in different environments. Since separated identical twins share genes but not environments, any systematic differences between them must be due to their different upbringings. If identical twins raised separately bear no resemblance to each other but are similar to their adopted siblings, this would suggest that the twins were shaped by their divergent upbringings. If the twins remain similar, despite growing up entirely separately, this would suggest that they were made by their identical genes.],
   [Researchers slice and measure these children, pulling apart the effects of nature and nurture. Twins separated at birth are the gold standard, but non-twin adoptees and non-adopted twins can work too. The researchers find or build databases of useful children (who may now be adults), and compare their grades (perhaps from school records), income (perhaps from tax records) or personalities (perhaps from administering personality tests directly). The evidence from this data is strong and consistent: a near-zero effect of upbringing on character, happiness, and almost everything else.],
-  [id="should-i-pay-attention-to-the-evidence"\>Should I pay attention to the evidence?],
+  [Should I pay attention to the evidence?],
   [The studies are clever, but are they valid? They control naturally for almost everything, but they still aren’t perfect. For example, maybe parents who choose to adopt are meaningfully different to the average parent, meaning that conclusions based solely on them don’t generalise to the rest of the population. Maybe parents who choose to adopt and then also agree to be part of a long-term study are even more different. Maybe women who have twins are different. Maybe twins themselves are different too.],
   [But even if these sampling biases are material, I doubt that they’re large enough to tear down the studies’ broad conclusions. I’d guess that adoptees and twins separated at birth are a good enough sample to represent humanity, and that even if they aren’t fully representative, they probably aren’t masking a giant effect that skips twins and applies only to the rest of us. If researchers were able to fully control for sampling biases then this might shift their estimate of the effect of parental influence from “incredibly low” to merely “very, very low”.],
   [Caplan admits that the studies are primarily focussed on the Western middle class, because that’s where the data is. This hurts the studies’ generalisability but binds me - an orthodox member of their class - even tighter. All said, I think I have to assume that the studies pointing towards the primacy of genes are valid for people like me.],
@@ -2590,7 +2511,7 @@ Apart from peculiar test syntax, there are other interesting things about bats:]
   [I suspect – though I’m far from sure – that the Caplan Family School is such an exceptional experience that ordinary twin and adoption evidence isn’t relevant. For example, my sons are plausibly the only 12-year-olds in the nation taking a college class in labor economics.],
   [Should you or I try to do this too? It’s almost always delusional to put yourself and your children in a category called “exceptional”, and this might not even be a category that you want to be in. I do wonder, though, where does “normal” end and “exceptional” begin? Where’s the elastic limit, and how weird is it really? Is anything less than the Williams sisters a waste of time? Or does the curve bend much sooner than that? Even if you don’t want to do anything too odd by modern standards, a lot of the data in these studies comes from dead twins brought up decades ago. Today’s parenting zeitgeist might not necessarily be better than the old days, but it’s certainly different. How well does data from a different era in parenting generalise to today? Is it possible that even normal parenting today is different enough from several decades ago to have a material impact?],
   [Is reading a respected parenting manual and teaching your toddler to add and multiply too normal and futile, or just crazy enough that it might work? I don’t want to be Richard Williams and I couldn’t even be Bryan Caplan, but I could be a bit weirder than average if that was worthwhile and harmless. I might be inventing straws to clutch at, but as far as I know there’s no cast iron science out here so we’re allowed to make things up again and I can assert a world in which I have agency.],
-  [id="what-should-i-do-now"\>What should I do now?],
+  [What should I do now?],
   [I’ve drilled a tenuous airhole in Caplan’s claims, but his evidence is still strong, spiky, and hard to digest without a rupture in my plans. Normally when confronted with new evidence you can wisely say “it’s probably a combination of everything” and then maybe do a bit more or less of something, or not. However, Caplan argues specifically that parenting is not a combination of everything. Everything is nature, at least in the long-term. His arguments are backed by simple and compelling studies that are hard to wishy-wash away and that block the easy path back to the status quo.],
   [But it’s drastic to change how you raise your kids based on a short book and some studies that you aren’t going to read. The book’s claims are extreme, at least compared to what I used to think, and it’s hard to build enough confidence to change your mind about things that matter to you. I rarely need to develop solid beliefs about messy, unsettled topics that I’m not an expert in. I’ve skimmed a few paper abstracts and some reviews of the book, but that doesn’t feel like enough. Caplan seems smart and honest but this isn’t settled science and how do I know he’s not missing or ignoring grave methodological gaffes?],
   [I can’t unread the book, and as someone who likes to consider themselves a somewhat scientific, data-driven parent, I can’t ignore it. So what should I do now?],
@@ -2610,18 +2531,16 @@ Apart from peculiar test syntax, there are other interesting things about bats:]
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Win the cloud with Winnaker!],
   author: [Target Brands, Inc],
   source-name: [Target Tech],
   images: (),
   paragraphs: (
-  [id="win-the-cloud-with-winnaker"\>Win the cloud with Winnaker!],
+  [Win the cloud with Winnaker!],
   [I am happy to announce that we, at Target, decided to open source a tool called Winnaker. This tool will allow the user to audit Spinnaker from an end user point of view.],
-  [id="but-first-what-is-spinnaker"\>But first what is Spinnaker?],
+  [But first what is Spinnaker?],
   [The first time I heard the word Spinnaker, my reaction was, “wait, what does that even mean in English?”],
   [Shortly after, I found myself implementing a demo of Spinnaker as a potential replacement for our internal cloud deployment tool.],
   [Spinnaker is a cloud agnostic continuous delivery tool, which means we can push our code to any cloud provider we like. In fact, Spinnaker takes agnosticism to the next level by introducing three abstractions.],
@@ -2630,9 +2549,9 @@ Apart from peculiar test syntax, there are other interesting things about bats:]
   [Security groups],
   [By enforcing this level of simplicity, it allows the implementation of deployment strategies such as Highlander, Red/Black on a vast different type of infrastructure (VM, Container, Kubernetes, public cloud, private cloud) with a high level of confidence and an incredible level of ease of use for the app developers.],
   [Spinnaker also roots for the immutable infrastructure design pattern. Baking your image once and deploying the image everywhere is another bold move that differentiates Spinnaker from the other tools.],
-  [id="why-winnaker-"\>Why Winnaker ?],
+  [Why Winnaker ?],
   [Short answer is because of automation!],
-  [id="test-the-functionality-of-the-cd-system-as-a-whole"\>Test the functionality of the CD system as a whole.],
+  [Test the functionality of the CD system as a whole.],
   [Spinnaker has different components (CloudDriver, Rosco, Deck,…).
 Each of these components have their own unit tests and health checks that can be monitored.],
   [We learned the hard way that relying only on component health checks is not effective enough to ensure developers won’t face any error when they deploy their apps.],
@@ -2643,12 +2562,13 @@ Each of these components have their own unit tests and health checks that can be
   [So we decided to audit Spinnaker and cloud’s whole functionality with a sample app. If baking and deploying our sample app in different accounts and regions passes, then we are positive that it works!],
   [However, that kind of testing is time consuming and boring for humans. Winnaker brings back the fun to the testing.],
   [Winnaker is the product of automating the auditing of your deployment process.],
-  [id="automate-troubleshooting"\>Automate Troubleshooting],
   [Every error in Spinnaker means something new that we document, but who reads the documentation? Additionally, documentation goes out of date all the time.],
   [Winnaker has a list of known error messages and it comes up with suggestions that you may want to use based on the error message.],
   [For instance, this is an example of a Winnaker output :],
+  [- Failed for : This application has no explicit mapping for /error
+- Suggestion : Check Deck],
   [And you can add your own suggestion for errors.],
-  [id="what-are-the-features-of-winnaker-"\>What are the features of Winnaker ?],
+  [What are the features of Winnaker ?],
   [Start a pipeline on Spinnaker with different options (force baking, deploy,…)],
   [Get stage details and return the non-zero error code.],
   [Screenshot the stages],
@@ -2656,13 +2576,13 @@ Each of these components have their own unit tests and health checks that can be
   [Integrates with HipChat],
   [Troubleshoot suggestions],
   [Works with different cloud providers.],
-  [id="how-do-you-install-winnaker-"\>How do you install Winnaker ?],
+  [How do you install Winnaker ?],
   [There is nothing to install. Everything ships in a docker container. Winnaker uses chromedriver, python, virtualdisplay and selenium. Installing any of those things separately can be a recipe for headache sometimes.],
-  [id="what-do-you-need-"\>What do you need ?],
+  [What do you need ?],
   [A Spinnaker URL],
   [A sample app and sample pipeline to run],
   [More extensive documentation is located in Winnaker’s GitHub repository. Please feel free to open issues or submit PRs.],
-  [id="about-the-author"\>About the Author],
+  [About the Author],
   [Medya Ghazizadeh is a Senior Engineer and part of Target’s Cloud Platform Engineering team.],
 ),
   insert-map: (:),
@@ -2671,10 +2591,8 @@ Each of these components have their own unit tests and health checks that can be
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Cypress Dependencies Through A Docker Image],
   author: [Gleb Bahmutov],
   source-name: [Gleb Bahmutov],
@@ -2807,8 +2725,8 @@ Each of these components have their own unit tests and health checks that can be
   [package-hash:],
   [runs-on: ubuntu-latest],
   [outputs:],
-  [hash: \${{ steps.hash.outputs.checksum }}],
-  [tag: \${{ steps.tag-exists.outputs.tag }}],
+  [hash: \$\{\{ steps.hash.outputs.checksum \}\}],
+  [tag: \$\{\{ steps.tag-exists.outputs.tag \}\}],
   [steps:],
   [- name: Checkout 🛎️],
   [\# https:\/\/github.com/actions/checkout],
@@ -2819,7 +2737,6 @@ Each of these components have their own unit tests and health checks that can be
   [package.json],
   [- name: Package.json + Dockerfile checksum],
   [id: hash],
-  [run: echo "checksum=\$ {{ hashFiles('package.json', 'Dockerfile') }} " \>\> \$GITHUB\_OUTPUT],
   [\# https:\/\/github.com/tyriis/docker-image-tag-exists],
   [- name: Check if Docker image tag exists],
   [id: tag-exists],
@@ -2828,13 +2745,10 @@ Each of these components have their own unit tests and health checks that can be
   [registry: docker.io],
   [repository: bahmutov/cy],
   [\# The container image tag],
-  [tag: \${{ steps.hash.outputs.checksum }}],
+  [tag: \$\{\{ steps.hash.outputs.checksum \}\}],
   [- name: Report the check results],
   [\# print the tag result into Github Actions summary],
   [run: |],
-  [echo "\#\# Docker image check" \>\> \$GITHUB\_STEP\_SUMMARY],
-  [echo "Package.json + Dockerfile hash: \${{ steps.hash.outputs.checksum }}" \>\> \$GITHUB\_STEP\_SUMMARY],
-  [echo "Docker image bahmutov/cy:\${{ steps.hash.outputs.checksum }} \*\*\${{ steps.tag-exists.outputs.tag }}\*\*" \>\> \$GITHUB\_STEP\_SUMMARY],
   [Build and push],
   [Great, let's build the Docker image if one is missing. We could have a job with every internal step using a condition:],
   [1 
@@ -2860,12 +2774,12 @@ Each of these components have their own unit tests and health checks that can be
  needs: package-hash 
  steps: 
  - name: Checkout 🛎️ 
- if: \${{ needs.package-hash.outputs.tag == 'not found' }} 
+ if: \$\{\{ needs.package-hash.outputs.tag == 'not found' \}\} 
  \# https:\/\/github.com/actions/checkout 
  uses: actions/checkout\@v6 
  
  - name: Log in to Docker Hub 
- if: \${{ needs.package-hash.outputs.tag == 'not found' }} 
+ if: \$\{\{ needs.package-hash.outputs.tag == 'not found' \}\} 
  \# https:\/\/github.com/docker/login-action 
  uses: docker/login-action\@f4ef78c080cd8ba55a85445d5b36e214a81df20a 
  ...],
@@ -2924,8 +2838,8 @@ Each of these components have their own unit tests and health checks that can be
   [package-hash:],
   [runs-on: ubuntu-latest],
   [outputs:],
-  [hash: \${{ steps.hash.outputs.checksum }}],
-  [tag: \${{ steps.tag-exists.outputs.tag }}],
+  [hash: \$\{\{ steps.hash.outputs.checksum \}\}],
+  [tag: \$\{\{ steps.tag-exists.outputs.tag \}\}],
   [steps:],
   [...],
   [build-docker-image:],
@@ -2933,7 +2847,7 @@ Each of these components have their own unit tests and health checks that can be
   [\# but only if it does not exist yet],
   [runs-on: ubuntu-latest],
   [needs: package-hash],
-  [if: \${{ needs.package-hash.outputs.tag == 'not found' }}],
+  [if: \$\{\{ needs.package-hash.outputs.tag == 'not found' \}\}],
   [steps:],
   [- name: Checkout 🛎️],
   [\# https:\/\/github.com/actions/checkout],
@@ -2942,14 +2856,14 @@ Each of these components have their own unit tests and health checks that can be
   [\# https:\/\/github.com/docker/login-action],
   [uses: docker/login-action\@f4ef78c080cd8ba55a85445d5b36e214a81df20a],
   [with:],
-  [username: \${{ secrets. DOCKER\_USERNAME }}],
-  [password: \${{ secrets. DOCKER\_PASSWORD }}],
+  [username: \$\{\{ secrets. DOCKER\_USERNAME \}\}],
+  [password: \$\{\{ secrets. DOCKER\_PASSWORD \}\}],
   [\# we could also use the action],
   [\# https:\/\/github.com/docker/build-push-action],
   [- name: Build docker image],
-  [run: docker build -t bahmutov/cy:\${{ needs.package-hash.outputs.hash }} .],
+  [run: docker build -t bahmutov/cy:\$\{\{ needs.package-hash.outputs.hash \}\} .],
   [- name: Push Docker images],
-  [run: docker push bahmutov/cy:\${{ needs.package-hash.outputs.hash }}],
+  [run: docker push bahmutov/cy:\$\{\{ needs.package-hash.outputs.hash \}\}],
   [Now that we have Docker image build (if needed), let's use it. We can define another job that simply uses the bahmutov/cy: container, but it cannot depend on the build-docker-image job - if the job is skipped on GitHub Actions, any job that depends on it will be skipped too. Luckily, there is an easy fix: simply have yet another job that will simply "ping" build-docker-image job status. Once the build-docker-image job finishes or is skipped, our "ping" job resolves. The "ping" is done using lewagon/wait-on-check-action 3rd-party action. Here is how the last part of the workflow looks:],
   [.github/workflows/ci.yml 1],
   [2],
@@ -3023,7 +2937,7 @@ Each of these components have their own unit tests and health checks that can be
   [\# but only if it does not exist yet],
   [runs-on: ubuntu-latest],
   [needs: package-hash],
-  [if: \${{ needs.package-hash.outputs.tag == 'not found' }}],
+  [if: \$\{\{ needs.package-hash.outputs.tag == 'not found' \}\}],
   [...],
   [wait-for-build:],
   [\# a trick to allow other jobs to run, even if the "build" job is skipped],
@@ -3036,16 +2950,16 @@ Each of these components have their own unit tests and health checks that can be
   [\# https:\/\/github.com/lewagon/wait-on-check-action],
   [uses: lewagon/wait-on-check-action\@v1.4.1],
   [with:],
-  [ref: \${{ github.ref }}],
+  [ref: \$\{\{ github.ref \}\}],
   [check-name: build-docker-image],
-  [repo-token: \${{ secrets. GITHUB\_TOKEN }}],
+  [repo-token: \$\{\{ secrets. GITHUB\_TOKEN \}\}],
   [\# seconds between checks],
   [wait-interval: 10],
   [test:],
   [\# this job finishes after the Docker image is built (or exists already)],
   [runs-on: ubuntu-latest],
   [needs: \[ package-hash , wait-for-build \]],
-  [container: bahmutov/cy:\${{ needs.package-hash.outputs.hash }}],
+  [container: bahmutov/cy:\$\{\{ needs.package-hash.outputs.hash \}\}],
   [steps:],
   [- name: Checkout 🛎️],
   [\# https:\/\/github.com/actions/checkout],
@@ -3077,24 +2991,6 @@ Each of these components have their own unit tests and health checks that can be
  package.json 
  package-lock.json],
   [The current directory is set to \/ , so we need to make sure Node and Cypress can find the DEV dependencies. We do it by creating the symlink:],
-  [1 
- 2 
- 3 
- 4 
- 5 
- 6 
- 7 
- 8 
- 9 
- /e2e\/ 
- cypress\_cache\/ 
- node\_modules\/ 
- \/ \/ 
- node\_modules -\> /e2e/node\_modules\/ 
- cypress\/ 
- cypress.conf.js 
- package.json 
- package-lock.json],
   [We tell Cypress NPM module to find its binary in the /e2e/cypress\_cache\/ folder by using the environment variable baked into the Dockerfile: ENV CYPRESS\_CACHE\_FOLDER=/e2e/cypress\_cache .],
   [Run on GitHub Actions],
   [Let's confirm that it works. We can push the code for the very first time, or change package.json or Dockerfile],
@@ -3131,7 +3027,7 @@ Each of these components have their own unit tests and health checks that can be
   [\# and verifies the Cypress GitHub action works],
   [runs-on: ubuntu-latest],
   [needs: \[ package-hash , wait-for-build \]],
-  [container: bahmutov/cy:\${{ needs.package-hash.outputs.hash }}],
+  [container: bahmutov/cy:\$\{\{ needs.package-hash.outputs.hash \}\}],
   [steps:],
   [- name: Checkout 🛎️],
   [\# https:\/\/github.com/actions/checkout],
@@ -3278,7 +3174,7 @@ Each of these components have their own unit tests and health checks that can be
   [on: push],
   [env:],
   [REGISTRY: ghcr.io],
-  [IMAGE\_NAME: \${{ github.repository }}],
+  [IMAGE\_NAME: \$\{\{ github.repository \}\}],
   [jobs:],
   [\# computes the hash of package.json and and stores it in the output],
   [\# also checks if the Docker image with this tag already exists],
@@ -3288,8 +3184,8 @@ Each of these components have their own unit tests and health checks that can be
   [package-hash:],
   [runs-on: ubuntu-latest],
   [outputs:],
-  [hash: \${{ steps.hash.outputs.checksum }}],
-  [tag: \${{ steps.tag-exists.outputs.tag }}],
+  [hash: \$\{\{ steps.hash.outputs.checksum \}\}],
+  [tag: \$\{\{ steps.tag-exists.outputs.tag \}\}],
   [steps:],
   [- name: Checkout 🛎️],
   [\# https:\/\/github.com/actions/checkout],
@@ -3300,24 +3196,18 @@ Each of these components have their own unit tests and health checks that can be
   [package.json],
   [- name: Package.json + Dockerfile checksum],
   [id: hash],
-  [run: echo "checksum=\$ {{ hashFiles('package.json', 'Dockerfile') }} " \>\> \$GITHUB\_OUTPUT],
   [\# https:\/\/github.com/tyriis/docker-image-tag-exists],
   [- name: Check if Docker image tag exists],
   [id: tag-exists],
   [uses: tyriis/docker-image-tag-exists\@v2.1.0],
   [with:],
-  [registry: \${{ env. REGISTRY }}],
-  [repository: \${{ env. IMAGE\_NAME }}],
+  [registry: \$\{\{ env. REGISTRY \}\}],
+  [repository: \$\{\{ env. IMAGE\_NAME \}\}],
   [\# The container image tag],
-  [tag: \${{ steps.hash.outputs.checksum }}],
+  [tag: \$\{\{ steps.hash.outputs.checksum \}\}],
   [- name: Report the check results],
   [\# print the tag result into Github Actions summary],
   [run: |],
-  [echo "\#\# Docker image check" \>\> \$GITHUB\_STEP\_SUMMARY],
-  [echo "Registry: \${{ env. REGISTRY }}" \>\> \$GITHUB\_STEP\_SUMMARY],
-  [echo "Image: \${{ env. REGISTRY }}/\${{ env. IMAGE\_NAME }}" \>\> \$GITHUB\_STEP\_SUMMARY],
-  [echo "Package.json + Dockerfile hash: \${{ steps.hash.outputs.checksum }}" \>\> \$GITHUB\_STEP\_SUMMARY],
-  [echo "Docker image \${{ env. REGISTRY }}/\${{ env. IMAGE\_NAME }}:\${{ steps.hash.outputs.checksum }} \*\*\${{ steps.tag-exists.outputs.tag }}\*\*" \>\> \$GITHUB\_STEP\_SUMMARY],
   [build-docker-image:],
   [\# builds the Docker image and pushes it to the registry],
   [\# but only if it does not exist yet],
@@ -3327,7 +3217,7 @@ Each of these components have their own unit tests and health checks that can be
   [\# don't forget to allow workflows to write to GHCR],
   [\# https:\/\/github.com\/ \/ /settings/actions],
   [packages: write],
-  [if: \${{ needs.package-hash.outputs.tag == 'not found' }}],
+  [if: \$\{\{ needs.package-hash.outputs.tag == 'not found' \}\}],
   [steps:],
   [- name: Checkout 🛎️],
   [\# https:\/\/github.com/actions/checkout],
@@ -3336,15 +3226,15 @@ Each of these components have their own unit tests and health checks that can be
   [\# https:\/\/github.com/docker/login-action],
   [uses: docker/login-action\@f4ef78c080cd8ba55a85445d5b36e214a81df20a],
   [with:],
-  [registry: \${{ env. REGISTRY }}],
-  [username: \${{ github.actor }}],
-  [password: \${{ secrets. GITHUB\_TOKEN }}],
+  [registry: \$\{\{ env. REGISTRY \}\}],
+  [username: \$\{\{ github.actor \}\}],
+  [password: \$\{\{ secrets. GITHUB\_TOKEN \}\}],
   [\# we could also use the action],
   [\# https:\/\/github.com/docker/build-push-action],
   [- name: Build docker image],
-  [run: docker build -t \${{ env. REGISTRY }}/\${{ env. IMAGE\_NAME }}:\${{ needs.package-hash.outputs.hash }} .],
+  [run: docker build -t \$\{\{ env. REGISTRY \}\}/\$\{\{ env. IMAGE\_NAME \}\}:\$\{\{ needs.package-hash.outputs.hash \}\} .],
   [- name: Push Docker image to the correct registry],
-  [run: docker push \${{ env. REGISTRY }}/\${{ env. IMAGE\_NAME }}:\${{ needs.package-hash.outputs.hash }}],
+  [run: docker push \$\{\{ env. REGISTRY \}\}/\$\{\{ env. IMAGE\_NAME \}\}:\$\{\{ needs.package-hash.outputs.hash \}\}],
   [wait-for-build:],
   [\# a trick to allow other jobs to run, even if the "build" job is skipped],
   [\# runs in parallel with the "build" job and keeps checking if it is finished],
@@ -3356,9 +3246,9 @@ Each of these components have their own unit tests and health checks that can be
   [\# https:\/\/github.com/lewagon/wait-on-check-action],
   [uses: lewagon/wait-on-check-action\@v1.4.1],
   [with:],
-  [ref: \${{ github.ref }}],
+  [ref: \$\{\{ github.ref \}\}],
   [check-name: build-docker-image],
-  [repo-token: \${{ secrets. GITHUB\_TOKEN }}],
+  [repo-token: \$\{\{ secrets. GITHUB\_TOKEN \}\}],
   [\# seconds between checks],
   [wait-interval: 10],
   [test:],
@@ -3366,7 +3256,7 @@ Each of these components have their own unit tests and health checks that can be
   [runs-on: ubuntu-latest],
   [needs: \[ package-hash , wait-for-build \]],
   [\# seems we cannot use the env variables here],
-  [container: ghcr.io/\${{ github.repository }}:\${{ needs.package-hash.outputs.hash }}],
+  [container: ghcr.io/\$\{\{ github.repository \}\}:\$\{\{ needs.package-hash.outputs.hash \}\}],
   [steps:],
   [- name: Checkout 🛎️],
   [\# https:\/\/github.com/actions/checkout],
@@ -3386,7 +3276,7 @@ Each of these components have their own unit tests and health checks that can be
  3 
  env: 
  REGISTRY: ghcr.io 
- IMAGE\_NAME: \${{ github.repository }}],
+ IMAGE\_NAME: \$\{\{ github.repository \}\}],
   [Nice.],
   [Let's say you want to use private Docker images stored on Google Artifact Registry . You need to create it on GCP, then create a Service Account to access it from CI (this is simpler for me than using Workload identity), see the docs .],
   [So here is my Artifact Registry called gleb-google-artifact-registry-test running inside us-east4-docker.pkg.dev configured to run under the project helloworld-330918],
@@ -3552,8 +3442,8 @@ Each of these components have their own unit tests and health checks that can be
   [package-hash:],
   [runs-on: ubuntu-latest],
   [outputs:],
-  [hash: \${{ steps.hash.outputs.checksum }}],
-  [tag: \${{ steps.tag-exists.outputs.tag }}],
+  [hash: \$\{\{ steps.hash.outputs.checksum \}\}],
+  [tag: \$\{\{ steps.tag-exists.outputs.tag \}\}],
   [steps:],
   [- name: Checkout 🛎️],
   [\# https:\/\/github.com/actions/checkout],
@@ -3564,31 +3454,25 @@ Each of these components have their own unit tests and health checks that can be
   [package.json],
   [- name: Package.json + Dockerfile checksum],
   [id: hash],
-  [run: echo "checksum=\$ {{ hashFiles('package.json', 'Dockerfile') }} " \>\> \$GITHUB\_OUTPUT],
   [- name: Log in to Google Artifacts Registry],
   [\# https:\/\/github.com/docker/login-action],
   [uses: docker/login-action\@f4ef78c080cd8ba55a85445d5b36e214a81df20a],
   [with:],
-  [registry: \${{ env. REGISTRY }}],
+  [registry: \$\{\{ env. REGISTRY \}\}],
   [username: \_json\_key],
-  [password: \${{ secrets. GCR\_KEY }}],
+  [password: \$\{\{ secrets. GCR\_KEY \}\}],
   [\# https:\/\/github.com/tyriis/docker-image-tag-exists],
   [- name: Check if Docker image tag exists],
   [id: tag-exists],
   [uses: tyriis/docker-image-tag-exists\@v2.1.0],
   [with:],
-  [registry: \${{ env. REGISTRY }}],
-  [repository: \${{ env. GCP\_PROJECT }}/\${{ env. REPOSITORY }}/\${{ env. IMAGE\_NAME }}],
+  [registry: \$\{\{ env. REGISTRY \}\}],
+  [repository: \$\{\{ env. GCP\_PROJECT \}\}/\$\{\{ env. REPOSITORY \}\}/\$\{\{ env. IMAGE\_NAME \}\}],
   [\# The container image tag],
-  [tag: \${{ steps.hash.outputs.checksum }}],
+  [tag: \$\{\{ steps.hash.outputs.checksum \}\}],
   [- name: Report the check results],
   [\# print the tag result into Github Actions summary],
   [run: |],
-  [echo "\#\# Docker image check" \>\> \$GITHUB\_STEP\_SUMMARY],
-  [echo "Registry: \${{ env. REGISTRY }}" \>\> \$GITHUB\_STEP\_SUMMARY],
-  [echo "Image: \${{ env. REGISTRY }}/\${{ env. GCP\_PROJECT }}/\${{ env. REPOSITORY }}/\${{ env. IMAGE\_NAME }}" \>\> \$GITHUB\_STEP\_SUMMARY],
-  [echo "Package.json + Dockerfile hash: \${{ steps.hash.outputs.checksum }}" \>\> \$GITHUB\_STEP\_SUMMARY],
-  [echo "Docker image \${{ env. REGISTRY }}/\${{ env. IMAGE\_NAME }}:\${{ steps.hash.outputs.checksum }} \*\*\${{ steps.tag-exists.outputs.tag }}\*\*" \>\> \$GITHUB\_STEP\_SUMMARY],
   [build-docker-image:],
   [\# builds the Docker image and pushes it to the registry],
   [\# but only if it does not exist yet],
@@ -3598,7 +3482,7 @@ Each of these components have their own unit tests and health checks that can be
   [\# don't forget to allow workflows to write to GHCR],
   [\# https:\/\/github.com\/ \/ /settings/actions],
   [packages: write],
-  [if: \${{ needs.package-hash.outputs.tag == 'not found' }}],
+  [if: \$\{\{ needs.package-hash.outputs.tag == 'not found' \}\}],
   [steps:],
   [- name: Checkout 🛎️],
   [\# https:\/\/github.com/actions/checkout],
@@ -3607,15 +3491,15 @@ Each of these components have their own unit tests and health checks that can be
   [\# https:\/\/github.com/docker/login-action],
   [uses: docker/login-action\@f4ef78c080cd8ba55a85445d5b36e214a81df20a],
   [with:],
-  [registry: \${{ env. REGISTRY }}],
+  [registry: \$\{\{ env. REGISTRY \}\}],
   [username: \_json\_key],
-  [password: \${{ secrets. GCR\_KEY }}],
+  [password: \$\{\{ secrets. GCR\_KEY \}\}],
   [\# we could also use the action],
   [\# https:\/\/github.com/docker/build-push-action],
   [- name: Build docker image],
-  [run: docker build -t \${{ env. REGISTRY }}/\${{ env. GCP\_PROJECT }}/\${{ env. REPOSITORY }}/\${{ env. IMAGE\_NAME }}:\${{ needs.package-hash.outputs.hash }} .],
+  [run: docker build -t \$\{\{ env. REGISTRY \}\}/\$\{\{ env. GCP\_PROJECT \}\}/\$\{\{ env. REPOSITORY \}\}/\$\{\{ env. IMAGE\_NAME \}\}:\$\{\{ needs.package-hash.outputs.hash \}\} .],
   [- name: Push Docker image to the correct registry],
-  [run: docker push \${{ env. REGISTRY }}/\${{ env. GCP\_PROJECT }}/\${{ env. REPOSITORY }}/\${{ env. IMAGE\_NAME }}:\${{ needs.package-hash.outputs.hash }}],
+  [run: docker push \$\{\{ env. REGISTRY \}\}/\$\{\{ env. GCP\_PROJECT \}\}/\$\{\{ env. REPOSITORY \}\}/\$\{\{ env. IMAGE\_NAME \}\}:\$\{\{ needs.package-hash.outputs.hash \}\}],
   [wait-for-build:],
   [\# a trick to allow other jobs to run, even if the "build" job is skipped],
   [\# runs in parallel with the "build" job and keeps checking if it is finished],
@@ -3627,9 +3511,9 @@ Each of these components have their own unit tests and health checks that can be
   [\# https:\/\/github.com/lewagon/wait-on-check-action],
   [uses: lewagon/wait-on-check-action\@v1.4.1],
   [with:],
-  [ref: \${{ github.ref }}],
+  [ref: \$\{\{ github.ref \}\}],
   [check-name: build-docker-image],
-  [repo-token: \${{ secrets. GITHUB\_TOKEN }}],
+  [repo-token: \$\{\{ secrets. GITHUB\_TOKEN \}\}],
   [\# seconds between checks],
   [wait-interval: 10],
   [test:],
@@ -3638,10 +3522,10 @@ Each of these components have their own unit tests and health checks that can be
   [needs: \[ package-hash , wait-for-build \]],
   [\# seems we cannot use the env variables here],
   [container:],
-  [image: us-east4-docker.pkg.dev/helloworld-330918/gleb-google-artifact-registry-test/cypress-tests-image:\${{ needs.package-hash.outputs.hash }}],
+  [image: us-east4-docker.pkg.dev/helloworld-330918/gleb-google-artifact-registry-test/cypress-tests-image:\$\{\{ needs.package-hash.outputs.hash \}\}],
   [credentials:],
   [username: \_json\_key],
-  [password: \${{ secrets. GCR\_KEY }}],
+  [password: \$\{\{ secrets. GCR\_KEY \}\}],
   [steps:],
   [- name: Checkout 🛎️],
   [\# https:\/\/github.com/actions/checkout],
@@ -3680,10 +3564,10 @@ Each of these components have their own unit tests and health checks that can be
  
  \# later 
  container: 
- image: us-east4-docker.pkg.dev/helloworld-330918/gleb-google-artifact-registry-test/cypress-tests-image:\${{ needs.package-hash.outputs.hash }} 
+ image: us-east4-docker.pkg.dev/helloworld-330918/gleb-google-artifact-registry-test/cypress-tests-image:\$\{\{ needs.package-hash.outputs.hash \}\} 
  credentials: 
  username: \_json\_key 
- password: \${{ secrets. GCR\_KEY }}],
+ password: \$\{\{ secrets. GCR\_KEY \}\}],
   [The finished workflow works great],
   [Just keep the GCR\_KEY secret!],
 ),
@@ -3693,10 +3577,8 @@ Each of these components have their own unit tests and health checks that can be
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How we did it: Heat and income in U.S. cities],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
@@ -3706,14 +3588,12 @@ Each of these components have their own unit tests and health checks that can be
   [\[READ THE SERIES: Heat and Health in American Cities \]],
   [\[VIEW THE ANALYSIS: On Github \]],
   [Though the scope of the story isn’t something we can do all the time with the small-ish staff at NPR Viz, I think it ended up as an example of the power of unique data analysis paired with strong investigative reporting, and it’s something I’ll try to learn from and repeat.],
-  [id="data-incoming"\>Data Incoming],
   [The initial email came in like lots of others do: A reporter has lots of data, doesn’t quite know what to do with it and wants help.],
   [Cool, easy enough. Sometimes it takes a couple days to peg the reporter down on exactly what they want and get the data in a usable format. After that, we make a few charts, calculate some averages, wash our hands and move onto the next story.],
   [But after meeting with the producer on this one, I could tell something was different. The investigation team’s Meg Anderson had been working with a friend of mine, a University of Maryland journalism professor named Sean Mussenden, who had compiled a ton of data about heat, income and health in Baltimore. Based on researchers’ data, Sean was able to establish a thread through different parts of the city that showed something concerning: The poorer the neighborhoods, the hotter they got. And low-income people in Baltimore’s hottest areas were visiting the hospital more often than low-income people in the city’s coolest areas for several cardiovascular and respiratory conditions.],
   [That was news to me — I didn’t even realize there were major differences in temperature within cities. I thought if it was 80 degrees, it was 80 degrees, period. But even with this, what we had seemed like a very Baltimore-centric story. We are, of course, National Public Radio. Not to say every story we do is a national one, but if we’re going to put significant resources toward a trend in one city, we should at least be able to say whether it holds true for other parts of the country.],
   [So I asked Meg the question: Could we do this analysis for every city in the country? At first it sounded crazy — the researchers in Baltimore literally drove around in station wagons with thermometers to get extremely granular heat data in different parts of the city. As fun as that would be to do in every city in the U. S., I didn’t think the bosses would go for it.],
   [Instead, we started looking for other options. I thought I’d seen detailed temperature maps of the United States before — where did they come from?],
-  [id="fun-with-satellites"\>Fun With Satellites],
   [As it turns out, that data can come from a number of places, like local surveys, extrapolation from weather stations and satellites. The last one was what really interested me. Satellites don’t cover only limited areas like weather stations do, and they sometimes have enough detail to map relatively granular geographies, like neighborhoods. But could government-run satellites really detect heat on the ground?],
   [Unfortunately for my plans of making this a quick-turn data story, satellite data was something I’d never touched before. In fact, it was something I’d actively avoided — I used to work with a mapping specialist who handled all our geographic data needs, and the idea of touching anything more complicated than a simple shapefile overwhelmed me before I even sat down at the computer.],
   [So I sent out a Bat-Nerd Signal on the News Nerdery Slack channel to people in other newsrooms who do these kinds of things. Someone there pointed me to a former colleague of his who now works with satellite data for a living, and a brief background conversation with that person opened up a box of terms I’d never heard before: Landsat, EarthExplorer , bands, collections and AOIs.],
@@ -3730,7 +3610,7 @@ Each of these components have their own unit tests and health checks that can be
   [It looked like we had ourselves a story.],
   [To show our editors, these were some of the first maps we made for this project, of the counties that contain San Antonio, Sacramento and Miami:],
   [That idea of putting heat maps next to income maps stayed with us all the way through publication.],
-  [id="real-data-real-people"\>Real Data, Real People],
+  [Real Data, Real People],
   [Meg, along with our reporting intern Nora Eckert, made sure to confirm what we were finding in the data was reflected by real people on the ground. They spent hours on the streets of Baltimore, and in hospital emergency rooms there, interviewing people who lived in this heat and sometimes felt they couldn’t escape it. They also talked to climate experts and historians who traced back the causes of this heat problem to decades of government policies and inequities when it came to investment in low-income neighborhoods.],
   [But we knew from the beginning that we didn’t want this to be just a doom-and-gloom story. We were hoping to find places that were aware of this issue and were taking meaningful steps to address it.],
   [Meg, Nora and I made plenty of phone calls to try to find these places. It was harder than I thought it would be (something that seemed to be becoming a theme) to find places that were aware of this issue and actively addressing it.],
@@ -3738,63 +3618,56 @@ Each of these components have their own unit tests and health checks that can be
   [Soon we had plane tickets booked and interviews lined up with different environmental groups there: TreesLouisville, Louisville Grows, the city’s sustainability director (who, by the time we arrived, would be the former director because of city budget cuts) and others. We even got a driving tour of the city from a self-styled local historian who had recorded a four-hour documentary series recounting the city’s history.],
   [I’ll spare you all the details of how that trip went, but just briefly acknowledge how cool it is to be able to take off your data-reporting hat and put on your real-person reporting hat every once in a while. I forget who said this, but all data are about people. We do ourselves a disservice by taking the comfortable path of writing about those people from behind a computer, thinking we know everything we need to because we have a spreadsheet, or a map. Meeting the people who live in the heat of Louisville, and their grandchildren, and their friends and neighbors brought the whole story to life for me. A number of storylines that showed up in the published story, as well as some that didn’t, simply couldn’t be found in a spreadsheet.],
   [As this was my first radio reporting trip, I also learned a number of things that you don’t have to worry about working at a newspaper. I put those in a Twitter thread when I got back to D. C.],
-  [dir="ltr" lang="en"\>Back in the office after my first reporting trip with NPR. Here are some lessons I learned working with ~radio people~.],
+  [Back in the office after my first reporting trip with NPR. Here are some lessons I learned working with ~radio people~.],
   [— Sean McMinn (\@shmcminn) July 18, 2019],
-  [dir="ltr" lang="en"\>2: Leave the headphones/recording equipment off when first meeting a nervous source. The giant fishpole microphone can be intimidating.],
+  [2: Leave the headphones/recording equipment off when first meeting a nervous source. The giant fishpole microphone can be intimidating.],
   [— Sean McMinn (\@shmcminn) July 18, 2019],
-  [dir="ltr" lang="en"\>4: There’s a thing called “ambi” (ambient sound) where the producer has to record a minute of silence wherever you’re doing an interview, and that is also guaranteed to be awkward af.],
+  [4: There’s a thing called “ambi” (ambient sound) where the producer has to record a minute of silence wherever you’re doing an interview, and that is also guaranteed to be awkward af.],
   [— Sean McMinn (\@shmcminn) July 18, 2019],
-  [dir="ltr" lang="en"\>6: Radio people still call it tape. Don’t ask me why.],
+  [6: Radio people still call it tape. Don’t ask me why.],
   [— Sean McMinn (\@shmcminn) July 18, 2019],
-  [dir="ltr" lang="en"\>7: Producers want to record the darnedest things: Door knocks, seatbelt buckles clicking, highway noise, fountains in a park …. if it makes noise, you betcha they’re recording it.],
+  [7: Producers want to record the darnedest things: Door knocks, seatbelt buckles clicking, highway noise, fountains in a park …. if it makes noise, you betcha they’re recording it.],
   [— Sean McMinn (\@shmcminn) July 18, 2019],
-  [id="real-data-real-problems"\>Real Data, Real Problems],
+  [Real Data, Real Problems],
   [Once I got back from Kentucky, it was time to really get at the heavy programming for the story. It was also, as luck would have it, less than a week before my wedding and honeymoon, which meant that our mapping intern Nick Underwood was bound by destiny to put in some major hours on this project.],
   [The pipeline I originally came up with — download the satellite images, put the census data on top of it and calculate a correlation score for each city – seemed like it would be relatively straightforward. But problems came when we tried to scale it to the 100 largest U. S. cities, a number that we thought seemed manageable …],
-  [id="clouds"\>Clouds],
   [The problem : Satellites can’t see through clouds. Pretty straightforward.],
   [The solution : The API we were using had an indicator for each satellite image that marks the percentage of the image obscured by cloud cover. I thought we could just use that to find good images. But I realized even if there weren’t many clouds, they could make the whole image unusable if they were sitting over the city you wanted to get data for. Instead, a team of us manually reviewed several hundred images and made a spreadsheet of the ones that were cloudless, or at least didn’t have clouds over the city we were looking at. There were three cities — Hialeah and Miami, Fla., and Honolulu — where we couldn’t find a single summertime image without clouds.],
-  [id="api-reliability"\>API Reliability],
+  [API Reliability],
   [The problem : Sometimes, in one of the universe’s grand mysteries, an image couldn’t be found by the API that accessed satellite images. As helpful as the API was for getting the images we wanted, it seemed to sometimes cause more headaches than it solved.],
   [The solution : For a handful of cities, we had to download the images by hand, and then note that in the documentation. I really didn’t want to do this, since it made it virtually impossible to run the full analysis from a single command-line script, which was a goal of mine. But when the deadline came around, I still hadn’t debugged this particular problem.],
-  [id="city-boundaries"\>City Boundaries],
   [The problem : The most accurate city geographies are held by local governments. To access them, we would need to go to 100 different city websites and find their shapefiles.],
   [The solution : At first I tried OpenStreetMap , which gave us a good start. But when Nick realized he was looking at Henderson County, Ill., when he should have been looking at Henderson, Nev., he made the smart decision to pull out census boundaries instead. Those files had some of their own issues, but between the two sources we were able to get accurate shapefiles for each city.],
-  [id="speed"\>Speed],
   [The problem : Using the code Nick wrote to calculate median heat readings for each census tract, and my code to download several gigabytes of heat images, you could say it took … a while … to run.],
   [The solution : In general, I ran the code in small chunks as to not wait hours before finding out if everything broke. But I also left my computer running overnight a couple times to make sure I could run the whole analysis at once. Our team’s journo-developer Thomas Wilburn gently suggested that in the future we could do this on an AWS cloud server so everything wasn’t tied to my temperamental Macbook (fair point). He also came to the rescue before publication and showed me how to run parallel processes on my computer. This allowed us to do the heat analysis, though not the file downloads, about four times faster.],
-  [id="dumb-statistics-"\>Dumb Statistics …],
+  [Dumb Statistics …],
   [The problem : P-values. It’s always p-values.],
   [The solution : For once, it wasn’t p-value interpretation — a notoriously sticky topic — that made this difficult. It was whether we should be calculating p-values at all. For the statistically uninitiated, p-values, in layperson’s terms, tell you the likelihood that your study’s observations are just random chance. This is incredibly useful if you’re looking at a small sample of, say, patients given a drug, and you want to find out if your findings would hold true to the broader population of patients in the world. The thing is, we weren’t trying to make any broader judgements about cities or census tracts outside the scope of our analysis. That’s why I decided, after talking to a handful of other stats-minded people, to not calculate p-values for our findings. This is something that we heard about from multiple confused readers after publication, but I believe we made the right call since we already had data for the entire population we wanted to study — not just a sample of it.],
-  [id="-and-dumb-humans-ok-just-me"\>… And Dumb Humans (OK, Just Me)],
+  [… And Dumb Humans (OK, Just Me)],
   [The problem : I knew that higher pixel values in the satellite images meant hotter spots on the map, but I didn’t stop to ask how much hotter.],
   [The solution : The week before we published — and just hours before we showed our work to a few dozen NPR member stations — I called NASA to make sure my analysis made sense to them. Researchers there pointed out that the pixel values in their images actually have a logarithmic relationship to heat, not a linear one. So, technically speaking, all our numbers were wrong. I think I nearly gave our producer Meg a heart attack when I used those exact words — ”all our numbers are wrong” — to tell her what was going on. But it ended up being relatively straightforward to change everything to a linear scale, and it actually made the correlations stronger than we thought they were before.],
   [After dealing with those big issues, as well as so many smaller ones I wouldn’t be able to remember them all today, we were ready to publish the story and code .],
   [I took a nap.],
-  [id="followup"\>Followup],
   [Already I’ve heard since these stories published that Louisville is voting on an ordinance for stronger tree preservation, and Chesapeake, Va., is considering hiring a city arborist. Local blog Denverite also wrote its own take on the heat-income story, pointing out some gaps in our analysis of Denver that a local publication is well positioned to dive deeper into.],
   [If you know of other work happening in this field, I’d love to hear about it — get in touch at smcminn\@npr.org.],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([— Sean McMinn (\@shmcminn) July 18, 2019   class="twitter-tweet"\>  dir="ltr" lang="en"\>6: Radio people still call it tape.], [NPR Apps Blog]),
-  inline-pq-idx: 28,
+  inline-pq: pull-quote([— Sean McMinn (\@shmcminn) July 18, 2019  6: Radio people still call it tape.], [NPR Apps Blog]),
+  inline-pq-idx: 26,
   word-count: 2694,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Making Remote Work: Tools],
   author: [Jay],
   source-name: [Jay Fields],
   images: (),
   paragraphs: (
   [I recently wrote about my experiences working on a remote team . Within that blog entry you can find a more verbose version of the following text:],
-  [class="tr\_bq"\>
-Communication is what I consider to be the hardest part of remote work. I haven't found an easy, general solution. A few teammates prefer video chat, others despise it. A few teammates like the wiki as a backlog, a few haven't ever edited the wiki. Some prefer strict usage of email/chat/phone for async-unimportant/async-important/sync-urgent, others tend to use one of those 3 for all communication.],
+  [Communication is what I consider to be the hardest part of remote work. I haven't found an easy, general solution. A few teammates prefer video chat, others despise it. A few teammates like the wiki as a backlog, a few haven't ever edited the wiki. Some prefer strict usage of email/chat/phone for async-unimportant/async-important/sync-urgent, others tend to use one of those 3 for all communication.],
   [As you can tell, we have several different communication tools. When writing, I generally prefer to include concrete examples. This blog entry will list each tool referenced above. However, I cannot emphasize enough that: this list is a snapshot of what we're using, not a recommended set of tools .],
   [app: Github],
   [usage: We use many of the features of Github; however, the two features that help facilitate remote work are (a) pull requests with inline comments and (b) compare . A pull request with inline comments has (thus far) been the most productive way to asynchronously discuss specific pieces of code. Almost all non-trivial commits will eventually end up in a pull request that's reviewed by at least one other team member. We've found compare view to be the best solution for distilling changes for a teammate with limited context.],
@@ -3819,8 +3692,10 @@ Communication is what I consider to be the hardest part of remote work. I haven'
   [support coffee],
   [support wheat],
   [(1) Commission summary],
+  [note: some things in Now need to be done immediately, but do not support an upcoming milestone. These things are incremental changes for previously met milestones.],
   [Obviously we use email and other tools as well, but I can't think of any remote specific usage patterns that are worth sharing.],
   [As I previously mentioned, each member of the team uses each of these tools in their own way. None of these tools are ideal for every member of the team, and I believe a good team lead helps ensure each team member is only required to use the tools they find most helpful.],
+  [© Jay Fields - www.jayfields.com],
 ),
   insert-map: (:),
   word-count: 699,
@@ -3828,12 +3703,10 @@ Communication is what I consider to be the hardest part of remote work. I haven'
   debug-mode: false,
 )
 
-  #pull-quote([Most team members look at chat history for work and support, reading anything that happened between now and the last time they were logged in.], [Jay])
+#pull-quote([Most team members look at chat history for work and support, reading anything that happened between now and the last time they were logged in.], [Jay])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Generating mock data with Mimesis: Part II],
   author: [L],
   source-name: [Wemake Services],
@@ -3848,31 +3721,15 @@ Communication is what I consider to be the hardest part of remote work. I haven'
   [Creating objects],
   [If your app requires data in one particular language, it’s preferable to use class Generic(), giving access to all class providers through a single object, rather than through multiple separate class providers. Using Generic() will allow you to get rid of several extra lines of code.],
   [Correct:],
-  [\>\>\> from mimesis import Generic
- \>\>\> generic = Generic('ru') \>\>\> generic.personal.username()
-'sherley3354' \>\>\> generic.datetime.date()
-'14-05-2007'],
   [Incorrect:],
-  [\>\>\> from mimesis import Personal, Datetime, Text, Code \>\>\> personal = Personal('ru')
- \>\>\> datetime = Datetime('ru')
- \>\>\> text = Text('ru')
- \>\>\> code = Code('ru')],
   [Still correct:],
-  [\>\>\> from mimesis import Personal \>\>\> p\_en = Personal('en')
- \>\>\> p\_sv = Personal('sv')
- \>\>\> \# …],
   [It means that importing class providers separately makes sense only if you limit yourself to the data available through the class you imported, otherwise it’s better to use Generic().],
   [Inserting data into database],
   [If you need to generate data and import it into a database we strongly recommend generating data in chunks rather than 600k at once. Keep in mind the possible limitations of databases, ORM, etc. The smaller the generated data chunks are, the faster the process will go.],
   [Good:],
-  [\>\>\> Patient().\_bootstrap(count=2000, locale='de')],
   [Very bad:],
-  [\>\>\> Patient().\_bootstrap(count=600000, locale='de')],
   [Importing images],
   [Class Internet() boasts of several methods which generate image links (more details here ). Links to images locate on remote servers would be enough, however, if you still want to have a number of random images locally, you can download images generated by the respective class Internet() methods with the help of function download\_image() from model utils:],
-  [\>\>\> from mimesis import Internet
- \>\>\> from mimesis.utils import download\_image \>\>\> net = Internet() \>\>\> img\_url = net.stock\_image(category='food', width=1920, height=1080)
- \>\>\> download\_image(url=img\_url, save\_path='/some/path/')],
   [User providers],
   [The library supports a vast amount of data and in most cases this would be enough. For those who want to create their own providers with more specific data. This can be done like this:],
   [\>\>\> class SomeProvider ():
@@ -3889,39 +3746,14 @@ Communication is what I consider to be the hardest part of remote work. I haven'
 1 \>\>\> generic.another.bye()
 'Bye!'],
   [You can also add multiple providers:],
-  [\>\>\> generic.add\_providers(SomeProvider, Another)
- \>\>\> generic.some\_provider.one()
-1
- \>\>\> generic.another.bye()
-'Bye!'],
   [Everything is pretty easy and self-explanatory here, therefore, we will only clarify one moment — attribute name, class Meta is the name of a class through which access to methods of user-class providers is carried out. By default class name is the name of the class in the lower register.],
   [Built-in providers],
   [Most countries, where only one language is official, have data typical only for these particular countries. For example, CPF for Brazil (pt-br), SSN for USA (en). This kind of data can cause discomfort and meddle with the order (or at least annoy) by being present in all the objects regardless of the chosen language standard. You can see that for yourselves by looking at the example (the code won’t run):],
-  [\>\>\> from mimesis import Personal \>\>\> person = Personal('ru')
- \>\>\> person.ssn()
- \>\>\> person.cpf()],
   [We bet everyone would agree that this does not look too good. Perfectionists, as we are, have taken care of this in a way that some specific regional provider would not bother other providers for other regions. For this reason, class providers with locally-specific data are separated into a special sub-package (mimesis.builtins) for keeping a common class structure for all languages and their objects.],
   [Here’s how it works:],
-  [\>\>\> from mimesis import Generic
- \>\>\> from mimesis.builtins import BrazilSpecProvider \>\>\> generic = Generic('pt-br') \>\>\> generic.add\_provider(BrazilProvider)
- \>\>\> generic.brazil\_provider.cpf()
-'696.441.186-00'],
   [If you want to change default name of built-in provider, just change value of attribute name, class Meta of the builtin provider:],
-  [\>\>\> BrazilSpecProvider. Meta.name = 'brasil'
- \>\>\> generic.add\_provider(BrazilSpecProvider) \>\>\> generic.brasil.cpf()
-'019.775.929-70'],
   [Or just inherit the class and override the value of attribute name of class Meta of the provider (in our case this is BrazilSpecProvider()) :],
-  [\>\>\> class Brasil (BrazilSpecProvider):
-...
- ... class Meta :
- ... name = "brasil"
-... \>\>\> generic.add\_provider(Brasil) \>\>\> generic.brasil.cnpj()
-'55.806.487/7994-45'],
   [Generally, you don’t need to add built-it classes to the object Generic(). It was done in the example with the single purpose of demonstrating in which cases you should add a built-in class provider to the object Generic(). You can use it directly, as shown below:],
-  [\>\>\> from mimesis.builtins import RussiaSpecProvider
- \>\>\> ru = RussiaSpecProvider() \>\>\> ru.patronymic(gender='female')
-'Петровна' \>\>\> ru.patronymic(gender='male')
-'Бенедиктович'],
   [Which type of data do you usually need in your work? What is the library missing? We will be very happy to hear your suggestions and comments.],
   [Useful links],
   [Link to the first part of this article.],
@@ -3937,10 +3769,8 @@ Communication is what I consider to be the hardest part of remote work. I haven'
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Beyond \`border-radius\`: What The CSS \`corner-shape\` Property Unlocks For Everyday UI],
   author: [Brecht De Ruyte],
   source-name: [Smashing Magazine],
@@ -3962,10 +3792,10 @@ Communication is what I consider to be the hardest part of remote work. I haven'
   [\*corner-shape: bevel round scoop squircle;
 /\* top-left, top-right, bottom-right, bottom-left \*/],
   [You can also use the superellipse() function with a numeric parameter for fine-grained control.],
-  [.element { 
+  [.element \{ 
  border-radius: 25px;
  corner-shape: superellipse(0); /\* equal to 'bevel' \*/
-}],
+\}],
   [So the question here might be: why not call this property “ border-shape ” instead? Well, first of all, that is something completely different that we’ll get to play around with soon . Second, it does apply to a bit more than borders, such as outlines, box shadows, and backgrounds. That’s the thing that the clip-path property could never do.],
   [Why Progressive Enhancement Matters Here],
   [At the time of writing (March 2026), corner-shape is only supported in Chrome 139+ and other Chromium-based browsers. That’s a significant chunk of users, but certainly not everyone. The temptation is to either ignore the property until it’s everywhere or to build demos that fall apart without it.],
@@ -3973,35 +3803,35 @@ Communication is what I consider to be the hardest part of remote work. I haven'
   [Every demo in this article is created with that progressive enhancement idea. The structure for the demos looks like:],
   [\@layer base, presentation, demo;],
   [The presentation layer contains the full polished UI using proven techniques. The demo layer wraps everything in \@supports :],
-  [\@layer demo {
- \@supports (corner-shape: bevel) {
+  [\@layer demo \{
+ \@supports (corner-shape: bevel) \{
  /\* upgrade styles here \*/
- }
-}],
+ \}
+\}],
   [No fallback banners, no “your browser doesn’t support this” messages. Just two tiers of design: good and better. I thought it could be nice just to show some examples. There are a few out there already, but I hope I can add a bit of extra inspiration on top of those.],
   [Demo 1: Product Cards With Ribbon Badges],
   [Every e-commerce site has them: those little “New” or “Sale” badges pinned to the corner of a product card. Traditionally, getting that ribbon shape means reaching for clip-path: polygon() or a rotated pseudo-element, let's call it “fiddly code” that has the chance to fall apart the moment someone changes a padding value.],
   [But here’s the thing: we don’t need the ribbon shape in the baseline. A simple badge with slightly rounded corners tells the same story and looks perfectly fine:],
-  [.product\_\_badge {
+  [.product\_\_badge \{
  border-radius: 0 4px 4px 0;
  background-color: var(--badge-bg);
-}],
+\}],
   [That’s it. A small, clean label sitting flush against the left edge of the card. Nothing fancy, nothing broken. It works in every browser.],
   [For browsers that support corner-shape , we enhance:],
-  [\@layer demo {
+  [\@layer demo \{
  /\* If the browser supports \`corner-shape\` \*/
- \@supports (corner-shape: bevel) {
- .product {
+ \@supports (corner-shape: bevel) \{
+ .product \{
  border-radius: 40px;
  corner-shape: squircle;
- }],
-  [.product\_\_badge {
+ \}],
+  [.product\_\_badge \{
  padding: 0.35rem 1.4rem 0.35rem 1rem;
  border-radius: 0 16px 16px 0;
  corner-shape: round bevel bevel round;
- }
- }
-}],
+ \}
+ \}
+\}],
   [The round bevel bevel round combination creates a directional ribbon. Round where it meets the card edge, beveled to a point on the other side. No clip-path , no pseudo-element tricks. Borders, shadows, and backgrounds all follow the declared shape because it is the shape.],
   [The cards themselves upgrade from border-radius: 12px to a larger size and the squircle corner-shape, that smooth superellipse curve that makes standard rounding look slightly off by comparison. Designers will notice immediately. Everyone else will just say it “feels more premium.”],
   [Hot tip: Using the squircle value on card components is one of those upgrades where the before-and-after difference can be subtle in isolation, but transformative across an entire page. It’s the iOS effect: once everything uses superellipse curves, plain circular arcs start looking out of place. In this demo, I did exaggerate a bit.],
@@ -4028,10 +3858,8 @@ Communication is what I consider to be the hardest part of remote work. I haven'
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Flow control: Building accessible video for ‘After the Water’],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
@@ -4041,39 +3869,39 @@ Communication is what I consider to be the hardest part of remote work. I haven'
   [It’s fashionable for web storytelling, both inside and outside of journalism, to open with large, captivating video sequences. But the Web Content Accessibility Guidelines serve as a good reminder that for users with vestibular disorders, attention issues, or even just normal motion sensitivity, these videos are less “captivating” and more “disorienting.” From WCAG success criterion 2.2.2 :],
   [For any moving, blinking or scrolling information that (1) starts automatically, (2) lasts more than five seconds, and (3) is presented in parallel with other content, there is a mechanism for the user to pause, stop, or hide it unless the movement, blinking, or scrolling is part of an activity where it is essential.],
   [To return to our question: Yes, it’s very possible to make large-format video accessible. Here’s how we designed our scrolling video experience, optimizing for control, user preference and bandwidth.],
-  [id="control"\>Control],
   [To start, it’s relatively easy to offer users a checkbox at the top of the story so that they can turn off autoplay.],
-  [var toggleAutoplay = function(enable) {
+  [var autoplayers = \$("video\[autoplay\]");
+var autoplayCheck = \$.one("\#autoplay-video")],
+  [var toggleAutoplay = function(enable) \{
  autoplayCheck.checked = enable;
- if (enable) {
- autoplayers.forEach(function(video) {
+ if (enable) \{
+ autoplayers.forEach(function(video) \{
  video.setAttribute("autoplay", "");
  var promised = video.play()
  \/\\/ ignore DOMExceptions for playback, they can get tripped up by the lazy load
  if (promised) promised.catch(err =\> err);
- });
- } else {
- autoplayers.forEach(function(video) {
+ \});
+ \} else \{
+ autoplayers.forEach(function(video) \{
  video.removeAttribute("autoplay");
  video.pause();
- });
- }
-}],
-  [autoplayCheck.addEventListener("change", e =\> toggleAutoplay(e.target.checked));],
+ \});
+ \}
+\}],
   [All ambient video in the presentation starts with an autoplay attribute, so we can find it in the document, and then remove (or add) that attribute based on the checkbox state. If the box is unchecked, we also halt all running videos. And in a separate function, we set up buttons on all video sections that let users individually start or stop the media for that block, regardless of autoplay.],
-  [id="preference"\>Preference],
   [You’ll note that the toggleAutoplay function doesn’t just update the video state; it also sets the checkbox on or off. When called in response to clicking on that checkbox, this doesn’t do anything, since we’re just re-applying the current value. Why the redundancy?],
   [To answer that question, we need to go back to 2013, when Apple released iOS 7. As a broad visual revamp of Apple’s design language on mobile, iOS 7 incorporated a lot of translucent layers over moving backdrops, to the degree where it made many people (particularly those with motion sensitivity) feel a little queasy. In response, Apple added a “reduce motion” checkbox to turn these effects down across the entire operating system, and a CSS media query was introduced to let that option apply to web content as well.],
   [With the release of Chrome 74 this year, support for reduced motion finally is available in every major operating system and browser. We can use a media query to address it in our CSS, and we can use JavaScript to react to that same media query on pageload–which is where our checkbox comes in. Based on prefers-reduced-motion , we set or unset the checkbox, so that users who may have forgotten they set the OS preference aren’t confused.],
   [For this approach, I’m working closely from Scott O’Hara’s post on reduced motion and video. We create a media query DOM object ( reducedMotion ) and then check it immediately when the page starts up. We also attach a listener for when it changes, in case someone changes the preference at the OS level while the web page is open.],
   [Between the checkbox and the media query, the user is always in control of how video playback occurs in the page — within the confines what browsers currently allow for autoplay (namely, that the video must be muted and include a playsinline attribute). Other factors may apply that we can’t control. For example, in low-power mode, Safari may decide to disable autoplay even if all the other conditions are met, which is a “fun” source of confusion when testing.],
-  [id="bandwidth"\>Bandwidth],
   [The movement for inclusive design has widened the definition and application of accessibility in software. But when building video presentations, it’s worth remembering that access is not just about the user, but also their device. Immersive presentations like “After The Water” incorporate a lot of imagery, and require a corresponding amount of bandwidth. For users on pay-as-you-go data plans, these pages can be literally expensive to read.],
   [It’s also worth remembering that just as accessibility (in the disability sense) is contextual , not intrinsic or permanent, technological capability may vary even for users with expensive devices or connections. For example, at NPR’s DC headquarters there are a number of places where the wifi signal isn’t great (and I think we somehow found every single one of them during user testing). It doesn’t matter how nice someone’s phone or cell plan is if they’re in a subway tunnel or a wifi dead zone.],
   [To some extent, we can only mitigate these concerns so far: Visual stories are necessarily heavier (in kilobytes, at least) than text journalism. But we certainly try to make sure that we keep people from paying for content they never see: Audio and video are lazy-loaded based on scroll position (one block back and two blocks forward).],
   [We also automated the optimization of images, videos, and video posters whenever possible, using shell scripts running FFMPEG and ImageMagick . For example, this Bash loop will generate a thumbnail for every video in a folder, so that we can automatically show a static image to users with autoplay disabled or on low-bandwidth connections:],
+  [for f in \*.mp4; do
+ ffmpeg -i \$f -ss 0 -vframes 1 \$f.jpg
+done],
   [One struggle of lazy-loading is that the browser only allows roughly six connections to a given domain, so people on slow connections who scrolled quickly were able to saturate and block the requests for further down the page. We’re still working on solving that problem in a more elegant way. If you have any suggestions, feel free to reach out!],
-  [id="results"\>Results],
   [This was the first time we took this approach with our big story pages, so we added some tracking to see how common their usage actually was. We found that about 1 in 30 users has the reduced motion option set in their browser. A similar share of users turned off autoplay from the checkbox, or used the play/pause buttons on individual videos.],
   [Regardless of the numbers, creating accessible experiences is the right thing to do for our audience. But it is interesting — and gratifying — to see that these engagement numbers are as high as they are, especially in comparison to the low difficulty of their implementation.],
 ),
@@ -4083,10 +3911,8 @@ Communication is what I consider to be the hardest part of remote work. I haven'
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Countdown To New Adventures (January 2026 Wallpapers Edition)],
   author: [Cosima Mielke],
   source-name: [Smashing Magazine],
@@ -4219,10 +4045,8 @@ We are always looking for creative talent and would love to feature your desktop
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Be our design/dev intern for summer 2019!],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
@@ -4265,9 +4089,9 @@ We are always looking for creative talent and would love to feature your desktop
  
  Brittany Mayes 
 (Summer 2016)],
-  [id="whos-eligible"\>Who’s Eligible],
+  [Who’s Eligible],
   [To be eligible for an internship with NPR, you must be a student (undergraduate or graduate) or a person who has graduated no more than 12 months prior to the start of the internship period. You must also be authorized to work in the United States.],
-  [id="heres-how-to-apply"\>Here’s how to apply],
+  [Here’s how to apply],
   [Read about our expectations and selection process and then apply now! . The application deadline has passed.],
   [Into photography? Check out our photo editing internship .],
 ),
@@ -4277,41 +4101,39 @@ We are always looking for creative talent and would love to feature your desktop
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([Real Python], source-name: [Real Python], [In this quiz, you’ll test your understanding of Python Strings and Character Data .
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([Real Python], source-name: [Real Python], [In this quiz, you’ll test your understanding of Python Strings and Character Data .
 
 This quiz helps you deepen your understanding of Python’s string and byte data types. You’ll explore core concepts like string immutability, interpolation with f-strings, Unicode handling, key string methods, and working with bytes objects.])],
-    [#brief-item([Evan Miller], source-name: [Evan Miller], [An essay that bids farewell to x87, a computing architecture too long for this world: The Floppy Disk of Floating Point])],
-    [#brief-item([Robin Ward (eviltrout)], source-name: [Robin Ward (eviltrout)], [Recently I fell in love with Pretender , the mock server library in
+  [#brief-item([Evan Miller], source-name: [Evan Miller], [An essay that bids farewell to x87, a computing architecture too long for this world: The Floppy Disk of Floating Point])],
+  [#brief-item([Robin Ward (eviltrout)], source-name: [Robin Ward (eviltrout)], [Recently I fell in love with Pretender , the mock server library in
 Javascript, so I decided to record a screencast showing how to use it in an Ember.js integration test:
 
 The source code for the login application is on github . The finished
 version is in the pretender branch .])],
-    [#brief-item([Robin Ward (eviltrout)], source-name: [Robin Ward (eviltrout)], [Previously I posted notes and links for my talk about “Ember at 10 feet” from the
+  [#brief-item([Robin Ward (eviltrout)], source-name: [Robin Ward (eviltrout)], [Previously I posted notes and links for my talk about “Ember at 10 feet” from the
  Embergarten Saturday Symposium .
 
 Today my awesome friends at Unspace posted a video of the talk, which you can watch below:
 
  Source Code | Online Demo])],
-    [#brief-item([Evan Miller], source-name: [Evan Miller], [Quantiles can represent key operational and business metrics, but the computational challenges associated with inference has hampered their adoption in online experimentation. In a new paper, I present a two-sample difference-in-quantile hypothesis test and confidence interval based on a likelihood-ratio test statistic. It can be computed using only four order statistics from each sample. arXiv link: Likelihood-ratio inference on differences in quantiles])],
-    [#brief-item([Robin Ward (eviltrout)], source-name: [Robin Ward (eviltrout)], [Back in February , I gave
+  [#brief-item([Evan Miller], source-name: [Evan Miller], [Quantiles can represent key operational and business metrics, but the computational challenges associated with inference has hampered their adoption in online experimentation. In a new paper, I present a two-sample difference-in-quantile hypothesis test and confidence interval based on a likelihood-ratio test statistic. It can be computed using only four order statistics from each sample. arXiv link: Likelihood-ratio inference on differences in quantiles])],
+  [#brief-item([Robin Ward (eviltrout)], source-name: [Robin Ward (eviltrout)], [Back in February , I gave
 a presentation on Discourse and client side MVC at TechTalksTO.
 
 It wasn’t recorded, but I’ve taken the liberty of creating a video version of the presentation with an audio track.
 
 While the presentation is about Browser Applications, I take a large detour in the beginning to talk about
  Discourse and Forum software in general. Enjoy!])],
-    [#brief-item([Robin Ward (eviltrout)], source-name: [Robin Ward (eviltrout)], [Recently, I wrote a short essay on privilege and programming . It was quite popular on /r/programming and generated hundreds of comments, both there and on this blog.
+  [#brief-item([Robin Ward (eviltrout)], source-name: [Robin Ward (eviltrout)], [Recently, I wrote a short essay on privilege and programming . It was quite popular on /r/programming and generated hundreds of comments, both there and on this blog.
 
 I was surprised and flattered to see the majority of the comments agreed with my post, however a few people brought up a concern which I’d like to address:
 
 Why this is person trying to convince me that I should regretful for being able to use a computer at a young age just because others couldn’t?])],
-    [#brief-item([Addy Osmani], source-name: [Addy Osmani], [Two papers published in early 2026 suggest you might have just made your agent slower, more expensive, and no more accurate. The right mental model is to treat AGENTS.md as a living list of codebase smells you haven't fixed yet, not a permanent configuration.])],
-    [#brief-item([Unknown], source-name: [CSC Cloud Team Blog], [There are now CentOS-8 images available in Pouta!
+  [#brief-item([Addy Osmani], source-name: [Addy Osmani], [Two papers published in early 2026 suggest you might have just made your agent slower, more expensive, and no more accurate. The right mental model is to treat AGENTS.md as a living list of codebase smells you haven't fixed yet, not a permanent configuration.])],
+  [#brief-item([Unknown], source-name: [CSC Cloud Team Blog], [There are now CentOS-8 images available in Pouta!
 
 There are some minor issues with the upstream CentOS8 images, so, for now, they are considered to be in "tech preview".
 
@@ -4320,11 +4142,10 @@ We have solved the one we have found so far by temporarily modifying the image t
 Basic information about our images can be found on docs.csc.fi 
 
 One issue is that /etc/resolv.conf sometimes has a nameserver defined from the build of the image. There is an open CentOS bug report about this:  https:\/\/bugs.centos.org/view.php?id=16948])],
-    [#brief-item([Julien Tellier], source-name: [OCTO Technology Blog], [Lors cette série d’interviews, OCTO vous propose un aperçu des sujets à considérer dans votre trajectoire des mois à venir. Aujourd’hui, Guillaume Estassy, nous parle d’Observabilité.])],
-    [#brief-item([Robin Ward (eviltrout)], source-name: [Robin Ward (eviltrout)], [Over the last couple of months, I’ve been posting a series of videos about early PC gaming and programming on my YouTube Channel . It’s been quite a fun journey and I thought I might write a few words about it.
+  [#brief-item([Julien Tellier], source-name: [OCTO Technology Blog], [Lors cette série d’interviews, OCTO vous propose un aperçu des sujets à considérer dans votre trajectoire des mois à venir. Aujourd’hui, Guillaume Estassy, nous parle d’Observabilité.])],
+  [#brief-item([Robin Ward (eviltrout)], source-name: [Robin Ward (eviltrout)], [Over the last couple of months, I’ve been posting a series of videos about early PC gaming and programming on my YouTube Channel . It’s been quite a fun journey and I thought I might write a few words about it.
 
 I have a lot of nostalgia for early games, which makes sense since it was how I spent most of my free time in the 80’s and 90’s. Times were boring before the Internet :)])],
-  ))
-}
+))
 
 #colophon([The Clear Sentinel], [Vol. 1, No. 031], [2026-03-30])

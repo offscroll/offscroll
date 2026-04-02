@@ -21,72 +21,8 @@
 #masthead([The Frontier Gazette], [Vol. 1, No. 048], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [The art of the startup pivot from a founder-CTO point of view],
-  kicker: [Cover Story],
-  author: [Yann Lechelle],
-  source-name: [eFounders Blog],
-  deck: [A risk management perspective
-
-Yann Lechelle ( LinkedIn , Twitter ) is a Paris-based entrepreneur with a number of pivots under his belt.],
-  lead-pre: [],
-  lead-cap: [A],
-  lead-rest: [ risk management perspective],
-  body-paragraphs: (
-  [Yann Lechelle ( LinkedIn , Twitter ) is a Paris-based entrepreneur with a number of pivots under his belt. He was founder and CEO at Etheryl (acquired by private investors), co-founder at KickYourApp.com (acquired by Change), co-founder and COO/CTO at Appsfire.com (acquired by MNG), co-founder at Sonetin.com and currently COO at Snips.ai using AI to make technology disappear. Yann occasionally invests in and advises other startups, on pivots among other things!],
-  [~],
-  [TL;DR : this post discusses the generic notion of a startup pivot. Technically minded readers might prefer to focus on the product & tech sections, or anything else in bold.],
-  [Pivots are a fact of life in the startup world. Yet, very few founders, especially first-time founders, will provision for it. The founder mindset is typically focused on a single go-to-market strategy. The investors are sold on the potential based on that initial strategy, signing off a budget calibrated accordingly. Everyone sings the same tune until the shareholders realize, hopefully before it’s too late, that the strategy is going nowhere, and that a radical change is required. This scenario occurs more often than not, over 65% of the time according to Fred Wilson .],
-  [While this iterative process appears natural, and with the benefit of hindsight, accepted and even praised as part of the startup folklore, it remains a traumatic event from the inside, and possibly a direct cause for failure. Reversely, if done right, a pivot is almost inevitably cause for success.],
-  [Structurally, there can only be a handful of pivots within the lifetime of a company. Repeat entrepreneurs may have experienced it multiple times and therefore developed their art of the pivot… hence becoming pivot artists, a trait that VCs should consider as key risk management expertise! Here are a few awesome pivot artists:],
-  [Multi-pivot repeat entrepreneur Stewart Butterfield: from video game to Flickr and from video game to Slack; product & vision pivot.],
-  [One-time-pivot entrepreneur extraordinaire Mark Zuckerberg: from Hot or Not to The Facebook; product pivot, vision developed in hindsight?],
-  [Multi-pivot co-founders Jean-Baptiste Rudelle, Romain Niccolini and Franck Le Ouay: CRITEO and its 3 pivots to become a (too rare) French Unicorn.],
-  [Let’s go back to our humble startups and itemize some of the issues that may arise during a pivot (with first hand examples):],
-  [A sudden shift in business model affects the former revenue stream and structure, therefore affecting the operating budget;],
-  [For example, killing a revenue generating B2C product will certainly reduce the top line and increase the monthly burn. The lifeline suddenly becomes shorter.],
-  [The team that had grown according to the needs of the previous product suddenly needs to be recast to the new configuration, leading to casting and head-count mismatch;],
-  [For example, a team that had built an architecture around complex and intertwined relational databases with a balanced mix of read/writes suddenly needs to reconfigure for a product that needs massive reads (100x) optimised for low latency with a noSQL-based and map-reduced architecture. Different skills, different architecture, new learning curve.],
-  [Parts of the older product needs to be transitioned, phased out, or worse maintained to some degree;],
-  [For example, when the pivot requires to move from B2C to B2B, when do you pull the plug on the B2C product? Does it affect your revenue? It is probably a good idea to give reasonable notice to those users who have embraced your initial product; it is essential that those very users are onboard with the pivot and keep them as potential ambassadors of your brand equity. Who on the team can help maintain the legacy solution? for how long? should they instead focus on the new product?],
-  [A new product needs to be developed, hopefully by leveraging existing infrastructure, skills, and capital, all of which are now more constrained;],
-  [For example, shifting the model from B2C to B2B may involve refactoring a single platform into a SaaS offering… resulting in multiple instances of the same product. Other examples may involve refactoring some of the code and accelerate the design of a brand new product, for example by going up or down the value chain), while at the same time keeping the same clients or partners to speed up the go-to-market this second time around.],
-  [Worse of all, the time and energy considerations are now more constrained than ever: this is possibly the most difficult aspect to manage.],
-  [Here the founders need to lead by example, be on the ground and with the team at the same time; in a way, back to square one.],
-  [As you can see, most of the above issues are product related , and yet fundamentally anchored in the HR ability to turn things around. Indeed, entrepreneurs thrive on constraints, and a pivot may in fact correspond to “a second wind”.],
-  [How does one prepare for a pivot, or rather, how does one create the proper conditions to pivot properly?],
-  [Let’s break it down around three main pillars: product & tech , HR, and capital.],
-  [Product & Tech Challenge],
-  [The product initially defined by the founders typically emanates from a global vision. In some cases, founders will start with the product and later realize, on their own or with external help, that there is a greater vision. Either way, the team must strive to work towards the greater vision, and consider that the product itself is just a means for achieving a greater goal. This serves two distinct purposes: pitch investors at a higher level of ambition (helps with the valuation), but most importantly, helps the product and engineering team build a category of assets that will be reusable when pivoting the product within the general framework of their vision.],
-  [For example, building an architecture that isolates fundamental blocks of logic and imposes inter-process communication by way of a proper API supporting OAuth 2.0 may help migrate from a B2C product to a B2B offering that exposes those APIs to external entities. Building a B2C product that way may require a little more time and effort, but is in fact the correct way. Shortcuts or sloppy execution can easily turn into technical debt which is extremely penalizing in case of a pivot.],
-  [While the pivot is a general management directive, the CTO is a key decision maker in this process. Indeed, only the CTO has a global view on the existing architecture and the individual skills that the technical team possesses. Reversely, smaller technical teams may be better at instigating what the new product could be. Either way, at the board level, the CTO can steer the ship smoothly towards a new product that leverages the current skillset and architecture, or else agree to ignore those assets and embark on a radically new creation (at a cost).],
-  [It helps if the vision is both ambitious and not dependent on exogenous platforms like Facebook, Twitter, Apple or Google. With Appsfire, a company that I co-founded in 2010, our vision and mission was to solve “app discovery”. Unfortunately, that vision had very strong dependencies with the App Stores. Towards the end of 2013, changes within the App Store guidelines made our model unsustainable… forcing us to pivot both at the vision and product levels; a much harder feat.],
-  [Reshuffling the business model, or reshuffling a number of technical assets to re-define the product is much easier than having to start from scratch, in addition to helping keep the momentum and timing to achieve the holy grail: the product-market fit.],
-  [HR],
-  [It’s the people, stupid! It always boils down to the people doesn’t it? Indeed, a startup isn’t a financial play on its own. It may be at the VC portfolio level, but at the micro level, within the startup itself, it’s all about energy and productivity, about beating the odds and overachieving, it’s about the core vision and the ability for the founders and the rest of the team to bind to it.],
-  [To that effect, to ensure that the team is effectively able to pivot, it should be composed of two key groups:],
-  [the hard core team: founders and first employees. They must demonstrate charisma and the stamina to go the extra mile, especially during hard times and periods of doubt. They will lead by example and explain why the pivot is necessary, in full transparency.],
-  [a larger group made of polyvalent engineers (also known as the talent ): full stack, avid learners, passionate bunch, agile minds, sprinters (and not just in the agile sense), team players… typically people who are not too affected when their project suddenly shifts gears and they have to step outside of their comfort zone or preferred coding language or IDE .],
-  [A third group inevitably exists and is made of people who are either back-office (accounting, finance), sales and business development agents, or technical specialists. During a pivot, some of these people will see their workload dwindle rapidly: if the business model changes, there is perhaps suddenly no more invoices to produce, nothing to sell for a while, or at the technical no need for a specific expertise that made sense pre-pivot. In the US, it’s quite easy to thank people and let them go — a harsh reality and necessity. In France, the labor framework does not make it easy even though, contrary to popular belief, it is definitely possible and reasonable if done right. I would argue that if the reason is communicated properly, employees will understand that the pivot creates a “casting mismatch” and that they are often better off by leaving the company. Working with them on their transition to a new job, or mutually agreeing on a smooth “exit” will give them ample time to rebound at a reasonable cost to the startup (the rest will be covered by the government’s unemployment subsidies).],
-  [At the capitalistic level, the pivot brings an interesting paradoxical twist. While the team and founders may have found a way to better address the market, they will almost inevitably do so from the existing cap table, and without fresh capital. Pivoting means the board acknowledges a local failure, and yet, the action of pivoting, in fact allows a swift and more educated go-to-market approach, bearing less risk, and therefore value creating.],
-  [It could be argued that if the pivot is radical enough, then the team and founders should probably start from a clean slate: new company, fresh cap table, and funds dedicated to the new product. Call it emotional attachment, loyalty or ignoring the notion of sunk cost, founders will often honor continuity and momentum even if it means less than ideal capitalistic terms. VCs should probably acknowledge that and recognize that a pivot done right deserves a little readjustment or nudge towards the effort. Reversely, when comes the time to pivot, founders should perhaps approach their investors in earnest and plead towards a new set of terms and incentive: relution against cash if pivot succeeds, dilution otherwise.],
-  [In reality, entrepreneurs keep at it and pivot within the capitalistic framework inherited from the pre-pivot period. To that effect, I only have one piece of advice: raise more funds if you can by adding some padding to your budget. In short, within your fundraising round, provision for a pivot by allocating an extra 50% of your initial budget. Early stage investors (seed or series A) will be more interested to discuss this notion of padding for a potential pivot rather than discuss unrealistic 3 year projections.],
-  [To conclude…],
-  [Pivoting is in fact a corollary to the fail fast doctrine. Execution and focus are key ingredients to a successful path until you reach that dead end. Yet, nothing prevents startup founders to think in broader terms, provision for the (almost) inevitable pivot by creating financial padding, recruit polyvalent talent, and finally productize around the vision rather than digging a grave around a mono-product approach .],
-  [This article is part of the publication Unexpected Token powered by eFounders — startup studio. All eFounders’ startups are built by extraordinary CTOs. If you feel like it could be you, apply here .],
-  [You like? Hit “Recommend” and subscribe to our collection!],
-  [The art of the startup pivot from a founder-CTO point of view was originally published in Unexpected Token on Medium, where people are continuing the conversation by highlighting and responding to this story.],
-),
-  inline-pq: pull-quote([Either way, the team must strive to work towards the greater vision, and consider that the product itself is just a means for achieving a greater goal.], [Yann Lechelle]),
-  inline-pq-idx: 17,
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [If I were CEO of Bluesky],
   author: [Scripting News],
   source-name: [Scripting News],
@@ -105,13 +41,11 @@ Yann Lechelle ( LinkedIn , Twitter ) is a Paris-based entrepreneur with a number
   debug-mode: false,
 )
 
-  #pull-quote([It's exactly like evolution in the natural world.], [Scripting News])
+#pull-quote([It's exactly like evolution in the natural world.], [Scripting News])
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [How GitHub engineers tackle platform problems],
   author: [Fabian Aguilar Gomez],
   source-name: [GitHub Engineering],
@@ -122,30 +56,36 @@ Yann Lechelle ( LinkedIn , Twitter ) is a Paris-based entrepreneur with a number
   [About a year ago, my team at GitHub moved to the infrastructure organization, inheriting new roles and Areas of Responsibility (AoRs). Previously, the team had tackled external customer problems, such as building the new deployment views across environments . This involved interacting with users who depend on GitHub to address challenges within their respective industries. Our new customers as a platform engineering team are internal , which makes our responsibilities different from the product-focused engineering work we were doing before.],
   [Going back to my Gundam example, rather than constructing kits, we’re now responsible for building the components of the kits. Adapting to this change meant I had to rethink my approach to code testing and problem solving.],
   [Whether you’re working on product engineering or on the platform side, here are a few best practices to tackle platform problems.],
+  [Understanding your domain],
   [One of the most critical steps before tackling problems is understanding the domain. A “domain” is the business and technical subject area in which a team and platform organization operate. This requires gaining an understanding of technical terms and how these systems interact to provide fast and reliable solutions. Here’s how to get up to speed:],
   [Talk to your neighbors: Arrange a handover meeting with a team that has more knowledge and experience with the subject matter. This meeting provides an opportunity to ask questions about terminology and gain a deeper understanding of the problems the team will be addressing.],
   [Investigate old issues: If there is a backlog of issues that are either stale or still persistent, they may give you a better understanding of the system’s current limitations and potential areas for improvement.],
   [Read the docs: Documentation is a goldmine of knowledge that can help you understand how the system works.],
+  [Bridging concepts to platform-specific skills],
   [While the preceding advice offers general guidance applicable to both product and platform teams, platform teams — serving as the foundational layer — necessitate a more in-depth understanding.],
   [Networks : Understanding network fundamentals is crucial for all engineers, even those not directly involved in network operations. This includes concepts like TCP, UDP, and L4 load balancing, as well as debugging tools such as dig. A solid grasp of these areas is essential to comprehend how network traffic impacts your platform.],
   [Operating systems and hardware: Selecting appropriate virtual machines (VMs) or physical hardware is vital for both scalability and cost management. Making well-informed choices for particular applications requires a strong grasp of both. This is closely linked to choosing the right operating system for your machines, which is important to avoid systems with vulnerabilities or those nearing end of life.],
   [Infrastructure as Code (IaC): Automation tools like Terraform, Ansible, and Consul are becoming increasingly essential. Proficiency in these tools is becoming a necessity as they significantly decrease human error during infrastructure provisioning and modifications.],
   [Distributed systems : Dealing with platform issues, particularly in distributed systems, necessitates a deep understanding that failures are inevitable. Consequently, employing proactive solutions like failover and recovery mechanisms is crucial for preserving system reliability and preventing adverse user experiences. The optimal approach for this depends entirely on the specific problem and the desired system behavior.],
+  [Knowledge sharing],
   [By sharing lessons and ideas, engineers can introduce new perspectives that lead to breakthroughs and innovations. Taking the time to understand why a project or solution did or didn’t work and sharing those findings provides new perspectives that we can use going forward.],
   [Here are three reasons why knowledge sharing is so important:],
   [Teamwork makes the dream work: Collaboration often results in quicker problem resolution and fosters new solution innovation, as engineers have the opportunity to learn from each other and expand upon existing ideas.],
   [Prevent lost knowledge : If we don’t share our lessons learned, we prevent the information from being disseminated across the team or organization. This becomes a problem if an engineer leaves the company or is simply unavailable.],
   [Improve our customer success: As engineers, our solutions should effectively serve our customers. By sharing our knowledge and lessons learned, we can help the team build reliable, scalable, and secure platforms, which will enable us to create better products that meet customer needs and expectations!],
   [But big differences start to appear between product engineering and infrastructure engineering when it comes to the impact radius and the testing process.],
+  [Impact radius],
   [With platforms being the fundamental building blocks of a system, any change (small or large) can affect a wide range of products. Our team is responsible for DNS, a foundational service that impacts numerous products. Even a minor alteration to this service can have extensive repercussions, potentially disrupting access to content across our site and affecting products ranging from GitHub Pages to GitHub Copilot.],
   [Understand the radius: Or understand the downstream dependencies. Direct communication with teams that depend on our service provides valuable insights into how proposed changes may affect other services.],
   [Postmortems: By looking at past incidents related to our platform and asking “ What is the impact of this incident?”, we can form more context around what change or failure was introduced, how our platform played a role in it, and how it was fixed.],
   [Monitoring and telemetry: Condense important monitoring and logging into a small and quickly digestible medium to give you the general health of the system. This could be a Single Availability Metric (SAM), for example. The ability to quickly glance at a single dashboard allows engineers to rapidly pinpoint the source of an issue and streamlines the debugging and incident mitigation process, as compared to searching through and interpreting detailed monitors or log messages.],
+  [Testing changes],
   [Testing changes in a distributed environment can be challenging, especially for services like DNS. A crucial step in solving this issue is utilizing a test site as a “real” machine where you can implement and assess all your changes.],
   [Infrastructure as Code (IaC): When using tools like Terraform or Ansible, it’s crucial to test fundamental operations like provisioning and deprovisioning machines. There are circumstances where a machine will need to be re-provisioned. In these cases, we want to ensure the machine is not accidentally deleted and that we retain the ability to create a new one if needed.],
   [End-to-End (E2E): Begin directing some network traffic to these servers. Then the team can observe host behavior by directly interacting with it, or we can evaluate functionality by diverting a small portion of traffic.],
   [Self-healing : We want to test the platform’s ability to recover from unexpected loads and identify bottlenecks before they impact our users. Early identification of bottlenecks or bugs is crucial for maintaining the health of our platform.],
   [Ideally changes will be implemented on a host-by-host basis once testing is complete. This approach allows for individual machine rollback and prevents changes from being applied to unaffected hosts.],
+  [What to remember],
   [Platform engineering can be difficult. The systems GitHub operates with are complex and there are a lot of services and moving parts. However, there’s nothing like seeing everything come together. All the hard work our engineering teams do behind the scenes really pays off when the platform is running smoothly and teams are able to ship faster and more reliably — which allows GitHub to be the home to all developers.],
   [Want to dive deeper? Check out our infrastructure related blog posts .],
   [The post How GitHub engineers tackle platform problems appeared first on The GitHub Blog .],
@@ -156,22 +96,20 @@ Yann Lechelle ( LinkedIn , Twitter ) is a Paris-based entrepreneur with a number
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Election 2012: Electoral combinations],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
   images: (),
   paragraphs: (
   [This is the first in a series of two (or more) blog posts about how we built the Swing State Scorecard and our Election 2012 results site .],
-  [id="the-idea"\>The idea],
+  [The idea],
   [Early in the development of the Swing State Scorecard we determined that we wanted to tell a story about how many combinations (2-state, 3-state) of tossup states there are which would win the election for Obama or Romney (based on NPR projections). One idea that seemed compelling was to try to actually illustrate all the possible combinations of states that would win the election for each candidate. Doing so would, we speculated, demonstrate very clearly how important certain states (Florida) were to each candidate’s overall chance of winning the election. We had seen one other example of this, but it was difficult to use and didn’t allow you to quickly compare the candidates.],
-  [id="building-it"\>Building it],
+  [Building it],
   [The one wrinkle to generating our “paths to victory” was that we weren’t actually sure we had the computational capacity to do it. Pre-rendering all the possible combinations would be a huge pain—the numbers quickly became unmanageable and an API would have been untenable on election night. The better option was to actually generate the combinations on the fly in Javascript, but we weren’t sure whether or not the average user’s computer would have the horsepower to do it.],
   [With these constraints in mind I set to work prototyping the algorithms that generate the combinations. Javascript lacks good library support for this sort of operation, but I was able to find many combination generating functions on Stack Overflow and elsewhere. The vast majority of these were recursive solutions, which immediately blew the call stack in several of our target browsers. Fortunately, I found a very fast, non-recursive solution developed by Stack Overflow user Sid\_M . I modified this very slightly and the final function is called in combinations in our codebase. To my surprise this method of generating combinations is very, very fast and works great even in IE. Of course, performance of the algorithm does degrade quickly with the number of tossup states, so we had to keep that number under thirteen in order for this method to work.],
-  [id="pruning-the-combinations"\>Pruning the combinations],
+  [Pruning the combinations],
   [The resulting combinations still needed to be pruned down in order to be interesting. We filtered them in two ways. First (1), and most obviously, we only included ones that accumulated enough votes to form a winning combination. (This would probably have been faster if we pushed the logic down into the combinations algorithm, but I preferred to keep things well-factored.) Secondly (2), we removed any combination which was a superset of a previous combination. That is, if we already had the combination “Florida + Colorado”, then we discarded “Florida + Colorado + New Hampshire”. Fortunately the output of our combinations algorithm was sorted, so we were able to do all this pruning in a single iteration over the list.],
   [Here is the final code that generates and prunes the combinations for the Scorecard:],
   [Obama’s lead in the polls shrank (or even reversed, depending on who you read) after we developed this approach, but we felt the illustration of the relative complexity of the paths to victory remained compelling. For election night we refactored this this code into a “prediction mode” that would kick on automatically when we got down to the last twelve states.],
@@ -183,10 +121,8 @@ Yann Lechelle ( LinkedIn , Twitter ) is a Paris-based entrepreneur with a number
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Beginner Guide to CJ Affiliate (Commission Junction) in 2022],
   author: [Unknown],
   source-name: [TechCrunch],
@@ -195,18 +131,16 @@ Yann Lechelle ( LinkedIn , Twitter ) is a Paris-based entrepreneur with a number
   [In this CJ Affiliate guide, I will share with you everything you need to get started on the platform, I will give you an in-depth look at the network and how it works.],
   [You will learn how to earn money with the platform. If you're not interested, I'll share some of the best CJ affiliate programs and alternatives. By the end of this post, I will also answer some of the FAQs on the platform and give my quick CJ review.],
   [Sounds Good So let’s start],
-  [style="text-align: left;"\> What is CJ Affiliate?],
+  [What is CJ Affiliate?],
   [Commission Junction is an online advertising company that offers affiliate programs for various retailers. Since 1998, it has been known as one of the oldest and most popular affiliate networks.],
   [Commission Junction has consistently ranked among the top 10 affiliate networks],
-  [id="atContainer-2060cf2f0491455d459b6b7a0ee275f3"\>],
   [With in-depth data analysis and an unmatched understanding of clients needs, CJ has established itself as a leader in performance marketing.],
-  [style="text-align: left;"\> For Advertiser:],
+  [For Advertiser:],
   [CJ provides advertisers with a variety of tracking, management, and payment options. As an affiliate network, CJ can help you launch multiple affiliate programs from a centralized network.],
   [CJ's experienced team of account managers is available to help at every step—from program set-up to optimization.],
-  [style="text-align: left;"\> For Publishers:],
+  [For Publishers:],
   [CJ offers a  variety of well-paying affiliate programs. You can find affiliate programs in almost every niche at CJ. With CJ, you can also find promotional tools such as banners and product feeds, which help you promote your website.],
   [The reporting tools are unparalleled and provide granular data that can assist you in fine-tuning your campaigns for maximum results.],
-  [style="text-align: left;"\> Requirements],
   [First things first, CJ is free to join! If you are new to the world of affiliate marketing, don't worry—you'll be able to join right away.],
   [The requirements for joining CJ are almost similar to other networks. For example, you must have a blog or social media follower.],
   [Isn't it obvious? Let's explore the details.],
@@ -217,11 +151,11 @@ Yann Lechelle ( LinkedIn , Twitter ) is a Paris-based entrepreneur with a number
   [Your traffic must be from US and Canada.],
   [The main traffic source must not be paid],
   [10K+ monthly trafic on your website.],
-  [style="text-align: left;"\> How Does CJ Affiliate Work?],
+  [How Does CJ Affiliate Work?],
   [Between advertisers and publishers, CJ Affiliate acts as a middleman.. Advertisers sign up on CJ to promote their products or services, while publishers sign up on CJ to find and join affiliate programs to make money. CJ then tracks the sales or leads generated by the publisher and pays them a commission according to the terms of the affiliate program.],
   [CJ provides a win-win situation for both sides: advertisers get more sales and publishers make money.],
   [In order to free up both parties to concentrate on their job, CJ also handles payments and other technical issues. Now that you know how CJ works, let's learn more about how to sign up and start making money with it.],
-  [style="text-align: left;"\> How to Start Making Money Online Using CJ Affiliate],
+  [How to Start Making Money Online Using CJ Affiliate],
   [To get started using CJ's affiliate network, you'll need to register for an account. To do this, you must have a website or social media profile with relevant content and an audience from the US or Canada.],
   [Create a CJ account, complete the application process, and then wait for approval. You shouldn't worry CJ is not strict as other network in approving applications.],
   [Here's how you can signup for Cj],
@@ -237,22 +171,21 @@ Yann Lechelle ( LinkedIn , Twitter ) is a Paris-based entrepreneur with a number
   [Click on "Advertisers" and then select a category to go to  your niche advertiser area. You can apply for it by clicking the 'Join the Program' button and analysing three months' earnings per click and overall earnings! After you're approved, you'll get links from all over the Internet.],
   [After you've completed the steps above, you can share your affiliate links in your blog post. You can view performance reports for your affiliate links by visiting the CJ account dashboard. Click "Clients" to see details about clicks, sales, and commissions earned by each client.],
   [With CJ, you can make money promoting great products and services in any niche imaginable! So start joining CJ programs now and watch your business grow.],
-  [style="text-align: left;"\> Best CJ Affiliate Programs in 2022],
+  [Best CJ Affiliate Programs in 2022],
   [On CJ, you can find thousands of affiliate programs in almost any niche. Some of the top affiliate programs enlisted on CJ include:],
   [Contabo VPS],
   [You'll find a lot of programs to join at CJ, depending on your niche. Just enter your keywords in the search bar, and CJ will show you all the relevant programs that match your criteria. You can further filter the results by commission type, category, or country.],
-  [style="text-align: left;"\> A Quick CJ Affiliate Review: Is It Good Enough?],
-  [id="atContainer-8a426783aef805554f3d96c19f8beeb7"\>],
+  [A Quick CJ Affiliate Review: Is It Good Enough?],
   [CJ Affiliate is one of the oldest and most well-known affiliate networks. The platform has been around for over 20 years and has a massive network of advertisers and publishers. The features on CJ Affiliate are easy to use, and it offers advertisers a wide range of tracking, management, and payment options.],
   [CJ offers some great features for publishers too—promotional tools like banners, links, and social media are available to help boost your site's visibility. The only downside is that CJ has a bit of a learning curve, and the approval process can be strict. But overall, CJ Affiliate is an excellent platform for advertisers and publishers.],
-  [style="text-align: left;"\> Top Alternatives and Competitors],
+  [Top Alternatives and Competitors],
   [CJ Affiliate is a great place to earn an income from affiliate marketing. It offers a wide range of features and options for advertisers and publishers. But if CJ doesn't work for you, plenty of other options are available. Here are some of the top competitors and alternatives in the market today:],
   [ShareASale],
   [AWIN],
   [PartnerStack],
   [ClickBank],
   [Here are some of the best CJ Affiliate alternatives that you can try. Each platform has its own set of features, so make sure to choose one that best suits your needs. Regardless of which CJ alternative you choose, remember that quality content is key to success as a publisher, so ensure to focus on providing high-value, engaging content to your readers.],
-  [style="text-align: left;"\> Frequently Asked Questions About Cj Affiliate Marketplace],
+  [Frequently Asked Questions About Cj Affiliate Marketplace],
   [Is the Cj AffilIs late Network legit?],
   [CJ Affiliate is a legitimate affiliate platform that has earned the trust of many marketers because of its vast network of advertisers and publishers.],
   [How much do CJ affiliates make?],
@@ -267,7 +200,6 @@ Yann Lechelle ( LinkedIn , Twitter ) is a Paris-based entrepreneur with a number
   [What are the Pros of CJ Affiliate for advertisers?],
   [CJ Affiliate is one of the most advanced affiliate programs available, providing advertisers with a range of features and options including advanced tracking, management, and payment options.],
   [The platform is also easy to use and provides promotional tools like coupons, banners, and widgets that can help increase our sales.],
-  [style="text-align: left;"\> Final Saying],
   [Choosing Commission Junction as your affiliate program isn't easy. CJ is a big company and they have a wide range of affiliates, big and small. They offer everything from banner ads to text links and so much more. The sheer amount of choices can seem intimidating at first, especially to new Affiliates, which is why we've put together this simple guide for people looking for a successful CJ affiliate program to join. If you have any questions feel free to ask in the comments.],
 ),
   insert-map: (:),
@@ -276,10 +208,8 @@ Yann Lechelle ( LinkedIn , Twitter ) is a Paris-based entrepreneur with a number
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Creating Combine-compatible versions of async/await-based APIs],
   author: [Swift by Sundell],
   source-name: [Swift by Sundell],
@@ -290,79 +220,53 @@ Yann Lechelle ( LinkedIn , Twitter ) is a Paris-based entrepreneur with a number
   [While we’ve already taken a look at how Combine relates to concurrency APIs like async sequences and streams , and how we can make it possible to call async -marked functions within a Combine pipeline — in this article, let’s explore how we could make it easy to create Combine-based variants of any async API, regardless of whether it was defined by us, by Apple, or as part of a third-party dependency.],
   [Async futures],
   [Let’s say that an app that we’re working on contains the following ModelLoader , which can be used to load any Decodable model over the network. It performs its work through an async function that looks like this:],
-  [class ModelLoader {
+  [class ModelLoader \{
  ...],
-  [func loadModel(from url: URL ) async throws -\> Model {
- ...
- }
-}],
   [Now let’s say that we’d also like to create a Combine-based version of the above loadModel API, for example in order to be able to call it within specific parts of our code base that might’ve been written in a more reactive style using the Combine framework.],
   [We could of course choose to write that sort of compatibility code specifically for our ModelLoader type, but since this is a general problem that we’re likely to encounter multiple times when working with Combine-based code, let’s instead create a more generic solution that we’ll be able to easily reuse across our code base.],
   [Since we’re dealing with async functions that either return a single value, or throw an error, let’s use Combine’s Future publisher to wrap those calls. That publisher type was specifically built for these kinds of use cases, since it gives us a closure that can be used to report a single Result back to the framework.],
   [So let’s go ahead and extend the Future type with a convenience initializer that makes it possible to initialize an instance with an async closure:],
-  [extension Future where Failure == Error {
- convenience init (operation: \@escaping () async throws -\> Output ) {
- self . init { promise in 
- Task {
- do {
+  [extension Future where Failure == Error \{
+ convenience init (operation: \@escaping () async throws -\> Output ) \{
+ self . init \{ promise in 
+ Task \{
+ do \{
  let output = try await operation ()
  promise (. success (output))
- } catch {
+ \} catch \{
  promise (. failure (error))
- }
- }
- }
- }
-}],
+ \}
+ \}
+ \}
+ \}
+\}],
+  [For more information on how Combine’s Future type works, check out “Using Combine’s futures and subjects” .],
   [The power of creating an abstraction like that, which isn’t tied to any specific use case, is that we’ll now be able to apply it to any async API that we want to make Combine-compatible. All it takes is a few lines of code that calls the API that we’re looking to bridge within a closure that’s passed to our new Future initializer — like this:],
-  [extension ModelLoader {
- func modelPublisher(for url: URL ) -\> Future {
- Future {
- try await self . loadModel (from: url)
- }
- }
-}],
   [Neat! Note how we could’ve chosen to give that Combine-based version the same loadModel name that our async -powered one has (since Swift supports method overloading). However, in this case, it might be a good idea to clearly separate the two, which is why the above new API has a name that explicitly includes the word “Publisher”.],
   [Reactive async sequences],
   [Async sequences and streams are perhaps the closest that the Swift standard library has ever come to adopting reactive programming, which in turn makes those APIs behave very similarly to Combine — in that they enable us to emit values over time .],
   [In fact, in the article “Async sequences, streams, and Combine” , we took a look at how Combine publishers can even be directly converted into async sequences using their values property — but what if we wanted to go the other way, and convert an async sequence (or stream) into a publisher?],
   [Continuing with the ModelLoader example from before, let’s say that our loader class also offers the following API, which lets us create an AsyncThrowingStream that emits a series of models loaded from an array of URLs:],
-  [class ModelLoader {
+  [class ModelLoader \{
  ...],
-  [func loadModels(from urls: \[ URL \]) -\> AsyncThrowingStream {
- ...
- }
-}],
+  [For an example of a concrete implementation of an API just like the one above, check out the aforementioned article “Async sequences, streams, and Combine” .],
   [Just like before, rather than rushing into writing code that specifically converts the above loadModels API into a Combine publisher, let’s instead try to come up with a generic abstraction that we’ll be able to reuse whenever we want to write similar bridging code elsewhere within our project.],
   [This time, we’ll extend Combine’s PassthroughSubject type, which gives us complete control over when its values are emitted, as well as when and how it should terminate. However, we’re not going to model this API as a convenience initializer, since we want to make it clear that calling this API will, in fact, make the created subject start emitting values right away. So let’s make it a static factory method instead — like this:],
-  [extension PassthroughSubject where Failure == Error {
- static func emittingValues (
- from sequence: T 
- ) -\> Self where T . Element == Output {
- let subject = Self ()],
-  [Task {
- do {
- for try await value in sequence {
+  [Task \{
+ do \{
+ for try await value in sequence \{
  subject. send (value)
- }],
+ \}],
   [subject. send (completion: . finished )
- } catch {
+ \} catch \{
  subject. send (completion: . failure (error))
- }
- }],
+ \}
+ \}],
   [return subject
- }
-}],
+ \}
+\}],
+  [For more on how static factory methods might differ from initializers in terms of API design, check out “Initializers in Swift”],
   [With the above in place, we can now wrap our async stream-based loadModels API almost as easily as our previous async -marked one — the only extra step that’s required in this case is to type-erase our PassthroughSubject instance into an AnyPublisher , to prevent any other code from being able to send new values to our subject:],
-  [extension ModelLoader {
- func modelPublisher(for urls: \[ URL \]) -\> AnyPublisher {
- let subject = PassthroughSubject . emittingValues (
- from: loadModels (from: urls)
- )
- 
- return subject. eraseToAnyPublisher ()
- }
-}],
   [Just like that, we’ve now created two convenience APIs that make it very straightforward for us to make code using Swift’s concurrency system backward compatible with Combine — which should prove to be incredibly convenient when working with a code base that uses Combine to some extent.],
   [Even though Swift does now have a built-in concurrency system that covers much of the same ground as Combine does, I think both of those two technologies will continue to be incredibly useful for years to come — so the more we can create smooth bridges between them, the better.],
   [While some developers will likely opt to completely rewrite their Combine-based code using Swift concurrency, the good news is that we don’t have to do that. With just a few convenience APIs in place, we can make it trivial to pass data and events between those two technologies, which in turn will let us keep using our Combine-based code, even as we start adopting async/await and the rest of Swift’s concurrency system.],
@@ -375,10 +279,8 @@ Yann Lechelle ( LinkedIn , Twitter ) is a Paris-based entrepreneur with a number
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Everything our app template does: July 2014 edition],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
@@ -386,73 +288,65 @@ Yann Lechelle ( LinkedIn , Twitter ) is a Paris-based entrepreneur with a number
   paragraphs: (
   [The NPR News Apps team, before its merger with the Multimedia team to form Visuals, made an early commitment to building client-side news applications, or static sites. The team made this choice for many reasons — performance, reliability and cost among them — but such a decision meant we needed our own template to start from so that we could easily build production-ready static sites. Over the past two years, the team has iterated on our app template , our “opinionated project template for client-side apps.” We also commit ourselves to keeping that template completely open source and free to use.],
   [We last checked in on the app template over a year ago . Since then, our team has grown and merged with the Multimedia team to become Visuals. We have built user-submitted databases , visual stories and curated collections of great things , all with the app template. As we continue to build newer and weirder things, we learn more about what our app template needs. When we develop something for a particular project that can be used later — say, the share panel from Behind the Civil Rights Act — we refactor it back into the app template. Since we haven’t checked in for a while, I thought I would provide a rundown of everything the app template does in July 2014.],
-  [id="the-backbone"\>The Backbone],
   [The fundamental backbone of the app template is the same as it has always been: a Flask app that renders the project locally and provides routes for baking the project into flat files. All of our tooling for local development revolves around this Flask app. That includes:],
   [Fabric : Using the app template requires knowledge of the command line. This is because we use Fabric, a Python library for running functions from the command line, to automate every task from bootstrapping the template to deploying to production.],
   [Jinja2 : Jinja2 provides templating within HTML, which is essential for baking out our various pages within an app. The Flask app allows us to pass any data we want, but we pass in data from a Google Spreadsheet and data from a configuration file by default (more on this later).],
   [awscli : All of our apps are hosted on Amazon S3 . It is cheap, reliable and fast. With awscli and Fabric, we can fully automate deployment from the command line. It is true one-touch deployment.],
   [Out of these tools, we essentially built a basic static site generator. With just these features, the app template wouldn’t be all that special or worth using. But the app template comes with plenty more features that make it worth our investment.],
-  [id="copytext-and-google-spreadsheets"\>Copytext and Google Spreadsheets],
+  [Copytext and Google Spreadsheets],
   [A few months ago, we released copytext , a library for accessing a spreadsheet as a native Python object suitable for templating. Some version of copytext has been a part of the app template for much longer, but we felt it was valuable enough to factor out into its own library.],
   [We often describe our Google Docs to Jinja template workflow entirely as “copytext”, but that’s not entirely true. Copytext, the library, works with a locally downloaded .xlsx version of a Google spreadsheet (or any .xlsx file). We have separate code in the app template itself that handles the automated download of the Google Spreadsheet.],
   [Once we have the Google Spreadsheet locally, we use copytext to turn it into a Python object, which is passed through the Flask app to the Jinja templates (and a separate JS file if we want to render templates on the client).],
   [The benefits of using Google Spreadsheets to handle your copy are well-documented . A globally accessible spreadsheet lets us remove all content from the raw HTML, including tags for social media and SEO . Spreadsheets democratize our workflow, letting reporters, product owners and copy editors read through the raw content without having to dig into HTML. Admittedly, a spreadsheet is not an optimal place to read and edit long blocks of text, but this is the best solution we have right now.],
-  [id="render-pipeline"\>Render Pipeline],
   [Another piece of the backbone of the static site generator is the render pipeline. This makes all of our applications performance-ready once they get to the S3 server. Before we deploy, the render pipeline works as follows:],
   [Compile our LESS files into CSS files.],
   [Compile our JavaScript templates (JSTs).],
   [Render our app configuration file and copy spreadsheet as JavaScript objects.],
   [Run through the Flask routes and render Jinja templates into flat HTML as appropriate.],
   [When running through the Jinja templates, some more optimization magic happens. We defined template tags that allow us to “push” individual CSS and JavaScript files into one minified and compressed file. You can see the code that creates those tags here . In production, this reduces the number of HTTP requests the browser has to make and makes the files the browser has to download as small as possible.],
-  [id="sensible-front-end-defaults"\>Sensible Front-End Defaults],
+  [Sensible Front-End Defaults],
   [We like to say that the app template creates the 90% of every website that is exactly the same so we can spend our time perfecting the last 10%, the presentation layer. But we also include some defaults that make creating the presentation layer easier. Every app template project comes with Bootstrap and Font Awesome . We include our custom-built share panel so we never have to do that again. Our NPR fonts are automatically included into the project. This makes going from paper sketching to wireframing in code simple and quick.],
-  [id="synchronized-assets"\>Synchronized Assets],
   [Once we merged with the Multimedia team, we started working more with large binary files such as images, videos and audio. Committing these large files to our git repository was not optimal, slowing down clone, push and pull times as well as pushing against repository sizes limits. We knew we needed a different solution for syncing large assets and keeping them in a place where our app could see and use them.],
   [First, we tried symlinking to a shared Dropbox folder, but this required everyone to maintain the same paths for both repositories and Dropbox folders. We quickly approached our size limit on Dropbox after a few projects. So we decided to move all of our assets to a separate S3 bucket that is used solely for syncing assets across computers. We use a Fabric command to scan a gitignored assets folder to do three things:],
   [Scan for files that the local assets folder contains but S3 does not. Then, we prompt the user to upload those files to S3.],
   [Scan for files that the S3 bucket has but the local folder does not. Then, we download those files.],
   [Scan for files that are different and prompt the user to pick which file is newer.],
   [This adds a layer of complexity for the user, having to remember to update assets continually so that everyone stays in sync during development. But it does resolve space issues and keeps assets out of the git repo.],
-  [id="project-management"\>Project Management],
   [On the Visuals Team, we use GitHub Issues as our main project management tool. Doing so requires a bit of configuration on each project. We don’t like GitHub’s default labels, and we have a lot of issues (or tickets, as we call them) that we need to open for every project we do, such as browser testing.],
   [To automate that process we have — you guessed it — a Fabric command to make the whole thing happen! Using the GitHub API, we run some code that sets up our default labels, milestones and issues. Those defaults are defined in .csv files that we can update as we learn more and get better.],
-  [id="command-line-analytics"\>Command Line Analytics],
   [Every few weeks, Chris Groskopf gets an itch. He gets an itch that he must solve a problem. And he usually solves that problem by writing a Python library.],
   [Most recently, Chris wrote clan (or Command Line Analytics) for generating analytics reports about any of our projects. The app template itself has baseline event tracking baked into our default JavaScript files (Who opened our share panel? Who reached the end of the app?). Clan is easily configured through a YAML file to track those events as well as Google Analytics’ standard events for any of our apps. While clan is an external library and not technically part of the template, we configure our app template with Google Analytics defaults that make using clan easy.],
   [It is important for us to be able to not only easily make and deploy apps, but also easily see how well they are performing. Clan allows us to not only easily generate individual reports, but also generate reports that compare different apps to each other so we get a relative sense of performance.],
-  [id="servers"\>Servers!],
+  [Servers!],
   [Our static site generator can also deploy to real servers. Seriously. In our Playgrounds For Everyone app, we need a cron server running to listen for when people submit new playgrounds to the database. As much as we wish we could, we can’t do that statically, but that doesn’t mean the entire application has to be dynamic! Instead, the app template provides tooling for deploying cron jobs to a cron server.],
   [In the instance of Playgrounds, the cron server listens for new playground submissions and sends an email daily to the team so we can see what has been added to the database. It also re-renders and re-deploys the static website. Read more about that here .],
   [This is the benefit of having a static site generator that is actually just a Flask application. Running a dynamic version of it on an EC2 server is not much more complicated.],
-  [id="in-summation"\>In Summation],
   [Over 1500 words later, we’ve gone through (nearly) everything the app template can do. At the most fundamental level, the app template is a Flask-based static site generator that renders dynamic templates into flat HTML. But it also handles deployment, spreadsheet-based content management, CSS and JavaScript optimization, large asset synchronization, project management, analytics reporting and, if we need it, server configuration.],
   [While creating static websites is a design constraint, the app template’s flexibility allows us to do many different things within that constraint. It provides a structural framework through which we can be creative about how we present our content and tell our stories.],
 ),
   insert-map: (:),
   inline-pq: pull-quote([When running through the Jinja templates, some more optimization magic happens.], [NPR Apps Blog]),
-  inline-pq-idx: 17,
+  inline-pq-idx: 14,
   word-count: 1711,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A few bytes here, a few there, pretty soon you’re talking real memory],
   author: [Dave Cheney],
   source-name: [Dave Cheney],
   images: (),
   paragraphs: (
   [Today’s post comes from a recent Go pop quiz. Consider this benchmark fragment. 1],
-  [func BenchmarkSortStrings(b \*testing. B) {
- s := \[\]string{"heart", "lungs", "brain", "kidneys", "pancreas"}
+  [func BenchmarkSortStrings(b \*testing. B) \{
+ s := \[\]string\{"heart", "lungs", "brain", "kidneys", "pancreas"\}
  b. ReportAllocs()
  for i := 0; i Escaping to the heap],
   [To make the example a little more explicit, here’s the benchmark rewritten without the sort. Strings helper function:],
-  [func BenchmarkSortStrings(b \*testing. B) {
- s := \[\]string{"heart", "lungs", "brain", "kidneys", "pancreas"}
+  [func BenchmarkSortStrings(b \*testing. B) \{
+ s := \[\]string\{"heart", "lungs", "brain", "kidneys", "pancreas"\}
  b. ReportAllocs()
  for i := 0; i Size classes],
   [To explain what a size class is, consider how a theoretical Go runtime could allocate 24 bytes on its heap. A simple way to do this would be keep track of all the memory allocated so far using a pointer to the last allocated byte on the heap. To allocate 24 bytes, the heap pointer is incremented by 24, and the previous value returned to the caller. As long as the code that asked for 24 bytes never writes beyond that mark this mechanism has no overhead. Sadly, in real life, memory allocators don’t just allocate memory, sometimes they have to free it.],
@@ -460,9 +354,11 @@ Yann Lechelle ( LinkedIn , Twitter ) is a Paris-based entrepreneur with a number
   [In our scenario, when the runtime wants to allocate memory, it could request a little more than it was asked for and use it to store the amount requested. For our slice example, when we asked for 24 bytes, we’d actually consume 24 bytes plus some overhead to store the number 24. How large is this overhead? It turns out the minimum amount that is practical is one word. 5],
   [To record a 24 byte allocation the overhead would 8 bytes. 25% is not great, but not terrible, and as the size of the allocation goes up, the overhead would become insignificant. However, what would happen if we wanted to store just one byte on the heap? The overhead would be eight times the amount of data we asked for! Is there are more efficient way to allocate small amounts on the heap?],
   [Rather than storing the length alongside each allocation, what if all the thing of the same size were stored together? If all the 24 byte things are stored together, then the runtime would automatically know how large they are. All the runtime needs is a single bit to indicate if a 24 byte area is in use or not. In Go these areas are known as size classes, because all the things of the same size are stored together (think school class–all the students are the same grade–not a C++ class). When the runtime needs to allocate a small amount, it does so using the smallest size class that can accomodate the allocation.],
+  [Unlimited size classes for all],
   [Now we know how size classes work, the obvious question is, where are they stored? Not surprisingly, the memory for a size class comes from the heap. To minimise overhead, the runtime allocates a larger amount from the heap (usually a multiple of the system page size) then dedicates that space for allocations of a single size. But, there’s a problem.],
   [The pattern of allocating a large area to store things of the same size works well 6 if there’s a fixed, preferably small, number of allocation sizes, but in a general purpose language programs can ask the runtime for an allocation of any size. 7],
   [For example, imagine asking the runtime for 9 bytes. 9 bytes is an uncommon size, so it’s likely that a new size class for things of size 9 would be required. As 9 byte things are uncommon, it’s likely the remainder of the allocation, 4kb or more, would be wasted. Because of this the set of possible size classes is fixed. If a size class of the exact amount is not available, the allocation is rounded up to the next size class. In our example 9 bytes might be allocated in the 12 byte size class. The overhead of 3 unused bytes is better than an entire size class allocation which goes mostly unused.],
+  [All together now],
   [This is the final piece of the puzzle. Go 1.15 did not have a 24 byte size class, so the heap allocation of ss was allocated in the 32 byte size class. Thanks to the work of Martin Möhrmann Go 1.16 has a 24 byte size class, which is a perfect fit for slice values assigned to interfaces.],
 ),
   insert-map: (:),
@@ -471,51 +367,47 @@ Yann Lechelle ( LinkedIn , Twitter ) is a Paris-based entrepreneur with a number
   debug-mode: false,
 )
 
-  #pull-quote([In Go these areas are known as size classes, because all the things of the same size are stored together (think school class–all the students are the same grade–not a C++ class).], [Dave Cheney])
+#pull-quote([In Go these areas are known as size classes, because all the things of the same size are stored together (think school class–all the students are the same grade–not a C++ class).], [Dave Cheney])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Most Frequently Asked Questions About NFTs(Non-Fungible Tokens)],
   author: [Unknown],
   source-name: [TechCrunch],
   images: (),
   paragraphs: (
   [Non-fungible tokens (NFTs) are the most popular digital assets today, capturing the attention of cryptocurrency investors, whales and people from around the world. People find it amazing that some users spend thousands or millions of dollars on a single NFT-based image of a monkey or other token, but you can simply take a screenshot for free. So here we share some freuently asked question about NFTs.],
-  [style="text-align: left;"\> 1) What is an NFT?],
+  [1) What is an NFT?],
   [NFT stands for non-fungible  token, which is a cryptographic token on a blockchain with unique identification codes that distinguish it from other tokens. NFTs are unique and not interchangeable, which means no two NFTs are the same. NFTs can be a unique artwork, GIF, Images, videos, Audio album. in-game items, collectibles etc.],
-  [style="text-align: left;"\> 2) What is Blockchain?],
+  [2) What is Blockchain?],
   [A blockchain is a distributed digital ledger that allows for the secure storage of data. By recording any kind of information—such as bank account transactions, the ownership of Non-Fungible Tokens (NFTs), or Decentralized Finance (DeFi) smart contracts—in one place, and distributing it to many different computers, blockchains ensure that data can’t be manipulated without everyone in the system being aware.],
-  [style="text-align: left;"\> 3) What makes an NFT valuable?],
+  [3) What makes an NFT valuable?],
   [The value of an NFT comes from its ability to be traded freely and securely on the blockchain, which is not possible with other current digital ownership solutionsThe NFT points to its location on the blockchain, but doesn’t necessarily contain the digital property. For example, if you replace one bitcoin with another, you will still have the same thing. If you buy a non-fungible item, such as a movie ticket, it is impossible to replace it with any other movie ticket because each ticket is unique to a specific time and place.],
-  [style="text-align: left;"\> 4) How do NFTs work?],
+  [4) How do NFTs work?],
   [One of the unique characteristics of non-fungible tokens (NFTs) is that they can be tokenised to create a digital certificate of ownership that can be bought, sold and traded on the blockchain.],
   [As with crypto-currency, records of who owns what are stored on a ledger that is maintained by thousands of computers around the world. These records can’t be forged because the whole system operates on an open-source network.],
   [NFTs also contain smart contracts—small computer programs that run on the blockchain—that give the artist, for example, a cut of any future sale of the token.],
-  [style="text-align: left;"\> 5) What’s the connection between NFTs and cryptocurrency?],
+  [5) What’s the connection between NFTs and cryptocurrency?],
   [Non-fungible tokens (NFTs) aren't cryptocurrencies, but they do use blockchain technology. Many NFTs are based on Ethereum, where the blockchain serves as a ledger for all the transactions related to said NFT and the properties it represents.5) How to make an NFT?],
   [Anyone can create an NFT. All you need is a digital wallet, some ethereum tokens and a connection to an NFT marketplace where you’ll be able to upload and sell your creations],
-  [style="text-align: left;"\> 6) How to validate the authencity of an NFT?],
+  [6) How to validate the authencity of an NFT?],
   [When you purchase a stock in NFT, that purchase is recorded on the blockchain—the bitcoin ledger of transactions—and that entry acts as your proof of ownership.],
-  [style="text-align: left;"\> 7) How is an NFT valued? What are the most expensive NFTs?],
+  [7) How is an NFT valued? What are the most expensive NFTs?],
   [The value of an NFT varies a lot based on the digital asset up for grabs. People use NFTs to trade and sell digital art, so when creating an NFT, you should consider the popularity of your digital artwork along with historical statistics.],
   [In the year 2021, a digital artist called Pak created an artwork called The Merge. It was sold on the Nifty Gateway NFT market for \$91.8 million.],
-  [style="text-align: left;"\> 8) Can NFTs be used as an investment?],
+  [8) Can NFTs be used as an investment?],
   [Non-fungible tokens can be used in investment opportunities. One can purchase an NFT and resell it at a profit. Certain NFT marketplaces let sellers of NFTs keep a percentage of the profits from sales of the assets they create.],
-  [style="text-align: left;"\> 9) Will NFTs be the future of art and collectibles?],
+  [9) Will NFTs be the future of art and collectibles?],
   [Many people want to buy NFTs because it lets them support the arts and own something cool from their favorite musicians, brands, and celebrities. NFTs also give artists an opportunity to program in continual royalties if someone buys their work. Galleries see this as a way to reach new buyers interested in art.],
-  [style="text-align: left;"\> 10) How do we buy an NFTs?],
+  [10) How do we buy an NFTs?],
   [There are many places to buy digital assets, like opensea and their policies vary. On top shot, for instance, you sign up for a waitlist that can be thousands of people long. When a digital asset goes on sale, you are occasionally chosen to purchase it.],
-  [style="text-align: left;"\> 11) Can i mint NFT for free?],
+  [11) Can i mint NFT for free?],
   [To mint an NFT token, you must pay some amount of gas fee to process the transaction on the Etherum blockchain, but you can mint your NFT on a different blockchain called Polygon to avoid paying gas fees. This option is available on OpenSea and this simply denotes that your NFT will only be able to trade using Polygon's blockchain and not Etherum's blockchain. Mintable allows you to mint NFTs for free without paying any gas fees.],
-  [style="text-align: left;"\> 12) Do i own an NFT if i screenshot it?],
-  [id="atContainer-adee9769ea74eb59e82d4f0cb2e6f816"\>],
+  [12) Do i own an NFT if i screenshot it?],
   [The answer is no. Non-Fungible Tokens are minted on the blockchain using cryptocurrencies such as Etherum, Solana, Polygon, and so on. Once a Non-Fungible Token is minted, the transaction is recorded on the blockchain and the contract or license is awarded to whoever has that Non-Fungible Token in their wallet.],
-  [style="text-align: left;"\> 12) Why are people investing so much in NFT?],
+  [12) Why are people investing so much in NFT?],
   [Non-fungible tokens have gained the hearts of people around the world, and they have given digital creators the recognition they deserve. One of the remarkable things about non-fungible tokens is that you can take a screenshot of one, but you don’t own it. This is because when a non-fungible token is created, then the transaction is stored on the blockchain, and the license or contract to hold such a token is awarded to the person owning the token in their digital wallet.],
   [You can sell your work and creations by attaching a license to it on the blockchain, where its ownership can be transferred. This lets you get exposure without losing full ownership of your work. Some of the most successful projects include Cryptopunks, Bored Ape Yatch Club NFTs, SandBox, World of Women and so on. These NFT projects have gained popularity globally and are owned by celebrities and other successful entrepreneurs. Owning one of these NFTs gives you an automatic ticket to exclusive business meetings and life-changing connections.],
-  [style="text-align: left;"\> Final Saying],
   [That’s a wrap. Hope you guys found this article enlightening. I just answer some question with my limited knowledge about NFTs. If you have any questions or suggestions, feel free to drop them in the comment section below. Also I have a question for you, Is bitcoin an NFTs? let me know in The comment section below],
 ),
   insert-map: (:),
@@ -524,10 +416,8 @@ Yann Lechelle ( LinkedIn , Twitter ) is a Paris-based entrepreneur with a number
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How we cleaned up and ranked our listeners' favorite albums of 2016],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
@@ -541,9 +431,9 @@ Yann Lechelle ( LinkedIn , Twitter ) is a Paris-based entrepreneur with a number
   [Different spelling, empty rows, multiple entries by one person: Ugh],
   [In addition to cleaning up the data to make it usable, we had to decide on a weighting algorithm for the five different ranks and calculate it.],
   [Since the whole project had a tight deadline, our process wasn’t pretty, but we did it. Here’s how:],
-  [id="step-1-combining-like-entries"\>Step 1: Combining Like Entries],
+  [Step 1: Combining Like Entries],
   [The poll asks listeners to type in the artist and album, separated with a comma. But humans are faulty creatures who make spelling mistakes, don’t obey the rules or don’t remember the name of an album correctly. This faultiness results in a nice compilation of a dozen different ways to write one and the same thing:],
-  [class="highlight"\> Bon Iver - 22, a Million
+  [Bon Iver - 22, a Million
 Bon Iver -22, A Million
 Bon Iver 22 a million
 Bon Iver, '22, A Million'
@@ -567,13 +457,16 @@ bon iver. 22,a million
   […and that’s still a relatively easy album name. I rely on your imagination to think of all the possible ways to spell “A Tribe Called Quest, We Got It from Here… Thank You 4 Your Service”.],
   [To fix that mess, we used a combination of cluster analysis in OpenRefine and “Find and Replace” in Google Spreadsheet.],
   [First, OpenRefine . To run the cluster analysis on just one column instead of five different ones, we needed to transform the data from a “wide” format into a “long” format . This can be easily achieved, e.g. with R:],
-  [Then we imported the CSV into OpenRefine, selected our one column that states all artist-album entries and chose Facet \> Text Facet and then Cluster .],
+  [library(reshape2)
+d = read.csv("data.csv",stringsAsFactors = FALSE)
+d = melt(d,id.vars = c('Timestamp'))
+write.csv(d,”data\_long.csv”)],
   [Text Facet in OpenRefine],
   [So what is cluster analysis? Basically, OpenRefine can run different algorithms on the data to cluster similar entries . Depending on the algorithm, “similar” is defined differently . OpenRefine offers different methods and keying functions, and we used all of them one after another.],
   [Clustering in OpenRefine],
   [OpenRefine then lets us select and merge similar entries and give them all a new name.],
   [After successfully running through lots of different cluster methods, our data was approximately 95 percent clean. Our Bon Iver entries looked like this:],
-  [class="highlight"\> Bon Iver, 22, A Million
+  [Bon Iver, 22, A Million
 Bon Iver, 22, A Million
 Bon Iver, 22, A Million
 Bon Iver, 22, A Million
@@ -585,11 +478,17 @@ Bon Iver, 22, A Million
 Bon Iver, 22, A Million
 …],
   [So much better! But OpenRefine doesn’t take care of the cases in which only the album or artist is mentioned. So we imported the data back into Google Spreadsheet and took care of that by hand – with a combination of “Find and Replace” and sorting the list alphabetically (which places all the Bon Iver ’s before Bon Iver, 22, A Million ).],
-  [id="step-2-roughly-clean-up-with-a-python-script"\>Step 2: Roughly clean up with a Python script],
+  [Step 2: Roughly clean up with a Python script],
   [Once we made sure that the albums were written in the same way, they were countable. But we still needed to only count the entries that are from individual listeners who don’t abuse the poll. To do so, we ran the cleaned data through a Python script. The Pandas library is a great choice for our first easy task, dropping the empty rows :],
+  [\# Drop empty rows
+ albums . dropna ( subset = RANKS )],
   [But Pandas proved to be a bad choice for the next task: Deleting duplicate rows that appears within one hour . Doing that makes sure that we eliminated the entries that obviously come from one and the same person. We saw dozens of these copy-and-pasted entries (especially for the album Mind of Mine by Zayn). To get rid of all the duplicate entries within one hour, we first transformed the Pandas dataframe to a Python list and then checked for identical entries:],
+  [\# Do row values match? If not, not a dupe
+ for rank in RANKS : 
+ if row1 \[ rank \] != row2 \[ rank \]: 
+ return False],
   [The last piece is checking for mentions of the same album within one entry , eg “Beyonce, Lemonade” on rank 1 and on rank 3. We wanted to delete these rows as well. To do so, we used a solution that we found on StackOverFlow :],
-  [class="highlight"\> \# check if all elements in a list are identical
+  [\# check if all elements in a list are identical
  iterator = iter ( iterator ) 
  try : 
  first = next ( iterator ) 
@@ -597,12 +496,17 @@ Bon Iver, 22, A Million
  return True 
  return all ( first == rest for rest in iterator )],
   [That whole process removed 1200 empty or duplicate rows and brought the CSV from 4,500 entries down to 3,300 entries.],
-  [id="step-3-weight-and-rank-with-an-r-script"\>Step 3: Weight and rank with an R script],
+  [Step 3: Weight and rank with an R script],
   [Wooooooohoo! We went from messy, human-made data to clean, machine-readable data! Next, we did the actual calculations that got us to a ranked list of the top albums.],
   [To spice things up a little bit (or maybe because we have people with different favorite tools on the team), we did this part of the process not with Python, but with R.],
   [After converting the data back into a long format, it looks like this:],
   [Data with ranks in long format],
   [Next, we gave each album a ranking value. To do so, we just replaced the rank columns with ranking values:],
+  [d\$rank\[d\$rank=="Rank.1"\]= 5
+d\$rank\[d\$rank=="Rank.2"\]= 4
+d\$rank\[d\$rank=="Rank.3"\]= 3
+d\$rank\[d\$rank=="Rank.4"\]= 2
+d\$rank\[d\$rank=="Rank.5"\]= 1],
   [Note here that we are giving the number one albums the most points and the number five album the least points. This means a sum of these points will lead to the most popular album.],
   [With numerical rank values, we could try out different ranking methods and different ways of aggregating these ranks. We quickly found that artists like Zayn who had campaigns on their behalf had huge spikes on certain days in terms of entries:],
   [The table shows how often Zayn’s Mind of Mine was mentioned on all days of the poll. He was really successful on the first and the second-to-last day.],
@@ -626,10 +530,8 @@ Bon Iver, 22, A Million
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Avoiding having to recompute values within SwiftUI views],
   author: [Swift by Sundell],
   source-name: [Swift by Sundell],
@@ -637,11 +539,8 @@ Bon Iver, 22, A Million
   paragraphs: (
   [In general, using computed properties can be a great way to model view-specific data that we want to create on-demand, when need — especially within SwiftUI views, since each such view already uses a computed property ( body ) to implement its actual UI.],
   [For example, here we’re using two computed properties to determine what title and button text that a UserSessionView should render based on the app’s current LoginState :],
-  [struct UserSessionView: View {
- var buttonAction: () -\> Void 
- \@Environment (\\. loginState ) private var state],
-  [var body: some View {
- VStack {
+  [var body: some View \{
+ VStack \{
  Text (title)
  . font (. headline )
  . foregroundColor (. white )
@@ -649,113 +548,114 @@ Bon Iver, 22, A Million
  . padding ()
  . background ( Color . white )
  . cornerRadius ( 10 )
- }
+ \}
  . padding ()
  . background ( Color . blue )
  . cornerRadius ( 15 )
- }],
-  [private var title: String {
- switch state {
+ \}],
+  [private var title: String \{
+ switch state \{
  case . loggedIn ( let user):
  return "Welcome back, \\(user. name ) !" 
  case . loggedOut :
  return "Not logged in" 
- }
- }],
-  [private var buttonText: String {
- switch state {
+ \}
+ \}],
+  [private var buttonText: String \{
+ switch state \{
  case . loggedIn :
  return "Log out" 
  case . loggedOut :
  return "Log in" 
- }
- }
-}],
+ \}
+ \}
+\}],
+  [To learn more about the Environment property wrapper that’s being used above, check out my guide to SwiftUI’s state management system .],
   [Implementing a SwiftUI view like that, using multiple computed properties, can often be a great approach — as it lets us keep our body implementations as simple as possible, and since it gives us a clear overview of how we’re computing the different content that a given view will render.],
   [Recomputed properties],
   [But, we also have to keep in mind that computed properties are just that — computed — there’s no form of caching or other kind of in-memory storage involved, meaning that each such values will always be recomputed each time that it’s being accessed.],
   [That’s not an issue in our first example, because each of our properties can be quickly computed with constant (or O(1) ) time complexity . However, let’s now take a look at another example, which is quite different in terms of performance characteristics, since we’re now computing a property by sorting a collection:],
-  [struct RemindersList: View {
+  [struct RemindersList: View \{
  var items: \[ Reminder . ID : Reminder \]],
-  [var body: some View {
- List (sortedItems) { reminder in 
+  [var body: some View \{
+ List (sortedItems) \{ reminder in 
  ...
- }
- }],
-  [private var sortedItems: \[ Reminder \] {
- items. values . sorted (by: {
+ \}
+ \}],
+  [private var sortedItems: \[ Reminder \] \{
+ items. values . sorted (by: \{
  \$0. dueDate Void],
   [\@State private var newItemName = ""],
-  [var body: some View {
- VStack {
- List (sortedItems) { reminder in 
+  [var body: some View \{
+ VStack \{
+ List (sortedItems) \{ reminder in 
  ...
- }
- HStack {
+ \}
+ HStack \{
  TextField ( "Add a new reminder" , text: \$newItemName )
- Button ( "Add" ) {
+ Button ( "Add" ) \{
  newItemHandler ( Reminder (name: newItemName))
- }
+ \}
  . disabled (newItemName. isEmpty )
- }
+ \}
  . padding ()
- }
- }],
-  [private var sortedItems: \[ Reminder \] {
- items. values . sorted (by: {
- \$0. dueDate AnyPublisher {
+ \}
+ \}],
+  [private var sortedItems: \[ Reminder \] \{
+ items. values . sorted (by: \{
+ \$0. dueDate AnyPublisher \{
  controller
  . loadReminders ()
- . map { items in 
- items. values . sorted (by: {
+ . map \{ items in 
+ items. values . sorted (by: \{
  \$0. dueDate Void],
   [init (items: \[ Reminder . ID : Reminder \],
- newItemHandler: \@escaping ( Reminder ) -\> Void ) {
- self . items = items. values . sorted (by: {
+ newItemHandler: \@escaping ( Reminder ) -\> Void ) \{
+ self . items = items. values . sorted (by: \{
  \$0. dueDate \< \$1. dueDate 
- })
+ \})
  self . newItemHandler = newItemHandler
- }],
+ \}],
   [\@State private var newItemName = ""],
   [...
-}],
+\}],
   [With the above change in place, we’re now only sorting our collection once per RemindersList instance, rather than after every key stroke, without actually having to change the way our view is created or how our app’s data is managed. So while my general recommendation is to keep initializers focused on simple setup work , rather than performing data mutations, that’s a tradeoff that we might be willing to make in this case.],
   [Worth keeping in mind, though, is that if the parent of our RemindersList view does update (or more specifically, if that parent’s body property gets re-evaluated), then a new instance of our view is likely going to be created, meaning that we’ll once again perform our item sorting operation.],
   [Basically, when writing code within SwiftUI views, it’s close to impossible to gain complete control over when and how that code will be executed. After all, a core part of the design of a declarative UI framework like SwiftUI is that the framework takes care of orchestrating all of our UI updates for us.],
   [So if we wanted to improve our control over the lifecycle of our actual model logic, then a better approach will likely be to move that logic out from our view implementations and into objects that we have complete control over.],
   [Dedicated model logic],
   [One way to do that would be to use something like a view model to encapsulate the logic associated with handling our items array. If we then make that view model an ObservableObject , then we’ll be able to easily observe it and connect to it within our SwiftUI views:],
-  [class RemindersListViewModel: ObservableObject {
+  [class RemindersListViewModel: ObservableObject \{
  \@Published private(set) var items: \[ Reminder \]],
-  [init (items: \[ Reminder . ID : Reminder \]) {
- self . items = items. values . sorted (by: {
+  [init (items: \[ Reminder . ID : Reminder \]) \{
+ self . items = items. values . sorted (by: \{
  \$0. dueDate \< \$1. dueDate 
- })
- }],
-  [func addItem(named name: String ) {
+ \})
+ \}],
+  [func addItem(named name: String ) \{
  ...
- }
-}],
+ \}
+\}],
   [With the above in place, we can now simplify our view quite heavily, and we’re also free to choose how we want to manage the above RemindersListViewModel ourselves, without having to take view updates and other SwiftUI implementation details into account:],
-  [struct RemindersList: View {
+  [struct RemindersList: View \{
  \@ObservedObject var viewModel: RemindersListViewModel 
  \@State private var newItemName = ""],
-  [var body: some View {
- VStack {
- List (viewModel. items ) { reminder in 
+  [var body: some View \{
+ VStack \{
+ List (viewModel. items ) \{ reminder in 
  ...
- }
- HStack {
+ \}
+ HStack \{
  TextField ( "Add a new reminder" , text: \$newItemName )
- Button ( "Add" ) {
+ Button ( "Add" ) \{
  viewModel. addItem (named: newItemName)
- }
+ \}
  . disabled (newItemName. isEmpty )
- }
+ \}
  . padding ()
- }
- }
-}],
+ \}
+ \}
+\}],
   [Very nice! That of course doesn’t mean that every single view within our app now needs to have a view model. It just so happens that in this particular case, a view model turned out to be a quite nice solution to our problem, since it enabled us to move our view-related model logic out from our view hierarchy itself (which also heavily improves that code’s testability).],
   [Recomputing some of our view-related values every time that a SwiftUI view updates is typically not an issue. After all, that’s the way that each view’s body property works, and as long as those computations can happen quickly (and ideally, with constant time complexity) then we’re not very likely to run into any kind of major performance issues.],
   [However, that’s not always the case, and sometimes we might need to be particularly careful with how we consume our model data within our views, especially if doing so involves any kind of potentially heavy operations that could slow down our overall UI performance.],
@@ -768,10 +668,8 @@ Bon Iver, 22, A Million
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [What makes a great photo editing intern (Apply now for Summer 2019!)],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
@@ -780,17 +678,16 @@ Bon Iver, 22, A Million
   [This is not your standard photo internship!],
   [This internship is an opportunity to learn more about the world of photo editing. Our goal isn’t to make you into a photo editor; we view this internship as a chance for you to understand what it is like to be an editor and improve your visual literacy , which can help you become a better photographer.],
   [Our paid internship runs from May 20 to Aug. 9. Applications are due Monday, March 4 at 5 p.m. ET.],
-  [id="what-you-will-be-doing"\>What you will be doing],
+  [What you will be doing],
   [Editing: You’ll be working closely with the Visuals Team’s photo editors (Nicole and Emily) on fast-paced deadlines – we’re talking anywhere from 15 minutes to publication, to short-term projects that are a week out. You’ll dig into news coverage and photo research, learning how to communicate about what makes a good image across a range of news topics, including international, national, technology, arts and more.],
   [Photography: Depending on the news cycle, there may be opportunities to photograph DC-area assignments. This can mean you’d have one or two shoots in a week, or maybe just a couple shoots in a month. You’ll work closely with a radio or web reporter while out in the field, and a photo editor will go through your work and provide feedback for each assignment. There will also be a chance to work on portraiture and still lifes in our studio.],
   [We also encourage each intern to create a self-directed project to work on throughout the semester. It can be an Instagram series , video , photo essay , text story or anything in-between. You can work independently or with another intern or reporter .],
   [You will be part of NPR’s intern program, which includes 40-50 interns each semester, across different departments. There will be coordinated training and intern-focused programming throughout the semester, which includes meeting NPR radio hosts, career development and other opportunities. As an intern, you will be treated as a member of the team. Many NPR employees are former interns and they’re always willing to help current interns.],
-  [id="eligibility"\>Eligibility],
   [Any student (undergraduate or graduate), or person who has graduated no more than 12 months prior to the start of the internship period to which he/she is applying is eligible. Interns must be authorized to work in the United States.],
-  [id="who-should-apply"\>Who should apply],
+  [Who should apply],
   [We’re looking for candidates that have a strong photojournalism background. An interest in editing, or experience with video/photo editing is a nice plus. It’s also helpful if you’ve completed at least one photojournalism-focused internship prior to applying (let us know if you have!), though it’s not necessary. A portfolio , however, is required.],
   [We also want folks who can tell us what they would like to accomplish during their time at NPR. What do you want to learn? What do you want to try? We try to shape each internship around our intern, so we rely on you to tell us what goals you have for your time with us!],
-  [id="so-how-do-i-apply"\>So how do I apply?],
+  [So how do I apply?],
   [Does this sound like you? Read about our expectations and selection process and then apply now! . The application deadline has passed.],
   [Into code, design, and data? Check out our design/development internship .],
 ),
@@ -800,10 +697,8 @@ Bon Iver, 22, A Million
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How to Setup the NPR App Template for You and Your News Org],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
@@ -817,21 +712,28 @@ Bon Iver, 22, A Million
   [Clone and bootstrap the app template for an individual project.],
   [Deploy app template projects.],
   [Customize the app template for your use and remove NPR branding.],
-  [id="prerequisites"\>Prerequisites],
   [Our app template relies on a UNIX-based development environment and working knowledge of the command line. We have a Python and Node-based stack. Thus, if you are new to all of this, you should probably read our development environment blog post first and make sure your environment matches ours. Namely, you should have Python 2.7 and the latest version of Node installed.],
   [Also, all of our projects are deployed from the template to Amazon S3. You should have three buckets configured: one for production, one for staging and one for synchronizing large media assets (like images) across computers. For example, we use apps.npr.org, stage-apps.npr.org and assets.apps.npr.org for our three buckets, respectively.],
-  [id="cloning-the-template"\>Cloning the template],
+  [Cloning the template],
   [All of our projects start and end in version control, so the first thing to do for your project is to fork our app template so you have a place for all of your defaults when you use the app template for more projects. This is going to be the place where all of your app template projects begin. When you want to start a new project, you clone your fork of the app template.],
   [Once that is done, clone your fork to your local machine so we can start changing some defaults.],
-  [id="set-up-your-development-environment"\>Set up your development environment],
+  [git clone git\@github.com:\$YOUR\_GITHUB\_USERNAME/app-template.git],
+  [Set up your development environment],
   [Hopefully, you’ve already checked to make sure your development stack matches ours . Next, we’re going to create a virtual environment for the app template and install the Python and Node requirements. Use the following commands:],
-  [id="environment-variables"\>Environment variables],
+  [mkvirtualenv app-template
+pip install -r requirements.txt
+npm install],
+  [Environment variables],
   [You will also need a few environment variables established so that the entire stack works.],
   [In order to use Google Spreadsheets with copytext from within the app template, you will need to store a Google username and password in your ‘.bash\_profile’ (or comparable file for other shells like zsh).],
+  [export APPS\_GOOGLE\_EMAIL="youremail\@gmail.com"
+export APPS\_GOOGLE\_PASS="ih0pey0urpassw0rdisn0tpassword"],
   [When you create spreadsheets for your projects, ensure the Google account stored in your environment can access the spreadsheet.],
   [For deployment to Amazon S3, you will need your AWS Access Key ID and Secret stored as environment variables as well:],
+  [export AWS\_ACCESS\_KEY\_ID="\$AWSKEY"
+export AWS\_SECRET\_ACCESS\_KEY="\$AWSSECRET"],
   [After you have set these variables, open a new terminal session so that these variables are a part of your environment.],
-  [id="setting-your-defaults"\>Setting your defaults],
+  [Setting your defaults],
   [With your development environment and environment variables set, we can start hacking on the template.],
   [All of the configuration you will need to change lives in ‘app\_config.py’ . Open that file in your text editor of choice. We will edit a few of the NPR-specific defaults in this file.],
   [Change the following variables:],
@@ -843,34 +745,34 @@ Bon Iver, 22, A Million
   [DISQUS\_SHORTNAME : We configure different Disqus shortnames for different deployment targets. You can set yours in the configure\_targets() function in app\_config.py],
   [You will also notice the variables PRODUCTION\_SERVERS and STAGING\_SERVERS . Our app template is capable of deploying cron jobs and Flask applications to live servers. We do this for apps like our Playgrounds app .],
   [If you are going to use these server-side features, you will want to create a couple EC2 boxes for this purpose. As our defaults show, you can either create a full URL for this box or just use an elastic IP.],
-  [id="testing-your-new-config"\>Testing your new config],
+  [Testing your new config],
   [With all of this changed, you should be able to bootstrap a new project, work on it, and deploy it with the entire pipeline working. Let’s try it!],
-  [id="testing-cloning-and-bootstrapping"\>Testing cloning and bootstrapping],
+  [Testing cloning and bootstrapping],
   [First, make sure you have pushed all of the changes you just made back to Github. Then, make a test repository for a new app template project on Github. Take note of what you call this repository.],
   [Clone your fork of the app template once again. This is how you will begin all individual app template projects. This time, we’re going to specify that the clone is created in a folder with the name of the repository you just created . For example, if you made a repository called ‘my-new-awesome-project’, your clone command would look like this:],
+  [git clone git\@github.com:\$YOUR\_GITHUB\_USERNAME/app-template.git my-new-awesome-project],
   [Next, run the following commands:],
+  [cd my-new-awesome-project],
   [mkvirtualenv my-new-awesome-project
 pip install -r requirements.txt
 npm install],
   [fab bootstrap],
   [If you go back to the my-new-awesome-project you created, you should see an initial commit that puts the app template in this repository. If this worked, you have made all the changes necessary for bootstrapping new app template projects.],
-  [id="testing-the-local-flask-app"\>Testing the local Flask app],
+  [Testing the local Flask app],
   [In the project’s root directory in the terminal, run ./app.py . Then, open your web browser and visit http:\/\/localhost:8000],
   [You should see a web page (albeit one with NPR branding all over it… we’ll get there). If you see an error, something went wrong.],
-  [id="testing-deployment"\>Testing deployment],
+  [Testing deployment],
   [Finally, let’s test deployment. Run fab staging master deploy . Visit YOUR-S3-STAGING-BUCKET.com/my-new-awesome-project to see if deployment worked properly. You should see the same page you saw when you ran the local Flask server.],
   [If everything we just tested worked, then you are ready to start using the app template for all of your static site needs. Happy hacking!],
   [Below, I will get into some finer details about how to turn off certain features and get rid of more NPR-specific defaults],
-  [id="customizing-and-ripping-out-features"\>Customizing and Ripping Out Features],
+  [Customizing and Ripping Out Features],
   [Chances are, if you are using our app template, you don’t want to use all of our template. We’re fully aware that some of ways we do things are esoteric and may not work for everyone. Other things are our standard defaults, but won’t work for your projects. Here are some things you will probably want to change.],
-  [id="fonts"\>Fonts],
   [We automatically include the NPR-licensed Gotham web font. You can’t use this. Sorry. If you go to templates/\_fonts.html , you can point to your own hosted webfont CSS files, or alternatively, remove the template include from templates/\_base.html to turn off the webfont feature entirely.],
-  [id="ads"\>Ads],
   [We have a rig to serve NPR ads on some of our apps. We’re pretty sure you won’t want NPR ads on your stuff. To remove the ads, remove two files from the repo: www/js/ads.js and less/adhesion.less . Then, in templates/\_base.html , remove the call to js/ads.js and in less/app.less , remove the import statement that imports the adhesion.less file.],
   [Finally, in app\_config.py , you should remove the NPR\_DFP dict, as it will now be unnecessary.],
-  [id="front-end-defaults"\>Front-end defaults],
+  [Front-end defaults],
   [We have a base template setup so that we can see that all of the template is working easily. You will probably want something similar, but you will want to strip out the NPR header/footer and all the branding. You can do that by editing the various templates inside the templates folder, especially \_base.html and index.html and editing app.less .],
-  [id="sharing-tools-and-comments"\>Sharing tools and comments],
+  [Sharing tools and comments],
   [All of our apps come with a common share panel and comments form. We use Disqus for comments and integrate with Facebook and Twitter. This may or may not work for you. Should you want to remove all of these features, remove the following files:],
   [data/featured.json],
   [fabfile/data.py],
@@ -883,11 +785,10 @@ npm install],
   [templates/\_share\_modal.html],
   [www/js/comments.js],
   [Be sure to check for where these files are included in the HTML and less templates as well.],
-  [id="google-spreadsheets"\>Google Spreadsheets],
   [To turn off the dependency on Google Spreadsheets, simply set the variable COPY\_GOOGLE\_DOC\_URL in app\_config.py to None .],
   [Note that many of the default templates rely on a COPY object that is retrieved from a local .xlsx file stored in the data directory. That file path is set by the COPY\_PATH variable in app\_config.py .],
   [If you want to factor out all spreadsheet functionality, this will take a lot more work. You will need to completely remove the dependency on copytext throughout the app template.],
-  [id="this-seems-like-a-lot-why-should-i-do-this"\>This seems like a lot. Why should I do this?],
+  [This seems like a lot. Why should I do this?],
   [Our app template is customized for our needs. It has a great many NPR-specific defaults. If you want to use the app template for projects outside of NPR, it takes a good amount of customization to truly decouple the template from NPR defaults.],
   [But we think the payoff would be worth it for any news organization. Having a baseline template with sensible defaults makes all of your future projects faster, and you can spend more time focusing on the development of your individual project. We spend so much time working on our template up front because we like to spend as much time as we can working on the specifics of an individual project, rather than building the 90% of every website that is the same. The app template allows us to work at a quick pace, working on weekly sprints and turning around projects in a week or two.],
   [If you work for a news organization looking to turn around web projects quickly, you need a place to start every time. Instead of making broad, templated design decisions that compromise the functionality and purpose of a project, use our template to handle the boring stuff and make more amazing things.],
@@ -898,10 +799,8 @@ npm install],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Writing testable code when using SwiftUI],
   author: [Swift by Sundell],
   source-name: [Swift by Sundell],
@@ -913,119 +812,121 @@ npm install],
   [Logic intertwined with views],
   [“You shouldn’t put business logic within your views”, is a piece of advice that’s often mentioned when discussing unit testing within the context of UI-based projects, such as iOS and Mac apps. However, in practice, that advice can sometimes be tricky to follow, as the most natural or intuitive place to put view-related logic is often within the views themselves.],
   [As an example, let’s say that we’re working on an app that contains the following SendMessageView . Although the actual message sending logic (and its associated networking) has already been abstracted using a MessageSender protocol, all of the UI-specific logic related to sending messages is currently embedded right within our view:],
-  [struct SendMessageView: View {
+  [struct SendMessageView: View \{
  var sender: MessageSender],
   [\@State private var message = "" 
  \@State private var isSending = false
  \@State private var sendingError: Error ?],
-  [var body: some View {
- VStack {
+  [var body: some View \{
+ VStack \{
  Text ( "Your message:" )],
   [TextEditor (text: \$message )],
-  [Button (isSending ? "Sending..." : "Send" ) {
+  [Button (isSending ? "Sending..." : "Send" ) \{
  isSending = true 
  sendingError = nil 
  
- Task {
- do {
+ Task \{
+ do \{
  try await sender. sendMessage (message)
  message = "" 
- } catch {
+ \} catch \{
  sendingError = error
- }],
+ \}],
   [isSending = false 
- }
- }
+ \}
+ \}
  . disabled (isSending || message. isEmpty )],
-  [if let error = sendingError {
+  [if let error = sendingError \{
  Text (error. localizedDescription )
  . foregroundColor (. red )
- }
- }
- }
-}],
+ \}
+ \}
+ \}
+\}],
   [At first glance, the above might not look so bad. Our view isn’t massive by any stretch of the imagination, and the code is quite well-organized. However, unit testing that view’s logic would currently be incredibly difficult — as we’d have to find some way to spin up our view within our tests, then find its various UI controls (such as its “Send” button), and then figure out a way to trigger and observe those views ourselves.],
   [Because we have to remember that SwiftUI views aren’t actual, concrete representations of the UI that we’re drawing on-screen, which can then be controlled and inspected as we wish. Instead, they’re ephemeral descriptions of what we want our various views to look like, which the system then renders and manages on our behalf.],
   [So, although we could most likely find a way to unit test our SwiftUI views directly — ideally, we’ll probably want to verify our logic in a much more controlled, isolated environment.],
   [One way to create such an isolated environment would be to extract all of the logic that we’re looking to test out from our views, and into objects and functions that are under our complete control — for example by using a view model . Here’s what such a view model could end up looking like if we were to move all of our message sending UI logic out from our SendMessageView :],
-  [\@MainActor class SendMessageViewModel: ObservableObject {
+  [\@MainActor class SendMessageViewModel: ObservableObject \{
  \@Published var message = "" 
  \@Published private(set) var errorText: String ?
  
- var buttonTitle: String { isSending ? "Sending..." : "Send" }
- var isSendingDisabled: Bool { isSending || message. isEmpty }],
+ var buttonTitle: String \{ isSending ? "Sending..." : "Send" \}
+ var isSendingDisabled: Bool \{ isSending || message. isEmpty \}],
   [private let sender: MessageSender 
  private var isSending = false],
-  [init (sender: MessageSender ) {
+  [init (sender: MessageSender ) \{
  self . sender = sender
- }],
-  [func send() {
- guard !message. isEmpty else { return }
- guard !isSending else { return }],
+ \}],
+  [func send() \{
+ guard !message. isEmpty else \{ return \}
+ guard !isSending else \{ return \}],
   [isSending = true 
  errorText = nil],
-  [Task {
- do {
+  [Task \{
+ do \{
  try await sender. sendMessage (message)
  message = "" 
- } catch {
+ \} catch \{
  errorText = error. localizedDescription 
- }],
+ \}],
   [isSending = false 
- }
- }
-}],
+ \}
+ \}
+\}],
+  [To learn more about constructing and using observable objects, check out this guide to SwiftUI’s state management system .],
   [Our logic remains almost identical, but the above refactor does give us two quite significant benefits. First, we’ll now be able to unit test our code without having to worry about SwiftUI at all. And second, we’ll even be able to improve our SwiftUI view itself, as our view model now contains all of the logic that our view needs to decide how it should be rendered — making that UI code much simpler in the process:],
-  [struct SendMessageView: View {
+  [struct SendMessageView: View \{
  \@ObservedObject var viewModel: SendMessageViewModel],
-  [var body: some View {
- VStack (alignment: . leading ) {
+  [var body: some View \{
+ VStack (alignment: . leading ) \{
  Text ( "Your message:" )],
   [TextEditor (text: \$viewModel . message )],
-  [Button (viewModel. buttonTitle ) {
+  [Button (viewModel. buttonTitle ) \{
  viewModel. send ()
- }
+ \}
  . disabled (viewModel. isSendingDisabled )],
-  [if let errorText = viewModel. errorText {
+  [if let errorText = viewModel. errorText \{
  Text (errorText). foregroundColor (. red )
- }
- }
- }
-}],
+ \}
+ \}
+ \}
+\}],
   [Fantastic! To now shift our focus to unit testing our code, we’re going to need two pieces of infrastructure before we can actually start writing our test cases. While those two pieces are not strictly required, they’re going to help us make our testing code so much simpler and easier to read.],
   [Investing in utilities],
   [First, let’s create a mocked implementation of our MessageSender protocol, which will enable us to gain complete control over how messages are sent, as well as how errors are thrown during that process:],
-  [class MessageSenderMock: MessageSender {
+  [class MessageSenderMock: MessageSender \{
  \@Published private(set) var pendingMessageCount = 0 
  private var pendingMessageContinuations = \[ CheckedContinuation \]()],
-  [func sendMessage( \_ message: String ) async throws {
- return try await withCheckedThrowingContinuation { continuation in 
+  [func sendMessage( \_ message: String ) async throws \{
+ return try await withCheckedThrowingContinuation \{ continuation in 
  pendingMessageContinuations. append (continuation)
  pendingMessageCount += 1 
- }
- }],
-  [func sendPendingMessages() {
+ \}
+ \}],
+  [func sendPendingMessages() \{
  let continuations = pendingMessageContinuations
  pendingMessageContinuations = \[\]
  pendingMessageCount = 0 
- continuations. forEach { \$0. resume () }
- }],
-  [func triggerError( \_ error: Error ) {
+ continuations. forEach \{ \$0. resume () \}
+ \}],
+  [func triggerError( \_ error: Error ) \{
  let continuations = pendingMessageContinuations
  pendingMessageContinuations = \[\]
  pendingMessageCount = 0 
- continuations. forEach { \$0. resume (throwing: error) }
- }
-}],
+ continuations. forEach \{ \$0. resume (throwing: error) \}
+ \}
+\}],
+  [To learn more about Swift’s continuation system, check out “Connecting async/await to other Swift code” .],
   [Next, since the code that we’re looking to verify is asynchronous, we’re going to need a way to wait for a given state to be entered before proceeding with our verifications. Since we don’t want to put any observation logic within our tests themselves, let’s extend XCTestCase with a method that’ll let us wait until a given \@Published -marked property has been assigned a specific value:],
-  [extension XCTestCase {
+  [extension XCTestCase \{
  func waitUntil (
  \_ propertyPublisher: Published . Publisher ,
  equals expectedValue: T ,
  timeout: TimeInterval = 10 ,
  file: StaticString = \#file ,
  line: UInt = \#line 
- ) {
+ ) \{
  let expectation = expectation (
  description: "Awaiting value \\(expectedValue) " 
  )
@@ -1033,40 +934,40 @@ npm install],
  var cancellable: AnyCancellable ?],
   [cancellable = propertyPublisher
  . dropFirst ()
- . first (where: { \$0 == expectedValue })
- . sink { value in 
+ . first (where: \{ \$0 == expectedValue \})
+ . sink \{ value in 
  XCTAssertEqual (value, expectedValue, file: file, line: line)
  cancellable?. cancel ()
  expectation. fulfill ()
- }],
+ \}],
   [waitForExpectations (timeout: timeout, handler: nil )
- }
-}],
-  [class="info"\>Above we’re using Apple’s Combine framework to observe the injected Published property’s publisher (wow, that’s quite a tongue twister, isn’t it?). To learn more about Combine, and published properties in particular, check out this Discover page .],
+ \}
+\}],
+  [Above we’re using Apple’s Combine framework to observe the injected Published property’s publisher (wow, that’s quite a tongue twister, isn’t it?). To learn more about Combine, and published properties in particular, check out this Discover page .],
   [With those two pieces in place, we can now finally start writing the unit tests for our UI-related message sending logic! It might, at first, seem rather unnecessary to create all of that infrastructure just to be able to verify some simple pieces of logic — but the utilities that we’ve now created will really make our testing code much easier (and more enjoyable) to write.],
   [It’s testing time!],
   [Let’s start by verifying that our “Send” button will be correctly enabled and disabled based on whether the user has entered a message. To do that, we’ll start by setting up an XCTestCase subclass for our tests, and we’ll then be able to easily simulate a message being entered simply by assigning a string to our view model’s message property:],
-  [\@MainActor class SendMessageViewModelTests: XCTestCase {
+  [\@MainActor class SendMessageViewModelTests: XCTestCase \{
  private var sender: MessageSenderMock !
  private var viewModel: SendMessageViewModel !],
-  [\@MainActor override func setUp() {
+  [\@MainActor override func setUp() \{
  super . setUp ()
  sender = MessageSenderMock ()
  viewModel = SendMessageViewModel (sender: sender)
- }],
-  [func testSendingDisabledWhileMessageIsEmpty() {
+ \}],
+  [func testSendingDisabledWhileMessageIsEmpty() \{
  XCTAssertTrue (viewModel. isSendingDisabled )
  viewModel. message = "Message" 
  XCTAssertFalse (viewModel. isSendingDisabled )
  viewModel. message = "" 
  XCTAssertTrue (viewModel. isSendingDisabled )
- }
-}],
-  [class="info"\>Note that we need to add the MainActor attribute to both our test case itself, as well as to the setUp method that we’re overriding from the XCTestCase base class. Otherwise we wouldn’t be able to easily interact with our view model’s APIs, since those are also bound to the main actor. To learn more, check out this article .],
+ \}
+\}],
+  [Note that we need to add the MainActor attribute to both our test case itself, as well as to the setUp method that we’re overriding from the XCTestCase base class. Otherwise we wouldn’t be able to easily interact with our view model’s APIs, since those are also bound to the main actor. To learn more, check out this article .],
   [Alright, our first test is done, but we’re just getting started. Next, let’s verify that the correct states are entered while sending a message — and this is where the two utilities that we built earlier (our MessageSenderMock class and our waitUntil method) will come very much in handy:],
-  [\@MainActor class SendMessageViewModelTests: XCTestCase {
+  [\@MainActor class SendMessageViewModelTests: XCTestCase \{
  ...],
-  [func testSuccessfullySendingMessage() {
+  [func testSuccessfullySendingMessage() \{
  \/\\/ First, start sending a message, and verify the current state: 
  viewModel. message = "Message" 
  viewModel. send ()
@@ -1077,13 +978,13 @@ npm install],
  sender. sendPendingMessages ()
  waitUntil (viewModel. \$message , equals: "" )],
   [XCTAssertEqual (viewModel. buttonTitle , "Send" )
- }
-}],
+ \}
+\}],
   [That’s really the power of investing in testing infrastructure like mocks and various utility functions — they let our testing methods remain completely linear, and free from cancellables, expectations, and other sources of complexity.],
   [Let’s write one more test. This time, we’ll verify that our code behaves correctly when an error was encountered:],
-  [\@MainActor class SendMessageViewModelTests: XCTestCase {
+  [\@MainActor class SendMessageViewModelTests: XCTestCase \{
  ...],
-  [func testHandlingMessageSendingError() {
+  [func testHandlingMessageSendingError() \{
  \/\\/ First, start sending a message: 
  viewModel. message = "Message" 
  viewModel. send ()
@@ -1095,47 +996,47 @@ npm install],
   [XCTAssertEqual (viewModel. message , "Message" )
  XCTAssertEqual (viewModel. buttonTitle , "Send" )
  XCTAssertFalse (viewModel. isSendingDisabled )
- }
-}],
+ \}
+\}],
   [Just like that, we’ve now fully covered our UI-related message sending logic with unit tests — without having to actually attempt to unit test our SwiftUI view itself. As an added bonus, we also made our view code simpler in the process, and it should now be much easier to iterate on our view’s logic and styling completely separately.],
   [Combine the above approach with a few UI tests, as well as manual testing, and we should be able to release new versions of our app with confidence.],
   [Is MVVM required for testability?],
   [Now, is the point of the above series of examples that all SwiftUI-based apps should completely adopt the MVVM ( Model-View-ViewModel ) architecture? No, absolutely not. Instead, the point is that the easiest way to unit test any kind of UI-related code (regardless of what UI framework that the code was originally written against) is most often to move that code out from whatever view that it’s being consumed in. That way, our logic is no longer tied to any specific UI framework, and we’re free to test and manage it however we’d like.],
   [To further prove that this article isn’t about advocating for “MVVM all the things!”, let’s take a look at another example, in which using a view model would probably be quite unnecessary.],
   [Here we’ve written an EventSelectionView , which also has a significant piece of logic embedded within it — this time for deciding whether a given Event should be auto-selected when the user taps a button:],
-  [struct EventSelectionView: View {
+  [struct EventSelectionView: View \{
  var events: \[ Event \]
  \@Binding var selection: Event ?],
-  [var body: some View {
- List (events) { event in 
+  [var body: some View \{
+ List (events) \{ event in 
  ...
- }
- . toolbar {
- Button ( "Select next available" ) {
- selection = events. first (where: { event in
- guard event. isBookable else {
+ \}
+ . toolbar \{
+ Button ( "Select next available" ) \{
+ selection = events. first (where: \{ event in
+ guard event. isBookable else \{
  return false 
- }],
+ \}],
   [guard event. participants . count . now 
- })
- }
- }
- }
-}],
+ \})
+ \}
+ \}
+ \}
+\}],
   [Just like when we refactored our SendMessageView earlier, one way to make the above logic testable would be to create another view model, and move our logic there. But, let’s take a different (more lightweight) approach this time, and instead move that logic into our Event type itself:],
-  [extension Event {
- var isSelectable: Bool {
- guard isBookable else {
+  [extension Event \{
+ var isSelectable: Bool \{
+ guard isBookable else \{
  return false 
- }],
+ \}],
   [guard participants. count . now 
- }
-}],
+ \}
+\}],
   [After all, the above logic isn’t very UI-related at all (it doesn’t mutate any form of view state, and it just inspects properties that are owned by Event itself), so it doesn’t really warrant the creation of a dedicated view model.],
   [And, even without a view model, we can still fully test the above code, simply by creating and mutating an Event value:],
-  [class EventTests: XCTestCase {
+  [class EventTests: XCTestCase \{
  private var event: Event !],
-  [override func setUp() {
+  [override func setUp() \{
  super . setUp ()],
   [event = Event (
  id: UUID (),
@@ -1143,38 +1044,38 @@ npm install],
  isBookable: true ,
  startDate: . distantFuture 
  )
- }],
-  [func testEventIsSelectableByDefault() {
+ \}],
+  [func testEventIsSelectableByDefault() \{
  XCTAssertTrue (event. isSelectable )
- }],
-  [func testUnBookableEventIsNotSelectable() {
+ \}],
+  [func testUnBookableEventIsNotSelectable() \{
  event. isBookable = false 
  XCTAssertFalse(event. isSelectable )
- }],
-  [func testFullyBookedEventIsNotSelectable() {
+ \}],
+  [func testFullyBookedEventIsNotSelectable() \{
  event. participants = \[. stub ()\]
  XCTAssertFalse (event. isSelectable )
- }],
-  [func testPastEventIsNotSelectable() {
+ \}],
+  [func testPastEventIsNotSelectable() \{
  event. startDate = . distantPast 
  XCTAssertFalse (event. isSelectable )
- }
-}],
+ \}
+\}],
   [Just like before, a big benefit of performing the above kind of logic extraction is that doing so also tends to make our SwiftUI-based code much simpler. Thanks to our new Event extension, EventSelectionView can now simply use Swift’s key path syntax to pick the first selectable event — like this:],
-  [struct EventSelectionView: View {
+  [struct EventSelectionView: View \{
  var events: \[ Event \]
  \@Binding var selection: Event ?],
-  [var body: some View {
- List (events) { event in 
+  [var body: some View \{
+ List (events) \{ event in 
  ...
- }
- . toolbar {
- Button ( "Select next available" ) {
+ \}
+ . toolbar \{
+ Button ( "Select next available" ) \{
  selection = events. first (where: \\. isSelectable )
- }
- }
- }
-}],
+ \}
+ \}
+ \}
+\}],
   [So, regardless of whether we choose to go for a view model, a simple model extension, or another kind of metaphor — if we can move the UI logic that we’re looking to test out from our views themselves, then those tests tend to be much easier to write and maintain.],
   [So, how do I unit test my SwiftUI views? The answer is quite simply: I don’t . I also almost never test my UIView implementations either. Instead, I focus on extracting all of the logic that I wish to test out from my views and into objects that are under my complete control. That way, I can spend less time fighting with Apple’s UI frameworks in order to make them unit testing-friendly, and more time writing solid, reliable tests.],
   [I hope that this article has given you a few ideas on how you could make your SwiftUI-based code easier to test as well. If you have any questions, comments, or feedback, then feel free to reach out via either Twitter or email .],
@@ -1186,10 +1087,8 @@ npm install],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [TOP 11 AI MARKETING TOOLS YOU SHOULD USE (Updated 2022)],
   author: [Unknown],
   source-name: [TechCrunch],
@@ -1198,59 +1097,53 @@ npm install],
   [The marketing industry is turning to artificial intelligence (AI) as a way to save time and execute smarter, more personalized campaigns. 61% of marketers say AI software is the most important aspect of their data strategy.],
   [If you’re late to the AI party, don’t worry. It’s easier than you think to start leveraging artificial intelligence tools in your marketing strategy. Here are 11 AI marketing tools every marketer should start using today.],
   [1.  Jasper Ai (Formerly known as Jarvis)],
-  [style="text-align: left;"\>],
   [Jasper is a content writing and content generation tool that uses artificial intelligence to identify the best words and sentences for your writing style and medium in the most efficient, quick, and accessible way.],
   [It's trusted by 50,000+ marketers for creating engaging marketing campaigns, ad copy, blog posts, and articles within minutes which would traditionally take hours or days. Special Features:],
   [Blog posts have been optimized for search engines and rank high on Google and other search engines. This is a huge plus for online businesses that want to generate traffic to their website through content marketing.],
   [99.9% Original Content and guarantees that all content it generates will be original, so businesses can focus on their online reputation rather than worrying about penalties from Google for duplicate content.],
   [Long-Form Article Writing – Jasper.ai is also useful for long-form writing, allowing users to create articles of up to 10,000 words without any difficulty. This is ideal for businesses that want to produce in-depth content that will capture their audience’s attention.],
   [Wait!  I've got a pretty sweet deal for you. Sign up through the link below, and you'll get   (10k Free Credits)],
-  [style="text-align: left;"\>],
-  [style="text-align: left;"\> Also Read:  Top 10 AI Content Generator & Writer Tools in 2022],
-  [style="text-align: left;"\>],
-  [style="text-align: left;"\> 2. Personalize],
+  [Also Read:  Top 10 AI Content Generator & Writer Tools in 2022],
+  [2. Personalize],
   [Personalize is an AI-powered technology that helps you identify and produce highly targeted sales and marketing campaigns by tracking the products and services your contacts are most interested in at any given time. The platform uses an algorithm to identify each contact’s top three interests, which are updated in real-time based on recent site activity.],
   [K ey Features],
   [Identifies  top three interests based on metrics like time on page, recency, and frequency of each contact],
   [Works with every ESP and CRM],
   [Easy to get up and running in days],
   [Enterprise-grade technology at a low cost for SMBs],
-  [style="text-align: left;"\> 3. Seventh Sense],
+  [3. Seventh Sense],
   [Seventh Sense provides behavioral analytics that helps you win attention in your customers’ overcrowded email inboxes. Choosing the best day and time to send an email is always a gamble. And while some days of the week generally get higher open rates than others, you’ll never be able to nail down a time that’s best for every customer. Seventh Sense eases your stress of having to figure out the perfect send-time and day for your email campaigns. The AI-based platform figures out the best timing and email frequency for each contact based on when they’re opening emails. The tool is primarily geared toward HubSpot and Marketo customers],
-  [style="text-align: left;"\>],
   [AI determines the best send-time and email frequency for each contact],
   [Connects with HubSpot and Marketo],
-  [style="text-align: left;"\> 4. Phrasee],
+  [4. Phrasee],
   [Phrasee uses artificial intelligence to help you write more effective subject lines. With its AI-based Natural Language Generation system, Phrasee uses data-driven insights to generate millions of natural-sounding copy variants that match your brand voice. The model is end-to-end, meaning when you feed the results back to Phrasee, the prediction model rebuilds so it can continuously learn from your audience.],
-  [style="text-align: left;"\>],
   [Instantly generates millions of human-sounding, brand-compliant copy variants],
   [Creates tailored language models for every customer],
   [Learns what your audience responds to and rebuilds the prediction model every time],
-  [style="text-align: left;"\> 5. Hubspot Seo],
+  [5. Hubspot Seo],
   [HubSpot Search Engine Optimization (SEO) is an integral tool for the Human Content team. It uses machine learning to determine how search engines understand and categorize your content. HubSpot SEO helps you improve your search engine rankings and outrank your competitors. Search engines reward websites that organize their content around core subjects, or topic clusters. HubSpot SEO helps you discover and rank for the topics that matter to your business and customers.],
   [Helps you discover and rank topics that people are searching for],
   [Provides suggestions for your topic clusters and related subjects],
   [Integrates with all other HubSpot content tools to help you create a well-rounded content strategy],
   [Also Read:  Top 10 AI Content Generator & Writer Tools in 2022],
-  [style="text-align: left;"\>  6. Evolve AI],
-  [id="atContainer-8a426783aef805554f3d96c19f8beeb7"\>],
+  [6. Evolve AI],
   [When you’re limited to testing two variables against each other at a time, it can take months to get the results you’re looking for. Evolv AI lets you test all your ideas at once. It uses advanced algorithms to identify the top-performing concepts, combine them with each other, and repeat the process to achieve the best site experience.],
   [Figures out which content provides the best performance],
   [Lets you test multiple ideas in a single experiment instead of having to perform many individual tests over a long period],
   [Lets you try all your ideas across multiple pages for full-funnel optimization],
   [Offers visual and code editors],
-  [style="text-align: left;"\> 7. Acrolinx],
+  [7. Acrolinx],
   [Acrolinx is a content alignment platform that helps brands scale and improves the quality of their content. It’s geared toward enterprises – its major customers include big brands like Google, Adobe, and Amazon - to help them scale their writing efforts. Instead of spending time chasing down and fixing typos in multiple places throughout an article or blog post, you can use Acrolinx to do it all right there in one place. You start by setting your preferences for style, grammar, tone of voice, and company-specific word usage. Then, Acrolinx checks and scores your existing content to find what’s working and suggest areas for improvement. The platform provides real-time guidance and suggestions to make writing better and strengthen weak pages.],
   [Key features],
   [Reviews and scores existing content to ensure it meets your brand guidelines],
   [Finds opportunities to improve your content and use automation to shorten your editorial process.],
   [Integrates with more than 50 tools and platforms, including Google Docs, Microsoft Word, WordPress, and most web browsers.],
-  [style="text-align: left;"\> 8. MarketMuse],
+  [8. MarketMuse],
   [MarketMuse uses an algorithm to help marketers build content strategies. The tool shows you where to target keywords to rank in specific topic categories, and recommends keywords you should go after if you want to own particular topics. It also identifies gaps and opportunities for new content and prioritizes them by their probable impact on your rankings. The algorithm compares your content with thousands of articles related to the same topic to uncover what’s missing from your site.],
   [Key features:],
   [The built-in editor shows how in-depth your topic is covered and what needs improvement],
   [Finds gaps and opportunities for new content creation, prioritized by their probable impact and your chance of ranking],
-  [style="text-align: left;"\> 9. Copilot],
+  [9. Copilot],
   [Copilot is a suite of tools that help eCommerce businesses maintain real-time communication with customers around the clock at every stage of the funnel. Promote products, recover shopping carts and send updates or reminders directly through Messenger.],
   [Key features:],
   [Integrate Facebook Messenger directly with your website, including chat history and recent interactions for a fluid customer service experience],
@@ -1261,20 +1154,18 @@ npm install],
   [Demonstrate social proof on your website with a widget, or push automatic Facebook posts sharing recent purchases],
   [Display a promotional banner on your website to capture contacts instantly],
   [Also Read:  Top 10 AI Content Generator & Writer Tools in 2022],
-  [style="text-align: left;"\> 10. Yotpo],
+  [10. Yotpo],
   [Yotpo’s deep learning technology evaluates your customers’ product reviews to help you make better business decisions. It identifies key topics that customers mention related to your products—and their feelings toward them. The AI engine extracts relevant reviews from past buyers and presents them in smart displays to convert new shoppers. Yotpo also saves you time moderating reviews. The AI-powered moderation tool automatically assigns a score to each review and flags reviews with negative sentiment so you can focus on quality control instead of manually reviewing every post.],
   [Key features:],
   [Makes it easy for shoppers to filter reviews and find the exact information they’re looking for],
   [Analyzes customer feedback and sentiments to help you improve your products],
   [Integrates with most leading eCommerce platforms, including BigCommerce, Magento, and Shopify.],
-  [style="text-align: left;"\> 11. Albert AI],
+  [11. Albert AI],
   [Albert is a self-learning software that automates the creation of marketing campaigns for your brand. It analyzes vast amounts of data to run optimized campaigns autonomously, allowing you to feed in your own creative content and target markets, and then use data from its database to determine key characteristics of a serious buyer. Albert identifies potential customers that match those traits, and runs trial campaigns on a small group of customers—with results refined by Albert himself—before launching it on a larger scale.],
   [Albert plugs into your existing marketing technology stack, so you still have access to your accounts, ads, search, social media, and more. Albert maps tracking and attribution to your source of truth so you can determine which channels are driving your business.],
   [Key features:],
   [Breaks down large amounts of data to help you customize campaigns],
   [Plugs into your marketing technology stack and can be used across diverse media outlets, including email, content, paid media, and mobile],
-  [id="atContainer-876e841c5466fc380c36e872fae9a8bb"\>],
-  [style="text-align: left;"\> Final Saying],
   [There are many tools and companies out there that offer AI tools, but this is a small list of resources that we have found to be helpful. If you have any other suggestions, feel free to share them in the comments below this article. As marketing evolves at such a rapid pace, new marketing strategies will be invented that we haven't even dreamed of yet. But for now, this list should give you a good starting point on your way to implementing AI into your marketing mix.],
   [Note: This article contains affiliate links, meaning we make a small commission if you buy any premium plan from our link.],
 ),
@@ -1284,10 +1175,8 @@ npm install],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Faster iOS performance debugging with ETTrace],
   author: [Bruno Rocha],
   source-name: [SwiftRocks],
@@ -1310,9 +1199,9 @@ npm install],
   [Consider how ExploreCardViewController is shown in the report. It's very large, which means that this method is taking a really long time to run. But what exactly is causing it? Is it the literal call to didSelectItemAt , or is it something else further down the stack trace?],
   [By going down the trace we can see that at its very bottom there's a very expensive call to usleep originating from ArticleViewController.viewDidLoad() , which is the reason why that entire stack trace is being reported as being expensive:],
   [Oops, seems like we forgot some debug code in our class!],
-  [func viewDidLoad() {
+  [func viewDidLoad() \{
  sleep(1) \/\\/ TODO: remove this!
-}],
+\}],
   [After deleting the call, the bottleneck was gone!],
   [You may find this to be a dumb example, but I find that debugging real performance issues doesn't stray too far from this. The difference is just that instead of a dumb call to sleep , you'd see some other expensive operation. Otherwise, the process to locate it and the different ways in which you could fix it are the same.],
   [Other useful ETTrace features],
@@ -1331,10 +1220,8 @@ npm install],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Observing the content offset of a SwiftUI ScrollView],
   author: [Swift by Sundell],
   source-name: [Swift by Sundell],
@@ -1349,69 +1236,56 @@ npm install],
   [One thing that’s key to realize before we begin is that both UIScrollView and SwiftUI’s ScrollView perform their scrolling by offsetting a container that’s hosting our actual scrollable content. They then clip that container to their bounds to produce the illusion of the viewport moving. So if we can find a way to observe the frame of that container , then we’ll essentially have found a way to observe the scroll view’s content offset.],
   [That’s where our good old friend GeometryReader comes in (wouldn’t be a proper SwiftUI layout workaround without it, right?). While GeometryReader is mostly used to access the size of the view that it’s hosted in (or, more accurately, that view’s proposed size ), it also has another neat trick up its sleeve — in that it can be asked to read the frame of the current view relative to a given coordinate system.],
   [To use that capability, let’s start by creating a PositionObservingView , which lets us bind a CGPoint value to the current position of that view relative to a CoordinateSpace that we’ll also pass in as an argument. Our new view will then embed a GeometryReader as a background (which will make that geometry reader take on the same size as the view itself) and will assign the resolved frame’s origin as our offset using a preference key — like this:],
-  [struct PositionObservingView : View {
- var coordinateSpace: CoordinateSpace 
- \@Binding var position: CGPoint 
- \@ViewBuilder var content: () -\> Content],
-  [var body: some View {
+  [var body: some View \{
  content ()
- . background ( GeometryReader { geometry in 
+ . background ( GeometryReader \{ geometry in 
  Color . clear . preference (
  key: PreferenceKey . self ,
  value: geometry. frame (in: coordinateSpace). origin 
  )
- })
- . onPreferenceChange ( PreferenceKey . self ) { position in 
+ \})
+ . onPreferenceChange ( PreferenceKey . self ) \{ position in 
  self . position = position
- }
- }
-}],
+ \}
+ \}
+\}],
+  [To learn more about how the \@ViewBuilder attribute can be used when building custom SwiftUI container views, check out this article .],
   [The reason we use SwiftUI’s preference system above is because our GeometryReader will be invoked as part of the view updating process, and we’re not allowed to directly mutate our view’s state during that process. So, by using a preference instead, we can deliver our CGPoint values to our view in an asynchronous fashion, which then lets us assign those values to our position binding.],
   [Now all that we need to do is to implement the PreferenceKey type that’s used above, and we’ll be good to go:],
-  [private extension PositionObservingView {
- struct PreferenceKey: SwiftUI . PreferenceKey {
- static var defaultValue: CGPoint { . zero }],
-  [static func reduce(value: inout CGPoint , nextValue: () -\> CGPoint ) {
- \/\\/ No-op 
- }
- }
-}],
-  [class="info"\>We don’t actually need to implement any kind of reduce algorithm above, since we’ll only have a single view delivering values using that preference key within any given hierarchy (since our implementation is entirely contained within our PositionObservingView ).],
+  [private extension PositionObservingView \{
+ struct PreferenceKey: SwiftUI . PreferenceKey \{
+ static var defaultValue: CGPoint \{ . zero \}],
+  [We don’t actually need to implement any kind of reduce algorithm above, since we’ll only have a single view delivering values using that preference key within any given hierarchy (since our implementation is entirely contained within our PositionObservingView ).],
   [Alright, so now we have a view that’s capable of reading and observing its own position within a given coordinate system. Let’s now use that view to build a ScrollView wrapper that’ll let us accomplish our original goal — to be able to read the current content offset within such a scroll view.],
   [From position to content offset],
   [Our new ScrollView wrapper will essentially have two responsibilities — one, it’ll need to convert the position of our inner PositionObservingView into the current scroll position (or content offset), and two, it’ll also need to define a CoordinateSpace that the inner view can use to resolve its position. Besides that, it’ll simply forward its configuration parameters to its underlying ScrollView , so that we can decide what axes we want each scroll view to operate on, and so that we can decide whether or not to display any scrolling indicators.],
   [The good news is that converting our inner view’s position into content offset is as easy as negating both the x and y components of those CGPoint values. That’s because, as discussed earlier, a scroll view’s content offset is essentially just the distance that the container has been moved relative to the scroll view’s bounds.],
   [So let’s go ahead and implement our custom scroll view, which we’ll name OffsetObservingScrollView (spelling out ContentOffset does feel a bit too verbose in this case):],
-  [struct OffsetObservingScrollView : View {
- var axes: Axis . Set = \[. vertical \]
- var showsIndicators = true
- \@Binding var offset: CGPoint 
- \@ViewBuilder var content: () -\> Content],
   [\/\\/ The name of our coordinate space doesn't have to be
  \/\\/ stable between view updates (it just needs to be
  \/\\/ consistent within this view), so we'll simply use a
  \/\\/ plain UUID for it: 
  private let coordinateSpaceName = UUID ()],
-  [var body: some View {
- ScrollView (axes, showsIndicators: showsIndicators) {
+  [var body: some View \{
+ ScrollView (axes, showsIndicators: showsIndicators) \{
  PositionObservingView (
  coordinateSpace: . named (coordinateSpaceName),
  position: Binding (
- get: { offset },
- set: { newOffset in 
+ get: \{ offset \},
+ set: \{ newOffset in 
  offset = CGPoint (
  x: -newOffset. x ,
  y: -newOffset. y 
  )
- }
+ \}
  ),
  content: content
  )
- }
+ \}
  . coordinateSpace (name: coordinateSpaceName)
- }
-}],
-  [class="info"\>Note how we’re able to create a completely custom Binding for our inner view’s position parameter, by defining a getter and setter using closures. That’s a great option in situations like the one above, when we want to transform a value before assigning it to another Binding .],
+ \}
+\}],
+  [Note how we’re able to create a completely custom Binding for our inner view’s position parameter, by defining a getter and setter using closures. That’s a great option in situations like the one above, when we want to transform a value before assigning it to another Binding .],
   [That’s it! We now have a drop-in replacement for SwiftUI’s built-in ScrollView which enables us to observe the current content offset — which we can then bind to any state property that we’d like, for example in order to change the layout of a header view, to report analytics events to our server, or to perform any other kind of scroll position-based operation. You can find a complete example that uses the above OffsetObservingScrollView in order to implement a collapsable header view right here .],
   [I hope that you found this article useful. If you have any questions, comments, or feedback, then feel free to contact me on Mastodon , or send me an email .],
   [Thanks for reading!],
@@ -1422,10 +1296,8 @@ npm install],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Mutating and non-mutating Swift contexts],
   author: [Swift by Sundell],
   source-name: [Swift by Sundell],
@@ -1436,109 +1308,110 @@ npm install],
   [What can a mutating function do?],
   [Essentially, a function that’s been marked as mutating can change any property within its enclosing value. The word “value” is really key here, since Swift’s concept of structured mutations only applies to value types, not to reference types like classes and actors.],
   [For example, the following Meeting type’s cancel method is mutating, since it modifies its enclosing type’s state and reminderDate properties:],
-  [struct Meeting {
+  [struct Meeting \{
  var name: String 
  var state: MeetingState 
  var reminderDate: Date ?
  ...],
-  [mutating func cancel(withMessage message: String ) {
+  [mutating func cancel(withMessage message: String ) \{
  state = . cancelled (message: message)
  reminderDate = nil 
- }
-}],
+ \}
+\}],
   [Besides modifying properties, mutating contexts can also assign a brand new value to self , which can be really useful when adding a mutating method to an enum (which can’t contain any stored instance properties). For example, here we’re creating an API for making it easy to appending one Operation to another:],
-  [enum Operation {
+  [enum Operation \{
  case add( Item )
  case remove( Item )
  case update( Item )
  case group(\[ Operation \])
-}],
-  [extension Operation {
- mutating func append( \_ operation: Operation ) {
+\}],
+  [extension Operation \{
+ mutating func append( \_ operation: Operation ) \{
  self = . group (\[ self , operation\])
- }
-}],
+ \}
+\}],
   [The above technique also works for other value types, such as structs, which can be really useful if we ever want to reset a value back to its default set of properties, or if we want to mutate a more complex value as a whole — for example like this:],
-  [struct Canvas {
+  [struct Canvas \{
  var backgroundColor: Color ?
  var foregroundColor: Color ?
  var shapes = \[ Shape \]()
  var images = \[ Image \]()],
-  [mutating func reset() {
+  [mutating func reset() \{
  self = Canvas ()
- }
-}],
+ \}
+\}],
   [The fact that we can assign a brand new value to self within a mutating function might initially seem a bit strange, but we have to remember that Swift structs are really just values — so just like how we can replace an Int value by assigning a new number to it, we can do the same thing with any other struct (or enum) as well.],
   [Mutating protocol requirements],
   [Although the concept of separating mutating and non-mutating APIs is something that’s unique to value types, we can still make a mutating function a part of a protocol as well — even if that protocol might end up being adopted by a reference type, such as a class. Classes can simply omit the mutating keyword when conforming to such a protocol, since they are inherently mutable.],
   [What’s very interesting, though, is that if we extend a protocol with a default implementation of a mutating function, then we could implement things like the above reset API without actually knowing what type of value that we’re resetting — like this:],
-  [protocol Resettable {
+  [protocol Resettable \{
  init ()
  mutating func reset()
-}],
-  [extension Resettable {
- mutating func reset() {
+\}],
+  [extension Resettable \{
+ mutating func reset() \{
  self = Self ()
- }
-}],
-  [struct Canvas: Resettable {
+ \}
+\}],
+  [struct Canvas: Resettable \{
  var backgroundColor: Color ?
  var foregroundColor: Color ?
  var shapes = \[ Shape \]()
  var images = \[ Image \]()
-}],
+\}],
   [Performing mutations within initializers],
   [While functions always need to be explicitly marked as mutating whenever we want to modify a value type’s internal state (whether that’s a property, or the entire value itself), initializers are always mutating by default. That means that, besides assigning initial values to a type’s properties, an initializer can also call mutating methods to perform its work (as long as self has been fully initialized beforehand).],
   [For example, the following ProductGroup calls its own add method in order to add all of the products that were passed into its initializer — which makes it possible for us to use a single code path for that logic, regardless of whether it’s being run as part of the initialization process or not:],
-  [struct ProductGroup {
+  [struct ProductGroup \{
  var name: String 
  private(set) var products = \[ Product \]()
  private(set) var totalPrice = 0 
  
- init (name: String , products: \[ Product \]) {
+ init (name: String , products: \[ Product \]) \{
  self . name = name
- products. forEach { add (\$0) }
- }],
-  [mutating func add( \_ product: Product ) {
+ products. forEach \{ add (\$0) \}
+ \}],
+  [mutating func add( \_ product: Product ) \{
  products. append (product)
  totalPrice += product. price 
- }
-}],
+ \}
+\}],
+  [Just like mutating functions, initializers can also assign a value directly to self . Check out this quick tip for an example of that.],
   [Non-mutating properties],
   [So far, all of the examples that we’ve been taking a look at have been about mutable contexts, but Swift also offers a way to mark certain contexts as explicitly non-mutating as well. While the use cases for doing so are certainly more limited compared to opting into mutations, it can still be a useful tool in certain kinds of situations.],
   [As an example, let’s take a look at this simple SwiftUI view , which increments an \@State -marked value property every time that a button was tapped:],
-  [struct Counter: View {
+  [struct Counter: View \{
  \@State private var value = 0],
-  [var body: some View {
- VStack {
+  [var body: some View \{
+ VStack \{
  Text ( String (value)). font (. largeTitle )
- Button ( "Increment" ) {
+ Button ( "Increment" ) \{
  value += 1 
- }
- }
- }
-}],
+ \}
+ \}
+ \}
+\}],
   [Now, if we look at the above not just as a SwiftUI view, but rather as a standard Swift struct (which it is), it’s actually quite strange that our code compiles. How come we can mutate our value property like that, within a closure, that’s not being called within a synchronous, mutable context?],
   [The mystery continues to thicken if we then take a look at the declaration of the State property wrapper , which is also a struct, just like our view:],
-  [\@frozen \@propertyWrapper public struct State : DynamicProperty {
+  [\@frozen \@propertyWrapper public struct State : DynamicProperty \{
  ...
-}],
+\}],
   [So how come a struct-based property wrapper, that’s used within a struct-based view, can actually be mutated within a non-mutating context? The answer lies within the declaration of the State wrapper’s wrappedValue , which has been marked with the nonmutating keyword:],
-  [public var wrappedValue: Value { get nonmutating set }],
+  [public var wrappedValue: Value \{ get nonmutating set \}],
   [Although this is as far as we’re able to investigate without access to SwiftUI’s source code, State very likely uses some form of reference-based storage under the hood, which in turn makes it possible for it to opt out of Swift’s standard value mutation semantics (using the nonmutating keyword) — since the State wrapper itself is not actually being mutated when we assign a new property value.],
   [If we wanted to, this is a capability that we could add to some of our own types as well. To demonstrate, the following PersistedFlag wrapper stores its underlying Bool value using UserDefaults , meaning that when we assign a new value to it (through its wrappedValue property), we’re not actually performing any value-based mutations here either. So that property can be marked as nonmutating , which gives PersistedFlag the same mutation capabilities as State :],
-  [\@propertyWrapper struct PersistedFlag {
- var wrappedValue: Bool {
- get {
+  [\@propertyWrapper struct PersistedFlag \{
+ var wrappedValue: Bool \{
+ get \{
  defaults. bool (forKey: key)
- }
- nonmutating set {
+ \}
+ nonmutating set \{
  defaults. setValue (newValue, forKey: key)
- }
- }],
+ \}
+ \}],
   [var key: String 
  private let defaults = UserDefaults . standard 
-}],
+\}],
   [So just like \@State -marked properties, any property that we mark with \@PersistedFlag can now be written to even within non-mutating contexts, such as within escaping closures . What’s very important to note, though, is that the nonmutating keyword sort of lets us circumvent key aspects of Swift’s value semantics, so it’s definitely something that should only be used within very specific situations.],
   [I hope that this article has given you a few insights into what separates a mutating context from a non-mutating one, what sort of capabilities that a mutating context actually has, and what Swift’s relatively new nonmutating keyword does.],
   [If you have any questions, comments, or feedback, then feel free to reach out via either Twitter or email .],
@@ -1550,10 +1423,8 @@ npm install],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How we approached data cleaning for our listeners' favorite albums of 2017],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
@@ -1568,17 +1439,18 @@ npm install],
   [Use make to tie together our data processing pipeline. We were inspired by the awesome explanations of the use of Makefiles for data processing by Datamade .],
   [Reuse ranking strategy from the previous year.],
   [Let’s dive into each of those goals and how we tackled them.],
-  [id="form-improvements"\>Form improvements],
+  [Form improvements],
   [Our first question was “is there a way to improve the audience submission Google form to provide cleaner initial results?” In previous years we had asked our audience to add a comma-separated artist and album pair, but that rule was not always followed. Surprise! Welcome to the world of free text fields.],
   [This year we made two major changes. First, we decided to split album and artist into separate inputs grouped under a common heading. Second, we made the \#1 album and artist fields required.],
   [2017 form],
   [Looking back to that decision, it made a huge difference in the cleanliness of the original dataset. The separation of album and artist gave us a consistent data format and the required fields eliminated completely empty rows. It was useful to have a better starting point for our cleanup process.],
   [Original export of the 2017 form],
-  [id="clustering-similar-artistalbum-entries"\>Clustering similar artist/album entries],
+  [Clustering similar artist/album entries],
   [Members of our team had already tried out dedupe in other projects and we thought this data cleaning task was well suited for that tool. We want to identify and group together similar artist/album pairs in order to correctly rank them later.],
   [We finally used csvdedupe , a command line tool for deduplicating CSV files, that takes a messy input file or data piped from standard input and identifies duplicates.],
   [Installation is as easy as using pip :],
-  [id="preparing-data-for-csvdedupe"\>Preparing data for csvdedupe],
+  [pip install csvdedupe],
+  [Preparing data for csvdedupe],
   [In order to use csvdedupe effectively, we first needed to change the format of the input data so that every artist/album pair was in a different row. That way csvdedupe could work across all of the entries and group them.],
   [One artist/album pair per row],
   [As you can see in the above CSV output, we have assigned points to each album/artist pair depending on the position in the Google form. We wanted a point schema that would always rank two votes for an artist/album pair higher than a single vote, regardless of the single vote’s position.],
@@ -1588,23 +1460,28 @@ npm install],
   [13 points to album/artist \#3],
   [12 points to album/artist \#4],
   [11 points to album/artist \#5],
-  [id="training-csvdedupe"\>Training csvdedupe],
+  [Training csvdedupe],
   [Dedupe uses a supervised machine learning algorithm to detect what we want to identify as similar. The first step in using it is training the algorithm. Dedupe suggests that we provide at least 10 positive results (similar entries) and 10 negative results (dissimilar entries) for it to build a model that can give us accurate results.],
   [Training dedupe on the terminal],
-  [id="verifying-csvdedupe-results"\>Verifying csvdedupe results],
+  [Verifying csvdedupe results],
   [Dedupe was a huge improvement in terms of simplifying our detection of similar entries, but we wanted some kind of manual verification step to fine tune entries that were either bundled together incorrectly or not bundled together when they should have been.],
   [For this we used OpenRefine . With its visual faceting capabilities it allows you to quickly identify the most prominent clusters and review them to search for incongruencies.],
   [Using facets on OpenRefine to verify dedupe results],
-  [id="using-makefiles-for-our-data-processing-pipeline"\>Using makefiles for our data processing pipeline],
+  [Using makefiles for our data processing pipeline],
   [As Mike Bostock, the creator of D3.js , states in this article - “Makefiles are machine-readable documentation that make your workflow reproducible”.],
   [It takes a while to adapt yourself to the syntax of a makefile, but once you start to get familiar with it, you start to move more quickly and at the end you will have a reproducible data pipeline. Your teammates or your future self will be really happy that you spent the time to document the process in a makefile when they need to reproduce the workflow on a tight deadline.],
-  [id="basic-syntax"\>Basic Syntax],
   [A makefile is a set of rules with the following format:],
+  [targetfile: sourcefile(s)
+ command(s)],
   [targetfile is the file you want to generate.],
   [sourcefile(s) are the file(s) it depends on.],
   [command(s) is what you need to run in a shell to generate the target file.],
   [You can then chain these rules, making the next rule’s sourcefile the targetfile of a previous rule. In that way you generate a pipeline through which your data flows.],
-  [id="lets-see-an-example-from-our-own-makefile"\>Let’s see an example from our own makefile],
+  [Let’s see an example from our own makefile],
+  [INPUT\_DATA\_DIR = data
+INPUT\_FILE = 2017\_responses.csv
+OUTPUT\_DATA\_DIR = output
+...],
   [\# clean and dedupe rules 
 clean\_dedupe: \$( OUTPUT\_DATA\_DIR ) /2017\_responses\_deduped.csv],
   [\$( OUTPUT\_DATA\_DIR ) /2017\_responses\_deduped.csv: \$( OUTPUT\_DATA\_DIR ) /2017\_responses\_normalized.csv
@@ -1617,9 +1494,9 @@ clean\_dedupe: \$( OUTPUT\_DATA\_DIR ) /2017\_responses\_deduped.csv],
  mkdir -p \$( OUTPUT\_DATA\_DIR ) 
 ...],
   [At first, looking at the rules can be overwhelming, but let us walk you through what they actually do. Trust me, in no time you’ll fall in love with the approach.],
-  [id="defining-variables"\>Defining variables],
+  [Defining variables],
   [You can define variables in your makefiles, for example OUTPUT\_DATA\_DIR in the snippet above, and you can then refer to them in your rules in this way: \$(OUTPUT\_DATA\_DIR) .],
-  [id="automatic-variables"\>Automatic variables],
+  [Automatic variables],
   [GNU make comes with some automatic variables that you can use in your recipe to refer to specific target or source files:],
   [\$\@ - the filename of the target],
   [\$^ - the filenames of all dependencies],
@@ -1629,25 +1506,22 @@ clean\_dedupe: \$( OUTPUT\_DATA\_DIR ) /2017\_responses\_deduped.csv],
   [You can see that is one of our targetfiles in the Makefile, but it has a dependency on a file in the filesystem. If the dependency of the specified target does not exist or needs to be regenerated since one of its dependencies has changed, make will also build those dependencies.],
   [make will find another rule whose targetfile matches the filename in the previous rule and will, in turn, search for any dependencies it needs to build in order to generate the target.],
   [Can you start to see the chain behavior?],
-  [id="understanding-the-make-recipes"\>Understanding the make recipes],
+  [Understanding the make recipes],
   [The example makefile shown above could be translated to the following initial execution:],
-  [cat data/2017\_responses.csv | ./scripts/clean\_ballot\_stuffing.py | ./scripts/transform\_form\_responses.py \> output/2017\_responses\_normalized.csv],
   [Start with the raw form responses.],
   [Use a Python script to remove duplicate entries in a given time window.],
   [Use another Python script to transform the responses into one artist/album pair per row and assign points to each entry.],
-  [./scripts/dedupe.sh output/2017\_responses\_normalized.csv \> output/2017\_responses\_deduped.csv],
   [Train csvdedupe and then apply the machine learned algorithm to cluster similar entries together.],
   [Dump the output to a CSV file named output/2017\_responses\_deduped.csv .],
   [Dedupe output with Cluster IDs],
-  [id="suggestions-when-using-makefiles"\>Suggestions when using makefiles],
+  [Suggestions when using makefiles],
   [In order to take full advantage of the makefile approach here are some suggestions:],
   [Always try to use stdin and stdout as input and output for your helper scripts so that you can pipe scripts together.],
   [Think backwards: Start with the final output rule and then start to write the rules that will need to generate its dependencies.],
   [Use automatic variables to avoid hardcoding filenames on your commands.],
-  [id="reuse-2016-ranking-strategy"\>Reuse 2016 ranking strategy],
+  [Reuse 2016 ranking strategy],
   [Even though our approach to data cleaning was quite different from 2016, once the data was cleaned we reused the ranking strategy to provide consistency with the previous year’s Top 100 list.],
   [Lisa, who did the analysis in 2016, liked to work in R and we like to work in Python so we reimplemented her strategy by relying on the pandas library.],
-  [id="code"\>Code],
   [Do you want to take a look at the full Makefile or look at the process we used to rank the entries to arrive at the Top 100? Take a look at our repo .],
   [The final ranking is published on All Songs Considered .],
 ),
@@ -1657,10 +1531,8 @@ clean\_dedupe: \$( OUTPUT\_DATA\_DIR ) /2017\_responses\_deduped.csv],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Swift by Sundell turns five years old today! Here’s what’s next for the website and the podcast],
   author: [Swift by Sundell],
   source-name: [Swift by Sundell],
@@ -1687,10 +1559,8 @@ clean\_dedupe: \$( OUTPUT\_DATA\_DIR ) /2017\_responses\_deduped.csv],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Multivariate testing: Learning what works from your users at scale],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
@@ -1708,24 +1578,22 @@ clean\_dedupe: \$( OUTPUT\_DATA\_DIR ) /2017\_responses\_deduped.csv],
   [When we ran the test, we showed half of users (who reached the final slide) the Care Question with two buttons, “Yes” and “No”. Clicking Yes brought them to one of the two actions listed above, clicking No revealed a prompt to email us feedback. The control group was shown the action we wanted them to take, without a preceeding question.],
   [We were able to run these tests at about equal intervals with a small amount of code .],
   [In this blog post, we will show the results, how we determined them and what we learned.],
-  [id="process"\>Process],
   [When a user reached the conclusion slide, we sent an event to Google Analytics to log which set of tests ran.],
   [We also tracked clicks on the “Yes” and “No” buttons of the Care Question, and clicks on the subsequent actions (support link, each of the follow links, and the feedback email link).],
   [The Care Question used in A Brother And Sister In Love],
   [Determining whether the results were statistically significant required some pretty complex calculations, which you can read about here . Luckily, Hubspot provides a simple-to-use calculator to determine the statistical significance of your results.],
   [Significance is determined by the confidence interval, or how confident you can be that your numbers are not determined simply by randomness. Usually, a 95% confidence interval or greater is high enough to draw a conclusion. Using the calculator, we determined whether the difference in conversion rates (where conversion rate is defined as clicks over the number of times a particular test was run) was statistically significant.],
-  [id="a-brother-and-sister-in-love"\>“A Brother And Sister In Love”],
+  [“A Brother And Sister In Love”],
   [The test for “A Brother And Sister In Love” was actually two separate A/B tests at the same time: whether a user was prompted to follow Look At This on social media or support NPR by donating. For each scenario, users were prompted with the Care Question or not. The Care Question was “Did you love this story?”],
   [This breaks down into two tests, a “follow test” and a “support test”, with a control and variation scenario for each:],
-  [id="follow-test-control"\>Follow test, control],
-  [id="follow-test-variation"\>Follow test, variation],
-  [id="support-test-control"\>Support test, control],
-  [id="support-test-variation"\>Support test, variation],
+  [Follow test, control],
+  [Follow test, variation],
+  [Support test, control],
+  [Support test, variation],
   [Finally, if a user clicked no, we provided a prompt to email us feedback.],
   [If a user answered "No" to the Care Question, we asked them to email us feedback.],
-  [id="responsive-embed-mvt-lovestory"\>],
   [We were able to determine with 99.90% confidence that prompting a user with a question before asking them to “Support Public Radio” was more successful. We converted 0.184% of users who did not receive the Care Question and 1.913% of users who did, which makes a user who received the Care Question 10 times more likely to click the support link.],
-  [id="life-after-death"\>“Life After Death”],
+  [“Life After Death”],
   [One week later, after we had seen the preliminary results of our test from “A Brother And Sister In Love”, we ran another test on “Life After Death” . This was not a story associated with Look At This, and there was not an equivalent NPR property to follow, so we decided to hone our test on converting users to the donate page.],
   [We wanted to confirm that users would convert at a higher percentage when presented with a Care Question first, so we kept the same control scenario. Instead of only using one question, we decided to run a multivariate test with four possible different phrasings. The control scenario and the four question variations each received ~20% of the test traffic. The four possible questions were:],
   [Did you like this story?],
@@ -1733,14 +1601,11 @@ clean\_dedupe: \$( OUTPUT\_DATA\_DIR ) /2017\_responses\_deduped.csv],
   [Does this kind of reporting matter to you?],
   [Does this kind of reporting matter to you? (It helps us to know)],
   [For this test, we tested each question against the control scenario – presenting the user with a support button without showing them a question first.],
-  [id="responsive-embed-mvt-liberia"\>],
   [Once again, we determined that presenting users with a Care Question before asking them to support public radio was a more successful path. Each of our four questions outperformed the control scenario at \> 95% confidence intervals. Of the four questions, the two asking “Does this type of reporting matter to you?” were the best performers, which perhaps suggests that tailoring the Care Question to the content is the best course of action. Life After Death is a harrowing, intense story about a devastated village in Liberia, so perhaps asking a user if they “liked” a story was offputting in this case.],
-  [id="a-photo-i-love-thomas-allen-harris"\>“A Photo I Love: Thomas Allen Harris”],
+  [“A Photo I Love: Thomas Allen Harris”],
   [A week later, we were able to run another test on a very similar story. It was a slide-based story that was also driven by the audio. We decided to rerun our original test, but fix our errors when logging to Google Analytics to create a better testing environment.],
   [We left the same Care Question, “Did you love this story?”, and maintained our Look At This follow links.],
-  [id="responsive-embed-mvt-harris"\>],
   [Once again, we determined that giving users a question before a prompt to take action is a more successful path to conversion (1.7 times better for the Follow action and 13.5 times for the Support action).],
-  [id="lessons-learned"\>Lessons Learned],
   [We learned a lot in a short amount of time: some things about the stories themselves, a lot about the running of live tests and the math behind it. A few insights:],
   [With our third test confirming that the Care Question has a positive impact on performance of actions presented at the end of stories, we feel confident implement this behavior by default going forward.],
   [We also demonstrated that the language used to frame the Care Question matters. So far, aligning the tone of the question with the tone of the story has proven most successful.],
@@ -1757,10 +1622,8 @@ clean\_dedupe: \$( OUTPUT\_DATA\_DIR ) /2017\_responses\_deduped.csv],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [What makes a great photo editing intern (Apply now for summer 2018!)],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
@@ -1769,17 +1632,16 @@ clean\_dedupe: \$( OUTPUT\_DATA\_DIR ) /2017\_responses\_deduped.csv],
   [This is not your standard photo internship!],
   [This internship is an opportunity to learn more about the world of photo editing. Our goal isn’t to make you into a photo editor; we view this internship as a chance for you to understand what it is like to be an editor and improve your visual literacy , which can help you become a better photographer.],
   [The paid internship runs from May 21, 2018 to August 10, 2018. Applications are due Sunday, March 4th at 11:59pm eastern .],
-  [id="what-you-will-be-doing"\>What you will be doing],
+  [What you will be doing],
   [Editing: You’ll be working closely with the Visuals Team’s photo editors (Nicole and Emily) on fast-paced deadlines – we’re talking anywhere from 15 minutes to publication, to short-term projects that are a week out. You’ll dig into news coverage and photo research, learning how to communicate about what makes a good image across a range of news topics, including international, national, technology, arts and more.],
   [Photography: Depending on the news cycle, there may be opportunities to photograph DC-area assignments. This can mean you’d have one or two shoots in a week, or maybe just a couple shoots in a month. You’ll work closely with a radio or web reporter while out in the field, and a photo editor will go through your work and provide feedback for each assignment. There will also be a chance to work on portraiture and still lifes in our studio.],
   [We also encourage each intern to create a self-directed project to work on throughout the semester. It can be an Instagram series , video , photo essay , text story or anything in-between. You can work independently or with another intern or reporter .],
   [You will be part of NPR’s intern program, which includes 40-50 interns each semester, across different departments. There will be coordinated training and intern-focused programming throughout the semester, which includes meeting NPR radio hosts, career development and other opportunities. As an intern, you will be treated as a member of the team. Many NPR employees are former interns and they’re always willing to help current interns.],
-  [id="eligibility"\>Eligibility],
   [Any student (undergraduate or graduate), or person who has graduated no more than 12 months prior to the start of the internship period to which he/she is applying is eligible. Interns must be authorized to work in the United States.],
-  [id="who-should-apply"\>Who should apply],
+  [Who should apply],
   [We’re looking for candidates that have a strong photojournalism background. An interest in editing, or experience with video/photo editing is a nice plus. It’s also helpful if you’ve completed at least one photojournalism-focused internship prior to applying (let us know if you have!), though it’s not necessary. A portfolio , however, is required.],
   [We also want folks who can tell us what they would like to accomplish during their time at NPR. What do you want to learn? What do you want to try? We try to shape each internship around our intern, so we rely on you to tell us what goals you have for your time with us!],
-  [id="so-how-do-i-apply"\>So how do I apply?],
+  [So how do I apply?],
   [Does this sound like you? Read about our expectations and selection process and then apply now!],
   [Into code, design, and data? Check out our design/development internship .],
 ),
@@ -1789,12 +1651,10 @@ clean\_dedupe: \$( OUTPUT\_DATA\_DIR ) /2017\_responses\_deduped.csv],
   debug-mode: false,
 )
 
-  #pull-quote([There will be coordinated training and intern-focused programming throughout the semester, which includes meeting NPR radio hosts, career development and other opportunities.], [NPR Apps Blog])
+#pull-quote([There will be coordinated training and intern-focused programming throughout the semester, which includes meeting NPR radio hosts, career development and other opportunities.], [NPR Apps Blog])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Combining protocols in Swift],
   author: [Swift by Sundell],
   source-name: [Swift by Sundell],
@@ -1802,108 +1662,104 @@ clean\_dedupe: \$( OUTPUT\_DATA\_DIR ) /2017\_responses\_deduped.csv],
   paragraphs: (
   [One of the core strengths of Swift’s protocols is that they enable us to define shared interfaces that multiple types can conform to, which in turn lets us interact with those types in a very uniform way, without necessarily knowing what underlying type that we’re currently dealing with.],
   [For example, to clearly define an API that enables us to persist a given instance onto disk, we might choose to use a protocol that looks something like this:],
-  [protocol DiskWritable {
+  [protocol DiskWritable \{
  func writeToDisk(at url: URL ) throws 
-}],
+\}],
   [One advantage of defining commonly used APIs that way is that it helps us keep our code consistent, as we can now make any type that should be disk-writable conform to the above protocol, which then requires us to implement the exact same method for all such types.],
   [Another big advantage of Swift protocols is that they’re extendable, which makes it possible for us to define all sorts of convenience APIs for both our own protocols, as well as those that are defined externally — for example within the standard library, or within any framework that we’ve imported.],
   [When writing those kinds of convenience APIs, we might also want to mix the protocol that we’re currently extending with some functionality provided by another protocol. For example, let’s say that we wanted to provide a default implementation of our DiskWritable protocol’s writeToDisk method for types that also conform to the Encodable protocol — since a type that’s encodable can be transformed into Data , which we could then automatically write to disk.],
   [One way to make that happen would be to make our DiskWritable protocol inherit from Encodable , which in turn will require all conforming types to implement both of those two protocols’ requirements. We could then simply extend DiskWritable in order to add that default implementation of writeToDisk that we were looking to provide:],
-  [protocol DiskWritable: Encodable {
+  [protocol DiskWritable: Encodable \{
  func writeToDisk(at url: URL ) throws 
-}],
-  [extension DiskWritable {
- func writeToDisk(at url: URL ) throws {
+\}],
+  [extension DiskWritable \{
+ func writeToDisk(at url: URL ) throws \{
  let encoder = JSONEncoder ()
  let data = try encoder. encode ( self )
  try data. write (to: url)
- }
-}],
+ \}
+\}],
   [While powerful, the above approach does have a quite significant downside, in that we’ve now completely coupled our DiskWritable protocol with Encodable — meaning that we can no longer use that protocol by itself, without also requiring any conforming type to also fully implement Encodable , which might become problematic.],
   [Another, much more flexible approach would be to let DiskWritable remain a completely stand-alone protocol, and instead write a type-constrained extension that only adds our default writeToDisk implementation to types that also conform to Encodable separately — like this:],
-  [extension DiskWritable where Self : Encodable {
- func writeToDisk(at url: URL ) throws {
+  [extension DiskWritable where Self : Encodable \{
+ func writeToDisk(at url: URL ) throws \{
  let encoder = JSONEncoder ()
  let data = try encoder. encode ( self )
  try data. write (to: url)
- }
-}],
+ \}
+\}],
   [The tradeoff here is that the above approach does require each type that wants to leverage our default writeToDisk implementation to explicitly conform to both DiskWritable and Encodable , which might not be a big deal, but it could make it a bit harder to discover that default implementation — since it’s no longer automatically available on all DiskWritable -conforming types.],
   [One way to address that discoverability issue, though, could be to create a convenience type alias (using Swift’s protocol composition operator, & ) that gives us an indication that DiskWritable and Encodable can be combined to unlock new functionality:],
   [typealias DiskWritableByEncoding = DiskWritable & Encodable],
   [When a type conforms to those two protocols (either using the above type alias, or completely separately), it’ll now get access to our default writeToDisk implementation (while still having the option to provide its own, custom implementation as well):],
-  [struct TodoList: DiskWritableByEncoding {
+  [struct TodoList: DiskWritableByEncoding \{
  var name: String 
  var items: \[ Item \]
  ...
-}],
+\}],
   [let list = TodoList (...)
  try list. writeToDisk (at: fileURL)],
   [Combining protocols like that can be a really powerful technique, as we’re not just limited to adding default implementations of protocol requirements — we can also add brand new APIs to any protocol combination, simply by adding new methods or computed properties within one of our extensions.],
   [For example, here we’ve added a second overload of our writeToDisk method, which makes it possible to pass a custom JSONEncoder that’ll be used when serializing the current instance:],
-  [extension DiskWritable where Self : Encodable {
- func writeToDisk(at url: URL , encoder: JSONEncoder ) throws {
+  [extension DiskWritable where Self : Encodable \{
+ func writeToDisk(at url: URL , encoder: JSONEncoder ) throws \{
  let data = try encoder. encode ( self )
  try data. write (to: url)
- }],
-  [func writeToDisk(at url: URL ) throws {
+ \}],
+  [func writeToDisk(at url: URL ) throws \{
  try writeToDisk (at: url, encoder: JSONEncoder ())
- }
-}],
+ \}
+\}],
   [We do have to be bit careful not to over-use the above pattern, though, since doing so could introduce conflicts if a given type ends up getting access to multiple default implementations of the same method.],
   [To illustrate, let’s say that our code base also contains a DataConvertible protocol, which we’d like to extend with a similar, default implementation of writeToDisk — like this:],
-  [protocol DataConvertible {
- func convertToData() throws -\> Data 
-}],
-  [extension DiskWritable where Self : DataConvertible {
- func writeToDisk(at url: URL ) throws {
+  [extension DiskWritable where Self : DataConvertible \{
+ func writeToDisk(at url: URL ) throws \{
  let data = try convertToData ()
  try data. write (to: url)
- }
-}],
+ \}
+\}],
   [While both of the two DiskWritable extensions that we’ve now created make perfect sense in isolation, we’ll now end up with a conflict if a given DiskWritable -conforming type also wants to conform to both Encodable and DataConvertible at the same time (which is highly likely, since both of those protocols are about transforming an instance into Data ).],
   [Since the compiler won’t be able to pick which default implementation to use in cases like that, we’d have to manually implement our writeToDisk method specifically for each of those conflicting types. Not a big problem, perhaps, but it could lead us to a situation where it’s hard to tell which method implementation that will be used for which type, which in turn could make our code feel quite unpredictable and harder to debug and maintain.],
   [So let’s also explore one final, alternative approach to the above set of problems — which would be to implement our disk-writing convenience APIs within a dedicated type, rather than using protocol extensions. For example, here’s how we could define an EncodingDiskWriter , which only requires the types that it’ll be used with to conform to Encodable , since the writer itself conforms to DiskWritable :],
-  [struct EncodingDiskWriter : DiskWritable {
+  [struct EncodingDiskWriter : DiskWritable \{
  var value: Value 
  var encoder = JSONEncoder ()],
-  [func writeToDisk(at url: URL ) throws {
+  [func writeToDisk(at url: URL ) throws \{
  let data = try encoder. encode (value)
  try data. write (to: url)
- }
-}],
+ \}
+\}],
   [So even though the following Document type doesn’t conform to DiskWritable , we can still easily write its data to disk using our new EncodingDiskWriter :],
-  [struct Document: Identifiable , Codable {
+  [struct Document: Identifiable , Codable \{
  let id: UUID 
  var name: String 
  ...
-}],
-  [class EditorViewController: UIViewController {
+\}],
+  [class EditorViewController: UIViewController \{
  private var document: Document 
  private var fileURL: URL 
  ...],
-  [private func save() throws {
+  [private func save() throws \{
  let writer = EncodingDiskWriter (value: document)
  try writer. writeToDisk (at: fileURL)
- }
-}],
+ \}
+\}],
   [So, although protocol extensions provide us with an incredibly powerful set of tools, it’s always important to remember that there are other alternatives that might be a better fit for what we’re trying to build.],
   [Like with so many things in programming, there are no right or wrong answers here, but I hope that this article has shown a few different ways to combine the functionality of multiple protocols, and what sort of tradeoffs that each approach comes with. If you have any questions, comments, or feedback, then feel free to send me an email , or reach out via Twitter .],
   [Thanks for reading!],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([}   class EditorViewController: UIViewController {  private var document: Document   private var fileURL: URL.], [Swift by Sundell]),
-  inline-pq-idx: 15,
+  inline-pq: pull-quote([\}   class EditorViewController: UIViewController \{  private var document: Document   private var fileURL: URL.], [Swift by Sundell]),
+  inline-pq-idx: 14,
   word-count: 1282,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Welcome to the new Project Zero Blog],
   author: [Natalie Silvanovich],
   source-name: [Project Zero (Google)],
@@ -1921,7 +1777,7 @@ clean\_dedupe: \$( OUTPUT\_DATA\_DIR ) /2017\_responses\_deduped.csv],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Podcast: “The magic of Augmented Reality”, with special guest Roxana Jula],
   author: [Swift by Sundell],
   source-name: [Swift by Sundell],
@@ -1961,7 +1817,7 @@ clean\_dedupe: \$( OUTPUT\_DATA\_DIR ) /2017\_responses\_deduped.csv],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Microblog: TestMain can cause one to question reality],
   author: [Dave Cheney],
   source-name: [Dave Cheney],
@@ -1974,9 +1830,9 @@ clean\_dedupe: \$( OUTPUT\_DATA\_DIR ) /2017\_responses\_deduped.csv],
  "testing"
  "go.uber.org/goleak"
 )],
-  [func TestMain(m \*testing. M) {
+  [func TestMain(m \*testing. M) \{
 \/\\/ goleak. VerifyTestMain(m)
-}],
+\}],
   [...],
   [TestMain is intended to be a middleware (so to speak) between the go test test runner and the Test functions in a package. The goleak check had recently been commented out (not surprisingly because of yet another logging library that spawns goroutines in the background) which meant that TestMain no longer called, indirectly, m. Run to execute any tests.],
 ),
@@ -1988,7 +1844,7 @@ clean\_dedupe: \$( OUTPUT\_DATA\_DIR ) /2017\_responses\_deduped.csv],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [],
   author: [Scripting News],
   source-name: [Scripting News],
@@ -2009,7 +1865,7 @@ clean\_dedupe: \$( OUTPUT\_DATA\_DIR ) /2017\_responses\_deduped.csv],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Sponsor: ViRE],
   author: [Swift by Sundell],
   source-name: [Swift by Sundell],
@@ -2028,7 +1884,7 @@ clean\_dedupe: \$( OUTPUT\_DATA\_DIR ) /2017\_responses\_deduped.csv],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Use internal packages to reduce your public API surface],
   author: [Dave Cheney],
   source-name: [Dave Cheney],
@@ -2053,7 +1909,7 @@ clean\_dedupe: \$( OUTPUT\_DATA\_DIR ) /2017\_responses\_deduped.csv],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [],
   author: [Scripting News],
   source-name: [Scripting News],
@@ -2069,7 +1925,7 @@ clean\_dedupe: \$( OUTPUT\_DATA\_DIR ) /2017\_responses\_deduped.csv],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [],
   author: [Scripting News],
   source-name: [Scripting News],
@@ -2087,8 +1943,7 @@ clean\_dedupe: \$( OUTPUT\_DATA\_DIR ) /2017\_responses\_deduped.csv],
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Podcast: “Accessibility on Apple’s platforms”, with special guest Sommer Panage],
   author: [Swift by Sundell],
   source-name: [Swift by Sundell],
@@ -2115,16 +1970,19 @@ clean\_dedupe: \$( OUTPUT\_DATA\_DIR ) /2017\_responses\_deduped.csv],
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([Jamie Cuevas], source-name: [OS X Daily], [If you’re an iPhone user in the UK, you might want to hold off on the latest iOS 26.4 update for a bit, as many UK users are reporting problems with the new mandatory online Age Verification system that is included in the latest versions of iOS. Failures and issues with the age verification system ... Read More])],
-    [#brief-item([Kelly Kirwan], source-name: [Twilio Blog], [Collecting data is easy. Activating it is hard. This guide covers the data activation process, common obstacles, and how to get it right.])],
-    [#brief-item([Scripting News], source-name: [Scripting News], [I have a hard and fast rule about phone calls that solicit private information. I hang up. The worst are insurance companies. They expect you to enter all kinds of confidential info on a phone from a number that doesn't even verify as belonging to the company. Caller ID has nothing to say about them. Yet at least some of these are legit and unless you do what they want, you don't get your meds.])],
-    [#brief-item([Scripting News], source-name: [Scripting News], [Send this video to your favorite Democrat and let them know that we would pay money to have this video run as an ad running everywhere, exactly as-is, no editing, not made glamorous. This is the truth that absolutely is not getting out about the law the Repubs want. We need to communicate with each other using the amazing tools we have at our disposal now in the third decade of the freaking 21st century.])],
-  ))
-}
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([Jamie Cuevas], source-name: [OS X Daily], [If you’re an iPhone user in the UK, you might want to hold off on the latest iOS 26.4 update for a bit, as many UK users are reporting problems with the new mandatory online Age Verification system that is included in the latest versions of iOS. Failures and issues with the age verification system ... Read More])],
+  [#brief-item([Kelly Kirwan], source-name: [Twilio Blog], [Collecting data is easy. Activating it is hard. This guide covers the data activation process, common obstacles, and how to get it right.])],
+  [#brief-item([Scripting News], source-name: [Scripting News], [I have a hard and fast rule about phone calls that solicit private information. I hang up. The worst are insurance companies. They expect you to enter all kinds of confidential info on a phone from a number that doesn't even verify as belonging to the company. Caller ID has nothing to say about them. Yet at least some of these are legit and unless you do what they want, you don't get your meds.])],
+  [#brief-item([Scripting News], source-name: [Scripting News], [Send this video to your favorite Democrat and let them know that we would pay money to have this video run as an ad running everywhere, exactly as-is, no editing, not made glamorous. This is the truth that absolutely is not getting out about the law the Repubs want. We need to communicate with each other using the amazing tools we have at our disposal now in the third decade of the freaking 21st century.])],
+))
+
+// --- Notable Quotes ---
+#block(above: 0.2in, stroke: (top: 1pt + luma(26)), inset: (top: 0.1in))[
+  #pull-quote([Either way, the team must strive to work towards the greater vision, and consider that the product itself is just a means for achieving a greater goal.], [Yann Lechelle])
+
+]
 
 #colophon([The Frontier Gazette], [Vol. 1, No. 048], [2026-03-30])

@@ -21,86 +21,8 @@
 #masthead([Southern Register], [Vol. 1, No. 082], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Three releases, one new organization],
-  kicker: [Cover Story],
-  author: [Ned Batchelder],
-  source-name: [Ned Batchelder],
-  deck: [It’s been a busy, bumpy week with coverage.py. Some things did not go
-smoothly, and I didn’t handle everything as well as I could have.],
-  lead-pre: [],
-  lead-cap: [I],
-  lead-rest: [t started with trying to fix issue 2064 about
-conflicts between the “sysmon” measurement core and a concurrency setting.],
-  body-paragraphs: (
-  [To measure your code, coverage.py needs to know what code got executed. To
-know that, it collects execution events from the Python interpreter. CPython now
-has two mechanisms for this: trace functions and sys.monitoring. Coverage.py
-has two implementations of a trace function (in C and in Python), and an
-implementation of a sys.monitoring listener. These three components are the
-measurement cores, known as “ctrace”, “pytrace”, and “sysmon”.],
-  [The fastest is sysmon, but there are coverage.py features it doesn’t yet
-support. With Python 3.14, sysmon is the default core. Issue 2064 complained
-that when the defaulted core conflicted with an explicit concurrency choice, the
-conflict resulted in an error. I agreed with the issue: since the core was
-defaulted, it shouldn’t be an error, we should choose a different core.],
-  [But I figured if you explicitly asked for the sysmon core and also a
-conflicting setting, that should be an error because you’ve got two settings
-that can’t be used together.],
-  [Implementing all that got a little involved because of “metacov”: coverage.py
-coverage-measuring itself. The sys.monitoring facility in Python was added in
-3.12, but wasn’t fully fleshed out enough to do branch coverage until 3.14. When
-we measure ourselves, we use branch coverage, so 3.12 and 3.13 needed some
-special handling to avoid causing the error that sysmon plus branch coverage
-would cause.],
-  [I got it all done, and released 7.11.1 on Friday.],
-  [Soon, issue 2077 arrived. Another fix in 7.11.1
-involved some missing branches when using the sysmon core. That fix required
-parsing the source code during execution. But sometimes the “code” can’t be
-parsed: Jinja templates compile html files to Python and use the html file as
-the file name for the code. When coverage.py tries to parse the html file as
-Python, of course it fails. My fix didn’t account for this. I fixed that on
-Saturday and released 7.11.2 .],
-  [In the meantime, issue 2076 and issue
-2078 both pointed out that now some settings combinations that used to
-produce warnings now produced errors. This is a breaking change, they said, and
-should not have been released as a patch version.],
-  [To be honest, my first reaction was that it wasn’t that big a deal, the
-settings were in conflict. Fix the settings and all will be well. It’s hard to
-remember all of the possibilities when making changes like this, it’s easy to
-make mistakes, and semantic versioning is bound to have judgement calls anyway.
-I had already spent a while getting 7.11.1 done, and .2 followed just a day
-later. I was annoyed and didn’t want to have to re-think everything.],
-  [But the more I thought about it, I decided they were right: it does break
-pipelines that used to work. And falling back to a different core is fine: the
-cores differ in speed and compatibility but (for the most part) produce the same
-results. Changing the requested core with a warning is a fine way to deal with
-the settings conflict without stopping test suites from running.],
-  [So I just released 7.11.3 to go back to the older
-behavior. Maybe I won’t have to do another release tomorrow!],
-  [While all this was going on, I also moved the code from my personal GitHub
-account to a new coveragepy GitHub
-organization !],
-  [Coverage.py is basically a one-man show. Maybe the GitHub organization will
-make others feel more comfortable chiming in, but I doubt it. I’d like to have
-more people to talk through changes with. Maybe I wouldn’t have had to make
-three releases in three days if someone else had been around as a sounding
-board.],
-  [I’m in the \#coverage-py channel if you want to talk
-about any aspect of coverage.py, or I can be reached in
- lots of other ways . I’d love to talk to
-you.],
-),
-  edited-for-length: false,
-)
-
-#pull-quote([That fix required parsing the source code during execution.], [Ned Batchelder])
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [ICE Is Trying to Avoid Oversight by Buying Private Prisons],
   author: [Katya Schwenk],
   source-name: [Jacobin],
@@ -117,6 +39,7 @@ you.],
   [But if the federal government owned these facilities outright, the Department of Homeland Security could try to claim additional legal immunity from many of these state restrictions, thanks to the broad immunity shield the federal government enjoys from lawsuits. How broad that immunity could ultimately extend will depend on the courts.],
   [One source with direct knowledge of the calculus behind ICE’s turnkey facility proposal confirmed to the Lever that additional legal immunity was seen as a potential benefit of the plan.],
   [ICE did not return a request for comment.],
+  [“Hell-Bent on Exploiting Loopholes”],
   [Though it appears ICE has not yet acted on its plans to purchase facilities from prison firms, a draft document obtained by the Washington Post indicated the agency is considering acquiring multiple facilities in California as well as facilities in Washington and Colorado.],
   [All three of those states have laws on the books that target private ICE detention centers — and the GEO Group facilities in Washington and Colorado under consideration are currently embroiled in high-profile legal battles over state law violations.],
   [Those cases have turned in part on whether privately owned detention centers should be treated as federal facilities under the law.],
@@ -126,6 +49,7 @@ you.],
   [‘There are many immunity doctrines that are incentivizing the federal government to outright own the place.’],
   [It would not be the Department of Homeland Security’s only recent attempt to evade local accountability, as states and cities try to fight back against ICE operations in their neighborhoods.],
   [As the grassroots research outfit Project Salt Box reported this month, ICE is employing a novel strategy to circumvent a recent New Mexico law banning state and local federal detention contracts. To dodge the ban, ICE has stopped contracting with county governments in the state and instead negotiated directly with the private prison firm CoreCivic.],
+  [Changing of the Guard],
   [The Department of Homeland Security’s sprawling detention apparatus has always relied heavily on private operators. Of the hundreds of facilities in which ICE detains immigrants, the agency owns vanishingly few outright.],
   [With the plans to buy warehouses and buy back some of its biggest private prisons, that arrangement may now be changing.],
   [While ICE detains people in a variety of locations across the country — including holding rooms, county jails, and state prisons — the majority of its detention beds are managed by private prison companies.],
@@ -144,6 +68,7 @@ you.],
   [That ruling was one of several recent legal opinions that upheld Washington State laws targeting the detention center in part on the basis that the facility was privately owned. Last year, in the course of a lawsuit brought by Tacoma detainees against the GEO Group over minimum wage violations, the Ninth Circuit supported its finding in favor of the detainees by noting that the detention center “is not a ‘federal facility.’”],
   [“Rather,” the court found, “it is a private facility, operated under contract with the federal government.”],
   [The ruling was a clear example of why ICE might be looking to purchase the Tacoma facility, Bidwell said. The panel of judges found “that if the federal government owned these facilities, we would be having a different conversation,” she said.],
+  [Forced Labor and Low Pay],
   [Even if ICE goes through with its plan to buy these private facilities, it wouldn’t necessarily put an immediate end to related legal battles. Kellen Funk, a law professor at Columbia University, noted that the impacts of ICE’s purchases would likely depend on how the agency changed prison operations.],
   [“To the extent \[a private prison company\] is contracted to supply personnel, set their hours and working conditions, etc., there may be a number of suits that could be brought against \[the company\] where ICE’s title over the facilities would make no practical difference on immunities,” Funk wrote in an email to the Lever .],
   [The Colorado detention center under consideration for purchase by ICE has also been mired in a yearslong legal battle that began in 2014, when detainees sued over alleged forced labor at the facility.],
@@ -157,10 +82,8 @@ you.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Number of Families Being Held at Dilley Detention Center Has Plummeted],
   author: [Mica Rosenberg],
   source-name: [ProPublica],
@@ -194,10 +117,8 @@ you.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Pytest parameter functions],
   author: [Ned Batchelder],
   source-name: [Ned Batchelder],
@@ -219,6 +140,7 @@ the lengths of the shortest and longest non-blank lines:],
   [lengths   =   \[ len ( ln )   for   ln   in   text . splitlines ()   if   ln \]],
   [return   min ( lengths ),   max ( lengths )],
   [We can test it with a simple parameterized test with two test cases:],
+  [import   pytest],
   [from   non\_blanks   import   non\_blanks],
   [\@pytest . mark . parametrize (],
   ["text, short, long" ,],
@@ -236,6 +158,7 @@ the lengths of the shortest and longest non-blank lines:],
   [assert   non\_blanks ( text )   ==   ( short ,   long )],
   [I really dislike how the multi-line string breaks the indentation flow, so I
 wrap strings like that in textwrap.dedent :],
+  [\@pytest . mark . parametrize (],
   ["text, short, long" ,],
   [\[],
   [( "abcde \\n a \\n abc \\n " ,   1 ,   5 ),],
@@ -255,6 +178,7 @@ bit of visual clutter. I also need to remember that first backslash so that the
 string won’t start with a newline.],
   [As the test data gets more elaborate, I might not want to have it all inline
 in the decorator. I’d like to have some of the large data in its own file:],
+  [\@pytest . mark . parametrize (],
   ["text, short, long" ,],
   [\[],
   [( "abcde \\n a \\n abc \\n " ,   1 ,   5 ),],
@@ -275,6 +199,7 @@ provided explicitly, sometimes read from a file.],
 most convenient form. We’ll take a string and use it as either a file name or
 literal data. We’ll deal with the initial newline, and dedent the multi-line
 strings:],
+  [def   nb\_case ( text ,   short ,   long ):],
   ["""Create data for test\_non\_blanks."""],
   [if   " \\n "   in   text :],
   [\# Multi-line string: it's actual data.],
@@ -286,6 +211,7 @@ strings:],
   [text   =   Path ( text ) . read\_text ()],
   [return   ( text ,   short ,   long )],
   [Now the test data is more direct:],
+  [\@pytest . mark . parametrize (],
   ["text, short, long" ,],
   [\[],
   [nb\_case ( "abcde \\n a \\n abc \\n " ,   1 ,   5 ),],
@@ -305,6 +231,7 @@ But the ID is made from the test data. Here, our last test case has an ID using
 the entire Gettysburg Address, over 1500 characters. It was
  very short for a speech , but it’s very long for an ID!],
   [This is what the pytest output looks like with our current IDs:],
+  [test\_non\_blank.py::test\_non\_blanks\[abcde\\na\\nabc\\n-1-5\] PASSED],
   [test\_non\_blank.py::test\_non\_blanks\[A long line\\nThe next line is blank:\\n\\nShort.\\nMuch much longer line, more than anyone thought.\\n-6-48\] PASSED],
   [test\_non\_blank.py::test\_non\_blanks\[Four score and seven years ago our fathers brought forth on this continent, a\\nnew nation, conceived in Liberty, and dedicated to the proposition that all men\\nare created equal.\\n\\nNow we are engaged in a great civil war, testing whether that nation, or any\\nnation so conceived and so dedicated, can long endure. We are met on a great\\nbattle-field of that war. We have come to dedicate a portion of that field, as a\\nfinal resting place for those who here gave their lives that that nation might\\nlive. It is altogether fitting and proper that we should do this.\\n\\nBut, in a larger sense, we can not dedicate \\u2013 we can not consecrate we can not\\nhallow \\u2013 this ground. The brave men, living and dead, who struggled here, have\\nconsecrated it far above our poor power to add or detract. The world will little\\nnote, nor long remember what we say here, but it can never forget what they did\\nhere. It is for us the living, rather, to be dedicated here to the unfinished\\nwork which they who fought here have thus far so nobly advanced. It is rather\\nfor us to be here dedicated to the great task remaining before us that from\\nthese honored dead we take increased devotion to that cause for which they gave\\nthe last full measure of devotion \\u2013 that we here highly resolve that these dead\\nshall not have died in vain that this nation, under God, shall have a new birth\\nof freedom \\u2013 and that government of the people, by the people, for the people,\\nshall not perish from the earth.\\n-18-80\] PASSED],
   [Even that first shortest test has an awkward and hard to use test name.],
@@ -313,6 +240,7 @@ test cases, you can use pytest.param to create the
 internal parameters object that pytest needs. Each of these can have an explicit
 ID assigned. Pytest will still assign an ID if you don’t provide one.],
   [Here’s an updated nb\_case() function using pytest.param:],
+  [def   nb\_case ( text ,   short ,   long ,   id = None ):],
   [if   " \\n "   in   text :],
   [\# Multi-line string: it's actual data.],
   [if   text \[ 0 \]   ==   " \\n " :       \# Remove a first newline],
@@ -325,6 +253,7 @@ ID assigned. Pytest will still assign an ID if you don’t provide one.],
   [return   pytest . param ( text ,   short ,   long ,   id = id )],
   [Now we can provide IDs for test cases. The ones reading from a file will use
 the file name as the ID:],
+  [\@pytest . mark . parametrize (],
   ["text, short, long" ,],
   [\[],
   [nb\_case ( "abcde \\n a \\n abc \\n " ,   1 ,   5 ,   id = "little" ),],
@@ -339,6 +268,7 @@ the file name as the ID:],
   [\]],
   [)],
   [Now our tests have useful IDs:],
+  [test\_non\_blank.py::test\_non\_blanks\[little\] PASSED],
   [test\_non\_blank.py::test\_non\_blanks\[four\] PASSED],
   [test\_non\_blank.py::test\_non\_blanks\[gettysburg.txt\] PASSED],
   [The exact details of my case() function aren’t important here. Your
@@ -353,10 +283,8 @@ and readable as you want.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [New Footage Shows Wanted Kinahan Cartel Kingpins Post-Sanctions],
   author: [Financial Investigations Team],
   source-name: [Bellingcat],
@@ -446,10 +374,8 @@ and readable as you want.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [An OB-GYN Was Repeatedly Accused of Sexual Misconduct. The State Medical Board Let Him Keep Practicing.],
   author: [Ashley Hiruko],
   source-name: [ProPublica],
@@ -489,6 +415,7 @@ and readable as you want.],
   [“I acknowledge that sometimes it takes longer than people would like, but we take that process really seriously,” Karinen said. “When we file a case and go to a hearing, we want to make sure that everybody has the opportunity to be heard on a particular topic.”],
   [The woman who saw Mulholland in February 2025 filed a lawsuit against the clinic and a board complaint against the doctor, both in August. She said she was indignant after learning about the earlier complaints.],
   [She said the commission should have taken those women more seriously. “They just let him keep practicing,” she said.],
+  [2022: The First Complaint],
   [The first sexual misconduct allegation against Mulholland landed in the commission’s email inbox in January 2022. The author was a first-time mother who, at 41 weeks pregnant, went to have labor induced at the Kadlec Regional Medical Center.],
   [The woman said she had hoped a female doctor would deliver the baby. But Mulholland was the on-call doctor assigned the day she arrived. When she saw that the doctor was a man, she asked if the female nurse who was there could perform her predelivery cervical check instead, according to her complaint.],
   [Mulholland insisted, she said. (He later told a commission investigator that because the woman was having labor induced, he had to personally know her cervical dilation and consistency, whether the fetus was in breech position or if her amniotic sac was intact. He also said because she was experiencing high blood pressure, her delivery couldn’t wait to be rescheduled with a female doctor.)],
@@ -510,6 +437,7 @@ and readable as you want.],
   [By the end of July 2022, the new mother’s case was closed without any disciplinary action.],
   [At the time, it was an isolated complaint in the record of a doctor who, records show, had not faced accusations of sexual misconduct with the medical commission before.],
   [Then, a little over a year later, came another complaint, this time filed by a woman who had worked with Mulholland for nearly a decade.],
+  [October 2023: A Co-worker and Patient Speaks Out],
   [According to an investigator’s report, the woman said she had worked at Kadlec Regional Medical Center for nine years and her interactions as Mulholland’s colleague had always been professional.],
   [The complaint she filed in October 2023 concerned events she said took place when she was Mulholland’s patient. She’d had her fallopian tubes and the tissue lining her uterus removed and developed pain that was only present when she was menstruating.],
   [On the day of her appointment, her complaint said, she’d explained all this to Mulholland when he began a line of questioning.],
@@ -528,6 +456,7 @@ and readable as you want.],
   [Through an attorney, Mulholland later told the commission that he conducts all of his exams “as respectfully as possible” and that he is “very cognizant of his patient’s reactions.”],
   [The doctor was responding to a commission investigator’s December 2023 request for his version of what happened during the woman’s visit.],
   [That same month, a complaint from a third woman arrived.],
+  [December 2023: Another Exam Complaint],
   [It was three weeks before the new year when the woman went to the medical commission for help.],
   [The patient, whose primary language is Spanish, had an interpreter join her in-person appointment virtually. A physician’s assistant had referred the woman to Mulholland to discuss a possible hysterectomy to relieve pain.],
   [The woman later told a commission investigator that during her appointment, Mulholland entered the exam room and introduced himself. Then he lifted the paper sheet that covered her naked lower half, looked at her genital area, then looked back at her, which made her uncomfortable. Without asking her to reposition herself, he grabbed her by the butt to move her down the exam table, she said.],
@@ -556,6 +485,7 @@ and readable as you want.],
   [The claims against Mulholland were piling up.],
   [In February and March 2024, Britta Fischer, commission investigator, submitted the 2023 cases for review.],
   [What to do next was soon in the hands of commissioners.],
+  [March-September 2024: A Decision Awaits],
   [The medical commission takes its guidance on how to handle allegations against a doctor from Washington statutes, which prohibit physicians from engaging in a range of behavior defined as sexual misconduct.],
   [The law bans statements about a patient’s “body, appearance, sexual history, or sexual orientation” except for legitimate purposes of care. The law also bars behavior, gestures or expressions that could “reasonably be interpreted as seductive or sexual.”],
   [A doctor can’t remove a patient’s gown or draping unless it’s with a patient’s consent, during emergency care or in a custodial setting.],
@@ -579,6 +509,7 @@ and readable as you want.],
   [All Mulholland had to do was sign.],
   [Months passed. Mulholland’s attorney asked for the information gathered about his client, and the commission sent it. A June 2024 deadline for him to accept the agreement passed, as did a subsequent one in August. Nothing in documents released by the commission indicates he signed — or that the commission took any disciplinary action.],
   [Mulholland kept seeing patients.],
+  [2018-2023: What the Hospital Knew],
   [Long before the commission’s investigator filed her report with her superiors, Mulholland’s employer had also heard repeated concerns, according to Kadlec Clinic records acquired by attorneys in a lawsuit against Providence and the clinic. The attorneys submitted the documents as an exhibit in court.],
   [(In court filings, Providence and Kadlec denied that they were negligent or that they knew or should have known about the abuse the plaintiffs alleged.)],
   [Kadlec’s records in the lawsuit show that the clinic conducted a 2018 human resources investigation into allegations that Mulholland had mocked a co-worker’s sexuality and religion, concluding that it was “more likely than not” the allegations were true. Afterward, the records say, Mulholland’s employer provided him “coaching.”],
@@ -588,6 +519,7 @@ and readable as you want.],
   [Separately, Tuck, the OB-GYN who worked alongside Mulholland, told a Kadlec investigator that a patient disclosed she felt Mulholland had assaulted her but that the woman didn’t report it because she felt no one would believe her.],
   [Following the 2019 workplace investigation, Kadlec’s records say, Mulholland’s employer concluded in 2020 that he “engaged in multiple instances of inappropriate behavior” that violated the medical center’s expectations. He was placed on a “behavior agreement” and required to take harassment prevention training.],
   [In 2022, Kadlec records show, more emails were sent to clinic leadership alleging that Mulholland was demeaning to patients and co-workers. They described a “toxic work environment” and said management failed to address employees’ concerns about the doctor.],
+  [Concerned About Your OB-GYN Visit? A Guide to What Should Happen — and What Shouldn’t.],
   [Tuck departed the clinic sometime that same year. She later told the medical commission she left because management failed to take action against him.],
   [Tuck raised concerns about Mulholland within an email to Chief Medical Officer Rich Meadows in July 2022, writing that patients “felt they had been insulted/assaulted” by Mulholland.],
   [Kadlec’s records in the lawsuit show that Tuck had also told a Kadlec workplace investigator in 2019 that the clinic manager, Lisa Mallory, protected Mulholland. In the statement she later gave the state medical commission, Tuck said when she brought concerns about Mulholland to Mallory, she responded, “He’s always been like that.”],
@@ -599,6 +531,7 @@ and readable as you want.],
   [The woman said her body where Mulholland touched her was inflamed for two and a half days.],
   [When the commission eventually contacted Mallory as part of the state’s own investigation, the clinic manager acknowledged there had been complaints within Kadlec. She did not seem to give them much credence.],
   [“Dr. Mulholland has received his fair share of complaints over the years as have all the other providers here” at the Kadlec clinic, she wrote in a statement to the state board. “From what I have observed, he cares deeply for his patients and has spent his career trying to educate women on their health. They have not always appreciated how he has done that.”],
+  [September 2024: State’s Investigation Resumes],
   [By September 2024, more than two years had elapsed since the state received its first complaint about a pelvic exam performed by Mulholland. Six months had passed since an investigator forwarded her report on two other pelvic exam complaints. That month, the commission learned of a new one.],
   [“During examination, he said my vagina was very dry and that my husband wasn’t doing his job,” the woman wrote in her complaint.],
   [The woman also described her interaction with Mulholland to a commission investigator. At the appointment, the woman had told a medical assistant that she was concerned about a fishy smell, she said. Upon entering the exam room, she told the investigator, Mulholland said loudly, “Hey, I heard you had a vagina that smells like fish.”],
@@ -637,16 +570,14 @@ and readable as you want.],
 ),
   insert-map: (:),
   inline-pq: pull-quote([“They are allowed to do things that we don’t give other people permission to do, and that’s part of their job.], [Ashley Hiruko]),
-  inline-pq-idx: 71,
+  inline-pq-idx: 74,
   word-count: 5808,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Munition Remnants Pictured at Site of Deadly Chad Strike Match Weapon Previously Used by Sudan’s RSF],
   author: [Sebastian Vandermeersch],
   source-name: [Bellingcat],
@@ -680,11 +611,10 @@ and readable as you want.],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Electronic Frontier Foundation to swap leaders as AI, ICE fights escalate],
   author: [Ashley Belanger],
   source-name: [Ars Technica Policy],
@@ -703,7 +633,7 @@ and readable as you want.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Meta loses trial after arguing child exploitation was “inevitable” on its apps],
   author: [Ashley Belanger],
   source-name: [Ars Technica Policy],
@@ -727,7 +657,7 @@ and readable as you want.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [DOJ confirms FBI Director Kash Patel’s personal email was hacked],
   author: [Ashley Belanger],
   source-name: [Ars Technica Policy],
@@ -746,7 +676,7 @@ and readable as you want.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [This Weekend’s No Kings Rallies Were Historically Massive],
   author: [Alex Nguyen],
   source-name: [Mother Jones],
@@ -755,6 +685,10 @@ and readable as you want.],
   [On Saturday millions of people around the country took part in more than 3,000 No Kings protests opposing the presidency of Donald Trump, whose approval ratings have plummeted to 36 percent , a record low since his return to the White House.],
   [Saturday’s rallies were the third major No Kings protest, with organizers saying that 8 million people took part. That estimate has not been independently verified. But to put this weekend’s anti-Trump protests in perspective: about 300,000 people attended the April 2009 Tea Party protests against the Obama administration that were heralded as a seismic political event.],
   [My Mother Jones colleagues were on the ground yesterday covering the action around the country:],
+  [St. Petersburg, Florida],
+  [Washington, D. C.],
+  [St. Paul, Minnesota],
+  [Oakland, California],
   [Given the immense outpouring, what could these demonstrations mean for future organizing?],
   [According to Payday Report , an outlet that covers labor and union news, Indivisible, one of the lead organizers of the No Kings protests, is backing the May Day Strong coalition , which is calling for “No Work, No School, No Shopping” on May 1.],
   [Leah Greenberg, the co-founder of Indivisible, said, “On May 1, Indivisibles will be joining people across the country with a clear message: we demand a government that invests in our communities, not one that enriches billionaires, fuels endless war, or deploys masked agents to intimidate our neighbors.”],
@@ -768,14 +702,17 @@ and readable as you want.],
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [What Are The Swing States Of The Future?],
   author: [Amelia Thomson-DeVeaux],
   source-name: [FiveThirtyEight],
   images: (),
   paragraphs: (
+  [2024 Election],
+  [What Are The Swing States Of The Future?],
+  [A FiveThirtyEight Chat],
+  [Sep. 6, 2023, at 10:45 AM],
   [Welcome to FiveThirtyEight’s politics chat . The transcript below has been lightly edited.],
   [ameliatd ( Amelia Thomson-DeVeaux , senior reporter): The residents of states like Pennsylvania, Wisconsin and Michigan are used to having their airwaves flooded with political ads as presidential elections draw near. But over the years, there’s actually been a lot of variation in which states have the most power to decide the future commander-in-chief. Only a few years ago, it would have been hard to imagine Arizona and Georgia in the toss-up category — and “as Ohio goes, so goes the nation” was proved wrong in 2020 , when President Joe Biden became the first candidate to win the White House without carrying Ohio since 1960.],
   [So have Arizona and Georgia replaced Ohio as the nation’s presidential bellwether? Is once-swingy Florida officially a red state ? Let’s talk about what are the swing states to watch in 2024 — and what are the states that could be toss-ups just a few election cycles from now.],
@@ -792,6 +729,8 @@ and readable as you want.],
   [ameliatd: That’s an interesting question, Geoffrey — does some of this come down to how you define a swing state? What do you think, Nathaniel and Elliott?],
   [nrakich: Yeah, I would define “swing state” closer to “tipping-point state” — i.e., a state (or district!) that could decide the election. If you define it simply as a competitive state, almost any state could be a swing state under the right circumstances. It’s hard to imagine right now, but it’s possible that, in 2036 or something, a Democrat or Republican will win the national popular vote by some massive margin and a normally uncompetitive state will be caught up in the wave — like Illinois voting Republican or something.],
   [geoffrey.skelley: I took a mathematical approach to determining these lists, so brace yourself for some methodology. We often talk about a state’s partisan lean by comparing its margin in presidential races to the national popular vote margin as a way of trying to decipher how a state would perform in a hypothetical 50-50 election. However, Democrats have usually had an advantage in the national popular vote in recent times — but a disadvantage in the Electoral College in 2016 and 2020 — meaning that a 50-50 race isn’t the norm. In fact, the median margin in the national popular vote has been D+3 in presidential races from 2000 to 2020. So I took the 2020 margin in a state and compared it to the national popular vote to calculate its lean, then adjusted it by 3 points to the left to reflect that recent trend. If you then take the states or districts that fall within D+10 and R+10, you get a list of 16 states plus Nebraska’s 2nd and Maine’s 2nd District that I’d define as broader battleground states. That stretches from New Mexico (Biden won it by about 11 points in 2020) to Iowa (Trump won it by a tad more than 8 points ). Within that larger group, the places between D+5 and R+5 form a core group of eight swing states and one district that are most likely to determine the outcome of the election.],
+  [One way to define battlegrounds and core swing states],
+  [2024 battlegrounds and swing states based on the 2020 vote and an adjusted lean calculation],
   [Place 
  2024 Elec. Votes 
  2020 margin 
@@ -925,7 +864,9 @@ and readable as you want.],
  R+8.2 
  R+12.7 
  R+9.7],
-  [class="notes"\>The adjusted lean accounts for the recent tendency for Democrats to perform better in the national popular vote in presidential elections from 2000 to 2020 by a median edge of 3 points.],
+  [A state’s lean is the difference between the state’s margin and the national popular vote margin (Biden won by about 4.5 points nationally in 2020).],
+  [The adjusted lean accounts for the recent tendency for Democrats to perform better in the national popular vote in presidential elections from 2000 to 2020 by a median edge of 3 points.],
+  [Source: Dave Leip’s Atlas of U. S. Presidential Elections, Daily Kos Elections],
   [gelliottmorris : I really like Geoff’s math! I tend to think of a swing state as a state that could plausibly provide the winner of the Electoral College with their 270th electoral vote under a wide array of plausible national electoral environments. That somewhat helps us avoid counting a state like Illinois as a “swing state” in a super-Republican year, because by that point they’ve already won the election and it doesn’t really matter if the Republican gets Illinois’s electoral votes too.],
   [But generally, I think people underestimate how quickly the political environment in a state can move, conditional on the national political environment staying the same. I mean, just look at Ohio and Iowa from 2012 to 2020: Former President Barack Obama won Ohio by 3 points in 2012, 1 point less than his margin nationally, but by 2020 it was 12 points to the right of the national popular vote. And Iowa went all the way from D+2 to R+12. So our priors for which states are “swing states” are not always super informative.],
   [geoffrey.skelley: Elliott, I think you’re right that people underestimate the possibilities of larger swings, but I do think they won’t be as sharp going from 2020 to 2024 because an incumbent is involved, not to mention the high probability of a full-on rematch.],
@@ -967,10 +908,8 @@ and readable as you want.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [They once called him a ‘goose-stepping extremist.’ They’re now sitting out his comeback bid.],
   author: [By Samuel Benson and Alec Hernandez],
   source-name: [Politico],
@@ -1014,10 +953,8 @@ and readable as you want.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [AIPAC faces calls to reassess strategy after split results in Illinois],
   author: [By Lisa Kashinsky and Elena Schneider],
   source-name: [Politico],
@@ -1058,10 +995,8 @@ and readable as you want.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Donald Trump Is Unpopular. That Only Matters in a Democracy.],
   author: [Ben Beckett],
   source-name: [Jacobin],
@@ -1075,6 +1010,7 @@ and readable as you want.],
   [Trump’s war of choice on Iran has already sent gas prices soaring 32 percent higher than before the attack, with no end in sight for rises in the price of oil. As the conflict drags on, the cost of oil will have an exponential effect on the prices of other goods as well. Perhaps most immediately, the war has delayed the delivery and dramatically increased the price of fertilizer in the United States and Asia . This will almost certainly have a major impact on farmers’ bottom lines as well as costs at the grocery store, which the US Department of Agriculture was already predicting would rise faster this year than in 2024 or 2025 before Trump attacked Iran.],
   [While it is still early in the election cycle, prospects for Democrats regaining control of the House of Representatives currently look fairly strong . It is difficult to imagine that any of the policies Trump is pursuing will make Republicans more popular before November. Winning a majority in the House would not allow Democrats to pass much of their own agenda, but it would give them greater leverage in budget negotiations and greater power to subpoena members of Trump’s government, allow them to release more of the Jeffrey Epstein files, and raise the prospect once again of filing articles of impeachment — even though the Senate is extremely unlikely to come to a guilty verdict.],
   [Trump, obviously, does not want any of these things to happen. Two critical questions for the next seven months are how far Trump and Republicans are willing to go to ensure the GOP remains in full control of Congress, and whether there is anyone in a position to stop them. On both counts, there is cause for concern.],
+  [Popularity Only Matters in a Democracy],
   [For years, Trump has insisted that he lost the 2020 election only due to voter fraud. The fact that every investigation has found these claims unsubstantiated has not deterred him from nursing this grievance. Neither has the fact that he won the 2024 election. If there was indeed a great conspiracy to keep him out of office that was successful in 2020, it’s unclear why it would have failed in 2024. But far be it from Trump to hold his grandiose persecution fantasies to a standard of logical coherence.],
   [In response, Trump and congressional Republicans have continued the Right’s decades-long project of making it more difficult to vote. This year, they have been pushing hard to pass the Safeguard American Voter Eligibility (SAVE) Act into law. If passed, the act would impose extreme new identification requirements both to register to vote and to actually cast a ballot. The bill is currently under filibuster in the Senate and so the exact requirements are not set, but if it became law, the act would require some combination of a passport, an official birth certificate, and additional identification both to register and each time a person voted. It would also increase the frequency with which states are required to purge their voter rolls. And just this week, oral arguments at the Supreme Court suggest that justices in the conservative court majority were open to significantly restricting mail-in voting.],
   [Republicans are now clearly establishing the tools, rhetorical and practical, to allow law enforcement to insert itself into elections in a manner without recent precedent and guaranteed to favor their party.],
@@ -1092,10 +1028,8 @@ and readable as you want.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Evidence Points to US Scattering Mines over Iranian Village],
   author: [Trevor Ball],
   source-name: [Bellingcat],
@@ -1144,10 +1078,8 @@ and readable as you want.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Federal Cyber Experts Thought Microsoft’s Cloud Was “a Pile of Shit.” They Approved It Anyway.],
   author: [Renee Dudley],
   source-name: [ProPublica],
@@ -1181,6 +1113,7 @@ and readable as you want.],
   [The consequence of all this, people who have worked for FedRAMP told ProPublica, is that the program now is little more than a rubber stamp for industry. The implications of such a downsizing for federal cybersecurity are far-reaching, especially as the administration encourages agencies to adopt cloud-based artificial intelligence tools , which draw upon reams of sensitive information.],
   [The General Services Administration, which houses FedRAMP, defended the program, saying it has undergone “significant reforms to strengthen governance” since GCC High arrived in 2020. “FedRAMP’s role is to assess if cloud services have provided sufficient information and materials to be adequate for agency use, and the program today operates with strengthened oversight and accountability mechanisms to do exactly that,” a GSA spokesperson said in an emailed statement.],
   [The agency did not respond to written questions regarding GCC High.],
+  [A “Cloud First” World],
   [About two decades ago, federal officials predicted that the cloud revolution, providing on-demand access to shared computing via the internet, would usher in an era of cheaper, more secure and more efficient information technology.],
   [Moving to the cloud meant shifting away from on-premises servers owned and operated by the government to those in massive data centers maintained by tech companies. Some agency leaders were reluctant to relinquish control, while others couldn’t wait to.],
   [In an effort to accelerate the transition, the Obama administration issued its “Cloud First” policy in 2011, requiring all agencies to implement cloud-based tools “whenever a secure, reliable, cost-effective” option existed. To facilitate adoption, the administration created FedRAMP, whose job was to ensure the security of those tools .],
@@ -1194,6 +1127,7 @@ and readable as you want.],
   [It was a milestone for all involved. Rogers had ushered the Justice Department into the cloud, and Microsoft had gained a significant foothold in the cutthroat market for the federal government’s cloud computing business.],
   [Moreover, Rogers’ decision placed GCC High on the FedRAMP Marketplace, the government’s influential online clearinghouse of all the cloud providers that are under review or already authorized. Its mere mention as “in process” was a boon for Microsoft, amounting to free advertising on a website used by organizations seeking to purchase cloud services bearing what is widely seen as the government’s cybersecurity seal of approval.],
   [That April, GCC High landed at FedRAMP’s office for review, the final stop on its bureaucratic journey to full authorization.],
+  [Microsoft’s Missing Information],
   [In theory, there shouldn’t have been much for FedRAMP’s team to do after the third-party assessor and Justice reviewed GCC High, because all parties were supposed to be following the same requirements.],
   [But it was around this time that the Government Accountability Office, which investigates federal programs, discovered breakdowns in the process , finding that agency reviews sometimes were lacking in quality. Despite missing details, FedRAMP went on to authorize many of these packages. Acknowledging these shortcomings, FedRAMP began to take a harder look at new packages, a former reviewer said.],
   [This was the environment in which Microsoft’s GCC High application entered the pipeline. The name GCC High was an umbrella covering many services and features within Office 365 that all needed to be reviewed. FedRAMP reviewers quickly noticed key material was missing.],
@@ -1204,6 +1138,7 @@ and readable as you want.],
   [A Microsoft spokesperson acknowledged that the company had “articulated a challenge related to illustrating the volume of information being requested in diagram form” but “found alternate ways to share that information.”],
   [Rogers, who was hired by Microsoft in 2025, declined to be interviewed. In response to emailed questions, the company provided a statement saying that she “stands by the rigorous evaluation that contributed to” her authorization of GCC High. A spokesperson said there was “absolutely no connection” between her hiring and the decisions in the GCC High process, and that she and the company complied with “all rules, regulations, and ethical standards.”],
   [The Justice Department declined to respond to written questions from ProPublica.],
+  [A Fight Over “Spaghetti Pies”],
   [As 2020 came to a close, a national security crisis hit Washington that underscored the consequences of cyber weakness. Russian state-sponsored hackers had been quietly working their way through federal computer systems for much of the year and vacuuming up sensitive data and emails from U. S. agencies — including the Justice Department .],
   [At the time, most of the blame fell on a Texas-based company called SolarWinds, whose software provided hackers their initial opening and whose name became synonymous with the attack. But, as ProPublica has reported , the Russians leveraged that opening to exploit a long-standing weakness in a Microsoft product — one that the company had refused to fix for years, despite repeated warnings from one of its engineers. Microsoft has defended its decision not to address the flaw, saying that it received “multiple reviews” and that the company weighs a variety of factors when making security decisions.],
   [In the aftermath, the Biden administration took steps to bolster the nation’s cybersecurity. Among them, the Justice Department announced a cyber-fraud initiative in 2021 to crack down on companies and individuals that “put U. S. information or systems at risk by knowingly providing deficient cybersecurity products or services, knowingly misrepresenting their cybersecurity practices or protocols, or knowingly violating obligations to monitor and report cybersecurity incidents and breaches.”],
@@ -1222,6 +1157,7 @@ and readable as you want.],
   [A Microsoft spokesperson acknowledged the company faces a unique challenge but maintained that its cloud products meet federal security requirements.],
   [“Unlike providers that started later with a narrower product scope, Microsoft operates one of the broadest enterprise and government platforms in the world, supporting continuity for millions of customers while simultaneously modernizing at scale,” the spokesperson said in emailed responses. “That complexity is not ‘spaghetti,’ but it does mean the work of disentangling, isolating, and hardening systems is continuous.”],
   [The spokesperson said that since 2023, Microsoft has made “security‑first architectural redesign, legacy risk reduction, and stronger isolation guarantees a top, company‑wide priority.”],
+  [Assessors Back-Channel Cyber Concerns],
   [The FedRAMP team was not the only party with reservations about GCC High. Microsoft’s third-party assessment organizations also expressed concerns.],
   [The firms are supposed to be independent but are hired and paid by the company being assessed. Acknowledging the potential for conflicts of interest , FedRAMP has encouraged the assessment firms to confidentially back-channel to its reviewers any negative feedback that they were unwilling to bring directly to their clients or reflect in official reports.],
   [In 2020, two third-party assessors hired by Microsoft, Coalfire and Kratos, did just that. They told FedRAMP that they were unable to get the full picture of GCC High, a former FedRAMP reviewer told ProPublica.],
@@ -1234,6 +1170,7 @@ and readable as you want.],
   [The Microsoft spokesperson told ProPublica the company has “always been responsive to requests” from Kratos and FedRAMP. “We are not aware of any backchanneling, nor do we believe that backchanneling would have been necessary given our transparency and cooperation with auditor requests,” the spokesperson said.],
   [In response to questions from ProPublica about the process, the GSA said in an email that FedRAMP’s system “does not create an inherent conflict of interest for professional auditors who meet ethical and contractual performance expectations.”],
   [GSA did not respond to questions about back-channeling but said the “correct process” is for a third-party assessor to “state these problems formally in a finding during the security assessment so that the cloud service provider has an opportunity to fix the issue.”],
+  [FedRAMP Ends Talks],
   [FedRAMP is housed under the General Services Administration within the federal government. Al Drago/Bloomberg via Getty Images],
   [The back-and-forth between the FedRAMP reviewers and Microsoft’s team went on for years with little progress. Then, in the summer of 2023, the program’s interim director, Brian Conrad, got a call from the White House that would alter the course of the review.],
   [Chinese state-sponsored hackers had infiltrated GCC, the lower-cost version of Microsoft’s government cloud, and stolen data and emails from the commerce secretary, the U. S. ambassador to China and other high-ranking government officials. In the aftermath, Chris DeRusha, the White House’s chief information security officer, wanted a briefing from FedRAMP, which had authorized GCC.],
@@ -1246,6 +1183,7 @@ and readable as you want.],
   [If Microsoft still wanted FedRAMP authorization, Conrad wrote, it would need to start over.],
   [A FedRAMP reviewer, explaining the decision to the Justice Department, said the team was “not asking for anything above and beyond what we’ve asked from every other” cloud service provider, according to meeting minutes reviewed by ProPublica. But the request was particularly justified in Microsoft’s case, the reviewer told the Justice officials, because “each time we’ve actually been able to get visibility into a black box, we’ve uncovered an issue.”],
   [“We can’t even quantify the unknowns, which makes us very uncomfortable,” the reviewer said, according to the minutes.],
+  [Microsoft and the Justice Department Push Back],
   [Microsoft was furious. Failing to obtain authorization and starting the process over would signal to the market that something was wrong with GCC High. Customers were already confused and concerned about the drawn-out review, which had become a hot topic in an online forum used by government and technology insiders. There, Wakeman, the Microsoft cybersecurity architect, deflected blame, saying the government had been “dragging their feet on it for years now.”],
   [Meanwhile, to build support for Microsoft’s case, Bergin, the company’s point person for FedRAMP and a former Army official, reached out to government leaders, including one from the Justice Department.],
   [The Justice official, who spoke on condition of anonymity because they were not authorized to discuss the matter, said Bergin complained that the delay was hampering Microsoft’s ability “to get this out into the market full sail.” Bergin then pushed the Justice Department to “throw around our weight” to help secure FedRAMP authorization, the official said.],
@@ -1258,12 +1196,14 @@ and readable as you want.],
   [Bergin did not dispute the account, telling ProPublica that he had been trying to argue that it is the purview of third-party assessors such as Kratos — not FedRAMP — to evaluate the security of cloud products. And because FedRAMP must approve the third-party assessment firms , the program should have taken its issues up with Kratos.],
   [“When you are the regulatory agency who determines who the auditors are and you refuse to accept your auditors’ answers, that’s not a ‘me’ problem,” Bergin told ProPublica.],
   [The GSA did not respond to questions about the meeting. The Justice Department declined to comment.],
+  [Pressure Mounts on FedRAMP],
   [If there was any doubt about the role of FedRAMP, the White House issued a memorandum in the summer of 2024 that outlined its views. FedRAMP, it said, “must be capable of conducting rigorous reviews” and requiring cloud providers to “rapidly mitigate weaknesses in their security architecture.” The office should “consistently assess and validate cloud providers’ complex architectures and encryption schemes.”],
   [But by that point, GCC High had spread to other federal agencies, with the Justice Department’s authorization serving as a signal that the technology met federal standards.],
   [It also spread to the defense sector, since the Pentagon required that cloud products used by its contractors meet FedRAMP standards. While it did not have FedRAMP authorization, Microsoft marketed GCC High as meeting the requirements, selling it to companies such as Boeing that research, develop and maintain military weapons systems.],
   [But with the FedRAMP authorization up in the air, some contractors began to worry that by using GCC High, they were out of compliance. That could threaten their contracts, which, in turn, could impact Defense Department operations. Pentagon officials called FedRAMP to inquire about the authorization stalemate.],
   [The Defense Department acknowledged but did not respond to written questions from ProPublica.],
   [Rogers also kept pressing FedRAMP to “get this thing over the line,” former employees of the GSA and FedRAMP said. It was the “opinion of the staff and the contractors that she simply was not willing to put heat to Microsoft on this” and that the Justice Department “was too sympathetic to Microsoft’s claims,”  Eric Mill, then GSA’s executive director for cloud strategy , told ProPublica.],
+  [Authorization Despite a “Damning” Assessment],
   [In the summer of 2024, FedRAMP hired a new permanent director, government technology insider Pete Waterman . Within about a month of taking the job, he restarted the office’s review of GCC High with a new team, which put aside the debate over data flow diagrams and instead attempted to examine evidence from Microsoft. But these reviewers soon arrived at the same conclusion, with the team’s leader complaining about “getting stiff-armed” by Microsoft.],
   [“He came back and said, ‘Yeah, this thing sucks,’” Mill recalled.],
   [While the team was able to work through only two of the many services included in GCC High, Exchange Online and Teams, that was enough for it to identify “issues that are fundamental” to risk management, including “timely remediation of vulnerabilities and vulnerability scanning,” according to a summary of the team’s findings reviewed by ProPublica.],
@@ -1276,6 +1216,7 @@ and readable as you want.],
   [While authorizations with oversight conditions weren’t unusual, arriving at one under these circumstances was. GCC High reviewers saw problems everywhere, both in what they were able to evaluate and what they weren’t. To them, most of the package remained a vast wilderness of untold risk.],
   [Nevertheless, FedRAMP and Microsoft reached an agreement, and the day after Christmas 2024, GCC High received its FedRAMP authorization. FedRAMP appended a cover report to the package laying out its deficiencies and noting it carried unknown risks, according to people familiar with the report.],
   [It emphasized that agencies should carefully review the package and engage directly with Microsoft on any questions.],
+  [“Unknown Unknowns” Persist],
   [Microsoft told ProPublica that it has met the conditions of the agreement and has “stayed within the performance metrics required by FedRAMP” to ensure that “risks are identified, tracked, remediated, and transparently communicated.”],
   [But under the Trump administration, there aren’t many people left at FedRAMP to check.],
   [While the Biden-era guidance said FedRAMP “must be an expert program that can analyze and validate the security claims” of cloud providers, the GSA told ProPublica that the program’s role is “not to determine if a cloud service is secure enough.” Rather, it is “to ensure agencies have sufficient information to make these risk decisions.”],
@@ -1300,10 +1241,8 @@ and readable as you want.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [As Trump Demands Voter Data, This Fiercely Independent Red State Says No],
   author: [Audrey Dutton],
   source-name: [ProPublica],
@@ -1365,11 +1304,10 @@ and readable as you want.],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Apple Now Requires Device-Level Age Verification in the UK. Could the US Be Next?],
   author: [EditorDavid],
   source-name: [Slashdot],
@@ -1391,7 +1329,7 @@ and readable as you want.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Video Shows US Tomahawk Missile Strike Next to Girls’ School in Iran],
   author: [Trevor Ball],
   source-name: [Bellingcat],
@@ -1399,7 +1337,7 @@ and readable as you want.],
   paragraphs: (
   [New video footage shows a US Tomahawk missile hitting an Islamic Revolutionary Guard Corps (IRGC) facility in Minab, Iran, on Feb 28, showing for the first time that the US struck the area.],
   [The footage, released by Mehr News and geolocated by Bellingcat , also shows smoke already rising from the vicinity of the girls’ school where 175 people were reportedly killed , including children.],
-  [dir="ltr" lang="en"\>New video footage shows a US Tomahawk missile hitting an IRGC facility in Minab, Iran, on Feb 28, showing for the first time that the US struck the area. The footage also shows smoke already rising from the vicinity of the girls’ school, where 175 people were reportedly killed. pic.twitter.com/4jBXrNcRJO],
+  [New video footage shows a US Tomahawk missile hitting an IRGC facility in Minab, Iran, on Feb 28, showing for the first time that the US struck the area. The footage also shows smoke already rising from the vicinity of the girls’ school, where 175 people were reportedly killed. pic.twitter.com/4jBXrNcRJO],
   [— Trevor Ball (\@Easybakeovensz) March 8, 2026],
   [The footage would appear to contradict US President Donald Trump’s claim that it was an Iranian missile that hit the school.],
   [Left: Image showing a Tomahawk missile from the airstrike in Minab. Right: A Tomahawk missile flying over Tehran earlier in the conflict.],
@@ -1422,28 +1360,32 @@ and readable as you want.],
 #pull-quote([So far, that restriction has only been implemented at the website level, but UK officials have been worried about easy loopholes to evade the age restrictions, like VPNs.], [EditorDavid])
 
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Cybersecurity researchers have disclosed three security vulnerabilities impacting LangChain and LangGraph that, if successfully exploited, could expose filesystem data, environment secrets, and conversation history.
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Cybersecurity researchers have disclosed three security vulnerabilities impacting LangChain and LangGraph that, if successfully exploited, could expose filesystem data, environment secrets, and conversation history.
 Both LangChain and LangGraph are open-source frameworks that are used to build applications powered by Large Language Models (LLMs). LangGraph is built on the foundations of])],
-    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Most teams have security tools in place. Alerts are firing, dashboards look clean, threat intel is flowing in. On the surface, everything feels under control.
+  [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Most teams have security tools in place. Alerts are firing, dashboards look clean, threat intel is flowing in. On the surface, everything feels under control.
 But one question usually stays unanswered: Would your defenses actually stop a real attack?
 That’s where things get shaky. A control exists, so it’s assumed to work. A detection rule is active, so it’s expected to catch something. But very])],
-    [#brief-item([Madeleine Schwartz], source-name: [Dissent Magazine], [Anne Hidalgo’s mayoralty illustrates the limits of local responses to national and international problems like housing and climate change. Without wider coordination, even the most successful mayor’s reach can only extend so far.])],
-    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Cybersecurity researchers have uncovered malicious artifacts distributed via Docker Hub following the Trivy supply chain attack, highlighting the widening blast radius across developer environments.
+  [#brief-item([Madeleine Schwartz], source-name: [Dissent Magazine], [Anne Hidalgo’s mayoralty illustrates the limits of local responses to national and international problems like housing and climate change. Without wider coordination, even the most successful mayor’s reach can only extend so far.])],
+  [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Cybersecurity researchers have uncovered malicious artifacts distributed via Docker Hub following the Trivy supply chain attack, highlighting the widening blast radius across developer environments.
 The last known clean release of Trivy on Docker Hub is 0.69.3. The malicious versions 0.69.4, 0.69.5, and 0.69.6 have since been removed from the container image library.
 "New image tags 0.69.5 and])],
-    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Cybersecurity researchers have disclosed a vulnerability in Anthropic's Claude Google Chrome Extension that could have been exploited to trigger malicious prompts simply by visiting a web page.
+  [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Cybersecurity researchers have disclosed a vulnerability in Anthropic's Claude Google Chrome Extension that could have been exploited to trigger malicious prompts simply by visiting a web page.
 The flaw "allowed any website to silently inject prompts into that assistant as if the user wrote them," Koi Security researcher Oren Yomtov said in a report shared with The Hacker News. "No clicks, no])],
-    [#brief-item([John R. Puri], source-name: [National Review], [A coastguard boat approaches an Indian liquefied petroleum gas carrier as it arrives at Mundra Port via the Strait of Hormuz, amid the U. S.-Israel conflict with Iran, in Gujarat, India, March 16, 2026.])],
-    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Oracle has released security updates to address a critical security flaw impacting Identity Manager and Web Services Manager that could be exploited to achieve remote code execution.
+  [#brief-item([John R. Puri], source-name: [National Review], [A coastguard boat approaches an Indian liquefied petroleum gas carrier as it arrives at Mundra Port via the Strait of Hormuz, amid the U. S.-Israel conflict with Iran, in Gujarat, India, March 16, 2026.])],
+  [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Oracle has released security updates to address a critical security flaw impacting Identity Manager and Web Services Manager that could be exploited to achieve remote code execution.
 The vulnerability, tracked as CVE-2026-21992, carries a CVSS score of 9.8 out of a maximum of 10.0.
 "This vulnerability is remotely exploitable without authentication," Oracle said in an advisory. "If successfully])],
-    [#brief-item([Matthew Sitman and Sam Adler-Bell], source-name: [Dissent Magazine], [Matt and Sam are joined by Know Your Enemy ’s intrepid producer, Jesse Brenneman, to discuss the recent film One Battle After Another .])],
-    [#brief-item([Al Jazeera English], source-name: [Al Jazeera English], [As troops push towards Litani River, mourners gather for the funeral of three slain journalists killed in line of duty.])],
-    [#brief-item([Alexander Hertel-Fernandez], source-name: [Dissent Magazine], [Labor unions have long been central to the fight for democracy. But they can only play that role when members are engaged and trust their unions to fight for them.])],
-  ))
-}
+  [#brief-item([Matthew Sitman and Sam Adler-Bell], source-name: [Dissent Magazine], [Matt and Sam are joined by Know Your Enemy ’s intrepid producer, Jesse Brenneman, to discuss the recent film One Battle After Another .])],
+  [#brief-item([Al Jazeera English], source-name: [Al Jazeera English], [As troops push towards Litani River, mourners gather for the funeral of three slain journalists killed in line of duty.])],
+  [#brief-item([Alexander Hertel-Fernandez], source-name: [Dissent Magazine], [Labor unions have long been central to the fight for democracy. But they can only play that role when members are engaged and trust their unions to fight for them.])],
+))
+
+// --- Notable Quotes ---
+#block(above: 0.2in, stroke: (top: 1pt + luma(26)), inset: (top: 0.1in))[
+  #pull-quote([That fix required parsing the source code during execution.], [Ned Batchelder])
+
+]
 
 #colophon([Southern Register], [Vol. 1, No. 082], [2026-03-30])

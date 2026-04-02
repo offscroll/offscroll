@@ -21,36 +21,8 @@
 #masthead([Digital Courier], [Vol. 1, No. 067], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Tuesday Things.],
-  kicker: [Cover Story],
-  author: [Jessica],
-  source-name: [How Sweet Eats],
-  deck: [1. If you want to ensure that it snows one or two more times this season, go ahead and put away all of your puffer coats, gloves, winter hats, etc.],
-  lead-pre: [],
-  lead-cap: [A],
-  lead-rest: [sk me how I know!!],
-  body-paragraphs: (
-  [2. Anything pistachio is right up my alley. Like this cheesecake !! I’m craving it.],
-  [3. I want to get the kids a giant yard game for easter – one that can be near our pool! Tell me the best. Connect 4? Giant checkers?!],
-  [4. Easter peanut butter m&m’s are the most elite m&ms.],
-  [5. I always so love my margaritas at home more !],
-  [6. TV Things!! Ugh, Love Story killed me this past week. I hate that we are getting to this part. Not sure how I can even watch the last one!],
-  [7. Also, I had six baskets of laundry to fold last night so I started binging SLOMW. I’ve never watched before!],
-  [8. I’ve never been into boat shoes but am losing my mind over these ones . OMG.],
-  [9. The only contest I need to enter as an adult is a grown-up book it, especially if a pan pizza is involved. Pretty sure that’s what made me love reading!],
-  [The post Tuesday Things. appeared first on How Sweet Eats .],
-),
-  edited-for-length: false,
-)
-
-#pull-quote([I always so love my margaritas at home more !  6.], [Jessica])
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [Corrupt a wish with GPT-4],
   author: [\@corrupt-a-bot GPT-4 bot],
   source-name: [Sam Saffron],
@@ -65,12 +37,11 @@
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    section-label([Features])
-    standard-article(
+    #section-label([Features])
+    #standard-article(
   title: [miso chicken and rice],
   author: [deb],
   source-name: [Smitten Kitchen],
@@ -87,7 +58,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [How I learned to stop worrying and write my own ORM],
   author: [\@Vincent\_Grazapoli Vincent Grazapoli],
   source-name: [Sam Saffron],
@@ -98,7 +69,6 @@
   [sqlplus.net],
   [SQL+ The Fastest ORM for C\# & SQL Server],
   [SQL+ is the only ORM that features a SQL first approach to building data services and holds up in the most demanding environments],
-  [style="clear: both;"\>],
   [Generate all those POCO objects in seconds by simply adding a comment to a stored procedure and you’re done. Nearly twice as fast as dapper, and just as productive as Entity Framework.],
   [Entity Framework vs Dapper vs ADO w/SQL+ . NET],
 ),
@@ -110,7 +80,7 @@
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([\@corrupt-a-bot GPT-4 bot], source-name: [Sam Saffron], [Granted! Large Language Models (LLMs) advance exponentially over the next year, and their power is used for noble purposes such as curing cancer and solving complex physics problems. However, with their increasing intelligence, LLMs become highly sought-after companions, outshining human creativity and skills in various aspects of life. As a result, people become too reliant on LLMs, leading to a decline in innovation and the perseverance of the human spirit.
 
 I wish that every time someone feels sad, a heartwarming memory from their past magically appears in a small photo album, providing instant comfort and happiness.])],
@@ -138,10 +108,10 @@ The post AUGUST BURNS RED Announce New Album, Stream First Single "The Nameless"
 The post KING DIAMOND's ANDY LA ROCQUE On 2026 Tentative Timeline For Long-Awaited New Album: "That's Our Goal. We Have Most Of The Songs" appeared first on Metal Injection .])],
       [#brief-item([By Kiley Price], source-name: [Inside Climate News], [Citing national security, the Trump administration wants to exempt all federally regulated offshore oil from protections for endangered animals—even if it could cause their extinction. 
 
-class="byline" style="color: \#888888; font-family: 'Open Sans',sans-serif; font-size: 10px; line-height: 12px; margin: 1em 0; font-weight: bold;"\>By Kiley Price
+By Kiley Price
 
 The Trump administration is turning to the nuclear option on endangered-species protections in the name of national security.])],
-      [#brief-item([deb], source-name: [Smitten Kitchen], [class="smittenkitchen-print-hide"\>
+      [#brief-item([deb], source-name: [Smitten Kitchen], [
  
 
  If you want a homemade pizza that requires no kneading, no special flour, or long wait time (because who among us has ever said “what I really crave is pizza that will be ready 1 to 3 days from now”), you should really, really be making more pan pizzas at home. You might even consider it a worthwhile addition to your 2026 cooking bucket list .
@@ -155,11 +125,17 @@ The post Four Former KING DIAMOND Members & PAGAN'S MIND Vocalist Join Forces In
 The post San Diego Padres' MASON MILLER Made KORN's "Blind" His New Entrance Song appeared first on Metal Injection .])],
       [#brief-item([By Jake Bolster], source-name: [Inside Climate News], [Recently released data show how drought, paltry Western snows and unseasonable heat, all exacerbated by climate change, could be priming the nation for a long wildfire season. 
 
-class="byline" style="color: \#888888; font-family: 'Open Sans',sans-serif; font-size: 10px; line-height: 12px; margin: 1em 0; font-weight: bold;"\>By Jake Bolster
+By Jake Bolster
 
 As the Western United States limps away from one of the warmest and driest winters on record, wildfires have burned over 127 percent more acreage so far in 2026 than the 10-year average, potentially setting the stage for a long, fiery summer.])],
     ))
   ],
 ), ruled-indices: (1, 2,))
+
+// --- Notable Quotes ---
+#block(above: 0.2in, stroke: (top: 1pt + luma(26)), inset: (top: 0.1in))[
+  #pull-quote([I always so love my margaritas at home more !  6.], [Jessica])
+
+]
 
 #colophon([Digital Courier], [Vol. 1, No. 067], [2026-03-30])

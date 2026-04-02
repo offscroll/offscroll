@@ -31,6 +31,7 @@ from offscroll.layout.renderer import (
     _has_editorial_ellipsis,
     _is_filename_caption,
     _strip_display_boilerplate,
+    _strip_html_attr_prefixes,
     _unescape_html_entities,
     _will_inline_pull_quotes,
     image_insert_indices,
@@ -53,7 +54,7 @@ def _escape_typst(text: str) -> str:
     """
     if not text:
         return ""
-    # Order matters: escape # first (most common in URLs/hashtags)
+    # Order matters: escape backslash first (it's the escape character)
     text = text.replace("\\", "\\\\")
     text = text.replace("#", "\\#")
     text = text.replace("$", "\\$")
@@ -63,6 +64,9 @@ def _escape_typst(text: str) -> str:
     text = text.replace("_", "\\_")
     text = text.replace("*", "\\*")
     text = text.replace("`", "\\`")
+    # Typst uses {} for code blocks in markup — escape curly braces in content
+    text = text.replace("{", "\\{")
+    text = text.replace("}", "\\}")
     # Typst uses // for comments — escape double slashes in URLs
     text = text.replace("//", "\\/\\/")
     # Typst uses [] for content blocks — escape when in content text
@@ -101,6 +105,7 @@ def _preprocess_edition(edition: CuratedEdition, config: dict) -> None:
         for item in section.items:
             if hasattr(item, "display_text") and item.display_text:
                 item.display_text = _unescape_html_entities(item.display_text)
+                item.display_text = _strip_html_attr_prefixes(item.display_text)
                 item.display_text = _strip_display_boilerplate(item.display_text)
                 item.display_text = _fix_subheading_concatenation(item.display_text)
                 item._edited_for_length = _has_editorial_ellipsis(item.display_text)
@@ -123,9 +128,17 @@ def _preprocess_edition(edition: CuratedEdition, config: dict) -> None:
                 for sub in item.items:
                     if hasattr(sub, "display_text") and sub.display_text:
                         sub.display_text = _unescape_html_entities(sub.display_text)
+                        sub.display_text = _strip_html_attr_prefixes(sub.display_text)
                         sub.display_text = _strip_display_boilerplate(sub.display_text)
                         sub.display_text = _fix_subheading_concatenation(sub.display_text)
                         sub._edited_for_length = _has_editorial_ellipsis(sub.display_text)
+    # Preprocess pull quote text — extracted from display_text at generation
+    # time, so HTML attribute leakage can appear here too.
+    for pq in edition.pull_quotes:
+        if pq.text:
+            pq.text = _strip_html_attr_prefixes(_unescape_html_entities(pq.text))
+        if pq.attribution:
+            pq.attribution = _strip_html_attr_prefixes(_unescape_html_entities(pq.attribution))
 
 
 def _resolve_image_path(local_path: str, data_dir: Path) -> str | None:
@@ -389,6 +402,7 @@ def build_typst_markup(edition: CuratedEdition, config: dict) -> str:
     if front_feature is not None:
         if hasattr(front_feature, "display_text") and front_feature.display_text:
             front_feature.display_text = _unescape_html_entities(front_feature.display_text)
+            front_feature.display_text = _strip_html_attr_prefixes(front_feature.display_text)
             front_feature.display_text = _strip_display_boilerplate(front_feature.display_text)
             front_feature.display_text = _fix_subheading_concatenation(front_feature.display_text)
             front_feature._edited_for_length = _has_editorial_ellipsis(front_feature.display_text)

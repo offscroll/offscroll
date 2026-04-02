@@ -21,83 +21,17 @@
 #masthead([The Sunday Sentinel], [Vol. 1, No. 045], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [The Surprising Benefits of Journaling One Sentence Every Day],
-  kicker: [Cover Story],
-  author: [James Clear],
-  source-name: [James Clear (Atomic Habits)],
-  deck: [From 1986 to 2011, Oprah Winfrey hosted The Oprah Winfrey Show .],
-  lead-pre: [],
-  lead-cap: [I],
-  lead-rest: [t was the highest rated talk show of all-time and familiar to nearly anyone who owned a television set in North America at that time.],
-  body-paragraphs: (
-  [Throughout the 1980s and 1990s, the “Queen of All Media” built a brand that stretched far beyond the television screen. She went on to become a billionaire, a well-regarded philanthropist, and a recipient of the Presidential Medal of Freedom. And as she was busy working toward these otherworldly accomplishments, Oprah relied on a simple habit: journaling.],
-  [Journaling is simply the act of thinking about your life and writing it down. That’s it. Nothing more is needed. But despite its simplicity, the daily journal has played a key role in the careers of many prolific people.],
-  [As you might expect, journaling is a favorite habit of many writers. From Mark Twain to Virginia Woolf, Francis Bacon to Joan Didion, John Cheever to Vladimir Nabokov. 1 A journal was rarely far from any of these artists. Susan Sontag once claimed that her journal was where she “created herself.” 2],
-  [Journaling has been utilized by scores of brilliant thinkers and inventors. Charles Darwin. Marie Curie. Leonardo da Vinci. Thomas Edison. Albert Einstein. 3 Similarly, leaders and politicians throughout history have kept journals in one form or another. People like George Washington, Winston Churchill, and Marcus Aurelius. 4 In the sporting world, athletes like Katie Ledecky, winner of multiple gold medals, and Eliud Kipchoge, the world record holder in the marathon, rely on journals to reflect on their daily workouts and improve their training. 5],
-  [Why have so many of history's greatest thinkers spent time journaling? What are the benefits?],
-  [What Journaling Can Do for You],
-  [Nearly anyone can benefit from getting their thoughts out of their head and onto paper. There are more benefits to journaling than I have time to cover here, but allow me to point out a few of my favorites.],
-  [Journaling provides the opportunity to learn new lessons from old experiences. When looking back on her previous journal entries, Virginia Woolf remarked that she often “found the significance to lie where I never saw it at the time.” 6],
-  [Reading your old journal entries is a bit like reading a great book for a second time. You pick up on new sentences and see the past in a different way. Only this time, you are re-reading the story of your life.],
-  [Journaling sharpens your memory. When Cheryl Strayed wrote her hit book, Wild , she relied heavily on her journal. She recalled, “My journal provided the who, what, how, when, and why with a specificity that memory might have blurred, but it also did something more: it offered me a frank and unvarnished portrait of myself at 26 that I couldn't have found anywhere else.” 7],
-  [Time will change your face without you noticing, but it will also change your thoughts without you realizing it. Our beliefs shift slowly as we gain experience and journal entries have the ability to freeze your thoughts in time. Seeing an old picture of yourself can be interesting because it reminds you of what you looked like, but reading an old journal entry can be even more surprising because it reminds you of how you thought.],
-  [Journaling motivates you to make the most of each day. There is something about knowing that your day will be recorded that makes you want to make at least one good choice before the sun sets. I will sometimes find myself thinking, “I want to have something good to write down tonight.”],
-  [Journaling provides proof of your progress. Writing down one sentence about what went well today gives you something powerful to look at when you're feeling down. When you have a bad day, it can be easy to forget how much progress you have made. But with a journal, it's easier to keep a sense of perspective. One glance at your previous entries and you have proof of how much you have grown over the months and years.],
-  [Of course, despite the numerous benefits of journaling, there is one problem.],
-  [Many people like the idea of journaling, but few people stick with the act of journaling. It sounds great in theory, but making it a habit is another matter.],
-  [This is where we return to Oprah's story.],
-  [The Challenge of Making Journaling a Habit],
-  [In November 2012, after wrapping up her 25-year television career, Oprah wrote, “For years I've been advocating the power and pleasure of being grateful. I kept a gratitude journal for a full decade without fail—and urged you all to do the same. Then life got busy. My schedule overwhelmed me. I still opened my journal some nights, but my ritual of writing down five things I was grateful for every day started slipping away.” 8],
-  [She picked up one of her old journals.],
-  [“I wondered why I no longer felt the joy of simple moments,” Oprah said. “Since 1996 I had accumulated more wealth, more responsibility, more possessions; everything, it seemed, had grown exponentially—except my happiness. How had I, with all my options and opportunities, become one of those people who never have time to feel delight? I was stretched in so many directions, I wasn't feeling much of anything. Too busy doing.”],
-  [She admitted, “But the truth is, I was busy in 1996, too. I just made gratitude a daily priority. I went through the day looking for things to be grateful for, and something always showed up.”],
-  [Most people know that journaling is helpful, but they never get around to making it a priority. How can we make journaling frictionless? What is the simplest way that to get the benefits of journaling without it feeling like another obligation?],
-  [How to Make Journaling Easy],
-  [I've spent a fair bit of time thinking about how to make journaling easy over the past year. In fact, I thought so much about it that I partnered with the premium notebook maker Baron Fig to create the Clear Habit Journal —a combination dot grid notebook, daily journal, and habit tracker that not only makes it easier to journal, but also easier to build any habit.],
-  [But before I start hawking my wares, let's get something straight.],
-  [Here's the truth: There’s no one “right” way to journal. You can do it wherever you want and in whatever way you want. All you need is a piece of paper or a blank document. However, although there is no right way to journal, there is an easy way to journal…],
-  [Write one sentence per day.],
-  [The primary advantage of journaling one sentence each day is that it makes journaling fun . It's easy to do. It's easy to feel successful. And if you feel good each time you finish journaling, then you'll keep coming back to it.],
-  [A habit does not have to be impressive for it to be useful.],
-  [Journaling Prompts That Make Journaling Easy],
-  [Let's talk about the process I designed to make journaling a cinch.],
-  [Every Habit Journal is designed to make the process of keeping a daily journal as easy as possible. It starts with a section called One Line Per Day.],
-  [At the top of each One Line Per Day page is space for a journaling prompt. Here are a few examples of journaling prompts you could use:],
-  [What happened today? (Daily journal) 9],
-  [What am I grateful for today? (Gratitude journal)],
-  [What is my most important task today? (Productivity journal)],
-  [How did I sleep last night? (Sleep journal)],
-  [How do I feel today? (Mood journal)],
-  [Underneath the prompt are 31 lines. One line for each day of the month. This is where you'll write your one sentence each day.],
-  [To start your journaling habit all you have to do is write your prompt for the month and jot down a few words each day. Once the month is complete, you can look back on 31 beautiful journal entries. The entire experience is designed to make journaling so easy that you can't help but do it each day.],
-  [That's it. You can see a picture of the One Line Per Day section on this page .],
-  [Where to Go From Here],
-  [When a habit feels like an annoyance, you’re unlikely to stick with it.],
-  [Journaling doesn’t need to be a big production. Just write one sentence about what happened during the day. Whether you use my habit journal or not is beside the point.],
-  [What matters is that you make it easy to show up. As Madeleine L’Engle, author of A Wrinkle in Time , put it: “Just write a little bit every day.” 10],
-  [Sources: The Bancroft Library at the University of California has a website with digitized versions of many of Mark Twain's journals ; A Writer's Diary is a collection of Virginia Woolf's journals; Some of Francis Bacon's journals are archived at the Haverford College Quaker & Special Collections at the University of Pennsylvania; Joan Didion detailed her journaling habit in her essay “On Keeping a Notebook” in her anthology Slouching Towards Bethlehem ; A selection of John Cheever's journals was published in The Journals of John Cheever ; Insomniac Dreams is Vladimir Nabokov's dream diary.],
-  [Technically, Sontag's quote was, “In the journal I do not just express myself more openly than I could to any person; I create myself.” The quotation is from a diary entry published in Sontag's book Reborn: Journals and Notebooks, 1947–1963 .],
-  [Sources: Portions of Charles Darwin's Beagle voyage diary ; Marie Curie kept lab notebooks (they are still radioactive, and will be for another 1500 years); Portions of Leonardo da Vinci's notebooks are held by the British Library and can be previewed online; Thomas Edison wrote more than five million pages of notes; Get a peek into Albert Einstein's Zurich notebook],
-  [Sources: George Washington's diaries on the Library of Congress website; Winston Churchill's personal notes are digitized in an online archive; Marcus Aurelius' Meditations is a collection of his personal writings.],
-  [Sources: Interview with Katie Ledecky's coach ; Eliud Kipchoge's full training log .],
-  [Quotes in this section are from What Oprah Knows for Sure About Gratitude by Oprah Winfrey.],
-  [I also like a slight variation on this, which I learned from Shawn Blanc who uses “Highlight of the Day” as his prompt.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [New Trailer for Science Saru's 'The Ghost in the Shell' Anime Series],
   author: [Alex Billington],
   source-name: [FirstShowing.net],
   images: (),
   paragraphs: (
-  [Motoko Kusanagi is back! And ready for more action on the streets of Japan. Bandai Namco has revealed another exciting 45-second teaser trailer for a new version of GITS titled simply The Ghost in the Shell (with "the" in the title this time). From the acclaimed animation studio Science Saru , this is a brand new animated TV series version of the iconic sci-fi series Ghost in the Shell , which comes from a manga that has been turned into many movies & series already ( here's the first teaser for this series from a few months ago). Beginning with Shirow Masamune's 1989 manga , The Ghost in the Shell , the franchise has since transcended media boundaries, expanding into mediums like anime, a live-action Hollywood film ( remember or did we all forget it already?), and video games. Motoko Kusanagi, also known as Major, returns again battling more cybercrime. With animation from Science Saru ( Inu-oh , The Colors Within , Scott Pilgrim Takes Off , Dan Da Dan ). The fresh anime arrives in Japan as a TV series launching in July 2026 - as a Prime Video exclusive which hopefully means viewable in the US as well. This was revealed as part of the AnimeJapan 2026 event happening now. So far so good, I'm really digging all this new footage and the new look of The Major. Enjoy. \/\/  Continue Reading ›],
+  [
+
+Motoko Kusanagi is back! And ready for more action on the streets of Japan. Bandai Namco has revealed another exciting 45-second teaser trailer for a new version of GITS titled simply The Ghost in the Shell (with "the" in the title this time). From the acclaimed animation studio Science Saru , this is a brand new animated TV series version of the iconic sci-fi series Ghost in the Shell , which comes from a manga that has been turned into many movies & series already ( here's the first teaser for this series from a few months ago). Beginning with Shirow Masamune's 1989 manga , The Ghost in the Shell , the franchise has since transcended media boundaries, expanding into mediums like anime, a live-action Hollywood film ( remember or did we all forget it already?), and video games.],
+  [Motoko Kusanagi, also known as Major, returns again battling more cybercrime. With animation from Science Saru ( Inu-oh , The Colors Within , Scott Pilgrim Takes Off , Dan Da Dan ). The fresh anime arrives in Japan as a TV series launching in July 2026 - as a Prime Video exclusive which hopefully means viewable in the US as well. This was revealed as part of the AnimeJapan 2026 event happening now. So far so good, I'm really digging all this new footage and the new look of The Major. Enjoy. \/\/  Continue Reading ›],
 ),
   insert-map: (:),
   word-count: 238,
@@ -105,11 +39,9 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [DOGE Targeting Nuclear Safety Brings Back Memories of Three Mile Island],
   author: [Jill Lawrence],
   source-name: [The Bulwark],
@@ -126,6 +58,7 @@
   [The news tonight is not encouraging. An unexpected release of more radiation from the Three Mile Island nuclear power plant has led to a series of consequences. Certain people have been advised to evacuate, others have been urged to remain indoors. Telephone lines in the Harrisburg area are jammed, and the immediate highways are, too, as more people decide to leave.],
   [Plant officials say that they do not have a meltdown on their hands. The nuclear core is under control. But plant officials do admit some uranium oxide pellets that power the reactor have melted. That is causing heat and steam pressure and the need to vent into the atmosphere. Plant officials say it will go on for five more days. The air is being monitored for radiation. There is none here. Safeway announced it will not buy milk from southern Pennsylvania.],
   [And on and on, with dispatches from correspondents at the scene, for over seven more minutes.],
+  [Sign up for a free or paid Bulwark subscription and get our independent journalism delivered to your inbox.],
   [Radiation suits and an airlift plan],
   [A NEWS CONFERENCE CLIP of then-Gov. Dick Thornburgh features anxious reporters throwing out questions about whose radiation readings they should trust, and what dangers various readings posed. “We’re getting conflicting reports, too,” Thornburgh replied . “There are hundreds of people out there with survey meters,” added Tom Gerusky, the state’s radiation protection director.],
   [Exactly. “For days the people in authority had little idea of what was happening, and less of what would happen next,” reporters Peter M. Sandman and Mary Paden, assigned to cover the coverage, wrote later that year in Columbia Journalism Review . “They fixed the reactor the way a mechanic fixes a car—they tinkered. When it was all over they tried to figure out what they had done right. With two months’ hindsight, we now know what the big story at T. M. I. really was: no one knew enough to guarantee that the genie would stay in the bottle. Call this criminal incompetence or call it the human condition. Either way it was the story.”],
@@ -135,6 +68,7 @@
   [It never came to that (and a few years later I had two sons). Still, there were surreal and heart-pounding moments that remain vivid today. I remember driving through Middletown in unseasonably warm weather a day or two after the episode began, my car window wide open. Suddenly a radio announcer barked an emergency warning: Bursts of radiation coming from the plant! Close your windows! Stay indoors! I closed the window and tried not to panic.],
   [Fourteen months later, in May 1980, I was back at Unit 2 for what promised to be high drama: human entry into the containment dome housing the partially melted core for the first time since the accident. Two young engineers wearing heavy protective gear would go in, take pictures, measure radiation, and leave after fifteen minutes.],
   [As we waited for news, I participated in a fraught competition among reporters for the two landline phones available to us—“I’m the network!” “I’m the wire!” In the end, nobody got much of a story. The doors were jammed and the engineers couldn’t get in.],
+  [Join now],
   [Backsliding on trust],
   [FOR ME, THE STORY KEPT ON GOING. In Harrisburg until late 1982, tracking plant damage, radiation levels and cancer cases; who would pay for repairs and higher electric bills; how much liability the utility bore, and when or if Unit 2 would ever reopen. And then for nearly four years as AP’s Pennsylvania regional reporter in Washington, following the NRC and its TMI activities.],
   [Much later, as climate change grew ever more obvious and ominous, I began to revise my views. The 2010 loan guarantees, and then-president Barack Obama’s explicit intent to include nuclear power in a carbon-free energy mix, did bring back bad memories, as I wrote. But I concluded with this: “I’m getting there on the trust thing. The feds could close the deal with me by launching a Manhattan Project on nuclear waste disposal, deadline any time before those new Georgia reactors come online.”],
@@ -149,16 +83,14 @@
 ),
   insert-map: (:),
   inline-pq: pull-quote([Dick Thornburgh features anxious reporters throwing out questions about whose radiation readings they should trust, and what dangers various readings posed.], [Jill Lawrence]),
-  inline-pq-idx: 12,
+  inline-pq-idx: 13,
   word-count: 1714,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Do the Next Right Thing: Carl Jung on How to Live and the Origin of His Famous Tenet for Navigating Uncertainty],
   author: [Maria Popova],
   source-name: [The Marginalian (Brain Pickings)],
@@ -189,19 +121,20 @@
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Trump Won’t Stop—Because He Can’t Look Weak],
   author: [Jonathan V. Last],
   source-name: [The Bulwark],
   images: (),
   paragraphs: (
   [JVL and Bill Kristol—filling in for Sarah—discuss escalating Iran conflict, the risky push toward a wider war, and why the real damage may outlast the fighting. They also get into the global fallout—from threats to the petrodollar system to the collapse of U. S. alliances—and what a rushed exit might look like.],
+  [Leave a comment],
   [Pre-order Sarah’s book, How to Eat an Elephant , coming in September],
-  [style="text-align: center;"\> The Secret Podcast with JVL and Sarah is exclusively for members of Bulwark+. To watch or listen to future episodes and join the Secret community in the comments become a Bulwark+ member today.],
+  [The Secret Podcast with JVL and Sarah is exclusively for members of Bulwark+. To watch or listen to future episodes and join the Secret community in the comments become a Bulwark+ member today.],
+  [Join now],
   [Read more],
 ),
   insert-map: (:),
@@ -212,13 +145,16 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Disturbing Trailer \#2 for 'Faces of Death' Horror with Barbie Ferreira],
   author: [Alex Billington],
   source-name: [FirstShowing.net],
   images: (),
   paragraphs: (
-  ["That is the first rule of content creation – give the people what they want." That can be dangerous! IFC has debuted a second official trailer for the disturbing horror film titled Faces of Death , a modern meta horror remake of the one of the most infamous cult movies ever. "You can't unsee it." Dropping into theaters this April if you're brave enough for it. A woman, employed as a website content moderator, comes across a series of extremely violent videos reproducing death scenes from a cult film - the original Faces of Death (from 1978). That old film played up the "is it real?" angle to make viewers sick. This remake stars Barbie Ferreira & Dacre Montgomery , with Josie Totah , Aaron Holliday , Jermaine Fowler , and Charli XCX . It's from the same director of Cam and How to Blow Up a Pipeline . "We're in awe of Goldhaber’s reimagining of Faces of Death . His take is unsettling, timely, and provocative, and we can’t wait to unleash it in theaters everywhere this spring." The freakiest trailer yet ( watch the other one ) - gross and unsettling and provocative. But just what it needs to get the attention of anyone interested in buying a ticket. Will you? \/\/  Continue Reading ›],
+  [
+
+ "That is the first rule of content creation – give the people what they want." That can be dangerous! IFC has debuted a second official trailer for the disturbing horror film titled Faces of Death , a modern meta horror remake of the one of the most infamous cult movies ever. "You can't unsee it." Dropping into theaters this April if you're brave enough for it. A woman, employed as a website content moderator, comes across a series of extremely violent videos reproducing death scenes from a cult film - the original Faces of Death (from 1978). That old film played up the "is it real?" angle to make viewers sick. This remake stars Barbie Ferreira & Dacre Montgomery , with Josie Totah , Aaron Holliday , Jermaine Fowler , and Charli XCX . It's from the same director of Cam and How to Blow Up a Pipeline .],
+  ["We're in awe of Goldhaber’s reimagining of Faces of Death . His take is unsettling, timely, and provocative, and we can’t wait to unleash it in theaters everywhere this spring." The freakiest trailer yet ( watch the other one ) - gross and unsettling and provocative. But just what it needs to get the attention of anyone interested in buying a ticket. Will you? \/\/  Continue Reading ›],
 ),
   insert-map: (:),
   word-count: 220,
@@ -231,13 +167,14 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Fortnite Festival's Official Guitar Controller Is On Sale For A Nice Price Right Now],
   author: [GameSpot],
   source-name: [GameSpot],
   images: (),
   paragraphs: (
   [Amazon's Big Spring Sale rolls on today with even more deals, including a nice discount on PDP's Riffmaster guitar, which can be used with Fortnite Festival and Rock Band 4. Epic Games just recently announced that Fortnite Festival's Battle Stage is shutting down , but the two other modes are staying online. The PDP Riffmaster is currently on sale for \$100, which is 33% off its normal \$150 price point.],
+  [See on Amazon],
   [The Riffmaster guitar was built specifically for Fortnite Festival and originally came out in 2024. The wireless guitar controller works with PS5, PS4, Xbox Series X|S, Xbox One, and Nintendo Switch, but you need to buy a different model depending on your platform of choice, so be sure to double check that on Amazon.],
   [It features a built-in, rechargeable battery that promises up to 36 hours of use per charge. The guitar also has a 3.5mm audio jack for playing with headphones, and PDP says it should work within a 30-foot area. Additionally, it has an analog stick on the back of the guitar's neck to help users navigate menus, and comes with a shoulder strap. It also has a collapsable design.],
   [Continue Reading at GameSpot],
@@ -250,7 +187,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [This week’s news in Venn diagrams.],
   author: [James Folta],
   source-name: [The Literary Hub],
@@ -268,18 +205,21 @@
 
   ],
 ), ruled-indices: (1,))
-#pull-quote([class="norewrite" title=""\> See on Amazon   The Riffmaster guitar was built specifically for Fortnite Festival and originally came out in 2024.], [GameSpot])
+#pull-quote([See on Amazon   The Riffmaster guitar was built specifically for Fortnite Festival and originally came out in 2024.], [GameSpot])
 
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Callum Turner & Riley Keough in 'Rosebush Pruning' Official Trailer],
   author: [Alex Billington],
   source-name: [FirstShowing.net],
   images: (),
   paragraphs: (
-  ["Blood is not only a thing that can turn you on, but also a thing that can set you free – from us." Mubi has revealed their official trailer for peculiar dark comedy called Rosebush Pruning , the latest film made by the extra kooky Brazilian filmmaker Karim Aïnouz. This just premiered at the 2025 Berlin Film Festival a few months ago but it ended up with the worst reviews of the festival (I also hated it). This one's a dud. Alas Mubi is planning to give it a release anyway for anyone still intrigued. A tedious film about rich people. In an opulent villa beneath the Catalonian sun, American siblings Jack, Ed, Anna and Robert wallow in their isolation as well as a great inherited fortune, eschewing the demands of their blind father, and seeking love and validation through each other and their latest designer clothes. When Jack, eldest brother and linchpin of this family, announces that he is moving in with his girlfriend Martha, blood ties are severed and Ed is forced to uncover the truth surrounding their mother's death. Starring Callum Turner , Riley Keough , Jamie Bell , Lukas Gage , Elena Anaya , Tracy Letts , with Elle Fanning , & Pamela Anderson . This reminds me of Glen Powell's How to Make a Killing , but nowhere near as good – way too wacky and messy. \/\/  Continue Reading ›],
+  [
+
+ "Blood is not only a thing that can turn you on, but also a thing that can set you free – from us." Mubi has revealed their official trailer for peculiar dark comedy called Rosebush Pruning , the latest film made by the extra kooky Brazilian filmmaker Karim Aïnouz. This just premiered at the 2025 Berlin Film Festival a few months ago but it ended up with the worst reviews of the festival (I also hated it). This one's a dud. Alas Mubi is planning to give it a release anyway for anyone still intrigued. A tedious film about rich people. In an opulent villa beneath the Catalonian sun, American siblings Jack, Ed, Anna and Robert wallow in their isolation as well as a great inherited fortune, eschewing the demands of their blind father, and seeking love and validation through each other and their latest designer clothes.],
+  [When Jack, eldest brother and linchpin of this family, announces that he is moving in with his girlfriend Martha, blood ties are severed and Ed is forced to uncover the truth surrounding their mother's death. Starring Callum Turner , Riley Keough , Jamie Bell , Lukas Gage , Elena Anaya , Tracy Letts , with Elle Fanning , & Pamela Anderson . This reminds me of Glen Powell's How to Make a Killing , but nowhere near as good – way too wacky and messy. \/\/  Continue Reading ›],
 ),
   insert-map: (:),
   word-count: 239,
@@ -289,21 +229,20 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Episode 916: The Council of Trent? Hello?],
   author: [Matthew Wrather],
   source-name: [Overthinking It],
   images: (),
   paragraphs: (
-  [style="text-align: center;"\> Support Overthinking It by becoming a member for \$5/month!],
+  [Support Overthinking It by becoming a member for \$5/month!],
   [Pete Fenzel, Mark Lee, and Matt Wrather overthink Wake Up Dead Man: A Knives Out Mystery , the latest installment in the Benoit Blanc Cinematic Murder Universe. The panelists appreciated the rich, cinematic presentation of the movie, especially compared to most made-for-Netflix movies, but they also took issue with how the film treats Catholicism more as symbolic wallpaper than as a lived, institutional reality. Where are the baptisms? The first communions? The immigrants? Most importantly, why is everyone so concerned about finding a lost diamond when it would’ve been a lot easier to embezzle the Sunday collection money?],
   [Those critiques aside, everyone appreciated the portrayal of Father Jud as an authentic moral center for the story and as a thematic counterbalance to Benoit Blanc’s cold rationalism. It makes for a very different Knives Out movie compared to its predecessors; whether it’s better or worse than those is largely a matter of taste and perspective. But it’s beyond argument that Daniel Craig’s accent remains sublime through them all.],
   [Download (MP3)],
   [Watch Wake Up Dead Man: A Knives Out Mystery on Netflix],
   [The Sacred Heart of Jesus],
   [The Council of Trent],
-  [style="margin: 5px 0; padding: 10px; background: \#eee;"\>],
-  [style="margin: 0; padding: 0;"\> Episode 916: The Council of Trent? Hello? originally appeared on Overthinking It , the site subjecting the popular culture to a level of scrutiny it probably doesn't deserve. \[ Latest Posts | Podcast ( iTunes Link )\]],
+  [Episode 916: The Council of Trent? Hello? originally appeared on Overthinking It , the site subjecting the popular culture to a level of scrutiny it probably doesn't deserve. \[ Latest Posts | Podcast ( iTunes Link )\]],
 ),
   insert-map: (:),
   word-count: 260,
@@ -316,9 +255,8 @@
 #pull-quote([But it’s beyond argument that Daniel Craig’s accent remains sublime through them all.], [Matthew Wrather])
 
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [Why the ICE Raid in ‘The Pitt’ Matters],
   author: [Adrian Carrasquillo],
   source-name: [The Bulwark],
@@ -331,6 +269,7 @@
   [Last week’s episode, “5:00 P. M.,” stayed true to those elements, only this time the source of the frustration, drama, and emotion was ICE agents who came storming into the ER. 1],
   [Things get rolling when some commotion in the ER attracts the attention of Dr. “Robby” Robinavitch (Noah Wyle) and Dr. Cassie McKay (Fiona Dourif). They look up to see two federal agents hauling in a terrified immigrant who is clearly in immense pain.],
   [The immigrant is named Pranita (Ramona DuBarry), and she is a restaurant worker who was caught up in the chaos of a raid and thrown down a flight of stairs, which has likely torn her rotator cuff. It’s hard to find a more true-to-life premise in television right now: Pranita’s plight evokes the memory of so many similar stories we’ve seen and heard over the last year of immigrants trying to flee federal agents or being hurt by them. And of course the two agents who have apprehended Pranita won’t let her call her daughter to let her know where she is.],
+  [Get 20% off for 1 year],
   [The presentation of the two ICE agents speaks volumes. The first one, agent Russo (Juju Alexander), is tall and masked; the camera looks up at him in a way that reinforces the sense of threat and intimidation, and you can see the way this sense radiates out to various members of the hospital staff, from the main characters to the other hospital personnel and patients waiting in the ER. The second agent, Correa 2 (Josell Mariano), goes without a mask and for that reason alone seemed infinitely more human than his partner. The Instagram algorithm later served me Mariano’s post about filming the episode: “I found myself imagining what it would feel like to find my own mother or father in that same situation,” he wrote. He highlighted several behind-the-scenes photos, which he offered at the end to, as he put it, “hopefully make you not hate me.”],
   [I found the actor’s reflections on his performance fascinating, so I reached out to ask for an interview. When we spoke, Mariano told me],
   [Read more],
@@ -341,10 +280,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Trump-Biden Debate],
   author: [Tim Urban],
   source-name: [Wait But Why],
@@ -481,10 +418,11 @@
   [Wallace: Biden?],
   [Biden: The country can go on if I lose.],
   [Wallace: And that concludes what will end up as a stain on my career even though it clearly wasn’t my fault. Thank you, and goodnight.],
-  [style="text-align: center;"\>\_\_\_\_\_\_\_\_\_\_\_],
+  [\_\_\_\_\_\_\_\_\_\_\_],
   [If you like Wait But Why, sign up for our unannoying-I-promise email list and we’ll send you new posts when they come out.],
   [To support Wait But Why, visit our Patreon page .],
-  [style="text-align: center;"\>\_\_\_\_\_\_\_\_\_\_\_],
+  [\_\_\_\_\_\_\_\_\_\_\_],
+  [More Places:],
   [The Trump-Clinton Town Hall],
   [The full deal with the first 16 presidents],
   [Why you should stop caring what other people think],
@@ -496,11 +434,10 @@
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The PS5 Price Hike Was Inevitable, But What Comes Next?],
   author: [GameSpot],
   source-name: [GameSpot],
@@ -520,13 +457,13 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Episode 917: Snow is Smooth, Smooth is Fast],
   author: [Matthew Wrather],
   source-name: [Overthinking It],
   images: (),
   paragraphs: (
-  [style="text-align: center;"\> Support Overthinking It by becoming a member for \$5/month!],
+  [Support Overthinking It by becoming a member for \$5/month!],
   [Pete Fenzel and Matt Wrather convene cross-country, with snow piled in the East and sun set in the West, to clear their bottleneck of constrained podcast topics. In this storied two-hander, they dissect the perception and reality of bodies of work that strain our ability to perceive and accomplish.],
   [The two share their subjective limits on the feet of snow that had just fallen, from the individual snow shoveler fighting a private war with the sky, to the kaleidoscopic social media snow spectator bombarded by accounts and moments from a hundred cold days while lounging in temperate comfort. These swarming pinholes alluding to some greater image beyond a veil, recall instagram stories about Taylor Swift concerts or the current state of public truth.],
   [They further consider two masterpieces of slow and steady work done faster than seemed possible: Alex Honnold’s methodical ropeless climb of the skyscraper Taipei 101, and the Eliyahu Goldratt novel The Goal , an 80s classic about the Socratic method, narrative reinvention, communication in marriage, art’s relationship with truth, and very detailed, specific instructions on how to successfully implement lean manufacturing techniques in late 20th century bearing assembly manufacturing plants, which at this moment has a 50/50 shot of being on the waiting list at your public library.],
@@ -535,8 +472,7 @@
   [Three Hundred Sixty Thousand, Seven Hundred and Twenty Eight, at the Time of This Writing, Stock Images of Snow Storms on Getty Images.],
   [Which Snow Removal Tool is Best? Here’s A Comparison Between Methods, by Catherine Messier, USA TODAY NETWORK – New England, from The Providence Journal],
   [How To Play ‘Crossplay,’ The New NYT Game That’s Officially Out Now: The 2-player Word Game Has Its Own App, and It’s Already Making Waves, by Kelsey Pelzer, Lifestyle Director, Parade Magazine],
-  [style="margin: 5px 0; padding: 10px; background: \#eee;"\>],
-  [style="margin: 0; padding: 0;"\> Episode 917: Snow is Smooth, Smooth is Fast originally appeared on Overthinking It , the site subjecting the popular culture to a level of scrutiny it probably doesn't deserve. \[ Latest Posts | Podcast ( iTunes Link )\]],
+  [Episode 917: Snow is Smooth, Smooth is Fast originally appeared on Overthinking It , the site subjecting the popular culture to a level of scrutiny it probably doesn't deserve. \[ Latest Posts | Podcast ( iTunes Link )\]],
 ),
   insert-map: (:),
   word-count: 447,
@@ -549,13 +485,16 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The Space Race from the Cosmonaut Side - 'Star City' Series Teaser],
   author: [Alex Billington],
   source-name: [FirstShowing.net],
   images: (),
   paragraphs: (
-  ["I take this step for my country, for my people..." Apple TV has revealed the first look teaser for their new Star City spin-off sci-fi series, a new angle on the streaming hit For All Mankind . This is about the "other side." This time they're telling the same Space Race story from that original series but from the perspective of the Soviet Union. And what would happen if they landed on the Moon first. Ready for streaming in May in just a few months from now. Right as news that For All Mankind is getting one final season , they're already setting up another follow-up. Soviet cosmonauts, engineers, and intelligence officers risk everything in an ambitious space program aiming to be the first to reach the moon. "Where reaching for space meant risking everything on Earth." The series main cast features Rhys Ifans , Anna Maxwell Martin , Agnes O'Casey , Adam Nagaitis , Alice Englert , Josef Davies , Solly McLeod , & Ruby Ashbourne Serkis . This is a fascinating alternate history concept and I'm very, very curious to see if they can pull it off. For All Mankind is already a huge hit and this might also be, too. Only a quick look at 30 seconds of footage so far. \/\/  Continue Reading ›],
+  [
+
+ "I take this step for my country, for my people..." Apple TV has revealed the first look teaser for their new Star City spin-off sci-fi series, a new angle on the streaming hit For All Mankind . This is about the "other side." This time they're telling the same Space Race story from that original series but from the perspective of the Soviet Union. And what would happen if they landed on the Moon first. Ready for streaming in May in just a few months from now. Right as news that For All Mankind is getting one final season , they're already setting up another follow-up. Soviet cosmonauts, engineers, and intelligence officers risk everything in an ambitious space program aiming to be the first to reach the moon.],
+  ["Where reaching for space meant risking everything on Earth." The series main cast features Rhys Ifans , Anna Maxwell Martin , Agnes O'Casey , Adam Nagaitis , Alice Englert , Josef Davies , Solly McLeod , & Ruby Ashbourne Serkis . This is a fascinating alternate history concept and I'm very, very curious to see if they can pull it off. For All Mankind is already a huge hit and this might also be, too. Only a quick look at 30 seconds of footage so far. \/\/  Continue Reading ›],
 ),
   insert-map: (:),
   word-count: 221,
@@ -565,7 +504,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Todd Blanche’s Jaw-Dropping Ethics Violation (w\/ Andrew Weissmann)],
   author: [Andrew Weissmann],
   source-name: [The Bulwark],
@@ -580,6 +519,7 @@
   [Bookshop.org: Bookshop.org : https:\/\/bit.ly/3N5hVa3],
   [More great stuff:],
   [Pre-order Sarah’s book, How to Eat an Elephant , coming in September!],
+  [Leave a comment],
   [Watch, listen and leave a comment .],
   [Access to this show’s community comments and ad-free editions are available exclusively for Bulwark+ members. Bulwark+ members can listen ad-free on your podcast player of choice— click SET UP here .],
   [The Illegal News with Sarah Longwell is available wherever you get your podcasts and on YouTube . Leave us a review and ⭐⭐⭐⭐⭐ so more people can find this important show from The Bulwark.],
@@ -594,17 +534,16 @@
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([Tom Breihan], source-name: [Stereogum], [Hey what’s up hello. The New Jersey sing-rapper Fetty Wap has been through some unpredictable career turns since he scored three top-10 hits, back-to-back-to-back, in the summer of 2015. In 2021, federal authorities arrested Fetty just before he was supposed to take the stage at Rolling Loud New York, accusing him of conspiring to distribute…
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([Tom Breihan], source-name: [Stereogum], [Hey what’s up hello. The New Jersey sing-rapper Fetty Wap has been through some unpredictable career turns since he scored three top-10 hits, back-to-back-to-back, in the summer of 2015. In 2021, federal authorities arrested Fetty just before he was supposed to take the stage at Rolling Loud New York, accusing him of conspiring to distribute…
 
 The post Fetty Wap Interpolates The Cranberries On First Post-Prison Album appeared first on Stereogum .])],
-    [#brief-item([Alison Foreman], source-name: [IndieWire], [Tracy Letts, Riley Keough, Jamie Bell, Lukas Gage, Pamela Anderson, Callum Turner, Elle Fanning, and more star in the upcoming film.])],
-    [#brief-item([James Hibberd], source-name: [The Hollywood Reporter], [The author of the blockbuster film says Paramount turned down his 'Star Trek' idea and suggested that modern 'Trek' shows have lost their way.])],
-    [#brief-item([Tim Miller], source-name: [The Bulwark], [Tim Miller was on MS NOW's Deadline: White House to explain why Trump’s Iran decision may be doing lasting damage to his own coalition. From GOP infighting to failed election interference efforts and another Democratic win in Washington, MAJOR cracks are starting to show.
+  [#brief-item([Alison Foreman], source-name: [IndieWire], [Tracy Letts, Riley Keough, Jamie Bell, Lukas Gage, Pamela Anderson, Callum Turner, Elle Fanning, and more star in the upcoming film.])],
+  [#brief-item([James Hibberd], source-name: [The Hollywood Reporter], [The author of the blockbuster film says Paramount turned down his 'Star Trek' idea and suggested that modern 'Trek' shows have lost their way.])],
+  [#brief-item([Tim Miller], source-name: [The Bulwark], [Tim Miller was on MS NOW's Deadline: White House to explain why Trump’s Iran decision may be doing lasting damage to his own coalition. From GOP infighting to failed election interference efforts and another Democratic win in Washington, MAJOR cracks are starting to show.
 
-class="button-wrapper"\> Leave a comment 
+Leave a comment 
 
 As always: Watch, listen, and leave a comment. Bulwark+ Takes is home to short videos, livestreams, and event archives exclusively for Bulwark+ members.
 
@@ -612,21 +551,20 @@ Add Bulwark+ Takes feed to your player of choice, here .
 
  
  Read more])],
-    [#brief-item([Apple Newsroom], source-name: [Apple Newsroom], [Apple announced the new iPad Air featuring M4 and more memory, giving users a big jump in performance and making it more versatile than ever.])],
-    [#brief-item([Pamela McClintock], source-name: [The Hollywood Reporter], [Thanks to an epic hold in its second weekend, the Ryan Gosling-led movie already ranks as Amazon MGM Studios' biggest post-merger release after passing up 'Creed III.'])],
-    [#brief-item([Jack Dunn], source-name: [Variety], [HBO boss Casey Bloys recently told The Times of London that the network is already developing the second season of the highly anticipated “Harry Potter” TV series. “Our goal is to not have a huge gap, you know, especially because the kids are growing,” Bloys said. “It’s not going to be an annual; the show \[…\]])],
-    [#brief-item([Danielle Chelosky], source-name: [Stereogum], [Last year, Dua Lipa was busy touring 2024's Radical Optimism and bringing out guests like Charli XCX and Ben Gibbard in addition to performing covers like Sinead O'Connor's " Nothing Compares 2 U " and Daft Punk's " Get Lucky ." Now, the British singer is getting ready to focus on acting again, as she's joined the cast for Molly Gordon's new movie Peaked .
+  [#brief-item([Apple Newsroom], source-name: [Apple Newsroom], [Apple announced the new iPad Air featuring M4 and more memory, giving users a big jump in performance and making it more versatile than ever.])],
+  [#brief-item([Pamela McClintock], source-name: [The Hollywood Reporter], [Thanks to an epic hold in its second weekend, the Ryan Gosling-led movie already ranks as Amazon MGM Studios' biggest post-merger release after passing up 'Creed III.'])],
+  [#brief-item([Jack Dunn], source-name: [Variety], [HBO boss Casey Bloys recently told The Times of London that the network is already developing the second season of the highly anticipated “Harry Potter” TV series. “Our goal is to not have a huge gap, you know, especially because the kids are growing,” Bloys said. “It’s not going to be an annual; the show \[…\]])],
+  [#brief-item([Danielle Chelosky], source-name: [Stereogum], [Last year, Dua Lipa was busy touring 2024's Radical Optimism and bringing out guests like Charli XCX and Ben Gibbard in addition to performing covers like Sinead O'Connor's " Nothing Compares 2 U " and Daft Punk's " Get Lucky ." Now, the British singer is getting ready to focus on acting again, as she's joined the cast for Molly Gordon's new movie Peaked .
 
 The post Dua Lipa Joins Connor Storrie In Molly Gordon’s New Movie Peaked appeared first on Stereogum .])],
-    [#brief-item([Jack Dunn], source-name: [Variety], [“The Pitt” Season 2 star Sepideh Moafi recently told People that her first agent told her to change her name so that she could land more roles. “When I graduated from grad school, my first agent wanted me to change my name and I immediately said, ‘Fuck no,’” she recalled. “I know actors who have \[…\]])],
-    [#brief-item([Chris DeVille], source-name: [Stereogum], [Like many bands of yesteryear, the Scottish rockers Big Country, makers of the 1983 hit "In A Big Country," have splintered into various units on the touring circuit over the years. Also like many of those bands, they're now fighting about who gets to use the band name.
+  [#brief-item([Jack Dunn], source-name: [Variety], [“The Pitt” Season 2 star Sepideh Moafi recently told People that her first agent told her to change her name so that she could land more roles. “When I graduated from grad school, my first agent wanted me to change my name and I immediately said, ‘Fuck no,’” she recalled. “I know actors who have \[…\]])],
+  [#brief-item([Chris DeVille], source-name: [Stereogum], [Like many bands of yesteryear, the Scottish rockers Big Country, makers of the 1983 hit "In A Big Country," have splintered into various units on the touring circuit over the years. Also like many of those bands, they're now fighting about who gets to use the band name.
 
 The post Big Country Drummer Must Stop Touring As Big Country, Say Rest Of Big Country appeared first on Stereogum .])],
-    [#brief-item([Patrick Hipes], source-name: [Deadline Hollywood], [The video spread at a velocity only social media can generate. Missiles rained down on the USS Abraham Lincoln, blasting fighter jets into the sea, the vessel breaking apart in a dramatic fireball — shared millions of times before anyone thought to ask whether the carrier was still sailing. It was. Analysis using the AI \[…\]])],
-    [#brief-item([Natalie Oganesyan], source-name: [Deadline Hollywood], [Alex Duong, a comedian, writer and actor based in Los Angeles, has died at the age of 42. Duong was diagnosed with alveolar rhabdomyosarcoma last year, a rare and aggressive cancer affecting soft tissue. He underwent surgery to remove a malignant growth that was blocking blood flow to his optic nerve and caused vision loss. \[…\]])],
-    [#brief-item([Apple Newsroom], source-name: [Apple Newsroom], [“Friday Night Baseball” — a weekly MLB doubleheader on Apple TV — returns for its fifth season on March 27.])],
-    [#brief-item([Apple Newsroom], source-name: [Apple Newsroom], [Today, Apple announced iPhone and iPad are the first and only consumer devices in compliance with information assurance requirements of NATO nations.])],
-  ))
-}
+  [#brief-item([Patrick Hipes], source-name: [Deadline Hollywood], [The video spread at a velocity only social media can generate. Missiles rained down on the USS Abraham Lincoln, blasting fighter jets into the sea, the vessel breaking apart in a dramatic fireball — shared millions of times before anyone thought to ask whether the carrier was still sailing. It was. Analysis using the AI \[…\]])],
+  [#brief-item([Natalie Oganesyan], source-name: [Deadline Hollywood], [Alex Duong, a comedian, writer and actor based in Los Angeles, has died at the age of 42. Duong was diagnosed with alveolar rhabdomyosarcoma last year, a rare and aggressive cancer affecting soft tissue. He underwent surgery to remove a malignant growth that was blocking blood flow to his optic nerve and caused vision loss. \[…\]])],
+  [#brief-item([Apple Newsroom], source-name: [Apple Newsroom], [“Friday Night Baseball” — a weekly MLB doubleheader on Apple TV — returns for its fifth season on March 27.])],
+  [#brief-item([Apple Newsroom], source-name: [Apple Newsroom], [Today, Apple announced iPhone and iPad are the first and only consumer devices in compliance with information assurance requirements of NATO nations.])],
+))
 
 #colophon([The Sunday Sentinel], [Vol. 1, No. 045], [2026-03-30])

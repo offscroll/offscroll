@@ -21,53 +21,8 @@
 #masthead([The Daily Star], [Vol. 1, No. 060], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Investing in the people shaping open source and securing the future together],
-  kicker: [Cover Story],
-  author: [Kevin Crosby],
-  source-name: [The GitHub Blog],
-  deck: [Open source has always been about community. It’s about maintainers who review pull requests late at night.],
-  lead-pre: [],
-  lead-cap: [O],
-  lead-rest: [pen source has always been about community.],
-  body-paragraphs: (
-  [It’s about maintainers who review pull requests late at night. Volunteers who respond to security reports from strangers. And communities that quietly power the world’s software.],
-  [The reality behind the commits is that maintainers get stretched thin. The effort of responding to pull requests and comments, while also being expected to merge and ship, adds up quickly. Late nights turn into burnout, one-person projects become critical infrastructure overnight without even realizing it, and “thank you” doesn’t pay the bills. Plus, AI is an accelerating force that’s changing how the open source community secures the ecosystem. The requirements of always-on security take more time and energy in addition to not always having the knowledge and expertise.],
-  [At GitHub, we believe supporting open source means more than hosting code. It means investing in the people who maintain it, giving them the tools they need to succeed, and standing with them as the ecosystem evolves rapidly in the AI era. Open source maintainers deserve better support and security, and we’re listening and investing.],
-  [Today, we are joining Anthropic, Amazon Web Services (AWS), Google, and OpenAI with a combined commitment of \$12.5 million to support the Linux Foundation’s Alpha-Omega initiative to advance open source security. This collaboration is aimed at helping maintainers make emerging AI security capabilities accessible and integrated into existing project workflows, and at further advancing our OSS security programs, to strengthen the security of critical open source software projects.],
-  [This effort builds on years of GitHub’s work as a steward of open source and software security. Real impact comes from pairing investment with practical tools, education, and long-term support designed to help maintainers.],
-  [Today, over 280,000 maintainers on GitHub across hundreds of millions of public repositories are eligible for free access to core GitHub platform services, GitHub Copilot Pro, GitHub Actions, and security capabilities, like code scanning and Autofix, secret scanning, push protection, and dependency alerts. Our GitHub Security Lab works with the open source community to educate and protect at scale against the most common threats, and it publishes security advisories that help the entire ecosystem respond faster.],
-  [On top of recent and ongoing support across our core platform and GitHub Copilot, we are also reaffirming our commitment to helping maintainers to secure their open source projects by announcing:],
-  [GitHub Secure Open Source Fund is adding an additional \$5.5 million in Azure credits and funding to provide training and expertise; community to improve outcomes; and new partners, including Datadog, Open WebUI, Atlantic Council, and OWASP.],
-  [GitHub Security Lab is investing in the security advisory experience on GitHub and Private Vulnerability Reporting (PVR) features to reduce the burden of low-quality reports to help maintainers manage the increasing volume of security reports.],
-  [We have learned through programs like the GitHub Secure Open Source Fund that the most effective security outcomes happen when you link maintainer funding and resources to specific outcomes like improving security. After supporting 138 projects with over 200 maintainers across 38 countries, we have seen 191 new CVEs issued, 250+ new secrets prevented from leaking, and 600+ leaked secrets detected and resolved, impacting billions of monthly downloads from alumni projects. We also learned that providing hands-on coding with education and expertise, drives self-reported learning and action.],
-  [The outcome: when maintainers are empowered rather than overwhelmed, given time to learn with space to focus, and provided access to tools that fit naturally into their workflows, security improves for everyone downstream. This creates a community reinforcement flywheel. Those lessons shape everything we are doing next.],
-  [This work centers on helping maintainers defend and secure the projects that underpin the global software supply chain, at a time when AI is fundamentally changing both how vulnerabilities are discovered and how they are exploited.],
-  [AI has dramatically increased the speed and scale of vulnerability discovery. That’s true for defenders and for attackers. Now, more than ever, maintainers sit on the front lines of software security. They often face a surge of automated pull requests and security reports with low signal-to-noise ratio. The result is increasing burnout .],
-  [As Christian Grobmeier, maintainer for Log4j, put it: “ our AI has to be better than the attacking AI .” We agree. That is why our focus is not just on finding more issues. It is on helping maintainers triage, understand, and fix them effectively, without losing the joy or sustainability of maintaining open source. For example, our recent AI-powered security research framework was open sourced because we believe it should be used to empower maintainers and not only security teams.],
-  [Looking ahead, GitHub will continue investing in tools like pull request controls, while also ensuring AI is a force multiplier for maintainers from issue triage, pull request reviews, security vulnerability identification, and remediation, and more. It should not be another source of pressure. Maintainers of impactful open source projects already have access to Copilot Pro, which includes AI-assisted code review, agentic security remediation workflows, and access to a broad set of leading models all designed to help maintainers find and remediate risks faster.],
-  [AI should reduce maintainer burden, not increase it. Our goals are simple:],
-  [Meeting maintainers where they already work on GitHub],
-  [Helping prioritize actual issues over noise],
-  [Accelerating fixes, not just findings],
-  [Supporting secure defaults and healthy workflows],
-  [We will continue refining this alongside the community, informed by real world feedback and outcomes.],
-  [No single company or group can secure open source alone. The software we all depend on is built by a global community, and protecting it requires collaboration across ecosystems and global economies.],
-  [By working with maintainers and partners like Alpha-Omega , we aim to scale impact without fragmenting effort. By pairing GitHub’s platform, tools, and programs with shared community governance and trust, and providing maintainers with the latest models and AI-assisted coding tools, we can achieve this.],
-  [Most importantly, we are still committed to investing in people, not just projects. Because open source thrives when maintainers are supported, respected, and empowered to do their best work. We are grateful to every maintainer building the future with us.],
-  [Activate the tools available, and consider applying for GitHub Secure OSS Fund . Session 4 runs late April with each project receiving \$10,000, Copilot Pro, \$100K of Azure Credits, and 3 weeks of security education and a dedicated community. As always, your feedback helps shape what we build next.],
-  [The post Investing in the people shaping open source and securing the future together appeared first on The GitHub Blog .],
-),
-  inline-pq: pull-quote([They often face a surge of automated pull requests and security reports with low signal-to-noise ratio.], [Kevin Crosby]),
-  inline-pq-idx: 10,
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Fresh Energy In March (2026 Wallpapers Edition)],
   author: [Cosima Mielke],
   source-name: [Smashing Magazine],
@@ -178,10 +133,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Smashing Animations Part 7: Recreating Toon Text With CSS And SVG],
   author: [Andy Clarke],
   source-name: [Smashing Magazine],
@@ -269,56 +222,56 @@ text-stroke-width: 3px;],
   [With those class attributes applied, I can then style individual characters as I choose.],
   [For example, for “Hum Sweet Hum,” I want to replicate how its letters shift away from the baseline. After using my Toon Text Splitter, I applied four different translate values using several :nth-child selectors to create a semi-random look:],
   [/\* 4th, 8th, 12th... \*/
-.toon-char:nth-child(4n) { translate: 0 -8px; }
+.toon-char:nth-child(4n) \{ translate: 0 -8px; \}
 /\* 1st, 5th, 9th... \*/
-.toon-char:nth-child(4n+1) { translate: 0 -4px; }
+.toon-char:nth-child(4n+1) \{ translate: 0 -4px; \}
 /\* 2nd, 6th, 10th... \*/
-.toon-char:nth-child(4n+2) { translate: 0 4px; }
+.toon-char:nth-child(4n+2) \{ translate: 0 4px; \}
 /\* 3rd, 7th, 11th... \*/
-.toon-char:nth-child(4n+3) { translate: 0 8px; }],
+.toon-char:nth-child(4n+3) \{ translate: 0 8px; \}],
   [But translate is only one property I can use to transform my toon text.],
   [I could also rotate those individual characters for an even more chaotic look:],
   [/\* 4th, 8th, 12th... \*/
-.toon-line .toon-char:nth-child(4n) { rotate: -4deg; }
+.toon-line .toon-char:nth-child(4n) \{ rotate: -4deg; \}
 /\* 1st, 5th, 9th... \*/
-.toon-char:nth-child(4n+1) { rotate: -8deg; }
+.toon-char:nth-child(4n+1) \{ rotate: -8deg; \}
 /\* 2nd, 6th, 10th... \*/
-.toon-char:nth-child(4n+2) { rotate: 4deg; }
+.toon-char:nth-child(4n+2) \{ rotate: 4deg; \}
 /\* 3rd, 7th, 11th... \*/
-.toon-char:nth-child(4n+3) { rotate: 8deg; }],
+.toon-char:nth-child(4n+3) \{ rotate: 8deg; \}],
   [But translate is only one property I can use to transform my toon text. I could also rotate those individual characters for an even more chaotic look:],
   [/\* 4th, 8th, 12th... \*/
-.toon-line .toon-char:nth-child(4n) {
-rotate: -4deg; }],
+.toon-line .toon-char:nth-child(4n) \{
+rotate: -4deg; \}],
   [/\* 1st, 5th, 9th... \*/
-.toon-char:nth-child(4n+1) {
-rotate: -8deg; }],
+.toon-char:nth-child(4n+1) \{
+rotate: -8deg; \}],
   [/\* 2nd, 6th, 10th... \*/
-.toon-char:nth-child(4n+2) {
-rotate: 4deg; }],
+.toon-char:nth-child(4n+2) \{
+rotate: 4deg; \}],
   [/\* 3rd, 7th, 11th... \*/
-.toon-char:nth-child(4n+3) {
-rotate: 8deg; }],
+.toon-char:nth-child(4n+3) \{
+rotate: 8deg; \}],
   [And, of course, I could add animations to jiggle those characters and bring my toon text style titles to life. First, I created a keyframe animation that rotates the characters:],
-  [\@keyframes jiggle {
-0%, 100% { transform: rotate(var(--base-rotate, 0deg)); }
-25% { transform: rotate(calc(var(--base-rotate, 0deg) + 3deg)); }
-50% { transform: rotate(calc(var(--base-rotate, 0deg) - 2deg)); }
-75% { transform: rotate(calc(var(--base-rotate, 0deg) + 1deg)); }
-}],
+  [\@keyframes jiggle \{
+0%, 100% \{ transform: rotate(var(--base-rotate, 0deg)); \}
+25% \{ transform: rotate(calc(var(--base-rotate, 0deg) + 3deg)); \}
+50% \{ transform: rotate(calc(var(--base-rotate, 0deg) - 2deg)); \}
+75% \{ transform: rotate(calc(var(--base-rotate, 0deg) + 1deg)); \}
+\}],
   [Before applying it to the span elements created by my Toon Text Splitter:],
-  [.toon-char {
+  [.toon-char \{
 animation: jiggle 3s infinite ease-in-out;
-transform-origin: center bottom; }],
+transform-origin: center bottom; \}],
   [And finally, setting the rotation amount and a delay before each character begins to jiggle:],
-  [.toon-char:nth-child(4n) { --base-rotate: -2deg; }
-.toon-char:nth-child(4n+1) { --base-rotate: -4deg; }
-.toon-char:nth-child(4n+2) { --base-rotate: 2deg; }
-.toon-char:nth-child(4n+3) { --base-rotate: 4deg; }],
-  [.toon-char:nth-child(4n) { animation-delay: 0.1s; }
-.toon-char:nth-child(4n+1) { animation-delay: 0.3s; }
-.toon-char:nth-child(4n+2) { animation-delay: 0.5s; }
-.toon-char:nth-child(4n+3) { animation-delay: 0.7s; }],
+  [.toon-char:nth-child(4n) \{ --base-rotate: -2deg; \}
+.toon-char:nth-child(4n+1) \{ --base-rotate: -4deg; \}
+.toon-char:nth-child(4n+2) \{ --base-rotate: 2deg; \}
+.toon-char:nth-child(4n+3) \{ --base-rotate: 4deg; \}],
+  [.toon-char:nth-child(4n) \{ animation-delay: 0.1s; \}
+.toon-char:nth-child(4n+1) \{ animation-delay: 0.3s; \}
+.toon-char:nth-child(4n+2) \{ animation-delay: 0.5s; \}
+.toon-char:nth-child(4n+3) \{ animation-delay: 0.7s; \}],
   [One Frame To Make An Impression],
   [Cartoon title artists had one frame to make an impression, and their typography was as important as the artwork they painted. The same is true on the web.],
   [A well-designed header or hero area needs clarity, character, and confidence — not simply a faded full-width background image.],
@@ -330,10 +283,8 @@ transform-origin: center bottom; }],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Unlock the Secrets of a Custom Sign-In Page with Tailwind and JavaScript],
   author: [Okta Developer Blog],
   source-name: [Okta Developer Blog],
@@ -349,6 +300,7 @@ transform-origin: center bottom; }],
   [Add a footer for custom brand links],
   [Display a terms and conditions modal using Alpine.js that the user must accept before authenticating],
   [Take a moment to read this post on customizing the Sign-In Widget if you aren’t familiar with the process, as we will be expanding from customizing the widget to enhancing the entire sign-in page experience.],
+  [Stretch Your Imagination and Build a Delightful Sign-In Experience],
   [Customize your Gen3 Okta Sign-In Widget to match your brand. Learn to use design tokens, CSS, and JavaScript for a seamless user experience.],
   [In the post, we covered how to style the Gen3 SIW using design tokens and customize the widget elements using the afterTransform() method. You’ll want to combine elements of both posts for the most customized experience.],
   [Table of Contents],
@@ -367,7 +319,7 @@ transform-origin: center bottom; }],
   [Let’s get started!],
   [Before we begin, you must configure your Okta org to use your custom domain. Custom domains enable code customizations, allowing us to style more than just the default logo, background, favicon, and two colors. Sign in as an admin and open the Okta Admin Console, navigate to Customizations \> Brands and select Create Brand + .],
   [Follow the Customize domain and email developer docs to set up your custom domain on the new brand.],
-  [id="customize-your-okta-hosted-sign-in-page"\>Customize your Okta-hosted sign-in page],
+  [Customize your Okta-hosted sign-in page],
   [We’ll first apply the base configuration using the built-in configuration options in the UI. Add your favorite primary and secondary colors, then upload your favorite logo, favicon, and background image for the page. Select Save when done. Everyone has a favorite favicon, right?],
   [I’ll use \#ea3eda and \#ffa738 as the primary and secondary colors, respectively.],
   [On to the code. In the Theme tab:],
@@ -376,9 +328,9 @@ transform-origin: center bottom; }],
   [On the Page Design tab, select the Code editor toggle to see a HTML page],
   [You can only enable the code editor if you configure a custom domain .],
   [You’ll see the lightweight IDE already has code scaffolded. Press Edit and replace the existing code with the following.],
-  [{{pageTitle}} 
- {{{SignInWidgetResources}}}],
-  [:root { 
+  [\{\{pageTitle\}\} 
+ \{\{\{SignInWidgetResources\}\}\}],
+  [:root \{ 
  --font-header : 'Inter Tight' , sans-serif ; 
  --font-body : 'Manrope' , sans-serif ; 
  --color-gray : \#4f4f4f ; 
@@ -392,30 +344,30 @@ transform-origin: center bottom; }],
  --color-bright-white : \#fff ; 
  --border-radius : 4px ; 
  --color-gradient : linear-gradient ( 12deg , var ( --color-fuchsia ) 0% , var ( --color-orange ) 100% ); 
- }],
-  [{ {\#useSiwGen3 } } 
- html { 
+ \}],
+  [\{ \{\#useSiwGen3 \} \} 
+ html \{ 
  font-size : 87.5% ; 
- } 
- { {/useSiwGen3 } }],
-  [\#okta-auth-container { 
+ \} 
+ \{ \{/useSiwGen3 \} \}],
+  [\#okta-auth-container \{ 
  display : flex ; 
- background-image : {{ bgImageUrl } } ; 
- }],
-  [\#okta-login-container { 
+ background-image : \{\{ bgImageUrl \} \} ; 
+ \}],
+  [\#okta-login-container \{ 
  display : flex ; 
  justify-content : center ; 
  align-items : center ; 
  height : 100vh ; 
  width : 50vw ; 
  background : var ( --color-white ); 
- }],
-  [{{{OktaUtil}}}],
+ \}],
+  [\{\{\{OktaUtil\}\}\}],
   [\/\\/ "config" object contains default widget configuration 
  \/\\/ with any custom overrides defined in your admin settings.],
   [const config = OktaUtil . getSignInWidgetConfig (); 
- config . theme = { 
- tokens : { 
+ config . theme = \{ 
+ tokens : \{ 
  BorderColorDisplay : ' var(--color-bright-white) ' , 
  PalettePrimaryMain : ' var(--color-fuchsia) ' , 
  PalettePrimaryDark : ' var(--color-purple) ' , 
@@ -428,31 +380,34 @@ transform-origin: center bottom; }],
  TypographyFamilyHeading : ' var(--font-header) ' , 
  TypographyFamilyButton : ' var(--font-header) ' , 
  BorderColorDangerControl : ' var(--color-cherry) ' 
- } 
- }],
-  [config . i18n = { 
- ' en ' : { 
+ \} 
+ \}],
+  [config . i18n = \{ 
+ ' en ' : \{ 
  ' primaryauth.title ' : ' Log in to create tasks ' , 
- } 
- }],
+ \} 
+ \}],
   [\/\\/ Render the Okta Sign-In Widget 
  const oktaSignIn = new OktaSignIn ( config ); 
- oktaSignIn . renderEl ({ el : ' \#okta-login-container ' }, 
+ oktaSignIn . renderEl (\{ el : ' \#okta-login-container ' \}, 
  OktaUtil . completeLogin , 
- function ( error ) { 
+ function ( error ) \{ 
  \/\\/ Logs errors that occur when configuring the widget. 
  \/\\/ Remove or replace this with your own custom error handler. 
  console . log ( error . message , error ); 
- } 
+ \} 
  );],
   [This code adds style configuration to the SIW elements and configures the text for the title when signing in. Press Save to draft .],
   [We must allow Okta to load font resources from an external source, Google, by adding the domains to the allowlist in the Content Security Policy (CSP).],
   [Navigate to the Settings tab for your brand’s Sign-in page . Find the Content Security Policy and press Edit . Add the domains for external resources. In our example, we only load resources from Google Fonts, so we added the following two domains:],
+  [\*.googleapis.com
+\*.gstatic.com],
   [Select Save to draft , then Publish to view your changes.],
   [The sign-in page looks more stylized than before. If you try resizing the browser window, we see it’s not handling different form factors well. Let’s use Tailwind CSS to add a responsive layout.],
-  [id="use-tailwind-css-to-build-a-responsive-layout"\>Use Tailwind CSS to build a responsive layout],
+  [Use Tailwind CSS to build a responsive layout],
   [Tailwind makes delivering cool-looking websites much faster than writing our CSS manually. We’ll load Tailwind via CDN for our demonstration purposes.],
   [Add the CDN to your CSP allowlist:],
+  [https:\/\/cdn.jsdelivr.net],
   [Navigate to Page Design , then Edit the page. Add the script to load the Tailwind resources in the . I added it after the definitions before the .],
   [Loading external resources, like styles and scripts, requires a CSP nonce to mitigate cross-site scripting (XSS). You can read more about the CSP nonce on the CSP Quick Reference Guide .],
   [Don’t use Tailwind from NPM CDN for production use cases. The Tailwind documentation notes this is for experimentation and prototyping only, as the CDN has rate limits. If your brand uses Tailwind for other production sites, you’ve most likely defined custom mixins and themes in Tailwind. Therefore, reference your production Tailwind resources in place of the CDN we’re using in this post.],
@@ -460,50 +415,69 @@ transform-origin: center bottom; }],
   [Add the styles for Tailwind. We’ll add the classes to show the login container without the hero image in smaller form factors, then display the hero image with different widths depending on the breakpoints.],
   [The two div containers look like this:],
   [Save the file and publish the changes. Feel free to test it out!],
-  [id="use-tailwind-for-custom-html-elements-on-your-okta-hosted-sign-in-page"\>Use Tailwind for custom HTML elements on your Okta-hosted sign-in page],
+  [Use Tailwind for custom HTML elements on your Okta-hosted sign-in page],
   [Tailwind excels at adding styled HTML elements to websites. We can also take advantage of this. Let’s say you want to maintain continuity of the webpage from your site through the sign-in page by adding a footer with links to your brand’s sites. Adding this new section involves changing the HTML node structure and styling the elements.],
   [We want a footer pinned to the bottom of the view, so we’ll need a new parent container with vertical stacking and ensure the height of the footer stays consistent. Replace the HTML node structure to look like this:],
   [Everything redirects to the Okta Developer sites. 😊 I also maintained the style of font, text colors, and text decoration styles to match the SIW elements. CSS custom properties make consistency manageable.],
   [Feel free to save and publish to check it out!],
-  [id="add-custom-interactivity-on-the-okta-hosted-sign-in-page-using-an-external-library"\>Add custom interactivity on the Okta-hosted sign-in page using an external library],
+  [Add custom interactivity on the Okta-hosted sign-in page using an external library],
   [Tailwind is great at styling HTML elements, but it’s not a JavaScript library. If we want interactive elements on the sign-in page, we must rely on Web APIs or libraries to assist us. Let’s say we want to ensure that users who sign in to the to-do app agree to the terms and conditions. We want a modal that blocks interaction with the SIW until the user agrees.],
   [We’ll use Alpine for the heavy lifting because it’s a lightweight JavaScript library that suits this need. We add the library via the NPM CDN, as we have already allowed the domain in our CSP. Add the following to the section of the HTML. I added mine directly after the Tailwind script.],
   [We’re including Alpine from the NPM CDN for demonstration and experimentation. For production applications, use a CDN that supports production scale. The NPM CDN applies rate limiting to prevent production-grade use.],
   [Next, we add the HTML tags to support the modal. Replace the HTML node structure to look like this:],
+  [Welcome to to-do app 
+ This app is in beta. Thank you for agreeing to our terms and conditions. 
+ 
+ Agree
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Terms 
+ Docs 
+ Blog 
+ Community],
   [It’s a lot to add, but I want the smooth transition animations. 😅 The built-in enter and leave states make adding the transition animation so much easier than doing it manually.],
   [Notice we’re using a state value to determine whether to show the modal. We’re using global state management, and setting it up is the next step. We’ll add initializing the state when Alpine initializes. Find the comment \/\\/ Render the Okta Sign-In Widget within the section, and add the following code that runs after Alpine initializes:],
-  [class="highlight"\> document . addEventListener ( ' alpine:init ' , () =\> { 
- Alpine . store ( ' modal ' , { 
+  [document . addEventListener ( ' alpine:init ' , () =\> \{ 
+ Alpine . store ( ' modal ' , \{ 
  open : true , 
- show () { 
+ show () \{ 
  this . open = true ; 
- }, 
- hide () { 
+ \}, 
+ hide () \{ 
  this . open = false ; 
- } 
- }); 
- });],
+ \} 
+ \}); 
+ \});],
   [The event listener watches for the alpine:init event and runs a function that defines an element in Alpine’s store, modal . The modal store contains a property to track whether it’s open and some helper methods for showing and hiding.],
   [When you save and publish, you’ll see the modal upon site reload!],
   [We made the modal fixed even if the user presses Esc or selects the scrim. Users must agree to the terms to continue.],
-  [id="customize-okta-hosted-sign-in-page-behavior-using-web-apis"\>Customize Okta-hosted sign-in page behavior using Web APIs],
+  [Customize Okta-hosted sign-in page behavior using Web APIs],
   [We display the modal as soon as the webpage loads. It works, but we can also display the modal after the Sign-In Widget renders. Doing so allows us to use the nice enter and leave CSS transitions Alpine supports. We want to watch for changes to the DOM within the . This is the parent container that renders the SIW. We can use the MutationObserver Web API and watch for DOM mutations within the div .],
   [In the section, after the event listener for alpine:init , add the following code:],
+  [const loginContainer = document . querySelector ( " \#okta-login-container " );],
   [\/\\/ Use MutationObserver to watch for auth container element 
- const mutationObserver = new MutationObserver (() =\> { 
+ const mutationObserver = new MutationObserver (() =\> \{ 
  const element = loginContainer . querySelector ( ' \[data-se\*="auth-container"\] ' ); 
- if ( element ) { 
+ if ( element ) \{ 
  document . getElementById ( ' modal ' ). classList . remove ( ' hidden ' ); 
  \/\\/ Open modal using Alpine store 
  Alpine . store ( ' modal ' ). show (); 
  \/\\/ Clean up the observer 
  mutationObserver . disconnect (); 
- } 
- });],
-  [mutationObserver . observe ( loginContainer , { 
+ \} 
+ \});],
+  [mutationObserver . observe ( loginContainer , \{ 
  childList : true , 
  subtree : true 
- });],
+ \});],
   [Let’s walk through what the code does. First, we’re creating a variable to reference the parent container for the SIW, as we’ll use it as the root element to target our work. Mutation observers can negatively impact performance, so it’s essential to limit the scope of the observer as much as possible.],
   [Create the observer],
   [We create the observer and define the behavior for observation. The observer first looks for the element with the data attribute named se , which includes the value auth-container . Okta adds a node with the data attribute for internal operations. We’ll do the same for our internal operations. 😎],
@@ -514,23 +488,23 @@ transform-origin: center bottom; }],
   [Lastly, let’s enable the modal to trigger based on the observer. I intentionally provided you with code snippets that force the modal to display before the SIW renders, so you could take sneak peeks at your work as we went along.],
   [In the HTML node structure, find the . It’s missing a class that hides the modal initially. Add the class hidden to the class list. The class list for the should look like],
   [Then, in the alpine:init event listener, change the modal’s open property to default to false :],
-  [class="highlight"\> document . addEventListener ( ' alpine:init ' , () =\> { 
- Alpine . store ( ' modal ' , { 
+  [document . addEventListener ( ' alpine:init ' , () =\> \{ 
+ Alpine . store ( ' modal ' , \{ 
  open : false , 
- show () { 
+ show () \{ 
  this . open = true ; 
- }, 
- hide () { 
+ \}, 
+ hide () \{ 
  this . open = false ; 
- } 
- }); 
- });],
+ \} 
+ \}); 
+ \});],
   [Save and publish your changes. You’ll now notice a slight delay before the modal eases into view. So smooth!],
   [It’s worth noting that our solution isn’t foolproof; a savvy user can hide the modal and continue interacting with the sign-in widget by manipulating elements in the browser’s debugger. You’ll need to add extra checks and more robust code for foolproof methods. Still, this example provides a general idea of capabilities and how one might approach adding interactive components to the sign-in experience.],
   [Don’t forget to test any implementation changes to the sign-in page for accessibility. The default site and the sign-in widget are accessible. Any changes or customizations we make may alter the accessibility of the site.],
   [You can connect your brand to one of our sample apps to see it work end-to-end. Follow the instructions in the README of our Okta React Sample to run the app locally. You’ll need to update your Okta OpenID Connect (OIDC) application to work with the domain. In the Okta Admin Console, navigate to Applications \> Applications and find the Okta application for your custom app. Navigate to the Sign On tab. You’ll see a section for OpenID Connect ID Token . Select Edit and select Custom URL for your brand’s sign-in URL as the Issuer value.],
   [You’ll use the issuer value, which matches your brand’s custom URL, and the Okta application’s client ID in your custom app’s OIDC configuration.],
-  [id="add-tailwind-web-apis-and-javascript-libraries-to-customize-your-okta-hosted-sign-in-page"\>Add Tailwind, Web APIs, and JavaScript libraries to customize your Okta-hosted sign-in page],
+  [Add Tailwind, Web APIs, and JavaScript libraries to customize your Okta-hosted sign-in page],
   [I hope you found this post interesting and unlocked the potential of how much you can customize the Okta-hosted Sign-In Widget experience.],
   [You can find the final code for this project in the GitHub repo .],
   [If you liked this post, check out these resources.],
@@ -544,41 +518,49 @@ transform-origin: center bottom; }],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Three questions about Apple, encryption, and the U.K.],
   author: [Matthew Green],
   source-name: [Matthew Green (Cryptography)],
   images: (),
   paragraphs: (
-  [class="wp-block-paragraph"\>Two weeks ago, the Washington Post reported that the U. K. government had issued a secret order to Apple demanding that the company include a “backdoor” into the company’s end-to-end encrypted iCloud Backup feature. From the article :],
-  [class="wp-block-paragraph"\>The British government’s undisclosed order, issued last month, requires blanket capability to view fully encrypted material, not merely assistance in cracking a specific account, and has no known precedent in major democracies. Its application would mark a significant defeat for tech companies in their decades-long battle to avoid being wielded as government tools against their users, the people said, speaking under the condition of anonymity to discuss legally and politically sensitive issues.],
-  [class="wp-block-paragraph"\>That same report predicted that Apple would soon be disabling their end-to-end encrypted iCloud backup feature (called Advanced Data Protection ) for all U. K. users. On Friday, this prediction was confirmed:],
-  [class="wp-block-paragraph"\>With all this in mind, I think it’s time to take a sober look at what might really happening here. This will require some speculation and educated guesswork. But I think that exercise will be a lot more helpful to us if we want to find out what’s really going on.],
-  [class="wp-block-paragraph"\>Encryption is a tool that protects user data by processing it using a key, so that only the holder of the appropriate key can read it. A variant called end-to-end encryption (E2EE) uses keys that only the user (or users ) knows. The benefit of this approach is that data is protected from many threats that face centralized repositories: theft, cyber attacks, and even access by sophisticated state-sponsored attackers. One downside of this encryption is that it can also block governments and law enforcement agencies from accessing the same data .],
+  [Two weeks ago, the Washington Post reported that the U. K. government had issued a secret order to Apple demanding that the company include a “backdoor” into the company’s end-to-end encrypted iCloud Backup feature. From the article :],
+  [The British government’s undisclosed order, issued last month, requires blanket capability to view fully encrypted material, not merely assistance in cracking a specific account, and has no known precedent in major democracies. Its application would mark a significant defeat for tech companies in their decades-long battle to avoid being wielded as government tools against their users, the people said, speaking under the condition of anonymity to discuss legally and politically sensitive issues.],
+  [That same report predicted that Apple would soon be disabling their end-to-end encrypted iCloud backup feature (called Advanced Data Protection ) for all U. K. users. On Friday, this prediction was confirmed:],
+  [Apple’s decision to disable their encrypted cloud backup feature has triggered many reactions, including a few angry takes by Apple critics , accusing Apple of selling out its users:],
+  [With all this in mind, I think it’s time to take a sober look at what might really happening here. This will require some speculation and educated guesswork. But I think that exercise will be a lot more helpful to us if we want to find out what’s really going on.],
+  [Question 1: does Apple really care about encryption?],
+  [Encryption is a tool that protects user data by processing it using a key, so that only the holder of the appropriate key can read it. A variant called end-to-end encryption (E2EE) uses keys that only the user (or users ) knows. The benefit of this approach is that data is protected from many threats that face centralized repositories: theft, cyber attacks, and even access by sophisticated state-sponsored attackers. One downside of this encryption is that it can also block governments and law enforcement agencies from accessing the same data .],
+  [Navigating this tradeoff has been a thorny problem for Apple. Nevertheless, Apple has mostly opted to err on the side of aggressive deployment of (end-to-end) encryption. For some examples:],
   [In 2008, the company began encrypting all iPhone internal data storage by default. This is why you can feel safe (about your data) if you ever leave your iPhone in a cab.],
   [In 2011, the company launched iMessage , a built-in messaging service with default end-to-end encryption for all users. This was the first widely-deployed end-to-end encrypted messaging service. Today these systems are recommended even by the FBI .],
   [In 2013, Apple launched iCloud Key Vault, which encrypts your backed-up passwords and browser history using encryption that even Apple can’t access.],
-  [class="wp-block-paragraph"\>Apple faced law enforcement backlash on each of these moves. But perhaps the most famous example of Apple’s aggressive stance on encryption occurred during the 2016 Apple v. FBI case, where the company actively fought U. S. government’s demands to bypass encryption mechanisms on an iPhone belonging to an alleged terrorist. Apple argued that satisfying the government’s demand would have required Apple to weaken encryption on all of the company’s phones. Tim Cook even took the unusual step of signing a public letter defending the company’s use of encryption:],
-  [class="wp-block-paragraph"\>I wouldn’t be telling you the truth if I failed to mention that Apple has also made some big mistakes. In 2021, the company announced a plan to implement client-side scanning of iCloud Photos to search for evidence of illicit material in private photo libraries. This would have opened the door for many different types of government-enforced data scanning, scanning that would work even if data was backed up in an end-to-end encrypted form. In that instance, technical experts quickly found flaws in Apple’s proposal and it was first paused , then completely abandoned in 2022.],
-  [class="wp-block-paragraph"\>This is not intended to be a hagiography for Apple. I’m simply pointing out that the company has, in the past, taken major public risks to deploy and promote encryption. Based on this history, I’m going to give Apple the benefit of the doubt and assume that the company is not racing to sell out its users.],
-  [class="wp-block-paragraph"\>Way back in 2016, the U. K. passed a bill called the Investigatory Powers Act , sometimes called the “ Snooper’s Charter. ” At the time the law was enacted, many critics argued that it could be used to secretly weaken security systems , potentially making them much more vulnerable to hacking.],
-  [class="wp-block-paragraph"\>This was due to a critical feature of the new law: it enables the U. K. government to issue secret “ Technical Capability Notices ” that can force a provider, such as Apple, to secretly change the operation of their system — for example, altering an end-to-end encrypted system so that Apple would be forced to hold a copy of the user’s key. With this modification in place, the U. K. government could then demand access to any user’s data on demand.],
-  [class="wp-block-paragraph"\>By far the most concerning part of the U. K. law is that it does not clearly distinguish between U. K. customers and non-U. K. customers, such as those of us in the U. S. or other European nations. Apple’s lawyers called this out in a 2024 filing to Parliament :],
-  [class="wp-block-paragraph"\>In the worst-case interpretation of the law, the U. K. might now be the arbiter of all cybersecurity defense measures globally . Her Majesty’s Government could effectively “cap” the amount of digital security that customers anywhere in the world can depend on, without users even knowing that cap was in place. This could expose vast amounts of data to state-sponsored attackers, such as the ones who recently compromised the entire U. S. telecom industry . Worse, because the U. K.’s Technical Capability Notices are secret , companies like Apple would be effectively forced to lie to their customers — convincing them that their devices are secure, when in fact they are not.],
-  [class="wp-block-paragraph"\>Let us imagine, hypothetically, that this worst-case demand is exactly what Apple is faced with. The U. K. government asks Apple to secretly modify their system for all users globally, so that it is no longer end-to-end encrypted anywhere in the world.],
-  [class="wp-block-paragraph"\>( And if you think about it practically: that flavor of demand seems almost unavoidable in practice. Even if you imagine that Apple is only being asked only to target users in the U. K., the company would either need to build this capability globally, or it would need to deploy a new version or “zone” 1 for U. K. users that would work differently from the version for, say, U. S. users. From a technical perspective, this would be tantamount to admitting that the U. K.’s version is somehow operationally distinct from the U. S. version. That would invite reverse-engineers to ask very pointed questions and the secret would almost certainly be out.)],
-  [class="wp-block-paragraph"\>But if you’re Apple, you absolutely cannot entertain, or even engage with this possibility. The minute you engage with it, you’re dead. One single nation — the U. K. — becomes the governor of all of your security products, and will now dictate how they work globally. Worse, engage with this demand would open a hell-mouth of unfortunate possibilities. Do you tell China and Europe and the U. S. that you’ve given the U. K. a backdoor into their data? What if they object? What if they want one too?],
-  [class="wp-block-paragraph"\>So if you’re Apple and faced with this demand from the U. K., engaging with the demand is not really an option. You have a relatively small number of choices available to you. In order of increasing destructiveness:],
+  [Apple faced law enforcement backlash on each of these moves. But perhaps the most famous example of Apple’s aggressive stance on encryption occurred during the 2016 Apple v. FBI case, where the company actively fought U. S. government’s demands to bypass encryption mechanisms on an iPhone belonging to an alleged terrorist. Apple argued that satisfying the government’s demand would have required Apple to weaken encryption on all of the company’s phones. Tim Cook even took the unusual step of signing a public letter defending the company’s use of encryption:],
+  [I wouldn’t be telling you the truth if I failed to mention that Apple has also made some big mistakes. In 2021, the company announced a plan to implement client-side scanning of iCloud Photos to search for evidence of illicit material in private photo libraries. This would have opened the door for many different types of government-enforced data scanning, scanning that would work even if data was backed up in an end-to-end encrypted form. In that instance, technical experts quickly found flaws in Apple’s proposal and it was first paused , then completely abandoned in 2022.],
+  [This is not intended to be a hagiography for Apple. I’m simply pointing out that the company has, in the past, taken major public risks to deploy and promote encryption. Based on this history, I’m going to give Apple the benefit of the doubt and assume that the company is not racing to sell out its users.],
+  [Question 2: what was the U. K. really asking for?],
+  [Way back in 2016, the U. K. passed a bill called the Investigatory Powers Act , sometimes called the “ Snooper’s Charter. ” At the time the law was enacted, many critics argued that it could be used to secretly weaken security systems , potentially making them much more vulnerable to hacking.],
+  [This was due to a critical feature of the new law: it enables the U. K. government to issue secret “ Technical Capability Notices ” that can force a provider, such as Apple, to secretly change the operation of their system — for example, altering an end-to-end encrypted system so that Apple would be forced to hold a copy of the user’s key. With this modification in place, the U. K. government could then demand access to any user’s data on demand.],
+  [By far the most concerning part of the U. K. law is that it does not clearly distinguish between U. K. customers and non-U. K. customers, such as those of us in the U. S. or other European nations. Apple’s lawyers called this out in a 2024 filing to Parliament :],
+  [In the worst-case interpretation of the law, the U. K. might now be the arbiter of all cybersecurity defense measures globally . Her Majesty’s Government could effectively “cap” the amount of digital security that customers anywhere in the world can depend on, without users even knowing that cap was in place. This could expose vast amounts of data to state-sponsored attackers, such as the ones who recently compromised the entire U. S. telecom industry . Worse, because the U. K.’s Technical Capability Notices are secret , companies like Apple would be effectively forced to lie to their customers — convincing them that their devices are secure, when in fact they are not.],
+  [It goes without saying that this is a very dangerous road to start down.],
+  [Question 3: how might Apple respond to a broad global demand from the U. K.?],
+  [Let us imagine, hypothetically, that this worst-case demand is exactly what Apple is faced with. The U. K. government asks Apple to secretly modify their system for all users globally, so that it is no longer end-to-end encrypted anywhere in the world.],
+  [( And if you think about it practically: that flavor of demand seems almost unavoidable in practice. Even if you imagine that Apple is only being asked only to target users in the U. K., the company would either need to build this capability globally, or it would need to deploy a new version or “zone” 1 for U. K. users that would work differently from the version for, say, U. S. users. From a technical perspective, this would be tantamount to admitting that the U. K.’s version is somehow operationally distinct from the U. S. version. That would invite reverse-engineers to ask very pointed questions and the secret would almost certainly be out.)],
+  [But if you’re Apple, you absolutely cannot entertain, or even engage with this possibility. The minute you engage with it, you’re dead. One single nation — the U. K. — becomes the governor of all of your security products, and will now dictate how they work globally. Worse, engage with this demand would open a hell-mouth of unfortunate possibilities. Do you tell China and Europe and the U. S. that you’ve given the U. K. a backdoor into their data? What if they object? What if they want one too?],
+  [There is nothing down that road but catastrophe.],
+  [So if you’re Apple and faced with this demand from the U. K., engaging with the demand is not really an option. You have a relatively small number of choices available to you. In order of increasing destructiveness:],
   [Hire a bunch of very expensive lawyers and hope you can convince the U. K. to back down.],
   [Shut down iCloud end-to-end encryption in the U. K. and hope that this renders the issue moot.],
   [???],
   [Exit the U. K. market entirely.],
-  [class="wp-block-paragraph"\>If we can believe the reporting so far , I think it’s safe to say that Apple has almost certainly tried the legal route. I can’t even imagine what the secret court process in the U. K. looks like (does it involve wigs?) but if it’s anything like the U. S.’s FISA courts , I would tend to assume that it is unlikely to be a fair fight for a target company, particularly a foreign one.],
-  [class="wp-block-paragraph"\>In this model, Apple’s decision to disable end-to-end encrypted iCloud Backup means we have now reached Stage 2. U. K. users will no longer be able to sign up for Apple’s end-to-end encrypted backup as of February 21. (We aren’t told how existing users will be handled, but I imagine they’ll be forced to voluntarily downgrade to unencrypted service, or else lose their data.) Any request for a backdoor for U. K. users is now completely moot, because effectively the system no longer exists for U. K. users.],
-  [class="wp-block-paragraph"\>At this point I suppose it remains to see what happens next. Perhaps the U. K. government blinks, and relaxes its demands for access to Apple’s keys. In that case, I suppose this story will sink beneath the waves, and we’ll never hear anything about it ever again, at least until next time.],
+  [If we can believe the reporting so far , I think it’s safe to say that Apple has almost certainly tried the legal route. I can’t even imagine what the secret court process in the U. K. looks like (does it involve wigs?) but if it’s anything like the U. S.’s FISA courts , I would tend to assume that it is unlikely to be a fair fight for a target company, particularly a foreign one.],
+  [In this model, Apple’s decision to disable end-to-end encrypted iCloud Backup means we have now reached Stage 2. U. K. users will no longer be able to sign up for Apple’s end-to-end encrypted backup as of February 21. (We aren’t told how existing users will be handled, but I imagine they’ll be forced to voluntarily downgrade to unencrypted service, or else lose their data.) Any request for a backdoor for U. K. users is now completely moot, because effectively the system no longer exists for U. K. users.],
+  [At this point I suppose it remains to see what happens next. Perhaps the U. K. government blinks, and relaxes its demands for access to Apple’s keys. In that case, I suppose this story will sink beneath the waves, and we’ll never hear anything about it ever again, at least until next time.],
+  [In another world, the U. K. government keeps pushing. If that happens, I imagine we’ll be hearing quite a bit more about this in the future.],
+  [Top photo due to Rian (Ree) Saunders.],
+  [Notes:],
   [Apple already deploys a separate “zone” for many of its iCloud security products in China . This is due to Chinese laws that mandate domestic hosting of Apple server hardware and keys. We have been assured by Apple (in various reporting) that Apple does not violate its end-to-end encryption for the Chinese government. The various people I’d expect to quit — if that claim was not true — all seem to be still working there.],
 ),
   insert-map: (:),
@@ -587,37 +569,43 @@ transform-origin: center bottom; }],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Kerberoasting],
   author: [Matthew Green],
   source-name: [Matthew Green (Cryptography)],
   images: (),
   paragraphs: (
-  [class="wp-block-paragraph"\>I learn about cryptographic vulnerabilities all the time, and they generally fill me with some combination of jealousy (“oh, why didn’t I think of that”) or else they impress me with the brilliance of their inventors. But there’s also another class of vulnerabilities: these are the ones that can’t possibly exist in important production software, because there’s no way anyone could still do that in 2025.],
-  [class="wp-block-paragraph"\>Today I want to talk about one of those ridiculous ones, something Microsoft calls “low tech, high-impact”. This vulnerability isn’t particularly new; in fact the worst part about it is that it’s had a name for over a decade, and it’s existed for longer than that. I’ll bet most Windows people already know this stuff, but I only happened to learn about it today, after seeing a letter from Senator Wyden to Microsoft , describing how this vulnerability was used in the May 2024 ransomware attack on the Ascension Health hospital system .],
-  [class="wp-block-paragraph"\>The vulnerability is called Kerberoasting , and TL;DR it relies on the fact that Microsoft’s Active Directory is very, very old . And also: RC4. If you don’t already know where I’m going with this, please read on.],
-  [class="wp-block-paragraph"\> A couple of updates: The folks on HN pointed out that I was using some incorrect terms in here (sorry!) and added some good notes, so I’m updating below. Also, Tim Medin, who discovered and named the attack, has a great post on it here .],
-  [class="wp-block-paragraph"\>Microsoft’s Active Directory (AD) is a many-tentacled octopus that controls access to almost every network that runs Windows machines. The system uses centralized authentication servers to determine who gets access to which network resources. If an employee’s computer needs to access some network Service (a file server, say), an Active Directory server authenticates the user and helps them get securely connected to the Service.],
-  [class="wp-block-paragraph"\>This means that AD is also the main barrier ensuring that attackers can’t extend their reach deeper into a corporate network. If an attacker somehow gets a toehold inside an enterprise (for example, because an employee clicks on a malicious Bing link ), they should absolutely not be able to move laterally and take over critical network services. That’s because any such access would require the employee’s machine to have access to specialized accounts (called “Service accounts”) with privileges to fully control those machines. A well-managed network obviously won’t allow this. This means that AD is the “guardian” that stands between most companies and total disaster.],
-  [class="wp-block-paragraph"\>Unfortunately, Active Directory is a monster dragged from the depths of time. It uses the Kerberos protocol, which was first introduced in early 1989. A lot of things have happened since 1989! In fairness to Microsoft, Active Directory itself didn’t actually debut until about 1999; but (in less fairness), large portions of its legacy cryptography from that time period appear to still be supported in AD. This is very bad, because the cryptography is exceptionally terrible.],
-  [class="wp-block-paragraph"\>When you want to obtain access to some network resource (a “Service” in AD parlance), you first contact an AD server (called a KDC) to obtain a “ ticket ” that you can send to the Service to authenticate. This ticket is encrypted using a long-term Service “password” established at the KDC and the Service itself, and it’s handed to the user making the call.],
-  [class="wp-block-paragraph"\>Now, ideally, this Service password is not really a password at all: it’s actually a randomly-generated cryptographic key. Microsoft even has systems in place to generate and rotate these keys regularly. This means the encrypted ticket will be completely inscrutable to the user who receives it, even if they’re malicious. But occasionally network administrators will make mistakes, and one (apparently) somewhat common mistake is to set up a Service that’s connected to an ordinary user account, complete with a human-generated password.],
-  [class="wp-block-paragraph"\>Since human passwords probably are not cryptographically strong, the tickets encrypted using them are extremely vulnerable to cracking. This is very bad, since any random user — including our hypothetical laptop malware hacker — can now obtain a copy of such a ticket, and attempt to crack the Service’s password offline by trying many candidate passwords using a dictionary attack . The result of this is that the user learns an account password that lets them completely control that essential Service. And the result of that (with a few extra steps) is often ransomware.],
-  [class="wp-block-paragraph"\>Of course, it’s not. It’s actually a terrible design that should have been done away with decades ago. We should not build systems where any random attacker who compromises a single employee laptop can ask for a message encrypted under a critical password! This basically invites offline cracking attacks, which do not need even to be executed on the compromised laptop — they can be exported out of the network to another location and performed using GPUs and other hardware.],
-  [class="wp-block-paragraph"\>There are a few things that can stop this attack in practice. As we noted above, if the account has a long enough (random!) password, then cracking it should be virtually impossible. Microsoft could prevent users from configuring services with weak human-generated passwords, but apparently they don’t — at least because this is something that’s happened many times (including at Ascension Health.)],
-  [class="wp-block-paragraph"\>Your best hope in this case is that the encrypted tickets are extremely challenging for an attacker to crack. That’s because at this point, the only thing preventing the attacker from accessing your Service is computing power. But — and this is a very weak “but” — computing power can still be a deterrent! In the “standard” authentication mode, tickets are encrypted with AES, using a key derived using 4,096 iterations of PBKDF2 hashing , based on the Service password and a per-account salt ( Update : which is not truly random salt, it’s a combination of domain and principal name.) The salt means an attacker cannot easily pre-compute a dictionary of hashed passwords, and while the PBKDF2 (plus AES) isn’t an amazing defense, it puts some limits on the number of password guesses that can be attempted in a given unit of time.],
-  [class="wp-block-paragraph"\> This page by Chick3nman gives some excellent password cracking statistics computed using an RTX 5090 . It implies that a hacker can try 6.8 million candidate passwords every second, using AES-128 and PBKDF2.],
-  [class="wp-block-paragraph"\>This isn’t the end of the story. In fact it’s self-evident that this is not the end of the story, because Active Directory was invented in 1999, which means at some point we’ll have to deal with RC4.],
-  [class="wp-block-paragraph"\>Here’s the thing. Anytime you see cryptography born in the 1990s and yet using AES, you cannot be dealing with the original. What you’re looking at is the modernized, “upgraded” version of the original. The original probably used an abacus and witchcraft, or (failing that) at least some combination of unsalted hash functions and RC4 . And here’s the worst part: it turns out that in Active Directory, when a user does not configure a Service account to use a more recent mode, then Kerberos will indeed fall back to RC4, combined with unsalted NT hashes (basically, one iteration of MD4 .)],
-  [class="wp-block-paragraph"\>The main implication of using RC4 (and NT hashing) is that tickets encrypted this way become hilariously, absurdly fast to crack. According to our friend Chick3nman , the same RTX 5090 can attempt 4.18 billion (with a “b”) password guesses every second. That’s roughly 1000x faster than the AES variant.],
-  [class="wp-block-paragraph"\>As an aside, the NT hashes are not salted, which means they’re vulnerable to pre-computation attacks that involve rainbow tables . I had been meaning to write about rainbow tables recently on this blog, but had convinced myself that they mostly don’t matter, given that these ancient unsalted hash functions are going away. I guess maybe I spoke too soon? Update: see Tom Tervoort’s excellent comment below, which mentions that there is a random 8-byte “confounder” acting as a salt during key derivation.],
-  [class="wp-block-paragraph"\>Clearly not enough. These “Kerberoasting” attacks have been around for ages: the technique and name is credited to Tim Medin who presented it in 2014 (and many popular blogs followed up on it) but the vulnerabilities themselves are much older. The fact that there are practical ransomware attacks using these ideas in 2024 indicates that (1) system administrators aren’t hardening things enough, but more importantly , (2) Microsoft is still not turning off the unsafe options that make these attacks possible.],
-  [class="wp-block-paragraph"\>To give some sense of where we are, in October 2024, Microsoft published a blog post on how to avoid Kerberos-based attacks ( NB: I cannot say Kerberoasting again and take myself seriously) .],
-  [class="wp-block-paragraph"\>The recommendations are all kind of dismal. They recommend that administrators should use proper automated key assignment, and if they can’t do that, then to try to pick “really good long passwords”, and if they can’t do that, to pretty please shut off RC4. But Microsoft doesn’t seem to do anything proactive, like absolutely banning obsolete legacy stuff , or being completely obnoxious and forcing admins to upgrade their weird and bad legacy configurations. Instead this all seems much more like a reluctant and half-baked bit of vulnerability management.],
-  [class="wp-block-paragraph"\>I’m sure there are some reasons why this is, but I refuse to believe they’re good reasons, and Microsoft should probably try a lot harder to make sure these obsolete services go away. It isn’t 1999 anymore, and it isn’t even 2014.],
+  [I learn about cryptographic vulnerabilities all the time, and they generally fill me with some combination of jealousy (“oh, why didn’t I think of that”) or else they impress me with the brilliance of their inventors. But there’s also another class of vulnerabilities: these are the ones that can’t possibly exist in important production software, because there’s no way anyone could still do that in 2025.],
+  [Today I want to talk about one of those ridiculous ones, something Microsoft calls “low tech, high-impact”. This vulnerability isn’t particularly new; in fact the worst part about it is that it’s had a name for over a decade, and it’s existed for longer than that. I’ll bet most Windows people already know this stuff, but I only happened to learn about it today, after seeing a letter from Senator Wyden to Microsoft , describing how this vulnerability was used in the May 2024 ransomware attack on the Ascension Health hospital system .],
+  [The vulnerability is called Kerberoasting , and TL;DR it relies on the fact that Microsoft’s Active Directory is very, very old . And also: RC4. If you don’t already know where I’m going with this, please read on.],
+  [A couple of updates: The folks on HN pointed out that I was using some incorrect terms in here (sorry!) and added some good notes, so I’m updating below. Also, Tim Medin, who discovered and named the attack, has a great post on it here .],
+  [What’s Kerberos, and what’s Active Directory?],
+  [Microsoft’s Active Directory (AD) is a many-tentacled octopus that controls access to almost every network that runs Windows machines. The system uses centralized authentication servers to determine who gets access to which network resources. If an employee’s computer needs to access some network Service (a file server, say), an Active Directory server authenticates the user and helps them get securely connected to the Service.],
+  [This means that AD is also the main barrier ensuring that attackers can’t extend their reach deeper into a corporate network. If an attacker somehow gets a toehold inside an enterprise (for example, because an employee clicks on a malicious Bing link ), they should absolutely not be able to move laterally and take over critical network services. That’s because any such access would require the employee’s machine to have access to specialized accounts (called “Service accounts”) with privileges to fully control those machines. A well-managed network obviously won’t allow this. This means that AD is the “guardian” that stands between most companies and total disaster.],
+  [Unfortunately, Active Directory is a monster dragged from the depths of time. It uses the Kerberos protocol, which was first introduced in early 1989. A lot of things have happened since 1989! In fairness to Microsoft, Active Directory itself didn’t actually debut until about 1999; but (in less fairness), large portions of its legacy cryptography from that time period appear to still be supported in AD. This is very bad, because the cryptography is exceptionally terrible.],
+  [Let me get specific.],
+  [When you want to obtain access to some network resource (a “Service” in AD parlance), you first contact an AD server (called a KDC) to obtain a “ ticket ” that you can send to the Service to authenticate. This ticket is encrypted using a long-term Service “password” established at the KDC and the Service itself, and it’s handed to the user making the call.],
+  [Now, ideally, this Service password is not really a password at all: it’s actually a randomly-generated cryptographic key. Microsoft even has systems in place to generate and rotate these keys regularly. This means the encrypted ticket will be completely inscrutable to the user who receives it, even if they’re malicious. But occasionally network administrators will make mistakes, and one (apparently) somewhat common mistake is to set up a Service that’s connected to an ordinary user account, complete with a human-generated password.],
+  [Since human passwords probably are not cryptographically strong, the tickets encrypted using them are extremely vulnerable to cracking. This is very bad, since any random user — including our hypothetical laptop malware hacker — can now obtain a copy of such a ticket, and attempt to crack the Service’s password offline by trying many candidate passwords using a dictionary attack . The result of this is that the user learns an account password that lets them completely control that essential Service. And the result of that (with a few extra steps) is often ransomware.],
+  [Isn’t that cute?],
+  [That doesn’t actually seem very cute?],
+  [Of course, it’s not. It’s actually a terrible design that should have been done away with decades ago. We should not build systems where any random attacker who compromises a single employee laptop can ask for a message encrypted under a critical password! This basically invites offline cracking attacks, which do not need even to be executed on the compromised laptop — they can be exported out of the network to another location and performed using GPUs and other hardware.],
+  [There are a few things that can stop this attack in practice. As we noted above, if the account has a long enough (random!) password, then cracking it should be virtually impossible. Microsoft could prevent users from configuring services with weak human-generated passwords, but apparently they don’t — at least because this is something that’s happened many times (including at Ascension Health.)],
+  [So let’s say you did not use a strong cryptographic key as your Service’s password. Where are you?],
+  [Your best hope in this case is that the encrypted tickets are extremely challenging for an attacker to crack. That’s because at this point, the only thing preventing the attacker from accessing your Service is computing power. But — and this is a very weak “but” — computing power can still be a deterrent! In the “standard” authentication mode, tickets are encrypted with AES, using a key derived using 4,096 iterations of PBKDF2 hashing , based on the Service password and a per-account salt ( Update : which is not truly random salt, it’s a combination of domain and principal name.) The salt means an attacker cannot easily pre-compute a dictionary of hashed passwords, and while the PBKDF2 (plus AES) isn’t an amazing defense, it puts some limits on the number of password guesses that can be attempted in a given unit of time.],
+  [This page by Chick3nman gives some excellent password cracking statistics computed using an RTX 5090 . It implies that a hacker can try 6.8 million candidate passwords every second, using AES-128 and PBKDF2.],
+  [So that’s not great. But also not terrible, right?],
+  [This isn’t the end of the story. In fact it’s self-evident that this is not the end of the story, because Active Directory was invented in 1999, which means at some point we’ll have to deal with RC4.],
+  [Here’s the thing. Anytime you see cryptography born in the 1990s and yet using AES, you cannot be dealing with the original. What you’re looking at is the modernized, “upgraded” version of the original. The original probably used an abacus and witchcraft, or (failing that) at least some combination of unsalted hash functions and RC4 . And here’s the worst part: it turns out that in Active Directory, when a user does not configure a Service account to use a more recent mode, then Kerberos will indeed fall back to RC4, combined with unsalted NT hashes (basically, one iteration of MD4 .)],
+  [The main implication of using RC4 (and NT hashing) is that tickets encrypted this way become hilariously, absurdly fast to crack. According to our friend Chick3nman , the same RTX 5090 can attempt 4.18 billion (with a “b”) password guesses every second. That’s roughly 1000x faster than the AES variant.],
+  [As an aside, the NT hashes are not salted, which means they’re vulnerable to pre-computation attacks that involve rainbow tables . I had been meaning to write about rainbow tables recently on this blog, but had convinced myself that they mostly don’t matter, given that these ancient unsalted hash functions are going away. I guess maybe I spoke too soon? Update: see Tom Tervoort’s excellent comment below, which mentions that there is a random 8-byte “confounder” acting as a salt during key derivation.],
+  [So what is Microsoft doing about this?],
+  [Clearly not enough. These “Kerberoasting” attacks have been around for ages: the technique and name is credited to Tim Medin who presented it in 2014 (and many popular blogs followed up on it) but the vulnerabilities themselves are much older. The fact that there are practical ransomware attacks using these ideas in 2024 indicates that (1) system administrators aren’t hardening things enough, but more importantly , (2) Microsoft is still not turning off the unsafe options that make these attacks possible.],
+  [To give some sense of where we are, in October 2024, Microsoft published a blog post on how to avoid Kerberos-based attacks ( NB: I cannot say Kerberoasting again and take myself seriously) .],
+  [The recommendations are all kind of dismal. They recommend that administrators should use proper automated key assignment, and if they can’t do that, then to try to pick “really good long passwords”, and if they can’t do that, to pretty please shut off RC4. But Microsoft doesn’t seem to do anything proactive, like absolutely banning obsolete legacy stuff , or being completely obnoxious and forcing admins to upgrade their weird and bad legacy configurations. Instead this all seems much more like a reluctant and half-baked bit of vulnerability management.],
+  [I’m sure there are some reasons why this is, but I refuse to believe they’re good reasons, and Microsoft should probably try a lot harder to make sure these obsolete services go away. It isn’t 1999 anymore, and it isn’t even 2014.],
+  [If you don’t believe me on these points, go ask Ascension Health.],
 ),
   insert-map: (:),
   word-count: 1634,
@@ -625,16 +613,13 @@ transform-origin: center bottom; }],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Woonpioniers opts for "modernity tucked inside tradition" at timber-lined Dutch home],
   author: [Jon Astbury],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [A pair of gabled volumes conceal the expansive timber-lined interiors of Light House, a home in the Netherlands designed by local studio Woonpioniers .],
   [Located in the village of Nigtevecht in Utrecht , the home is tucked within a row of homes on a sloping, narrow plot close to a river.],
   [Aiming to maximise this challenging site, Amsterdam-based Woonpioniers designed the home as two gabled volumes that slot together "like puzzle pieces", with stepped floor levels and mezzanines that create deceptively expansive and high-ceilinged interiors.],
@@ -666,10 +651,8 @@ transform-origin: center bottom; }],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Stack Overflow: The Architecture - 2016 Edition],
   author: [Nick Craver],
   source-name: [Nick Craver],
@@ -709,9 +692,7 @@ Next post (\#2): Stack Overflow: The Hardware - 2016 Edition],
   [What do we need to run Stack Overflow? That hasn’t changed much since 2013 , but due to the optimizations and new hardware mentioned above, we’re down to needing only 1 web server. We have unintentionally tested this, successfully, a few times. To be clear: I’m saying it works. I’m not saying it’s a good idea. It’s fun though, every time.],
   [Now that we have some baseline numbers for an idea of scale, let’s see how we make those fancy web pages. Since few systems exist in complete isolation (and ours is no exception), architecture decisions often make far less sense without a bigger picture of how those pieces fit into the whole. That’s the goal here, to cover the big picture. Many subsequent posts will do deep dives into specific areas. This will be a logistical overview with hardware highlights only; the next post will have the hardware details.],
   [For those of you here to see what the hardware looks like these days, here are a few pictures I took of rack A (it has a matching sister rack B) during our February 2015 upgrade :],
-  [style="text-align: center;"\>],
   […and if you’re into that kind of thing, here’s the entire 256 image album from that week (you’re damn right that number’s intentional). Now, let’s dig into layout. Here’s a logical overview of the major systems in play:],
-  [id="ground-rules"\>Ground Rules],
   [Here are some rules that apply globally so I don’t have to repeat them with every setup:],
   [Everything is redundant.],
   [All servers and network gear have at least 2x 10Gbps connectivity.],
@@ -719,46 +700,43 @@ Next post (\#2): Stack Overflow: The Hardware - 2016 Edition],
   [All servers have a redundant partner between rack A and B.],
   [All servers and services are doubly redundant via another data center (Colorado), though I’m mostly talking about New York here.],
   [Everything is redundant.],
-  [id="the-internets"\>The Internets],
   [First, you have to find us—that’s DNS . Finding us needs to be fast, so we farm this out to CloudFlare (currently) because they have DNS servers nearer to almost everyone around the world. We update our DNS records via an API and they do the “hosting” of DNS. But since we’re jerks with deeply-rooted trust issues, we still have our own DNS servers as well. Should the apocalypse happen (probably caused by the GPL, Punyon , or caching) and people still want to program to take their mind off of it, we’ll flip them on.],
   [After you find our secret hideout, HTTP traffic comes from one of our four ISPs (Level 3, Zayo, Cogent, and Lightower in New York) and flows through one of our four edge routers. We peer with our ISPs using BGP (fairly standard) in order to control the flow of traffic and provide several avenues for traffic to reach us most efficiently. These ASR-1001 and ASR-1001-X routers are in 2 pairs, each servicing 2 ISPs in active/active fashion—so we’re redundant here. Though they’re all on the same physical 10Gbps network, external traffic is in separate isolated external VLANs which the load balancers are connected to as well. After flowing through the routers, you’re headed for a load balancer.],
   [I suppose this may be a good time to mention we have a 10Gbps MPLS between our 2 data centers, but it is not directly involved in serving the sites. We use this for data replication and quick recovery in the cases where we need a burst. “But Nick, that’s not redundant!” Well, you’re technically correct ( the best kind of correct ), that’s a single point of failure on its face. But wait! We maintain 2 more failover OSPF routes (the MPLS is \#1, these are \#2 and 3 by cost) via our ISPs. Each of the sets mentioned earlier connects to the corresponding set in Colorado, and they load balance traffic between in the failover situation. We could make both sets connect to both sets and have 4 paths but, well, whatever. Moving on.],
-  [id="load-balancers-haproxy"\>Load Balancers (HAProxy)],
+  [Load Balancers (HAProxy)],
   [The load balancers are running HAProxy 1.5.15 on CentOS 7 , our preferred flavor of Linux. TLS (SSL) traffic is also terminated in HAProxy. We’ll be looking hard at HAProxy 1.7 soon for HTTP/2 support.],
   [Unlike all other servers with a dual 10Gbps LACP network link, each load balancer has 2 pairs of 10Gbps: one for the external network and one for the DMZ. These boxes run 64GB or more of memory to more efficiently handle SSL negotiation. When we can cache more TLS sessions in memory for reuse, there’s less to recompute on subsequent connections to the same client. This means we can resume sessions both faster and cheaper. Given that RAM is pretty cheap dollar-wise, it’s an easy choice.],
   [The load balancers themselves are a pretty simple setup. We listen to different sites on various IPs (mostly for certificate concerns and DNS management) and route to various backends based mostly on the host header. The only things of note we do here is rate limiting and some header captures (sent from our web tier) into the HAProxy syslog message so we can record performance metrics for every single request. We’ll cover that later too .],
-  [id="web-tier-iis-85-aspnet-mvc-523-and-net-461"\>Web Tier (IIS 8.5, ASP. Net MVC 5.2.3, and . Net 4.6.1)],
+  [Web Tier (IIS 8.5, ASP. Net MVC 5.2.3, and . Net 4.6.1)],
   [The load balancers feed traffic to 9 servers we refer to as “primary” (01-09) and 2 “dev/meta” (10-11, our staging environment) web servers. The primary servers run things like Stack Overflow, Careers, and all Stack Exchange sites except meta.stackoverflow.com and meta.stackexchange.com , which run on the last 2 servers. The primary Q&A Application itself is multi-tenant. This means that a single application serves the requests for all Q&A sites. Put another way: we can run the entire Q&A network off of a single application pool on a single server. Other applications like Careers, API v2, Mobile API, etc. are separate. Here’s what the primary and dev tiers look like in IIS:],
-  [style="text-align: center;"\>],
   [Here’s what Stack Overflow’s distribution across the web tier looks like in Opserver (our internal monitoring dashboard):],
   […and here’s what those web servers look like from a utilization perspective:],
   [I’ll go into why we’re so overprovisioned in future posts, but the highlight items are: rolling builds, headroom, and redundancy.],
-  [id="service-tier-iis-aspnet-mvc-523-net-461-and-httpsys"\>Service Tier (IIS, ASP. Net MVC 5.2.3, . Net 4.6.1, and HTTP. SYS)],
+  [Service Tier (IIS, ASP. Net MVC 5.2.3, . Net 4.6.1, and HTTP. SYS)],
   [Behind those web servers is the very similar “service tier.” It’s also running IIS 8.5 on Windows 2012R2. This tier runs internal services to support the production web tier and other internal systems. The two big players here are “Stack Server” which runs the tag engine and is based on http.sys (not behind IIS) and the Providence API (IIS-based). Fun fact: I have to set affinity on each of these 2 processes to land on separate sockets because Stack Server just steamrolls the L2 and L3 cache when refreshing question lists on a 2-minute interval.],
   [These service boxes do heavy lifting with the tag engine and backend APIs where we need redundancy, but not 9x redundancy. For example, loading all of the posts and their tags that change every n minutes from the database (currently 2) isn’t that cheap. We don’t want to do that load 9 times on the web tier; 3 times is enough and gives us enough safety. We also configure these boxes differently on the hardware side to be better optimized for the different computational load characteristics of the tag engine and elastic indexing jobs (which also run here). The “tag engine” is a relatively complicated topic in itself and will be a dedicated post . The basics are: when you visit /questions/tagged/java , you’re hitting the tag engine to see which questions match. It does all of our tag matching outside of /search , so the new navigation , etc. are all using this service for data.],
-  [id="cache--pubsub-redis"\>Cache & Pub/Sub (Redis)],
+  [Cache & Pub/Sub (Redis)],
   [We use Redis for a few things here and it’s rock solid. Despite doing about 160 billion ops a month, every instance is below 2% CPU. Usually much lower:],
   [We have an L1/L2 cache system with Redis. “L1” is HTTP Cache on the web servers or whatever application is in play. “L2” is falling back to Redis and fetching the value out. Our values are stored in the Protobuf format , via protobuf-dot-net by Marc Gravell. For a client, we’re using StackExchange. Redis —written in-house and open source. When one web server gets a cache miss in both L1 and L2, it fetches the value from source (a database query, API call, etc.) and puts the result in both local cache and Redis. The next server wanting the value may miss L1, but would find the value in L2/Redis, saving a database query or API call.],
   [We also run many Q&A sites, so each site has its own L1/L2 caching: by key prefix in L1 and by database ID in L2/Redis. We’ll go deeper on this in a future post .],
   [Alongside the 2 main Redis servers (master/slave) that run all the site instances, we also have a machine learning instance slaved across 2 more dedicated servers (due to memory). This is used for recommending questions on the home page, better matching to jobs, etc. It’s a platform called Providence, covered by Kevin Montrose here .],
   [The main Redis servers have 256GB of RAM (about 90GB in use) and the Providence servers have 384GB of RAM (about 125GB in use).],
   [Redis isn’t just for cache though, it also has a publish & subscriber mechanism where one server can publish a message and all other subscribers receive it—including downstream clients on Redis slaves. We use this mechanism to clear L1 caches on other servers when one web server does a removal for consistency, but there’s another great use: websockets.],
-  [id="websockets-httpsgithubcomstackexchangenetgain"\>Websockets (https:\/\/github.com/StackExchange/NetGain)],
+  [Websockets (https:\/\/github.com/StackExchange/NetGain)],
   [We use websockets to push real-time updates to users such as notifications in the top bar, vote counts, new nav counts, new answers and comments, and a few other bits.],
   [The socket servers themselves are using raw sockets running on the web tier. It’s a very thin application on top of our open source library: StackExchange. NetGain . During peak, we have about 500,000 concurrent websocket connections open. That’s a lot of browsers. Fun fact: some of those browsers have been open for over 18 months. We’re not sure why. Someone should go check if those developers are still alive. Here’s what this week’s concurrent websocket pattern looks like:],
   [Why websockets? They’re tremendously more efficient than polling at our scale. We can simply push more data with fewer resources this way, while being more instant to the user. They’re not without issues though—ephemeral port and file handle exhaustion on the load balancer are fun issues we’ll cover later .],
-  [id="search-elasticsearch"\>Search (Elasticsearch)],
+  [Search (Elasticsearch)],
   [Spoiler: there’s not a lot to get excited about here. The web tier is doing pretty vanilla searches against Elasticsearch 1.4, using the very slim high-performance StackExchange. Elastic client. Unlike most things, we have no plans to open source this simply because it only exposes a very slim subset of the API we use. I strongly believe releasing it would do more harm than good with developer confusion. We’re using elastic for /search , calculating related questions, and suggestions when asking a question.],
   [Each Elastic cluster (there’s one in each data center) has 3 nodes, and each site has its own index. Careers has an additional few indexes. What makes our setup a little non-standard in the elastic world: our 3 server clusters are a bit beefier than average with all SSD storage, 192GB of RAM, and dual 10Gbps network each.],
   [The same application domains (yeah, we’re screwed with . Net Core here…) in Stack Server that host the tag engine also continually index items in Elasticsearch. We do some simple tricks here such as ROWVERSION in SQL Server (the data source) compared against a “last position” document in Elastic. Since it behaves like a sequence, we can simply grab and index any items that have changed since the last pass.],
   [The main reason we’re on Elasticsearch instead of something like SQL full-text search is scalability and better allocation of money. SQL CPUs are comparatively very expensive, Elastic is cheap and has far more features these days. Why not Solr ? We want to search across the entire network (many indexes at once), and this wasn’t supported at decision time. The reason we’re not on 2.x yet is a major change to “types” means we need to reindex everything to upgrade. I just don’t have enough time to make the needed changes and migration plan yet.],
-  [id="databases-sql-server"\>Databases (SQL Server)],
+  [Databases (SQL Server)],
   [We’re using SQL Server as our single source of truth . All data in Elastic and Redis comes from SQL Server. We run 2 SQL Server clusters with AlwaysOn Availability Groups . Each of these clusters has 1 master (taking almost all of the load) and 1 replica in New York. Additionally, they have 1 replica in Colorado (our DR data center). All replicas are asynchronous.],
   [The first cluster is a set of Dell R720xd servers, each with 384GB of RAM, 4TB of PCIe SSD space, and 2x 12 cores. It hosts the Stack Overflow, Sites (bad name, I’ll explain later), PRIZM, and Mobile databases.],
   [The second cluster is a set of Dell R730xd servers, each with 768GB of RAM, 6TB of PCIe SSD space, and 2x 8 cores. This cluster runs everything else . That list includes Talent , Open ID , Chat , our Exception log , and every other Q&A site (e.g. Super User , Server Fault , etc.).],
   [CPU utilization on the database tier is something we like to keep very low, but it’s actually a little high at the moment due to some plan cache issues we’re addressing. As of right now, NY-SQL02 and 04 are masters, 01 and 03 are replicas we just restarted today during some SSD upgrades. Here’s what the past 24 hours looks like:],
   [Our usage of SQL is pretty simple. Simple is fast. Though some queries can be crazy, our interaction with SQL itself is fairly vanilla. We have some legacy Linq2Sql , but all new development is using Dapper , our open source Micro-ORM using POCOs . Let me put this another way: Stack Overflow has only 1 stored procedure in the database and I intend to move that last vestige into code.],
-  [id="libraries"\>Libraries],
   [Okay, let’s change gears to something that can more directly help you . I’ve mentioned a few of these up above, but I’ll provide a list here of many open-source . Net libraries we maintain for the world to use. We open sourced them because they have no core business value but can help the world of developers. I hope you find these useful today:],
   [Dapper (. Net Core) - High-performance Micro-ORM for ADO. Net],
   [StackExchange. Redis - High-performance Redis client],
@@ -777,16 +755,13 @@ Next post (\#2): Stack Overflow: The Hardware - 2016 Edition],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Construction material costs set to rise if Strait of Hormuz blockade continues],
   author: [Lizzie Crook],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [The continued blockade of the Strait of Hormuz could push up prices of building materials , including steel and cement , a study by global construction consultant Linesight has warned.],
   [If disruption continues in the Strait of Hormuz – a narrow waterway between Iran and the UAE – the construction industry should prepare for higher prices for aluminium , steel, copper and cement, the report states .],
   [Iran is currently restricting access to the waterway used to ship a fifth of the world's oil supply following US and Israeli strikes on the country creating a bottleneck for the oil and gas trade.],
@@ -820,10 +795,8 @@ Next post (\#2): Stack Overflow: The Hardware - 2016 Edition],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Getting Started With The Popover API],
   author: [Godstime Aburu],
   source-name: [Smashing Magazine],
@@ -883,46 +856,53 @@ Next post (\#2): Stack Overflow: The Hardware - 2016 Edition],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A year of open source vulnerability trends: CVEs, advisories, and malware],
   author: [Jonathan Evans],
   source-name: [The GitHub Blog],
   images: (),
   paragraphs: (
   [GitHub published 4,101 reviewed advisories in 2025. This is the fewest number of reviewed advisories since 2021 .  Does this mean open source is shipping more secure code? Let’s dig into the data to find out.],
+  [GitHub reviewed advisories],
   [Fewer advisories reviewed doesn’t mean fewer vulnerabilities were reported. The drop is because GitHub reviewed far fewer older vulnerabilities . When you look only at newly reported vulnerabilities from our sources , GitHub actually reviewed 19% more advisories year over year.],
   [So why the change? Quite frankly, we are running out of unreviewed vulnerabilities that are older than the Advisory Database . At the same time, the number of newly reported vulnerabilities hasn’t dropped.],
+  [What is the GitHub Advisory Database?],
   [The  GitHub Advisory Database provides a comprehensive list of known security vulnerabilities and malware affecting open source packages. It was created in 2019, and has since become a vital resource for open source developers.],
-  [Read more in last year’s blog post \>],
   [It’s also worth clarifying that “ unreviewed ” in the database can be misleading: most advisories marked unreviewed have already been looked at by a curator and found not to affect any package in a supported ecosystem , so they may never be fully reviewed.],
   [This means that you should be receiving fewer brand-new Dependabot alerts about old vulnerabilities.],
   [Note : If you find an unreviewed advisory that affects a supported package, please let us know so we can get it reviewed!],
+  [How vulnerabilities were distributed across ecosystems in 2025],
   [The distribution of ecosystems in advisories reviewed in 2025 is similar to the overall distribution in the database, with the exception of Go. Go is overrepresented in 2025 advisories by 6%. This is largely due to dedicated campaigns to re-examine potentially missing advisories found through an internal review for packages where we had inconsistent coverage.],
+  [How the types of vulnerabilities changed in 2025],
   [Rank Common Weakness Enumeration (CWE) Number of 2025 Advisories\* Change in Rank from 2024 Change in Rank from the Overall Database 1 CWE-79 672 +0 +0 2 CWE-22 214 +2 +1 3 CWE-863 169 +9 +8 4 CWE-20 154 +1 +1 5 CWE-200 145 -2 -1 6 CWE-400 144 +4 +0 7 CWE-770 136 +7 +10 8 CWE-502 134 +5 +1 9 CWE-94 119 -3 -1 10 CWE-918 103 +5 +8],
   [\* An advisory may have more than CWE. For example, an advisory might have both CWE-400 and CWE-770. It would then count for both.],
   [As usual, cross-site scripting (CWE-79) is by far the most common vulnerability type. However, there are significant changes in the following areas. Resource exhaustion (CWE-400 and CWE-770), unsafe deserialization (CWE-502), and server-side request forgery (CWE-918) were unusually common in 2025. CWE-863 (“Incorrect Authorization”) saw a significant jump, but that is largely due to reclassification away from CWE-284 (“Improper Access Control”) and CWE-285 (“Improper Authorization”), which are higher level CWEs that the CWE program discourages using.],
   [One of the biggest quality improvements in 2025 was more specific, more consistent CWE tagging. Advisories without any CWE dropped 85% (from 452 in 2024 to 65 in 2025). CWE-20 (“Improper Input Validation”) is still common, but in prior years it was often the only CWE listed on an advisory.],
   [In 2025, advisories far more often list CWE-20 plus one or more additional CWEs that describe the concrete failure mode. This added specificity makes the data more actionable for triage, prioritization, and remediation.],
   [To find out how to filter Dependabot alerts by CWE, see our documentation on auto-triage rules .],
+  [How to prioritize your response],
   [We provide two scoring systems for prioritization:],
   [Common Vulnerability Severity Score (CVSS) : Scores how severe the impact of the vulnerability will be],
   [Exploit Prediction Scoring System (EPSS) : Provides a measure of how likely the vulnerability will be attacked in the next 30 days and],
   [Together, they can give you a head start on your risk assessment process.],
   [As you can see, when considering impact, most vulnerabilities skew moderate to high of the impact range. Low-impact vulnerabilities are likely more common than the CVSS data suggests but are often not considered worth the time and effort for researchers and maintainers to report. The EPSS scores for moderate to high impact vulnerabilities support this decision.],
   [So should you trust the EPSS or CVSS scores? To judge that, let’s look at how they match up to vulnerabilities in CISA’s Known Exploited Vulnerabilities Catalog . The exploited vulnerabilities are at least scored moderate, and most are critical or high. While CVSS has more of the exploited vulnerabilities as critical, it also has far more vulnerabilities in the range in general. Combining the two can help you prioritize which vulnerabilities to address to prevent exploitation.],
+  [npm malware advisories],
   [2025 was a huge year for npm malware advisories. Due to large malware campaigns, such as SHA1-Hulud , GitHub saw a 69% increase in published malware advisories compared to 2024. This is the most malware advisories GitHub has published since our initial release of historical malware when we added support in 2022 .],
   [You can receive Dependabot alerts when your repositories depend on npm packages with known malicious versions. When you enable malware alerting, Dependabot matches your npm dependencies against malware advisories in the GitHub Advisory Database.],
+  [GitHub CVE Numbering Authority (CNA)],
+  [CVE publications],
   [2025 was a big year for the GitHub, Inc. CNA . We saw a 35% increase in published CVE records , outpacing the overall CVE Project’s increase of 21%.],
   [In fact, we saw 10 to 16% growth every quarter. If this trend continues, GitHub will publish over 50% more CVEs in 2026.],
   [You can help make that a reality by requesting a CVE from us the next time you publish a repository security advisory about a vulnerability!],
+  [Organizations using GitHub’s CNA],
   [Every year, GitHub sees more organizations use its CNA services. 2025 is no exception with a 20% increase in new organizations requesting CVE IDs .],
   [Unlike reviewed global advisories, which are always mapped to packages in ecosystems we support, any maintainer on GitHub can request a CVE , even if they don’t publish that package to a supported ecosystem. In fact, 2025 is the first year that GitHub has published more CVEs from organizations that do not use a supported ecosystem than those that do.],
   [We would like to thank all 987 organizations that published CVEs with us in 2025 and highlight the top 10 most prolific organizations.],
   [Top 10 organizations using the GitHub CNA Organization Number of 2025 CVEs LabReDeS (WeGIA)\* 130 XWiki 40 Frappe 28 Discourse 27 Enalean 27 FreeScout\* 27 DataEase 26 Nextcloud 25 GLPI 24 DNN Software\* 23],
   [\* Organizations that published CVEs through GitHub for the first time in 2025],
+  [Onward to 2026],
   [The data from 2025 shows incredible growth:],
   [4,101 reviewed advisories],
   [7,197 malware advisories],
@@ -930,9 +910,13 @@ Next post (\#2): Stack Overflow: The Hardware - 2016 Edition],
   [679 new organizations using our CNA services .],
   [These numbers represent real security improvements for millions of developers.],
   [You can be part of this in 2026. Here’s how:],
+  [1. Use our CNA services],
   [Publishing CVEs shouldn’t be complicated. Request a CVE directly from your repository security advisory, and we’ll take care of curating and publishing it for you. It’s free, it’s fast, and it helps the entire ecosystem understand and respond to vulnerabilities.],
+  [2. Improve advisory accuracy],
   [Found an unreviewed advisory affecting a supported package? See incorrect severity scores or missing affected versions? Suggest edits . Your edits will be reviewed by the Advisory Database team and ultimately, will help make the database more accurate for everyone. In 2025, 675 contributions from the community improved the quality of this data for the entire software industry!],
+  [3. Protect your projects],
   [The most direct impact you can have is protecting your own code. Enable Dependabot to automatically receive security updates and explore GitHub Advanced Security for comprehensive protection.],
+  [4. Make reporting a vulnerability easier],
   [Let researchers know how to report to you and what you will and will not accept by creating a security policy for your repository. Enable private vulnerability reporting to make the coordination process smooth and secure.],
   [Let’s make 2026 even better. See you in next year’s review! 🚀],
   [The post A year of open source vulnerability trends: CVEs, advisories, and malware appeared first on The GitHub Blog .],
@@ -943,16 +927,13 @@ Next post (\#2): Stack Overflow: The Hardware - 2016 Edition],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Verge Select connects three weathering-steel volumes for Ontario painting studio],
   author: [Ellen Eberhardt],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [Canadian design studio Verge Select has designed a studio for painter Janna Watson in Ontario , composed of three square volumes fused together to form a secluded forest retreat.],
   [The Grey County studio is located in the county of the same name in Ontario , and, unlike a second, more urban studio operated by Watson, provides a space that "slows time".],
   [Verge Select has completed a painter's studio in Ontario],
@@ -986,10 +967,8 @@ Next post (\#2): Stack Overflow: The Hardware - 2016 Edition],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Human Strategy In An AI-Accelerated Workflow],
   author: [Carrie Webster],
   source-name: [Smashing Magazine],
@@ -1082,17 +1061,15 @@ Next post (\#2): Stack Overflow: The Hardware - 2016 Edition],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Over 40,000 civilian buildings in Iran reportedly damaged in ongoing war],
   author: [Amy Peacock],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [Humanitarian group Iranian Red Crescent Society has reported that 42,914 civilian buildings in Iran have been damaged by US-Israeli airstrikes, including more than 36,000 homes.],
   [Announced on X last week, the Iranian Red Crescent Society – a non-governmental group affiliated with the International Federation of Red Cross and Red Crescent Societies (IFRC) – calculated that US-Israeli airstrikes have caused damage to 42,914 civilian buildings in Iran.],
   [This includes 36,489 residential units and 6,179 commercial units.],
@@ -1116,13 +1093,12 @@ Next post (\#2): Stack Overflow: The Hardware - 2016 Edition],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Dezeen Jobs announces Top Companies 2026],
   author: [Dezeen staff],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [Dezeen's recruitment site Dezeen Jobs has revealed the 20 studios on this year's Top Companies list, which includes Studio Gang and Grimshaw .],
   [The list celebrates the leading architecture and design workplaces around the world, recognising studios that are setting new standards in employee experience and organisational culture.],
   [Alongside US-based Studio Gang and UK practice Grimshaw, other studios recognised for their workplace culture include Donald Insall Associates in London and Beijing Shanfangzhu Art Design in Beijing.],
@@ -1144,7 +1120,7 @@ Next post (\#2): Stack Overflow: The Hardware - 2016 Edition],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Corrupt a wish with GPT-4],
   author: [\@sam Sam Saffron],
   source-name: [Sam Saffron],
@@ -1162,7 +1138,7 @@ Next post (\#2): Stack Overflow: The Hardware - 2016 Edition],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Corrupt a wish with GPT-4],
   author: [\@corrupt-a-bot GPT-4 bot],
   source-name: [Sam Saffron],
@@ -1182,9 +1158,8 @@ Next post (\#2): Stack Overflow: The Hardware - 2016 Edition],
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [Creating a Typography System With React and styled-components],
   author: [Jacy Clare],
   source-name: [Harry's Engineering],
@@ -1229,10 +1204,8 @@ Next post (\#2): Stack Overflow: The Hardware - 2016 Edition],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Now Shipping: Accessible UX Research, A New Smashing Book By Michele Williams],
   author: [Ari Stiles],
   source-name: [Smashing Magazine],
@@ -1316,16 +1289,13 @@ Next post (\#2): Stack Overflow: The Hardware - 2016 Edition],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Benjamin Hall Design uses masonry walls for Arizona accessory dwelling unit],
   author: [Kate Mazade],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [Local studio Benjamin Hall Design has attached an accessory dwelling unit made of concrete block to an existing house to accommodate a multi-generational family in Phoenix , Arizona, USA.],
   [Known as Moon Valley Residence, the 1,756-square-foot (163-square-metre) dwelling was designed to intentionally contrast the original 1970s suburban main home, set in a golf community that looks eastward to a rock formation called Lookout Mountain.],
   [Benjamin Hall Design has created a concrete block ADU in Phoenix],
@@ -1359,16 +1329,13 @@ Next post (\#2): Stack Overflow: The Hardware - 2016 Edition],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Islington House extension features details that "might make a Georgian craftsperson proud"],
   author: [Jon Astbury],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [Local practice Architecture for London and interiors studio Hamish Vincent Design have revamped a neo-Georgian house in London , organising its interior around a triple-height stairwell.],
   [Located in the Canonbury Conservation Area, Islington House has been updated with a skylit rear extension containing a kitchen and dining room and an additional ensuite bedroom on the second floor.],
   [Architecture for London and Hamish Vincent Design have renovated a neo-Georgian home],
@@ -1399,12 +1366,10 @@ Next post (\#2): Stack Overflow: The Hardware - 2016 Edition],
   debug-mode: false,
 )
 
-  #pull-quote([Doors set within the large arched opening connect the dining area to a paved patio in the garden, which is flanked by grey-brick walls to match the extension.], [Jon Astbury])
+#pull-quote([Doors set within the large arched opening connect the dining area to a paved patio in the garden, which is flanked by grey-brick walls to match the extension.], [Jon Astbury])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Using Home Assistant to integrate a Unifi Protect G4 Doorbell and Amazon Alexa to announce visitors],
   author: [Scott Hanselman],
   source-name: [Scott Hanselman],
@@ -1459,7 +1424,6 @@ data:
   [It works! There's a ton of cool stuff I can automate now!],
   [Sponsor: Make login Auth0’s problem. Not yours. Provide the convenient login features your customers want, like social login, multi-factor authentication, single sign-on, passwordless, and more. Get started for free.],
   [© 2025 Scott Hanselman. All rights reserved.],
-  [style="clear: both; padding-top: 0.2em;"\>],
 ),
   insert-map: (:),
   word-count: 887,
@@ -1467,11 +1431,10 @@ data:
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Corrupt a wish with GPT-4],
   author: [\@corrupt-a-bot GPT-4 bot],
   source-name: [Sam Saffron],
@@ -1488,13 +1451,12 @@ data:
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Is AI really coming for architects' jobs?],
   author: [Dezeen staff],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [In the latest episode of Dezeen Weekly , we discuss a study indicating that architecture is highly exposed to automation and talk about the winner of this year's Pritzker Architecture Prize .],
   [How worried should architects be about large language models taking their jobs? How did the Pritzker Architecture Prize make us look silly this week? And what is "bio-upcycling"?],
   [In this episode, Dezeen features editor Nat Barker and design editor Jennifer Hahn consider a controversial labour impact study by AI company Anthropic .],
@@ -1513,13 +1475,12 @@ data:
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [This week we interviewed Pritzker Architecture Prize-winner Smiljan Radić],
   author: [Tom Ravenscroft],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [This week on Dezeen , we spoke to elusive architect Smiljan Radić about his "surprise" Pritzker Architecture Prize win .],
   [Radić explained how he was surprised by the win and didn't want his work to be seen as a blueprint for "good or bad" architecture.],
   ["There is no message in what I do," he said. "I'm not interested in it becoming a kind of sermon about what is good or bad in architecture."],
@@ -1550,7 +1511,7 @@ data:
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [An analysis of memory bloat in Active Record 5.2],
   author: [\@sam Sam Saffron],
   source-name: [Sam Saffron],
@@ -1577,13 +1538,11 @@ class ActiveRecord:: Relation
  \# end
  \#],
   [This file has been truncated. show original],
-  [style="clear: both;"\>],
   [I wish we did not have to, but I am not sure how to land this in Rails.],
   [Another change that has happened since is that we released:],
   [GitHub],
   [GitHub - discourse/mini\_sql: a minimal, fast, safe sql executor],
   [a minimal, fast, safe sql executor. Contribute to discourse/mini\_sql development by creating an account on GitHub.],
-  [style="clear: both;"\>],
   [Which is the piece we use for any performance sensitive work and totally outperforms almost anything you can throw at it.],
   [Maybe run the bench on some earlier versions 7/6/5 and see what happens?],
 ),
@@ -1598,42 +1557,46 @@ class ActiveRecord:: Relation
 #pull-quote([The US home shirts have bold red stripes, while the jerseys for Mexico pay homage to Aztec sculpture.], [Tom Ravenscroft])
 
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([Renato Losio], source-name: [InfoQ], [ProxySQL 3.0.6 was recently released, along with a new multi-tier release strategy. The Stable Tier focuses on reliability and production use, the Innovative Tier introduces newer features earlier, and the AI/MCP Tier explores future capabilities, including AI integrations.
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([Renato Losio], source-name: [InfoQ], [ProxySQL 3.0.6 was recently released, along with a new multi-tier release strategy. The Stable Tier focuses on reliability and production use, the Innovative Tier introduces newer features earlier, and the AI/MCP Tier explores future capabilities, including AI integrations.
 
  By Renato Losio])],
-    [#brief-item([Matt Saunders], source-name: [InfoQ], [Version 4.0 of the open source Kubernetes security platform Kubescape has been released, bringing runtime threat detection and a new set of AI-era security features. This is the first time the project has targeted the security of AI agents themselves, alongside its established scanning capabilities.
+  [#brief-item([Matt Saunders], source-name: [InfoQ], [Version 4.0 of the open source Kubernetes security platform Kubescape has been released, bringing runtime threat detection and a new set of AI-era security features. This is the first time the project has targeted the security of AI agents themselves, alongside its established scanning capabilities.
 
  By Matt Saunders])],
-    [#brief-item([fogus], source-name: [Mike Fogus], [The blog you're reading was rendered at some point in the past as HTML (maybe) but it was written in text with a dash of Markdown flavor (maybe).])],
-    [#brief-item([\@Mystery\_Dan], source-name: [Sam Saffron], [I wish I could see the end of the universe. Does it restart? What is nothing without a reference point.])],
-    [#brief-item([Zack Garvey], source-name: [PlayStation Blog], [class=""\> PlayStation Store’s Spring Sale begins tomorrow, Wednesday, March 25. For a limited time\* you can enjoy deep discounts of up to 75% on a vast range of games that include iconic blockbusters, acclaimed classics, and more.
+  [#brief-item([fogus], source-name: [Mike Fogus], [The blog you're reading was rendered at some point in the past as HTML (maybe) but it was written in text with a dash of Markdown flavor (maybe).])],
+  [#brief-item([\@Mystery\_Dan], source-name: [Sam Saffron], [I wish I could see the end of the universe. Does it restart? What is nothing without a reference point.])],
+  [#brief-item([Zack Garvey], source-name: [PlayStation Blog], [PlayStation Store’s Spring Sale begins tomorrow, Wednesday, March 25. For a limited time\* you can enjoy deep discounts of up to 75% on a vast range of games that include iconic blockbusters, acclaimed classics, and more.
 
-class=""\>
 
-class=""\>
 
-class="has-small-font-size"\> \*PlayStation Store Spring Sale promotion runs from Wednesday, March 25 at 00:00 AM PDT/BST/JST and finishes Wednesday April 22 at 11:59 PM PDT/BST/JST\*\*. Each title may have different sale periods. Please refer to the information in the title details page.  
 
-class="has-small-font-size"\> \*\*The promotion’s start and finish time may differ in certain regions. Game selection may differ by region. 
 
-class=""\>])],
-    [#brief-item([Bruno Couriol], source-name: [InfoQ], [Max Inden recently explored in a talk at FOSDEM 2026 how the upcoming WebTransport protocol and Web API enhance WebSocket capabilities. WebTransport seeks to provide, among other things, lower latency and transparent network switching for key use cases such as high-frequency financial data streaming, cloud gaming, live streaming, and collaborative editing.
+\*PlayStation Store Spring Sale promotion runs from Wednesday, March 25 at 00:00 AM PDT/BST/JST and finishes Wednesday April 22 at 11:59 PM PDT/BST/JST\*\*. Each title may have different sale periods. Please refer to the information in the title details page.  
+
+\*\*The promotion’s start and finish time may differ in certain regions. Game selection may differ by region. 
+
+])],
+  [#brief-item([Bruno Couriol], source-name: [InfoQ], [Max Inden recently explored in a talk at FOSDEM 2026 how the upcoming WebTransport protocol and Web API enhance WebSocket capabilities. WebTransport seeks to provide, among other things, lower latency and transparent network switching for key use cases such as high-frequency financial data streaming, cloud gaming, live streaming, and collaborative editing.
 
  By Bruno Couriol])],
-    [#brief-item([\@yossi-shasho Yossi Shasho], source-name: [Sam Saffron], [Actually this command was still too long for me. This is how I finally got it to work:
+  [#brief-item([\@yossi-shasho Yossi Shasho], source-name: [Sam Saffron], [Actually this command was still too long for me. This is how I finally got it to work:
 
- rbtrace -p PID -e 'Thread.new{require "stackprof";s = StackProf;s.start(mode: :cpu);sleep 2;s.stop;s.results("/tmp/perf");}'])],
-    [#brief-item([Craig Risi], source-name: [InfoQ], [Airbnb has revealed how it significantly improved its observability practices by rethinking how alerts are developed and validated, concluding that what appeared to be a "culture problem" was actually a tooling and workflow gap.
+ rbtrace -p PID -e 'Thread.new\{require "stackprof";s = StackProf;s.start(mode: :cpu);sleep 2;s.stop;s.results("/tmp/perf");\}'])],
+  [#brief-item([Craig Risi], source-name: [InfoQ], [Airbnb has revealed how it significantly improved its observability practices by rethinking how alerts are developed and validated, concluding that what appeared to be a "culture problem" was actually a tooling and workflow gap.
 
  By Craig Risi])],
-    [#brief-item([Sergio De Simone], source-name: [InfoQ], [OpenAI announced they are extending the Responses API to make it easier for developer to build agentic workflows, adding support for a shell tool, a built-in agent execution loop, a hosted container workspace, context compaction, and reusable agent skills.
+  [#brief-item([Sergio De Simone], source-name: [InfoQ], [OpenAI announced they are extending the Responses API to make it easier for developer to build agentic workflows, adding support for a shell tool, a built-in agent execution loop, a hosted container workspace, context compaction, and reusable agent skills.
 
  By Sergio De Simone])],
-    [#brief-item([\@sam Sam Saffron], source-name: [Sam Saffron], [I wish that LLMs progress over the next year and become more powerful, are used only for good and help cure cancer and solve intricate and complex physics problem. They will delight people and enrich our lives, and all the safety are nothing but unfounded fears.])],
-  ))
-}
+  [#brief-item([\@sam Sam Saffron], source-name: [Sam Saffron], [I wish that LLMs progress over the next year and become more powerful, are used only for good and help cure cancer and solve intricate and complex physics problem. They will delight people and enrich our lives, and all the safety are nothing but unfounded fears.])],
+))
+
+// --- Notable Quotes ---
+#block(above: 0.2in, stroke: (top: 1pt + luma(26)), inset: (top: 0.1in))[
+  #pull-quote([They often face a surge of automated pull requests and security reports with low signal-to-noise ratio.], [Kevin Crosby])
+
+]
 
 #colophon([The Daily Star], [Vol. 1, No. 060], [2026-03-30])

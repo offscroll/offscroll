@@ -21,64 +21,8 @@
 #masthead([The Old Report], [Vol. 1, No. 001], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [A HashiConf art collab],
-  kicker: [Cover Story],
-  author: [Monica Dinculescu],
-  source-name: [Monica Dinculescu],
-  deck: [A couple of months ago my friend Jana helped organize HashiConf Europe , and asked me to work on generating custom artwork for each of their speakers.],
-  lead-pre: [],
-  lead-cap: [T],
-  lead-rest: [his was my first experience with creating art for someone else, and especially art that had to match someone else’s artistic guidelines. I’ve said this before, but I live and nap by the idea that rules (and editing) are at the core of the artistic process and not having to do that myself was brilliant . I wanted to write a bit about it because a) I did a bunch of work that I’m really proud of and I never got to talk about it and b) I am vain and I want to talk about it.],
-  body-paragraphs: (
-  [This was the final poster:],
-  [And this is what we wrote about it on the card that accompanied it:],
-  [Enclosed you will find an art print made for you by generative artist and engineer Monica Dinculescu.],
-  [This individual print is unique to you and you alone, as Monica has incorporated your name, the title of your talk, and the color of the HashiCorp product that you are talking about at this year’s conference.],
-  [Each cell in the grid has been randomly generated to contain either a letter from your name, or a pattern in the product color.],
-  [Cells located towards the middle of the grid are more likely to contain a letter rather than a pattern, and this likelihood decreases in the cells towards the edges.],
-  [This print is the only iteration of its kind. Were it to be generated again, it would look slightly different each time.],
-  [I print everything in my art store myself, because I sell very limited editions and third-party printing companies only make sense financially when you’re printing in the several dozen. This does mean that sometimes I’ll fight with my printer thinking that its colour profile is whack, only to discover that it was Doing Just Fine™️ and my MacBook oversaturates things like it’s an Instagram filter in 2011. Every day is a school day.],
-  [Here are all the prints drying on their totes profesh drying rack that is definitely not just a string I hung around in my office.],
-  [So, how did we get here?],
-  [id="v1-i-have-no-idea-what-you-want"\>v1: I have no idea what you want],
-  [The design team’s requirements were clear and wonderful:],
-  [follow the conference guidelines: there is a set of product colours that can be used in very specific ways (either as a solid colour, a gradient, a grid of dots, hashed lines, and nothing else) and should be used to have a geometric grid feeling.],
-  [the art should be unique and somewhat meaningful to the speaker. Like, random shapes might look beautiful, but they have no immediate connection to the speaker or what they were talking about, and needing to explain it too hard takes away from the magic of someone making you your very own art.],
-  [When I think of geometric posters, I (and everyone who’s ever looked at a design book) think of Bauhaus , and that’s exactly where I started. Here’s some iterations from this round:],
-  [Too Partridge-Family: I started with a basic Bauhausy sort of grid, but we felt that it looked too much like a grid of birds. Not all was lost, though; you can see this in a different style on the home page now!],
-  [Extremely Mondrian-y, divided grid of squares. Really boring.],
-  [Random paths on a grid. These are called Truchet tiles , and they're a pretty classic generative art approach. I thought this looked really cool by itself, but it didn’t have a ton of connection with the speaker so we scraped them early on.],
-  [Random shapes in random places. Too generic, kinda boring.],
-  [Random shapes in random places but channeling Suprematism . I LOVE this style and I would LOVE to use it again, and I very well might.],
-  [Grid of squares with some overlapped letters. This was one we liked because it had both a grid and the speaker's name, but it felt a bit too chaotic in this iteration. It honestly looks to me like I sneazed a bunch of letters on a grid.],
-  [At this point I also considered some data-based art, but I didn’t have enough interesting data that I could aggregate based on a name and an abstract alone. Anyway, did you notice how a lot of the iterations in this bunch are fairly standard generative-art approaches? Like, nothing here was novel, and I intended it that way: I wanted to figure out what the team had in mind, and the only way I knew how to do that was to use some common language we all knew, which is “things we’ve seen before”.],
-  [id="v2-grids-of-letters"\>v2: Grids of letters],
-  [What came out from the previous explorations was that they liked the letter grid the most, but not as it was. At this point I also learnt that a specific colour (like, blue) is associated with a particular product (in blue’s case that product is Vagrant ) that a speaker is giving a talk about. Each of these products have a primary and a slightly lighter secondary colour, which is why below you’ll see I stopped mixing different product colours together.],
-  [Can we do something with that Mondrian-y grid, but make it less boring with textures? Answer: yes but not in a good way.],
-  [Can we do something with those random shapes in random places, but by also remembering the user has a name? Answer: no and let's never mention this horror again.],
-  [Enough of that; let's go back to our friend, the grid. Truchet tile blobs with letters. I vetoed this before even sending it over because it was serving very solid 70s lava lamp vibes. At this point I also went a bit mad looking at just Jana's name, so I branched out to another team member.],
-  [Grids of squares with letters. A bit boring, a bit "not a fan of cutting off letters on principle". This image is really good at showing the letter distribution algorithm that all the grids are using: it's mostly centered around the center horizontal line, and then spreads out randomly outwards and downwards from there.],
-  [Grids of Bauhaus-style quarter circles or letters. I kind of like this, but overall it still felt a bit too basic and too “classic Bauhaus”.],
-  [Grids of triangles or letters. This one looks kind of nice, doesn't it? We thought so too.],
-  [You’ll notice that all of these images are very similar looking. This was an extremely good sign for me because I knew we were on the right track, and in the cleaning up stage.],
-  [id="v3-bring-it-home"\>v3: Bring it home],
-  [We all loved the triangles the most, and in order to make them a bit 🌶 spicy, I decided to vary the texture of the triangle. Remember, I was allowed dots and hatches too! So in the final version, each triangle can be one of the 2 colours belonging to the product, either hashed or filled. Bish, bash, bosh.],
-  [From here it was just a matter of designing the poster layout around it, and making sure I had a plan for when my random number pixel math wasn’t quuuuuuuite good enough. Thankfully, dat.gui exists, and this is what I looked at while generating 50-ish posters:],
-  [id="would-i-do-this-again"\>Would I do this again?],
-  [Absolutely . I honestly loved every step of this. I worked with 3 amazing women from start to finish that had good instincts and were kind and supportive af. I got to think outside of a box I wouldn’t have normally found myself in. I tend to obsessively listen to a new album for 100 hours and I exclusively listened to Jessie Ware for this project (and then, ironically, never again).],
-  [Most importantly, I made something that is in 46 humans’ hands. I hope they liked it!!!],
-  [I would love to do this again, so if you’re a conference or a company that thinks this was a 
-cool idea and want to do this for your speakers or employees, send me an email ! I’ve got way more ideas where this came from and nothing to do with them.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [Stop Multitasking and Try Timeboxing],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -92,11 +36,9 @@ cool idea and want to do this for your speakers or employees, send me an email !
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [When pull requests get tricky],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -106,22 +48,29 @@ cool idea and want to do this for your speakers or employees, send me an email !
   [In case you have doubts about the likelihood of this scenario, we’re talking about my notwaldorf.github.com blog branch, which I forked from holman/left . All my changes are on the master branch so that GitHub can do its magic gh-pages trick and just Make Things Work™. This could also happen for repos you’ve forked and mucked around with, but never thought you’d ever contribute to.],
   [Because you’re a good open sorcerer, you might, at some point, want to send a pull request to fix a thing in the original repo. If you’re anything like I am, you are now in a bit of a terrible situation because your fork’s tip of tree has advanced and diverged quite a bit from the upstream repo, so any pull requests you send out will be polluted with code that doesn’t belong in them.],
   [At this point, you probably have some regrets. Let’s not dwell on them. Here’s the set of steps that will help you navigate this minefield you find yourself in. They’re not special; I just couldn’t find them all in one place, and wanted a summary for the future. Kamal figured most of this out, because he is a git wizard, while I am, most definitely, not.],
-  [id="set-up-your-upstream"\>Set up your upstream],
+  [Set up your upstream],
   [If git remote doesn’t show you a branch called upstream , you need to add one:],
-  [id="set-up-a-clean-branch-for-your-fix"\>Set up a clean branch for your fix],
+  [git remote add upstream https:\/\/github.com/user/repo\_you\_forked.git],
+  [Set up a clean branch for your fix],
   [Step into your tardis and branch from when you were last in sync with the upstream. In my case, this was when I initially created my fork.
 A dull perusing of git log or git reflog should point you to the right sha. Then,],
-  [id="get-your-changes-in"\>Get your changes in],
+  [git checkout -b pr\_branch
+git reset --hard sha\_from\_the\_past],
+  [Get your changes in],
   [Here you have two options. If your changes are tiny, or you know exactly what they are, you can just manually reapply them. And by that I mean copy paste the changes into the right files, like a barbarian. For the record, this is my preferred approach. I am a barbarian. I live in the git stone age.],
   [Alternatively, you can go the fancy route with],
+  [git checkout -p master file\_to\_modify],
   [This will look at the diff between master (which is in the future), and your working copy (we are in the past) and let you pick and choose individual hunks. Having taken a moment and appreciated how amazing this last sentence was, you can:],
   [hit s to split the hunks into smaller hunks],
   [hit y or n to pick or skip a hunk.],
   [If you’ve touched any files, it would be a good time to do your familiar git add/git commit dance.],
-  [id="merge-the-upstream-changes-in"\>Merge the upstream changes in],
-  [id="--t-t-t-test-your-cha-an-ges--"\>♫ ♪ T-t-t-test your cha-an-ges ♫ ♪],
-  [id="upload-your-branch"\>Upload your branch],
+  [Merge the upstream changes in],
+  [git fetch upstream \# You won't see any changes in git log. Don't panic yet.
+git merge upstream/master \# Some wild upstream changes appear in git log.],
+  [♫ ♪ T-t-t-test your cha-an-ges ♫ ♪],
+  [Upload your branch],
   [This is the last step. If you want, you can rename your branch before uploading it. I usually do, because my original branch names tend to be silly. After this, you can go and look at your branch in GitHub and be delighted with the progress you’ve made. Time to send out that pull request!],
+  [git push origin pr\_branch:possibly\_new\_branch\_name],
   [Hope this helped!],
 ),
   insert-map: (:),
@@ -130,13 +79,12 @@ A dull perusing of git log or git reflog should point you to the right sha. Then
   debug-mode: false,
 )
 
-  #pull-quote([A dull perusing of git log or git reflog should point you to the right sha.], [Monica Dinculescu])
+#pull-quote([A dull perusing of git log or git reflog should point you to the right sha.], [Monica Dinculescu])
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Comedian Sarah Cooper On Bringing Humor to Any Career],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -152,7 +100,7 @@ A dull perusing of git log or git reflog should point you to the right sha. Then
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Why Companies Should Stop Political Spending Now],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -169,7 +117,7 @@ A dull perusing of git log or git reflog should point you to the right sha. Then
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Joshua Gans, a professor at the University of Toronto’s Rotman School of Management, advises against trying to commercialize a new technology or product before considering all the strategic options. He talks through some questions entrepreneurs should ask themselves — like, collaborate or compete? — and outlines a framework he and his fellow researchers have found to work best for startups. Gans is the coauthor of the article “Do Entrepreneurs Need a Strategy?”])],
       [#brief-item([Bloomberg], source-name: [Bloomberg], [A Palestinian flag is raised as Houthis rally in solidarity with Iran and Lebanon, in Sanaa, Yemen, on March 27, 2026.])],
       [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Gary Hamel and Michele Zanini, cofounders of the consultancy Management Lab, say that even though we all lament how rigid, parochial, and time sucking bureaucracies can be, they still seem inescapable. The managers who’ve excelled in them often don’t know how to dismantle them — or else they don’t want to. But Zanini and Hamel have studied and collaborated with innovative organizations, and they outline bottom-up ways to empower workers and hack management. Hamel and Zanini wrote the new book “Humanocracy: Creating Organizations as Amazing as the People Inside them.”])],
@@ -189,7 +137,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices])],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Summer School 7: Negotiating and the empathetic nibble],
   author: [NPR Planet Money],
   source-name: [NPR Planet Money],
@@ -214,7 +162,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices])],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [What AI data centers are doing to your electric bill],
   author: [NPR Planet Money],
   source-name: [NPR Planet Money],
@@ -251,7 +199,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices])],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Goodbye Bureaucracy, Hello Common Sense],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -268,7 +216,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices])],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Consumer Psychology of Adopting AI],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -287,7 +235,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices])],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [No Scrubs: Breeding a Better Bull],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -305,7 +253,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Introducing 4 Business Ideas That Changed the World],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -327,7 +275,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [How to Get Better at Saying No],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -343,7 +291,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Tiki Time!],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -363,7 +311,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The Rest of the Story, 2025],
   author: [NPR Planet Money],
   source-name: [NPR Planet Money],
@@ -394,7 +342,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [How to get what Greenland has, with permission],
   author: [NPR Planet Money],
   source-name: [NPR Planet Money],
@@ -431,7 +379,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Move Over Gin, We’ve Got Tonic Fever],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -448,7 +396,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Vapes of Wrath],
   author: [NPR Planet Money],
   source-name: [NPR Planet Money],
@@ -474,7 +422,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Ask Gastropod: Bubblegum, Meal Kits, and the Real Truth About Rooibos],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -491,7 +439,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Meet the Most Famous American You’ve Never Heard Of: His Legacy is Excellent French Fries and Monsanto],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -511,7 +459,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The trade fraud detective],
   author: [NPR Planet Money],
   source-name: [NPR Planet Money],
@@ -536,7 +484,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Easy A: The SuperRad Story of Home Economics],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -558,7 +506,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Inside video game economics (Two Indicators)],
   author: [NPR Planet Money],
   source-name: [NPR Planet Money],
@@ -584,7 +532,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Trump's crypto interests (Two Indicators)],
   author: [NPR Planet Money],
   source-name: [NPR Planet Money],
@@ -612,7 +560,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The Chicken Tax (Classic)],
   author: [NPR Planet Money],
   source-name: [NPR Planet Money],
@@ -635,7 +583,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Week 6],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -677,7 +625,7 @@ problem is a hell of a thing.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Why is everyone talking about Musk's money?],
   author: [NPR Planet Money],
   source-name: [NPR Planet Money],
@@ -701,7 +649,7 @@ problem is a hell of a thing.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Rest of the Story, 2024],
   author: [NPR Planet Money],
   source-name: [NPR Planet Money],
@@ -728,7 +676,7 @@ problem is a hell of a thing.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [How refrigeration took over the world],
   author: [NPR Planet Money],
   source-name: [NPR Planet Money],
@@ -754,7 +702,7 @@ problem is a hell of a thing.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Grounds for Revolution: the Stimulating Story of How Coffee Shaped the World],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -774,7 +722,7 @@ problem is a hell of a thing.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The Land of the Duty Free (classic)],
   author: [NPR Planet Money],
   source-name: [NPR Planet Money],
@@ -798,7 +746,7 @@ problem is a hell of a thing.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [From Trash to Treasure: Why's It So Hard to Save Restaurant Leftovers From the Dumpster?],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -818,7 +766,7 @@ problem is a hell of a thing.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Find Joy in Any Job: How Do I Improve the Role I Have?],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -836,7 +784,7 @@ problem is a hell of a thing.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Kale of the Sea],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -857,7 +805,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The Great Gastropod Pudding Off (encore)],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -874,7 +822,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Baked: How Pot Brownies and Pate de Fruits Fueled an Edible Cannabis Revolution],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -892,8 +840,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Why are we so bummed about the economy?],
   author: [NPR Planet Money],
   source-name: [NPR Planet Money],
@@ -915,6 +862,5 @@ These are the kinds of questions baked into the Consumer Sentiment Index. And wh
   debug-mode: false,
 )
 
-}
 
 #colophon([The Old Report], [Vol. 1, No. 001], [2026-03-30])

@@ -21,83 +21,8 @@
 #masthead([The Pacific Wire], [Vol. 1, No. 073], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Fly Kubernetes does more now],
-  kicker: [Cover Story],
-  author: [Fly.io Blog],
-  source-name: [Fly.io Blog],
-  deck: [class="lead"\>
-
-Eons ago, we announced we were working on Fly Kubernetes .],
-  lead-pre: [],
-  lead-cap: [c],
-  lead-rest: [lass="lead"\>],
-  body-paragraphs: (
-  [Eons ago, we announced we were working on Fly Kubernetes . It drummed up enough excitement to prove we were heading in the right direction. So, we got hard to work to get from barebones “early access” to a beta release. We’ll be onboarding customers to the closed beta over the next few weeks. Email us at sales\@fly.io and we’ll hook you up.],
-  [Fly Kubernetes is the “blessed path"™️ to using Kubernetes backed by Fly.io infrastructure. Or, in simpler terms, it is our managed Kubernetes service. We take care of the complexity of operating the Kubernetes control plane, leaving you with the unfettered joy of deploying your Kubernetes workloads. If you love Fly.io and K8s, this product is for you.],
-  [So how did this all come to be—and what even is a Kubernete?],
-  [You can see more fun details in Introducing Fly Kubernetes .],
-  [If you wade through all the YAML and CNCF projects , what’s left is an API for declaring workloads and how it should be accessed.],
-  [But that’s not what people usually talk \/ groan about. It’s everything else that comes along with adopting Kubernetes: a container runtime (CRI), networking between workloads (CNI) which leads to DNS (CoreDNS). Then you layer on Prometheus for metrics and whatever the logging daemon du jour is at the time. Now you get to debate which Ingress—strike that— Gateway API to deploy and if the next thing is anything to do with a Service Mess, then as they like to say where I live, "bless your heart”.],
-  [Finally, there’s capacity planning. You’ve got to pick and choose where, how and what the Nodes will look like in order to configure and run the workloads.],
-  [When we began thinking about what a Fly Kubernetes Service could look like, we started from first principles, as we do with most everything here. The best way we can describe it is the scene from Iron Man 2 when Tony Stark discovers a new element . As he’s looking at the knowledge left behind by those that came before, he starts to imagine something entirely different and more capable than could have been accomplished previously. That’s what happened to JP, but with K3s and Virtual Kubelet.],
-  [We looked at what people need to get started—the API—and then started peeling away all the noise, filling in the gaps to connect things together to provide the power. Here’s how this looks currently:],
-  [Containerd/CRI → flyd + Firecracker + our init : our system transmogrifies Docker containers into Firecracker microVMs],
-  [Networking/CNI → Our internal WireGuard mesh connects your pods together],
-  [Pods → Fly Machines VMs],
-  [Secrets → Secrets, only not the base64’d kind],
-  [Services → The Fly Proxy],
-  [CoreDNS → CoreDNS (to be replaced with our custom internal DNS)],
-  [Persistent Volumes → Fly Volumes (coming soon)],
-  [Now…not everything is a one-to-one comparison, and we explicitly did not set out to support any and every configuration. We aren’t dealing with resources like Network Policy and init containers, though we’re also not completely ignoring them. By mapping many of the core primitives of Kubernetes to a Fly.io resource, we’re able to focus on continuing to build the primitives that make our cloud better for workloads of all shapes and sizes.],
-  [A key thing to notice above is that there’s no “Node”.],
-  [Virtual Kubelet plays a central role in FKS. It’s magic, really. A Virtual Kubelet acts as if it’s a standard Kubelet running on a Node, eager to run your workloads. However, there’s no Node backing it. It instead behaves like an API, receiving requests from Kubernetes and transforming them into requests to deploy on a cloud compute service. In our case, that’s Fly Machines.],
-  [So what we have is Kubernetes calling out to our Virtual Kubelet provider , a small Golang program we run alongside K3s, to create and run your pod. It creates your pod as a Fly Machine , via the Fly Machines API , deploying it to any underlying host within that region. This shifts the burden of managing hardware capacity from you to us. We think that’s a cool trick—thanks, Virtual Kubelet magic!],
-  [You can deploy your workloads (including GPUs) across any of our available regions using the Kubernetes API.],
-  [You create a cluster with flyctl :],
-  [When a cluster is created, it has the standard default namespace. You can inspect it:],
-  [The fly.io/app label shows the name of the Fly App that corresponds to your cluster.],
-  [It would seem appropriate to deploy the Kubernetes Up And Running demo here, but since your pods are connected over an IPv6 WireGuard mesh , we’re going to use a fork with support for IPv6 DNS .],
-  [And you can see its Machine representation via:],
-  [This is important! Your pod is a Fly Machine! While we don’t yet support all kubectl features, Fly.io tooling will “just work” for cases where we don’t yet support the kubectl way. So, for example, we don’t have kubectl port-forward and kubectl exec , but you can use flyctl to forward ports and get a shell into a pod.],
-  [Expose it to your internal network using the standard ClusterIP Service:],
-  [ClusterIP Services work natively, and Fly.io internal DNS supports them. Within the cluster, CoreDNS works too.],
-  [Access this Service locally via flycast : Get connected to your org’s 6PN private WireGuard network . Get kubectl to describe the kuard Service:],
-  [class="highlight relative group"\>
- Name: kuard
-Namespace: default
-Labels: app=kuard-fks
-Annotations: fly.io/clusterip-allocator: configured
- service.fly.io/sync-version: 11507529969321451315
-Selector: app=kuard-fks
-Type: ClusterIP
-IP Family Policy: SingleStack
-IP Families: IPv6
-IP: fdaa:0:48c8:0:1::1a
-IPs: fdaa:0:48c8:0:1::1a
-Port: 8080/TCP
-TargetPort: 8080/TCP
-Endpoints: \[fdaa:0:48c8:a7b:228:4b6d:6e20:2\]:8080
-Session Affinity: None
-Events:],
-  [You can pull out the Service’s IP address from the above output, and get at the KUARD UI using that: in this case, http:\/\/\[fdaa:0:48c8:0:1::1a\]:8080 .],
-  [Using internal DNS: http:\/\\/ .svc. .flycast:8080 . Or, in our example: http:\/\/kuard.svc.fks-default-7zyjm3ovpdxmd0ep.flycast:8080 .],
-  [And finally CoreDNS: . .svc.cluster.local resolves to the fdaa IP and is routable within the cluster.],
-  [Get in on the FKS beta],
-  [Email us at sales\@fly.io],
-  [The Fly Kubernetes Service is free during the beta. Fly Machines and Fly Volumes you create with it will cost the same as for your other Fly.io projects . It’ll be \$75/mo per cluster after that, plus the cost of the other resources you create.],
-  [Today, Fly Kubernetes supports only a portion of the Kubernetes API. You can deploy pods using Deployments/ReplicaSets. Pods are able to communicate via Services using the standard K8s DNS format. Ephemeral and persistent volumes are supported.],
-  [The most notable absences are: multi-container pods, StatefulSets, network policies, horizontal pod autoscaling and emptyDir volumes. We’re working at supporting autoscaling and emptyDir volumes in the coming weeks and multi-container pods in the coming months.],
-  [If you’ve made it this far and are eagerly awaiting your chance to tell us and the rest of the internet “this isn’t Kubernetes!”, well, we agree! It’s not something we take lightly. We’re still building, and conformance tests may be in the future for FKS. We’ve made a deliberate decision to only care about fast launching VMs as the one and only way to run workloads on our cloud. And we also know enough of our customers would like to use the Kubernetes API to create a fast launching VM in the form of a Pod, and that’s where this story begins.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [Nutrition Advice Decoded: What Foods Are Actually Good For Us, What Should We Avoid, and Why Is It All SO Confusing?],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -112,11 +37,9 @@ Events:],
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [My Answers for Microservices Awkward Questions],
   author: [Jay],
   source-name: [Jay Fields],
@@ -159,12 +82,13 @@ A few, but not many to be honest. Logging, testing , and some common functions -
   [How do you plan to monitor your microservices? :
 We use proprietary monitoring software managed by another team. We also have front line support that is on call and knows who to contact when they encounter issues they cannot solve on their own.],
   [How do you plan to trace the interactions between different microservices in a production environment? :],
-  [We log as much as is reasonable. User generated interactions are infrequent enough that every single one is logged. Other interactions, such as snapshots of large pieces of data, or data that is updated 10 or more times per second, are generally not logged. We have a test environment were we can bring the system up and mirror prod, so interactions we miss in prod can (likely) be reproduced in dev if necessary. A few of our systems are also experimenting with a logging system that logs every interaction shape, and a sample per shape. For example, if the message {foo: {bar:4 baz:45 cat:\["dog", "elephant"\]}} is sent, the message and the shape {foo {bar: Int, baz: Int, cat:\[String\]}} will be logged. If that shape previous existed, neither the shape nor the message will be logged. In practice, logging what you can and having an environment to reproduce what you can't log is all you need 95% of the time.],
+  [We log as much as is reasonable. User generated interactions are infrequent enough that every single one is logged. Other interactions, such as snapshots of large pieces of data, or data that is updated 10 or more times per second, are generally not logged. We have a test environment were we can bring the system up and mirror prod, so interactions we miss in prod can (likely) be reproduced in dev if necessary. A few of our systems are also experimenting with a logging system that logs every interaction shape, and a sample per shape. For example, if the message \{foo: \{bar:4 baz:45 cat:\["dog", "elephant"\]\}\} is sent, the message and the shape \{foo \{bar: Int, baz: Int, cat:\[String\]\}\} will be logged. If that shape previous existed, neither the shape nor the message will be logged. In practice, logging what you can and having an environment to reproduce what you can't log is all you need 95% of the time.],
   [What constitutes a production-ready microservice in your environment? :
 Something that provides any value whatsoever, and has been hardened enough that it should create zero production issues under normal working circumstances.],
   [What does the smallest possible deployable microservice look like in your environment? :
 A single webpage that displays (readonly) data it's collecting from various other services.],
   [I'm happy to share more of my experiences with a microservice architecture, if people find that helpful. If you'd like elaboration on a question above or you'd like an additional question answered, please leave a comment.],
+  [© Jay Fields - www.jayfields.com],
 ),
   insert-map: (:),
   word-count: 1219,
@@ -172,10 +96,8 @@ A single webpage that displays (readonly) data it's collecting from various othe
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Philopappou Hill Pathways in Athens, Greece],
   author: [Atlas Obscura],
   source-name: [Atlas Obscura],
@@ -194,10 +116,8 @@ A single webpage that displays (readonly) data it's collecting from various othe
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Using Kamal 2.0 in Production],
   author: [Fly.io Blog],
   source-name: [Fly.io Blog],
@@ -219,18 +139,15 @@ A single webpage that displays (readonly) data it's collecting from various othe
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Making Remote Work: Tools],
   author: [Jay],
   source-name: [Jay Fields],
   images: (),
   paragraphs: (
   [I recently wrote about my experiences working on a remote team . Within that blog entry you can find a more verbose version of the following text:],
-  [class="tr\_bq"\>
-Communication is what I consider to be the hardest part of remote work. I haven't found an easy, general solution. A few teammates prefer video chat, others despise it. A few teammates like the wiki as a backlog, a few haven't ever edited the wiki. Some prefer strict usage of email/chat/phone for async-unimportant/async-important/sync-urgent, others tend to use one of those 3 for all communication.],
+  [Communication is what I consider to be the hardest part of remote work. I haven't found an easy, general solution. A few teammates prefer video chat, others despise it. A few teammates like the wiki as a backlog, a few haven't ever edited the wiki. Some prefer strict usage of email/chat/phone for async-unimportant/async-important/sync-urgent, others tend to use one of those 3 for all communication.],
   [As you can tell, we have several different communication tools. When writing, I generally prefer to include concrete examples. This blog entry will list each tool referenced above. However, I cannot emphasize enough that: this list is a snapshot of what we're using, not a recommended set of tools .],
   [app: Github],
   [usage: We use many of the features of Github; however, the two features that help facilitate remote work are (a) pull requests with inline comments and (b) compare . A pull request with inline comments has (thus far) been the most productive way to asynchronously discuss specific pieces of code. Almost all non-trivial commits will eventually end up in a pull request that's reviewed by at least one other team member. We've found compare view to be the best solution for distilling changes for a teammate with limited context.],
@@ -255,8 +172,10 @@ Communication is what I consider to be the hardest part of remote work. I haven'
   [support coffee],
   [support wheat],
   [(1) Commission summary],
+  [note: some things in Now need to be done immediately, but do not support an upcoming milestone. These things are incremental changes for previously met milestones.],
   [Obviously we use email and other tools as well, but I can't think of any remote specific usage patterns that are worth sharing.],
   [As I previously mentioned, each member of the team uses each of these tools in their own way. None of these tools are ideal for every member of the team, and I believe a good team lead helps ensure each team member is only required to use the tools they find most helpful.],
+  [© Jay Fields - www.jayfields.com],
 ),
   insert-map: (:),
   word-count: 699,
@@ -264,10 +183,8 @@ Communication is what I consider to be the hardest part of remote work. I haven'
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Experience Report: Weak Code Ownership],
   author: [Jay],
   source-name: [Jay Fields],
@@ -302,20 +219,20 @@ The motivation for this approach is that a primary will commit keeping their vis
   [While reviewing this entry Jake McCrary and others pointed out that while context switching is annoying, there are many benefits that also come from the pull request review process. I agree with this observation, and I'm always pleased when I see discussion (comments) occur on a pull request. Perhaps I'm over optimistic, but I always see the discussion as evidence that the team is learning from each other and we are further advancing on our shared goals.],
   [12 months in, I'm happy with the results.],
   [Unsurprisingly, there are other people using and/or experimenting with similar approaches. Paul Nasrat noted the similarities with this approach and the maintainer model of Linux; Scott Robinson pointed me at OWNERS Files ; Romily Cocking noted the similarities with the underlying model used in Envy/Developer (pre Java).],
+  [© Jay Fields - www.jayfields.com],
 ),
   insert-map: (:),
   inline-pq: pull-quote([All of the developers on the team had great success before the project, and (after that team split up) 8 out of 9 have gone on to lead very successful teams.], [Jay]),
-  inline-pq-idx: 9,
+  inline-pq-idx: 10,
   word-count: 1432,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Talking Taco],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -332,7 +249,7 @@ The motivation for this approach is that a primary will commit keeping their vis
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Eating to Win: Gatorade, Muscle Milk, and… Chicken Nuggets?],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -349,21 +266,21 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([Jeremy Kun (Math ∩ Programming)], source-name: [Jeremy Kun (Math ∩ Programming)], [The study of groups is often one’s first foray into advanced mathematics. In the naivete of set theory one develops tools for describing basic objects, and through a first run at analysis one develops a certain dexterity for manipulating symbols and definitions. But it is not until the study of groups that one must step back and inspect the larger picture. The main point of that picture (and indeed the main point of a group) is that algebraic structure can be found in the most unalgebraic of settings.])],
       [#brief-item([Jeremy Kun (Math ∩ Programming)], source-name: [Jeremy Kun (Math ∩ Programming)], [We present a video on Möbius transformations and the geometry of the sphere. Anyone who has taken or will take complex analysis (that means you engineers!) should watch this. It shows not only the beautiful correspondence between the two, but it reveals the intuition behind a lot of complex analysis, when more often than not a student is left in the dust of rigorous formulas.
-In short, this is a proof without words that the Möbius transformations are in correspondence with rigid motions of the unit sphere in \$ \\mathbb{R}^3\$.])],
+In short, this is a proof without words that the Möbius transformations are in correspondence with rigid motions of the unit sphere in \$ \\mathbb\{R\}^3\$.])],
       [#brief-item([Jeremy Kun (Math ∩ Programming)], source-name: [Jeremy Kun (Math ∩ Programming)], [In this post we will assume the reader has a passing familiarity with some of the basic concepts of functional programming (the map, fold, and filter functions). We introduce these topics in our Racket primer, but the average reader will understand the majority of this primer without expertise in functional programming.
 Follow-ups to this post can be found in the Computational Category Theory section of the Main Content page.
 Preface: ML for Category Theory A few of my readers have been asking for more posts about functional languages and algorithms written in functional languages.])],
-      [#brief-item([Jeremy Kun (Math ∩ Programming)], source-name: [Jeremy Kun (Math ∩ Programming)], [Last time we covered an operation in the LWE encryption scheme called modulus switching, which allows one to switch from one modulus to another, at the cost of introducing a small amount of extra noise, roughly \$\\sqrt{n}\$, where \$n\$ is the dimension of the LWE ciphertext.
+      [#brief-item([Jeremy Kun (Math ∩ Programming)], source-name: [Jeremy Kun (Math ∩ Programming)], [Last time we covered an operation in the LWE encryption scheme called modulus switching, which allows one to switch from one modulus to another, at the cost of introducing a small amount of extra noise, roughly \$\\sqrt\{n\}\$, where \$n\$ is the dimension of the LWE ciphertext.
 This time we’ll cover a more sophisticated operation called key switching, which allows one to switch an LWE ciphertext from being encrypted under one secret key to another, without ever knowing either secret key.])],
       [#brief-item([Jeremy Kun (Math ∩ Programming)], source-name: [Jeremy Kun (Math ∩ Programming)], [My four-year-old son has declared 36 to be the best number.
 His reason: 36 is the only number (he knows of) that is both a square and a staircase number AND an up-and-down-staircase number.
 “Staircase numbers” are what he calls triangular numbers (numbers that are the sum of the first \$n\$ integers). This name comes from the blocks he has that can be arranged into a staircase. He also calls them “step squad” numbers thanks to Numberblocks.])],
       [#brief-item([Jeremy Kun (Math ∩ Programming)], source-name: [Jeremy Kun (Math ∩ Programming)], [In my studies of the Remez algorithm, I learned about the barycentric Lagrange interpolation formula.
 The context is finding a polynomial of degree at most \$n\$ that passes through \$n+1\$ points \$(x\_0, y\_0), \\dots, (x\_n, y\_n)\$. The classical Lagrange interpolation formula is what you’d write down if you “just did it.”
-\$\$f(x) = \\sum\_{i=0}^n y\_i \\cdot \\prod\_{j \\neq i}\\frac{x - x\_j}{x\_i - x\_j}\$\$ I wrote a 2014 article deriving this more gently, and implementing it in Haskell for secret sharing.])],
+\$\$f(x) = \\sum\_\{i=0\}^n y\_i \\cdot \\prod\_\{j \\neq i\}\\frac\{x - x\_j\}\{x\_i - x\_j\}\$\$ I wrote a 2014 article deriving this more gently, and implementing it in Haskell for secret sharing.])],
       [#brief-item([Jeremy Kun (Math ∩ Programming)], source-name: [Jeremy Kun (Math ∩ Programming)], [Last time we looked at the elementary formulation of an elliptic curve as the solutions to the equation
 \$\$y^2 = x^3 + ax + b\$\$ where \$ a,b\$ are such that the discriminant is nonzero:
 \$\$-16(4a^3 + 27b^2) \\neq 0\$\$ We have yet to explain why we want our equation in this form, and we will get to that, but first we want to take our idea of intersecting lines as far as possible.])],
@@ -375,7 +292,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices])],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [GPUs on Fly.io are available to everyone!],
   author: [Fly.io Blog],
   source-name: [Fly.io Blog],
@@ -388,6 +305,16 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices])],
   [Ampere A100 (80GB) a100-80gb],
   [Lovelace L40s (48GB) l40s],
   [To use a GPU instance today, change the vm.size for one of your apps or processes to any of the above GPU kinds. Here’s how you can spin up an Ollama server in seconds:],
+  [Wrap text
+ 
+ 
+ 
+ 
+ 
+ Copy to clipboard],
+  [app = "your-app-name" 
+ region = "ord" 
+ vm.size = "l40s"],
   [\[http\_service\] 
  internal\_port = 11434 
  force\_https = false 
@@ -418,7 +345,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices])],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Brightest Bulb],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -438,7 +365,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices])],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Meet Saffron, the World’s Most Expensive Spice],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -455,7 +382,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Most Dangerous Fruit in America],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -475,7 +402,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Dynamic Programming Fail],
   author: [Jeremy Kun (Math ∩ Programming)],
   source-name: [Jeremy Kun (Math ∩ Programming)],
@@ -493,7 +420,7 @@ I also had some 2x6 boards left over from a different part of the shed, and I re
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Scoop on Ice Cream],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -512,8 +439,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Where's the Beef? Lab-Grown Meat is Finally on the Menu],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -528,6 +454,5 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
   debug-mode: false,
 )
 
-}
 
 #colophon([The Pacific Wire], [Vol. 1, No. 073], [2026-03-30])

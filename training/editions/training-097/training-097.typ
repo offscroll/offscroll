@@ -21,56 +21,8 @@
 #masthead([The Metropolitan Post], [Vol. 1, No. 097], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Lynda Barry on How the Smartphone Is Endangering Three Ingredients of Creativity: Loneliness, Uncertainty & Boredom],
-  kicker: [Cover Story],
-  author: [OC],
-  source-name: [Open Culture (books)],
-  deck: [class="oc-video-wrapper"\>
-
-class="oc-video-container"\>
-
- The phone gives us a lot but it takes away three key elements of discovery: loneliness, uncertainty and boredom.],
-  lead-pre: [],
-  lead-cap: [c],
-  lead-rest: [lass="oc-video-wrapper"\>],
-  body-paragraphs: (
-  [The phone gives us a lot but it takes away three key elements of discovery: loneliness, uncertainty and boredom. Those have always been where creative ideas come from. —  Lynda Barry],
-  [In the spring of 2016, the great cartoonist and educator, Lynda Barry , did the unthinkable, prior to giving a lecture and writing class at NASA’s Goddard Space Flight Center.],
-  [She demanded that all participating staff members surrender their phones and other such personal devices.],
-  [Her victims were as jangled by this prospect as your average iPhone-addicted teen, but surrendered, agreeing to write by hand, another antiquated notion Barry subscribes to:],
-  [style="padding-left: 30px;"\> The delete button makes it so that anything you’re unsure of you can get rid of, so nothing new has a chance. Writing by hand is a revelation for people. Maybe that’s why they asked me to NASA – I still know how to use my hands… there is a different way of thinking that goes along with them.],
-  [Barry—who told the Onion’s AV Club that she crafted her book What It Is with an eye toward bored readers stuck in a Jiffy Lube oil-change waiting room—is also a big proponent of doodling, which she views as a creative neurological response to boredom:],
-  [style="padding-left: 30px;"\> Boring meeting, you have a pen, the usual clowns are yakking. Most people will draw something, even people who can’t draw. I say “If you’re bored, what do you draw?” And everybody has something they draw. Like “Oh yeah, my little guy, I draw him.” Or “I draw eyeballs, or palm trees.” … So I asked them “Why do you think you do that? Why do you think you doodle during those meetings?” I believe that it’s because it makes having to endure that particular situation more bearable, by changing our experience of time. It’s so slight. I always say it’s the difference between, if you’re not doodling, the minutes feel like a cheese grater on your face. But if you are doodling, it’s more like Brillo.  It’s not much better, but there is a difference. You could handle Brillo a little longer than the cheese grater.],
-  [Meetings and classrooms are among the few remaining venues in which screen-addicted moths are expected to force themselves away from the phone’s inviting flame. Other settings—like the Jiffy Lube waiting room—require more initiative on the user’s part.],
-  [Once, we were keener students of minor changes to familiar environments, the books strangers were reading in the subway, and those strangers themselves. Our subsequent observations were known to spark conversation and sometimes ideas that led to creative projects.],
-  [Now, many of us let those opportunities slide by, as we fill up on such fleeting confections as funny videos and all-you-can-eat servings of social media.],
-  [It’s also tempting to use our phones as defacto shields any time social anxiety looms. This dodge may provide short term comfort, especially to younger people, but remember, Barry and many of her cartoonist peers, including Daniel Clowes, Simon Hanselmann, and Ariel Schrag, toughed it out by making art. That’s what got them through the loneliness, uncertainty, and boredom of their middle and high school years.],
-  [style="padding-left: 30px;"\> The book you hold in your hands would not exist had high school been a pleasant experience for me… It was on those quiet weekend nights when even my parents were out having fun that I began making serious attempts to make stories in comics form.],
-  [style="padding-left: 30px;"\> -  Adrian Tomine, introduction to 32 Stories],
-  [Barry is far from alone in encouraging adults to peel themselves away from their phone dependency for their creative good.],
-  [Photographer Eric Pickersgill’s Removed  imagines a series of everyday situations in which phones and other personal devices have been rendered invisible. (It’s worth noting that he removed the offending articles from the models’ hands, rather that Photoshopping them out later.)],
-  [Computer Science Professor Calvin Newport’s book, Deep Work , posits that all that shallow phone time is creating stress, anxiety, and lost creative opportunities, while also doing a number on our personal and professional lives.],
-  [Author Manoush Zomorodi’s TED Talk on how boredom can lead to brilliant ideas, below, details a weeklong experiment in battling smartphone habits, with lots of scientific evidence to back up her findings.],
-  [But what if you wipe the slate of digital distractions only to find that your brain’s just… empty? A once occupied room, now devoid of anything but dimly recalled memes, and generalized dread over the state of the world?],
-  [The aforementioned AV Club interview with Barry offers both encouragement and some useful suggestions that will get the temporarily paralyzed moving again:],
-  [style="padding-left: 30px;"\> I don’t know what the strip’s going to be about when I start. I never know. I oftentimes have—I call it the word-bag. Just a bag of words. I’ll just reach in there, and I’ll pull out a word, and it’ll say “ping-pong.” I’ll just have that in my head, and I’ll start drawing the pictures as if I can… I hear a sentence, I just hear it. As soon as I hear even the beginning of the first sentence, then I just… I write really slow. So I’ll be writing that, and I’ll know what’s going to go at the top of the panel. Then, when it gets to the end, usually I’ll know what the next one is. By three sentences or four in that first panel, I stop, and then I say “Now it’s time for the drawing.” Then I’ll draw. But then I’ll hear the next one over on another page! Or when I’m drawing Marlys and Arna , I might hear her say something, but then I’ll hear Marlys say something back. So once that first sentence is there, I have all kinds of choices as to where I put my brush. But if nothing is happening, then I just go over to what I call my decoy page. It’s like decoy ducks. I go over there and just start messing around.],
-  [Note: An earlier version of this post appeared on our site in 2017.],
-  [Related Content:],
-  [How Information Overload Robs Us of Our Creativity: What the Scientific Research Shows],
-  [The Case for Deleting Your Social Media Accounts & Doing Valuable “Deep Work” Instead, According to Prof. Cal Newport],
-  [Lynda Barry’s Illustrated Syllabus & Homework Assignments from Her New UW-Madison Course, “Making Comics”],
-  [Lynda Barry, Cartoonist Turned Professor, Gives Her Old Fashioned Take on the Future of Education],
-  [Ayun Halliday is an author, illustrator, and theater maker in NYC.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Using Heartbleed as a starting point],
   author: [Antirez],
   source-name: [Antirez],
@@ -113,10 +65,8 @@ class="oc-video-container"\>
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [First Token Cutoff LLM sampling],
   author: [Antirez],
   source-name: [Antirez],
@@ -163,7 +113,6 @@ class="oc-video-container"\>
   [There are perhaps interesting information to collect from the logits distribution. For example it is likely that a linear probe could be able to learn when the hidden layers of an LLM are dealing with some factual information. This, with the token perplexity, could be used in order to show the user of LLMs that some part of the output is likely wrong. In general visualizing tokens probabilities distribution is very informative and in some way allows to touch with bare hands how LLMs work and what are the candidates at each step.],
   [\#\# Reference implementation],
   [logits = mx.softmax(logits)],
-  [np\_logits = np.array(logits) \# MX -\> NumPy],
   [np\_logits = np\_logits.flatten()],
   [sorted\_indices = np.argsort(np\_logits)],
   [sorted\_indices = sorted\_indices\[::-1\]],
@@ -178,10 +127,8 @@ class="oc-video-container"\>
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Lesson Two: Life Doesn’t Need to Be Exhausting],
   author: [Scott Young],
   source-name: [Scott Young (learning)],
@@ -196,6 +143,7 @@ class="oc-video-container"\>
   [The culprit is biological. The clock cells in our brains run slightly longer than a normal twenty-four hour day. Strong light cues provided by the sun constantly adjust that clock backwards. But, in our environment of bright indoor lights, insufficient daytime sunshine, and non-stop screens, we don’t get the resetting signal. Instead, we live in a state of perpetual jet lag.],
   [Our food is fast and low-quality . While our ancestors had to worry about caloric deficits, for most of us the problem is caloric excess. Ultra-processed diets lead to energy that spikes and crashes, and subtle micronutrient deficiencies can leave us tired all the time without us knowing why.],
   [We live in an era of anxiety . Stress in bursts energizes us, but sustained stress leaves us exhausted . Non-stop psychological threats, increasing social isolation, and fewer outlets for coping have resulted in an explosion of mental health diagnoses, and the energy-sapping effects they entail.],
+  [Turning Back the Cycle],
   [Worse, these continual shocks to our system can form a vicious cycle. We get overwhelmed at work, so we cut back on exercise. This degrades our body’s ability to turn down the stress response. The increase in stress causes us to eat more junk food and keeps us up at night. The cycle turns, and we end up even more exhausted than we were before.],
   [The self-reinforcing cycle of fatigue can be debilitating. We lack the very energy we need to do the things we need to gain greater energy!],
   [The solution is to take small steps to turn the vicious cycle of energy sapping into a virtuous cycle of energy replenishment. Go to sleep ten minutes earlier. Take a brief daily walk. Learn some relaxation exercises. Switch from a late-afternoon energy drink to a healthy snack.],
@@ -210,10 +158,8 @@ class="oc-video-container"\>
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Redis new data structure: the HyperLogLog],
   author: [Antirez],
   source-name: [Antirez],
@@ -313,10 +259,8 @@ class="oc-video-container"\>
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The open source paradox],
   author: [Antirez],
   source-name: [Antirez],
@@ -338,12 +282,10 @@ class="oc-video-container"\>
   debug-mode: false,
 )
 
-  #pull-quote([The real right you have, and often don’t exploit, is that you are the only one that can decide about the design of your software.], [Antirez])
+#pull-quote([The real right you have, and often don’t exploit, is that you are the only one that can decide about the design of your software.], [Antirez])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How Horses Shaped the Mughal Empire],
   author: [Livia Gershon],
   source-name: [JSTOR Daily],
@@ -351,15 +293,19 @@ class="oc-video-container"\>
   paragraphs: (
   [The Mughal Empire became a dominant power in South Asia from the sixteenth through the eighteenth century thanks largely to its cavalry. And, as political scientist Deepti Kumari writes, the importance of horses influenced many aspects of how the empire developed .],
   [Kumari writes that horses were both a source of military strength and a focus of pageantry for Mughal aristocratic leaders. Imperial officers had two ranks: zat , determined by their pay rate, and sawar , reflecting the number of horsemen under their command.],
-  [class="pull-quote\_\_text"\>Transporting horses from Kandahar through Multan to the Mughal central city of Agra could mean traveling through a desert, leaving a caravan with no source of water for three to four days.],
+  [Transporting horses from Kandahar through Multan to the Mughal central city of Agra could mean traveling through a desert, leaving a caravan with no source of water for three to four days.],
   [However, South Asia was considered a poor area for horse breeding due to the heat and monsoons. Instead, the empire largely imported the horses it needed from Arabian, Persian, and Central Asian sources. In exchange, India exported commodities like cotton cloth , indigo , silk, sugar, slaves, spices , and medicines, including opium .],
   [Kumari writes that horses from Central Asia mainly arrived in India over land routes, brought by merchants from nomadic cultures who traveled in caravans. This could be tough going. Transporting horses from Kandahar through Multan to the Mughal central city of Agra , for example, could mean traveling through a desert, leaving a caravan with no source of water for three to four days. Travelers more often took an alternate route across the Khyber Pass in the mountains of what is now Pakistan, even though this added an extra ten days to the journey.],
+  [More to Explore],
   [The Supernatural Horses That Fascinated Chinese Emperors],
+  [December 2, 2024],
+  [In the second century BCE, Han Dynasty Emperor Wu so desired a herd of “blood-sweating” horses from Central Asia that he was willing to wage war over them.],
   [To import horses across land routes, the Mughals built roads and set up travelers’ inns known as caravanserais . They also established diplomatic relationships with countries along the way and recruited locals to be part of the imperial machinery. When Emperor Akbar took power in 1556, he moved the empire’s capital to Lahore in an effort to exercise greater control over trade routes from Central Asia, particularly in the area around the key trading city of Kabul.],
   [“By providing the security, Akbar improved and accelerated the bilateral caravan traffic coming in and going out of India via Kabul and Qandahar route and restored the confidence of the merchants,” Kumari writes. “This ensured a regular supply of the horses and other commodities for the Mughal army and Indian population.”],
   [Meanwhile, horses from Arabia, Persia, and northeastern Africa mostly reached India by sea—routes that had been used since the early medieval period. The Mughals particularly valued these horses for their strength and stamina, as well as their colors and other aesthetic features.],
+  [This field is for validation purposes and should be left unchanged.],
   [Get your fix of JSTOR Daily’s best stories in your inbox each Thursday.],
-  [\<\>],
+  [Δ],
   [This made sea ports along the western coast of the subcontinent particularly important. The trading ports were a crucial part of the imperial administration, with their own governors who regulated commercial activity and reported back to the Mughal court.],
   [And within the empire, the Mughals encouraged horse traders by providing them with tax relief and protection while traveling. Emperor Akbar ordered the construction of special quarters for the most trusted horse-dealers to protect them from robbers or bad weather.],
   [“The Mughals encouraged horse-trading and invested in horse-breeding because it was crucial for state building,” Kumari writes.],
@@ -371,10 +317,8 @@ class="oc-video-container"\>
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Module Federation Pipeline — Part 1],
   author: [Naman Saini],
   source-name: [Housing.com Engineering],
@@ -395,48 +339,45 @@ class="oc-video-container"\>
   [In order to enable module federation, we need to add the ModuleFederationPlugin to the Webpack configuration of each application in our setup. It’s important to note that this configuration is specific to the client build of our application and does not apply to the server side. The reason for this is that the ModuleFederationPlugin is designed to support client-side federation only.],
   [This plugin requires some configuration, and there are various options available based on our needs. Here are a few important ones. Please refer to the sample configuration code at the end.],
   [i. ‘name’: Specifies a unique name for the container (host) project. This name will serve as the key to add this specific container to the window object.],
-  [ii. ‘filename’: Acts as the filename for the container. When we provide a URL to fetch this container from another app, it will end with …\${filename}.js.],
+  [ii. ‘filename’: Acts as the filename for the container. When we provide a URL to fetch this container from another app, it will end with …\$\{filename\}.js.],
   [iii. ‘exposes’: An object that specifies the modules exposed by the current project, making them accessible for remote projects. For example, in the code snippet below, this container exposes a module located at the path “./routes/demandRoutes” with the name “exposedRoutes”.],
   [iv: ‘remotes’: Defines the remote modules consumed by the current project. It allows us to specify the remote entry points and the exposed modules. This is used for static remotes when we want to fetch remote modules statically. For instance, in the code snippet below, whenever Webpack encounters ‘supply’ in an import path, it fetches the supplyContainer from the URL mentioned in the ‘remotes’ key and extracts the respective module from this container.],
   [v: ‘shared’: Specifies the shared modules and their versions (using the ‘requiredVersion’ key). Shared modules are loaded only once, even if multiple projects depend on them. There is also a ‘singleton’ key that, when set to true, indicates that only a single instance of this shared module will be created among different apps. Otherwise, multiple instances would be created for each federated app, but the code of this module would only be loaded once. For example, in the code snippet below, the ‘react’ version 18.2.0 is set to be a singleton.],
-  [const { ModuleFederationPlugin } = require('webpack').container;
-module.exports = {
+  [const \{ ModuleFederationPlugin \} = require('webpack').container;
+module.exports = \{
  plugins: \[
- new ModuleFederationPlugin({
+ new ModuleFederationPlugin(\{
  name: 'demand',
  filename: \`demndContainer.m.m.js\`,
- exposes: {
+ exposes: \{
  exposedRoutes: "./routes/demandRoutes"
- },
- remotes: {
+ \},
+ remotes: \{
  supply: 'supply\@https:\/\/supply-app.com/supplyContainer.js',
  inventory: 'inventory\@https:\/\/inventory-app.com/inventoryContainer.js',
- }
- shared: {
- react: {
+ \}
+ shared: \{
+ react: \{
  singleton: true,
  requiredVersion: '18.2.0'
- },
- 'react-redux': {
+ \},
+ 'react-redux': \{
  singleton: true,
  requiredVersion: '8.0.2'
- },
- }),
+ \},
+ \}),
  \],
-};],
+\};],
   [3. If we have specified the ‘remotes’ configuration in our ModuleFederationPlugin, there is no need for any additional steps. Webpack will automatically fetch the container and its respective module when it encounters an import statement that matches our remotes.],
-  [However, if we haven’t specified ‘remotes’, it indicates that we want to dynamically fetch containers and their exposed modules. There are multiple ways to fetch an app’s container (let’s say the ‘demand’ app) based on our specific use case. In our case, we achieve this by creating a script tag with its ‘src’ attribute set to the path of the demand’s container file. As mentioned earlier, this path ends with …\${filename}.js, which is defined in the demand's ModuleFederation plugin configuration. When the script tag is executed, the container is added to the window object and can be accessed using the value specified in the 'name' field of the demand's module federation plugin configuration.],
+  [However, if we haven’t specified ‘remotes’, it indicates that we want to dynamically fetch containers and their exposed modules. There are multiple ways to fetch an app’s container (let’s say the ‘demand’ app) based on our specific use case. In our case, we achieve this by creating a script tag with its ‘src’ attribute set to the path of the demand’s container file. As mentioned earlier, this path ends with …\$\{filename\}.js, which is defined in the demand's ModuleFederation plugin configuration. When the script tag is executed, the container is added to the window object and can be accessed using the value specified in the 'name' field of the demand's module federation plugin configuration.],
   [4. Now, we can access the container file to obtain the required module. Each container exposes methods such as ‘ init ’ and ‘ get ’. To access a module from the container, we need to first initialize the container within the specified scope using the ‘init’ function. Only after initialization, we can asynchronously load the module from the container using the ‘get’ function. For a comprehensive understanding of how this process works, please refer to the following link: Webpack Module Federation — Dynamic Remote Containers . Take a look at the sample code snippet, which does the same.],
-  [const loadComponent = async (app, module) =\> {
- \/\\/ Initializes the share scope. This fills it with known provided modules from this build and all remotes
- await \_\_webpack\_init\_sharing\_\_('default')],
   [const container = window\[app\] \/\\/ or get the container somewhere else
  \/\\/ Initialize the container, it may provide shared modules
  await container.init(\_\_webpack\_share\_scopes\_\_.default)
  const factory = await window\[scope\].get(module)
  const Module = factory()
  return Module
-}],
+\}],
   [The module returned by this function includes a ‘default’ property that holds the actual module code, which can be accessed and utilized.],
   [This concludes the current article. In the next part, I will discuss how we successfully implemented module federation for our server-side application and integrated it into our architecture.],
   [Module Federation Pipeline — Part 1 was originally published in Engineering \@ Housing/Proptiger/Makaan on Medium, where people are continuing the conversation by highlighting and responding to this story.],
@@ -447,10 +388,8 @@ module.exports = {
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [GNU and the AI reimplementations],
   author: [Antirez],
   source-name: [Antirez],
@@ -482,10 +421,8 @@ module.exports = {
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Discovering patterns with React hooks],
   author: [Maciek Pekala],
   source-name: [Pony Foo],
@@ -493,10 +430,10 @@ module.exports = {
   paragraphs: (
   [One of the things I enjoy the most about coding is discovering patterns. Being aware and mindful of the patterns emerging in your codebase can make it easier to keep that codebase consistent, readable and easy to navigate. Most patterns will remain unspoken, and some, that prove notably elegant, are named and promoted as best practices. Others might even be candidates for a basis of a new abstraction, although I recommend restraint as it’s worth remembering that abstractions are expensive .],
   [If you’re not familiar with the topic or React hooks, there is plenty of introductory as well as in-depth materials out there. I can also shamelessly recommend my talk on hooks from a recent React Copenhagen meetup. What follows assume at least some understanding of what hooks are and how to use them.],
-  [id="pattern-extinction-level-event"\>Pattern extinction level event],
+  [Pattern extinction level event],
   [Discovering new patterns is relatively rare when working with established technologies, but every now and then a new idea comes up that stirs things up within some ecosystem. Enter React hooks. Hooks enable a drastically different way to build stateful components in React, which means that they also invalidate 1 a lot of the established patterns. However, being an exceptionally well thought-through and composition-friendly abstraction, hooks enabled new, elegant patterns to emerge.],
   [Over the last few months, I’ve been building apps with hooks and I’ve been having a lot of fun discovering these patterns. I’d like to share one, that I’ve grown especially fond of. For the lack of a better name, and for sole the purpose of this blog post, let’s call it the Choco pattern (from Context, HOok, COpomonent). The pattern comes useful when you need a UI widget which is top-level, centralised and unique across the application and needs to expose some functionality to the rest of the components in the app. It might sound vague at the moment, so let’s try to go through solving a concrete problem where I noticed the Choco pattern manifest itself.],
-  [id="exhibit-a-feature-toggles"\>Exhibit A: Feature toggles],
+  [Exhibit A: Feature toggles],
   [Let’s try to build a simple feature toggle functionality for a React app. There should be UI where the user can toggle features on and off and we want to expose these settings to any component interested. We can identify parts we will need:],
   [a context provider exposing the feature toggles anywhere in the component tree,],
   [a component rendering the UI for toggling features,],
@@ -511,7 +448,7 @@ module.exports = {
   [What’s interesting is that we kept the same type of exports from the feature toggle module (Context, HOok, and COpomonent), but they are consumed in a different way. The hook is now taking care of exposing the features to the components. The context (or more precisely the wrapped context provider) now also encapsulates the state and related logic.],
   [Did we improve this code in comparison to the previous iteration? I think the answer depends on how we plan to use it. If we decided to extract the feature toggle module into a small library, then that last version of the code is most likely a better choice. It would be easier to document and use the API with a smaller exposed surface. Hiding the implementation details might also enable adding more functionality later on, without introducing breaking changes.],
   [However, if we keep it as a module within the codebase the abstraction creates an unnecessary indirection that the next developer would need to unpack to understand. We created a black box that would need to be explored as opposed to the previous version, which while verbose, used the core React APIs most likely already familiar. Since we don’t extract and version the module, breaking changes are not a big deal as we could quickly make necessary adjustments in the places where the module is consumed.],
-  [id="exhibit-b-toast-notifications"\>Exhibit B: Toast notifications],
+  [Exhibit B: Toast notifications],
   [It wouldn’t be much of a pattern if it didn’t repeat. To see how it manifests again and again in this kind of problems, let’s look at one more example. We are going to build a simplified toast notification system. We want to be able to ask for a notification anywhere in our component tree and then show it in a global bar. Again, let’s identify what pieces we are going to need:],
   [a context provider exposing a function that can be used to ask for a toast,],
   [a component rendering the toast bar,],
@@ -519,7 +456,7 @@ module.exports = {
   [We already know what to expect so let’s skip the first draft and go directly to the version with a separate module:],
   [It’s our Choco pattern on full display! And as in the previous example, we can refactor this to make the API cleaner and more controlled. It could look like this:],
   [As in the feature toggle example, I chose to only expose some part of the context value to the component tree through the custom hook. In this case, the array of toasts remains private, while the functions to add and remove toasts are exposed.],
-  [id="exhibit-c-user-guide"\>Exhibit C: User guide],
+  [Exhibit C: User guide],
   [To cement the pattern further, let’s look at one last example. We will build user guide functionality. We want to add a help button in some places in our app, which when clicked, opens a user guide widget that explains the part of the interface in question. You know the drill by now, let’s see what we’re going to need:],
   [a context provider exposing the help icon button component],
   [a component rendering the user guide UI],
@@ -527,10 +464,11 @@ module.exports = {
   [Our first iteration could look like this:],
   [Hopefully, the structure is intuitive and familiar by now. The only significant difference is the type of functionality exposed to the other components. In the case of the guide, we choose to expose a component, while in the previous examples it was a method or state data. Anything goes!],
   [Following the previously established procedure, the refactored version of the same code could look like this:],
-  [id="spot-the-pattern"\>Spot the pattern],
+  [Spot the pattern],
   [Of course, I slightly cheated with the way I presented the refactoring evolution here. I already knew the pattern and made the examples follow it from the very beginning. In fact, when I first got to implement these features using hooks, I didn’t immediately see the Choco pattern and my initial implementation attempts were chaotic and inconsistent. But with time, I started to see the same code paths and elements showing up repeatedly and I was able to streamline and clean up my implementations.],
   [Discovering and embracing patterns can be a powerful technique that can make penetrating and understanding a codebase easier. I’m always on a lookout for concerns and features that share similar requirements and characteristics and try to implement them in a consistent way, without introducing abstractions prematurely.],
   [I’m really eager to find out what other concerns are candidates for using this pattern and what other patterns using hooks will surface. Let me know what you think!],
+  [1],
   [Of course, hooks being backward-compatible, you can still use old patterns in React if you stick to the class component API.],
 ),
   insert-map: (:),
@@ -541,10 +479,8 @@ module.exports = {
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Misfire],
   author: [Alex Russell (infrequently noted)],
   source-name: [Alex Russell (infrequently noted)],
@@ -557,7 +493,6 @@ module.exports = {
   [But before that, I should stipulate my personal position on third-party cookies: they aren't great!],
   [They should be removed from browsers when replacements are good and ready, and Google's climbdown isn't helpful. That said, we have seen nothing of the hinted-at alternatives, so the jury's out on what the impact will be in practice. 2],
   [So why am I dissapointed in the TAG, given that my position is essentially what they wrote? Because it failed to acknowledge the limited and contingent upside of removing third-party cookies, or the thorny issues we're left with after they're gone.],
-  [id="unmasking-the-problem" tabindex="-1"\> Unmasking The Problem],
   [So, what do third-party cookies do? And how do they relate to the privacy theat model?],
   [Like a lot of web technology, third-party cookies have both positive and negative uses. Owing to a historcal lack of platform-level identity APIs, they form the backbone of nearly every large Single Sign-On (SSO) system. Thankfully, replacements have been developed and are being iterated on .],
   [Unfortunately, some browsers have unilaterally removed them without developing such replacements, disrupting sign-in flows across the web, harming users and pushing businesses toward native mobile apps. That's bad, as native apps face no limits on communicating with third parties and are generally worse for tracking. They're not even subject to pro-user interventions like browser extensions. The TAG should have called out this aspect of the current debate in its Finding, encouraging vendors to adopt APIs that will make the transition smoother.],
@@ -571,7 +506,6 @@ module.exports = {
   [Once correlates are established, or "consent" is given to process data in ways that facilitate unmasking, re-identification becomes trivial. It only takes giving a phone number to one delivery company, or an email address to one e-commerce site to suddenly light up a shadow profile, linking a vast amount of previously un-attributed browsing to a user. Clearing caches can reset things for a little while, but any tracking vendor that can observe a large proportion of browsing will eventually be able to join things back up.],
   [Removal of third-party cookies can temporarily disrupt this reidentification while collection funnels are rebuilt to use "first party" data, but that's not going to improve the situation over the long haul. The problem isn't just what's being collected now , it's the ocean of dormant data that was previously slurped up. 3 The only way to avoid pervasive collection and reidentification over the long term is to change the economics of correlation.],
   [The TAG surely understands the only way to make that happen is for more jurisdictions to pass privacy laws worth a damn. It should say so.],
-  [id="fire-and-movement" tabindex="-1"\> Fire And Movement],
   [The goal of tracking is to pick users out of crowds, or at least bucket them into small unique clusters. As I explained on Mastodon , this boils down to bits of entropy, and those bits are everywhere . From screen resolution and pixel density, to the intrinsic properties of the networks, to extensions, to language and accessibility settings that folks rely on to make browsing liveable. Every attribute that is even subtly different can be a building block for silent reidentification; A. K. A., "fingerprinting." 4],
   [In jurisdictions where laws allow collected data to remain the property of the collector, the risks posed by data-at-rest is only slightly attenuated by narrowing the funnel through which collection takes place.],
   [It's possible to imagine computing that isn't fingerprintable, but that isn't what anyone is selling. For complex reasons, even the most cautious use of commodity computers is likely to be uniquely identifiable with enough time. This means that the question to answer isn't "do we think tracking is bad?" , it's "given that we can't technically eliminate it, how can we rebuild privacy?" . The TAG's new Finding doesn't wrestle with that question, doing the community a disservice in the process.],
@@ -579,13 +513,14 @@ module.exports = {
   [For a preview of what this will look like, think back on Apple's "App Tracking Transparency" kayfabe, which did not visibly dent Facebook's long-term profits.],
   [So this is not a solution to privacy, it's fire-and-movement tactics against corporate enemies. Because of the deep technical challenges in defeating fingerprinting 4:1 , even the most outspoken vendors have given up, introducing "nutrition labels" to shift responsibility for privacy onto consumers.],
   [If the best vertically-integrated native ecosystems can do is to shift blame, the TAG should call out posturing about ineffective changes and push for real solutions. Vendors should loudly lobby for stronger laws that can truly change the game and the TAG should join those calls. The TAG should also advocate for the web, rather than playing into technically ungrounded fearmongering by folks trying to lock users into proprietary native apps whilst simultaneously depriving users of more private browsers.],
-  [id="finding-a-way-forward" tabindex="-1"\> Finding A Way Forward],
+  [Finding A Way Forward],
   [The most generous take I can muster is that the TAG's work is half-done. Calling on vendors to drop third-party cookies has the virtue of being technical and actionable, properties I believe all TAG writing should embody. But having looked deeply at the situation, the TAG should have also called on browser vendors to support further reform along several axes — particularly vendors that also make native OSes.],
   [First, if the TAG is serious about preventing tracking and improving the web ecosystem, it should call on all OS vendors to prohibit the use of "in-app browsers" when displaying third-party content within native apps.],
   [It is not sufficient to prevent JavaScript injection because the largest native apps can simply convince the sites to include their scripts directly. For browser-based tracking attenuation to be effective, these side-doors must be closed. Firms grandstanding about browser privacy features without ensuring users can reliably enjoy the protections of their browser need to do better. The TAG is uniquely positioned to call for this erosion of privacy and the web ecosystem to end.],
   [Next, the TAG should have outlined the limits of technical approaches to attenuating data collection. It should also call on browser vendors to adopt scale-based interventions (rather than absolutism ) in mitigating high-entropy API use. 5 The TAG should go first in moving past debates that don't acknowledge impossibilities in removing all reidentification, and encourage vendors to do the same. There's no solution to the privacy puzzle that can be solved by the purchase of a new phone, and the TAG should be clarion about what will end our privacy nightmare: privacy laws worth a damn.],
   [Lastly, the TAG should highlight discrepancies between privacy marketing and the failure of vendors to push for strong privacy laws and enforcement. Because the threat model of privacy intrusion renders solely techincal interventions ineffective on long timeframes, this is the rare case in which the TAG should push past providing technical advice.],
   [The TAG's role is to explain complex things with rigor and signpost credible ways forward. It has not done that yet regarding third-party cookies, but it's not too late.],
+  [FOOTNOTES],
   [Praise, as well as concern, in this post is specific to today's TAG's, not the output of the group while I served . I surely got a lot of things wrong, and the current TAG is providing a lot of value. My hope here is that it can extend this good work by expanding its new Finding. ⇐],
   [Also, James Roswell can go suck eggs. ⇐],
   [It's neither here nor there, but the TAG also failed in these posts to encourage users and developers to move their use of digital technology into real browsers and out of native apps which invasively track and fingerprint users to a degree web adtech vendors only fantasize about.],
@@ -617,10 +552,8 @@ module.exports = {
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Put Names and Dates On Documents],
   author: [Alex Russell (infrequently noted)],
   source-name: [Alex Russell (infrequently noted)],
@@ -637,30 +570,28 @@ module.exports = {
   [Having to work to find the best person to discuss a topic with is annoying, but in large organisations, the probability of authors having work appropriated without credit goes up when they fail to claim ownership of their writing. It should go without saying that this is toxic, and that functional engineering cultures look harshly on it. But to ward off bad behaviour, it helps to model what's healthy.],
   [The best reminder to cite work is for authors to name themselves. Doing this increases their stature, unsubtly encourages others to link and cite, and leaves a trail of evidence for authors to reference when building a case for promotion.],
   [The importance of evidence to support claims of design work in technical fields cannot be overstated. Having served on hiring and promotion committees for many years, I can unequivocally say that this collateral is often pivotal. The difference between "\[x\] promote" and "\[x\] do not promote" often comes down to the names on documents. Reviewers will pay attention to both the authors list and the propensity of design doc authors to cite others. 1],
-  [id="weighing-up-inline-attribution" tabindex="-1"\> Weighing Up Inline Attribution],
   [In response to unsubtle nudges, several recurring arguments are offered against explicit authorship notices.],
-  [id="readability" tabindex="-1"\> "These blocks detract from readability."],
+  ["These blocks detract from readability."],
   [This is fair, but does not outweigh the needs of future readers who may be working to trace a chain of events or ideas. Nor does it outweigh the needs of authors for credit regarding their work at a future date.],
-  [id="edit-logs" tabindex="-1"\> "There's already an edit log."],
+  ["There's already an edit log."],
   [This crutch fails in any number of ways:],
   [PDFs and printed copies do not include authorship data that is not in body text.],
   [Some systems (e.g. Google Docs) do not make the history available to non-editors.],
   [Documents may be copied or re-published in ways that disconnect the content from the original revision tracking system; e.g., in a systems transition as part of an acquisition.],
   [Moreover, design is a complex and collaborative process. Ideas and concepts captured in documents are not always the contribution of the person writing down the conclusions of a whiteboarding session. A clear, consistent way to give credit helps everyone feel included and encourages future collaboration.],
-  [id="small-teams" tabindex="-1"\> "Our team is small.],
+  ["Our team is small.],
   [This is usually offered as a claim of superfluousness. If everyone knows everything and everyone working in a system, why does attribution matter?],
   [Perhaps a team is small now, but will it always be? I am not in a position to tell, and my interlocutors also lack crystal balls. Given the downside risks, attribution is a pittance of an insurance premium.],
-  [id="contribution-ellision" tabindex="-1"\> "Specifying an author elides the contributions of collaborators."],
+  ["Specifying an author elides the contributions of collaborators."],
   [This is easily countered with invitations in comments and drafts for contributors to add themselves to the authorship section. Generous and collaborative folks — the sorts of people we want to promote — reliably add their collaborators to documents proactively and set the expectation that others will do the same. Over time, practice becomes habit, which crystallises into culture.],
-  [id="minimum-viable-attribution" tabindex="-1"\> Minimum Viable Attribution],
   [A final concern I hear is that these blocks require a great deal of upkeep. Long-form revision logs might be onerous, but the minimum viable attribution style only needs three elements: names, emails, and dates. These should be provided on the very first page, ideally just below the title.],
   [The primary date always refers first drafting, even if that is before publication. If deemed necessary, authors can optionally add a "Last Updated" field below the primary date, but this is optional. Documents authored in a single sitting by a lone author should avoid extra visual noise.],
   [Revision logs are generally unnecessary, and my personal view is that they distract from content; if they're a requirement (e.g., in a heavily regulated industry), record them in an Appendix, but do not remove minimum viable attributions.],
   [Here's a screenshot of an explainer I helped draft many years ago showing the basic form 2 :],
   [Minimum Viable Attribution in a Markdown document.],
   [If a document is still an early draft, it can be helpful to put some indication in the title — I use a prefix like " \[ Draft \] ... " — and invite collaborators to add themselves to the authors list by including an entry there of the form " Your Name " . Once a document is circulated widely, remove these inline markers.],
-  [style="font-size: 1rem;"\>],
   [Thanks to Andy Luhrs for his feedback on drafts of this post.],
+  [FOOTNOTES],
   [If you write technical design docs, it is always a good sign if you cite prior work and parallel efforts, including competing designs. Omitting those references is something that both technical and promotion reviewers are alert to and are primed to think poorly of. No design is entirely new, and it is a sign of maturity to give others their due. ⇐],
   [Don't worry, all of these email addresses are now inactive.],
   [On the question of emails and spam in authoring public documents, views are split. I favour always using them, but understand if authors prefer other sorts of contact information; e.g., their personal website. Best not to be too fussy about this sort of thing, except to ensure that internal documents always contain email addresses. ⇐],
@@ -671,11 +602,10 @@ module.exports = {
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Deals: Take Up to \$199 Off Apple's M1 MacBook Pro and MacBook Air at Best Buy and Amazon],
   author: [Mitchel Broussard],
   source-name: [MacRumors],
@@ -694,6 +624,7 @@ module.exports = {
   [M1 MacBook Pro, 256GB - \$1,099.99, down from \$1,299.00 at Best Buy \/ Amazon],
   [M1 MacBook Pro, 512GB - \$1,299.99, down from \$1,499.00 at Best Buy \/ Amazon],
   [You can find even more discounts on other MacBooks by visiting our Best Deals guide for MacBook Pro and MacBook Air. In this guide we track the steepest discounts for the newest MacBook models every week, so be sure to bookmark it and check back often if you're shopping for a new Apple notebook.],
+  [Related Roundup: Apple Deals],
   [This article, " Deals: Take Up to \$199 Off Apple's M1 MacBook Pro and MacBook Air at Best Buy and Amazon " first appeared on MacRumors.com],
   [Discuss this article in our forums],
 ),
@@ -705,7 +636,7 @@ module.exports = {
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Deals: Get Apple's 512GB 27-Inch iMac for Lowest Price of \$1,699.99 (\$299 Off)],
   author: [Mitchel Broussard],
   source-name: [MacRumors],
@@ -714,8 +645,12 @@ module.exports = {
   [Amazon this week is still hosting a record low deal on Apple's 512GB 27-inch 5K iMac with 6-core CPU. You can get this 2020 model for \$1,699.99 , down from \$1,999.00, after an automatic coupon worth \$199.01 is applied at checkout .],
   [Note: MacRumors is an affiliate partner with Amazon. When you click a link and make a purchase, we may receive a small payment, which helps us keep the site running.],
   [This sale is particularly notable because it knocks down the 512GB 27-inch iMac to the same price level as the 256GB model. It's also the best price we've ever tracked across all of the major Apple resellers online. The iMac is ready to ship today with Amazon's typical free shipping for all Prime members.],
+  [\$299 OFF],
   [27-inch iMac (512GB SSD) for \$1,699.99],
   [You can keep track of ongoing sales on Apple's iMac line by visiting our Best iMac Deals guide. There, we keep track of the best iMac offers from Amazon, Adorama, B&H Photo, and other retailers, so be sure to check back often if you're shopping for an iMac for the first time, or thinking of upgrading.],
+  [Related Roundups: Apple Deals , iMac],
+  [Buyer's Guide: iMac (Don't Buy)],
+  [Related Forum: iMac],
   [This article, " Deals: Get Apple's 512GB 27-Inch iMac for Lowest Price of \$1,699.99 (\$299 Off) " first appeared on MacRumors.com],
   [Discuss this article in our forums],
 ),
@@ -732,7 +667,7 @@ module.exports = {
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Deals: Get the M1 MacBook Air for Up to \$150 Off, Starting at \$899 for 256GB],
   author: [Mitchel Broussard],
   source-name: [MacRumors],
@@ -741,10 +676,15 @@ module.exports = {
   [Amazon, B&H Photo, and Adorama today are discounting the M1 MacBook Air to match previous record low prices for both 256GB and 512GB storage options. To start, you can get the 256GB model for \$899.00 today on Adorama, down from an original price of \$999.00.],
   [Note: MacRumors is an affiliate partner with Amazon. When you click a link and make a purchase, we may receive a small payment, which helps us keep the site running.],
   [Only Silver and Space Gray are available at this price on Adorama. You can also find this sale on Amazon , with a \$50 automatic coupon applied at checkout on the Gold and Silver colors. Gold is available to ship in one to two business days, and Silver will be in stock soon, according to Amazon.],
+  [\$100 OFF],
   [M1 MacBook Air (256GB) for \$899.00],
   [Likewise, the 512GB version of the M1 MacBook Air is seeing a notable discount to \$1,099.00 , down from \$1,249.00. This is a record low price for the notebook, and it's available in all colors. For Silver and Space Gray, you'll find an automatic coupon that will be applied to your order at the checkout screen. The same sale can be found at B&H Photo on the Gold model.],
+  [\$150 OFF],
   [M1 MacBook Air (512GB) for \$1,099.00],
   [You can find even more discounts on other MacBooks by visiting our Best Deals guide for MacBook Pro and MacBook Air. In this guide we track the steepest discounts for the newest MacBook models every week, so be sure to bookmark it and check back often if you're shopping for a new Apple notebook.],
+  [Related Roundups: Apple Deals , MacBook Air],
+  [Buyer's Guide: MacBook Air (Buy Now)],
+  [Related Forum: MacBook Air],
   [This article, " Deals: Get the M1 MacBook Air for Up to \$150 Off, Starting at \$899 for 256GB " first appeared on MacRumors.com],
   [Discuss this article in our forums],
 ),
@@ -756,7 +696,7 @@ module.exports = {
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Deals: Apple's 512GB M1 MacBook Pro Hits \$1,299.99 on Amazon (\$199 Off, Lowest Price)],
   author: [Mitchel Broussard],
   source-name: [MacRumors],
@@ -765,9 +705,12 @@ module.exports = {
   [At Amazon today you can get Apple's 13-inch M1 MacBook Pro (512GB) for \$1,299.99 , down from \$1,499.00 on Amazon. You'll see this price at the checkout screen after an automatic coupon worth \$50 is applied.],
   [Note: MacRumors is an affiliate partner with Amazon. When you click a link and make a purchase, we may receive a small payment, which helps us keep the site running.],
   [This sale is available in both Silver and Space Gray color options, and it's in stock and ready to ship. At a total of \$199 off the original price, this is a match of the previous low price on this model of the MacBook Pro.],
+  [\$199 OFF],
   [M1 MacBook Pro (512GB) for \$1,299.99],
   [If anyone's on the hunt for the entry level version of the M1 MacBook Pro, Amazon does have the 256GB model at its typical sale price of \$1,149.99 , down from \$1,299.00. There's no checkout coupon for this one, and it's also being discounted in both colors.],
   [You can find even more discounts on other MacBooks by visiting our Best Deals guide for MacBook Pro and MacBook Air. In this guide we track the steepest discounts for the newest MacBook models every week, so be sure to bookmark it and check back often if you're shopping for a new Apple notebook.],
+  [Related Roundup: Apple Deals],
+  [Related Forum: MacBook Pro],
   [This article, " Deals: Apple's 512GB M1 MacBook Pro Hits \$1,299.99 on Amazon (\$199 Off, Lowest Price) " first appeared on MacRumors.com],
   [Discuss this article in our forums],
 ),
@@ -779,15 +722,13 @@ module.exports = {
 
   ],
 ), ruled-indices: (1,))
-#pull-quote([class="center-wrap"\>   class="fancybutton"\>  class="fancybadge"\>\$199 OFF  M1 MacBook Pro (512GB) for \$1,299.], [Mitchel Broussard])
+#pull-quote([class="fancybutton"\> \$199 OFF  M1 MacBook Pro (512GB) for \$1,299.], [Mitchel Broussard])
 
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([Scientific American], source-name: [Scientific American], [Engineers explain how a collision between an Air Canada plane and a fire truck at one of New York’s busiest airports turned deadly])],
-    [#brief-item([Spencer Ackerman], source-name: [Wired Science], [Months into a supposed ceasefire in Gaza, doctors still have to smuggle in basic medical supplies—and treat new casualties of war.])],
-  ))
-}
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([Scientific American], source-name: [Scientific American], [Engineers explain how a collision between an Air Canada plane and a fire truck at one of New York’s busiest airports turned deadly])],
+  [#brief-item([Spencer Ackerman], source-name: [Wired Science], [Months into a supposed ceasefire in Gaza, doctors still have to smuggle in basic medical supplies—and treat new casualties of war.])],
+))
 
 #colophon([The Metropolitan Post], [Vol. 1, No. 097], [2026-03-30])

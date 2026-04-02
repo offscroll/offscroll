@@ -21,42 +21,8 @@
 #masthead([The Bold Mirror], [Vol. 1, No. 027], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [What I Learned from MasterClass],
-  kicker: [Cover Story],
-  author: [Study Hacks],
-  source-name: [Study Hacks (Cal Newport)],
-  deck: [Last fall, I filmed a course for MasterClass. It’s mainly based on my book Slow Productivity , but there’s some Deep Work in there too.],
-  lead-pre: [],
-  lead-cap: [I],
-  lead-rest: [t’s called: ​“Rebuild Your Focus & Reclaim Your Time.”​],
-  body-paragraphs: (
-  [The course launched last week, so you should definitely ​check it out​ . It gets to the core of a lot of the topics we tackle in this newsletter about the intersection of technology and productivity, and it’s an incredibly polished final product.],
-  [It’s actually this latter point that I want to talk a little bit more about today, as it sparks an interesting question about the future of online media more generally…],
-  [One of the most striking things about working with MasterClass is its production values. I’ve been a guest on many major video podcasts (from ​Mel Robbins​ to ​Andrew Huberman​ to ​Rich Roll​ ). These shows look good. They all have reasonable sets with diffused lights and three-camera setups.],
-  [MasterClass, however, operates at another level. They use high-end TV-quality production crews. There’s a director, a cinematographer, and multiple camera operators distinct from the focus pullers, all of whom work with gaffers and grips, supported by production assistants. My make-up artist had recently worked on Sinners .],
-  [In my career as a writer, I’ve been on TV before as a guest on morning shows and cable news programs, but this was as close as I’ll ever come to starring in a dramatic series or independent film.],
-  [For me, this experience implied an important reality about the current state of visual media: there remains a non-trivial quality gap between independent video (e.g., as produced for YouTube) and legacy video (e.g., as produced for streaming platforms or linear television).],
-  [This gap matters.],
-  [Because these two categories still look different, we treat them distinctly. We’re willing to pay for access to content on Netflix, but we relegate the next rung down on the quality ladder to ad-supported general-use platforms like YouTube.],
-  [But here’s what’s interesting about the near future: that difference is diminishing. MasterClass, for example, is not funded by a streaming service or television studio; however, they achieve streaming/TV-level production values. Other independent video producers are also closing this gap.],
-  [This raises a key question: What will happen to video content as the difference between independent and legacy production value vanishes?],
-  [We can see a glimpse of this future in a project that fascinates me: ​Dropout TV​ – also stylized online as : Dropout – which can best be described as a comedy streaming service. It costs \$6.99 a month, which gains you access to a slate of original unscripted shows all filmed at a quality level indistinguishable from what you would find on, say, Netflix programs like Is it Cake? or Nailed It!.],
-  [Except, they’re not Netflix. Dropout TV doesn’t have multi-billion dollar production budgets or massive venture capital backing. It grew out of the early 2000s website ​CollegeHumor.com​ . With the rise of YouTube, CollegeHumor turned more attention to producing content for the platform. But they were frustrated by a model that required them to live or die by a third-party algorithm and the whims of advertisers, so they eventually launched their own subscription app.],
-  [Today, Dropout boasts over a million subscribers.],
-  [I refer to this type of niche subscription service, defined by a combination of legacy-quality programming and a focused audience, as a micro-streamer.],
-  [Keep an eye on this market segment. As it becomes easier to produce high-end video, more independent creators will leave the mass-aggregation platforms like YouTube and offer up targeted competition to the major streaming players.],
-  [Who knows, maybe one day you’ll even have a Deep Life TV app next to Disney+ on your smart TV. Until then, however, you can get your fill of movie-quality Cal content ​over at MasterClass​ .],
-  [The post What I Learned from MasterClass appeared first on Cal Newport .],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [SOMEONE TO DAYDREAM ABOUT],
   author: [Kirkus Reviews],
   source-name: [Kirkus Reviews],
@@ -71,11 +37,9 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Brookfield CEO Connor Teskey: AI Infrastructure, Data Centers, and the Future of Investing],
   author: [Vicky],
   source-name: [Farnam Street (fs.blog)],
@@ -83,8 +47,13 @@
   paragraphs: (
   [Connor Teskey is CEO of Brookfield Asset Management, one of the world’s largest investors, managing about a trillion dollars across infrastructure, power, real estate, private equity, and credit.],
   [In this exclusive interview, his first as CEO, we explore his approach to capital allocation, isolating variables, and building a business designed for long-term growth.],
+  [Featured clips],
+  [12:06],
   [Your Work Ethic is in Your Control],
+  [32:00],
   [What Happens Post Business Acquisition?],
+  [47:10],
+  [01:15:17],
   [Work and Life Harmony],
   [Listen and Learn: YouTube | Spotify | Apple Podcasts | X | Transcript],
   [Discover why effective investing begins with minimizing losses, how waiting for perfect information can result in missed opportunities, the strategies Brookfield uses to manage market risk while maintaining upside potential, and the key insights he gained working alongside Bruce Flatt.],
@@ -117,20 +86,24 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [James Clear: How to Build Good Habits & Break Bad Ones],
   author: [Vicky],
   source-name: [Farnam Street (fs.blog)],
   images: (),
   paragraphs: (
   [James Clear is the author of Atomic Habits , a global bestseller that has shaped how millions of people think about habits, consistency, and long-term change.],
+  [Featured clips],
+  [0:56],
   [The Role of Identity in Habits],
+  [17:44],
   [The Confidence to Start],
+  [56:06],
   [Maintaining Focus on What You Want],
+  [01:11:22],
   [What is a Habit?],
+  [01:48:12],
   [Complexity Vs. Simplicity],
   [In this conversation, James explains how habits shape identity, why progress often stays invisible before it compounds, and how to design your environment so good behavior becomes the default.],
   [You will learn how to stay consistent when motivation fades, stop quitting too early, and build habits that work across different seasons of life.],
@@ -190,10 +163,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [For Southern Antagonists in the Civil War, a Kindred Desire for Peace Goes Awry],
   author: [Jesse George-Nichol],
   source-name: [HistoryNet],
@@ -228,10 +199,8 @@ John Robertson],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [When the 80/20 Rule Fails: The Downside of Being Effective],
   author: [James Clear],
   source-name: [James Clear (Atomic Habits)],
@@ -286,16 +255,13 @@ John Robertson],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Mapa Rios Aragon],
   author: [landofmaps],
   source-name: [Land of Maps],
   images: (),
   paragraphs: (
-  [id="articles"\>],
   [Mapa Rios Aragon – An Expert Guide to the Rivers of Aragon],
   [The Mapa Rios Aragon is a comprehensive map showcasing the rivers of the Aragon region in Spain.],
   [This map provides essential information about the major rivers, including their names, lengths, and their relation to other geographical features.],
@@ -374,6 +340,7 @@ John Robertson],
   [Boat rental Aragon],
   [Kayak rental Aragon],
   [Map updates Aragon],
+  [Share this:],
 ),
   insert-map: (:),
   word-count: 823,
@@ -381,27 +348,35 @@ John Robertson],
   debug-mode: false,
 )
 
-  #pull-quote([The map showcases the interconnectedness of the rivers within the region and highlights their contributions to the overall water management system.], [landofmaps])
+#pull-quote([The map showcases the interconnectedness of the rivers within the region and highlights their contributions to the overall water management system.], [landofmaps])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [10 Pivotal Events in the Life of Buffalo Bill],
   author: [Steve Friesen],
   source-name: [HistoryNet],
   images: (),
   paragraphs: (
+  [1. Cody Family Moves to Kansas],
   [Will was born in Iowa Territory in 1846. In 1854 father Isaac moved the family to Kansas Territory in search of a better life. There young Will watched a wagon train embarking on the Oregon Trail and declared that was what he wanted to do. Three years later, at age 11, he did just that with a freighting operation. It was the first of many such trips.],
+  [2. Will Meets the Kickapoos],
   [Young Cody’s earliest encounters with American Indians were with Kickapoos who did business at his father’s trading post. Will also befriended Kickapoo classmates. Such positive encounters informed the way he approached Indians the rest of his life.],
+  [3. Family Opposition to Slavery],
   [Isaac Cody opposed allowing slavery in Kansas Territory and was stabbed in 1854 while speaking against it. Pro-slavers continued to persecute the family until Isaac’s death three years later. Will regarded his father as a martyr and idolized his mother for having persevered. Following their examples, he later championed equal rights for women and Indians.],
+  [4. Riding With the Pony Express],
   [Just what role Cody played in the Pony Express is open for debate, but it was important enough to him to emphasize in his 1879 autobiography, by which time the mail service was but a memory. It might have remained a footnote in American history had Cody not promoted it in every performance of Buffalo Bill’s Wild West over a 30-year span.],
+  [5. Becoming ‘Buffalo Bill’],
   [In 1867, during a hiatus as a scout for the U. S. Army, Cody landed a contract to supply bison meat for work crews on the Kansas Pacific Railway. He proved such an adept hunter that the workers bestowed on him the nickname “Buffalo Bill.”],
   [Cody engaged in real-life adventures as a U. S. Army scout.],
+  [6. A Taste of the Good Life],
   [After fulfilling his contract with the railroad, Buffalo Bill returned to scouting for the Army. In January 1872 he led a hunt for Lt. Gen. Phil Sheridan in honor of Russian Grand Duke Alexei Alexandrovich. Among the guests were wealthy New Yorkers who introduced Cody to gourmet dining, something he’d enjoy the rest of his life. Within weeks he traveled to Manhattan, where he dined at Delmonico’s, stayed in fine hotels, partied with millionaires and took in several plays.],
+  [7. Taking the Stage],
   [One of the plays Cody went to see while in New York was Buffalo Bill, King of the Border Men , at the Bowery Theater. He attended with Ned Buntline , who wrote the dime novel series on which the play was based. At Buntline’s urging, Cody embarked on an acting career that December.],
+  [8. Birth of Buffalo Bill’s Wild West],
   [After a decade onstage Cody reflected, “Immense success and comparative wealth, attained in the profession of showman, stimulated me to greater exertion and largely increased my ambition for public favor.” That ambition led to his most successful enterprise. Beginning in 1883, Buffalo Bill’s Wild West introduced the region’s people, animals and stories first to all Americans and then to the world. The show transformed Cody into history’s first international celebrity.],
+  [9. Buffalo Bill Conquers Europe],
   [In 1887 Cody was invited to bring his Wild West to London and perform as part of Victoria’s Golden Jubilee, celebrating her half century as Britain’s queen. Afterward, Buffalo Bill toured the Continent with his troupe, introducing Europeans to the American West. In each nation tens of thousands of curious spectators flocked to the celebrated showman’s arena performances.],
+  [10. World’s Columbian Exposition],
   [Cody’s success in Europe only boosted his status at home. Back Stateside he planned a grand homecoming at Chicago’s 1893 World’s Columbian Exposition, but its aloof organizers denied the showman a place on their grounds. For nearly a year the Wild West performed just outside the main gate, drawing far larger crowds—18,000 people to each of its two daily shows. Buffalo Bill left the “Windy City” a millionaire with a legacy extending beyond his own lifetime.],
 ),
   insert-map: (:),
@@ -410,10 +385,8 @@ John Robertson],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Introducing Amazing Atlas],
   author: [Tynan],
   source-name: [Tynan (personal)],
@@ -447,18 +420,21 @@ John Robertson],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Inside the Mind of Robinhood Co-Founder Vlad Tenev],
   author: [Vicky],
   source-name: [Farnam Street (fs.blog)],
   images: (),
   paragraphs: (
   [Robinhood’s co-founder reveals the brutal reality of surviving an 80% market crash, going “founder mode” to cut corporate bloat, and what actually happened during GameStop.],
+  [Featured clips],
+  [00:33],
   [Setting the Scene: GameStop],
+  [24:25],
+  [50:03],
   [Internal AI at Robinhood],
+  [01:20:04],
   [Deciding What to do Next],
   [Vlad Tenev is the co-founder and CEO of Robinhood. Not only did he navigate the unprecedented GameStop crisis, but he also completely re-engineered the fintech giant to thrive.],
   [He breaks down the brutal transition from bloated hyper-growth to a lean machine, why a “juicy falsehood is more powerful than a boring truth”, and the 3 distinct phases of AI integration separating the winners from the dead.],
@@ -501,30 +477,36 @@ John Robertson],
   [Communication involves distilling the message to the core.],
   [If you’re in doubt, push them out.],
   [“If you can solve a hard math problem, you can solve pretty much any problem.”],
+  [A juicy falsehood is more powerful than a boring truth],
   [04:30 -6:52],
   [The viral narrative that emerged was that Robinhood was colluding with hedge funds to protect their short positions.],
   [Vlad explains that this was patently false: Robinhood has no meaningful business relationship with hedge funds. But the narrative was irresistible, retail investors vs. Wall Street, with Robinhood cast as the traitor. The fact that the company was literally named Robinhood made the false narrative too good not to spread.],
   [One detail most people do not know is that Robinhood had been giving new customers free GameStop shares as sign-up bonuses throughout 2020. So when GameStop went parabolic, many of those customers suddenly had valuable holdings. Robinhood arguably seeded the entire phenomenon.],
   [“A juicy falsehood is more powerful than a boring truth. Once a narrative gets any traction whatsoever, it doesn’t matter how crazy or false it is — facts do not tend to refute that.”],
+  [The GameStop crisis connected Vlad with Zuckerberg, Musk, and Benioff],
   [07:06 — 10:39],
   [A silver lining of the GameStop crisis was that it put Vlad on the radar of tech leaders who would not have otherwise noticed Robinhood. Mark Zuckerberg, Elon Musk, and Marc Benioff all called him during the crisis, offering their perspectives on navigating public firestorms. Later, when Spotify CEO Daniel Ek faced his own crisis over Joe Rogan, Vlad called him to pay it forward.],
   [Vlad highlights his Clubhouse appearance with Elon Musk as the best media moment of that week — a low bar, he admits, given some disastrous other appearances.],
   [In the movie Dumb Money , he reveals he only watched the six minutes featuring his character, played by Sebastian Stan. His favorite detail: the actor was shirtless in every single scene—grinding smoothies, shaving, handling business crises.],
   [“The idea of me being shirtless, dealing with all these complicated business situations, just made me laugh a little bit.”],
+  [What came next was even harder than GameStop],
   [10:39-14:50],
   [Vlad argues that 2022 was actually harder than GameStop, even though GameStop was more acutely stressful. The GameStop crisis lasted only a few days in its most intense form. But 2022 was a gradual, grinding reversal of every tailwind that had powered the business during COVID.],
   [First, the stimulus checks stopped. Then inflation surged, eating into discretionary spending and investing. Then interest rates went from near-zero to the highest levels in 30 years. When risk-free returns hit 5%, buying stocks became less attractive. For the first time ever, Robinhood’s entire business model, which was based on first-time investors entering the stock market, started to swim against the current.],
   [The stock cratered from a \$32 billion IPO valuation to around \$6 per share, an 80% loss. People called it a broken IPO. Advisors suggested he pursue a buyout and take the company private. But Vlad refused to give up or to simply hunker down and wait for conditions to improve.],
   [“I’m not going to be one of these people that gives up. I’m also not going to batten down the hatches and turn into an ostrich or a turtle.”],
+  [Build for the environment you are in, not the one you want],
   [14:53-16:02],
   [Rather than waiting (or wishing) for the environment to change, Vlad asked what products would help customers thrive in the current environment? This led to a bunch of new products.],
   [The company systematically diversified away from being a zero-interest-rate business dependent on trading. By the time of this interview, Robinhood had 11 business lines, each generating over \$100 million in annual revenue.],
+  [Firing himself and going Founder Mode],
   [16:02-24:25],
   [“I had to spend a lot of time trying to figure out how to fix things.”],
   [Robinhood had bulked up massively during COVID, gaining muscle but also a lot of fat. The 2022 correction forced a massive phase of leaning out. The end result was a healthier, stronger company.],
   [The hardest part of fixing things is admitting that past decisions were wrong.],
   [Vlad observes that most people try to undo mistakes incrementally, which produces no results. As he points out, “things get easier if you do them multiple times. ” He advocates practicing undoing small decisions and building up the muscle you need to do it for bigger things.],
   [“We took off the wellness days, there was complaining for one day, and then we never heard about it again. Our deepest fears about the consequences were wrong.”],
+  [High performance means rewarding impact, not org size],
   [24:25-27:09],
   [Vlad lays out Robinhood’s core operating values . First is high performance: the company explicitly tells employees and applicants that this is not a cushy job. The expectation is to accomplish in one year what another company would expect in ten.],
   [“We operate with extreme urgency. We push for progress without compromising quality—and when something is broken, we fix it. We’re driven by impact and pride ourselves in our ability to be nimble and quickly adjust our strategy when presented with new information. Friction and obstacles don’t deter us from pursuing what’s truly important.”],
@@ -537,20 +519,24 @@ John Robertson],
   [“We only follow the crowd when they’re right. We’re innovators and problem solvers. We use data, empirical truth, and experiments to inform decisions. Our bold bets often make us a first mover, and we do what’s right for customers – even if it hasn’t been done before.”],
   [He ends with this:],
   [“I’d rather have a small team of the best people than a large team of mediocre people.”],
+  [Fire fast, but recognize hidden potential],
   [27:09-29:10],
   [When someone is clearly not a fit, Vlad wants to make the separation as frictionless as possible — even after three weeks. He argues that waiting six months once you know it is not working is a waste for everyone. He wants it to be easy to remove low performers.],
   [But he draws a distinction: if someone does not hit the ground running but shows extraordinary ability in a specific area, patience can pay off.],
   [Some people need six months to find their footing and eventually become exceptional. The key is distinguishing between “not a fit” and “slow start with high ceiling.”],
+  [Hire early-career people, put them on production work, and sit next to them],
   [29:10-31:33],
   [One unconventional element of Robinhood’s hiring, especially in financial services, is the heavy emphasis on early-career talent.],
   [From the beginning, Vlad and co-founder Baiju Bhatt personally recruited at Stanford career fairs. The company still prioritizes interns and entry-level engineers on real production work, not coffee runs.],
   [Vlad argues this keeps Robinhood connected to its young customer base. He points to how legacy financial firms age with their customers: Charles Schwab served baby boomers, E-Trade captured Gen X, but struggled with younger generations. The best defense against becoming a generational company is having young people embedded throughout the organization.],
   [“If I can succeed and become the CEO of a company from an internship, then everyone should have the ability to do that.”],
+  [Replace one-on-ones with large leadership meetings (and a gavel)],
   [31:33 — 33:40],
   [Vlad’s weekly leadership meeting is deliberately large. He prefers everyone hearing the same information simultaneously over a series of private one-on-ones, which he has reduced to on-demand only for critical decisions.],
   [The meeting format is simple: Vlad shares priorities or reflections from the weekend, then the team reviews goals using a green/yellow/red system. Green goals are skipped. Red goals get scrutiny.],
   [To keep the atmosphere open, he uses a literal gavel, banging it against the wall when discussing underperforming goals. The ceremony lightens the mood so that people actually enjoy talking openly about what is not working.],
   [The assumption is that everyone on the leadership team is at least very strong, so if a goal is red, there is usually a good reason beyond lack of effort. The group’s collective perspective can often find solutions faster than any individual.],
+  [Where he gets involved most, products and events],
   [33:40 — 38:49],
   [Vlad is personally involved in Robinhood’s major products and product launches, spending significant time on messaging, design, and the look and feel of each event. He presents at the events alongside the teams that built the products, treating each one like a television show.],
   [Vlad admits his instinct is to get too jargony and detailed, assuming the audience knows as much as he does. The events correct for that by demanding simple explanations.],
@@ -558,6 +544,7 @@ John Robertson],
   [When Robinhood first started doing events, the Apple keynote was the explicit model. Vlad compares it to learning an instrument — you start by playing what the masters composed, but eventually you know enough to innovate and break rules.],
   [“You learn how to tell stories . “It’s really about storytelling.”],
   [“Once you get to a certain level, you know enough to innovate, to break rules, and to change things.”],
+  [AI],
   [39:06 — 48:00],
   [Vlad breaks down AI adoption in customer support into three phases.],
   [Phase one: the company feeds its help center into an AI chatbot, giving customers better search. About 90% of companies doing AI customer support are here.],
@@ -572,17 +559,20 @@ John Robertson],
   [Vlad identifies creative and marketing as the next domain where AI will create step-change improvements.],
   [High-quality advertising collateral that previously required deep work by talented artists over long periods can now be produced at 100x to 1000x the volume using tools like ElevenLabs, Midjourney, and Runway — while also being far more personalized.],
   [When pressed on whether this means anyone can do it, Vlad pushes back. He argues these are genuinely hard problems to get right. Most companies do not even have the metrics to track AI’s impact, let alone the engineering infrastructure to deploy it effectively. The gap between companies that can execute on AI and those that cannot is widening, not narrowing.],
+  [The case for mathematical superintelligence],
   [50:02 — 56:19],
   [Vlad is the co-founder and chairman of  Harmonic , a company building what he calls “mathematical superintelligence” — AI that can solve math problems that exceed the best human mathematicians.],
   [Harmonic’s model, Aristotle, achieved gold medal performance at the International Mathematical Olympiad , solving five out of six problems. It has also solved previously unsolved Erdos problems and recently achieved 97% on a software verification benchmark.],
   [The key technical insight is that math problems can be posed as computer code, which allows machine-checking of proofs. This creates a synthetic data pipeline: the model generates proofs, the system automatically verifies them, and the correct results feed back into training. It is closer to training a chess engine than training a language model — the reward signal is precise and verifiable.],
   [Vlad draws a direct line from mathematical ability to business decision-making. If you can endure 12 hours of beating your head against a single math problem, no business problem will feel overwhelming.],
   [“No business problem is as complicated as solving a really hard math problem. If you get used to the pain and suffering and mental stress, it’s really good training — like going to the gym for business problems.”],
+  [The AI model landscape will specialize, not consolidate],
   [58:05 — 01:01:37],
   [Vlad predicts multiple specialized AI models rather than one winner-take-all. The differentiator will be data.],
   [Harmonic has an advantage in math because mathematicians use it to solve complex problems, generating proprietary training data. Anthropic has specialized in coding and enterprise software engineering. Google’s Gemini benefits from arguably the highest-quality data source in the world, with few access restrictions, plus limitless compute funded by massive net income.],
   [He notes the irony that when ChatGPT launched in 2022, Google called a code red about an existential threat to search. Now OpenAI is reportedly calling its own code red about Gemini. The narrative can shift remarkably fast.],
   [“It’s amazing how quickly the narrative can shift. Google was being counted out as a big, slow company. They said, how are they ever going to catch up?”],
+  [The greatest inequity in capital markets is that retail investors are locked out of private companies],
   [01:03:07 — 01:12:59],
   [Vlad frames retail access to private markets as the single most important problem he is trying to solve. The most transformative companies of this era — in AI, space technology, and deep tech — are overwhelmingly private, with valuations in the tens or hundreds of billions. Retail investors cannot invest in them.],
   [Simultaneously, going public has become harder, more expensive, and less common. Institutional capital has more avenues to fund private companies, creating an inadvertent system that shuts ordinary investors out of the greatest wealth creation of their generation. SpaceX, the largest and most impactful private space company, has been inaccessible to retail from the beginning.],
@@ -594,13 +584,16 @@ John Robertson],
   [Vlad expects tokenization to be the primary vehicle for non-US investment until US regulatory clarity arrives, at which point it will seep into the American market as well.],
   [The current administration has signaled openness to using these vehicles for alternative access, which Vlad expects will trigger a wave of innovation.],
   [Vlad just doesn’t want to tokenize private markets; he thinks about tokenizing housing.],
+  [Price discovery is inevitable — private companies cannot control it forever],
   [01:12:59 — 01:16:06],
   [When asked whether secondary trading could distort pricing for private companies — particularly for employee option valuations — Vlad argues that transparent, two-sided price discovery is always the ideal. When one side has more information than the other, unfair outcomes are inevitable.],
   [He acknowledges this is not the world we live in today. But derivative markets on private shares already exist, and the data is getting out. That genie cannot be put back in the bottle. If derivatives are pricing a company at one level but a financing round is priced differently, the market will increasingly demand reconciliation.],
   [“It’s going to be tough increasingly in a global market to have as much control over the price as maybe private companies have historically had.”],
+  [Maximizing direct equity ownership is Robinhood’s North Star],
   [01:20:05 — 01:22:05],
   [Vlad articulates Robinhood’s single organizing principle: maximizing direct equity ownership by retail investors worldwide. Every strategic decision flows from this. Can they get people invested at a younger age? That is why they support Trump accounts and invest-in-America initiatives. Can they reach people outside the US? Can they open private markets?],
   [He frames the coming \$120 trillion intergenerational wealth transfer as a massive accelerator for these goals. If Robinhood can position itself as the multi-generational financial platform — where your spouse, parents, and children all have accounts — it captures a disproportionate share of that transfer while also fulfilling its mission.],
+  [Growing up in post-communist Bulgaria shaped everything],
   [01:22:05 — 01:27:58],
   [Vlad’s father left Bulgaria in 1991 for a master’s degree at the University of Delaware. At the time, inflation in Bulgaria exceeded 100%.],
   [Vlad remembers his mother watching the grocery store line from their apartment window in Varna — if you did not arrive at the right time, there were no eggs or milk. Rolling blackouts forced the family to huddle around a battery-powered radio each night.],
@@ -613,11 +606,13 @@ John Robertson],
   [Robinhood’s credit card offers a flat 3% cash back on all categories. Vlad explains why this is so compelling: it eliminates the optimization game. Credit card enthusiasts maintain spreadsheets tracking which card to use for travel, groceries, and gas. Most people do not want to play that game. A flat 3% on everything becomes the default card at the top of your wallet.],
   [The card has over half a million holders and is among the fastest-growing credit cards, driven entirely by word of mouth rather than paid customer acquisition. Customers are joining faster than Robinhood can onboard them.],
   [The economic engine works because 3% cash back must be deposited into the brokerage account, creating a flywheel: credit card users become brokerage customers, brokerage customers use more products, and each additional product lifts engagement across all others.],
+  [Why legacy banks cannot compete],
   [01:35:33 — 01:44:21],
   [Vlad explains why American Express or JPMorgan cannot simply copy Robinhood’s credit card: their cost structures are fundamentally different.],
   [Legacy credit card companies employ tens of thousands of people for manual account servicing and spend heavily on marketing. The economics of the card program itself are dwarfed by the overhead of operating the business.],
   [The banking industry has a deeper structural problem. For a long time, banks were prohibited from paying interest on checking accounts — the concern was that competition over checking account yields would threaten bank solvency. That rule was eventually repealed, but by then the zero-interest checking spread had become such a large line item that banks had become structurally dependent on it. Asking a bank with trillions in checking to suddenly pass most of that interest to customers would crater their earnings.],
   [“Banks play this game where your money goes in and out of checking, and they penalize you for doing the right thing. That’s an opportunity for us to differentiate.”],
+  [Success is creating dramatically more value for the world than you capture for yourself],
   [01:47:56 — 01:49:12],
   [Vlad defines personal success as creating more value for the world than he does for himself. He wants the aggregate impact of his work to far exceed his personal outcomes.],
   [This connects back to his core mission: expanding ownership so that everyone has skin in the game across private and public markets. If he can play a part in ensuring more people own the great industries of the country, it leads not just to wealthier individuals but to a more stable and prosperous society.],
@@ -626,16 +621,14 @@ John Robertson],
 ),
   insert-map: (:),
   inline-pq: pull-quote([The second metric is critical; it ensures that AI is not just doing a larger share of the same output, but that aggregate productivity is actually increasing.], [Vicky]),
-  inline-pq-idx: 66,
+  inline-pq-idx: 76,
   word-count: 4516,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Is the Internet Hijacking Our Ambition?],
   author: [Study Hacks],
   source-name: [Study Hacks (Cal Newport)],
@@ -660,6 +653,7 @@ John Robertson],
   [→  “True discipline is not a chest-thumping, hype-speech giving, performative act of toughness.”  Excellence works better when you disconnect. Don’t brag about your accomplishments online. Don’t look for brief hits of hype from emotionally manipulative videos. Instead, take care of your business with a quiet, inward satisfaction.],
   [If you’re worried about the internet hijacking your ambition (or the ambition of someone you care about), then keep these ideas in mind. It’s not enough to dismiss influencers like Ashton Hall; you need to replace what they’re offering with a more compelling alternative. Stulberg’s writing, in my opinion, points the way to one such alternative.],
   [“The real reward is that you become a better version of yourself,” he summarizes toward the end of his book .  This might not be as exciting as sticking your face in ice water before sunrise. But it sounds about right to me.],
+  [—],
   [It may go without saying that I highly recommend The Way of Excellence . It’s a must-read book that offers a path toward the discipline of mastery, competence, and mattering. Consider buying a copy today . And if you do, fill out this form to obtain some bonus material from Stulberg, including a video master class on the topic and a list of related reading.],
   [The post Is the Internet Hijacking Our Ambition? appeared first on Cal Newport .],
 ),
@@ -669,10 +663,8 @@ John Robertson],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How to Make Your Future Habits Easy],
   author: [James Clear],
   source-name: [James Clear (Atomic Habits)],
@@ -718,10 +710,8 @@ John Robertson],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Ultimate Habit Tracker Guide: Why and How to Track Your Habits],
   author: [James Clear],
   source-name: [James Clear (Atomic Habits)],
@@ -854,10 +844,8 @@ John Robertson],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [What I Would Do if I Were Gen Z],
   author: [Tynan],
   source-name: [Tynan (personal)],
@@ -890,10 +878,8 @@ John Robertson],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Gear Post 2026],
   author: [Tynan],
   source-name: [Tynan (personal)],
@@ -1095,16 +1081,13 @@ John Robertson],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Bangladesh Location Map With River Names Without Division Borders],
   author: [landofmaps],
   source-name: [Land of Maps],
   images: (),
   paragraphs: (
-  [id="articles"\>],
   [Bangladesh Location Map With River Names Without Division Borders],
   [The Bangladesh Location Map shows the geographical location of Bangladesh in the world.],
   [This map specifically highlights the rivers in Bangladesh without division borders.],
@@ -1170,6 +1153,7 @@ John Robertson],
   [bangladesh rivers without division borders],
   [bangladesh river system],
   [bangladesh river networks],
+  [Share this:],
 ),
   insert-map: (:),
   word-count: 581,
@@ -1177,12 +1161,10 @@ John Robertson],
   debug-mode: false,
 )
 
-  #pull-quote([The map helps in understanding the distribution and spatial arrangement of rivers across the country.], [landofmaps])
+#pull-quote([The map helps in understanding the distribution and spatial arrangement of rivers across the country.], [landofmaps])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Why I Did Buy a Tesla],
   author: [Tynan],
   source-name: [Tynan (personal)],
@@ -1215,10 +1197,8 @@ John Robertson],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Why Hasn’t AI Made Work Easier?],
   author: [Study Hacks],
   source-name: [Study Hacks (Cal Newport)],
@@ -1240,7 +1220,9 @@ John Robertson],
   [This points toward a pattern similar to what happened when email first arrived. It was undeniably true that sending emails was more efficient than wrangling fax machines and voicemail. But once workers gained access to low-friction communication, they transformed their days into a furious flurry of back-and-forth messaging that felt “productive” in the ​abstract, activity-centric sense​ of that term, but ultimately hurt almost every other aspect of their jobs and ​made everyone miserable​ .],
   [AI tools might be replicating this dynamic with small, self-contained tasks. Users are now furiously bouncing ideas back and forth with chatbots, iteratively refining text and generating drafts of memos and slide decks that are often ​too sloppy ​ to be useful. If they’re particularly tech savvy, perhaps they’re even monitoring the efforts of agent swarms deployed to parallelize such efforts even further. Once again, this all seems “productive” in the sense that these individual tasks appear to be happening faster, and activity seems intensified overall.],
   [But are we sure we’re accelerating the right parts of our jobs?],
+  [I Need Your Help],
   [I’m working on an article for a major publication about the move toward simple, high-friction, single-use technologies like the ​Tin Can phone​ . If you have a Tin Can phone/are on the waiting list, or have recently embraced similar retro technologies, and are willing to talk, please send me an email at ​ podcast\@calnewport.com ​ . I want to hear about your motivations and experience!],
+  [AI Reality Check : Is Claude Conscious?],
   [If you were following AI news last week, you might have noticed a barrage of concerning headlines about Anthropic’s Claude LLM, including:],
   [​“Anthropic CEO Says Company No Longer Sure Whether Claude is Conscious.”​],
   [​“Is AI Assistant Claude Conscious – and Suffering from Anxiety?”​],
@@ -1259,10 +1241,8 @@ John Robertson],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [This Patient Rider Spent Months Retracing the Pony Express on Horseback],
   author: [Will Grant],
   source-name: [HistoryNet],
@@ -1291,10 +1271,8 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [This Frenchman Tried to Best the Wright Brothers on Their Home Turf],
   author: [Reg Winstone],
   source-name: [HistoryNet],
@@ -1341,16 +1319,19 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Michael Ovitz: The Psychology of Power],
   author: [Vicky],
   source-name: [Farnam Street (fs.blog)],
   images: (),
   paragraphs: (
   [Michael Ovitz co-founded CAA and helped reshape Hollywood, then took the same playbook into tech investing and advising founders.],
+  [Featured clips],
+  [8:17],
+  [33:28],
+  [43:42],
+  [52:49],
   [The Genius of Patrick Collison],
   [Available Now: Apple Podcasts | Spotify | YouTube | X | Transcript],
   [In this conversation, he breaks down the operating rules that kept CAA from losing clients, and the personal disciplines that kept him grounded when the stakes got massive.],
@@ -1390,10 +1371,8 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Surprising Benefits of Journaling One Sentence Every Day],
   author: [James Clear],
   source-name: [James Clear (Atomic Habits)],
@@ -1459,10 +1438,8 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The One and Only ‘Booger’ Was Among History’s Best Rodeo Performers],
   author: [Richard F. Selcer],
   source-name: [HistoryNet],
@@ -1475,6 +1452,7 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
   [He soon found an even more lucrative and entertaining way of making a living—riding competitively in small-town fairs and stock shows. Ranchers and cattlemen brought their wildest horses to such events and offered prize money to anyone who could gentle them. There were no arenas in those early days, just a patch of open prairie with poles stuck in the ground and rope strung between them. Spectators stood or sat in buggies or on camp stools. The only “box seats” were the saddles of those watching from horseback. Bets laid on both horse and rider were collected only when a rider went sailing or a horse quit bucking. The odds either way were about even, unless Booger Red was aboard. He took on any animals, even those with reputations as man-killers. Mounting was a challenge in itself. As there were no chutes—the side-opening chute came along years later—a rider had to get on while fellow cowboys held the animal by its ears and covered its eyes. As soon as the rider was in the saddle, the others let go and scattered. Red rode one notorious bronc that pitched and bucked across several acres before finally coming to a halt, its sides heaving, its head low and mouth flecked with foam. Rider and horse were equally exhausted, but Red walked away with a nice purse.],
   [Small-town stock shows drew bold young riders eager to test their mettle against one another and stockmen happy to let them break horses for prize money. Organized rodeos followed.],
   [These impromptu, open-air gatherings eventually morphed into organized rodeos that charged admission and programmed the various events—bronc riding (saddle and bareback), steer wrestling (aka bulldogging), roping and trick riding. As the frontier faded into history, rodeos and Wild West shows sprang up to keep the memory of the old days alive. Such shows were a combination of nostalgia and genuine cowboy skills.],
+  [Starting a Family and a Business],
   [In 1895 Booger Red found love. He was 37 (more or less), while Mary Frances “Mollie” Webb was, by one account, just 15 years old. Sources vary on how old each was and when exactly they married, but by any reckoning it was a May-December romance. Red met “Mollie” at a church singalong, for which he provided musical accompaniment on the harmonica. At the time she hailed from the little town of Bronte, in Coke County, and was the prettiest thing he had ever seen. To his surprise she also was taken with him, and to his further delight he learned she was an accomplished rider. Apparently, her parents had no problem with their teen daughter dating a man more than twice her age, and the couple tied the knot before the year was out.],
   [They settled down in San Angelo, where Red continued to operate his wagon yard and stable and break horses on the side. They ultimately had seven children, starting with Roy in 1896, followed by Ella, the twins, Tommy, Bill and, finally, Alta in 1909. Only one of the twins, Luther, survived. The other was buried as “infant daughter.” None of the children made it past the 11th grade in school. Despite their ever-expanding parental responsibilities, Red and Mollie resolved to start a new business. (The settled life had never been for him, and Mollie was game for anything.) Selling the wagon yard and stable, Red used the money to start Booger Red’s Wild West & Vaudeville Show. By 1907 he had the operation off the ground.],
   [He was in his mid-30s and she in her mid-teens when they met, but Red was taken from the start, more so when Red learned Mollie was an adept horsewoman. Their May-December romance brought them seven kids and flourished for the three decades they shared.],
@@ -1486,6 +1464,7 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
   [A forgotten figure from Red’s life story is the young protégé he mentored, known professionally as Booger Red Jr. Junior was no relation; it was Privett who gave him that handle. “That’s the only kid I’ve ever seen that has the makin’s of as ugly a man as I,” Red declared the first time he laid eyes on the young man. Junior, whose real name has been lost to time, was described as an “all-round product of the Texas range,” just like his mentor. A top rider in his own right, junior appeared on numerous programs with the original Booger.],
   [One of Red’s favorite stops in later years was Fort Worth, where he regularly appeared at the annual Fat Stock Show. In March 1916 he came to town by train for the show and left his grip in the baggage room at the Santa Fe depot. When the attendant offered him a check, he said he didn’t need one. “This grip belongs to the ugliest man in Texas—in the world,” Red replied. “If anybody uglier than ‘Booger Red,’ of Tom Green County, shows up, give him the grip. He’s welcome to it.”],
   [In 1918, when the show promoters added a rodeo to the Fat Stock Show, Red signed on as a competitor. Held in the Grand Coliseum (later renamed the Cowtown Coliseum), it was the world’s first indoor rodeo. A lot had changed in the intervening years. Red recalled having ridden broncs on a nearby patch of prairie cordoned off by rope. While spectators then weren’t expected to pay a dime to watch cowboys compete, thousands now crowded into the coliseum, paying 25 cents a head. Though by far the oldest entrant competing for the \$3,000 in prize money, Red could still outride all challengers. For the next few years he returned to compete. While he loved the attention, however, he retained his aversion to being photographed or filmed. It was the dawn of Hollywood, and motion picture companies regularly came calling, hoping to make a star of Booger Red. For the most part he managed to dodge their cameras.],
+  [“Give us Booger Red!”],
   [Red was remarkable for more than just his advanced years and scarred visage. For one, he never touched liquor, reportedly to keep a promise made to his mother on her deathbed. A rodeo performer who didn’t drink was akin to a dog that doesn’t bark. Keeping his promise wasn’t a simple matter of abstinence. There was little else besides liquor to drink on the ranching frontier, while rodeo performers used liquor to both pass the time and ease aches and pains. (No record remains of whether Red’s vow covered beer.) The bronc rider was not completely tamed and curried, however. Red smoked a corncob pipe, chewed tobacco and boasted an ability to spit a stream of tobacco juice with accuracy and distance.],
   [No matter how good one is in the saddle, riding half-wild horses (and steers) is dangerous work. Red suffered his share of broken bones over the years. At one Wild West performance a bronc struck a corral post and fell on Red, breaking his leg. But the showman refused to crawl off. He remained in the saddle when the horse regained its feet. No injury ever kept him from riding. That toughness helps explain why he was so admired by fellow cowboys. He was the real McCoy, not some fancy-pants trick rider.],
   [Though Red officially retired in 1924, he couldn’t stay away from the arena. Like an actor returning to the footlights or a jock drawn to the gym, he came back to Fort Worth that year for the annual Fat Stock Show & Rodeo, but as a spectator. His performing days were behind him, or so he thought as he sat in the stands watching the Monday matinee rodeo that March 10. He had a nondescript cap pulled low over his face and hoped no one would recognize him. All was working to plan until a “hell pitchin’ hoss” named Romeo broke away from handlers, electrifying the sparse crowd. “Give us Booger Red!” the spectators began chanting. A woman in the stands beside Red suddenly stood, pointed at him and shouted, “Here he is!” The crowd went wild. Moments later, his blood racing, the nearly bald old man made his way down the coliseum steps to the arena floor, swapping his cap for a Stetson before climbing aboard the outlaw horse. Romeo promptly broke across the arena, Red hanging on with one hand and waving the hat with the other. Soaking in the smell of the horse and roar of the adoring crowd, he tipped and pivoted with each buck and twist. The ride ended with him firmly in the saddle, keeping alive the legend of never having been thrown.],
@@ -1503,10 +1482,8 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [My 2019 Annual Review],
   author: [James Clear],
   source-name: [James Clear (Atomic Habits)],
@@ -1608,6 +1585,7 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
   [In short: Prune away the inessential. Pour yourself into what remains.],
   [That's it! As always, thanks for reading. Happy New Year! 1],
   [This is a complete list of Annual Reviews I have written.],
+  [My 2019 Annual Review],
   [My 2018 Annual Review],
   [My 2017 Annual Review],
   [My 2016 Annual Review],
@@ -1622,16 +1600,13 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [River Severn Map],
   author: [landofmaps],
   source-name: [Land of Maps],
   images: (),
   paragraphs: (
-  [id="articles"\>],
   [The River Severn is the longest river in the United Kingdom],
   [It flows through Wales and England, eventually reaching the Bristol Channel],
   [The river has played a significant role in the history and development of the region],
@@ -1693,6 +1668,7 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
   [Special Area of Conservation],
   [Wildlife along River Severn],
   [Boating on River Severn],
+  [Share this:],
 ),
   insert-map: (:),
   word-count: 656,
@@ -1700,10 +1676,8 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [\[Outliers\] Mary Kay Ash: The Greatest Saleswoman In History],
   author: [Vicky],
   source-name: [Farnam Street (fs.blog)],
@@ -1746,10 +1720,8 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Cześć 2025],
   author: [Tynan],
   source-name: [Tynan (personal)],
@@ -1789,10 +1761,8 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Why I Bought a Place in Chicago],
   author: [Tynan],
   source-name: [Tynan (personal)],
@@ -1824,11 +1794,10 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [JUNKYARD PRINCESS],
   author: [Kirkus Reviews],
   source-name: [Kirkus Reviews],
@@ -1846,7 +1815,7 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [A-MAZE-ING AIRPORT ADVENTURE],
   author: [Kirkus Reviews],
   source-name: [Kirkus Reviews],
@@ -1866,7 +1835,7 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [What Do Social Media Companies Fear? Time Management.],
   author: [Study Hacks],
   source-name: [Study Hacks (Cal Newport)],
@@ -1881,6 +1850,7 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
   [When you’re following an intentional schedule, your efforts are oriented toward goals that you find important. You also feel a satisfying sense of self-efficacy. These realities engage your long-term reward system, which can override the urges generated by its short-term counterpart, dissipating the drive for quick gratification from activities like glancing at your phone.],
   [In other words: The more you organize your analog life, the less appealing you’ll find the digital alternative.],
   [If this is true, then maybe the thing social media companies fear most is not some newly-powerful application-blocking software or impossibly strict regulation, but rather a good old-fashioned daily planner.],
+  [In Other News :],
   [A lot of people I know have been freaked out recently by a viral essay with a grandiose title: ​“Something Big is Happening.”​ I recently released ​a short video​ in which I conduct a close analysis of this piece. (Spoiler alert: I wasn’t impressed.) ​ Check it out. ​],
   [(More generally, I’ve been considering starting a separate weekly podcast/newsletter dedicated to providing a reality check on recent AI news. It feels like it might be useful to separate this discussion from my existing podcast and newsletter, which are more focused on how individuals can seek depth in a distracted world. But also, maybe this is a bad idea? I’m interested to hear your thoughts about this plan.)],
   [The post What Do Social Media Companies Fear? Time Management. appeared first on Cal Newport .],
@@ -1893,7 +1863,7 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [WHERE I GREW],
   author: [Kirkus Reviews],
   source-name: [Kirkus Reviews],
@@ -1915,7 +1885,7 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [WHO NEEDS FRIENDS],
   author: [Kirkus Reviews],
   source-name: [Kirkus Reviews],
@@ -1933,7 +1903,7 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [THE HEART WORK OF MODERN LEADERSHIP],
   author: [Kirkus Reviews],
   source-name: [Kirkus Reviews],
@@ -1954,7 +1924,7 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [BENEATH],
   author: [Kirkus Reviews],
   source-name: [Kirkus Reviews],
@@ -1971,7 +1941,7 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [ON THE RECORD],
   author: [Kirkus Reviews],
   source-name: [Kirkus Reviews],
@@ -1992,7 +1962,7 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [\[Outliers\] The Multidisciplinary Approach to Thinking | Peter D. Kaufman],
   author: [Vicky],
   source-name: [Farnam Street (fs.blog)],
@@ -2014,7 +1984,7 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [THE HEART OF OUR HOME],
   author: [Kirkus Reviews],
   source-name: [Kirkus Reviews],
@@ -2034,7 +2004,7 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Joe Liemandt: Alpha School and the Future of Education],
   author: [Vicky],
   source-name: [Farnam Street (fs.blog)],
@@ -2043,6 +2013,9 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
   [Joe Liemandt is the principal of Alpha School and the founder of Trilogy Software and ESW Capital.],
   [Liemandt dropped out of Stanford to build Trilogy, made the cover of Forbes twice before thirty, became the youngest member of the Forbes 400, then vanished from public life for twenty-five years. But he didn’t stop building. Through ESW Capital, he quietly became one of the most prolific acquirers of software businesses in the world.],
   [Now he’s back with a \$1 billion bet that AI can make kids learn ten times faster, and that school as we know it isn’t just inefficient, it’s broken.],
+  [Public Release: March 31. 
+Members have access now .
+ Join us .],
   [Coming Soon: YouTube | Spotify | Apple Podcasts | Transcript],
   [At Alpha School, students spend two hours a day on AI-driven instruction and score in the top 1% on standardized tests. The rest of the day is devoted to what Liemandt calls life skills: leadership, entrepreneurship, teamwork, and real projects that kids actually care about.],
   [There are no lectures, and kids don’t move forward until they master the material.],
@@ -2060,7 +2033,7 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [This Quiet Missionary Survived the Lincoln County War to Live Among the Zunis],
   author: [Gregory Lalire],
   source-name: [HistoryNet],
@@ -2069,7 +2042,9 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
   [The Rev. Dr. Taylor Filmore Ealy faced many struggles, most not of his own making, while a Presbyterian medical missionary between 1874 and 1881—first at Fort Arbuckle, on the Chickasaw Reservation in Oklahoma Territory; then in volatile Lincoln, New Mexico Territory; and finally at Zuni Pueblo, also in New Mexico Territory. Some of that time he kept a journal. Daughter Ruth drew on his journal entries, as well as the recollections and correspondence of her father and mother, Mary, to write Water in a Thirsty Land —first privately issued in 1955 in a limited edition of 40 copies.],
   [Editor David Thomas resurrects the Ealy chronicle as Vol. 10 of Doc45’s Mesilla Valley History series. In his excellent introduction Thomas provides not only overviews of the three Western locales where the Ealys lived, but also brief biographies of the major figures in Ruth’s narrative. Perhaps of greatest interest is the time the Ealys spent in Lincoln, as the family arrived on the day murdered English rancher John Tunstall ’s body was brought into town. It was the latter’s murder that triggered the 1878 Lincoln County War, and it was the Rev. Dr. Ealy who delivered Tunstall’s funeral oration at the home of Alexander McSween. Forty-one days later the doctor and family witnessed the killing of Lincoln County Sheriff William Brady and Deputy George Hindman, and the Ealys were also present for the five-day shootout in Lincoln that culminated with the burning of the McSween house and Alexander’s murder. In his journal Ealy noted that Colonel Nathan Dudley, the commander at Fort Stanton, “refused to protect McSween and ordered his men not to fire over Dudley’s camp, or he would turn the cannon on them. My wife read his note to reply to McSween’s request for protection. McSween’s house, where his party had taken refuge, was deliberately set on fire.”],
   [Such violence is what ultimately drove the family out of Lincoln. The Rev. Dr. Ealy then spent nearly three years as a missionary teacher at Zuni Pueblo, 150 miles west of Albuquerque. There was no gunplay there, but Ealy experienced plenty of cultural shock. “He had gained the respect of many of the Indians who more and more were beginning to realize the value of an education,” wrote Ruth (who was born in East Waterford, Pa., in 1877 and died in St. Petersburg, Fla., in 1959). “The religious dances still interfered with the school attendance, it is true, but the children seemed to be enjoying their schoolwork. He had learned to like his Indian friends.” It was—and remains—mighty dry country, and Ealy often noted in his journal how the Zunis danced day and night for rain.],
+  [Water in a Thirsty Land],
   [By Ruth R. Ealy, edited by David Thomas, Doc45 Publishing, 2022],
+  [get it on amazon],
   [If you buy something through our site, we might earn a commission.],
 ),
   insert-map: (:),
@@ -2085,21 +2060,31 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Be Your Best in 2026: The Most Important Lessons from The Knowledge Project (2025)],
   author: [Vicky],
   source-name: [Farnam Street (fs.blog)],
   images: (),
   paragraphs: (
   [The Knowledge Project closes 2025 with a look back at the most meaningful conversations of the year. Featuring insights from some of our most impactful episodes, this collection brings together practical insights on decision-making, leadership, preparation, relationships, trust, and performance.],
+  [Featured clips],
+  [01:32],
   [Alfred Lin: Inputs vs Outputs – Daily Routines and Priorities],
+  [08:05],
   [Bret Taylor: Founder Mode (Accountability vs. Caricature)],
+  [21:58],
   [Logan Ury: Navigating Relationships and Attachments],
+  [29:04],
   [Bill Belichick: Preparation and Success In Life And The NFL],
+  [38:33],
   [Indra Nooyi: Delivering a Message That Gets Heard],
+  [43:36],
   [Anthony Scilipoti: Don’t Rely on AI, You Still Have to Put the Work In],
+  [52:11],
   [Lulu Cheng Meservey: Engineering Trust and Building Confidence That Others Can Believe In],
+  [57:53],
   [Harley Finkelstein: Overcoming Failure + The Hard Work Behind the Life You Want],
+  [01:05:15],
   [Jim Murphy: Performance Habits of Successful People],
   [This episode features insights from world-class investor  Alfred Lin , tech founder and operator  Bret Taylor , behavioral scientist  Logan Ury , legendary NFL coach  Bill Belichick , former PepsiCo CEO  Indra Nooyi , disciplined value investor  Anthony Scilipoti , trust and communication expert  Lulu Cheng Meservey , Shopify President  Harley Finkelstein , and performance coach  Jim Murphy .],
   [These are the insights that help you prepare better, make clearer decisions, and build momentum for the year ahead.],
@@ -2115,7 +2100,7 @@ as the Pony Express Road. The original trail, which appears as a faint scar in t
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [PEN PALS],
   author: [Kirkus Reviews],
   source-name: [Kirkus Reviews],

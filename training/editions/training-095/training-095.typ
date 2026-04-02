@@ -21,40 +21,13 @@
 #masthead([The Wide Post], [Vol. 1, No. 095], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [A polar week],
-  kicker: [Cover Story],
-  author: [Petr Mitrichev],
-  source-name: [Petr Mitrichev (competitive programming)],
-  deck: [However, the St Petersburg State University has managed to get the very difficult problem G accepted as well, and the university became the world champion for the 5th time .],
-  lead-pre: [],
-  lead-cap: [c],
-  lead-rest: [lass="separator" style="clear: both; text-align: center;"\>],
-  body-paragraphs: (
-  [ICPC World Finals 2025 \#ICPCBaku was the main event of the week, and for many the main event of the year ( problems , results , top 12 on the left, official stream , our stream ). The St Petersburg State University team was always among the leaders, but they collected too many incorrect attempts and therefore the almost flawless University of Tokyo team was leading with a better penalty time on 10 problems just two minutes before the end. However, the St Petersburg State University has managed to get the very difficult problem G accepted as well, and the university became the world champion for the 5th time . Congratulations!],
-  [For the University of Tokyo this means that they have earned their 13th medal and 6th gold , but will unfortunately need to wait to lift the cup for a bit longer. I expect them to do it soon, given the flourishing programming contest community in the university and in Tokyo in general. In any case, well done to them and to all medalists!],
-  [We have solved the mirror contest together with Kevin and Mateusz. It started reasonably well, but then initally Mateusz and then myself got stuck in problem B , spending a lot of thinking time and computer time on it, but never getting it accepted.],
-  [At the end of the contest, we tried to add some heuristics to speed up our matching code in B, but it was still too slow. The way that many teams used to work around it is to have a separate solution for "large enough" values of n , either a direct mathematical one or one obtained by looking for patterns in the outputs in the matching solution for small values of n .],
-  [However (it is always somehow easier to think after the contest ends...) today I have tried another approach that seems obvious in retrospect: since we just need to find an even number that is not covered by some matching, and in the normal bipartite matching algorithm (usually called Kuhn's in the programming contest circles) as soon as we're unable to find an augmenting path from a certain vertex of the first part, we know that it will not be covered by the final matching, we can stop the matching algorithm as soon as a search starting from an even number is unsuccessful. On my laptop, it makes the code run in 0.6s for n =10 7 . I could not find any working upsolving to test this properly, please share a link if you know one!],
-  [Another problem that I found very nice was problem E : you are given a graph with 2 n vertices and m edges ( n \<=2\*10 5 , m \<=4\*10 5 ), the vertices are split into n  pairs that we will call blocks , let us call one vertex in a block  red and another blue . Every edge connects a red vertex with a blue vertex. The m edges are added to the initially empty graph one by one. After each edge is added, you need to print the number of pairs of blocks (out of n \*( n -1)/2 possibilities) that are connected (there exists a path connecting one of the four possiblities: between the red or the blue vertex in the first block and the red or the blue vertex in the second block). If not for the complication with the blocks, it would be a simple union-find application, but can you see how to deal with the blocks?],
-  [Thanks for reading, and check back next week!],
-),
-  edited-for-length: false,
-)
-
-#pull-quote([At the end of the contest, we tried to add some heuristics to speed up our matching code in B, but it was still too slow.], [Petr Mitrichev])
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [Is AI really coming for architects' jobs?],
   author: [Dezeen staff],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [In the latest episode of Dezeen Weekly , we discuss a study indicating that architecture is highly exposed to automation and talk about the winner of this year's Pritzker Architecture Prize .],
   [How worried should architects be about large language models taking their jobs? How did the Pritzker Architecture Prize make us look silly this week? And what is "bio-upcycling"?],
   [In this episode, Dezeen features editor Nat Barker and design editor Jennifer Hahn consider a controversial labour impact study by AI company Anthropic .],
@@ -68,17 +41,14 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Heliotrope tucks False Bay house into rocky site on a Washington island],
   author: [Jenna McKnight],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [Architectural studio Heliotrope took a "site-sensitive approach" while designing a vacation house in the Pacific Northwest, resulting in a bow tie-shaped plan and knotty cedar cladding.],
   [The house is located on San Juan Island in the Salish Sea, situated about 90 miles (145 kilometers) from Seattle. Part of Washington State , the island is reached by boat or seaplane.],
   [The clients are from Seattle and have friends with homes on the island. They wanted a family vacation home that would be suitable for entertaining guests and could shift to more frequent use as the clients age.],
@@ -123,10 +93,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A thesis week],
   author: [Petr Mitrichev],
   source-name: [Petr Mitrichev (competitive programming)],
@@ -147,16 +115,13 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Eight contemporary houses raised on stilts],
   author: [Tom Ravenscroft],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [Whether to make sloped sites level, prevent flooding or reduce impact on natural surroundings, houses on stilts are being built around the world. Here are eight of the best contemporary examples.],
   [House in the Delta by MAPA, Argentina],
   [Raised on stilts to protect from periodic flooding on its riverside site near Buenos Aires, House in the Delta was the first Passivhaus-certified home built in Argentina.],
@@ -192,16 +157,13 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Verge Select connects three weathering-steel volumes for Ontario painting studio],
   author: [Ellen Eberhardt],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [Canadian design studio Verge Select has designed a studio for painter Janna Watson in Ontario , composed of three square volumes fused together to form a secluded forest retreat.],
   [The Grey County studio is located in the county of the same name in Ontario , and, unlike a second, more urban studio operated by Watson, provides a space that "slows time".],
   [Verge Select has completed a painter's studio in Ontario],
@@ -235,16 +197,13 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Construction material costs set to rise if Strait of Hormuz blockade continues],
   author: [Lizzie Crook],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [The continued blockade of the Strait of Hormuz could push up prices of building materials , including steel and cement , a study by global construction consultant Linesight has warned.],
   [If disruption continues in the Strait of Hormuz – a narrow waterway between Iran and the UAE – the construction industry should prepare for higher prices for aluminium , steel, copper and cement, the report states .],
   [Iran is currently restricting access to the waterway used to ship a fifth of the world's oil supply following US and Israeli strikes on the country creating a bottleneck for the oil and gas trade.],
@@ -278,16 +237,13 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [NASA accelerates plan to build permanent moon base],
   author: [Ellen Eberhardt],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [NASA has announced that it has cancelled an upcoming orbital space station to expedite the building of a permanent lunar base on the moon , "landing by landing and incrementally".],
   [Announced on 24 March, the shift in focus is part of agency-wide strategies to hurriedly "achieve President Donald Trump 's National Space Policy and advance American leadership in space", according to NASA.],
   [The lunar base will feature three major stations according to the space agency, with a reported \$20 billion allocated to the cause over the next seven years. It will use components from the now-cancelled Lunar Gateway, an orbital station that was designed to support moon missions.],
@@ -321,10 +277,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A Pluggable Solution for API Observability on our PHP System],
   author: [nickscheiblauer],
   source-name: [Flickr Engineering],
@@ -373,10 +327,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A shift week],
   author: [Petr Mitrichev],
   source-name: [Petr Mitrichev (competitive programming)],
@@ -440,16 +392,13 @@ the additional complexity that g values of y have been replaced with y  - 1. Le
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: ["There is no message in what I do" says Pritzker Architecture Prize-winner Smiljan Radić],
   author: [Ben Dreith],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [Elusive architect Smiljan Radić explains how his work should not be seen as a blueprint for "good or bad" architecture, in this exclusive interview following his "surprise" Pritzker Architecture Prize win .],
   [Radić, who became the 55th Pritzker Architecture Prize laureate earlier this month, said that although he's always wanted his work to have a global impact, the win was "a great surprise".],
   ["I have always wanted my work to be part of a global discussion," Radić told Dezeen.],
@@ -494,8 +443,7 @@ the additional complexity that g values of y have been replaced with y  - 1. Le
   [Radić's works have been commended for their metaphorical relationship with human experience, but he says his architecture is not a moral tool],
   ["I don't know," he said when asked what's next for his practice.],
   ["In architecture, you generally can't create your own opportunities. Clients and competitions appear unevenly, and you have to make decisions quickly, trying to experiment as much as possible."],
-  [dir="ltr"\> Dezeen In Depth],
-  [dir="ltr"\> If you enjoy reading Dezeen's interviews, opinions and features, subscribe to Dezeen In Depth . Sent on the last Friday of each month, this newsletter provides a single place to read about the design and architecture stories behind the headlines.],
+  [If you enjoy reading Dezeen's interviews, opinions and features, subscribe to Dezeen In Depth . Sent on the last Friday of each month, this newsletter provides a single place to read about the design and architecture stories behind the headlines.],
   [The post "There is no message in what I do" says Pritzker Architecture Prize-winner Smiljan Radić appeared first on Dezeen .],
 ),
   insert-map: (:),
@@ -504,10 +452,8 @@ the additional complexity that g values of y have been replaced with y  - 1. Le
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Safer Internet Day and Open Source Codes of Conduct],
   author: [Sarah Graywood],
   source-name: [Flickr Engineering],
@@ -515,10 +461,12 @@ the additional complexity that g values of y have been replaced with y  - 1. Le
   paragraphs: (
   [Last week the world celebrated Safer Internet Day , a day used to call upon stakeholders to join together to make the internet a safer and better place for all, and especially for children and young people. Here at Flickr, we believe in creating spaces on the internet that take into account the safety of all of our contributors, especially our youngest and most underrepresented. So, to celebrate that and to continue the work of making our spaces safer and more accessible to all, we have added a code of conduct to our most trafficked open source repositories on GitHub.],
   [What’s/Why Open Source?],
+  [“100\_0509” by Nick Quaranto is licensed under CC BY-SA 2.0],
   [Open source is a method of development that allows software to be available publicly so that contributors can modify, add, and remove code as they see fit in order to create a more robust codebase colored with the ideas and innovations of many developers rather than just a few. At Flickr we believe that innovation happens when we have a diverse and widespread set of voices coming together to suggest changes. Open source allows us to harness the power of these voices to create the very best software we can.],
   [Flickr has 15 open source repositories, 4 of which are actively contributed to. Of those four, none had a formal code of conduct to govern contributions to the code base or interpersonal interactions between developers actively working on the code… until now!],
   [Why a code of conduct?],
   [Codes of conduct are extremely common and important in the open source community. Groups like Linux, Homebrew, Bootstrap, and Kubernetes all have codes of conduct governing the use of and contributions to their open source projects. Because open source allows such a diverse set of voices to express themselves, conflicts can arise and unfortunately not all come with the best of intent.],
+  [“Bullying” by Senado Federal is licensed under CC by 2.0],
   [Codes of conduct allow us to have a preconceived understanding of what interactions in our community are meant to look like and why we hold these expectations of members. Codes of conduct can range from what is expected of interpersonal interactions (e.g. Demonstrate kindness and empathy toward other developers in pull request reviews) to more generalized expectations (e.g. Focus on what is best for the community as a whole rather than individual desires or needs). Codes of conduct not only benefit the community in its entirety, but also allow us to focus on protecting the psychological safety of members of our community who are most at risk. We care about all of our members while also recognizing the need for specific and directed language to protect members of underrepresented groups. The best way to do this is to have a written code of conduct with specific, actionable steps used to govern the safety of the community.],
   [Why Contributor Covenant?],
   [In order to protect underrepresented groups and to foster a strong and healthy open source community here at Flickr, we thought about whether it would be best to write our own code of conduct specifically tailored to what we value at Flickr or whether it would be better to find a code of conduct already in use that we could use to guide our own open source communities. We ended up finding a code of conduct already in use by quite a few well respected organizations that directly spoke to our most important operating principles .],
@@ -531,17 +479,15 @@ the additional complexity that g values of y have been replaced with y  - 1. Le
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [PichiAvo builds wooden temple to burn down for Valencia's Fallas festival],
   author: [Amy Peacock],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [Local art studio PichiAvo used wood and paper to create a pavilion based on an Ancient Greek temple, which was set ablaze for the Fallas celebrations in Valencia .],
   [Named Per Ofrenar, which means "to offer" in Catalan, the installation had a classical design that drew upon the Temple of Athena Nike in Athens .],
   [PichiAvo designed a temple-like pavilion to be burnt as part of Fallas festival],
@@ -569,7 +515,7 @@ the additional complexity that g values of y have been replaced with y  - 1. Le
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Big Dune],
   author: [Stu Davidson],
   source-name: [Stuck in Customs],
@@ -596,7 +542,7 @@ the additional complexity that g values of y have been replaced with y  - 1. Le
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([Fashionista], source-name: [Fashionista], [In case you missed them, we've rounded up our most popular stories of the week to help you stay in the loop. No need to thank us — just toast a cappuccino in our honor when you're discussing who did what over your pain au chocolat. Homepage photo: Bryan Bedder/Getty Images for Fashion Scholarship ...
 
  Continue reading])],
@@ -659,19 +605,19 @@ There have been several thorough examples already published — most notably thi
 Rather, this is a quick write-up of some first-hand impressions, thoughts and features I have not seen much mention of elsewhere.
 
  Read more »])],
-      [#brief-item([David Hobby], source-name: [Strobist], [class="separator"\>
+      [#brief-item([David Hobby], source-name: [Strobist], [
 
-style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em; text-align: center;"\> 
 
-class="separator" style="clear: both; text-align: center;"\> 
+
+
 
  Whew. What a year. 
 
-class="separator"\>But if you're reading this, you made it through! 
+But if you're reading this, you made it through! 
 
-class="separator"\>As we all move into a hopefully much better 2021, here are three things you can do to improve your experience as a photographer for the coming year.
+As we all move into a hopefully much better 2021, here are three things you can do to improve your experience as a photographer for the coming year.
 
-class="separator"\> 
+
 
  Read more »])],
       [#brief-item([Winnie Liu], source-name: [Fashionista], [Responsibilities: Assistance on photoshootsCoordinating samples for wholesale, shoots etctakes weekly calls with PR team and helps executes any in house tasks - pass of decks, send out samples, provide general communication takes part in event planning and executing eventsoutreach and ...
@@ -685,13 +631,12 @@ class="separator"\>
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Kéré Architecture designs perforated brick health clinic in Burundi],
   author: [Tom Ravenscroft],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [Berlin studio Kéré Architecture has revealed its design for the Ineza Clinic, which will step up a hillside in rural Burundi within a series of brick pavilions.],
   [Designed for the city of Bubanza, around 30 miles north of Burundi's capital, the health centre will be built from predominantly local materials to reduce the cost of transportation.],
   [Kéré Architecture has designed the Ineza Clinic in Burundi],
@@ -721,7 +666,7 @@ class="separator"\>
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [An alumni day],
   author: [Petr Mitrichev],
   source-name: [Petr Mitrichev (competitive programming)],
@@ -743,7 +688,7 @@ class="separator"\>
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [A chess day],
   author: [Petr Mitrichev],
   source-name: [Petr Mitrichev (competitive programming)],
@@ -766,13 +711,12 @@ class="separator"\>
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Over 40,000 civilian buildings in Iran reportedly damaged in ongoing war],
   author: [Amy Peacock],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [Humanitarian group Iranian Red Crescent Society has reported that 42,914 civilian buildings in Iran have been damaged by US-Israeli airstrikes, including more than 36,000 homes.],
   [Announced on X last week, the Iranian Red Crescent Society – a non-governmental group affiliated with the International Federation of Red Cross and Red Crescent Societies (IFRC) – calculated that US-Israeli airstrikes have caused damage to 42,914 civilian buildings in Iran.],
   [This includes 36,489 residential units and 6,179 commercial units.],
@@ -801,13 +745,12 @@ class="separator"\>
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [This week we interviewed Pritzker Architecture Prize-winner Smiljan Radić],
   author: [Tom Ravenscroft],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [This week on Dezeen , we spoke to elusive architect Smiljan Radić about his "surprise" Pritzker Architecture Prize win .],
   [Radić explained how he was surprised by the win and didn't want his work to be seen as a blueprint for "good or bad" architecture.],
   ["There is no message in what I do," he said. "I'm not interested in it becoming a kind of sermon about what is good or bad in architecture."],
@@ -838,7 +781,7 @@ class="separator"\>
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [SLC-2L-12: Two-Light Bike for the Bucks],
   author: [David Hobby],
   source-name: [Strobist],
@@ -866,7 +809,7 @@ class="separator"\>
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [A winter week],
   author: [Petr Mitrichev],
   source-name: [Petr Mitrichev (competitive programming)],
@@ -889,7 +832,7 @@ class="separator"\>
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Our Justified Layout Goes Open Source],
   author: [jimwhimpey],
   source-name: [Flickr Engineering],
@@ -911,12 +854,8 @@ class="separator"\>
   [https:\/\/gist.github.com/jimwhimpey/faaf2c95809647abcbea481d8445ecf9],
   [This is the extent of what the module provides. There’s no rendering component. It’s up to you to use this data to render boxes the way you want. Use absolute positioning, background positions, canvas, generate a static image on the backend, whatever you like! There’s a very basic implementation used on the demo and docs page .],
   [It’s highly likely the defaults don’t satisfy your requirements; they don’t even satisfy ours. There’s a full set of configuration options to customize the output just the way you want. My favorite is the fullWidthBreakoutRowCadence option that we use on album pages . All config options are documented on the docs and demo page .],
-  [style="font-weight: 400;"\> Latest Chrome],
-  [style="font-weight: 400;"\> Latest Safari],
-  [style="font-weight: 400;"\> Latest Firefox],
-  [style="font-weight: 400;"\> Latest Mobile Safari],
-  [style="font-weight: 400;"\> IE 9+],
-  [style="font-weight: 400;"\> Node 0.10+],
+  [IE 9+],
+  [Node 0.10+],
   [The future],
   [The justified layout algorithm is just one part of our photo list infrastructure. Following this, we’ll be open sourcing more modules for handling data, handling state, reverse layouts, appending and prepending items for pagination.],
   [We welcome your feedback, issues and contributions on Github .],
@@ -931,7 +870,13 @@ class="separator"\>
 
   ],
 ), ruled-indices: (1,))
-#pull-quote([Kudos for the perseverance!  class="separator" style="clear: both; text-align: center;"\>   The Universal Cup Grand Prix of Poland also took place on Saturday ( problems , results , top 5 on the left).], [Petr Mitrichev])
+#pull-quote([Kudos for the perseverance!    The Universal Cup Grand Prix of Poland also took place on Saturday ( problems , results , top 5 on the left).], [Petr Mitrichev])
 
+
+// --- Notable Quotes ---
+#block(above: 0.2in, stroke: (top: 1pt + luma(26)), inset: (top: 0.1in))[
+  #pull-quote([At the end of the contest, we tried to add some heuristics to speed up our matching code in B, but it was still too slow.], [Petr Mitrichev])
+
+]
 
 #colophon([The Wide Post], [Vol. 1, No. 095], [2026-03-30])

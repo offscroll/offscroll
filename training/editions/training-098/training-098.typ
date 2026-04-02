@@ -21,65 +21,8 @@
 #masthead([The Atlantic Bulletin], [Vol. 1, No. 098], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [How a diplomatic snub evokes the complicated US-Brazil relationship in the second Trump era],
-  kicker: [Cover Story],
-  author: [Anthony W. Pereira, Executive Director of the Stone Center for Latin American Studies, Tulane University; King's College London],
-  source-name: [The Conversation US],
-  deck: [U. S.],
-  lead-pre: [],
-  lead-cap: [P],
-  lead-rest: [resident Donald Trump holds a bilateral meeting with Brazil's President Luiz Inácio Lula da Silva on Oct. 26, 2025, in Kuala Lumpur, Malaysia. Andrew Harnik/Getty Images],
-  body-paragraphs: (
-  [Darren Beattie, the recently appointed U. S. State Department senior adviser for Brazil policy, had planned to attend a forum on critical minerals in São Paulo in mid-March. But his visa was denied .],
-  [The reason had nothing to do with U. S. policy on critical minerals. Rather, Beattie reportedly had plans to make a detour to Brasilia to visit former President Jair Bolsonaro. The right-wing politician, a longtime ally of President Donald Trump, has been in jail serving a sentence for attempting to prevent his successor, President Luiz Inácio Lula da Silva, from taking office. On March 25 it was announced that the Brazilian Supreme Court will provisionally allow Bolsonaro to serve his sentence at home , due to ill health.],
-  [Supreme Court Judge Alexandre de Morães, who oversaw Bolsonaro’s trial, denied Beattie’s visa after consulting Brazil’s foreign ministry, which said the visit could amount to “undue interference” in the country’s internal affairs, given that 2026 is an election year. Bolsonaro cannot run for office, due to his criminal conviction, but his son Flávio is the most popular likely opposition candidate. Beattie is a known critic of Lula and Morães and has praised Bolsonaro as representing “exactly the type of nationalism that we want and support.”],
-  [Lula, for his part, later claimed that the block on Beattie’s visa was payback for the Trump administration’s refusal last year to give a visa to Brazilian Health Minister Alexandre Padilha.],
-  [As a professor of Latin American politics , I believe the Beattie episode is important given what it reveals about strained U. S.-Brazil ties since Trump’s reelection. Specifically, that relationship has been wrapped up with the U. S. administration’s broader support for Brazil’s former leader and his right-wing base. From the standpoint of Lula’s government, the latest U. S. actions are another instance of meddling in the country, particularly in the lead-up to presidential elections in October.],
-  [Brazilian Supreme Court Judge Alexandre de Moraes hears testimony from former President Jair Bolsonaro, back to camera at right, accompanied by his lawyer, during his trial. 
- AP Photo/Eraldo Peres],
-  [The Trump-Bolsonaro pipeline],
-  [To some observers and critics , the Trump administration’s foreign policy is about dismantling the alliances that propped up the post-World War II international order. But the policy goes beyond that to support authoritarian national-populist movements around the world.],
-  [Indeed, many officials in the Trump administration still accept Jair Bolsonaro’s narrative that his criminal conviction at the hands of the country’s Supreme Court is a form of “lawfare” aimed at repressing him for what he says rather than what he did. The official police and legal record , on the other hand, paints a much more damning picture of Bolsonaro’s participation in a coup plot .],
-  [Yet Trump has long echoed the allegations of improper targeting of Bolsonaro, including when he imposed punitive 50% tariffs on a range of Brazilian exports to the U. S. in July 2025.],
-  [Those tariffs were later reduced on many products, and the U. S. Supreme Court invalidated them in a February 2026 ruling. Furthermore, Trump and Lula engaged in a later rapprochement of sorts , which included the Trump administration’s decision to lift sanctions on Morães .],
-  [Yet the kerfuffle over the Beattie visa shows there remains a fundamentally antagonistic relationship between elements of the Trump and Lula coalitions, despite recent improvements in the two countries’ diplomatic relations.],
-  [Lula is expected to visit Trump in Washington, D. C., sometime in the near future , and assuming that remains on the agenda, what happens there will be carefully watched for clues about where the bilateral relationship stands.],
-  [Brazil’s fears of Washington’s meddling],
-  [For the Lula administration, the episode with Beattie is part of a much greater concern that the Trump administration could try to tip the scales of the October 2026 presidential election in Brazil.],
-  [The fear is hardly without recent precedent. In 2025, Trump extended a bailout to Argentine President Javier Milei, a Trump ally , including a US\$20 billion currency swap that buoyed the economy and helped Milei’s far-right party Liberty Advances do well in the October legislative elections.],
-  [Meanwhile in Honduras in December 2025, the Trump-backed candidate Nasry Asfura won a tight presidential election, helped by Trump’s declaration that there would be “hell to pay” if Asfura’s small lead was overturned in the vote count.],
-  [Those cases are to say nothing of the explicitly militarized forms of coercive power the Trump administration has used in Venezeula with the abduction of President Nicolás Maduro, or the oil embargo imposed on Cuba as a way to undermine the government there.],
-  [These interventions provoke fear among Lula supporters in Brazil and evoke memories of an earlier age of U. S.-backed authoritarianism in Brazil.],
-  [Part of the concern is that America’s bitterly polarized society and concerns over the rise of authoritarian politics mirrors Brazil’s own situation. A Genial/Quaest poll from early March 2026 shows a statistical tie in electoral support for Lula of the Workers’ Party and Flávio Bolsonaro of the Liberal Party.],
-  [Flavio Bolsonaro, son of former President Jair Bolsonaro and a candidate in Brazil’s October presidential election, gestures to supporters during a protest against President Luiz Inácio Lula da Silva in São Paulo on March 1, 2026. 
- AP Photo/Andre Penner],
-  [Beattie, too, serves as a kind of proxy for the politics that Trump represents – and that Lula aims to prevent in Brazil in the form of Bolsonarism. Before landing a job in the current administration , Beattie was fired from the first Trump administration for attending a conference at which prominent white nationalists, including Richard Spencer and Peter Brimelow, were also present.],
-  [Later, Beattie helped found the pro-Trump conservative Revolver News, and he has a long history of making what critics have framed as inflammatory remarks and promoting conspiracy theories.],
-  [The clash between ideology and pragmatism],
-  [It is unclear whether a pragmatic approach will prevail in U. S. policy toward Brazil.],
-  [At present, there are elements of such an approach in U. S. policy toward Venezuela. The Trump administration is happy to negotiate with the Delcy Rodríguez government as long as it receives Venezuelan oil exports. While Lula and other critics have castigated the Trump administration’s removal of Maduro from power , the current U. S. policy of dealing with the remaining Chavista leadership in Venezuela — albeit on terms favorable to the U. S. — signals a degree of pragmatism.],
-  [In Brazil, the Trump administration has ample reasons for making deals with Lula, including to gain access to the country’s critical minerals, such as niobium, lithium and cobalt. Brazil has an estimated 20% to 23% of the world’s rare earth minerals, and U. S. government officials and investors are very interested in these deposits.],
-  [It could be that the personal relationship between Trump and Lula and the economic interest of the U. S. in Brazil’s critical minerals cause the Trump administration to stay neutral in the October presidential election.],
-  [On the other hand, the Lula administration, consistent with a long-standing concern in Brazilian diplomacy to maintain autonomy in its dealings with other countries, is reluctant to sign an exclusive agreement with the U. S. on critical minerals. That concern was on display earlier in March, when no Lula administration officials attended a U. S. Embassy-hosted summit on critical minerals in São Paulo.],
-  [Moreover, Brazil will likely continue to resist any U. S. pressure to diminish its trade relationship with China.],
-  [Lula pats the chest of Colombian President Gustavo Petro, another South American leader who has been in Trump’s crosshairs. 
- AP Photo/Fernando Vergara],
-  [The Lula administration is also alarmed that the Trump administration might classify two of its organized criminal groups – the Primeiro Comando da Capital and Comando Vermelho – as terrorist organizations. Such designations have formed a key basis of recent aggressive American actions across the hemisphere, and some in Brazil fear they could be extended to their country, too.],
-  [There is other evidence, however, that aggressive anti-Lula and pro-Bolsonaro officials in the Trump administration, such as Beattie, would like to tip the scales in favor of the opposition in the October elections.],
-  [Beattie’s schedule in Brazil had included a meeting with the likely presidential candidate Flávio Bolsonaro, discussions with Brazilian government officials about court decisions to block social media accounts, and meetings with civil servants at the Superior Electoral Court in order to better understand Brazil’s electronic voting system.],
-  [This agenda raised concerns that it could form a pretext for later allegations that the 2026 election was fraudulent and that Brazilian voters’ free speech rights were infringed by the judiciary. Such allegations were made by supporters of Jair Bolsonaro, and Beattie too , in the wake of Brazil’s 2022 election.],
-  [All of this exposes the delicate nature of current relations between the U. S. and Brazil, two politically polarized countries with recent histories of democratic backsliding whose right-wing populist movements are closely intertwined.],
-  [If Lula comes to Washington as planned, he is likely to have much to discuss with Trump.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [If Not React, Then What?],
   author: [Alex Russell (infrequently noted)],
   source-name: [Alex Russell (infrequently noted)],
@@ -105,7 +48,7 @@
   ["... React Native!"],
   [In the hope of steering the next team away from the rocks, I've found myself penning advocacy pieces and research into the state of play , as well as giving talks to alert managers and developers of the dangers of today's frontend orthodoxy.],
   [In short, nobody should start a new project in the 2020s based on React. Full stop. 1],
-  [id="the-rule-of-least-client-side-complexity" tabindex="-1"\> The Rule Of Least Client-Side Complexity],
+  [The Rule Of Least Client-Side Complexity],
   [Code that runs on the server can be fully costed. Performance and availability of server-side systems are under the control of the provisioning organisation, and latency can be actively managed.],
   [Code that runs on the client, by contrast, is running on The Devil's Computer. 2 Almost nothing about the latency, client resources, or even API availability are under the developer's control.],
   [Client-side web development is perhaps best conceived of as influence-oriented programming . Once code has left the datacentre, all a web developer can do is send thoughts and prayers.],
@@ -113,7 +56,7 @@
   [Stacks based on React, Angular, and other legacy-oriented, desktop-focused JavaScript frameworks generally take the opposite bet. These ecosystems pay lip service the controls that are necessary to prevent horrific proliferations of unnecessary client-side cruft. The predictable consequence are NPM-amalgamated bundles full of redundancies like core-js , lodash , underscore , polyfills for browsers that no longer exist, userland ECC libraries, moment.js , and a hundred other horrors.],
   [This culture is so out of hand that it seems 2024's React developers are constitutionally unable to build chatbots without including all of these 2010s holdovers, plus at least one chonky MathML or TeX library in the critical path to display an . A tiny fraction of query responses need to display formulas — and yet.],
   [Tech leads and managers need to break this spell. Ownership has to be created over decisions affecting the client. In practice, this means forbidding React in new work.],
-  [id="ok%2C-but-what%2C-then%3F" tabindex="-1"\> OK, But What, Then?],
+  [OK, But What, Then?],
   [This question comes in two flavours that take some work to tease apart:],
   [The narrow form:],
   ["Assuming we have a well-qualified need for client-side rendering, what specific technologies would you recommend instead of React?"],
@@ -137,7 +80,7 @@
   [Realists do not wallow in abstraction-induced hallucinations about user experiences; they measure them. Realism requires reckoning with the world as it is, not as we wish it to be. In that way, realism is the opposite of frameworkism.],
   [The most effective tools for breaking the spell are techniques that give managers a user-centred view of system performance. This can take the form of RUM data, such as Core Web Vitals ( check yours now! ), or lab results from well-configured test-benches (e.g., WPT ). Instrumenting critical user journeys and talking through business goals are quick follow-ups that enable teams to seize the momentum and formulate business cases for change.],
   [RUM and bench data sources are essential antidotes to frameworkism because they provide data-driven baselines to argue from, creating a shared observable reality. Instead of accepting the next increment of framework investment on faith, teams armed with data can weigh up the costs of fad chasing versus likely returns.],
-  [id="and-nothing-of-value-was-lost" tabindex="-1"\> And Nothing Of Value Was Lost],
+  [And Nothing Of Value Was Lost],
   [Prohibiting the spread of React (and other frameworkist totems) by policy is both an incredible cost savings and a helpful way to reorient teams towards delivery for users. However, better results only arrive once frameworkism itself is eliminated from decision-making. It's no good to spend the windfall from avoiding one sort of mistake on errors within the same category.],
   [A general answer to the broad form of the problem has several parts:],
   [User focus],
@@ -147,7 +90,6 @@
   [Organisations can tweak guidance as appropriate — e.g., creating an escalation path for exceptions — but the important thing is to set a baseline. Evidence boiled down into policy has power.],
   [No new system should be deployed without a clear list of critical user journeys. Those journeys embody what we users do most frequently, and once those definitions are in hand, teams can do bake offs to test how well various systems deliver given the constraints of the expected marginal user.],
   [All of this casts the product manager's role in stark relief. Instead of suggesting an endless set of experiments to run (poorly), they must define a product thesis and commit to defining success as improving services for users . This will be uncomfortable. It's also the job. Graciously accept the resignations of PMs who decide managing products is not in their wheelhouse.],
-  [id="vignettes" tabindex="-1"\> Vignettes],
   [To see how realism and frameworkism differ in practice, it's helpful to work a few examples. As background, recall that our rubric 9 for choosing technologies is based on the number of incremental updates to primary data in a session. Some classes of app, like editors, feature long sessions and many incremental updates where a local data model can be helpful in supporting timely application of updates, but this is the exception .],
   [Sites with short average sessions cannot afford much JS up-front.],
   [It's only in these exceptional instances that SPA architectures should be considered.],
@@ -155,18 +97,17 @@
   [The choice isn't between JavaScript frameworks, it's whether SPA-oriented tools should be entertained at all .],
   [For most sites, the answer is clearly "no".],
   [We can examine broad classes of site to understand why this is true:],
-  [id="informational" tabindex="-1"\> Informational],
   [Sites built to inform should almost always be built using semantic HTML with optional progressive enhancement as necessary.],
   [Static site generation tools like Hugo, Astro, 11ty, and Jekyll work well for many of these cases. Sites that have content that changes more frequently should look to "classic" CMSes or tools like WordPress to generate HTML and CSS.],
   [Blogs, marketing sites, company home pages, and public information sites should minimise client-side JavaScript to the greatest extent possible. They should never be built using frameworks that are designed to enable SPA architectures. 10],
-  [id="why-semantic-markup-and-optional-progressive-enhancement-are-the-right-choice" tabindex="-1"\> Why Semantic Markup and Optional Progressive Enhancement Are The Right Choice],
+  [Why Semantic Markup and Optional Progressive Enhancement Are The Right Choice],
   [Informational sites have short sessions and server-owned application data models; that is, the source of truth for what's displayed on the page is always the server's to manage and own. This means that there is no need for a client-side data model abstraction or client-side component definitions that might be updated from such a data model.],
   [Note : many informational sites include productivity components as distinct sub-applications, which can be evaluated independently. For example, CMSes such as Wordpress are comprised of two distinct surfaces; post editors that are low-traffic but high-interactivity, and published pages, which are high-traffic, low-interactivity viewers. Progressive enhancement should be considered for both, but is an absolute must for reader views which do not feature long sessions. 9:1],
-  [id="e-commerce" tabindex="-1"\> E-Commerce],
+  [E-Commerce],
   [E-commerce sites should be built using server-generated semantic HTML and progressive enhancement.],
   [A large and stable performance gap between Amazon and its React-based competitors demonstrates how poorly SPA architectures perform in e-commerce applications. More than 70% of Walmart's traffic is mobile, making their bet on Next.js particularly problematic for the business.],
   [Many tools are available to support this architecture. Teams building e-commerce experiences should prefer stacks that deliver no JavaScript by default , and buttress that with controls on client-side script to prevent regressions in material business metrics.],
-  [id="why-progressive-enhancement-is-the-right-choice" tabindex="-1"\> Why Progressive Enhancement Is The Right Choice],
+  [Why Progressive Enhancement Is The Right Choice],
   [The general form of e-commerce sites has been stable for more than 20 years:],
   [Landing pages with current offers and a search function for finding products.],
   [Search results pages which allow for filtering and comparison of products.],
@@ -174,32 +115,28 @@
   [Cart management, checkout, and account management screens.],
   [Across all of these page types, a pervasive login and cart status widget will be displayed. Sometimes this widget, and the site's logo, are the only consistent elements.],
   [Long experience demonstrates very little shared data across these page types, highly variable session lengths, and a need for fresh content (e.g., prices) from the server. The best way to reduce latency in e-commerce sites is to optimise for lightweight, server-generated pages. Aggressive caching, image optimisation, and page-weight reduction strategies all help.],
-  [id="media" tabindex="-1"\> Media],
   [Media consumption sites vary considerably in session length and data update potential. Most should start as progressively-enhanced markup-based experiences, adding complexity over time as product changes warrant it.],
-  [id="why-progressive-enhancement-and-islands-may-be-the-right-choice" tabindex="-1"\> Why Progressive Enhancement and Islands May Be The Right Choice],
+  [Why Progressive Enhancement and Islands May Be The Right Choice],
   [Many interactive elements on media consumption sites can be modelled as distinct islands of interactivity (e.g., comment threads). Many of these components present independent data models and can therefore be constructed as progressively-enhanced Web Components within a larger (static) page.],
-  [id="when-an-spa-may-be-appropriate" tabindex="-1"\> When An SPA May Be Appropriate],
+  [When An SPA May Be Appropriate],
   [This model breaks down when media playback must continue across media browsing (think "mini-player" UIs). A fundamental limitation of today's web platform is that it is not possible to preserve some elements from a page across top-level navigations. Sites that must support features like this should consider using SPA technologies while setting strict guardrails for the allowed size of client-side JS per page.],
   [Another reason to consider client-side logic for a media consumption app is offline playback. Managing a local (Service Worker-backed) media cache requires application logic and a way to synchronise information with the server.],
   [Lightweight SPA-oriented frameworks may be appropriate here, along with connection-state resilient data systems such as Zero or Y.js .],
-  [id="social" tabindex="-1"\> Social],
   [Social media apps feature significant variety in session lengths and media capabilities. Many present infinite-scroll interfaces and complex post editing affordances. These are natural dividing lines in a design that align well with session depth and client-vs-server data model locality.],
-  [id="why-progressive-enhancement-may-be-the-right-choice" tabindex="-1"\> Why Progressive Enhancement May Be The Right Choice],
+  [Why Progressive Enhancement May Be The Right Choice],
   [Most social media experiences involve a small, fixed number of actions on top of a server-owned data model ("liking" posts, etc.) as well as distinct update phase for new media arriving at an interval. This model works well with a hybrid approach as is found in Hotwire and many HTMX applications.],
-  [id="when-an-spa-may-be-appropriate-1" tabindex="-1"\> When An SPA May Be Appropriate],
+  [When An SPA May Be Appropriate],
   [Islands of deep interactivity may make sense in social media applications, and aggressive client-side caching (e.g., for draft posts) may aid in building engagement. It may be helpful to think of these as unique app sections with distinct needs from the main site's role in displaying content.],
   [Offline support may be another reason to download a snapshot of user data to the client. This should be as part of an approach that builds resilience against flaky networks. Teams in this situation should consider a Service Worker-based, multi-page apps with "stream stitching". This allows sites to stick with HTML, while enabling offline-first logic and synchronisation. Because offline support is so invasive to an architecture, this requirement must be identified up-front.],
   [Note : Many assume that SPA-enabling tools and frameworks are required to build compelling Progressive Web Apps that work well offline. This is not the case. PWAs can be built using stream-stitching architectures that apply the equivalent of server-side templating to data on the client, within a Service Worker.],
   [With the advent of multi-page view transitions , MPA architecture PWAs can present fluid transitions between user states without heavyweight JavaScript bundles clogging up the main thread. It may take several more years for the framework community to digest the implications of these technologies, but they are available today and work exceedingly well, both as foundational architecture pieces and as progressive enhancements.],
-  [id="productivity" tabindex="-1"\> Productivity],
   [Document-centric productivity apps may be the hardest class to reason about, as collaborative editing, offline support, and lightweight "viewing" modes with full document fidelity are hard product requirements.],
   [Triage-oriented experiences (e.g. email clients) are also prime candidates for the potential benefits of SPA-based technology. But as with all SPAs, the ability to deliver a better experience hinges both on session depth and up-front payload cost. It's easy to lose this race, as this blog has examined in the past.],
   [Editors of all sorts are a natural fit for local data models and SPA-based architectures to support modifications to them. However, the endemic complexity of these systems ensures that performance will remain a constant struggle. As a result, teams building applications in this style should consider strong performance guardrails, identify critical user journeys up-front, and ensure that instrumentation is in place to ward off unpleasant performance surprises.],
-  [id="why-spas-may-be-the-right-choice" tabindex="-1"\> Why SPAs May Be The Right Choice],
+  [Why SPAs May Be The Right Choice],
   [Editors frequently feature many updates to the same data (e.g., for every keystroke or mouse drag). Applying updates optimistically and only informing the server asynchronously of edits can deliver a superior experience across long editing sessions.],
   [However, teams should be aware that editors may also perform double duty as viewers and that the weight of up-front bundles may not be reasonable for both cases. Worse, it can be hard to tease viewing sessions apart from heavy editing sessions at page load time.],
   [Teams that succeed in these conditions build extreme discipline about the modularity, phasing, and order of delayed package loading based on user needs (e.g., only loading editor components users need when they require them). Teams that get stuck tend to fail to apply controls over which team members can approve changes to critical-path payloads.],
-  [id="other-application-classes" tabindex="-1"\> Other Application Classes],
   [Some types of apps are intrinsically interactive, focus on access to local device hardware, or center on manipulating media types that HTML doesn't handle intrinsically. Examples include 3D CAD systems , programming editors , game streaming services , web-based games , media-editing , and music-making systems. These constraints often make client-side JavaScript UIs a natural fit, but each should be evaluated critically:],
   [What are the critical user journeys?],
   [How long will average sessions be?],
@@ -213,9 +150,9 @@
   [One consequence of cultures that fail to put the user first are products whose usability is so poor that attributes which didn't matter at the time of sale (like performance) become reasons to switch.],
   [If you've ever had the distinct displeasure of using Concur or Workday, you'll understand what I mean. Challengers win business from them not by being wonderful, but simply by being usable. These incumbents are powerless to respond because their problems are now rooted deeply in the behaviours they rewarded through hiring and promotion along the way. The resulting management blindspot becomes a self-reinforcing norm that no single leader can shake.],
   [This is why it's caustic to product success and brand value to allow a culture of disrespect towards users in favour of venerating developers (e.g., "DX"). The only antidote is to stamp it out wherever it arises by demanding user-focused realism in decision making.],
-  [id="%22but...%22" tabindex="-1"\> "But..."],
+  ["But..."],
   [To get unstuck, managers and tech leads that become wedded to frameworkism have to work through a series of easily falsified rationales offered by Over Reactors in service of their chosen ideology. Note, as you read, that none of these protests put the user experience front-and-centre. This admission by omission is a reliable property of the conversations these sketches are drawn from.],
-  [id="%22...we-need-to-move-fast%22" tabindex="-1"\> "...we need to move fast"],
+  ["...we need to move fast"],
   [This chestnut should be answered with the question: "for how long?"],
   [The dominant outcome of fling-stuff-together-with-NPM, feels-fine-on-my-\$3K-laptop development is to get teams stuck in the mud much sooner than anyone expects.],
   [From major accessibility defects to brand-risk levels of lousy performance, the consequence of this approach has been crossing my desk every week for a decade. The one thing I can tell you that all of these teams and products have in common is that they are not moving faster .],
@@ -227,56 +164,54 @@
   [This is in direct opposition to identifying product-market-fit . After all, the way to find who will want your product is to make it as widely available as possible, then to add UX flourishes.],
   [Teams I've worked with are frequently astonished to find that removing barriers to use opens up new markets and leads to growth in parts of a world they had under-valued.],
   [Now, if you're selling Veblen goods, by all means, prioritise anything but accessibility. But in literally every other category, the returns to quality can be best understood as clarity of product thesis. A low-quality experience — which is what is being proposed when React is offered as an expedient — is a drag on the core growth argument for your service. And if the goal is scale, rather than exclusivity, building for legacy desktop browsers that Microsoft won't even sell you at the cost of harming the experience for the majority of the world's users is a strategic error.],
-  [id="%22...it-works-for-facebook%22" tabindex="-1"\> "...it works for Facebook"],
+  ["...it works for Facebook"],
   [To a statistical certainty, you aren't making Facebook. Your problems likely look nothing like Facebook's early 2010s problems, and even if they did, following their lead is a terrible idea.],
   [And these tools aren't even working for Facebook (or IG , or Threads ). They just happen to be a monopoly in various social categories and can afford to light money on fire. If that doesn't describe your situation, it's best not to over index on narratives premised on Facebook's perceived success.],
-  [id="%22...our-teams-already-know-react%22" tabindex="-1"\> "...our teams already know React"],
+  ["...our teams already know React"],
   [React developers are web developers . They have to operate in a world of CSS, HTML, JavaScript, and DOM. It's inescapable. This means that React is the most fungible layer in the stack. Moving between templating systems (which is what JSX is) is what web developers have done fluidly for more than 30 years. Even folks with deep expertise in, say, Rails and ERB, can easily knock out Django or Laravel or WordPress or 11ty sites. There are differences, sure, but every web developer is a polyglot.],
   [React knowledge is also not particularly valuable. Any team familiar with React's...baroque...conventions can easily master Preact, Stencil, Svelte, Lit, FAST, Qwik, or any of a dozen faster, smaller, reactive client-side systems that demand less mental bookkeeping.],
-  [id="%22...we-need-to-be-able-to-hire-easily%22" tabindex="-1"\> "...we need to be able to hire easily"],
+  ["...we need to be able to hire easily"],
   [The tech industry has just seen many of the most talented, empathetic, and user-focused engineers I know laid off for no reason other than their management couldn't figure out that there would be some mean reversion post-pandemic. Which is to say, there's a fire sale on talent right now, and you can ask for whatever skills you damn well please and get good returns.],
   [If you cannot attract folks who know web standards and fundamentals, reach out. I'll help you formulate recs, recruiting materials, hiring rubrics, and promotion guides to value these folks the way you should: unreasonably effective collaborators that will do incredible good for your products at a fraction of the cost of solving the next problem the React community is finally acknowledging that React caused.],
-  [id="resumes-aren't-murder%2Fsuicide-pacts" tabindex="-1"\> Resumes Aren't Murder/Suicide Pacts],
+  [Resumes Aren't Murder/Suicide Pacts],
   [But even if you decide you want to run interview loops to filter for React knowledge, that's not a good reason to use it! Anyone who can master the dark thicket of build tools, typescript foibles, and the million little ways that JSX's fork of HTML and JavaScript syntax trips folks up is absolutely good enough to work in a different system.],
   [Heck, they're already working in an ever-shifting maze of faddish churn. The treadmill is real, which means that the question isn't "will these folks be able to hit the ground running?" (answer: no, they'll spend weeks learning your specific setup regardless), it's "what technologies will provide the highest ROI over the life of our team?"],
   [Given the extremely high costs of React and other frameworkist prescriptions, the odds that this calculus will favour the current flavour of the week over the lifetime of even a single project are vanishingly small.],
-  [id="the-bootcamp-thing" tabindex="-1"\> The Bootcamp Thing],
   [It makes me nauseous to hear managers denigrate talented engineers, and there seems to be a rash of it going around. The idea that folks who come out of bootcamps — folks who just paid to learn whatever was on the syllabus — aren't able or willing to pick up some alternative stack is bollocks.],
   [Bootcamp grads might be junior, and they are generally steeped in varying strengths of frameworkism, but they're not stupid. They want to do a good job, and it's management's job to define what that is. Many new grads might know React, but they'll learn a dozen other tools along the way, and React is by far the most (unnecessarily) complex of the bunch. The idea that folks who have mastered the horrors of useMemo and friends can't take on board DOM lifecycle methods or the event loop or modern CSS is insulting . It's unfairly stigmatising and limits the organisation's potential.],
   [In other words, definitionally atrocious management.],
-  [id="%22...everyone-has-fast-phones-now%22" tabindex="-1"\> "...everyone has fast phones now"],
+  ["...everyone has fast phones now"],
   [For more than a decade, the core premise of frameworkism has been that client-side resources are cheap (or are getting increasingly inexpensive) and that it is, therefore, reasonable to trade some end-user performance for developer convenience.],
   [This has been an absolute debacle. Since at least 2012, the rise of mobile falsified this contention, and (as this blog has meticulously catalogued) we are only just starting to turn the corner.],
   [Frameworkist assertion that "everyone has fast phones" is many things, but first and foremost it's an admission that the folks offering it don't know what they're talking about — and they hope you don't either.],
   [No business trying to make it on the web can afford what they're selling, and you are under no obligation to offer your product as sacrifice to a false god.],
-  [id="%22...react-is-industry-standard%22" tabindex="-1"\> "... React is industry-standard"],
+  ["... React is industry-standard"],
   [This is, at best, a comforting fiction.],
   [At worst, it's a knowing falsity that serves to omit the variability in React-based stacks because, you see, React isn't one thing. It's more of a lifestyle, complete with choices to make about React itself (function components or class components?) languages and compilers (typescript or nah?), package managers and dependency tools (npm? yarn? pnpm? turbo?), bundlers (webpack? esbuild? swc? rollup?), meta-tools (vite? turbopack? nx?), "state management" tools (redux? mobx? apollo? something that actually manages state?) and so on and so forth. And that's before we discuss plugins to support different CSS transpilation, among other optional side-quests frameworkists insist are necessary.],
   [Across more than 100 consulting engagements, I've never seen two identical React setups, save smaller cases where the defaults of Create React App were unchanged. CRA itself changed dramatically over the years before finally being removed from the React docs as the best way to get started.],
   [There's nothing standard about any of this. It's all change, all the time, and anyone who tells you differently is not to be trusted.],
-  [id="the-bare-(assertion)-minimum" tabindex="-1"\> The Bare (Assertion) Minimum],
+  [The Bare (Assertion) Minimum],
   [Hopefully, if you've made it this far, you'll forgive a digression into how the "React is industry standard" misdirection became so embedded.],
   [Given the overwhelming evidence that this stuff isn't even working on the sites of the titular React poster children, how did we end up with React in so many nooks and crannies of contemporary frontend?],
   [Pushy know-it-alls, that's how. Frameworkists have a way of hijacking every conversation with assertions like "virtual DOM is fast" without ever understanding anything about how browsers work, let alone the GC costs of their (extremely chatty) alternatives. This same ignorance allows them to confidently assert that React is "fine" when cheaper alternatives exist in every dimension.],
   [These are not serious people. You do not have to entertain arguments offered without evidence. But you do have to oppose them and create data-driven structures that put users first. The long-term costs of these errors are enormous, as witnessed by the parade of teams needing our help to achieve minimally decent performance using stacks that were supposed to be "performant" (sic).],
-  [id="%22...the-ecosystem...%22" tabindex="-1"\> "...the ecosystem..."],
+  ["...the ecosystem..."],
   [Which part, exactly? Be extremely specific. Which packages are so valuable, yet wedded entirely to React, that a team should not entertain alternatives? Do they really not work with Preact ? How much money is exactly the right amount to burn to use these libraries? Because that's the debate.],
   [Even if you get the benefits of "the ecosystem" at Time 0, why do you think that will continue to pay out at T+1? Or T+N?],
   [Every library presents a separate, stochastic risk of abandonment. Even the most heavily used systems fall out of favour with the JavaScript-industrial-complex's in-crowd. This strands teams in the same position they'd have been in if they accepted ownership of more of the stack up-front, but with less experience and agency. Is that a good trade? Does your boss agree?],
   [And how's that "CSS-in-JS" adventure working out? Still writing class components, or did you have a big forced (and partial) migration that's still creating headaches?],
   [The truth is that every single package that is part of a repo's devDependencies is, or will be, fully owned by the consumer of the package. The only bulwark against uncomfortable surprises is to consider NPM dependencies a high-interest loan collateralized by future engineering capacity.],
   [The best way to prevent these costs spiralling out of control is to fully examine and approve each and every dependency for UI tools and build systems. If your team is not comfortable agreeing to own, patch, and improve every single one of those systems, they should not be part of your stack.],
-  [id="%22...next.js-can-be-fast-(enough)%22" tabindex="-1"\> "... Next.js can be fast (enough)"],
+  ["... Next.js can be fast (enough)"],
   [Do you feel lucky, punk? Do you?],
   [You'll have to be lucky to beat the odds.],
   [Sites built with Next.js perform materially worse than those from HTML-first systems like 11ty , Astro , et al.],
   [It simply does not scale, and the fact that it drags React behind it like a ball and chain is a double demerit. The chonktastic default payload of delay-loaded JS in any Next.js site will compete with ads and other business-critical deferred content for bandwidth, and that's before custom components and routes are added. Even when using React Server Components . Which is to say, Next.js is a fast way to lose a lot of money while getting locked in to a VC-backed startup's proprietary APIs.],
   [Next.js starts bad and only gets worse from a shocking baseline. No wonder the only Next sites that seem to perform well are those that enjoy overwhelmingly wealthy user bases, hand-tuning assistance from Vercel, or both.],
   [So, do you feel lucky?],
-  [id="%22...react-native!%22" tabindex="-1"\> "... React Native!"],
+  ["... React Native!"],
   [React Native is a good way to make a slow app that requires constant hand-tuning and an excellent way to make a terrible website. It has also been abandoned by it's poster children.],
   [Companies that want to deliver compelling mobile experiences into app stores from the same codebase as their website are better served investigating Trusted Web Activities and PWABuilder. If those don't work, Capacitor and Cordova can deliver similar benefits. These approaches make most native capabilities available, but centralise UI investment on the web side, providing visibility and control via a single execution path. This, in turn, reduces duplicate optimisation and accessibility headaches.],
-  [id="references" tabindex="-1"\> References],
   [These are essential guides for frontend realism. I recommend interested tech leads, engineering managers, and product managers digest them all:],
   ["Building a robust frontend using progressive enhancement" from the UK's Government Digital Service.],
   ["JavaScript dos and donts" by Github alumnus Mu-An Chiou.],
@@ -287,6 +222,7 @@
   ["Questions for a new technology" by Kellan Elliott-McCrea and Glyph's "Against Innovation Tokens" . Together, they set a well-focused lens for thinking about how frameworkism is antithetical to functional engineering culture.],
   [These pieces are from teams and leaders that have succeeded in outrageously effective ways by applying the realist tenants of looking around for themselves and measuring. I wish you the same success.],
   [Thanks to Mu-An Chiou , Hasan Ali , Josh Collinsworth , Ben Delarre , Katie Sylor-Miller , and Mary for their feedback on drafts of this post.],
+  [FOOTNOTES],
   [Why not React? Dozens of reasons, but a shortlist must include:],
   [React is legacy technology. It was built for a world where IE 6 still had measurable share, and it shows.],
   [React's synthetic event system and hard-coded element list are a direct consequence of IE's limitations. Independently, these create portability and performance hazards. Together, they become a driver of lock-in.],
@@ -481,10 +417,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A New Era of Creativity: Expert-in-the-loop Generative AI at Stitch Fix],
   author: [Stitch Fix Multithreaded],
   source-name: [Stitch Fix Multithreaded],
@@ -492,21 +426,20 @@
   paragraphs: (
   [Generative AI has been gaining attention and popularity in recent years. Made possible with advances in deep learning algorithms and trained with previously unimaginable amounts of data, generative AI has already contributed many real-world use cases, from creating realistic images with systems like DALL-E 2 and Midjourney, to generating human-like responses with ChatGPT.],
   [At Stitch Fix, we are constantly exploring innovative ways to utilize the latest advancements in AI and ML to enhance the experiences of our clients. In this blog post, we will delve into our approach to generative AI, with a special focus on our text generation use cases. By combining algo-generated text with a human expert-in-the-loop approach, we aim to streamline tasks such as crafting engaging advertisement headlines and producing high-fidelity product descriptions.],
-  [id="algo-generated-ad-headlines"\>Algo-generated Ad Headlines],
+  [Algo-generated Ad Headlines],
   [Generative AI in the text space is powered by large language models (LLMs) that are pre-trained on vast amounts of data (for example, GPT-3 is pre-trained on nearly the entire internet) and can understand and generate natural language. However, once pre-trained, it can generalize from very limited amounts of data and is capable of performing a wide variety of natural language tasks such as Q&A, translation, summarization, and text generation. This few-shot learning capability, which relies only on a few examples to make predictions, makes it especially well suited for tasks that require creativity and originality, such as crafting compelling ad headlines.],
   [Ad headlines are often the first interaction with potential clients, so it’s crucial to make them engaging. Traditional marketing requires a copywriter to write new headlines for every new ad asset, which can be time consuming and costly, and may not always result in unique copy. Using generative AI, such as GPT-3, we can quickly generate a large number of headlines tailored to our brand tone and messaging.],
   [We achieve this by using a combination of latent style understanding (check out this blog and this blog to learn more about how we understand clients’ personal styles), word embeddings (read more about word embeddings in this blog and this blog ), and few-shot learning.],
   [Our ad assets primarily consist of many outfit images that illustrate a wide range of styles we offer. First, we map the outfit and a set of style keywords (such as effortless, classic, romantic, professional, boho etc.) to the latent style space, and then find the style keywords closest to the outfit in that space. Next, we use GPT-3 to generate headlines based on the selected style keywords. Our human experts (copywriters) then review and edit the headlines generated by AI to ensure they capture the style of the outfit and align with the brand’s tone and messaging. This human expert-in-the-loop approach allows us to leverage the creativity and efficiency of generative AI while still maintaining human oversight. For our copywriters, reviewing headlines instead of writing new ones saves a significant amount of time and effort.],
-  [style="text-align: center;"\>],
   [We have since used the expert-in-the-loop approach for generating all ad headlines for Facebook and Instagram campaigns, and have continued to benefit from improved efficiency while not sacrificing quality. Additionally, we’ve been constantly seeking opportunities to extend this capability to other areas.],
-  [id="algo-generated-product-descriptions"\>Algo-generated Product Descriptions],
+  [Algo-generated Product Descriptions],
   [“A smart choice for everyday wear, this crew neck T-shirt is a versatile addition to your wardrobe, pairing well with jeans, leggings and shorts.”],
   [With the success of algo-generated ad headlines, we have gained confidence in the potential of expert-in-the-loop generative AI for production use cases. Next, we set our sights on a problem of even greater scale and complexity: product descriptions.],
   [Product descriptions play a crucial role in e-commerce and fashion retail websites. Well-written, accurate, and detailed descriptions can enhance the client experience, build trust, and improve search engine optimization. Our Freestyle offering, where clients can shop for individual items in their own personal shopping feed, benefits greatly from informative and compelling product descriptions on the product detail pages (PDP). Writing descriptions for hundreds of thousands of styles in inventory is a daunting task for human copywriters alone, and relying on the few-shot learning approach used for ad headlines results in generic, limited quality descriptions. We needed a solution that could build on the generic large language model with few-shot learning and utilize expert-written examples to create a customized solution for our use case.],
   [Enter, fine-tuning!],
   [Fine-tuning is the process of retraining a pre-trained base model on a smaller, task-specific dataset in order to adapt it to a specific use case. Through fine-tuning, the model learns the unique language, style, and requirements of the specific task, leading to improved performance compared to a generic pre-trained model. For our product description use case, we gathered a task-specific dataset by having our human experts write several hundred high-quality product descriptions (the “completion”, or training output) based on product attributes (the “prompt”, or training input). We then fine-tuned the base model on this task-specific dataset to teach the model our language, style, and template for high-quality product descriptions. This resulted in accurate and engaging descriptions tailored to meet the needs of our clients, all written in the Stitch Fix brand voice.],
   [Our fine-tuned algo solution offers unbeatable time savings as well as excellent scalability without sacrificing quality of descriptions. In fact, in a blind evaluation, where we compared our algo-generated product descriptions with written descriptions, we found that the descriptions generated by our AI solution achieved higher quality scores, which demonstrated the efficacy of our fine-tuned algorithm solution.],
-  [id="an-expert-in-the-loop-approach"\>An Expert-in-the-loop Approach],
+  [An Expert-in-the-loop Approach],
   [In both use cases above, we used an “expert-in-the-loop” approach that incorporates human expertise into the text generation and evaluation process. It combines the efficiency and scalability of algorithmic solutions with the quality and expertise of human experts. The result is a solution that not only delivers high-quality content but also continuously improves with each iteration.],
   [In comparison to relying solely on human experts, the expert-in-the-loop approach is much more efficient and fun. Our copywriters have reported saving significant time and effort as they review and edit the algo-generated content instead of writing new content from scratch. They have also shared that the algo-generated content can be fun and even inspiring to work with, as there are often interesting expressions or angles that are not typical of human-generated content.],
   [Compared to purely algorithmic solutions, the expert-in-the-loop approach ensures the quality and appropriateness of the client-facing content. Among all generative AI applications, text generation may be the area where human expertise is needed most. Natural language is complex and nuanced, and while algorithms are able to generate text, they often fall short when it comes to capturing the subtleties of human language such as tone and sentiment. That’s where human experts come in. Only human experts are able to distinguish between these nuances and choose the best expressions for the algorithm to model after.],
@@ -519,10 +452,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Ariadne: building a custom observability UI for personalized search],
   author: [Stitch Fix Multithreaded],
   source-name: [Stitch Fix Multithreaded],
@@ -565,7 +496,7 @@ fulfills the following user needs:],
 where and why did it get blocked);],
   [Enable “what if” analysis by modifying the search query, client, pipeline 
 configuration and settings, and/or specific inventory items.],
-  [id="search-pipeline-from-query-to-results"\>Search pipeline from query to results],
+  [Search pipeline from query to results],
   [Search engineers start with searching for a query (e.g. “plaid shacket”) for a particular 
  client. The landing page shows how the search pipeline, uniquely configured for that client, 
  transforms the query into search results. Several interactively linked visualizations of 
@@ -617,7 +548,7 @@ tailor-sift illustrates how the search pipeline balances relevance and personali
 That helps reveal potential issues with the reranking algorithm. For example, if the 
 order of the results were reversed, that would indicate an excessive bias towards 
 personalization, potentially producing irrelevant results.],
-  [id="exploring-search-results"\>Exploring search results],
+  [Exploring search results],
   [At the bottom of the landing page, search results are displayed in several ways for 
 further exploration. These visualizations are linked with each other and the Sankey 
 diagram: selecting an item or subset of items in the pipeline visualization highlights 
@@ -644,7 +575,7 @@ individual item. Selecting an item highlights all metrics for that item, in addi
 to selecting that item in other visualizations. The distribution plots help identify 
 anomalies in metric distributions. The plots reveal If any of the metrics were missing, 
 skewed towards an end of the distribution, or clipped by improper data processing.],
-  [id="deep-dive-specific-items-in-the-search-pipeline"\>Deep dive: specific items in the search pipeline],
+  [Deep dive: specific items in the search pipeline],
   [Often, there is a specific item or small set of items that we would like to focus on when 
 analyzing search results. For example, when expected items are not showing up in search 
 results, we need to understand why the problem occurred. It is possible that these items 
@@ -675,7 +606,7 @@ each item’s metadata to the item’s overall relevance rank in an interactive 
 The table shows all search results by default, and any custom set of items can be substituted. 
 This makes it easy to spot missing data, unexpected mappings between subqueries and results, 
 and inappropriate weight assignments.],
-  [id="what-if-analysis-and-pipeline-modification"\>“What if” analysis and pipeline modification],
+  [“What if” analysis and pipeline modification],
   [Your browser doesn't support HTML5 video. Here is a
  link to the video instead.],
   [Search pipeline sandbox enables changes to the pipeline configuration and parameters, 
@@ -700,10 +631,8 @@ amplified the work of the Search team by addressing these needs.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Soaring gas prices and disrupted supply chains will ripple out to increase costs in every store and sector of the economy],
   author: [Vidya Mani, Associate Professor of Business Administration, University of Virginia; Cornell University],
   source-name: [The Conversation US],
@@ -730,7 +659,7 @@ amplified the work of the Search team by addressing these needs.],
   [This war is not a distant geopolitical shock for U. S. households. It reaches everyday life through fuel, freight, fertilizer, petrochemicals and global supply chains through factories that produce consumer goods.],
   [Some mitigation is possible: 32 nations will be releasing more than 400 million barrels of oil to the global market over the next few months. There are pipelines and alternative ports in Saudi Arabia and the United Arab Emirates that, if they remain undamaged and uninterrupted, can handle potentially 40% of the 20 billion barrels per day that was passing through the Strait of Hormuz. Combined with a temporary easing of sanctions on Russian oil , limited shipments to India and China through the Strait of Hormuz and the March 23 announcement of a five-day pause on U. S. and Israeli strikes on Iran , it is possible to head off the worst-case scenario.],
   [But these measures cannot fully replace the strait’s normal oil and LNG shipment volume. And if oil production, refining and shipment locations continue to be targeted, recovery can be expected to stretch into many months. The likely result is broader inflation, prolonged shortages and longer waits for goods of all sorts, including food and packaging as well as electronics and appliances.],
-  [class="fine-print"\> Vidya Mani has received funding from LMI. She is a Senior Research Fellow with the Mexico Program and Inter-American Dialogue and an Expert Advisor on Critical Minerals, Emerging Technologies, and Supply Chain Resilience at the Public Spend Forum.],
+  [Vidya Mani has received funding from LMI. She is a Senior Research Fellow with the Mexico Program and Inter-American Dialogue and an Expert Advisor on Critical Minerals, Emerging Technologies, and Supply Chain Resilience at the Public Spend Forum.],
 ),
   insert-map: (:),
   word-count: 1022,
@@ -738,11 +667,10 @@ amplified the work of the Search team by addressing these needs.],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Freedom House Ambulance Service],
   author: [Roman Mars],
   source-name: [99% Invisible],
@@ -759,7 +687,7 @@ amplified the work of the Search team by addressing these needs.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Dear John and Roman],
   author: [john green],
   source-name: [99% Invisible],
@@ -778,7 +706,7 @@ amplified the work of the Search team by addressing these needs.],
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([GoCardless Blog], source-name: [GoCardless Blog], [ADDACS messages are the messages you receive from your customer’s bank if a mandate has been cancelled or amended by your customer.])],
       [#brief-item([JEANNINE BETTS, MARKETING SPECIALIST \@ TOPTAL], source-name: [Toptal Engineering], [Trust is an increasingly important factor in consumer purchasing choices. A digital marketing specialist presents a content framework that helps businesses build trust and drive sustainable growth.])],
       [#brief-item([Jayson De Leon, Lasha Madan, Jeyca Maldonado Medina, Kelly Prime], source-name: [99% Invisible], [Welcome to our second episode of short stories all about what may be the original designed object: the trail. If you haven’t heard the first episode yet you should totally go back and listen. It’s a lot of fun.
@@ -894,7 +822,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The Divided Dial],
   author: [Katie Thornton],
   source-name: [99% Invisible],
@@ -913,7 +841,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Chapter 4: The List],
   author: [Roman Mars],
   source-name: [99% Invisible],
@@ -934,7 +862,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The Green Book redux],
   author: [SiriusXM Podcasts and Roman Mars],
   source-name: [99% Invisible],
@@ -952,7 +880,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Stuccoed in Time],
   author: [Roman Mars, Emmett FitzGerald, Delaney Hall, Katie Mingle],
   source-name: [99% Invisible],
@@ -973,7 +901,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Freedom House Ambulance Service: American Sirens],
   author: [Kevin Hazzard],
   source-name: [99% Invisible],
@@ -990,7 +918,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Power Broker \#11: Brennan Lee Mulligan],
   author: [elliott kalan, isabel angell],
   source-name: [99% Invisible],
@@ -1016,7 +944,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Empire of the Sum],
   author: [keith houston, lasha madan],
   source-name: [99% Invisible],
@@ -1035,7 +963,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Airships and the Future that Never Was],
   author: [SiriusXM Podcasts and Roman Mars],
   source-name: [99% Invisible],
@@ -1058,7 +986,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The Lost Subways of North America],
   author: [Jake Berman, Sarah Baik, Kelly Prime],
   source-name: [99% Invisible],
@@ -1076,7 +1004,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Exploring The 99% Invisible City],
   author: [Roman Mars],
   source-name: [99% Invisible],

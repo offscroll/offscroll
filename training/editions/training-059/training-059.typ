@@ -21,75 +21,8 @@
 #masthead([The Thoughtful Review], [Vol. 1, No. 059], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Funniest/Most Insightful Comments Of The Week At Techdirt],
-  kicker: [Cover Story],
-  author: [Leigh Beadon],
-  source-name: [Techdirt],
-  deck: [This week, our first place winner on the insightful side is Stephen T.],
-  lead-pre: [],
-  lead-cap: [S],
-  lead-rest: [tone with a rebuke to someone defending the Fifth Circuit’s ruling about whether a cop could sue Twitter :],
-  body-paragraphs: (
-  [By the logic of the Fifth Circuit’s rulings, Donald Trump can and should be held responsible for the actions of the rioters on the 6th of January 2021. Is that the position you wish to take?],
-  [In second place, it’s a long comment from Azuaron disagreeing with many parts of our post about the verdict against Meta :],
-  [Hold up],
-  [I don’t wholly agree with this ruling or it’s implications–The Encryption Problem, in particular, is a terrible argument that has to die–but I really have to address this section because it’s not accurate:],
-  [The trial judge in the California case bought this argument, ruling that because the claims were about “product design and other non-speech issues,” Section 230 didn’t apply. The New Mexico court reached a similar conclusion. Both cases then went to trial.],
-  [This distinction — between “design” and “content” — sounds reasonable for about three seconds. Then you realize it falls apart completely.],
-  [Here’s a thought experiment: imagine Instagram, but every single post is a video of paint drying. Same infinite scroll. Same autoplay. Same algorithmic recommendations. Same notification systems. Is anyone addicted? Is anyone harmed? Is anyone suing?],
-  [Of course not. Because infinite scroll is not inherently harmful. Autoplay is not inherently harmful. Algorithmic recommendations are not inherently harmful. These features only matter because of the content they deliver. The “addictive design” does nothing without the underlying user-generated content that makes people want to keep scrolling.],
-  [Instagram has, I’m sure, thousands of videos of paint drying that, I’m also sure, have very few views. Those videos have very few views because part of Instagram’s algorithmic recommendation system is to not serve videos of paint drying to people, because the design goal of Instagram is maximum addiction and use, which would not happen if their algorithm only recommended videos of paint drying.],
-  [The scenario of “Instagram, but with videos of paint drying. Same infinite scroll. Same autoplay. Same algorithmic recommendations. Same notification systems,” is the scenario we’re in now where we do have people addicted, we do have people harmed, and people are suing. Constraining Instagram to have “only” videos of paint drying is a straw man because it nearly eliminates all the design decisions that caused the harm. So, yeah, if you eliminate all that design that causes harm, the harm isn’t caused, but that’s not what anyone’s talking about.],
-  [First, however, let’s start with what Section 230 actually says:],
-  [No provider or user of an interactive computer service shall be treated as the publisher or speaker of any information provided by another information content provider.],
-  [No provider or user of an interactive computer service shall be held liable on account of—],
-  [(A) any action voluntarily taken in good faith to restrict access to or availability of material that the provider or user considers to be obscene, lewd, lascivious, filthy, excessively violent, harassing, or otherwise objectionable, whether or not such material is constitutionally protected; or],
-  [(B) any action taken to enable or make available to information content providers or others the technical means to restrict access to material described in paragraph (1).],
-  [There’s more that I believe isn’t currently relevant, but by all means look and correct me .],
-  [In every day language, what does 230 say? It’s a narrow carve out for responsibility based only on “providers are not necessarily publishers” and “providers can choose what content appears, or does not”.],
-  [Now, what are these lawsuits claiming? They claim (I’m going to speak to just Instagram here, but this applies to all the others as well):],
-  [That Instagram, as a system, has been specifically designed to be addictive],
-  [That Instagram, as a system, has been specifically designed to worsen the mental health of its users],
-  [That Instagram, as a system, has been specifically designed to maximize user engagement at the expense of that user],
-  [That children deserve additional protection–just like children get additional protection from advertisement–from hostile systems because their brains are still developing and they’re particularly vulnerable to it],
-  [None of those are content arguments, and saying, “But what if the content was paint drying?” is not relevant or helpful. People aren’t addicted to “a single Instagram video” or even “a single Instagram channel” (you can probably tell I’m not on Instagram; I’m sure they’re not called “channels”). People are addicted to the system of Instagram that feeds them content specifically tailored to maximize addiction and use, and feeds them content in a way that maximizes addiction and use. For some people that’s makeup videos, for some people that’s movie clips; the specific content is not the point. Hell, there’s probably one guy in Minnesota who’s hopelessly addicted to paint drying videos.],
-  [The problem, as with practically everything we’re dealing with in the world, is not single bad actors or individual responsibility. The problem is the system, and the system has, in fact as documented in court, been specifically designed to be addictive, to ruin people’s mental health, and to cause harm. The only way we’re going to be able to address this is by focusing on the system.],
-  [Finally, we’ve got to address this statement as well:],
-  [If every editorial decision about how to present third-party content is now a “design choice” subject to product liability, Section 230 protects effectively nothing. Every website makes decisions about how to display user content. Every search engine ranks results. Every email provider filters spam. Every forum has a sorting algorithm, even if it’s just “newest first.” All of those are “design choices” that could, theoretically, be blamed for some downstream harm.],
-  [Instagram’s targeted recommendation and addiction algorithm dark patterns are not the same thing as “newest first”. This is a slippery slope argument with no evidence that such a slope exists. If “newest first” was equally addictive and harmful, Meta would not have spent probably billions creating its various “engagement” systems. This is like saying a lawsuit against a restaurant that poisoned someone with puffer fish will lead to lawsuits against restaurants for selling salmon because they’re both fish.],
-  [Another example: we didn’t ban normal darts after we banned lawn darts, despite their similar design decisions, because of the key differences in their design decisions that resulted in clear and obvious differences in their harmful outcomes. No one’s going to get sued for “newest first” specifically because of how it’s different to the engagement algorithms.],
-  [The people and companies who make products have always been responsible for the designs of their products when those designs cause harm, from the lawn dart to the Pinto. And, we have long recognized that mental harms are harms: “Intentional infliction of emotional distress”, for instance, has been a recognized tort for decades. That we now have products that cause mental harm is new simply because we didn’t used to have the technology to create those products. But, “products have designs that cause harm” is not a new concept, and neither is “mental harms are tortable harms”.],
-  [Furthermore, “every editorial decision” is not now a “design choice”; just the design choices. Providers are–still!–not publishers or speakers of third-party content, and–still!–are not liable for moderation. Nothing in these lawsuits can be reasonably construed to impact decisions to publish–or not–specific content, which is all 230 protects. These lawsuits are, fully, not about the content, any more than California’s ban on Amazon’s dark patterns are a ban on having a web store. This lawsuits are fundamentally not about speech, because the problem is not the speech, but the system around the speech.],
-  [That some people might benefit from social media doesn’t negate the harm done to other people, nor make the company not liable for the harm it causes. No matter how many people found joy and friendship playing lawn darts with their friends, that doesn’t resurrect the kids who died, or replace the eyes that were lost. “Someone who was not harmed by lawn darts” would never be invited to a lawsuit about someone who was harmed by lawn darts; that just doesn’t make sense.],
-  [I’ve come down pretty hard, here, like I’m fully in favor of these lawsuits. While I definitely believe the nature of these social media sites is specifically designed to be harmful, and we do need a way to address that, ehhhhh, the plaintiffs in these cases made some pretty bad arguments. “Encryption is harmful”, well, guess what, lack of encryption is more harmful! We absolutely can’t be saying that companies are damned if they do, damned if they don’t, and we definitely don’t want to be restricting encryption. As rightly pointed out by the author, mental harms are complex, multifaceted, and it’s difficult to determine a reliable causality; I don’t know enough about the people in question to speak on the analysis that happened here, but it probably wasn’t sufficient. But, that doesn’t mean that such an analysis is impossible, and being on social media for 16 hours a day is certainly a compelling starting point.],
-  [So, more broadly speaking, what should we do about it? I don’t know! There’s a needle that needs to be threaded, and I’m not the one to thread it. The big algorithmic social media sites are really bad and I love every cut that someone gets against them, but there were certainly arguments being made on the plaintiff’s side (encryption? Come on!) that were pure BS and bad for everyone.],
-  [All that being said, one thing we absolutely must not do is misrepresent the actual harm and problems caused by the systems these companies created, and we need some kind of law or regulation to end it and make them liable for it. Hell, a basic goddamn privacy law would probably get us most of the way there on its own just by cutting down on the fodder that goes into their algorithms. Good luck to us all on that.],
-  [For editor’s choice on the insightful side, we start out with a comment from MrWilson about the Trump administration trying to rein in RFK Jr. :],
-  [Junior should check the schedule. There might be a bus coming and he might be under it soon.],
-  [Next, it’s frankcox with a comment about Brendan Carr lazily trying to ban all foreign routers :],
-  [Ban MS Windows instead?],
-  [If the objective is to increase Internet security with no regard to secondary/downstream ramifications, then wouldn’t it make more sense to ban Microsoft Windows?],
-  [MS Windows has been responsible for more security issues than any other single factor pretty much since from the first day showed up on the Internet.],
-  [Over on the funny side, our first place winner is MrWilson again, this time with a comment about learning HTML back in the early days of the web :],
-  [This comment is best viewed in Netscape Navigator 3.0.],
-  [In second place, it’s Thad with a comment about a bad take from the Washington Post editorial board :],
-  [Well jeez, if you can’t trust an unsigned editorial from a paper whose owner has actively and publicly interfered with its content to favor the Trump Administration, who can you trust?],
-  [For editor’s choice on the funny side, we start out with a comment from Pixelation about the deployment of “synergy” corporate speak to announce layoffs :],
-  [Pushing the envelope],
-  [Well, they can use those synergies and circle back to their core competencies, which will streamline the deliverables for a deep dive so they can move the needle. It will be a paradigm shift when everyone has skin in the game!],
-  [Finally, it’s Bloof with a comment about the court’s rejection of attempts to take down the DOGE deposition videos :],
-  [Once again biased judges fail to protect the most delicate treasure that america owns, the egos of unqualified white men promoted well beyond anything their mediocrity would justify.],
-  [That’s all for this week, folks!],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [How to Become Ryuk from Death Note for Halloween],
   author: [Nelson Aguilar],
   source-name: [WonderHowTo],
@@ -104,11 +37,9 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [French Holiday Recipes],
   author: [Anne Elder],
   source-name: [Chocolate & Zucchini],
@@ -194,10 +125,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Dynamic linking best practices],
   author: [Joe Nelson (begriffs)],
   source-name: [Joe Nelson (begriffs)],
@@ -218,7 +147,7 @@ improve the quality of open source libraries.],
   [Loaders (ld.so, dyld)],
   [Portable best practices],
   [Example code],
-  [id="the-common-unix-pattern"\>The common UNIX pattern],
+  [The common UNIX pattern],
   [The design typically used nowadays for dynamic linking (in BSD, MacOS, and
 Linux) came from SunOS in 1988. The paper Shared Libraries in
 SunOS neatly
@@ -236,7 +165,7 @@ The complexity of the loader on some systems offers increased attack
 surface . Finally, upgraded
 libraries may affect some programs differently than others, for instance
 breaking those that rely on undocumented behavior.],
-  [id="the-link-editor-and-loader"\>The link editor and loader],
+  [The link editor and loader],
   [At compile time the link editor resolves symbols in specified libraries, and
 makes a note in the resulting binary to load those libraries. At runtime,
 applications call code to map the shared library symbols in memory at the
@@ -247,7 +176,6 @@ designers also added a special system library (ld.so) with code to find and
 load other libraries for an application. The pre- main() initialization
 routine of a program loads ld.so and runs it from within the program to find
 and load the rest of the required libraries.],
-  [id="versioning"\>Versioning],
   [As mentioned, applications can take advantage of updated libraries without
 needing recompilation. Library updates can be classified in three categories:],
   [Implementation improvements for the current interface. Bug fixes,
@@ -263,7 +191,7 @@ minor release than that used at link time.],
 different releases of a single library. The system should provide a way to
 store multiple library releases and load the right one for each app. Different
 systems have different ways to do it, as we’ll see later.],
-  [id="version-identifiers"\>Version identifiers],
+  [Version identifiers],
   [Each library release can be marked with a version identifier (or “version”)
 which seeks to capture information about the library’s release history. There
 are multiple ways to map release history to a version identifier.],
@@ -396,7 +324,7 @@ identifiers.],
 Solaris, for instance, developed a system called symbol versioning. Symbol
 versioning chases space savings at the expense of operational complexity, and
 we’ll consider it later.],
-  [id="api-vs-abi"\>API vs ABI],
+  [API vs ABI],
   [One subtlety of versioning is that changes can happen in either a library’s
  programming interface (API) or binary interface (ABI). A C library’s
 programming interface is defined through its header files. A
@@ -446,8 +374,8 @@ runtime. However, I think a more conservative versioning scheme is wise, where
 you bump a version when either the API or ABI change. You’ll end up with
 potentially more library versions installed, but each shared API/ABI version
 will provide guarantees at both compilation and runtime.],
-  [id="variance-of-linker-and-loader-by-system"\>Variance of linker and loader by system],
-  [id="linkers-ld-lld"\>Linkers (ld, lld)],
+  [Variance of linker and loader by system],
+  [Linkers (ld, lld)],
   [After compiling object files, the compiler front-end (gcc, clang, cc, c99) will
 invoke the linker (ld, lld) to find unresolved symbols and match them across
 object files or in shared libraries. The linker searches only the shared
@@ -473,7 +401,7 @@ a system location like /usr/local/lib , it nominates a single inflexible
 link-time version for the whole system. I’ll suggest a different solution later
 that involves storing link-time files in a separate place from load-time
 libraries.],
-  [id="loaders-ld.so-dyld"\>Loaders (ld.so, dyld)],
+  [Loaders (ld.so, dyld)],
   [At launch time, programs with dynamic library dependencies load and run ld.so
 (or dyld on Mac) to find and load the rest of their dependencies. The load
 library inspects DT\_NEEDED ELF tags (or LOAD\_DYLIB names in Mach-O on Mac) to
@@ -541,8 +469,7 @@ version, like 1.1.5. At load time, the user would see a clear error:],
  Referenced from: myapp
  Reason: Incompatible library version: myapp requires version 1.2.0 or later,
  but libfoo.1.dylib provides version 1.1.5],
-  [id="portable-best-practices"\>Portable best practices],
-  [id="linking"\>Linking],
+  [Portable best practices],
   [Standard practice is to create symlinks libfoo.so -\> libfoo.so.x -\>
 libfoo.so.x.y.z in a shared system directory. The first link (without the
 version number) is for linking at build time. Problem is, it’s pinned to one
@@ -575,7 +502,7 @@ libraries, headers, man pages, and pkg-config files as desired:],
  ├── ...
  └── ...],
   [Linking against libfoo.x.y.z is easy. In a Makefile, set your flags like this:],
-  [class="sourceCode" id="cb3"\> CFLAGS += -I/opt/libfoo-dev.x.y.z/include 
+  [CFLAGS += -I/opt/libfoo-dev.x.y.z/include 
  LDFLAGS += -L/opt/libfoo-dev.x.y.z/lib 
  LDLIBS += -lfoo 
  
@@ -586,7 +513,7 @@ libraries, headers, man pages, and pkg-config files as desired:],
 an application to express a range of acceptable library versions, rather than
 hardcoding a specific one. In a configure script, we’ll test for the library’s
 presence and version, and output the flags to config.mk :],
-  [class="sourceCode" id="cb4"\> \# supposing we require libfoo 1.x for x \>= 1 
+  [\# supposing we require libfoo 1.x for x \>= 1 
  pkg-config --print-errors 'libfoo \>= 1.1, libfoo config.mk include config.mk 
  
  .c: 
@@ -602,11 +529,10 @@ release separate files, libfoo.pc and libfoo-static.pc that differ in their
  -L flag. One uses lib and another lib/static . (Pkg-config’s --static 
 flag is a bit of a misnomer, and just passes items in Libs.private in
 addition to Libs in the build process.)],
-  [id="loading"\>Loading],
   [This section talks about installing dynamic libraries for system-wide loading.
 Libraries installed for this purpose are not meant to link with at compile
 time, but to load at runtime.],
-  [id="elf-installation-bsdlinux"\>ELF installation (BSD/Linux)],
+  [ELF installation (BSD/Linux)],
   [ELF objects don’t have much version metadata. SONAME is about it. That,
 combined with the lackluster behavior of loaders on some systems, means the
 traditional installation technique doesn’t work too well.],
@@ -615,16 +541,17 @@ method I designed.],
   [Traditional installation method],
   [For version x.y.z, compile libfoo.so with SONAME libfoo.so.x],
   [Copy libfoo.so to /usr/local/lib/libfoo.so.x.y.z],
-  [Create symlink libfoo.so.x -\> libfoo.x.y.z],
   [This way allows a sysadmin to see exactly which versions are installed, and to
 have multiple major versions installed at once. It doesn’t allow multiple minor
 versions per major (although usually only the latest minor is needed), and more
 importantly doesn’t offer protection against loading too old a minor version.],
   [Safer installation method],
   [For version x.y.z, compile libfoo.so with SONAME libfoo.so.x.y],
+  [\# use compilation flags 
+ -shared -Wl,-soname,libfoo.so. \$\{MAJOR\} . \$\{MINOR\}],
   [Copy libfoo.so to /usr/local/lib/libfoo.so.x.y.z],
   [Backfill minor version symlinks in DEST:],
-  [class="sourceCode" id="cb8"\> i = 0 
+  [i = 0 
  while \[ \$i -le " \$MINOR " \] ; do 
  ln -fs "libfoo.so. \$VER " " \$DEST /libfoo.so. \$MAJOR . \$i " 
  i = \$((i + 1 )) 
@@ -635,18 +562,22 @@ because the SONAME has major.minor granularity, it will protect against loading
 too old a minor version.],
   [(As an alternative to the symlinks, FreeBSD has
  libmap.conf )],
-  [id="mach-o-installation-macos"\>Mach-O installation (MacOS)],
+  [Mach-O installation (MacOS)],
   [Mach-O has more version metadata inside than ELF, so a traditional install
 works fine here.],
   [For version x.y.z, compile libfoo.dylib with],
   [install\_name libfoo.x.dylib],
   [current version x.y.z],
   [compatibility version x.y],
+  [\# use compilation flags 
+ -dynamiclib -install\_name "libfoo. \$\{MAJOR\} .dylib" \\ 
+ -current\_version \$\{VER\} \\ 
+ -compatibility\_version \$\{MAJOR\} . \$\{MINOR\} .0],
   [Copy libfoo.dylib to /usr/local/lib/libfoo.x.dylib],
   [It’s important to set the compatibility version correctly so that Mac’s dyld
 will prevent loading too old a minor version. To upgrade the library, overwrite
 libfoo.x.dylib with one of a later internal minor release.],
-  [id="example-code"\>Example code],
+  [Example code],
   [For an example of how to build a library portably, and install it conveniently
 for the linker and loader, see
  begriffs/libderp . It’s my first shared
@@ -658,10 +589,8 @@ library, where I tested the ideas for this article.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Get my new book ready for dessert…now available!],
   author: [David],
   source-name: [David Lebovitz],
@@ -669,7 +598,6 @@ library, where I tested the ideas for this article.],
   paragraphs: (
   [It’s almost ready!],
   [Coming this Fall is the new, completely revised edition of Ready for Dessert: My Best Recipes .],
-  [\[It’s now available at ==\> Bookshop , Amazon , Barnes & Noble and at the links below.\]],
   [When my publisher told me they wanted a new edition of the book, I decided to revise the book completely, from top to bottom. Ready for Dessert is a compilation of my favorite recipes, so I knew that I wanted to keep my signature Chocolate chip cookies , the Chocolate-cherry biscotti accented with black pepper, and classic Black & white cookies , along with everyone’s favorite, the Fresh ginger cake , as well as a tangy Lemon semifreddo , and the recipe for the Coconut layer cake I made for Alice Waters’ father on his birthday every year.],
   [Order Ready for Dessert now!],
   [To sweeten the pot, I added brand-new recipes to Ready for Dessert , favorites culled from my kitchen in Paris, including Île flottante (inspired by the version I always order at a favorite local bistro), a very special Riz au lait (rice pudding) topped with crunchy, candied nuts and salted butter caramel sauce, buttery Palets Breton cookies, and my version of the iconic, and irresistible (truly!), Maple tart from Tapisserie in Paris, the pastry shop of the highly-regarded restaurant Septime, so you can make it at home.],
@@ -687,10 +615,8 @@ library, where I tested the ideas for this article.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Hey, Game Devs: The ‘Placeholder Assets’ Excuse For Using AI Is Running Really Thin],
   author: [Timothy Geigner],
   source-name: [Techdirt],
@@ -714,39 +640,37 @@ library, where I tested the ideas for this article.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Seville Orange Marmalade],
   author: [David],
   source-name: [David Lebovitz],
   images: (),
   paragraphs: (
-  [align="center"\>],
   [This time of year brings Seville oranges to the markets in Paris. For the past few years, I kept wondering why they were so hard to find since it’s perhaps my favorite of all jams and jellies to make, and eat. But lately, they’ve been everywhere. And I found myself busy making a lot of marmalade, which was easier since I came up with a brand-new, revolutionary technique which I couldn’t wait to share.],
   [Since Seville oranges are rife with seeds, which makes slicing them difficult since you have to keep moving the seeds around with your slippery fingers, while trying to cut the oranges, then finding more, and fishing around deeper inside to extract more, plucking them out, etc… Each Seville orange has perhaps twenty to thirty inside.],
-  [align="center"\>],
   [So I thought, what if I was to squeeze the juice and seeds out first, strain them, then pour the juice back in? The seeds are precious commodities in jam-making, and get saved and used since they’re so high in pectin.],
   [They’re wrapped in a sack and cooked with the marmalade giving the marmalade gets a suave, jellied texture. And this simple method, featured in my book Ready for Dessert , makes the whole process much easier.],
-  [align="center"\>],
   [You might be interested to know that Seville Orange Marmalade was created because of an error. Apparently, an Englishwoman in 1700, the wife of a grocer, was stuck with some sour oranges that were bought cheaply from a boat that was carrying them from Seville.],
   [Since there was a storm, they wanted to get rid of their stock or oranges quickly, so the grocer bought them. But they were inedibly sour so his wife decided to try making jam from them, and viola! …Seville Orange Marmalade was invented.],
-  [align="center"\>],
-  [align="center"\>],
-  [id="recipe"\>],
+  [Adapted from Ready for Dessert (Ten Speed)],
   [In my book, I advise letting the cooked oranges and the seeds rest overnight. That's an optional step. If you want to go ahead and finish the marmalade the same day you start it, you can.],
-  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\> Wash oranges and wipe them dry. Cut each Seville orange in half, crosswise around the equator. Set a non-reactive mesh strainer over a bowl and squeeze the orange halves to remove the seeds, assisting with your fingers to remove any stubborn ones tucked deep within.],
-  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\> Cut each rind into 3 pieces and use a sharp chef’s knife to cut the rinds into slices or cubes as thin as possible. Each piece shouldn’t be too large (no more than a centimeter, or 1/3-inch in length.) Cut the navel orange into similar-sized pieces.],
-  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\> In a large (10-12 quart/liter) stockpot, add the orange slices, seed pouch, water, and salt, as well as the juice from the Seville oranges from step \#1. Bring to a boil, then reduce to a simmer, and cook until the peels are translucent, about 20 to 30 minutes. (At this point, sometimes I’ll remove it from the heat after cooking them and let the mixture stand overnight, to help the seeds release any additional pectin. But it's not imperative.)],
-  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\> Stir the sugar into the mixture and bring the mixture to a full boil again, then reduce heat to a gentle boil. Stir occasionally while cooking to make sure it does not burn on the bottom. Midway during cooking, remove the seed pouch and discard.],
-  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\> Continue cooking until it has reached the jelling point, about 218ºF degrees (103ºC), if using a candy thermometer. I cook this slightly less than other jams and marmalades because the high amount of pectin helps the marmalade set up more stiffly. To test the marmalade, turn off the heat and put a small amount on a plate that has been chilled in the freezer and briefly return it to the freezer. Check it in a few minutes; it should be slightly jelled and will wrinkle just a bit when you slide your finger through it. If not, continue to cook until it is.],
-  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\> Remove from heat, then stir in the Scotch (if using), and ladle the mixture into clean jars. Sometimes I bury a piece of vanilla bean in each jar. (Which is a great way to recycle previously-used or dried-out vanilla beans.)],
-  [id="recipe-video"\>],
-  [class="wprm-recipe-notes"\> I don’t process my jams, since I store them in the refrigerator. But if you wish to preserve them by canning, you can read more about the process here .],
-  [align="center"\>],
-  [align="center" style="text-align: left;"\> Note : Sour or Seville oranges are called in French oranges amères and are available mid-winter in many other countries around the world as well.],
-  [align="center"\>],
+  [Keyword confiture, jam, marmalade, orange],
+  [6 Seville oranges (see Note)],
+  [1 navel orange],
+  [10 cups (2.5L) water],
+  [pinch of salt],
+  [8 cups (1.6 kg) sugar],
+  [1 tablespoon Scotch (optional)],
+  [Wash oranges and wipe them dry. Cut each Seville orange in half, crosswise around the equator. Set a non-reactive mesh strainer over a bowl and squeeze the orange halves to remove the seeds, assisting with your fingers to remove any stubborn ones tucked deep within.],
+  [Tie the seeds up in cheesecloth or muslin very securely.],
+  [Cut each rind into 3 pieces and use a sharp chef’s knife to cut the rinds into slices or cubes as thin as possible. Each piece shouldn’t be too large (no more than a centimeter, or 1/3-inch in length.) Cut the navel orange into similar-sized pieces.],
+  [In a large (10-12 quart/liter) stockpot, add the orange slices, seed pouch, water, and salt, as well as the juice from the Seville oranges from step \#1. Bring to a boil, then reduce to a simmer, and cook until the peels are translucent, about 20 to 30 minutes. (At this point, sometimes I’ll remove it from the heat after cooking them and let the mixture stand overnight, to help the seeds release any additional pectin. But it's not imperative.)],
+  [Stir the sugar into the mixture and bring the mixture to a full boil again, then reduce heat to a gentle boil. Stir occasionally while cooking to make sure it does not burn on the bottom. Midway during cooking, remove the seed pouch and discard.],
+  [Continue cooking until it has reached the jelling point, about 218ºF degrees (103ºC), if using a candy thermometer. I cook this slightly less than other jams and marmalades because the high amount of pectin helps the marmalade set up more stiffly. To test the marmalade, turn off the heat and put a small amount on a plate that has been chilled in the freezer and briefly return it to the freezer. Check it in a few minutes; it should be slightly jelled and will wrinkle just a bit when you slide your finger through it. If not, continue to cook until it is.],
+  [Remove from heat, then stir in the Scotch (if using), and ladle the mixture into clean jars. Sometimes I bury a piece of vanilla bean in each jar. (Which is a great way to recycle previously-used or dried-out vanilla beans.)],
+  [I don’t process my jams, since I store them in the refrigerator. But if you wish to preserve them by canning, you can read more about the process here .],
+  [Note : Sour or Seville oranges are called in French oranges amères and are available mid-winter in many other countries around the world as well.],
 ),
   insert-map: (:),
   word-count: 915,
@@ -754,10 +678,8 @@ library, where I tested the ideas for this article.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How to Walk on the Trail of Tears],
   author: [Louise Story],
   source-name: [Atlas Obscura],
@@ -788,10 +710,8 @@ library, where I tested the ideas for this article.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Vegetarian Batch-Cooking for Winter: 1 1/2-Hour Prep, 6 Easy Meals !],
   author: [clotilde],
   source-name: [Chocolate & Zucchini],
@@ -819,6 +739,7 @@ library, where I tested the ideas for this article.],
   [Vegetarian Batch Cooking for Fall],
   [To make the process super smooth, I recommend these French-made glass containers for storing your preparations (I have two sets; they nest perfectly and take up very little room) and this dual kitchen timer to keep track of two preparations at the same time!],
   [Without further ado, here’s your vegetarian batch cooking plan for winter !],
+  [This is what you’ll make during the 1-hour prep time.],
   [Your Batch-Cooking Shopping List],
   [Get your free printable shopping list!],
   [For 4 people:],
@@ -945,6 +866,7 @@ library, where I tested the ideas for this article.],
   [☐ Stir in the remainder of the can of coconut milk, cook for 1 more minute, sprinkle with black pepper. Taste and adjust the seasoning.],
   [☐ Serve the curry with the rice and some chutney.],
   [Note: You will likely have leftovers; set them aside to eat as part of Meal \#5.],
+  [Photography by Céline de Cérou .],
   [Meal \#4: Roasted Brussels Sprouts with Eggs],
   [Active time: 15 minutes],
   [Time-to-table: 30 minutes],
@@ -997,16 +919,14 @@ library, where I tested the ideas for this article.],
 ),
   insert-map: (:),
   inline-pq: pull-quote([☐ Sprinkle with cheese and bake for 20 minutes, until the top is browned in places.], [clotilde]),
-  inline-pq-idx: 78,
+  inline-pq-idx: 79,
   word-count: 2720,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [FBI Tells Senate It’s Still Bypassing 4th Amendment By Purchasing Location Data From Third Parties],
   author: [Tim Cushing],
   source-name: [Techdirt],
@@ -1032,10 +952,8 @@ library, where I tested the ideas for this article.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [This Chef Is Redefining Cuban Comfort Food From a Kissimmee Food Truck],
   author: [Sam Lin-Sommer],
   source-name: [Atlas Obscura],
@@ -1056,6 +974,7 @@ library, where I tested the ideas for this article.],
   [In Miami, fate brought her just outside of the kitchen, as a server and a manager. “I worked, like we all do in this country, in gastronomy,” Melendez says. Her first job was in a Salvadorean restaurant, and her second was at a Cuban one. The experiences exposed her to cuisines from across Latin America—even her own.],
   [“I ate foods that people here say are Cuban dishes—that you don’t actually eat in Cuba,” she said, because of a lack of access to ingredients. She points out that ropa vieja , a slow-cooked, shredded beef dish that is famous in the United States, is rare in Cuba, because the slaughter and sale of beef is heavily regulated on the island.],
   [With time in the United States, Melendez would not only taste, but also innovate on Cuban dishes that were difficult to obtain back home. At her food truck, she plates a mini-serving of ropa vieja on crispy tostones (fried green plantains) for a small, punchy bite of Cuba.],
+  [A chef is born],
   [Though Amanda’s transition to life in Miami was marked by abundance, she became a cook during a time of desperation: the beginning of the COVID-19 pandemic. With nothing to do, she began to cook in her Miami home, her grandmother guiding her through Cuban classics. “Little by little,” she remembers, “my love for cooking emerged.”],
   [Claudia, who met Amanda while they were both waiting tables, could tell that she was tapping into a passion.],
   [“She pushed me to study it” seriously, Amanda says, and she did, enrolling in night classes at the María Moreno Culinary Institute in Miami. By night, she learned the fundamentals of French cooking, and by day she continued working at a Cuban restaurant in Miami.],
@@ -1067,6 +986,7 @@ library, where I tested the ideas for this article.],
   [Amanda’s father lives in Orlando, and on a trip to visit him, Amanda and Claudia were impressed by the area’s vibrant food truck scene. They wanted to become a part of it.],
   [They applied to join five or six food truck parks before getting a call from Food Trucks Heaven. The manager offered them a spot, but there was a catch: “You have to come before the end of the week because I only have one spot available,” Amanda recalls her telling Claudia over the phone.],
   [“We left for Orlando early the next morning.”],
+  [A place in Food Trucks Heaven],
   [The first month in Kissimmee was “horrible,” Amanda remembers. One of the toughest parts of leaving was separating from her 90-year-old grandmother, whom she had lived with since arriving in the United States. On top of that, she left behind many other family members in the Miami area to move to a city where she knew no one besides her father.],
   [“Nobody knew who we were, and my food truck is named Chef Amanda,” says Melendez. “Who is Amanda? No one knows. It didn’t say ‘Cuban’ anywhere. It was horrible, horrible.”],
   [Amanda worked the kitchen of the pink food truck, and Claudia attended to customers. Melendez burnt herself cooking on her first day. There were days where Amanda and Claudia did not sell a single thing. “It was like when someone is just exhausting themselves, sacrificing so much, but with nothing to show for it,” Amanda remembers. “We realized the only way people would buy from us was if they learned about our food first.”],
@@ -1086,6 +1006,7 @@ library, where I tested the ideas for this article.],
   [In fact, while certain visitors need convincing, some Cuban-American influencers have been sharing videos of themselves eating at her food truck, calling it the best Cuban food truck in Orlando and saying that it transports them right back to Cuba .],
   [And though Amanda loves winning over her compatriots, she is just as pleased when an American who isn’t as familiar with Latin American food tries her cooking.],
   [“They come to us and say, ‘This is the best Cuban sandwich I’ve ever eaten.’ That fills us up, really. It gives me more happiness, I promise you, than money could.”],
+  [From Kissimmee to the world],
   [Now that she’s developed a following in Kissimmee, Melendez says that she’s just getting started as a restaurateur. Next, she hopes to open another food truck in the Orlando metro area, and at some point, a brick-and-mortar. She and Claudia are also eying cities north of Florida where they can introduce her takes on Cuban cuisine to Americans who might be unfamiliar with it.],
   [Getting there won’t be easy, but she and Claudia are more than up to the challenge.],
   [“You’ll fall, you’ll hit a thousand obstacles, Amanda says. “But you can’t give up.”],
@@ -1098,11 +1019,10 @@ library, where I tested the ideas for this article.],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Sieboldhuis in Leiden, Netherlands],
   author: [Atlas Obscura],
   source-name: [Atlas Obscura],
@@ -1122,7 +1042,7 @@ library, where I tested the ideas for this article.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [10 Absolutely Ingenious Ways to Open Wine Without a Corkscrew],
   author: [Heather Fishel],
   source-name: [WonderHowTo],
@@ -1142,7 +1062,7 @@ library, where I tested the ideas for this article.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [My 50-State Quest: Gravette, Arkansas],
   author: [Louise Story],
   source-name: [Atlas Obscura],
@@ -1160,7 +1080,7 @@ library, where I tested the ideas for this article.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Lasagna Soup, Plus Other Yummy Ways to Use Lasagna Noodles],
   author: [Naomi Imatome-Yun],
   source-name: [WonderHowTo],
@@ -1182,7 +1102,7 @@ library, where I tested the ideas for this article.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [How to Play 'I'm Yours' by Jason Mraz on Baritone Ukulele],
   author: [getexcellent],
   source-name: [WonderHowTo],
@@ -1199,7 +1119,7 @@ library, where I tested the ideas for this article.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Digital Fellowship is your foot in the door to the future of news],
   author: [Guardian Staff],
   source-name: [Guardian Developer Blog],
@@ -1221,7 +1141,7 @@ library, where I tested the ideas for this article.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [If You're Hungry When Sick, It Might Be Less Severe—But More Contagious],
   author: [Sheryl Wood],
   source-name: [WonderHowTo],
@@ -1238,7 +1158,7 @@ library, where I tested the ideas for this article.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Pistachio Ganache (with White Chocolate and Pistachio Butter)],
   author: [Lindsay Landis],
   source-name: [Love and Olive Oil],
@@ -1249,6 +1169,7 @@ library, where I tested the ideas for this article.],
   [My pistachio obsession is showing no signs of abating any time soon.],
   [After making a truly otherworldly whipped pistachio ganache to top my exquisite raspberry pistachio frangipane tart , I decided that a standalone pistachio ganache recipe was probably a good idea, as it makes such an incredibly versatile frosting or filling.],
   [This recipe is for a standard soft-set pistachio ganache (perfect for truffle filling or macarons), but it’s easy enough to turn it into a whipped ganache by just adding additional cream and then whipping it to silky smooth, airy perfection the next day.],
+  [What to do with it?],
   [Other than eat it with a spoon, you mean? That’s a great question!],
   [Ganache is truly one of the most flexible fillings in the pastry world, and you can use this pistachio one in just about any recipe that calls for chocolate ganache .],
   [I used it to fill some gorgeously green truffles (seriously, the contrast of the rich, dark chocolate with the sweet pistachio is a revelation). If I have the time to make a batch of chocolate or pistachio macarons, I might use what’s left to fill those (did I mention I made multiple batches of this?)],
@@ -1266,7 +1187,7 @@ library, where I tested the ideas for this article.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [10 Ways to Whiten Clothes Without Using Any Bleach],
   author: [Heather Fishel],
   source-name: [WonderHowTo],
@@ -1283,7 +1204,7 @@ library, where I tested the ideas for this article.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [How to Make a Balloon-Powered Paper Plate Racer],
   author: [Osas Obaiza],
   source-name: [WonderHowTo],
@@ -1303,7 +1224,7 @@ library, where I tested the ideas for this article.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [This Thanksgiving, You Can Have Your Booze & Eat It, Too],
   author: [Nick & Bay Nigro],
   source-name: [WonderHowTo],
@@ -1320,7 +1241,7 @@ library, where I tested the ideas for this article.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [How to Make Perfectly Fluffy Mashed Potatoes Without Adding More Butter or Milk],
   author: [Karen Ahn],
   source-name: [WonderHowTo],
@@ -1340,7 +1261,7 @@ library, where I tested the ideas for this article.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The Buried Church Beneath Musée Rude in Dijon, France],
   author: [Atlas Obscura],
   source-name: [Atlas Obscura],
@@ -1359,7 +1280,7 @@ library, where I tested the ideas for this article.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [How to Make a Football-Shaped Pull-Apart Cake],
   author: [Alessa],
   source-name: [WonderHowTo],
@@ -1379,7 +1300,7 @@ library, where I tested the ideas for this article.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [How to Silence Your Obnoxiously Squeaky Bed with 4 Easy MacGyver Style Fixes],
   author: [Gabrielle Taylor],
   source-name: [WonderHowTo],
@@ -1396,7 +1317,7 @@ library, where I tested the ideas for this article.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [How to Tell if Your 'Expired' Eggs Are Still Good to Eat],
   author: [Gabrielle Taylor],
   source-name: [WonderHowTo],
@@ -1416,7 +1337,7 @@ library, where I tested the ideas for this article.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [8 Simple Tweaks to Transform Your Boring Pumpkin Pie],
   author: [Nick & Bay Nigro],
   source-name: [WonderHowTo],
@@ -1433,7 +1354,7 @@ library, where I tested the ideas for this article.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [How to Prevent Carved & Uncarved Pumpkins from Rotting],
   author: [Tara Redfield],
   source-name: [WonderHowTo],
@@ -1453,7 +1374,7 @@ library, where I tested the ideas for this article.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Parsing: the merit of strictly typed JSON],
   author: [Max Duval],
   source-name: [Guardian Developer Blog],
@@ -1472,7 +1393,7 @@ library, where I tested the ideas for this article.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [8 Last Minute Fixes for Common Thanksgiving Cooking Disasters],
   author: [Yumi Sakugawa],
   source-name: [WonderHowTo],
@@ -1494,7 +1415,7 @@ library, where I tested the ideas for this article.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [How to Heat Your Home in an Emergency Without Gas Using Flower Pots & Candles],
   author: [Gabrielle Taylor],
   source-name: [WonderHowTo],
@@ -1511,7 +1432,7 @@ library, where I tested the ideas for this article.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [After Halloween Guide: How to Remove Makeup, Face Paint, Fake Blood & Body Glue from Skin & Clothing],
   author: [Gabrielle Taylor],
   source-name: [WonderHowTo],
@@ -1529,8 +1450,7 @@ library, where I tested the ideas for this article.],
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Urartian Tomb of Yerevan in Yerevan, Armenia],
   author: [Atlas Obscura],
   source-name: [Atlas Obscura],
@@ -1550,22 +1470,19 @@ library, where I tested the ideas for this article.],
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([Tom Richards], source-name: [Guardian Developer Blog], [Pinboard is a discussion and asset sharing tool (or rather tool within other tools) which is gradually transforming how the news room communicate as news stories move through the various phases of the production process
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([Tom Richards], source-name: [Guardian Developer Blog], [Pinboard is a discussion and asset sharing tool (or rather tool within other tools) which is gradually transforming how the news room communicate as news stories move through the various phases of the production process
 
  This is part three of three ( part one and part two ). 
 
  Continue reading...])],
-    [#brief-item([Dahlia Ambrose], source-name: [Light Stalking], [Minimalism is an art and it can be also applied to all genre in photography - minimal portraits, minimal landscapes, minimal street photos, etc. In landscape photography, when you use minimalism as a compositional tool, the framing becomes very intentional and you focus on a particular element (which may be your subject) or two, the light, shapes, form, etc. Doing this can add a mood or emotion to your landscapes.
+  [#brief-item([Dahlia Ambrose], source-name: [Light Stalking], [Minimalism is an art and it can be also applied to all genre in photography - minimal portraits, minimal landscapes, minimal street photos, etc. In landscape photography, when you use minimalism as a compositional tool, the framing becomes very intentional and you focus on a particular element (which may be your subject) or two, the light, shapes, form, etc. Doing this can add a mood or emotion to your landscapes.
 
 Here are 25 simple yet striking photos that portray minimalism in landscapes.
 
 The post 25 Simple Yet Striking Photos That Portray Minimalism In Landscapes appeared first on Light Stalking .])],
-  ))
-}
+))
 
 #colophon([The Thoughtful Review], [Vol. 1, No. 059], [2026-03-30])

@@ -21,41 +21,8 @@
 #masthead([The Edition], [Vol. 1, No. 032], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Kafka’s Misdiagnosis],
-  kicker: [Cover Story],
-  author: [Aaron Schuster],
-  source-name: [The Paris Review Blog],
-  deck: [class="wp-caption aligncenter" id="attachment\_173141" style="width: 1034px;"\> 
-
-class="wp-caption-text" id="caption-attachment-173141"\>Drawings by Franz Kafka.],
-  lead-pre: [],
-  lead-cap: [c],
-  lead-rest: [lass="wp-caption aligncenter" id="attachment\_173141" style="width: 1034px;"\>],
-  body-paragraphs: (
-  [In a diary entry from February 1922, Franz Kafka writes of a deal he made with madness:],
-  [There is a certain failing, a lack in me, that is clear and distinct enough but difficult to describe: it is a compound of timidity, reserve, talkativeness, and half-heartedness; by this I intend to characterize something specific, a group of failings that under a certain aspect constitute one single clearly defined failing (which has nothing to do with such grave vices as mendacity, vanity, etc.). This failing keeps me from going mad, but also from making any headway. Because it keeps me from going mad, I cultivate it; out of fear of madness I sacrifice whatever headway I might make and shall certainly be the loser in the bargain, for no bargains are possible at this level.],
-  [The Kafkian protagonist (including the “I” of Kafka’s letters and diaries) is a loser who cannot make “any headway,” a schlemiel who secretly cultivates failure as the means of his persistence. The subject must lose, must fail; that’s the deal made with madness. Conversely, does this not imply that a successful Kafka would be not a socially well-adjusted, non-neurotic, even happily married Kafka, but rather a mad Kafka, one forced to pay a high price for not sacrificing headway in his pursuit, for going all the way to the end of his investigations? In “Investigations of a Dog,” the philosopher dog speaks of wanting to feed on the bone marrow of all the dogs, the marrow of truth—but then turns around and avows that this marrow is “no food; on the contrary, it is a poison.” Similarly, what if Kafka nourished himself on failure to avoid being poisoned by the truth he was seeking?],
-  [There is something profoundly unhinged about the Kafkian universe. In the first book-length study of Kafka in English (a rather eccentric work, largely forgotten today), Paul Goodman put it sharply: Relax your vigilance and “the entire order of the world will fly in pieces.” Kafka himself once called waking up “the riskiest moment”: “If you can manage to get through it without being dragged out of place, you can relax for the rest of the day.” It’s as if the interval between sleep and waking were not only a matter of fuzzy consciousness but also an ontological blurriness, threatening to open a rupture in the fabric of space-time where all sorts of demons might appear, like agents coming to arrest you for an unknown—and unknowable—crime, or a giant insect substituting for your formerly human self. Schizo- in Greek means cleft or split, and apart from the moment of awakening, there are many such figures of schizoid rupture in Kafka’s universe. “A Little Woman” opens with a delirious detail: “I have never seen a hand with the separate fingers so sharply differentiated from each other as hers; and yet her hand has no anatomical peculiarities, it is an entirely normal hand.” The too-finely-spaced fingers signal a subtle breach in the order of things, a breach into which the narrator can’t help but plunge.],
-  [It is true that one of the recurrent motifs or atmospheres in Kafka is a kind of nonchalant absurdity or normal insanity, which gives to his writing much of its dry humor. Like when Gregor Samsa turns into a bug and no one’s really shocked, or when Blumfeld comes home to his apartment to discover a pair of magical bouncing balls, which he finds bothersome but not particularly extraordinary. “Blumfeld, an Elderly Bachelor” would appear to illustrate the schizophrenia diagnosis, with its quasihallucinatory pair of celluloid balls that keep jumping up and down, doggedly following an increasingly exasperated Blumfeld. But within this delirium lies a fundamentally neurotic problem: on the one hand, the lonely bachelor is frustrated and cannot fulfill his desire (to find a life companion); on the other, a strange enjoyment keeps popping up where it’s least expected (the unwanted “companions” hopping around him). Such is the paradox of a bachelor’s existence: Loneliness can never be dispelled, and solitude is always interrupted by an intruder. Loneliness is incurable, yet one is never left alone. Likewise, the dog in “Investigations of a Dog” recounts how he was first launched on his philosophical quest by a psychedelic musical concert he stumbled upon in his youth. However, it’s not the intensities of light, movement, and sound or the violently reality-bursting spectacle (its “deterritorializing” force, in Deleuze and Guattari’s language) that grip the dog; rather, it’s the silence of the musicians, their refusal to answer his questions. This silence triggers something in him, destining the rest of his life to repeat this primal scene. His adult quest is a philosophical neurosis, organized around the posing of questions and the nonreception of answers.],
-  [Another example: the digging animal in “The Burrow,” with his constant fear of predators and obsession with defense, might easily be taken for a paranoid psychotic. But rather than being possessed by the certainty of persecution, he is riven by doubts, admitting that he doesn’t know what the enemy knows or if he’s plotting against him; near the end of the story he even claims, “I have reached the stage where I no longer wish to have certainty.” As the psychoanalyst Darian Leader has argued, if there’s one thing that separates neurosis from psychosis, it’s certainty. What “The Burrow” brilliantly illustrates is the warped neurotic logic by which one clings more to one’s defenses than to the life they are supposed to be defending. Indeed, many of Kafka’s abiding themes point to neurosis rather than schizophrenia: the ambivalent relation to authority and the ever-frustrated desire for official permission and status; delay, deferral, postponement, and procrastination; compulsive overthinking (Kafka makes virtuosic use of the word but —the Belgian Germanist Herman Uyttersprot once dubbed him the Aber Mann ); misunderstanding and the equivocations of interpretation; a floating sense of guilt, whose cause is unknown; the tortuous intricacies of grievance and complaint; and above all, failure—the failure to reach one’s goal or simply to make it from point A to B.],
-  [Samuel Beckett held a similar view. In a 1956 interview, Beckett underlined a certain serenity in Kafka’s writing: “The Kafka hero has a coherence of purpose. He’s lost but he’s not spiritually precarious, he’s not falling to bits.” He continues: “You notice how Kafka’s form is classic, it goes on like a steamroller—almost serene. It seems to be threatened the whole time—but the consternation is in the form. In my work there is consternation behind the form, not in the form.” Beckett reprises this point in a letter to the critic Ruby Cohn: “What struck me as strange in Kafka was that the form is not shaken by the experience it conveys.” Unlike Beckett’s writing, which tends toward disintegration, language collapsing into oblivion, in Kafka the form holds steady, despite the “consternation” it conveys. Now, Beckett may well have more in common with Kafka than he’s willing to admit, but his point stands: Kafka does not engage in the same kind of formal innovations and experiments as do other modern writers, making him the odd man out of the literary avant-garde. He adheres to the classical forms of the fable, chronicle, epic, and parable. Yet it’s not exactly that “the form is not shaken.” Kafka does something to the old forms: he twists them from the inside, riddling them with hesitations, gaps, and silences, but without abandoning them or splintering them apart.],
-  [The ways in which Kafka twists traditional forms according to his own disturbance are what introduce a new universal dimension for the Freudian age, the dimension of neurosis. Kafka invented a mythology for the twentieth century by neuroticizing the ancient myths: my own private Greece, my own private Judaism, even (given Kafka’s returns to Don Quixote ) my own private literary modernism. The Abraham who can’t recognize himself in God’s call, or is just too busy to answer; the tardy messiah who arrives only the day after he’s needed; the not-so-great Alexander who cannot cross the Hellespont, arrested by the mere weight of his body (his warhorse, Bucephalus, makes more progress—studying hard, he becomes a lawyer in an age when there are no more Alexanders, when the reign of the master has been eclipsed by anonymous administration); the Sirens who don’t sing but rather silently gawk at an ear-plugged Odysseus; the office-comedy Poseidon turned into the harried supervisor of the seas, having exchanged cruising on the waves and his trident for paperwork and a pen— this is how Kafka revivifies the old myths, makes them speak to us again.],
-  [The case of Moses is particularly revealing: in a passage from his diary dated October 19, 1921, Kafka compares the Jewish prophet’s fate to the conclusion of Sentimental Education . Kafka’s Moses is like Flaubert’s hyperneurotic Frédéric Moreau, with his desperately unconsummated, self-sabotaging love for Madame Arnoux: at the end of the novel, just at the moment he senses she’s about to give herself to him, and despite his “frenzied, rabid lust,” Frédéric turns away and rolls a cigarette, repulsed by a feeling of (incestuous) disgust, and a general sense of fatigue—“Besides, what a nuisance it would be!” This is how Kafka pictures Moses, not prohibited by God but stopping himself at the edge of Canaan, perhaps also muttering (prophetically) under his breath, “The promised land, what a nuisance!” Is there a truer theology? Kafka recasts mythical heroes and exalted religious figures as neurotically divided subjects, not wanting what they want and thriving on the obstacles to their thriving. Even more, they are characters who cannot be located in their traditions, who are adrift in their myths. By continuing to write in the traditional forms while subverting them in this way, Kafka depicts our own broken relation to the modern world—as something we must yet cannot inhabit . The inhibitions, hesitations, and gaps that Kafka insinuates into ancient stories reflect the angst of a subject who both belongs to a certain history and context and does not, who cannot find its place where it is “placed.”],
-  [“Hesitation before birth. If there is a transmigration of souls, then I am not yet on the bottom rung. My life is a hesitation before birth,” Kafka writes in his diary, shortly before the entry on madness. One of Kafka’s most remarkable modernizations of mythology is his take on the ancient doctrine of metempsychosis. Plato’s myth of Er, which concludes The Republic , describes the cycle of reincarnation whereby dead souls return to the underworld to decide on their next lives. In Kafka’s version of the myth, the soul does not choose a new incarnation, but rather wavers before this choice, vacillates before being. Another fateful interval: not, this time, between sleep and wakefulness, but being and nothingness. To be or not to be? Hold on, wait a second … In Plato, the focus is on the content of the choice (tyrant or recluse, lion or swan); in Kafka, it’s the act of choosing that has become problematic, “impossible.” For moderns, reincarnation concerns not so much what we’re going to be (our identity) as it does how or in what way we won’t entirely manage to be (our mis-identity or internal otherness). Freud called it the “choice of neurosis.” Extending the image of Kafka’s wavering soul, our subjectivities might be defined, in a formal manner, as so many ways of failing to be born or of bungling the choice of being: neurotic hesitation that dithers in the face of choice; perverse disavowal that avoids or sidesteps the necessity of decision; psychotic self-negation that chooses the impossible option not to be. The idea of an underworld may not be viable for us, but a disenchanted adherence to the immanence of this world is not the sole alternative. Instead, this world is fractured from within, so that it no longer falls together with itself yet without being redoubled in some kind of beyond (heaven or hell). The Freudian unconscious is a reinvention of the Platonic underworld.],
-  [At one point, Blumfeld considers crushing the troublesome magical balls into tiny bits, then wonders whether the fragments will keep jumping, a possibility he wryly dismisses: “Even the unusual must have its limits.” This might be read as an ironic metacommentary on Kafka’s fiction, but it is also a kind of neurotic joke about madness, the wit of a neurotic on the edge of psychosis whose abyss he knowingly pulls back from. The world still holds together—not due to its having a strong enough center but, funnily enough, because of a failing or weakness that prevents it from falling apart.],
-  [This is a clinical insight we can take from Kafka: What grounds neurotic existence is not a better grip on socially consensual reality than that of psychotics, or a well-installed symbolic law, as in the classic Lacanian account. It rather consists of a certain flair for cultivating weakness—a capacity for turning lack into bounty and failure into success, and, conversely, for snatching failure from the jaws of victory and finding the absence in every plenty. The trick is spinning fast enough around the void to avoid falling into it. To use another image, neurotics can almost magically conjure a ground from its absence, like the flight of stairs generated by the very feet climbing upon them: “As long as you don’t stop climbing, the stairs won’t end, under your climbing feet they will go on growing upwards,” concludes the story “Advocates.” Schizophrenics might see this as “cheating”; having a clearer insight into the precarious nature of things, they would expect the climber to glimpse the abyss beneath him and plummet. Kafka’s losing bargain is a trick on madness. From a classical diagnostic perspective, there is something confounding about Kafka’s neurosis on the edge of madness, or neurosis that saves itself from breakdown via failure. The schizophrenic interpretation of Kafka is not completely mistaken: reality is fractured, and strange animals, crossbreeds, and uncanny nonhumans rush in through the gaps. What Kafka instructs us about, however, is a mode of psychic coherence that is made up of gaps, the paradoxical perseverance of a system that subsists in and through the ways it undermines itself. Kafka’s heroes are maestros of self-sabotage; they do it to themselves. But this self-sabotage is also sabotaged—it doesn’t manage to do itself in—and so they can only keep on “climbing.” His characters live by failing to not-live. (This wayward negation is the mainspring of Kafka’s comedy, or what might be called his screwball tragedy.) One of the lessons of Kafkian neurosis is that human beings are the astoundingly resourceful architects of their own cages—yet the very ingenuity by which we entrap ourselves points to a freedom that remains untamed. In Kafka there may be no exit, no way out, but there is no absolute closure either, only an evermore exacting working through of their strange loop.],
-  [Jacques Lacan once called Hegel the “most sublime hysteric.” Kafka, the most sublime obsessional neurotic? The point is not to pathologize the author, to reduce him to his sickness, but to appreciate how literature can lift psychopathology to the level of a style—transforming it, to use the parlance of Kafka’s dog, into a field of “investigation.” This is not a matter of romanticizing mental illness but of exploring its dynamics and complexities, showing it to be not merely ailment and dysfunction but also a means for grappling with essential human problems, and for constituting different ways or even styles of being. Kafka raised neurosis to the level of a style. “There is a goal, but no way,” he writes in his notebooks. “What we call a way is hesitation.”],
-  [Aaron Schuster is a philosopher and writer who lives in Amsterdam. He is the author of The Trouble with Pleasure: Deleuze and Psychoanalysis and How to Research Like a Dog: Kafka’s New Science.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [How American Kids Have Been Collateral Damage in Trump’s Immigration Crackdown],
   author: [Nicole Foy],
   source-name: [ProPublica],
@@ -71,6 +38,9 @@ class="wp-caption-text" id="caption-attachment-173141"\>Drawings by Franz Kafka.
   [Eighteen-year-old Fernando Hernández García, who is using a pseudonym to protect the safety of his family in Mexico, is speaking on behalf of his 11-year-old sister. Both siblings are citizens .],
   [Last year, the family was driving to Houston to get emergency treatment for the girl, who was recovering from brain cancer. Border Patrol agents ignored a hospital letter that the family had used previously to go through checkpoints. This time, agents held the family until they were deported the next day to Mexico. With few other options, the American children went with their parents — except for Hernández García, who had not been detained and stayed to earn money and send medicine home.],
   [The family’s lawyers say they have not been able to access the care they need for their daughter in Mexico, and they have applied for humanitarian parole to return. Customs and Border Protection previously told ProPublica the family’s account was inaccurate but declined to provide specifics.],
+  [We Found That More Than 170 U. S. Citizens Have Been Held by Immigration Agents. They’ve Been Kicked, Dragged and Detained for Days.],
+  [Some Americans Have Already Been Caught in Trump’s Immigration Dragnet. More Will Be.],
+  [We Found More Than 40 Cases of Immigration Agents Using Banned Chokeholds and Other Moves That Can Cut Off Breathing],
   [Also speaking is 16-year-old Arnoldo Bazan. As ProPublica detailed earlier this year, Bazan was tackled and choked by immigration agents who were chasing his undocumented father in Houston.],
   [Bystanders filmed the teen screaming that he was a minor and a U. S. citizen. After agents knelt on his neck and put him in a choke hold, then they handcuffed him.],
   [Bazan told ProPublica that when he was in a choke hold, “I felt like I was seeing the light.” He said he’s now speaking up — including on Capitol Hill — to help keep others from going through the same. “I don’t think nobody’s safe anymore.”],
@@ -95,10 +65,8 @@ class="wp-caption-text" id="caption-attachment-173141"\>Drawings by Franz Kafka.
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How Do You Know That You Love Somebody? Philosopher Martha Nussbaum’s Incompleteness Theorem of the Heart’s Truth, from Plato to Proust],
   author: [Maria Popova],
   source-name: [The Marginalian (Brain Pickings)],
@@ -148,10 +116,8 @@ class="wp-caption-text" id="caption-attachment-173141"\>Drawings by Franz Kafka.
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [This JBL Boombox Is 40% Off During Amazon's Big Spring Sale],
   author: [Naima Karp],
   source-name: [Lifehacker],
@@ -159,9 +125,19 @@ class="wp-caption-text" id="caption-attachment-173141"\>Drawings by Franz Kafka.
   paragraphs: (
   [We may earn a commission from links on this page. Deal pricing and availability subject to change after time of publication.],
   [Old school boomboxes might be a relic of the past, but they’ve been reinterpreted in recent years with sleek, modern, and more portable silhouettes. While not as compact as some Bluetooth speakers, they pack a bigger punch in sound, especially when it comes to playing music outdoors. One of the best-rated ones on the market is the JBL Boombox 3 , which earned a PCMag Editor’s Choice Award —and it's currently 40% off for Amazon’s Spring Sale , bringing it down to its lowest price ever of \$299.95 (originally \$499.95).],
+  [JBL Boombox 3],
+  [\$299.95
+ at Amazon],
+  [\$499.95 
+ Save \$200.00],
+  [\$299.95
+ at Amazon],
+  [\$499.95 
+ Save \$200.00],
   [At 14.7 pounds, it might not be the most lightweight speaker, but it’s still technically portable given the built-in handle that lets you carry it from place to place. The control bar lets you link to other JBL speakers, control volume, power, play/pause and Bluetooth pairing, but doesn’t allow you to go back to the previous track. It has a covered rear panel with a compartment housing a 3.5mm aux input, a USB-A port that allows you to charge other devices, and a connector for the included power cable. Aesthetically, it’s similar to the Boombox 2, but adds an extra subwoofer.],
   [It’s compatible with Bluetooth 5.3 and supports the SBC codec , but not AAC or AptX. Still, the bass and volume have impressive output in both AC and battery power modes. Battery life lasts up to 24 hours on a charge and takes around 6.5 hours to fully charge from empty. An IP67 rating makes it dust-proof and waterproof (up to one meter of depth for 30 minutes), so poolside hangs or unexpected rain shouldn’t pose an issue. Just note that the snap-shut cover on the back needs to be closed for the rating to apply. The companion app includes a customizable three-band EQ, firmware updates, and battery life monitoring.],
   [If you’re looking for a loud, durable outdoor speaker with deep bass and adjustable EQ, and you don’t mind slightly limited Bluetooth codec support or a heavier build, the size-to-power ratio makes this award-winning speaker a reliable choice. With summer right around the corner, and the JBL Boombox 3 at nearly half off, now is a great time to invest.],
+  [Our Best Editor-Vetted Amazon Big Spring Sale Deals Right Now],
   [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
  
  
@@ -218,6 +194,7 @@ class="wp-caption-text" id="caption-attachment-173141"\>Drawings by Franz Kafka.
  \$169.99 
  
  (List Price \$249.99)],
+  [Deals are selected by our commerce team],
 ),
   insert-map: (:),
   word-count: 686,
@@ -225,10 +202,8 @@ class="wp-caption-text" id="caption-attachment-173141"\>Drawings by Franz Kafka.
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [10 Shows Like 'The Comeback' You Should Watch Next],
   author: [Ross Johnson],
   source-name: [Lifehacker],
@@ -237,36 +212,50 @@ class="wp-caption-text" id="caption-attachment-173141"\>Drawings by Franz Kafka.
   [We may earn a commission from links on this page.],
   [Valerie Cherish is back, and not a moment too soon. Twenty years after a modestly rated but absolutely brilliant first season, mega-cringe Hollywood satire The Comeback has returned to HBO for one more painfully embarrassing season (complimentary) Co-created by and starring Lisa Kudrow, it's the hilarious, dark, and occasionally moving story of a C-list celebrity determined to stay in the limelight at whatever cost.],
   [Valerie Cherish—clueless, egotistical, and all-too-human—is one of TV's indelible characters, simultaneously a victim of ageism, misogyny, and celebrity culture, and also a woman who doesn't care about any of that provided she can find a way to scrabble to the top. Likewise, these 10 shows spotlight women (mostly) of a certain age navigating career challenges with...mixed results.],
-  [id="hacks-2021"\> Hacks (2021 – )],
-  [id="video-container-01KMY4RNT43RJH0K7NJJ40R2CW"\>],
+  [Hacks (2021 – )],
   [On the surface, Valerie Cherish and Deborah Vance don't have all that much in common, but they often feel like two sides of a coin in the ways in which they battle, and concede to, the pressures of being a woman in modern show business. Hacks finds 25-year-old writer Ava (Hannah Einbinder) struggling to get her career back one track after getting cancelled over a tweet. She reluctantly takes a job with Deborah Vance (Jean Smart), a comedy trailblazer who remains popular with an older Vegas crown, but whose career is largely on autopilot. They're an entirely mismatched pair, but their chemistry is ultimately explosive, with Jean Smart doing some of the best work of her incredible career as the often deeply unlikeable Vance, and Einbinder more than holding her own in return. It's funny, bitchy, and surprisingly moving when it wants to be. Stream Hacks on HBO Max .],
-  [id="girls5eva-2021-2024"\> Girls5eva (2021 – 2024)],
-  [id="video-container-01KMY4RNT67T6W92K7W12JCXA0"\>],
+  [Hacks (2021 – )],
+  [Girls5eva (2021 – 2024)],
   [The premise is very much about a comeback: A very ‘90s group (Sara Bareilles, Busy Philipps, Paula Pell, and Renée Elise Goldsberry) who made it big very briefly with exactly one hit song gets its own shot at a career resurgence (they’re Girls5eva because they expected to be in the game “longer than 4 ever”—turned out, not so much; also there used to be a fifth member, but she died in a tragic infinity pool accident). After an up-and-coming rapper samples one of their old hits, the band reunites to try to find new relevancy in the 2020s. It doesn't go great! Tina Fey is one of the executive producers, and the (very fun) '90s-inspired original music was composed and written for the show by the creators. Stream Girls5Eva on Peacock and Netflix .],
-  [id="veep-2012-2019"\> Veep (2012 – 2019)],
-  [id="video-container-01KMY4RNT7K9Q7Q50V1019TVQ9"\>],
+  [Girls5eva (2021 – 2024)],
+  [at Peacock],
+  [at Peacock],
+  [Veep (2012 – 2019)],
   [There's a sweet vulnerability to Valerie Cherish absent from pretty much anyone in Veep , but the air of cringeworthy desperation hangs heavy over both shows. Veep asks: What if the very worst people imaginable had control of all the levers of power in America? What would that be like? In the highly satirical and in no way politically relevant series, Julia Louis-Dreyfus brilliantly plays Vice President Selina Meyer: part icon, part worst-case-scenario for the feminist dream. The supporting cast consists almost entirely of entitled rich people climbing over each other for infinitesimal extra bits of power while trying to appear as folk heroes to the rubes (us voters). It’s one of the funniest shows ever on TV, with the nastiest put-downs...if you can handle the fact that history has overtaken it in favor of a reality that's even more absurd. Stream Veep on HBO Max.],
-  [id="the-studio-2025"\> The Studio (2025 – )],
-  [id="video-container-01KMY4RNT819TY5SC4JA0R35H7"\>],
+  [Veep (2012 – 2019)],
+  [at HBO Max],
+  [at HBO Max],
+  [The Studio (2025 – )],
   [Industry exec Matt Remick ( Comeback vet Seth Rogen) loves movies, and when he signs on for a high-profile role at the fictional Continental Studios, he feels like his time has come. He aims to make a real difference in returning an increasingly IP-driven movie industry to its creative roots.—until about a minute into his new job, when the CEO (Bryan Cranston) reveals his first order of business will be marketing the Kool-Aid Man Movie . Hollywood satires of yore have focused on the industry as one that eats people up and spits them out, but the spin here is that Remick yearns for those good old days, much as Valerie can never quite seem to move forward. The late Catherine O'Hara, Ike Barinholtz, Chase Sui Wonders ( Bodies Bodies Bodies ), and Kathryn Hahn also star, and like The Comeback , the show boasts a long list of celebrity cameos. Stream The Studio on Apple TV+ .],
-  [id="enlightened-2011-2013"\> Enlightened (2011 – 2013)],
-  [id="video-container-01KMY4RNTAVYTE13NT24A6539C"\>],
+  [The Studio (2025 – )],
+  [at Apple TV+],
+  [at Apple TV+],
+  [Enlightened (2011 – 2013)],
   [Before The White Lotus , Mike White co-created (with star Laura Dern) this beloved, if short-lived, comedy-drama about a middle-aged woman who has a complete mental breakdown following a demotion at the job to which she's devoted her life. Following a two-month stay in an holistic treatment facility, Dern's Amy Jellicoe becomes determined to approach life with a new perspective, focusing on meditation and positive change at work and at home. The results are mixed, but there's also a rather beautiful sense that change is absurd and difficult, but also entirely possible. Stream Enlightened on HBO Max.],
-  [id="no-good-deed-2024"\> No Good Deed (2024)],
-  [id="video-container-01KMY4RNTBNDMZCNDK0YWS3EGR"\>],
+  [Enlightened (2011 – 2013)],
+  [No Good Deed (2024)],
   [I'm adding this one largely for the Lisa Kudrow of it all, but there's a similar vein of dark comedy here—plus, No Good Deed is a pretty great show that a lot of people missed. The setup sounds like a juicy crime thrillers: Kudrow is retired pianist Lydia; Ray Romano is her husband, Paul. The two are in rather tricky financial straits and need to sell their home without wanting to seem too desperate to prospective buyers—and also hide a secret involving a death a few years prior. For all that, it's very much a comedy, with a great supporting cast that includes Linda Cardellini, Luke Wilson, O-T Fagbenle, and Teyonah Parris. Stream No Good Deed on Netflix .],
-  [id="younger-2015-2021"\> Younger (2015 – 2021)],
-  [id="video-container-01KMY4RNTC7KT35D6JECWSYX16"\>],
+  [No Good Deed (2024)],
+  [Younger (2015 – 2021)],
   [Rather than a young woman seeking to make a name for herself, Younger follows Liza Miller (Sutton Foster), a recently divorced woman in her 40s who finds that age is a barrier to reentering the publishing industry she left years earlier. After a compliment convinces her that she could pass for a younger woman, she lies that she's just 26 (must be nice) in order to land an entry-level job. Misadventures ensue. Think of it as a story of coming-of-age, again. Stream Younger on Netflix .],
-  [id="hot-in-cleveland-2010-2015"\> Hot in Cleveland (2010 – 2015)],
-  [id="video-container-01KMY4RNTEKPRJEQKB82RQFB0K"\>],
+  [Younger (2015 – 2021)],
+  [at Netflix],
+  [at Netflix],
+  [Hot in Cleveland (2010 – 2015)],
   [In contrast to The Comeback' s reality TV style and structure, this is very much a traditional three-camera sitcom, albeit one with a stacked cast of legends, though it approaches the challenges of being a middle-aged woman in entertainment in many of the same ways. Writer Melanie (Valerie Bertinelli), beautician Joy (Jane Leeves), and soap diva Victoria (Wendie Malick) wind up spending a wild night in Cleveland after a plane to Paris is diverted, discovering in the process that, while they're seen as over-the-hill back in Los Angeles, they're all Ohio 10s—though the sassy caretaker of their house, Elka (Betty White), might not agree. Stream Hot in Cleveland on Paramount+ .],
-  [id="grace-and-frankie-2015-2022"\> Grace and Frankie (2015 – 2022)],
-  [id="video-container-01KMY4RNTFMNTQ2V0MERFNDEGZ"\>],
+  [Hot in Cleveland],
+  [at Paramount+],
+  [at Paramount+],
+  [Grace and Frankie (2015 – 2022)],
   [Close female friendships are hard to come by for the driven, slightly clueless Valerie, a woman focused on staying on top. Jane Fonda's Grace, a cosmetics mogul, isn't much different at the start, but she finds a different path when she makes a truce with her arch-nemesis Frankie (Lily Tomlin), a quirky artist with whom she has nothing in common—other than the fact that their husbands left them for one another. (Valerie might take some notes.) Stream Grace and Frankie on Netflix.],
-  [id="call-my-agent-2015-2020"\> Call My Agent! (2015 – 2020)],
-  [id="video-container-01KMY4RNTG61KVYX8QBQST17BG"\>],
+  [Grace and Frankie],
+  [at Netflix],
+  [at Netflix],
+  [Call My Agent! (2015 – 2020)],
   [International sensation Call My Agent! shifts its focus between four talent agents at a prestigious firm who are forced to take the reins following the sudden death of the agency founder, all of them getting a second chance in mid-career—or beyond. The cast is lead by Camille Cottin as Andréa Martel, while Liliane Rovère's Arlette Azéma is in her '80s. They navigate their messy personal lives while catering to the needs of their real celebrity clients (Juliette Binoche, Monica Bellucci, Isabelle Huppert, and Sigourney Weaver are just some of the name guest stars playing faintly exaggerated versions of themselves). It's soapy, addictive showbiz fun, a dishy delight even if you know not a lick of French. Stream Call My Agent! on Netflix .],
+  [Call My Agent! (2015 – 2020)],
+  [at Netflix],
+  [at Netflix],
 ),
   insert-map: (:),
   word-count: 2627,
@@ -274,10 +263,8 @@ class="wp-caption-text" id="caption-attachment-173141"\>Drawings by Franz Kafka.
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Overconfidence is how wars are lost − lessons from Vietnam, Afghanistan and Ukraine for the war in Iran were ignored],
   author: [Monica Duffy Toft, Professor of International Politics and Director of the Center for Strategic Studies, The Fletcher School, Tufts University],
   source-name: [The Conversation (Politics)],
@@ -326,7 +313,7 @@ class="wp-caption-text" id="caption-attachment-173141"\>Drawings by Franz Kafka.
   [Notably, Iran has kept the strait selectively open to Turkish, Indian and Saudi vessels , rewarding neutral countries and punishing U. S. allies, driving wedges through the coalition.],
   [Historian Geoffrey Blainey famously argued that wars start when both sides hold incompatible beliefs about power and only end when reality forces those beliefs to align .],
   [That alignment is now happening, at great cost, in the Persian Gulf and beyond. The Trump administration scored high on the hubris index at exactly the moment when it most needed humility.],
-  [class="fine-print"\> Monica Duffy Toft does not work for, consult, own shares in or receive funding from any company or organization that would benefit from this article, and has disclosed no relevant affiliations beyond their academic appointment.],
+  [Monica Duffy Toft does not work for, consult, own shares in or receive funding from any company or organization that would benefit from this article, and has disclosed no relevant affiliations beyond their academic appointment.],
 ),
   insert-map: (:),
   word-count: 1469,
@@ -334,10 +321,8 @@ class="wp-caption-text" id="caption-attachment-173141"\>Drawings by Franz Kafka.
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How we use Abstract Syntax Trees (ASTs) to turn Workflows code into visual diagrams],
   author: [André Venceslau],
   source-name: [Cloudflare Blog],
@@ -365,8 +350,8 @@ class="wp-caption-text" id="caption-attachment-173141"\>Drawings by Franz Kafka.
   [When a Worker is deployed, the configuration service bundles (using esbuild by default) and minifies the code unless specified otherwise . This presents another challenge — while Workflows in TypeScript follow an intuitive pattern, their minified Javascript (JS) can be dense and indigestible. There are also different ways that code can be minified, depending on the bundler.],
   [Here’s an example of Workflow code that shows agents executing in parallel:],
   [const summaryPromise = step.do(
- \`summary agent (loop \${loop})\`,
- async () =\> {
+ \`summary agent (loop \$\{loop\})\`,
+ async () =\> \{
  return runAgentPrompt(
  this.env,
  SUMMARY\_SYSTEM,
@@ -376,11 +361,11 @@ class="wp-caption-text" id="caption-attachment-173141"\>Drawings by Franz Kafka.
  input.context
  )
  );
- }
+ \}
  );
  const correctnessPromise = step.do(
- \`correctness agent (loop \${loop})\`,
- async () =\> {
+ \`correctness agent (loop \$\{loop\})\`,
+ async () =\> \{
  return runAgentPrompt(
  this.env,
  CORRECTNESS\_SYSTEM,
@@ -390,11 +375,11 @@ class="wp-caption-text" id="caption-attachment-173141"\>Drawings by Franz Kafka.
  input.context
  )
  );
- }
+ \}
  );
  const clarityPromise = step.do(
- \`clarity agent (loop \${loop})\`,
- async () =\> {
+ \`clarity agent (loop \$\{loop\})\`,
+ async () =\> \{
  return runAgentPrompt(
  this.env,
  CLARITY\_SYSTEM,
@@ -404,54 +389,48 @@ class="wp-caption-text" id="caption-attachment-173141"\>Drawings by Franz Kafka.
  input.context
  )
  );
- }
+ \}
  );],
   [Bundling with rspack , a snippet of the minified code looks like this:],
-  [class pe extends e{async run(e,t){de("workflow.run.start",{instanceId:e.instanceId});const r=await t.do("validate payload",async()=\>{if(!e.payload.r2Key)throw new Error("r2Key is required");if(!e.payload.telegramChatId)throw new Error("telegramChatId is required");return{r2Key:e.payload.r2Key,telegramChatId:e.payload.telegramChatId,context:e.payload.context?.trim()}}),s=await t.do("load source document from r2",async()=\>{const e=await this.env. REVIEW\_DOCUMENTS.get(r.r2Key);if(!e)throw new Error(\`R2 object not found: \${r.r2Key}\`);const t=(await e.text()).trim();if(!t)throw new Error("R2 object is empty");return t}),n=Number(this.env. MAX\_REVIEW\_LOOPS??"5"),o=this.env. RESPONSE\_TIMEOUT??"7 days",a=async(s,i,c)=\>{if(s\>n)return le("workflow.loop.max\_reached",{instanceId:e.instanceId,maxLoops:n}),await t.do("notify max loop reached",async()=\>{await se(this.env,r.telegramChatId,\`Review stopped after \${n} loops for \${e.instanceId}. Start again if you still need revisions.\`)}),{approved:!1,loops:n,finalText:i};const h=t.do(\`summary agent (loop \${s})\`,async()=\>te(this.env,"You summarize documents. Keep the output short, concrete, and factual.",ue("Summarize this text in 5 bullet points.",i,r.context)))...],
+  [class pe extends e\{async run(e,t)\{de("workflow.run.start",\{instanceId:e.instanceId\});const r=await t.do("validate payload",async()=\>\{if(!e.payload.r2Key)throw new Error("r2Key is required");if(!e.payload.telegramChatId)throw new Error("telegramChatId is required");return\{r2Key:e.payload.r2Key,telegramChatId:e.payload.telegramChatId,context:e.payload.context?.trim()\}\}),s=await t.do("load source document from r2",async()=\>\{const e=await this.env. REVIEW\_DOCUMENTS.get(r.r2Key);if(!e)throw new Error(\`R2 object not found: \$\{r.r2Key\}\`);const t=(await e.text()).trim();if(!t)throw new Error("R2 object is empty");return t\}),n=Number(this.env. MAX\_REVIEW\_LOOPS??"5"),o=this.env. RESPONSE\_TIMEOUT??"7 days",a=async(s,i,c)=\>\{if(s\>n)return le("workflow.loop.max\_reached",\{instanceId:e.instanceId,maxLoops:n\}),await t.do("notify max loop reached",async()=\>\{await se(this.env,r.telegramChatId,\`Review stopped after \$\{n\} loops for \$\{e.instanceId\}. Start again if you still need revisions.\`)\}),\{approved:!1,loops:n,finalText:i\};const h=t.do(\`summary agent (loop \$\{s\})\`,async()=\>te(this.env,"You summarize documents. Keep the output short, concrete, and factual.",ue("Summarize this text in 5 bullet points.",i,r.context)))...],
   [Or, bundling with vite , here is a minified snippet:],
-  [class ht extends pe {],
-  [async run(e, r) {],
-  [b("workflow.run.start", { instanceId: e.instanceId });],
-  [const s = await r.do("validate payload", async () =\> {],
+  [class ht extends pe \{],
+  [async run(e, r) \{],
+  [b("workflow.run.start", \{ instanceId: e.instanceId \});],
   [if (!e.payload.r2Key)],
   [throw new Error("r2Key is required");],
   [if (!e.payload.telegramChatId)],
   [throw new Error("telegramChatId is required");],
-  [return {],
+  [return \{],
   [r2Key: e.payload.r2Key,],
   [telegramChatId: e.payload.telegramChatId,],
   [context: e.payload.context?.trim()],
-  [};],
-  [}), n = await r.do(],
+  [\};],
+  [\}), n = await r.do(],
   ["load source document from r2",],
-  [async () =\> {],
   [const i = await this.env. REVIEW\_DOCUMENTS.get(s.r2Key);],
   [if (!i)],
-  [throw new Error(\`R2 object not found: \${s.r2Key}\`);],
+  [throw new Error(\`R2 object not found: \$\{s.r2Key\}\`);],
   [const c = (await i.text()).trim();],
   [if (!c)],
   [throw new Error("R2 object is empty");],
   [return c;],
-  [}],
-  [), o = Number(this.env. MAX\_REVIEW\_LOOPS ?? "5"), l = this.env. RESPONSE\_TIMEOUT ?? "7 days", a = async (i, c, u) =\> {],
-  [if (i \> o)],
-  [return H("workflow.loop.max\_reached", {],
+  [\}],
+  [return H("workflow.loop.max\_reached", \{],
   [instanceId: e.instanceId,],
   [maxLoops: o],
-  [}), await r.do("notify max loop reached", async () =\> {],
   [await J(],
   [this.env,],
   [s.telegramChatId,],
-  [\`Review stopped after \${o} loops for \${e.instanceId}. Start again if you still need revisions.\`],
+  [\`Review stopped after \$\{o\} loops for \$\{e.instanceId\}. Start again if you still need revisions.\`],
   [);],
-  [}), {],
+  [\}), \{],
   [approved: !1,],
   [loops: o,],
   [finalText: c],
-  [};],
+  [\};],
   [const h = r.do(],
-  [\`summary agent (loop \${i})\`,],
-  [async () =\> \_(],
+  [\`summary agent (loop \$\{i\})\`,],
   [this.env,],
   [et,],
   [K(],
@@ -471,76 +450,59 @@ class="wp-caption-text" id="caption-attachment-173141"\>Drawings by Franz Kafka.
   [We check for other patterns as well, including a list of static steps from which we can infer the workflow diagram or variables, defined in up to ten different ways. If your script contains multiple workflows, we follow a similar pattern to the subgraphs created for functions, abstracted one level higher.],
   [For every AST node type, we had to consider every way they could be used inside of a workflow: loops, branches, promises, parallels, awaits, arrow functions… the list goes on. Even within these paths, there are dozens of possibilities. Consider just a few of the possible ways to loop:],
   [\/\\/ for...of
-for (const item of items) {
- await step.do(\`process \${item}\`, async () =\> item);
-}
+for (const item of items) \{
+ await step.do(\`process \$\{item\}\`, async () =\> item);
+\}
 \/\\/ while
-while (shouldContinue) {
+while (shouldContinue) \{
  await step.do('poll', async () =\> getStatus());
-}
+\}
 \/\\/ map
 await Promise.all(
- items.map((item) =\> step.do(\`map \${item}\`, async () =\> item)),
+ items.map((item) =\> step.do(\`map \$\{item\}\`, async () =\> item)),
 );
 \/\\/ forEach
-await items.forEach(async (item) =\> {
- await step.do(\`each \${item}\`, async () =\> item);
-});],
+await items.forEach(async (item) =\> \{
+ await step.do(\`each \$\{item\}\`, async () =\> item);
+\});],
   [And beyond looping, how to handle branching:],
-  [\/\\/ switch \/ case
-switch (action.type) {
- case 'create':
- await step.do('handle create', async () =\> {});
- break;
- default:
- await step.do('handle unknown', async () =\> {});
- break;
-}],
   [\/\\/ if \/ else if \/ else
-if (status === 'pending') {
- await step.do('pending path', async () =\> {});
-} else if (status === 'active') {
- await step.do('active path', async () =\> {});
-} else {
- await step.do('fallback path', async () =\> {});
-}],
-  [\/\\/ ternary operator
-await (cond
- ? step.do('ternary true branch', async () =\> {})
- : step.do('ternary false branch', async () =\> {}));],
-  [\/\\/ nullish coalescing with step on RHS
-const myStepResult =
- variableThatCanBeNullUndefined ??
- (await step.do('nullish fallback step', async () =\> 'default'));],
+if (status === 'pending') \{
+ await step.do('pending path', async () =\> \{\});
+\} else if (status === 'active') \{
+ await step.do('active path', async () =\> \{\});
+\} else \{
+ await step.do('fallback path', async () =\> \{\});
+\}],
   [\/\\/ try/catch with finally
-try {
- await step.do('try step', async () =\> {});
-} catch (\_e) {
- await step.do('catch step', async () =\> {});
-} finally {
- await step.do('finally step', async () =\> {});
-}],
+try \{
+ await step.do('try step', async () =\> \{\});
+\} catch (\_e) \{
+ await step.do('catch step', async () =\> \{\});
+\} finally \{
+ await step.do('finally step', async () =\> \{\});
+\}],
   [Our goal was to create a concise API that communicated what developers need to know without overcomplicating it. But converting a workflow into a diagram meant accounting for every pattern (whether it follows best practices, or not) and edge case possible. As we discussed earlier, each step is not explicitly sequential, by default, to any other step. If a workflow does not utilize await and Promise.all() , we assume that the steps will execute in the order in which they are encountered. But if a workflow included await , Promise or Promise.all() , we needed a way to track those relationships.],
   [We decided on tracking execution order, where each node has a starts: and resolves: field. The starts and resolves indices tell us when a promise started executing and when it ends relative to the first promise that started without an immediate, subsequent conclusion. This correlates to vertical positioning in the diagram UI (i.e., all steps with starts:1 will be inline). If steps are awaited when they are declared, then starts and resolves will be undefined, and the workflow will execute in the order of the steps’ appearance to the runtime.],
   [While parsing, when we encounter an unawaited Promise or Promise.all() , that node (or nodes) are marked with an entry number, surfaced in the starts field. If we encounter an await on that promise, the entry number is incremented by one and saved as the exit number (which is the value in resolves ). This allows us to know which promises run at the same time and when they’ll complete in relation to each other.],
-  [export class ImplicitParallelWorkflow extends WorkflowEntrypoint {
- async run(event: WorkflowEvent , step: WorkflowStep) {
- const branchA = async () =\> {
+  [export class ImplicitParallelWorkflow extends WorkflowEntrypoint \{
+ async run(event: WorkflowEvent , step: WorkflowStep) \{
+ const branchA = async () =\> \{
  const a = step.do("task a", async () =\> "a"); \/\/starts 1
  const b = step.do("task b", async () =\> "b"); \/\/starts 1
- const c = await step.waitForEvent("task c", { type: "my-event", timeout: "1 hour" }); \/\/starts 1 resolves 2
+ const c = await step.waitForEvent("task c", \{ type: "my-event", timeout: "1 hour" \}); \/\/starts 1 resolves 2
  await step.do("task d", async () =\> JSON.stringify(c)); \/\/starts 2 resolves 3
  return Promise.all(\[a, b\]); \/\/resolves 3
- };],
-  [const branchB = async () =\> {
+ \};],
+  [const branchB = async () =\> \{
  const e = step.do("task e", async () =\> "e"); \/\/starts 1
  const f = step.do("task f", async () =\> "f"); \/\/starts 1
  return Promise.all(\[e, f\]); \/\/resolves 2
- };],
+ \};],
   [await Promise.all(\[branchA(), branchB()\]);],
   [await step.sleep("final sleep", 1000);
- }
-}],
+ \}
+\}],
   [You can see the steps’ alignment in the diagram:],
   [After accounting for all of those patterns, we settled on the following list of node types:],
   [| StepSleep
@@ -559,70 +521,70 @@ try {
 | BreakNode;],
   [Here are a few samples of API output for different behaviors:],
   [function call:],
-  [{
- "functions": {
- "runLoop": {
+  [\{
+ "functions": \{
+ "runLoop": \{
  "name": "runLoop",
  "nodes": \[\]
- }
- }
-}],
+ \}
+ \}
+\}],
   [if condition branching to step.do :],
-  [{
+  [\{
  "type": "if",
  "branches": \[
- {
+ \{
  "condition": "loop \> maxLoops",
  "nodes": \[
- {
+ \{
  "type": "step\_do",
  "name": "notify max loop reached",
- "config": {
- "retries": {
+ "config": \{
+ "retries": \{
  "limit": 5,
  "delay": 1000,
  "backoff": "exponential"
- },
+ \},
  "timeout": 10000
- },
+ \},
  "nodes": \[\]
- }
+ \}
  \]
- }
+ \}
  \]
-}],
+\}],
   [parallel with step.do and waitForEvent :],
-  [{
+  [\{
  "type": "parallel",
  "kind": "all",
  "nodes": \[
- {
+ \{
  "type": "step\_do",
- "name": "correctness agent (loop \${...})",
- "config": {
- "retries": {
+ "name": "correctness agent (loop \$\{...\})",
+ "config": \{
+ "retries": \{
  "limit": 5,
  "delay": 1000,
  "backoff": "exponential"
- },
+ \},
  "timeout": 10000
- },
+ \},
  "nodes": \[\],
  "starts": 1
- },
+ \},
 ...
- {
+ \{
  "type": "step\_wait\_for\_event",
- "name": "wait for user response (loop \${...})",
- "options": {
+ "name": "wait for user response (loop \$\{...\})",
+ "options": \{
  "event\_type": "user-response",
  "timeout": "unknown"
- },
+ \},
  "starts": 3,
  "resolves": 4
- }
+ \}
  \]
-}],
+\}],
   [What’s next],
   [Ultimately, the goal of these Workflow diagrams is to serve as a full-service debugging tool. That means you’ll be able to:],
   [Trace an execution through the graph in real time],
@@ -632,16 +594,14 @@ try {
 ),
   insert-map: (:),
   inline-pq: pull-quote([",ue("Summarize this text in 5 bullet points.], [André Venceslau]),
-  inline-pq-idx: 46,
+  inline-pq-idx: 42,
   word-count: 2460,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Some notes on upgrading Hugo],
   author: [Julia Evans],
   source-name: [Julia Evans],
@@ -659,18 +619,18 @@ won’t be as hard as I think, and I kind of like a tedious computer task someti
 anyone else doing this very specific migration. I upgraded from Hugo v0.40
 (from 2018) to v0.135 (from 2024).],
   [Here are most of the changes I had to make:],
-  [id="change-1-template-theme-partials-thing-html-is-now-partial-thing-html"\>change 1: template "theme/partials/thing.html is now partial thing.html],
-  [I had to replace a bunch of instances of {{ template "theme/partials/header.html" . }} with {{ partial "header.html" . }} .],
+  [change 1: template "theme/partials/thing.html is now partial thing.html],
+  [I had to replace a bunch of instances of \{\{ template "theme/partials/header.html" . \}\} with \{\{ partial "header.html" . \}\} .],
   [This happened in v0.42 :],
   [We have now virtualized the filesystems for project and theme files. This
 makes everything simpler, faster and more powerful. But it also means that
-template lookups on the form {{ template “theme/partials/pagination.html” .
-}} will not work anymore. That syntax has never been documented, so it’s not
+template lookups on the form \{\{ template “theme/partials/pagination.html” .
+\}\} will not work anymore. That syntax has never been documented, so it’s not
 expected to be in wide use.],
-  [id="change-2-data-pages-is-now-site-regularpages"\>change 2: . Data. Pages is now site. RegularPages],
+  [change 2: . Data. Pages is now site. RegularPages],
   [This seems to be discussed in the release notes for 0.57.2],
   [I just needed to replace . Data. Pages with site. RegularPages in the template on the homepage as well as in my RSS feed template.],
-  [id="change-3-next-and-prev-got-flipped"\>change 3: . Next and . Prev got flipped],
+  [change 3: . Next and . Prev got flipped],
   [I had this comment in the part of my theme where I link to the next/previous blog post:],
   [“next” and “previous” in hugo apparently mean the opposite of what I’d think
 they’d mean intuitively. I’d expect “next” to mean “in the future” and
@@ -679,7 +639,7 @@ they’d mean intuitively. I’d expect “next” to mean “in the future” a
  ad705aac064 
 so that “next” actually is in the future and “prev” actually is in the past. I
 definitely find the new behaviour more intuitive.],
-  [id="downloading-the-hugo-changelogs-with-a-script"\>downloading the Hugo changelogs with a script],
+  [downloading the Hugo changelogs with a script],
   [Figuring out why/when all of these changes happened was a little difficult. I
 ended up hacking together a bash script to download all of the changelogs from github as text files , which I
 could then grep to try to figure out what happened. It turns out it’s pretty
@@ -687,14 +647,13 @@ easy to get all of the changelogs from the GitHub API.],
   [So far everything was not so bad – there was also a change around taxonomies
 that’s I can’t quite explain, but it was all pretty manageable, but then we got
 to the really tough one: the markdown renderer.],
-  [id="change-4-the-markdown-renderer-blackfriday-goldmark"\>change 4: the markdown renderer (blackfriday -\> goldmark)],
   [The blackfriday markdown renderer (which was previously the default) was removed in v0.100.0 . This seems pretty reasonable:],
   [It has been deprecated for a long time, its v1 version is not maintained
 anymore, and there are many known issues. Goldmark should be a mature
 replacement by now.],
   [Fixing all my Markdown changes was a huge pain – I ended up having to update
 80 different Markdown files (out of 700) so that they would render properly, and I’m not totally sure],
-  [id="why-bother-switching-renderers"\>why bother switching renderers?],
+  [why bother switching renderers?],
   [The obvious question here is – why bother even trying to upgrade Hugo at all
 if I have to switch Markdown renderers?
 My old site was running totally fine and I think it wasn’t necessarily a good 
@@ -704,7 +663,7 @@ more futureproof. So maybe I won’t have to go through this again? We’ll see.
   [Also it turned out that the new Goldmark renderer does fix some problems I had
 (but didn’t know that I had) with smart quotes and how lists/blockquotes
 interact.],
-  [id="finding-all-the-markdown-problems-the-process"\>finding all the Markdown problems: the process],
+  [finding all the Markdown problems: the process],
   [The hard part of this Markdown change was even figuring out what changed.
 Almost all of the problems (including \#2 and \#3 above) just silently broke the
 site, they didn’t cause any errors or anything. So I had to diff the HTML to
@@ -719,19 +678,19 @@ hunt them down.],
   [(the grep 31m|32m thing is searching for red/green text in the diff)],
   [This was very time consuming but it was a little bit fun for some reason so I
 kept doing it until it seemed like nothing too horrible was left.],
-  [id="the-new-markdown-rules"\>the new markdown rules],
+  [the new markdown rules],
   [Here’s a list of every type of Markdown change I had to make. It’s very
 possible these are all extremely specific to me but it took me a long time to
 figure them all out so maybe this will be helpful to one other person who finds
 this in the future.],
-  [id="4-1-mixing-html-and-markdown"\>4.1: mixing HTML and markdown],
+  [4.1: mixing HTML and markdown],
   [This doesn’t work anymore (it doesn’t expand the link):],
   [\[a link\](https:\/\/example.com)],
   [I need to do this instead:],
   [\[a link\](https:\/\/example.com)],
   [This works too:],
   [\[a link\](https:\/\/example.com)],
-  [id="4-2-is-changed-into"\>4.2: 4.3: nested lists sometimes need 4 space indents],
+  [4.2: 4.3: nested lists sometimes need 4 space indents],
   [This doesn’t render as a nested list anymore if I only indent by 2 spaces, I need to put 4 spaces.],
   [1. a
  \* b
@@ -739,20 +698,16 @@ this in the future.],
 2. b],
   [The problem is that the amount of indent needed depends on the size of the list
 markers. Here’s a reference in CommonMark for this .],
-  [id="4-4-blockquotes-inside-lists-work-better"\>4.4: blockquotes inside lists work better],
-  [Previously the \> quote here didn’t render as a blockquote, and with the new renderer it does.],
-  [\* something
-\> quote
-\* something else],
+  [4.4: blockquotes inside lists work better],
   [I found a bunch of Markdown that had been kind of broken (which I hadn’t
 noticed) that works better with the new renderer, and this is an example of
 that.],
   [Lists inside blockquotes also seem to work better.],
-  [id="4-5-headings-inside-lists"\>4.5: headings inside lists],
+  [4.5: headings inside lists],
   [Previously this didn’t render as a heading, but now it does. So I needed to
 replace the \# with \# .],
   [\* \# passengers: 20],
-  [id="4-6-or-1-at-the-beginning-of-the-line-makes-it-a-list"\>4.6: + or 1) at the beginning of the line makes it a list],
+  [4.6: + or 1) at the beginning of the line makes it a list],
   [I had something which looked like this:],
   [\`1 \/ (1
 + exp(-1)) = 0.73\`],
@@ -769,28 +724,28 @@ replace the \# with \# .],
   [To fix this I just had to rewrap the line so that the + wasn’t the first character.],
   [The Markdown is formatted this way because I wrap my Markdown to 80 characters
 a lot and the wrapping isn’t very context sensitive.],
-  [id="4-7-no-more-smart-quotes-in-code-blocks"\>4.7: no more smart quotes in code blocks],
+  [4.7: no more smart quotes in code blocks],
   [There were a bunch of places where the old renderer (Blackfriday) was doing
 unwanted things in code blocks like replacing ... with … or replacing
 quotes with smart quotes. I hadn’t realized this was happening and I was very
 happy to have it fixed.],
-  [id="4-8-better-quote-management"\>4.8: better quote management],
+  [4.8: better quote management],
   [The way this gets rendered got better:],
   ["Oh, \*interesting\*!"],
   [old: “Oh, interesting !“],
   [new: “Oh, interesting !”],
   [Before there were two left smart quotes, now the quotes match.],
-  [id="4-9-images-are-no-longer-wrapped-in-a-p-tag"\>4.9: images are no longer wrapped in a p tag],
+  [4.9: images are no longer wrapped in a p tag],
   [Previously if I had an image like this:],
   [it would get wrapped in a tag, now it doesn’t anymore. I dealt with this
 just by adding a margin-bottom: 0.75em to images in the CSS, hopefully
 that’ll make them display well enough.],
-  [id="4-10-br-is-now-wrapped-in-a-p-tag"\>4.10: is now wrapped in a p tag],
+  [4.10: is now wrapped in a p tag],
   [Previously this wouldn’t get wrapped in a p tag, but now it seems to:],
   [I just gave up on fixing this though and resigned myself to maybe having some
 extra space in some cases. Maybe I’ll try to fix it later if I feel like
 another yakshave.],
-  [id="4-11-some-more-goldmark-settings"\>4.11: some more goldmark settings],
+  [4.11: some more goldmark settings],
   [I also needed to],
   [turn off code highlighting (because it wasn’t working properly and I didn’t have it before anyway)],
   [use the old “blackfriday” method to generate heading IDs so they didn’t change],
@@ -806,13 +761,13 @@ another yakshave.],
  autoHeadingIDType: blackfriday],
   [Maybe I’ll try to get syntax highlighting working one day, who knows. I might
 prefer having it off though.],
-  [id="a-little-script-to-compare-blackfriday-and-goldmark"\>a little script to compare blackfriday and goldmark],
+  [a little script to compare blackfriday and goldmark],
   [I also wrote a little program to compare the Blackfriday and Goldmark output
 for various markdown snippets, here it is in a gist .],
   [It’s not really configured the exact same way Blackfriday and Goldmark were in
 my Hugo versions, but it was still helpful to have to help me understand what
 was going on.],
-  [id="a-quick-note-on-maintaining-themes"\>a quick note on maintaining themes],
+  [a quick note on maintaining themes],
   [My approach to themes in Hugo has been:],
   [pay someone to make a nice design for the site (for example wizardzines.com was designed by Melody Starling )],
   [use a totally custom theme],
@@ -822,7 +777,7 @@ of the theme myself so I’m pretty familiar with how it works.],
   [Relying on someone else to keep a theme updated feels kind of scary to me, I
 think if I were using a third-party theme I’d just copy the code into my site’s
 github repo and then maintain it myself.],
-  [id="which-static-site-generators-have-better-backwards-compatibility"\>which static site generators have better backwards compatibility?],
+  [which static site generators have better backwards compatibility?],
   [I asked on Mastodon if
 anyone had used a static site generator with good backwards compatibility.],
   [The main answers seemed to be Jekyll and 11ty. Several people said they’d been
@@ -835,7 +790,7 @@ working Ruby installation. But I imagine this wouldn’t be a problem for a Ruby
 or Node developer.],
   [Several people said that they don’t build their Jekyll site locally at all –
 they just use GitHub Pages to build it.],
-  [id="that-s-it"\>that’s it!],
+  [that’s it!],
   [Overall I’ve been happy with Hugo – I started using it because it had fast
 build times and it was a static binary, and both of those things are still
 extremely useful to me. I might have spent 10 hours on this upgrade, but I’ve
@@ -864,10 +819,8 @@ if you see anything broken!],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Investigating multi-vector attacks in Log Explorer],
   author: [Jen Sells],
   source-name: [Cloudflare Blog],
@@ -1007,10 +960,8 @@ WHERE date = '2026-02-22'
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Being the co-founder of a VC backed startup],
   author: [Matt Aimonetti],
   source-name: [Matt Aimonetti],
@@ -1035,10 +986,8 @@ WHERE date = '2026-02-22'
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [AI Security for Apps is now generally available],
   author: [Liam Reese],
   source-name: [Cloudflare Blog],
@@ -1087,11 +1036,10 @@ WHERE date = '2026-02-22'
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [new rails plugin mimetype\_fu],
   author: [Matt Aimonetti],
   source-name: [Matt Aimonetti],
@@ -1114,7 +1062,7 @@ WHERE date = '2026-02-22'
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [fun with macruby],
   author: [Matt Aimonetti],
   source-name: [Matt Aimonetti],
@@ -1157,7 +1105,7 @@ puts "明けましておめでとうございます。".language
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [become better at merb],
   author: [Matt Aimonetti],
   source-name: [Matt Aimonetti],
@@ -1184,7 +1132,7 @@ Location: Phoenix, AZ],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [attachment\_fu updated],
   author: [Matt Aimonetti],
   source-name: [Matt Aimonetti],
@@ -1217,8 +1165,7 @@ Location: Phoenix, AZ],
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Ultrahuman’s New Ring Pro Is Finally Available in the US],
   author: [Beth Skwarecki],
   source-name: [Lifehacker],
@@ -1232,7 +1179,7 @@ Location: Phoenix, AZ],
   [\$449 — until pre-orders close.],
   [Ultrahuman’s smart rings have been off the U. S. market since October 2025, due to legal action by Oura. As I detailed here , Oura sued several other smart ring makers over patent infringement and won a judgment by the U. S. International Trade Commission. As a result, most other smart ring companies had to leave the U. S. market or reach a deal with Oura. Ultrahuman found a third option—continuing to develop a ring they already had in the works, betting that the ITC would rule its design is different enough that it does not infringe Oura’s patent.],
   [That bet seems to have paid off. U. S. Customs and Border Protection has officially signed off on the new design, allowing it to be sold here. Ultrahuman’s older designs, like the Ring Air I reviewed last year , are still banned.],
-  [id="whats-new-with-the-ultrahuman-ring-pro"\>What’s new with the Ultrahuman Ring Pro],
+  [What’s new with the Ultrahuman Ring Pro],
   [I wrote more about the Ring Pro here . It’s got a faster processor with “on-chip machine learning,” a 15-day battery life, and the ability to hold 250 days of data if you’re unable to sync your ring for extended periods. The physical shape is similar to the Ring Air (no sensor bumps, but there is a flattened area at the bottom of the interior), and it has break points for easier removal of the ring in an emergency.],
   [The cleverest feature of the Ring Pro is its charging case, which can store data, flash the firmware, and deliver haptic alerts. It also has a speaker for alarms and for sounding when you use the “find my case” feature. The charger can charge wirelessly.],
   [Ultrahuman has since announced that you’ll have the option to buy the ring packaged with the charging case for \$479, or with just a “mini charger” (presumably similar to the Ring Air’s charger) for \$399. The case will be available separately for \$100.],
@@ -1243,11 +1190,9 @@ Location: Phoenix, AZ],
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [The New Echo Dot Max Is Its Lowest Price Ever for the Amazon Spring Sale],
   author: [Khamosh Pathak],
   source-name: [Lifehacker],
@@ -1256,10 +1201,19 @@ Location: Phoenix, AZ],
   [We may earn a commission from links on this page. Deal pricing and availability subject to change after time of publication.],
   [The Echo Dot Max is Amazon's “Pro” tier smart speaker, designed for people who want better sound quality in a relatively small package and at an affordable price. This upgraded smart speaker is powerful, with a spherical body and a concave cutout for volume and mute controls, surrounded by an LED ring (yes, it looks like the Death Star).],
   [Released last October, the Echo Dot Max is currently at its lowest price ever during Amazon's Big Spring Sale . You can get one for \$74.99 instead of the usual \$99.99.],
+  [\$74.99
+ at Amazon],
+  [\$99.99 
+ Save \$25.00],
+  [\$74.99
+ at Amazon],
+  [\$99.99 
+ Save \$25.00],
   [The new Echo Dot Max is a step up from the Echo Dot, and compared to the 2022 model, it features three times louder bass (thanks to a new 0.8-inch tweeter and a 2.5-inch woofer). It's powered by Amazon's custom Za3 chip with a built-in AI Accelerator, meaning it's built for the Alexa+ AI service .],
   [The Max also features a built-in smart home hub with support for Matter, Zigbee, and Thread Border Router; it can also work as an eero extender for your mesh Wi-Fi router. There's also a temperature sensor and ultrasonic presence detector, so you can use it to trigger Alexa routines as soon as someone walks into the room.],
   [Tech wise, the Echo Dot Max supports Wi-Fi 6E for faster speeds, Bluetooth 5.3, lossless high-definition audio, and automatic room adaption. It's also easy to pair two Echo Dot Max speakers for a stereo home theater setup with any compatible Fire TV devices. Echo Dot Max comes in three colors: Graphite, Glacier White, and Amethyst. All three are available on discount right now.],
   [PCMag gave the Echo Dot Max an "Outstanding" 4.5 star rating , along with an Editor's Choice award, noting, "the Amazon Echo Dot Max stands out as a strong successor to the fourth-generation Echo, comfortably occupying the \$100 sweet spot for smart speakers." And what's better than a \$100 sweet spot? A \$75 sweet spot.],
+  [Our Best Editor-Vetted Amazon Big Spring Sale Deals Right Now],
   [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
  
  
@@ -1316,6 +1270,7 @@ Location: Phoenix, AZ],
  \$169.99 
  
  (List Price \$249.99)],
+  [Deals are selected by our commerce team],
 ),
   insert-map: (:),
   word-count: 647,
@@ -1323,26 +1278,35 @@ Location: Phoenix, AZ],
   debug-mode: false,
 )
 
-  #pull-quote([All three are available on discount right now.], [Khamosh Pathak])
+#pull-quote([All three are available on discount right now.], [Khamosh Pathak])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The names of birds, part 1],
   author: [ericlippert],
   source-name: [Fabulous Adventures in Coding (Eric Lippert)],
   images: (),
   paragraphs: (
-  [class="wp-block-paragraph"\>For the next part in my Bean Machine retrospective to make sense I’ll need to make a short digression. In looking back on the almost 20 years I’ve been blogging, it is surprising to me that I’ve only briefly alluded to my appreciation of combinatory logic. In the next couple of episodes, I’ll do a quick introduction based on the delightful book that introduced it to me: To Mock A Mockingbird , by the late Raymond Smullyan.],
-  [class="wp-block-paragraph"\>Imagine a forest containing some birds, possibly finitely or infinitely many. These are unusual birds. When you call the species name of a bird in the forest to a bird in the forest, it calls one back to you. Maybe the same, maybe different, but when you tell a bird the name of a bird, it names a bird back to you. There might be a Red Capped Cardinal in the forest and when you call out Great Blue Heron to it, it calls back Belted Kingfisher.],
-  [class="wp-block-paragraph"\>We will notate “I called Q to P and got response R ” as PQ = R . If I then called out S to R and R responded with T , we’ll notate that as PQS = RS = T . We’ll use parentheses in the obvious way: PQS = (PQ)S and this might be different from P(QS) . The latter is “I called S to Q , and then called Q ‘s response to P “. I’ll use capital letters to represent specific bird names, and small letters to represent variables.],
-  [class="wp-block-paragraph"\>The question we’re considering here is: under what circumstances will a bird call back the same name you called to it? That is, for a given bird y , under what circumstances does yx = x ?],
-  [class="wp-block-paragraph"\>Smullyan calls birds with this relationship “fondness” — that is, “ y is fond of x ” means that yx = x . If y is fond of x then x is said to be a “fixpoint” of y .],
-  [class="wp-block-paragraph"\>A forest is said to be “compositional” if for every pair of birds ( a , b ) — a and b can be the same or different — there is a bird c in the forest such that cx = b(ax) for all x . That is, if we call any name x to a , and then call its response to b , we get the same result as simply calling x to c . c is the composition of “call x to a , and then call that response to b “.],
-  [class="wp-block-paragraph"\>A mockingbird is the bird M with the property that Mx = xx . That is, for any bird name x , M tells you what x ‘s response is to its own name. (The attentive reader will note that we have not said what MM is, but at least we know from the definition that MM = MM , so give me some credit for consistency at least.)],
-  [class="wp-block-paragraph"\>In particular, that’s true for c , so cc = p(Mc) . But Mc = cc , thus cc = p(cc) , and we’ve found a bird that p is fond of. Since p was any bird, every bird in the forest is fond of at least one bird. Or, put another way, every bird in a compositional forest with a mockingbird has at least one fixpoint .],
-  [class="wp-block-paragraph"\> Next time on FAIC: we’ll take a look at a few more interesting birds, and then discuss why this whimsy is relevant to compilation before getting back to Bean Machine.],
+  [For the next part in my Bean Machine retrospective to make sense I’ll need to make a short digression. In looking back on the almost 20 years I’ve been blogging, it is surprising to me that I’ve only briefly alluded to my appreciation of combinatory logic. In the next couple of episodes, I’ll do a quick introduction based on the delightful book that introduced it to me: To Mock A Mockingbird , by the late Raymond Smullyan.],
+  [Imagine a forest containing some birds, possibly finitely or infinitely many. These are unusual birds. When you call the species name of a bird in the forest to a bird in the forest, it calls one back to you. Maybe the same, maybe different, but when you tell a bird the name of a bird, it names a bird back to you. There might be a Red Capped Cardinal in the forest and when you call out Great Blue Heron to it, it calls back Belted Kingfisher.],
+  [(Photos by me; click for higher resolution.)],
+  [We will notate “I called Q to P and got response R ” as PQ = R . If I then called out S to R and R responded with T , we’ll notate that as PQS = RS = T . We’ll use parentheses in the obvious way: PQS = (PQ)S and this might be different from P(QS) . The latter is “I called S to Q , and then called Q ‘s response to P “. I’ll use capital letters to represent specific bird names, and small letters to represent variables.],
+  [The question we’re considering here is: under what circumstances will a bird call back the same name you called to it? That is, for a given bird y , under what circumstances does yx = x ?],
+  [Smullyan calls birds with this relationship “fondness” — that is, “ y is fond of x ” means that yx = x . If y is fond of x then x is said to be a “fixpoint” of y .],
+  [A forest is said to be “compositional” if for every pair of birds ( a , b ) — a and b can be the same or different — there is a bird c in the forest such that cx = b(ax) for all x . That is, if we call any name x to a , and then call its response to b , we get the same result as simply calling x to c . c is the composition of “call x to a , and then call that response to b “.],
+  [A mockingbird is the bird M with the property that Mx = xx . That is, for any bird name x , M tells you what x ‘s response is to its own name. (The attentive reader will note that we have not said what MM is, but at least we know from the definition that MM = MM , so give me some credit for consistency at least.)],
+  [Theorem : if a compositional forest contains a mockingbird then every bird in the forest is fond of at least one bird.],
+  [Proof: Try to prove it yourself; scroll down for the solution.],
+  [.],
+  [.],
+  [.],
+  [.],
+  [.],
+  [.],
+  [.],
+  [Let p be any bird. Let c be the bird that composes p with M . Therefore cx = p(Mx) for all x .],
+  [In particular, that’s true for c , so cc = p(Mc) . But Mc = cc , thus cc = p(cc) , and we’ve found a bird that p is fond of. Since p was any bird, every bird in the forest is fond of at least one bird. Or, put another way, every bird in a compositional forest with a mockingbird has at least one fixpoint .],
+  [Next time on FAIC: we’ll take a look at a few more interesting birds, and then discuss why this whimsy is relevant to compilation before getting back to Bean Machine.],
 ),
   insert-map: (:),
   word-count: 674,
@@ -1350,10 +1314,8 @@ Location: Phoenix, AZ],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How Robert F. Kennedy Jr.’s Vaccine Agenda Risks a Resurgence of Deadly Childhood Plagues],
   author: [Patricia Callahan],
   source-name: [ProPublica],
@@ -1518,6 +1480,8 @@ Location: Phoenix, AZ],
   [Vitek retired in July after 33 years with the CDC, but he still worries how diseases that seem vanquished can reappear if people can’t or won’t get shots.],
   [The unvaccinated parts of America could find themselves, like Germany, one unwitting traveler away from an outbreak of a horror from the history books.],
   [“Once it gets reintroduced, your kid could get sick or die, even with modern medicine,” Vitek warned. And diphtheria, he noted, “it’s a terrible way to die.”],
+  [Do You Have a Tip for ProPublica? Help Us Do Journalism.],
+  [Got a story we should hear? Are you down to be a background source on a story about your community, your schools or your workplace? Get in touch.],
   [The post How Robert F. Kennedy Jr.’s Vaccine Agenda Risks a Resurgence of Deadly Childhood Plagues appeared first on ProPublica .],
 ),
   insert-map: (:),
@@ -1526,74 +1490,90 @@ Location: Phoenix, AZ],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Sunday at La Bombonera],
   author: [Juan Villoro],
   source-name: [The Paris Review Blog],
   images: (),
   paragraphs: (
-  [class="p1"\> Clásicos are like Christmas for football. In these high-tension matches between fierce rivals, expectation almost always outstrips results. For months, fans visualize goals with the unrealistic yearning of a child who hopes for a new PlayStation from Santa Claus in exchange for a few cookies left out for his tired reindeer.],
-  [class="p1"\>For me, the Superclásico between Buenos Aires’s Boca Juniors and River Plate on May 4, 2008, was preceded by thirty-four years of anticipation. In 1974 I went to the Estadio Monumental to see River–Boca, but I had never been to the reverse fixture in La Bombonera, that exceptional stadium that should have been examined by Elias Canetti in Crowds and Power.],
-  [class="p1"\>The wait had charged the occasion with so much emotion that it was almost a shame it actually had to take place. Friends from Mexico, Colombia, and Spain had all similarly circled the date of May 4—the Argentine derby appeals not only to those who sleep in shirts emblazoned with the Quilmes beer logo but to an entire global tribe.],
-  [class="p1"\>Like Everest or the Mona Lisa , the fame of Boca’s stadium is impossible to deny—look no further than the crowds of tourists who come to snap pictures. But does it really represent the pinnacle of footballing passion?],
-  [class="p1"\>I spoke about the Superclásico with the taxi driver who picked me up at the Ezeiza airport and he replied with indignation: “But we hate each other more!” He came from Rosario and was referring to the bad blood between his hometown clubs Newell’s Old Boys (“the Lepers”) and Rosario Central (“the Swine”). On the drive he told me about his family’s marvelous wrath and the betrayal of his aunt Teresita, the heretic who refused to support the Swine. At the core of his story was the issue of rancor: on its biggest days, football comes down to contempt, and nobody hates each other more than Swine hate Lepers. In his opinion, the lesser rivalry between Boca–River was inflated by the press. The driver summed up his argument with theological flair: “God is everywhere, but performs his tricks in Buenos Aires.”],
+  [Clásicos are like Christmas for football. In these high-tension matches between fierce rivals, expectation almost always outstrips results. For months, fans visualize goals with the unrealistic yearning of a child who hopes for a new PlayStation from Santa Claus in exchange for a few cookies left out for his tired reindeer.],
+  [For me, the Superclásico between Buenos Aires’s Boca Juniors and River Plate on May 4, 2008, was preceded by thirty-four years of anticipation. In 1974 I went to the Estadio Monumental to see River–Boca, but I had never been to the reverse fixture in La Bombonera, that exceptional stadium that should have been examined by Elias Canetti in Crowds and Power.],
+  [The wait had charged the occasion with so much emotion that it was almost a shame it actually had to take place. Friends from Mexico, Colombia, and Spain had all similarly circled the date of May 4—the Argentine derby appeals not only to those who sleep in shirts emblazoned with the Quilmes beer logo but to an entire global tribe.],
+  [Like Everest or the Mona Lisa , the fame of Boca’s stadium is impossible to deny—look no further than the crowds of tourists who come to snap pictures. But does it really represent the pinnacle of footballing passion?],
+  [I spoke about the Superclásico with the taxi driver who picked me up at the Ezeiza airport and he replied with indignation: “But we hate each other more!” He came from Rosario and was referring to the bad blood between his hometown clubs Newell’s Old Boys (“the Lepers”) and Rosario Central (“the Swine”). On the drive he told me about his family’s marvelous wrath and the betrayal of his aunt Teresita, the heretic who refused to support the Swine. At the core of his story was the issue of rancor: on its biggest days, football comes down to contempt, and nobody hates each other more than Swine hate Lepers. In his opinion, the lesser rivalry between Boca–River was inflated by the press. The driver summed up his argument with theological flair: “God is everywhere, but performs his tricks in Buenos Aires.”],
   [Don’t Worry: It’s Just the Earth Shaking],
-  [class="p2"\>On April 16, my friend Daniel Samper Pizano, a renowned Colombian journalist, organized a dinner in Madrid to prepare for the Superclásico. The final of the Copa del Rey had just concluded between Valencia and Getafe, but we weren’t interested. We preferred to talk about the football of the future, which was to say the upcoming game on May 4. The other guest justified our interest; after the meal, Jorge Valdano told us about the first time he faced Boca as a visiting player. Lacing up his boots in the locker room, he said, everything around him seemed to be moving. One of the veterans came over to reassure him: “It’s not you, pibe, it’s the stadium.” Playing at La Bombonera means overcoming an arena about to collapse under the weight of its own passion. No other ground imposes itself so forcefully upon its visitors.],
-  [class="p1"\>In his stupendous book Boquita , Martín Caparrós reminds us that it was Argentina where fans were first baptized as “the twelfth man.” Accustomed to adversity, we Mexicans consider the scoreline a suggestion we can ignore. Argentine fans, on the other hand, seek to alter the result using three basic tactics: holding their breath, insulting their rivals, and singing love songs. It’s no accident that one of the most prominent barras bravas is called La Doce, or “the twelfth.” These ultras aren’t there to merely watch a game, but to participate in it through their shouts.],
-  [class="p1"\>For years, magical realism has gone missing from Latin American literature, finding refuge in aviation instead. To fly across the continent is to endure a saga of detours, delays, and strange schedules that lead to a parallel reality. Maybe air traffic control is cheaper in the early morning and this determines the itineraries of the hemisphere. At any rate, I found myself on a four-hour predawn flight from Bogotá to Buenos Aires. Anyone without the meditative powers of a yogi arrived at the destination a zombie. Among the many surprises to come that day, I was made to experience May 4 in an altered state of time.],
-  [class="p1"\>The relationship between football and aviation is no trifle—the Copa Libertadores will never be truly competitive until the continent modifies its fixture calendar and flight paths. When I was a kid, I used to take medications with labels that read “Shake well before using.” Thanks to a miserable night on the plane, I arrived at the Superclásico in a state of total agitation.],
-  [class="p1"\>Entering the stadium was likewise an extreme sport. I was lucky to be accompanied by my friend Leo Tarifeño, a diehard River fan who had sworn to never set foot in La Bombonera.],
-  [class="p1"\>Leo is convinced that Argentines live for confrontation, eagerly disregard established rules, object impulsively, and justify themselves only through negativity, taking issue with anything they don’t agree with. After asserting this theory, he put it into practice. When I praised the chanting of the Boca fans, he replied, “Deep down, their joy is bitter.”],
-  [class="p1"\>Being with Leo was the opposite of having a human shield. The route to the stadium was blocked, so we made our way through a wasteland thick with the invigorating smoke from street stalls selling choripán. Our barren surroundings gradually became a funnel. Police barricades flanked us on either side. We continued on until someone—an invisible leader far ahead—committed a grave mistake. The crowd was pushed back by the sound of riot guns and retreated to a checkpoint, where Leo and I asked for directions to the press box. An officer waved his hand as if trying to hypnotize us. We “understood” to make our way to the other side of a roundabout, but instead we ducked into the first alley we came across. Another crowd pulled us in before being repelled again by the riot guns. Everyone ran en masse to a station manned by mounted police ushering fans into a makeshift fenced corridor. It looked less like an accessway than a site of detention. Perhaps for regular stadium-goers the challenge of entry might offer a delicious adrenaline rush, but we were in no shape for it. Above all, it was no place for Leo to expound upon his theory of antagonism.],
-  [class="p1"\>The propaganda was signed “Estudio Posca,” which was located on Calle Uruguay 385, Office 902. Its 2008 slogan was “ ¡¡¡Standing with fans for 32 years!!!” The firm presented itself as specializing in “accidents occurring in traffic or in football stadiums.”],
-  [class="p1"\>I was struck by the fact that the sporting ground had generated its own area of legal specialization. I was also surprised that the area of jurisdiction extended to the stadium’s outskirts. Leo and I had entered the zone where it might behoove us to keep Estudio Posca’s phone number close at hand. Among other alarming facts, the flyer warned:],
-  [class="p1"\>I kept the flyer to safeguard my survival. The most alarming thing about it was the casual implication that broken bones and rubber bullets simply came with the territory. Some people refuse to see doctors out of fear a previously invisible ailment might suddenly appear in their presence. With Estudio Posca, it was the other way around: we were already injured, we just hadn’t yet discovered the blood.],
-  [class="p1"\>Given humanity’s great diversity of mindsets, perhaps someone out there would be excited to receive proof of having entered a zone of aggression. Perhaps others were busy calculating how good the afternoon’s business might be—how much “\$\$\$” might be made from a broken fibula? Could it be worth sacrificing a rib as well? If some people survive by selling their blood plasma and sperm, might there also be professional victims with a long history of fractures?],
-  [class="p1"\>We made our way down streets that seemed to lead to the stadium but only ended in more detours. Due to my friend’s distrust of all Boca fans, we asked the police for directions instead. In every country stadium guards seem to come from afar and have no idea how to reach the seats.],
-  [class="p1"\>I was distracted by the flags hanging from balconies and the women in blue-and-gold aprons selling empanadas. Few clubs retain the urban grit of Boca, whose football still represents the surrounding neighborhood. The club of Maradona hasn’t lost touch with the streets—the only problem is knowing which one leads to its entrance.],
-  [class="p1"\>We reached an area where everyone was leaning out their windows. The festive atmosphere was interrupted by homophobic chants: “ Puuuuuuuuuutos! ” A motorcycle roared in the distance. Then we saw the white beast: the team bus of River. We had arrived in the corridor of rage, where those who can’t get into the stadium play their own kind of game. The following day I heard Beto Alonso, one of River’s most emblematic players, describing on the radio the objects that fell onto the roof of the bus. Some people freeze blocks of ice for the occasion and others sacrifice their heaviest padlocks. The bus slowly advanced through the crowd, dented, spat upon, and reviled.],
-  [class="p1"\>I’m always suspicious of singers who visit a new country and become instant fans of a team, playing their encore draped in a local jersey. However, in that shameful alleyway, I was on the verge of becoming a River fan myself—and it wasn’t just to make Leo happy.],
-  [class="p1"\>When Mexican police don’t want to investigate a murder, they label it “assisted suicide.” My sudden sympathy for the abused, paired with my friend’s theories, could have easily transformed us into two potential suicides in search of assistance.],
-  [class="p1"\>Naturally, my perception was entirely foreign. In 1974 when I went to River’s stadium, a man heard my accent and asked if it was true that in Mexico, a fan of a team like River could be seated next to the equivalent of a Boca fan. I said yes. “And they won’t kill each other?” he asked with interest. I explained that at least in this respect, we were peaceful. His response was withering: “What a bunch of degenerates!”],
-  [class="p1"\>I’ll never forget seeing my father in Mexico’s City’s University Olympic Stadium, urging everyone around us to applaud for the visiting team. “They’re our guests!” he said with enough amiable quirkiness to make everyone unthinkingly follow along.],
-  [class="p1"\>Raised with the belief that losing is synonymous with hospitality, it’s hard for Mexican fans to understand the spirit of the barra brava, which was seemingly forged, if not in the actual Battle of Thermopylae, at least in the movie 300.],
-  [class="p1"\>During a discussion about football and literature at the Buenos Aires Book Fair, Martín Caparrós remarked that Mexicans say “I cheer for Guadalajara” while Argentines proclaim “I’m from Boca.” These degrees of belonging are distinct. In Mexico our teams tend to fall into the abyss, so we prefer to follow at a distance. Our passion is an unreachable horizon rather than something woven into our DNA.],
+  [On April 16, my friend Daniel Samper Pizano, a renowned Colombian journalist, organized a dinner in Madrid to prepare for the Superclásico. The final of the Copa del Rey had just concluded between Valencia and Getafe, but we weren’t interested. We preferred to talk about the football of the future, which was to say the upcoming game on May 4. The other guest justified our interest; after the meal, Jorge Valdano told us about the first time he faced Boca as a visiting player. Lacing up his boots in the locker room, he said, everything around him seemed to be moving. One of the veterans came over to reassure him: “It’s not you, pibe, it’s the stadium.” Playing at La Bombonera means overcoming an arena about to collapse under the weight of its own passion. No other ground imposes itself so forcefully upon its visitors.],
+  [In his stupendous book Boquita , Martín Caparrós reminds us that it was Argentina where fans were first baptized as “the twelfth man.” Accustomed to adversity, we Mexicans consider the scoreline a suggestion we can ignore. Argentine fans, on the other hand, seek to alter the result using three basic tactics: holding their breath, insulting their rivals, and singing love songs. It’s no accident that one of the most prominent barras bravas is called La Doce, or “the twelfth.” These ultras aren’t there to merely watch a game, but to participate in it through their shouts.],
+  [For years, magical realism has gone missing from Latin American literature, finding refuge in aviation instead. To fly across the continent is to endure a saga of detours, delays, and strange schedules that lead to a parallel reality. Maybe air traffic control is cheaper in the early morning and this determines the itineraries of the hemisphere. At any rate, I found myself on a four-hour predawn flight from Bogotá to Buenos Aires. Anyone without the meditative powers of a yogi arrived at the destination a zombie. Among the many surprises to come that day, I was made to experience May 4 in an altered state of time.],
+  [The relationship between football and aviation is no trifle—the Copa Libertadores will never be truly competitive until the continent modifies its fixture calendar and flight paths. When I was a kid, I used to take medications with labels that read “Shake well before using.” Thanks to a miserable night on the plane, I arrived at the Superclásico in a state of total agitation.],
+  [Entering the stadium was likewise an extreme sport. I was lucky to be accompanied by my friend Leo Tarifeño, a diehard River fan who had sworn to never set foot in La Bombonera.],
+  [Leo is convinced that Argentines live for confrontation, eagerly disregard established rules, object impulsively, and justify themselves only through negativity, taking issue with anything they don’t agree with. After asserting this theory, he put it into practice. When I praised the chanting of the Boca fans, he replied, “Deep down, their joy is bitter.”],
+  [Being with Leo was the opposite of having a human shield. The route to the stadium was blocked, so we made our way through a wasteland thick with the invigorating smoke from street stalls selling choripán. Our barren surroundings gradually became a funnel. Police barricades flanked us on either side. We continued on until someone—an invisible leader far ahead—committed a grave mistake. The crowd was pushed back by the sound of riot guns and retreated to a checkpoint, where Leo and I asked for directions to the press box. An officer waved his hand as if trying to hypnotize us. We “understood” to make our way to the other side of a roundabout, but instead we ducked into the first alley we came across. Another crowd pulled us in before being repelled again by the riot guns. Everyone ran en masse to a station manned by mounted police ushering fans into a makeshift fenced corridor. It looked less like an accessway than a site of detention. Perhaps for regular stadium-goers the challenge of entry might offer a delicious adrenaline rush, but we were in no shape for it. Above all, it was no place for Leo to expound upon his theory of antagonism.],
+  [We walked through another abandoned lot where someone handed me a flyer I read like a sacred text:],
+  [Injured fans . . . . !],
+  [You have rights and are entitled to lots of \$\$\$.],
+  [Any injury you suffer inside a football stadium,],
+  [or anywhere nearby, can be claimed.],
+  [The propaganda was signed “Estudio Posca,” which was located on Calle Uruguay 385, Office 902. Its 2008 slogan was “ ¡¡¡Standing with fans for 32 years!!!” The firm presented itself as specializing in “accidents occurring in traffic or in football stadiums.”],
+  [I was struck by the fact that the sporting ground had generated its own area of legal specialization. I was also surprised that the area of jurisdiction extended to the stadium’s outskirts. Leo and I had entered the zone where it might behoove us to keep Estudio Posca’s phone number close at hand. Among other alarming facts, the flyer warned:],
+  [Do not believe People who claim to be Lawyers, and who show up at your home, in the Hospital, or at the police station.],
+  [Did it make sense to attend an event where I risked ending up in a prison bed, accosted by a “Person who claimed to be a Lawyer?”],
+  [Even if I had “lots of \$\$\$” to claim, I was hardly eager to go through the necessary requirements to get it. The flyer was explicit about the covered risks:],
+  [Trampling; rubber bullets or lead bullets;],
+  [broken bones; sprains; flares; fights; stones, etc.],
+  [After suffering any of the above, you were advised to take the following actions:],
+  [Keep your ticket.],
+  [Get treated at the club’s sick bay in the closest],
+  [Hospital to the stadium.],
+  [Call us.],
+  [I kept the flyer to safeguard my survival. The most alarming thing about it was the casual implication that broken bones and rubber bullets simply came with the territory. Some people refuse to see doctors out of fear a previously invisible ailment might suddenly appear in their presence. With Estudio Posca, it was the other way around: we were already injured, we just hadn’t yet discovered the blood.],
+  [Given humanity’s great diversity of mindsets, perhaps someone out there would be excited to receive proof of having entered a zone of aggression. Perhaps others were busy calculating how good the afternoon’s business might be—how much “\$\$\$” might be made from a broken fibula? Could it be worth sacrificing a rib as well? If some people survive by selling their blood plasma and sperm, might there also be professional victims with a long history of fractures?],
+  [We made our way down streets that seemed to lead to the stadium but only ended in more detours. Due to my friend’s distrust of all Boca fans, we asked the police for directions instead. In every country stadium guards seem to come from afar and have no idea how to reach the seats.],
+  [“We aren’t going to get in,” Leo said with strange satisfaction.],
+  [I was distracted by the flags hanging from balconies and the women in blue-and-gold aprons selling empanadas. Few clubs retain the urban grit of Boca, whose football still represents the surrounding neighborhood. The club of Maradona hasn’t lost touch with the streets—the only problem is knowing which one leads to its entrance.],
+  [We reached an area where everyone was leaning out their windows. The festive atmosphere was interrupted by homophobic chants: “ Puuuuuuuuuutos! ” A motorcycle roared in the distance. Then we saw the white beast: the team bus of River. We had arrived in the corridor of rage, where those who can’t get into the stadium play their own kind of game. The following day I heard Beto Alonso, one of River’s most emblematic players, describing on the radio the objects that fell onto the roof of the bus. Some people freeze blocks of ice for the occasion and others sacrifice their heaviest padlocks. The bus slowly advanced through the crowd, dented, spat upon, and reviled.],
+  [I’m always suspicious of singers who visit a new country and become instant fans of a team, playing their encore draped in a local jersey. However, in that shameful alleyway, I was on the verge of becoming a River fan myself—and it wasn’t just to make Leo happy.],
+  [When Mexican police don’t want to investigate a murder, they label it “assisted suicide.” My sudden sympathy for the abused, paired with my friend’s theories, could have easily transformed us into two potential suicides in search of assistance.],
+  [Naturally, my perception was entirely foreign. In 1974 when I went to River’s stadium, a man heard my accent and asked if it was true that in Mexico, a fan of a team like River could be seated next to the equivalent of a Boca fan. I said yes. “And they won’t kill each other?” he asked with interest. I explained that at least in this respect, we were peaceful. His response was withering: “What a bunch of degenerates!”],
+  [I’ll never forget seeing my father in Mexico’s City’s University Olympic Stadium, urging everyone around us to applaud for the visiting team. “They’re our guests!” he said with enough amiable quirkiness to make everyone unthinkingly follow along.],
+  [Raised with the belief that losing is synonymous with hospitality, it’s hard for Mexican fans to understand the spirit of the barra brava, which was seemingly forged, if not in the actual Battle of Thermopylae, at least in the movie 300.],
+  [During a discussion about football and literature at the Buenos Aires Book Fair, Martín Caparrós remarked that Mexicans say “I cheer for Guadalajara” while Argentines proclaim “I’m from Boca.” These degrees of belonging are distinct. In Mexico our teams tend to fall into the abyss, so we prefer to follow at a distance. Our passion is an unreachable horizon rather than something woven into our DNA.],
+  [On the street where the River bus was pelted with insults, the question of identity couldn’t be more clear. If you weren’t throwing stones, you came from somewhere else.],
   [Side Effects: The Game],
-  [class="p2"\>Occasionally, there are moments in life when we Mexicans reveal our strength in the face of adversity. I had resigned myself to never entering the stadium and to eating choripán alongside the peaceful vendors. Then we saw a white-haired policeman issuing orders with the decisiveness of an orchestra conductor. He, and only he, knew how to find our entrance. “It’s simple,” he said prophetically. “Just follow the train tracks.”],
-  [class="p2"\>We walked between the rusty rails of a long-abandoned tramway. This had been the route to the stadium in the days when goalkeepers wore caps and footballs were still made from leather.],
-  [class="p2"\>We continued along the history-drenched path until we arrived at another dangerous crossroads. To our right was a blue wall of perforated metal. This was the entryway for River fans. We couldn’t see them, but we sensed them advancing like a herd of shadows. The only proof of their presence were the insults hurled in their direction. I was tempted to make a silent gesture of solidarity by slipping the flyer from Estudio Posca beneath the wall.],
-  [class="p1"\>Finally, we arrived at the gate and climbed to our assigned tower. From these heights I was able to confirm the optical effect described by the Colombian sportswriter David Leonardo Quitián—Boca’s stadium is the only one where distance from the field does not increase with the level of ascent. Instead, the verticality of its construction creates a dizzying proximity. “You must take a lesson in abysses,” say the protagonists of Journey to the Center of the Earth. It’s a good piece of advice for visiting La Bombonera.],
-  [class="p1"\>When Hugo Orlando Gatti, Boca’s most beloved and extravagant goalkeeper, said, “I go to the edge of the abyss,” he was referring to his tendency to complicate plays, but perhaps also to the onlookers who seemed about to collapse onto the field.],
-  [class="p1"\>For the crowd, there is no greater exercise than anticipation itself. Energized by the wait, the standing area known as La Popular defines the Superclásico. What happens on the pitch can’t compete with what happens here. On May 4, 2008, someone wanting to see a derby with great Argentine players could have watched Inter vs. Milan to admire the country’s exported geniuses. The match in Italy was a back-and-forth affair, nothing at all like the morass at La Bombonera.],
-  [class="p1"\>The home team won by playing defense and prolonging every pause in play with the exaggerated slowness of Soviet cinema. River lacked the forcefulness that their coach, El Cholo Simeone, had once shown in spades during his playing days, and they were only able to triangulate passes when it no longer mattered. River fans are called gallinas or “chickens” by their enemies. True to form, the sun-drenched masses shouted like crazed farmers ready to slaughter an entire hen house. They would never have traded this match for the aesthetic flourish of Inter vs. Milan. The Superclásico was as it should be: an effective pretext for the outpouring of passion. You don’t go to La Bombonera to discover football, but to confirm its emotional heft.],
-  [class="p1"\>It’s always disappointing to compare historical exploits: an ideal game would collapse time, offering us a clash of great idols across eras, with Labruna, Pedernera, and Sívori taking on Rattín, Pernía, and Batistuta. This impossibility—the ghostly sum of everything that has ever been played for—infuses each new contest between these intimate enemies with new allure. It’s a knife fight in which wounds never feel as deep as the animosity that fuels them.],
-  [class="p1"\>There are, of course, exceptional days when a derby resembles its inspirational propaganda—in the ninetieth minute a match is tied 3–3 and sees a winner scored in stoppage time. But on this Sunday in May, the only astonishing occurrences were in the stands.],
-  [class="p1"\>If comic-book superheroes are bipolar characters who punctuate their depressing existence as Clark Kent with maniacal outbursts as Superman, football fans oscillate from affection to invective with nothing in between. The dedication of a fanbase is measured according to its bipolarity, and Boca ranks highly: “I don’t care what they say \/ what the others say \/ I follow you everywhere \/ I love you more each day,” sing the romantic men who just minutes before called for the River fans to be murdered.],
-  [class="p1"\>That afternoon, when Sebastián Battaglia scored the stunning header that made the game 1–0, the building shook as promised by legend. Coming from a country of earthquakes, I talked about this enthusiasm, measurable on the Richter scale, for days. I was corrected by a writer, a waiter, and a police officer with the same phrase, extracted straight from the most sensitive ventricle of the Bostero heart: “Boca’s stadium doesn’t tremble, it beats.”],
-  [class="p1"\>Passion can also be defined by its power to summon those who are absent. That day, the ultras of Barra Auriazul memorialized the passing of a man named Raulito, an extraordinary fan made present even in death, and they paid tribute to the great players who had migrated away from a place where careers never last.],
-  [class="p1"\>Long gone are the chivalrous days of Ernesto Lazzatti, who played his entire career without ever being sent off, and who wore Boca’s colors without ever thinking of them as a stepping stone to Europe. Today Argentines are football’s great nomads. “If they were any good they wouldn’t be playing for us,” a taxi driver told me. “Verón came back because he’s old, Riquelme because he’s weird.”],
-  [class="p1"\>I remembered a scene from Germany ’06, when I was a commentator alongside Carlos Bianchi for Mexican TV. During a commercial break, the former coach who won everything with Boca received a phone call. He said something like “I can’t help anymore—you have another father now.” Later he told us “that was Riquelme,” with the same satisfaction Homer would have felt announcing a phone call from Achilles. Argentina’s number ten needed to feel loved in order to play well. From his training camp in Germany, he was seeking the emotional support Bianchi had given him at Boca. Coming from the riotous atmosphere of La Bombonera, it’s no wonder Riquelme had little success at Barcelona’s Camp Nou, where spectators behave like opera-goers.],
-  [class="p1"\>With few exceptions, Argentina’s cracks consider their feats a boarding pass to faraway places. The only ones who remain sedentary are the supporters. Perhaps their devotion stems from this irreconcilable disagreement. In football, passion feeds on pain—every fan base finds a way to overcome its own distinct evils. In Argentina, miracles are possible but short-lived; in Mexico, they are forever postponed and glory can only be imagined. The Estadio Azteca sportswriter describes plays that require adjectives to become interesting. The Bombonera sportswriter is faced with something that needs no words of validation; in the press box, I met Juan José Becerra, the indispensable author of Grasa , who was chronicling the team’s season for the daily newspaper Crítica. “The only thing I want,” he admitted, “is for Boca to win.”],
-  [class="p1"\>So, what does an expert in postponement discover in the realm of the impatient? In La Bombonera, the Mexican fan no longer waits for the fiction of spectacular Mexican goals. Instead, he enters a hardboiled reality. The stadium vibrates like nature at its most radical, demanding survival instead of interpretation.],
+  [Occasionally, there are moments in life when we Mexicans reveal our strength in the face of adversity. I had resigned myself to never entering the stadium and to eating choripán alongside the peaceful vendors. Then we saw a white-haired policeman issuing orders with the decisiveness of an orchestra conductor. He, and only he, knew how to find our entrance. “It’s simple,” he said prophetically. “Just follow the train tracks.”],
+  [We walked between the rusty rails of a long-abandoned tramway. This had been the route to the stadium in the days when goalkeepers wore caps and footballs were still made from leather.],
+  [We continued along the history-drenched path until we arrived at another dangerous crossroads. To our right was a blue wall of perforated metal. This was the entryway for River fans. We couldn’t see them, but we sensed them advancing like a herd of shadows. The only proof of their presence were the insults hurled in their direction. I was tempted to make a silent gesture of solidarity by slipping the flyer from Estudio Posca beneath the wall.],
+  [The intensity of the scene contrasted sharply with one across the street, where three girls in yellow-and-blue leotards were posing in support of a local candidate.],
+  [Finally, we arrived at the gate and climbed to our assigned tower. From these heights I was able to confirm the optical effect described by the Colombian sportswriter David Leonardo Quitián—Boca’s stadium is the only one where distance from the field does not increase with the level of ascent. Instead, the verticality of its construction creates a dizzying proximity. “You must take a lesson in abysses,” say the protagonists of Journey to the Center of the Earth. It’s a good piece of advice for visiting La Bombonera.],
+  [When Hugo Orlando Gatti, Boca’s most beloved and extravagant goalkeeper, said, “I go to the edge of the abyss,” he was referring to his tendency to complicate plays, but perhaps also to the onlookers who seemed about to collapse onto the field.],
+  [La Bombonera is an odd stadium—fantastically so. It holds 57,395 spectators. Not a single number in this magical figure is even.],
+  [For the crowd, there is no greater exercise than anticipation itself. Energized by the wait, the standing area known as La Popular defines the Superclásico. What happens on the pitch can’t compete with what happens here. On May 4, 2008, someone wanting to see a derby with great Argentine players could have watched Inter vs. Milan to admire the country’s exported geniuses. The match in Italy was a back-and-forth affair, nothing at all like the morass at La Bombonera.],
+  [The home team won by playing defense and prolonging every pause in play with the exaggerated slowness of Soviet cinema. River lacked the forcefulness that their coach, El Cholo Simeone, had once shown in spades during his playing days, and they were only able to triangulate passes when it no longer mattered. River fans are called gallinas or “chickens” by their enemies. True to form, the sun-drenched masses shouted like crazed farmers ready to slaughter an entire hen house. They would never have traded this match for the aesthetic flourish of Inter vs. Milan. The Superclásico was as it should be: an effective pretext for the outpouring of passion. You don’t go to La Bombonera to discover football, but to confirm its emotional heft.],
+  [It’s always disappointing to compare historical exploits: an ideal game would collapse time, offering us a clash of great idols across eras, with Labruna, Pedernera, and Sívori taking on Rattín, Pernía, and Batistuta. This impossibility—the ghostly sum of everything that has ever been played for—infuses each new contest between these intimate enemies with new allure. It’s a knife fight in which wounds never feel as deep as the animosity that fuels them.],
+  [There are, of course, exceptional days when a derby resembles its inspirational propaganda—in the ninetieth minute a match is tied 3–3 and sees a winner scored in stoppage time. But on this Sunday in May, the only astonishing occurrences were in the stands.],
+  [If comic-book superheroes are bipolar characters who punctuate their depressing existence as Clark Kent with maniacal outbursts as Superman, football fans oscillate from affection to invective with nothing in between. The dedication of a fanbase is measured according to its bipolarity, and Boca ranks highly: “I don’t care what they say \/ what the others say \/ I follow you everywhere \/ I love you more each day,” sing the romantic men who just minutes before called for the River fans to be murdered.],
+  [That afternoon, when Sebastián Battaglia scored the stunning header that made the game 1–0, the building shook as promised by legend. Coming from a country of earthquakes, I talked about this enthusiasm, measurable on the Richter scale, for days. I was corrected by a writer, a waiter, and a police officer with the same phrase, extracted straight from the most sensitive ventricle of the Bostero heart: “Boca’s stadium doesn’t tremble, it beats.”],
+  [Passion can also be defined by its power to summon those who are absent. That day, the ultras of Barra Auriazul memorialized the passing of a man named Raulito, an extraordinary fan made present even in death, and they paid tribute to the great players who had migrated away from a place where careers never last.],
+  [Long gone are the chivalrous days of Ernesto Lazzatti, who played his entire career without ever being sent off, and who wore Boca’s colors without ever thinking of them as a stepping stone to Europe. Today Argentines are football’s great nomads. “If they were any good they wouldn’t be playing for us,” a taxi driver told me. “Verón came back because he’s old, Riquelme because he’s weird.”],
+  [I remembered a scene from Germany ’06, when I was a commentator alongside Carlos Bianchi for Mexican TV. During a commercial break, the former coach who won everything with Boca received a phone call. He said something like “I can’t help anymore—you have another father now.” Later he told us “that was Riquelme,” with the same satisfaction Homer would have felt announcing a phone call from Achilles. Argentina’s number ten needed to feel loved in order to play well. From his training camp in Germany, he was seeking the emotional support Bianchi had given him at Boca. Coming from the riotous atmosphere of La Bombonera, it’s no wonder Riquelme had little success at Barcelona’s Camp Nou, where spectators behave like opera-goers.],
+  [With few exceptions, Argentina’s cracks consider their feats a boarding pass to faraway places. The only ones who remain sedentary are the supporters. Perhaps their devotion stems from this irreconcilable disagreement. In football, passion feeds on pain—every fan base finds a way to overcome its own distinct evils. In Argentina, miracles are possible but short-lived; in Mexico, they are forever postponed and glory can only be imagined. The Estadio Azteca sportswriter describes plays that require adjectives to become interesting. The Bombonera sportswriter is faced with something that needs no words of validation; in the press box, I met Juan José Becerra, the indispensable author of Grasa , who was chronicling the team’s season for the daily newspaper Crítica. “The only thing I want,” he admitted, “is for Boca to win.”],
+  [So, what does an expert in postponement discover in the realm of the impatient? In La Bombonera, the Mexican fan no longer waits for the fiction of spectacular Mexican goals. Instead, he enters a hardboiled reality. The stadium vibrates like nature at its most radical, demanding survival instead of interpretation.],
+  [Adrift in the tide, the sportswriter from afar has ninety minutes to get used to something he never before associated with football: vertigo.],
   [An excerpt from The Game at the End of the World , translated from the Spanish by Francisco Cantú, to be published by Restless Books in May.],
-  [class="p1"\> Juan Villoro is a writer and journalist based in Mexico City. His columns have appeared in Reforma , The New York Times, El País, and El Mercurio , among others, and his books have been translated into numerous languages. A recipient of several awards, including the 2018 Manuel Rojas Prize for his body of work, Villoro has taught at Autonomous Metropolitan University, Yale, Princeton, Stanford, and Pompeu Fabra university in Barcelona, as well as at the New Journalism Foundation, created by Gabriel Garcia Márquez.],
-  [class="p1"\> Francisco Cantú is a writer, translator, and the author of The Line Becomes a River. He is the winner of the 2018 Los Angeles Times Book Prize and is the recipient of a 2017 Whiting Award in Nonfiction . His writing and translations have been featured in The New Yorker , Granta , Guernica, and VQR.],
+  [Juan Villoro is a writer and journalist based in Mexico City. His columns have appeared in Reforma , The New York Times, El País, and El Mercurio , among others, and his books have been translated into numerous languages. A recipient of several awards, including the 2018 Manuel Rojas Prize for his body of work, Villoro has taught at Autonomous Metropolitan University, Yale, Princeton, Stanford, and Pompeu Fabra university in Barcelona, as well as at the New Journalism Foundation, created by Gabriel Garcia Márquez.],
+  [Francisco Cantú is a writer, translator, and the author of The Line Becomes a River. He is the winner of the 2018 Los Angeles Times Book Prize and is the recipient of a 2017 Whiting Award in Nonfiction . His writing and translations have been featured in The New Yorker , Granta , Guernica, and VQR.],
 ),
   insert-map: (:),
   inline-pq: pull-quote([Its 2008 slogan was “ ¡¡¡Standing with fans for 32 years!!!” The firm presented itself as specializing in “accidents occurring in traffic or in football stadiums.], [Juan Villoro]),
-  inline-pq-idx: 18,
+  inline-pq-idx: 26,
   word-count: 3545,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [These Are the Best Deals on Home Gym Equipment I've Seen During Amazon’s Big Spring Sale],
   author: [Meredith Dietz],
   source-name: [Lifehacker],
@@ -1601,24 +1581,52 @@ Location: Phoenix, AZ],
   paragraphs: (
   [We may earn a commission from links on this page. Deal pricing and availability subject to change after time of publication.],
   [I dream of building out a garage gym one day, but for now, I'm content with my "workout corner" in my apartment bedroom. Hey, a home gym can look like anything. Whether you're eyeing a smart rowing machine, a compact massage gun for post-workout recovery, or just a clean set of hex dumbbells with a rack to keep your space organized, there's something worth buying during Amazon's Big Spring Sale right now.],
-  [id="the-best-deals-on-at-home-cardio-equipment"\>The best deals on at-home cardio equipment],
+  [The best deals on at-home cardio equipment],
   [I know how quickly cardio equipment can turn into major investment of your time, money, and space. That's why I recommend equipment that can fold up to store vertically against the wall, so your treadmill doesn't just become a fancy coat rack.],
   [Original Peloton Bike , \$1,295, down from \$1,695],
   [Hydrow Origin Rowing Machine , \$1,895, down from \$2,195],
   [NordicTrack T 5 Treadmill , \$479, down from \$599],
-  [id="the-best-deals-on-at-home-strength-training-essentials"\>The best deals on at-home strength training essentials],
+  [Peloton Exercise Cross Training Bike],
+  [\$1,295.00
+ at Amazon],
+  [\$1,695.00 
+ Save \$400.00],
+  [\$1,295.00
+ at Amazon],
+  [\$1,695.00 
+ Save \$400.00],
+  [The best deals on at-home strength training essentials],
   [In my experience, adjustable dumbbells are the single highest-impact upgrade you can make to a home gym. But sometimes you just want the real thing, without dealing with pins or spin locks or any sort of fuss. In that case, you definitely want a quality storage rack keeps your gym organized, your equipment accessible, and your floor clear.],
   [PowerBlock Elite EXP Adjustable Dumbbells , \$339.15, down from \$449],
   [CAP Adjustable Dumbbells , \$249.99, down from \$299.99],
   [CAP Rubber Coated Dumbbell Weight Set , \$159.99, down from \$189.99],
   [TRX Resistance Band Set , \$148.71, down from \$174.95],
   [PLKOW storage and weight rack , \$79.98, down from \$129.99],
-  [id="the-best-deals-on-muscle-recovery-and-stretching-tools"\>The best deals on muscle recovery and stretching tools],
+  [PowerBlock Elite EXP Adjustable Dumbbells (Pair, 5-50lb)],
+  [\$339.15
+ at Amazon],
+  [\$449.00 
+ Save \$109.85],
+  [\$339.15
+ at Amazon],
+  [\$449.00 
+ Save \$109.85],
+  [The best deals on muscle recovery and stretching tools],
   [I know I've personally got my eye on massage guns and foam rollers to help me survive my upcoming marathon training.],
   [Bob and Brad Q2 Ultra Mini Massage Gun , \$78.82, down from \$99.99],
   [1-Inch Thick Yoga Mat , \$29.99, down from \$36.99],
   [TriggerPoint Grid 1.0 Foam Roller , \$27.99, was \$39.99],
+  [Bob and Brad Q2 Ultra Mini Massage Gun],
+  [\$78.82
+ at Amazon],
+  [\$99.99 
+ Save \$21.17],
+  [\$78.82
+ at Amazon],
+  [\$99.99 
+ Save \$21.17],
   [While we're at it, plenty of other gadgets could technically fall into the realm of home gym expenses. Check out more of the best deals we've found on fitness wearables , on headphones and earbuds , and all other tech during Amazon's Big Spring Sale here .],
+  [Our Best Editor-Vetted Amazon Big Spring Sale Deals Right Now],
   [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
  
  
@@ -1675,6 +1683,7 @@ Location: Phoenix, AZ],
  \$169.99 
  
  (List Price \$249.99)],
+  [Deals are selected by our commerce team],
 ),
   insert-map: (:),
   word-count: 988,
@@ -1682,10 +1691,8 @@ Location: Phoenix, AZ],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Akari Brings Authenticity to New York’s Washed Sauna Scene],
   author: [Adrian Madlener],
   source-name: [Design Milk Architecture],
@@ -1705,10 +1712,8 @@ Location: Phoenix, AZ],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Titanium Apple Watch Series 10 Is Just \$449 During the Amazon Big Spring Sale],
   author: [Jake Peterson],
   source-name: [Lifehacker],
@@ -1716,9 +1721,19 @@ Location: Phoenix, AZ],
   paragraphs: (
   [We may earn a commission from links on this page. Deal pricing and availability subject to change after time of publication.],
   [Flagship Apple Watches tend to start at \$399, but the price only goes up from there. If you want a larger size, that's a slight bump in cost; if you want cellular connectivity, that's an even larger hit. But the titanium Apple Watch—the "premium" material, if you will—is the most expensive upgrade outside of the Ultra line. These models typically start at \$699, but cost \$749 for the larger size, and a whopping \$799 if you want the stainless steel band. Right now, you can get a titanium Apple Watch for as low as \$449 during Amazon's Big Spring Sale—so long as you're okay with using last generation's watch.],
+  [Apple Watch Series 10 (Titanium)],
+  [\$449.00
+ at Amazon],
+  [\$749.00 
+ Save \$300.00],
+  [\$449.00
+ at Amazon],
+  [\$749.00 
+ Save \$300.00],
   [Here's the deal: Amazon currently has the titanium versions of the Apple Watch Series 10 on discount for the Big Spring Sale. You can get the Natural or Slate models with rubber sport bands for \$449, or if you want the stainless steel band, you can get the watch in gold for \$499 . That's a pretty great price, considering the watch once retailed for \$799.],
   [Now, this is the Series 10. The Series 11 is Apple's newest flagship watch. If you ask me, however, that isn't a big deal. The Series 10 is still the best Apple Watch for most people , since it has most of the Series 11's features, while often being available at a discount. They both have large displays that can reach 2,000 nits of brightness; they both have heart rate and sleep tracking with alerts for each; they both support Emergency SOS, and are water resistant up to 50m; they both have the same S10 chip, and support the same gestures; and both have Precision Finding, so you can use your iPhone if you misplace it.],
   [Really, the key advantages of the Series 11 are few, but noteworthy: The battery life is better, up to 24 hours instead of 18 hours; you get 38 hours in Low Power Mode versus 36 hours; and while both watches support fast charging (0-80% in 30 minutes), the Series 11 can get eight hours of battery life in 15 minutes of charge time. The Series 11 also supports 5G, if you opt for the cellular plan. That's largely it, however. Other than that, the Series 10 is virtually the same watch. Amazon does have the Series 11 discounted at this time, starting at \$649 . You just need to ask yourself whether those extra features are worth \$200.],
+  [Our Best Editor-Vetted Amazon Big Spring Sale Deals Right Now],
   [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
  
  
@@ -1775,6 +1790,7 @@ Location: Phoenix, AZ],
  \$169.99 
  
  (List Price \$249.99)],
+  [Deals are selected by our commerce team],
 ),
   insert-map: (:),
   word-count: 736,
@@ -1782,11 +1798,10 @@ Location: Phoenix, AZ],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [few changes in merb edge],
   author: [Matt Aimonetti],
   source-name: [Matt Aimonetti],
@@ -1809,7 +1824,7 @@ Location: Phoenix, AZ],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [rspec bundle for textmate],
   author: [Matt Aimonetti],
   source-name: [Matt Aimonetti],
@@ -1838,21 +1853,19 @@ Location: Phoenix, AZ],
 #pull-quote([Note the following interesting change:  c\[:reload\_templates\] = true  You will need to update this setting if you want Merb to auto reload your templates.], [Matt Aimonetti])
 
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [A critical security flaw impacting Langflow has come under active exploitation within 20 hours of public disclosure, highlighting the speed at which threat actors weaponize newly published vulnerabilities.
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [A critical security flaw impacting Langflow has come under active exploitation within 20 hours of public disclosure, highlighting the speed at which threat actors weaponize newly published vulnerabilities.
 The security defect, tracked as CVE-2026-33017 (CVSS score: 9.3), is a case of missing authentication combined with code injection that could result in remote code execution.
 "The POST /api/v1])],
-    [#brief-item([Bonface Landi], source-name: [Inhabitat], [Soil erosion is an age-long predicament that always shows up whenever humans embark on any land use activity. Whether it is agriculture, construction or gardening, the need to tame erosion is apparent, especially in regions that experience significant precipitation. The U. N. Food and Agriculture Organization (FAO) warns that 90% of the world’s topsoil risks erosion by 2050. It is, therefore, the responsibility of those who participate in land use activities to prevent such a mess.])],
-    [#brief-item([Jupiter Hadley], source-name: [Indie Games Plus], [Dark Tides is an adventure game where you play as a boardwalk psychic unravelling the demonic mysteries of a seaside Victorian town. Playing as Theodora Green, you are tasked with figuring out...
+  [#brief-item([Bonface Landi], source-name: [Inhabitat], [Soil erosion is an age-long predicament that always shows up whenever humans embark on any land use activity. Whether it is agriculture, construction or gardening, the need to tame erosion is apparent, especially in regions that experience significant precipitation. The U. N. Food and Agriculture Organization (FAO) warns that 90% of the world’s topsoil risks erosion by 2050. It is, therefore, the responsibility of those who participate in land use activities to prevent such a mess.])],
+  [#brief-item([Jupiter Hadley], source-name: [Indie Games Plus], [Dark Tides is an adventure game where you play as a boardwalk psychic unravelling the demonic mysteries of a seaside Victorian town. Playing as Theodora Green, you are tasked with figuring out...
 
 The post ‘Dark Tides’ Reads Minds to Discover an Old Town’s True Fate appeared first on Indie Games Plus .])],
-    [#brief-item([Jupiter Hadley], source-name: [Indie Games Plus], [Ghost Haunting is an adventure game about a young girl whose grandmother has been trapped in the realm of the dead. You are a young 8-year old child currently visiting your grandfather....
+  [#brief-item([Jupiter Hadley], source-name: [Indie Games Plus], [Ghost Haunting is an adventure game about a young girl whose grandmother has been trapped in the realm of the dead. You are a young 8-year old child currently visiting your grandfather....
 
 The post ‘Ghost Haunting’ Follows Unruly Children Attempting Resurrections appeared first on Indie Games Plus .])],
-    [#brief-item([Stripe Blog], source-name: [Stripe Blog], [Adaptive Pricing is now available for subscriptions, allowing businesses to automatically localize prices in 150+ countries while Stripe handles currency conversion. In an A/B test across 1.5 million subscription checkouts, businesses saw 4.7% higher conversion and 5.4% higher LTV per session, on average.])],
-  ))
-}
+  [#brief-item([Stripe Blog], source-name: [Stripe Blog], [Adaptive Pricing is now available for subscriptions, allowing businesses to automatically localize prices in 150+ countries while Stripe handles currency conversion. In an A/B test across 1.5 million subscription checkouts, businesses saw 4.7% higher conversion and 5.4% higher LTV per session, on average.])],
+))
 
 #colophon([The Edition], [Vol. 1, No. 032], [2026-03-30])

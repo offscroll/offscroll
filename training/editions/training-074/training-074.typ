@@ -21,102 +21,8 @@
 #masthead([The Pioneer Mirror], [Vol. 1, No. 074], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [AK Monthly Recap: January 2026],
-  kicker: [Cover Story],
-  author: [Adventurous Kate],
-  source-name: [Adventurous Kate],
-  deck: [A new year is upon us. After my very busy December, I didn’t leave the city of Prague once in the month of January.],
-  lead-pre: [],
-  lead-cap: [A],
-  lead-rest: [nd it was excellent.],
-  body-paragraphs: (
-  [Also this month, Adventurous Kate turned sixteen years old. WOW.],
-  [Let’s take a look at the best of January 2026!],
-  [Prague, Czech Republic],
-  [Prague during its least touristy time of year.],
-  [Before I get into the usual recap, I want you to help me raise money for immigrants in the United States who are being terrorized by ICE.],
-  [I’m giving away four 45-minute consult calls to people who make donations to organizations fighting ICE: specifically, legal aid and mutual aid organizations helping immigrants.],
-  [I charge a lot for these and NEVER give them away, but this seemed like a very good reason to do so.],
-  [You can choose between the following:],
-  [Travel consult, where I help you plan a trip],
-  [Blog consult, where I help you with your blog],
-  [Social media consult, where I help you with your social media],
-  [Or just a call where we talk about anything (within reason)],
-  [I chose organizations that help immigrants with legal support and mutual aid in Minnesota, in Maine, and nationwide.],
-  [Here are the five places where you can donate:],
-  [Immigrant Law Center of Minnesota  https:\/\/www.ilcm.org/donate/],
-  [CoPal Minnesota  https:\/\/copalmn.org/donate/],
-  [Immigrant Legal Advocacy Project Maine  https:\/\/ilapmaine.org],
-  [Maine Solidarity Fund  https:\/\/www.mainesolidarity.org],
-  [National Immigrant Justice Center  https:\/\/immigrantjustice.org/ways-to-help/],
-  [You will get one entry for every \$5.00 you donate — so feel free to donate \$20, \$50, or even more!],
-  [Forward the receipt to  care \[at\] adventurouskate.com  by February 13, 2026.],
-  [I will draw four random winners and follow up by email.],
-  [THANK YOU for making a big difference. So far we have raised several hundred dollars for these organizations! Let’s keep it up!!],
-  [Raye was amazing in concert!],
-  [I’ll be honest — this was a very quiet month. I did not do much, and that was very much by design. We all need time to winter properly.],
-  [Seeing Raye in concert. I’ve been a fan of Raye ever since she appeared on SNL two years ago, and I had to snap up tickets when she came to Prague.],
-  [She put on a beautiful concert that was both a throwback and something super modern. I loved how she had a giant big band on stage, how she wore a red sparkly dress for most of the concert, and how she went from big band to stripped down songs sitting behind the piano (she called it the “musical therapy section”) to a big dance party at the end!],
-  [Cooking lots of tasty things. Winter is the time of year I cook a lot, and this has been a good month for sauces, soups, and other hearty dishes!],
-  [Marcella Hazan’s bolognese , which takes at least four hours to cook, was so good, I made two double portions this month. It’s also great reheated with some nduja stirred in!],
-  [Lewis! How did you get in that bag??],
-  [Nothing much, but it was SO, SO COLD THIS MONTH! It snowed quite decently, but beyond that, we’ve had temperatures below freezing almost every day, which makes it the coldest winter since I’ve been living in Prague.],
-  [Every day, I take a 45-minute walk — but with temperatures like these, I’ve been gritting my teeth through the whole ordeal.],
-  [Murray in his happy place…any cardboard box.],
-  [What’s it like to travel to Curaçao? — Everything you should know before traveling to Curaçao, and why it quickly became one of my favorite Caribbean islands!],
-  [It was actually this post about why I talk about politics as a travel blogger — and exactly where I stand on many issues.],
-  [I talk about politics frequently, on all platforms, but I know that not everyone sees all my content due to algorithms and whatnot. This is a chance to be crystal clear about my values.],
-  [I have been working my way through Better Call Saul this month. And yes, I know I’m MANY years late on that. It’s weird that I never watched, as Breaking Bad is my favorite TV drama of all time. But after getting into Pluribus , I decided to dive deep into the live of Saul Goodman.],
-  [And what a surprise — it is SO good, so deep, and full of what made Breaking Bad so good. If you’ve never watched it, I highly recommend it. But make sure you watch Breaking Bad first. It’s more rewarding to see the Easter eggs and thematic parallels of Better Call Saul .],
-  [Also, The Pitt is back! Brilliant, brilliant show. I’ll probably talk about that more next month.],
-  [Movies-wise, I really enjoyed Bugonia this month. Dark, funny, brilliantly acted, and a lot of fun. It’s on Peacock if you want to stream it.],
-  [I ’m listening to all 500 of  Rolling Stone ‘s  500 Greatest Albums of All Time , which I am enjoying immensely.  I am loving discovering new artists and listening to albums I’ve somehow missed my entire life until now!],
-  [And I’ve noticed a change lately. As I get below number 150, the albums are having a huge uptick in quality. They’re some of the best. This is also the month with the most albums I had listened to in full.],
-  [In January, I listened to albums number 162-136.],
-  [Favorite Discovery: Grace by Jeff Buckley. All I knew about him was that his version of “Hallelujah” is known for being far better than Leonard Cohen’s original, that he died young, and that people who love him really, really love him.],
-  [Then I listened to his album, and I was absolutely spellbound. His beautiful voice, his deep songwriting, and the perfect 90s alternative sound (in a good way). Just magnificent, start to finish.],
-  [I’ve listened to the album several times and I think it will be going into my rotation regularly.],
-  [Jeff Buckley died by accidental drowning at age 30. He will forever be a one-album artist. What a loss for the world.],
-  [Favorite Revisited Album: Channel Orange by Frank Ocean. This has long been one of my favorite albums of all time, and I’ve listened to it consistently since it came out. I love the diversity of the songs on this album, but how it all has a very strong point of view throughout.],
-  [In the decade-plus since it came out, I’ve come to realize just what a big impact this album had on alternative R&B (it’s up there with Kanye’s 808s & Heartbreak in terms of influencing genres).],
-  [Not to mention how revolutionary it was at the time for a hip-hop artist to be openly queer and sing about it.],
-  [(Also, Frank…if you ever wanted to make more music, that would be great!)],
-  [Favorite Songs: SO MANY THIS MONTH!! “Forget Her” by Jeff Buckley, “The Wanton Song” by Led Zeppelin, “Kiss Me On My Neck” by Erykah Badu, “Hand to Mouth” by George Michael, “Encore” by Jay-Z, “Guinnevere” by Crosby, Stills & Nash, “Stan” by Eminem, “Sweet Life” by Frank Ocean, “King of Pain” by The Police, “Into the Groove” by Madonna, “Cast No Shadow” by Oasis, “Turning Tables” by Adele, “Atlantic City” by Bruce Springsteen.],
-  [Get the playlist:  I’m creating a playlist of my favorite songs from the 500 albums — maximum one per album — on Spotify.  You can listen to it here.],
-  [Random Music Thoughts: Just like The Slim Shady LP , I hadn’t listened to The Marshall Mathers LP in decades, and yet when I put it on, I remembered every word.],
-  [I find it interesting when I have starkly different opinions on different artists’ albums. That been the case for Tom Petty (love Full Moon Fever much more than his others) and Big Star (love \#1 Record much more than their others).],
-  [This month it was PJ Harvey, whose album Rid of Me didn’t do anything for me, compared to Stories from the City, Stories from the Sea , which I ADORED. Conversely, this month I enjoyed Blondie’s Parallel Lines significantly more than their self-titled Blondie , which I found to be an incredibly annoying album.],
-  [This month we also got a new console table for our living room!],
-  [I started the year off strong with six books read. I’ve decided to stop recapping every book in depth in the monthly recap (mostly because I just DREAD writing them all), but I’ll include a sentence at least.],
-  [The Seven Moons of Maali Almeida by Shehan Karunatilaka (2022) — During the Sri Lankan civil was in the 1980s, a photojournalist is murdered and ascends to the in-between. He has seven nights to find out how he died and get his world-changing photos into his friends’ hands.],
-  [This book reminded me so much of George Saunders’s Lincoln in the Bardo (one of my favorites the year it came out), which is also about the place where spirits dwell between life and death, and has a similarly chaotic atmosphere among the spirits. Turns out that Karunatilaka lists Lincoln in the Bardo as one of his top inspirations.],
-  [This book is different in a lot of ways. It’s about living in a politically corrupt atmosphere, becoming detached from reporting on violence constantly, being gay and hiding half in the closet, and creating a found family. A really interesting book, and my first by a Sri Lankan author.],
-  [All Fours by Miranda July (2024) — A somewhat famous artists decides to drive across the country from California to New York. Instead, thirty minutes from home, she checks into a hotel and immerses herself in a very different adventure with a younger local man.],
-  [This book got a lot of accolades, and I get it. Just make sure you’re ready for an incredibly unlikeable protagonist and lots of cringing throughout. Some good books are like that! I thought it was worth it.],
-  [We went for a long walk on the snowiest day of the year!],
-  [The Paradise Problem by Christina Lauren (2024) — A romance that asks the question of “If we pretend to be married around my rich family for a weekend, I’ll receive a \$100 million inheritance, but what if we fall in love for real??” It’s entertaining and moves pretty quickly with a lot of action, though I wasn’t a fan of the manic pixie dream girl cliché.],
-  [The Let Them Theory by Mel Robbins (2024) — Like many pop psych books, this could have been a blog post. Let people do what they want to do. Stop caring about it and be free. WAY too much filler otherwise.],
-  [The Perfectionist’s Guide to Losing Control by Katherine Morgan Schafler (2023) — This book started very strong with redefining perfectionism, completely with several different kinds of perfectionism, but unfortunately lost steam soon after.],
-  [More snow in February? I hope so!],
-  [Um…absolutely nothing is coming up in February. This is going to be another quiet month at home.],
-  [Only two things are on the calendar: my friends amusingly signed us all up for a zabíjačka on February 14. A zabíjačka is a pig roast tradition that takes place each winter in the Czech Republic and Slovakia. They butcher a pig, hang it upside down outside, and cook it in a million different ways.],
-  [So yeah, nothing says Valentine’s Day like pig carcasses dripping blood in parks all over the city!],
-  [Other than that, I’m on the waitlist for tickets to see Sombr (he’s literally performing a five-minute walk from my apartment!) on February 16. Hopefully those come through.],
-  [And that is it. Taking it easy.],
-  [style="font-size: 25px;"\>What are you looking forward to in February? Share away!],
-  [The post AK Monthly Recap: January 2026 appeared first on Adventurous Kate .],
-),
-  inline-pq: pull-quote([I love the diversity of the songs on this album, but how it all has a very strong point of view throughout.], [Adventurous Kate]),
-  inline-pq-idx: 30,
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [The stories that stay: What remains when memory fades],
   author: [TED Staff],
   source-name: [TED Blog],
@@ -142,16 +48,13 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [India Bihar Location Map],
   author: [landofmaps],
   source-name: [Land of Maps],
   images: (),
   paragraphs: (
-  [id="articles"\>],
   [Bihar is a state in northeastern India.],
   [The India Bihar Location Map showcases the geographical location of Bihar within India.],
   [Bihar is known for its rich history, cultural heritage, and contributions to ancient and modern India.],
@@ -219,6 +122,7 @@
   [Bihar culture and heritage],
   [Famous attractions in Bihar],
   [Travel to Bihar],
+  [Share this:],
 ),
   insert-map: (:),
   word-count: 759,
@@ -226,10 +130,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Equity Allocation in Startups],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -242,9 +144,9 @@
   [Equity Split with the VP of Engineering : 1/3],
   [Founder Title : Yes],
   [Did VP of Engineering Put in Cash : No],
-  [id="you-need-to-understand-this"\>You Need to Understand This],
+  [You Need to Understand This],
   [One of the basic rules of the startup world is that on Day 1, you, the founder, own 100% of something that is worth absolutely nothing . The goal, by the end, is that you own a much smaller percentage of something actually worth something. As an example, owning 10% of something worth \$10 million is actually much, much better.],
-  [id="the-basic-rules-of-thumb-for-equity-allocations"\>The Basic Rules of Thumb for Equity Allocations],
+  [The Basic Rules of Thumb for Equity Allocations],
   [Here are my rules of thumb to use for equity allocation:],
   [The more risk you take, the more you get],
   [The earlier you join, the more you get],
@@ -254,7 +156,7 @@
   [You only have 80% of the equity to play with - 20% generally goes to an ESOP (employee stock option plan)],
   [Make damn sure that you give out options not stock and a long vesting schedule (incremental over say 4 years)],
   [The bottom line is that equity, in whatever form, is a reward for taking risk. And the earlier you are involved in a startup, the more risk there is.],
-  [id="my-personal-experience-from-feedster"\>My Personal Experience from Feedster],
+  [My Personal Experience from Feedster],
   [A long, long time ago, I founded a blog search engine named Feedster. I merged with another RSS search engine shortly after coming to market to address some technical limitations in my architecture. We did the typical nerd founder thing and simply split the equity down the middle and both took the Founder title.],
   [In retrospect that wasn't a fair allocation because I committed significantly more time to Feedster but it avoided a difficult conversation that I was simply not brave enough to have – and that was a mistake.],
   [Once we realized that blog search was actually a viable business, my first hire was a CEO to handle the operations and capital raise. This CEO:],
@@ -264,15 +166,13 @@
   [Did not have to put in any personal money],
   [The equity allocation for that CEO, bear in mind that this was 16 years ago so my memory may be fuzzy was between 9% and 10%. That CEO's advice to me is that if we filled other VP level slots, we'd be talking about between a 3% to 5% stake.],
   [If you contrast these numbers with the 1/3 equity split mentioned above, it is considerably less and the reason was that an awful lot of the risk had already been addressed (functional technology, working product, site with traffic, no capital investment, etc).],
-  [id="disclaimers"\>Disclaimers],
   [There are two important disclaimers to understand here:],
   [I am not a lawyer (IANAL) and my focus is always on making great technology NOT on the best personal economic return. This means that there are aspects of capital raising and equity allocation that I don't now and likely never will fully understand.],
   [I should also note that equity allocation is a particularly sensitive topic for me because, even though I was the founder, I was forced out by the people I hired and then voted off the board. And while I am over it (somewhat), had the equity allocations been handled differently, that might not have happened.],
-  [id="what-should-this-founder-do"\>What Should This Founder Do?],
+  [What Should This Founder Do?],
   [My advice to this founder is to get Marc Randolph's book, That Will Never Work , about the founding of Netflix and read pages 180 to 189. Marc Randolph was the founder of Netflix and the original CEO. In these pages, Reed Hastings not only told Marc that he needed to step down as CEO and be replaced by Reed but that he needed to give a substantial portion of his equity to Reed in order for that privilege.],
   [After reading these pages, I think that the founder needs to talk with the VP of Engineering and negotiate the equity split down, the 1/3 is just too high. Once upon a time, I would have said that once you make an agreement, you have to keep it at all costs. What this book has illustrated to me is that if circumstances change, you actually can renegotiate even on a sensitive topic like equity allocation.],
   [Note : Marc Randolph stayed with Netflix for years even after being replaced as CEO and losing equity in the process. So even difficult discussions don't necessarily end relationships.],
-  [id="references"\>References],
   [Lest you think that I'm pulling this information out of thin air, I did try and confirm my thoughts a bit:],
   [AVC on Equity Allocation ; Honestly just read everything that Fred Wilson writes.],
   [The Joel Spolsky answer that Fred Wilson is referencing above is offline but I managed to find it in the Internet Archive .],
@@ -287,17 +187,14 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [An Annotated Startup History Bibliography],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
   images: (),
   paragraphs: (
   [I've been reading High Tech case studies now since the 80s – just after I entered the business. Bryan Cantrill from Oxide Computer's podcast inspired me to get all my books out and order them on a rough historical basis. I thought listing them here might be interesting to someone. All of these I've read and there are a ton of lessons for entrepreneurs here. I put rough notes next to some of them in bold after the author name in quotes.],
-  [id="change-log"\>Change Log],
   [2022-06-27 - Added book of the week],
   [2022-06-26 - Cleaned my bookcase and looked for other books in this category and added entries for How Would You Move Mount Fuji (Microsoft category), Go To (Misc \/ Software Category), Building a Successful Software Business (Misc \/ Software Category), Side Hustles (Misc \/ Software Category), Facebook by Steven Levy (Web 2 category), Tim Cook (Apple Category), A Piece of the Computer Pie (IBM Category), In Search of Stupidity (Misc \/ Software Category), Crypto (Misc \/ Software Category), Smart and Gets Things Done (Software Category), The Effective Engineer (Misc \/ Software Category), Creativity Inc (Apple Category), The Chip (Intel Category), Lean In (Web 2 Category), No Such Thing as a Free Gift (Microsoft Category), The Phoenix Project (Misc \/ Software Category)],
   [2022-06-26 - Added Sub Categories in the Apple Section],
@@ -305,90 +202,56 @@
   [2022-06-23 - Started adding links, added books suggested on Twitter, Added Gaskins on PowerPoint History; fixed typos (how did I possibly misspell Torvalds; clearly was stupid yesterday)],
   [2022-06-23 - Apologies for where an Audible audio book is linked instead of hard or paperback; Amazon is inconsistent with this],
   [2022-06-23 - Added a bunch more notes from reading these.],
-  [id="book-of-the-week"\>Book of the Week],
-  [id="in-search-of-stupidity-over-20-years-of-high-tech-marketing-disasters"\>In Search of Stupidity: Over 20 Years of High Tech Marketing Disasters],
+  [Book of the Week],
+  [In Search of Stupidity: Over 20 Years of High Tech Marketing Disasters],
+  [View on Amazon],
   [This is an absolute gem of a book. There is a lot of humor here but the best bits, the parts I underline, start on Page 308 where he outlines positioning for a software product. In an extremely telling bit of analysis, he opens the book by looking at software companies in 1984 and then 2001. Even though there were a number of companies both larger than Microsoft or approximately Microsoft's size, in 2001, the next runner up, Adobe, is 1/20th of Microsoft's size. This he attributes to Microsoft being the only company "that never made a fatal, stupid mistake". And, yes, Ashton-Tate is part of the 1984 list. A bit dated but it is also timeless. Recommended],
-  [id="ibm--mainframes--super-computers"\>IBM \/ Mainframes \/ Super Computers],
+  [IBM \/ Mainframes \/ Super Computers],
   [1,000 Dollars and an Idea by Sam Wyly],
   [Eniac by McCartney],
   [A Piece of the Computer Pie],
-  [id="minis"\>Minis],
   [The Ultimate Entrepreneur by Glenn Rifkin and George Harrar; " A fantastic read. Cantrill argues in his podcast that DEC had too many people – and they did – but they grew up in an era where you made everything right down to the cases. That leads to an incredible number of people. "],
-  [id="internet-history"\>Internet History],
-  [id="the-phone-company"\>The Phone Company],
-  [id="mit"\>MIT],
-  [id="xerox"\>Xerox],
-  [id="plato"\>Plato],
+  [MIT],
   [The Friendly Orange Glow by Brian Dear; " One of my absolute favorites; everything we do online today happened here first (and then in Lotus Notes by Ray Ozzie but thank the FSM that went away) "],
-  [id="early-silicon-valley"\>Early Silicon Valley],
   [Broken Genius by Joel Shurkin; " The first proof that brains doesn't equal ethics; this was followed by Patrick Naughton, Hans Reiser and one of the php core team members "],
-  [id="intel"\>Intel],
-  [id="bloomberg"\>Bloomberg],
-  [id="george-lucas"\>George Lucas],
   [Note: A lot of our modern media tech comes out of Lucas intellectual heritage which is why this is here],
   [Inside the Star Wars Empire],
-  [id="the-pc-era"\>The PC Era],
+  [The PC Era],
   [Almost Perfect by W. E. Pete Peterson],
   [Open by Rod Canion; " I agree with Bryan Cantrill that this should have been titled Compatible "],
-  [id="microsoft"\>Microsoft],
   [Microsoft Secrets by Cusuman and Selby; " This was the book that talked about employees leaving the office for coffee or soda and how detrimental it was for concentration. At the company I was at when this came out, our founder read it on a plane and we had soda in the office the next day. Only time he ever read a book that benefited engineers; ISO 9000 quality for software was one of the bad book fall outs. "],
   [All You Really Need to Know in Business I Learned at Microsoft by Julie Bick],
   [Gates by Stephen Mane and Paul Andrews],
   [Show Stopper by G. Pascal Zachary; " Damn near perfect "],
-  [id="apple--jobs--pixar--next"\>Apple \/ Jobs \/ Pixar \/ Next],
-  [id="apple-early"\>Apple Early],
-  [id="mac"\>Mac],
-  [id="the-middle-years"\>The Middle Years],
+  [Apple \/ Jobs \/ Pixar \/ Next],
   [Apple by Jim Carlton],
-  [id="steve-wozniak"\>Steve Wozniak],
   [iWoz by Steve Wozniak],
-  [id="steve-jobs"\>Steve Jobs],
   [iCon by Jeffrey Young and William Simon],
-  [id="next"\>Next],
-  [id="pixar"\>Pixar],
-  [id="take-2-the-return-of-steve-and-beyond"\>Take 2: The Return of Steve and Beyond],
-  [id="ipod"\>iPod],
-  [id="iphone"\>iPhone],
+  [Take 2: The Return of Steve and Beyond],
+  [iPod],
+  [iPhone],
   [Creative Selection by Ken Kocienda; " This was written by the guy who created the auto correct algorithms on the iPhone and is amazing to understand how that one innovation came to be "],
-  [id="venture-capital"\>Venture Capital],
   [eBoys by Randall Stross],
-  [id="oracle"\>Oracle],
   [The Difference Between God and Larry Ellison by Mike Wilson; " This book helps you understand Oracle and how sales people really work. The Go for the Gold program and Oracle's insanity in paying commissions on order receipt not payment of order never left me. "],
-  [id="sun"\>Sun],
   [The Java Handbook (this is here because of an excellent appendix covering the history of Java) by Patrick Naughton; " Great explanation of the early Java days "],
-  [id="cisco"\>Cisco],
-  [id="amiga"\>Amiga],
-  [id="open-source"\>Open Source],
   [Dreaming in Code by Scott Rosenberg; " Mitch Kapor's second coming and his inability to give up on Lotus Agenda; seriously tho a great look at what happens when you don't have an MVP and a lot of money "],
-  [id="palm"\>Palm],
-  [id="netscape--internet-stuff"\>Netscape \/ Internet Stuff],
+  [Netscape \/ Internet Stuff],
   [How the Web Was Born by Gillies and Calliau; " I was at the conference where the WWW was first announced and all of us 'experienced hypertext folks' didn't see how big it was; probably me single greatest technical misjudgement "],
-  [id="web-10---the-early-commercial-internet"\>Web 1.0 - The Early Commercial Internet],
+  [Web 1.0 - The Early Commercial Internet],
   [StrikingItRich.com by Jaclyn Easton],
   [dot.con by John Cassidy],
   [Year Zero By Rob Reid],
-  [id="amazon"\>Amazon],
   [Amazon.com by Spector],
   [21 Dog Years by Mike Daisey],
-  [id="google"\>Google],
-  [id="misc--software"\>Misc \/ Software],
+  [Misc \/ Software],
   [In Search of Stupidity: Over 20 Years of High Tech Marketing Disasters by Chapman. " YES IT HAS dbase IN THE INDEX; DON'T WAIT - READ THIS IMMEDIATELY; I'M GOING TO READ IT AGAIN THIS WEEK "],
   [Go To . " ESSAY SIZE SNIPPETS ACROSS THE SOFTWARE REVOLUTION; RECOMMENDED "],
-  [id="george-gilder"\>George Gilder],
-  [id="segway"\>Segway],
-  [id="blackberry--nokia"\>Blackberry & Nokia],
-  [id="web-20--facebook--twitter--instagram--airbnb--etc"\>Web 2.0 \/ Facebook \/ Twitter \/ Instagram \/ AirBnB \/ Etc],
-  [id="facebook"\>Facebook],
+  [Blackberry & Nokia],
+  [Web 2.0 \/ Facebook \/ Twitter \/ Instagram \/ AirBnB \/ Etc],
   [dot Complicated by Randi Zuckerberg],
-  [id="multiple-companies-covered-in-one-book"\>Multiple Companies Covered in One Book],
-  [id="twitter"\>Twitter],
-  [id="airbnb"\>Airbnb],
-  [id="instagram"\>Instagram],
-  [id="other"\>Other],
-  [id="the-cellphone-wars"\>The Cellphone Wars],
-  [id="gaming"\>Gaming],
+  [Multiple Companies Covered in One Book],
   [Disclaimer: I'm not a gamer and there is a rich lore of game books that aren't here; send me recommendations on Twitter],
-  [id="space-20--tesla"\>Space 2.0 \/ Tesla],
+  [Space 2.0 \/ Tesla],
 ),
   insert-map: (:),
   word-count: 2902,
@@ -396,11 +259,10 @@
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The Moth],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -420,7 +282,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [James Baldwin's Shadow],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -443,7 +305,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [A History of Hamas],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -467,7 +329,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [NuShell - When /bin/bash curl installs fail],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -475,9 +337,11 @@
   paragraphs: (
   [I've liked the concept of NuShell since I first heard about it. I then liked it more when I discovered that Yehuda Katz was involved since I strongly believe in picking software based on the pedigree of the engineers involved (no I don't – yet – have engineer trading cards but I'm thinking about it).],
   [Although I have NuShell running on my experimental system, I've held off on using it on my main box mostly due to concerns about the vast amounts of things that pipe crap to /bin/bash like this:],
+  [/bin/bash -c "\$(curl -fsSL https:\/\/raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"],
   [/bin/bash -c "\$(curl -fsSL https:\/\/raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"],
   [/usr/bin/find "\$(brew --prefix)/Caskroom/"\*'/.metadata' -type f -name '\*.rb' -print0 | /usr/bin/xargs -0 /usr/bin/perl -i -0pe 's/depends\_on macos: \\\[.\*?\\\]\/\/gsm;s/depends\_on macos: .\*\/\/g'],
   [That's an uninstall script, an install script and a find command. I tried all of these tonight on NuShell and they all failed. An example of this is:],
+  [/Users/sjohnson/Sync/coding〉/bin/bash -c "\$(curl -fsSL https:\/\/raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"],
   [/bin/bash: \#!/bin/bash: No such file or directory
 /Users/sjohnson/Sync/coding〉],
   [Note : For non NuShell users, you can tell its NuShell above by the greater than sign in the prompt.],
@@ -494,7 +358,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Improving Your Podcast Audio Quality],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -524,7 +388,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [US to pay TotalEnergies \$1 billion to stop developing offshore wind in US],
   author: [John Timmer],
   source-name: [Ars Technica OpenForum],
@@ -546,7 +410,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Edward Said and the Question of Palestine],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -567,7 +431,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The 4th Amendment: Search and Seizure],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -591,7 +455,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The Rise of the Right Wing in Israel],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -613,7 +477,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Three Faces of Ataturk],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -638,7 +502,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Essential Technology for a Team Offsite],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -668,7 +532,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Chaos],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -693,7 +557,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Assessing the impact of human error factors on railway accident severity: Evidence from accident investigation reports in Korea],
   author: [Jun Lee],
   source-name: [PLOS ONE Feed],
@@ -710,7 +574,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Converting from MySQL to Postgres using NMIG],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -718,7 +582,7 @@
   paragraphs: (
   [Historically I've been a MySQL advocate but I've recently been quite impressed with Postgres. This leaves me in the position of needing to migrate several MySQL databases over to Postgres -or- run two database engines in production. And, clearly, it is far more desirable to run only a single production database server.],
   [I recently found the NPM tool NMIG and used it to successfully convert a MySQL database over to Postgres quickly and easily – once I got past the initial installation process.],
-  [id="installing-and-using-nmig"\>Installing and Using NMIG],
+  [Installing and Using NMIG],
   [Here's what you need to do to use NMIG.],
   [Pro Tip 2 : Go into your source database before you start the conversion and do a count on any table with a large number of records. This gives you a checksum on the overall process (NMIG has great logs but I always prefer belt and suspenders when it comes to working with valuable data).],
   [On your machine you need to have a version of NPM installed that is version 10 or later.],
@@ -743,18 +607,22 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Updating to the Latest Ansible on Ubuntu],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
   images: (),
   paragraphs: (
   [One of the tricky bits about Ansible is that new features in the "language" always require the latest version of Ansible itself. And, while logical, this can easily bite you. Here's an example:],
-  [class="highlight"\> TASK \[deploy\_hate-language-modeling\_systemd\_start : just force systemd to re-execute itself (2.8 and above)\] \*\*\* 
- fatal : \[ aws\_master2 \]: FAILED! =\> {"changed" : false , "msg" : " Unsupported parameters for (systemd) module: daemon\_reexec Supported parameters include: daemon\_reload, enabled, masked, name, no\_block, state, user" } 
+  [TASK \[deploy\_hate-language-modeling\_systemd\_start : just force systemd to re-execute itself (2.8 and above)\] \*\*\* 
+ fatal : \[ aws\_master2 \]: FAILED! =\> \{"changed" : false , "msg" : " Unsupported parameters for (systemd) module: daemon\_reexec Supported parameters include: daemon\_reload, enabled, masked, name, no\_block, state, user" \} 
  to retry, use : --limit \@/home/ubuntu/ansible/playbook\_deploy\_hate-language-modeling\_master.retry],
   [What that translates to is that Ansible itself doesn't know how to use the parameter daemon\_reexec . And when you've been using an Ansible feature successfully and then it doesn't work on the server, that usually is a rock solid signal "update ansible".],
   [Here's how to do this on Ubuntu:],
+  [sudo apt update
+sudo apt install software-properties-common
+sudo apt-add-repository --yes --update ppa:ansible/ansible
+sudo apt install ansible],
 ),
   insert-map: (:),
   word-count: 155,
@@ -764,7 +632,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Scent of History],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -788,7 +656,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [How Bad Bunny took Puerto Rican independence mainstream],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -813,7 +681,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [When Zoom Is Too Heavy for Your Laptop Just Use Your Phone or iPad],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -835,7 +703,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Cinco de Mayo and the Rise of Modern Mexico (2022)],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -855,7 +723,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Measuring cerebral glucose metabolism by chemical exchange-sensitive spin-lock (CESL) MRI of 2-deoxy-D-glucose in rodents],
   author: [Philipp Mergenthaler],
   source-name: [PLOS ONE Feed],
@@ -875,7 +743,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Abortion Before Roe],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -895,7 +763,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Polygraphs have major flaws. Are there better options?],
   author: [Sarah Scoles, Undark Magazine],
   source-name: [Ars Technica OpenForum],
@@ -917,7 +785,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Octavia Butler: Visionary Fiction],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -937,7 +805,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [All Wars Are Fought Twice],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -960,7 +828,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The Spotted Owl],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -980,7 +848,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Real Black Panthers],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -1001,8 +869,7 @@
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Meltdown],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -1020,16 +887,14 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([Marlowe Starling], source-name: [Quanta Magazine], [The passage of the sun across the sky — dawn, day, dusk, night — drives the clock of life. Some species wake with the sun and sleep with the moon. Others do the opposite, and a few keep odd hours. These naturally driven, 24-hour biological cycles are known as circadian rhythms, and they do more than cue bedtime: They regulate hormones, metabolism, DNA repair, and more. When life falls out of sync…
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([Marlowe Starling], source-name: [Quanta Magazine], [The passage of the sun across the sky — dawn, day, dusk, night — drives the clock of life. Some species wake with the sun and sleep with the moon. Others do the opposite, and a few keep odd hours. These naturally driven, 24-hour biological cycles are known as circadian rhythms, and they do more than cue bedtime: They regulate hormones, metabolism, DNA repair, and more. When life falls out of sync…
 
  Source])],
-    [#brief-item([Scientific American], source-name: [Scientific American], [Cortical Labs says the stunt points toward a new kind of low-power computing—and perhaps a new way to study neurological drugs])],
-    [#brief-item([Throughline (NPR)], source-name: [Throughline (NPR)], [A record number of Americans have died from opioid overdoses in recent years. But how did we get here? And is this the first time Americans have faced this crisis? The short answer: no. Three stories of opioids that have plagued Americans for more than 150 years.
+  [#brief-item([Scientific American], source-name: [Scientific American], [Cortical Labs says the stunt points toward a new kind of low-power computing—and perhaps a new way to study neurological drugs])],
+  [#brief-item([Throughline (NPR)], source-name: [Throughline (NPR)], [A record number of Americans have died from opioid overdoses in recent years. But how did we get here? And is this the first time Americans have faced this crisis? The short answer: no. Three stories of opioids that have plagued Americans for more than 150 years.
 
 To manage podcast ad preferences, review the links below:
 
@@ -1038,13 +903,13 @@ See pcm.adswizz.com for information about our collection and use of personal dat
 Learn more about sponsor message choices: podcastchoices.com/adchoices 
 
  NPR Privacy Policy])],
-    [#brief-item([Scott Johnson (fuzzyblog)], source-name: [Scott Johnson (fuzzyblog)], [class="center"\> 
+  [#brief-item([Scott Johnson (fuzzyblog)], source-name: [Scott Johnson (fuzzyblog)], [
 
  Tonsky recently had a great post about 4K monitors, fonts and scaling. The magic in this article are his suggestions around how to set fonts on your OSX machine. Apparently Apple does not set the defaults correctly (and, I'm writing this on a brand new OSX box that is NOTABLY improved by following his directions). This is the kind of stuff that I'm going to need to refer back to hence this post. Discussion thread about this .
 
  How to download and install the Consolas Font .])],
-    [#brief-item([Scientific American], source-name: [Scientific American], [A major defense against everything space throws at us, Earth’s magnetic field may even protect the moon from damaging galactic cosmic rays])],
-    [#brief-item([Throughline (NPR)], source-name: [Throughline (NPR)], [In February, President Trump declared a national emergency at the US-Mexico border. Last year, he ordered thousands of National Guard troops to the border. Is this the first time an American president has responded with this level of force? In this week's episode, the history of militarization at the U. S.-Mexico border.
+  [#brief-item([Scientific American], source-name: [Scientific American], [A major defense against everything space throws at us, Earth’s magnetic field may even protect the moon from damaging galactic cosmic rays])],
+  [#brief-item([Throughline (NPR)], source-name: [Throughline (NPR)], [In February, President Trump declared a national emergency at the US-Mexico border. Last year, he ordered thousands of National Guard troops to the border. Is this the first time an American president has responded with this level of force? In this week's episode, the history of militarization at the U. S.-Mexico border.
 
 To manage podcast ad preferences, review the links below:
 
@@ -1053,7 +918,7 @@ See pcm.adswizz.com for information about our collection and use of personal dat
 Learn more about sponsor message choices: podcastchoices.com/adchoices 
 
  NPR Privacy Policy])],
-    [#brief-item([Throughline (NPR)], source-name: [Throughline (NPR)], [Big Bird, politics, and the ABCs: how a television show made to represent New York City neighborhoods like Harlem and the Bronx became beloved by families around a divided country. This episode originally ran in 2022 as "Getting to Sesame Street."
+  [#brief-item([Throughline (NPR)], source-name: [Throughline (NPR)], [Big Bird, politics, and the ABCs: how a television show made to represent New York City neighborhoods like Harlem and the Bronx became beloved by families around a divided country. This episode originally ran in 2022 as "Getting to Sesame Street."
 
 To access bonus episodes and listen to Throughline sponsor-free, subscribe to Throughline+ via Apple Podcasts or at plus.npr.org/throughline.
 
@@ -1064,13 +929,13 @@ See pcm.adswizz.com for information about our collection and use of personal dat
 Learn more about sponsor message choices: podcastchoices.com/adchoices 
 
  NPR Privacy Policy])],
-    [#brief-item([TED Staff], source-name: [TED Blog], [Can’t make it to Atlanta for TEDNext? TED Live brings the minute-by-minute excitement from the TED Theater to your home, school or office. Be one of the first to experience talks from visionary speakers like music mogul Jermaine Dupri, ballerina & activist Misty Copeland, neurosurgeon & reporter Sanjay Gupta, financial educator Vivian Tu and so many more.
+  [#brief-item([TED Staff], source-name: [TED Blog], [Can’t make it to Atlanta for TEDNext? TED Live brings the minute-by-minute excitement from the TED Theater to your home, school or office. Be one of the first to experience talks from visionary speakers like music mogul Jermaine Dupri, ballerina & activist Misty Copeland, neurosurgeon & reporter Sanjay Gupta, financial educator Vivian Tu and so many more.
 
  Get your TED Live pass to stream the unedited talks in real time starting November 9 , or later on with the on-demand archive.])],
-    [#brief-item([Natalie Wolchover], source-name: [Quanta Magazine], [Fifty-eight years after it first appeared, string theory remains the most popular candidate for the “theory of everything,” the unified mathematical framework for all matter and forces in the universe. This is much to the chagrin of its rather vocal critics. “String theory is not dead; it’s undead and now walks around like a zombie eating people’s brains,” the former physicist Sabine Hossenfelder…
+  [#brief-item([Natalie Wolchover], source-name: [Quanta Magazine], [Fifty-eight years after it first appeared, string theory remains the most popular candidate for the “theory of everything,” the unified mathematical framework for all matter and forces in the universe. This is much to the chagrin of its rather vocal critics. “String theory is not dead; it’s undead and now walks around like a zombie eating people’s brains,” the former physicist Sabine Hossenfelder…
 
  Source])],
-    [#brief-item([Throughline (NPR)], source-name: [Throughline (NPR)], ["Race" is often used as a fundamental way to understand American history. But what if "caste" is the more appropriate lens? In conversation with Pulitzer Prize winner Isabel Wilkerson, we examine the hidden system that has shaped our country.
+  [#brief-item([Throughline (NPR)], source-name: [Throughline (NPR)], ["Race" is often used as a fundamental way to understand American history. But what if "caste" is the more appropriate lens? In conversation with Pulitzer Prize winner Isabel Wilkerson, we examine the hidden system that has shaped our country.
 
 To manage podcast ad preferences, review the links below:
 
@@ -1079,7 +944,12 @@ See pcm.adswizz.com for information about our collection and use of personal dat
 Learn more about sponsor message choices: podcastchoices.com/adchoices 
 
  NPR Privacy Policy])],
-  ))
-}
+))
+
+// --- Notable Quotes ---
+#block(above: 0.2in, stroke: (top: 1pt + luma(26)), inset: (top: 0.1in))[
+  #pull-quote([I love the diversity of the songs on this album, but how it all has a very strong point of view throughout.], [Adventurous Kate])
+
+]
 
 #colophon([The Pioneer Mirror], [Vol. 1, No. 074], [2026-03-30])

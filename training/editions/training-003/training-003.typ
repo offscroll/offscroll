@@ -21,60 +21,44 @@
 #masthead([The Atlantic Post], [Vol. 1, No. 003], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Teen builds an award-winning virtual reality prototype thanks to free MIT courses],
-  kicker: [Cover Story],
-  author: [Stefanie Koperniak | MIT Open Learning],
-  source-name: [MIT News Education],
-  deck: [dir="ltr"\>When Freesia Gaul discovered MIT Open Learning’s OpenCourseWare at just 14 years old, it opened up a world of learning far beyond what her classrooms could offer.],
-  lead-pre: [],
-  lead-cap: [H],
-  lead-rest: [er parents had started a skiing company, and the seasonal work meant that Gaul had to change schools every six months. Growing up in small towns in Australia and Canada, she relied on the internet to fuel her curiosity.],
-  body-paragraphs: (
-  [dir="ltr"\>“I went to 13 different schools, which was hard because you're in a different educational system every single time,” says Gaul. “That’s one of the reasons I gravitated toward online learning and teaching myself. Knowledge is something that exists beyond a curriculum.”],
-  [dir="ltr"\>The small towns she lived in often didn’t have a lot of resources, she says, so a computer served as a main tool for learning. She enjoyed engaging with Wikipedia, ultimately researching topics and writing and editing content for pages. In 2018, she discovered  MIT OpenCourseWare , part of  MIT Open Learning , and took her first course. OpenCouseWare offers free, online, open educational resources from more than 2,500 MIT undergraduate and graduate courses.],
-  [dir="ltr"\>“I really got started with the OpenCourseWare introductory electrical engineering classes, because I couldn’t find anything else quite like it online,” says Gaul, who was initially drawn to courses on circuits and electronics, such as 6.002 (Circuits and Electronics) and 6.01SC (Introduction to Electrical Engineering and Computer Science). “It really helped me in terms of understanding how electrical engineering worked in a practical sense, and I just started modding things.”],
-  [dir="ltr"\>In true MIT “mens et manus” (“mind and hand”) fashion, Gaul spent much of her childhood building and inventing, especially when she was able to access a 3D printer. She says that a highlight was when she built a life-sized, working version of a Mario Kart, constructed out of materials she had printed.],
-  [dir="ltr"\>Gaul calls herself a “serial learner,” and has taken many OpenCourseWare courses. In addition to classes on circuits and electronics, she also took courses in linear algebra, calculus, and quantum physics — in which she took a particular interest.],
-  [dir="ltr"\>When she was 15, she participated in  Qubit by Qubit . Hosted by The Coding School, in collaboration with universities (including MIT) and tech companies, this two-semester course introduces high schoolers to quantum computing and quantum physics.],
-  [dir="ltr"\>During that time she started a blog called On Zero, representing the “zero state” of a qubit. “The ‘zero state’ in a quantum computer is the representation of creativity from nothing, infinite possibilities,” says Gaul. For the blog, she found different topics and researched them in depth. She would think of a topic or question, such as “What is color?” and then explore it in great detail. What she learned eventually led her to start asking questions such as “What is a hamiltonian?” and  teaching quantum physics alongside PhDs.],
-  [dir="ltr"\>Building on these interests, Gaul chose to study quantum engineering at the University of New South Wales. She notes that on her first day of university, she participated in  iQuHack , the MIT Quantum Hackathon. Her team worked to find a new way to approximate the value of a hyperbolic function using quantum logic, and received an honorable mention for “exceptional creativity.”],
-  [dir="ltr"\>Gaul’s passion for making things continued during her college days, especially in terms of innovating to solve a problem. When she found herself on a train, wanting to code a personal website on a computer with a dying battery, she wondered if there might be a way to make a glove that can act as a type of Bluetooth keyboard — essentially creating a way to type in the air. In her spare time, she started working on such a device, ultimately finding a less expensive way to build a lightweight, haptic, gesture-tracking glove with applications for virtual reality (VR) and robotics.],
-  [dir="ltr"\>Gaul says she has always had an interest in VR, using it to create her own worlds, reconstruct an old childhood house, and play Dungeons and Dragons with friends. She discovered a way to put into a glove some small linear resonant actuators, which can be found in a smartphone or gaming controller, and map to any object in VR so that the user can feel it.],
-  [dir="ltr"\>An early prototype that Gaul put together in her dorm room received a lot of attention on YouTube. She went on to win the People’s Choice award for it at the SxSW Sydney 2025 Tech and Innovation Festival. This design also sparked her co-founding of the tech startup  On Zero , named after her childhood blog dedicated to the love of creation from nothing.],
-  [dir="ltr"\>Gaul sees the device, in general, as a way of “paying it forward,” making improved human-computer interaction available to many — from young students to professional technologists. She hopes to enable creative freedom in as many as she can. “The mind is just such a fun thing. I want to empower others to have the freedom to follow their curiosity, even if it's pointless on paper.],
-  [dir="ltr"\>“I’ve benefited from people going far beyond what they needed to do to help me,” says Gaul. “I see OpenCourseWare as a part of that. The free courses gave me a solid foundation of knowledge and problem-solving abilities. Without these, it wouldn’t be possible to do what I’m doing now.”],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Roots of Righteousness: A Glimpse into Ethics as the Moral Fabric of India],
   author: [George Levrier-Jones],
   source-name: [History in 28 Minutes],
   images: (),
   paragraphs: (
-  [class=""\> Ethics are moral principles that govern a person’s behavior in a society. In very simple terms, they constitute the rights and wrongs that guide people’s conduct. The Indian ethics are generally connected to the principle of anekantavada or many-sidedness, emphasizing that there is “no absolute truth” and no neatly defined binaries of right and wrong. They are based on factors such as the person practicing them, the situation, and the time at which they are practised. Indian ethics focus on accepting and encouraging diverse thoughts and beliefs, hence propagating “unity in diversity” and “diversity in unity.”],
-  [class=""\>“ It is surely extremely strange that whenever, either in Greek, or in Chinese, or in Persian, or in Arab writings, we meet with any attempts at describing the distinguishing features in the national character of the Indians, regard for truth and justice should always be mentioned first. ” — F. Max Müller, Sanskritist and philologist (1882)],
-  [class=""\>Composed between 1500–1000 BCE, the Rig Veda mentions the concept of Ritam (cosmic order) through which the physical and the social worlds are sustained. Ritam can be understood as the sense of righteousness. It later developed into the concept of Satyam (truth), with strong ethical implications. Dharma , the building block of Indian ethics, has been translated from the Rig Veda to refer to words such as justice, duty, righteousness, and order, among others. It is important to note that dharma is a multifaceted concept and does not denote a single idea or meaning.],
-  [class=""\>Composed between 800 and 500 BCE, the Upanishads reveal further developments in Indian ethical thought. For example, Aham Brahma asmi (1.4.10; Brihadaranyaka Upanishad ) translates to “I am Brahman (the Absolute)” and can be understood as: A person is a part of God (and not separate from this universal consciousness). It is essential to grow cognizant of this identity. Further, the Upanishads highlight that every person has a distinct nature ( svabhava ), function, truth, and path ( svadharma ), echoing the concept of anekantavada . The Puranas also propagate notions like all creation is interconnected and that one can be happy when all are happy.],
-  [class=""\>The Ramayana and Mahabharata stories underline the idea that ethics are complex. Several dilemmas shape the events of these epics and put forth the question: How to decide what is dharma in different situations? The central message of the Bhagavad Gita, part of the Mahabharata, is Nishkama Karma , meaning desireless action. It propagates the concept that people should work without any expectation of results. What matters ultimately is the inner growth of the individual, which can be achieved when one’s actions align with one’s dharma . Nishkama Karma forms the basis of Karma Yoga , a spiritual practice of selfless action that can lead a person to liberation ( moksha ). Lord Krishna emphasized that dharma cannot be practiced in passivity; several situations arise when a person needs to take a particular side in life. Some examples showcasing the sophisticated nature of dharma include the following:],
-  [class=""\> Dronacharya : In the Mahabharata, Drona was a master of advanced military arts, including divine weapons. The Pandavas decided to use Drona’s only weakness, his son Ashwatthama, to save many lives in the war. The Pandava Bhima killed an elephant named Ashwatthama and spread the news of his death. Drona asked the Pandava Yudhishthira (known for always speaking the truth), who clearly said that Ashwatthama was killed. It is said that Krishna suppressed the word ‘elephant’ by blowing the conch. The news of the death of his son eventually led to the slaying of Drona. This story emphasizes that if an untruth saves lives, then perhaps ethics is not about always telling the truth.],
-  [class=""\> Vibhishana and Kumbhakarana : Ravana’s brothers Vibhishana and Kumbhakarana in the Ramayana skillfully demonstrated that there is no single path to dharma and no single way of solving an ethical dilemma. Kumbhakarna adhered to the dharma of loyalty to his kin. At the same time, Vibhishana chose to follow the dharma of saving the people from the evil of his brother Ravana by opposing his kin and supporting Rama.],
-  [class=""\>Buddhism originated in the Indian subcontinent and mentions a noble eightfold path encompassing the ‘right’ vision, intention/aspiration, speech, action, livelihood, effort, mindfulness, and concentration. Once Buddha preached, “... whenever someone abuses us, we can either choose to accept or decline that anger. Our response will decide who owns and keeps the bad and negative feelings.” This story beautifully encourages the practice of the right speech, action, and mindfulness. Buddhism also talks about having compassion for others. Aligning with this idea, Buddhist economics studies the production, distribution, and consumption of goods/services by changing the focus from self-interest to no-self (generosity), with ‘right’ livelihood and sustainability. While traditional economics emphasizes maximizing profits, Buddhist economics aims to minimize suffering (losses) for all.],
-  [class=""\>Jainism also originated in the Indian subcontinent and mentions the Triratna (three jewels) as the ‘right’ faith, knowledge, and walk. Ahimsa (non-violence), Satya (truth), asteya (non-stealing), brahmacharya (chastity), and aparigraha (Non-possession) are its five ethical codes. Detachment (non-attachment or non-possession) is one of its main morals. It can serve as the means to attain the realization of one’s self. Jainism’s concept of violence, acceptable only when absolutely necessary for self-defense, appears to echo with Lord Krishna’s advice from the Mahabharata that dharma cannot be practiced in passivity (at least, in certain situations according to Jainism).],
-  [class=""\>Composed around the 5th century CE by Thiruvallur and consisting of 1,330 short couplets, the Kural is a classic Tamil language text. It is considered a great work on morality, known for its secular nature. Some examples from this work include (a) In prosperity, bend low \[be humble\], (and) in adversity, stand straight \[be strong\], and (b) Always aim high—failure then is as good as success. This text provides worldly wisdom and guidance to make ethical decisions.],
-  [class=""\> Din-i-Ilahi : The Divine Faith was propounded by the Mughal emperor Akbar (1582), who wanted to unite his people so that all of humankind could worship God according to their faith. Its writer, Abu’l-Fazl, expressed, “every sect can assert its doctrine without apprehension, and everyone can worship God after his own fashion.” Discriminations among the different religions of the realm were prohibited. Here, religious harmony emerges as a critical component of dharma .],
-  [class=""\> The Story of Panna Dhai : I remember a story my mother told me during childhood. It is the tale of Panna Dhai, a 16th-century maid to Rani Karnavati, who helped her in political matters and the upbringing of the prince, Udai Singh II, along with her own son, Chandan. During the attack on Chittor, Panna sent Udai out to a river while putting her son in Udai’s place on the bed. When Bhanvir, the enemy, came and asked for Udai, Panna pointed at the bed occupied by her son and watched as Banvir murdered him. An epitome of courage and sacrifice, Panna adhered to the dharma of loyalty to her kingdom, where she lived. Saving the prince was more important to her than her child. This incident reflects anekantavada (“no absolute truth”) and dharma that depends on the person, situation, and time of practice. Panna chose her duty as a nursemaid over being a mother. Had she not done so, India might not have known the ancient hero Maharana Pratap, who was later born as the eldest son of Udai Singh II.],
-  [class=""\> The Bishnoi Sacrifice : In the year 1730 at Khejadli (Rajasthan), 363 Bishnoi women, children, and men, led by Amrita Devi, sacrificed their lives to protect Khejadli trees while chanting their Guru’s teaching: “If a tree is saved even at the cost of one’s head, it is worth it.” It led the Maharaja of Jodhpur to prohibit tree cutting and animal hunting in all Bishnoi villages, attaching a sense of sacredness to these forms of nature. Such traditions from India are based on the dharma of non-hurting and simple living.],
-  [class=""\> Beyond One’s Life : Bal Gangadhar Tilak (1856–1920) was a mathematics teacher, social reformer, and freedom fighter. He encouraged people to fight for India’s freedom so future generations could enjoy the fruit. It can be equated with the dharma of having no relaxation (in one’s efforts) so that one does not incur the curse of one’s children and descendants.],
-  [class=""\> Guest is God : Indians have believed since ancient times in the spiritual tradition of guests being considered divine. Adhering to this principle as their dharma , many Taj Hotel employees died saving the lives of the hotel guests during the 26/11 Mumbai terrorist attacks. Although many knew all the back exits that could have safely led them out of the hotel, they stayed back to save the guests selflessly.],
-  [class=""\>In conclusion, India’s ethics system is based on diverse philosophies, religious teachings, and cultural traditions spanning thousands of years. It is important to note that the information provided in this article is not exhaustive in nature. The complexity associated with ethics reflects India’s pluralistic society, offering insights into living a meaningful life. Understanding the anekantavada aspect of these ethics not only highlights India’s glorious past but also inspires discussions about morality in a rapidly changing world.],
-  [class=""\> Apeksha Srivastava is pursuing her Ph. D. at the Indian Institute of Technology (IIT) Gandhinagar, Gujarat, India. She was a visiting researcher at the University of Colorado, Colorado Springs (USA) from April to July 2024.],
+  [Ethics are moral principles that govern a person’s behavior in a society. In very simple terms, they constitute the rights and wrongs that guide people’s conduct. The Indian ethics are generally connected to the principle of anekantavada or many-sidedness, emphasizing that there is “no absolute truth” and no neatly defined binaries of right and wrong. They are based on factors such as the person practicing them, the situation, and the time at which they are practised. Indian ethics focus on accepting and encouraging diverse thoughts and beliefs, hence propagating “unity in diversity” and “diversity in unity.”],
+  [Apeksha Srivastava explains.],
+  [A manuscript from the Mewar Rāmāyaṇa. This shows Rāma slaying Rāvaṇa.],
+  [“ It is surely extremely strange that whenever, either in Greek, or in Chinese, or in Persian, or in Arab writings, we meet with any attempts at describing the distinguishing features in the national character of the Indians, regard for truth and justice should always be mentioned first. ” — F. Max Müller, Sanskritist and philologist (1882)],
+  [The Rig Veda and Upanishads],
+  [Composed between 1500–1000 BCE, the Rig Veda mentions the concept of Ritam (cosmic order) through which the physical and the social worlds are sustained. Ritam can be understood as the sense of righteousness. It later developed into the concept of Satyam (truth), with strong ethical implications. Dharma , the building block of Indian ethics, has been translated from the Rig Veda to refer to words such as justice, duty, righteousness, and order, among others. It is important to note that dharma is a multifaceted concept and does not denote a single idea or meaning.],
+  [Composed between 800 and 500 BCE, the Upanishads reveal further developments in Indian ethical thought. For example, Aham Brahma asmi (1.4.10; Brihadaranyaka Upanishad ) translates to “I am Brahman (the Absolute)” and can be understood as: A person is a part of God (and not separate from this universal consciousness). It is essential to grow cognizant of this identity. Further, the Upanishads highlight that every person has a distinct nature ( svabhava ), function, truth, and path ( svadharma ), echoing the concept of anekantavada . The Puranas also propagate notions like all creation is interconnected and that one can be happy when all are happy.],
+  [The Ramayana and Mahabharata stories underline the idea that ethics are complex. Several dilemmas shape the events of these epics and put forth the question: How to decide what is dharma in different situations? The central message of the Bhagavad Gita, part of the Mahabharata, is Nishkama Karma , meaning desireless action. It propagates the concept that people should work without any expectation of results. What matters ultimately is the inner growth of the individual, which can be achieved when one’s actions align with one’s dharma . Nishkama Karma forms the basis of Karma Yoga , a spiritual practice of selfless action that can lead a person to liberation ( moksha ). Lord Krishna emphasized that dharma cannot be practiced in passivity; several situations arise when a person needs to take a particular side in life. Some examples showcasing the sophisticated nature of dharma include the following:],
+  [Dronacharya : In the Mahabharata, Drona was a master of advanced military arts, including divine weapons. The Pandavas decided to use Drona’s only weakness, his son Ashwatthama, to save many lives in the war. The Pandava Bhima killed an elephant named Ashwatthama and spread the news of his death. Drona asked the Pandava Yudhishthira (known for always speaking the truth), who clearly said that Ashwatthama was killed. It is said that Krishna suppressed the word ‘elephant’ by blowing the conch. The news of the death of his son eventually led to the slaying of Drona. This story emphasizes that if an untruth saves lives, then perhaps ethics is not about always telling the truth.],
+  [Vibhishana and Kumbhakarana : Ravana’s brothers Vibhishana and Kumbhakarana in the Ramayana skillfully demonstrated that there is no single path to dharma and no single way of solving an ethical dilemma. Kumbhakarna adhered to the dharma of loyalty to his kin. At the same time, Vibhishana chose to follow the dharma of saving the people from the evil of his brother Ravana by opposing his kin and supporting Rama.],
+  [Buddhism’s Eightfold Path],
+  [Buddhism originated in the Indian subcontinent and mentions a noble eightfold path encompassing the ‘right’ vision, intention/aspiration, speech, action, livelihood, effort, mindfulness, and concentration. Once Buddha preached, “... whenever someone abuses us, we can either choose to accept or decline that anger. Our response will decide who owns and keeps the bad and negative feelings.” This story beautifully encourages the practice of the right speech, action, and mindfulness. Buddhism also talks about having compassion for others. Aligning with this idea, Buddhist economics studies the production, distribution, and consumption of goods/services by changing the focus from self-interest to no-self (generosity), with ‘right’ livelihood and sustainability. While traditional economics emphasizes maximizing profits, Buddhist economics aims to minimize suffering (losses) for all.],
+  [Morals in Jainism],
+  [Jainism also originated in the Indian subcontinent and mentions the Triratna (three jewels) as the ‘right’ faith, knowledge, and walk. Ahimsa (non-violence), Satya (truth), asteya (non-stealing), brahmacharya (chastity), and aparigraha (Non-possession) are its five ethical codes. Detachment (non-attachment or non-possession) is one of its main morals. It can serve as the means to attain the realization of one’s self. Jainism’s concept of violence, acceptable only when absolutely necessary for self-defense, appears to echo with Lord Krishna’s advice from the Mahabharata that dharma cannot be practiced in passivity (at least, in certain situations according to Jainism).],
+  [Composed around the 5th century CE by Thiruvallur and consisting of 1,330 short couplets, the Kural is a classic Tamil language text. It is considered a great work on morality, known for its secular nature. Some examples from this work include (a) In prosperity, bend low \[be humble\], (and) in adversity, stand straight \[be strong\], and (b) Always aim high—failure then is as good as success. This text provides worldly wisdom and guidance to make ethical decisions.],
+  [Some Case Studies on Different Aspects of Dharma],
+  [Din-i-Ilahi : The Divine Faith was propounded by the Mughal emperor Akbar (1582), who wanted to unite his people so that all of humankind could worship God according to their faith. Its writer, Abu’l-Fazl, expressed, “every sect can assert its doctrine without apprehension, and everyone can worship God after his own fashion.” Discriminations among the different religions of the realm were prohibited. Here, religious harmony emerges as a critical component of dharma .],
+  [The Story of Panna Dhai : I remember a story my mother told me during childhood. It is the tale of Panna Dhai, a 16th-century maid to Rani Karnavati, who helped her in political matters and the upbringing of the prince, Udai Singh II, along with her own son, Chandan. During the attack on Chittor, Panna sent Udai out to a river while putting her son in Udai’s place on the bed. When Bhanvir, the enemy, came and asked for Udai, Panna pointed at the bed occupied by her son and watched as Banvir murdered him. An epitome of courage and sacrifice, Panna adhered to the dharma of loyalty to her kingdom, where she lived. Saving the prince was more important to her than her child. This incident reflects anekantavada (“no absolute truth”) and dharma that depends on the person, situation, and time of practice. Panna chose her duty as a nursemaid over being a mother. Had she not done so, India might not have known the ancient hero Maharana Pratap, who was later born as the eldest son of Udai Singh II.],
+  [The Bishnoi Sacrifice : In the year 1730 at Khejadli (Rajasthan), 363 Bishnoi women, children, and men, led by Amrita Devi, sacrificed their lives to protect Khejadli trees while chanting their Guru’s teaching: “If a tree is saved even at the cost of one’s head, it is worth it.” It led the Maharaja of Jodhpur to prohibit tree cutting and animal hunting in all Bishnoi villages, attaching a sense of sacredness to these forms of nature. Such traditions from India are based on the dharma of non-hurting and simple living.],
+  [Beyond One’s Life : Bal Gangadhar Tilak (1856–1920) was a mathematics teacher, social reformer, and freedom fighter. He encouraged people to fight for India’s freedom so future generations could enjoy the fruit. It can be equated with the dharma of having no relaxation (in one’s efforts) so that one does not incur the curse of one’s children and descendants.],
+  [Guest is God : Indians have believed since ancient times in the spiritual tradition of guests being considered divine. Adhering to this principle as their dharma , many Taj Hotel employees died saving the lives of the hotel guests during the 26/11 Mumbai terrorist attacks. Although many knew all the back exits that could have safely led them out of the hotel, they stayed back to save the guests selflessly.],
+  [In conclusion, India’s ethics system is based on diverse philosophies, religious teachings, and cultural traditions spanning thousands of years. It is important to note that the information provided in this article is not exhaustive in nature. The complexity associated with ethics reflects India’s pluralistic society, offering insights into living a meaningful life. Understanding the anekantavada aspect of these ethics not only highlights India’s glorious past but also inspires discussions about morality in a rapidly changing world.],
+  [Apeksha Srivastava is pursuing her Ph. D. at the Indian Institute of Technology (IIT) Gandhinagar, Gujarat, India. She was a visiting researcher at the University of Colorado, Colorado Springs (USA) from April to July 2024.],
+  [Danino, M. (2020). System of ethics in India: Lecture and discussions . Perspectives on Indian Civilization course at IIT Gandhinagar.],
+  [Nadkarni, M. V. (2011). Ethics in Hinduism (Book – Ethics For Our Times: Essays in Gandhian Perspective). Oxford Scholarship Online.],
+  [Ganguli, K. M. (1883–1896). The fifteenth day at Kurukshetra – The fall of the preceptor, Drona (Mahabharata) . Retrieved from wisdomlib.org.],
+  [Mahatthanadull, S. (2018). The noble eightfold path: The Buddhist middle way for mankind . International Buddhist Studies College, Mahachulalongkornrajavidyalaya University.],
+  [BBC. (2009). The three jewels of Jainism . BBC Religions.],
+  [Tiruvaḷḷuvar (around the 5th century CE). Tirukkural . Retrieved from wisdomlib.org.],
+  [Rajasthan Heritage Protection & Promotion Authority. (n.d.). Panna Dhai panorama, Kameri, Rajsamand . Rajasthan Government.],
+  [Spiegel, A. (2011, December 23). Heroes of Mumbai’s Taj Hotel: Why they risked their lives . NPR.],
 ),
   insert-map: (:),
   word-count: 1756,
@@ -82,43 +66,41 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Code reviews for fun and profit],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
   images: (),
   paragraphs: (
-  [id="stats-a-preamble"\>Stats: a preamble],
+  [Stats: a preamble],
   [I’ve been reading too much about March Madness brackets, so I thought I had to run some numbers around here like the cool kids do. Get your umbrella out, it’s about to rain cold facts.],
   [In the history of time, Chromium has had 205,095 commits made by 1,943 contributors representing 7,431,088 lines of code. In the last 30 days, there have been 5021 commits, by 637 contributors, including 53 new hoomans.],
   [I did some advanced Nate Silver analysis here for you, and that’s at least 167 commits and 1+ new committers a day. On average, that’s at least 7 commits an hour. Every hour. All of the hours.],
   [That’s an imperial ton of new code being added, by what it seems like new people. Imagine if everyone could commit code willy-nilly. Are you imagining a minefield? You should.],
-  [id="code-reviews-ftw"\>Code reviews ftw],
+  [Code reviews ftw],
   [Good news for our browser using audience! Chromium isn’t a minefield, and on top of it, has pretty awesome looking code. This comes from the fact that any code changes need to be reviewed and blessed before they can land on the master branch. More eyes means less bugs means you’re less likely to commit broken code and break the internet. And you really don’t want to break the internet.],
   [Even if you have tests, and everything is going your way, you can write correct, but genuinely shitty code. 7 million lines of kinda-shitty code is not something anyone wants to work with, and are worth investing a little time in fixing.],
   [Code reviews also bring up the bus factor, which is my favourite sinister nerd metaphor. You know, the buuuuuus factor. The number of people that can get run over by a bus on a team before that team is royally and epically screwed. If all the code that you write has been closely read by a different person, then you’re probably ok getting run over by a bus every once in a while. But still, you probably shouldn’t. Who would feed your cat?],
-  [id="consistent-code-is-the-best-code"\>Consistent code is the best code],
+  [Consistent code is the best code],
   [Code style guides are sooper neat, and are a huge part of code reviews, because ain’t nobody got time to argue about braces. You can spend that time arguing about imperative vs. functional languages, which is a much better use of everyone’s time. Having a strict and detailed style guide means that, even though it’s probably going to piss off some very opinionated people, all of the code will look the same, all the time, regardless of who wrote it. You can jump into any area of Chromium and feel at home, because nobody went crazy with the whitespace.],
   [And trust me, it only takes a week to get over the wrong kind of braces.],
-  [id="dont-be-scared"\>Don’t be scared],
+  [Don’t be scared],
   [We’ve reached the point in the blog post where I confess I am a terrible code reviewer. I am incredibly scared of reviewing code I haven’t written. Guess what: in the case of Chromium, that’s most of it.],
   [Reviewers are usually picked from a list of owners , which is a group of people that is intimate enough with that area of code that they’ve taken it out to dinner a couple of times. They’re the ones that have the final say on whether the code is ok, and who make sure that little neighbourhood of code isn’t a minefield. Even if you’re not an owner, your team mates will probably ask you for a first review of their code, to make the owners’ lives easier. You will be tempted to panic and not want to take responsibility for it. You will be tempted to run away from confrontation and agree with all of their changes.],
   [Don’t. It doesn’t help anyone, and it will be like you’re not even there. You were asked for a review because people trust your judgement and value your opinion. So give it. The worst thing that can happen is that they will disagree, and you will have a polite conversation about it. The best thing that can happen is amazingly awesome code. So, have a little courage, and be the little reviewer that could.],
-  [id="dont-be-a-jerk"\>Don’t be a jerk],
+  [Don’t be a jerk],
   [Jerks are the worst code reviewers. Generally, people tend to get very defensive when faced with criticism, and they’ll get exponentially more defensive if that criticism comes in a harsh, patronizing voice. Defensive people aren’t open to discussions, and it will make the review experience painful for everyone.],
   [Don’t be a control freak either. You might disagree with the names of variables and functions, but unless you have good suggestions, you might want to consider conceding those points.],
   [The moral here is: the code you’re reviewing was written by a smart human. Treat them like one.],
-  [id="what-makes-a-great-code-reviewer"\>What makes a great code reviewer],
+  [What makes a great code reviewer],
   [Good code reviewers are diligent: they enforce the style guide, they make sure you’ve documented the new code, and they aren’t scared of making you shave a yak or four if that’s needed (this includes both yaks that you have conjured and the ones you’ve accidentally stumbled upon).],
   [Even better reviewers will try to help the author of the code learn. This is a very hard stack of plates to balance: on one hand you don’t want to be lazy and offer really vague advice that will waste the programmer’s time, and on the other hand you don’t want to spoon-feed them every single character of code. I don’t think there’s a magic formula here: this comes with experience, and with your knowledge of the person you’re reviewing.],
   [The best code reviewers are usually right, and always humble. They’ll always admit when they’re wrong and they’ll back away from points that are too annoying (“yes, the way I suggested is better, but I see your point that it’s way, way too much effort, and I agree it’s not worth it”).],
-  [id="code-reviews-are-kind-of-social"\>Code reviews are kind of social],
+  [Code reviews are kind of social],
   [A neat/fun thing that happens even in a project as big as Chromium is that programmers and reviewers will form specific reviewing relationships.],
   [My favourite reviewer used to leave pretty vague comments when the general approach of one of my patches was bad. At first the comments didn’t make any sense, but because I didn’t want to look dumb, I’d spend four hours trying to figure out what they meant. Somebody who isn’t me would probably just go back and ask for a clarification, and that would define their reviewing relationship. However, I kind of really enjoy this sort of code sherlocking, because by the time I figured out what they meant, I would have learned a whole bunch of new things, fixed my code, replaced it with badass code, and would be genuinely excited. And that’s why they’re my favourite reviewer, but not necessarily the best reviewer. Our styles just match really well.],
-  [id="how-to-level-up-as-a-code-reviewer"\>How to level up as a code reviewer],
+  [How to level up as a code reviewer],
   [First, become comfortable with the style guide. The first thing you should do for every review is go through all of the new code, and find all the nits. Is the indentation ok? Do the variable names follow the naming convention? Have new functions or parameters been documented correctly?],
   [Once you’re done with that, ask yourself if you understand what the code does. If you can’t, the next person won’t either. It’s easy to think you’re dumb and the code is great, but that’s almost never true. Does the new code make sense where it is? Should it be in a different class? Should it be a class or a helper function? Is this code duplicated anywhere else?],
   [Make sure that if the code can be tested (this, sadly, isn’t always true), it is tested. Don’t be afraid to ask for tests if they’re not there.],
@@ -130,10 +112,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Week 11],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -166,30 +146,31 @@ several really productive 4 am YouTube holes of watching Avengers bloopers, ever
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A Brief History of the Polish Winged Hussars],
   author: [George Levrier-Jones],
   source-name: [History in 28 Minutes],
   images: (),
   paragraphs: (
-  [class=""\> The Winged Hussars of the Polish Lithuanian Commonwealth dominated the battlefields of Eastern Europe from the 16th to the 18th centuries. Sporting massive artificial wings on their armor, these aristocratic warriors were among the most feared and cohesive cavalry forces in European history.],
-  [class=""\>Eastern Europe has a deep equestrian and cavalry tradition, due in part to its topography. Active from the 16th to the 18thcentury. The Winged Hussars showed a consistently remarkable ability to seemingly defy the odds snatching victory from otherwise imminent defeat.],
-  [class=""\>Eastern Europe has a rich history and tradition of elite horsemanship. Much of the region is comprised of plains and flat grassland advantageous to horse rearing. Successive waves of elite horse warriors such as the Huns, Magyars, and Tartars had raided and settled the area at various times. Likewise, much of the warfare that defined this region throughout the Middle Ages and early modern era involved larger cavalry forces than the more heavily populated and more urbanized parts of Western Europe.],
-  [class=""\>Hussars derive their name from the Hungarian “Huserones” and originated in the Kingdom of Hungary sometime in the late 15th century as a light cavalry force. The name later became incorporated by a whole host of Central and Eastern European countries such as Serbia, The Holy Roman Empire and Poland becoming renowned as some of the best light horse units in all of Europe.],
-  [class=""\>The Polish Lithuanian Commonwealth was one of the premier states in Early Modern Europe. Engaging with a host of enemies mainly the Ottoman Turks, Swedes and Russians, a series of drastic military reforms were undergone to bolster and safeguard its territory and people as the state grew and became more vulnerable. These included but were not limited to modernizing land and naval forces and modifying its already prolific cavalry.],
-  [class=""\>Drawing on the litany of pre-established equine traditions, the Winged Hussars as they became known drew their ranks from the upper classes and nobility and adapting their role into a heavy shock cavalry instead of the more traditional nimble light horse tactics of their predecessors.],
-  [class=""\>Riding in tight formation these heavily armored horsemen could smash into enemy formations with lethal efficiency thus enabling infantry and lighter cavalry units to exploit the gaps and gain tactical advantages ensuring victory. The Winged Hussars displayed impressive capability in the diverse geographical and climatic conditions from which they operated.],
-  [class=""\>The Winged Hussars were well armored, well equipped and rode expertly bred war horses. One reason in which their ranks were filled almost exclusively by nobles was the sheer cost of such expenditures.],
-  [class=""\>Wings: The signature and iconic wings worn by the Hussars were fashioned out of feathers from a variety of raptor birds, mainly Eagle and Falcon. Originally the wings were placed on their saddles before being fastened onto the backs of their armor. The purpose was twofold. In an era of extravagant military arms and uniforms the Wings were visually impressive on parade grounds and intimidating foes. The Wings also may have produced an odd and terrifying din when the Hussars charged, frightening enemy soldiers and horses in the process.],
-  [class=""\>Armor: Hussars were clad in heavy steel armor typical of the era and often sported exotic animal furs such as leopards and saddles decked out with fine silk and lace. Beneath their armor and hides Hussars typically donned red or crimson short coats called zupans with helmets encrusted with gems or plumed with exotic feathers. The Winged Hussars took great pride in their appearance on and off the battlefield.],
-  [class=""\>Horses: Expensive warhorses typically Polish-Arabian breeds were the predominant mount used by the Winged Hussars. These horses were both incredibly strong as they could carry a heavily armored rider in addition to their great endurance with long marches ranging across a variety of terrain in and around Central and Eastern Europe.],
-  [class=""\>Weapons: They were well trained, well-armed and capable of wielding a lance, (kopia) saber, (szabla) and various firearms with expert lethality. The Hussars could combat a variety of foes. From conventual infantry and cavalry units which defined 16th and 17th century European armies to the expert light cavalry of the Tatars.],
-  [class=""\>Khlushino: One of the finest victories performed by the Winged Hussars was the Battle of Klushino fought on July 4th, 1610. The heavily outnumbered Polish-Lithuanian force of about 6,000 with the bulk of the army of 5,000 Winged Hussars crushed a Muscovite army of over 30,000. Over the course of a five-hour battle the Winged Hussars superior training, tactics, and troop cohesion made it possible to smash their adversaries’ lines, disintegrating their forces and routing them in the process.],
-  [class=""\>Vienna: The Winged Hussars most renowned moment came in September 1683 at the Siege of Vienna. For weeks the Ottomans under Mustapha Pasha had been battering the “Golden Apple of Europe” coming closer to victory with each passing day. Finally, a coalition of predominantly Catholic Holy League Forces arrived to lift the Siege. John Sobieski King of Poland an experienced soldier led a contingent of roughly 4,000 Winged Hussars. Devising a plan Sobieski outflanked the Ottoman Camp and along with his Winged Hussars led what was possibly the largest cavalry charge in the history of Europe at the head of some twenty thousand horsemen devasting the Ottoman expeditionary force and relieving the city in the process.],
-  [class=""\> The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
+  [The Winged Hussars of the Polish Lithuanian Commonwealth dominated the battlefields of Eastern Europe from the 16th to the 18th centuries. Sporting massive artificial wings on their armor, these aristocratic warriors were among the most feared and cohesive cavalry forces in European history.],
+  [Here, Brian Hughes tells us about the Polish Winged Hussars.],
+  [A Hussar formation at the 1610 Battle of Klushino. By Szymon Boguszowicz.],
+  [Eastern Europe has a deep equestrian and cavalry tradition, due in part to its topography. Active from the 16th to the 18thcentury. The Winged Hussars showed a consistently remarkable ability to seemingly defy the odds snatching victory from otherwise imminent defeat.],
+  [Eastern Europe has a rich history and tradition of elite horsemanship. Much of the region is comprised of plains and flat grassland advantageous to horse rearing. Successive waves of elite horse warriors such as the Huns, Magyars, and Tartars had raided and settled the area at various times. Likewise, much of the warfare that defined this region throughout the Middle Ages and early modern era involved larger cavalry forces than the more heavily populated and more urbanized parts of Western Europe.],
+  [Hussars derive their name from the Hungarian “Huserones” and originated in the Kingdom of Hungary sometime in the late 15th century as a light cavalry force. The name later became incorporated by a whole host of Central and Eastern European countries such as Serbia, The Holy Roman Empire and Poland becoming renowned as some of the best light horse units in all of Europe.],
+  [The Polish Lithuanian Commonwealth was one of the premier states in Early Modern Europe. Engaging with a host of enemies mainly the Ottoman Turks, Swedes and Russians, a series of drastic military reforms were undergone to bolster and safeguard its territory and people as the state grew and became more vulnerable. These included but were not limited to modernizing land and naval forces and modifying its already prolific cavalry.],
+  [Drawing on the litany of pre-established equine traditions, the Winged Hussars as they became known drew their ranks from the upper classes and nobility and adapting their role into a heavy shock cavalry instead of the more traditional nimble light horse tactics of their predecessors.],
+  [Riding in tight formation these heavily armored horsemen could smash into enemy formations with lethal efficiency thus enabling infantry and lighter cavalry units to exploit the gaps and gain tactical advantages ensuring victory. The Winged Hussars displayed impressive capability in the diverse geographical and climatic conditions from which they operated.],
+  [Arms and Armor],
+  [The Winged Hussars were well armored, well equipped and rode expertly bred war horses. One reason in which their ranks were filled almost exclusively by nobles was the sheer cost of such expenditures.],
+  [Wings: The signature and iconic wings worn by the Hussars were fashioned out of feathers from a variety of raptor birds, mainly Eagle and Falcon. Originally the wings were placed on their saddles before being fastened onto the backs of their armor. The purpose was twofold. In an era of extravagant military arms and uniforms the Wings were visually impressive on parade grounds and intimidating foes. The Wings also may have produced an odd and terrifying din when the Hussars charged, frightening enemy soldiers and horses in the process.],
+  [Armor: Hussars were clad in heavy steel armor typical of the era and often sported exotic animal furs such as leopards and saddles decked out with fine silk and lace. Beneath their armor and hides Hussars typically donned red or crimson short coats called zupans with helmets encrusted with gems or plumed with exotic feathers. The Winged Hussars took great pride in their appearance on and off the battlefield.],
+  [Horses: Expensive warhorses typically Polish-Arabian breeds were the predominant mount used by the Winged Hussars. These horses were both incredibly strong as they could carry a heavily armored rider in addition to their great endurance with long marches ranging across a variety of terrain in and around Central and Eastern Europe.],
+  [Weapons: They were well trained, well-armed and capable of wielding a lance, (kopia) saber, (szabla) and various firearms with expert lethality. The Hussars could combat a variety of foes. From conventual infantry and cavalry units which defined 16th and 17th century European armies to the expert light cavalry of the Tatars.],
+  [Khlushino: One of the finest victories performed by the Winged Hussars was the Battle of Klushino fought on July 4th, 1610. The heavily outnumbered Polish-Lithuanian force of about 6,000 with the bulk of the army of 5,000 Winged Hussars crushed a Muscovite army of over 30,000. Over the course of a five-hour battle the Winged Hussars superior training, tactics, and troop cohesion made it possible to smash their adversaries’ lines, disintegrating their forces and routing them in the process.],
+  [Vienna: The Winged Hussars most renowned moment came in September 1683 at the Siege of Vienna. For weeks the Ottomans under Mustapha Pasha had been battering the “Golden Apple of Europe” coming closer to victory with each passing day. Finally, a coalition of predominantly Catholic Holy League Forces arrived to lift the Siege. John Sobieski King of Poland an experienced soldier led a contingent of roughly 4,000 Winged Hussars. Devising a plan Sobieski outflanked the Ottoman Camp and along with his Winged Hussars led what was possibly the largest cavalry charge in the history of Europe at the head of some twenty thousand horsemen devasting the Ottoman expeditionary force and relieving the city in the process.],
+  [The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
 ),
   insert-map: (:),
   word-count: 954,
@@ -197,68 +178,91 @@ several really productive 4 am YouTube holes of watching Avengers bloopers, ever
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A U.S. Civil War Spy in Europe: Henry Shelton Sanford],
   author: [George Levrier-Jones],
   source-name: [History in 28 Minutes],
   images: (),
   paragraphs: (
-  [class=""\> Who does not enjoy a good spy story? The Civil War, though fought on American soil, was also waged in drawing rooms, chancelleries, and counting houses across Europe. In that shadow war, few figures were more important—or more obscure—than Henry Shelton Sanford.],
-  [class=""\>Sanford was not the kind of man one would cast as a master spy. He did not resemble the polished, worldly intelligence officer of fiction. That was precisely why he was effective. Born in Connecticut to a prosperous family whose wealth came from manufacturing brass tacks, Sanford grew up comfortably connected. One of his ancestors had served as governor of the state. He attended Trinity College and studied in Germany, though he never graduated from either. What he lacked in formal credentials he made up for in money, mobility, and social access.],
-  [class=""\>At just twenty-four, Sanford entered diplomacy, appointed secretary to the American legation in St. Petersburg in 1847. A year later he moved to Frankfurt, and in 1849 to Paris, where he remained for five years, eventually rising to chargé d’affaires. In 1861 Abraham Lincoln named him minister to Belgium. His official portfolio included trade agreements, naturalization treaties, and consular arrangements such as the Scheldt Treaties of 1863, which governed customs duties and navigation rights on one of Europe’s most important commercial waterways. But Sanford’s formal responsibilities were the least important part of his job. His real assignment was counterespionage.],
-  [class=""\>What made Sanford valuable was not diplomacy but deniability. He was wealthy enough not to require a salary, socially connected enough to travel freely without raising suspicion, and unburdened by the technical minutiae that tied other diplomats to their desks. Like many ministers of the era, he was assumed to be a gentleman abroad—sightseeing, attending receptions, and occasionally reporting home. That assumption was his camouflage],
-  [class=""\>In reality, Sanford was one of the principal architects of the Union’s covert war in Europe. Secretary of State William H. Seward entrusted him with authority far exceeding his nominal rank. Sanford was permitted to travel freely across the Continent and into Britain. He was given access to a secret fund of roughly one million dollars—a staggering sum at the time—to finance intelligence gathering, influence, and interference. His mission was straightforward to describe and extraordinarily difficult to execute: prevent the Confederacy from acquiring ships, weapons, credit, and diplomatic recognition.],
-  [class=""\>Jefferson Davis and his government understood that they could not prevail in a prolonged war without foreign assistance. The American Revolution provided the model: French intervention had transformed rebellion into victory. Confederate leaders hoped Britain or France might play a similar role in 1862. Short of recognition, they needed rifles, cannon, powder, ships, and financing—resources Europe could supply in abundance if the Union blockade could be breached.],
-  [class=""\>Seward and Charles Francis Adams, the American minister in London, formed the official diplomatic front. Sanford was tasked with the unacknowledged work behind it. From Brussels, Paris, and London, he assembled a private intelligence service. In Britain, he employed a police detective who ran operatives in major ports and industrial centers. Shipyards, foundries, arms manufacturers, insurers, and brokers were watched closely for signs of Confederate activity.],
-  [class=""\>Identifying Confederate agents was rarely difficult. They were Americans from the seceded states, often with unmistakable accents and known loyalties. Some were serving Confederate officers; others were businessmen acting as intermediaries. The challenge was not knowing who they were, but discovering what they were doing.],
-  [class=""\>In a world without telephones or secure communications, conspiracies traveled on paper and wire. Letters moved through the post. Contracts were telegraphed. Shipping instructions passed between offices and ports. Sanford targeted all of it.],
-  [class=""\>Sanford’s agents bribed postal workers to copy or intercept Confederate correspondence. Telegraph clerks were paid to divert or decode messages. Clerks inside factories and shipyards were induced to hand over specifications, contracts, and delivery schedules. Couriers carried intelligence between Belgium, France, and Britain. At times, Sanford simply “borrowed” Confederate letters long enough to read them before returning them to circulation.],
-  [class=""\>Through business contacts, he tracked cotton shipments, arms purchases, and financial transactions. When necessary, he quietly pressured European firms not to deal with the South. The aim was not dramatic disruption but steady suffocation.],
-  [class=""\>Two Confederate operatives were of particular importance: Caleb Huse and James D. Bulloch. Huse, a West Point–trained officer and former chemistry instructor, served as the Confederacy’s principal arms buyer. Operating across Britain, Austria, Prussia, and beyond, he negotiated most of the weapons contracts that eventually supplied Southern armies. Bulloch oversaw naval procurement, including the construction of commerce raiders in British shipyards. One of them—the Alabama—would devastate U. S. merchant shipping before being sunk off Cherbourg.],
-  [class=""\>Sanford tracked both men closely. He fed intelligence to Adams in London, worked to delay or derail their transactions, and ensured that Washington knew when ships were likely to sail. When formal channels failed, less formal methods were sometimes employed. As Sanford joked to Seward in one letter, “accidents are numerous in the \[English\] Channel, you know.”],
-  [class=""\>Recognition of the Confederate government before 1863 was a central Southern objective. Envoys James Mason and John Slidell were dispatched to Britain and France, though their capture during the Trent Affair nearly triggered war. While Queen Victoria was personally hostile to a slaveholding republic, British politics were complicated. Liverpool merchants depended on Southern cotton. William Gladstone spoke sympathetically of Southern independence. French policy remained opportunistic.],
-  [class=""\>Seward responded with another weapon: influence. His instrument was Thurlow Weed, a veteran political operative, newspaper man, and longtime ally. Weed held no diplomatic title—by design. He could move through London and Paris as a private citizen, cultivating editors, financiers, and politicians while quietly countering Confederate propaganda.],
-  [class=""\>Weed arrived in Europe in late 1861. He subsidized friendly journalists, planted pro-Union stories, hosted salons and dinners, and gathered intelligence—especially regarding Confederate shipbuilding. Like Sanford, he carried funds and used them where persuasion alone was insufficient. If questioned, Seward could plausibly deny everything. Weed was merely a tourist. Sanford was merely a minister in Brussels. Adams remained the sole visible face of American diplomacy.],
-  [class=""\>Sanford’s influence operations extended far beyond Britain. By 1862 his network reached Belgium, France, Spain, Italy, and the German states. Journalists and editors were quietly supported to produce Union-friendly coverage. Articles prepared in Washington circulated abroad as “news.” When Confederate agents planted stories of their own, Sanford’s operatives countered them with rebuttals, leaks, or alternative narratives.],
-  [class=""\>Clergy were targeted as well. American ministers appealed to European priests and pastors, urging them not to grant moral legitimacy to a slaveholding republic. In Britain, Sanford’s agents worked through labor organizations, emphasizing free labor and the degradation of chattel slavery. Antislavery demonstrations were sometimes organized to appear spontaneous. On this terrain, the Confederacy was especially vulnerable.],
-  [class=""\>None of this resembled conventional diplomacy. By any reasonable standard, Sanford violated the norms of neutrality. Had Belgium chosen to protest, it would have been within its rights to demand his recall.],
-  [class=""\>Weed’s presence in Europe was unofficial; he did not hold a diplomatic title. If questioned, Seward could assert that Weed was merely a private citizen traveling abroad. However, in truth, Weed operated with the backing of the State Department, private funds, and political directives, rendering him a covert envoy in all but name. His role was designed to be deniable, which was the intention: Adams could maintain a legitimate front as the 'official' representative of U. S. diplomacy, while Weed undertook the clandestine tasks of influence and propaganda.],
-  [class=""\>Sanford’s network extended far beyond Britain. By 1862 it reached into Belgium, France, Spain, Italy, and the German states. Intelligence gathering was only one part of the enterprise. The more ambitious—and more dangerous—arm of his campaign was an organized effort to shape European public opinion.],
-  [class=""\>Sanford poured money into the press. Journalists and editors were quietly subsidized to produce stories favorable to the Union. At one point he even attempted to purchase a Belgian newspaper outright. Articles prepared in Washington were circulated abroad as “news.” When Confederate agents planted stories of their own, Sanford’s people countered them with rebuttals, leaks, or alternative narratives.],
-  [class=""\>Clergy were targeted as well. American ministers were sent to Europe to appeal to priests and pastors, urging them not to lend moral legitimacy to a slaveholding republic. In Britain, Sanford’s agents worked through labor organizations, emphasizing the dignity of free labor and the degradation of chattel slavery. Antislavery demonstrations were sometimes organized to appear spontaneous. On this ground the Confederacy was especially vulnerable: however much cotton mattered, slavery repelled too many Europeans for Southern diplomacy to overcome.],
-  [class=""\>None of this resembled conventional diplomacy. When France had attempted similar manipulation of American politics during the 1790s, it had triggered the Genet Affair and nearly wrecked relations between Paris and Washington. By any reasonable standard, Sanford was violating the norms of neutrality and the limits placed on foreign ministers. Had Belgium chosen to protest, it would have been within its rights to demand his recall.],
-  [class=""\>As the Union’s military position deteriorated after the failed Peninsula Campaign, Seward feared that Britain and France might push for mediation—an outcome that would have legitimized Confederate independence. Thurlow Weed was therefore sent back across the Atlantic. His mission was to stiffen Adams’s hand by quietly lobbying elites, feeding sympathetic journalists, and using money and charm to blunt Southern influence. Weed reported that European opinion was deeply divided, and that Confederate agents were tireless in their efforts. That only confirmed the necessity of the counteroffensive Sanford was running.],
-  [class=""\> I am determined, if it is possible, to get at the operations of these \[Confederate\] “commissioners” through their own papers, and the man specially occupied with that knows his business. How it will be done whether through a pretty mistress or an intelligent servant or a spying landlord is nobody’s business; but I lay great stress on getting you full official accounts of their operations here!],
-  [class=""\> I intend on putting an agent or two on my own account on their fellow in Paris. The official agents don’t do all I ask them to and the Chef de Police1 has promised me one of their retired agents in the political department who shall be in relations with the office but not accountable to them for what I set him at.],
-  [class=""\> If you do not approve my way of proceeding tell me so frankly. I go on the doctrine that in war as in love, everything is fair that will lead to success!.”],
-  [class=""\>This was not ambiguous. Sanford was telling the Secretary of State that he intended to use bribery, infiltration, mail theft, and sexual entrapment to penetrate Confederate operations—and that it would be expensive.],
-  [class=""\>Through foreign nationals, Sanford intercepted correspondence, diverted contracts, identified shipbuilders, and occasionally sabotaged vessels. These acts were illegal under local law. Sanford enjoyed diplomatic immunity; his agents did not. Corruption was intrinsic to the system.],
-  [class=""\>“Sexpionage,” as later generations would call it, was hardly novel. The Civil War had its own female operatives—Rose Greenhow, Belle Boyd, Ginnie Moon—who used intimacy to extract secrets. Sanford’s casual reference to “a pretty mistress” shows he understood the same tools were available to him.],
-  [class=""\>There is substantial evidence indicating that the United States Government engaged in covert counterespionage through a network involving bribery, as well as mail and wire fraud, utilizing foreign operatives during the Civil War. Secretary of State William H. Seward, likely with the knowledge of President Lincoln, oversaw an intelligence and covert operation in Europe. His operations were conducted through individuals such as Thurlow Weed, Charles Francis Adams, and Henry Shelton Sanford, who served as the U. S. minister to Belgium. Sanford, in particular, was responsible for managing secret surveillance, courier networks, and propaganda efforts aimed at undermining Confederate diplomacy and arms procurement in Europe. 21st Century readers are likely not particularly surprised to learn this.],
-  [class=""\>Had Sanford’s network been exposed, the diplomatic consequences could have been severe. Britain and France maintained official neutrality; revelations of U. S. interference with correspondence, commerce, or the press could have triggered expulsions or demands for recall. Belgium, whose neutrality required delicate balance, might have objected strongly to its territory being used for clandestine operations.],
-  [class=""\>Yet the Confederacy was engaged in its own covert diplomacy and arms procurement. Had Sanford’s actions been revealed, Washington would have argued—credibly—that it was countering Southern subversion. The risk was real, but the calculation proved correct.],
-  [class=""\>If European governments were to uncover U. S. interference with private or diplomatic correspondence, it would be regarded as a significant violation of sovereignty. This could have led to the expulsion of U. S. diplomats (or at the very least, Sanford himself).],
-  [class=""\>Both Britain and France maintained official neutrality. Following the Trent Affair, U. S. diplomacy was cast into doubt. Should Sanford’s bribery, espionage against Confederate agents, and the use of press propaganda have been exposed, London and Paris might have charged the U. S. with breaching their neutrality. This could have jeopardized Adams’ meticulous diplomacy in London, potentially increasing the likelihood of recognizing the Confederacy. Sanford’s host nation might have objected to the use of its territory for clandestine operations.],
-  [class=""\>The damage to the Union’s moral standing could have been catastrophic for global opinion. The Lincoln administration framed the war as a moral battle against slavery and insurrection. If it were revealed that the U. S. was conducting covert influence operations—such as planting articles in newspapers, financing agents, or surveilling Confederate sympathizers—it could have undermined that moral assertion, portraying the Union as Machiavellian rather than principled. There would have been a significant risk to U. S. agents and sympathizers operating overseas. If Sanford’s informants and intermediaries were to be exposed, they could have faced arrest or expulsion. This situation would have severely hindered the U. S. capacity to monitor Confederate arms acquisitions and blockade runners.],
-  [class=""\>Consequently, the immediate repercussions would have included diplomatic embarrassment and a potential loss of influence in Europe. Should the Confederates’ situation have improved, it is uncertain whether Britain’s political stance might have shifted. They were undertaking a considerable risk, and it ultimately proved beneficial.],
-  [class=""\>Following the war, Union leaders minimized or overlooked Sanford’s covert involvement. The official narrative highlighted Lincoln’s moral clarity and Adams’ diplomatic resolve, rather than the obscure tactics that underpinned them. Thus, the justification was both practical at the time and discreetly suppressed afterward to maintain the Union’s image as a principled power.],
-  [class=""\>Henry Shelton Sanford never commanded an army and never signed a famous treaty. His war was fought in post offices, telegraph rooms, shipyards, and newspaper offices. Through bribery, surveillance, and influence, he helped deny the Confederacy the foreign support it desperately needed. Had his activities been exposed, they might have damaged the Union’s standing abroad. That they remained secret helped preserve it.],
-  [class=""\> The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
-  [class=""\>U. S. Department of State. Papers Relating to Foreign Affairs (Annual volumes, esp. 1861–1865).
+  [Who does not enjoy a good spy story? The Civil War, though fought on American soil, was also waged in drawing rooms, chancelleries, and counting houses across Europe. In that shadow war, few figures were more important—or more obscure—than Henry Shelton Sanford.],
+  [Lloyd W Klein explains.],
+  [Henry Shelton Sanford.],
+  [Sanford was not the kind of man one would cast as a master spy. He did not resemble the polished, worldly intelligence officer of fiction. That was precisely why he was effective. Born in Connecticut to a prosperous family whose wealth came from manufacturing brass tacks, Sanford grew up comfortably connected. One of his ancestors had served as governor of the state. He attended Trinity College and studied in Germany, though he never graduated from either. What he lacked in formal credentials he made up for in money, mobility, and social access.],
+  [At just twenty-four, Sanford entered diplomacy, appointed secretary to the American legation in St. Petersburg in 1847. A year later he moved to Frankfurt, and in 1849 to Paris, where he remained for five years, eventually rising to chargé d’affaires. In 1861 Abraham Lincoln named him minister to Belgium. His official portfolio included trade agreements, naturalization treaties, and consular arrangements such as the Scheldt Treaties of 1863, which governed customs duties and navigation rights on one of Europe’s most important commercial waterways. But Sanford’s formal responsibilities were the least important part of his job. His real assignment was counterespionage.],
+  [What made Sanford valuable was not diplomacy but deniability. He was wealthy enough not to require a salary, socially connected enough to travel freely without raising suspicion, and unburdened by the technical minutiae that tied other diplomats to their desks. Like many ministers of the era, he was assumed to be a gentleman abroad—sightseeing, attending receptions, and occasionally reporting home. That assumption was his camouflage],
+  [In reality, Sanford was one of the principal architects of the Union’s covert war in Europe. Secretary of State William H. Seward entrusted him with authority far exceeding his nominal rank. Sanford was permitted to travel freely across the Continent and into Britain. He was given access to a secret fund of roughly one million dollars—a staggering sum at the time—to finance intelligence gathering, influence, and interference. His mission was straightforward to describe and extraordinarily difficult to execute: prevent the Confederacy from acquiring ships, weapons, credit, and diplomatic recognition.],
+  [Jefferson Davis and his government understood that they could not prevail in a prolonged war without foreign assistance. The American Revolution provided the model: French intervention had transformed rebellion into victory. Confederate leaders hoped Britain or France might play a similar role in 1862. Short of recognition, they needed rifles, cannon, powder, ships, and financing—resources Europe could supply in abundance if the Union blockade could be breached.],
+  [Seward and Charles Francis Adams, the American minister in London, formed the official diplomatic front. Sanford was tasked with the unacknowledged work behind it. From Brussels, Paris, and London, he assembled a private intelligence service. In Britain, he employed a police detective who ran operatives in major ports and industrial centers. Shipyards, foundries, arms manufacturers, insurers, and brokers were watched closely for signs of Confederate activity.],
+  [Identifying Confederate agents was rarely difficult. They were Americans from the seceded states, often with unmistakable accents and known loyalties. Some were serving Confederate officers; others were businessmen acting as intermediaries. The challenge was not knowing who they were, but discovering what they were doing.],
+  [In a world without telephones or secure communications, conspiracies traveled on paper and wire. Letters moved through the post. Contracts were telegraphed. Shipping instructions passed between offices and ports. Sanford targeted all of it.],
+  [Sanford’s agents bribed postal workers to copy or intercept Confederate correspondence. Telegraph clerks were paid to divert or decode messages. Clerks inside factories and shipyards were induced to hand over specifications, contracts, and delivery schedules. Couriers carried intelligence between Belgium, France, and Britain. At times, Sanford simply “borrowed” Confederate letters long enough to read them before returning them to circulation.],
+  [Through business contacts, he tracked cotton shipments, arms purchases, and financial transactions. When necessary, he quietly pressured European firms not to deal with the South. The aim was not dramatic disruption but steady suffocation.],
+  [Two Confederate operatives were of particular importance: Caleb Huse and James D. Bulloch. Huse, a West Point–trained officer and former chemistry instructor, served as the Confederacy’s principal arms buyer. Operating across Britain, Austria, Prussia, and beyond, he negotiated most of the weapons contracts that eventually supplied Southern armies. Bulloch oversaw naval procurement, including the construction of commerce raiders in British shipyards. One of them—the Alabama—would devastate U. S. merchant shipping before being sunk off Cherbourg.],
+  [Sanford tracked both men closely. He fed intelligence to Adams in London, worked to delay or derail their transactions, and ensured that Washington knew when ships were likely to sail. When formal channels failed, less formal methods were sometimes employed. As Sanford joked to Seward in one letter, “accidents are numerous in the \[English\] Channel, you know.”],
+  [Influence and the Press],
+  [Recognition of the Confederate government before 1863 was a central Southern objective. Envoys James Mason and John Slidell were dispatched to Britain and France, though their capture during the Trent Affair nearly triggered war. While Queen Victoria was personally hostile to a slaveholding republic, British politics were complicated. Liverpool merchants depended on Southern cotton. William Gladstone spoke sympathetically of Southern independence. French policy remained opportunistic.],
+  [Seward responded with another weapon: influence. His instrument was Thurlow Weed, a veteran political operative, newspaper man, and longtime ally. Weed held no diplomatic title—by design. He could move through London and Paris as a private citizen, cultivating editors, financiers, and politicians while quietly countering Confederate propaganda.],
+  [Weed arrived in Europe in late 1861. He subsidized friendly journalists, planted pro-Union stories, hosted salons and dinners, and gathered intelligence—especially regarding Confederate shipbuilding. Like Sanford, he carried funds and used them where persuasion alone was insufficient. If questioned, Seward could plausibly deny everything. Weed was merely a tourist. Sanford was merely a minister in Brussels. Adams remained the sole visible face of American diplomacy.],
+  [Sanford’s influence operations extended far beyond Britain. By 1862 his network reached Belgium, France, Spain, Italy, and the German states. Journalists and editors were quietly supported to produce Union-friendly coverage. Articles prepared in Washington circulated abroad as “news.” When Confederate agents planted stories of their own, Sanford’s operatives countered them with rebuttals, leaks, or alternative narratives.],
+  [Clergy were targeted as well. American ministers appealed to European priests and pastors, urging them not to grant moral legitimacy to a slaveholding republic. In Britain, Sanford’s agents worked through labor organizations, emphasizing free labor and the degradation of chattel slavery. Antislavery demonstrations were sometimes organized to appear spontaneous. On this terrain, the Confederacy was especially vulnerable.],
+  [None of this resembled conventional diplomacy. By any reasonable standard, Sanford violated the norms of neutrality. Had Belgium chosen to protest, it would have been within its rights to demand his recall.],
+  [How Secret Was It?],
+  [Weed’s presence in Europe was unofficial; he did not hold a diplomatic title. If questioned, Seward could assert that Weed was merely a private citizen traveling abroad. However, in truth, Weed operated with the backing of the State Department, private funds, and political directives, rendering him a covert envoy in all but name. His role was designed to be deniable, which was the intention: Adams could maintain a legitimate front as the 'official' representative of U. S. diplomacy, while Weed undertook the clandestine tasks of influence and propaganda.],
+  [Thurlow Weed.],
+  [Sanford’s network extended far beyond Britain. By 1862 it reached into Belgium, France, Spain, Italy, and the German states. Intelligence gathering was only one part of the enterprise. The more ambitious—and more dangerous—arm of his campaign was an organized effort to shape European public opinion.],
+  [Sanford poured money into the press. Journalists and editors were quietly subsidized to produce stories favorable to the Union. At one point he even attempted to purchase a Belgian newspaper outright. Articles prepared in Washington were circulated abroad as “news.” When Confederate agents planted stories of their own, Sanford’s people countered them with rebuttals, leaks, or alternative narratives.],
+  [Clergy were targeted as well. American ministers were sent to Europe to appeal to priests and pastors, urging them not to lend moral legitimacy to a slaveholding republic. In Britain, Sanford’s agents worked through labor organizations, emphasizing the dignity of free labor and the degradation of chattel slavery. Antislavery demonstrations were sometimes organized to appear spontaneous. On this ground the Confederacy was especially vulnerable: however much cotton mattered, slavery repelled too many Europeans for Southern diplomacy to overcome.],
+  [None of this resembled conventional diplomacy. When France had attempted similar manipulation of American politics during the 1790s, it had triggered the Genet Affair and nearly wrecked relations between Paris and Washington. By any reasonable standard, Sanford was violating the norms of neutrality and the limits placed on foreign ministers. Had Belgium chosen to protest, it would have been within its rights to demand his recall.],
+  [As the Union’s military position deteriorated after the failed Peninsula Campaign, Seward feared that Britain and France might push for mediation—an outcome that would have legitimized Confederate independence. Thurlow Weed was therefore sent back across the Atlantic. His mission was to stiffen Adams’s hand by quietly lobbying elites, feeding sympathetic journalists, and using money and charm to blunt Southern influence. Weed reported that European opinion was deeply divided, and that Confederate agents were tireless in their efforts. That only confirmed the necessity of the counteroffensive Sanford was running.],
+  [What did President Lincoln Know About All of This?],
+  [Sanford was not a rogue operator. He worked with the knowledge of Adams and under the direction of Seward. The remaining question is how far that knowledge extended.],
+  [A letter from Sanford to Seward, dated July 4, 1861, provides an unambiguous answer. It survives in the Lincoln Papers at the Library of Congress.],
+  [From Henry S. Sanford to William H. Seward, July 4, 1861, Abraham Lincoln papers, Library of Congress, http:\/\/www.loc.gov/resource/mal.1064500 .],
+  [“I hope you will act on the suggestion contained in the accompanying letter to get Congress to provide you a larger Secret Service Fund.],
+  [I am determined, if it is possible, to get at the operations of these \[Confederate\] “commissioners” through their own papers, and the man specially occupied with that knows his business. How it will be done whether through a pretty mistress or an intelligent servant or a spying landlord is nobody’s business; but I lay great stress on getting you full official accounts of their operations here!],
+  [It will be expensive. Your £600 will not last long if this is continued for a considerable period, but I count on your increasing it as wanted.],
+  [I intend on putting an agent or two on my own account on their fellow in Paris. The official agents don’t do all I ask them to and the Chef de Police1 has promised me one of their retired agents in the political department who shall be in relations with the office but not accountable to them for what I set him at.],
+  [If you do not approve my way of proceeding tell me so frankly. I go on the doctrine that in war as in love, everything is fair that will lead to success!.”],
+  [This was not ambiguous. Sanford was telling the Secretary of State that he intended to use bribery, infiltration, mail theft, and sexual entrapment to penetrate Confederate operations—and that it would be expensive.],
+  [Sanford was explicitly proposing bribery, infiltration, mail theft, and sexual entrapment—and requesting additional funds to do so. Seward did not object.],
+  [Through foreign nationals, Sanford intercepted correspondence, diverted contracts, identified shipbuilders, and occasionally sabotaged vessels. These acts were illegal under local law. Sanford enjoyed diplomatic immunity; his agents did not. Corruption was intrinsic to the system.],
+  [“Sexpionage,” as later generations would call it, was hardly novel. The Civil War had its own female operatives—Rose Greenhow, Belle Boyd, Ginnie Moon—who used intimacy to extract secrets. Sanford’s casual reference to “a pretty mistress” shows he understood the same tools were available to him.],
+  [There is substantial evidence indicating that the United States Government engaged in covert counterespionage through a network involving bribery, as well as mail and wire fraud, utilizing foreign operatives during the Civil War. Secretary of State William H. Seward, likely with the knowledge of President Lincoln, oversaw an intelligence and covert operation in Europe. His operations were conducted through individuals such as Thurlow Weed, Charles Francis Adams, and Henry Shelton Sanford, who served as the U. S. minister to Belgium. Sanford, in particular, was responsible for managing secret surveillance, courier networks, and propaganda efforts aimed at undermining Confederate diplomacy and arms procurement in Europe. 21st Century readers are likely not particularly surprised to learn this.],
+  [Had Sanford’s network been exposed, the diplomatic consequences could have been severe. Britain and France maintained official neutrality; revelations of U. S. interference with correspondence, commerce, or the press could have triggered expulsions or demands for recall. Belgium, whose neutrality required delicate balance, might have objected strongly to its territory being used for clandestine operations.],
+  [Yet the Confederacy was engaged in its own covert diplomacy and arms procurement. Had Sanford’s actions been revealed, Washington would have argued—credibly—that it was countering Southern subversion. The risk was real, but the calculation proved correct.],
+  [If European governments were to uncover U. S. interference with private or diplomatic correspondence, it would be regarded as a significant violation of sovereignty. This could have led to the expulsion of U. S. diplomats (or at the very least, Sanford himself).],
+  [Both Britain and France maintained official neutrality. Following the Trent Affair, U. S. diplomacy was cast into doubt. Should Sanford’s bribery, espionage against Confederate agents, and the use of press propaganda have been exposed, London and Paris might have charged the U. S. with breaching their neutrality. This could have jeopardized Adams’ meticulous diplomacy in London, potentially increasing the likelihood of recognizing the Confederacy. Sanford’s host nation might have objected to the use of its territory for clandestine operations.],
+  [The damage to the Union’s moral standing could have been catastrophic for global opinion. The Lincoln administration framed the war as a moral battle against slavery and insurrection. If it were revealed that the U. S. was conducting covert influence operations—such as planting articles in newspapers, financing agents, or surveilling Confederate sympathizers—it could have undermined that moral assertion, portraying the Union as Machiavellian rather than principled. There would have been a significant risk to U. S. agents and sympathizers operating overseas. If Sanford’s informants and intermediaries were to be exposed, they could have faced arrest or expulsion. This situation would have severely hindered the U. S. capacity to monitor Confederate arms acquisitions and blockade runners.],
+  [Consequently, the immediate repercussions would have included diplomatic embarrassment and a potential loss of influence in Europe. Should the Confederates’ situation have improved, it is uncertain whether Britain’s political stance might have shifted. They were undertaking a considerable risk, and it ultimately proved beneficial.],
+  [Following the war, Union leaders minimized or overlooked Sanford’s covert involvement. The official narrative highlighted Lincoln’s moral clarity and Adams’ diplomatic resolve, rather than the obscure tactics that underpinned them. Thus, the justification was both practical at the time and discreetly suppressed afterward to maintain the Union’s image as a principled power.],
+  [Henry Shelton Sanford never commanded an army and never signed a famous treaty. His war was fought in post offices, telegraph rooms, shipyards, and newspaper offices. Through bribery, surveillance, and influence, he helped deny the Confederacy the foreign support it desperately needed. Had his activities been exposed, they might have damaged the Union’s standing abroad. That they remained secret helped preserve it.],
+  [The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
+  [Primary and secondary on Henry Shelton Sanford’s covert operations, Seward’s diplomacy, and Union intelligence in Europe:],
+  [Sanford, Henry Shelton. Papers of Henry Shelton Sanford, 1841–1891. Library of Congress Manuscript Division.
+– Contains his dispatches from Brussels, including reports on Confederate activities and his covert countermeasures.],
+  [U. S. Department of State. Papers Relating to Foreign Affairs (Annual volumes, esp. 1861–1865).
 – Includes Sanford’s and Adams’ correspondence with Seward; you can see how carefully they worded reports to obscure covert activities.],
-  [class=""\>Jones, Howard. Blue and Gray Diplomacy: A History of Union and Confederate Foreign Relations. Chapel Hill: University of North Carolina Press, 2010.
+  [Charles Francis Adams. The Memoirs of Charles Francis Adams, 1835–1917.
+– Adams reflects on his role in Britain and occasionally mentions the behind-the-scenes pressures, though cautiously.],
+  [Jones, Howard. Blue and Gray Diplomacy: A History of Union and Confederate Foreign Relations. Chapel Hill: University of North Carolina Press, 2010.
 – Excellent overview of both Union and Confederate diplomacy; details Sanford’s activities in Belgium and the broader intelligence struggle.],
-  [class=""\>Thomas, Benjamin P. & Hyman, Harold M. Stanton: The Life and Times of Lincoln’s Secretary of War. New York: Knopf, 1962.
+  [Merrill, Walter M. Seward and the Balance of Power. Ithaca: Cornell University Press, 1967.
+– Classic study of Seward’s statecraft, including his reliance on shadow diplomacy and intelligence gathering.],
+  [Thomas, Benjamin P. & Hyman, Harold M. Stanton: The Life and Times of Lincoln’s Secretary of War. New York: Knopf, 1962.
 – While focused on Stanton, it provides context on the Union’s broader intelligence operations, including coordination with diplomats like Sanford.],
-  [class=""\>Hubbell, John T. “The Northern Response to Confederate Diplomacy: The Sanford Missions.” Civil War History 13, no. 3 (1967): 201–218.
+  [Hubbell, John T. “The Northern Response to Confederate Diplomacy: The Sanford Missions.” Civil War History 13, no. 3 (1967): 201–218.
 – A focused scholarly article on Sanford’s specific covert operations in Belgium.],
-  [class=""\>Ferris, Norman B. Desperate Diplomacy: William H. Seward’s Foreign Policy, 1861. Knoxville: University of Tennessee Press, 1976.
+  [Ferris, Norman B. Desperate Diplomacy: William H. Seward’s Foreign Policy, 1861. Knoxville: University of Tennessee Press, 1976.
 – Analyzes Seward’s readiness to bend norms and how he used covert measures to protect the Union from recognition crises.],
-  [class=""\>Elliott, Mark R. Color-Blind Justice: Albion Tourgée and the Quest for Racial Equality from the Civil War to Plessy v. Ferguson. Oxford: Oxford University Press, 2006.
+  [Elliott, Mark R. Color-Blind Justice: Albion Tourgée and the Quest for Racial Equality from the Civil War to Plessy v. Ferguson. Oxford: Oxford University Press, 2006.
 – Though focused on Tourgée, it briefly discusses Union propaganda abroad and its tension with the Union’s moral message.],
+  [Klein, Lloyd W. George Alfred Trenholm. https:\/\/www.historyisnowmagazine.com/blog/tag/George+Alfred+Trenholm],
+  [References for Weed’s Missions],
+  [·       Glyndon Van Deusen, Thurlow Weed: Wizard of the Lobby (1947) — detailed account of his European missions.],
+  [·       Howard Jones, Blue and Gray Diplomacy (2010) — situates Weed’s role in the broader Union diplomatic and covert strategy.],
+  [·       Norman B. Ferris, Desperate Diplomacy: William H. Seward’s Foreign Policy, 1861 (1976) — covers Weed’s involvement during the Trent Affair.],
+  [·       U. S. State Department, Papers Relating to Foreign Affairs (1861–62) — includes indirect references to Weed’s activities, though sanitized.],
 ),
   insert-map: (:),
   word-count: 3102,
@@ -266,30 +270,30 @@ several really productive 4 am YouTube holes of watching Avengers bloopers, ever
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [David Livingstone - An Inspiring Victorian],
   author: [George Levrier-Jones],
   source-name: [History in 28 Minutes],
   images: (),
   paragraphs: (
-  [class=""\> David Livingstone stands as one of the most celebrated figures of the Victorian age, a missionary, explorer, and abolitionist whose name became synonymous with Africa's vast, unmapped interior. Born on the 19th of March, 1813, in Blantyre, Scotland, Livingstone's early life was one of humble beginnings. The second of seven children, he grew up in a small tenement room above a cotton mill where his father worked as a tea salesman and Sunday school teacher. From the age of ten, Livingstone himself worked twelve-hour shifts at the mill, his small wages helping to support the family. Yet even amid such hardship, he displayed an unrelenting thirst for learning, studying Latin and theology late into the night with the aid of a single flickering candle. His self-discipline and curiosity earned him a place at Anderson's University in Glasgow, where he trained in both medicine and theology. It was during this time that he became inspired by the writings and appeals of the London Missionary Society (LMS), whose vision of combining medical work with Christian mission would become the cornerstone of his life's endeavor.],
-  [class=""\>In 1840, Livingstone was ordained as a missionary doctor under the LMS and sailed for Africa, a continent largely unknown to Europeans beyond the coastal regions. His first posting was in the Bechuana country (modern-day Botswana), where he worked alongside the veteran missionary Robert Moffat. There, Livingstone quickly distinguished himself not only for his medical skills and fluency in local languages but also for his belief in establishing missions far inland, away from European colonial influences. His early travels introduced him to the harsh realities of African geography and the challenges of crossing vast deserts such as the Kalahari. Livingstone's marriage to Moffat's daughter, Mary, in 1845 marked the beginning of a partnership often tested by the dangers of exploration and illness.],
-  [class=""\>Livingstone's first great achievement came in 1849 when he crossed the Kalahari Desert to reach Lake Ngami, a body of water previously unknown to Europeans. His reports of this journey captured the imagination of the British public, eager for tales of adventure and discovery. Determined to find new routes for legitimate trade as an alternative to the brutal slave routes that scarred the continent, Livingstone pushed further north. Between 1851 and 1856, he traversed thousands of miles, becoming the first European to cross the African continent from west to east. His expedition from Luanda on the Atlantic coast to Quelimane on the Indian Ocean was a feat of endurance that won him worldwide fame.],
-  [class=""\>It was during these years that Livingstone made one of his most famous discoveries: the great waterfall on the Zambezi River, which he named Victoria Falls in honor of Queen Victoria. The native name, Mosi-oa-Tunya—"The Smoke That Thunders"—he preserved in his writings, noting its grandeur and spiritual significance to local peoples. His detailed journals and maps from this period were meticulously kept, later forming the basis for his book Missionary Travels and Researches in South Africa (1857), a major publication that enthralled readers and established his reputation as both a scientist and a man of faith. The Royal Geographical Society awarded him its gold medal, and his observations contributed significantly to the European understanding of African geography, geology, and ethnography.],
-  [class=""\>Livingstone's later expeditions, particularly the Zambezi Expedition (1858–1864), were less successful but no less ambitious. Appointed by the British government to explore the navigability of the Zambezi River and its tributaries, he hoped to open up routes for trade and Christian missions that would undermine the slave trade. However, the journey was plagued by disease, logistical failure, and tragedy, including the death of his wife Mary from malaria in 1862. Despite these setbacks, his scientific work remained meticulous. He recorded flora, fauna, and mineral deposits, and his notebooks, many of which survive in archives such as the National Library of Scotland bear witness to a disciplined observer driven by both humanitarian and scientific motives.],
-  [class=""\>In the later years of his life, Livingstone became increasingly preoccupied with finding the source of the Nile, a mystery that had fascinated explorers for centuries. His travels took him deep into Central Africa, where he lost contact with the outside world for several years. Rumors of his death circulated widely in Europe until, in 1871, the Welsh-born American journalist and explorer Henry Morton Stanley was dispatched by the New York Herald to find him. Stanley's long and arduous search ended in the town of Ujiji on the shores of Lake Tanganyika, where he greeted the weary, bearded missionary with the now-legendary words, "Dr. Livingstone, I presume?"],
-  [class=""\>The meeting between Livingstone and Stanley became one of the most famous encounters in exploration history. Livingstone, though weakened by illness and years of hardship, was still resolute in his mission. Stanley, impressed by the older man's determination and moral conviction, provided supplies and encouragement. The two men explored parts of Lake Tanganyika together before Stanley returned to the coast with news that Livingstone was alive. Stanley's own life, though often overshadowed by this single encounter, was remarkable. Born John Rowlands in Denbigh, Wales, in 1841, he endured a harsh childhood before emigrating to the United States, where he served as a soldier, sailor, and journalist. His transformation into Henry Morton Stanley came after being adopted by a wealthy merchant of that name. His later explorations, including the charting of the Congo River, would establish him as one of the most controversial and driven explorers of the 19th century.],
-  [class=""\>David Livingstone, however, never returned home. His final years were spent in relentless pursuit of the Nile's source, often under conditions of extreme suffering. His final journals, preserved on fragile paper and sometimes written in berry juice when ink ran out, reveal both his physical decline and his enduring spiritual faith. On the 1st of May, 1873, he died in the village of Chitambo (in present-day Zambia), likely from malaria and dysentery. His African attendants, loyal to the end, buried his heart beneath a tree at the site and carried his embalmed body over a thousand miles to the coast. From there, his remains were returned to Britain and interred in Westminster Abbey, where he was honored as both a national hero and a symbol of humanitarian courage.],
-  [class=""\>The documents, letters, and diaries Livingstone left behind remain invaluable to historians. They not only chronicle a vast and challenging period of exploration but also offer rare insight into the cultural, geographical, and ethical dimensions of 19th-century Africa. Modern projects such as the "Livingstone Online" digital archive have preserved and analyzed these records, revealing details of his linguistic studies, medical observations, and even his evolving views on imperialism and slavery.],
-  [class=""\>David Livingstone's legacy endures not simply as that of a man who charted rivers and crossed continents, but as one who sought to bring moral reform to a world divided by greed and ignorance. His life's work combined faith, science, and compassion, leaving a mark that transcended geography. The image of Livingstone emaciated, resolute, and holding fast to his ideals in the heart of Africa became a powerful emblem of the Victorian spirit of exploration and remains an enduring chapter in the intertwined histories of Britain and Africa.],
-  [class=""\>David Livingstone's life formed a remarkable reflection of the transformative power of perseverance, conviction, and moral purpose. Emerging from poverty in industrial Scotland, he fashioned himself through relentless study and unyielding discipline into one of the most influential figures of the 19th century. His journeys across Africa created some of the most significant geographical and scientific records of his age, expanding European understanding of a continent too often approached with ignorance or prejudice. Yet Livingstone's work was never solely about mapping rivers or tracing mountain chains. It was underpinned by a profound humanitarian mission: to challenge the slave trade, to encourage what he called "legitimate commerce," and to foster cross-cultural understanding at a time when imperial attitudes frequently bred exploitation rather than empathy.],
-  [class=""\>Though his later expeditions were marked by hardship, loss, and controversy, Livingstone's commitment to his principles never wavered. His meticulous notes, journals, and correspondence reveal a man constantly searching for knowledge, for justice, for the elusive headwaters of the Nile, and for ways to improve the lives of the people he encountered. These documents, preserved today in archives and digital collections, allow modern readers to glimpse the complexity of his character: a scientist shaped by faith, a missionary shaped by science, and an explorer shaped by an abiding respect for the African landscapes and communities that defined his career.],
-  [class=""\>His celebrated meeting with Henry Morton Stanley, and the deeply human story behind it, further cemented his image in the Victorian imagination but it was Livingstone's death, and the extraordinary devotion of his African companions who carried his body across vast distances that most clearly demonstrated the depth of the relationships he forged. In life and in death, he crossed boundaries of culture and geography that few Europeans of his era attempted to bridge.],
-  [class=""\>Ultimately, David Livingstone stands not only as a pioneer of exploration but as a symbol of a broader moral struggle. His efforts against the slave trade, his insistence on recording African voices and customs with respect, and his belief that knowledge could serve humanitarian ends distinguish him from many of his contemporaries. While modern interpretations rightly place his achievements within the wider context of imperial history, his intentions and contributions remain significant and enduring. His story continues to resonate because it speaks to universal themes: resilience in the face of adversity, integrity in purpose, and the pursuit of understanding across cultural divides. In this way, Livingstone's legacy extends far beyond the maps he drew or the rivers he traced, it endures as a reminder of the profound impact one determined individual can have on the course of history.],
-  [class=""\> The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
+  [David Livingstone stands as one of the most celebrated figures of the Victorian age, a missionary, explorer, and abolitionist whose name became synonymous with Africa's vast, unmapped interior. Born on the 19th of March, 1813, in Blantyre, Scotland, Livingstone's early life was one of humble beginnings. The second of seven children, he grew up in a small tenement room above a cotton mill where his father worked as a tea salesman and Sunday school teacher. From the age of ten, Livingstone himself worked twelve-hour shifts at the mill, his small wages helping to support the family. Yet even amid such hardship, he displayed an unrelenting thirst for learning, studying Latin and theology late into the night with the aid of a single flickering candle. His self-discipline and curiosity earned him a place at Anderson's University in Glasgow, where he trained in both medicine and theology. It was during this time that he became inspired by the writings and appeals of the London Missionary Society (LMS), whose vision of combining medical work with Christian mission would become the cornerstone of his life's endeavor.],
+  [Terry Bailey explains.],
+  [David Livingstone in 1864.],
+  [In 1840, Livingstone was ordained as a missionary doctor under the LMS and sailed for Africa, a continent largely unknown to Europeans beyond the coastal regions. His first posting was in the Bechuana country (modern-day Botswana), where he worked alongside the veteran missionary Robert Moffat. There, Livingstone quickly distinguished himself not only for his medical skills and fluency in local languages but also for his belief in establishing missions far inland, away from European colonial influences. His early travels introduced him to the harsh realities of African geography and the challenges of crossing vast deserts such as the Kalahari. Livingstone's marriage to Moffat's daughter, Mary, in 1845 marked the beginning of a partnership often tested by the dangers of exploration and illness.],
+  [Livingstone's first great achievement came in 1849 when he crossed the Kalahari Desert to reach Lake Ngami, a body of water previously unknown to Europeans. His reports of this journey captured the imagination of the British public, eager for tales of adventure and discovery. Determined to find new routes for legitimate trade as an alternative to the brutal slave routes that scarred the continent, Livingstone pushed further north. Between 1851 and 1856, he traversed thousands of miles, becoming the first European to cross the African continent from west to east. His expedition from Luanda on the Atlantic coast to Quelimane on the Indian Ocean was a feat of endurance that won him worldwide fame.],
+  [It was during these years that Livingstone made one of his most famous discoveries: the great waterfall on the Zambezi River, which he named Victoria Falls in honor of Queen Victoria. The native name, Mosi-oa-Tunya—"The Smoke That Thunders"—he preserved in his writings, noting its grandeur and spiritual significance to local peoples. His detailed journals and maps from this period were meticulously kept, later forming the basis for his book Missionary Travels and Researches in South Africa (1857), a major publication that enthralled readers and established his reputation as both a scientist and a man of faith. The Royal Geographical Society awarded him its gold medal, and his observations contributed significantly to the European understanding of African geography, geology, and ethnography.],
+  [Livingstone's later expeditions, particularly the Zambezi Expedition (1858–1864), were less successful but no less ambitious. Appointed by the British government to explore the navigability of the Zambezi River and its tributaries, he hoped to open up routes for trade and Christian missions that would undermine the slave trade. However, the journey was plagued by disease, logistical failure, and tragedy, including the death of his wife Mary from malaria in 1862. Despite these setbacks, his scientific work remained meticulous. He recorded flora, fauna, and mineral deposits, and his notebooks, many of which survive in archives such as the National Library of Scotland bear witness to a disciplined observer driven by both humanitarian and scientific motives.],
+  [In the later years of his life, Livingstone became increasingly preoccupied with finding the source of the Nile, a mystery that had fascinated explorers for centuries. His travels took him deep into Central Africa, where he lost contact with the outside world for several years. Rumors of his death circulated widely in Europe until, in 1871, the Welsh-born American journalist and explorer Henry Morton Stanley was dispatched by the New York Herald to find him. Stanley's long and arduous search ended in the town of Ujiji on the shores of Lake Tanganyika, where he greeted the weary, bearded missionary with the now-legendary words, "Dr. Livingstone, I presume?"],
+  [The meeting between Livingstone and Stanley became one of the most famous encounters in exploration history. Livingstone, though weakened by illness and years of hardship, was still resolute in his mission. Stanley, impressed by the older man's determination and moral conviction, provided supplies and encouragement. The two men explored parts of Lake Tanganyika together before Stanley returned to the coast with news that Livingstone was alive. Stanley's own life, though often overshadowed by this single encounter, was remarkable. Born John Rowlands in Denbigh, Wales, in 1841, he endured a harsh childhood before emigrating to the United States, where he served as a soldier, sailor, and journalist. His transformation into Henry Morton Stanley came after being adopted by a wealthy merchant of that name. His later explorations, including the charting of the Congo River, would establish him as one of the most controversial and driven explorers of the 19th century.],
+  [David Livingstone, however, never returned home. His final years were spent in relentless pursuit of the Nile's source, often under conditions of extreme suffering. His final journals, preserved on fragile paper and sometimes written in berry juice when ink ran out, reveal both his physical decline and his enduring spiritual faith. On the 1st of May, 1873, he died in the village of Chitambo (in present-day Zambia), likely from malaria and dysentery. His African attendants, loyal to the end, buried his heart beneath a tree at the site and carried his embalmed body over a thousand miles to the coast. From there, his remains were returned to Britain and interred in Westminster Abbey, where he was honored as both a national hero and a symbol of humanitarian courage.],
+  [The documents, letters, and diaries Livingstone left behind remain invaluable to historians. They not only chronicle a vast and challenging period of exploration but also offer rare insight into the cultural, geographical, and ethical dimensions of 19th-century Africa. Modern projects such as the "Livingstone Online" digital archive have preserved and analyzed these records, revealing details of his linguistic studies, medical observations, and even his evolving views on imperialism and slavery.],
+  [David Livingstone's legacy endures not simply as that of a man who charted rivers and crossed continents, but as one who sought to bring moral reform to a world divided by greed and ignorance. His life's work combined faith, science, and compassion, leaving a mark that transcended geography. The image of Livingstone emaciated, resolute, and holding fast to his ideals in the heart of Africa became a powerful emblem of the Victorian spirit of exploration and remains an enduring chapter in the intertwined histories of Britain and Africa.],
+  [David Livingstone's life formed a remarkable reflection of the transformative power of perseverance, conviction, and moral purpose. Emerging from poverty in industrial Scotland, he fashioned himself through relentless study and unyielding discipline into one of the most influential figures of the 19th century. His journeys across Africa created some of the most significant geographical and scientific records of his age, expanding European understanding of a continent too often approached with ignorance or prejudice. Yet Livingstone's work was never solely about mapping rivers or tracing mountain chains. It was underpinned by a profound humanitarian mission: to challenge the slave trade, to encourage what he called "legitimate commerce," and to foster cross-cultural understanding at a time when imperial attitudes frequently bred exploitation rather than empathy.],
+  [Though his later expeditions were marked by hardship, loss, and controversy, Livingstone's commitment to his principles never wavered. His meticulous notes, journals, and correspondence reveal a man constantly searching for knowledge, for justice, for the elusive headwaters of the Nile, and for ways to improve the lives of the people he encountered. These documents, preserved today in archives and digital collections, allow modern readers to glimpse the complexity of his character: a scientist shaped by faith, a missionary shaped by science, and an explorer shaped by an abiding respect for the African landscapes and communities that defined his career.],
+  [His celebrated meeting with Henry Morton Stanley, and the deeply human story behind it, further cemented his image in the Victorian imagination but it was Livingstone's death, and the extraordinary devotion of his African companions who carried his body across vast distances that most clearly demonstrated the depth of the relationships he forged. In life and in death, he crossed boundaries of culture and geography that few Europeans of his era attempted to bridge.],
+  [Ultimately, David Livingstone stands not only as a pioneer of exploration but as a symbol of a broader moral struggle. His efforts against the slave trade, his insistence on recording African voices and customs with respect, and his belief that knowledge could serve humanitarian ends distinguish him from many of his contemporaries. While modern interpretations rightly place his achievements within the wider context of imperial history, his intentions and contributions remain significant and enduring. His story continues to resonate because it speaks to universal themes: resilience in the face of adversity, integrity in purpose, and the pursuit of understanding across cultural divides. In this way, Livingstone's legacy extends far beyond the maps he drew or the rivers he traced, it endures as a reminder of the profound impact one determined individual can have on the course of history.],
+  [The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
 ),
   insert-map: (:),
   word-count: 1674,
@@ -297,46 +301,45 @@ several really productive 4 am YouTube holes of watching Avengers bloopers, ever
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [African American Servicemen in Britain During World War 2],
   author: [George Levrier-Jones],
   source-name: [History in 28 Minutes],
   images: (),
   paragraphs: (
-  [class=""\> Just after 9pm on a cool September evening in 1943, a large group of soldiers calmly walked the mile home to camp where they armed themselves with tommy guns, ammunition and bayonets. Putting themselves into formation, they marched back into town, three-a-breast. The sound of their army-issue boots striking the road for nearly a mile echoed heavily in the pitchy-ink of the blacked-out night-time and is something witnesses remember to this day. It seemed as if a ‘whole company’ of troops was moving through the night, it was said later.],
-  [class=""\> In England, Major Charity E. Adams, Columbia, South Carolina., and Captain Abbie N. Campbell, Tuskegee Institute, Tuskegee, Alabama, inspect the first members of the African American Women's Army Corps assigned to overseas service.],
-  [class=""\>Undoubtedly the troops who were on the move were ready for the fight of their lives – it just wasn’t the official enemy they had in their sights. Because unbelievably this was not happening in mainland Nazi-occupied Europe, but on Britain’s homefront – specifically the market town of Launceston in Cornwall. And these were American soldiers. Military police patrolling the town could sense impending danger. ‘Everything was so tense that evening that we thought that something might start,’ said one. Another added that all evening ‘…you could feel the tenseness in the air.’ Even publicans working in the town’s many drinking houses felt this was the calm before the storm.  One shut early that evening saying how he just sensed ‘…something brewing.’],
-  [class=""\>Suddenly the marching troops appeared ‘in a body’ from out of the darkness to encircle a group of military policemen, fellow Americans, who were standing chatting next to a jeep parked near the town’s war memorial. ‘We saw forty to fifty soldiers coming up the street. They had overcoats on. They walked up almost in formation, and straight toward us… and \[we\] thought trouble was about to begin,’ said one of the surrounded. A man, who seemed to be spokesman for the group, said very quietly: ‘Why don’t you let us come into town, come into the pubs?’. Flashlights snapped on. ‘Hands up!’ was shouted. The military police raised their arms and backed up. As they did, ‘I heard bolts open on rifles,’ said the jeep’s driver. There was just time for the terrifying realisation to sink in that their compatriots were not only armed but already taking aim when: ‘I heard a bolt crack and a shot landed at our feet. Someone hollered ‘DUCK’. I jumped in behind the wheel of a jeep.’ Next, a volley of fire. ‘I felt a bullet whizz past me.’ A flashlight revealed a soldier ‘with a denim hat and overcoat firing a rifle from the hip and he was really pumping them out.’ A pause. Then chaos as British soldiers, civilians, WAAFs and Land Army girls, as well as the Americans under fire, scrambled for cover amid ricocheting bullets. One old man told the Daily Mirror the next day : ‘There hasn’t been anything like this since the days of the smugglers.’],
-  [class=""\>No-one knows for sure exactly how many soldiers were armed and fighting that night. What is universally acknowledged is a large number was involved – from the 581st Ordnance Ammunition Company who were firing at soldiers from the 115th Infantry’s Second Battalion. It was all over in five minutes before the shooters melted away into the night. What they left behind was a shot up town centre, soldiers and citizens shaken, store windows in shatters, two hole-ridden US army jeeps (it subsequently took 20 soldiers to lift them bodily away), two sergeants with mashed-up legs, the visiting US army with its reputation hugely-dented and bullet holes in Cornish bricks and mortar which for more than seventy years were the sole reminder of an all-American gunfight army authorities wanted forgotten and tried their best to obscure. Because the inconvenient truth here was that these were members of an African American ordnance company who were taking on the white soldiers who policed them. The level of injuries given the firepower on hand that night shows precisely that wholesale slaughter was certainly not the intent, although military prosecutors defied their own investigators recommendations and insisted on bringing attempted murder charges alongside mutiny et al. The ‘mutineers’ were making a point and it was one that was needed to be made.],
-  [class=""\>There were around 130,000 African Americans among the 1.5 million US servicemen who were in the United Kingdom at any one time in World War Two – altogether 4 million Americans would come to Britain. But this segregated army had an inherent racial friction which began to spill over into violence with increasing frequency whenever the two races met in Britain’s ‘green and pleasant’ land. Riding on the tide of simmering racial tension in US training camps and explosive riots in five American cities during the long hot ‘bloody’ summer of 1943, this enmity inevitably floated across the Atlantic with each wave of arriving servicemen.],
-  [class=""\>At first it baffled the British. Despite ruling an empire upon which ‘the sun never set’ there were surprisingly few people of colour, roughly 15,000, in Britain during World War 2. Undoubtedly, in such a mono-cultural society, racism was bound to thrive as proved by race riots in 1919 and exemplified by the experiences of Learie Constantine, the West Indian cricketer, who came to live in Britain in the 1920s and described how ‘personal slights’ were ‘an unpleasant part of life in Britain for anyone of my colour.’  But evidence from thousands of censored letters, secret reports from the Ministry of Information’s Home Intelligence division, surveys for Mass Observation (the nascent polling organisation) as well as editorials and letters to newspapers and government departments shows this confusion amongst ordinary Brits soon morphed into outright rejection of the ‘colour bar’ – and decided support for African American troops. From George Orwell who kicked off his first article for Tribune with “The general consensus of opinion seems to be that the only American soldiers with decent manners are the Negroes” to a Blackpool factory worker raging against how “…the American troops literally kick, and I mean kick, the coloured soldiers off the pavement." Whatever British and American officials would have people believe, displays of discrimination and violence shamelessly paraded on British cobbles and village greens provoked a general sympathy amongst ordinary British people for the African American soldiers who came to trial and train for D-Day and put an invisible wedge in Anglo-American relations.],
-  [class=""\> An American Uprising in Second World War England: Mutiny in the Duchy tells the story of the soldiers, the trial and what this meant for Britain, America and what has subsequently been dubbed the ‘special relationship’.],
-  [class=""\>Turning that first page of the original court martial transcript, which arrived courtesy of a freedom of information request, was like beginning a film script. So too was the narrative that developed behind why the shooting happened, which I pieced together using once-secret government documents from various sources including the National Archives, the National Archives of America and the British Library. By the time I found out the targeted soldiers in Launceston happened to be tasked with Omaha Beach on D-day – it felt almost inevitable. The extraordinary timeline around this Launceston uprising made the 581st Ordnance Ammunition Company, the men – and 26 September 1943, the hour. It was a slam dunk of a story and needed to be told, especially since nearly 80 years on nobody knew what had really happened here, why and the ultimate fate of those involved.],
-  [class=""\>The story began with the United States army that came to trial and train for D-Day, which was segregated, mimicking the ‘Jim Crow’ separation of society in the American south.  One in every ten of its soldiers was African American and eventually 130,000 came to the UK before journeying to France after D-Day. With the rare exceptions of units such as the Tuskagee airmen and the 320th Barrage Balloon Battalion, these servicemen soon discovered they would be fighting from the supply side of things -  the decidedly more inglorious face of battle incorporating the Quartermaster Corps, the Corps of Engineers and the Transportation Corps. Their training experience was universally discriminatory, oppressive and – all too often - violent. This fractious rubbing alongside of African American and white soldiers was happening in camps across the nation. The Launceston ‘mutineers’ time in training was embarrassingly typical, according to Walter White, secretary of the National Association for the Advancement of Colored People (NAACP) who discovered they were repeatedly denied the chance for rest and recreation.],
-  [class=""\>Outside United States Army camps, general racial tension spilled over in the long hot ‘ bloody’ summer of 1943 when full-blown fights, riots and clashes flared in five American cities. The Second World War had heightened inequality between black and white communities over housing, work and even who got plaudits for fighting, and feuding broke out first in the streets of Los Angeles. Next it exploded in Detroit leaving 34 dead – 25 of whom were black – before ending in New York when rioting erupted after a policeman killed a black soldier. The ripple effect in the military was almost tangible and inevitably floated across the Atlantic to Britain with each wave of arriving servicemen. It was on this swell that the 581stOrdnance Ammunition Company came riding into Cornwall.],
-  [class=""\>Although ruling ‘an empire on which the sun never sets’, there were surprisingly few people of colour in Britain itself when the Second World War started. The black British community was no bigger than about 15,000 and centred mainly in port cities such as Bristol, Cardiff and Liverpool. Unsurprisingly, in such a mono-cultural nation, racism was bound to exist. Race riots broke out in 1919 around those same British port towns leaving five dead, hundreds injured and 250 arrested. Learie Constantine, the cricketer who moved from the West Indies to Britain in 1923, described how ‘personal slights’ were ‘an unpleasant part of life in Britain for anyone of my colour.’ And this only increased, with depressing predictability, probably more frequently in the upper than lower echelons of British society, once the segregated Americans arrived.],
-  [class=""\>Plentiful anecdotal evidence of American scuffles being played out on English cobbles and greens proliferated as black soldiers were pushed out of pubs, off buses and away from cinemas. However, a fresh look at evidence shows this in fact inspired a powerful British feeling about the visiting American army and race – which was recorded everywhere from Mass Observation and weekly secret Home Intelligence Division reports – to newspaper editorials and letters picked up by the censors. The story was nearly always the same. As George Orwell wrote in his first piece for Tribune: “The general consensus of opinion seems to be that the only American soldiers with decent manners are the Negroes.” Mass Observation, the nascent polling organisation, concluded feelings about Americans was ‘can be fairly sharply divided into feelings about white and coloured troops. As a general rule…the latter have made themselves more liked in his country.’ The feeling came from Blackpool, where one report told: ‘I have personally seen the American troops literally kick, and I mean kick, the coloured soldiers off the pavement’ to Essex when a ‘particularly disgusted’ father protested angrily to the Foreign Office that American white soldiers set upon a black soldier who ‘dared’ to take to the floor with a white woman at a dance.],
-  [class=""\>Put simply, the British sided with the underdog and were beginning to involve themselves in American disputes up and down the country. One of the most extreme cases was in Bamber Bridge, Lancashire, where one soldier was killed and several MPs and soldiers injured in an armed incident sparked by heavy-handed military policing in June 1943. Here, the British servicewomen and locals drinking at Ye Olde Hob Inn Public House backed the African Americans. Two hundred odd miles away in Corsham, Wiltshire, just a few days later again the violence of American military policemen towards African American soldiers caused a near riot. Head of Southern Command Sir Harry Haig reported: ‘A large group of civilians gathered and were heard saying: “They don’t like the blacks”; “Why don’t they leave them alone?”; “They’re as good as they are"; “That’s democracy.” The situation eventually developed into one of mass insubordination by the coloured troops, and at one point a coloured sergeant who had been ordered to bring his Company Commander, replied: “We aint no slaves, this is England.” The clash in Launceston is a perfect reflection of both emotions within the US Army and its outward-facing relations with the British home front at that precise moment in time. After that, things only got worse. A month before D-Day, a US Army morale report noted tersely that ‘the whites dislike the Negroes and the Negroes dislike the whites…The predominant note is that if the invasion doesn’t occur soon, trouble will.’ Clearly, the ‘colour bar’ was a wedge in the American army and it was something the authorities were determined to obfuscate.],
-  [class=""\>By a quirky twist of fate the 581st Ordnance Ammunition Company arrived in Cornwall, slap bang in the heart of GI country, in the dying ebbs of that scratchy summer. The 29th Infantry division relocated from Tidworth Barracks, Wiltshire, in May 1943 to Devon and Cornwall  where it planted its three principal units and it was the Second Battalion of the 115thInfantry Regiment that came to Launceston and built a base for itself at a farm on the top of a hill nearly a mile from the town’s market square - and half a mile from the African American soldiers’ base at Pennygillam. It is difficult to exaggerate just how much swing and glamour forced its way through the cobbles and winding country roads of this market town edging Bodmin Moor as a result of their arrival. Clinging to the coat-tips of incoming US Army arrivals, it meant untold luxuries like Hershey’s chocolate and Lucky Strike cigarettes to visits from big band leader Artie Shaw and boxing legend Joe Louis. But underneath all the glamour pulsed a racial tension beating at the heart of the US Army which turned some British people against white GIs and hurled an invisible lance into Anglo American relations.],
-  [class=""\>Curiouser still, was that the men arrived days after events in Britain polarised feeling about ‘the colour bar’ or segregation once and for all, starting with that most quintessential bastion of British sport – cricket. On September 3, news leaked that Learie Constantine, captain of the West Indies and a professional cricketer in England since the 1920s, had been thrown out of a London hotel because of American complaints. Newspapers had a field day. The response was a national outcry monitored secretly by the British government’s Home Intelligence Unit. Hot on its heels came the case of Amelia King, a young black British woman from Stepney, who was refused entry to the Women’s Land Army because it was felt white farmers would reject her help solely because of her ethnicity. Instead of taking the rejection lying down, she coolly raised it with her MP who voiced the outrageous situation in Parliament four days after the 581st arrived in Britain – and barely a week after the Constantine scandal erupted. It was the deciding blow. What followed was an almighty row about the blindingly unfair treatment of Constantine and King which rumbled on throughout September and October culminating just days before the Paignton court martial opened with a volcanic poll for Mass Observation revealing 75 per cent of respondents felt ‘definite disapproval’ of the colour bar.],
-  [class=""\>When the 581st Ordnance Ammunition Company arrived in September they had been restricted to their last two camps in America. In their first roll call in Cornwall, they were told they were to be restricted for a third time as they did not have the correct ‘dress uniform’ to go into town – although it didn’t seem to stop fellow white soldiers. It was the final straw. The American authorities tried repeatedly to censor the reporting of the shooting that followed; firstly, by trying to ban the reporting of race in the Paignton court martial which had, by law, to be held in public – a move foiled by a plucky objection from the Daily Mirror. Next it banned the public reporting of the sentence. This was precisely because of what the episode said about the state of its army’s internal relations and the truth it revealed at the heart of what would subsequently be dubbed the ‘special relationship’. George Orwell was alive to it, the trial itself caused Churchill ‘grave anxiety’ and it was something the authorities wished would just go away. But it couldn’t because the shoot out that happened in Launceston one September night in 1943 was both a result and reflection of race relations in Britain in that tunnel of time – of the enmity between white and black Americans and the sympathy of Brits for African Americans. It explained the court martial’s bulging press benches – and why it made headlines all over the United Kingdom and the United States.],
-  [class=""\> An American Uprising in Second World War England: Mutiny in the Duchy recounts what happened next in this fascinating episode that crosses over between military and social history. It is available here in the UK through Pen & Sword Books. The book is available to US readers here .],
+  [Just after 9pm on a cool September evening in 1943, a large group of soldiers calmly walked the mile home to camp where they armed themselves with tommy guns, ammunition and bayonets. Putting themselves into formation, they marched back into town, three-a-breast. The sound of their army-issue boots striking the road for nearly a mile echoed heavily in the pitchy-ink of the blacked-out night-time and is something witnesses remember to this day. It seemed as if a ‘whole company’ of troops was moving through the night, it was said later.],
+  [Here, author Kate Werran tell us about African American servicemen in Britain during World War Two.],
+  [In England, Major Charity E. Adams, Columbia, South Carolina., and Captain Abbie N. Campbell, Tuskegee Institute, Tuskegee, Alabama, inspect the first members of the African American Women's Army Corps assigned to overseas service.],
+  [Undoubtedly the troops who were on the move were ready for the fight of their lives – it just wasn’t the official enemy they had in their sights. Because unbelievably this was not happening in mainland Nazi-occupied Europe, but on Britain’s homefront – specifically the market town of Launceston in Cornwall. And these were American soldiers. Military police patrolling the town could sense impending danger. ‘Everything was so tense that evening that we thought that something might start,’ said one. Another added that all evening ‘…you could feel the tenseness in the air.’ Even publicans working in the town’s many drinking houses felt this was the calm before the storm.  One shut early that evening saying how he just sensed ‘…something brewing.’],
+  [Suddenly the marching troops appeared ‘in a body’ from out of the darkness to encircle a group of military policemen, fellow Americans, who were standing chatting next to a jeep parked near the town’s war memorial. ‘We saw forty to fifty soldiers coming up the street. They had overcoats on. They walked up almost in formation, and straight toward us… and \[we\] thought trouble was about to begin,’ said one of the surrounded. A man, who seemed to be spokesman for the group, said very quietly: ‘Why don’t you let us come into town, come into the pubs?’. Flashlights snapped on. ‘Hands up!’ was shouted. The military police raised their arms and backed up. As they did, ‘I heard bolts open on rifles,’ said the jeep’s driver. There was just time for the terrifying realisation to sink in that their compatriots were not only armed but already taking aim when: ‘I heard a bolt crack and a shot landed at our feet. Someone hollered ‘DUCK’. I jumped in behind the wheel of a jeep.’ Next, a volley of fire. ‘I felt a bullet whizz past me.’ A flashlight revealed a soldier ‘with a denim hat and overcoat firing a rifle from the hip and he was really pumping them out.’ A pause. Then chaos as British soldiers, civilians, WAAFs and Land Army girls, as well as the Americans under fire, scrambled for cover amid ricocheting bullets. One old man told the Daily Mirror the next day : ‘There hasn’t been anything like this since the days of the smugglers.’],
+  [No-one knows for sure exactly how many soldiers were armed and fighting that night. What is universally acknowledged is a large number was involved – from the 581st Ordnance Ammunition Company who were firing at soldiers from the 115th Infantry’s Second Battalion. It was all over in five minutes before the shooters melted away into the night. What they left behind was a shot up town centre, soldiers and citizens shaken, store windows in shatters, two hole-ridden US army jeeps (it subsequently took 20 soldiers to lift them bodily away), two sergeants with mashed-up legs, the visiting US army with its reputation hugely-dented and bullet holes in Cornish bricks and mortar which for more than seventy years were the sole reminder of an all-American gunfight army authorities wanted forgotten and tried their best to obscure. Because the inconvenient truth here was that these were members of an African American ordnance company who were taking on the white soldiers who policed them. The level of injuries given the firepower on hand that night shows precisely that wholesale slaughter was certainly not the intent, although military prosecutors defied their own investigators recommendations and insisted on bringing attempted murder charges alongside mutiny et al. The ‘mutineers’ were making a point and it was one that was needed to be made.],
+  [African American servicemen],
+  [There were around 130,000 African Americans among the 1.5 million US servicemen who were in the United Kingdom at any one time in World War Two – altogether 4 million Americans would come to Britain. But this segregated army had an inherent racial friction which began to spill over into violence with increasing frequency whenever the two races met in Britain’s ‘green and pleasant’ land. Riding on the tide of simmering racial tension in US training camps and explosive riots in five American cities during the long hot ‘bloody’ summer of 1943, this enmity inevitably floated across the Atlantic with each wave of arriving servicemen.],
+  [At first it baffled the British. Despite ruling an empire upon which ‘the sun never set’ there were surprisingly few people of colour, roughly 15,000, in Britain during World War 2. Undoubtedly, in such a mono-cultural society, racism was bound to thrive as proved by race riots in 1919 and exemplified by the experiences of Learie Constantine, the West Indian cricketer, who came to live in Britain in the 1920s and described how ‘personal slights’ were ‘an unpleasant part of life in Britain for anyone of my colour.’  But evidence from thousands of censored letters, secret reports from the Ministry of Information’s Home Intelligence division, surveys for Mass Observation (the nascent polling organisation) as well as editorials and letters to newspapers and government departments shows this confusion amongst ordinary Brits soon morphed into outright rejection of the ‘colour bar’ – and decided support for African American troops. From George Orwell who kicked off his first article for Tribune with “The general consensus of opinion seems to be that the only American soldiers with decent manners are the Negroes” to a Blackpool factory worker raging against how “…the American troops literally kick, and I mean kick, the coloured soldiers off the pavement." Whatever British and American officials would have people believe, displays of discrimination and violence shamelessly paraded on British cobbles and village greens provoked a general sympathy amongst ordinary British people for the African American soldiers who came to trial and train for D-Day and put an invisible wedge in Anglo-American relations.],
+  [An American Uprising in Second World War England: Mutiny in the Duchy tells the story of the soldiers, the trial and what this meant for Britain, America and what has subsequently been dubbed the ‘special relationship’.],
+  [Turning that first page of the original court martial transcript, which arrived courtesy of a freedom of information request, was like beginning a film script. So too was the narrative that developed behind why the shooting happened, which I pieced together using once-secret government documents from various sources including the National Archives, the National Archives of America and the British Library. By the time I found out the targeted soldiers in Launceston happened to be tasked with Omaha Beach on D-day – it felt almost inevitable. The extraordinary timeline around this Launceston uprising made the 581st Ordnance Ammunition Company, the men – and 26 September 1943, the hour. It was a slam dunk of a story and needed to be told, especially since nearly 80 years on nobody knew what had really happened here, why and the ultimate fate of those involved.],
+  [The story began with the United States army that came to trial and train for D-Day, which was segregated, mimicking the ‘Jim Crow’ separation of society in the American south.  One in every ten of its soldiers was African American and eventually 130,000 came to the UK before journeying to France after D-Day. With the rare exceptions of units such as the Tuskagee airmen and the 320th Barrage Balloon Battalion, these servicemen soon discovered they would be fighting from the supply side of things -  the decidedly more inglorious face of battle incorporating the Quartermaster Corps, the Corps of Engineers and the Transportation Corps. Their training experience was universally discriminatory, oppressive and – all too often - violent. This fractious rubbing alongside of African American and white soldiers was happening in camps across the nation. The Launceston ‘mutineers’ time in training was embarrassingly typical, according to Walter White, secretary of the National Association for the Advancement of Colored People (NAACP) who discovered they were repeatedly denied the chance for rest and recreation.],
+  [Outside United States Army camps, general racial tension spilled over in the long hot ‘ bloody’ summer of 1943 when full-blown fights, riots and clashes flared in five American cities. The Second World War had heightened inequality between black and white communities over housing, work and even who got plaudits for fighting, and feuding broke out first in the streets of Los Angeles. Next it exploded in Detroit leaving 34 dead – 25 of whom were black – before ending in New York when rioting erupted after a policeman killed a black soldier. The ripple effect in the military was almost tangible and inevitably floated across the Atlantic to Britain with each wave of arriving servicemen. It was on this swell that the 581stOrdnance Ammunition Company came riding into Cornwall.],
+  [Although ruling ‘an empire on which the sun never sets’, there were surprisingly few people of colour in Britain itself when the Second World War started. The black British community was no bigger than about 15,000 and centred mainly in port cities such as Bristol, Cardiff and Liverpool. Unsurprisingly, in such a mono-cultural nation, racism was bound to exist. Race riots broke out in 1919 around those same British port towns leaving five dead, hundreds injured and 250 arrested. Learie Constantine, the cricketer who moved from the West Indies to Britain in 1923, described how ‘personal slights’ were ‘an unpleasant part of life in Britain for anyone of my colour.’ And this only increased, with depressing predictability, probably more frequently in the upper than lower echelons of British society, once the segregated Americans arrived.],
+  [Plentiful anecdotal evidence of American scuffles being played out on English cobbles and greens proliferated as black soldiers were pushed out of pubs, off buses and away from cinemas. However, a fresh look at evidence shows this in fact inspired a powerful British feeling about the visiting American army and race – which was recorded everywhere from Mass Observation and weekly secret Home Intelligence Division reports – to newspaper editorials and letters picked up by the censors. The story was nearly always the same. As George Orwell wrote in his first piece for Tribune: “The general consensus of opinion seems to be that the only American soldiers with decent manners are the Negroes.” Mass Observation, the nascent polling organisation, concluded feelings about Americans was ‘can be fairly sharply divided into feelings about white and coloured troops. As a general rule…the latter have made themselves more liked in his country.’ The feeling came from Blackpool, where one report told: ‘I have personally seen the American troops literally kick, and I mean kick, the coloured soldiers off the pavement’ to Essex when a ‘particularly disgusted’ father protested angrily to the Foreign Office that American white soldiers set upon a black soldier who ‘dared’ to take to the floor with a white woman at a dance.],
+  [American disputes],
+  [Put simply, the British sided with the underdog and were beginning to involve themselves in American disputes up and down the country. One of the most extreme cases was in Bamber Bridge, Lancashire, where one soldier was killed and several MPs and soldiers injured in an armed incident sparked by heavy-handed military policing in June 1943. Here, the British servicewomen and locals drinking at Ye Olde Hob Inn Public House backed the African Americans. Two hundred odd miles away in Corsham, Wiltshire, just a few days later again the violence of American military policemen towards African American soldiers caused a near riot. Head of Southern Command Sir Harry Haig reported: ‘A large group of civilians gathered and were heard saying: “They don’t like the blacks”; “Why don’t they leave them alone?”; “They’re as good as they are"; “That’s democracy.” The situation eventually developed into one of mass insubordination by the coloured troops, and at one point a coloured sergeant who had been ordered to bring his Company Commander, replied: “We aint no slaves, this is England.” The clash in Launceston is a perfect reflection of both emotions within the US Army and its outward-facing relations with the British home front at that precise moment in time. After that, things only got worse. A month before D-Day, a US Army morale report noted tersely that ‘the whites dislike the Negroes and the Negroes dislike the whites…The predominant note is that if the invasion doesn’t occur soon, trouble will.’ Clearly, the ‘colour bar’ was a wedge in the American army and it was something the authorities were determined to obfuscate.],
+  [By a quirky twist of fate the 581st Ordnance Ammunition Company arrived in Cornwall, slap bang in the heart of GI country, in the dying ebbs of that scratchy summer. The 29th Infantry division relocated from Tidworth Barracks, Wiltshire, in May 1943 to Devon and Cornwall  where it planted its three principal units and it was the Second Battalion of the 115thInfantry Regiment that came to Launceston and built a base for itself at a farm on the top of a hill nearly a mile from the town’s market square - and half a mile from the African American soldiers’ base at Pennygillam. It is difficult to exaggerate just how much swing and glamour forced its way through the cobbles and winding country roads of this market town edging Bodmin Moor as a result of their arrival. Clinging to the coat-tips of incoming US Army arrivals, it meant untold luxuries like Hershey’s chocolate and Lucky Strike cigarettes to visits from big band leader Artie Shaw and boxing legend Joe Louis. But underneath all the glamour pulsed a racial tension beating at the heart of the US Army which turned some British people against white GIs and hurled an invisible lance into Anglo American relations.],
+  [Curiouser still, was that the men arrived days after events in Britain polarised feeling about ‘the colour bar’ or segregation once and for all, starting with that most quintessential bastion of British sport – cricket. On September 3, news leaked that Learie Constantine, captain of the West Indies and a professional cricketer in England since the 1920s, had been thrown out of a London hotel because of American complaints. Newspapers had a field day. The response was a national outcry monitored secretly by the British government’s Home Intelligence Unit. Hot on its heels came the case of Amelia King, a young black British woman from Stepney, who was refused entry to the Women’s Land Army because it was felt white farmers would reject her help solely because of her ethnicity. Instead of taking the rejection lying down, she coolly raised it with her MP who voiced the outrageous situation in Parliament four days after the 581st arrived in Britain – and barely a week after the Constantine scandal erupted. It was the deciding blow. What followed was an almighty row about the blindingly unfair treatment of Constantine and King which rumbled on throughout September and October culminating just days before the Paignton court martial opened with a volcanic poll for Mass Observation revealing 75 per cent of respondents felt ‘definite disapproval’ of the colour bar.],
+  [When the 581st Ordnance Ammunition Company arrived in September they had been restricted to their last two camps in America. In their first roll call in Cornwall, they were told they were to be restricted for a third time as they did not have the correct ‘dress uniform’ to go into town – although it didn’t seem to stop fellow white soldiers. It was the final straw. The American authorities tried repeatedly to censor the reporting of the shooting that followed; firstly, by trying to ban the reporting of race in the Paignton court martial which had, by law, to be held in public – a move foiled by a plucky objection from the Daily Mirror. Next it banned the public reporting of the sentence. This was precisely because of what the episode said about the state of its army’s internal relations and the truth it revealed at the heart of what would subsequently be dubbed the ‘special relationship’. George Orwell was alive to it, the trial itself caused Churchill ‘grave anxiety’ and it was something the authorities wished would just go away. But it couldn’t because the shoot out that happened in Launceston one September night in 1943 was both a result and reflection of race relations in Britain in that tunnel of time – of the enmity between white and black Americans and the sympathy of Brits for African Americans. It explained the court martial’s bulging press benches – and why it made headlines all over the United Kingdom and the United States.],
+  [An American Uprising in Second World War England: Mutiny in the Duchy recounts what happened next in this fascinating episode that crosses over between military and social history. It is available here in the UK through Pen & Sword Books. The book is available to US readers here .],
 ),
   insert-map: (:),
   inline-pq: pull-quote([It was all over in five minutes before the shooters melted away into the night.], [George Levrier-Jones]),
-  inline-pq-idx: 7,
+  inline-pq-idx: 8,
   word-count: 2940,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Mock The Location Href Property],
   author: [Gleb Bahmutov],
   source-name: [Gleb Bahmutov],
@@ -358,10 +361,10 @@ several really productive 4 am YouTube holes of watching Avengers bloopers, ever
  2 
  3 
  4 
- setTimeout ( () =\> { 
+ setTimeout ( () =\> \{ 
  console . log ( 'changing window location to acme.com' ) 
  location. href = 'https:\/\/acme.com' 
- }, 1000 )],
+ \}, 1000 )],
   [The initial Cypress test does not prevent the navigation to "acme.com"],
   [cypress/e2e/spec.cy.js 1 
  2 
@@ -370,13 +373,13 @@ several really productive 4 am YouTube holes of watching Avengers bloopers, ever
  5 
  6 
  7 
- it ( 'sets the location HREF' , () =\> { 
+ it ( 'sets the location HREF' , () =\> \{ 
  cy. visit ( 'index.html' ) 
  cy. contains ( 'h1' , 'Hello World' ) 
  \/\\/ confirm but do not allow the application 
  \/\\/ to navigate away to the new URL 
  \/\\/ Tip: app sets it using "location.href = ..." command 
- })],
+ \})],
   [🎁 The source code for this blog post is located in the repo bahmutov/with-window .],
   [I have recorded a short video going through this example and my solution],
   [Cannot stub Location object],
@@ -390,9 +393,9 @@ several really productive 4 am YouTube holes of watching Avengers bloopers, ever
   [1 
  2 
  3 
- with (expression) { 
+ with (expression) \{ 
  ... 
- }],
+ \}],
   [The above syntax adds the expression result into the variable lookup chain. For example:],
   [1 
  2 
@@ -406,12 +409,12 @@ several really productive 4 am YouTube holes of watching Avengers bloopers, ever
  let a, x, y; 
  const r = 10 ; 
  
- with ( Math ) { 
+ with ( Math ) \{ 
  \/\\/ where is PI, cos, and sin defined? 
  a = PI \* r \* r; 
  x = r \* cos ( PI ); 
  y = r \* sin ( PI \/ 2 ); 
- }],
+ \}],
   [In the example above, the PI , cos , and sin are properties of the Math object. By using with (Math) we are forcing the browser to look up these identifiers in the Math object (before going up to the window object).],
   [Tip: the with (expression) syntax is hard to read and understand. A simple spread operator would be much more preferable way of coding the above example:],
   [1 
@@ -422,7 +425,7 @@ several really productive 4 am YouTube holes of watching Avengers bloopers, ever
  6 
  let a, x, y; 
  const r = 10 ; 
- const { PI , cos, sin } = Math 
+ const \{ PI , cos, sin \} = Math 
  a = PI \* r \* r; 
  x = r \* cos ( PI ); 
  y = r \* sin ( PI \/ 2 );],
@@ -449,27 +452,27 @@ several really productive 4 am YouTube holes of watching Avengers bloopers, ever
  19 
  20 
  21 
- it ( 'sets the location HREF' , () =\> { 
- cy. intercept ( 'GET' , 'app.js' , ( req ) =\> { 
- req. continue ( ( res ) =\> { 
+ it ( 'sets the location HREF' , () =\> \{ 
+ cy. intercept ( 'GET' , 'app.js' , ( req ) =\> \{ 
+ req. continue ( ( res ) =\> \{ 
  \/\\/ wrap app's code with a fake window object 
  \/\\/ that has overwritten location object 
  res. body = \` 
- const fakeWindowObject = { 
- location: { 
+ const fakeWindowObject = \{ 
+ location: \{ 
  href: '', 
- }, 
- } 
- with (fakeWindowObject) { 
- \${res.body} 
- } 
+ \}, 
+ \} 
+ with (fakeWindowObject) \{ 
+ \$\{res.body\} 
+ \} 
  \` 
- }) 
- }). as ( 'appJs' ) 
+ \}) 
+ \}). as ( 'appJs' ) 
  cy. visit ( 'index.html' ) 
  cy. wait ( '\@appJs' ) 
  cy. contains ( 'h1' , 'Hello World' ) 
- })],
+ \})],
   [When the test runs, the application loads app.js and receives the following (modified) script],
   [app.js 1 
  2 
@@ -482,17 +485,17 @@ several really productive 4 am YouTube holes of watching Avengers bloopers, ever
  9 
  10 
  11 
- const fakeWindowObject = { 
- location : { 
+ const fakeWindowObject = \{ 
+ location : \{ 
  href : '' , 
- }, 
- } 
- with (fakeWindowObject) { 
- setTimeout ( () =\> { 
+ \}, 
+ \} 
+ with (fakeWindowObject) \{ 
+ setTimeout ( () =\> \{ 
  console . log ( 'changing window location to acme.com' ) 
  location. href = 'https:\/\/acme.com' 
- }, 1000 ) 
- }],
+ \}, 1000 ) 
+ \}],
   [The test stays on the same page, but we do see the application printing "changing window location to acme.com".],
   [We need to verify the location.href property really changes to acme.com string. We can put the fake window object on the real window object. Then we can get its value using the cy.window command.],
   [One last tip: the browser caches the app.js resource, thus we need to remove the caching headers in order to receive the full JavaScript source code:],
@@ -516,26 +519,26 @@ several really productive 4 am YouTube holes of watching Avengers bloopers, ever
  18 
  19 
  20 
- cy. intercept ( 'GET' , 'app.js' , ( req ) =\> { 
+ cy. intercept ( 'GET' , 'app.js' , ( req ) =\> \{ 
  \/\\/ delete common cache headers 
  \/\\/ so the browser gets the real app.js source code 
  delete req. headers \[ 'if-none-match' \] 
  delete req. headers \[ 'if-modified-since' \] 
- req. continue ( ( res ) =\> { 
+ req. continue ( ( res ) =\> \{ 
  \/\\/ wrap app's code with a fake window object 
  \/\\/ that has overwritten location object 
  res. body = \` 
- window.fakeWindowObject = { 
- location: { 
+ window.fakeWindowObject = \{ 
+ location: \{ 
  href: '', 
- }, 
- } 
- with (window.fakeWindowObject) { 
- \${res.body} 
- } 
+ \}, 
+ \} 
+ with (window.fakeWindowObject) \{ 
+ \$\{res.body\} 
+ \} 
  \` 
- }) 
- }). as ( 'appJs' )],
+ \}) 
+ \}). as ( 'appJs' )],
   [Proxy to the real location],
   [We don't want to create a completely fake location object, since we want to be able to use the real properties and methods in Location.prototype . Instead of plain object, our fake location can proxy to the real thing:],
   [1],
@@ -588,43 +591,40 @@ several really productive 4 am YouTube holes of watching Avengers bloopers, ever
   [48],
   [49],
   [50],
-  [it ( 'sets the location HREF' , () =\> {],
-  [cy. intercept ( 'GET' , 'app.js' , ( req ) =\> {],
   [\/\\/ delete common cache headers],
   [\/\\/ so the browser gets the real app.js source code],
   [delete req. headers \[ 'if-none-match' \]],
   [delete req. headers \[ 'if-modified-since' \]],
-  [req. continue ( ( res ) =\> {],
   [\/\\/ wrap app's code with a fake window object],
   [\/\\/ that has overwritten location object],
   [res. body = \`],
   [let href = ''],
-  [const fakeLocation = new Proxy(location, {],
-  [set(target, prop, value) {],
-  [if (prop === 'href') {],
+  [const fakeLocation = new Proxy(location, \{],
+  [set(target, prop, value) \{],
+  [if (prop === 'href') \{],
   [href = value],
   [\/\\/ do not allow the app to navigate away],
   [return false],
-  [}],
+  [\}],
   [target\[prop\] = value],
   [return true],
-  [},],
-  [get(target, prop) {],
-  [if (prop === 'href') {],
+  [\},],
+  [get(target, prop) \{],
+  [if (prop === 'href') \{],
   [return href],
-  [}],
+  [\}],
   [return target\[prop\]],
-  [},],
-  [})],
-  [window.fakeWindowObject = {],
+  [\},],
+  [\})],
+  [window.fakeWindowObject = \{],
   [location: fakeLocation,],
-  [}],
-  [with (window.fakeWindowObject) {],
-  [\${res.body}],
-  [}],
+  [\}],
+  [with (window.fakeWindowObject) \{],
+  [\$\{res.body\}],
+  [\}],
   [\`],
-  [})],
-  [}). as ( 'appJs' )],
+  [\})],
+  [\}). as ( 'appJs' )],
   [cy. visit ( 'index.html' )],
   [cy. wait ( '\@appJs' )],
   [cy. contains ( 'h1' , 'Hello World' )],
@@ -637,7 +637,7 @@ several really productive 4 am YouTube holes of watching Avengers bloopers, ever
   [\/\\/ and the test passes],
   [. its ( 'location' )],
   [. should ( 'have.property' , 'href' , 'https:\/\/acme.com' )],
-  [})],
+  [\})],
   [To see the proxy in action, I will modify the console.log message the application prints:],
   [app.js 1 
  2 
@@ -646,13 +646,13 @@ several really productive 4 am YouTube holes of watching Avengers bloopers, ever
  5 
  6 
  7 
- setTimeout ( () =\> { 
+ setTimeout ( () =\> \{ 
  console . log ( 
  'changing window location from %s to acme.com' , 
  location. hostname , 
  ) 
  location. href = 'https:\/\/acme.com' 
- }, 1000 )],
+ \}, 1000 )],
   [The test runs and we see the real host name, yet href = ... assignment is trapped.],
   [Tip: if you do not know the URL value, simply request it to make sure it is valid using cy.request command],
   [1 
@@ -678,10 +678,8 @@ several really productive 4 am YouTube holes of watching Avengers bloopers, ever
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [2017: another year in review],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -736,7 +734,7 @@ I still didn’t spoil Star Wars. I turned 32.],
   [I don’t do resolutions because they don’t really work for me, but I heard a
 good one from a coworker: do 12 new things next year.],
   [So, I will.],
-  [id="️"\>❤️],
+  [❤️],
   [\/\\/ also available: 2016 and 2015 years in review,
 that were actually on time.],
 ),
@@ -746,10 +744,8 @@ that were actually on time.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Cypress Dependencies Through A Docker Image],
   author: [Gleb Bahmutov],
   source-name: [Gleb Bahmutov],
@@ -882,8 +878,8 @@ that were actually on time.],
   [package-hash:],
   [runs-on: ubuntu-latest],
   [outputs:],
-  [hash: \${{ steps.hash.outputs.checksum }}],
-  [tag: \${{ steps.tag-exists.outputs.tag }}],
+  [hash: \$\{\{ steps.hash.outputs.checksum \}\}],
+  [tag: \$\{\{ steps.tag-exists.outputs.tag \}\}],
   [steps:],
   [- name: Checkout 🛎️],
   [\# https:\/\/github.com/actions/checkout],
@@ -894,7 +890,6 @@ that were actually on time.],
   [package.json],
   [- name: Package.json + Dockerfile checksum],
   [id: hash],
-  [run: echo "checksum=\$ {{ hashFiles('package.json', 'Dockerfile') }} " \>\> \$GITHUB\_OUTPUT],
   [\# https:\/\/github.com/tyriis/docker-image-tag-exists],
   [- name: Check if Docker image tag exists],
   [id: tag-exists],
@@ -903,13 +898,10 @@ that were actually on time.],
   [registry: docker.io],
   [repository: bahmutov/cy],
   [\# The container image tag],
-  [tag: \${{ steps.hash.outputs.checksum }}],
+  [tag: \$\{\{ steps.hash.outputs.checksum \}\}],
   [- name: Report the check results],
   [\# print the tag result into Github Actions summary],
   [run: |],
-  [echo "\#\# Docker image check" \>\> \$GITHUB\_STEP\_SUMMARY],
-  [echo "Package.json + Dockerfile hash: \${{ steps.hash.outputs.checksum }}" \>\> \$GITHUB\_STEP\_SUMMARY],
-  [echo "Docker image bahmutov/cy:\${{ steps.hash.outputs.checksum }} \*\*\${{ steps.tag-exists.outputs.tag }}\*\*" \>\> \$GITHUB\_STEP\_SUMMARY],
   [Build and push],
   [Great, let's build the Docker image if one is missing. We could have a job with every internal step using a condition:],
   [1 
@@ -935,12 +927,12 @@ that were actually on time.],
  needs: package-hash 
  steps: 
  - name: Checkout 🛎️ 
- if: \${{ needs.package-hash.outputs.tag == 'not found' }} 
+ if: \$\{\{ needs.package-hash.outputs.tag == 'not found' \}\} 
  \# https:\/\/github.com/actions/checkout 
  uses: actions/checkout\@v6 
  
  - name: Log in to Docker Hub 
- if: \${{ needs.package-hash.outputs.tag == 'not found' }} 
+ if: \$\{\{ needs.package-hash.outputs.tag == 'not found' \}\} 
  \# https:\/\/github.com/docker/login-action 
  uses: docker/login-action\@f4ef78c080cd8ba55a85445d5b36e214a81df20a 
  ...],
@@ -999,8 +991,8 @@ that were actually on time.],
   [package-hash:],
   [runs-on: ubuntu-latest],
   [outputs:],
-  [hash: \${{ steps.hash.outputs.checksum }}],
-  [tag: \${{ steps.tag-exists.outputs.tag }}],
+  [hash: \$\{\{ steps.hash.outputs.checksum \}\}],
+  [tag: \$\{\{ steps.tag-exists.outputs.tag \}\}],
   [steps:],
   [...],
   [build-docker-image:],
@@ -1008,7 +1000,7 @@ that were actually on time.],
   [\# but only if it does not exist yet],
   [runs-on: ubuntu-latest],
   [needs: package-hash],
-  [if: \${{ needs.package-hash.outputs.tag == 'not found' }}],
+  [if: \$\{\{ needs.package-hash.outputs.tag == 'not found' \}\}],
   [steps:],
   [- name: Checkout 🛎️],
   [\# https:\/\/github.com/actions/checkout],
@@ -1017,14 +1009,14 @@ that were actually on time.],
   [\# https:\/\/github.com/docker/login-action],
   [uses: docker/login-action\@f4ef78c080cd8ba55a85445d5b36e214a81df20a],
   [with:],
-  [username: \${{ secrets. DOCKER\_USERNAME }}],
-  [password: \${{ secrets. DOCKER\_PASSWORD }}],
+  [username: \$\{\{ secrets. DOCKER\_USERNAME \}\}],
+  [password: \$\{\{ secrets. DOCKER\_PASSWORD \}\}],
   [\# we could also use the action],
   [\# https:\/\/github.com/docker/build-push-action],
   [- name: Build docker image],
-  [run: docker build -t bahmutov/cy:\${{ needs.package-hash.outputs.hash }} .],
+  [run: docker build -t bahmutov/cy:\$\{\{ needs.package-hash.outputs.hash \}\} .],
   [- name: Push Docker images],
-  [run: docker push bahmutov/cy:\${{ needs.package-hash.outputs.hash }}],
+  [run: docker push bahmutov/cy:\$\{\{ needs.package-hash.outputs.hash \}\}],
   [Now that we have Docker image build (if needed), let's use it. We can define another job that simply uses the bahmutov/cy: container, but it cannot depend on the build-docker-image job - if the job is skipped on GitHub Actions, any job that depends on it will be skipped too. Luckily, there is an easy fix: simply have yet another job that will simply "ping" build-docker-image job status. Once the build-docker-image job finishes or is skipped, our "ping" job resolves. The "ping" is done using lewagon/wait-on-check-action 3rd-party action. Here is how the last part of the workflow looks:],
   [.github/workflows/ci.yml 1],
   [2],
@@ -1098,7 +1090,7 @@ that were actually on time.],
   [\# but only if it does not exist yet],
   [runs-on: ubuntu-latest],
   [needs: package-hash],
-  [if: \${{ needs.package-hash.outputs.tag == 'not found' }}],
+  [if: \$\{\{ needs.package-hash.outputs.tag == 'not found' \}\}],
   [...],
   [wait-for-build:],
   [\# a trick to allow other jobs to run, even if the "build" job is skipped],
@@ -1111,16 +1103,16 @@ that were actually on time.],
   [\# https:\/\/github.com/lewagon/wait-on-check-action],
   [uses: lewagon/wait-on-check-action\@v1.4.1],
   [with:],
-  [ref: \${{ github.ref }}],
+  [ref: \$\{\{ github.ref \}\}],
   [check-name: build-docker-image],
-  [repo-token: \${{ secrets. GITHUB\_TOKEN }}],
+  [repo-token: \$\{\{ secrets. GITHUB\_TOKEN \}\}],
   [\# seconds between checks],
   [wait-interval: 10],
   [test:],
   [\# this job finishes after the Docker image is built (or exists already)],
   [runs-on: ubuntu-latest],
   [needs: \[ package-hash , wait-for-build \]],
-  [container: bahmutov/cy:\${{ needs.package-hash.outputs.hash }}],
+  [container: bahmutov/cy:\$\{\{ needs.package-hash.outputs.hash \}\}],
   [steps:],
   [- name: Checkout 🛎️],
   [\# https:\/\/github.com/actions/checkout],
@@ -1152,24 +1144,6 @@ that were actually on time.],
  package.json 
  package-lock.json],
   [The current directory is set to \/ , so we need to make sure Node and Cypress can find the DEV dependencies. We do it by creating the symlink:],
-  [1 
- 2 
- 3 
- 4 
- 5 
- 6 
- 7 
- 8 
- 9 
- /e2e\/ 
- cypress\_cache\/ 
- node\_modules\/ 
- \/ \/ 
- node\_modules -\> /e2e/node\_modules\/ 
- cypress\/ 
- cypress.conf.js 
- package.json 
- package-lock.json],
   [We tell Cypress NPM module to find its binary in the /e2e/cypress\_cache\/ folder by using the environment variable baked into the Dockerfile: ENV CYPRESS\_CACHE\_FOLDER=/e2e/cypress\_cache .],
   [Run on GitHub Actions],
   [Let's confirm that it works. We can push the code for the very first time, or change package.json or Dockerfile],
@@ -1206,7 +1180,7 @@ that were actually on time.],
   [\# and verifies the Cypress GitHub action works],
   [runs-on: ubuntu-latest],
   [needs: \[ package-hash , wait-for-build \]],
-  [container: bahmutov/cy:\${{ needs.package-hash.outputs.hash }}],
+  [container: bahmutov/cy:\$\{\{ needs.package-hash.outputs.hash \}\}],
   [steps:],
   [- name: Checkout 🛎️],
   [\# https:\/\/github.com/actions/checkout],
@@ -1353,7 +1327,7 @@ that were actually on time.],
   [on: push],
   [env:],
   [REGISTRY: ghcr.io],
-  [IMAGE\_NAME: \${{ github.repository }}],
+  [IMAGE\_NAME: \$\{\{ github.repository \}\}],
   [jobs:],
   [\# computes the hash of package.json and and stores it in the output],
   [\# also checks if the Docker image with this tag already exists],
@@ -1363,8 +1337,8 @@ that were actually on time.],
   [package-hash:],
   [runs-on: ubuntu-latest],
   [outputs:],
-  [hash: \${{ steps.hash.outputs.checksum }}],
-  [tag: \${{ steps.tag-exists.outputs.tag }}],
+  [hash: \$\{\{ steps.hash.outputs.checksum \}\}],
+  [tag: \$\{\{ steps.tag-exists.outputs.tag \}\}],
   [steps:],
   [- name: Checkout 🛎️],
   [\# https:\/\/github.com/actions/checkout],
@@ -1375,24 +1349,18 @@ that were actually on time.],
   [package.json],
   [- name: Package.json + Dockerfile checksum],
   [id: hash],
-  [run: echo "checksum=\$ {{ hashFiles('package.json', 'Dockerfile') }} " \>\> \$GITHUB\_OUTPUT],
   [\# https:\/\/github.com/tyriis/docker-image-tag-exists],
   [- name: Check if Docker image tag exists],
   [id: tag-exists],
   [uses: tyriis/docker-image-tag-exists\@v2.1.0],
   [with:],
-  [registry: \${{ env. REGISTRY }}],
-  [repository: \${{ env. IMAGE\_NAME }}],
+  [registry: \$\{\{ env. REGISTRY \}\}],
+  [repository: \$\{\{ env. IMAGE\_NAME \}\}],
   [\# The container image tag],
-  [tag: \${{ steps.hash.outputs.checksum }}],
+  [tag: \$\{\{ steps.hash.outputs.checksum \}\}],
   [- name: Report the check results],
   [\# print the tag result into Github Actions summary],
   [run: |],
-  [echo "\#\# Docker image check" \>\> \$GITHUB\_STEP\_SUMMARY],
-  [echo "Registry: \${{ env. REGISTRY }}" \>\> \$GITHUB\_STEP\_SUMMARY],
-  [echo "Image: \${{ env. REGISTRY }}/\${{ env. IMAGE\_NAME }}" \>\> \$GITHUB\_STEP\_SUMMARY],
-  [echo "Package.json + Dockerfile hash: \${{ steps.hash.outputs.checksum }}" \>\> \$GITHUB\_STEP\_SUMMARY],
-  [echo "Docker image \${{ env. REGISTRY }}/\${{ env. IMAGE\_NAME }}:\${{ steps.hash.outputs.checksum }} \*\*\${{ steps.tag-exists.outputs.tag }}\*\*" \>\> \$GITHUB\_STEP\_SUMMARY],
   [build-docker-image:],
   [\# builds the Docker image and pushes it to the registry],
   [\# but only if it does not exist yet],
@@ -1402,7 +1370,7 @@ that were actually on time.],
   [\# don't forget to allow workflows to write to GHCR],
   [\# https:\/\/github.com\/ \/ /settings/actions],
   [packages: write],
-  [if: \${{ needs.package-hash.outputs.tag == 'not found' }}],
+  [if: \$\{\{ needs.package-hash.outputs.tag == 'not found' \}\}],
   [steps:],
   [- name: Checkout 🛎️],
   [\# https:\/\/github.com/actions/checkout],
@@ -1411,15 +1379,15 @@ that were actually on time.],
   [\# https:\/\/github.com/docker/login-action],
   [uses: docker/login-action\@f4ef78c080cd8ba55a85445d5b36e214a81df20a],
   [with:],
-  [registry: \${{ env. REGISTRY }}],
-  [username: \${{ github.actor }}],
-  [password: \${{ secrets. GITHUB\_TOKEN }}],
+  [registry: \$\{\{ env. REGISTRY \}\}],
+  [username: \$\{\{ github.actor \}\}],
+  [password: \$\{\{ secrets. GITHUB\_TOKEN \}\}],
   [\# we could also use the action],
   [\# https:\/\/github.com/docker/build-push-action],
   [- name: Build docker image],
-  [run: docker build -t \${{ env. REGISTRY }}/\${{ env. IMAGE\_NAME }}:\${{ needs.package-hash.outputs.hash }} .],
+  [run: docker build -t \$\{\{ env. REGISTRY \}\}/\$\{\{ env. IMAGE\_NAME \}\}:\$\{\{ needs.package-hash.outputs.hash \}\} .],
   [- name: Push Docker image to the correct registry],
-  [run: docker push \${{ env. REGISTRY }}/\${{ env. IMAGE\_NAME }}:\${{ needs.package-hash.outputs.hash }}],
+  [run: docker push \$\{\{ env. REGISTRY \}\}/\$\{\{ env. IMAGE\_NAME \}\}:\$\{\{ needs.package-hash.outputs.hash \}\}],
   [wait-for-build:],
   [\# a trick to allow other jobs to run, even if the "build" job is skipped],
   [\# runs in parallel with the "build" job and keeps checking if it is finished],
@@ -1431,9 +1399,9 @@ that were actually on time.],
   [\# https:\/\/github.com/lewagon/wait-on-check-action],
   [uses: lewagon/wait-on-check-action\@v1.4.1],
   [with:],
-  [ref: \${{ github.ref }}],
+  [ref: \$\{\{ github.ref \}\}],
   [check-name: build-docker-image],
-  [repo-token: \${{ secrets. GITHUB\_TOKEN }}],
+  [repo-token: \$\{\{ secrets. GITHUB\_TOKEN \}\}],
   [\# seconds between checks],
   [wait-interval: 10],
   [test:],
@@ -1441,7 +1409,7 @@ that were actually on time.],
   [runs-on: ubuntu-latest],
   [needs: \[ package-hash , wait-for-build \]],
   [\# seems we cannot use the env variables here],
-  [container: ghcr.io/\${{ github.repository }}:\${{ needs.package-hash.outputs.hash }}],
+  [container: ghcr.io/\$\{\{ github.repository \}\}:\$\{\{ needs.package-hash.outputs.hash \}\}],
   [steps:],
   [- name: Checkout 🛎️],
   [\# https:\/\/github.com/actions/checkout],
@@ -1461,7 +1429,7 @@ that were actually on time.],
  3 
  env: 
  REGISTRY: ghcr.io 
- IMAGE\_NAME: \${{ github.repository }}],
+ IMAGE\_NAME: \$\{\{ github.repository \}\}],
   [Nice.],
   [Let's say you want to use private Docker images stored on Google Artifact Registry . You need to create it on GCP, then create a Service Account to access it from CI (this is simpler for me than using Workload identity), see the docs .],
   [So here is my Artifact Registry called gleb-google-artifact-registry-test running inside us-east4-docker.pkg.dev configured to run under the project helloworld-330918],
@@ -1627,8 +1595,8 @@ that were actually on time.],
   [package-hash:],
   [runs-on: ubuntu-latest],
   [outputs:],
-  [hash: \${{ steps.hash.outputs.checksum }}],
-  [tag: \${{ steps.tag-exists.outputs.tag }}],
+  [hash: \$\{\{ steps.hash.outputs.checksum \}\}],
+  [tag: \$\{\{ steps.tag-exists.outputs.tag \}\}],
   [steps:],
   [- name: Checkout 🛎️],
   [\# https:\/\/github.com/actions/checkout],
@@ -1639,31 +1607,25 @@ that were actually on time.],
   [package.json],
   [- name: Package.json + Dockerfile checksum],
   [id: hash],
-  [run: echo "checksum=\$ {{ hashFiles('package.json', 'Dockerfile') }} " \>\> \$GITHUB\_OUTPUT],
   [- name: Log in to Google Artifacts Registry],
   [\# https:\/\/github.com/docker/login-action],
   [uses: docker/login-action\@f4ef78c080cd8ba55a85445d5b36e214a81df20a],
   [with:],
-  [registry: \${{ env. REGISTRY }}],
+  [registry: \$\{\{ env. REGISTRY \}\}],
   [username: \_json\_key],
-  [password: \${{ secrets. GCR\_KEY }}],
+  [password: \$\{\{ secrets. GCR\_KEY \}\}],
   [\# https:\/\/github.com/tyriis/docker-image-tag-exists],
   [- name: Check if Docker image tag exists],
   [id: tag-exists],
   [uses: tyriis/docker-image-tag-exists\@v2.1.0],
   [with:],
-  [registry: \${{ env. REGISTRY }}],
-  [repository: \${{ env. GCP\_PROJECT }}/\${{ env. REPOSITORY }}/\${{ env. IMAGE\_NAME }}],
+  [registry: \$\{\{ env. REGISTRY \}\}],
+  [repository: \$\{\{ env. GCP\_PROJECT \}\}/\$\{\{ env. REPOSITORY \}\}/\$\{\{ env. IMAGE\_NAME \}\}],
   [\# The container image tag],
-  [tag: \${{ steps.hash.outputs.checksum }}],
+  [tag: \$\{\{ steps.hash.outputs.checksum \}\}],
   [- name: Report the check results],
   [\# print the tag result into Github Actions summary],
   [run: |],
-  [echo "\#\# Docker image check" \>\> \$GITHUB\_STEP\_SUMMARY],
-  [echo "Registry: \${{ env. REGISTRY }}" \>\> \$GITHUB\_STEP\_SUMMARY],
-  [echo "Image: \${{ env. REGISTRY }}/\${{ env. GCP\_PROJECT }}/\${{ env. REPOSITORY }}/\${{ env. IMAGE\_NAME }}" \>\> \$GITHUB\_STEP\_SUMMARY],
-  [echo "Package.json + Dockerfile hash: \${{ steps.hash.outputs.checksum }}" \>\> \$GITHUB\_STEP\_SUMMARY],
-  [echo "Docker image \${{ env. REGISTRY }}/\${{ env. IMAGE\_NAME }}:\${{ steps.hash.outputs.checksum }} \*\*\${{ steps.tag-exists.outputs.tag }}\*\*" \>\> \$GITHUB\_STEP\_SUMMARY],
   [build-docker-image:],
   [\# builds the Docker image and pushes it to the registry],
   [\# but only if it does not exist yet],
@@ -1673,7 +1635,7 @@ that were actually on time.],
   [\# don't forget to allow workflows to write to GHCR],
   [\# https:\/\/github.com\/ \/ /settings/actions],
   [packages: write],
-  [if: \${{ needs.package-hash.outputs.tag == 'not found' }}],
+  [if: \$\{\{ needs.package-hash.outputs.tag == 'not found' \}\}],
   [steps:],
   [- name: Checkout 🛎️],
   [\# https:\/\/github.com/actions/checkout],
@@ -1682,15 +1644,15 @@ that were actually on time.],
   [\# https:\/\/github.com/docker/login-action],
   [uses: docker/login-action\@f4ef78c080cd8ba55a85445d5b36e214a81df20a],
   [with:],
-  [registry: \${{ env. REGISTRY }}],
+  [registry: \$\{\{ env. REGISTRY \}\}],
   [username: \_json\_key],
-  [password: \${{ secrets. GCR\_KEY }}],
+  [password: \$\{\{ secrets. GCR\_KEY \}\}],
   [\# we could also use the action],
   [\# https:\/\/github.com/docker/build-push-action],
   [- name: Build docker image],
-  [run: docker build -t \${{ env. REGISTRY }}/\${{ env. GCP\_PROJECT }}/\${{ env. REPOSITORY }}/\${{ env. IMAGE\_NAME }}:\${{ needs.package-hash.outputs.hash }} .],
+  [run: docker build -t \$\{\{ env. REGISTRY \}\}/\$\{\{ env. GCP\_PROJECT \}\}/\$\{\{ env. REPOSITORY \}\}/\$\{\{ env. IMAGE\_NAME \}\}:\$\{\{ needs.package-hash.outputs.hash \}\} .],
   [- name: Push Docker image to the correct registry],
-  [run: docker push \${{ env. REGISTRY }}/\${{ env. GCP\_PROJECT }}/\${{ env. REPOSITORY }}/\${{ env. IMAGE\_NAME }}:\${{ needs.package-hash.outputs.hash }}],
+  [run: docker push \$\{\{ env. REGISTRY \}\}/\$\{\{ env. GCP\_PROJECT \}\}/\$\{\{ env. REPOSITORY \}\}/\$\{\{ env. IMAGE\_NAME \}\}:\$\{\{ needs.package-hash.outputs.hash \}\}],
   [wait-for-build:],
   [\# a trick to allow other jobs to run, even if the "build" job is skipped],
   [\# runs in parallel with the "build" job and keeps checking if it is finished],
@@ -1702,9 +1664,9 @@ that were actually on time.],
   [\# https:\/\/github.com/lewagon/wait-on-check-action],
   [uses: lewagon/wait-on-check-action\@v1.4.1],
   [with:],
-  [ref: \${{ github.ref }}],
+  [ref: \$\{\{ github.ref \}\}],
   [check-name: build-docker-image],
-  [repo-token: \${{ secrets. GITHUB\_TOKEN }}],
+  [repo-token: \$\{\{ secrets. GITHUB\_TOKEN \}\}],
   [\# seconds between checks],
   [wait-interval: 10],
   [test:],
@@ -1713,10 +1675,10 @@ that were actually on time.],
   [needs: \[ package-hash , wait-for-build \]],
   [\# seems we cannot use the env variables here],
   [container:],
-  [image: us-east4-docker.pkg.dev/helloworld-330918/gleb-google-artifact-registry-test/cypress-tests-image:\${{ needs.package-hash.outputs.hash }}],
+  [image: us-east4-docker.pkg.dev/helloworld-330918/gleb-google-artifact-registry-test/cypress-tests-image:\$\{\{ needs.package-hash.outputs.hash \}\}],
   [credentials:],
   [username: \_json\_key],
-  [password: \${{ secrets. GCR\_KEY }}],
+  [password: \$\{\{ secrets. GCR\_KEY \}\}],
   [steps:],
   [- name: Checkout 🛎️],
   [\# https:\/\/github.com/actions/checkout],
@@ -1755,10 +1717,10 @@ that were actually on time.],
  
  \# later 
  container: 
- image: us-east4-docker.pkg.dev/helloworld-330918/gleb-google-artifact-registry-test/cypress-tests-image:\${{ needs.package-hash.outputs.hash }} 
+ image: us-east4-docker.pkg.dev/helloworld-330918/gleb-google-artifact-registry-test/cypress-tests-image:\$\{\{ needs.package-hash.outputs.hash \}\} 
  credentials: 
  username: \_json\_key 
- password: \${{ secrets. GCR\_KEY }}],
+ password: \$\{\{ secrets. GCR\_KEY \}\}],
   [The finished workflow works great],
   [Just keep the GCR\_KEY secret!],
 ),
@@ -1768,44 +1730,43 @@ that were actually on time.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Roman Trade with Modern-Day Sri Lanka],
   author: [George Levrier-Jones],
   source-name: [History in 28 Minutes],
   images: (),
   paragraphs: (
-  [class=""\> When Roman sailors and merchants in the first centuries of the Common Era looked southward from the mouth of the Red Sea, the island they called Taprobane, now almost universally identified with Sri Lanka, appeared in their geographies as a rich and mysterious partner in an expanding Indian Ocean trade network. Classical geographers and travel writers treated Taprobane both as a place of fabulous commodities and as a real staple of long-distance exchange: it appears in the Periplus of the Erythraean Sea, in Pliny the Elder's Natural History, and on Ptolemy's maps, and these accounts, read together with archaeological finds around Sri Lanka's ancient ports, make a persuasive case that Greco-Roman traders reached the island's shores, if sometimes indirectly, from the mid-first century CE onward.],
-  [class=""\>The short but vivid Periplus of the Erythraean Sea, a Greek seaman's handbook usually dated to the mid-first century CE, is the most direct contemporary Roman-period testimony to long-distance navigation in the Indian Ocean. Its anonymous author describes routes, seasons and goods, and although Taprobane receives briefer treatment than the western Indian ports, the Periplus places the island within the author's pragmatic commercial map: it is a known source of gems, ivory and other sought-after products and a waypoint for ships that ranged along the eastern Indian seaboard and beyond. The Periplus also reflects the adoption of the monsoon crossing, knowledge of seasonal wind patterns credited to figures such as Hippalus, which made regular oceanic linkages between the Red Sea and South Asia feasible and economically attractive for Roman subjects based in Egypt.],
-  [class=""\>Pliny the Elder and Ptolemy amplify the picture of Taprobane as an object of classical curiosity and commerce. Pliny compiled earlier reports and travelers’ tales into his encyclopedic Natural History and explicitly names Taprobane among the distant islands whose products reached Mediterranean markets; Ptolemy's Geographia, meanwhile, institutionalized Taprobane on maps, even if the island's scale and position were distorted in late antique cartography. These literary testimonies outline what the Roman-world readers believed they were buying from the Indian Ocean: not only luxury items such as pearls, gems, spices and exotic woods, but also useful commodities—elephants for war and ivory for luxury works—that made a voyage to Taprobane, or through agents who dealt with it, commercially worthwhile.],
-  [class=""\>Textual notice must be matched to material traces, and here archaeology supplies concrete, if sometimes contested, evidence. Excavations and survey work at Sri Lanka's ancient trading sites—most notably Mantai (the harbor complex at Mannar), Godavaya and certain finds around the southern ports and the Ruhuna region—have produced imported ceramics, Indo-Roman wares, and metal finds datable to the first few centuries CE. These finds indicate that goods and perhaps persons moved between the island and the wider Indian Ocean economy at the time classical authors wrote. Archaeologists have recovered Roman or Roman-style amphora sherds and Mediterranean imports mixed with local and South Indian ceramics in contexts that often line up with the mid-first through third centuries CE, supporting the textual evidence that Taprobane was part of long-distance trade networks rather than an isolated curiosity.],
-  [class=""\>Numismatics has contributed one of the most headline-grabbing types of evidence: Roman and Indo-Roman coins found on the island and in neighboring Indian ports. Scholars have catalogued a variety of coins—official Roman denominations, later Byzantine and Sasanian pieces, and locally struck imitations, that turn up in hoards and stray finds across Sri Lanka's archaeological record. The presence of Roman gold, silver and bronze specimens, and of imitations that adapt Roman portraiture and types, demonstrates multiple channels of contact: direct importation, trade mediated by South Indian merchants, and the island's participation in a wider monetary ecology that incorporated foreign coinage as bullion or prestige money. At the same time, numismatists caution that coin deposits are slippery evidence for regular commercial routes, coins travel, are hoarded, reused and sometimes arrive centuries after they were minted, so they illuminate connectivity without always proving direct, continuous Roman state involvement.],
-  [class=""\>Material culture beyond coins, such as fragments of Mediterranean amphorae, glassware and certain classically styled objects helps round out the picture. Amphora sherds linked by form and fabric to Mediterranean production argue that Mediterranean foodstuffs (wine, preserved fish or oil) or at least their containers were carried into the Indian Ocean system. Yet many of the "Roman" finds in South Asia were funneled through intermediary entrepôts on the Malabar coast and the Arabian littoral; the principal agents of exchange in this era were often Indian, Arabian and later Southeast Asian merchants who operated the coastal networks and transshipped cargoes to and from Sri Lankan anchors. Consequently, although Roman subjects and merchants surely appear among the actors of this commerce, especially in Egyptian port cities like Berenice and Myos Hormos—the day-to-day movement of goods to Taprobane seems to have been largely run by regional middlemen who connected Mediterranean markets to South Asian and island producers.],
-  [class=""\>Certain Sri Lankan exports made the island especially prized by Mediterranean consumers. Classical authors and later commentators repeatedly emphasize cinnamon (whose precise identification in ancient texts is debated), pearls from the island's offshore banks, high-quality gemstones and ivory. Archaeology confirms the island's role in pearl fishing and its access to precious stones and fine timber, while epigraphic and local traditions record long-standing maritime commerce. The intersection of demand in the Roman world for luxury consumables and Sri Lanka's capacity to supply them produced the economic logic for sustained contact, sometimes direct, sometimes indirect—across the Indian Ocean.],
-  [class=""\>Historians still debate the scale and intimacy of Roman contact with Taprobane. Older popular narratives sometimes implied a flood of Roman merchants and colonial outposts, but modern scholarship tends toward a more nuanced reconstruction: the Roman world was linked into the Indian Ocean by regular traffic and predictable monsoon crossings, yet most trade remained mercantile rather than imperial in character. Exchanges involved ships and traders from many polities, and Roman interest in the island was commercial and mediated through established regional networks. Recent syntheses emphasize networks rather than empires and stress local agency: Sri Lankan rulers and coastal cities actively engaged with incoming traders, negotiated the terms of exchange, and integrated foreign goods into local economies and status displays.],
-  [class=""\>To read the Roman footprint on Sri Lanka is therefore to read an intricate palimpsest: classical texts furnish names, commodities and routes; coins and imported pottery confirm episodes of contact; port archaeology (Mantai, Godavaya and elsewhere) gives archaeological contexts; and numismatic and ceramic studies provide the cautionary notes that turn sensational finds into careful historical argument. Together they show a world in which a Mediterranean empire's appetites met an Indian Ocean island's riches through the wind and skill of monsoon sailors, the networks of Indian and Arabian middlemen, and the receptive markets of the classical Mediterranean. The story of Roman contact with Taprobane is thus not simply one of exotic discovery but of interlocking economic systems whose consequences can still be traced across texts, maps and the soil of Sri Lanka's ancient harbors.],
-  [class=""\>If modern readers take away anything from these fragments of evidence, it should be the image of an ancient globality: long before industrial shipping lanes and steam power, mariners harnessed seasonal winds and a shared appetite for luxury to connect Rome and Taprobane. The contacts were episodic and mediated, yet real—and archaeology keeps revealing fresh details that transform classical blurbs into a living maritime history of exchange, negotiation and cultural contact centered on an island the ancients called Taprobane.],
-  [class=""\>Therefore in conclusion, the story of Roman contact with Taprobane, (modern Sri Lanka), reveals a world far more interconnected than traditional histories of empire and conquest often suggest. It illustrates how commerce, curiosity, and the mastery of the monsoon winds drew distant civilizations into dialogue across thousands of nautical miles. Taprobane stood at the crossroads of the Indian Ocean trade, a hub where the ambitions of Mediterranean merchants, the enterprise of South Asian and Arabian intermediaries, and the wealth of the island's own natural resources converged. Rather than a tale of colonization or conquest, it is one of exchange and adaptation, in which goods, ideas, and cultural influences circulated through the flexible networks of ancient trade.],
-  [class=""\>From the Roman amphora fragments unearthed at Mantai to the gold coins buried in Sri Lankan soil, every discovery underscores that global trade, even in antiquity, was a shared venture driven by mutual interest and the steady rhythm of the monsoon. Taprobane's presence in classical geography, literature, and cartography speaks not only to Roman fascination with distant lands but also to the island's active participation in shaping the maritime world of its time. In the final measure, the legacy of these contacts lies in their reminder that globalization is not a modern invention, it is a continuous human story that began when early sailors learned to follow the winds from the Red Sea to the shining shores of Taprobane.],
-  [class=""\> The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
-  [class=""\>Hippalus was a Greek navigator and mariner traditionally credited with one of the most important breakthroughs in ancient navigation, the discovery of the direct sea route across the Indian Ocean from the Red Sea to the west coast of India, aided by the predictable seasonal winds known today as the monsoon. His exploits, usually dated to the 1st century BCE, revolutionized maritime trade between the Greco-Roman world and India by allowing sailors to venture directly across the open ocean rather than hugging the dangerous and time-consuming coastlines of Arabia and Persia. Although few details of his life are known, Hippalus's name became synonymous with this vital navigational discovery, with both the southwest monsoon wind and the route itself often referred to in ancient texts as the Hippalus or Hippalus wind.],
-  [class=""\>Before Hippalus's innovation, Greek and Roman merchants relied largely on intermediary traders and coastal navigation routes that followed the Arabian Peninsula, using small vessels ill-suited for deep-sea travel. By observing the regular reversal of the monsoon winds, blowing from the southwest in summer and the northeast in winter, Hippalus realized that a direct crossing from the Red Sea to the Malabar Coast of India was possible. This not only shortened the voyage but also dramatically increased the volume and efficiency of trade. His discovery effectively opened the Indian Ocean to Greco-Roman seafarers and established a reliable maritime corridor that endured for centuries, connecting ports such as Berenice and Myos Hormos in Egypt to Muziris and Barygaza in India.],
-  [class=""\>The Periplus of the Erythraean Sea, a 1st-century CE Greek navigational text, preserves some of the earliest references to Hippalus's route. Although historians debate whether Hippalus himself made the voyage or merely identified the wind pattern, his legacy was profound. Roman merchants soon began to dominate the Indian Ocean trade, importing spices, silks, gemstones, and ivory in exchange for gold and silver. The new route not only enriched the Roman economy but also deepened cultural exchanges between the Mediterranean world and South Asia, influencing art, religion, and material culture on both sides. Thus, even though the man Hippalus remains elusive, his name endures as a symbol of early scientific observation and the spirit of exploration that bridged civilizations across the seas.],
+  [When Roman sailors and merchants in the first centuries of the Common Era looked southward from the mouth of the Red Sea, the island they called Taprobane, now almost universally identified with Sri Lanka, appeared in their geographies as a rich and mysterious partner in an expanding Indian Ocean trade network. Classical geographers and travel writers treated Taprobane both as a place of fabulous commodities and as a real staple of long-distance exchange: it appears in the Periplus of the Erythraean Sea, in Pliny the Elder's Natural History, and on Ptolemy's maps, and these accounts, read together with archaeological finds around Sri Lanka's ancient ports, make a persuasive case that Greco-Roman traders reached the island's shores, if sometimes indirectly, from the mid-first century CE onward.],
+  [Terry Bailey explains.],
+  [A map of Taprobane from Ptolemy's Geography.],
+  [The short but vivid Periplus of the Erythraean Sea, a Greek seaman's handbook usually dated to the mid-first century CE, is the most direct contemporary Roman-period testimony to long-distance navigation in the Indian Ocean. Its anonymous author describes routes, seasons and goods, and although Taprobane receives briefer treatment than the western Indian ports, the Periplus places the island within the author's pragmatic commercial map: it is a known source of gems, ivory and other sought-after products and a waypoint for ships that ranged along the eastern Indian seaboard and beyond. The Periplus also reflects the adoption of the monsoon crossing, knowledge of seasonal wind patterns credited to figures such as Hippalus, which made regular oceanic linkages between the Red Sea and South Asia feasible and economically attractive for Roman subjects based in Egypt.],
+  [Pliny the Elder and Ptolemy amplify the picture of Taprobane as an object of classical curiosity and commerce. Pliny compiled earlier reports and travelers’ tales into his encyclopedic Natural History and explicitly names Taprobane among the distant islands whose products reached Mediterranean markets; Ptolemy's Geographia, meanwhile, institutionalized Taprobane on maps, even if the island's scale and position were distorted in late antique cartography. These literary testimonies outline what the Roman-world readers believed they were buying from the Indian Ocean: not only luxury items such as pearls, gems, spices and exotic woods, but also useful commodities—elephants for war and ivory for luxury works—that made a voyage to Taprobane, or through agents who dealt with it, commercially worthwhile.],
+  [Textual notice must be matched to material traces, and here archaeology supplies concrete, if sometimes contested, evidence. Excavations and survey work at Sri Lanka's ancient trading sites—most notably Mantai (the harbor complex at Mannar), Godavaya and certain finds around the southern ports and the Ruhuna region—have produced imported ceramics, Indo-Roman wares, and metal finds datable to the first few centuries CE. These finds indicate that goods and perhaps persons moved between the island and the wider Indian Ocean economy at the time classical authors wrote. Archaeologists have recovered Roman or Roman-style amphora sherds and Mediterranean imports mixed with local and South Indian ceramics in contexts that often line up with the mid-first through third centuries CE, supporting the textual evidence that Taprobane was part of long-distance trade networks rather than an isolated curiosity.],
+  [Numismatics has contributed one of the most headline-grabbing types of evidence: Roman and Indo-Roman coins found on the island and in neighboring Indian ports. Scholars have catalogued a variety of coins—official Roman denominations, later Byzantine and Sasanian pieces, and locally struck imitations, that turn up in hoards and stray finds across Sri Lanka's archaeological record. The presence of Roman gold, silver and bronze specimens, and of imitations that adapt Roman portraiture and types, demonstrates multiple channels of contact: direct importation, trade mediated by South Indian merchants, and the island's participation in a wider monetary ecology that incorporated foreign coinage as bullion or prestige money. At the same time, numismatists caution that coin deposits are slippery evidence for regular commercial routes, coins travel, are hoarded, reused and sometimes arrive centuries after they were minted, so they illuminate connectivity without always proving direct, continuous Roman state involvement.],
+  [Material culture beyond coins, such as fragments of Mediterranean amphorae, glassware and certain classically styled objects helps round out the picture. Amphora sherds linked by form and fabric to Mediterranean production argue that Mediterranean foodstuffs (wine, preserved fish or oil) or at least their containers were carried into the Indian Ocean system. Yet many of the "Roman" finds in South Asia were funneled through intermediary entrepôts on the Malabar coast and the Arabian littoral; the principal agents of exchange in this era were often Indian, Arabian and later Southeast Asian merchants who operated the coastal networks and transshipped cargoes to and from Sri Lankan anchors. Consequently, although Roman subjects and merchants surely appear among the actors of this commerce, especially in Egyptian port cities like Berenice and Myos Hormos—the day-to-day movement of goods to Taprobane seems to have been largely run by regional middlemen who connected Mediterranean markets to South Asian and island producers.],
+  [Certain Sri Lankan exports made the island especially prized by Mediterranean consumers. Classical authors and later commentators repeatedly emphasize cinnamon (whose precise identification in ancient texts is debated), pearls from the island's offshore banks, high-quality gemstones and ivory. Archaeology confirms the island's role in pearl fishing and its access to precious stones and fine timber, while epigraphic and local traditions record long-standing maritime commerce. The intersection of demand in the Roman world for luxury consumables and Sri Lanka's capacity to supply them produced the economic logic for sustained contact, sometimes direct, sometimes indirect—across the Indian Ocean.],
+  [Historians still debate the scale and intimacy of Roman contact with Taprobane. Older popular narratives sometimes implied a flood of Roman merchants and colonial outposts, but modern scholarship tends toward a more nuanced reconstruction: the Roman world was linked into the Indian Ocean by regular traffic and predictable monsoon crossings, yet most trade remained mercantile rather than imperial in character. Exchanges involved ships and traders from many polities, and Roman interest in the island was commercial and mediated through established regional networks. Recent syntheses emphasize networks rather than empires and stress local agency: Sri Lankan rulers and coastal cities actively engaged with incoming traders, negotiated the terms of exchange, and integrated foreign goods into local economies and status displays.],
+  [To read the Roman footprint on Sri Lanka is therefore to read an intricate palimpsest: classical texts furnish names, commodities and routes; coins and imported pottery confirm episodes of contact; port archaeology (Mantai, Godavaya and elsewhere) gives archaeological contexts; and numismatic and ceramic studies provide the cautionary notes that turn sensational finds into careful historical argument. Together they show a world in which a Mediterranean empire's appetites met an Indian Ocean island's riches through the wind and skill of monsoon sailors, the networks of Indian and Arabian middlemen, and the receptive markets of the classical Mediterranean. The story of Roman contact with Taprobane is thus not simply one of exotic discovery but of interlocking economic systems whose consequences can still be traced across texts, maps and the soil of Sri Lanka's ancient harbors.],
+  [If modern readers take away anything from these fragments of evidence, it should be the image of an ancient globality: long before industrial shipping lanes and steam power, mariners harnessed seasonal winds and a shared appetite for luxury to connect Rome and Taprobane. The contacts were episodic and mediated, yet real—and archaeology keeps revealing fresh details that transform classical blurbs into a living maritime history of exchange, negotiation and cultural contact centered on an island the ancients called Taprobane.],
+  [Therefore in conclusion, the story of Roman contact with Taprobane, (modern Sri Lanka), reveals a world far more interconnected than traditional histories of empire and conquest often suggest. It illustrates how commerce, curiosity, and the mastery of the monsoon winds drew distant civilizations into dialogue across thousands of nautical miles. Taprobane stood at the crossroads of the Indian Ocean trade, a hub where the ambitions of Mediterranean merchants, the enterprise of South Asian and Arabian intermediaries, and the wealth of the island's own natural resources converged. Rather than a tale of colonization or conquest, it is one of exchange and adaptation, in which goods, ideas, and cultural influences circulated through the flexible networks of ancient trade.],
+  [From the Roman amphora fragments unearthed at Mantai to the gold coins buried in Sri Lankan soil, every discovery underscores that global trade, even in antiquity, was a shared venture driven by mutual interest and the steady rhythm of the monsoon. Taprobane's presence in classical geography, literature, and cartography speaks not only to Roman fascination with distant lands but also to the island's active participation in shaping the maritime world of its time. In the final measure, the legacy of these contacts lies in their reminder that globalization is not a modern invention, it is a continuous human story that began when early sailors learned to follow the winds from the Red Sea to the shining shores of Taprobane.],
+  [The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
+  [Notes:],
+  [Hippalus was a Greek navigator and mariner traditionally credited with one of the most important breakthroughs in ancient navigation, the discovery of the direct sea route across the Indian Ocean from the Red Sea to the west coast of India, aided by the predictable seasonal winds known today as the monsoon. His exploits, usually dated to the 1st century BCE, revolutionized maritime trade between the Greco-Roman world and India by allowing sailors to venture directly across the open ocean rather than hugging the dangerous and time-consuming coastlines of Arabia and Persia. Although few details of his life are known, Hippalus's name became synonymous with this vital navigational discovery, with both the southwest monsoon wind and the route itself often referred to in ancient texts as the Hippalus or Hippalus wind.],
+  [Before Hippalus's innovation, Greek and Roman merchants relied largely on intermediary traders and coastal navigation routes that followed the Arabian Peninsula, using small vessels ill-suited for deep-sea travel. By observing the regular reversal of the monsoon winds, blowing from the southwest in summer and the northeast in winter, Hippalus realized that a direct crossing from the Red Sea to the Malabar Coast of India was possible. This not only shortened the voyage but also dramatically increased the volume and efficiency of trade. His discovery effectively opened the Indian Ocean to Greco-Roman seafarers and established a reliable maritime corridor that endured for centuries, connecting ports such as Berenice and Myos Hormos in Egypt to Muziris and Barygaza in India.],
+  [The Periplus of the Erythraean Sea, a 1st-century CE Greek navigational text, preserves some of the earliest references to Hippalus's route. Although historians debate whether Hippalus himself made the voyage or merely identified the wind pattern, his legacy was profound. Roman merchants soon began to dominate the Indian Ocean trade, importing spices, silks, gemstones, and ivory in exchange for gold and silver. The new route not only enriched the Roman economy but also deepened cultural exchanges between the Mediterranean world and South Asia, influencing art, religion, and material culture on both sides. Thus, even though the man Hippalus remains elusive, his name endures as a symbol of early scientific observation and the spirit of exploration that bridged civilizations across the seas.],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([class=""\>   class=""\> The site has been offering a wide variety of high-quality, free history content since 2012.], [George Levrier-Jones]),
-  inline-pq-idx: 6,
+  inline-pq: pull-quote([  The site has been offering a wide variety of high-quality, free history content since 2012.], [George Levrier-Jones]),
+  inline-pq-idx: 7,
   word-count: 1892,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [For Southern Antagonists in the Civil War, a Kindred Desire for Peace Goes Awry],
   author: [Jesse George-Nichol],
   source-name: [HistoryNet],
@@ -1838,10 +1799,8 @@ John Robertson],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Turning a childhood interest into a career path with MIT Open Learning resources],
   author: [Lauren Rebecca Thacker | MIT Open Learning],
   source-name: [MIT News Education],
@@ -1870,11 +1829,10 @@ John Robertson],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Episode 115 (A Brief Eulogy for a Commercial Radio Station)],
   author: [The Memory Palace],
   source-name: [The Memory Palace],
@@ -1893,7 +1851,7 @@ John Robertson],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Episode 150: Late One Night],
   author: [The Memory Palace],
   source-name: [The Memory Palace],
@@ -1920,7 +1878,7 @@ John Robertson],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Tackling the Awkward Squad for Reactive Programming],
   author: [Lambda the Ultimate],
   source-name: [Lambda the Ultimate],
@@ -1938,7 +1896,7 @@ John Robertson],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Week 17],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -1973,7 +1931,7 @@ having mainstream brands start looking into more reusable, less-plastic products
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Episode 184: Betty Robinson],
   author: [Nate DiMeo],
   source-name: [The Memory Palace],
@@ -1995,7 +1953,7 @@ having mainstream brands start looking into more reusable, less-plastic products
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Episode 226: A Wild One],
   author: [Nate DiMeo],
   source-name: [The Memory Palace],
@@ -2020,7 +1978,7 @@ There is a lot written about Bessie, including some wonderful children's books. 
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Week 18],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -2051,7 +2009,7 @@ but pb cookies with no-guilt-sugar are delicius), cashew milk.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [What Do Social Media Companies Fear? Time Management.],
   author: [Study Hacks],
   source-name: [Study Hacks (Cal Newport)],
@@ -2066,6 +2024,7 @@ but pb cookies with no-guilt-sugar are delicius), cashew milk.],
   [When you’re following an intentional schedule, your efforts are oriented toward goals that you find important. You also feel a satisfying sense of self-efficacy. These realities engage your long-term reward system, which can override the urges generated by its short-term counterpart, dissipating the drive for quick gratification from activities like glancing at your phone.],
   [In other words: The more you organize your analog life, the less appealing you’ll find the digital alternative.],
   [If this is true, then maybe the thing social media companies fear most is not some newly-powerful application-blocking software or impossibly strict regulation, but rather a good old-fashioned daily planner.],
+  [In Other News :],
   [A lot of people I know have been freaked out recently by a viral essay with a grandiose title: ​“Something Big is Happening.”​ I recently released ​a short video​ in which I conduct a close analysis of this piece. (Spoiler alert: I wasn’t impressed.) ​ Check it out. ​],
   [(More generally, I’ve been considering starting a separate weekly podcast/newsletter dedicated to providing a reality check on recent AI news. It feels like it might be useful to separate this discussion from my existing podcast and newsletter, which are more focused on how individuals can seek depth in a distracted world. But also, maybe this is a bad idea? I’m interested to hear your thoughts about this plan.)],
   [The post What Do Social Media Companies Fear? Time Management. appeared first on Cal Newport .],
@@ -2081,8 +2040,7 @@ but pb cookies with no-guilt-sugar are delicius), cashew milk.],
 #pull-quote([So, the more you use social media, the worse you become at time management.], [Study Hacks])
 
 
-{
-  #standard-article(
+#standard-article(
   title: [Episode 166: The Silent Room],
   author: [The Memory Palace],
   source-name: [The Memory Palace],
@@ -2103,25 +2061,22 @@ but pb cookies with no-guilt-sugar are delicius), cashew milk.],
   debug-mode: false,
 )
 
-  #pull-quote([It's pretentious, sure, but that's the intention.], [The Memory Palace])
+#pull-quote([It's pretentious, sure, but that's the intention.], [The Memory Palace])
 
-}
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [Lighting an Ikea Billy Bookcase],
   author: [Erik Runyon],
   source-name: [Erik Runyon],
   images: (),
   paragraphs: (
   [This past December I had the opportunity to put together my first proper home office. One aspect of the office is a bookshelf to corral all my books and memorabilia that up to this point have been scattered around the house. For this project I utilized three Ikea Billy bookcases, but to make the project really shine, I added LED lighting. Let’s go over the products and process I followed to set this up.],
-  [id="tldr"\>TL;DR],
+  [TL;DR],
   [LED and wire channels = clean finish],
   [Cable management = worth the effort],
   [Splicing wires = most time-consuming],
   [End result = cozy, nerd-approved display],
-  [id="shopping-list"\>Shopping List],
   [Ikea Billy bookcase],
   [Ikea HÖGBO glass doors],
   [LED Strip Lights - 16.4ft 3000K Dimmable],
@@ -2129,28 +2084,28 @@ but pb cookies with no-guilt-sugar are delicius), cashew milk.],
   [Black cable channel],
   [22/2 AWG Red/Black Electrical Wire],
   [20 Pack COB 0.31in(8mm) 2-pin Transparent Connector],
-  [id="tools-needed"\>Tools needed],
+  [Tools needed],
   [Electric drill for drilling wiring holes in the back of the case and attaching difuser channel],
   [Hacksaw for cutting difuser channel],
   [Tin-snips for cutting cable channel],
   [Screwdriver and allen wrenches],
   [Two of the three shelves assembled and ready for wiring],
   [The HÖGBO doors come with inserts to hide the contents, but since the whole point here is to enjoy the display, I left those off. The reason for the doors is to keep everything inside relatively dust-free. These doors are made for the Billy cases, so they’re relatively easy to install.],
-  [id="step-1-led-channel"\>Step 1: LED channel],
+  [Step 1: LED channel],
   [LED diffuser channel installed on underside of shelf],
   [A big priority for this project was to make the lighting look as clean as possible. So for step one I cut and installed the channel diffuser along the front lip of shelf. The diffuser channel is alumnium, so I used a hacksaw to cut to length. Luckily there was enough space between the shelf mounts and the front lip. To allow space for the wiring to run from the diffuser channel to the cable channel (see step \#2), I cut a small notch.],
   [Diffuser channel with notch for wiring],
   [To connect the LED strip to the wiring I used 2-pin transparent connectors. This way the LED strip was only running along the front of the shelf, and the wiring could then do a 90-degree turn to head out the back of the case. If you look close, you would be able to see the connectors at the right end of the LED strip near the wall of the shelf. But I made sure these connections were at the door end of my office, so they’re less noticeable.],
-  [id="step-2-cable-channel"\>Step 2: Cable channel],
+  [Step 2: Cable channel],
   [Diffuser and cable channel installed],
   [The cable channel is added to the underside of each shelf to hide the wiring that runs from the LED strips to the back of the shelf where the wiring is joined. For this I drilled a hole just large enough for the wiring. This is a peel-and-stick product, so installation was simply a matter of cutting the plastic channel to fit, and then sticking it to the underside of the shelf. NOTE: Due to how I ran the wiring through the back of the shelf, it does not allow for future adjustment to the height of the shelves. It’s not an issue in my case since I was going for a symmetrical, even-height look.],
-  [id="step-3-connecting-the-wires"\>Step 3: Connecting the wires],
+  [Step 3: Connecting the wires],
   [The LED kit I purchased came with two 5-meter (16.4 ft) LED strips. The included controller had two outputs, one for each strip. Since I’m lighting nine separate shelves and the top of the cases, this required quite a bit of wire splicing. But since all of the cables were exiting through the back of the cases, it was easy to hide the mess. Wiring was easily the most labor intensive part of the project as there was quite a bit of experimentation and testing before I found a solution that I liked and worked well.],
   [One example of splicing the wires running to each strip],
-  [id="step-4-finish-adding-light-strips"\>Step 4: Finish adding light strips],
+  [Step 4: Finish adding light strips],
   [All wiring connected],
   [I forgot to take some intermittent shots at this juncture. I installed LED strips along the underside of each shelf for an even glow across all levels. Connecting the light strips was probably the easiest and fastest step in the process. As you can see in the image above, none of the red/black wiring is visible. All that’s left is to finish attaching the top LED strip. After that comes the fun part… DECORATING!],
-  [id="the-finished-product"\>The finished product],
+  [The finished product],
   [My daughter was a big help in this final step. Much to my wife’s delight, we gathered all of the books and trinkets and began the organizing process. We attempted to organize by theme and genre as much as possible. But given that it’s a mad collection of various books, 80’s toys, and general nerddom trinkets, it was at times a challenge. And I have been adding and removing items as I’ve found more stuff stashed away in boxes. As soon as I can find my original NES, it will joining the collection (I know it’s in a box in the basement somewhere). The end result is a great backdrop for my new home office.],
   [Lit and decorated (photographed at 100% brightness)],
   [The lighting kit is dimmable which is great. I almost never run at full brightness. In the morning, I go with 10% brightness. Later in the day I’ll bump up to 25-50%. It just depends on time of day, weather (light coming in through the windows), and general mood.],
@@ -2162,10 +2117,8 @@ but pb cookies with no-guilt-sugar are delicius), cashew milk.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Hallucinating with art models],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -2184,27 +2137,26 @@ but pb cookies with no-guilt-sugar are delicius), cashew milk.],
   [3. “Erik Johansson photograph of a woman\[sic\] hair that is a literal bee hive”],
   [4. “A toucan wearing a 60s apron, sitting on a mid century modern armchair, talking on a rotary phone, retrofuturism”],
   [What have I learned?],
-  [id="boring-uses-of-interesting-models"\>Boring uses of interesting models],
+  [Boring uses of interesting models],
   [I use these new models for a very specific thing, and that is as a brainstorming partner/collaborator. This shouldn’t surprise you: I’ve been going off on using ML for co-creation since the days of working on Magenta , which was the project that forged my views on the topic (shoutout to the smarter-than-me people on the team that let me absorb their well articulated opinions).],
   [I tend to find DALL-E generations like “dogs playing poker” or “Donald Trump but as a cheeseburger” impressive, but kind of boring: yes, the output is funny, but no, I don’t fall asleep thinking about the deep meaning of an orange cheeseburger with a balding head and very small hands. As an artist who is trying to carve a place for myself in the art world (and for these models in my art), I want them to be my co-creators, my partners in crime, but not take over and compromise my style. I want us to brainstorm together, come up with ideas, and then (in most cases), mold this draft into something that I can look at and say “yeah, that looks like something I made”.],
   [This is consistent with how I look at the use of music models like the Music Transformer : absolutely impressive compositions, best suited for an elevator. This isn’t the fault of the model, nor its users, and I am truly not shitting on these outputs (unless they’re for NFTs; always here to shit on NFTs 🙃): I think both background music and memes have a value in society, as do procedural TV shows (they’re filming new Criminal Minds!!!), computer generated or not. But personally, as an artist, I feel fairly emotionally detached from them, as I’m pretty sure their authors do.],
   [The exact same models, when used in a thoughtful and creative way lead to absolutely brilliant things; the ones that make you say “fuck, I wish I had thought of that”. Yacht’s album made with hard creative rules and machine learning is a wonderful example, as is Karen X. Cheng’s use of DALL-E to imagine the scene beyond Girl with a Pearl Earring . This is the bit that I care about.],
   [I’ve been trying to post updates about how I personally use these models on my artstagram (often with a commentary about the process), but as a recent craft fair that just rejected me had to say: I’m quite shit at the socials. Have this blog post instead?],
-  [id="the-barely-scientific-method"\>The (barely scientific) method],
-  [id="models"\>Models],
+  [The (barely scientific) method],
   [I used the 4 models I have access to:],
   [DALL-E , via the OpenAI website],
   [Stable Diffusion , via the collab],
   [MidJourney , via their Discord bot],
   [DALL-E mini , via the HuggingFace interface.],
   [I tried to get a Googler to help me run the prompts on Imagen , but I got no bites, so I have no idea how it fits into this story.],
-  [id="cherry-picking-outputs"\>Cherry-picking outputs],
+  [Cherry-picking outputs],
   [I cherry-picked 4 images for each model as follows:],
   [DALL-E: Because using it costs real moneydollars these days, I decided to backfit this experiment to prompts I’ve already saved several images for (crucially: this means that I thought the prompt gave interesting enough results for me to care; this is 100% not true of every prompt I try). I also ran each prompt one more time to generate 4 more outputs, and then picked the best 3 out of those. The top left result is always the one I liked the most.],
   [Stable Diffusion: cherry picked 4 results out of about 9.],
   [MidJourney: I ran each prompt twice (getting 8 outputs in total), and then I picked the best 4. I didn’t try any parameters or tricks other than just using the prompt itself.],
   [I tried to be as honest as possible with the results I’m showing, because I don’t have a dog in this race. I just want something useful for me , wherever it comes from. You can zoom over the results to see them slightly bigger.],
-  [id="what-i-look-for"\>What I look for],
+  [What I look for],
   [The prompts I used are for stuff I am actively working on, so they’re a bit weird, slightly personal, and in some cases, oddly disturbing. Please don’t steal the prompts or the outputs from me; I can’t stop you (such is life on the internet), but it will break my heart.],
   [I’ll have some more details for each prompt, and how I picked “the most interesting to me”, but the two big rubrics I looked for were:],
   [Did this model interpret the prompt?],
@@ -2213,20 +2165,19 @@ but pb cookies with no-guilt-sugar are delicius), cashew milk.],
   [I understand that in some cases if I spent more time working on the prompt, I might get better results. The way I work is that I don’t try to force things into existing – if they don’t work out, I shelve them for a better time.],
   [Some results are really weird and unsettling, and they’ve made me dislike my prompt. This isn’t the models’ faults, or their authors, nor do I have “bad feels” towards the models; it just means I’ve
 accidentally created an uncanny valley and I need to back away from it until I have a better idea of what I actually want from a model. Or maybe not use bees ever again.],
-  [id="results"\>Results],
   [I picked 4 prompts, each of which covering a different area I am interested in:],
   [An easy to imagine concept that exists in real life (can it execute?)],
   [An easy to imagine concept that doesn’t exist in real life (can it imagine?)],
   [A hard to imagine concept that doesn’t exist in real life but makes sense linguistically (can it hallucinate a surrealism?)],
   [Multiple concepts that exist in real life, glued together in a way that doesn’t make sense linguistically nor does it exist it real life (can it be weird?)],
   [I apologize in advance for \#3 – it’s a bad place – and for the alt text on these images. Summarizing robot art is harder than I thought.],
-  [id="1-linocut-print-of-a-girl-bundled-up-in-bed-with-a-stack-of-books-and-a-cat"\>1. “Linocut print of a girl bundled up in bed with a stack of books and a cat”],
+  [1. “Linocut print of a girl bundled up in bed with a stack of books and a cat”],
   [What I am looking for: Something that I can actually carve into linoleum and make prints out of, so sharp lines that I don’t have to spend too much time cleaning up is ideal. The suprise winner in this category was Stable Diffusion who despite not interpreting the prompt correctly, came up with the most interesting results (in my opinion, etc)],
   [DALL-E . Composition is great (100% gets the prompt), but completely misses the mark on "linocut". I tried to work this into a useable drawing to carve, but because it uses fairly sketchy lines and fills, it ended up being way more work than I wanted.],
   [Stable diffusion . Composition is pretty good but doesn't actually interpret the prompt well. The "linocut" part is really well done -- I find it amazing that the top left image actually has a signature and a title outside of the print! Despite not getting the point, the top right result is my dream come true and what I'll end up using.],
   [MidJourney . Also kind of misses the prompt, and doesn't have as many details as the Stable Diffusion results. I really like the bottom left the most, but I don't think it screams "cat with books" enough for me to use.],
   [DALL-E mini . The results are kind of okay if you squint really hard, but not at all what I'm looking for. I just got laser eyes; I'm not about to go back to squinting.],
-  [id="2-lithograph-of-an-orchid-where-each-flower-has-a-small-skull-inside"\>2. “Lithograph of an orchid where each flower has a small skull inside”],
+  [2. “Lithograph of an orchid where each flower has a small skull inside”],
   [What I am looking for: any semblance of an orchid not looking like an orchid. The “lithograph” part was a very loose requirement – I just wanted it to feel “pencilly” without looking like a child drew it, which is what DALL-E often does for “pencil drawing”. I spent a lot of time on this prompt with DALL-E (including looking up the technical biology terms for “the bit inside an orchid flower”), and I never got anything at all correct. It wasn’t until this blog post when I went to other models that I regained hope! MidJourney, man!],
   [DALL-E . I remember I tried many combinations of writing "a skull inside each flower", and
  all I could ever get out of DALL-E was an orchid next to, or coming out of, a skull. I get bored after about half an hour of failing at a prompt; I'm sure there is a way to write this to get what I'm looking for, but I didn't figure it out, and I lost interest.],
@@ -2236,7 +2187,7 @@ accidentally created an uncanny valley and I need to back away from it until I h
   [DALL-E mini . Suffers from the same prompt problems as the other models, which makes me think
  that whatever special tweaks MidJourney does to get "creativity" out of a prompt are absolutely
  working.],
-  [id="3-erik-johansson-photograph-of-a-womansic-hair-that-is-a-literal-bee-hive"\>3. “Erik Johansson photograph of a woman\[sic\] hair that is a literal bee hive”],
+  [3. “Erik Johansson photograph of a woman\[sic\] hair that is a literal bee hive”],
   [I love surrealism. I was watching this 60s movie where a bunch of women had beehive hairdos, and this is how my brain operates: “wouldn’t it be interesting if”? I don’t know what I was expecting to get, but it wasn’t any of this (though as someone who understands how these models work, in retrospect I understand exactly how we got here). I chose Erik Johansson because surreal photography is his jam, and it helped stir DALL-E towards more of the right vibes at the time. Unfortunately, I got really creeped out by most of the results (from all models tbh), and it’s really soured up this prompt for me.],
   [DALL-E . The uncanny valley of literal bee hives turns out to be deep. The top left image one is the nicest, possibly because a) it doesn't have a face and b) it only has casual bees. It is maybe the closest to what I wanted (out of all the outputs), but it doesn't make me feel great looking at it.],
   [Stable diffusion . The people. They look like people. I don't like it. I think the top right one is the least disturbing?],
@@ -2246,14 +2197,14 @@ accidentally created an uncanny valley and I need to back away from it until I h
  isn't very good at realism; it gives very noisy people, or faces, and then shoves them through a potato. That, combined with (my bad) sheer
  creepiness of the prompt leads to a literal nightmare.],
   [I cannot apologize enough to these models for making them go through this. You at least could’ve scrolled past this section; they, the poor darlings, couldn’t.],
-  [id="4-a-toucan-wearing-a-60s-apron-sitting-on-a-mid-century-modern-armchair-talking-on-a-rotary-phone-retrofuturism"\>4. “A toucan wearing a 60s apron, sitting on a mid century modern armchair, talking on a rotary phone, retrofuturism”],
+  [4. “A toucan wearing a 60s apron, sitting on a mid century modern armchair, talking on a rotary phone, retrofuturism”],
   [And now, a palette cleanser. I had been doing some reading and learnt that DALL-E really likes commas and stacking up contexts, so that’s why this prompt is so detailed.],
   [DALL-E . I expected DALL-E to do well, and it did. The toucan on the phone is there, the 60s vibe is there, the apron is dubiously missing but we'll give it a pass. It's got the fuzziness of old,
  spacey, retrofuturism posters (though the prompt has absolutely no actual futurism in it)],
   [Stable diffusion . This isn't bad either. The art style is a little flatter (what is retrofuturism even?), but it's toucans doing their thing, some better than others.],
   [MidJourney . If you've ever played with MidJourney, this will strike you as having "very MidJourney vibes". This grainy, round style I see often, and I quite like. However, while it captures the style really nicely, the prompt is sort of a wash past the toucan.],
   [DALL-E mini . This is the first time I a) love this model the most and b) wish that it produced higher resolution images. Look at the aprons! Look at the furniture! In terms of concept, it's absolute perfection. In terms of execution, an absolute potato.],
-  [id="what-have-i-learned"\>What have I learned?],
+  [What have I learned?],
   [I think the most important thing I’ve learnt from this experiment is that in terms of what I’m looking for (interesting hallucinations and not realism), DALL-E isn’t the end-all, be-all of models, and nor is MidJourney. The two freely available models are quite alright in some cases, especially if you’re looking for fast and free brainstorming. I think the workflow that I will try out next is to workshop the prompt using StableDiffusion/DALL-E mini, and then take that to the big boi DALL-E herself, and see what I can go from there.],
   [In terms of model-specific lessons (knowing that it’s based on my weird experience with them, they’re not scientific and not necessarily applicable to what you are working on, etc. Don’t come for me, basically):],
   [MidJourney can be super creative, but can also fall into stylistic pits (see: the bees, the toucan)],
@@ -2266,16 +2217,14 @@ accidentally created an uncanny valley and I need to back away from it until I h
 ),
   insert-map: (:),
   inline-pq: pull-quote([I just got laser eyes; I'm not about to go back to squinting.], [Monica Dinculescu]),
-  inline-pq-idx: 33,
+  inline-pq-idx: 32,
   word-count: 2744,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Public Environment Variables For Your Tests Using cypress-expose Plugin],
   author: [Gleb Bahmutov],
   source-name: [Gleb Bahmutov],
@@ -2293,14 +2242,14 @@ accidentally created an uncanny valley and I need to back away from it until I h
  8 
  9 
  \/\\/ only run these tests on CI 
- if ( Cypress . env ( 'ci' )) { 
- it ( 'has CI variable' , () =\> { 
+ if ( Cypress . env ( 'ci' )) \{ 
+ it ( 'has CI variable' , () =\> \{ 
  expect ( Cypress . env ( 'ci' ), 'CI variable' ). to . equal ( true ) 
  expect ( Cypress . env ( 'ciName' ), 'CI name variable' ). to . equal ( 
  'GitHub Actions' , 
  ) 
- }) 
- }],
+ \}) 
+ \}],
   [In Cypress before v15 we could have set \/ used "ci" and "ciName" via environment variables, for example, if using Cypress github action :],
   [.github/workflows/ci.yml 1 
  2 
@@ -2338,7 +2287,7 @@ accidentally created an uncanny valley and I need to back away from it until I h
  \# default CI variable 
  CYPRESS\_ci: true 
  CYPRESS\_ciName: 'GitHub Actions'],
-  [The test runs, Cypress.env() returns { ci: true, ciName: 'GitHub Actions' } , everyone is happy. But in Cypress v16 the process environment variables that start with CYPRESS\_ are automatically added to the private cy.env space, and are not accessible outside test blocks \/ hooks. We could still pass them, but now we need to use a complete custom cypress run --expose ... command, instead of letting Cypress GitHub Action do its thing!],
+  [The test runs, Cypress.env() returns \{ ci: true, ciName: 'GitHub Actions' \} , everyone is happy. But in Cypress v16 the process environment variables that start with CYPRESS\_ are automatically added to the private cy.env space, and are not accessible outside test blocks \/ hooks. We could still pass them, but now we need to use a complete custom cypress run --expose ... command, instead of letting Cypress GitHub Action do its thing!],
   [This is why I wrote cypress-expose plugin. It grabs every CYPRESS\_EXPOSE\_... process environment variable and sets it into Cypress.expose object, letting the specs access it. This is meant for public data only! Simply add plugin to your setupNodeEvents callback function and pass the config object.],
   [cypress.config.js 1 
  2 
@@ -2359,25 +2308,25 @@ accidentally created an uncanny valley and I need to back away from it until I h
  17 
  18 
  19 
- const { defineConfig } = require ( 'cypress' ) 
+ const \{ defineConfig \} = require ( 'cypress' ) 
  const cypressExpose = require ( 'cypress-expose' ) 
  
- module . exports = defineConfig ({ 
+ module . exports = defineConfig (\{ 
  allowCypressEnv : false , 
- e2e : { 
+ e2e : \{ 
  \/\\/ baseUrl, etc 
  supportFile : false , 
  fixturesFolder : false , 
  
- setupNodeEvents ( on, config ) { 
+ setupNodeEvents ( on, config ) \{ 
  cypressExpose (config) 
  
  \/\\/ IMPORTANT: return the config object 
  \/\\/ to let Cypress know we modified it 
  return config 
- }, 
- }, 
- })],
+ \}, 
+ \}, 
+ \})],
   [Boom, you are all set. Now any CYPRESS\_EXPOSE\_... variable is available under camel-cased name. Let's say we run Cypress using the following command:],
   [1 
  2 
@@ -2395,10 +2344,8 @@ accidentally created an uncanny valley and I need to back away from it until I h
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Personal tech, social media, and the “decline of humanity”],
   author: [Peter Dizikes | MIT News],
   source-name: [MIT News Education],
@@ -2440,11 +2387,10 @@ accidentally created an uncanny valley and I need to back away from it until I h
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Episode 231: On Dexter Avenue],
   author: [Nate DiMeo],
   source-name: [The Memory Palace],
@@ -2465,7 +2411,7 @@ You might want to check out Caroline Janney's book, Burying the Dead but Not the
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Episode 158: Life's Work],
   author: [The Memory Palace],
   source-name: [The Memory Palace],
@@ -2487,7 +2433,7 @@ You might want to check out Caroline Janney's book, Burying the Dead but Not the
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [From The Memory Palace Audiobook: Fine New England Granite],
   author: [Nate DiMeo],
   source-name: [The Memory Palace],
@@ -2506,7 +2452,7 @@ You might want to check out Caroline Janney's book, Burying the Dead but Not the
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Episode 92 (Oil, Water)],
   author: [The Memory Palace],
   source-name: [The Memory Palace],
@@ -2529,7 +2475,7 @@ You might want to check out Caroline Janney's book, Burying the Dead but Not the
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [I made a 2001-era emoji font! That you can use!],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -2543,10 +2489,8 @@ I have never successfully befriended a monkey.],
 one of the first phones to have emoji (🤓🤓🤓: emoji first appeared in 1999, on DoCoMo phones,
 and DoCoMo phones alone). So I got ahold of this phone. Which charged, turned on
 and most importantly, TOTALLY had OG emoji:],
-  [style="width: 100%;"\>],
   [I spent the whole day being unproductive and sending emoji messages to people:],
-  [style="width: 100%;"\>],
-  [id="svgs"\>SVGs],
+  [SVGs],
   [I then took a 10 hour flight to Europe and, for lack of better things to do
 while watching every movie that came out this year, I drew every one of those emoji as a sprite.
 166 emoji in total, 12x12px each, in one of six colors. This was my first time doing pixels
@@ -2555,7 +2499,7 @@ each with a random number of sprites in it, which was a bit of a mess. Thankfull
  Amanda Glosson , reigning queen of pixels, wrote me a script to transmogrify my mess into
 individual svgs. These individual SVGs, to be exact:],
   [LOOK HOW PRETTY THEY ARE! 💓],
-  [id="a-wild-font-appears"\>A wild font appears],
+  [A wild font appears],
   [The reason why I made those SVGs was partly because Captain America: Civil War is unbearably
 boring, but partly because I wanted to make a font and use it everywhere like
 an emoji hipster.],
@@ -2567,14 +2511,26 @@ based on this list, because let’s be honest, some of them were mysterious.
 Do you know what 💥 means? It’s 💥. And
  💦 is 💦. 12 pixels ain’t a lot of pixels, friends.],
   [Here the 166 emoji as they look today:],
+  [❤💔💓💕😃😖😞😵😠🎵♨💠💋✨💡💢👊💣🎶💤❗⁉‼💥💦💧💨〰️➰⤴⤵↗↘↖↙☀️☁️☔️⛄⚡️🌀🌁🌂♈️♉️♊️♋️♌️♍️♎️♏️♐️♑️♒️♓️🎽⚾️⛳🎾⚽️🎿🏀🏁📟🚃Ⓜ🚄🚗🚙🚌🚢✈🏠🏢🏣🏥🏦🏧🏨🏪⛽🅿🚥🚻🍴☕🍸🍺🍔👠✂️🎤🎥🎠🎧🎨🎩🎪🎫🚬🚭📷👜📖🎀🎁🎂☎︎📱📝📺🎮💿♥♠♦♣👀👂✊✌️✋👣👟👓🌑🌔🌓🌙🌕🐶🐱⛵🎄📲📩📠✉︎💴🆓🆔↩🆑🔍🆕🚩➿\#️⃣0️⃣1️⃣2️⃣3️⃣4️⃣5️⃣6️⃣7️⃣8️⃣9️⃣🆗],
   [And here’s the same list, using the DoCoMo emoji font:],
+  [❤💔💓💕😃😖😞😵😠🎵♨💠💋✨💡💢👊💣🎶💤❗⁉‼💥💦💧💨〰️➰⤴⤵↗↘↖↙☀☁︎☔︎⛄⚡︎🌀🌁🌂♈︎♉︎♊︎♋︎♌︎♍︎♎︎♏︎♐︎♑︎♒︎♓︎🎽⚾︎⛳🎾⚽︎🎿🏀🏁📟🚃Ⓜ🚄🚗🚙🚌🚢✈🏠🏢🏣🏥🏦🏧🏨🏪⛽🅿🚥🚻🍴☕🍸🍺🍔👠✂︎🎤🎥🎠🎧🎨🎩🎪🎫🚬🚭📷👜📖🎀🎁🎂☎︎📱📝📺🎮💿♥♠♦♣👀👂✊✌︎✋👣👟👓🌑🌔🌓🌙🌕🐶🐱⛵🎄📲📩📠✉︎💴🆓🆔↩🆑🔍🆕🚩➿\#0123456789🆗],
   [There’s some OG emoji that don’t even exist today!:],
+  [abcde],
   [Boom! 💣],
   [If you want to use it, you can download the font here , and use
 it as a font-face :],
+  [\@font-face \{
+ font-family: og-emoji;
+ src: url(/fonts/og-dcm-emoji.ttf);
+\}
+.og \{
+ font-family: og-emoji, sans-serif;
+\}
+ 💥],
   [If you’re going to use it, maybe give me some credit, because I spent an unhealthy
 amount of time on it. Also, if you’re
 DoCoMo, please don’t sue me. Emojineering comes only from the ❤ .],
+  [✌︎ ✨ 🐱 💋 🆗],
 ),
   insert-map: (:),
   word-count: 487,
@@ -2584,7 +2540,7 @@ DoCoMo, please don’t sue me. Emojineering comes only from the ❤ .],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Seminoles Taught American Soldiers a Thing or Two About Guerrilla Warfare],
   author: [Jon Guttman],
   source-name: [HistoryNet],
@@ -2593,8 +2549,10 @@ DoCoMo, please don’t sue me. Emojineering comes only from the ❤ .],
   [The word “Seminole” is derived from the Muscogean word simanó-li , or “runaway,” reflecting a common heritage, as Upper Creeks from Alabama, Lower Creeks from Georgia, other affiliated tribes and escaped African slaves all sought sanctuary in Spanish Florida. There they mixed with one another, adapted to their surroundings, traded with Britain, Spain and the United States and came to be collectively recognized as one of the Five Civilized Tribes (along with the Cherokee, Chickasaw, Choctaw and Creek/Muscogee) of the American Southeast. Not civilized enough for some, apparently, for when the United States acquired Florida in 1821, it began herding the Seminoles, through a succession of treaties, to progressively smaller and less desirable parts of the state. Ultimately, in 1834 federal officials set Jan. 1, 1836, as a deadline for removal of the Seminoles from Florida to Indian Territory (present-day Oklahoma). When a 110-man detachment of the 4th U. S. Infantry under Brevet Maj. Francis L. Dade set out for Fort King to oversee that final removal, however, it was ambushed by 180 Seminoles led by Halpatter Tustenuggee (Alligator) on Dec. 28, 1835. The ensuing slaughter of all but two of Dade’s men marked the beginning of the longest campaign fought between the U. S. Army and American Indians, a mix of pitched battles and guerrilla warfare.],
   [In Seminole Warrior versus U. S. Soldier: Second Seminole War, 1835– 42 (No. 61 in Osprey’s Combat series) military historian Ron Field compares the tactics, arms, equipment and fighting techniques used by both sides. In addition to what whites termed the “Dade massacre,” re-examined here through a more impartial lens, Field relates two other major engagements—at Lake Okeechobee, on Christmas Day 1837, and the second of back-to-back clashes at the Loxahatchee River, on Jan. 24, 1838.],
   [Set in what might be more appropriately called the “Wild South,” the Second Seminole War was something of a learning process for both sides. Several notable future U. S. Army figures had their first taste of Indian warfare and, for that matter, their first combat experience during the conflict, lessons they would apply during the Mexican War. The Seminoles likewise developed guerrilla tactics they would employ as scouts during the Army’s later run-ins with other tribes on the Great Plains. Backed by Osprey’s usual fine array of illustrations and maps, Seminole Warrior versus U. S. Soldier offers Wild West readers a peek at the dress rehearsal for Indian campaigns to come.],
+  [Seminole Warrior vs. U. S. Soldier],
   [Second Seminole War, 1835–42],
   [By Ron Field, Osprey Publishing, 2022],
+  [get it on amazon],
   [If you buy something through our site, we might earn a commission.],
 ),
   insert-map: (:),
@@ -2608,7 +2566,7 @@ DoCoMo, please don’t sue me. Emojineering comes only from the ❤ .],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [That Efficiency of Programming Languages Image],
   author: [astorm],
   source-name: [Alan Storm],
@@ -2624,7 +2582,7 @@ DoCoMo, please don’t sue me. Emojineering comes only from the ❤ .],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [TMR 24.9: “I Hate Thinking about Thinking about Myself Like This” \[Melvill\]],
   author: [Chad Post],
   source-name: [Three Percent (U of Rochester)],
@@ -2646,18 +2604,17 @@ DoCoMo, please don’t sue me. Emojineering comes only from the ❤ .],
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([New Scientist], source-name: [New Scientist], [In a randomised trial, men who experience premature ejaculation benefitted from using an app to learn techniques for extending intercourse])],
-    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, do tell someone about The Memory Palace. 
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([New Scientist], source-name: [New Scientist], [In a randomised trial, men who experience premature ejaculation benefitted from using an app to learn techniques for extending intercourse])],
+  [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, do tell someone about The Memory Palace. 
 
 Thanks.
 
 Nate
 
 Learn about your ad choices: dovetail.prx.org/ad-choices])],
-    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia , a collective of independently owned and operated podcasts.
+  [#brief-item([The Memory Palace], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia , a collective of independently owned and operated podcasts.
 
  Music 
 
@@ -2674,7 +2631,7 @@ We get a snipped of Eartheater's Peripheral
 And E Ruscha V's The Hostess 
 
 Learn about your ad choices: dovetail.prx.org/ad-choices])],
-    [#brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia from PRX.
+  [#brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia from PRX.
 
 Music
 
@@ -2685,7 +2642,7 @@ Musica Bionda from the score to The Sweet Body of Deborah
 The Peter Thomas Sound Orchestra plays Natascha from the score to The Perfect Marriage. 
 Waltz from the Brendan Eder Ensemble
 Christa Schonfeldinger plays Grieg's Smarthold - der Kobold, on the glass armonica.])],
-    [#brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia from PRX.
+  [#brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia from PRX.
 
 A note on notes: We’d much rather you just went into each episode of The Memory Palace cold. And just let the story take you where it well. So, we don’t suggest looking into the show notes first.
 
@@ -2698,11 +2655,11 @@ A couple of numbers from Marcelo Zarvos’ wonderful score to the wonderful, Ple
 A remarkable piece of music called Spectacle of Ritual by Kali Malone
 
 And another called Pauvre Simon from Sylvain Chauveau])],
-    [#brief-item([New Scientist], source-name: [New Scientist], [This is the opening of Kim Stanley Robinson's Red Mars, the New Scientist Book Club read for April, as humans come to the planet to settle it])],
-    [#brief-item([New Scientist], source-name: [New Scientist], [We know that a person’s outlook can have a huge effect on their health, and it’s no different when it comes to ageing. Columnist Graham Lawton looks at new evidence of just how powerful our attitude is – and how to use it to age better])],
-    [#brief-item([New Scientist], source-name: [New Scientist], [Ancient DNA reveals that the Goths of eastern Europe, some of whom would ultimately sack the city of Rome, may have been a mix of peoples from three continents])],
-    [#brief-item([New Scientist], source-name: [New Scientist], [Toys powered by AI show a worrying lack of emotional understanding. But we need to understand the risks and benefits of the technology so the industry can be regulated, not outright banned])],
-    [#brief-item([Nate DiMeo], source-name: [The Memory Palace], [Order The Memory Palace book now, dear listener. On Bookshop.org , on Amazon.com , on Barnes & Noble , or directly from Random House . Or order the audiobook at places like Libro.fm .
+  [#brief-item([New Scientist], source-name: [New Scientist], [This is the opening of Kim Stanley Robinson's Red Mars, the New Scientist Book Club read for April, as humans come to the planet to settle it])],
+  [#brief-item([New Scientist], source-name: [New Scientist], [We know that a person’s outlook can have a huge effect on their health, and it’s no different when it comes to ageing. Columnist Graham Lawton looks at new evidence of just how powerful our attitude is – and how to use it to age better])],
+  [#brief-item([New Scientist], source-name: [New Scientist], [Ancient DNA reveals that the Goths of eastern Europe, some of whom would ultimately sack the city of Rome, may have been a mix of peoples from three continents])],
+  [#brief-item([New Scientist], source-name: [New Scientist], [Toys powered by AI show a worrying lack of emotional understanding. But we need to understand the risks and benefits of the technology so the industry can be regulated, not outright banned])],
+  [#brief-item([Nate DiMeo], source-name: [The Memory Palace], [Order The Memory Palace book now, dear listener. On Bookshop.org , on Amazon.com , on Barnes & Noble , or directly from Random House . Or order the audiobook at places like Libro.fm .
 
 The Memory Palace is a proud member of Radiotopia from PRX. Radiotopia is a collective of independently owned and operated podcasts that’s a part of PRX, a not-for-profit public media company. If you’d like to directly support this show, you can make a donation at Radiotopia.fm/donate. 
 
@@ -2711,9 +2668,9 @@ Music
 On-ness by Tom Rogerson and Eno.
 Etude by Joep Beving
 Ebb Tide by Houston & Dorsey])],
-    [#brief-item([jessica.blake\@insidehighered.com], source-name: [Inside Higher Ed], [New Survey Announcements From IES Give Hope for Agency’s Revival 
+  [#brief-item([jessica.blake\@insidehighered.com], source-name: [Inside Higher Ed], [New Survey Announcements From IES Give Hope for Agency’s Revival 
 
-class="field field--name-field-featured-image field--type-entity-reference field--label-hidden field\_\_item"\> 
+
 
  
  jessica.blake\@… 
@@ -2723,22 +2680,21 @@ class="field field--name-field-featured-image field--type-entity-reference field
 
 Higher ed researchers and policy experts are pleased to see the agency get back to work after losing 80 percent of its staff. But one college access group has concerns about how the Trump administration may use the data it collects.
 
-class="field field--name-field-authors field--type-entity-reference field--label-inline clearfix"\>
+
  
 
-class="field\_\_label"\>Byline(s)
+Byline(s)
 
-class="field\_\_items"\>
+
  
 
-class="field\_\_item"\> Jessica Blake])],
-    [#brief-item([New Scientist], source-name: [New Scientist], [Researchers have created the first living synthetic bacterium made from non-living parts by killing a bacterial cell and then transplanting the genome of another species into it, blurring the boundary between life and death])],
-    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, please tell a friend about The Memory Palace. 
+Jessica Blake])],
+  [#brief-item([New Scientist], source-name: [New Scientist], [Researchers have created the first living synthetic bacterium made from non-living parts by killing a bacterial cell and then transplanting the genome of another species into it, blurring the boundary between life and death])],
+  [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, please tell a friend about The Memory Palace. 
 
 Thank you kindly.
 
 Learn about your ad choices: dovetail.prx.org/ad-choices])],
-  ))
-}
+))
 
 #colophon([The Atlantic Post], [Vol. 1, No. 003], [2026-03-30])

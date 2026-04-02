@@ -21,249 +21,8 @@
 #masthead([The Independent Courier], [Vol. 1, No. 018], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [OTP Authentication in Laravel & Vue.js for Secure Transactions],
-  kicker: [Cover Story],
-  author: [Ojekudo Oghenemaro Emmanuel],
-  source-name: [Stack Abuse],
-  deck: [id="introduction"\>Introduction
-
-In today’s digital world, security is paramount, especially when dealing with sensitive data like user authentication and financial transactions.],
-  lead-pre: [],
-  lead-cap: [i],
-  lead-rest: [d="introduction"\>Introduction],
-  body-paragraphs: (
-  [In today’s digital world, security is paramount, especially when dealing with sensitive data like user authentication and financial transactions. One of the most effective ways to enhance security is by implementing One-Time Password (OTP) authentication. This article explores how to implement OTP authentication in a Laravel backend with a Vue.js frontend, ensuring secure transactions.],
-  [id="whyuseotpauthentication"\>Why Use OTP Authentication?],
-  [OTP authentication provides an extra layer of security beyond traditional username and password authentication. Some key benefits include:],
-  [Prevention of Unauthorized Access: Even if login credentials are compromised, an attacker cannot log in without the OTP.],
-  [Enhanced Security for Transactions: OTPs can be used to confirm high-value transactions, preventing fraud.],
-  [Temporary Validity: Since OTPs expire after a short period, they reduce the risk of reuse by attackers.],
-  [id="prerequisites"\>Prerequisites],
-  [Before getting started, ensure you have the following:],
-  [Laravel 8 or later installed],
-  [Vue.js configured in your project],
-  [A mail or SMS service provider for sending OTPs (e.g., Twilio, Mailtrap)],
-  [Basic understanding of Laravel and Vue.js],
-  [In this guide, we’ll implement OTP authentication in a Laravel (backend) and Vue.js (frontend) application . We’ll cover:],
-  [Setting up Laravel and Vue (frontend) from scratch],
-  [Setting up OTP generation and validation in Laravel],
-  [Creating a Vue.js component for OTP input],
-  [Integrating OTP authentication into login workflows],
-  [Enhancing security with best practices],
-  [By the end, you’ll have a fully functional OTP authentication system ready to enhance the security of your fintech or web application.],
-  [id="settinguplaravelforotpauthentication"\>Setting Up Laravel for OTP Authentication],
-  [id="step1installlaravelandrequiredpackages"\>Step 1: Install Laravel and Required Packages],
-  [If you haven't already set up a Laravel project, create a new one:],
-  [composer create-project "laravel/laravel:^10.0" example-app],
-  [Next, install the Laravel Breeze package for frontend scaffolding:],
-  [composer require laravel/breeze --dev],
-  [After composer has finished installing, run the following command to select the framework you want to use—the Vue configuration:],
-  [php artisan breeze:install],
-  [You’ll see a prompt with the available stacks:],
-  [Which Breeze stack would you like to install?
-- Vue with Inertia 
-Would you like any optional features?
-- None 
-Which testing framework do you prefer? 
-- PHPUnit],
-  [Breeze will automatically install the necessary packages for your Laravel Vue project. You should see:],
-  [INFO Breeze scaffolding installed successfully.],
-  [Now run the npm command to build your frontend assets:],
-  [npm run dev],
-  [Then, open another terminal and launch your Laravel app:],
-  [php artisan serve],
-  [id="step2settingupotpgenerationandvalidationinlaravel"\>Step 2: Setting up OTP generation and validation in Laravel],
-  [We'll use a mail testing platform called Mailtrap to send and receive mail locally. If you don’t have a mail testing service set up, sign up at Mailtrap to get your SMTP credentials and add them to your .env file:],
-  [MAIL\_MAILER=smtp
-MAIL\_HOST=sandbox.smtp.mailtrap.io
-MAIL\_PORT=2525
-MAIL\_USERNAME=1780944422200a
-MAIL\_PASSWORD=a8250ee453323b
-MAIL\_ENCRYPTION=tls
-MAIL\_FROM\_ADDRESS=hello\@example.com
-MAIL\_FROM\_NAME="\${APP\_NAME}"],
-  [To send OTPs to users, we’ll use Laravel’s built-in mail services. Create a mail class and controller:],
-  [php artisan make:mail OtpMail
-php artisan make:controller OtpController],
-  [Then modify the OtpMail class:],
-  [otp = \$otp ;
- }],
-  [/\*\*
- \* Build the email message.
- \*\/ 
- public function build ( )
- {
- return \$this -\>subject( 'Your OTP Code' )
- -\>view( 'emails.otp' )
- -\>with(\[ 'otp' =\> \$this -\>otp\]);
- }],
-  [/\*\*
- \* Get the message envelope.
- \*\/ 
- public function envelope ( ): Envelope 
- {
- return new Envelope(
- subject: 'OTP Mail' ,
- );
- }
-}],
-  [Create a Blade view in resources/views/emails/otp.blade.php :],
-  [Your OTP Code 
- 
- 
- Hello, 
- Your One-Time Password (OTP) is: {{ \$otp }} 
- This code is valid for 10 minutes. Do not share it with anyone. 
- Thank you!],
-  [id="step3creatingavuejscomponentforotpinput"\>Step 3: Creating a Vue.js component for OTP input],
-  [Normally, after login or registration, users are redirected to the dashboard. In this tutorial, we add an extra security step that validates users with an OTP before granting dashboard access.],
-  [Create two Vue files:],
-  [Request.vue : requests the OTP],
-  [Verify.vue : inputs the OTP for verification],
-  [Now we create the routes for the purpose of return the View and the functionality of creating OTP codes, storing OTP codes, sending OTP codes through the mail class, we head to our web.php file:],
-  [Route::middleware( 'auth' )-\>group( function ( ) {
- Route::get( '/request' , \[OtpController::class, 'create' \])-\>name( 'request' );
- Route::post( '/store-request' , \[OtpController::class, 'store' \])-\>name( 'send.otp.request' );],
-  [Route::get( '/verify' , \[OtpController::class, 'verify' \])-\>name( 'verify' );
- Route::post( '/verify-request' , \[OtpController::class, 'verify\_request' \])-\>name( 'verify.otp.request' );
-});],
-  [Putting all of this code in the OTP controller returns the View for our request.vue and verify.vue file and the functionality of creating OTP codes, storing OTP codes, sending OTP codes through the mail class and verifying OTP codes, we head to our web.php file to set up the routes.],
-  [public function create ( Request \$request )
- {
- return Inertia::render( 'Request' , \[
- 'email' =\> \$request -\>query( 'email' , '' ),
- \]);
-}],
-  [public function store ( Request \$request )
- {
- \$request -\>validate(\[
- 'email' =\> 'required|email|exists:users,email' ,
- \]);],
-  [\$otp = rand( 100000 , 999999 );],
-  [Cache::put( 'otp\_' . \$request -\>email, \$otp , now()-\>addMinutes( 10 ));],
-  [Log::info( "OTP generated for " . \$request -\>email . ": " . \$otp );],
-  [Mail::to( \$request -\>email)-\>send( new OtpMail( \$otp ));],
-  [return redirect()-\>route( 'verify' , \[ 'email' =\> \$request -\>email\]);
-}],
-  [public function verify ( Request \$request )
- {
- return Inertia::render( 'Verify' , \[
- 'email' =\> \$request -\>query( 'email' ),
- \]);
-}],
-  [public function verify\_request ( Request \$request )
- {
- \$request -\>validate(\[
- 'email' =\> 'required|email|exists:users,email' ,
- 'otp' =\> 'required|digits:6' ,
- \]);],
-  [\$cachedOtp = Cache::get( 'otp\_' . \$request -\>email);],
-  [Log::info( "OTP entered: " . \$request -\>otp);
- Log::info( "OTP stored in cache: " . ( \$cachedOtp ?? 'No OTP found' ));],
-  [if (! \$cachedOtp ) {
- return back()-\>withErrors(\[ 'otp' =\> 'OTP has expired. Please request a new one.' \]);
- }],
-  [if (( string ) \$cachedOtp !== ( string ) \$request -\>otp) {
- return back()-\>withErrors(\[ 'otp' =\> 'Invalid OTP. Please try again.' \]);
- }],
-  [Cache::forget( 'otp\_' . \$request -\>email);],
-  [\$user = User::where( 'email' , \$request -\>email)-\>first();
- if ( \$user ) {
- \$user -\>email\_verified\_at = now();
- \$user -\>save();
- }],
-  [return redirect()-\>route( 'dashboard' )-\>with( 'success' , 'OTP Verified Successfully!' );
-}],
-  [Having set all this code, we return to the request.vue file to set it up.],
-  [import AuthenticatedLayout from '\@/Layouts/AuthenticatedLayout.vue' ;
- import InputError from '\@/Components/InputError.vue' ;
- import InputLabel from '\@/Components/InputLabel.vue' ;
- import PrimaryButton from '\@/Components/PrimaryButton.vue' ;
- import TextInput from '\@/Components/TextInput.vue' ;
- import { Head, useForm } from '\@inertiajs/vue3' ;],
-  [const props = defineProps({
- email : {
- type : String ,
- required : true ,
- },
-});],
-  [const form = useForm({
- email : props.email,
-});],
-  [const submit = () =\> {
- form.post(route( 'send.otp.request' ), {
- onSuccess : () =\> {
- alert( "OTP has been sent to your email!" );
- form.get(route( 'verify' ), { email : form.email }); \/\\/ Redirecting to OTP verification 
- },
- });
-};],
-  [Request OTP],
-  [Having set all this code, we return to the verify.vue to set it up:],
-  [import AuthenticatedLayout from '\@/Layouts/AuthenticatedLayout.vue' ;
- import InputError from '\@/Components/InputError.vue' ;
- import InputLabel from '\@/Components/InputLabel.vue' ;
- import PrimaryButton from '\@/Components/PrimaryButton.vue' ;
- import TextInput from '\@/Components/TextInput.vue' ;
- import { Head, useForm, usePage } from '\@inertiajs/vue3' ;],
-  [const page = usePage();
- \/\\/ Get the email from the URL query params 
- const email = page.props.email || '' ;],
-  [\/\\/ Initialize form with email and OTP field 
- const form = useForm({
- email : email,
- otp : '' ,
-});],
-  [\/\\/ Submit function 
- const submit = () =\> {
- form.post(route( 'verify.otp.request' ), {
- onSuccess : () =\> {
- alert( "OTP verified successfully! Redirecting..." );
- window .location.href = '/dashboard' ; \/\\/ Change to your desired redirect page 
- },
- onError : () =\> {
- alert( "Invalid OTP. Please try again." );
- },
- });
-};],
-  [Verify OTP],
-  [id="step4integratingotpauthenticationintologinandregisterworkflows"\>Step 4: Integrating OTP authentication into login and register workflows],
-  [Update the login controller:],
-  [public function store ( LoginRequest \$request ): RedirectResponse 
- {
- \$request -\>authenticate();],
-  [\$request -\>session()-\>regenerate();],
-  [return redirect()-\>intended(route( 'request' , absolute: false ));
-}],
-  [Update the registration controller:],
-  [public function store ( Request \$request ): RedirectResponse 
- {
- \$request -\>validate(\[
- 'name' =\> 'required|string|max:255' ,
- 'email' =\> 'required|string|lowercase|email|max:255|unique:' . User::class,
- 'password' =\> \[ 'required' , 'confirmed' , Rules\\Password::defaults()\],
- \]);],
-  [\$user = User::create(\[
- 'name' =\> \$request -\>name,
- 'email' =\> \$request -\>email,
- 'password' =\> Hash::make( \$request -\>password),
- \]);],
-  [event( new Registered( \$user ));],
-  [Auth::login( \$user );],
-  [return redirect(route( 'request' , absolute: false ));
-}],
-  [id="conclusion"\>Conclusion],
-  [Implementing OTP authentication in Laravel and Vue.js enhances security for user logins and transactions. By generating, sending, and verifying OTPs, we can add an extra layer of protection against unauthorized access. This method is particularly useful for financial applications and sensitive user data.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [The Dangers of “Vibe Reporting” About AI],
   author: [Study Hacks],
   source-name: [Study Hacks (Cal Newport)],
@@ -294,16 +53,15 @@ php artisan make:controller OtpController],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Making of a Poem: Joyelle McSweeney on “My Fortune”],
   author: [Joyelle McSweeney],
   source-name: [The Paris Review Blog],
   images: (),
   paragraphs: (
-  [style="font-weight: 400;"\> For our series Making of a Poem, we’re asking poets and translators to dissect the poems they’ve contributed to our pages. Joyelle McSweeney’s “ My Fortune ” appears in our new Spring issue, no. 255.],
+  [Fritz Geller-Grimm, CC BY-SA 2.5 , via Wikimedia Commons],
+  [For our series Making of a Poem, we’re asking poets and translators to dissect the poems they’ve contributed to our pages. Joyelle McSweeney’s “ My Fortune ” appears in our new Spring issue, no. 255.],
   [How did this poem start for you?],
   [For about a year I found the news so bleak that I turned away from the present tense and made myself a connoisseur of Fortune—the grave goods packed into the Pharaoh’s tomb—his mask, his cats, his casket. From the window of my phone, from the cold black cell of my wakefulness, I would watch rival Egyptologists make competing cases, revolving algorithmically, in and out of view. I watched Cocktails with a Curator , a series of hypererudite videos recorded by Frick Gallery staff from their apartments in New York at the height of lockdown, replayed now in sequence like a journal of the plague year—this swain, his lover, this horse, his Polish rider, this hat, this collar, this pearl. This vial. This tipsy lethal cup.],
   [One night, prowling among my treasures in the dark like a crone-ghost or crow, I saw a glittering promotion for some past Sotheby’s or Christie’s auction of a priceless silver service from the eighteenth century. It was laid out on a dark dining table, where you would expect to see such things in use, yet the pieces were crammed on all together, at once, as you never would expect to see them—all the tureens, all the platters, all the chargers, all the salts. And they were thickly lit, from every angle, as you would also never see in life. The light rinding the silver was unnatural, strange, dead. Some lord had lost his fortune.],
@@ -320,57 +78,46 @@ php artisan make:controller OtpController],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [how the creative impulse of utopia improves the world – maria arana zubiate],
   author: [Maria Arana Zubiate],
   source-name: [designboom Architecture],
   images: (),
   paragraphs: (
-  [dir="auto"\>],
-  [dir="auto"\>Over time, utopias, often disparaged, have shown their capacity to guide and shape the evolution of the world toward more desirable scenarios. The power of utopia is such that many of today’s widely accepted urban proposals— such as collective housing, garden cities, or mass public transport — were once dismissed as utopian. Over the past century, utopia became a powerful tool for accelerating change. After the First World War, the historian, philosopher, and urbanist Lewis Mumford, author of the book The Story of Utopias, argued that the most important task of the moment was to ‘build castles in the air,’ advocating for a proactive, creative, and visionary attitude toward a world that could not be accepted as desirable or just.],
-  [dir="auto"\>],
-  [dir="auto"\>As Mumford pointed out, the history of utopias is, in fact, the history of the world. They emerge as a rejection of the social and cultural context of their time, not as a naive refuge, but as a critical gaze that reveals the shortcomings of their present. Utopia is, in itself, a way of understanding reality, a way of seeing the world that allows us to imagine other rules, other connections, and other architectures. And it begins with an impulse that precedes any method: a creative reaction that pushes us to imagine the impossible.],
-  [dir="auto"\>],
-  [dir="auto"\>],
-  [dir="auto"\>],
-  [dir="auto"\>],
-  [dir="auto"\>Lewis Mumford divided utopias into two main categories: escapist utopias, which flee from reality, and regenerative utopias, which seek to transform it. Furthermore, he warned of the dangerous proximity between dystopia and the realized utopia: when the ideal is realized, it runs the risk of degenerating into its opposite. How can we differentiate these utopias and find the boundary that turns them into dystopia? How can we work with this ambiguity to recover the drive that fosters utopian thinking within a dystopia? Here is a small selection of projects from Eu-topias, Ou-topias , the main exhibition of the Basque International Architecture Biennial, Mugak, which may help explain this complexity.],
-  [dir="auto"\>],
-  [dir="auto"\>],
-  [dir="auto"\>],
+  [Two natures, one ambiguity, and the danger of its absence],
+  [Over time, utopias, often disparaged, have shown their capacity to guide and shape the evolution of the world toward more desirable scenarios. The power of utopia is such that many of today’s widely accepted urban proposals— such as collective housing, garden cities, or mass public transport — were once dismissed as utopian. Over the past century, utopia became a powerful tool for accelerating change. After the First World War, the historian, philosopher, and urbanist Lewis Mumford, author of the book The Story of Utopias, argued that the most important task of the moment was to ‘build castles in the air,’ advocating for a proactive, creative, and visionary attitude toward a world that could not be accepted as desirable or just.],
+  [As Mumford pointed out, the history of utopias is, in fact, the history of the world. They emerge as a rejection of the social and cultural context of their time, not as a naive refuge, but as a critical gaze that reveals the shortcomings of their present. Utopia is, in itself, a way of understanding reality, a way of seeing the world that allows us to imagine other rules, other connections, and other architectures. And it begins with an impulse that precedes any method: a creative reaction that pushes us to imagine the impossible.],
+  [not all utopias are the same],
+  [Lewis Mumford divided utopias into two main categories: escapist utopias, which flee from reality, and regenerative utopias, which seek to transform it. Furthermore, he warned of the dangerous proximity between dystopia and the realized utopia: when the ideal is realized, it runs the risk of degenerating into its opposite. How can we differentiate these utopias and find the boundary that turns them into dystopia? How can we work with this ambiguity to recover the drive that fosters utopian thinking within a dystopia? Here is a small selection of projects from Eu-topias, Ou-topias , the main exhibition of the Basque International Architecture Biennial, Mugak, which may help explain this complexity.],
+  [Utopias of Escape: Imaginaries Between Critique and Desire],
   [Utopias of escape offer an imaginary refuge from the contradictions of the present and function as cultural safety valves that express the desire for a different possible life and constitute forms of critical escape. From nomadism, voluntary confinement, or adaptive architectures, all of them explore escape as voluntary exclusion—geographical and existential—through the creation of new imaginaries.],
   [New Babylon is the name that Dutch artist Constant Nieuwenhuys gave to a large-scale project developed between 1956 and 1974. Conceived as a global city, free of borders, composed of large, elevated, and transformable structures, New Babylon presents itself as a space in constant metamorphosis, designed to welcome a humanity liberated from productive labor and fully dedicated to play, creation, and experimental living. A territory of freedom and exploration in which architecture ceases to be a fixed framework and becomes a malleable instrument of social experimentation.],
-  [dir="auto"\>],
   [Today, Constant’s proposal remains remarkably relevant. In the face of a globalized urban model marked by the standardization of spaces, the commodification of leisure, and the centrality of productivity, New Babylon challenges the contemporary imagination by positioning play, mobility, and creativity as the axes of spatial organization. The growing dematerialization of work, the nomadic mobility of broad social sectors, and the expansion of global communication networks seem to give substance—albeit in a fragmentary and contradictory manner—to some of Constant’s intuitions. At the same time, the climate and migration crisis, inequality, and the transformation of dwelling practices reopen the interest in thinking of the city as a collective project oriented toward emancipation rather than solely toward economic efficiency.],
+  [Regenerative utopias: Experimental cartographies for the future],
   [In an urban world marked by deep inequalities, architectural imagination can be a political and transformative tool. Regenerative utopias seek to reverse the physical and social deterioration of cities, not only by recovering what has been lost, but by proposing new ways of living and coexisting. Here architecture ceases to be mere construction and becomes a medium that creates bonds, projects futures, and draws new maps of possibilities. Two experiences stand out in this context:],
   [The Available City , conceived by architect and urban planner David Brown, is a proposal for urban intervention based on a striking statistic: the city of Chicago has approximately 13,000 vacant lots, an area equivalent to twice the size of its downtown core. David Brown proposes viewing these vacant sites as an interconnected system rather than isolated lots, to create new public spaces and reconfigure the urban fabric starting from the plot, its smallest unit. In 2021, this concept was chosen as the central theme of the 4th Chicago Architecture Biennial, becoming a laboratory for urban experimentation. The results included play spaces, sports facilities, temporary cultural centers, and community gardens, demonstrating the versatility of the model and its capacity to generate networks of collaboration between architects, residents, collectives, and public administration.],
   [More than 9,000 kilometers away, in Accra, architect, academic, and writer Lesley Lokko founded the African Futures Institute, an educational and critical thinking platform dedicated to envisioning African futures from within the continent itself. From its beginnings, the African Futures Institute has expanded its reach into curatorial practice and the organization of exhibitions, consolidating its international reputation through its participation in the 2023 Venice Architecture Biennale. This institution recognizes that, on the youngest and fastest-urbanizing continent on the planet, it is urgent to rethink how architects and urban planners are trained—not only for Africa’s future, but with the understanding that this future impacts the entire world.],
   [This African educational organization is establishing itself as a platform for imagining African futures from within the continent itself, placing issues such as decolonization, climate change, migration, and social justice at the center. In its vision, architecture is the capacity to imagine and build futures in which regeneration and social justice are interwoven, turning utopia into a living practice, a collective process, and the act of rewriting the present.],
+  [The Threshold: meeting point between utopia and dystopia],
   [Between the promise of a better future and the fear of its oppressive drift, the thin line that separates utopia from dystopia becomes fertile ground for architectural and social imagination. That intermediate space, where the ideal merges with the precarious and the collective with the provisional, reveals the fragility of our ways of living.],
   [Inverted Tents , by architect Aristide Antonas, embodies this ambiguity: beds suspended in abandoned buildings invert domestic logic, freeing up floor space for communal life and the creation of new bonds. But that same gesture that promises community also evokes the precariousness of shelter, the echo of ruin, and contemporary vulnerability. Antonas’s project emerged in Athens between 2010 and 2012, a period marked by economic collapse and the proliferation of functional ruins. Its aim is not to reinforce individual autonomy, but to generate conditions for collective practices and encounters. The project also connects with the idea of the “empty university,” proposing to bring together immigrant and local students in shared environments—not as a substitute for housing for the poor, but as an experiment in coexistence based on contingency and the reuse of existing infrastructures.],
   [In that unresolved tension between utopia and dystopia, a field of reflection opens about how to imagine the common without denying the instability that sustains it. It is at once a critique of the inaccessibility of housing and an exercise that oscillates between utopia—imagining alternative modes of coexistence—and dystopia—through its inevitable evocation of refugee camps and other conflicts, recalling the harshness of forced displacement and contemporary precariousness.],
   [Today, largely overtaken by the surrounding reality, utopias seem to have fallen into disrepute. The prevailing pragmatism limits the space for imagining better futures. An absence that is full of danger, because, as the French philosopher and anthropologist Paul Ricoeur warns, ‘a society without utopia is a society without purpose, a society without direction.’],
-  [dir="auto"\>Maria Arana Zubiate is an architect, researcher, and curator. She is a Founding Partner of Urbanbat, a social initiative cooperative dedicated to research and the production of critical culture on urban transformations. She has curated programmes for Azkuna Zentroa-Alhóndiga Bilbao, the Spanish Ministry of Culture, and has been Co-Director for 14 years of URBANBATfest, Bilbao’s annual festival of architecture, urbanism, and social innovation. Currently, she is the Curator of the Mugak\/ Basque Country International Architecture Biennial.],
-  [dir="auto"\>],
-  [dir="auto"\>],
-  [dir="auto"\> This guest essay is part of designboom’s Utopia: Then and Now chapter, examining utopia’s role in the past, present and future as a way of envisioning a better way of being. Explore more related stories here .],
+  [Maria Arana Zubiate is an architect, researcher, and curator. She is a Founding Partner of Urbanbat, a social initiative cooperative dedicated to research and the production of critical culture on urban transformations. She has curated programmes for Azkuna Zentroa-Alhóndiga Bilbao, the Spanish Ministry of Culture, and has been Co-Director for 14 years of URBANBATfest, Bilbao’s annual festival of architecture, urbanism, and social innovation. Currently, she is the Curator of the Mugak\/ Basque Country International Architecture Biennial.],
+  [This guest essay is part of designboom’s Utopia: Then and Now chapter, examining utopia’s role in the past, present and future as a way of envisioning a better way of being. Explore more related stories here .],
   [The post how the creative impulse of utopia improves the world – maria arana zubiate appeared first on designboom | architecture & design magazine .],
 ),
   insert-map: (:),
   inline-pq: pull-quote([That intermediate space, where the ideal merges with the precarious and the collective with the provisional, reveals the fragility of our ways of living.], [Maria Arana Zubiate]),
-  inline-pq-idx: 11,
+  inline-pq-idx: 8,
   word-count: 1584,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [What can a software developer do about climate change?],
   author: [Itamar Turner-Trauring],
   source-name: [Itamar Turner-Trauring],
@@ -385,7 +132,7 @@ There’s a whole pile of good ideas in there, and it’s worth reading, but the
 It’s still written for software developers, because that’s who I write for, but also because software developers often have access to two critical catalysts for political change.
 And it’s written for software developers in the US, because that’s where I live, and because the US is a big part of the problem.],
   [But before I go into what you can do, let me tell you the story of a small success I happened to be involved in, a small step towards a better future.],
-  [id="infrastructure-and-the-status-quo"\>Infrastructure and the status quo],
+  [Infrastructure and the status quo],
   [About a year ago I spent some of my mornings handing out pamphlets to bicycle riders.
 I looked like an idiot: in order to show I was one of them I wore my bike helmet, which is weirdly shaped and the color of fluorescent yellow snot.],
   [After finding an intersection with plenty of bicycle riders and a long red light that forces them to stop, I would do the following:],
@@ -405,7 +152,7 @@ In particular, this ordinance has three effects:],
   [Over time, more bicycle riders can kick off a positive feedback cycle, reducing emissions even more.],
   [Most significantly, local initiatives spread to other cities—kicking off these three effects in those other cities.],
   [Let’s examine these effects one by one.],
-  [id="effect-1-fewer-cars-less-emissions"\>Effect \#1: Fewer cars, less emissions],
+  [Effect \#1: Fewer cars, less emissions],
   [About 43% of the greenhouse gas emissions in Massachusetts are due to transportation; for the US overall it’s 29% ( ref ).
 And that means cars.],
   [The reason people in the US mostly drive cars is because all the transportation infrastructure is built for cars. 
@@ -437,7 +184,7 @@ But if you get rid of the danger and build good infrastructure—dedicated prote
 Similarly, if you have frequent, fast, and reliable buses and trains, people drive less.
 And that means less carbon emissions.],
   [In Copenhagen the number of kilometers driven by cars was flat or slightly down over those 10 years—whereas in the US, it’s up 6-7% ( ref ).],
-  [id="effect-2-a-positive-feedback-loop"\>Effect \#2: A positive feedback loop],
+  [Effect \#2: A positive feedback loop],
   [The changes in Copenhagen are a result of a plan the city government there adopted in 2011 ( ref ): they’re the result of a policy action.
 And the political will was there in part because there were already a huge number of bicycle riders.
 So it’s a positive feedback loop, and a good one.],
@@ -449,7 +196,7 @@ For example, one neighborhood previously had a safe route only in one direction;
   [With safer infrastructure, there will be more bicycle riders, and therefore more support by residents for safer infrastructure.
 Merely having support isn’t enough, of course, and I’ll get back to that later on.],
   [If Copenhagen can reach 50% of residents with a bicycle commute, so can Cambridge—and the ordinance is a good step in that direction.],
-  [id="effect-3-the-idea-spreads"\>Effect \#3: The idea spreads],
+  [Effect \#3: The idea spreads],
   [The Cambridge ordinance passed in April 2019—and the idea is spreading elsewhere:],
   [The California State Assembly is voting on a law with similar provisions ( ref ), through a parallel push by Calbike.],
   [In May 2019 a Washington DC Council member introduced a bill which among other points has the same rebuild requirements as the Cambridge ordinance ( ref ).],
@@ -457,7 +204,7 @@ Merely having support isn’t enough, of course, and I’ll get back to that lat
   [All of this is the result of local advocacy—but I’ve no doubt Cambridge’s example helped.
 It’s always easier to be the second adopter.
 And the examples from these larger localities will no doubt inspire other groups and cities, spreading the idea even more.],
-  [id="change-requires-politics"\>Change requires politics],
+  [Change requires politics],
   [Bike infrastructure is just an example, not a solution—but there are three takeaways from this story that I’d like to emphasize:],
   [If you want to change policy, you need to engage in politics.],
   [Politics are easier to impact on the local level.],
@@ -472,7 +219,7 @@ Elected officials and government staff have lots and lots of things to worry abo
   [What’s more, the candidates you get to vote for have to get on the ballot, and to do that they need money (for advertising, hiring staff, buying supplies).
 Lacking money, they need volunteer time.],
   [And it’s much easier for a small group of rich people to provide that support to the candidates they want—so by the time you’re voting, you only get to choose between candidates that have been pre-vetted (I highly recommend reading The Golden Rule to understand how this works on a national level).],
-  [id="what-you-can-do-become-an-activist"\>What you can do: Become an activist],
+  [What you can do: Become an activist],
   [In the end power is social. 
 Power comes from people showing up to meetings, people showing up for rallies, people going door-to-door convincing other people to vote for the right person or support the right initiative, people blocking roads and making a fuss.],
   [And that takes time and money.],
@@ -489,7 +236,7 @@ Denser construction would reduce the need for long trips, and more efficient bui
   [Moving utilities from private to public ownership, so they can focus on the public good and not on profit.],
   [Bulk municipal contracts for electricity: this allows for cheaper electricity for all residents, and to have green energy as the default.],
   [State-level carbon restrictions or taxes.],
-  [id="where-you-should-do-it-start-local"\>Where you should do it: Start local],
+  [Where you should do it: Start local],
   [If you are going to become an activist, the local level is a good starting point.],
   [An easier first step: Cambridge has 100,000 residents—city councilors are routinely elected with just 2500 votes.
 That means impacting policies here is much easier than at a larger scale.
@@ -499,7 +246,7 @@ Not only does this mean faster results, it also means you’re less likely to ge
   [Of course, local organizing is just the starting point for creating change on the global level.
 But you have to start somewhere.
 And global change is a lot easier if you have thousands of local organizations supporting it.],
-  [id="its-a-good-to-be-a-software-developer"\>It’s a good to be a software developer],
+  [It’s a good to be a software developer],
   [Let’s get back to our starting point—you’re paid to write software, you want to do something about climate change. 
 As a software developer you likely have access to the inputs needed to make political campaigns succeed—both candidate-based and issue-based:],
   [Money: Software developers tend to get paid pretty well, certainly better than most Americans.
@@ -512,26 +259,26 @@ Before I got married I worked full-time and went to a local adult education coll
 I’ve done this, I’ve interviewed people who have done it , I’ve found many random people on the Internet who have done it —it is possible.],
   [If you need help doing it yourself, I’ve written a book to help you negotiate a shorter workweek .
  If you want to negotiate a shorter workweek so you have time for political activism, you can use the code FIGHTCLIMATECHANGE to get the book for 60% off.],
-  [id="some-common-responses"\>Some common responses],
-  [id="there-will-never-be-the-political-will-to-make-this-happen"\>“There will never be the political will to make this happen”],
+  [Some common responses],
+  [“There will never be the political will to make this happen”],
   [Things do change, for better and for worse, and sometimes unexpectedly.
 To give a couple of examples:],
   [In Ireland, the Catholic Church went from all-powerful to losing badly, most recently with Ireland legalizing abortion.],
   [The anti-gay-marriage Defense of Marriage Act was passed by veto-proof majorities of Congress in 1996—and eight years later in 2004 the first legal gay marriage took place right here in Cambridge, MA.],
   [The timelines for gay marriage and cannabis legalization in the US are illuminating: these things didn’t just happen, it was the result of long, sustained activist efforts, much of it at the local level.],
   [Local changes do make a difference.],
-  [id="politics-is-awful-and-broken"\>“Politics is awful and broken”],
+  [“Politics is awful and broken”],
   [So are all our software tools, and somehow we manage to get things done!],
-  [id="i-dont-like-your-policy-suggestions-we-should-do-x-instead"\>“I don’t like your policy suggestions, we should do X instead”],
+  [“I don’t like your policy suggestions, we should do X instead”],
   [No problem, find the local groups that promote your favorite policies and join them.],
-  [id="the-necessary-policies-will-never-work-because-of-problem-y"\>“The necessary policies will never work because of problem Y”],
+  [“The necessary policies will never work because of problem Y”],
   [Same answer: join and help the local groups working on Y.],
-  [id="its-too-late-the-planet-is-doomed-no-matter-what-we-do"\>“It’s too late, the planet is doomed no matter what we do”],
+  [“It’s too late, the planet is doomed no matter what we do”],
   [Perhaps, but it’s very hard to say.
 So we’re in Pascal’s Wager territory here: given even a tiny chance there is something we can do, we had better do our best to make it happen.],
   [And even if humanity really is doomed, there’s always the hope that someday a hyperintelligent species of cockroach will inherit the Earth.
 And when cockroach archaeologists try to reconstruct our history, I would like them to be able to say, loosely translated from their complex pheromone-and-dancing system of communication: “These meatsacks may not have been as good at surviving as us cockroaches—but at least they tried!”],
-  [id="time-to-get-started"\>Time to get started],
+  [Time to get started],
   [If you find this argument compelling—that policy is driven by power, and that power requires social mobilization—then it’s up to you to take the next step.
 Find a local group or candidate pushing for a policy you care about, and show up for the next meeting.],
   [And the meeting after that.],
@@ -549,10 +296,8 @@ Find a local group or candidate pushing for a policy you care about, and show up
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Your dev environment matters less than you think],
   author: [Itamar Turner-Trauring],
   source-name: [Itamar Turner-Trauring],
@@ -566,7 +311,7 @@ And every article you find will have a different combination of suggested tools,
 Your choice of dev environment is meaningless.],
   [The slightly less flippant answer is that, yes, there are some contraints on which tools you should pick, but otherwise you should just pick something and move on.],
   [Let’s see why dev environments don’t matter that much in the end, and what limited constraints you should apply when choosing your tools.],
-  [id="learning-how-to-cook"\>Learning how to cook],
+  [Learning how to cook],
   [Imagine you’re training to become a chef.
 You will need to learn how to use a knife correctly, to chop and dice safely and quickly.],
   [And yes, you need a sharp knife.
@@ -576,7 +321,7 @@ After all, the knife is just a tool.],
   [After six months in the kitchen, you’ll start understanding how you personally use a knife, what cuisines you want to pursue, what techniques you want to vary.
 And then you’ll have the knowledge to pick a specific knife or knives exactly suited to your needs.],
   [But remember: the people eating your food still won’t care which knife you used.],
-  [id="choosing-a-dev-environment"\>Choosing a dev environment],
+  [Choosing a dev environment],
   [When you use a website, you don’t care which build tool the programmer used.
 When you run an app, you don’t care which editor they used.
 You want the software to work, to do what it says, to be easy to use, to get out of your way—and you don’t care how they did it.],
@@ -600,10 +345,8 @@ If you know what you’re doing, you can chop vegetables with any sharp knife, e
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Static initializers will murder your family],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -611,24 +354,24 @@ If you know what you’re doing, you can chop vegetables with any sharp knife, e
   paragraphs: (
   [But only if your family is code.],
   [So this is a bit of a terrible blog post because a) it’s about a really obscure atrocity that happens in C++ (as opposed to the common atrocities that happen in C++ on the regs) and b) there are not enough funnies in the world to make up for it. I recommend skipping it if you’ve just eaten, are feeling light-headed, or don’t want to make eye contact with C++. As a general policy, you should probably never make eye contact with C++. It can smell fear.],
-  [id="programmer-meet-static-initializers"\>Programmer, meet static initializers],
+  [Programmer, meet static initializers],
   [We’re going to be talking about static class objects, or objects defined in a global/unnamed namespace, such as these fellas:],
-  [namespace { 
+  [namespace \{ 
  static const std :: string kSquirrel = "sad squirrel" ; 
  static const Superhero batman ; 
- } 
+ \} 
  \/\\/ or 
- class Foo { 
+ class Foo \{ 
  static const std :: string panda\_ = "also a sad panda" ; 
- }],
+ \}],
   [Static initialization is the dance we do when creating these objects. This is not a dance we do when we initialize things with constant data (like static int x = 42 ); the compiler sees that the thing after the = is constant and can’t change, so it can inline it. However, if you try to initialize a variable by running code (e.g. static int x = foo() ), then this is not a constant anymore, and it will result in a static initializer. In C++11, I think constexpr will let you hint to the compiler that the thing after the equal is a constant expression, if it is that, so it can compute it at compile-time. I don’t get to use a lot of C++11, so this is still about nightmares of C++ past, and I don’t think constexpr will do away with all of the murders anyway. Finally, the compiler promises you to run all the static initializers before the body of main() is executed. That, unfortunately, doesn’t mean much.],
-  [id="why-static-initializers-are-bad-news-bears"\>Why static initializers are bad news bears],
+  [Why static initializers are bad news bears],
   [As Douglas Adams, the inventor of C++ said, static initializers have “made a lot of people very angry and been widely regarded as a bad move”. Apart from being hard to spell, they tend to throw up on your shoes:],
   [Static variables in the same compilation unit (or the same file) will be constructed in the order they are defined. This means that this code is predictable, and always does exactly what you think it does. This is also the last of the good news:],
-  [namespace { 
+  [namespace \{ 
  static Superhero batman ; 
  static Superhero robin = batman . getSidekick (); 
- }],
+ \}],
   [Static variables in different translation units are constructed in an undefined order. This is so terrible it has its own name: the static initialization order fiasco . It goes like this:],
   [\/\\/ In x.cpp: 
  static Superhero batman ;],
@@ -640,7 +383,7 @@ If you know what you’re doing, you can chop vegetables with any sharp knife, e
  \/\\/ you call batman.getSidekick() in robin's constructor.],
   [Yup. That’s it. Whether x.cpp or y.cpp gets compiled first is not defined (because C++), which means if y.cpp gets compiled first, batman hasn’t been constructed. You know what happens when you call getSidekick() on an uninitialized object? Regrets happen.],
   [We’re not done yet. Why have insanely terrible code when you can have insanely terrible EXPENSIVE code! Evan Martin has a really, really good post about this, but the tl;dr is that because the static initializers need to happen before main() , that code needs to be paged, which leads to disk seeks, which leads to awful startup performance. Seriously, read Evan’s post because it’s amazing.],
-  [id="spotting-static-initializers-in-the-wild-an-incomplete-manual"\>Spotting static initializers in the wild: an incomplete manual],
+  [Spotting static initializers in the wild: an incomplete manual],
   [Here are some examples of things that are and aren’t static initializers, so
 that at least we know what we’re looking for before we try to fix them.],
   [\/\\/ Both of these are ok, because 0 is a compile time constant, so it can't 
@@ -661,28 +404,28 @@ that at least we know what we’re looking for before we try to fix them.],
   [\/\\/ This has to call the Muppet() constructor, and who knows what that 
  \/\\/ does, so it's definitely not a const, and a case of the static initializers. 
  static Muppet waldorf ;],
-  [id="thems-the-breaks"\>Them’s the breaks],
+  [Them’s the breaks],
   [There’s a couple of ways in which you can fix this, some better than others:],
   [The best static initializer is no static initializer, so try const-ing all your things away. This will take you as far as defining an array of strings, for which you can’t pray the initializer away. (Trivia: Praying The Const Away™ is what I call a const\_cast )],
   [Place all your globals in the same compilation unit (i.e. a massive constants.cpp file). You can certainly try this, but if your project is the giant Snuffleupagus that Chrome is, you might be laughed at],
   [Place the static globals inside the function that needs them (or, if they’re the village bicycle, make a getter for them), and define them as function-static variables. Then you know they will be initialized only once, the first time that function is called. Whenever it is called],
   [That last bullet sounds like black magic, so here’s an example. This is the static initializer that we are trying to fix. Convince yourself that this code is no good:],
-  [namespace { 
- static const std :: string bucket \[\] = { "apples" , "pears" , "meerkats" }; 
- }],
-  [const std :: string GetBucketThing ( int i ) { 
+  [namespace \{ 
+ static const std :: string bucket \[\] = \{ "apples" , "pears" , "meerkats" \}; 
+ \}],
+  [const std :: string GetBucketThing ( int i ) \{ 
  return bucket \[ i \]; 
- }],
+ \}],
   [We can fix it by moving bucket into GetBucketThing() :],
-  [std :: string GetBucketThing ( int i ) { 
+  [std :: string GetBucketThing ( int i ) \{ 
  \/\\/ Sure, it's a non-trivial constructor, but it will get called once, 
  \/\\/ the first time GetBucketThing() gets called, which will be at runtime 
  \/\\/ and therefore a-ok. 
- static const std :: string bucket \[\] = { "apples" , "pears" , "meerkats" }; 
+ static const std :: string bucket \[\] = \{ "apples" , "pears" , "meerkats" \}; 
  return bucket \[ i \]; 
- }],
+ \}],
   [Yup. That’s pretty much it. If you want more reading on the topic, here’s a neat chromium-dev thread discussing this in more details (and talking about when these static globals are actually cleaned up).],
-  [id="mmmmkay"\>Mmmmkay.],
+  [Mmmmkay.],
   [I don’t know why you’ve made it this far. Maybe you thought there was going to be a joke or a prize at the end. There isn’t. There’s just this gif, and you could’ve just scrolled down for it.],
 ),
   insert-map: (:),
@@ -691,10 +434,8 @@ that at least we know what we’re looking for before we try to fix them.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [37signals Isn't Smarter Than You, But They Are Different],
   author: [Nate Berkopec],
   source-name: [Nate Berkopec],
@@ -732,10 +473,8 @@ that at least we know what we’re looking for before we try to fix them.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [10 Interview Questions Every JavaScript Developer Should Know in 2024],
   author: [Eric Elliott],
   source-name: [Eric Elliot (JavaScript Scene)],
@@ -747,14 +486,6 @@ that at least we know what we’re looking for before we try to fix them.],
   [A good interviewer is looking for people who are eager to learn and advance their understanding and their career. If I’m hiring for a less experienced role, and the candidate fails all of these questions, but demonstrates a good aptitude for learning, they may still land the job!],
   [1. What is a Closure?],
   [A closure gives you access to an outer function’s scope from an inner function. When functions are nested, the inner functions have access to the variables declared in the outer function scope, even after the outer function has returned:],
-  [const createSecret = (secret) =\> {
- return {
- getSecret: () =\> secret,
- setSecret: (newSecret) =\> {
- secret = newSecret;
- },
- };
-};],
   [const mySecret = createSecret("My secret");
 console.log(mySecret.getSecret()); \/\\/ My secret],
   [mySecret.setSecret("My new secret");
@@ -765,18 +496,7 @@ console.log(mySecret.getSecret()); \/\\/ My new secret],
   [Currying and partial applications (frequently used to improve function composition, e.g. to parameterize Express middleware or React higher order components )],
   [Sharing data with event handlers and callbacks],
   [Encapsulation is a vital feature of object oriented programming. It allows you to hide the implementation details of a class from the outside world. Closures in JavaScript allow you to declare private variables for objects:],
-  [\/\\/ Data privacy
-const createCounter = () =\> {
- let count = 0;
- return {
- increment: () =\> ++count,
- decrement: () =\> --count,
- getCount: () =\> count,
- };
-};],
   [Curried functions and partial applications:],
-  [\/\\/ A curried function takes multiple arguments one at a time.
-const add = (a) =\> (b) =\> a + b;],
   [\/\\/ A partial application is a function that has been applied to some,
 \/\\/ but not yet all of its arguments.
 const increment = add(1); \/\\/ partial application],
@@ -800,9 +520,6 @@ const increment = add(1); \/\\/ partial application],
   [In Redux, all reducers must be pure functions. If they are not, the state of the application will be unpredictable, and features like time-travel debugging will not work. Impurity in reducer functions may also cause bugs that are difficult to track down, including stale React component state.],
   [3. What is Function Composition?],
   [Function composition is the process of combining two or more functions to produce a new function or perform some computation: (f ∘ g)(x) = f(g(x)) (f composed with g of x equals f of g of x).],
-  [const compose = (f, g) =\> (x) =\> f(g(x));],
-  [const g = (num) =\> num + 1;
-const f = (num) =\> num \* 2;],
   [const h = compose(f, g);],
   [h(20); \/\\/ 42],
   [React developers can clean up large component trees with function composition . Instead of nesting components, you can compose them together to create a new higher-order component that can enhance any component you pass to it with additional functionality.],
@@ -826,28 +543,15 @@ const f = (num) =\> num \* 2;],
   [Rejected: The operation failed.],
   [Immutable: Once a Promise is fulfilled or rejected, its state cannot change. It becomes immutable, permanently holding its result. This makes Promises reliable in asynchronous flow control.],
   [Chaining: Promises can be chained, meaning the output of one Promise can be used as input for another. This is done using .then() for success or .catch() for handling failures, allowing for elegant and readable sequential asynchronous operations. Chaining is the async equivalent of function composition.],
-  [const promise = new Promise((resolve, reject) =\> {
- setTimeout(() =\> {
- resolve("Success!");
- \/\\/ You could also reject with a new error on failure.
- }, 1000);
-});],
-  [promise
- .then((value) =\> {
- console.log(value); \/\\/ Success!
- })
- .catch((error) =\> {
- console.log(error);
- });],
   [In JavaScript, you can treat promises and promise returning functions as if they are synchronous, using the async/await syntax. This makes asynchronous code much easier to read and reason about.],
-  [const processData = async () =\> {
- try {
+  [const processData = async () =\> \{
+ try \{
  const data = await fetchData(); \/\\/ Waits until the Promise is resolved
  console.log("Processed:", data); \/\\/ Process and display the data
- } catch (error) {
+ \} catch (error) \{
  console.error("Error:", error); \/\\/ Handle any errors
- }
-};],
+ \}
+\};],
   [6. What is TypeScript?],
   [TypeScript is a superset of JavaScript, developed and maintained by Microsoft. It has grown significantly in popularity in recent years, and chances are good that if you are a JavaScript engineer, you will eventually need to use TypeScript. It adds static typing to JavaScript, which is a dynamically typed language. Static typing helps developers catch errors early in the development process, improving code quality and maintainability.],
   [Key Features of TypeScript:],
@@ -856,55 +560,47 @@ const f = (num) =\> num \* 2;],
   [Compilation: TypeScript code is transpiled into JavaScript, making it compatible with any browser or JavaScript environment. During this process, type errors are caught, making the code more robust.],
   [Interfaces: Interfaces allow you to specify abstract contracts that objects and functions must satisfy.],
   [Compatibility with JavaScript: TypeScript is highly compatible with existing JavaScript code. JavaScript code can be gradually migrated to TypeScript, making the transition smooth for existing projects.],
-  [interface User {
+  [interface User \{
  id: number;
  name: string;
-}],
-  [type GetUser = (userId: number) =\> User;],
-  [const getUser: GetUser = (userId) =\> {
- \/\\/ Fetch user data from a database or API
- return {
- id: userId,
- name: "John Doe",
- };
-};],
+\}],
   [The best defenses against bugs are code review, TDD, and lint tools such as ESLint. TypeScript is not a substitute for these practices, because type correctness does not guarantee program correctness. TypeScript does occasionally catch bugs even after all your other quality measures have been applied. But its main benefit is the improved developer experience it provides via IDE support.],
   [7. What is a Web Component?],
   [Web Components are a set of web platform APIs that allow you to create new custom, reusable, encapsulated HTML tags to use in web pages and web apps. They are built using open web technologies such as HTML, CSS, and JavaScript. They are part of the browser, and do not require external libraries or frameworks.],
   [Web Components are particularly useful on large teams with many engineers who may be using different frameworks. They allow you to create reusable components that can be used in any framework, or no framework at all. For example, Adobe’s Spectrum design system is built using Web Components, and integrates smoothly with popular frameworks like React.],
   [Web Components have existed for a long time, but have grown in popularity recently, especially in large organizations. They are supported by all major browsers, and are a W3C standard.],
   [\/\\/ Define a class that extends HTMLElement
- class SimpleGreeting extends HTMLElement {
+ class SimpleGreeting extends HTMLElement \{
  \/\\/ Define a constructor that attaches a shadow root
- constructor() {
+ constructor() \{
  super();
- const shadowRoot = this.attachShadow({ mode: "open" });
+ const shadowRoot = this.attachShadow(\{ mode: "open" \});
  \/\\/ Use a template literal for the shadow root's innerHTML
  shadowRoot.innerHTML = \`
  
  /\* Style the web component using a style tag \*/
- p {
+ p \{
  font-family: Arial, sans-serif;
  color: var(--color, black); /\* Use a CSS variable for the color \*/
- }
+ \}
  
  element is a placeholder for user-provided content. --\>
  
  Hello, Web Components! 
  \`;
- }],
+ \}],
   [\/\\/ Define a static getter for the observed attributes
- static get observedAttributes() {
+ static get observedAttributes() \{
  return \["color"\]; \/\\/ Observe the color attribute
- }],
+ \}],
   [\/\\/ Define a callback for when an attribute changes
- attributeChangedCallback(name, oldValue, newValue) {
+ attributeChangedCallback(name, oldValue, newValue) \{
  \/\\/ Update the CSS variable when the color attribute changes
- if (name === "color") {
+ if (name === "color") \{
  this.style.setProperty("--color", newValue);
- }
- }
- }],
+ \}
+ \}
+ \}],
   [\/\\/ Register the custom element with a tag name
  customElements.define("simple-greeting", SimpleGreeting);],
   [Hello, reader! 
@@ -921,16 +617,7 @@ const f = (num) =\> num \* 2;],
   [Hooks solved some common pain points with class components, such as the need to bind methods in the constructor, and the need to split functionality into multiple lifecycle methods. They also make it easier to share logic between components, and to reuse stateful logic without changing your component hierarchy.],
   [9. How Do you Create a Click Counter in React?],
   [You can create a click counter in React by using the useState hook as follows:],
-  [import React, { useState } from "react";],
-  [const ClickCounter = () =\> {
- const \[count, setCount\] = useState(0); \/\\/ Initialize count to 0],
-  [return (
- 
- You clicked {count} times 
- setCount((count) =\> count + 1)}\>Click me 
- 
- );
-};],
+  [import React, \{ useState \} from "react";],
   [export default ClickCounter;],
   [Note that passing a function to setCount is best practice when you are deriving the new value from existing state, to ensure that you're always working with the latest state.],
   [10. What is Test Driven Development (TDD)?],
@@ -961,10 +648,8 @@ const f = (num) =\> num \* 2;],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Polymer 1.x Cheat Sheet],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -983,38 +668,45 @@ is missing from this page, tell me about it!],
   [Style modules],
   [Styling with custom properties and mixins],
   [Binding helper elements],
-  [id="defining-an-element"\>Defining an element],
+  [Defining an element],
   [Docs: registering an element , behaviours , shared style modules],
-  [class="highlight"\> 
- 
- 
- 
- 
- 
- 
- 
- 
- Polymer ({ 
+  [Polymer (\{ 
  is : ' element-name ' , 
  \/\\/ All of these are optional. Only keep the ones you need. 
  behaviors : \[\], 
  observers : \[\], 
- listeners : {}, 
- hostAttributes : {}, 
- properties : {} 
- });],
-  [id="defining-a-behaviour"\>Defining a behaviour],
+ listeners : \{\}, 
+ hostAttributes : \{\}, 
+ properties : \{\} 
+ \});],
+  [Defining a behaviour],
   [Docs: behaviours .],
   [Defining a behavior to share implementation between different elements:],
+  [MyNamespace . MyFancyBehaviorImpl = \{ 
+ \/\\/ Code that you want common to elements, such 
+ \/\\/ as behaviours, methods, etc. 
+ \}],
   [MyNamespace . MyFancyBehavior = \[ 
  MyFancyBehaviorImpl , 
  /\* You can add other behaviours here \*\/ 
  \];],
   [Using the behavior in an element:],
-  [id="lifecycle-methods"\>Lifecycle methods],
+  [Polymer (\{ 
+ is : ' element-name ' , 
+ behaviors : \[ MyNamespace . MyCustomButtonBehavior \] 
+ /\* ... \*\/ 
+ \});],
+  [Lifecycle methods],
   [Docs: lifecycle callbacks .],
+  [Polymer (\{ 
+ registered : function () \{\}, 
+ created : function () \{\}, 
+ ready : function () \{\}, 
+ attached : function () \{\}, 
+ detached : function () \{\} 
+ \});],
   [There’s an attributeChanged callback as well, but that’s very rarely used.],
-  [id="data-binding"\>Data binding],
+  [Data binding],
   [Docs: data binding ,
  attribute binding ,
  binding to array items ,
@@ -1028,32 +720,40 @@ and vice versa:],
  false , the element is visible:],
   [Computed binding : binding to the class attribute will recompile styles when
  myProperty changes:],
-  [\_computeSomething: function(prop) {
+  [\_computeSomething: function(prop) \{
  return prop ? 'a-class-name' : 'another-class-name';
-}],
-  [id="observers"\>Observers],
+\}],
   [Docs: observers ,
  multi-property observers ,
  observing array mutations .],
   [Adding an observer in the properties block lets you observe changes in the
 value of a property:],
+  [properties : \{ 
+ myProperty : \{ 
+ observer : ' \_myPropertyChanged ' 
+ \} 
+ \},],
   [\/\\/ The second argument is optional, and gives you the 
  \/\\/ previous value of the property, before the update: 
- \_myPropertyChanged : function ( value , /\*oldValue \*\/ ) { 
+ \_myPropertyChanged : function ( value , /\*oldValue \*\/ ) \{ 
  \/\/... 
- }],
+ \}],
   [In the observers block:],
-  [class="highlight"\> observers : \[ 
+  [observers : \[ 
  ' \_doSomething(myProperty) ' , 
  ' \_multiPropertyObserver(myProperty, anotherProperty) ' , 
  ' \_observerForASubProperty(user.name) ' , 
  \/\\/ Below, items can be an array or an object:' 
  ' \_observerForABunchOfSubPaths(items.\*) ' 
  \]],
-  [id="listeners"\>Listeners],
   [Docs: event listeners ,
  imperative listeners .],
-  [id="properties-block"\>Properties block],
+  [listeners : \{ 
+ ' click ' : ' \_onClick ' , 
+ ' input ' : ' \_onInput ' , 
+ ' something-changed ' : ' \_onSomethingChanged ' 
+ \}],
+  [Properties block],
   [Docs: declared properties ,
  object/array properties ,
  read-only properties ,
@@ -1061,43 +761,60 @@ value of a property:],
   [There are all the possible things you can use in the properties 
 block. Don’t just use all of them because you can; some (like reflectToAttribute 
  and notify ) can have performance implications.],
+  [properties : \{ 
+ basic : \{ 
+ type : Boolean | Number | String | Array | Object ,],
   [\/\\/ Value can be one of the types above, eg: 
  value : true ,],
   [\/\\/ For an Array or Object, you must return it from a function 
  \/\\/ (otherwise the array will be defined on the prototype 
  \/\\/ and not the instance): 
- value : function () { return \[ ' cheese ' , ' pepperoni ' , ' more-cheese ' \] },],
+ value : function () \{ return \[ ' cheese ' , ' pepperoni ' , ' more-cheese ' \] \},],
   [reflectToAttribute : true | false , 
  readOnly : true | false , 
  notify : true | false 
- },],
+ \},],
   [\/\\/ Computed properties are essentially read-only, and can only be 
  \/\\/ updated when their dependencies change. 
- basicComputedProperty : { 
+ basicComputedProperty : \{ 
  computed : ' \_someFunction(myProperty, anotherProperty) ' 
- } 
- }],
-  [id="observing-added-and-removed-children"\>Observing added and removed children],
+ \} 
+ \}],
+  [Observing added and removed children],
   [Docs: DOM distribution ,
  observe nodes .],
   [If you have a content node for distribution:],
   [And you want to be notified when nodes have been added/removed:],
-  [class="highlight"\> attached : function () { 
+  [attached : function () \{ 
  this . \_observer = 
- Polymer . dom ( this . \$ . distributed ). observeNodes ( function ( info ) { 
- \/\\/ info is {addedNodes: \[...\], removedNodes: \[...\]} 
- }); 
- }, 
- detached : function () { 
+ Polymer . dom ( this . \$ . distributed ). observeNodes ( function ( info ) \{ 
+ \/\\/ info is \{addedNodes: \[...\], removedNodes: \[...\]\} 
+ \}); 
+ \}, 
+ detached : function () \{ 
  Polymer . dom ( this . \$ . distributed ). unobserveNodes ( this . \_observer ); 
- }],
-  [id="style-modules"\>Style modules],
+ \}],
+  [Style modules],
   [Docs: shared style modules .],
   [Defining styles that will be shared across different elements, in a file called
  my-shared-styles.html (for example):],
+  [.red \{ color : red ; \} 
+ /\* Custom property defined in the global scope \*\/ 
+ html \{ 
+ --the-best-red : \#e91e63 ; 
+ \}],
   [Include the shared style in a custom element:],
+  [/\* Other styles in here \*\/ 
+ 
+ 
+ 
+ Polymer (\{ is : ' element-name ' \});],
   [Include the shared style in the main document:],
-  [id="styling-with-custom-properties-and-mixins"\>Styling with custom properties and mixins],
+  [/\* Other styles in here \*\/ 
+ 
+ 
+ ...],
+  [Styling with custom properties and mixins],
   [Docs: styling ,
  CSS properties ,
  CSS mixins ,
@@ -1106,18 +823,42 @@ block. Don’t just use all of them because you can; some (like reflectToAttribu
 For how to use the shim (spoilers: it’s ) and its limitations,
 check the docs linked above.],
   [Defining a custom property:],
+  [html /\* or :host, or :root etc. \*\/ \{ 
+ --my-custom-radius : 5px ; 
+ \}],
   [Using a custom property:],
+  [.my-image \{ 
+ border-radius : var ( --my-custom-radius ); 
+ \}],
   [Using a custom property with a fallback:],
+  [.my-image \{ 
+ border-radius : var ( --my-custom-radius , 3px ); 
+ \}],
   [Using a custom property with a custom property fallback:],
+  [.my-image \{ 
+ border-radius : var ( --my-custom-radius , var ( --my-fallback )); 
+ \}],
   [Defining a mixin:],
+  [some-custom-element \{ 
+ --my-custom-mixin : \{ 
+ border-radius : 5px ; 
+ \} ; 
+ \}],
   [Using a mixin:],
-  [id="binding-helper-elements"\>Binding helper elements],
+  [.my-image \{ 
+ \@apply --my-custom-mixin; 
+ \}],
+  [Binding helper elements],
   [Docs: dom-repeat ,
  dom-bind ,
  dom-if],
   [dom-repeat stamps and binds a template for each item in an array:],
+  [First name: \{\{item.first\}\} 
+ Last name: \{\{item.last\}\}],
   [dom-bind stamps itself into the main document and adds a binding scope:],
+  [You typed: \[\[myText\]\]],
   [dom-if stamps itself conditionally based on a property’s value:],
+  [This content will appear when myProperty is truthy.],
 ),
   insert-map: (:),
   word-count: 1108,
@@ -1125,11 +866,10 @@ check the docs linked above.],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Week 2],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -1163,7 +903,7 @@ evenings you ask? Watch every single Trixie Mattel video on YouTube because that
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Week 17],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -1200,7 +940,7 @@ having mainstream brands start looking into more reusable, less-plastic products
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Chrome extensions for quick site redesigns],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -1229,6 +969,10 @@ stylesheet, which means it has the lowest specificity. So some of its styles
 won’t get applied unless you slap some !important s on it (or have extra
 specific selectors). Or, if you have an ID, you can do my favourite CSS hack ever
 that I learnt from Surma and will take to the grave:],
+  [\#foo\#foo \{ 
+ /\* this is a really winner \#foo selector \*\/ 
+ color : red ; 
+ \}],
   [That’s it! If you want to see an example of such an extension in the wild, I made picasso ,
 which is just a pretty Google Calendar theme. Originally it was just a local
 extension I kept on my machine, but eventually I published it because I
@@ -1242,7 +986,7 @@ realized other people may want to give their calendar a bubble bath. Anyway, hap
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Best Way to Keep Track of New Children’s Books],
   author: [Community],
   source-name: [Book Riot],
@@ -1266,9 +1010,8 @@ realized other people may want to give their calendar a bubble bath. Anyway, hap
 #pull-quote([Here’s how it works: scroll through the covers until you find one that catches your eye.], [Community])
 
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [TED’s new chapter begins!],
   author: [Chris Anderson],
   source-name: [TED Blog],
@@ -1279,30 +1022,32 @@ realized other people may want to give their calendar a bubble bath. Anyway, hap
   [When we announced this process back in February, our guiding question was simple: Who can best take on TED’s unique blend of offerings and values — not just for the next few years, but for the coming decades? Our advisers, LionTree, heard from nearly 100 thoughtful and passionate groups — spanning individuals, foundations, media organizations, technology platforms, investor groups, and universities. (We even received generous offers to purchase TED outright.) The breadth, ambition, and imagination of what was offered were truly inspiring.],
   [But for me — and for everyone on TED’s leadership team — the answers weren’t just about capital or scale. They were about stewardship, values, and a shared belief in giving ideas away, trusting community, preserving independence, and amplifying human possibility.],
   [From that landscape of offers, we made a decision grounded in the guardrails we set in the original blog post announcing the search:],
-  [style="font-weight: 400;"\> Ambition for transformation, not just incrementalism — the next steward must have a truly compelling vision for how TED can scale up its impact.],
-  [style="font-weight: 400;"\> Protection of all that people hold dear about TED : the powerful experience of our main conference, our free TED Talk videos, our cherished communities of volunteers, and our determined optimism that a better future can be built.],
-  [style="font-weight: 400;"\> An open tent, diverse voices, global reach, nonpartisanship — those are nonnegotiable.],
-  [style="font-weight: 400;"\> Editorial and intellectual integrity must be protected against any conflicts of interest or agenda.],
-  [style="font-weight: 400;"\> TED must never be sold out to commercial interests , either now or down the line.],
+  [Ambition for transformation, not just incrementalism — the next steward must have a truly compelling vision for how TED can scale up its impact.],
+  [Protection of all that people hold dear about TED : the powerful experience of our main conference, our free TED Talk videos, our cherished communities of volunteers, and our determined optimism that a better future can be built.],
+  [An open tent, diverse voices, global reach, nonpartisanship — those are nonnegotiable.],
+  [Editorial and intellectual integrity must be protected against any conflicts of interest or agenda.],
+  [TED must never be sold out to commercial interests , either now or down the line.],
   [We seriously considered for-profit joint ventures that could allow TED’s rapid growth and infuse TED with significant capital. But the more we thought through the possibilities and reminded ourselves of the extraordinary culture of generosity that infuses this community, the harder it was to picture a scenario where TED’s ultimate controllers might one day prioritize profits over mission.],
   [So we made a key decision…],
-  [style="font-weight: 400;"\> TED’s Nonprofit status must endure — TED will stay a nonprofit, independent of external commercial control. We will proudly continue our transparent mission of providing knowledge, insights and inspiration freely to anyone in the world.],
+  [TED’s Nonprofit status must endure — TED will stay a nonprofit, independent of external commercial control. We will proudly continue our transparent mission of providing knowledge, insights and inspiration freely to anyone in the world.],
   [And now you will understand why I am so excited at where we ended up….],
   [Meet TED’s new Vision Steward… Sal Khan!],
+  [Sal Khan and Chris Anderson at TED2023 in Vancouver, BC, Canada. (Photo: Gilberto Tadday \/ TED)],
   [It is my delight to introduce Sal Khan , founder and CEO of the incredible nonprofit Khan Academy. Sal will join TED’s board as TED’s new Vision Steward , while continuing his full-time role leading Khan Academy. Sal understands, in his bones, what it means to build a global educational platform rooted in the power of what technology and AI can enable in our connected world. Sal’s story is well known: starting with math videos and software to help his cousins, he grew Khan Academy into a trusted, free learning resource for students — and a valued partner for schools and districts — with over 170 million registered users in over 50 languages. He has blended pedagogical rigor, technology (including the powerful use of AI), and ingenuity in service of learners everywhere. He has attracted and retained an extraordinary team. He has partnered with the world’s most thoughtful philanthropists and recruited one of the most powerful boards in the nonprofit space. Perhaps most importantly, he’s won the respect and gratitude of countless numbers of educators, parents, and students worldwide.],
   [What makes Sal especially compelling for TED is that he’s shown he can craft a vision that’s both breathtakingly ambitious and achievable in today’s technological landscape. And he’s done so inside a nonprofit culture. Add to this his lifelong dance with the power of curiosity, his hunger for crosscutting ideas, and his belief that bridging divides is not a side project, but a mission. Well, you can see why I’m excited.],
   [Khan Academy and TED will continue to operate independently of each other, but Sal has already shared with me electrifying sketches of how TED could find new ways of empowering humanity by tackling lifelong learning. He also sees how TED could play a meaningful role in helping address the world’s growing division and social isolation. We’re not announcing any details today. But watch this space… It’s about to get seriously exciting.],
   [While Sal will serve as a guiding steward for vision, the day-to-day execution will fall to a new CEO. For the past 12 years Jay Herratti has given sterling service to TED, initially as head of TEDx, and for the past five years as CEO, where he heroically turned my often wild ideas into effective operational reality. During that time he brilliantly dealt with the challenges of a pandemic and a brutally unstable media landscape. Jay has already given many more years to TED than he initially intended, and is now ready for his next chapter in which he intends to focus on board-level work.],
   [Introducing TED’s new CEO],
+  [Logan McClure Davda at TED Countdown Summit 2025 in Nairobi, Kenya. (Photo: Humphrey Gateri \/ TED)],
   [We’re therefore proud to announce a new CEO for TED: Logan McClure Davda .],
   [Logan is not an outsider or newcomer — she is a leader forged within our org. From co-founding our Fellows program to her current role as Head of Impact, she has earned deep respect across the organization and among our community. She knows our culture, our strengths and constraints; she has fought to extend TED’s reach, and she is a believer in Sal’s vision for the future.],
   [Our conviction is that this combination — a visionary steward plus an exceptional, trusted internal leader — gives us the best of both worlds: fresh imagination and operational firepower. This conviction has been strengthened by meaningful indications of financial support from exciting new philanthropic partners. (More to come on this.)],
   [Meanwhile, Jay and I remain deeply committed to TED. Jay is joining TED’s board and will be available as a resource to Logan. I’ll be on the board too and I’ll proudly continue to cheer-lead, fundraise, and carry the torch for TED’s values. I’ll also play a leading role at the upcoming TED2026 in Vancouver. That is going to be one epic celebration of all that this community stands for, and a thrilling chance for me to officially pass the torch to Sal and Logan.],
   [What happens next — and how you can be part of it],
-  [style="font-weight: 400;"\> Logan, Jay, and I will join Sal in co-hosting a community conversation by the end of this year to invite feedback, questions, and ideas.],
-  [style="font-weight: 400;"\> We’ll be transparent about the governance structure, board composition, and how decisions will be made.],
-  [style="font-weight: 400;"\> We’ll begin recruiting (with input from the community) an Ideas Council , an exciting braintrust that will work with our head of media and curation Helen Walters and her exceptional team of curators to guide TED’s pursuit of the ideas that matter.],
-  [style="font-weight: 400;"\> And yes — when the new leadership team is ready to unveil its plans, I’ll join them in an ambitious fund-raise to match the scope of our ambition for this next chapter.],
+  [Logan, Jay, and I will join Sal in co-hosting a community conversation by the end of this year to invite feedback, questions, and ideas.],
+  [We’ll be transparent about the governance structure, board composition, and how decisions will be made.],
+  [We’ll begin recruiting (with input from the community) an Ideas Council , an exciting braintrust that will work with our head of media and curation Helen Walters and her exceptional team of curators to guide TED’s pursuit of the ideas that matter.],
+  [And yes — when the new leadership team is ready to unveil its plans, I’ll join them in an ambitious fund-raise to match the scope of our ambition for this next chapter.],
   [To TED’s community — our speakers, TEDx organizers, educators, translators, Fellows, volunteers, donors, staff, and viewers around the world: this moment is for you. You have given TED its wings. Now let’s give it a future worthy of that trust.],
   [I’m deeply grateful to everyone who engaged in the search, submitted proposals, raised questions, and stayed with us in the tension of the unknown. I remain, as always, an ardent believer in TED — and I’m excited for this moment of passing the torch, and leaning into what’s next.],
   [Sal and Logan… Congratulations! And thank you! This is going to be beautiful.],
@@ -1317,10 +1062,8 @@ realized other people may want to give their calendar a bubble bath. Anyway, hap
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The secret skills of productive programmers],
   author: [Itamar Turner-Trauring],
   source-name: [Itamar Turner-Trauring],
@@ -1336,16 +1079,18 @@ You will never get everything done.],
   [What you can do, though, is choose the right work, the most valuable work, the most useful work, the work with most leverage.
  Choose the right work and you can gets orders of magnitude improvement in your output.],
   [Let’s see how.],
-  [id="the-goal-increased-output"\>The goal: increased output],
+  [The goal: increased output],
   [Your output as a programmer is based both on your productivity and on how much time you work:],
+  [Output = Productivity × Time Worked],
   [The first thing to notice is that there is a hard limit on how much increasing your working hours can help.
 After all, there are only 168 hours in a week.],
   [If you never slept, ate, or did anything but work—and this will literally kill you—you can work 4.2× as much as a 40-hour workweek, and that’s it.
 And even with smaller increases in work hours, the gains quickly decline.
 As you work more hours you’ll become fatigued and make more mistakes; beyond a certain point those extra work hours will decrease your productivity, canceling out any gains.],
-  [id="what-is-output-for-a-programmer"\>What is output for a programmer?],
+  [What is output for a programmer?],
   [Since increasing working hours isn’t really an option, the key to increasing your output is increasing your productivity.
 Productivity is the output you produce in each fixed unit of time, for example:],
+  [Productivity = Output per week],
   [If you’re going to improve your productivity, you need to understand how to measure output.],
   [The obvious measure is how much code you write: the more code, the better.
 This measure is obvious, popular, and completely wrong.],
@@ -1360,24 +1105,27 @@ In other areas you can come up with domain-specific concrete measures of usefuln
   [Note: If the problems you solve produce negative value you will become anti-productive: the better you are at your job, the more damage you will cause.],
   [If making money hurts people or the environment, your work may be productive for your employer but anti-productive for society as a whole.
 So make sure you’re carefully considering the ethical consequences of your actions as a worker.],
-  [id="how-to-increase-productivity"\>How to increase productivity],
+  [How to increase productivity],
   [Given the above, here’s how you can increase your productivity:],
   [Find the most significant problem you can work on.],
   [Come up with the most efficient solution to that problem.],
   [Implement the solution with minimum wasted time.],
   [Let’s go through these steps one by one, and see why they’re key to productivity.],
-  [id="1-find-the-most-significant-problem"\>1. Find the most significant problem],
+  [1. Find the most significant problem],
   [Let’s consider our formula for productivity again:],
+  [Productivity = Significant problems solved \/ Week],
   [There are many problems you could be working on, so first you have to choose one.
 If you could solve either of these problems, should you be working on:],
   [Implementing a particular missing feature; this will increase revenue by \$50,000.],
   [Fixing a bug that was decreasing customer retention; this will increase revenue by \$1,000,000.],
   [All other things being equal, the second problem is obviously the one you should be focusing on.
 Even if it takes 10× as long to solve and implement that bug fix, it should still be the highest priority:],
+  [Productivity of \#1 = \$50,000 \/ 1 Week = \$50,000 \/ Week
+Productivity of \#2 = \$1,000,000 \/ 10 Weeks = \$100,000 \/ Week],
   [Here’s the issue: in order to fix that expensive bug and improve customer retention, you need to know the problem exists. 
 If no one ever notices that customers are leaving, if no one ever finds that bug, if no one realizes the connection between the two—then that problem will never be solved.],
   [And that’s why finding problems is the first and most valuable step in increasing productivity.],
-  [id="2-come-up-with-an-efficient-solution"\>2. Come up with an efficient solution],
+  [2. Come up with an efficient solution],
   [Once you’ve identified the most significant problem—or once your manager assigns you a problem they identified—you need to come up with a solution.],
   [Which solution do you think is better?],
   [Takes 1000 lines of code and 4 weeks to implement.],
@@ -1386,12 +1134,14 @@ If no one ever notices that customers are leaving, if no one ever finds that bug
 But again, you need to find that solution.],
   [If you only ever find that first solution, then no matter how efficiently you implement it, no matter how focused you are, no matter how much you manage to speed things up—you’re still implementing a much less efficient solution.],
   [And that’s why identifying better solution is the second most valuable step in increasing productivity.],
-  [id="3-implement-the-solution-without-wasting-a-time"\>3. Implement the solution without wasting a time],
+  [3. Implement the solution without wasting a time],
   [Once you’ve identified a problem and chosen the solution, there is only so much leverage you have to improve productivity.
 You obviously want to avoid getting stuck and spinning your wheels, because wasted time reduces your productivity.],
   [But given a particular solution, there’s only so much waste you can reduce, only so fast you can go:],
+  [Wasted time → \$50,000 \/ 2 weeks = \$25,000 \/ week
+No waste → \$50,000 \/ 1 week = \$50,000 \/ week],
   [Efficient implementation is the last and least valuable way of increasing productivity.],
-  [id="technological-skills-arent-enough"\>Technological skills aren’t enough],
+  [Technological skills aren’t enough],
   [While you get the most increased productivity from identifying problems and the least from efficient implementation, your career as a programmer progresses in the opposite direction:],
   [Junior engineers implement solutions.],
   [Senior engineers find solutions and implement them.],
@@ -1401,13 +1151,13 @@ You obviously want to avoid getting stuck and spinning your wheels, because wast
   [Your JavaScript skills don’t matter if you can never meet deadlines.],
   [Your testing skills don’t matter if you can’t convince your manager of the value of testing.],
   [Your software architecture skills don’t matter if no one has ever heard of your product.],
-  [id="why-these-skills-are-secret"\>Why these skills are “secret”],
+  [Why these skills are “secret”],
   [Most discussions of programming productivity tend to end up focusing purely on technology, coding, and design skills, and skip over these problem-solving skills.
 Of course, this isn’t a conspiracy of silence, no one is deliberately hiding the existence of the skills.],
   [My guess is that experienced programmers still have to learn new technologies, so they’re more likely to realize the need to explain those particular skills.
 But having learned them once, they apply skills like timeboxing, or considering multiple different solutions to a problem, without even noticing they’re doing it.
 And so they end up talking about problem-solving skills rather less, and about technological skills rather more.],
-  [id="how-do-you-learn-these-skills"\>How do you learn these skills?],
+  [How do you learn these skills?],
   [This article is an excerpt from my book, The Secret Skills of Productive Programmers , covering the non-technical skills you need to get better at identifying problems, solving problems, and implementing them on schedule.],
   [Elsewhere on this site you’ll find many free articles on building up your skills.],
   [Tired of scrambling to get your job done?],
@@ -1420,10 +1170,8 @@ And so they end up talking about problem-solving skills rather less, and about t
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Kafka’s Misdiagnosis],
   author: [Aaron Schuster],
   source-name: [The Paris Review Blog],
@@ -1450,61 +1198,79 @@ And so they end up talking about problem-solving skills rather less, and about t
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Sunday at La Bombonera],
   author: [Juan Villoro],
   source-name: [The Paris Review Blog],
   images: (),
   paragraphs: (
-  [class="p1"\> Clásicos are like Christmas for football. In these high-tension matches between fierce rivals, expectation almost always outstrips results. For months, fans visualize goals with the unrealistic yearning of a child who hopes for a new PlayStation from Santa Claus in exchange for a few cookies left out for his tired reindeer.],
-  [class="p1"\>For me, the Superclásico between Buenos Aires’s Boca Juniors and River Plate on May 4, 2008, was preceded by thirty-four years of anticipation. In 1974 I went to the Estadio Monumental to see River–Boca, but I had never been to the reverse fixture in La Bombonera, that exceptional stadium that should have been examined by Elias Canetti in Crowds and Power.],
-  [class="p1"\>The wait had charged the occasion with so much emotion that it was almost a shame it actually had to take place. Friends from Mexico, Colombia, and Spain had all similarly circled the date of May 4—the Argentine derby appeals not only to those who sleep in shirts emblazoned with the Quilmes beer logo but to an entire global tribe.],
-  [class="p1"\>Like Everest or the Mona Lisa , the fame of Boca’s stadium is impossible to deny—look no further than the crowds of tourists who come to snap pictures. But does it really represent the pinnacle of footballing passion?],
-  [class="p1"\>I spoke about the Superclásico with the taxi driver who picked me up at the Ezeiza airport and he replied with indignation: “But we hate each other more!” He came from Rosario and was referring to the bad blood between his hometown clubs Newell’s Old Boys (“the Lepers”) and Rosario Central (“the Swine”). On the drive he told me about his family’s marvelous wrath and the betrayal of his aunt Teresita, the heretic who refused to support the Swine. At the core of his story was the issue of rancor: on its biggest days, football comes down to contempt, and nobody hates each other more than Swine hate Lepers. In his opinion, the lesser rivalry between Boca–River was inflated by the press. The driver summed up his argument with theological flair: “God is everywhere, but performs his tricks in Buenos Aires.”],
+  [Clásicos are like Christmas for football. In these high-tension matches between fierce rivals, expectation almost always outstrips results. For months, fans visualize goals with the unrealistic yearning of a child who hopes for a new PlayStation from Santa Claus in exchange for a few cookies left out for his tired reindeer.],
+  [For me, the Superclásico between Buenos Aires’s Boca Juniors and River Plate on May 4, 2008, was preceded by thirty-four years of anticipation. In 1974 I went to the Estadio Monumental to see River–Boca, but I had never been to the reverse fixture in La Bombonera, that exceptional stadium that should have been examined by Elias Canetti in Crowds and Power.],
+  [The wait had charged the occasion with so much emotion that it was almost a shame it actually had to take place. Friends from Mexico, Colombia, and Spain had all similarly circled the date of May 4—the Argentine derby appeals not only to those who sleep in shirts emblazoned with the Quilmes beer logo but to an entire global tribe.],
+  [Like Everest or the Mona Lisa , the fame of Boca’s stadium is impossible to deny—look no further than the crowds of tourists who come to snap pictures. But does it really represent the pinnacle of footballing passion?],
+  [I spoke about the Superclásico with the taxi driver who picked me up at the Ezeiza airport and he replied with indignation: “But we hate each other more!” He came from Rosario and was referring to the bad blood between his hometown clubs Newell’s Old Boys (“the Lepers”) and Rosario Central (“the Swine”). On the drive he told me about his family’s marvelous wrath and the betrayal of his aunt Teresita, the heretic who refused to support the Swine. At the core of his story was the issue of rancor: on its biggest days, football comes down to contempt, and nobody hates each other more than Swine hate Lepers. In his opinion, the lesser rivalry between Boca–River was inflated by the press. The driver summed up his argument with theological flair: “God is everywhere, but performs his tricks in Buenos Aires.”],
   [Don’t Worry: It’s Just the Earth Shaking],
-  [class="p2"\>On April 16, my friend Daniel Samper Pizano, a renowned Colombian journalist, organized a dinner in Madrid to prepare for the Superclásico. The final of the Copa del Rey had just concluded between Valencia and Getafe, but we weren’t interested. We preferred to talk about the football of the future, which was to say the upcoming game on May 4. The other guest justified our interest; after the meal, Jorge Valdano told us about the first time he faced Boca as a visiting player. Lacing up his boots in the locker room, he said, everything around him seemed to be moving. One of the veterans came over to reassure him: “It’s not you, pibe, it’s the stadium.” Playing at La Bombonera means overcoming an arena about to collapse under the weight of its own passion. No other ground imposes itself so forcefully upon its visitors.],
-  [class="p1"\>In his stupendous book Boquita , Martín Caparrós reminds us that it was Argentina where fans were first baptized as “the twelfth man.” Accustomed to adversity, we Mexicans consider the scoreline a suggestion we can ignore. Argentine fans, on the other hand, seek to alter the result using three basic tactics: holding their breath, insulting their rivals, and singing love songs. It’s no accident that one of the most prominent barras bravas is called La Doce, or “the twelfth.” These ultras aren’t there to merely watch a game, but to participate in it through their shouts.],
-  [class="p1"\>For years, magical realism has gone missing from Latin American literature, finding refuge in aviation instead. To fly across the continent is to endure a saga of detours, delays, and strange schedules that lead to a parallel reality. Maybe air traffic control is cheaper in the early morning and this determines the itineraries of the hemisphere. At any rate, I found myself on a four-hour predawn flight from Bogotá to Buenos Aires. Anyone without the meditative powers of a yogi arrived at the destination a zombie. Among the many surprises to come that day, I was made to experience May 4 in an altered state of time.],
-  [class="p1"\>The relationship between football and aviation is no trifle—the Copa Libertadores will never be truly competitive until the continent modifies its fixture calendar and flight paths. When I was a kid, I used to take medications with labels that read “Shake well before using.” Thanks to a miserable night on the plane, I arrived at the Superclásico in a state of total agitation.],
-  [class="p1"\>Entering the stadium was likewise an extreme sport. I was lucky to be accompanied by my friend Leo Tarifeño, a diehard River fan who had sworn to never set foot in La Bombonera.],
-  [class="p1"\>Leo is convinced that Argentines live for confrontation, eagerly disregard established rules, object impulsively, and justify themselves only through negativity, taking issue with anything they don’t agree with. After asserting this theory, he put it into practice. When I praised the chanting of the Boca fans, he replied, “Deep down, their joy is bitter.”],
-  [class="p1"\>Being with Leo was the opposite of having a human shield. The route to the stadium was blocked, so we made our way through a wasteland thick with the invigorating smoke from street stalls selling choripán. Our barren surroundings gradually became a funnel. Police barricades flanked us on either side. We continued on until someone—an invisible leader far ahead—committed a grave mistake. The crowd was pushed back by the sound of riot guns and retreated to a checkpoint, where Leo and I asked for directions to the press box. An officer waved his hand as if trying to hypnotize us. We “understood” to make our way to the other side of a roundabout, but instead we ducked into the first alley we came across. Another crowd pulled us in before being repelled again by the riot guns. Everyone ran en masse to a station manned by mounted police ushering fans into a makeshift fenced corridor. It looked less like an accessway than a site of detention. Perhaps for regular stadium-goers the challenge of entry might offer a delicious adrenaline rush, but we were in no shape for it. Above all, it was no place for Leo to expound upon his theory of antagonism.],
-  [class="p1"\>The propaganda was signed “Estudio Posca,” which was located on Calle Uruguay 385, Office 902. Its 2008 slogan was “ ¡¡¡Standing with fans for 32 years!!!” The firm presented itself as specializing in “accidents occurring in traffic or in football stadiums.”],
-  [class="p1"\>I was struck by the fact that the sporting ground had generated its own area of legal specialization. I was also surprised that the area of jurisdiction extended to the stadium’s outskirts. Leo and I had entered the zone where it might behoove us to keep Estudio Posca’s phone number close at hand. Among other alarming facts, the flyer warned:],
-  [class="p1"\>I kept the flyer to safeguard my survival. The most alarming thing about it was the casual implication that broken bones and rubber bullets simply came with the territory. Some people refuse to see doctors out of fear a previously invisible ailment might suddenly appear in their presence. With Estudio Posca, it was the other way around: we were already injured, we just hadn’t yet discovered the blood.],
-  [class="p1"\>Given humanity’s great diversity of mindsets, perhaps someone out there would be excited to receive proof of having entered a zone of aggression. Perhaps others were busy calculating how good the afternoon’s business might be—how much “\$\$\$” might be made from a broken fibula? Could it be worth sacrificing a rib as well? If some people survive by selling their blood plasma and sperm, might there also be professional victims with a long history of fractures?],
-  [class="p1"\>We made our way down streets that seemed to lead to the stadium but only ended in more detours. Due to my friend’s distrust of all Boca fans, we asked the police for directions instead. In every country stadium guards seem to come from afar and have no idea how to reach the seats.],
-  [class="p1"\>I was distracted by the flags hanging from balconies and the women in blue-and-gold aprons selling empanadas. Few clubs retain the urban grit of Boca, whose football still represents the surrounding neighborhood. The club of Maradona hasn’t lost touch with the streets—the only problem is knowing which one leads to its entrance.],
-  [class="p1"\>We reached an area where everyone was leaning out their windows. The festive atmosphere was interrupted by homophobic chants: “ Puuuuuuuuuutos! ” A motorcycle roared in the distance. Then we saw the white beast: the team bus of River. We had arrived in the corridor of rage, where those who can’t get into the stadium play their own kind of game. The following day I heard Beto Alonso, one of River’s most emblematic players, describing on the radio the objects that fell onto the roof of the bus. Some people freeze blocks of ice for the occasion and others sacrifice their heaviest padlocks. The bus slowly advanced through the crowd, dented, spat upon, and reviled.],
-  [class="p1"\>I’m always suspicious of singers who visit a new country and become instant fans of a team, playing their encore draped in a local jersey. However, in that shameful alleyway, I was on the verge of becoming a River fan myself—and it wasn’t just to make Leo happy.],
-  [class="p1"\>When Mexican police don’t want to investigate a murder, they label it “assisted suicide.” My sudden sympathy for the abused, paired with my friend’s theories, could have easily transformed us into two potential suicides in search of assistance.],
-  [class="p1"\>Naturally, my perception was entirely foreign. In 1974 when I went to River’s stadium, a man heard my accent and asked if it was true that in Mexico, a fan of a team like River could be seated next to the equivalent of a Boca fan. I said yes. “And they won’t kill each other?” he asked with interest. I explained that at least in this respect, we were peaceful. His response was withering: “What a bunch of degenerates!”],
-  [class="p1"\>I’ll never forget seeing my father in Mexico’s City’s University Olympic Stadium, urging everyone around us to applaud for the visiting team. “They’re our guests!” he said with enough amiable quirkiness to make everyone unthinkingly follow along.],
-  [class="p1"\>Raised with the belief that losing is synonymous with hospitality, it’s hard for Mexican fans to understand the spirit of the barra brava, which was seemingly forged, if not in the actual Battle of Thermopylae, at least in the movie 300.],
-  [class="p1"\>During a discussion about football and literature at the Buenos Aires Book Fair, Martín Caparrós remarked that Mexicans say “I cheer for Guadalajara” while Argentines proclaim “I’m from Boca.” These degrees of belonging are distinct. In Mexico our teams tend to fall into the abyss, so we prefer to follow at a distance. Our passion is an unreachable horizon rather than something woven into our DNA.],
+  [On April 16, my friend Daniel Samper Pizano, a renowned Colombian journalist, organized a dinner in Madrid to prepare for the Superclásico. The final of the Copa del Rey had just concluded between Valencia and Getafe, but we weren’t interested. We preferred to talk about the football of the future, which was to say the upcoming game on May 4. The other guest justified our interest; after the meal, Jorge Valdano told us about the first time he faced Boca as a visiting player. Lacing up his boots in the locker room, he said, everything around him seemed to be moving. One of the veterans came over to reassure him: “It’s not you, pibe, it’s the stadium.” Playing at La Bombonera means overcoming an arena about to collapse under the weight of its own passion. No other ground imposes itself so forcefully upon its visitors.],
+  [In his stupendous book Boquita , Martín Caparrós reminds us that it was Argentina where fans were first baptized as “the twelfth man.” Accustomed to adversity, we Mexicans consider the scoreline a suggestion we can ignore. Argentine fans, on the other hand, seek to alter the result using three basic tactics: holding their breath, insulting their rivals, and singing love songs. It’s no accident that one of the most prominent barras bravas is called La Doce, or “the twelfth.” These ultras aren’t there to merely watch a game, but to participate in it through their shouts.],
+  [For years, magical realism has gone missing from Latin American literature, finding refuge in aviation instead. To fly across the continent is to endure a saga of detours, delays, and strange schedules that lead to a parallel reality. Maybe air traffic control is cheaper in the early morning and this determines the itineraries of the hemisphere. At any rate, I found myself on a four-hour predawn flight from Bogotá to Buenos Aires. Anyone without the meditative powers of a yogi arrived at the destination a zombie. Among the many surprises to come that day, I was made to experience May 4 in an altered state of time.],
+  [The relationship between football and aviation is no trifle—the Copa Libertadores will never be truly competitive until the continent modifies its fixture calendar and flight paths. When I was a kid, I used to take medications with labels that read “Shake well before using.” Thanks to a miserable night on the plane, I arrived at the Superclásico in a state of total agitation.],
+  [Entering the stadium was likewise an extreme sport. I was lucky to be accompanied by my friend Leo Tarifeño, a diehard River fan who had sworn to never set foot in La Bombonera.],
+  [Leo is convinced that Argentines live for confrontation, eagerly disregard established rules, object impulsively, and justify themselves only through negativity, taking issue with anything they don’t agree with. After asserting this theory, he put it into practice. When I praised the chanting of the Boca fans, he replied, “Deep down, their joy is bitter.”],
+  [Being with Leo was the opposite of having a human shield. The route to the stadium was blocked, so we made our way through a wasteland thick with the invigorating smoke from street stalls selling choripán. Our barren surroundings gradually became a funnel. Police barricades flanked us on either side. We continued on until someone—an invisible leader far ahead—committed a grave mistake. The crowd was pushed back by the sound of riot guns and retreated to a checkpoint, where Leo and I asked for directions to the press box. An officer waved his hand as if trying to hypnotize us. We “understood” to make our way to the other side of a roundabout, but instead we ducked into the first alley we came across. Another crowd pulled us in before being repelled again by the riot guns. Everyone ran en masse to a station manned by mounted police ushering fans into a makeshift fenced corridor. It looked less like an accessway than a site of detention. Perhaps for regular stadium-goers the challenge of entry might offer a delicious adrenaline rush, but we were in no shape for it. Above all, it was no place for Leo to expound upon his theory of antagonism.],
+  [We walked through another abandoned lot where someone handed me a flyer I read like a sacred text:],
+  [Injured fans . . . . !],
+  [You have rights and are entitled to lots of \$\$\$.],
+  [Any injury you suffer inside a football stadium,],
+  [or anywhere nearby, can be claimed.],
+  [The propaganda was signed “Estudio Posca,” which was located on Calle Uruguay 385, Office 902. Its 2008 slogan was “ ¡¡¡Standing with fans for 32 years!!!” The firm presented itself as specializing in “accidents occurring in traffic or in football stadiums.”],
+  [I was struck by the fact that the sporting ground had generated its own area of legal specialization. I was also surprised that the area of jurisdiction extended to the stadium’s outskirts. Leo and I had entered the zone where it might behoove us to keep Estudio Posca’s phone number close at hand. Among other alarming facts, the flyer warned:],
+  [Do not believe People who claim to be Lawyers, and who show up at your home, in the Hospital, or at the police station.],
+  [Did it make sense to attend an event where I risked ending up in a prison bed, accosted by a “Person who claimed to be a Lawyer?”],
+  [Even if I had “lots of \$\$\$” to claim, I was hardly eager to go through the necessary requirements to get it. The flyer was explicit about the covered risks:],
+  [Trampling; rubber bullets or lead bullets;],
+  [broken bones; sprains; flares; fights; stones, etc.],
+  [After suffering any of the above, you were advised to take the following actions:],
+  [Keep your ticket.],
+  [Get treated at the club’s sick bay in the closest],
+  [Hospital to the stadium.],
+  [Call us.],
+  [I kept the flyer to safeguard my survival. The most alarming thing about it was the casual implication that broken bones and rubber bullets simply came with the territory. Some people refuse to see doctors out of fear a previously invisible ailment might suddenly appear in their presence. With Estudio Posca, it was the other way around: we were already injured, we just hadn’t yet discovered the blood.],
+  [Given humanity’s great diversity of mindsets, perhaps someone out there would be excited to receive proof of having entered a zone of aggression. Perhaps others were busy calculating how good the afternoon’s business might be—how much “\$\$\$” might be made from a broken fibula? Could it be worth sacrificing a rib as well? If some people survive by selling their blood plasma and sperm, might there also be professional victims with a long history of fractures?],
+  [We made our way down streets that seemed to lead to the stadium but only ended in more detours. Due to my friend’s distrust of all Boca fans, we asked the police for directions instead. In every country stadium guards seem to come from afar and have no idea how to reach the seats.],
+  [“We aren’t going to get in,” Leo said with strange satisfaction.],
+  [I was distracted by the flags hanging from balconies and the women in blue-and-gold aprons selling empanadas. Few clubs retain the urban grit of Boca, whose football still represents the surrounding neighborhood. The club of Maradona hasn’t lost touch with the streets—the only problem is knowing which one leads to its entrance.],
+  [We reached an area where everyone was leaning out their windows. The festive atmosphere was interrupted by homophobic chants: “ Puuuuuuuuuutos! ” A motorcycle roared in the distance. Then we saw the white beast: the team bus of River. We had arrived in the corridor of rage, where those who can’t get into the stadium play their own kind of game. The following day I heard Beto Alonso, one of River’s most emblematic players, describing on the radio the objects that fell onto the roof of the bus. Some people freeze blocks of ice for the occasion and others sacrifice their heaviest padlocks. The bus slowly advanced through the crowd, dented, spat upon, and reviled.],
+  [I’m always suspicious of singers who visit a new country and become instant fans of a team, playing their encore draped in a local jersey. However, in that shameful alleyway, I was on the verge of becoming a River fan myself—and it wasn’t just to make Leo happy.],
+  [When Mexican police don’t want to investigate a murder, they label it “assisted suicide.” My sudden sympathy for the abused, paired with my friend’s theories, could have easily transformed us into two potential suicides in search of assistance.],
+  [Naturally, my perception was entirely foreign. In 1974 when I went to River’s stadium, a man heard my accent and asked if it was true that in Mexico, a fan of a team like River could be seated next to the equivalent of a Boca fan. I said yes. “And they won’t kill each other?” he asked with interest. I explained that at least in this respect, we were peaceful. His response was withering: “What a bunch of degenerates!”],
+  [I’ll never forget seeing my father in Mexico’s City’s University Olympic Stadium, urging everyone around us to applaud for the visiting team. “They’re our guests!” he said with enough amiable quirkiness to make everyone unthinkingly follow along.],
+  [Raised with the belief that losing is synonymous with hospitality, it’s hard for Mexican fans to understand the spirit of the barra brava, which was seemingly forged, if not in the actual Battle of Thermopylae, at least in the movie 300.],
+  [During a discussion about football and literature at the Buenos Aires Book Fair, Martín Caparrós remarked that Mexicans say “I cheer for Guadalajara” while Argentines proclaim “I’m from Boca.” These degrees of belonging are distinct. In Mexico our teams tend to fall into the abyss, so we prefer to follow at a distance. Our passion is an unreachable horizon rather than something woven into our DNA.],
+  [On the street where the River bus was pelted with insults, the question of identity couldn’t be more clear. If you weren’t throwing stones, you came from somewhere else.],
   [Side Effects: The Game],
-  [class="p2"\>Occasionally, there are moments in life when we Mexicans reveal our strength in the face of adversity. I had resigned myself to never entering the stadium and to eating choripán alongside the peaceful vendors. Then we saw a white-haired policeman issuing orders with the decisiveness of an orchestra conductor. He, and only he, knew how to find our entrance. “It’s simple,” he said prophetically. “Just follow the train tracks.”],
-  [class="p2"\>We walked between the rusty rails of a long-abandoned tramway. This had been the route to the stadium in the days when goalkeepers wore caps and footballs were still made from leather.],
-  [class="p2"\>We continued along the history-drenched path until we arrived at another dangerous crossroads. To our right was a blue wall of perforated metal. This was the entryway for River fans. We couldn’t see them, but we sensed them advancing like a herd of shadows. The only proof of their presence were the insults hurled in their direction. I was tempted to make a silent gesture of solidarity by slipping the flyer from Estudio Posca beneath the wall.],
-  [class="p1"\>Finally, we arrived at the gate and climbed to our assigned tower. From these heights I was able to confirm the optical effect described by the Colombian sportswriter David Leonardo Quitián—Boca’s stadium is the only one where distance from the field does not increase with the level of ascent. Instead, the verticality of its construction creates a dizzying proximity. “You must take a lesson in abysses,” say the protagonists of Journey to the Center of the Earth. It’s a good piece of advice for visiting La Bombonera.],
-  [class="p1"\>When Hugo Orlando Gatti, Boca’s most beloved and extravagant goalkeeper, said, “I go to the edge of the abyss,” he was referring to his tendency to complicate plays, but perhaps also to the onlookers who seemed about to collapse onto the field.],
-  [class="p1"\>For the crowd, there is no greater exercise than anticipation itself. Energized by the wait, the standing area known as La Popular defines the Superclásico. What happens on the pitch can’t compete with what happens here. On May 4, 2008, someone wanting to see a derby with great Argentine players could have watched Inter vs. Milan to admire the country’s exported geniuses. The match in Italy was a back-and-forth affair, nothing at all like the morass at La Bombonera.],
-  [class="p1"\>The home team won by playing defense and prolonging every pause in play with the exaggerated slowness of Soviet cinema. River lacked the forcefulness that their coach, El Cholo Simeone, had once shown in spades during his playing days, and they were only able to triangulate passes when it no longer mattered. River fans are called gallinas or “chickens” by their enemies. True to form, the sun-drenched masses shouted like crazed farmers ready to slaughter an entire hen house. They would never have traded this match for the aesthetic flourish of Inter vs. Milan. The Superclásico was as it should be: an effective pretext for the outpouring of passion. You don’t go to La Bombonera to discover football, but to confirm its emotional heft.],
-  [class="p1"\>It’s always disappointing to compare historical exploits: an ideal game would collapse time, offering us a clash of great idols across eras, with Labruna, Pedernera, and Sívori taking on Rattín, Pernía, and Batistuta. This impossibility—the ghostly sum of everything that has ever been played for—infuses each new contest between these intimate enemies with new allure. It’s a knife fight in which wounds never feel as deep as the animosity that fuels them.],
-  [class="p1"\>There are, of course, exceptional days when a derby resembles its inspirational propaganda—in the ninetieth minute a match is tied 3–3 and sees a winner scored in stoppage time. But on this Sunday in May, the only astonishing occurrences were in the stands.],
-  [class="p1"\>If comic-book superheroes are bipolar characters who punctuate their depressing existence as Clark Kent with maniacal outbursts as Superman, football fans oscillate from affection to invective with nothing in between. The dedication of a fanbase is measured according to its bipolarity, and Boca ranks highly: “I don’t care what they say \/ what the others say \/ I follow you everywhere \/ I love you more each day,” sing the romantic men who just minutes before called for the River fans to be murdered.],
-  [class="p1"\>That afternoon, when Sebastián Battaglia scored the stunning header that made the game 1–0, the building shook as promised by legend. Coming from a country of earthquakes, I talked about this enthusiasm, measurable on the Richter scale, for days. I was corrected by a writer, a waiter, and a police officer with the same phrase, extracted straight from the most sensitive ventricle of the Bostero heart: “Boca’s stadium doesn’t tremble, it beats.”],
-  [class="p1"\>Passion can also be defined by its power to summon those who are absent. That day, the ultras of Barra Auriazul memorialized the passing of a man named Raulito, an extraordinary fan made present even in death, and they paid tribute to the great players who had migrated away from a place where careers never last.],
-  [class="p1"\>Long gone are the chivalrous days of Ernesto Lazzatti, who played his entire career without ever being sent off, and who wore Boca’s colors without ever thinking of them as a stepping stone to Europe. Today Argentines are football’s great nomads. “If they were any good they wouldn’t be playing for us,” a taxi driver told me. “Verón came back because he’s old, Riquelme because he’s weird.”],
-  [class="p1"\>I remembered a scene from Germany ’06, when I was a commentator alongside Carlos Bianchi for Mexican TV. During a commercial break, the former coach who won everything with Boca received a phone call. He said something like “I can’t help anymore—you have another father now.” Later he told us “that was Riquelme,” with the same satisfaction Homer would have felt announcing a phone call from Achilles. Argentina’s number ten needed to feel loved in order to play well. From his training camp in Germany, he was seeking the emotional support Bianchi had given him at Boca. Coming from the riotous atmosphere of La Bombonera, it’s no wonder Riquelme had little success at Barcelona’s Camp Nou, where spectators behave like opera-goers.],
-  [class="p1"\>With few exceptions, Argentina’s cracks consider their feats a boarding pass to faraway places. The only ones who remain sedentary are the supporters. Perhaps their devotion stems from this irreconcilable disagreement. In football, passion feeds on pain—every fan base finds a way to overcome its own distinct evils. In Argentina, miracles are possible but short-lived; in Mexico, they are forever postponed and glory can only be imagined. The Estadio Azteca sportswriter describes plays that require adjectives to become interesting. The Bombonera sportswriter is faced with something that needs no words of validation; in the press box, I met Juan José Becerra, the indispensable author of Grasa , who was chronicling the team’s season for the daily newspaper Crítica. “The only thing I want,” he admitted, “is for Boca to win.”],
-  [class="p1"\>So, what does an expert in postponement discover in the realm of the impatient? In La Bombonera, the Mexican fan no longer waits for the fiction of spectacular Mexican goals. Instead, he enters a hardboiled reality. The stadium vibrates like nature at its most radical, demanding survival instead of interpretation.],
+  [Occasionally, there are moments in life when we Mexicans reveal our strength in the face of adversity. I had resigned myself to never entering the stadium and to eating choripán alongside the peaceful vendors. Then we saw a white-haired policeman issuing orders with the decisiveness of an orchestra conductor. He, and only he, knew how to find our entrance. “It’s simple,” he said prophetically. “Just follow the train tracks.”],
+  [We walked between the rusty rails of a long-abandoned tramway. This had been the route to the stadium in the days when goalkeepers wore caps and footballs were still made from leather.],
+  [We continued along the history-drenched path until we arrived at another dangerous crossroads. To our right was a blue wall of perforated metal. This was the entryway for River fans. We couldn’t see them, but we sensed them advancing like a herd of shadows. The only proof of their presence were the insults hurled in their direction. I was tempted to make a silent gesture of solidarity by slipping the flyer from Estudio Posca beneath the wall.],
+  [The intensity of the scene contrasted sharply with one across the street, where three girls in yellow-and-blue leotards were posing in support of a local candidate.],
+  [Finally, we arrived at the gate and climbed to our assigned tower. From these heights I was able to confirm the optical effect described by the Colombian sportswriter David Leonardo Quitián—Boca’s stadium is the only one where distance from the field does not increase with the level of ascent. Instead, the verticality of its construction creates a dizzying proximity. “You must take a lesson in abysses,” say the protagonists of Journey to the Center of the Earth. It’s a good piece of advice for visiting La Bombonera.],
+  [When Hugo Orlando Gatti, Boca’s most beloved and extravagant goalkeeper, said, “I go to the edge of the abyss,” he was referring to his tendency to complicate plays, but perhaps also to the onlookers who seemed about to collapse onto the field.],
+  [La Bombonera is an odd stadium—fantastically so. It holds 57,395 spectators. Not a single number in this magical figure is even.],
+  [For the crowd, there is no greater exercise than anticipation itself. Energized by the wait, the standing area known as La Popular defines the Superclásico. What happens on the pitch can’t compete with what happens here. On May 4, 2008, someone wanting to see a derby with great Argentine players could have watched Inter vs. Milan to admire the country’s exported geniuses. The match in Italy was a back-and-forth affair, nothing at all like the morass at La Bombonera.],
+  [The home team won by playing defense and prolonging every pause in play with the exaggerated slowness of Soviet cinema. River lacked the forcefulness that their coach, El Cholo Simeone, had once shown in spades during his playing days, and they were only able to triangulate passes when it no longer mattered. River fans are called gallinas or “chickens” by their enemies. True to form, the sun-drenched masses shouted like crazed farmers ready to slaughter an entire hen house. They would never have traded this match for the aesthetic flourish of Inter vs. Milan. The Superclásico was as it should be: an effective pretext for the outpouring of passion. You don’t go to La Bombonera to discover football, but to confirm its emotional heft.],
+  [It’s always disappointing to compare historical exploits: an ideal game would collapse time, offering us a clash of great idols across eras, with Labruna, Pedernera, and Sívori taking on Rattín, Pernía, and Batistuta. This impossibility—the ghostly sum of everything that has ever been played for—infuses each new contest between these intimate enemies with new allure. It’s a knife fight in which wounds never feel as deep as the animosity that fuels them.],
+  [There are, of course, exceptional days when a derby resembles its inspirational propaganda—in the ninetieth minute a match is tied 3–3 and sees a winner scored in stoppage time. But on this Sunday in May, the only astonishing occurrences were in the stands.],
+  [If comic-book superheroes are bipolar characters who punctuate their depressing existence as Clark Kent with maniacal outbursts as Superman, football fans oscillate from affection to invective with nothing in between. The dedication of a fanbase is measured according to its bipolarity, and Boca ranks highly: “I don’t care what they say \/ what the others say \/ I follow you everywhere \/ I love you more each day,” sing the romantic men who just minutes before called for the River fans to be murdered.],
+  [That afternoon, when Sebastián Battaglia scored the stunning header that made the game 1–0, the building shook as promised by legend. Coming from a country of earthquakes, I talked about this enthusiasm, measurable on the Richter scale, for days. I was corrected by a writer, a waiter, and a police officer with the same phrase, extracted straight from the most sensitive ventricle of the Bostero heart: “Boca’s stadium doesn’t tremble, it beats.”],
+  [Passion can also be defined by its power to summon those who are absent. That day, the ultras of Barra Auriazul memorialized the passing of a man named Raulito, an extraordinary fan made present even in death, and they paid tribute to the great players who had migrated away from a place where careers never last.],
+  [Long gone are the chivalrous days of Ernesto Lazzatti, who played his entire career without ever being sent off, and who wore Boca’s colors without ever thinking of them as a stepping stone to Europe. Today Argentines are football’s great nomads. “If they were any good they wouldn’t be playing for us,” a taxi driver told me. “Verón came back because he’s old, Riquelme because he’s weird.”],
+  [I remembered a scene from Germany ’06, when I was a commentator alongside Carlos Bianchi for Mexican TV. During a commercial break, the former coach who won everything with Boca received a phone call. He said something like “I can’t help anymore—you have another father now.” Later he told us “that was Riquelme,” with the same satisfaction Homer would have felt announcing a phone call from Achilles. Argentina’s number ten needed to feel loved in order to play well. From his training camp in Germany, he was seeking the emotional support Bianchi had given him at Boca. Coming from the riotous atmosphere of La Bombonera, it’s no wonder Riquelme had little success at Barcelona’s Camp Nou, where spectators behave like opera-goers.],
+  [With few exceptions, Argentina’s cracks consider their feats a boarding pass to faraway places. The only ones who remain sedentary are the supporters. Perhaps their devotion stems from this irreconcilable disagreement. In football, passion feeds on pain—every fan base finds a way to overcome its own distinct evils. In Argentina, miracles are possible but short-lived; in Mexico, they are forever postponed and glory can only be imagined. The Estadio Azteca sportswriter describes plays that require adjectives to become interesting. The Bombonera sportswriter is faced with something that needs no words of validation; in the press box, I met Juan José Becerra, the indispensable author of Grasa , who was chronicling the team’s season for the daily newspaper Crítica. “The only thing I want,” he admitted, “is for Boca to win.”],
+  [So, what does an expert in postponement discover in the realm of the impatient? In La Bombonera, the Mexican fan no longer waits for the fiction of spectacular Mexican goals. Instead, he enters a hardboiled reality. The stadium vibrates like nature at its most radical, demanding survival instead of interpretation.],
+  [Adrift in the tide, the sportswriter from afar has ninety minutes to get used to something he never before associated with football: vertigo.],
   [An excerpt from The Game at the End of the World , translated from the Spanish by Francisco Cantú, to be published by Restless Books in May.],
-  [class="p1"\> Juan Villoro is a writer and journalist based in Mexico City. His columns have appeared in Reforma , The New York Times, El País, and El Mercurio , among others, and his books have been translated into numerous languages. A recipient of several awards, including the 2018 Manuel Rojas Prize for his body of work, Villoro has taught at Autonomous Metropolitan University, Yale, Princeton, Stanford, and Pompeu Fabra university in Barcelona, as well as at the New Journalism Foundation, created by Gabriel Garcia Márquez.],
-  [class="p1"\> Francisco Cantú is a writer, translator, and the author of The Line Becomes a River. He is the winner of the 2018 Los Angeles Times Book Prize and is the recipient of a 2017 Whiting Award in Nonfiction . His writing and translations have been featured in The New Yorker , Granta , Guernica, and VQR.],
+  [Juan Villoro is a writer and journalist based in Mexico City. His columns have appeared in Reforma , The New York Times, El País, and El Mercurio , among others, and his books have been translated into numerous languages. A recipient of several awards, including the 2018 Manuel Rojas Prize for his body of work, Villoro has taught at Autonomous Metropolitan University, Yale, Princeton, Stanford, and Pompeu Fabra university in Barcelona, as well as at the New Journalism Foundation, created by Gabriel Garcia Márquez.],
+  [Francisco Cantú is a writer, translator, and the author of The Line Becomes a River. He is the winner of the 2018 Los Angeles Times Book Prize and is the recipient of a 2017 Whiting Award in Nonfiction . His writing and translations have been featured in The New Yorker , Granta , Guernica, and VQR.],
 ),
   insert-map: (:),
   word-count: 3545,
@@ -1512,11 +1278,10 @@ And so they end up talking about problem-solving skills rather less, and about t
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Week 24: vroom vroom],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -1545,24 +1310,26 @@ pacing up and down next to our house, which sends Hopper into a fit of barking h
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Book Riot’s Deals of the Day for March 29, 2026],
   author: [Deals],
   source-name: [Book Riot],
   images: (),
   paragraphs: (
-  [align="center" class="deal"\>],
-  [align="center" class="deal"\>],
-  [align="center" class="deal"\>],
-  [align="center" class="deal"\>],
-  [align="center" class="deal"\>],
-  [align="center" class="deal"\>],
-  [align="center" class="deal"\>],
-  [align="center" class="deal"\>],
-  [align="center" class="deal"\>],
-  [align="center" class="deal"\>],
-  [align="center" class="deal"\>],
-  [align="center" class="deal"\>],
+  [Today’s Featured Book Deals],
+  [\$1.99],
+  [\$1.99],
+  [\$1.99],
+  [\$2.99],
+  [\$2.99],
+  [\$2.99],
+  [\$1.99],
+  [\$1.99],
+  [In Case You Missed Yesterday’s Most Popular Book Deals],
+  [\$1.99],
+  [\$2.99],
+  [\$4.99],
+  [\$0.99],
   [The Seventh Bride by T. Kingfisher Get This Deal],
 ),
   insert-map: (:),
@@ -1578,7 +1345,7 @@ pacing up and down next to our house, which sends Hopper into a fit of barking h
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Week 14],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -1601,7 +1368,7 @@ and the work I did, greatly. I haven’t had a vacation longer than 2 weeks sinc
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [ICYMI: The Week’s Biggest Book News],
   author: [Rebecca Joines Schinsky],
   source-name: [Book Riot],
@@ -1627,7 +1394,7 @@ and the work I did, greatly. I haven’t had a vacation longer than 2 weeks sinc
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [monica.css],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -1645,19 +1412,19 @@ want to say and for it to just work.],
   [I know there are tons of CSS frameworks out there like tachyons that can do this for me, but most of these frameworks
 do too much for me. I don’t work on large projects that need design systems, and I don’t want every possible padding and margin and colour and flexbox configuration in the world. I just
 want the ones that I know I end up using in every project. So here is monica.css : my very own CSS framework, which I copy paste at the beginning of every CSS file and take it from there. It’s already minified and bundled (because you copy pasted it) so dare I say: fast loading and efficient? 🙃],
-  [class="highlight"\> \* { box-sizing : border-box } 
- \[ hidden \] { display : none !important } 
- \[ disabled \] { pointer-events : none ; opacity : 0.3 } 
- .horizontal { display : flex ; flex-direction : row ; justify-content : space-between } 
- .vertical { display : flex ; flex-direction : column } 
- .center { justify-content : center ; align-items : center } 
- .flex { flex : 1 } 
- html { 
+  [\* \{ box-sizing : border-box \} 
+ \[ hidden \] \{ display : none !important \} 
+ \[ disabled \] \{ pointer-events : none ; opacity : 0.3 \} 
+ .horizontal \{ display : flex ; flex-direction : row ; justify-content : space-between \} 
+ .vertical \{ display : flex ; flex-direction : column \} 
+ .center \{ justify-content : center ; align-items : center \} 
+ .flex \{ flex : 1 \} 
+ html \{ 
  --spacing-xs : 8px ; 
  --spacing : 24px ; 
  --spacing-s : 12px ; 
  --spacing-m : 36px ; 
- }],
+ \}],
 ),
   insert-map: (:),
   word-count: 325,
@@ -1667,7 +1434,7 @@ want the ones that I know I end up using in every project. So here is monica.css
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Cat-DNS: learning about DNS with cats],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -1682,8 +1449,6 @@ DNS server if you’re a browser, and how to talk back to a browser if you are a
 can write your own DNS server in less than 200 lines of JavaScript, but perhaps most importantly, why you probably
 shouldn’t.],
   [And have I mentioned the cats? There are definitely cats.],
-  [id="video"\>Video],
-  [id="slides"\>Slides],
 ),
   insert-map: (:),
   word-count: 138,
@@ -1694,17 +1459,16 @@ shouldn’t.],
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([New Scientist], source-name: [New Scientist], [There are a few simple things you can do to make your digital life much more secure, says cybersecurity expert Jake Moore - follow these tips to tighten up your passwords])],
-    [#brief-item([New Scientist], source-name: [New Scientist], [Do we all see the same red? Or feel joy and sadness alike? Mapping how our inner experiences relate to one another could finally reveal how physical processes in the brain give rise to consciousness])],
-    [#brief-item([New Scientist], source-name: [New Scientist], [The neurodegenerative condition chronic traumatic encephalopathy appears to be driven by damage to the blood-brain barrier due to repetitive head injuries, like those that occur in boxing. This suggests that drugs that strengthen this barrier could prevent or slow the condition])],
-    [#brief-item([New Scientist], source-name: [New Scientist], [In a randomised trial, men who experience premature ejaculation benefitted from using an app to learn techniques for extending intercourse])],
-    [#brief-item([New Scientist], source-name: [New Scientist], [Strong magnets tend to be large and power-hungry, but a new design has produced a powerful magnet that fits in the palm of your hand, making it more practical and affordable])],
-    [#brief-item([New Scientist], source-name: [New Scientist], [A growing body of research shows that we tend to discount a person’s good deeds if they stand to benefit from them. Columnist David Robson explores where this instinct comes from – and whether we should resist it])],
-    [#brief-item([New Scientist], source-name: [New Scientist], [We shouldn't dismiss flowers as merely ornamental – these blooms are world-changers, argues a vivid new book by David George Haskell. Michael Marshall is mostly convinced])],
-    [#brief-item([Travis Turner], source-name: [Evil Martians Chronicles], [Authors: Victoria Melnikova, Head of New Business, Host of Dev Propulsion Labs, and Travis Turner, Tech Editor
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([New Scientist], source-name: [New Scientist], [There are a few simple things you can do to make your digital life much more secure, says cybersecurity expert Jake Moore - follow these tips to tighten up your passwords])],
+  [#brief-item([New Scientist], source-name: [New Scientist], [Do we all see the same red? Or feel joy and sadness alike? Mapping how our inner experiences relate to one another could finally reveal how physical processes in the brain give rise to consciousness])],
+  [#brief-item([New Scientist], source-name: [New Scientist], [The neurodegenerative condition chronic traumatic encephalopathy appears to be driven by damage to the blood-brain barrier due to repetitive head injuries, like those that occur in boxing. This suggests that drugs that strengthen this barrier could prevent or slow the condition])],
+  [#brief-item([New Scientist], source-name: [New Scientist], [In a randomised trial, men who experience premature ejaculation benefitted from using an app to learn techniques for extending intercourse])],
+  [#brief-item([New Scientist], source-name: [New Scientist], [Strong magnets tend to be large and power-hungry, but a new design has produced a powerful magnet that fits in the palm of your hand, making it more practical and affordable])],
+  [#brief-item([New Scientist], source-name: [New Scientist], [A growing body of research shows that we tend to discount a person’s good deeds if they stand to benefit from them. Columnist David Robson explores where this instinct comes from – and whether we should resist it])],
+  [#brief-item([New Scientist], source-name: [New Scientist], [We shouldn't dismiss flowers as merely ornamental – these blooms are world-changers, argues a vivid new book by David George Haskell. Michael Marshall is mostly convinced])],
+  [#brief-item([Travis Turner], source-name: [Evil Martians Chronicles], [Authors: Victoria Melnikova, Head of New Business, Host of Dev Propulsion Labs, and Travis Turner, Tech Editor
 
  Topics: Case Study, Developer Community
 
@@ -1713,13 +1477,12 @@ shouldn’t.],
 Established nearly 20 years ago, Evil Martians is a trusted software development consultancy for developer tools startups.
 
  Read more])],
-    [#brief-item([New Scientist], source-name: [New Scientist], [After the passing of physicist Anthony Leggett, columnist Karmela Padavic-Callaghan remembers their personal connection with this giant of quantum physics, and explores the legacy of his enduring recipe for testing the edges of the quantum world])],
-    [#brief-item([New Scientist], source-name: [New Scientist], [A pig's brain has been frozen with its cellular activity locked in place and minimal damage. Some believe the same could be done with the brains of people with a terminal illness, so their mind can be reconstructed and they can "continue with their life"])],
-    [#brief-item([Archivist], source-name: [Medieval Archives], [By the mid-1020s, Cnut the Great was arguably the most powerful man in Northern Europe. As the king of England and Denmark, he was no longer just a Viking warlord but the ruler of the North Sea Empire. Cnut was rebuilding the empire first forged by his father, Sweyn Forkbeard, reclaiming it piece by piece. His influence stretched from the Irish Sea to the Baltic. The King of Sweden…
+  [#brief-item([New Scientist], source-name: [New Scientist], [After the passing of physicist Anthony Leggett, columnist Karmela Padavic-Callaghan remembers their personal connection with this giant of quantum physics, and explores the legacy of his enduring recipe for testing the edges of the quantum world])],
+  [#brief-item([New Scientist], source-name: [New Scientist], [A pig's brain has been frozen with its cellular activity locked in place and minimal damage. Some believe the same could be done with the brains of people with a terminal illness, so their mind can be reconstructed and they can "continue with their life"])],
+  [#brief-item([Archivist], source-name: [Medieval Archives], [By the mid-1020s, Cnut the Great was arguably the most powerful man in Northern Europe. As the king of England and Denmark, he was no longer just a Viking warlord but the ruler of the North Sea Empire. Cnut was rebuilding the empire first forged by his father, Sweyn Forkbeard, reclaiming it piece by piece. His influence stretched from the Irish Sea to the Baltic. The King of Sweden…
 
  Source])],
-    [#brief-item([New Scientist], source-name: [New Scientist], [We've always thought that Tyrannosaurus rex was an unchallenged apex predator during the dying days of the dinosaurs. But a fresh look at controversial fossils has prompted palaeontology’s biggest-ever U-turn])],
-  ))
-}
+  [#brief-item([New Scientist], source-name: [New Scientist], [We've always thought that Tyrannosaurus rex was an unchallenged apex predator during the dying days of the dinosaurs. But a fresh look at controversial fossils has prompted palaeontology’s biggest-ever U-turn])],
+))
 
 #colophon([The Independent Courier], [Vol. 1, No. 018], [2026-03-30])

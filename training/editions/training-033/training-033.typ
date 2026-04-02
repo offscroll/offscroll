@@ -21,33 +21,8 @@
 #masthead([The Monitor], [Vol. 1, No. 033], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [28 Best Brunch Recipes For A Crowd],
-  kicker: [Cover Story],
-  author: [Lindsay],
-  source-name: [Pinch of Yum],
-  deck: [I love a good brunch moment! Whether it’s for something special like Easter or a baby shower, or just a simple Saturday morning with friends.],
-  lead-pre: [],
-  lead-cap: [B],
-  lead-rest: [reakfast food is some of the best food (sweet, savory, cheesy, carby!) and I love to see a table full of people gathered around it. ❤️],
-  body-paragraphs: (
-  [These are the brunch recipes I put on the menu when I’m hosting a group – some can be thrown together and served out of one pan for ease, others can be assembled however your guests see fit (LOVE this breakfast sandwich for that), and all of them are simple, easy, and super delicious.],
-  [One of my favorite menu combos: this egg and croissant bake , this simple green salad , and this carrot cake coffee cake . The ultimate brunch plate!],
-  [Here’s to brunch! Here’s to feeding all our favorite people!],
-  [class="tasty-roundups-description"\>Biscuits and Gravy Egg Bake! YES! a casserole-style dish of fluffy eggs and cheddar baked up with little bites of tender flaky biscuit pieces, and buried under a blanket of creamy green chile sausage gravy.],
-  [class="tasty-roundups-description"\>Crunchy, light, bright, and ultra-fresh. This French-inspired bistro salad is an absolute star as a side for nearly any dinner. Tender greens, fresh herbs, pickled onions, and a delicate vinaigrette on top.],
-  [class="tasty-roundups-description"\>Sweet Cinnamon Rolls! Made with pillowy brioche dough and cinnamon sugar tucked into every nook and cranny. This makes a BIG batch of dough that you can divide and save for later…or make extra all for yourself!],
-  [One of my most important brunch rules is that it must include multiple drinks – a glass of orange juice, a cup of coffee, and maybe something special, too? Here are some ideas for drinks to serve with brunch, many of which can be scaled up for a crowd!],
-  [The post 28 Best Brunch Recipes For A Crowd appeared first on Pinch of Yum .],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [F5: Paige Lawrence on Wildflowers, Vintage Furniture, a Fiddle-Leaf Fig Plant + More],
   author: [Anna Zappia],
   source-name: [Design Milk Architecture],
@@ -55,25 +30,36 @@
   paragraphs: (
   [Raised in Texas, Paige Lawrence earned a bachelor’s degree from Vanderbilt University before moving to Los Angeles. It was here that an early role in kitchen design and interiors sparked her interest in the built environment.],
   [Lawrence eventually received a graduate degree and became a licensed architect. After several years at a residential firm, she returned to the Lone Star State and joined 787 Design Studio, where she leads the practice alongside founder Patrick Mackie.],
+  [Photo: Shay Wills],
   [The duo is known for thoughtfully-designed homes across Austin and the surrounding region that respond to the natural landscape. For Lawrence, a project always starts with the floorplan. “I thoroughly enjoy the process of getting to know a client’s daily life, their routines and rituals,” she says. “That understanding is everything, because it’s what allows me to design spaces that don’t just look beautiful, but genuinely function for the people within them.”],
   [To capture her ideas, Lawrence uses a combination of analog and tech. As a self-described doodler, Lawrence almost always grabs a sketchpad, because she loves the tactile feel of pen on paper. She is careful to not make waste with endless scraps, and if multiple iterations are needed, she can easily switch to an iPad.],
   [While Lawrence is busy with career and family obligations, if she could find the time she would try her hand at woodworking or making furniture. “There’s something really appealing to me about creating a piece you can actually use, that will sit in someone’s home and last,” she notes. “And honestly, the technicalities of it suit my type-A mind.”],
   [Today, Paige Lawrence joins us for Friday Five !],
+  [Photo: Paige Lawrence],
   [1. Wildflowers],
   [Growing up in Texas, I’ve always been in awe of the wildflowers that seem to appear out of nowhere each year. They’re a simple surprise that never gets old and bring a quiet sense of joy. I feel a responsibility to care for and preserve them on my own property so this small, magical moment can be experienced for generations to come.],
+  [Photo: Paige Lawrence],
   [2. Fiddle Fig],
   [I bought this fiddle-leaf fig plant on a whim about 13 years ago when I first moved to Austin. It was barely a foot tall and picked up at a big-box hardware store, with no real plan for what would come next. Since then, it’s been through three moves, countless trims, and more neglect than it probably deserved. I’ve chopped it back many times and propagated smaller versions along the way. Despite my questionable plant skills, it’s continued to grow and thrive. It’s one of the first things people notice when they walk into our home and has become a lasting part of its identity. I’m excited to see what it becomes next.],
+  [Photo: Paige Lawrence],
   [3. Dogs],
   [I’ve always been a dog person and have never been without one. While dogs have brought me a lot of joy, they’ve also brought heartache. In my early 20s, living in Los Angeles, they pushed me to explore parks and hiking trails I might not have found otherwise. Now, they give our family something to care for, learn from, and gather around. They’ve become a quiet way to teach our children responsibility while still enjoying the companionship and love dogs bring. We recently adopted our newest dog in what felt like pure fate, and it’s been one of the best decisions we’ve made. He’s playful, affectionate, patient with kids of all ages, and a perfect fit for our family.],
+  [Photo: Paige Lawrence],
   [4. Vintage Furniture],
   [I’ve always been drawn to patterns and vintage furniture, and when the two come together, it feels like the best of both worlds. These chairs were passed down to me from a family member and won me over immediately. The bold, colorful pattern paired with the simple vintage frame creates an easy balance. They make a statement without trying too hard. That’s what I love about vintage furniture, it carries character and presence without feeling pretentious or showy.],
+  [Photo: Paige Lawrence],
   [5. Sunrises and Sunsets],
   [This may not come as a surprise to some, as I imagine it’s a favorite for many. Much like Texas wildflowers, sunrises and sunsets still catch me off guard. Even though they happen every day, their beauty never feels routine. The variety of colors and settings never gets old. A sunrise feels like a new beginning, bringing energy and hope for the day ahead, while a sunset offers a sense of peace and quiet closure. The colors they produce are some of the most magical hues nature creates, and knowing the moment is brief makes it feel special. Like being part of a quiet, shared experience with millions of others.],
   [Works by Paige Lawrence and 787 Design Studio:],
+  [Photo: Tobin Davies],
   [With its undulating steel railing and integrated details, this staircase reimagines structure as sculpture, where code, craft, and color converge.],
+  [Photo: Tobin Davies],
   [Part bath, part courtyard retreat by 787 Design Studio and Annie Downing Interiors. This light-filled space layers terrazzo, glass, and a freestanding tub within the shower for a fresh take on modern family living.],
+  [Photo: Molly Culver],
   [A contemporary take on the ranch house by 787 Design Studio and Annie Downing Interiors. Breezeways and floor-to-ceiling windows connect living spaces while framing uninterrupted views of the surrounding landscape.],
+  [Photo: Tobin Davies],
   [Old World inspired architecture meets modern living by 787 Design Studio and landscaping by LandWest Design Group. A tree anchored plan shapes the experience of the home.],
+  [Photo: Tobin Davies],
   [A courtyard pool and covered terrace define the heart of the home by 787 Design Studio, turning site constraints into a layered outdoor experience.],
 ),
   insert-map: (:),
@@ -82,10 +68,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Take a Closer Look at the Los Angeles Dodgers' Back-To-Back World Series Championship Ring],
   author: [Hypebeast],
   source-name: [Hypebeast],
@@ -98,44 +82,8 @@
   [The celebration marked the first time in the franchise's storied history that the organization claimed consecutive World Series championships. The Friday night ceremony saw superstars like Shohei Ohtani , Freddie Freeman, and Mookie Betts accept their intricate new hardware. The event culminated with a special appearance from recently retired pitcher Clayton Kershaw, who returned to the mound to throw the ceremonial first pitch and receive his own ring alongside his former teammates.],
   [The 2025 World Series Championship ring is a staggering piece of custom jewelry. Studded with an array of diamonds and sapphires, the 14-karat yellow gold ring contains a unique ring-within-a-ring feature enclosing actual dirt gathered from home plate during Game 7 against the Toronto Blue Jays. A total of 86 diamonds spell out "World Champions" across the face, while 17 blue sapphires inside the L. A. logo represent the team's total postseason wins.],
   [Further detailing includes 79 diamonds and 48 round sapphires resting behind the primary logo, alongside an additional 70 round diamonds framing the centerpiece. The side of the ring proudly reads "Back 2 Back" in blue, while the exterior band displays the number 4,012,470—a direct tribute to the team's total attendance during the 2025 season. Every ring also features the individual player's engraved signature on the interior band.],
-  [style="padding: 16px;"\>],
-  [style="display: flex;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"\>],
-  [style="display: flex;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; width: 60px;"\>],
-  [style="padding: 19% 0;"\>],
-  [style="display: block; height: 50px; margin: 0 auto 12px; width: 50px;"\>],
-  [style="padding-top: 8px;"\>],
-  [style="color: \#3897f0; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 550; line-height: 18px;"\>View this post on Instagram],
-  [style="padding: 12.5% 0;"\>],
-  [style="display: flex; margin-bottom: 14px;"\>],
-  [style="margin-left: 8px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 50%; height: 20px; width: 20px;"\>],
-  [style="margin-left: auto;"\>],
-  [style="display: flex; margin-bottom: 24px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 224px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; width: 144px;"\>],
-  [style="color: \#c9c8cd; font-family: Arial,sans-serif; font-size: 14px; line-height: 17px; margin-bottom: 0; margin-top: 8px; overflow: hidden; padding: 8px 0 7px; text-align: center; white-space: nowrap;"\> A post shared by Los Angeles Dodgers (\@dodgers)],
-  [style="padding: 16px;"\>],
-  [style="display: flex;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"\>],
-  [style="display: flex;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; width: 60px;"\>],
-  [style="padding: 19% 0;"\>],
-  [style="display: block; height: 50px; margin: 0 auto 12px; width: 50px;"\>],
-  [style="padding-top: 8px;"\>],
-  [style="color: \#3897f0; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 550; line-height: 18px;"\>View this post on Instagram],
-  [style="padding: 12.5% 0;"\>],
-  [style="display: flex; margin-bottom: 14px;"\>],
-  [style="margin-left: 8px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 50%; height: 20px; width: 20px;"\>],
-  [style="margin-left: auto;"\>],
-  [style="display: flex; margin-bottom: 24px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 224px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; width: 144px;"\>],
-  [style="color: \#c9c8cd; font-family: Arial,sans-serif; font-size: 14px; line-height: 17px; margin-bottom: 0; margin-top: 8px; overflow: hidden; padding: 8px 0 7px; text-align: center; white-space: nowrap;"\> A post shared by The Champions Collective (\@thechampscollective)],
+  [View this post on Instagram],
+  [View this post on Instagram],
 ),
   insert-map: (:),
   word-count: 578,
@@ -143,10 +91,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Springtime Pot-au-feu Beef Stew Recipe],
   author: [clotilde],
   source-name: [Chocolate & Zucchini],
@@ -163,20 +109,47 @@
   [\* You can even wedge in a third attraction by cooking marrow bones (one section per guest) in the broth for 30 minutes, and serving them with toasted bread after the broth and before the meat, sprinkled with fleur de sel and black pepper. Marrow bones may also be roasted in the oven at 200°C (400°F) for 25 to 30 minutes.],
   [Have you tried this? Share your pics on Instagram!],
   [Please tag your pictures with \#cnzrecipes . I'll share my favorites!],
-  [id="zlrecipe-innerdiv"\>],
-  [id="zlrecipe-prep-time"\>Prep Time: 20 minutes],
-  [id="zlrecipe-cook-time"\>Cook Time: 4 hours, 25 minutes],
-  [id="zlrecipe-total-time"\>Total Time: 24 hours],
-  [id="zlrecipe-yield"\> Serves 6.],
-  [class="instruction" id="zlrecipe-instruction-1"\>In a large soup pot or Dutch oven, place the meat and cover generously with cold water. Bring to a low simmer and cook for 1 hour, skimming the foam and scum regularly as they appear. After 1 hour, add the leek greens, carrot, fennel, garlic, onion, cloves, pepper, herbs, and salt. Add water to cover generously as needed, put the lid in place, and cook at a low simmer for another 3 hours. At this point, the meat should be fall-apart tender.],
-  [class="instruction" id="zlrecipe-instruction-2"\>Remove the meat and vegetables from the pot separately. Set the meat aside in a sealable container that you will place in the fridge once cool. (Some people throw away the vegetables, but I prefer to eat them that night, discarding any non-edible parts and eating them as is, or puréeing them with a touch of strong mustard.) Strain the broth slowly into a large container, making sure you leave behind the sand-like, scummy bits at the bottom of the pot. Let cool on the counter then place in the fridge overnight.],
-  [class="instruction" id="zlrecipe-instruction-4"\>Put the potatoes in a medium pan and cover with cold water. Add salt, bring to a simmer, and cook, covered, until the potatoes are tender -- 10 to 15 minutes depending on their size. Drain and cut the potatoes in half lengthwise. Set aside.],
-  [class="instruction" id="zlrecipe-instruction-5"\>Remove the fat that has collected at the surface of the broth. Return to the cleaned pot, and add the new carrots, baby fennel, and shallots. Bring to a simmer and cook for 15 minutes, until very tender. Taste and adjust the seasoning.],
-  [class="instruction" id="zlrecipe-instruction-7"\>While that's being enjoyed, add to the pot the reserved meat and potatoes, and the peas, and simmer for another 5 to 10 minutes, until the meat and potatoes are heated through and the peas are cooked.],
-  [id="zlrecipe-notes-list"\>],
-  [class="notes"\> About beef cuts: Ideally, you will ask your butcher for an assortment of cuts that includes some lean meat, some fatty meat, and some gelatinous meat. In the US, desirable cuts include short ribs, chuck, flank, brisket, rump, and round. In France, opt for macreuse, tendron, gîte, jarret, collier, plat de côte, or jumeau. I also included oxtail because I had it in the freezer.],
+  [Springtime Pot-au-feu Beef Stew Recipe],
+  [Prep Time: 20 minutes],
+  [Cook Time: 4 hours, 25 minutes],
+  [Total Time: 24 hours],
+  [Serves 6.],
+  [For the meat and broth:],
+  [1.5 kilos (3 1/3 pounds) sustainably raised beef for stewing (see note below), cut into 5-cm (2-inch) cubes],
+  [leek greens from about 3 leeks, roughly chopped],
+  [1 large carrot , sliced],
+  [8 fennel stalks or 2 celery stalks, roughly chopped],
+  [2 cloves garlic , roughly crushed],
+  [1 medium onion , roughly chopped],
+  [2 cloves],
+  [1/4 teaspoon black peppercorns , crushed with the side of the blade],
+  [1 bay leaf],
+  [1 teaspoon herbes de Provence or similar dried herb mix (basil, rosemary, oregano, savory, thyme...)],
+  [1 1/2 teaspoons fine sea salt],
+  [For the vegetables:],
+  [450 grams (1 pound) waxy new potatoes , about 10 small ones],
+  [450 grams (1 pound) small new carrots , trimmed (keep a small tuft of the stem) and halved lengthwise if on the thick side],
+  [200 grams (7 ounces) baby fennel , trimmed and halved or quartered],
+  [10 shallots , peeled and halved (leave in the root end so they will keep their shape)],
+  [350 grams (3/4 pound, about 2 1/2 cups) shelled green peas],
+  [For serving:],
+  [chives , finely chopped],
+  [good crusty bread],
+  [strong mustard],
+  [cornichons],
+  [The day before, cook the meat and broth.],
+  [In a large soup pot or Dutch oven, place the meat and cover generously with cold water. Bring to a low simmer and cook for 1 hour, skimming the foam and scum regularly as they appear. After 1 hour, add the leek greens, carrot, fennel, garlic, onion, cloves, pepper, herbs, and salt. Add water to cover generously as needed, put the lid in place, and cook at a low simmer for another 3 hours. At this point, the meat should be fall-apart tender.],
+  [Remove the meat and vegetables from the pot separately. Set the meat aside in a sealable container that you will place in the fridge once cool. (Some people throw away the vegetables, but I prefer to eat them that night, discarding any non-edible parts and eating them as is, or puréeing them with a touch of strong mustard.) Strain the broth slowly into a large container, making sure you leave behind the sand-like, scummy bits at the bottom of the pot. Let cool on the counter then place in the fridge overnight.],
+  [The next day, cook the vegetables, reheat, and serve.],
+  [Put the potatoes in a medium pan and cover with cold water. Add salt, bring to a simmer, and cook, covered, until the potatoes are tender -- 10 to 15 minutes depending on their size. Drain and cut the potatoes in half lengthwise. Set aside.],
+  [Remove the fat that has collected at the surface of the broth. Return to the cleaned pot, and add the new carrots, baby fennel, and shallots. Bring to a simmer and cook for 15 minutes, until very tender. Taste and adjust the seasoning.],
+  [First, serve bowls of the broth with a sprinkle of chives and good crusty bread.],
+  [While that's being enjoyed, add to the pot the reserved meat and potatoes, and the peas, and simmer for another 5 to 10 minutes, until the meat and potatoes are heated through and the peas are cooked.],
+  [Serve the meat and vegetables in soup plates, ladling more broth over them, and place strong mustard and cornichons on the table.],
+  [About beef cuts: Ideally, you will ask your butcher for an assortment of cuts that includes some lean meat, some fatty meat, and some gelatinous meat. In the US, desirable cuts include short ribs, chuck, flank, brisket, rump, and round. In France, opt for macreuse, tendron, gîte, jarret, collier, plat de côte, or jumeau. I also included oxtail because I had it in the freezer.],
+  [3.1],
   [https:\/\/cnz.to/recipes/meat-charcuterie/springtime-pot-au-feu-beef-stew-recipe/],
-  [id="zl-printed-copyright-statement"\>Unless otherwise noted, all recipes are copyright Clotilde Dusoulier.],
+  [Unless otherwise noted, all recipes are copyright Clotilde Dusoulier.],
   [The post Springtime Pot-au-feu Beef Stew Recipe appeared first on Chocolate & Zucchini .],
 ),
   insert-map: (:),
@@ -185,10 +158,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Light, Space, and Proportion Coalesce in the Conrad Residence],
   author: [Joseph Sgambati III],
   source-name: [Design Milk Architecture],
@@ -214,19 +185,47 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Be a Smart Traveler],
   author: [Anne Gordon],
   source-name: [Live Life Travel],
   images: (),
   paragraphs: (
+  [Be a SMART Traveler],
+  [WRITTEN BY ANNE GORDON, OWNER, LEISURE TRAVEL ADVISOR,],
   [LIVE LIFE TRAVEL • WWW. LIVELIFETRAVEL. WORLD],
-  [class="p3"\>Other tips: Wash your hands often, travel with hand sanitizer and wipes, pack more than enough of your prescription medication (you may want to carry an extra scrip on you as well), get your annual flu vaccine, drink bottled water/stay hydrated.],
-  [class="p4"\> Common Sense: The best advice that we could give any traveler today is to use plain old common sense. Be smart, be aware of your surroundings at all times and be prepared. Lock all doors and don’t go out alone at night (even on the beach).],
-  [class="p2"\>Leave your passports locked in your hotel safe; carry a copy on your person while in destination (we travel with both paper copies and have them backed up in the cloud on our mobile devices).],
+  [Here are some essentials to becoming a SMART Traveler:],
+  [STEP (SMART TRAVELER ENROLLMENT PROGRAM):],
+  [Register all International Travel with STEP. This ensures that the local US Embassy can contact and locate you in case of an emergency while traveling: https:\/\/step.state.gov/step/],
+  [IMPORTANT TRAVEL DOCUMENTATION:],
+  [REAL ID: Deadline is 10/1/20 https:\/\/www.tsa.gov/real-id],
+  [GLOBAL ENTRY: https:\/\/www.cbp.gov/travel/trusted-traveler-programs/global-entry],
+  [CLEAR: https:\/\/www.clearme.com/],
+  [VISA : Some countries require a visa to enter them, you should apply as early as possible as some are harder to obtain than others. https:\/\/cibtvisas.com/visa-quick-check],
+  [Avoid lines by having the proper documentation],
+  [PLAN AHEAD:],
+  [Learn about your destination before you get there and arrive well-informed – We recommend the State Department as a trusted resource: https:\/\/travel.state.gov/content/passports/en/country.html],
+  [STAY HEALTHY:],
+  [Use one trusted source for all travel-related health information, including vaccines you may need: https:\/\/www.nc.cdc.gov/travel],
+  [Other tips: Wash your hands often, travel with hand sanitizer and wipes, pack more than enough of your prescription medication (you may want to carry an extra scrip on you as well), get your annual flu vaccine, drink bottled water/stay hydrated.],
+  [FINANCIAL SMARTS:],
+  [Avoid international fees by using a travel credit card that waives them.],
+  [Get a duplicate of your ATM card to travel with.],
+  [Take out foreign currency once in destination using a bank ATM, avoid airport currency exchanges and never take out a cash advance on your credit card.],
+  [Carry emergency fund cash on you at all times.],
+  [Leave all of your valuables at home (including the engagement rings).],
+  [Common Sense: The best advice that we could give any traveler today is to use plain old common sense. Be smart, be aware of your surroundings at all times and be prepared. Lock all doors and don’t go out alone at night (even on the beach).],
+  [PLAN AHEAD:],
+  [Get your passport renewed at least one year before it expires (reminder that kids passports only last for 5 years; adults for 10): https:\/\/travel.state.gov/content/travel/en/passports/havepassport/renew.html],
+  [Leave your passports locked in your hotel safe; carry a copy on your person while in destination (we travel with both paper copies and have them backed up in the cloud on our mobile devices).],
+  [Make sure your travel advisor has copies of your updated passports pre-travel (do not email or text any ID or credit card info).],
+  [Use RFID blocking and never store your passport in a carry on or check it with other luggage.],
+  [A FEW FINAL TIPS TO KEEP YOU HEALTHY DURING AIR TRAVEL:],
+  [A certain celebrity always travels with Neosporin and uses a Q-Tip to apply it gently in their nostrils before every flight (we are seriously going to try this!)],
+  [I personally take and travel with Airborne (chewable tablets) and swear by them (pre, during and post air travel.)],
+  [Beware of the water on planes, we recommend washing your hands with soap and water and then always using your hand sanitizer upon return to your seat.],
+  [With all of this said, please don’t be afraid to travel, just be smart when you do. These same “essential tips” can also be applied to your everyday life.],
   [The post Be a Smart Traveler appeared first on Live Life Travel .],
 ),
   insert-map: (:),
@@ -235,15 +234,14 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Air Fryer Chicken Thighs],
   author: [Lindsay],
   source-name: [Pinch of Yum],
   images: (),
   paragraphs: (
+  [These Chicken Thighs Are a New House Favorite!],
   [Guys, I’ve been holding myself back from making these chicken thighs every single night. They’re so good. They go with almost anything, they’re extra juicy and crisped, and the kids and adults in my family BOTH approve!],
   [I love them with so many things:],
   [roasted potato wedges and a cucumber salad],
@@ -256,13 +254,27 @@
   [If you’ve made our air fryer chicken breasts (also amazing), the flavor on these chicken thighs is more savory. The OG chicken breast recipe has a brown sugar and smoked paprika base, whereas this one has paprika, garlic and onion, and a bit of oregano.],
   [I have been LOVING these with a smoky paprika aioli (I’ll include that in the recipe notes – it is so yummy). I am making myself hungry just thinking about it.],
   [Hope you guys love it!],
+  [How To Make Air Fryer Chicken Thighs],
+  [1],
+  [Trim Chicken Thighs.],
   [Optional, but I often cut off any little bits of fat that are on the edges of the chicken thighs.],
+  [2],
+  [Toss with Spices!],
   [Get those chicken thighs totally coated! Like so.],
+  [3],
+  [Air Fry for 11-13 Minutes.],
   [Place in a single layer in the air fryer to cook evenly!],
+  [4],
+  [It’s done!],
   [Do a quick temp check – the inside should reach a minimum of 165 degrees (I use this meat thermometer to check).],
+  [5],
+  [Cut and Serve!],
   [My daughter and my husband couldn’t wait for me to finish the photos. 🙂 I like to chop the chicken into bite-sized pieces and squeeze a bit of lemon over the whole thing! So yummy.],
   [5 Stars 4 Stars 3 Stars 2 Stars 1 Star],
   [5 from 15 reviews],
+  [Author: Lindsay],
+  [Total Time: 28 minutes],
+  [Yield: 4 servings 1 x],
   [These air fryer chicken thighs are SO good. Super juicy, deeply golden, and ready in 15 minutes! Such an easy recipe that my whole family loves.],
   [1.25 pounds boneless skinless chicken thighs],
   [1 1/2 teaspoons paprika],
@@ -273,19 +285,42 @@
   [a few cracks of freshly ground black pepper],
   [1 tablespoon olive oil],
   [squeeze of lemon to finish],
-  [id="instruction-step-1"\> Trim the Chicken Thighs: Optional, but I usually cut off the little bits of fat (the chunkier white strips) from the edges of the chicken thighs.],
-  [id="instruction-step-2"\> Season the Chicken: Toss the chicken thighs with the spices and olive oil. For the best flavor, let it marinate anywhere from 15 minutes to 2-3 hours in the fridge. (Also fine to skip if you’re short on time!)],
-  [id="instruction-step-3"\> Air Fry Chicken: Air fry at 375 for 11-13 minutes, until deeply golden and a bit crisped on the outside, and at least 165 degrees Fahrenheit on the inside. (I use a meat thermometer to check!)],
-  [id="instruction-step-4"\> Slice Chicken: Transfer chicken to a cutting board. Let it rest for a few minutes; cut into bite-sized pieces. Squeeze lemon over the top if you want.],
-  [id="instruction-step-5"\> Serve: Serve with your favorite sauce (see notes for a smoky aioli that I love) , baked potato or roasted veggies, in a rice bowl, or on a salad!],
+  [Cook Mode 
+ 
+ Prevent your screen from going dark],
+  [Trim the Chicken Thighs: Optional, but I usually cut off the little bits of fat (the chunkier white strips) from the edges of the chicken thighs.],
+  [Season the Chicken: Toss the chicken thighs with the spices and olive oil. For the best flavor, let it marinate anywhere from 15 minutes to 2-3 hours in the fridge. (Also fine to skip if you’re short on time!)],
+  [Air Fry Chicken: Air fry at 375 for 11-13 minutes, until deeply golden and a bit crisped on the outside, and at least 165 degrees Fahrenheit on the inside. (I use a meat thermometer to check!)],
+  [Slice Chicken: Transfer chicken to a cutting board. Let it rest for a few minutes; cut into bite-sized pieces. Squeeze lemon over the top if you want.],
+  [Serve: Serve with your favorite sauce (see notes for a smoky aioli that I love) , baked potato or roasted veggies, in a rice bowl, or on a salad!],
   [Smoky Paprika Aioli (my current favorite sauce with this) : Whisk 1/2 cup mayo, 1/4 cup yogurt, 1 clove freshly grated garlic, 1/2 teaspoon smoked paprika, 2 tablespoons water, 1/4 teaspoon salt (more to taste).],
   [Spice Coverage on The Chicken: Every package of chicken thighs is a slightly different size, so if your package is 1.5 pounds or more (or if you love a lot of spices), you may want to add a few extra shakes of spices to get more complete spice coverage!],
   [Preheating the Air Fryer: I do not preheat my air fryer. I just put the chicken in, turn the air fryer on, and then make sure to use a meat thermometer to check that it’s completely cooked.],
   [Lining the Air Fryer: I also don’t line the air fryer basket with anything. I just put the chicken thighs directly onto the grill grate.],
   [Flipping the Chicken: I also do not flip the chicken thighs halfway through. I’ve tried it, but I like the texture better with just the top being crispy and the underside being a bit juicy. If you think you want both the top and bottom to be crisped up a bit, you can air fry for 8-9 minutes, then flip and cook for another 5 minutes to get both sides a bit crisped.],
+  [Prep Time: 15 minutes],
+  [Cook Time: 13 minutes],
+  [Category: Dinner],
+  [Method: Air Fryer],
+  [Cuisine: American],
   [Keywords: air fryer chicken, air fryer chicken thighs, air fryer recipe],
   [Did you make this recipe?],
-  [class="schema-faq-answer"\>Yes! Bake on a small sheet pan at 425 degrees for 20-25 minutes, or until the internal temperature reaches 165 degrees Fahrenheit. To get extra browning on the chicken thighs, turn on the broil setting for the last few minutes of cooking and move the pan closer to the top of the oven.],
+  [I love hearing from you! Leave a comment or rating below!],
+  [Frequently Asked Questions For This Recipe],
+  [Can you use chicken breasts instead of thighs?],
+  [Yes! I would suggest cutting them horizontally into thinner pieces (follow the directions in this recipe ) and then air frying them at 375 for 9-10 minutes.],
+  [Can I make these chicken thighs in the oven instead of an air fryer?],
+  [Yes! Bake on a small sheet pan at 425 degrees for 20-25 minutes, or until the internal temperature reaches 165 degrees Fahrenheit. To get extra browning on the chicken thighs, turn on the broil setting for the last few minutes of cooking and move the pan closer to the top of the oven.],
+  [Can you use frozen chicken thighs?],
+  [I would not recommend using frozen chicken thighs.],
+  [Do I need to preheat the air fryer?],
+  [I don’t. I just put the chicken right in, turn the air fryer on, and then make sure to use a meat thermometer to check that it’s completely cooked.],
+  [How do you know when the chicken is fully cooked?],
+  [When it reaches 165 degrees, you’re good to go! This is the thermometer I use . (affiliate link) I use this thing all the time. Highly recommend.],
+  [Can you use other types of oil?],
+  [I use both avocado oil and olive oil.],
+  [What air fryer do you use?],
+  [This is my favorite air fryer ! The Ninja Air Fryer Pro XL. (affiliate link) Love this for so many recipes!],
   [The post Air Fryer Chicken Thighs appeared first on Pinch of Yum .],
 ),
   insert-map: (:),
@@ -294,10 +329,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Weekend reading: National scandal],
   author: [The Investor],
   source-name: [Monevator],
@@ -417,10 +450,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How to Create Your Own Lightroom Presets (Step By Step)],
   author: [Andrew S. Gibson],
   source-name: [Digital Photography School],
@@ -430,48 +461,59 @@
   [How can you create and save presets in Lightroom?],
   [In this article, I’m going to take you through the simple process, step by step. By the time you’re done, you’ll be able to confidently make presets of your own – and I’ll even show you how to make and apply import presets for high-quality, lightning-fast edits.],
   [Let’s dive right in.],
+  [When should you create and apply Lightroom presets?],
   [There are mundane edits in Lightroom that you should carry out on almost every photo.],
   [And you can save time by creating presets that perform these jobs automatically upon import. That way, you don’t have to do editing later.],
   [In other words: I highly recommend you apply presets to pretty much every photo you take.],
   [(You can also apply presets during the editing process, but you’ll want to use these more sparingly.)],
   [The fact is that RAW photos need edits to look good. And presets will help you do those edits faster than a standard editing workflow. Look at this unedited RAW file:],
-  [class="wp-block-image wp-image-83135 size-full is-style-with-caption"\>
- A straight-out-of-camera RAW file from an EOS 5D Mark II. This is the sort of image you’ll see when you import images into Lightroom without applying a Develop preset.],
+  [A straight-out-of-camera RAW file from an EOS 5D Mark II. This is the sort of image you’ll see when you import images into Lightroom without applying a Develop preset.],
   [And look at it after applying a simple preset:],
-  [class="wp-block-image wp-image-83136 size-full is-style-with-caption"\>
- The same photo, but with the Profile set to Landscape , lens corrections applied, chromatic aberrations removed, and white balance set to Auto . This is what you would see after importing the photo into Lightroom if you applied an import preset similar to the one I show you how to make in this article. The biggest benefit is that it saves you time.],
+  [The same photo, but with the Profile set to Landscape , lens corrections applied, chromatic aberrations removed, and white balance set to Auto . This is what you would see after importing the photo into Lightroom if you applied an import preset similar to the one I show you how to make in this article. The biggest benefit is that it saves you time.],
   [That’s what I’m going to teach you how to do in the next section:],
   [Create a simple preset that you can apply upon importing. But note that you can use these instructions to create a preset of any type, whether you plan to apply it on import or not.],
+  [How to prepare a useful Lightroom preset: step by step],
   [Now let’s take a look at the simple instructions for making a useful Lightroom preset:],
+  [Step 1: Open a photo in the Develop module],
   [Start by selecting the photo you plan to use as your preset base. Open it in the Lightroom Develop module.],
   [Hit the Reset button to zero out any existing settings:],
   [(You may find it helpful to make a Virtual Copy of the photo first so you don’t undo any edits you have already made; you can do this by right-clicking on the image, then selecting Create Virtual Copy .)],
+  [Step 2: Set your Profile in the Basic panel],
   [Next, you’ll need to pick a Profile . Think of this as a starting point or base layer, on top of which you’ll make all your edits.],
   [So head up to the Basic panel and click to open the Profile fly-out menu:],
   [Lightroom’s default Profile is Adobe Color , and this is where I often leave my photos – but if you’re a frequent landscape photographer, you might try Adobe Landscape , portrait photographers might try Adobe Portrait , and black and white photographers might try Adobe Monochrome . Really, it’s all about experimenting. Test out a few options and see what you like!],
   [Remember that, even if you save a profile as part of a preset, you can always change it after applying the preset if you decide it doesn’t work for a particular shot.],
   [(Also, note that your Profile options may vary depending on your camera, so if you can’t find one of the options I suggested, don’t worry; you probably have other cool Profiles to try out instead.)],
   [If you shoot a number of different genres or in a number of different styles, or if you simply like several profiles, you might consider creating a preset for each one!],
+  [Step 3: Apply profile corrections and remove chromatic aberration],
   [Most shots suffer from slight issues due to lens aberrations. The specifics depend on your lens, which is why Lightroom comes with profiles for a huge number of lenses:],
+  [Just a few of the many lens profiles included in Lightroom.],
   [So head down to the Lens Corrections panel and check Enable Profile Corrections :],
   [If Lightroom offers a profile matching your lens’s make and model – and it almost certainly will! – the profile corrections will be applied automatically.],
   [I’d also recommend checking Remove Chromatic Aberration , which will get rid of fringing (which you pretty much always want to do!).],
+  [Step 4: Make sure the Basic panel is ready to go],
   [Now it’s time to look at the Basic panel. Make sure the white balance is set to As Shot :],
   [And make sure all the other sliders are zeroed :],
   [If you’re a fan of Lightroom’s automatic settings, you can hit the Auto button. This will automatically set the exposure, contrast, highlights, shadows, whites, and blacks, along with the vibrance and saturation . I don’t do this myself, but if it’s helpful to you, then go ahead and try it!],
   [Also, if you shoot a mix of color and black and white, consider creating one preset for color photos and a second preset for black and white shots . Simply set the Treatment to Black & White :],
+  [Creating a preset in Lightroom],
   [Now it’s time to actually make a Lightroom preset. The process is extremely simple:],
+  [Step 1: Click the Create Preset option],
   [Make sure you’re in the Develop module, then click the Plus icon next to the Presets panel:],
   [And select Create Preset :],
+  [Step 2: Determine which settings should be a part of your preset],
   [The New Develop Preset window should come up:],
   [Give your preset a name and select a folder to save it in:],
   [Then select the settings you’d like to save as your preset. Hitting Check All works fine if you’re creating the preset I discussed above – though if you’ve decided to create a more targeted editing preset, you may want to only check certain boxes.],
+  [Step 3: Hit Create],
   [Finally, once you’re ready to save your preset, press Create :],
   [And t hat’s it! It’s a simple process that doesn’t take very long and can save you a lot of time when importing or editing your photos.],
+  [Applying presets upon import],
   [To apply the preset you just created upon importing your photos, launch the Import window:],
   [Then head over to the Apply During Import panel and set the Develop Settings menu to the appropriate preset:],
   [(This is where creating several presets helps saves time, as you can pick the best preset for the photos you are importing.)],
   [Then, when you click the Import button, Lightroom applies the settings from your selected preset!],
+  [Adding copyright info],
   [While you’re in the Import window, it’s worth setting up another preset to automatically add copyright information to photo metadata upon import .],
   [So g o to the Metadata menu in the Apply During Import panel and select New .],
   [Lightroom will open the New Metadata Preset window, where you can add information such as your name and copyright details :],
@@ -479,6 +521,7 @@
   [Under IPTC Copyright , set Copyright Status to Copyrighted and fill in the other fields appropriately (my entries are shown below).],
   [Under IPTC Creator, add your name, website, email address, and any other appropriate details. Personally, I leave out my address – I move around a lot so it’s constantly changing (plus identity theft is a risk).],
   [Click Done when you’re finished. Then, when you import photos, simply select the preset from the Metadata menu:],
+  [How to create your own Lightroom presets: your turn],
   [Hopefully, you’re now ready to create Lightroom presets of your own (and you have some ideas for useful presets).],
   [That way, you can save time and speed up your workflow!],
   [Now over to you:],
@@ -491,10 +534,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Chocolate Buckwheat Pound Cake Recipe],
   author: [clotilde],
   source-name: [Chocolate & Zucchini],
@@ -514,19 +555,31 @@
   [\* I’ll let you get away with pronouncing this cat-car .],
   [Have you tried this? Share your pics on Instagram!],
   [Please tag your pictures with \#cnzrecipes . I'll share my favorites!],
-  [id="zlrecipe-innerdiv"\>],
-  [id="zlrecipe-prep-time"\>Prep Time: 20 minutes],
-  [id="zlrecipe-cook-time"\>Cook Time: 25 minutes],
-  [id="zlrecipe-total-time"\>Total Time: 1 hour],
-  [id="zlrecipe-yield"\> Serves 6.],
-  [class="instruction" id="zlrecipe-instruction-0"\>Preheat the oven to 350°F (175°C) and line a loaf pan with parchment paper (my pan is 10 by 3 1/2 inches, or 26 x 9 cm; a standard 9-by-5-inch loaf pan can be used).],
-  [class="instruction" id="zlrecipe-instruction-8"\>Pour into the pan, sprinkle the top with sugar, and bake for 25 to 30 minutes, until the cake is golden brown and a knife inserted in the center comes out clean (melted chocolate is normal; it's uncooked batter you don't want to see).],
-  [id="zlrecipe-notes-list"\>],
+  [Chocolate Buckwheat Pound Cake Recipe],
+  [Prep Time: 20 minutes],
+  [Cook Time: 25 minutes],
+  [Total Time: 1 hour],
+  [Serves 6.],
+  [3 large eggs (see note)],
+  [2/3 cup (130 grams) raw cane sugar , plus extra for sprinkling (see note)],
+  [6 ounces (170 grams) coconut butter , heated and stirred to a smooth consistency, or unsalted butter, melted and cooled],
+  [1 1/3 cups (170 grams) buckwheat flour (gluten-free-certified as needed)],
+  [2 teaspoons baking powder (gluten-free-certified as needed)],
+  [1/4 teaspoon fine sea salt],
+  [6 ounces (170 grams) good-quality dark chocolate chips (or chopped dark chocolate)],
+  [Preheat the oven to 350°F (175°C) and line a loaf pan with parchment paper (my pan is 10 by 3 1/2 inches, or 26 x 9 cm; a standard 9-by-5-inch loaf pan can be used).],
+  [In a medium bowl, whisk together the eggs, sugar, and coconut butter until slightly frothy.],
+  [In another medium bowl, combine the flour, baking powder, salt, and chocolate.],
+  [Fold the dry ingredients into the wet ingredients using a spatula, until no trace of flour remains.],
+  [Pour into the pan, sprinkle the top with sugar, and bake for 25 to 30 minutes, until the cake is golden brown and a knife inserted in the center comes out clean (melted chocolate is normal; it's uncooked batter you don't want to see).],
+  [Lift carefully from the pan and cool on a rack.],
+  [Serve slightly warm or at room temperature.],
   [The idea of a pound cake is that you weigh the eggs, and use that weight for all the other ingredients. My 3 large eggs typically weigh 6 ounces, or 170 grams. Adjust accordingly.],
   [By the above principle, I should use 6 ounces of sugar, but I like it a bit less sweet, so typically use 3/4 of the egg weight in sugar.],
   [The pound cake is best eaten on the day it is baked, but it will keep 2 to 3 days under a cake dome or in an airtight container. I keep it at room temperature when it's not too warm out.],
+  [3.1],
   [https:\/\/cnz.to/recipes/cakes-tarts/chocolate-buckwheat-pound-cake-recipe/],
-  [id="zl-printed-copyright-statement"\>Unless otherwise noted, all recipes are copyright Clotilde Dusoulier.],
+  [Unless otherwise noted, all recipes are copyright Clotilde Dusoulier.],
   [The post Chocolate Buckwheat Pound Cake Recipe appeared first on Chocolate & Zucchini .],
 ),
   insert-map: (:),
@@ -535,10 +588,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A Layered Modern Farmhouse Takes Shape in North Vancouver],
   author: [Leo Lei],
   source-name: [Design Milk Architecture],
@@ -564,10 +615,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Chipotle Cumin Roasted Almonds Recipe],
   author: [clotilde],
   source-name: [Chocolate & Zucchini],
@@ -594,16 +643,24 @@
   [Happy Holidays!],
   [Have you tried this? Share your pics on Instagram!],
   [Please tag your pictures with \#cnzrecipes . I'll share my favorites!],
-  [id="zlrecipe-innerdiv"\>],
-  [id="zlrecipe-prep-time"\>Prep Time: 5 minutes],
-  [id="zlrecipe-cook-time"\>Cook Time: 15 minutes],
-  [id="zlrecipe-total-time"\>Total Time: 20 minutes],
-  [id="zlrecipe-yield"\> Makes 4 cups; enough for 3 food gift recipients.],
-  [class="ingredient" id="zlrecipe-ingredient-3"\>1 to 2 teaspoons ground chipotle , depending on how hot you want them (I buy it at L'Epicerie de Bruno ; you can substitute smoked paprika , preferably hot, or any other mild, ground chili)],
-  [class="instruction" id="zlrecipe-instruction-1"\>Place the almonds on a rimmed baking sheet. Drizzle with the olive oil (it helps the seasoning to adhere and the almonds to roast evenly), and add the salt, chipotle, and cumin. Stir until evenly coated; I find it's easiest to do this with your (clean) hands. Taste one almond and adjust the seasoning. Spread the almonds out in a single layer and insert the baking sheet into the oven.],
-  [id="zlrecipe-notes-list"\>],
+  [Chipotle Cumin Roasted Almonds Recipe],
+  [Prep Time: 5 minutes],
+  [Cook Time: 15 minutes],
+  [Total Time: 20 minutes],
+  [Makes 4 cups; enough for 3 food gift recipients.],
+  [500 grams (4 cups) whole unblanched almonds , preferably organic],
+  [2 tablespoons olive oil],
+  [2 teaspoons fine sea salt],
+  [1 to 2 teaspoons ground chipotle , depending on how hot you want them (I buy it at L'Epicerie de Bruno ; you can substitute smoked paprika , preferably hot, or any other mild, ground chili)],
+  [2 teaspoons ground cumin],
+  [Preheat the oven to 180°C (360°F).],
+  [Place the almonds on a rimmed baking sheet. Drizzle with the olive oil (it helps the seasoning to adhere and the almonds to roast evenly), and add the salt, chipotle, and cumin. Stir until evenly coated; I find it's easiest to do this with your (clean) hands. Taste one almond and adjust the seasoning. Spread the almonds out in a single layer and insert the baking sheet into the oven.],
+  [Bake for 15 to 20 minutes, keeping an eye on them and stirring halfway through, until the almonds are nicely browned and fragrant.],
+  [Let cool completely before serving or dividing among three gift bags. The almonds will keep for a few weeks in an airtight bag or container.],
+  [If there is cumin chipotle salt left at the bottom of the baking sheet, collect and keep it for seasoning avocados.],
+  [3.1],
   [https:\/\/cnz.to/recipes/appetizers/chipotle-cumin-roasted-almonds-recipe/],
-  [id="zl-printed-copyright-statement"\>Unless otherwise noted, all recipes are copyright Clotilde Dusoulier.],
+  [Unless otherwise noted, all recipes are copyright Clotilde Dusoulier.],
   [The post Chipotle Cumin Roasted Almonds Recipe appeared first on Chocolate & Zucchini .],
 ),
   insert-map: (:),
@@ -612,10 +669,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Akari Brings Authenticity to New York’s Washed Sauna Scene],
   author: [Adrian Madlener],
   source-name: [Design Milk Architecture],
@@ -635,30 +690,31 @@
   debug-mode: false,
 )
 
-  #pull-quote([While the former is generally defined as a communal bathhouse, the latter is specified as geothermal hot springs that are encircled by traditional inns.], [Adrian Madlener])
+#pull-quote([While the former is generally defined as a communal bathhouse, the latter is specified as geothermal hot springs that are encircled by traditional inns.], [Adrian Madlener])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Red Gomashio],
   author: [Heidi Swanson],
   source-name: [101 Cookbooks],
   images: (),
   paragraphs: (
   [Gomashio is a simple Japanese seasoning made from toasted sesame seeds and salt. It adds crunch, nuttiness, and added nutrients from the sesame seeds. A few years ago I started making a red version and it quickly became a kitchen staple. Dense with sesame, dynamic with chile powder and smoked paprika, the wildcard ingredient is green cardamom. Fragrant cardamom seeds are ground with mortar and pestle along with some of the sesame and the resulting blend of spices really sings – especially when it hits something hot. And while not at all traditional, you can use it in many of the same ways you might use a more traditional version of goma (sesame) shio (salt).],
-  [class="p1"\> Cardamom : Your cardamom seeds should be fragrant when crushed. You can buy cardamom in different forms – whole cardamom pods, cardamom seeds, ground cardamom seeds. For this recipe you want to start with pods or whole seeds. If you buy the seeds, it’s a bit of a shortcut and you can simply pounds them in a mortar and pestle, or grind them in a clean pepper grinder. If you start with seeds you’ll need about 1/4 teaspoon for this recipe.
+  [Red Gomashio: Ingredients],
+  [Cardamom : Your cardamom seeds should be fragrant when crushed. You can buy cardamom in different forms – whole cardamom pods, cardamom seeds, ground cardamom seeds. For this recipe you want to start with pods or whole seeds. If you buy the seeds, it’s a bit of a shortcut and you can simply pounds them in a mortar and pestle, or grind them in a clean pepper grinder. If you start with seeds you’ll need about 1/4 teaspoon for this recipe.
  
 My friend Wendy gifted me a few beautiful glass jars of spices last week (her calligraphy!), and looking at the cardamom I took it as a sign to make a fresh round of red gomashio.],
-  [class="p1"\> Sesame Seeds : I typically keep unhulled sesame seeds on hand, and that’s what I use here. Fresher is better. You want to keep sesame seeds in an airtight container, out of direct light, preferably refrigerated if you don’t go through them quickly.],
-  [class="p1"\> Onion : I prefer to use dried onion flakes here, but they can be tricky to find. Onion powder does the job as well, and is available in most stores. That said, if you plan ahead, one of my favorite ingredient discoveries lately is the toasted onion powder from Burlap & Barrel (not sponsored, just a fan). It’s good in place of the dried onion flakes here.],
-  [class="p1"\> Salt : I like to use flaky sea salt here, you can kind of crush it with your fingers into small, irregular shapes that are nice. Alternately, pink Himalayan sea salt pounded a bit with a mortar and pestle is a nice alternative.],
-  [class="p1"\> Chile powder : I like to use Kashmiri chile powder here. It has a vibrant spiciness, fruity notes, and for the electric color (!) it brings. If you want to use another chile powder, add it gradually as your final ingredient, adding more until the overall blend is to your liking.],
-  [class="p1"\>This is a wildly adaptable seasoning. I love it sprinkled over labneh and drizzled with a finishing extra virgin olive oil. It’s good sprinkled over homemade pasta tossed with a generous amount of butter or olive oil, some Parmesan, and whatever fresh herbs you have on hand. It’s A-plus on a baked potato (or mashed potatoes omg). Or sprinkled across a plate of hard-boiled eggs . Basically it’s an easy way to make everyday staples a bit special. You see it sprinkled above on onigirazu, it’s equally at home on rice bowls, onigiri, and soba bowls. I also love to sprinkle it all over guacamole before serving. I could go on and on, basically keep it on your counter and use it constantly.],
+  [Sesame Seeds : I typically keep unhulled sesame seeds on hand, and that’s what I use here. Fresher is better. You want to keep sesame seeds in an airtight container, out of direct light, preferably refrigerated if you don’t go through them quickly.],
+  [Onion : I prefer to use dried onion flakes here, but they can be tricky to find. Onion powder does the job as well, and is available in most stores. That said, if you plan ahead, one of my favorite ingredient discoveries lately is the toasted onion powder from Burlap & Barrel (not sponsored, just a fan). It’s good in place of the dried onion flakes here.],
+  [Salt : I like to use flaky sea salt here, you can kind of crush it with your fingers into small, irregular shapes that are nice. Alternately, pink Himalayan sea salt pounded a bit with a mortar and pestle is a nice alternative.],
+  [Chile powder : I like to use Kashmiri chile powder here. It has a vibrant spiciness, fruity notes, and for the electric color (!) it brings. If you want to use another chile powder, add it gradually as your final ingredient, adding more until the overall blend is to your liking.],
+  [How To Use Red Gomashio],
+  [This is a wildly adaptable seasoning. I love it sprinkled over labneh and drizzled with a finishing extra virgin olive oil. It’s good sprinkled over homemade pasta tossed with a generous amount of butter or olive oil, some Parmesan, and whatever fresh herbs you have on hand. It’s A-plus on a baked potato (or mashed potatoes omg). Or sprinkled across a plate of hard-boiled eggs . Basically it’s an easy way to make everyday staples a bit special. You see it sprinkled above on onigirazu, it’s equally at home on rice bowls, onigiri, and soba bowls. I also love to sprinkle it all over guacamole before serving. I could go on and on, basically keep it on your counter and use it constantly.],
   [Here are a few process shots and visual cues in case you need them.],
   [Grind the cardamom : This is the texture you’re after when grinding the cardamom seeds. A bit of texture along with a fine grind. It’s the grind I go for when grinding black pepper.],
   [Grind some of the sesame seeds : If you have a suribachi , this would be the time to use it – I bought this one by Colleen Hennessey for Permanent Collection years ago and it’s one of my prized kitchen possessions. But a mortar and pestle works nicely as well (pictured). Then you add the rest of ingredients.],
   [Add the rest of the toasted sesame seeds : Stir in the rest of the seeds and then adjust the seasoning to your linking with more chile powder, brown sugar, salt, etc. Keep it on your counter and sprinkle with enthusiasm!],
+  [Za’atar],
   [Continue reading Red Gomashio on 101 Cookbooks],
 ),
   insert-map: (:),
@@ -667,12 +723,10 @@ My friend Wendy gifted me a few beautiful glass jars of spices last week (her ca
   debug-mode: false,
 )
 
-  #pull-quote([class="p1"\>  How To Use Red Gomashio  class="p1"\>This is a wildly adaptable seasoning.], [Heidi Swanson])
+#pull-quote([How To Use Red Gomashio This is a wildly adaptable seasoning.], [Heidi Swanson])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How to Use Camera Memory Cards: 18 Essential Tips],
   author: [Darren Rowse],
   source-name: [Digital Photography School],
@@ -683,53 +737,72 @@ My friend Wendy gifted me a few beautiful glass jars of spices last week (her ca
   [After all, a properly cared-for memory card will often perform flawlessly for years – while a poorly looked-after card will be prone to errors, corruption, and loss of files.],
   [In this article, I share 18 tips for keeping your memory cards in good condition. I explain how you should correctly eject your cards, how often (and when) you should format your cards, and more.],
   [Let’s dive right in!],
+  [1. Carry backup cards whenever you shoot],
   [Card failure is unpredictable, and the last thing you want is to miss a once-in-a-lifetime shot because your only card decided to act up.],
   [Therefore, I’ve made it a habit to carry at least three cards with me on every shoot. And while it might seem excessive, it’s better to be safe than sorry!],
   [Imagine you’re capturing a breathtaking sunset or a candid moment at a child’s birthday party. Suddenly, your camera stops working due to a card error. If you have a backup, you just switch cards and continue shooting. But without a backup, that moment is lost forever. (Of course, it’s not just about having extras; it’s also about ensuring you have enough storage to keep shooting without worries.)],
   [For different shoots, the backup cards you choose can vary. For a casual day out, a couple of smaller capacity cards might suffice. But for a professional gig, you might want to carry a handful of larger, high-speed cards. These backups will be your photography lifeline .],
   [By the way, one thing I’ve noticed that’s true, at least for myself: having backup cards provides immense peace of mind. When you’re focused on getting the perfect shot, the last thing you want is to worry about storage space or card failure. The backups serve as a guarantee that no matter what happens, your photography can go on uninterrupted.],
+  [2. If disaster strikes, stop shooting],
   [If you’re in the middle of a photoshoot and you run into a memory card problem – for instance, you accidentally delete your images or see a card error message – then stop photographing immediately .],
   [Turn off your camera, eject the card, and store it in a safe place. When you run into one of these problems, all is not lost, and you may still be able to recover the images. However, it’s important that you stop using the card; otherwise, you might overwrite the files. Data recovery services and other tools are often very effective, especially when recovering accidentally deleted files , but once an image is overwritten, then it’s often lost forever.],
   [If you do have a memory card issue while shooting, you can always continue the session with another card. The key is to safely remove the problematic card as soon as possible.],
+  [3. Treat your cards well],
   [It’s crucial to treat your memory cards with care, especially when you’re out in difficult conditions. In the heat of the moment, switching cards quickly might seem necessary, but it’s also essential to take the time to handle them properly. I’ve seen too many instances where a little negligence led to big problems. A few tips here:],
   [First, always ensure your hands are clean when handling memory cards. Dirt and oils don’t mesh well will the delicate connectors. And hold the cards gently by the edges, avoiding the gold contacts. This might sound like overkill, but it’s these small habits that can prolong the life of your cards.],
   [Another key point is to be focused when handling your cards. Distractions can lead to accidental drops, especially in outdoor environments. I’ve heard of photographers dropping cards into puddles. Don’t let that be you!],
   [Proper storage is also vital. When not in use, keep your cards in a protective case to shield them from dust, moisture, and physical damage. Avoid extreme temperatures and magnetic sources as these can damage the data. Think of your memory cards as fragile; that way, you’ll have the best shot at preserving the images they hold.],
+  [4. Avoid deleting files one by one on your camera],
   [Did you know that repeatedly deleting images from an in-camera card while the card is still in your camera can actually shorten that card’s life? It’s true.],
   [The rule is that the fewer times you add or remove data on your card, the better. So instead of selectively deleting files as you shoot, aim to erase all the images at once after uploading them to your computer. That way, you delete the files in a single cycle, not one at a time.],
   [(Or better yet, use the Format function on your camera to wipe the card before each new photoshoot!)],
+  [5. Remove cards safely from your computer],
   [It’s tempting to connect a memory card to your computer, transfer the images, and then pull it out of the card reader slot.],
   [But that’s an easy way to cause problems, so after uploading images to your computer, make sure you take the time to eject the card before removing it from your card reader.],
   [(If you use a Mac, you’ll probably need to right-click the relevant drive and hit Eject . If you use a Windows PC, you’ll need to use the Safely Remove Hardware option in your system tray.)],
+  [6. Multiple small cards can be better than one big card],
   [These days, you can grab memory cards that store 128 GB, 256 GB, and beyond. But while these products do offer significant advantages – you need to carry far fewer cards, for one! – they also come with a significant drawback: You’re reliant on one (or a few) cards to get you through lengthy photoshoots and even week-long photo adventures.],
   [I myself learned this lesson on a recent trip; I had a memory card die on me, and if I only owned one huge card, I would’ve been unable to continue using my camera. That’s why it’s at least worth considering multi-card storage solutions (plus, if you do lose the data on one card, not all of your images from a shoot will be lost).],
+  [7. Keep your cards organized],
   [With memory cards, a little organization can go a long way! It’s easy to mix up cards when you’re juggling multiple shoots or locations. You don’t want to reach for a card during an important shoot, only to find it full. Or worse, realize that you just formatted a card that holds valuable images.],
   [I’ve found that a clear system can be incredibly helpful. I use a memory card case for this purpose. My fresh cards always go on the left side, and the used ones on the right. It’s simple but effective. When I’m in the field, this system saves me from second-guessing. I always know exactly where my empty cards are.],
   [Of course, what works for me might not work for you. Some photographers prefer labeling their cards with stickers or using different colored cases. The key is consistency. Stick to your chosen method so it becomes second nature.],
+  [8. Avoid filling your cards completely],
   [My friend recently had an issue with a memory card. When he took it into the store, the clerk asked if he’d completely filled the card with images – and when he nodded, he was told that this could occasionally cause problems with some types of cards.],
   [Let me be clear: I’ve not heard this advice before, and I’m somewhat skeptical about it myself, but it’s probably worth keeping in mind. The advice would be to regularly take images off your cards rather than only removing images when the cards are full; this is a good idea anyway because it’ll prevent significant heartbreak if you lose the card or the files are corrupted.],
+  [9. Periodically reformat your cards],
   [This memory card tip is quick but essential:],
   [Reformat your memory cards every so often, and do it with your camera, not your computer. This will clean the card and get it ready for a new batch of images. Of course, you should only do this after you’ve downloaded all files – otherwise, you’ll lose them!],
+  [10. Format your memory cards in the right camera],
   [As I discussed in the previous tip, it’s a good idea to format your memory card in a camera. But you shouldn’t format the card in just any camera; instead, make sure you format it in the camera you plan to shoot with.],
   [For instance, if you’ve been using your card in your Canon DSLR but want to start using it in your Canon mirrorless camera , you should safely store all the images, then reformat the card when you put it in the mirrorless camera for the first time.],
+  [11. Switch off your camera before removing the memory card],
   [Years ago, it was said that a camera could give a card “voltage shock” when the card was pulled out of the camera without first turning the camera off. But while manufacturers seem to have since made improvements in this area, it’s better to be safe than sorry! That’s why I recommend you always turn off your camera before you remove a card.],
   [(Additionally, if your camera is on, it might still be in the process of writing images – and if you remove the card, those images may become corrupted or go unwritten.)],
+  [12. Transfer photos as soon as you can],
   [There’s a simple rule I follow: transfer your photos as soon as possible. Why? Memory cards are reliable, but they’re not infallible. The longer your images sit on a card, the higher the risk of loss, either through card failure or misplacement.],
   [I’ve made it a habit: every time I return from a shoot, I transfer my images to my desktop hard drives. Then, once the images are safely transferred and backed up, I delete them from the card. This routine ensures I always have a fresh card ready for my next adventure.],
   [But there’s another reason for this habit: untransferred images are easily forgotten. You might capture an amazing moment, only to forget about its impact and relevance when it sits unseen on a card for months.],
+  [13. Keep your camera up to date],
   [Every so often, camera manufacturers will release firmware updates , which keep your camera up to date and include fixes for errors or problems that are identified with the camera.],
   [Some of these fixes can relate to the camera’s interaction with the memory card, so I encourage you to check for camera firmware updates every few months and download them as needed.],
+  [14. Periodically update your cards],
   [Memory cards can last a long time – even years. However, like all electronics, they wear down with constant use, so it’s important that you update your set of cards periodically to prevent issues.],
   [Fortunately, memory card prices are always dropping, so updating your cards has become a surprisingly inexpensive task!],
+  [15. Replace batteries before they die],
   [When you’re on a photoshoot, it’s important that you keep an eye on your battery levels – and if the battery does get low, either pause for a recharge or swap it out for a fresh one.],
   [You see, when a battery runs out just as you take a shot, it can prevent your camera from writing the image to your card. This can also cause card errors, so make sure you keep an eye on those batteries!],
+  [16. Don’t switch off your camera too quickly after shooting],
   [This one really depends on your camera model. If you fire off a burst of photos , your camera will need a little time to write all of the data to the memory card – and if you switch the camera off during this process, some cameras will simply lose the images and even end up with errors.],
   [However, recent models will continue buffering even after you switch them off (thus avoiding the problem). If you’re not sure how your camera handles the issue, check the manual or do some Googling.],
+  [17. Keep your memory cards safe],
   [Perhaps this memory card tip should go without saying, but whenever you’re shooting, do what you can to keep your cards safe.],
   [Make sure the cards stay dry and clean – a dedicated memory card case is perfect for this – don’t expose them to extreme temperatures, don’t drop, bend, or puncture them, and don’t expose them to electromagnetic currents.],
   [That way, your cards remain in good condition for years!],
+  [18. Prepare your cards in case they’re lost],
   [This last one is optional, but if you’re afraid that you might lose your camera and/or memory card, you might try taking a picture of a luggage tag or business card complete with your contact details, then keep it as the first image on each of your memory cards.],
   [Then lock the image so it’s not deleted. If you lose your camera or card and an honest person finds it, they’ll hopefully see the image and get in touch!],
+  [How to use camera memory cards: final words],
   [Now that you’ve finished this article, you know how to take care of your memory cards – and you’re well-equipped to prevent common card errors.],
   [Bottom line: Having backup cards, organizing them effectively, transferring photos promptly, treating them with care, and more – these aren’t just recommendations, they’re necessities for any photographer who values their work. Implementing these habits will save you from the heartache and frustration that come with memory card mishaps.],
   [So remember the tips I’ve shared, keep your memory cards safe, and (with a bit of luck) you won’t run into any issues.],
@@ -738,17 +811,15 @@ My friend Wendy gifted me a few beautiful glass jars of spices last week (her ca
   [The post How to Use Camera Memory Cards: 18 Essential Tips appeared first on Digital Photography School . It was authored by Darren Rowse .],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([class="wp-block-heading" id="avoid-filling-your-cards-completely"\>8.], [Darren Rowse]),
-  inline-pq-idx: 23,
+  inline-pq: pull-quote([8.], [Darren Rowse]),
+  inline-pq-idx: 30,
   word-count: 2404,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Stuffed Lumaconi with Butternut Squash and Chestnuts Recipe],
   author: [clotilde],
   source-name: [Chocolate & Zucchini],
@@ -763,21 +834,43 @@ My friend Wendy gifted me a few beautiful glass jars of spices last week (her ca
   [You sprinkle the whole thing with cheese so it will brown nicely…],
   [… and you squeeze lemon juice over the top just before serving. You end up with a golden and appetizing dish that boasts al dente pasta, a silky sauce that sticks to the ribbed sides of the lumaconi, little pockets of melty cheese with chestnut bits, and a top layer that is toasted and crunchy and irresistible. (Keep an eye on the little cousins who may be tempted to eat just the top.)],
   [It’s a recipe that is wowing but easy to make — the technique is straightforward, and many of the steps can be made in advance — and easy to live with — it’s lovely at room temperature, and almost tastes better reheated.],
+  [Grating cheese with a microplane zester .],
   [Have you tried this? Share your pics on Instagram!],
   [Please tag your pictures with \#cnzrecipes . I'll share my favorites!],
-  [id="zlrecipe-innerdiv"\>],
-  [id="zlrecipe-prep-time"\>Prep Time: 30 minutes],
-  [id="zlrecipe-cook-time"\>Cook Time: 40 minutes],
-  [id="zlrecipe-total-time"\>Total Time: 1 hour],
-  [id="zlrecipe-yield"\> Serves 4.],
-  [class="instruction" id="zlrecipe-instruction-5"\>Measure 500 grams (2 cups) of the butternut purée into a medium mixing bowl (reserve the remaining purée for another use). Add the chestnuts, parsley, and 1/2 teaspoon salt. Grate the zest of the lemon finely into the bowl and mix thoroughly.],
-  [class="instruction" id="zlrecipe-instruction-7"\>In a large saucepan, bring water to the boil with some coarse salt and a drizzle of olive oil. Add the lumaconi and boil until just shy of al dente, about 10 minutes.],
-  [class="instruction" id="zlrecipe-instruction-12"\>Spoon about 1 tablespoon of the filling into each lumaconi, and arrange in the prepared dish, snugly but in a single layer. When you're done, dot the top of the lumaconi with any remaining sauce.],
-  [id="zlrecipe-notes-list"\>],
+  [Stuffed Lumaconi with Butternut and Chestnuts Recipe],
+  [Prep Time: 30 minutes],
+  [Cook Time: 40 minutes],
+  [Total Time: 1 hour],
+  [Serves 4.],
+  [1 small butternut squash or other firm-flesh winter squash, about 800 grams (1 3/4 pounds), seeds and fibers removed, flesh cubed (no need to peel if organic)],
+  [Olive oil],
+  [Fine sea salt],
+  [100 grams (3 1/2 ounces) cooked peeled chestnuts from a jar, chopped],
+  [1 small bunch flat leaf parsley , finely chopped],
+  [1 organic lemon],
+  [Coarse sea salt],
+  [250 grams (9 ounces) uncooked lumaconi (large snail-shaped pasta, such as these )],
+  [150 grams (1 1/2 cups) freshly grated cheese , such as Comté or Parmesan],
+  [First, prepare the filling.],
+  [Preheat the oven to 200°C (400°F).],
+  [On a rimmed baking sheet, arrange the butternut in a single layer. Drizzle with olive oil and sprinkle with 1 teaspoon salt. Mix with your hands to coat well.],
+  [Insert in the oven and roast for 30 minutes, until tender.],
+  [Process in a blender or food mill until smooth. This can be prepared up to a day ahead, or even frozen. Thaw before using.],
+  [Measure 500 grams (2 cups) of the butternut purée into a medium mixing bowl (reserve the remaining purée for another use). Add the chestnuts, parsley, and 1/2 teaspoon salt. Grate the zest of the lemon finely into the bowl and mix thoroughly.],
+  [Next, cook the pasta.],
+  [In a large saucepan, bring water to the boil with some coarse salt and a drizzle of olive oil. Add the lumaconi and boil until just shy of al dente, about 10 minutes.],
+  [Drain, return to the saucepan, drizzle with olive oil, and shake to coat so they won't stick to one another as you work.],
+  [Assemble and bake.],
+  [Grease a round 25-cm (10-inch) baking dish or cast-iron pan with olive oil.],
+  [Increase the oven temperature to 220°C (425°F).],
+  [Spoon about 1 tablespoon of the filling into each lumaconi, and arrange in the prepared dish, snugly but in a single layer. When you're done, dot the top of the lumaconi with any remaining sauce.],
+  [Sprinkle with grated cheese and bake for 20 minutes, until the top is browned in places.],
+  [Squeeze some lemon juice over the top and serve, with a lightly dressed green salad, or as a side to roast chicken.],
   [If you have access to high-quality, ready-made puréed winter squash, you can use that in a pinch.],
   [This recipe can be made with other kinds of large, stuffable pasta, such as tube pasta or conchiglioni.],
+  [3.1],
   [https:\/\/cnz.to/recipes/pasta/stuffed-lumaconi-butternut-chestnuts-recipe/],
-  [id="zl-printed-copyright-statement"\>Unless otherwise noted, all recipes are copyright Clotilde Dusoulier.],
+  [Unless otherwise noted, all recipes are copyright Clotilde Dusoulier.],
   [The post Stuffed Lumaconi with Butternut Squash and Chestnuts Recipe appeared first on Chocolate & Zucchini .],
 ),
   insert-map: (:),
@@ -786,13 +879,12 @@ My friend Wendy gifted me a few beautiful glass jars of spices last week (her ca
   debug-mode: false,
 )
 
-  #pull-quote([Add the chestnuts, parsley, and 1/2 teaspoon salt.], [clotilde])
+#pull-quote([Add the chestnuts, parsley, and 1/2 teaspoon salt.], [clotilde])
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Cactus Jack Channels the "Gangster SpongeBob" Memes With Surprise Apparel Collaboration],
   author: [Hypebeast],
   source-name: [Hypebeast],
@@ -814,7 +906,7 @@ My friend Wendy gifted me a few beautiful glass jars of spices last week (her ca
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Inside the -196 Konbini Backroom That Turned NYC Into a Tokyo After-Hours Scene],
   author: [Hypebeast],
   source-name: [Hypebeast],
@@ -839,7 +931,7 @@ My friend Wendy gifted me a few beautiful glass jars of spices last week (her ca
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [FREAK'S STORE Goes ‘Back to the Future’ For New Spring/Summer 2026 Collection],
   author: [Hypebeast],
   source-name: [Hypebeast],
@@ -860,7 +952,7 @@ My friend Wendy gifted me a few beautiful glass jars of spices last week (her ca
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [WIND AND SEA Celebrates 8 Years With An Anniversary Rework Collection],
   author: [Hypebeast],
   source-name: [Hypebeast],
@@ -885,7 +977,7 @@ My friend Wendy gifted me a few beautiful glass jars of spices last week (her ca
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Drink of the Week: Zumbador Tequila Blanco],
   author: [Imbibe],
   source-name: [Imbibe Magazine],
@@ -894,6 +986,11 @@ My friend Wendy gifted me a few beautiful glass jars of spices last week (her ca
   [As the tequila category has exploded in recent years and a dizzying number of brands have filled shelves, the process of finding a true artisanal tequila has become more confusing. But among this growing crowd are spirits that stand out for their heritage, process, and dedication to quality. Hailing from the highlands of Jesus Maria, Altos de Jalisco, Zumbador (which translates to hummingbird) is one such standout. Founded by fourth-generation agave grower Roberto López, Zumbador is a family-run distillery that produces blanco, reposado, and añejo tequila, and with spring and summer approaching, we are now reaching for their blanco.],
   [The López family manages 1,000 acres of land with 1.5 million agaves planted in the Jaliscan highlands, where a perfect combination of altitude, soil, water, and climate allow for optimal growing conditions. Combine that with the family’s selective harvesting and traditional production techniques of masonry oven cooking, tahona crushing, wood and steel fermenters, copper and steel pot distillation, and zero additives. The result is an outstanding spirit that represents an incredible value. “Zumbador is a tequila made to reflect what my family has been drinking for generations,” says López. “Love, passion, work, and tradition in every drop.”],
   [Zumbador’s blanco delivers a refined minerality and a subtle sweetness with citrus and of floral notes that unfold gracefully. And while it’s elegant enough to sip solo, it will shine in array of cocktails. Drink it in a traditional Batanga , a seasonal Margarita twist , or the Main Character recipe below. \$24.99, zumbadortequila.com],
+  [2 oz. Zumbador tequila blanco
+1/2 oz. agave nectar
+1/2 oz fresh lime juice
+1 cup fresh watermelon juice
+Tools: shaker, strainer],
   [Glass: Nick & Nora
 Garnish: watermelon ball],
   [Shake all of the ingredients in shaker with ice. Strain into a chilled glass. Garnish.],
@@ -907,7 +1004,7 @@ Garnish: watermelon ball],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Nike Reimagines the Air Force 1 Low With Rugged Vibram Tooling],
   author: [Hypebeast],
   source-name: [Hypebeast],
@@ -932,8 +1029,7 @@ Garnish: watermelon ball],
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Easter Cocktails],
   author: [Imbibe],
   source-name: [Imbibe Magazine],
@@ -941,15 +1037,19 @@ Garnish: watermelon ball],
   paragraphs: (
   [Sure, you could whip up a batch of Mimosas or Bloody Marys , but why not liven up this year’s Easter brunch celebration with something a little more unexpected? From frothy sours to fruity punches, try these spring-ready Easter cocktails.],
   [Inspired by childhood memories of drinking Orange Julius smoothies.],
+  [Bee’s Breakfast],
   [Fresh berries, honey, and yogurt star in this delicious sipper.],
+  [Big in Japan],
   [A gin cocktail that makes fresh raspberries the star.],
   [Move over Mimosa—there’s a new drink at the brunch table.],
   [An unexpected star ingredient makes this Daiquiri perfect for springtime sipping.],
+  [French 75],
   [One of our favorite crowd-pleasing Easter cocktails is this bubbly classic.],
   [Chartreuse ups the herbacousness of this gin cocktail from Portland, Maine’s Hunt & Alpine Club .],
   [Looking to capture the flavors of two of her favorite cocktails, Tampa bartender Amber Carregal created this Pimm’s Gimlet.],
   [Original instructions dictated that this New Orleans classic be shaken 12 minutes.],
   [This spring-ready cocktail features a natural flavor pairing: savory carrot juice and spicy ginger.],
+  [Toast and Marmalade],
   [Orange jam and bourbon mimic the tried-and-true combo.],
   [A dollop of Greek yogurt is the key to this creamy cocktail.],
   [The post Easter Cocktails appeared first on Imbibe Magazine .],
@@ -960,11 +1060,9 @@ Garnish: watermelon ball],
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [30 Light and Bright Spring Dinner Recipes],
   author: [Lindsay],
   source-name: [Pinch of Yum],
@@ -973,27 +1071,133 @@ Garnish: watermelon ball],
   [Spring is in the air – I can feel it! My weekly dinner menus are slowly turning over from soups and stews to salads and bowls filled with lots and lots of color.],
   [This is the only list you need as we head into warmer, sunnier weather! ☀️ Some of my all-time favorite dinner recipes for spring are here – bright salads, easy sandwiches for a crowd, herby sauces and dressings, and lots of weeknight wonders (because spring is BUSY, too!).],
   [Hoping you find a new dinner favorite!],
-  [class="tasty-roundups-description"\>OOOH BABY, this salad is so good! Crunchy kale and cabbage, fresh herbs and fresno peppers, chopped peanuts, and a perfect roasted peanut vinaigrette that tucks into all the salad nooks and crannies.],
-  [class="tasty-roundups-description"\>We are living our best bowl life this week. Seasoned sweet potato wedges and chicken meatballs or rotisserie chicken all piled onto a plate with a little puddle of punchy green avocado mojo sauce. Yes, wow, repeat.],
-  [class="tasty-roundups-description"\>Crunchy, light, bright, and ultra-fresh. This French-inspired bistro salad is an absolute star as a side for nearly any dinner. Tender greens, fresh herbs, pickled onions, and a delicate vinaigrette on top.],
-  [class="tasty-roundups-description"\>Tender, juicy, garlic-marinated shrimp brushed with a bright pesto sauce and piled high on creamy Parmesan risotto with fresh tomatoes and herbs sprinkled on it all. Wow wow wow! Diving in now!],
-  [class="tasty-roundups-description"\>These Red Chile Chicken Tacos are always on our minds! Lightly pan-fried corn tortillas stuffed with tender chicken and a pinto bean red chile saucy filling, piles of creamy corn salsa, and tangy homemade pickled red onions. YUM!],
-  [class="tasty-roundups-description"\>We’re bringing you the most beautiful salad inspired by the restaurant Oliver’s in Minnesota. Tender salmon, savory peppers and garlic confit, buttery chunks of avocado, fire-roasted corn, bacon bits, and a river of homemade smoky ranch dressing.],
-  [class="tasty-roundups-description"\>This Sheet Pan Shrimp and Cauli Rice is the easiest sheet pan dinner! Shrimp, peas, cauliflower rice, seasonings, and Rosso pesto sauce all come together on one pan for a delicious springy meal.],
+  [Roasted Peanut Kale Crunch Salad],
+  [OOOH BABY, this salad is so good! Crunchy kale and cabbage, fresh herbs and fresno peppers, chopped peanuts, and a perfect roasted peanut vinaigrette that tucks into all the salad nooks and crannies.],
+  [34 reviews \/ 4.9 average],
+  [make this recipe],
+  [Sun-Dried Tomato Focaccia Turkey Sandwich],
+  [Pillowy sun-dried tomato focaccia gets piled with pesto mayo, turkey, juicy tomato slices, and greens. This sandwich is a beauty and practically a lifestyle!],
+  [46 reviews \/ 5 average],
+  [make this recipe],
+  [Spring Roll Bowls with Sweet Garlic Lime Sauce],
+  [Spring Roll Bowls – basil, mint, rice noodles, fish sauce, brown sugar, lime juice, and whatever other protein and veggies you have on hand! Easy to make meatless!],
+  [110 reviews \/ 4.8 average],
+  [make this recipe],
+  [Salmon Tacos with Mango Corn Salsa],
+  [Super easy salmon tacos loaded with a mango, sweet corn, and cucumber salsa!],
+  [30 reviews \/ 5 average],
+  [make this recipe],
+  [Avocado Mojo Bowls with Sweet Potato and Chicken],
+  [We are living our best bowl life this week. Seasoned sweet potato wedges and chicken meatballs or rotisserie chicken all piled onto a plate with a little puddle of punchy green avocado mojo sauce. Yes, wow, repeat.],
+  [34 reviews \/ 4.9 average],
+  [make this recipe],
+  [Shredded cabbage and kale, shrimp, avocado, cilantro and chili-flavored peanuts, and the perfect sweet miso dressing.],
+  [35 reviews \/ 4.9 average],
+  [make this recipe],
+  [Cilantro Orange Chicken with Rice and Beans],
+  [This golden Cilantro Orange Chicken is so flavorful, crisped to golden brown perfection, and just very finger-licking good! Served with rice, beans, and a quick homemade pineapple salsa.],
+  [45 reviews \/ 4.6 average],
+  [make this recipe],
+  [Golden brown chicken meatballs cozied up next to fixings like cucumbers, shallots, kewpie mayo, mint, a bit of chili crisp, and some fresh cilantro to make the ultimate chicken sando!],
+  [45 reviews \/ 4.8 average],
+  [make this recipe],
+  [Liz’s Bistro Salad],
+  [Crunchy, light, bright, and ultra-fresh. This French-inspired bistro salad is an absolute star as a side for nearly any dinner. Tender greens, fresh herbs, pickled onions, and a delicate vinaigrette on top.],
+  [20 reviews \/ 5 average],
+  [make this recipe],
+  [Chipotle Orange Shrimp with Cilantro Rice],
+  [Chipotle Orange Shrimp with Cilantro Rice! Tender shrimp in a sweet-meets-smoky cream sauce piled high on cilantro-speckled rice with a side of tangy cucumbers.],
+  [45 reviews \/ 4.8 average],
+  [make this recipe],
+  [Harissa Meatballs with Whipped Feta],
+  [These Harissa Meatballs with Whipped Feta are perfect for an easy SOS dinner! Store-bought meatballs, bell peppers, zucchini, harissa, and whipped feta all in one bowl. YUMMY!],
+  [39 reviews \/ 5 average],
+  [make this recipe],
+  [Chicken Lettuce Wraps with Lime Drench],
+  [These lettuce wraps are a SUMMER DREAM. Mountains of crumbled-crisp ground chicken, fluffy quinoa, and/or rice for added satisfaction, and garlicky gingery sautéed veggies in crisp butter lettuce leaves.],
+  [32 reviews \/ 4.8 average],
+  [make this recipe],
+  [Elote Quinoa Salad made with velvety peppers confit, juicy sweet corn, homemade dressing, cotija cheese, lime, and spices. Perfect for summer and so, so good!],
+  [23 reviews \/ 4.9 average],
+  [make this recipe],
+  [Pesto Shrimp and Parmesan Risotto],
+  [Tender, juicy, garlic-marinated shrimp brushed with a bright pesto sauce and piled high on creamy Parmesan risotto with fresh tomatoes and herbs sprinkled on it all. Wow wow wow! Diving in now!],
+  [5 reviews \/ 5 average],
+  [make this recipe],
+  [Garlic Cream Bucatini with Peas and Asparagus],
+  [This truly is a wonderful springy gem! Bucatini noodles in a garlic-infused creamy sauce and twirled around buttery bits of asparagus and peas. SO GOOD!],
+  [18 reviews \/ 4.9 average],
+  [make this recipe],
+  [Spring Salmon with Creamed Leeks, Potatoes, and Asparagus],
+  [We’re bringing you a plate of sunshine for dinner! Perfectly golden-crisp salmon partnered next to oven-roasted asparagus and a buttery, rich, creamy leek sauce piled on crispy potatoes.],
+  [10 reviews \/ 4.8 average],
+  [make this recipe],
+  [Red Chile Chicken Tacos with Creamy Corn],
+  [These Red Chile Chicken Tacos are always on our minds! Lightly pan-fried corn tortillas stuffed with tender chicken and a pinto bean red chile saucy filling, piles of creamy corn salsa, and tangy homemade pickled red onions. YUM!],
+  [53 reviews \/ 4.9 average],
+  [make this recipe],
+  [The Oliver’s Salad],
+  [We’re bringing you the most beautiful salad inspired by the restaurant Oliver’s in Minnesota. Tender salmon, savory peppers and garlic confit, buttery chunks of avocado, fire-roasted corn, bacon bits, and a river of homemade smoky ranch dressing.],
+  [27 reviews \/ 4.9 average],
+  [make this recipe],
+  [5 Ingredient Lemon Chicken with Asparagus],
+  [Juicy, pan-fried chicken with peppery lemon flavors and tender bites of asparagus with a honey butter sauce. A bright and fresh 5 ingredient dinner on the table in 20 minutes!],
+  [120 reviews \/ 4.8 average],
+  [make this recipe],
+  [Yummy Salmon Burgers with Slaw],
+  [These salmon burgers are THE YUMMIEST! and made with just five ingredients. The best for a quick + easy high protein lunch or dinner.],
+  [107 reviews \/ 4.8 average],
+  [make this recipe],
+  [These are the easiest crockpot carnitas and simple enough for anyone to make! Juicy, flavorful, and perfectly browned with a crispy crust.],
+  [159 reviews \/ 4.8 average],
+  [make this recipe],
+  [Hot, crunchy, salty, and begging for some sauce! These Crispy Chicken Cutlets are a dinnertime winner.],
+  [2 reviews \/ 5 average],
+  [make this recipe],
+  [Chipotle Salmon with Orange Salsa and Aji Verde],
+  [Sweet-and-smoky chipotle salmon topped with fresh orange salsa and creamy aji verde! An easy, delicious, restaurant-level salmon dinner.],
+  [43 reviews \/ 5 average],
+  [make this recipe],
+  [Pickley salad, crispy potatoes, and creamy ranch – this smashed potato salad is the perfect summer combo!],
+  [13 reviews \/ 5 average],
+  [make this recipe],
+  [Sheet Pan Shrimp and Cauli Rice],
+  [This Sheet Pan Shrimp and Cauli Rice is the easiest sheet pan dinner! Shrimp, peas, cauliflower rice, seasonings, and Rosso pesto sauce all come together on one pan for a delicious springy meal.],
+  [30 reviews \/ 4.9 average],
+  [make this recipe],
+  [Spicy Peanut Soba Noodle Salad],
+  [This Spicy Peanut Soba Noodle Salad features red peppers, cabbage, chicken, soba noodles, and a quick homemade spicy peanut sauce. Salads don’t get much yummier than this.],
+  [91 reviews \/ 4.8 average],
+  [make this recipe],
+  [Rainbow Chicken Salad with Almond Honey Mustard Dressing],
+  [Tender chicken, plump grapes and berries, crisp lettuce, tangy feta cheese, crunchy almonds, and the real star – almond honey mustard dressing! Eat the rainbow and be glad, friends!],
+  [61 reviews \/ 4.9 average],
+  [make this recipe],
+  [Pineapple Pork with Coconut Rice],
+  [Sticky-sweet pork, juicy pineapple, fresh herbs, jalapeño, and crispy onions all served over a bed of fluffy coconut rice. SO GOOD!],
+  [82 reviews \/ 4.8 average],
+  [make this recipe],
+  [Amazing Mushroom Bowls with Kale Pesto],
+  [Amazing Mushroom Bowls with Kale Pesto! Smoky, sweet, salt mushrooms (or tempeh!), caramelized pineapple, peppers, and dollop of kale pesto, all served over rice.],
+  [35 reviews \/ 4.9 average],
+  [make this recipe],
+  [The Best Chicken Tinga Tacos],
+  [These Chicken Tinga Tacos are THE BEST! Saucy, spicy, real food perfection.],
+  [192 reviews \/ 4.9 average],
+  [make this recipe],
+  [My Three Favorite Spring Baking Recipes],
   [The post 30 Light and Bright Spring Dinner Recipes appeared first on Pinch of Yum .],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([YUM!   class="flex items-center flex-wrap recipe-rating"\>    class="space-x-1 flex mr-2"\>   class="text-xxs text-gray-700 tracking-wider md:tracking-extra-widest uppercase font-arvo"\>  53 reviews \/ 4.], [Lindsay]),
-  inline-pq-idx: 4,
+  inline-pq: pull-quote([YUM!     53 reviews \/ 4.], [Lindsay]),
+  inline-pq-idx: 47,
   word-count: 1934,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Feel-good Lunch Ideas],
   author: [Heidi Swanson],
   source-name: [101 Cookbooks],
@@ -1030,6 +1234,7 @@ Garnish: watermelon ball],
  
 I hope this provides a bit of inspiration! It’s really wonderful to take a bit of time to sit down to a thoughtfully prepared, healthful homemade lunch and I’m never sorry about making the extra effort (in the long run). Even if it can make a morning a bit more demanding than usual, I know when I do it, I’ll eat better, feel better, and get excited about sitting down to lunch. Enjoy! -h],
   [Vegetarian Lunch Ideas : One Sauce, Three Lunches],
+  [10 Lunch Ideas that Spark Joy],
   [Continue reading Feel-good Lunch Ideas on 101 Cookbooks],
 ),
   insert-map: (:),
@@ -1040,10 +1245,8 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Radisson Resort and Spa Lonavala Celebrates the Remaining Natural Beauty of India’s Popular Sahyadris Region],
   author: [Adrian Madlener],
   source-name: [Design Milk Architecture],
@@ -1071,10 +1274,8 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Inside Piaule’s Design-Driven Catskills Escape With Design Within Reach],
   author: [Hayley Arsenault],
   source-name: [Design Milk Architecture],
@@ -1099,10 +1300,8 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [SARATOGA FAMILY, The Ultimate Holiday Gift for Your Family: A VACATION!!],
   author: [Anne Gordon],
   source-name: [Live Life Travel],
@@ -1128,7 +1327,7 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
   [OUR \#1 FAMILY TRAVEL RECOMMENDATION: GLOBAL CITIZENS WANTED],
   [ME to WE – A new travel partner to our Virtuoso family, this company is one of our very favorites. We would encourage you all to please check out their video on our Facebook and Instagram pages. If you want to make a difference in the world, if you want to make an impact with your children, if you want to create lifelong memories and a feeling that will never fade away, then ME to WE is what you are looking for. Travel itineraries currently include Ecuador, Kenya and India. Contact us to learn more!],
   [52% of Americans do not take all their PAID vacation time.],
-  [style="text-align: left;"\>Please do not become or stay part of this statistic— Vacations are healthy, not only for you physically and mentally, but emotionally for your family, especially for kids. Life is short, make the most of it!],
+  [Please do not become or stay part of this statistic— Vacations are healthy, not only for you physically and mentally, but emotionally for your family, especially for kids. Life is short, make the most of it!],
   [The post SARATOGA FAMILY, The Ultimate Holiday Gift for Your Family: A VACATION!! appeared first on Live Life Travel .],
 ),
   insert-map: (:),
@@ -1139,10 +1338,8 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [11 Best Lenses for Landscape Photography (in 2025)],
   author: [Jeremy Flint],
   source-name: [Digital Photography School],
@@ -1157,42 +1354,54 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
   [But choosing the right lens for landscape photography can be tough . There are dozens – even hundreds – of options, ranging from budget kit zooms to \$3000+ ultra-wide glass, each with its own benefits (and drawbacks).],
   [Fortunately, as a professional landscape photographer, I’ve spent years working with different lens models. I know how to pick the perfect starter lens, and I know how to find lenses that’ll satisfy the most experienced professionals. That’s why I’ve written this article, which takes you through all the best landscape photography lenses you can buy today – including options for mirrorless and DSLR shooters, choices for Canon, Nikon, Sony, and Fujifilm shooters, and picks at every price point.],
   [So without further ado, here are my top landscape lens recommendations, starting with my number one choice:],
+  [1. Sony FE 12-24mm f/2.8 GM],
   [If you’re an experienced photographer seeking the absolute best landscape lens on the market – no matter the cost – then the Sony 12-24mm f/2.8 GM is the model to buy.],
   [It has everything that you could want in a landscape lens, including ridiculously sharp optics that pair beautifully with the high-resolution sensors of the a7R series, incredible build quality that can handle all sorts of weather scenarios, and a surprisingly lightweight body. The lens also boasts an f/2.8 maximum aperture that’s perfect for serious astrophotography (and it also comes in handy if you’re looking to add some artistic background blur to your landscape shots).],
   [Of course, there’s also a stunning 12mm focal length on the wide end, so ultra-wide shooters can capture scenes of all types with a uniquely expansive perspective, while on the longer end, the 24mm perspective will give you a more conventional wide-angle field of view. Unfortunately, the 12-24mm f/2.8 GM is extremely expensive (at the time of writing, it costs nearly \$3000), but if you’re a professional or you have the cash to spare, you won’t be disappointed.],
+  [2. Canon EF 16-35mm f/4L IS USM],
   [If you use Canon full-frame DSLRs – or even Canon mirrorless models – then the 16-35mm f/4L IS USM is an excellent choice. It carries the prestigious L-series label and boasts a nice range of focal lengths as well as very sharp image quality.],
   [There is an f/2.8 version of this lens, but the f/4 version gives equally stunning results and comes with a cheaper price tag. (The main reason you’d want to consider the f/2.8 version for landscape photography is if you like to capture the night sky; in such scenarios, an ultra-wide maximum aperture will help you freeze the motion of the stars.)],
   [The 16-35mm f/4L is a fast and dynamic model with an ultrasonic focus system and a minimum focusing distance of 11 inches (0.28 meters), so it’s perfect for capturing sweeping vistas that feature close foreground subjects . Plus, the 4-stops of image stabilization and great in-built weather sealing allow you to work handheld in all types of light and weather.],
   [The 16-35mm f/4L is a reasonably priced option for enthusiasts (and is positively cheap compared to other pro-level lenses on this list), though beginners may wish to consider a more budget-friendly model like the 24-105mm f/4L (which is elsewhere on this list!). If you’re a budding Canon landscape shooter – or even a professional – hoping to create stunning images of expansive scenes, then this is one of the best landscape lenses on the market in 2024.],
   [Note: The 16-35mm f/4L is designed for full-frame Canon DSLRs, though you can also use it with any of Canon’s RF-mount mirrorless cameras with the purchase of the Canon EF-EOS R adapter . The adapter is essentially flawless, though if you’re a Canon mirrorless user and you prefer to use RF-mount lenses, take a look at the RF 15-35mm f/2.8L IS USM below.],
+  [3. Nikon Z 14-30mm f/4 S],
   [The Nikon Z 14-30mm f/4 lens was Nikon’s first ultra-wide-angle zoom for Z-mount cameras, and it remains one of the best lenses for Nikon full-frame mirrorless cameras in 2024, especially for professionals in search of that ultra-wide perspective. It’s also surprisingly affordable for a Z-mount lens, and while I wouldn’t recommend it to complete beginners, it should certainly meet the budgetary needs of enthusiasts and professionals.],
   [The 14-30mm f/4 is lightweight and relatively compact, so it’s plenty portable – always handy for travel landscape shooters as well as photographers who enjoy backpacking for days on end. It supports direct filter attachment to the front of the lens, which expands the creative possibilities for ultra-wide landscape photography. It’s well-designed with resistance to dust and water, which is essential for landscape photographers who work in blowing sand, seaspray, rain, or snow, and it features fabulous optics for clear and sharp shots.],
   [You get an extra couple of millimeters on the wide end compared to the F-mount 16-35mm f/4G (below), so you certainly won’t struggle to capture breathtakingly wide compositions. And while 30mm isn’t ideal for tighter, more intimate landscape shots, it’s perfect for more wide-angle-focused shooters. Ultimately, the compact design, incredible corner-to-corner sharpness, and wide perspective make the Nikon 14-30mm f/4 a landscape lens worth considering for serious mirrorless photographers.],
+  [4. Canon RF 15-35mm f/2.8L IS USM],
   [The Canon RF 15-35mm f/2.8L is the ultimate lens for landscape photographers looking to give their images a professional edge. It’s a great match for Canon mirrorless users, although there is a huge hike in price compared to the Canon EF 16-35mm f/4L (featured above). Note also that this lens will only work on Canon RF-mount mirrorless models like the EOS R5, whereas the EF 16-35mm f/4L can be used on both DSLRs and mirrorless cameras (though you’ll need to use this adapter ).],
   [The 15-35mm is a joy to use, and photographers will love its edge-to-edge sharpness, amazing image quality, and superbly silent and fast autofocus. The lens offers image stabilization of up to five stops, which is a big deal if you plan to shoot landscapes handheld in low light . Additionally, the f/2.8 maximum aperture is wide enough for sharp astrophotography, though it isn’t really necessary for non-astrophotography purposes and is one of the reasons for the eyewatering price tag.],
   [The RF 15-35mm f/2.8L also offers a slightly wider focal length than many of the lenses on this list, thanks to that 15mm wide end (versus the more common 16mm). And while a millimeter may not seem like much, it is noticeable in the field and is ideal if you’re looking to capture those ultra-wide, professional-style landscape images.],
+  [6. Fujifilm XF 10-24mm f/4 R OIS],
   [Do you shoot Fujifilm rather than Canon, Nikon, or Sony? The Fujifilm 10-24mm f/4 lens is one of my favorite Fujifilm X-mount lenses, and it’s an excellent landscape photography choice for a host of reasons.],
   [Key features include enhanced optical image stabilization, an elegant design, and very quiet focusing. The barrel feels and looks fabulous, and the construction is good quality. You get a minimum focusing distance of 9 inches (0.24 meters) – so you can capture gorgeous low-angle shots – and the lens offers great image sharpness across the focal range.],
   [Fujifilm users should bear in mind that the 10-24mm focal length converts to an effective 15-36mm, which is certainly respective and will work great for wide-angle landscape shots (even if the lens isn’t quite as wide as it initially sounds). Thanks to the beautiful field of view, the 10-24mm f/4 provides gorgeous landscape possibilities for Fujifilm APS-C users – and while it is on the expensive side, for serious landscape shooters, it’s worth every penny.],
+  [7. Nikon AF-S 16-35mm f/4G ED VR],
   [The Nikon 16-35mm f/4G is a great option for Nikon full-frame DSLR users, and it’s an especially good pick for enthusiast photographers and up-and-coming professionals in search of that beautiful wide-angle perspective. (Even if you shoot with Nikon’s Z-mount mirrorless models, this lens works flawlessly with the FTZ adapter .)],
   [The 16-35mm f/4G is both portable and durable, plus it packs great image stabilization for low-light handheld photography. (That said, I do recommend capturing most of your landscape photos using a tripod!) The 16-35mm focal length range is ideal for wider scenics and allows you to shoot stunning near-far landscape compositions with great results. It’s also a (relatively) inexpensive lens, plus it’s compact and much lighter than most f/2.8 zooms (at 24 oz/680 g).],
   [The lens accommodates filters with a 77mm thread, a standard filter size that will please a lot of photographers. And the lens optics are beautifully designed to enhance sharpness and contrast, so even professionals should be satisfied.],
+  [7. Sony E 10-18mm f/4 OSS],
   [Coupled with a Sony’s E-mount camera, the 10-18mm f/4 is a wide-angle zoom lens, though bear in mind that it’s designed to work with APS-C cameras only (its focal length equivalent is 15-27mm). For most landscape shooters, that shouldn’t be a problem – after all, 15mm is plenty wide if your goal is to capture sweeping seascapes, breathtaking mountain scenes, or stunning forest views – but it won’t get you the gorgeous ultra-wide perspective of the 12-24mm f/2.8 featured above.],
   [The superior glass provides optimal optical performance, with excellent contrast and sharp image quality even at the widest focal lengths. It is one of the best-quality landscape lenses for APS-C Sony mirrorless users out there, plus it’s small and lightweight (it only weighs 7.9 oz/225 grams), so it’s perfect for travel landscape shooting.],
   [The Optical SteadyShot feature keeps handheld shots blur-free (though again, I do recommend using a tripod!), and the constant f/4 maximum aperture is decent enough for noise-free shooting in low light, but for serious astrophotography, you really need an f/2.8 maximum aperture (see the 12-24mm f/2.8 model at the top of this list!). The minimum focus distance of 10 inches (0.25 meters) and attractive zoom range let you capture expansive landscapes with precision, and the price is incredibly reasonable for a high-quality Sony lens – so if you’re a landscape photography beginner or enthusiast with a Sony APS-C camera, this is the lens to buy.],
+  [8. Fujifilm XF 16-55mm f/2.8 R LM WR],
   [One of the biggest reasons to grab the Fujifilm 16-55mm f/2.8 for landscape photography is its versatility – it features great build quality so you don’t have to worry when working in tough weather conditions, an excellent maximum aperture for astrophotography , and a nice range of focal lengths that span from wide angle to short telephoto (even if the 24-82.5mm effective zoom range doesn’t quite reach those prized ultra-wide perspectives).],
   [It also offers the opportunity to capture the landscape with real accuracy; as you can imagine, optical performance is top-notch, and thanks to the f/2.8 aperture, sharp handheld results are practically guaranteed, even in low light. While most landscape photography is done at narrower apertures, the f/2.8 maximum aperture does allow for detailed astrophotography, which can certainly come in handy for the right photographer.],
   [Bottom line: The Fujifilm 16-55mm f/2.8 is perfect for landscape photographers in search of an all-around performer, especially those who require quality, precision, and sharpness across a wide focal length range.],
+  [9. Canon EF 24-70mm f/2.8L II USM],
   [Yes, it’s on the pricier side, but the greatest benefit of the 24-70mm f/2.8 lens for landscape shooters is the versatile focal range offered for shoots. At 24mm, you can capture beautiful wide-angle images, while at 70mm, you can shoot intimate landscapes, close-up scenes, and more. You don’t get the same ultra-wide perspective offered by the 15-35mm or 16-35mm lenses shared above, but you do get a set of longer focal lengths that are great for more intimate landscape photos.],
   [As I’ve discussed throughout this article, an f/2.8 maximum aperture isn’t necessary for standard landscape photography – assuming you use a tripod – but it is essential for clean, sharp astrophotography images, and it’s also nice to have if you like to experiment with shallow depth of field landscape shots.],
   [The 24-70mm f/2.8 is also plenty sharp, and the L-lens build quality is great for lengthy outdoor adventures. At the end of the day, the 24-70mm f/2.8 really is an incredible – albeit expensive – landscape lens, and if you can afford it, buy it. For those who want to spend less cash, Canon offers a cheaper f/4 version .],
+  [10. Canon EF 24-105mm f/4L IS II],
   [If you’re a more casual photographer in need of a lens that you can keep on your camera at all times – as you shoot landscapes, street scenes, and even portraits – consider the Canon EF 24-105mm f/4L IS II . It’s a versatile lens that extends beyond the 24-70mm lens featured above, plus it’s sharp, versatile, and reasonably priced.],
   [Thanks to the extra reach on the telephoto end, you can zoom in to highlight specific landscape features and create more intimate, even abstract images. But you can always capture standard landscapes in the 24-35mm range, and the image stabilization ensures you can shoot in lower light without a tripod.],
   [As I mentioned above, the lens is also great for non-landscape purposes; it’s a favorite of casual street photographers, and it can handle cityscapes, outdoor events, and even portraits just fine. The f/4 maximum aperture is a bit limiting if you hope to photograph moving subjects indoors, but for outdoor shoots in good light, the 24-105mm f/4L is a stellar choice.],
   [And by the way: While the EF 24-105mm f/4L featured above is designed for DSLRs, Canon does offer a great mirrorless version: the RF 24-105mm f/4L IS USM , which is (at the time of writing) the same price!],
+  [11. Sony FE 70-200mm f/4 G OSS],
   [If you’re a Sony mirrorless shooter looking to capture tighter landscape shots, the 70-200mm f/4 G is a great choice; it’s a telephoto zoom lens with a constant f/4 maximum aperture, and it delivers great image quality with wonderful background bokeh .],
   [While the focal length range sits squarely in the “telephoto” arena, you can use the 70-200mm to hone in on various elements of the landscape (and potentially even wildlife, too!). For instance, you can capture abstract mountain patterns, tight forest scenes, and so much more.],
   [The Sony 70-200mm is a fast focuser and performs well in the field, especially when coupled with its image stabilization, which allows for improved performance in low light. The f/4 maximum aperture isn’t ideal for producing shallow depth-of-field shots, but it should be fine for more conventional landscape images.],
+  [The best lens for landscape photography: final words],
   [There are quite a few excellent lenses for landscape photography, far too many to list – but I hope this article has been helpful, and that you can now confidently choose the best landscape lens for your needs.],
   [Ultimately, the ideal lens comes down to your own individual requirements and budget, so don’t feel pressure to choose the most expensive or most popular option. Instead, think about your camera model (and its corresponding lens compatibility), as well as features such as image quality, build quality, image stabilization, focal length, and more.],
   [Briefly, the Canon EF 16-35mm f/4L and the Nikon Z 14-30mm f/4 S lenses are excellent choices for those looking for a mix of price and quality, while the Sony FE 12-24mm f/2.8 GM is a top pick for professionals. The Canon EF 24-105mm f/4 L IS II and the Sony FE 70-200mm f/4 G are great if you love to capture a range of landscape shots from wide-angle to telephoto. Finally, for anyone looking for a budget-friendly landscape lens, the Sony E 10-18mm f/4 OSS is a reasonable buy.],
@@ -1206,10 +1415,8 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Everything Coming to HBO Max in April 2026],
   author: [Hypebeast],
   source-name: [Hypebeast],
@@ -1337,16 +1544,16 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Bianca Censori Directs the Surreal Music Video for Ye and Travis Scott's "FATHER"],
   author: [Hypebeast],
   source-name: [Hypebeast],
   images: (),
   paragraphs: (
+  [?si=-AaaO3IQm1VF3rP9],
   [Bianca Censori has officially unveiled her self-directed music video for Ye and Travis Scott's collaborative track "FATHER"],
   [The visual project is presented as a short film shot in a single continuous take without any cuts],
   [The cinematic release arrives alongside the drop of Ye's brand-new studio album BULLY],
@@ -1364,7 +1571,7 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Steel House in Denver Embraces Industrial Elements and Nature],
   author: [Anna Zappia],
   source-name: [Design Milk Architecture],
@@ -1389,8 +1596,7 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Nike Prepares The Air Force 1 Low "Heat Map" For Summer],
   author: [Hypebeast],
   source-name: [Hypebeast],
@@ -1411,38 +1617,35 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([Christopher Bonanos], source-name: [Curbed], [In the Chrysler Building’s 96 years of occupancy, exactly two people have managed to pull off the children’s-book fantasy of living there. (Officially, or at least semi.) They couldn’t have been more different; one was an artist, the other a corporate titan. In the mind’s eye, it’s a Fred Astaire... More »])],
-    [#brief-item([Nik Sharma], source-name: [Serious Eats], [Sweet and tender roasted beets, carrots, and onions, tossed with a zippy lime dressing and topped with crunchy, golden shallots.
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([Christopher Bonanos], source-name: [Curbed], [In the Chrysler Building’s 96 years of occupancy, exactly two people have managed to pull off the children’s-book fantasy of living there. (Officially, or at least semi.) They couldn’t have been more different; one was an artist, the other a corporate titan. In the mind’s eye, it’s a Fred Astaire... More »])],
+  [#brief-item([Nik Sharma], source-name: [Serious Eats], [Sweet and tender roasted beets, carrots, and onions, tossed with a zippy lime dressing and topped with crunchy, golden shallots.
  Get Recipe!])],
-    [#brief-item([The Investor], source-name: [Monevator], [class="memberful-global-teaser-content"\>
+  [#brief-item([The Investor], source-name: [Monevator], [
 
  R emember my natural yield model portfolio that I kicked off in May last year? I know that many of you do, because you keep emailing me about it!
 
-class="memberful-global-marketing-content"\>
 
-class="box"\> This article can be read by selected Monevator members. Please see our membership plans and consider joining! Already a member? Sign in here . 
+
+This article can be read by selected Monevator members. Please see our membership plans and consider joining! Already a member? Sign in here . 
 
 The post The natural yield model portfolio wheels are turning \[Members\] appeared first on Monevator .])],
-    [#brief-item([Matthew Sedacca], source-name: [Curbed], [David Drumgold’s room in what was until recently the Jane Hotel is small and showing its age. A full-size bed in the 9-by-13-foot space juts out against a gray armchair that is buried under a mountain of clothing waiting to be sent to the dry cleaner. The door paint is chipping, revealing the “as... More »])],
-    [#brief-item([Katie Leaird], source-name: [Serious Eats], [Orecchiette with olive oil, garlic, chiles, anchovies, bitter greens, and toasted breadcrumbs. Straight from the heel of Italy.
+  [#brief-item([Matthew Sedacca], source-name: [Curbed], [David Drumgold’s room in what was until recently the Jane Hotel is small and showing its age. A full-size bed in the 9-by-13-foot space juts out against a gray armchair that is buried under a mountain of clothing waiting to be sent to the dry cleaner. The door paint is chipping, revealing the “as... More »])],
+  [#brief-item([Katie Leaird], source-name: [Serious Eats], [Orecchiette with olive oil, garlic, chiles, anchovies, bitter greens, and toasted breadcrumbs. Straight from the heel of Italy.
  Get Recipe!])],
-    [#brief-item([Jerry Saltz], source-name: [Curbed], [On the occasion of her 2016 retrospective at the New Museum, Nicole Eisenman grabbed me by the shoulders and pleaded, “Get me out of here!” One didn’t look at art in the old, claustrophobic version of the building; one endured it. Now, the snazzy stacked boxes on Bowery More »])],
-    [#brief-item([Justin Davidson], source-name: [Curbed], [In New York, the fresh ripens into the antique at formidable speed. Sanaa’s New Museum opened on Bowery in 2007, and under a decade later, it already needed more space. After multiple delays and a two-year closure, the museum is reo... More »])],
-    [#brief-item([Bigphoto], source-name: [One Big Photo], [Did you know that approximately 41% — or around four of 10 — of the 50 million or so rental housing units in the U. S. are owned by individual investor landlords?   Owning real estate can be a great investment. You’ll benefit as the property appreciates in value over time, and you can \[…\]])],
-    [#brief-item([Bigphoto], source-name: [One Big Photo], [Personalized photo gifts are always a great idea for your loved ones, but you don’t want to go with something plain. Sure, printing photos and making a photo album can be a nice gift, but there are other options that are far more impressive. 1. A custom canvas print It’s always nice \[…\]])],
-    [#brief-item([Adriane Quinlan], source-name: [Curbed], [The house with the blue door on Wyckoff Street, in Boerum Hill, got more mail than the neighbors’ homes. Envelopes heavy with manuscripts arrived at the ground-floor entrance, piling up on the dining table by the window, which doubled as a slush pile for the independent poetry press More »])],
-    [#brief-item([Christopher Bonanos], source-name: [Curbed], [By this afternoon, the main MTA app on your phone will likely have updated, and not a moment too soon. Launched in 2024 and built by an outside contractor, the old app — and I refer here to the principal one, simply called ... More »])],
-    [#brief-item([Sunny Lee], source-name: [Serious Eats], [Basque cheesecake boasts a deeply caramelized top and bottom, with a creamy center thanks to a high-temperature bake. No crust required.
+  [#brief-item([Jerry Saltz], source-name: [Curbed], [On the occasion of her 2016 retrospective at the New Museum, Nicole Eisenman grabbed me by the shoulders and pleaded, “Get me out of here!” One didn’t look at art in the old, claustrophobic version of the building; one endured it. Now, the snazzy stacked boxes on Bowery More »])],
+  [#brief-item([Justin Davidson], source-name: [Curbed], [In New York, the fresh ripens into the antique at formidable speed. Sanaa’s New Museum opened on Bowery in 2007, and under a decade later, it already needed more space. After multiple delays and a two-year closure, the museum is reo... More »])],
+  [#brief-item([Bigphoto], source-name: [One Big Photo], [Did you know that approximately 41% — or around four of 10 — of the 50 million or so rental housing units in the U. S. are owned by individual investor landlords?   Owning real estate can be a great investment. You’ll benefit as the property appreciates in value over time, and you can \[…\]])],
+  [#brief-item([Bigphoto], source-name: [One Big Photo], [Personalized photo gifts are always a great idea for your loved ones, but you don’t want to go with something plain. Sure, printing photos and making a photo album can be a nice gift, but there are other options that are far more impressive. 1. A custom canvas print It’s always nice \[…\]])],
+  [#brief-item([Adriane Quinlan], source-name: [Curbed], [The house with the blue door on Wyckoff Street, in Boerum Hill, got more mail than the neighbors’ homes. Envelopes heavy with manuscripts arrived at the ground-floor entrance, piling up on the dining table by the window, which doubled as a slush pile for the independent poetry press More »])],
+  [#brief-item([Christopher Bonanos], source-name: [Curbed], [By this afternoon, the main MTA app on your phone will likely have updated, and not a moment too soon. Launched in 2024 and built by an outside contractor, the old app — and I refer here to the principal one, simply called ... More »])],
+  [#brief-item([Sunny Lee], source-name: [Serious Eats], [Basque cheesecake boasts a deeply caramelized top and bottom, with a creamy center thanks to a high-temperature bake. No crust required.
  Get Recipe!])],
-    [#brief-item([Christopher Bonanos], source-name: [Curbed], [I happened to be 1,800 miles from New York when the prospect of parking fees as budget-gap closer entered the chat, and I could very nearly hear the howling from there. The New York Post , as is its custom, More »])],
-    [#brief-item([Bigphoto], source-name: [One Big Photo], [New and old marketers alike recognize the phrase “content is king,” but it’s naive to suggest that “content” means the same thing it used to, back when the phrase initially rose to prominence. Content is still king, for the most part, but it is evolving.   How is it evolving and how should your \[…\]])],
-    [#brief-item([Bigphoto], source-name: [One Big Photo], [Nobody wants to watch their parents get older and start to struggle in the physical world, but it’s an unavoidable fact of life. At some point, your parents will begin to have a hard time with things. For example, they might lose some strength, have trouble walking, or lose some of their mental faculties. When \[…\]])],
-  ))
-}
+  [#brief-item([Christopher Bonanos], source-name: [Curbed], [I happened to be 1,800 miles from New York when the prospect of parking fees as budget-gap closer entered the chat, and I could very nearly hear the howling from there. The New York Post , as is its custom, More »])],
+  [#brief-item([Bigphoto], source-name: [One Big Photo], [New and old marketers alike recognize the phrase “content is king,” but it’s naive to suggest that “content” means the same thing it used to, back when the phrase initially rose to prominence. Content is still king, for the most part, but it is evolving.   How is it evolving and how should your \[…\]])],
+  [#brief-item([Bigphoto], source-name: [One Big Photo], [Nobody wants to watch their parents get older and start to struggle in the physical world, but it’s an unavoidable fact of life. At some point, your parents will begin to have a hard time with things. For example, they might lose some strength, have trouble walking, or lose some of their mental faculties. When \[…\]])],
+))
 
 #colophon([The Monitor], [Vol. 1, No. 033], [2026-03-30])

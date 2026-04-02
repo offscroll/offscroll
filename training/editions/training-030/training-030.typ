@@ -21,35 +21,8 @@
 #masthead([The Connected Dispatch], [Vol. 1, No. 030], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Khruangbin and Lord Huron to Headline the 2025 Outside Festival Presented by Capital One and REI],
-  kicker: [Cover Story],
-  author: [TJ Pitre],
-  source-name: [Trail Runner Magazine],
-  deck: [The just-announced lineup of musical headliners includes Khruangbin , Lord Huron , Sylvan Esso , Trampled by Turtles , Neal Francis , Waxahatchee , Husbands , and Hazlett .],
-  lead-pre: [],
-  lead-cap: [T],
-  lead-rest: [he Outside Festival is back.],
-  body-paragraphs: (
-  [A year after the inaugural gathering brought some 18,000 people together for a rousing weekend of music and joy in the outdoors, the Outside Festival with presenting sponsors Capital One and REI Co-op will return to downtown Denver’s Civic Center Park, May 31-June 1, 2025. The just-announced lineup of musical headliners includes Khruangbin , Lord Huron , Sylvan Esso , Trampled by Turtles , Neal Francis , Waxahatchee , Husbands , and Hazlett .],
-  [The two-day event will also feature conversations with iconic athletes, renowned storytellers, and inspiring changemakers, plus an adventure films series and a diverse mix of outdoor experiences.],
-  [Record-breaking swimmer Diana Nyad speaking at the 2024 Outside Festival],
-  [The Outside Summit, a precursor to the Festival and the outdoor industry’s premier networking event, which was attended by over 500 influential leaders in its first year, will return on Thursday, May 29. The Summit includes a full day of programming on Friday, May 30, plus exclusive gatherings during the Festival weekend.],
-  [The 2024 Outside Festival and Summit was hailed as a massive success that created a new model for a national outdoor community gathering. Building off that momentum, organizers have expanded the Festival grounds to include Lincoln Veterans Memorial Park in order to accommodate an anticipated 25,000-plus attendees. Activities include climbing experiences, yoga classes, skills workshops, gear demos, a kids’ zone, exciting food options, and a variety of immersive brand engagements. Films and talks will take place at spaces inside the Denver Art Museum and the newly renovated Denver Public Library.],
-  [Outside Festival presenting sponsor Capital One is running an exclusive Capital One cardholder presale, giving eligible cardholders—including REI Co-op ® MasterCard ® customers—48-hour early access to tickets beginning Wednesday, Dec. 11 at 10 a.m. MT, and ending at 10 a.m. MT on Friday, Dec. 13, or until the last ticket is sold. Supplies are limited. Those trying to access the Capital One Cardholder Presale must use an eligible Capital One Visa or Mastercard credit or debit card to purchase presale tickets. Excludes Capital One issued private label cards. Tickets start at \$99 for the full weekend.],
-  [Attendees enjoying a musical set at the at the 2024 Outside Festival (Photo: JP Quindara)],
-  [Immediately following the Capital One cardholder presale, all tickets will be released to the general public at 10 a.m. MT on Friday, December 13. VIP packages will start at \$150 for a single day and \$275 for the full weekend, with access to a premium VIP viewing area, exclusive food vendors, private bar access, expedited entry, and more.],
-  [Outside+ members have access to early-bird pricing throughout the entire sales window on single-day general admission tickets and all VIP ticket types, plus members have the opportunity to purchase GA+ tier tickets at general admission pricing. Two-day GA+ tickets start at \$175 and include perks like express entry, private bathrooms, additional food and beverage options, and access to the Outside+ Lounge. Children ages 12 and under enter free.],
-  [For more information or to purchase tickets, visit the Outside Festival 2025 website .],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [Life and Death in Singapore],
   author: [SiriusXM Podcasts and Roman Mars],
   source-name: [99% Invisible],
@@ -65,11 +38,9 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [‘Biggest Swell in Years’ Slams Bondi Beach with 12ft Bomb Sets (Video)],
   author: [Dashel Pierson],
   source-name: [Surfer Magazine],
@@ -78,72 +49,21 @@
   [While Bondi Beach may be one of Australia’s most popular shorelines, it’s not known typically for surf – there are plenty of other waves that regularly produce world-class surf in the region, leaving Bondi for the sunbathing and splish-splashing crowd.],
   [However, a strong pulse of south swell, one dubbed perhaps “the biggest south swell in years,” slammed the coastal Sydney suburb over the weekend.],
   [And a handful of surfers paddled out, with crowds on the headlands watching on, to witness the potentially historic waves, pushing into the 12-foot range. See below.],
-  [style="padding: 16px;"\>],
-  [style="display: flex;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"\>],
-  [style="display: flex;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; width: 60px;"\>],
-  [style="padding: 19% 0;"\>],
-  [style="display: block; height: 50px; margin: 0 auto 12px; width: 50px;"\>],
-  [style="padding-top: 8px;"\>],
-  [style="color: \#3897f0; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 550; line-height: 18px;"\>View this post on Instagram],
-  [style="padding: 12.5% 0;"\>],
-  [style="display: flex; margin-bottom: 14px;"\>],
-  [style="margin-left: 8px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 50%; height: 20px; width: 20px;"\>],
-  [style="margin-left: auto;"\>],
-  [style="display: flex; margin-bottom: 24px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 224px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; width: 144px;"\>],
+  [View this post on Instagram],
   [Surfline captioned:],
   [“Local chargers putting on a show for the spectators at Bondi Beach right now.],
   [But they also gave a caveat regarding the wave size:],
   [“These wave heights are in the Traditional scale. You can change between Face Heights or Traditional in the settings of your Surfline app.”],
-  [style="padding: 16px;"\>],
-  [style="display: flex;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"\>],
-  [style="display: flex;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; width: 60px;"\>],
-  [style="padding: 19% 0;"\>],
-  [style="display: block; height: 50px; margin: 0 auto 12px; width: 50px;"\>],
-  [style="padding-top: 8px;"\>],
-  [style="color: \#3897f0; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 550; line-height: 18px;"\>View this post on Instagram],
-  [style="padding: 12.5% 0;"\>],
-  [style="display: flex; margin-bottom: 14px;"\>],
-  [style="margin-left: 8px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 50%; height: 20px; width: 20px;"\>],
-  [style="margin-left: auto;"\>],
-  [style="display: flex; margin-bottom: 24px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 224px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; width: 144px;"\>],
+  [View this post on Instagram],
   [Elsewhere, in the leadup to the incoming south swell, which bubbled up from Tasman Sea, and made its way towards the East Coast of Australia, Surfline had high hopes, claiming, “The biggest S swell in years is lining up this weekend.” They continued :],
   [“An intense low tightens up near the NSW coast, then pulls away Friday evening as winds ramp up and a broad storm field sets from Tasmania to the Mid North Coast. XL surf builds overnight, with Saturday morning shaping up as possibly one of the biggest days in years. Expect a messy mix. There will be plenty of shorter period storm surf and wind chop stacked through the swell, with occasional long period bomb sets swinging through and catching plenty of crews out.”],
-  [align="center"\> Related: Bull Shark Mauls Dolphin in Sydney: ‘Is This Normal?’ (Video)],
+  [Related: Bull Shark Mauls Dolphin in Sydney: ‘Is This Normal?’ (Video)],
   [Elsewhere, to the north, at Manly Beach, spectators were nearly swept away as the humungous waves battered the coastline. See below.],
-  [style="padding: 16px;"\>],
-  [style="display: flex;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"\>],
-  [style="display: flex;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; width: 60px;"\>],
-  [style="padding: 19% 0;"\>],
-  [style="display: block; height: 50px; margin: 0 auto 12px; width: 50px;"\>],
-  [style="padding-top: 8px;"\>],
-  [style="color: \#3897f0; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 550; line-height: 18px;"\>View this post on Instagram],
-  [style="padding: 12.5% 0;"\>],
-  [style="display: flex; margin-bottom: 14px;"\>],
-  [style="margin-left: 8px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 50%; height: 20px; width: 20px;"\>],
-  [style="margin-left: auto;"\>],
-  [style="display: flex; margin-bottom: 24px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 224px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; width: 144px;"\>],
+  [View this post on Instagram],
   [Officials urged those looking to witness the potentially historic swell to heed caution:],
   [“A reminder from today for swell watchers to be prepared for the unexpected as the waves can get sneaky and leave you saturated or swept away, especially at Dee Why pool!”],
   [Stay tuned; more to come from this run of swell.],
-  [align="center"\> Related: 25ft ‘Pure Evil’ Waves at Australia’s Heaviest Slab (Video)],
+  [Related: 25ft ‘Pure Evil’ Waves at Australia’s Heaviest Slab (Video)],
 ),
   insert-map: (:),
   word-count: 686,
@@ -151,10 +71,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [‘Wave Pool King’ Stomps NBD Superman 360 Shuv-It at Waco Surf (Video)],
   author: [Dashel Pierson],
   source-name: [Surfer Magazine],
@@ -163,27 +81,10 @@
   [Jacob “Zeke” Szekely is many things, but humble is not one of them.],
   [The San Diego native is one of surfing’s biggest characters, making a name for himself early on by winning a competition while wearing a court-ordered ankle bracelet, turning his life around, and becoming one of the most prolific surf vloggers in the game.],
   [And what he lacks in humility, he makes up for in hard work. Like pushing the limits in terms of sticking new tricks, particularly in surf parks, and dubbing himself “the king of wave pools.” And Zeke has a new one for his extensive bag of never-before-done tricks, a superman air into a 360 shuv-it, landed at Waco Surf deep in the heart of Texas.],
-  [style="padding: 16px;"\>],
-  [style="display: flex;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"\>],
-  [style="display: flex;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; width: 60px;"\>],
-  [style="padding: 19% 0;"\>],
-  [style="display: block; height: 50px; margin: 0 auto 12px; width: 50px;"\>],
-  [style="padding-top: 8px;"\>],
-  [style="color: \#3897f0; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 550; line-height: 18px;"\>View this post on Instagram],
-  [style="padding: 12.5% 0;"\>],
-  [style="display: flex; margin-bottom: 14px;"\>],
-  [style="margin-left: 8px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 50%; height: 20px; width: 20px;"\>],
-  [style="margin-left: auto;"\>],
-  [style="display: flex; margin-bottom: 24px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 224px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; width: 144px;"\>],
+  [View this post on Instagram],
   [“I’M THE KING OF THIS SHIT,” Zeke boastfully captioned. “Quit Playyin w\/ Me! Nobody has Landed as many New Tricks as Me!! & I’ve been Dreaming of Landing a 360 Shuv it for like 8 years now. SuperMan 360 Shuv. Huge Thx to \@wacosurf\_tx for having us & shout out to my homies for Hyping me up the last two days to stomp it.”],
   [Impressive.],
-  [align="center"\> Related: 25-Foot Uluwatu: ‘Biggest Waves I’ve Ever Seen Here’ (Video)],
+  [Related: 25-Foot Uluwatu: ‘Biggest Waves I’ve Ever Seen Here’ (Video)],
   [And the congrats on the new trick rolled in, along with a note or two on his audacity.],
   [“My goat!!!!” – Eithan Osborne],
   [“I remember going to waco with you in 2019 and you were already way ahead of the game. Still got the thrown all these years later.” – Ridge Lenny],
@@ -191,27 +92,10 @@
   [“That was sickkk.” – Albee Layer],
   [“Bro! When your skill level catches up to your humility you’re going to be unstoppable!!! OTC BABY!!!” – Luke Cederman],
   [Previously, during a stint in Indonesia, Zeke landed another NBD – a superman fingerflip – and he shared it with the world accompanied by his trademark bravado:],
-  [style="padding: 16px;"\>],
-  [style="display: flex;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"\>],
-  [style="display: flex;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; width: 60px;"\>],
-  [style="padding: 19% 0;"\>],
-  [style="display: block; height: 50px; margin: 0 auto 12px; width: 50px;"\>],
-  [style="padding-top: 8px;"\>],
-  [style="color: \#3897f0; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 550; line-height: 18px;"\>View this post on Instagram],
-  [style="padding: 12.5% 0;"\>],
-  [style="display: flex; margin-bottom: 14px;"\>],
-  [style="margin-left: 8px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 50%; height: 20px; width: 20px;"\>],
-  [style="margin-left: auto;"\>],
-  [style="display: flex; margin-bottom: 24px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 224px;"\>],
-  [style="background-color: \#F4F4F4; border-radius: 4px; height: 14px; width: 144px;"\>],
+  [View this post on Instagram],
   [“Don’t forget I started that finger flipping shit in 2020. So if you don’t like it, YOU CAN SUCK IT!”],
   [Classic Zeke. Never change.],
-  [align="center"\> Related: Aerialist Sorcerer Sticks ‘First-Ever’ Superman Fingerflip (Video)],
+  [Related: Aerialist Sorcerer Sticks ‘First-Ever’ Superman Fingerflip (Video)],
 ),
   insert-map: (:),
   word-count: 559,
@@ -219,11 +103,10 @@
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Roman Mars Describes Athens GA As It Is],
   author: [roman mars],
   source-name: [99% Invisible],
@@ -243,7 +126,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Constitution Breakdown \#1: Nikole Hannah-Jones],
   author: [Nikole Hannah-Jones, Elizabeth Joh],
   source-name: [99% Invisible],
@@ -263,7 +146,7 @@
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([Lasha Madan, Vivian Le, Kurt Kohlstedt], source-name: [99% Invisible], [At a glance, the border between the United States and Canada would seem to be at the friendlier end of the international boundary spectrum. But even though the US-Canada border is now pretty tame, when two countries touch each other over a stretch of 5500 miles, it can result in some surprisingly weird disputes, misunderstandings, geographical quirks and... really good stories. 
 
  Fifty-Four Forty or Fight 
@@ -374,7 +257,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The Megaplex!],
   author: [Roman Mars, Katie Mingle, Ryan Kailath, Joe Rosenberg],
   source-name: [99% Invisible],
@@ -392,7 +275,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Photographing Spring Flowers with Artistic Intent],
   author: [500px Blog],
   source-name: [500px ISO],
@@ -429,7 +312,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The Address Book],
   author: [Roman Mars],
   source-name: [99% Invisible],
@@ -447,7 +330,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Cactus Jack Channels the "Gangster SpongeBob" Memes With Surprise Apparel Collaboration],
   author: [Hypebeast],
   source-name: [Hypebeast],
@@ -472,7 +355,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The Red, the Black, and the Green],
   author: [Christopher Johnson, Emmett FitzGerald],
   source-name: [99% Invisible],
@@ -490,7 +373,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Artistic License Redux],
   author: [Daniel Ackerman],
   source-name: [99% Invisible],
@@ -510,7 +393,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Whomst Among Us Let the Dogs Out AGAIN],
   author: [emmett fitzgerald, chris berube],
   source-name: [99% Invisible],
@@ -529,7 +412,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Their Dark Materials],
   author: [Roman Mars],
   source-name: [99% Invisible],
@@ -549,7 +432,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Blue Jeans: Articles of Interest \#5],
   author: [SiriusXM Podcasts and Roman Mars],
   source-name: [99% Invisible],
@@ -568,7 +451,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Changing Stripes Revisited],
   author: [Vivian Le, Martín Gonzalez, Christopher Johnson],
   source-name: [99% Invisible],
@@ -590,7 +473,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Archinect's latest featured hiring firms include Moore Ruble Yudell, Chu-Gooding, West of West, Kramer + deConciliis, and Brownstone Boys],
   author: [Nathaniel Bahadursingh],
   source-name: [Archinect News],
@@ -609,7 +492,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Power Broker \#2: Jamelle Bouie],
   author: [elliott kalan, isabel angell],
   source-name: [99% Invisible],
@@ -633,7 +516,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The Return of Con Law],
   author: [Isabel Angell, Elizabeth Joh, Roman Mars],
   source-name: [99% Invisible],
@@ -652,7 +535,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Yankee Pyramids],
   author: [Delaney Hall, Elizabeth Joh, Chris Berube],
   source-name: [99% Invisible],
@@ -673,7 +556,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Model Organism],
   author: [Emmett FitzGerald],
   source-name: [99% Invisible],
@@ -690,7 +573,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Rights of Rice and Future of Nature],
   author: [Delaney Hall, Ozzy Llinas Goodman, Rose Eveleth],
   source-name: [99% Invisible],
@@ -714,7 +597,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [A Fantasy of Fashion: Articles of Interest \#7],
   author: [Roman Mars],
   source-name: [99% Invisible],
@@ -732,7 +615,7 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [San Francisco Cliff Rescue: Woman Dangling 70ft Above Ocean Beach Saved (Video)],
   author: [Dashel Pierson],
   source-name: [Surfer Magazine],
@@ -744,11 +627,11 @@ Hosted by Simplecast, an AdsWizz company. See pcm.adswizz.com for information ab
   [Following the rescue, San Francisco Fire Department Lieutenant Ken Smith said in a statement :],
   [“1 female patient has been retrieved from the cliff and is now being evaluated by fire personnel on scene. At 4:50 pm the Victim has been rescued and is now being evaluated by medical personnel to determine if hospital transport is necessary. There have been no injuries to any fire department members during this rescue.”],
   [Firefighters used ropes to repel down the cliff, and retrieve the woman. As of now, it’s unclear how the woman got stuck on the cliff, nor has her identity been released. According to the fire department statement, it sounds like no injuries were sustained.],
-  [align="center"\> Related: Hero Rescues Father, Daughter from Near-Death Drowning (Video)],
+  [Related: Hero Rescues Father, Daughter from Near-Death Drowning (Video)],
   [As for the Cliff House, which overlooks the northern edge of the storied gladiator pit of a surf zone that is Ocean Beach, it is steeped in history. Here’s a snippet :],
   [“After the Gold Rush, San Francisco's population exploded and the city's downtown area got very crowded with new buildings and neighborhoods. Real estate developers, eager to make more money, saw Lands End and its unparalleled beauty as a new place to develop. They constructed the Cliff House in 1863 as a fashionable resort for the wealthy. The modest one-story wood-frame structure was skillfully situated on top of the cliff overlooking Seal Rocks, providing breathtaking panoramic views of the Pacific Coast line.”],
   [Sadly, a restaurant that operated in the Cliff House closed during the COVID-19 pandemic.],
-  [align="center"\> Related: ‘SOS!’ Stranded Tourists Saved From Flooded Hawaii Beach After 24 Hours (Video)],
+  [Related: ‘SOS!’ Stranded Tourists Saved From Flooded Hawaii Beach After 24 Hours (Video)],
 ),
   insert-map: (:),
   word-count: 347,

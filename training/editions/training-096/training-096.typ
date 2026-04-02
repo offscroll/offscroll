@@ -21,93 +21,8 @@
 #masthead([Atlantic Gazette], [Vol. 1, No. 096], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Liquids, “Brady Math,” and Road Super Shoes: How Riley Brady Got So Fast],
-  kicker: [Cover Story],
-  author: [RUN | Powered by Outside],
-  source-name: [Trail Runner Magazine],
-  deck: [Editor’s Note: In anticipation of Riley Brady toeing the line as a top contender at the 2025 Western States 100 on June 28, we’re looking back on their meteoric rise.],
-  lead-pre: [],
-  lead-cap: [T],
-  lead-rest: [heoretically, Riley Brady didn’t need to kick into the finish line at the 2024 Javelina Jundred on October 26. The non-binary runner from Boulder, Colorado, had forged nearly a 20-minute gap over second-place woman Hannah Allgood during the last 99 and a half miles.],
-  body-paragraphs: (
-  [But they needed to kick it in nonetheless.],
-  [“I never feel like I have the win in the bag,” Brady said. “A race is not over ‘til it’s over. When people show up at a finish line and stop and walk across the line, I’m like, ‘You don’t know who’s back there! You don’t know who’s gonna sprint pass you!’ You have to Zack-Miller-finish this race. You should be sprinting as fast as you can across that line, and then you can collapse, or walk, or do whatever you want.”],
-  [And that’s exactly what Brady did. The glow of their headlamp bobbed through the darkness, rounded the turn into the iridescent tent city that makes up the Javelina headquarters, and zoomed down the seemingly never-ending straight away. Brady zipped across the finish line and in one fluid motion doubled over, hands precariously holding the upper half of their body up on their knees.],
-  [They stopped the clock in 14:19:01—the second fastest time ever in the women’s race on a historically hot day that saw the thermometer creep up to 100 degrees Fahrenheit.],
-  [It’s their third consecutive Javelina Jundred podium, second golden ticket into Western States, and first win at the Burning-Man-meets-Halloween-meets-ultrarunning rave in Fountain Hills, Arizona. But simply examining those three data points from the end of October in 2022, 2023, and now 2024 leaves out much of the story—including why you may not even know who this very legitimate contender at the 2025 Western States 100 even is.],
-  [Here’s how the 29-year-old bike mechanic torched the Javelina Jundred this fall.],
-  [1. A Liquid Diet],
-  [Heading into Javelina in October, there was no question to those that know them that Brady was fit. Scary fit. (This author understood this deeply first hand, having had the privilege of getting dropped by Brady many times on long runs and workouts over the past year.) The big question was: could their stomach hold it together enough to let their fitness shine?],
-  [Violent nausea and vomiting that reduced Brady to the fetal position on the side of the trail had been their downfall in longer races ever since earning a golden ticket with a second-place finish at Javelina in 2022, including at Western States itself in 2023, Black Canyon 100K and Javelina in 2023, and the Black Canyon, Canyons 100K (where they were also sick with a virus), and CCC 100K earlier this year.],
-  [“I’ve always thrown up in races, and it’s been an easy puke and rally,” Brady said. “But this vomiting was so violent I couldn’t hold my body up. It’s very different when it’s like you just take a gel and it doesn’t sit right so you just kind of throw up. You’re not collapsed on the ground.”],
-  [Enough was enough.],
-  [Brady enlisted the expertise of Vic Johnson, a registered dietitian who specializes in working with mountain athletes. Sweat testing revealed that Brady’s sweat and salt rates were both on the low end, and yet they had not been hydrating sufficiently during races. Johnson set Brady a minimum of drinking 500mL an hour.],
-  [“That’s one bottle an hour, which is quite low,” Brady said. “There have been times when I’ve definitely been drinking less than that, so he was like, ‘Once you start losing two to three percent of your body weight, that’s when we start to see those kinds of stomach issues come into play.”],
-  [Under Johnson’s guidance, Brady also started experimenting with more liquid calories and fewer gels, the texture of which immediately sent Brady’s gag reflexes on high alert. As the forecast called for temperatures reaching dangerously close to triple digits, that strategy proved especially prescient.],
-  [Brady amused themself by listening and singing along to an eclectic playlist that included a lot of country (Sturgill Simpson, Dolly Parton, Alan Jackson, etc.), some pop (Chappell Roan, Taylor Swift, Beyoncé, etc.), and musical theater (Phantom of the Opera, Footloose). (Photo: Howie Stern)],
-  [Brady did their best to drink 500 mL per hour on lap one of the five-lap course. The sun had yet to shine its wrath on the desert, and they probably fell a little short. But they were running well inside of themselves, just ahead of the lead women’s pack, and diligently downed a bottle of Skratch and Gatorade from aid stations on course, as well as a gel. (Aid stations also supplied Gu Roctane, but they didn’t have the Tea flavor and that’s the only flavor Brady doesn’t find repulsive.)],
-  [“The Gatorade tasted a little bit like a cleaning chemical, but it was good enough that I could get it down,” Brady said. “So I was like, ‘All right, I’m getting some calories, some salt from this.’”],
-  [Starting the third lap, Brady attempted to down a Precision Nutrition caffeine gel, which they had mixed into water in their soft flask just as they had done in training “because the texture is disgusting.” Their tried-and-true plan failed.],
-  [“I immediately threw up,” Brady said. “And I was like, ‘OK, I’m just going to cut this out.’”],
-  [Feeling like they could use some more calories on lap four, Brady tried taking one more gel, an SIS Beta Fuel—another tried-and-true staple. But the body rejected that, too.],
-  [“I cut those out, too,” Brady said. “I was like, ‘The liquid calories are working. I’m not going to mess with that.”],
-  [Brady estimates they took in 45 grams of carbs, or just under 200 calories, an hour for the duration of the race. While that’s more carbs than they’ve stomached in recent longer ultras, it’s about half as much as many high-carb proponents recommend. The bonk started catching up with them by lap five. But moving forward with some energy was better than curled up on the side of the trail with no energy at all.],
-  [2. Brady Math],
-  [A crown jewel of the Aravaipa Running race portfolio, the Javelina Jundred takes runners around the same 20-mile loop through the sandy washes of the desert five times. Each loop features a slight uphill over the first half to the highpoint near the foothills of the McDowell Mountains northeast of Phoenix before looping back down to the start for a total of about 1,580 feet of climbing and descent on each lap.],
-  [Five 20-mile loops may sound daunting. Not to Brady.],
-  [“I don’t think about the miles,” Brady said. “I’m like, ‘We’re running five laps.’ You just say ‘a lap,’ and it doesn’t sound that bad, you know?”],
-  [Compartmentalizing the 100-mile course into something as benign as a lap let Brady forget about the miles. In fact, they didn’t look at their watch once all day.],
-  [“I put the mileage out of my mind,” Brady said. “It’s really just one hard lap. The first one doesn’t count because it’s the first one. Second one, you’re probably still feeling pretty good, so it’s whatever. Third one is kind of hard, because it’s the heat of the day and it’s the third one. But then fourth one you get to pick up a pacer, so then you have a buddy. And fifth one, it’s the last lap, so you just gotta get one lap done.”],
-  [In fact, they just had to make it through half of one lap:],
-  [“It helps that it’s slightly uphill on the way out and then slightly downhill all the way back. So I just didn’t count the downhill. That’s easy running. So I just have to make it through half a lap.”],
-  [Sounds like Brady math, a mindset quite similar to that of another Brady legend .],
-  [“It’s not really how it plays out in reality,” Brady admitted. “But that’s how I like to think about it going into it.”],
-  [3. Ice, Ice Baby],
-  [Brady, who “hates” the cold, is a natural in scorching temperatures. But they didn’t take that aptitude for granted, making the extra effort to spend time in the sauna and hot tub at the rec center a couple of times a week, as well as running in the heat of the day on weekends during an usually hot fall in Boulder. They also applied a full heat protocol during the race, using pacer Leah Yingling’s special bandanas Lululemon made for the Further Project and dumping ice water on their head and down their shirt. It helped that Javelina supplied ice at every aid station.],
-  [It all paid off.],
-  [“To be honest, it felt hot but not crazy,” Brady said. “The only time I really felt like, ‘OK, I’m getting pretty warm here,’ was on the third lap during the heat of the day coming into Jackass.”],
-  [There, Brady took a few extra seconds to make sure their bottles were refilled, as well as to fully submerge in a kitty pool filled with ice water.],
-  [4. Road Running Super Shoes (Seriously)],
-  [Two weeks before the race, Brady had not as much as even ever tried on road super shoes. (They had worn trail super shoes, such as they are, to varying degrees of success.) That’s when they got their hands on a pair of Nike Vaporflys—a carbon-plated road running super shoe with next-to-no traction.],
-  [Brady took them out for a test drive on the Dirty Biz, a 15-mile, mostly buffed out trail and double-track loop just south of Boulder that Brady characterizes as more technical than the Javelina course. It was love at first run.],
-  [“I was like, ‘Wow. This fits my foot so perfectly. This feels so comfortable,” Brady said. “I felt super nimble. I just wasn’t thinking about my feet at all.”],
-  [For someone with a neuroma who’s relatively picky when it comes to shoes, this was a ringing endorsement.],
-  [“I didn’t feel like they were tippy,” Brady said. “I didn’t feel like I was going to roll an ankle.”],
-  [They admit the tread could be better, but that wasn’t going to make or break their shoe choice on a course as untechnical as Javelina. They had no regrets.],
-  [“I couldn’t have been more thrilled with them,” Brady said. “I got a few rocks in my shoes. The upper is pretty porous. But I don’t have any blisters. I didn’t think about my feet once throughout the day.”],
-  [Make no mistake, Brady says: this is not an advertisement for Nike. But they’ve never loved a shoe more.],
-  [5. Attitude of Gratitude],
-  [Brady’s shoe choice was a reflection of the freedom they’ve afforded themselves with a clear-headed attitude. Over the past several years, they’ve turned down modest sponsorship offers from shoe companies whose shoes were not the perfect fit.],
-  [“There have been some shoes that I just don’t see working for me in trail hundred milers. And that’s what I want to be running,” Brady said. “And so if the shoe is gonna irritate my foot, all the money in the world wouldn’t be worth it to me to have a shoe that doesn’t work.”],
-  [Running sponsorless has come with a price—Brady works as a bike mechanic, putting in three long, hard days a week on their feet and lugging heavy e-bikes and mountain bikes onto and off of bike stands. (They love that work so much, though, that they continued working overtime hours during the pandemic despite making less than they would have on unemployment.) And they don’t have any sponsor support to travel to races (although they have supportive parents, who attend all of Brady’s big races and pay for the rental house). While not having a sponsor might knock the confidence of some runners at Brady’s level, it doesn’t seem to phase them.],
-  [“I’m not somebody who feels like they need a sponsorship to feel secure in my sense of self,” Brady said. “I know that’s some people’s goal, but that’s not my goal at all. For a sponsorship to be worth it to me, it needs to support my ability to run.”],
-  [If Brady were to sign a sponsorship contract—and they are in talks with some companies—the deal would have to be big enough so they could quit their job as a bike mechanic. They don’t need time to train more: Brady puts in about 90 miles a week, going up to 100 on key weeks, with a few bike rides, strength training, heat protocol, and physical therapy slotted in there as well. But it’s a militant schedule that leaves little time for cooking, spending time with their two roommates and two cats, and no time for Brady pursuing their biggest hobby outside of running: welding. And that’s a passion they hope to turn into a career.],
-  [Brady carried this maturity to the race itself. After running alone off the front of the women’s race on lap one, Brady was caught by Allgood on the long climb out of headquarters on lap two. They just kept doing their own thing, and sure enough their agility on the 10-mile downhill back to the start line reestablished that gap. They didn’t see another competitor in the woman’s race for the rest of the day—minus everyone they lapped.],
-  [Brady received a finish-line hug from race director Jubilee Paige after running the second-fastest women’s time ever on a historically hot day. (Photo: Howie Stern)],
-  [6. An A Team],
-  [Speaking of getting lapped, that’s the curse of doing well at this race. The faster you run, the more people you lap, and the more people you have to warn to get out of the way—as politely as you can, of course.],
-  [That’s where the power of the pacer came into play. Brady’s friend Chelsea Burns pulled them through lap four, and Yingling ran them home on lap five.],
-  [“It was really helpful to have Chelsea and Leah because they could tell people to move,” Brady said. “You’re passing so many people at that point, because the 100K is out on course, and then you’re catching all of the other people in the 100 miler because everybody’s just doing these same loops, and it gets really difficult when you’re tired to keep saying, ‘On your left! Excuse me! Coming through!’ And still sound kind about it. I definitely don’t want to be pissing people off out there, but also, I’m racing.”],
-  [Burns and Yingling also played the pivotal role of serving as Brady’s representative at aid stations, which while exceptionally well staffed were as chaotic as you would expect with hundreds of runners passing through every hour. (They were so chaotic, in fact, that at one point Brady and Burns got separated and Burns ran up the trail, thinking Brad had already left. They doubled back and found Brady just emerging from the aid station less than a handful of minutes later.) Brady’s pacers saved precious seconds by helping to acquire ice and fill bottles. Yingling, ever the consummate professional, provided just the stroke to the ego Brady needed on lap five to get them to the finish line and secure a golden ticket.],
-  [Secure a golden ticket they did. After failing to earn their way back into States last year, it’s a huge relief, Brady says. But you’ll see them on the golden ticket circuit again quite soon. They have some unfinished business at Black Canyons to attend to. And you’ll probably see them back at Javelina next year, too. But not with a bib pinned to their shirt.],
-  [“I really want to be top 10 at Western States,” Brady said. “I don’t want to have to go back \[to Javelina\]. I’ve done this race the last three years in a row. I want to get to experience some of the fun party aspects of Javelina. I have other friends who I think want to race it. I just really want to be on the crew and volunteer side of things. Aravaipa has been so great in terms of helping me get to this race, so I want to try and give back to Aravaipa in a small way.”],
-  [Because more than sponsorships or golden tickets, community is what attracted Brady to this sport as an undergraduate student at the University of Vermont, it’s largely what brought them out to Boulder (along with quality running and access to trans healthcare), and it’s what keeps them in the sport.],
-  [“This is probably gonna sound very cliché, and I really hate clichés, but I do feel so lucky to just have the best community around me,” Brady said. “Going into this race, I was reflecting and just felt so well supported. I’m very appreciative of David \[Roche\] for being a good coach, I have this great PT, and then just the best friends in Boulder.”],
-  [Roche, of course, won the men’s race.],
-  [Brady’s friend Rosie writes them a card before every race, and Javelina was no exception. And upon returning to Boulder after the race, Brady was greeted to a congratulatory sign on their bedroom door: “I’m fast as f\*\*\*, boi!” And their two roommates took them out to a celebratory dinner.],
-  [“One of the reasons to do this sport is the community,” Brady said. “I’m just really, really grateful and feeling really well loved right now.”],
-),
-  inline-pq: pull-quote([Third one is kind of hard, because it’s the heat of the day and it’s the third one.], [RUN | Powered by Outside]),
-  inline-pq-idx: 26,
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [SystemD Contributor Harassed Over Optional Age Verification Field, Suggests Installer-Level Disabling],
   author: [EditorDavid],
   source-name: [Slashdot],
@@ -131,10 +46,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Best Books, Movies, Video Games, and Podcasts to Check Out After Watching 'Severance'],
   author: [Jeff Somers],
   source-name: [Lifehacker],
@@ -143,65 +56,153 @@
   [We may earn a commission from links on this page.],
   [From the moment Mark Scout (Adam Scott) first rode an elevator down to his office and became a totally different person, we’ve been obsessed with Severance . Over two spectacular seasons, Ben Stiller’s sci-fi satire has explored the banality of corporate culture (and corporate cults), the impact of trauma, and the power of memory—or lack thereof. The story of a group of people who undergo the severance procedure, creating a separate workplace persona called an “Innie” who is essentially a separate individual lacking their outside memories, delivered one of the best finales of all time with its second-season ender “Cold Harbor.”],
   [But it’s been a year since then, and there’s no official word on when we'll see season three. If you’re jonesing for more of that bleak corporate vibe, mysterious and important work, and surprisingly nuanced commentary on the human condition— and you've already explored our list of streamalike shows —allow me to suggest some equally terrific books, movies, video games, and podcasts that will fill that empty space in your head.],
-  [id="the-best-books-like-severance"\>The best books like 'Severance'],
+  [The best books like 'Severance'],
   [Severance packs a lot of literary references into its scripts, adding a dense layer of subtext that makes every storyline richer (and more challenging). Unsurprisingly, there are a lot of choices if you’re looking for a reading experience that will give you similar vibes.],
+  [Tell Me an Ending: A Novel],
+  [\$13.29
+ at Amazon],
+  [\$20.00 
+ Save \$6.71],
+  [\$13.29
+ at Amazon],
+  [\$20.00 
+ Save \$6.71],
+  [The Room: A Novel],
+  [\$12.84
+ at Amazon],
+  [\$14.00 
+ Save \$1.16],
+  [\$12.84
+ at Amazon],
+  [\$14.00 
+ Save \$1.16],
+  [The Fold: A Novel],
+  [\$14.51
+ at Amazon],
+  [\$21.00 
+ Save \$6.49],
+  [\$14.51
+ at Amazon],
+  [\$21.00 
+ Save \$6.49],
+  [Several People Are Typing: A GMA Book Club Pick],
+  [\$13.35
+ at Amazon],
+  [\$18.00 
+ Save \$4.65],
+  [\$13.35
+ at Amazon],
+  [\$18.00 
+ Save \$4.65],
+  [\$10.12
+ at Amazon],
+  [\$17.99 
+ Save \$7.87],
+  [\$10.12
+ at Amazon],
+  [\$17.99 
+ Save \$7.87],
   [SEE 2 MORE],
   [One reason Severance is so compelling is the question raised by its basic premise: We are the sum of our experiences, so what would we be like if we didn’t have some (or most) of them? In Tell Me an Ending , a corporation offers a revolutionary memory-erasing procedure, and customers can choose to either be aware that they had a memory deleted—or not. Around the globe, people struggle with the consequences of removing crucial memories, including one character who slowly realizes he’s deleted the majority of his existence from his own brain.],
   [If you miss the wonderfully creepy vibe of the Macrodata Refinement Department at Lumon Industries, The Room is the story for you. Björn is a government worker who strives to be the perfect employee, driven by an almost cultish desire to do everything required of him. When he discovers a strange room in the office—one his coworkers scrupulously pretend isn’t there—he begins spending time in it, apparently staring off into space, talking to himself. The more he does it, the harder his peers try to get him fired—but Björn has a plan to defend himself. And it involves what he’s discovered in the room.],
   [The dual nature of the characters is a major aspect of Severance ’s appeal—the Innies and Outies share a body, but have diverging personalities and desires that become more and more pronounced (and tragic) as time goes on. In The Fold , a man with a photographic memory is asked to investigate a series of odd events around a secret project that appears to have invented teleportation by folding dimensions—with strange side effects for those who walk through the “perfectly safe” portal, including one team member who was apparently driven insane by his experience. It’s a dark sci-fi story about mysterious and important work that is not at all what it seems.],
   [If you love Severance’s off-kilter take on corporate life (and its sly, often laugh-out-loud sense of humor), Several People Are Typing is the book for you. Told entirely in Slack messages (and if you experienced a full-body chill upon reading that sentence, this is definitely the book for you), this is the story of a man who somehow uploads his consciousness into his company’s Slack channel. As he tries to figure out what’s happened, his coworkers carry on as if nothing’s unusual, creating a wonderfully absurd scenario crammed with emojis, Slack-speak, and deep observations on the dual nature of our online/offline lives.],
   [Evelyn Caldwell is a renowned scientist and happy spouse—until Martine, her clone, arrives on the scene. Martine was intended to be a distillation of everything good about Evelyn—kind, gentle, and subservient. But everything goes off the rails when Martine has an affair with Evelyn’s husband, who soon winds up dead. Like Severance , The Echo Wife pivots into an exploration of the nature of identity as the two wives team up to conceal the crime, turning to the cloning technology that created Martine to pull it off.],
-  [id="the-best-movies-like-severance"\>The best movies like 'Severance'],
+  [The best movies like 'Severance'],
   [Severance has a unique and finely-detailed visual look and feel. The transition from the “Outie” world (which is relatively normal, and resembles our own reality) to the “Innie” world of primary colors, old-school computer systems, and terrifyingly empty, white corridors, is always startling. If you want more of that kind of unnerving visual experience, here are some films to check out.],
   [Playtime (1967)],
-  [id="video-container-01KMY4RNKN34F0MC92QS41QSPF"\>],
   [This brilliant comedy from French legend Jacques Tati is an acknowledged influence on the show’s aesthetic and mood. In the largely dialog-free story of Playtime , Tati’s silent character Monsieur Hulot moves through a midcentury Paris that is depicted not as the beautiful City of Lights, but a modern maze of office cubes, sterile buildings, and apartments that resemble museum displays. It’s hilarious, but there’s a darkness underneath the slapstick that resonates sixty years later. Stream Playtime on The Criterion Channel or rent it from Prime Video .],
+  [Playtime (1967)],
+  [at Prime Video],
+  [at Prime Video],
   [Synecdoche, New York (2008)],
-  [id="video-container-01KMY4RNKPX101KJ64M5SPZH15"\>],
   [Charlie Kaufman’s masterpiece predicts Severance’s examination of identity, and the way our physical surroundings affect us even when they’re artificial (or maybe especially when they’re artificial). In Synecdoche, New York , the late, great Philip Seymour Hoffman plays a director who responds to a life crisis by staging an immense work of theater involving a replica of New York City built in a massive soundstage, populated by actors who basically live their entire fictional lives within it. As time goes on, the replica becomes more real than the city outside, and doubles are brought in to play the actors who are portraying the characters—leading to a grimly hilarious ending you won’t soon forget. Stream Synecdoche, New York on The Roku Channel or rent it from Prime Video .],
+  [Synecdoche, New York (2008)],
+  [at Prime Video],
+  [at Prime Video],
   [Sorry to Bother You (2018)],
-  [id="video-container-01KMY4RNKRDMXJ6S86684NK79R"\>],
   [If it’s the biting satire of modern-day employment that makes you love Severance , you have to check out Sorry to Bother You . Cassius Green (LaKeith Stanfield) is a Black man struggling in his telemarketing job until he learns to use a “white” voice on the phone. As his numbers skyrocket, he’s pulled deeper into the corporation, discovering some very weird vibes indeed. Visually inventive and offering an extremely low opinion of what it’s like to be employed in modern America, this is a perfect complement to our beloved Apple TV series. Stream Sorry to Bother You on Kanopy or rent it from Fandango at Home .],
+  [Sorry to Bother You (2018)],
+  [at Kanopy],
+  [at Kanopy],
   [The Truman Show (1998)],
-  [id="video-container-01KMY4RNKSX2ACWBC40M63B33X"\>],
   [The Innies working at Lumon Industry are part of an experiment they don’t understand (or even know about, initially); the mysterious and important work they’re doing has a purpose they only begin to understand in the second season. In The Truman Show , the same can be said for Truman Burbank, who is basically like an Innie who never leaves the office, his entire life a lie crafted around him so he can be filmed, his life the ultimate reality TV show. And like the Lumon Innies, Truman slowly realizes that something is off—and takes dramatic steps to find the truth. Stream The Truman Show on Peacock or rent it from Prime Video .],
+  [The Truman Show (1998)],
+  [at Peacock],
+  [at Peacock],
   [Eternal Sunshine of the Spotless Mind (2004)],
-  [id="video-container-01KMY4RNKTVQG5Y0X3XSHYZFXT"\>],
   [Another sci-fi story that considers the role of memory in making us who we are, Eternal Sunshine of the Spotless Mind syncs up with Severance thematically—and when Joel (Jim Carrey) begins fighting to stop his memories of his failed romance with Clementine (Kate Winslet) from being erased in a controversial medical procedure, it syncs up in terms of vibes as well. The haunting and often hilarious sequences where Joel attempts to hide Clementine in his other memories have the uncanny energy of Lumon’s weirdest melon-themed parties. Stream Eternal Sunshine of the Spotless Mind on Hulu or rent it from Prime Video .],
+  [Eternal Sunshine of the Spotless Mind (2004)],
+  [at Hulu],
+  [at Hulu],
   [Coming soon: Backrooms],
-  [id="video-container-01KMY4RNKW6102B88ATRH15PNP"\>],
   [If you’ve been online at all in the last few years, you’ve probably encountered The Backrooms , a creepy image of an eerie, infinite liminal space that just doesn’t feel right . Plenty of memes and games (see below) have been adapted from the concept, and A24 is set to release a Backrooms movie on May 29, 2026. The tone of ominous unreality is likely going to be perfect for Severance fans.],
-  [id="the-best-video-games-like-severance"\>The best video games like 'Severance'],
+  [The best video games like 'Severance'],
   [There’s a definite “secret level” vibe to Severance , with many of the Lumon teams’ adventures feeling like deranged video game speedruns. Why not lean into that by playing some of these off-kilter games with a similar tone?],
-  [id="video-container-01KMY4RNKW6102B88ATRH15PNQ"\>],
   [Severance co-creator Dan Erickson confirmed that The Stanley Parable was an inspiration for the show, and it’s easy to see why: You play as employee 427, aka Stanley, who discovers that all the other employees in his office have vanished. As you investigate, a dry-witted voice narrates your actions—and not-so-subtly tells you what to do. You can choose to follow directions or not, with the story splitting off into many different and unexpected directions that subvert just about every video game trope you can imagine.],
   [Platforms: PlayStation 5, macOS, PC, Xbox],
+  [The Stanley Parable: Ultra Deluxe],
+  [The Stanley Parable: Ultra Deluxe is an expanded re-imagining of the critically acclaimed, award winning indie game The Stanley Parable from 2013.],
+  [\$24.99
+ at Microsoft],
+  [\$24.99
+ at Microsoft],
   [Portal & Portal 2],
-  [id="video-container-01KMY4RNKX6232MS9G1SS8JF0F"\>],
   [A more full-blown science fiction story than Severance , the Portal games share the same absurdist tone when it comes to working in a strange, hauntingly empty office space. In both games, you’re forced to run a series of increasingly deadly gauntlets using a portal gun that lets you teleport between different flat surfaces, making each room you enter a devious puzzle of warped physics. But it’s the slowly-unfurling story and the secrets you uncover as you move through the ancient, crumbling labs and office spaces, that really nail the Severance vibe.],
   [Platforms: PlayStation, Xbox, PC, macOS, Nintendo Switch, Steam],
+  [Portal 2 - Xbox 360],
+  [\$13.68
+ at Amazon],
+  [\$14.99 
+ Save \$1.31],
+  [\$13.68
+ at Amazon],
+  [\$14.99 
+ Save \$1.31],
   [The Exit 8],
-  [id="video-container-01KMY4RNKZXH0CVW8SRXJ7RVQH"\>],
   [One of the weird pleasures of Severance is the slow doling out of details and atmosphere that feel “off,” coalescing into the nightmarish reveal of what’s actually happening down there in Macrodata Refinement. The Exit 8 offers a similar experience, though it rapidly descends into overt horror much, much more quickly. Your goal is to exit a subway station—but the corridor leading to the exit seems to repeat forever, and when you notice “anomalies” you must turn and flee immediately or suffer the consequences. The sense of liminal dislocation is perfect for Severance fans.],
   [Platforms: Steam, Nintendo Switch, PlayStation 4/5, Xbox],
+  [The Exit 8],
+  [You are trapped in an endless underground passageway. Observe your surroundings carefully to reach "The Exit 8".],
+  [\$3.99
+ at Sony Playstation],
+  [\$3.99
+ at Sony Playstation],
   [Limbo & Inside],
-  [id="video-container-01KMY4RNM0JZKTMYSAE8ABSX58"\>],
   [These two games are both set in worlds that initially seem familiar, only to slowly become increasingly strange and threatening—similar to how the underground world of the Innies seems like any outdated office at first. Both games offer a creepy, suffocatingly ominous vibe as the unnamed young boy you control makes his way past enormous spiders, brain-controlling slugs, and an entire economy seemingly powered by zombies.],
   [Platforms: Nintendo Switch, PlayStation 4, macOS, PC, Xbox One],
+  [INSIDE \/ LIMBO Double Pack - PlayStation 4],
+  [\$33.90
+ at Amazon],
+  [\$33.90
+ at Amazon],
   [Escape the Backrooms],
-  [id="video-container-01KMY4RNM1B7ZRR2S0X45CJSXF"\>],
   [It feels like the Lumon Industries offices were built in a place like The Backrooms , bizarre and off-putting spaces filled with unnerving wallpaper and oatmeal carpeting. Where the memes were unsettling, Escape the Backrooms adds more overtly horror elements, like the various deadly entities you can encounter while wandering these weird, empty spaces. It’s that vibe of moving through a space that shouldn’t exist, maybe, that makes it a great pairing with the show.],
   [Platforms: GeForce Now, PC, Steam],
-  [class="mt-4 block font-sans text-sm font-medium leading-4 text-gray-900 md:mx-0 md:mt-2"\>Escape the Backrooms is a 1-4 player co-op horror exploration game. Traverse 30+ eerie backrooms levels while avoiding entities and other dangers. Try to escape but be warned: survival isn't guaranteed.],
-  [id="the-best-podcasts-like-severance"\>The best podcasts like 'Severance'],
+  [Escape the Backrooms],
+  [Escape the Backrooms is a 1-4 player co-op horror exploration game. Traverse 30+ eerie backrooms levels while avoiding entities and other dangers. Try to escape but be warned: survival isn't guaranteed.],
+  [\$7.99
+ at Steam],
+  [\$9.99 
+ Save \$2.00],
+  [\$7.99
+ at Steam],
+  [\$9.99 
+ Save \$2.00],
+  [The best podcasts like 'Severance'],
   [One of the great things about Severance is how deep the discussion about it can be, and how it can inspire similar narratives that explore the same themes. If you’re a podcast fiend as well as a Severance fan, here are some to check out.],
+  [Credit: Podcast logo],
   [If you love the slow-burn mystery aspect of Severance , this hit narrative podcast will be your cup of tea. Set at an experimental facility designed to help veterans return to civilian life that’s run by a mysterious organization, Homecoming offers similarly creepy vibes. It’s told in a masterful melange of voicemails, overheard conversations, and therapy sessions, all voiced by some of the best actors working today—and once you've listened through, you can watch the Julia Roberts-starring adaptation on Prime Video.],
   [The Severance Podcast With Ben Stiller and Adam Scott],
+  [Credit: Podcast logo],
   [If what you really want is a deep, deep dive into the behind-the-scenes world of Severance , why not go straight to the source ? Star Adam Scott and writer/director Ben Stiller have done episode-by-episode breakdowns, giving you all the Innie-side info you could want, and they’ve also done one-offs exploring the influences and inspirations that shaped the scripts and performances. It’s the perfect companion for a rewatch.],
+  [Credit: Podcast logo],
   [For an outsider perspective on Severance , including episode breakdowns as well as broader discussions about themes and references, Illumination Above All is a stellar podcast to dive into. If you don’t have friends who share your obsession with the show, this is probably going to be the next best thing.],
   [Within the Wires],
+  [Credit: Podcast logo],
   [A series of standalone stories set in a shared alternate history universe, Within the Wires is all about subtle worldbuilding—just like Severance , which lets the visual and audio clues do a lot of the work. In this universe, the world was drastically altered after World War I, with much of the population wiped out and most of the old traditions and social structures lost. You learn everything from a series of in-universe recordings—relaxation guides, museum audio tours, for example—that slowly build up the details of what’s going on. It’s a deep dive into the weird any Severance fan will appreciate.],
   [SAYER],
+  [Credit: Podcast logo],
   [A near extinction-level event, a secretive and nefarious corporation, a self-aware and unreliable AI— SAYER has it all. After an asteroid impact decimates Earth, Ærolith Dynamics builds an artificial moon called Typhon, where its employees are also its research subjects. Filled with pitch-black humor and inventive storytelling this might just get you through the long months until Severance season three drops.],
 ),
   insert-map: (:),
@@ -210,10 +211,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The CISO Struggle: How AI is Changing the Data Security Landscape],
   author: [Deanna Ritchie],
   source-name: [ReadWrite],
@@ -222,11 +221,14 @@
   [Generative AI (GenAI) is expanding so quickly that security professionals are struggling to track its impact. Right now, employees are drafting their emails and reports using ChatGPT as their writing assistant, and sales teams are piping customer relationship management (CRM) data directly into AI assistance tools. Some developers are even connecting their code repositories to Copilot. Many teams are embedding GenAI into their daily operations before they’ve even figured out how to govern it.],
   [The main issue with all of this is the speed at which companies have latched onto GenAI but ignored the development of good security and governance. Chief Information Security Officers, or CISOs, are facing a growing data-security crisis, one that their legacy systems were not built to manage because they were designed in a time when the framework for taking these new concerns into consideration didn’t even exist yet.],
   [And while businesses are eager to harness the productivity that GenAI promises, their security teams are often left scrambling to make certain that things like proprietary data, intellectual property, and private or regulated information aren’t leaking into the large language models (LLMs) that sustain AI or are otherwise being mishandled by unmonitored AI agents.],
+  [The New AI Concern],
   [CISO concerns are not hypothetical. The reality is that companies and organizations are adopting GenAI at such a staggering rate that, according to recent industry analytics, 88% of them have already incorporated generative AI into at least one business function. Such a rapid integration shows how enthusiastic these companies are about AI’s potential, but it also highlights how responsible GenAI enablement needs to be a priority. One study found that only 24% of Chief Information Officers (CIOs) and CISOs felt that the necessary governance policies were even in place to properly manage their current AI-related risks.],
   [As a result, the real test for security leaders is how to build the practical guardrails they need to moderate correctly, as well as how to modernize the current oversight so AI adoption doesn’t sacrifice security and data protection to greater AI-driven productivity goals.],
+  [Re-Architecting in the Age of AI],
   [Currently, data security architecture leans into perimeter defense and endpoint controls. Unfortunately, that is proving increasingly insufficient in an environment where data is being moved, summarized, consumed, and regurgitated by sophisticated, and often third-party, AI services. These older models operated under the assumption that the data flow would always be predictable and manageable at all endpoints. GenAI breaks this pattern by creating new, and even hidden, pathways for data to pass through the pipeline.],
   [Captain Compliance reports that “ChatGPT and related OpenAI products triggered a wave of GDPR \[General Data Protection Regulation\] enforcement proceedings beginning in 2023.” This and other investigations have led to several new Information Privacy Acts to try to combat the new threat. When employees use a publicly available LLM, they are effectively uploading corporate data to an environment that exists outside the direct control of the organization’s security team. Now, even though LLM providers offer better data agreements, such immediate and easy accessibility to AI tools means that “shadow AI” has become an ongoing concern, and that security teams have to treat every AI interaction as a potential data-loss event until they can prove otherwise.],
   [One study by Proofpoint showed that the sheer volume of data being moved through GenAI tools is overwhelming existing data loss prevention (DLP) solutions, mostly because legacy DLP was designed for a world of email and file transfers, not for the high-speed data flow that comes with an AI model. This means security teams need to shift their focus from merely blocking certain suspect actions to fully understanding the context of the data that’s being used and the purpose behind each interaction.],
+  [The Three Pillars of Security],
   [To more fully contain the new AI-saturated ecosystem, CISOs need to focus on three important pillars:],
   [1. Visibility],
   [You can’t govern what you can’t see. Organizations need tools that can monitor the data flow going in and out of AI services. This includes not only identifying which AI tools are being used, but also what data is moving around, which will require next-gen data security platforms that can track data lineage across cloud services and other environments.],
@@ -244,18 +246,18 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [tunnel of mirrors and steel reshapes how space is experienced in new delhi bar],
   author: [Manav Dangg],
   source-name: [designboom Architecture],
   images: (),
   paragraphs: (
+  [corten and stainless steel clad No Vacancy in New Delhi],
   [For No Vacancy, a bar in New Delhi, India , Manav Dangg, principal architect at Studio Dangg shapes a compact interior into a spatial experience defined by movement, amplifying the long and narrow proportions of the site and allowing the volume to become the central protagonist of the project. A continuous tunnel-like enclosure draws visitors inward, where mirrored surfaces extend perception and soften spatial limits. Corners are softened into curved transitions, while a full-height mirror anchors one end, visually doubling the depth of the space. A continuous bench merges with the wall, guiding movement along the length of the interior.],
   [A corten steel –inspired finish wraps the space in warm, oxidized tones, contrasted by precise stainless steel insertions. Furniture follows the same logic, with leather seating, bouclé backrests, and steel rims introducing tactile variation without disrupting continuity. Color is used sparingly, with sage-green stools providing a subtle accent within an otherwise muted palette.],
   [all images by Avesh Gaur],
+  [layered glow shapes the atmosphere],
   [A concealed cove light traces the length of the bench, grazing textured surfaces and emphasizing curvature. Stainless steel elements catch and diffuse small points of light from table lamps and wall sconces, creating a layered glow. Behind the bar, the New Delhi-based architects at Studio Dangg combine backlit acrylic with steel mesh to transform bottle displays into luminous compositions, reinforcing the project’s scenographic quality.],
   [The space operates as a community-oriented bar organized around a single focal point. DJs and vinyl artists occupy one end, allowing the entire crowd to orient itself naturally without visual fragmentation. The elongated volume supports this arrangement, producing an intimate, boiler-room-like atmosphere where proximity intensifies both sound and social interaction.],
   [No Vacancy is built on a series of deliberate decisions: embracing limitation, prioritizing movement, and balancing industrial coolness with moments of warmth. The fixed volume becomes an active agent, shaping how visitors enter, gather, and engage. As the tunnel compresses and extends perception through reflection, light, and sound, the project demonstrates how constraint can be translated into spatial intensity.],
@@ -284,10 +286,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Beyond Code Review],
   author: [Mike Loukides],
   source-name: [O'Reilly Radar],
@@ -307,16 +307,15 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Death in the Young],
   author: [Brendan Foht],
   source-name: [The New Atlantis],
   images: (),
   paragraphs: (
   [In this sad world of ours, sorrow comes to all; and, to the young, it comes with bitterest agony, because it takes them unawares.],
+  [— Abraham Lincoln, Letter to Fanny McCullough , December 23, 1862],
   [In war, those with their lives yet to be lived are also those most urgently needed to fight. It is one of the tragic ironies of conflict. In the U. S. Civil War, the average soldier was 26 and approximately 620,000 soldiers died . In World War I, over 2 million German soldiers died, and 40 percent of German combatants were between 21 and 25 years old. In the Vietnam War, 58,193 American servicemen died — approximately 24 percent of those killed were 20, and roughly  17 percent of those killed were 21 . We comprehend the risk in sending young soldiers off to battle: the abrupt cessation of so much potential and promise. It is no less tragic than the death of sons and daughters in any other context, but at least we understand the possible outcome.],
   [But what of the young who do not fight, who expect to live full lives off the battlefield? Alas, forces beyond their control operate surreptitiously; a few dangerous mutations cause a cell to run awry, errant motorists drive recklessly, malfunctioning plane hardware fails mid-air—– all of these cut life short in unexpected ways.],
   [In my brief career, I have already seen patients from infancy to young adulthood fall victim to the cruelty of nature. As physicians we don’t feel the shock of such events in the same way as the patients’ friends and family. We see the patients, we take care of them, we escort them to their end, and then we move on to take care of the next casualty or convalescent.],
@@ -355,10 +354,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Google's Pixel Buds Pro 2 Are \$60 Off for the Amazon Big Spring Sale],
   author: [Jake Peterson],
   source-name: [Lifehacker],
@@ -366,6 +363,15 @@
   paragraphs: (
   [We may earn a commission from links on this page. Deal pricing and availability subject to change after time of publication.],
   [There are all kinds of earbuds to choose from out there —especially if you aren't dedicated to one specific ecosystem. If you're an Android user, however, and especially if you're a Pixel user , you might find that Google's Pixel Buds Pro are among your best options. Right now, the latest model, the Pixel Buds Pro 2 , have a solid 26% discount for Amazon's Big Spring Sale —bringing the price from \$229 down to \$169.],
+  [Google Pixel Buds Pro 2],
+  [\$169.00
+ at Amazon],
+  [\$229.00 
+ Save \$60.00],
+  [\$169.00
+ at Amazon],
+  [\$229.00 
+ Save \$60.00],
   [The Pixel Buds Pro 2 have a number of features you'd expect from earbuds sporting the "Pro" moniker. There's Adaptive Audio, which adjusts the volume based on your environment (if your surroundings get too loud, the volume turns up so you can hear); Loud Noise Protection, which dampens loud noises to protect your hearing; and Active Noise Cancellation. These Pixel Buds Pro are also the first to include a Tensor chip built in, Google's in-house chip. The earbuds use the Tensor A1 chip to power Active Noise Cancellation, which Google says cancels "twice the noise" as the first generation Pixel Buds Pro.],
   [As this is a Google product, and it's 2026, Pixel Buds Pro 2 also have AI features you can use—powered by Gemini, of course. You can use the buds to talk to Gemini Live without picking up your smartphone, answer calls by nodding your head, or have Gemini field your incoming messages, including summarizing long texts ( though we know how AI summaries can be ).],
   [Google says that Pixel Buds Pro 2 have 12 hours of listening time when Active Noise Cancellation is disabled, and up to 48 hours with the charging case. With Active Noise Cancellation turned on, you get eight hours of listening time, and 30 hours with the charging case. You can pop the earbuds in the case for five minutes to get 1.5 hours of listening time (with noise cancellation off).],
@@ -426,6 +432,7 @@
  \$169.99 
  
  (List Price \$249.99)],
+  [Deals are selected by our commerce team],
 ),
   insert-map: (:),
   word-count: 723,
@@ -433,10 +440,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [This Running Store Was Named the Very Best in the U.S. for 2024],
   author: [TJ Pitre],
   source-name: [Trail Runner Magazine],
@@ -492,10 +497,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Stop Closing the Door. Fix the House.],
   author: [Angie Jones],
   source-name: [O'Reilly Radar],
@@ -503,15 +506,16 @@
   paragraphs: (
   [The following article originally appeared on Angie Jones’s website and is being republished here with the author’s permission.],
   [I’ve been seeing more and more open source maintainers throwing up their hands over AI-generated pull requests. Going so far as to stop accepting PRs from external contributors.],
-  [dir="ltr" lang="en"\>This week we're going to begin automatically closing pull requests from external contributors. I hate this, sorry. pic.twitter.com/85GLG7i1fU],
+  [This week we're going to begin automatically closing pull requests from external contributors. I hate this, sorry. pic.twitter.com/85GLG7i1fU],
   [— tldraw (\@tldraw) January 15, 2026],
-  [dir="ltr" lang="en"\>Ghostty is getting an updated AI policy. AI assisted PRs are now only allowed for accepted issues. Drive-by AI PRs will be closed without question. Bad AI drivers will be banned from all future contributions. If you're going to use AI, you better be good. https:\/\/t.co/AJRX79S8XD],
+  [Ghostty is getting an updated AI policy. AI assisted PRs are now only allowed for accepted issues. Drive-by AI PRs will be closed without question. Bad AI drivers will be banned from all future contributions. If you're going to use AI, you better be good. https:\/\/t.co/AJRX79S8XD],
   [— Mitchell Hashimoto (\@mitchellh) January 22, 2026],
-  [dir="ltr" lang="en"\>AI is killing Open Source and it’s saddening. Basically, a bunch of people who now believe they’re geniuses because of LLMs have been spamming OSS projects with junk submissions causing some maintainers to limit contributions from the general public.],
+  [AI is killing Open Source and it’s saddening. Basically, a bunch of people who now believe they’re geniuses because of LLMs have been spamming OSS projects with junk submissions causing some maintainers to limit contributions from the general public.],
   [— ASH (\@ahmxrd) February 7, 2026],
   [If you’re an open source maintainer, you’ve felt this pain. We all have. It’s frustrating reviewing PRs that not only ignore the project’s coding conventions but also are riddled with AI slop.],
   [But yo, what are we doing?! Closing the door on contributors isn’t the answer. Open source maintainers don’t want to hear this, but this is the way people code now, and you need to do your part to prepare your repo for AI coding assistants.],
   [I’m a maintainer on goose which has more than 300 external contributors. We felt this frustration early on, but instead of pushing well-meaning contributors away, we did the work to help them contribute with AI responsibly .],
+  [1. Tell humans how to use AI on your project],
   [We created a HOWTOAI.md file as a straightforward guide for contributors on how to use AI tools responsibly when working on our codebase. It covers things like:],
   [What AI is good for (boilerplate, tests, docs, refactoring) and what it’s not (security critical code, architectural changes, code you don’t understand)],
   [The expectation that you are accountable for every line you submit, AI-generated or not],
@@ -519,17 +523,21 @@
   [Being transparent about AI usage in your PRs],
   [This welcomes AI PRs but also sets clear expectations. Most contributors want to do the right thing, they just need to know what the right thing is.],
   [And while you’re at it, take a fresh look at your CONTRIBUTING.md too. A lot of the problems people blame on AI are actually problems that always existed, AI just amplified them. Be specific. Don’t just say “follow the code style”; say what the code style is. Don’t just say “add tests”; show what a good test looks like in your project. The better your docs are, the better both humans and AI agents will perform.],
+  [2. Tell the agents how to work on your project],
   [Contributors aren’t the only ones who need instructions. The AI agents do too.],
   [We have an AGENTS.md file that AI coding agents can read to understand our project conventions. It includes the project structure, build commands, test commands, linting steps, coding rules, and explicit “never do this” guardrails.],
   [When someone points their AI agent at our repo, the agent picks up these conventions automatically. It knows what to do and how to do it, what not to touch, how the project is structured, and how to run tests to check their work.],
   [You can’t complain that AI-generated PRs don’t follow your conventions if you never told the AI what your conventions are.],
+  [3. Use AI to review AI],
   [Investing in an AI code reviewer as the first touchpoint for incoming PRs has been a game changer.],
   [I already know what you’re thinking… They suck too. LOL, fair. But again, you have to guide the AI. We added custom instructions so the AI code reviewer knows what we care about.],
   [We told it our priority areas: security, correctness, architecture patterns. We told it what to skip: style and formatting issues that CI already catches. We told it to only comment when it has high confidence there’s a real issue, not just nitpick for the sake of it.],
   [Now, contributors get feedback before a maintainer ever looks at the PR. They can clean things up on their own. By the time it reaches us, the obvious stuff is already handled.],
+  [4. Have good tests],
   [No, seriously. I’ve been telling y’all this for YEARS. Anyone who follows my work knows I’ve been on the test automation soapbox for a long time. And I need everyone to hear me when I say the importance of having a solid test suite has never been higher than it is right now.],
   [Tests are your safety net against bad AI-generated code. Your test suite can catch breaking changes from contributors, human or AI.],
   [Without good test coverage, you’re doing manual review on every PR trying to reason about correctness in your head. That’s not sustainable with five contributors, let alone 50 of them, half of whom are using AI.],
+  [5. Automate the boring gatekeeping with CI],
   [Your CI pipeline should also be doing the heavy lifting on quality checks so you don’t have to. Linting, formatting, type checking all should run automatically on every PR.],
   [This isn’t new advice, but it matters more now. When you have clear, automated checks that run on every PR, you create an objective quality bar. The PR either passes or it doesn’t. Doesn’t matter if a human wrote it or an AI wrote it.],
   [For example, in goose, we run a GitHub Action on any PR that involves reusable prompts or AI instructions to ensure they don’t contain prompt injections or anything else that’s sketchy.],
@@ -544,10 +552,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A White Doctor Goes to Africa],
   author: [Brendan Foht],
   source-name: [The New Atlantis],
@@ -607,10 +613,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [10 Shows Like 'The Comeback' You Should Watch Next],
   author: [Ross Johnson],
   source-name: [Lifehacker],
@@ -619,36 +623,50 @@
   [We may earn a commission from links on this page.],
   [Valerie Cherish is back, and not a moment too soon. Twenty years after a modestly rated but absolutely brilliant first season, mega-cringe Hollywood satire The Comeback has returned to HBO for one more painfully embarrassing season (complimentary) Co-created by and starring Lisa Kudrow, it's the hilarious, dark, and occasionally moving story of a C-list celebrity determined to stay in the limelight at whatever cost.],
   [Valerie Cherish—clueless, egotistical, and all-too-human—is one of TV's indelible characters, simultaneously a victim of ageism, misogyny, and celebrity culture, and also a woman who doesn't care about any of that provided she can find a way to scrabble to the top. Likewise, these 10 shows spotlight women (mostly) of a certain age navigating career challenges with...mixed results.],
-  [id="hacks-2021"\> Hacks (2021 – )],
-  [id="video-container-01KMY4RNT43RJH0K7NJJ40R2CW"\>],
+  [Hacks (2021 – )],
   [On the surface, Valerie Cherish and Deborah Vance don't have all that much in common, but they often feel like two sides of a coin in the ways in which they battle, and concede to, the pressures of being a woman in modern show business. Hacks finds 25-year-old writer Ava (Hannah Einbinder) struggling to get her career back one track after getting cancelled over a tweet. She reluctantly takes a job with Deborah Vance (Jean Smart), a comedy trailblazer who remains popular with an older Vegas crown, but whose career is largely on autopilot. They're an entirely mismatched pair, but their chemistry is ultimately explosive, with Jean Smart doing some of the best work of her incredible career as the often deeply unlikeable Vance, and Einbinder more than holding her own in return. It's funny, bitchy, and surprisingly moving when it wants to be. Stream Hacks on HBO Max .],
-  [id="girls5eva-2021-2024"\> Girls5eva (2021 – 2024)],
-  [id="video-container-01KMY4RNT67T6W92K7W12JCXA0"\>],
+  [Hacks (2021 – )],
+  [Girls5eva (2021 – 2024)],
   [The premise is very much about a comeback: A very ‘90s group (Sara Bareilles, Busy Philipps, Paula Pell, and Renée Elise Goldsberry) who made it big very briefly with exactly one hit song gets its own shot at a career resurgence (they’re Girls5eva because they expected to be in the game “longer than 4 ever”—turned out, not so much; also there used to be a fifth member, but she died in a tragic infinity pool accident). After an up-and-coming rapper samples one of their old hits, the band reunites to try to find new relevancy in the 2020s. It doesn't go great! Tina Fey is one of the executive producers, and the (very fun) '90s-inspired original music was composed and written for the show by the creators. Stream Girls5Eva on Peacock and Netflix .],
-  [id="veep-2012-2019"\> Veep (2012 – 2019)],
-  [id="video-container-01KMY4RNT7K9Q7Q50V1019TVQ9"\>],
+  [Girls5eva (2021 – 2024)],
+  [at Peacock],
+  [at Peacock],
+  [Veep (2012 – 2019)],
   [There's a sweet vulnerability to Valerie Cherish absent from pretty much anyone in Veep , but the air of cringeworthy desperation hangs heavy over both shows. Veep asks: What if the very worst people imaginable had control of all the levers of power in America? What would that be like? In the highly satirical and in no way politically relevant series, Julia Louis-Dreyfus brilliantly plays Vice President Selina Meyer: part icon, part worst-case-scenario for the feminist dream. The supporting cast consists almost entirely of entitled rich people climbing over each other for infinitesimal extra bits of power while trying to appear as folk heroes to the rubes (us voters). It’s one of the funniest shows ever on TV, with the nastiest put-downs...if you can handle the fact that history has overtaken it in favor of a reality that's even more absurd. Stream Veep on HBO Max.],
-  [id="the-studio-2025"\> The Studio (2025 – )],
-  [id="video-container-01KMY4RNT819TY5SC4JA0R35H7"\>],
+  [Veep (2012 – 2019)],
+  [at HBO Max],
+  [at HBO Max],
+  [The Studio (2025 – )],
   [Industry exec Matt Remick ( Comeback vet Seth Rogen) loves movies, and when he signs on for a high-profile role at the fictional Continental Studios, he feels like his time has come. He aims to make a real difference in returning an increasingly IP-driven movie industry to its creative roots.—until about a minute into his new job, when the CEO (Bryan Cranston) reveals his first order of business will be marketing the Kool-Aid Man Movie . Hollywood satires of yore have focused on the industry as one that eats people up and spits them out, but the spin here is that Remick yearns for those good old days, much as Valerie can never quite seem to move forward. The late Catherine O'Hara, Ike Barinholtz, Chase Sui Wonders ( Bodies Bodies Bodies ), and Kathryn Hahn also star, and like The Comeback , the show boasts a long list of celebrity cameos. Stream The Studio on Apple TV+ .],
-  [id="enlightened-2011-2013"\> Enlightened (2011 – 2013)],
-  [id="video-container-01KMY4RNTAVYTE13NT24A6539C"\>],
+  [The Studio (2025 – )],
+  [at Apple TV+],
+  [at Apple TV+],
+  [Enlightened (2011 – 2013)],
   [Before The White Lotus , Mike White co-created (with star Laura Dern) this beloved, if short-lived, comedy-drama about a middle-aged woman who has a complete mental breakdown following a demotion at the job to which she's devoted her life. Following a two-month stay in an holistic treatment facility, Dern's Amy Jellicoe becomes determined to approach life with a new perspective, focusing on meditation and positive change at work and at home. The results are mixed, but there's also a rather beautiful sense that change is absurd and difficult, but also entirely possible. Stream Enlightened on HBO Max.],
-  [id="no-good-deed-2024"\> No Good Deed (2024)],
-  [id="video-container-01KMY4RNTBNDMZCNDK0YWS3EGR"\>],
+  [Enlightened (2011 – 2013)],
+  [No Good Deed (2024)],
   [I'm adding this one largely for the Lisa Kudrow of it all, but there's a similar vein of dark comedy here—plus, No Good Deed is a pretty great show that a lot of people missed. The setup sounds like a juicy crime thrillers: Kudrow is retired pianist Lydia; Ray Romano is her husband, Paul. The two are in rather tricky financial straits and need to sell their home without wanting to seem too desperate to prospective buyers—and also hide a secret involving a death a few years prior. For all that, it's very much a comedy, with a great supporting cast that includes Linda Cardellini, Luke Wilson, O-T Fagbenle, and Teyonah Parris. Stream No Good Deed on Netflix .],
-  [id="younger-2015-2021"\> Younger (2015 – 2021)],
-  [id="video-container-01KMY4RNTC7KT35D6JECWSYX16"\>],
+  [No Good Deed (2024)],
+  [Younger (2015 – 2021)],
   [Rather than a young woman seeking to make a name for herself, Younger follows Liza Miller (Sutton Foster), a recently divorced woman in her 40s who finds that age is a barrier to reentering the publishing industry she left years earlier. After a compliment convinces her that she could pass for a younger woman, she lies that she's just 26 (must be nice) in order to land an entry-level job. Misadventures ensue. Think of it as a story of coming-of-age, again. Stream Younger on Netflix .],
-  [id="hot-in-cleveland-2010-2015"\> Hot in Cleveland (2010 – 2015)],
-  [id="video-container-01KMY4RNTEKPRJEQKB82RQFB0K"\>],
+  [Younger (2015 – 2021)],
+  [at Netflix],
+  [at Netflix],
+  [Hot in Cleveland (2010 – 2015)],
   [In contrast to The Comeback' s reality TV style and structure, this is very much a traditional three-camera sitcom, albeit one with a stacked cast of legends, though it approaches the challenges of being a middle-aged woman in entertainment in many of the same ways. Writer Melanie (Valerie Bertinelli), beautician Joy (Jane Leeves), and soap diva Victoria (Wendie Malick) wind up spending a wild night in Cleveland after a plane to Paris is diverted, discovering in the process that, while they're seen as over-the-hill back in Los Angeles, they're all Ohio 10s—though the sassy caretaker of their house, Elka (Betty White), might not agree. Stream Hot in Cleveland on Paramount+ .],
-  [id="grace-and-frankie-2015-2022"\> Grace and Frankie (2015 – 2022)],
-  [id="video-container-01KMY4RNTFMNTQ2V0MERFNDEGZ"\>],
+  [Hot in Cleveland],
+  [at Paramount+],
+  [at Paramount+],
+  [Grace and Frankie (2015 – 2022)],
   [Close female friendships are hard to come by for the driven, slightly clueless Valerie, a woman focused on staying on top. Jane Fonda's Grace, a cosmetics mogul, isn't much different at the start, but she finds a different path when she makes a truce with her arch-nemesis Frankie (Lily Tomlin), a quirky artist with whom she has nothing in common—other than the fact that their husbands left them for one another. (Valerie might take some notes.) Stream Grace and Frankie on Netflix.],
-  [id="call-my-agent-2015-2020"\> Call My Agent! (2015 – 2020)],
-  [id="video-container-01KMY4RNTG61KVYX8QBQST17BG"\>],
+  [Grace and Frankie],
+  [at Netflix],
+  [at Netflix],
+  [Call My Agent! (2015 – 2020)],
   [International sensation Call My Agent! shifts its focus between four talent agents at a prestigious firm who are forced to take the reins following the sudden death of the agency founder, all of them getting a second chance in mid-career—or beyond. The cast is lead by Camille Cottin as Andréa Martel, while Liliane Rovère's Arlette Azéma is in her '80s. They navigate their messy personal lives while catering to the needs of their real celebrity clients (Juliette Binoche, Monica Bellucci, Isabelle Huppert, and Sigourney Weaver are just some of the name guest stars playing faintly exaggerated versions of themselves). It's soapy, addictive showbiz fun, a dishy delight even if you know not a lick of French. Stream Call My Agent! on Netflix .],
+  [Call My Agent! (2015 – 2020)],
+  [at Netflix],
+  [at Netflix],
 ),
   insert-map: (:),
   word-count: 2627,
@@ -656,21 +674,22 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [this monolithic café in south korea is designed to evoke an ancient fortress],
   author: [kat barandy I designboom],
   source-name: [designboom Architecture],
   images: (),
   paragraphs: (
+  [Monologue Café: A colossal sculpture in the landscape],
   [Korean studio SOSOKKI ANAC takes to a forested landscape in Gangwon-do to design this Monologue Café as a series of angular brick volumes. The monolithic structure rises from the ground in sharp, deliberate formations. The building reads as a continuous mass, its surfaces folded and inclined, with each plane catching light differently across the day.],
   [Set along a quiet edge of water and low vegetation, the project avoids a single, fixed viewpoint. As visitors move around it, the café shifts in profile, sometimes appearing compact and vertical, elsewhere stretched and low against the terrain. The reddish brick facade gives the structure a consistent material presence, while the geometry introduces variation through depth, shadow, and projection.],
   [images © Seokgue Hong],
+  [SOSOKKI ANAC evokes a fortress],
   [SOSOKKI ANAC, the architects behind the Monologue Café, begin the design with a speculative concept: a monastery imagined from a time before a reset of the world. This narrative is translated into architecture through the use of layered, faceted forms that suggest accumulation rather than composition. Each volume feels placed in relation to another to build a sense of density and continuity across the site.],
   [References to a monumental boundary condition inform the project’s massing, with thick walls and abrupt angles reinforcing a sense of separation and threshold. These gestures are expressed through brick planes that sculpturally tilt, fold, and intersect, thus creating moments where the building reads as both solid and cut.],
   [Monologue Café stands in a forested landscape in Korea as a sculptural brick structure],
+  [Interior spaces shaped by light and section],
   [Interiors shift to an atmosphere of pale surfaces and filtered light. Sloped walls and narrow sections guide movement through the space, creating a sequence of compressed and expanded areas. Seating is arranged along elongated corridors, where tables align with angled windows that frame views outward to trees and ground cover.],
   [Large triangular openings define key moments within the café. These apertures bring in daylight with precision, casting changing patterns across the interior surfaces. The geometry of the openings echoes the exterior form, establishing continuity between inside and outside while also directing attention toward the surrounding landscape.],
   [the building shifts in form depending on movement around its angular volumes],
@@ -698,24 +717,26 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [VUILD’s ‘prewood’ project tests how modular timber can adapt to tight urban sites in tokyo],
   author: [kat barandy I designboom],
   source-name: [designboom Architecture],
   images: (),
   paragraphs: (
+  [prewood: a compact timber insertion in tokyo],
   [In Tokyo , VUILD completes prewood, a compact timber building that occupies a narrow urban gap with a precise, modular approach. Set within a dense streetscape, the project fits between neighboring structures with a quiet confidence, its vertical cedar facade introducing a distinct texture while maintaining the rhythm of the street.],
   [The exterior reads as a stacked composition of wooden panels, articulated through subtle shifts in depth and angled cuts. Openings are placed with restraint, offering glimpses of activity inside while preserving privacy along the tight frontage. The material remains untreated, allowing the cedar to weather gradually, its surface expected to shift in tone over time in response to the city’s climate.],
   [Prewood, designed by VUILD, occupies a narrow site within a dense Tokyo streetscape | image © Hayato Kurobe],
+  [vuild designs modules for reuse],
   [At the core of prewood is a construction system developed by the team at VUILD that treats the building as a set of discrete wooden modules. Each unit is designed for disassembly, allowing the structure to be taken apart and relocated in the future. This approach extends the lifespan of the material beyond a single site, aligning the design with a broader consideration of resource cycles.],
   [The modules are stacked vertically, forming a compact volume that maximizes usable floor area within the constraints of the plot. Digital modeling tools were used to define thousands of screw positions, translating directly into fabrication data. On site, assembly proceeded with a high level of precision, supported by 3D-printed guides that ensured consistent alignment across each connection.],
   [the cedar facade introduces depth through subtle shifts and angled cuts | image © Hayato Kurobe],
+  [interior sequencing and spatial compression],
   [Inside, prewood organizes its program through a series of split levels that expand the perception of space within a limited footprint. Service elements are concentrated toward the front, freeing the remaining areas for seating and circulation. The vertical movement between levels introduces variation in ceiling height and perspective, shaping a sequence that feels continuous yet differentiated.],
   [The interior palette is restrained, with plaster walls and exposed timber surfaces defining the atmosphere. Light enters through carefully positioned openings, grazing the surfaces and emphasizing the grain of the wood. In the upper levels, a semi-private zone supports small gatherings, while a rooftop terrace offers a moment of openness within the surrounding density.],
   [openings are positioned to balance light access with privacy along the street | image © Hayato Kurobe],
+  [construction logic and urban timber application],
   [The building’s structural system responds directly to the constraints of its site. With limited space for scaffolding, the modular components enabled rapid assembly, completing the primary structure within a short timeframe. The process reduced reliance on specialized carpentry, instead relying on a coordinated system that could be executed with standard construction labor.],
   [Material choices also address regulatory and environmental considerations. Located within a fire prevention district, prewood integrates cross-laminated timber ceilings designed to perform under fire exposure. The use of cedar panels, combined with ventilation gaps and protected end grains, supports durability while maintaining the material’s natural finish. Through this approach, VUILD positions prewood as a working example of urban timber construction adapted to dense city conditions.],
   [the building is composed of stacked wooden modules designed for disassembly | image © Hayato Kurobe],
@@ -737,12 +758,10 @@
   debug-mode: false,
 )
 
-  #pull-quote([Light enters through carefully positioned openings, grazing the surfaces and emphasizing the grain of the wood.], [kat barandy I designboom])
+#pull-quote([Light enters through carefully positioned openings, grazing the surfaces and emphasizing the grain of the wood.], [kat barandy I designboom])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [This Surprisingly Powerful Compressed Air Duster Is 27% Off Today],
   author: [Stephen Johnson],
   source-name: [Lifehacker],
@@ -750,10 +769,19 @@
   paragraphs: (
   [We may earn a commission from links on this page.],
   [Are you still dusting off your electronics with disposable cans of compressed air? Get with the times , man. All the cool people are using rechargeable air dusters like this one . I love mine so much, and I think you will too—and it's on sale for 27% off during Amazon's Big Spring Sale .],
-  [class="block cursor-pointer text-center font-akshar text-2xl font-medium leading-7 text-brand-green duration-200 ease-in-out hover:text-brand-green-700 md:text-left md:text-xl md:leading-6"\>WOLFBOX MF70 Compressed Air Duster-110000 RPM Electric Air Duster with Extended Runtime, 3-Speed Rechargeable Air Blower for Keyboard, Computer, Camera, Car, Home, 5 Nozzles],
+  [WOLFBOX MF70 Compressed Air Duster-110000 RPM Electric Air Duster with Extended Runtime, 3-Speed Rechargeable Air Blower for Keyboard, Computer, Camera, Car, Home, 5 Nozzles],
+  [\$43.99
+ at Amazon],
+  [\$59.99 
+ Save \$16.00],
+  [\$43.99
+ at Amazon],
+  [\$59.99 
+ Save \$16.00],
   [Seriously, you really need this thing, even if you don't think you do. For a one-time purchase, you can have endless compressed air, and blow the dust off anything you want to for the foreseeable future. It's so much better than compressed air cans: It doesn't get cold in your hand, it's makes a satisfying high-pitched whining noise, and it never runs out of propellant. You just recharge it and you're good to go blow. It doesn't create the waste of spent compressed air cans either.],
   [I got mine for Christmas, and I was skeptical at first. It's small enough to fit in your hand, so how could it have the blowing power of a can of compressed air? A couple pulls on the trigger prove it's better than compressed air. The motor's top speed is 110,000 rpm, more than enough power to blast the gunk out of electronics, all the little crevices in your car, air filters, and anything else that needs dusting.],
   [I use mine so often that I have started giving them out as gifts. It's the perfect for any practical person—the kind of tool you wouldn't think of buying for yourself, but that you'll use all the time.],
+  [Our Best Editor-Vetted Amazon Big Spring Sale Deals Right Now],
   [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
  
  
@@ -810,6 +838,7 @@
  \$169.99 
  
  (List Price \$249.99)],
+  [Deals are selected by our commerce team],
 ),
   insert-map: (:),
   word-count: 592,
@@ -817,13 +846,12 @@
   debug-mode: false,
 )
 
-  #pull-quote([It's so much better than compressed air cans: It doesn't get cold in your hand, it's makes a satisfying high-pitched whining noise, and it never runs out of propellant.], [Stephen Johnson])
+#pull-quote([It's so much better than compressed air cans: It doesn't get cold in your hand, it's makes a satisfying high-pitched whining noise, and it never runs out of propellant.], [Stephen Johnson])
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [What the FCC's Router Ban Could Mean for You],
   author: [Emily Long],
   source-name: [Lifehacker],
@@ -831,11 +859,11 @@
   paragraphs: (
   [The U. S. government is banning the importation of new routers made overseas, meaning consumers will no longer be able to purchase devices from many popular manufacturers. On Monday, the Federal Communications Commission (FCC) added all consumer-grade routers produced abroad to its "Covered List" of communications equipment that poses an "unacceptable risk to the national security of the United States or the security and safety of United States persons." The agency specifically cited the exploitation of foreign-made routers in the Volt, Flax, and Salt Typhoon cyberattacks.],
   [But the thing is, the vast majority of routers are manufactured overseas. So where does that leave you?],
-  [id="what-does-the-fcc-router-ban-cover"\>What does the FCC router ban cover?],
+  [What does the FCC router ban cover?],
   [The FCC's order bans the import of "all consumer-grade routers produced in foreign countries." While there is no list of specific companies or devices covered by this ban, at least 60% of home routers in the U. S. are estimated to come from China—and almost none are made here, a notable exception being Starlink's Wifi router. (The ban also covers routers designed by U. S. companies but manufactured abroad.)],
   [There could be exceptions to the ban in the future, as the federal government will grant "conditional approval" to companies that provide details about their operations , including information about corporate structure, manufacturing and supply chains, and plans to "establish or expand" production in the U. S. But that's all up in the air at this point.],
   [This isn't the first step the federal government has taken to ban devices made by companies with foreign ties, including routers. Late last year, several agencies, including the Departments of Commerce, Homeland Security, Justice, and Defense, proposed a ban on future sales of TP-Link routers following a review that began during the Biden administration. Other bans include sales of antivirus software made by Russia's Kaspersky Labs and telecom devices from Huawei and ZTE. The FCC also recently banned foreign-made drones for similar security reasons.],
-  [id="what-the-ban-means-for-your-router"\>What the ban means for your router],
+  [What the ban means for your router],
   [The FCC's action does not affect existing routers, so if you have a device made by a foreign company, you can keep using it as normal. If you're currently in the market for a new router , there's no rush—retailers will also continue to be able to sell and import all routers previously approved for sale through FCC's equipment authorization process.],
   [However, since the ban covers the majority of companies that make routers U. S. consumers buy, in the future you won't be able to upgrade to a newly released device from foreign manufacturers like TP-Link and Netgear unless those models receive conditional approval from the FCC.],
 ),
@@ -847,7 +875,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [World's Smallest QR Code - Smaller Than Bacteria - Could Store Data for Centuries],
   author: [EditorDavid],
   source-name: [Slashdot],
@@ -875,7 +903,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Xbox Partner Preview showcase March 2026 - here's everything announced],
   author: [Matt Wales],
   source-name: [Eurogamer],
@@ -892,7 +920,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Sucker Punch is peak Zack Snyder, for better or worse],
   author: [Jesse Hassenger],
   source-name: [Polygon],
@@ -909,24 +937,23 @@
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [You Can Finally Have Two WhatsApp Accounts on Your iPhone],
   author: [Khamosh Pathak],
   source-name: [Lifehacker],
   images: (),
   paragraphs: (
   [WhatsApp just announced a slew of updates for iPhone users, playing catch-up with some of the features that have existed on Android for years. With this update, iPhone users can expect multiple accounts, easy cross-platform transfers, an option to only clear the media from chats, and, of course, a couple of Meta AI features to round things off. According to WhatsApp , the update is rolling out now and will be available to everyone soon—though as it's a slow rollout, it might take time before it's live on your iPhone.],
-  [id="iphone-users-can-finally-have-two-whatsapp-accounts-at-once"\>iPhone users can finally have two WhatsApp accounts at once],
+  [iPhone users can finally have two WhatsApp accounts at once],
   [The biggest update here is the addition of multi-account support, something that WhatsApp has been testing on iPhone since last January , and a feature that has been live on Android since 2023 . Now, just like Android, you can use two WhatsApp accounts on your iPhone: perhaps one for work, and one for personal use. But because this is WhatsApp, the second account will need a separate phone number (that's when eSIM is going to be helpful ). Once they are set up, you will get notifications and messages from both accounts, and you can switch between the active account from the Profile menu in the tab bar.],
-  [id="iphone-to-android-chat-transfer-gets-easier"\>iPhone to Android chat transfer gets easier],
+  [iPhone to Android chat transfer gets easier],
   [WhatsApp just made transferring your chats between two phones much easier. It all happens over wifi now ( previously you needed to connect using a USB-C cable ). On your iPhone, go to Settings \> Chats \> Transfer chat history \> Transfer to Android to get started. Make sure that your iPhone is unlocked, and when prompted, scan a QR code, and connect to a stable wifi network.],
-  [id="free-up-space-without-deleting-complete-chats"\>Free up space without deleting complete chats],
+  [Free up space without deleting complete chats],
   [Usually, it's the photos and videos that take up the most space on WhatsApp. The app has a dedicated storage management tool that will delete images and videos in bulk, but now, WhatsApp is bringing it directly into your conversations. Following the update, you'll find a Manage Storage option in every thread. You can select all the media to delete with a tap, while keeping all your text messages, links, and documents safe.],
-  [id="whatsapp-has-new-sticker-suggestions"\>WhatsApp has new sticker suggestions],
+  [WhatsApp has new sticker suggestions],
   [WhatsApp wants you to switch from regular emojis to its animated stickers. When you type commonly used emojis (say, the heart emoji), it will suggest stickers instead (a pulsating, red heart). You can tap on a sticker to swap out the emoji.],
-  [id="whatsapp-has-new-ai-features-for-you-to-ignore"\>WhatsApp has new AI features for you to ignore],
+  [WhatsApp has new AI features for you to ignore],
   [It wouldn't be a Meta update without the addition of new Meta AI features . WhatsApp is updating its Writing Help feature , which it introduced last year. Writing Help takes your message and suggests a couple of revised versions to replace it with, each in different tones, and all processed locally using WhatsApp's Private Processing feature. Now, WhatsApp can directly draft a reply to a message based on the conversation. This too happens locally, and the chat remains private. Lastly, you can now use Meta AI to touch up photos before sending them off in WhatsApp. You can remove distracting objects, change the background, or apply a different style to the photo.],
 ),
   insert-map: (:),
@@ -935,10 +962,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Some of My Favorite Milwaukee Tools Come With a Free Battery Right Now],
   author: [Becca Lewis],
   source-name: [Lifehacker],
@@ -946,12 +971,29 @@
   paragraphs: (
   [We may earn a commission from links on this page. Deal pricing and availability subject to change after time of publication.],
   [One of the most expensive parts of a personal tool kit is the batteries, especially if you want to use multiple tools simultaneously without having to swap the battery each time you change tools. Moving seamlessly between drilling pilot holes and driving screws can save you time on your DIY projects, but the cost of extra batteries can add up. These deals from Home Depot are a good way to save more than 50% on a battery and tool combo if you want to expand your Milwaukee set.],
-  [id="battery-combo"\>Battery combo],
+  [Battery combo],
+  [18-volt Milwaukee six-amp-hour battery two-pack],
+  [Free extra battery with purchase],
+  [\$299.00
+ at Home Depot],
+  [\$439.00 
+ Save \$140.00],
+  [\$299.00
+ at Home Depot],
+  [\$439.00 
+ Save \$140.00],
   [If you use bigger Milwaukee 18-volt tools like a circular saw, or use a Milwaukee inverter in your emergency kit for temporary emergency power, a few extra six-amp-hour batteries are helpful to have around, but the higher capacity batteries can be expensive. The two-pack of 18-volt Milwaukee six-amp-hour batteries is on sale for \$299, 32% off its regular price. When you open the link to the two-pack, you'll see a "free gift with purchase" menu to the right, and you can select a third six-amp-hour battery from this menu. Once you add the battery, the discount is applied in your cart for a total savings of 53% off.],
-  [id="tool-combos"\>Tool combos],
+  [Tool combos],
   [I use my Milwaukee 18-volt random orbital sander daily when I’m working on furniture and other projects. Having a cordless sander is more convenient because you don’t have to drag the cord around when you’re working on delicate projects and you can bring it with you wherever you want to work, making it perfect for outdoor woodworking as well. The Milwaukee 18-volt random orbital sander is on sale for \$229 and it comes with a free six-amp-hour 18-volt battery when you select it in the "free gift with purchase" menu, saving you about 46% on the bundle. On this bundle, as with the other two tool bundles, you’ll need an 18-volt Milwaukee charger to use the battery.],
   [My Milwaukee oscillating multitool has saved many of my household projects because of its versatility. I used mine when I needed to replace the drain in my 115-year-old Craftsman’s bathroom sink to cut through the plaster and lathe, to cut some PVC components, to trim the drain pipe where it came out from the wall, to trim a patch I installed, and to sand over some places after I patched the wall. The 1 8-volt Milwaukee oscillating multitool is \$249 , and right now, it comes with a free 18-volt, six-amp-hour battery when you select it in the "free gift with purchase" menu, saving you around 44% on the set.],
+  [18-volt Milwaukee oscillating multitool],
+  [Free battery with purchase],
+  [\$249.00
+ at Home Depot],
+  [\$249.00
+ at Home Depot],
   [I use my 6 ½” Milwaukee circular saw frequently to make quick rip cuts or in places I can’t use a table saw. Battery technology has come a long way since I first started using a cordless circular saw and I had to change out my battery every 20 minutes or so. With larger capacity batteries, you can use your cordless circular saw for several hours before needing to replace the battery, depending on the thickness and density of the material you’re cutting. The Milwaukee 18-volt, 6 ½” cordless circular saw is \$229, and it comes with a free six-amp-hour battery when you select it in the "free gift with purchase" menu, saving you about 46% on the combo.],
+  [Our Best Editor-Vetted Amazon Big Spring Sale Deals Right Now],
   [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
  
  
@@ -1008,19 +1050,18 @@
  \$169.99 
  
  (List Price \$249.99)],
+  [Deals are selected by our commerce team],
 ),
   insert-map: (:),
   inline-pq: pull-quote([Once you add the battery, the discount is applied in your cart for a total savings of 53% off.], [Becca Lewis]),
-  inline-pq-idx: 6,
+  inline-pq-idx: 11,
   word-count: 1022,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [These Are the Best Laptop Deals I've Seen During Amazon's Big Spring Sale],
   author: [Jake Peterson],
   source-name: [Lifehacker],
@@ -1029,20 +1070,75 @@
   [We may earn a commission from links on this page. Deal pricing and availability subject to change after time of publication.],
   [Amazon's Big Spring Sale is in full swing this week. If you take a look at the "Laptops" section of Amazon's Big Spring Sale page, you'll find seemingly endless options available at a discount. That doesn't mean these are all deals worth considering, however. There are a lot of laptops out there, and not all of them going to be right for you (or most people). As such, I've looked at Amazon's wares, and found some deals that really seem worth considering.],
   [A rule of thumb with deals like these: If you've never heard of the company before, be extremely cautious. There are laptop manufacturers that have been in the game for years, and know how to ship a product that works. If you see a huge discount on a laptop from a no-name company, that should be a red flag. That's not to say all start-ups and new companies should be avoided; just do your research before buying a computer.],
+  [M4 MacBook Air (15-inch)],
+  [\$1,149.00
+ at Amazon],
+  [\$1,399.00 
+ Save \$250.00],
+  [\$1,149.00
+ at Amazon],
+  [\$1,399.00 
+ Save \$250.00],
+  [Samsung Galaxy Book 5 Pro 360],
+  [\$1,199.99
+ at Amazon],
+  [\$1,699.99 
+ Save \$500.00],
+  [\$1,199.99
+ at Amazon],
+  [\$1,699.99 
+ Save \$500.00],
+  [HP EliteBook 6 G1i],
+  [\$1,899.98
+ at Amazon],
+  [\$2,799.00 
+ Save \$899.02],
+  [\$1,899.98
+ at Amazon],
+  [\$2,799.00 
+ Save \$899.02],
+  [ASUS TUF F16],
+  [\$999.99
+ at Amazon],
+  [\$1,299.99 
+ Save \$300.00],
+  [\$999.99
+ at Amazon],
+  [\$1,299.99 
+ Save \$300.00],
+  [ASUS ROG Strix G18],
+  [\$1,394.99
+ at Amazon],
+  [\$1,699.99 
+ Save \$305.00],
+  [\$1,394.99
+ at Amazon],
+  [\$1,699.99 
+ Save \$305.00],
+  [Lenovo Legion 5i],
+  [\$1,469.99
+ at Amazon],
+  [\$1,669.99 
+ Save \$200.00],
+  [\$1,469.99
+ at Amazon],
+  [\$1,669.99 
+ Save \$200.00],
   [SEE 3 MORE],
-  [id="m4-15-inch-macbook-air"\>M4 15-inch MacBook Air],
+  [M4 15-inch MacBook Air],
   [If you're in the market for a large yet portable laptop, the MacBook Air is a great buy. While Apple's newest model has the M5 chip, the M4 version is more than capable to buy instead—especially when you can save some money.],
   [During Amazon's Big Spring Sale, you can pick up the 15-inch M4 MacBook Air for \$1,149 . That's \$150 cheaper than the M5 version. You still get the same 16GB of RAM and 512GB of storage, and a chip that Apple will likely support for years to come. (The company still supports M1, which came out in 2020.) If you're set on the M5 MacBook Air, consider saving a bit by going through Apple's education store .],
-  [id="samsung-16-inch-galaxy-book-5-pro-360"\>Samsung 16-inch Galaxy Book 5 Pro 360],
+  [Samsung 16-inch Galaxy Book 5 Pro 360],
   [If you need a large, thin and light laptop that runs Windows 11, this Copilot+ PC from Samsung might suit you. The 16-inch Galaxy Book 5 Pro 360 has an Intel Core 7 Ultra processor with 16GB of RAM and 1TB of storage—double that of the MacBook Air above. It also has a touchscreen 3K AMOLED display with a refresh rate of 120Hz. The integrated graphics won't get you far for gaming, but if you need a capable machine for school, work, or personal use, this is a great all-around machine.],
-  [id="hp-elitebook-6-g1i"\>HP EliteBook 6 G1i],
+  [HP EliteBook 6 G1i],
   [Let's up the ante a bit. This HP EliteBook comes with a whopping 64GB of RAM. That's potentially overkill for most students and workers, but it does mean that this machine is a multitasker's dream. (You'll likely never run out of Chrome tabs.) It comes with an Intel Core Ultra 7 255U processor with a 1TB PCIe SSD for storage. The 16-inch IPS display is lower-res than the other laptops I've noted so far, as its only a 1200p panel. That's just a bit more pixels than you'd find in a 1080p display: Not bad, but not 3K or 4K. That said, if you can live with the compromises on the screen, this machine will handle most things you throw at it—at 32% off its original list price.],
-  [id="asus-tuf-f16"\>ASUS TUF F16],
+  [ASUS TUF F16],
   [If you're looking for something to game on that won't break the bank, this ASUS TUF laptop might be a solid choice . This machine comes with 16GB of RAM, a 512GB SSD, a 4.6GHz Intel Core i5 13450HX processor, and a dedicated NVIDIA GeForce RTX 5050 graphics card. It also comes with a 16-inch LED display with a refresh rate of 165 Hz, so you'll be able to boost the frame rates of your games. This isn't the most powerful gaming laptop out there by any means, but at 23% off (\$999.99), it's worth considering.],
-  [id="asus-rog-strix-g18"\>ASUS ROG Strix G18],
+  [ASUS ROG Strix G18],
   [If you want to push your games a bit further, take a look at the ASUS ROG Strix G18 . This 18-inch laptop has an AMD Ryzen 9 8940HX chip, a dedicated GeForce RTX 5050 GPU, 16GB of RAM, and a 1TB SSD. That 18-inch display has a 1080p resolution, and refresh rate of 144Hz—plenty for high refresh rate gaming. This one will cost nearly \$400 more than the TUF, but you're getting a bit more for your money—and you're saving 18% off the list price.],
-  [id="lenovo-legion-5i"\>Lenovo Legion 5i],
+  [Lenovo Legion 5i],
   [Let's take a look at one more gaming laptop—this time, with a more powerful Intel chip. Lenovo's Legion 5i comes with an Intel Core i7 17000HX chip, a dedicated GeForce RTX 5070 GPU, 16GB of RAM, and a 1TB SSD. It comes with a 1600p 15-inch OLED, which is the sharpest and highest contrast of any of the gaming laptops listed here. That's excellent for both games, as well for watching shows and movies. Like the TUF F16, this has a 165 Hz refresh rate. That's why this machine is typically listed at \$1,699.99, but is currently \$230 off.],
+  [Our Best Editor-Vetted Amazon Big Spring Sale Deals Right Now],
   [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
  
  
@@ -1099,6 +1195,7 @@
  \$169.99 
  
  (List Price \$249.99)],
+  [Deals are selected by our commerce team],
 ),
   insert-map: (:),
   word-count: 1630,
@@ -1106,10 +1203,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Want to Break an Ultrarunning Champion? Send Her to Bhutan.],
   author: [TJ Pitre],
   source-name: [Trail Runner Magazine],
@@ -1139,10 +1234,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: ['Project Hail Mary':  Real Space Science, Real Astrophotography],
   author: [EditorDavid],
   source-name: [Slashdot],
@@ -1164,10 +1257,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A Survival Guide to Ultrarunning Race Lottery Rejection],
   author: [TJ Pitre],
   source-name: [Trail Runner Magazine],
@@ -1211,11 +1302,10 @@
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Apple Now Requires Device-Level Age Verification in the UK. Could the US Be Next?],
   author: [EditorDavid],
   source-name: [Slashdot],
@@ -1237,7 +1327,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: ["Suck my toes, my darling" - Inkle's book of essays by game writers reveals the secrets behind the worlds we play in],
   author: [Robert Purchese],
   source-name: [Eurogamer],
@@ -1257,55 +1347,59 @@
 #pull-quote([Apple didn't specify exactly which services and features are banned for under-18 users, but it will likely be in compliance with UK legislation.], [EditorDavid])
 
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([Rafael Motamayor], source-name: [/Film], [A Knight of the Seven Kingdoms season 1 has made one of the best moments in Game of Thrones season 8 all the more powerful.])],
-    [#brief-item([Vikki Blake], source-name: [Eurogamer], [Prolific former Valve writer, Chet Faliszek, has hit out at Epic Games founder Tim Sweeney, asking why anyone at Epic "should work hard" when staff have no agency and "the recent 1,000 job cuts didn't come because of shareholder pressure".
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([Rafael Motamayor], source-name: [/Film], [A Knight of the Seven Kingdoms season 1 has made one of the best moments in Game of Thrones season 8 all the more powerful.])],
+  [#brief-item([Vikki Blake], source-name: [Eurogamer], [Prolific former Valve writer, Chet Faliszek, has hit out at Epic Games founder Tim Sweeney, asking why anyone at Epic "should work hard" when staff have no agency and "the recent 1,000 job cuts didn't come because of shareholder pressure".
 
  Read more])],
-    [#brief-item([Vikki Blake], source-name: [Eurogamer], [Crimson Desert developer Pearl Abyss has deployed a new patch over the weekend across all platforms, adding five summonable mounts, decreasing loading times for fast travel and revival, and "more changes to controls as part of \[the\] ongoing efforts to improve the game's controls".
+  [#brief-item([Vikki Blake], source-name: [Eurogamer], [Crimson Desert developer Pearl Abyss has deployed a new patch over the weekend across all platforms, adding five summonable mounts, decreasing loading times for fast travel and revival, and "more changes to controls as part of \[the\] ongoing efforts to improve the game's controls".
 
  Read more])],
-    [#brief-item([Connor Makar], source-name: [Eurogamer], [Pearl Abyss has addressed the future of Crimson Desert's Intel Arc GPU support, after it was discovered the hardware wasn't compatible at launch .
+  [#brief-item([Connor Makar], source-name: [Eurogamer], [Pearl Abyss has addressed the future of Crimson Desert's Intel Arc GPU support, after it was discovered the hardware wasn't compatible at launch .
 
  Read more])],
-    [#brief-item([Victoria Phillips Kennedy], source-name: [Eurogamer], [As promised, the powers that be at Capcom have released an update for Resident Evil Requiem, which along with other fixes and such also adds the much-requested photo mode, so you can really capture all those nasties in their bloody glory (or, you could just take pics of Leon and Grace, your call).
+  [#brief-item([Victoria Phillips Kennedy], source-name: [Eurogamer], [As promised, the powers that be at Capcom have released an update for Resident Evil Requiem, which along with other fixes and such also adds the much-requested photo mode, so you can really capture all those nasties in their bloody glory (or, you could just take pics of Leon and Grace, your call).
 
  Read more])],
-    [#brief-item([Adam Davidson], source-name: [How-To Geek], [I've used a lot of smart home devices in my time, and I thought I'd seen them all. However, there's one device I bought recently that's been a real game-changer. It's not something I ever thought I needed, but it's had a big impact on my family and me.])],
-    [#brief-item([Reece Bithrey], source-name: [Eurogamer], [The £229 \/ \$229 WiiM Sound Lite isn't your conventional PC speaker, but one I think is a very clever addition to a desktop setup for use with movies, games and for general viewing. It might look like a conventional Wifi speaker, but underneath is one of the most feature-rich audio products I've tested at its modest price tag.
+  [#brief-item([Adam Davidson], source-name: [How-To Geek], [I've used a lot of smart home devices in my time, and I thought I'd seen them all. However, there's one device I bought recently that's been a real game-changer. It's not something I ever thought I needed, but it's had a big impact on my family and me.])],
+  [#brief-item([Reece Bithrey], source-name: [Eurogamer], [The £229 \/ \$229 WiiM Sound Lite isn't your conventional PC speaker, but one I think is a very clever addition to a desktop setup for use with movies, games and for general viewing. It might look like a conventional Wifi speaker, but underneath is one of the most feature-rich audio products I've tested at its modest price tag.
 
  Read more])],
-    [#brief-item([Sydney Butler], source-name: [How-To Geek], [I bet you never thought you'd still be buying spinning hard drives in the latter half of the '20s, but mechanical drives are still at the core of our mass storage. These devices are in your NAS, they're in your home media server, and they're plugged into your USB ports to store media and backups.])],
-    [#brief-item([Sam Stone], source-name: [/Film], [A great miniseries knows how to tell an engaging story on television but also knows when to wrap it up rather than overstay its welcome, and these are the best.])],
-    [#brief-item([Fran Ruiz], source-name: [Eurogamer], [One month and a half into its life cycle, Mewgenics is quite the indie sensation, and players have been wondering about the chances of it making the jump to other platforms, following its glowing launch on PC via Steam . Well, it seems you won't have to wait for too long, as Edmund McMillen and his team are beginning to tease the first ports.
+  [#brief-item([Sydney Butler], source-name: [How-To Geek], [I bet you never thought you'd still be buying spinning hard drives in the latter half of the '20s, but mechanical drives are still at the core of our mass storage. These devices are in your NAS, they're in your home media server, and they're plugged into your USB ports to store media and backups.])],
+  [#brief-item([Sam Stone], source-name: [/Film], [A great miniseries knows how to tell an engaging story on television but also knows when to wrap it up rather than overstay its welcome, and these are the best.])],
+  [#brief-item([Fran Ruiz], source-name: [Eurogamer], [One month and a half into its life cycle, Mewgenics is quite the indie sensation, and players have been wondering about the chances of it making the jump to other platforms, following its glowing launch on PC via Steam . Well, it seems you won't have to wait for too long, as Edmund McMillen and his team are beginning to tease the first ports.
 
  Read more])],
-    [#brief-item([ZDNet], source-name: [ZDNet], [For Amazon's Big Spring Sale, I've rounded up the best phone deals from major brands like Apple, Samsung, Motorola, and more. Sales are live now, so act fast.])],
-    [#brief-item([Zack Zwiezen], source-name: [Kotaku], [The posts were part of his administration celebrating plans to bail farmers out of a situation created by Trump's own actions])],
-    [#brief-item([Robert Purchese], source-name: [Eurogamer], [Neil Newbon, the award-winning actor known for portraying the vampire Astarion in Baldur's Gate 3 , has said he's avoided roles recently because they wanted a repeat performance - or thereabouts - of the same thing.
+  [#brief-item([ZDNet], source-name: [ZDNet], [For Amazon's Big Spring Sale, I've rounded up the best phone deals from major brands like Apple, Samsung, Motorola, and more. Sales are live now, so act fast.])],
+  [#brief-item([Zack Zwiezen], source-name: [Kotaku], [The posts were part of his administration celebrating plans to bail farmers out of a situation created by Trump's own actions])],
+  [#brief-item([Robert Purchese], source-name: [Eurogamer], [Neil Newbon, the award-winning actor known for portraying the vampire Astarion in Baldur's Gate 3 , has said he's avoided roles recently because they wanted a repeat performance - or thereabouts - of the same thing.
 
  Read more])],
-    [#brief-item([Fran Ruiz], source-name: [Eurogamer], [Fortnite is one of the biggest games in the world, so it isn't overly surprising to see Epic Games make adjustments to how the title is run as the game nears its tenth birthday. Maintaining a massive multiplatform operation filled with big IP collaborations isn't cheap or easy, and that knowledge lead to some shocking news yesterday, 24th March, when over 1,000 positions were cut at the developer.
+  [#brief-item([Fran Ruiz], source-name: [Eurogamer], [Fortnite is one of the biggest games in the world, so it isn't overly surprising to see Epic Games make adjustments to how the title is run as the game nears its tenth birthday. Maintaining a massive multiplatform operation filled with big IP collaborations isn't cheap or easy, and that knowledge lead to some shocking news yesterday, 24th March, when over 1,000 positions were cut at the developer.
 
  Read more])],
-    [#brief-item([Matt Wales], source-name: [Eurogamer], [Lawyers for Subnautica 2 developer Unknown Worlds' newly reinstated CEO Ted Gill are reportedly pushing for Krafton to be found in contempt of a recent court ruling after the publisher confirmed a May early access release for the highly anticipated underwater survival sequel without consulting Gill.
+  [#brief-item([Matt Wales], source-name: [Eurogamer], [Lawyers for Subnautica 2 developer Unknown Worlds' newly reinstated CEO Ted Gill are reportedly pushing for Krafton to be found in contempt of a recent court ruling after the publisher confirmed a May early access release for the highly anticipated underwater survival sequel without consulting Gill.
 
  Read more])],
-    [#brief-item([Matt Wales], source-name: [Eurogamer], [Happy birthday Game Boy Advance! It's been 25 years since Nintendo's handheld line-up bound into the world of proper 16-bit technicolour. Two and a half decades later, with a whopping 81.5m units sold, the diminutive machine is the stuff of legend. Its library is vast, home to many of video gaming's most iconic characters, and it also managed to birth a whole bunch of series that would go on to become just as beloved themselves.
+  [#brief-item([Matt Wales], source-name: [Eurogamer], [Happy birthday Game Boy Advance! It's been 25 years since Nintendo's handheld line-up bound into the world of proper 16-bit technicolour. Two and a half decades later, with a whopping 81.5m units sold, the diminutive machine is the stuff of legend. Its library is vast, home to many of video gaming's most iconic characters, and it also managed to birth a whole bunch of series that would go on to become just as beloved themselves.
 
  Read more])],
-    [#brief-item([ZDNet], source-name: [ZDNet], [We found deals on tablets up to \$150 off from brands like Apple, Samsung, and more, for Amazon's Big Spring Sale this week. Sales are live now through March 31.])],
-    [#brief-item([Vikki Blake], source-name: [Eurogamer], [Surprise! Team Cherry has just rolled out a patch not for Hollow Knight: Silksong , but its nine-year-old predecessor, Hollow Knight , and it addresses a "slightly longer than intended" mechanic in the very final boss fight.
+  [#brief-item([ZDNet], source-name: [ZDNet], [We found deals on tablets up to \$150 off from brands like Apple, Samsung, and more, for Amazon's Big Spring Sale this week. Sales are live now through March 31.])],
+  [#brief-item([Vikki Blake], source-name: [Eurogamer], [Surprise! Team Cherry has just rolled out a patch not for Hollow Knight: Silksong , but its nine-year-old predecessor, Hollow Knight , and it addresses a "slightly longer than intended" mechanic in the very final boss fight.
 
  Read more])],
-    [#brief-item([Joe Supan], source-name: [CNET News], [I spoke to four cybersecurity experts about the FCC's ban on all new foreign-made routers. Even though I review routers for a living, here's why I recommend avoiding a router purchase right now.])],
-    [#brief-item([Victoria Phillips Kennedy], source-name: [Eurogamer], [Pearl Abyss has detailed a rather chunky patch for Crimson Desert, after its launch last week was marred by multiple issues and AI controversies.
+  [#brief-item([Joe Supan], source-name: [CNET News], [I spoke to four cybersecurity experts about the FCC's ban on all new foreign-made routers. Even though I review routers for a living, here's why I recommend avoiding a router purchase right now.])],
+  [#brief-item([Victoria Phillips Kennedy], source-name: [Eurogamer], [Pearl Abyss has detailed a rather chunky patch for Crimson Desert, after its launch last week was marred by multiple issues and AI controversies.
 
  Read more])],
-    [#brief-item([Adam Gray], source-name: [How-To Geek], [The Toyota RAV4 has been topping U. S. sales charts for years, dominating the compact SUV segment. For most buyers, it’s not just a choice—it’s the choice.])],
-  ))
-}
+  [#brief-item([Adam Gray], source-name: [How-To Geek], [The Toyota RAV4 has been topping U. S. sales charts for years, dominating the compact SUV segment. For most buyers, it’s not just a choice—it’s the choice.])],
+))
+
+// --- Notable Quotes ---
+#block(above: 0.2in, stroke: (top: 1pt + luma(26)), inset: (top: 0.1in))[
+  #pull-quote([Third one is kind of hard, because it’s the heat of the day and it’s the third one.], [RUN | Powered by Outside])
+
+]
 
 #colophon([Atlantic Gazette], [Vol. 1, No. 096], [2026-03-30])

@@ -21,62 +21,8 @@
 #masthead([The Silicon Ledger], [Vol. 1, No. 090], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Visualising the .NET Garbage Collector],
-  kicker: [Cover Story],
-  author: [Matt Warren (.NET)],
-  source-name: [Matt Warren (.NET)],
-  deck: [The output from the tool is shown below, click to Play/Stop ( direct link to gif ).],
-  lead-pre: [],
-  lead-cap: [A],
-  lead-rest: [s part of an ongoing attempt to learn more about how a real-life Garbage Collector (GC) works (see part 1 ) and after being inspired by Julia Evans’ excellent post gzip + poetry = awesome I spent a some time writing a tool to enable a live visualisation of the . NET GC in action.],
-  body-paragraphs: (
-  [The output from the tool is shown below, click to Play/Stop ( direct link to gif ). The full source is available if you want to take a look.],
-  [id="capturing-gc-events-in-net"\>Capturing GC Events in . NET],
-  [Fortunately there is a straight-forward way to capture the raw GC related events, using the excellent TraceEvent library that provides a wrapper over the underlying ETW Events the . NET GC outputs.],
-  [It’s a simple as writing code like this :],
-  [totalBytesAllocated += allocationData . AllocationAmount ;],
-  [Console . Write ( "." ); 
- };],
-  [Here we are wiring up a callback each time a GCAllocationTick event is fired, other events that are available include GCStart , GCEnd , GCSuspendEEStart , GCRestartEEStart and many more .],
-  [As well outputting a visualisation of the raw events, they are also aggregated so that a summary can be produced:],
-  [class="highlight"\> Memory Allocations:
- 1,065,720 bytes currently allocated
- 1,180,308,804 bytes have been allocated in total
-GC Collections:
- 16 in total (12 excluding B/G)
- 2 - generation 0
- 9 - generation 1
- 1 - generation 2
- 4 - generation 2 (B/G)
-Time in GC: 1,300.1 ms (108.34 ms avg)
-Time under test: 3,853 ms (33.74 % spent in GC)
-Total GC Pause time: 665.9 ms
-Largest GC Pause: 75.99 ms],
-  [id="gc-pauses"\>GC Pauses],
-  [Most of the visualisation and summary information is relatively easy to calculate, however the timings for the GC pauses are not always straight-forward. Since . NET 4.5 the Server GC has 2 main modes available the new Background GC mode and the existing Foreground/Non-Concurrent one. The . NET Workstation GC has had a Background GC mode since . NET 4.0 and a Concurrent mode before that.],
-  [The main benefit of the Background mode is that it reduces GC pauses , or more specifically it reduces the time that the GC has to suspend all the user threads running inside the CLR. The problem with these “stop-the-world” pauses, as they are also known, is that during this time your application can’t continue with whatever it was doing and if the pauses last long enough users will notice .],
-  [As you can see in the image below (courtesy of the . NET Blog ) , with the newer Background mode in . NET 4.5 the time during which user-threads are suspended is much smaller (the dark blue arrows). They only need to be suspended for part of the GC process, not the entire duration.],
-  [id="foreground-blocking-gc-flow"\>Foreground (Blocking) GC flow],
-  [So calculating the pauses for a Foreground GC (this means all Gen 0/1 GCs and full blocking GCs) is relatively straightforward, using the info from the excellent blog post by Maoni Stephens the main developer on the . NET GC:],
-  [GCSuspendEE\_V1],
-  [GCSuspendEEEnd\_V1 Background GC flow],
-  [However for Background GC (Gen 2) it is more complicated, again from Maoni’s blog post :],
-  [GCSuspendEE\_V1],
-  [GCSuspendEEEnd\_V1],
-  [GCStart\_V1 Age of Ascent - GC Pauses],
-  [Finally, if you want a more dramatic way of visualising a “ Stop the World ” or more accurately a “ Stop the Universe ” GC pause, take a look at the video below. The GC pause starts at around 7 seconds in (credit to Ben Adams and Age of Ascent )],
-  [Discuss this post on Hacker News],
-  [CodeProject],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Handling generic Http errors across your Android app],
   author: [Miguel Juárez López],
   source-name: [Yammer Engineering],
@@ -87,26 +33,26 @@ Largest GC Pause: 75.99 ms],
   [I am a fan of all the Android libraries from square , so for this post I’ll be using the REST client Retrofit in combination with the event bus Otto to achieve a centralized elegant way to do this.],
   [Although all this should have been pretty straightforward there are a couple of gotchas to be aware of, mostly regarding Otto limitations so let’s get to it!],
   [0. Create an event object for Otto],
-  [public class HttpUnauthorizedEvent { }],
+  [public class HttpUnauthorizedEvent \{ \}],
   [The way Otto works is by creating a contract between publishers and subscribers based on the type of the object used as a parameter. In this case we will use the HttpUnauthorizedEvent object to signal that a 401 error has happened in our application.],
   [An instance of any class may be published on the bus and it will only be dispatched to subscribers for that type.],
   [1. Create a custom ErrorHandler for Retrofit and post events for intercepted 401 errors using Otto event bus from there],
-  [public class CustomErrorHandler implements ErrorHandler { private static final Handler MAIN\_LOOPER\_HANDLER = new Handler(Looper.getMainLooper());
- private final Bus eventBus; public CustomErrorHandler(Bus eventBus) {
+  [public class CustomErrorHandler implements ErrorHandler \{ private static final Handler MAIN\_LOOPER\_HANDLER = new Handler(Looper.getMainLooper());
+ private final Bus eventBus; public CustomErrorHandler(Bus eventBus) \{
  this.eventBus = eventBus;
- } \@Override public Throwable handleError(RetrofitError error) {
+ \} \@Override public Throwable handleError(RetrofitError error) \{
  Response r = error.getResponse();
- if (r != null && r.getStatus() == HttpURLConnection. HTTP\_UNAUTHORIZED) {
+ if (r != null && r.getStatus() == HttpURLConnection. HTTP\_UNAUTHORIZED) \{
  \/\\/ we need to make sure we post in the UI thread
- MAIN\_LOOPER\_HANDLER.post(new Runnable() {
- \@Override public void run() {
+ MAIN\_LOOPER\_HANDLER.post(new Runnable() \{
+ \@Override public void run() \{
  eventBus.post(new HttpUnauthorizedEvent());
- }
- });
- }
+ \}
+ \});
+ \}
  return error;
- }
-}],
+ \}
+\}],
   [One thing to notice is that we’re making sure we’re posting in the UI thread, this is mainly for two reasons:],
   [By default, all interaction with an instance is confined to the main thread.],
   [If you try to post from a different thread Otto will throw an exception.],
@@ -126,30 +72,30 @@ api. MethodCall(...); \/\/If a 401 error response happens here
   [For my specific case I wanted to put the subscription and log-out logic in a base Activity from which all my app Activities were inheriting. This is currently impossible given that Otto doesn’t support subscribing on base classes.],
   [Otto will not traverse the class hierarchy and add methods from base classes or interfaces that are annotated. This is an explicit design decision to improve performance of the library as well as keep your code simple and unambiguous.],
   [As a workaround you can put your \@Subscribe method on your base Activity’s nested class and it will work as a charm.],
-  [public abstract class BaseActivity ... { private class AuthFailureHandler {],
+  [public abstract class BaseActivity ... \{ private class AuthFailureHandler \{],
   [\@Subscribe],
-  [public void onAuthFailure(HttpUnauthorizedEvent event) {],
+  [public void onAuthFailure(HttpUnauthorizedEvent event) \{],
   [BaseActivity.this.logOutCurrentUser();],
-  [}],
-  [} \/\\/ Obtain same Singleton eventBus],
+  [\}],
+  [\} \/\\/ Obtain same Singleton eventBus],
   [private Bus eventBus = new BusProvider().get();],
   [private AuthFailureHandler authFailureHandler; \@Override],
-  [protected void onResume() {],
+  [protected void onResume() \{],
   [super.onResume();],
   [authFailureHandler = new AuthFailureHandler();],
   [\/\\/ "In order to receive events, a class instance needs to],
   [\/\\/ register with the bus."],
   [eventBus.register(authFailureHandler);],
-  [} \@Override],
-  [protected void onPause() {],
+  [\} \@Override],
+  [protected void onPause() \{],
   [super.onPause();],
   [\/\\/ "Remember to also call the unregister method when],
   [\/\\/ appropriate."],
   [eventBus.unregister(authFailureHandler);],
-  [} private void logOutCurrentUser() {],
+  [\} private void logOutCurrentUser() \{],
   [\/\\/ use a (pending) Intent Service to log out the user],
-  [}],
-  [}],
+  [\}],
+  [\}],
   [If there’s enough interest I can work out a simple code example and share it here.],
   [Happy coding!],
   [Handling generic Http errors across your Android app was originally published in Yammer Engineering on Medium, where people are continuing the conversation by highlighting and responding to this story.],
@@ -160,10 +106,8 @@ api. MethodCall(...); \/\/If a 401 error response happens here
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [I Failed to Implement the Diameter of a Binary Tree in a Coding Interview],
   author: [Daniel Doubrovkine],
   source-name: [Daniel Doubrovkine (dBlock)],
@@ -187,10 +131,8 @@ api. MethodCall(...); \/\/If a 401 error response happens here
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Seven Schools, Four Cities, and Three Countries Later],
   author: [Mannie Tagarira],
   source-name: [Yammer Engineering],
@@ -241,46 +183,42 @@ api. MethodCall(...); \/\/If a 401 error response happens here
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Adventures in Benchmarking - Performance Golf],
   author: [Matt Warren (.NET)],
   source-name: [Matt Warren (.NET)],
   images: (),
   paragraphs: (
   [Recently Nick Craver one of the developers at Stack Overflow has been tweeting snippets of code from their source, the other week the following code was posted:],
-  [dir="ltr" lang="en"\>A daily screenshot from the Stack Overflow codebase (checking strings for tokens without allocations). \#StackCode pic.twitter.com/sDPqviHgD0],
+  [A daily screenshot from the Stack Overflow codebase (checking strings for tokens without allocations). \#StackCode pic.twitter.com/sDPqviHgD0],
   [— Nick Craver (\@Nick\_Craver) April 20, 2016],
   [This code is an optimised version of what you would normally write, specifically written to ensure that is doesn’t allocate memory. Previously Stack Overflow have encountered issues with large pauses caused by the . NET GC , so it appears that where appropriate, they make a concerted effort to write code that doesn’t needlessly allocate.],
   [I also have to give Nick credit for making me aware of the term “Performance Golf” , I’ve heard of Code Golf , but not the Performance version.],
   [Aside: If you want to see the full discussion and the code for all the different entries, take a look at this gist . Also for a really in-depth explanation of what the fastest version is actually doing, I really recommend checking out Kevin Montrose’s blog post “An Optimisation Exercise” , there’s some very cool tricks in there, although by this point he is basically writing C/C++ code rather than anything you would recognise as C\#!],
-  [id="good-benchmarking-tools"\>Good Benchmarking Tools],
   [In this post I’m not going to concentrate too much on this particular benchmark, but instead I’m going to use it as an example of what I believe a good benchmarking library should provide for you. Full disclaimer, I’m one of the authors of BenchmarkDotNet , so I admit I might be biased!],
   [I think that a good benchmarking tool should offer the following features:],
   [Diagnose what is going on],
   [Consistent, Reliable and Clear Results],
-  [id="benchmark-scaffolding"\>Benchmark Scaffolding],
   [By using BenchmarkDotNet , or indeed any benchmarking tool, you can just get on with the business of actually writing the benchmark and not worry about any of the mechanics of accurately measuring the code. This is important because often when someone has posted an optimisation and accompanying benchmark on Stack Overflow, several of the comments then point out why their measurements are inaccurate or plain wrong.],
   [In the case of BenchmarkDotNet, it’s as simple as adding a \[Benchmark\] attribute to the methods that you want to benchmark and then a few lines of code to launch the run:],
-  [class="highlight"\> \[ Benchmark ( Baseline = true )\] 
+  [\[ Benchmark ( Baseline = true )\] 
  public bool StringSplit () 
- { 
+ \{ 
  var tokens = Value . Split ( delimeter ); 
  foreach ( var token in tokens ) 
- { 
+ \{ 
  if ( token == Match ) 
  return true ; 
- } 
+ \} 
  return false ; 
- }],
+ \}],
   [static void Main ( string \[\] args ) 
- { 
+ \{ 
  var summary = BenchmarkRunner . Run (); 
- }],
+ \}],
   [It also offers a few more tools for advanced scenarios, for instance you can decorate a field/property with the \[Params\] attribute like so:],
-  [class="highlight"\> \[ Params ( "Foo;Bar" , 
+  [\[ Params ( "Foo;Bar" , 
  "Foo;FooBar;Whatever" , 
  "Bar;blaat;foo" , 
  "blaat;foo;Bar" , 
@@ -290,16 +228,15 @@ api. MethodCall(...); \/\/If a 401 error response happens here
  "Bar1;Bar2;Bar3;Bar4;NoMatch" , 
  "Foo;FooBar;Whatever" , 
  "Some;Other;Really;Interesting;Tokens" )\] 
- public string Value { get ; set ; }],
+ public string Value \{ get ; set ; \}],
   [and then each benchmark will be run multiples times, with Value set to the different strings. This gives you a really easy way of trying out benchmarks across different inputs. For instance some methods were consistently fast, whereas other performed badly on inputs that were a worse-case scenario for them.],
-  [id="diagnose-what-is-going-on"\>Diagnose what is going on],
+  [Diagnose what is going on],
   [If you state that the aim of optimising you code is to “check a string for tokens, without allocations”, you would really like to be able to prove if that is true or not. I’ve previously written about how BenchmarkDotNet can give you this information and in this case we get the following results (click for full-size image):],
   [So you can see that the ContainTokenFransBouma benchmark isn’t allocation free, which in the scenario is a problem.],
-  [id="consistent-reliable-and-clear-results"\>Consistent, Reliable and Clear Results],
+  [Consistent, Reliable and Clear Results],
   [Another important aspect is that you should be able to rely on the results. Part of this is trusting the tool and hopefully people will come to trust BenchmarkDotNet over time .],
   [Also you should be able to get clear results, so in as well as providing a text-based result table that you can easily paste into a GitHub issue or Stack Overflow answer, BenchmarkDotNet will provide several graphs using the R statistics and graphing library . Sometimes a wall of text isn’t the easiest thing to interpret, but colourful graphs can help (click for full image).],
   [Here we can see that the original ContainsToken code is “slower” in some scenarios (although it’s worth pointing out that the Y-axis is in nanoseconds).],
-  [id="summary"\>Summary],
   [Would I recommend writing code like any of these optimisations for normal day-to-day scenarios? No.],
   [Without exception the optimised versions of the code are less readable, harder to debug and probably contain more errors. Certainly, by the time you get to the fastest version you are no longer writing recognisable C\# code, it’s basically C++/C masquerading as C\#.],
   [However, for the purposes of learning, a bit of fun or just because you like a spot of competition, then it’s fine. Just make sure you use a decent tool that lets you get on with the fun part of writing the most optimised code possible!],
@@ -311,12 +248,10 @@ api. MethodCall(...); \/\/If a 401 error response happens here
   debug-mode: false,
 )
 
-  #pull-quote([For instance some methods were consistently fast, whereas other performed badly on inputs that were a worse-case scenario for them.], [Matt Warren (.NET)])
+#pull-quote([For instance some methods were consistently fast, whereas other performed badly on inputs that were a worse-case scenario for them.], [Matt Warren (.NET)])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [CTCSS fingerprinting: a method for transmitter identification],
   author: [Oona Räisänen],
   source-name: [Oona Raisanen (windytan)],
@@ -353,12 +288,10 @@ api. MethodCall(...); \/\/If a 401 error response happens here
   debug-mode: false,
 )
 
-  #pull-quote([The average RMS power is measured similarly.], [Oona Räisänen])
+#pull-quote([The average RMS power is measured similarly.], [Oona Räisänen])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [What makes a great photo editing intern (Apply now for Fall 2016!)],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
@@ -366,17 +299,16 @@ api. MethodCall(...); \/\/If a 401 error response happens here
   paragraphs: (
   [This is not your standard photo internship!],
   [This internship is an opportunity to learn more about the world of photo editing. Our goal isn’t to make you into a photo editor; we view this internship as a chance for you to understand what it is like to be an editor and improve your visual literacy , which can help you become a better photographer.],
-  [id="what-you-will-be-doing"\>What you will be doing],
+  [What you will be doing],
   [Editing: You’ll be working closely with the Visuals Team’s photo editors (Ariel and Emily) on fast-paced deadlines – we’re talking anywhere from 15 minutes to publication, to short-term projects that are a week out. You’ll dig into news coverage and photo research, learning how to communicate about what makes a good image across a range of news topics, including international, national, technology, arts and more.],
   [Photography: Depending on the news cycle, there may be opportunities to photograph DC-area assignments. This can mean you’d have one or two shoots in a week, or maybe just a couple shoots in a month. You’ll work closely with a radio or web reporter while out in the field, and a photo editor will go through your work and provide feedback for each assignment. There will also be a chance to work on portraiture and still lifes in our studio.],
   [We also encourage each intern to create a self-directed project to work on throughout the semester. It can be an Instagram series , video , photo essay , text story or anything in-between. You can work independently or with another intern or reporter .],
   [You will be part of NPR’s intern program, which includes 40-50 interns each semester, across different departments. There will be coordinated training and intern-focused programming throughout the semester, which includes meeting NPR radio hosts, career development and other opportunities. As an intern, you will be treated as a member of the team. Many NPR employees are former interns and they’re always willing to help current interns.],
-  [id="eligibility"\>Eligibility],
   [Any student (undergraduate or graduate), or person who has graduated no more than 12 months prior to the start of the internship period to which he/she is applying is eligible. Interns must be authorized to work in the United States.],
-  [id="who-should-apply"\>Who should apply],
+  [Who should apply],
   [We’re looking for candidates that have a strong photojournalism background. An interest in editing, or experience with video/photo editing is a nice plus. It’s also helpful if you’ve completed at least one photojournalism-focused internship prior to applying (let us know if you have!), though it’s not necessary. A portfolio , however, is required.],
   [We also want folks who can tell us what they would like to accomplish during their time at NPR. What do you want to learn? What do you want to try? We try to shape each internship around our intern, so we rely on you to tell us what goals you have for your time with us!],
-  [id="so-how-do-i-apply"\>So how do I apply?],
+  [So how do I apply?],
   [Does this sound like you? Read our post about how to write a cover letter and then apply now!],
   [The deadline for applications HAS BEEN EXTENDED to May 29, 2016, 11:59pm EST .],
 ),
@@ -386,10 +318,8 @@ api. MethodCall(...); \/\/If a 401 error response happens here
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Measuring the impact of the .NET Garbage Collector],
   author: [Matt Warren (.NET)],
   source-name: [Matt Warren (.NET)],
@@ -409,27 +339,27 @@ api. MethodCall(...); \/\/If a 401 error response happens here
   [But the limitation of this is that it has no context, what % of time in GC is too high, how many Gen 2 collections are too many? What effect does GC actually have on your program, in terms of pauses that a customer will experience?],
   [jHiccup and HdrHistogram],
   [To gain a better understanding, I’ve used some of the ideas from the excellent jHiccup Java tool. Very simply, it starts a new thread in which the following code runs:],
-  [class="highlight"\> var timer = new Stopwatch (); 
+  [var timer = new Stopwatch (); 
  while ( true ) 
- { 
+ \{ 
  timer . Restart (); 
  Thread . Sleep ( 1 ); 
  timer . Stop (); 
  \/\\/ allow a little bit of leeway 
  if ( timer . ElapsedMilliseconds \> 2 ) 
- { 
+ \{ 
  \/\\/ Record the pause 
  \_histogram . recordValue ( timer . ElapsedMilliseconds ); 
- } 
- }],
+ \} 
+ \}],
   [Any pauses that this thread experiences will also be seen by the other threads running in the program and whilst these pauses aren’t guaranteed to be caused by the GC, it’s the most likely culprit.],
   [Note: this uses the . NET port of the Java HdrHistogram , a full explanation of what HdrHistogram offers and how it works is available in the Readme . But the summary is that it offers a non-intrusive way of collecting samples in a histogram, so that you can then produce a graph of the 50%/99%/99.9%/99.99% percentiles . It does this by allocating all the memory it needs up front, so after start-up it performs no allocations during usage. The benefit of recording full percentile information like this is that you get a much fuller view of any outlying values, compared to just recording a simple average.],
   [To trigger garbage collection, the test program also runs several threads, each executing the code below. In a loop, each thread creates a large string and a byte array , to simulate what a web server might be doing when generating a response to a web request (for instance from de-serialising some Json and creating a HTML page). Then to ensure that the objects are kept around long enough, they are both put into a Least Recently Used (LRU) cache, that holds the 2000 most recent items.],
-  [class="highlight"\> processingThreads \[ i \] = new Thread (() =\> 
- { 
+  [processingThreads \[ i \] = new Thread (() =\> 
+ \{ 
  var threadCounter = 0 ; 
  while ( true ) 
- { 
+ \{ 
  var text = new string (( char ) random . Next ( start , end + 1 ), 1000 ); 
  stringCache . Set ( text . GetHashCode (), text );],
   [\/\\/ Use 80K, If we are \> 85,000 bytes = LOH and we don't want these there 
@@ -438,8 +368,8 @@ api. MethodCall(...); \/\/If a 401 error response happens here
  bytesCache . Set ( bytes . GetHashCode (), bytes );],
   [threadCounter ++; 
  Thread . Sleep ( 1 ); \/\\/ So we don't thrash the CPU!!!! 
- } 
- });],
+ \} 
+ \});],
   [The test was left running for 10 mins, in each of the following GC modes:],
   [Workstation Batch (non-concurrent)],
   [Workstation Interactive (concurrent)],
@@ -463,10 +393,8 @@ api. MethodCall(...); \/\/If a 401 error response happens here
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Fuzzing the .NET JIT Compiler],
   author: [Matt Warren (.NET)],
   source-name: [Matt Warren (.NET)],
@@ -478,7 +406,7 @@ api. MethodCall(...); \/\/If a 401 error response happens here
   [Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program.],
   [Or in other words, a fuzzer is a program that tries to create source code that finds bugs in a compiler .],
   [Massive kudos to the developers behind Fuzzlyn, Jakob Botsch Nielsen (who helped answer my questions when writing this post), Chris Schmidt and Jonas Larsen , it’s an impressive project!! (to be clear, I have no link with the project and can’t take any of the credit for it)],
-  [id="compilation-in-net"\>Compilation in . NET],
+  [Compilation in . NET],
   [But before we dive into ‘Fuzzlyn’ and what it does, we’re going to take a quick look at ‘compilation’ in the . NET Framework . When you write C\#/VB. NET/F\# code (delete as appropriate) and compile it, the compiler converts it into Intermediate Language (IL) code. The IL is then stored in a .exe or .dll, which the Common Language Runtime (CLR) reads and executes when your program is actually run. However it’s the job of the Just-in-Time (JIT) Compiler to convert the IL code into machine code.],
   [Why is this relevant? Because Fuzzlyn works by comparing the output of a Debug and a Release version of a program and if they are different, there’s a bug! But it turns out that very few optimisations are actually done by the ‘Roslyn’ compiler , compared to what the JIT does, from Eric Lippert’s excellent post What does the optimize switch do? (2009)],
   [The /optimize flag does not change a huge amount of our emitting and generation logic . We try to always generate straightforward, verifiable code and then rely upon the jitter to do the heavy lifting of optimizations when it generates the real machine code. But we will do some simple optimizations with that flag set. For example, with the flag set:],
@@ -486,11 +414,11 @@ api. MethodCall(...); \/\/If a 401 error response happens here
   [That’s pretty much it. These are very straightforward optimizations; there’s no inlining of IL, no loop unrolling, no interprocedural analysis whatsoever. We let the jitter team worry about optimizing the heck out of the code when it is actually spit into machine code; that’s the place where you can get real wins .],
   [So in . NET, very few of the techniques that an ‘Optimising Compiler’ uses are done at compile-time . They are almost all done at run-time by the JIT Compiler (leaving aside AOT scenarios for the time being ).],
   [For reference, most of the differences in IL are there to make the code easier to debug, for instance given this C\# code:],
-  [class="highlight"\> public void M () { 
- foreach ( var item in new \[\] { 1 , 2 , 3 , 4 }) { 
+  [public void M () \{ 
+ foreach ( var item in new \[\] \{ 1 , 2 , 3 , 4 \}) \{ 
  Console . WriteLine ( item ); 
- } 
- }],
+ \} 
+ \}],
   [The differences in IL are shown below (‘Release’ on the left, ‘Debug’ on the right). As you can see there are a few extra nop instructions to allow the debugger to ‘step-through’ more locations in the code, plus an extra local variable, which makes it easier/possible to see the value when debugging.],
   [(click for larger image or you can view the ‘Release’ version and the ‘Debug’ version on the excellent SharpLab )],
   [For more information on the differences in Release/Debug code-gen see the ‘Release (optimized)’ section in this doc on CodeGen Differences . Also, because Roslyn is open-source we can see how this is handled in the code:],
@@ -503,7 +431,7 @@ api. MethodCall(...); \/\/If a 401 error response happens here
   [Extra Attribute is inserted in Debug builds],
   [This all means that the ‘Fuzzlyn’ project has actually been finding bugs in the . NET JIT, not in the Roslyn Compiler],
   [(well, except this one Finally block belonging to unexecuted try runs anyway , which was fixed here )],
-  [id="how-it-works"\>How it works],
+  [How it works],
   [At the simplest level, Fuzzlyn works by compiling and running a piece of randomly generated code in ‘Debug’ and ‘Release’ versions and comparing the output. If the 2 versions produce different results, then it’s a bug, specifically a bug in the optimisations that the JIT compiler has attempted.],
   [The . NET JIT, known as ‘RyuJIT’, has several modes. It can produce fully optimised code that has the highest-performance, or in can produce more ‘debug’ friendly code that has no optimisations, but is much simpler. You can find out more about the different ‘optimisations’ that RyuJIT performs in this excellent tutorial , in this design doc or you can search through the code for usages of the ‘compDbgCode’ flag .],
   [From a high-level Fuzzlyn goes through the following steps:],
@@ -511,19 +439,19 @@ api. MethodCall(...); \/\/If a 401 error response happens here
   [Check if the code produces an error (Debug v. Release)],
   [Reduce the code to it’s simplest form],
   [If you want to see this in action, I ran Fuzzlyn until it produced a randomly generated program with a bug. You can see the original source (6,802 LOC) and the reduced version (28 LOC). What’s interesting is that you can clearly see the buggy line-of-code in the original code , before it’s turned into a simplified version :],
-  [class="highlight"\> \/\\/ Generated by Fuzzlyn v1.1 on 2018-08-22 15:19:26 
+  [\/\\/ Generated by Fuzzlyn v1.1 on 2018-08-22 15:19:26 
  \/\\/ Seed: 14928117313359926641 
  \/\\/ Reduced from 256.3 KiB to 0.4 KiB in 00:01:58 
  \/\\/ Debug: Prints 0 line(s) 
  \/\\/ Release: Prints 1 line(s) 
  public class Program 
- { 
+ \{ 
  static short s\_18 ; 
  static byte s\_33 = 1 ; 
- static int \[\] s\_40 = new int \[\]{ 0 }; 
+ static int \[\] s\_40 = new int \[\]\{ 0 \}; 
  static short s\_74 = 1 ; 
  public static void Main () 
- { 
+ \{ 
  s\_18 = - 1 ; 
  \/\\/ This comparision is the bug, in Debug it's False, in Release it's True 
  \/\\/ However, '(ushort)(s\_18 | 2L)' is 65,535 in Debug \*and\* Release 
@@ -542,27 +470,29 @@ api. MethodCall(...); \/\/If a 401 error response happens here
   [‘Try/Catch’ statement],
   [Binary Operation tables , which are themselves generated using Roslyn],
   [All the statements and expressions that are currently supported are listed here . Interestingly enough the type of statement/expression chosen is not completely random, instead that are chosen using probability tables , that look like this:],
-  [class="highlight"\> public ProbabilityDistribution StatementTypeDist { get ; set ; } 
+  [public ProbabilityDistribution StatementTypeDist \{ get ; set ; \} 
  = new TableDistribution ( new Dictionary 
- { 
+ \{ 
  \[( int ) StatementKind . Assignment \] = 0.57 , 
  \[( int ) StatementKind . If \] = 0.17 , 
  \[( int ) StatementKind . Block \] = 0.1 , 
  \[( int ) StatementKind . Call \] = 0.1 , 
  \[( int ) StatementKind . TryFinally \] = 0.05 , 
  \[( int ) StatementKind . Return \] = 0.01 , 
- });],
+ \});],
   [As we saw before, the initial program that Fuzzlyn produces is quite large (over 5,000 LOC), so why does it create and execute a very large program?],
   [Partly because it’s quicker to do this compared to working with lots of smaller programs, i.e. the steps of generation, compilation and starting new processes can be reduced by running large programs.],
   [In addition, Jakob explained the other reasons:],
   [Empirically, other similar projects have shown that larger programs are better . Csmith authors report that most bugs were found with examples of around 80 KB (I don’t remember the exact number). We actually found the same thing in v1.0 – our examples had an average size of 76 KB],
   [Small programs do not get as many opportunities to generate a lot of patterns . For example, it is very unlikely that a small program will have a method taking a byte parameter and at the same time, a method returning a ref byte (this pattern has a bug on Linux: dotnet/coreclr\#19256 ).],
   [We mainly adjusted our probabilities based on how the examples looked. We strived for the generator to produce code that looked relatively like human code . This included going for a wide range of program sizes. By the way, you can run Fuzzlyn with --stats --num-programs=10000 to get a view of the distribution of program sizes – it will output stats for every 500 programs generated.],
-  [id="checking-for-bugs"\>‘Checking’ for bugs],
+  [‘Checking’ for bugs],
   [To check if the behaviour of 2 samples diverge (in ‘Release’ v ‘Debug’ mode), the tool inserts checksum-related code throughout the program. For example here’s a randomly generated method, note the calls to the Checksum(..) function at the end:],
+  [static sbyte M15 ( int arg0 ) 
+ \{ 
+ bool var0 = - 71 ‘Reducing’ the output],
   [However, the checksums also help Fuzzlyn ‘Reduce’ the program from the large initial version to something much more readable . By using a ‘binary search’ technique it can remove a section of code and compare the checksums of the remaining code. If the checksums still differ then the remaining code contains the error/bug and Fuzzlyn can carry on reducing it, otherwise it can be discarded.],
   [In addition, Fuzzlyn makes good use of the Roslyn ‘syntax tree’ API when removing code. For instance the CoarseStatementRemover class makes use of the Roslyn CSharpSyntaxWriter class, which is designed to allow syntax re-writing (also see Using a CSharp Syntax Rewriter ).],
-  [id="the-results"\>The Results],
   [What initially drew me to the Fuzzlyn project (aside from the great name ) was the impressive results I saw it getting . As of the end of Aug 2018, they’re reported 22 bugs, of which 11 have already been fixed (kudos to the . NET JIT devs for fixing them so quickly).],
   [Here’s a list of some of them, taken from the project README :],
   [NullReferenceException thrown for multi-dimensional arrays in release (fixed)],
@@ -583,7 +513,6 @@ api. MethodCall(...); \/\/If a 401 error response happens here
   [RyuJIT: Mishandling of subrange assertion for rewritten call parameter],
   [RyuJIT: Incorrect ordering around Interlocked. Exchange and Interlocked. CompareExchange],
   [(for the most up-to-date list see the GitHub Issues created by \@jakobbotsch )],
-  [id="summary"\>Summary],
   [I think that Fuzzlyn is a fantastic project, anything that roots out bugs or undesired behaviour in the JIT is a great benefit to all . NET Developers. If you want a see what the potential side-effects of JIT bugs can be, take a look at Why you should wait on upgrading to . Net 4.6 by Nick Craver (one of the developers at Stack Overflow).],
   [Now, you could argue that some of the code patterns that Fuzzlyn detects are not ones you’d normally write, e.g. if (((ushort)(s\_18 | 2L) Further Reading],
   [Jakob was kind enough to share some additional links with me:],
@@ -597,16 +526,14 @@ api. MethodCall(...); \/\/If a 401 error response happens here
 ),
   insert-map: (:),
   inline-pq: pull-quote([We strived for the generator to produce code that looked relatively like human code.], [Matt Warren (.NET)]),
-  inline-pq-idx: 37,
+  inline-pq-idx: 36,
   word-count: 2254,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [GC Pauses and Safe Points],
   author: [Matt Warren (.NET)],
   source-name: [Matt Warren (.NET)],
@@ -614,22 +541,25 @@ api. MethodCall(...); \/\/If a 401 error response happens here
   paragraphs: (
   [GC pauses are a popular topic, if you do a google search , you’ll see lots of articles explaining how to measure and more importantly how to reduce them. This issue is that in most runtimes that have a GC, allocating objects is a quick operation, but at some point in time the GC will need to clean up all the garbage and to do this is has to pause the entire runtime (except if you happen to be using Azul’s pauseless GC for Java ).],
   [The GC needs to pause the entire runtime so that it can move around objects as part of it’s compaction phase. If these objects were being referenced by code that was simultaneously executing then all sorts of bad things would happen. So the GC can only make these changes when it knows that no other code is running, hence the need to pause the entire runtime.],
-  [id="gc-flow"\>GC Flow],
+  [GC Flow],
   [In a previous post I demonstrated how you can use ETW Events to visualise what the . NET Garbage Collector (GC) is doing. That post included the following GC flow for a Foreground/Blocking Collection (info taken from the excellent blog post by Maoni Stephens the main developer on the . NET GC):],
   [GCSuspendEE\_V1],
   [GCSuspendEEEnd\_V1 GC suspension in Runtime code],
   [Inside code that it controls, the runtime inserts method calls to ensure that threads can regularly poll to determine when they need to suspend. For instance take a look at the following code snippet from the IndexOfCharArray() method (which is called internally by String. IndexOfAny(..) ). Notice that it contains multiple calls to the macro FC\_GC\_POLL\_RET() :],
+  [FCIMPL4 ( INT32 , COMString :: IndexOfCharArray , StringObject \* thisRef , CHARArray \* valueRef , INT32 startIndex , INT32 count ) 
+ \{ 
+ \/\/],
   [\/\\/ use probabilistic map, see (code: InitializeProbabilisticMap) 
- int charMap \[ PROBABILISTICMAP\_SIZE \] = { 0 };],
+ int charMap \[ PROBABILISTICMAP\_SIZE \] = \{ 0 \};],
   [InitializeProbabilisticMap ( charMap , valueChars , valueLength );],
-  [for ( int i = startIndex ; i = 0 ) { 
+  [for ( int i = startIndex ; i = 0 ) \{ 
  FC\_GC\_POLL\_RET (); 
  return i ; 
- } 
- }],
+ \} 
+ \}],
   [FC\_GC\_POLL\_RET (); 
  return - 1 ; 
- }],
+ \}],
   [The are lots of other places in the runtime where these calls are inserted, to ensure that a GC suspension can happen as soon as possible. However having these calls spread throughout the code has an overhead, so the runtime uses a special trick to ensure the cost is only paid when a suspension has actually been requested, From jithelp.asm you can see that the method call is re-written to a nop routine when not needed and only calls the actual JIT\_PollGC() function when absolutely required:],
   [; Normally (when we're not trying to suspend for GC), the 
 ; CORINFO\_HELP\_POLL\_GC helper points to this nop routine. When we're 
@@ -640,13 +570,21 @@ PUBLIC \@JIT\_PollGC\_Nop\@0
 ret
 \@JIT\_PollGC\_Nop\@0 ENDP],
   [However calls to FC\_GC\_POLL need to be carefully inserted in the correct locations, too few and the EE won’t be able to suspend quickly enough and this will cause excessive GC pauses, as this comment from one of the . NET JIT devs confirms:],
-  [id="gc-suspension-in-user-code"\>GC suspension in User code],
+  [GC suspension in User code],
   [Alternatively, in code that the runtime doesn’t control things are a bit different. Here the JIT analyses the code and classifies it as either:],
   [Partially interruptible],
   [Fully interruptible],
   [Partially interruptible code can only be suspended at explicit GC poll locations (i.e. FC\_GC\_POLL calls) or when it calls into other methods. On the other hand fully interruptible code can be interrupted or suspended at any time, as every line within the method is considered a GC safe-point.],
   [I’m not going to talk about how the thread-hijacking mechanism works (used with fully interruptible code), as it’s a complex topic, but as always there’s an in-depth section in the BOTR that gives all the gory details. If you don’t want to read the whole thing, in summary it suspends the underlying native thread, via the Win32 SuspendThread API .],
   [You can see some of the heuristics that the JIT uses to decide whether code is fully or partially interruptible as it seeks to find the best trade-off between code quality/size and GC suspension latency. But as a concrete example, if we take the following code that accumulates a counter in a tight loop:],
+  [public static long TestMethod () 
+ \{ 
+ long counter = 0 ; 
+ for ( int i = 0 ; i],
+  [public static long TestMethod () 
+ \{ 
+ long counter = 0 ; 
+ for ( int i = 0 ; i Further Reading],
   [Modern Garbage Collection in Theory and Practice],
   [GC-safe points, mutator suspension and barriers],
   [How local variable usage infomation is maintained in .net clr source code],
@@ -668,10 +606,8 @@ ret
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Top 10 AI Tools in 2023 That Will Make Your Life Easier],
   author: [Unknown],
   source-name: [TechCrunch],
@@ -689,108 +625,329 @@ ret
   [writing and website optimization. This],
   [list is a great starting point for anyone looking to explore the possibilities],
   [of AI and how it can be applied to their business or project.],
-  [style="text-align: left;"\> 1. ChatGPT],
-  [class="MsoNormal"\> ChatGPT is a large language model that generates human-like
+  [So let’s dive into],
+  [1. ChatGPT],
+  [ChatGPT is a large language model that generates human-like
 responses to a variety of prompts. It can be used for tasks such as language
 translation, question answering, and text completion. It can
 handle a wide range of topics and styles of writing, and generates coherent and
 fluent text, but should be used with care as it may generate text that is
 biased, offensive, or factually incorrect.],
-  [id="atContainer-504b591a28719b1270e09aa4045e24ab"\>],
-  [style="text-align: left;"\> 2. DALL-E],
-  [class="MsoNormal"\> DALL-E is a generative model developed by OpenAI that is
+  [Pros:],
+  [Generates
+ human-like responses to a variety of prompts],
+  [Can
+ be fine-tuned for specific tasks such as language translation, question
+ answering, and text completion],
+  [Can
+ handle a wide range of topics and styles of writing],
+  [Can
+ generate coherent and fluent text, even when completing a given text
+ prompt.],
+  [Cons:],
+  [May
+ generate text that is biased or offensive],
+  [Can
+ generate text that is not accurate or factually correct],
+  [May
+ require large amounts of computational resources to run],
+  [The
+ model can sometimes generate text that is not coherent or fluent,
+ depending on the prompt given.],
+  [Overall, ChatGPT is a powerful tool for natural language
+processing, but it should be used with care and with an understanding of its
+limitations.],
+  [2. DALL-E],
+  [DALL-E is a generative model developed by OpenAI that is
 capable of generating images from text prompts. It is based on the GPT-3 architecture,
 which is a transformer-based neural network language model that has been
 trained on a massive dataset of text. DALL-E can generate images that
 are similar to a training dataset and it can generate high-resolution
 images that are suitable for commercial use.],
-  [class="MsoNormal"\> Overall, DALL-E is a powerful AI-based tool for generating
+  [Pros:],
+  [Generates
+ high-resolution images],
+  [Can
+ generate images from text prompts],
+  [It can be fine-tuned for specific tasks such as generating images of a certain
+ style or category],
+  [Cons:],
+  [May
+ generate images that are not entirely original and could be influenced by
+ the training data],
+  [May
+ require significant computational resources to run],
+  [The
+ quality of the generated images may vary depending on the specific prompt],
+  [Overall, DALL-E is a powerful AI-based tool for generating
 images, it can be used for a variety of applications such as creating images
 for commercial use, gaming, and other creative projects. It is important to
 note that the generated images should be reviewed and used with care, as they
 may not be entirely original and could be influenced by the training data.],
-  [style="text-align: left;"\> 3. Lumen5],
-  [class="MsoNormal"\> Lumen5 is a content creation platform that uses AI to help
+  [3. Lumen5],
+  [Lumen5 is a content creation platform that uses AI to help
 users create videos, social media posts, and other types of content. It has
 several features that make it useful for content creation and marketing,
 including:],
-  [class="MsoNormal"\> Overall, Lumen5 is a useful tool for creating content
+  [Pros:],
+  [Automatically
+ summarizes text from a blog post, article, or another source into a script
+ for a video or social media post],
+  [Offers
+ a library of royalty-free videos, images, and music to use in content],
+  [Has a
+ drag-and-drop interface for easy content creation],
+  [Can
+ create videos in multiple languages],
+  [Has a
+ built-in analytics tool to track the performance of created content.],
+  [Cons:],
+  [The
+ quality of the generated content may vary depending on the source material],
+  [The
+ automatic summarization feature may not always capture the main points of
+ the source material],
+  [The
+ library of videos, images, and music is limited.],
+  [The
+ analytics feature is basic],
+  [Overall, Lumen5 is a useful tool for creating content
 quickly and easily, it can help automate the process of creating videos, social
 media posts, and other types of content. However, the quality of the generated
 content may vary depending on the source material and it is important to review
 and edit the content before publishing it.],
-  [style="text-align: left;"\> 4. Grammarly],
-  [class="MsoNormal"\> Grammarly is a writing-enhancement platform that uses AI to
+  [4. Grammarly],
+  [Grammarly is a writing-enhancement platform that uses AI to
 check for grammar, punctuation, and spelling errors in the text. It also provides
 suggestions for improving the clarity, concision, and readability of the text. It
 has several features that make it useful for improving writing, including:],
-  [class="MsoNormal"\> Overall,
+  [Pros:],
+  [Checks
+ for grammar, punctuation, and spelling errors in the text],
+  [Provides
+ suggestions for improving clarity, concision, and readability],
+  [Can
+ be integrated with various apps and platforms such as Microsoft Office,
+ Google Docs, and social media platforms],
+  [Offers
+ a browser extension and a desktop app],
+  [Has a
+ premium version with more advanced features such as plagiarism detection
+ and more],
+  [Cons:],
+  [The
+ suggestions provided may not always be accurate or appropriate],
+  [The
+ grammar checker may not always recognize context-specific language use],
+  [The
+ free version has limited features],
+  [Limited
+ to English language only],
+  [Overall,
  Grammarly is a useful tool for improving writing, it can help users
  identify and correct grammar and punctuation errors, and improve the
  clarity, concision, and readability of their text. However, it is
  important to review the suggestions provided by the tool and use them with
  caution, as they may not always be accurate or appropriate.],
-  [style="text-align: left;"\> 5. OpenAI Codex],
-  [class="MsoNormal"\> OpenAI Codex is a system developed by OpenAI that can
+  [5. OpenAI Codex],
+  [OpenAI Codex is a system developed by OpenAI that can
 create code from natural language descriptions of software tasks. The system is
 based on the GPT-3 model and can generate code in multiple programming
 languages.],
-  [class="MsoNormal"\> Overall, OpenAI Codex is a powerful tool that can help
+  [Pros:],
+  [Can
+ automate the process of writing code],
+  [Can
+ help developers to be more productive],
+  [Can
+ help non-technical people to create software],
+  [Can
+ generate code in multiple programming languages],
+  [Cons:],
+  [The
+ quality of the generated code may vary depending on the task description],
+  [The
+ generated code may not always be optimal or efficient],
+  [The
+ system may not be able to handle complex software tasks],
+  [Dependence
+ on the tool may lead to a lack of understanding of the code.],
+  [Overall, OpenAI Codex is a powerful tool that can help
 automate the process of writing code and make it more accessible to
 non-technical people. However, the quality of the generated code may vary
 depending on the task description and it is important to review and test the
 code before using it in a production environment. It is important to use the
 tool as an aid, not a replacement for the developer's knowledge.],
-  [style="text-align: left;"\> 6. Tabnine],
-  [class="MsoNormal"\> Tabnine is a code completion tool that uses AI to predict
+  [6. Tabnine],
+  [Tabnine is a code completion tool that uses AI to predict
 and suggest code snippets. It is compatible with multiple programming languages
 and can be integrated with various code editors.],
-  [class="MsoNormal"\> Overall, TabNine is a useful tool for developers that can
+  [Pros:],
+  [Can
+ improve coding efficiency by suggesting code snippets based on context],
+  [Can
+ complete entire code blocks],
+  [Can
+ predict variables, functions, and other elements of code],
+  [Can
+ be integrated with various code editors],
+  [Cons:],
+  [The
+ suggestions may not always be accurate or appropriate],
+  [The
+ system may not always be able to understand the context of the code],
+  [May
+ not work with all code editors],
+  [Dependence
+ on the tool may lead to a lack of understanding of the code.],
+  [Overall, TabNine is a useful tool for developers that can
 help improve coding efficiency and reduce the time spent on writing code.
 However, it is important to review the suggestions provided by the tool and use
 them with caution, as they may not always be accurate or appropriate. It is
 important to use the tool as an aid, not a replacement for the developer's
 knowledge.],
-  [style="text-align: left;"\> 7. Jasper AI],
-  [class="MsoNormal"\> Jasper is a content writing and content generation tool that
+  [7. Jasper AI],
+  [Jasper is a content writing and content generation tool that
 uses artificial intelligence to identify the best words and sentences for your
 writing style and medium in the most efficient, quick, and accessible way.],
-  [style="text-align: left;"\> 8. Surfer SEO],
-  [class="MsoNormal"\> Surfer SEO is a software tool designed to help website
+  [Pros:],
+  [User-friendly
+ interface],
+  [Generates
+ a wide variety of content types],
+  [Guarantees
+ 100% unique and free-plagiarism content],
+  [SEO
+ friendly],
+  [Create
+ articles of up to 10k words],
+  [Cons:],
+  [Not
+ the cheapest AI writer on the market],
+  [8. Surfer SEO],
+  [Surfer SEO is a software tool designed to help website
 owners and digital marketers improve their search engine optimization (SEO)
 efforts. The tool provides a variety of features that can be used to analyze a
 website's on-page SEO, including:],
-  [id="container-67c1d379f2d23d1196246b2000d3b84a"\>],
-  [class="MsoNormal"\> Overall, Surfer SEO can be a useful tool for website owners
+  [Features:],
+  [A
+ site audit tool that checks for technical SEO issues],
+  [A
+ content editor that suggests optimizations for individual pages],
+  [A
+ keyword research tool that suggests keywords to target],
+  [A
+ SERP analyzer that shows how a website's pages rank for specific keywords],
+  [A
+ backlink analysis tool that shows the backlinks pointing to a website.],
+  [Pros:],
+  [Can
+ help website owners and marketers identify technical SEO issues],
+  [Can
+ provide suggestions for optimizing individual pages],
+  [Can
+ help with keyword research],
+  [Can
+ show how a website's pages rank for specific keywords],
+  [Can
+ provide insight into a website's backlink profile],
+  [Cons:],
+  [Some
+ features may require a paid subscription],
+  [The
+ tool is not a guarantee of better ranking],
+  [The
+ tool can only analyze the data it has access to],
+  [The
+ tool's suggestions may not always be applicable or optimal],
+  [Overall, Surfer SEO can be a useful tool for website owners
 and digital marketers looking to improve their SEO efforts. However, it is
 important to remember that it is just a tool and should be used in conjunction
 with other SEO best practices. Additionally, the tool is not a guarantee of
 better ranking.],
-  [style="text-align: left;"\> 9. Zapier],
-  [class="MsoNormal"\> Zapier is a web automation tool that allows users to
+  [9. Zapier],
+  [Zapier is a web automation tool that allows users to
 automate repetitive tasks by connecting different web applications together. It
 does this by creating "Zaps" that automatically move data between
 apps, and can also be used to trigger certain actions in one app based on
 events in another app.],
-  [class="MsoNormal"\> Overall, Zapier is a useful tool that can help users
+  [Features:],
+  [Can
+ connect over 3,000 web applications],
+  [Can
+ automate repetitive tasks],
+  [Can
+ create "Zaps" to move data between apps],
+  [Can
+ trigger certain actions in one app based on events in another app.],
+  [Pros:],
+  [Can
+ automate repetitive tasks],
+  [Can
+ save time],
+  [Can
+ improve workflow],
+  [Can
+ increase productivity],
+  [Can
+ be integrated with a wide range of web applications],
+  [Cons:],
+  [Can
+ be difficult to set up],
+  [May
+ require some technical skills],
+  [May
+ require a paid subscription for some features],
+  [Some
+ apps may not be compatible],
+  [Dependence
+ on the tool may lead to a lack of understanding of the apps],
+  [Overall, Zapier is a useful tool that can help users
 automate repetitive tasks and improve workflow. It can save time and increase
 productivity by connecting different web applications together. However, it may
 require some technical skills and some features may require a paid
 subscription. It is important to use the tool with caution and not to rely too
 much on it, to understand the apps better.],
-  [style="text-align: left;"\> 10. Compose AI],
-  [class="MsoNormal"\> Compose AI is a company that specializes in developing
+  [10. Compose AI],
+  [Compose AI is a company that specializes in developing
 natural language generation (NLG) software. Their software uses AI to
 automatically generate written or spoken text from structured data, such as
 spreadsheets, databases, or APIs.],
-  [id="atContainer-8a426783aef805554f3d96c19f8beeb7"\>],
-  [class="MsoNormal"\> Overall, Compose AI's NLG software can be a useful tool for
+  [Features:],
+  [Automatically
+ generates written or spoken text from structured data],
+  [Can
+ be integrated with a wide range of data sources],
+  [Can
+ be used for a variety of applications such as creating reports, summaries,
+ and explanations],
+  [Provides
+ an API and a user-friendly interface],
+  [Pros:],
+  [Can
+ automate the process of creating written or spoken content],
+  [Can
+ help users create more accurate and consistent content],
+  [Can
+ help users save time by automating repetitive tasks],
+  [Can
+ be integrated with a wide range of data sources],
+  [Cons:],
+  [The
+ quality of the generated content may vary depending on the data source],
+  [The
+ generated content may not always be optimal or efficient],
+  [The
+ system may not be able to handle complex tasks],
+  [Dependence
+ on the tool may lead to a lack of understanding of the data],
+  [Overall, Compose AI's NLG software can be a useful tool for
 automating the process of creating written or spoken content from structured
 data. However, the quality of the generated content may vary depending on the
 data source, and it is essential to review the generated content before using
 it in a production environment. It is important to use the tool as an aid, not
 a replacement for the understanding of the data.],
-  [style="text-align: left;"\> Conclusion],
+  [AI tools are becoming increasingly important in today's],
   [business and technology landscape. They are designed to automate repetitive],
   [tasks, improve workflow, and increase productivity. The top 10 AI tools],
   [included in this article are some of the most advanced and widely used in the],
@@ -808,10 +965,8 @@ a replacement for the understanding of the data.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Virtual music box],
   author: [Oona Räisänen],
   source-name: [Oona Raisanen (windytan)],
@@ -837,15 +992,19 @@ a replacement for the understanding of the data.],
  +3 = ( 12 √2) 3 ≈ 1.189207],
   [First test!],
   [Now I could finally write a script to play my melody!],
+  [(HTML5 audio: Music box notes.)],
   [It sounds pretty good already - there's no obvious noise and the samples line up seamlessly even though they were just naively glued together sample by sample. There's a lot of power in the lower harmonics, probably because of the big cardboard box I used, but this can easily be changed by EQ if we want to give the impression of a cute little music box.],
   [Adding errors],
   [The above sound still sounded quite artificial, I think mostly because simultaneous notes start on the same exact millisecond. There seems to be a small timing variance in music boxes that is an important contributor to their overall delicate sound. In the below sample I added a timing error from a normal distribution with a standard deviation of 11 milliseconds. It sounds a lot better already!],
+  [(HTML5 audio: Music box notes.)],
   [Other sounds from the teeth],
   [If you listen to recordings of music boxes you can occasionally hear a high-pitched screech as well. It sounds a bit like stopping a tuning fork or guitar string with a metal object. That's why I thought it must be the sound of the pin stopping a vibrating tooth just before playing another note on the same tooth.],
   [Sure enough, this sound could always be heard by playing the same note twice in quick succession. I recorded this sound for each tooth and added it to my sound generator. The sound will be generated only if the previous note sample is still playing, and its volume will be scaled in proportion to the tooth's envelope amplitude at that moment. Also, it will silence the note. The amount of silence between the screech and the next note will depend on a tempo setting.],
   [Adding this resonance definitely brings about a more organic feel:],
+  [(HTML5 audio: Music box notes.)],
   [The wind-up mechanism],
   [For a final touch I recorded sounds from the wind-up mechanism of another music box, even though this one didn't have one. It's all stitched up from small pieces, so the number of wind-ups in the beginning and the speed of the whirring sound can all be adjusted. I was surprised at the smoothness of the background sound; it's a three-second loop with no cross-fading involved. You can also hear the box lid being closed in the end.],
+  [(HTML5 audio: Music box notes.)],
   [The native notation of a music box is some kind of a perforated tape or drum, so I ended up using a similar format. There's a tempo marking and tuning information in the beginning, followed by notation one eighth per line. Arpeggios are indicated by a pointy bracket \> . I also wrote a script to convert MIDI files into this format; but the number of notes in a music box loop is usually so small that it's not very hard to write manually.],
   [This format could include additional information as well, perhaps controlling the motor sound or box size and shape (properties of the EQ filter).],
   [This format could also potentially be useful when producing or transcribing music from music drums.],
@@ -860,10 +1019,8 @@ a replacement for the understanding of the data.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Complex But Not Dynamic: Using A Static Site To Crowdsource Playgrounds],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
@@ -871,18 +1028,26 @@ a replacement for the understanding of the data.],
   paragraphs: (
   [This post is cross-posted with our friends at Source .],
   [We usually build relatively simple sites with our app template . Our accessible playgrounds project needed to be more complex. We needed to deal with moderated, user-generated data. But we didn’t have to run a server in order to make this site work; we just modified our app template .],
-  [id="asynchronous-updates"\>Asynchronous Updates],
   [App template-based sites are HTML files rendered from templates and deployed to Amazon’s Simple Storage Service (S3). This technique works tremendously for sites that never change, but our playgrounds site needs to be dynamic.],
   [When someone adds, edits or deletes a playground, we POST to a tiny server running a Flask application. This application appends the update to a file on our server, one line for each change. These updates accumulate throughout the day.],
   [At 5 a.m., a cron job runs that copies and then deletes this file, and then processes updates from the copied file. (This copy-delete-read the copy flow helps us solve race conditions where new updates from the web might attempt to write to a locked-for-reading file. After the initial copy-and-delete step, any new writes will be written to a new updates file that will get processed the next day.)],
   [Each update is processed twice. First, we write the old and new states of the playground to a revision log with a timestamp, like so:],
+  [\{
+ 'slug': 'ambucs-hub-city-playground-at-maxey-park-lubbock-tx',
+ 'revisions':\[
+ \{
+ 'field': 'address',
+ 'from': '26th Street and Nashville Avenue'
+ 'to': '4007 26th Street'
+ \},
+ \],
+ 'type': 'update'
+\}],
   [Second, we update the playground in a SQLite database. When this is complete, a script on the server regenerates the site from the data in the database. Since each page includes a list of other nearby playgrounds, we need to regenerate every playground page. This process takes 10 or 15 minutes, but it’s asynchronous from the rest of the application, so we don’t mind. We’re guaranteed to have the correct version of each playground page generated every 24 hours.],
   [At each step of the process, we take snapshots of the state of our data. Before running our update process, we time-stamp and copy the JSON file of updates from the previous day. We also time-stamp and copy the SQLite database file and push it up to S3 for safekeeping.],
-  [id="email-as-admin"\>Email As Admin],
   [Maintaining a crowdsourced web site requires a little work. We fix spelling and location errors, remove duplicates, and delete playgrounds that were added but aren’t accessible.],
   [Typically, you’d run an admin site for your maintenance tasks, but we decided that our editors use the public-facing site just like our readers. That said, our editors still need a way to check the updates our users are making.],
   [Since we only process updates once every 24 hours, we decided to just send an email. For additions, we link the playground URL in the email so that editors could click through. For updates, we list the changes. And for delete requests, we include a link that, when clicked, confirms a deletion and instructs the site to process the delete during the next day’s cron.],
-  [id="search"\>Search],
   [Flat files are awesome, but without a web server, how do you search?],
   [To solve this, we use Amazon’s CloudSearch. Eventually, we’ll probably implement a way to find playgrounds with certain features or to search by name. But right now, we’re using it just for geographic search, e.g., finding playgrounds near a point.],
   [To implement geographic search in CloudSearch you need to use rank expressions , bits of JavaScript that apply an order to the results. CloudSearch allows you to specify a rank expression as a parameter to the search URL. That’s right: Our search URLs include a string that contains instructions for CloudSearch to order the results. Amazon has documentation on how to use this to implement simple “great circle” math. We took it a step further and implemented spherical law of cosines because it is a more accurate algorithm for determining distance between points on a sphere.],
@@ -890,20 +1055,19 @@ a replacement for the understanding of the data.],
   [CloudSearch only supports unsigned integers , so we have to add the 180 degrees (because latitudes and longitudes can be negative numbers) and also multiply the coordinates by 10,000 (because an unsigned integer can’t have a decimal point) to get five decimal points of precision. Finally, we have to reverse this process within our rank expression before converting the coordinates to radians to calculate distance.],
   [Also, a single CloudSearch instance is not very stable when running high-CPU queries like geographic searches. During load testing we saw a large number of HTTP 507 errors, indicating that the search service was overloaded . Unfortunately, 5xx errors and JSONP don’t mix . To solve this, we catch 507 errors in Nginx and instead return a HTTP 202 with a custom JSON error document. The 202 response allowed us to read the JSON in the response and then retry the search if it failed. We retry up to three times, though in practice we observed that almost every failed request would return a proper result after only a single fail/retry.],
   [Finally, while Amazon would auto-scale our CloudSearch instances to match demand, we couldn’t find any published material explaining how often Amazon would spin up new servers or how many would initialize at once. So, we reached out to Amazon. They were able to set our CloudSearch domain to always have at least two servers at all times. With the extra firepower and our retry solution, on launch day we had no problems at all.],
-  [id="retrofitting-cloudsearch-for-jsonp"\>Retrofitting CloudSearch For JSONP],
+  [Retrofitting CloudSearch For JSONP],
   [You might notice we’re doing all of our CloudSearch interaction on the client. But the CloudSearch API doesn’t support JSONP natively. So we need to proxy the responses with Nginx.],
-  [id="option-1-cors"\>Option 1: CORS],
+  [Option 1: CORS],
   [We could have modified the headers coming back from our CloudSearch to support Cross-Origin Resource Sharing, aka CORS . CORS works when your response contains a header like Access-Control-Allow-Origin: \* , which would instruct a Web browser to trust responses from any origin.],
   [However, while CORS has support in many modern browsers, it fails in older versions of Android and iOS Safari, as well as having inconsistent support in IE8 and IE9. JSONP just matched our needs more closely than CORS did.],
-  [id="option-2-rewrite-the-response"\>Option 2: Rewrite the response.],
+  [Option 2: Rewrite the response.],
   [Once we settled on JSONP, we knew we would need to rewrite the response to wrap it in a function. Initially, we specified a static callback name in jQuery and hard-coded it into our Nginx configuration.],
   [This pattern worked great until we needed to get search results twice on the same page load. In that case, we returned a function with new data but with the same function name as the previous AJAX call. The result? We didn’t see any updated data. We needed a dynamic callback where the function that wraps your JSON was unique for each request. jQuery will do this automatically.],
   [Now we needed our Nginx configuration to sniff the callback out of the URL and then wrap it around the response. And while this might be easy using some nonstandard Nginx libraries like OpenResty , we didn’t have the option to recompile our Nginx on the fly without possibly disturbing existing running projects.],
   [One other hassle: Amazon’s CloudSearch would return a 403 if we included a callback param in the URL. Adding insult to injury, we’d need to strip this parameter from the URL before proxying it to Amazon’s servers.],
   [Thankfully, Nginx’s location pattern-matcher allowed us to use regular expressions with multiple capture groups. Here’s the final Nginx configuration we used to both capture and strip the callback from the proxy URL.],
-  [id="nginx-proxy-and-dns"\>Nginx Proxy And DNS],
+  [Nginx Proxy And DNS],
   [Another thing you might notice: We had to specify a DNS server in the Nginx configuration so that we could resolve the domain name for the Amazon CloudSearch servers. Nginx’s proxy\_pass is meant to work with routable IP addresses, not fully-qualified domain names. Adding a resolver directive meant that Nginx could look up the DNS name for our CloudSearch server instead of forcing us to hard-code an IP address that might change in the future.],
-  [id="embrace-constraints"\>Embrace Constraints],
   [Static sites with asynchronous architectures stay up under great load, cost very little to deploy, and have low maintenance burden .],
   [We really like doing things this way. If you’re feeling inspired, complete instructions for getting this code up and running on your machine are available on our GitHub page. Don’t hesitate to send us a note with any questions.],
   [Happy hacking!],
@@ -914,10 +1078,8 @@ a replacement for the understanding of the data.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Recurrent Networks Hello World in Clojure with new Deep Diamond RNN support on CPU and GPU],
   author: [Dragan Djuric],
   source-name: [Dragan Djuric],
@@ -933,7 +1095,7 @@ with deep learning, let alone recurrent neural networks, and that's why I'll try
 to show a very simple example on the level of Hello World that anyone interested
 in machine learning and programming can understand and try.],
   [So, enough talk, let's get down to business.],
-  [id="orga87de2e"\>What are we doing],
+  [What are we doing],
   [We are demonstrating a hammer: recurrent neural networks. Just kidding; we would like
 to create a (software) device that can learn to predict the next data point in a series.
 Depending on the data, this can be done in a number of ways (even
@@ -951,10 +1113,9 @@ to predict the next number in the series for obvious series such as 1, 2, 3, 4, 
 Of course, in real life we rarely need to solve that exact task with such a bazooka
 as RNN, but if this is your first contact with time series prediction with deep
 learning, I guess it'd be just what works best.],
-  [id="org1560cc6"\>Let's get down to code],
+  [Let's get down to code],
   [First, we'll require a bunch of Clojure namespaces that we need.],
-  [class="org-src-container"\>
- ( require ' \[ uncomplicate.commons.core :refer \[ with-release let-release release \] \] 
+  [( require ' \[ uncomplicate.commons.core :refer \[ with-release let-release release \] \] 
  ' \[ uncomplicate.neanderthal
  \[ core :refer \[ ge dim amax submatrix subvector mrows trans transfer transfer! view-vctr
  native view-ge cols mv! rk! raw col row nrm2 scal! ncols dim rows axpby! \] \] 
@@ -970,6 +1131,7 @@ to feed it. Suppose (for the sake of Hello World), that I "measured" a narrow ra
 by generating it from thin air. Does this data tell us anything about stock market? Of course not, and
 please does not expect any model that we train on this data to magically be informed on anything that
 could not be learned from the data it has seen.],
+  [( def simple-sequence ( range -100 100 ) )],
   [(-100 -99 -98 -97 -96 -95 -94 -93 -92 -91 -90 -89 -88 -87 -86 -85 ...)],
   [Now, I'll create a blueprint for an arbitrary recurrent neural network (RNN). This network has 3
 recurrent layers (Gated Recurrent Unit cells), an abbreviation to one timestep, and
@@ -980,8 +1142,7 @@ I chose it simply to show you how it's easy to construct with Deep Diamond (),
 as it will practically do everything on its own if you specify the bare minimum,
 that is "what you want". And we hope it'll at least learn to work well at the end,
 as non-optimal as it is.],
-  [class="org-src-container"\>
- ( def net-bp ( network ( desc \[ 5 32 1 \] :float :tnc ) 
+  [( def net-bp ( network ( desc \[ 5 32 1 \] :float :tnc ) 
  \[ ( rnn \[ 128 \] :gru ) 
  ( rnn 2 ) 
  ( abbreviate ) 
@@ -991,7 +1152,7 @@ as non-optimal as it is.],
 recurrent layers have an ability to handle sequential relations of its input by "memorizing"
 the signals that pass through it. The upcoming version of my book Deep Learning for Programmers (2.0)
 discusses RNNs in more detail.],
-  [id="orgbe3f6b0"\>Formatting the input data],
+  [Formatting the input data],
   [The input of this network differs from fully connected or convolutional networks by explicitly
 modeling the time dimension, "t" in the ":tnc" format. Technically, you can feed it with any
 3D tensor that matches its \[5 32 1\] shape, but for that data to be in context, it has to
@@ -1012,8 +1173,7 @@ almost 400, and their respective target outputs could be extracted from simple-s
 the data and pack it into input and target output tensors \[x-train\] and \[y-train\] .
 I don't have time to explain each step, which is not trivial, but this is fairly standard
 vector/matrix/tensor stuff, well explained in both books from my Interactive Programming for Artificial Intelligence book series .],
-  [class="org-src-container"\>
- ( defn split-series \[ fact s ^ long t \] 
+  [( defn split-series \[ fact s ^ long t \] 
  ( let \[ n ( - ( ncols s ) t ) 
  c ( mrows s ) \] 
  ( let-release \[ x-tz ( tensor fact \[ t n c \] :float :tnc ) 
@@ -1026,16 +1186,19 @@ vector/matrix/tensor stuff, well explained in both books from my Interactive Pro
  \[ x-tz y-tz \] ) ) )],
   [Here's how the output looks like on an ever simpler example of 2-step sample sequences produced from
 5 element long full sequence.],
+  [( def dummy ( fge 1 5 ( range 5 ) ) )],
   [\#RealGEMatrix\[float, mxn:1x5, layout:column, offset:0\]
  ▥ ↓ ↓ ↓ ↓ ↓ ┓
  → 0.00 1.00 2.00 3.00 4.00
  ┗ ┛],
-  [\[{:shape \[2 3 1\], :data-type :float, :layout \[3 1 1\]} (0.0 1.0 2.0 1.0 2.0 3.0)
- {:shape \[3 1\], :data-type :float, :layout \[1 1\]} (2.0 3.0 4.0)\]],
+  [( def dummy-split ( split-series \*diamond-factory\* dummy 2 ) )],
+  [\[\{:shape \[2 3 1\], :data-type :float, :layout \[3 1 1\]\} (0.0 1.0 2.0 1.0 2.0 3.0)
+ \{:shape \[3 1\], :data-type :float, :layout \[1 1\]\} (2.0 3.0 4.0)\]],
   [This split produces 3 samples for training, each sample has 2 entries, and for each sample there is a desired output.
 The tensor printout does not show dimensions, which would be super hard to make sense anyway due to large
 dimensionality and enormous number of entries in any tensor of any use. We can extract a matrix view,
 in cases when it makes sense.],
+  [( view-ge ( view-vctr ( dummy-split 0 ) ) 3 2 )],
   [\#RealGEMatrix\[float, mxn:3x2, layout:column, offset:0\]
  ▥ ↓ ↓ ┓
  → 0.00 1.00
@@ -1046,20 +1209,21 @@ in cases when it makes sense.],
 default layout is :tnc , meaning that innermost grouping is channels (\\(C=1\\)), (mini)batch size (\\(N=3\\))
 and time (\$T=2).],
   [Ok, so, finally, we transform our own data so that the network can learn from it.],
+  [( def full-series ( fge 1 200 simple-sequence ) )],
   [\#RealGEMatrix\[float, mxn:1x200, layout:column, offset:0\]
  ▥ ↓ ↓ ↓ ↓ ↓ ┓
  → -100.00 -99.00 ⁙ 98.00 99.00
  ┗ ┛],
-  [\[{:shape \[5 195 1\], :data-type :float, :layout \[195 1 1\]} (-100.0 -99.0 -98.0 -97.0 -96.0 -95.0 -94.0 -93.0 -92.0 -91.0 -90.0 -89.0 -88.0 -87.0 -86.0 -85.0)
- {:shape \[195 1\], :data-type :float, :layout \[1 1\]} (-95.0 -94.0 -93.0 -92.0 -91.0 -90.0 -89.0 -88.0 -87.0 -86.0 -85.0 -84.0 -83.0 -82.0 -81.0 -80.0)\]],
+  [( def train-data ( split-series \*diamond-factory\* full-series 5 ) )],
+  [\[\{:shape \[5 195 1\], :data-type :float, :layout \[195 1 1\]\} (-100.0 -99.0 -98.0 -97.0 -96.0 -95.0 -94.0 -93.0 -92.0 -91.0 -90.0 -89.0 -88.0 -87.0 -86.0 -85.0)
+ \{:shape \[195 1\], :data-type :float, :layout \[1 1\]\} (-95.0 -94.0 -93.0 -92.0 -91.0 -90.0 -89.0 -88.0 -87.0 -86.0 -85.0 -84.0 -83.0 -82.0 -81.0 -80.0)\]],
   [The printouts of long tensors show only a subset of the content of the tensor.],
-  [id="org186bca1"\>The actual network],
+  [The actual network],
   [The blueprint that we've created at the beginning of the article can be simplified
 for later reuse. Please note that it's not some super-opaque magical compiler.
 The network architecture is defined as a simple Clojure vector of straight Clojure
 functions!],
-  [class="org-src-container"\>
- ( def architecture \[ ( rnn \[ 128 \] :gru ) 
+  [( def architecture \[ ( rnn \[ 128 \] :gru ) 
  ( rnn 2 ) 
  ( abbreviate ) 
  ( dense \[ 128 \] :relu ) 
@@ -1071,6 +1235,8 @@ functions!],
  \#function\[uncomplicate.diamond.dnn/fully-connected/fn--43493\]\]],
   [This architecture is independent from the specific input dimensions.
 We create a blueprint by specifying the dimensions and the architecture.],
+  [( def net-bp ( network ( desc \[ 5 32 1 \] :float :tnc ) 
+ architecture ) )],
   [This blueprint is independent of the learning algorithm. It is a function
 that creates the actual network training program. In this case, I will
 use gradient descent with adaptive moments (:adam). Before we start learning,
@@ -1079,90 +1245,118 @@ we initialize the network with random weights, automatically chosen by
 initialization function that is more to your liking. Everything in Deep Diamond
 is modular and implemented in Clojure fashion of "assemble your own if you wish".
 If you are content with my choices, then everything is automatic!],
+  [( def net ( init! ( net-bp :adam ) ) )],
   [Here's the network printout, in case you],
   [=======================================================================],
   [\#SequentialNetwork\[train, input:\[5 32 1\], layers:5, workspace:1\]],
   [-----------------------------------------------------------------------],
   [\#Adam\[topology::gru, shape:\[5 32 128\], activation: :identity\]],
-  [parameters: \[{:shape \[1 1 129 3 128\], :data-type :float, :layout \[49536 49536 384 128 1\]} (2.1676771211787127E-5 -5.19975537827122E-6 5.7575953178456984E-6 2.380384103162214E-5 -2.894530371122528E-5 -2.4803119913485716E-7 -1.6729745766497217E-5 -2.902976348195807E-6 4.530028309090994E-5 5.464621608552989E-6 -5.7127394939016085E-6 1.593221713847015E-5 -1.1793279554694891E-5 -7.507987476174094E-8 -1.1438844921940472E-5 5.965541276964359E-6) {:shape \[1 1 3 128\], :data-type :float, :layout \[384 384 128 1\]} (0.0035437364131212234 -0.001584756188094616 0.0013698132243007421 -1.2431709910742939E-4 1.7048766312655061E-4 0.002398068318143487 0.00372034078463912 -0.0021170536056160927 8.799560600891709E-4 -0.0023348634131252766 8.223060867749155E-4 -1.1841517698485404E-4 -0.004045043606311083 9.459585417062044E-4 -0.0037800846621394157 -0.002804018324241042)\]],
+  [parameters: \[\{:shape \[1 1 129 3 128\], :data-type :float, :layout \[49536 49536 384 128 1\]\} (2.1676771211787127E-5 -5.19975537827122E-6 5.7575953178456984E-6 2.380384103162214E-5 -2.894530371122528E-5 -2.4803119913485716E-7 -1.6729745766497217E-5 -2.902976348195807E-6 4.530028309090994E-5 5.464621608552989E-6 -5.7127394939016085E-6 1.593221713847015E-5 -1.1793279554694891E-5 -7.507987476174094E-8 -1.1438844921940472E-5 5.965541276964359E-6) \{:shape \[1 1 3 128\], :data-type :float, :layout \[384 384 128 1\]\} (0.0035437364131212234 -0.001584756188094616 0.0013698132243007421 -1.2431709910742939E-4 1.7048766312655061E-4 0.002398068318143487 0.00372034078463912 -0.0021170536056160927 8.799560600891709E-4 -0.0023348634131252766 8.223060867749155E-4 -1.1841517698485404E-4 -0.004045043606311083 9.459585417062044E-4 -0.0037800846621394157 -0.002804018324241042)\]],
   [-----------------------------------------------------------------------],
   [\#Adam\[topology::gru, shape:\[5 32 128\], activation: :identity\]],
-  [parameters: \[{:shape \[2 1 256 3 128\], :data-type :float, :layout \[98304 98304 384 128 1\]} (2.276021717761978E-7 3.804875632340554E-6 1.058972247847123E-5 2.8063212198503606E-7 1.8309128790860996E-5 -9.416969078301918E-6 -7.987003414200444E-8 1.0779360309243202E-5 2.222931470896583E-6 -1.2704362234217115E-5 1.5140467439778149E-5 -2.0407780539244413E-5 -1.5779027080498054E-6 -1.0661310625437181E-5 -3.834541985270334E-6 -1.0737002412497532E-5) {:shape \[2 1 3 128\], :data-type :float, :layout \[384 384 128 1\]} (8.910018368624151E-4 0.003690000157803297 -4.8378523206338286E-4 -0.0034620240330696106 0.0031146425753831863 6.610305863432586E-4 0.00204548635520041 0.001728582545183599 -0.0027434946969151497 0.007643579971045256 0.00425624568015337 -0.00295245717279613 1.8937387721962295E-5 -0.0027048818301409483 -0.0012806318700313568 -0.0028582836966961622)\]],
+  [parameters: \[\{:shape \[2 1 256 3 128\], :data-type :float, :layout \[98304 98304 384 128 1\]\} (2.276021717761978E-7 3.804875632340554E-6 1.058972247847123E-5 2.8063212198503606E-7 1.8309128790860996E-5 -9.416969078301918E-6 -7.987003414200444E-8 1.0779360309243202E-5 2.222931470896583E-6 -1.2704362234217115E-5 1.5140467439778149E-5 -2.0407780539244413E-5 -1.5779027080498054E-6 -1.0661310625437181E-5 -3.834541985270334E-6 -1.0737002412497532E-5) \{:shape \[2 1 3 128\], :data-type :float, :layout \[384 384 128 1\]\} (8.910018368624151E-4 0.003690000157803297 -4.8378523206338286E-4 -0.0034620240330696106 0.0031146425753831863 6.610305863432586E-4 0.00204548635520041 0.001728582545183599 -0.0027434946969151497 0.007643579971045256 0.00425624568015337 -0.00295245717279613 1.8937387721962295E-5 -0.0027048818301409483 -0.0012806318700313568 -0.0028582836966961622)\]],
   [-----------------------------------------------------------------------],
-  [{:shape \[32 128\], :topology :abbreviate}],
+  [\{:shape \[32 128\], :topology :abbreviate\}],
   [\#Adam\[topology::dense, shape:\[32 128\], activation: :relu\]],
-  [parameters: \[{:shape \[128 128\], :data-type :float, :layout \[8192 1024\]} (-0.004568892996758223 -0.004355841316282749 0.005139997228980064 -0.005750759970396757 -0.004274052567780018 0.005599929019808769 -0.003351157531142235 -0.008299742825329304 -0.0031023912597447634 0.0013810413656756282 0.002118719043210149 0.0023180078715085983 -0.005323362536728382 -0.013326002284884453 7.393552223220468E-4 -0.013735005632042885) {:shape \[128\], :data-type :float, :layout \[1\]} (0.5049463510513306 -0.47153180837631226 -1.3509427309036255 -1.3017100095748901 -0.39814749360084534 0.8303372263908386 0.6530964970588684 -0.22249580919742584 -1.326366901397705 0.16360507905483246 -0.022157425060868263 2.0535836219787598 1.8076190948486328 -0.0799550786614418 -1.6791125535964966 -0.7451670169830322)\]],
+  [parameters: \[\{:shape \[128 128\], :data-type :float, :layout \[8192 1024\]\} (-0.004568892996758223 -0.004355841316282749 0.005139997228980064 -0.005750759970396757 -0.004274052567780018 0.005599929019808769 -0.003351157531142235 -0.008299742825329304 -0.0031023912597447634 0.0013810413656756282 0.002118719043210149 0.0023180078715085983 -0.005323362536728382 -0.013326002284884453 7.393552223220468E-4 -0.013735005632042885) \{:shape \[128\], :data-type :float, :layout \[1\]\} (0.5049463510513306 -0.47153180837631226 -1.3509427309036255 -1.3017100095748901 -0.39814749360084534 0.8303372263908386 0.6530964970588684 -0.22249580919742584 -1.326366901397705 0.16360507905483246 -0.022157425060868263 2.0535836219787598 1.8076190948486328 -0.0799550786614418 -1.6791125535964966 -0.7451670169830322)\]],
   [-----------------------------------------------------------------------],
   [\#Adam\[topology::dense, shape:\[32 1\], activation: :linear\]],
-  [parameters: \[{:shape \[1 128\], :data-type :float, :layout \[1 1\]} (0.003621552372351289 -0.004416522569954395 2.548426273278892E-4 0.006995228119194508 0.0013199367094784975 -0.0018220240017399192 0.009454095736145973 0.003091101534664631 -0.01203352864831686 -0.014204473234713078 -0.007159397471696138 0.0039085038006305695 0.0029486482962965965 -0.009481357410550117 0.009158425033092499 -0.004999339580535889) {:shape \[1\], :data-type :float, :layout \[1\]} (-0.09112684428691864)\]],
+  [parameters: \[\{:shape \[1 128\], :data-type :float, :layout \[1 1\]\} (0.003621552372351289 -0.004416522569954395 2.548426273278892E-4 0.006995228119194508 0.0013199367094784975 -0.0018220240017399192 0.009454095736145973 0.003091101534664631 -0.01203352864831686 -0.014204473234713078 -0.007159397471696138 0.0039085038006305695 0.0029486482962965965 -0.009481357410550117 0.009158425033092499 -0.004999339580535889) \{:shape \[1\], :data-type :float, :layout \[1\]\} (-0.09112684428691864)\]],
   [=======================================================================],
-  [id="orga09ae80"\>Training, finally!],
+  [Training, finally!],
   [Hey, I promised you a Hello World, and I've been beating the bush for half an hour
 formatting the data. And we didn't even touched the biggest obstacle: actually training
 the network. Is it hard? Yes, but not for the user. Now it's time for Deep Diamond () to beat the hell out of your
 CPU or GPU. But it will at leas do this on its own :)],
   [Since this is a Hello World, we'll start with 50 epochs and see how it's going.],
+  [( time ( train-shuffle net ( train-data 0 ) ( train-data 1 ) :quadratic 50 \[ 0.005 \] ) )],
   ["Elapsed time: 769.986155 msecs"
 3238.298712769756],
   [Hmmmm. The cost of 3000 and change does not look very good. Would more training help?],
+  [( time ( train-shuffle net ( train-data 0 ) ( train-data 1 ) :quadratic 50 \[ 0.005 \] ) )],
   ["Elapsed time: 744.456035 msecs"
 708.0862449675478],
   [Still bad, but it's improving! For the sake of experinmenting, I've run this ten(ish) times,
 and the cost has been steadily decreasing, to the point that it looks good now.],
+  [( time ( train-shuffle net ( train-data 0 ) ( train-data 1 ) :quadratic 50 \[ 0.005 \] ) )],
   ["Elapsed time: 720.427332 msecs"
 0.13662090173881225],
   [We don't have to stick to 50-epoch runs. Let's do 500 at once.],
+  [( time ( train-shuffle net ( train-data 0 ) ( train-data 1 ) :quadratic 500 \[ 0.005 \] ) )],
   ["Elapsed time: 6325.427605 msecs"
 0.008672867995529465],
   [This looks nice. A thousand epochs might seem a lot, but considering the large network size,
 recurrent layers, and the scarceness of the training data, it might actually be appropriate.
 On the other hand, Deep Diamond did it blazingly fast, in a mere dozen seconds! In the world
 of machine learning, this is nothing.],
-  [{:shape \[5 1 1\], :data-type :float, :layout \[1 1 1\]} (1.0 2.0 3.0 4.0 5.0)],
+  [( def question ( tensor \[ 5 1 1 \] :float :tnc ) ) 
+ ( transfer! \[ 1 2 3 4 5 \] question )],
+  [\{:shape \[5 1 1\], :data-type :float, :layout \[1 1 1\]\} (1.0 2.0 3.0 4.0 5.0)],
+  [( infer net question )],
   [Dragan says: Requested subtensor is outside of bounds.
-{:src-index -31, :src-cnt 1, :dst-index 0, :dst-cnt 32, :mb-size 1}],
-  [id="org2a87b99"\>Using the network for inference],
+\{:src-index -31, :src-cnt 1, :dst-index 0, :dst-cnt 32, :mb-size 1\}],
+  [Using the network for inference],
   [Now that we have our super useful network, we can stop and think: but how do we use it?
 First, we need data that could be interpreted as a "question". Our network needs a sequence
 of five numbers, and when fed, will answer with one number. Obviously, these should be
 provided as tensors of appropriate dimensions.],
+  [( def question ( tensor \[ 5 1 1 \] :float :tnc ) ) 
+ ( transfer! \[ 1 2 3 4 5 \] question )],
   [However, invoking inference would cause the complaint from the network.],
+  [( infer net question )],
+  [Execution error ( ExceptionInfo ) at uncomplicate.commons.utils /dragan-says-ex ( utils.clj:105 ) .
+Dragan says: Requested subtensor is outside of bounds.],
   [Our network's input requires a minibatch of 32 samples. The infer function
 can handle more, and do the inference in mini batches of 32, but it can't handle
 fewer samples.],
   [One of the solutions is to create another blueprint with the same structure, and transfer
 learned weights to the new network.],
+  [( def net1-bp ( network ( desc \[ 5 1 1 \] :float :tnc ) 
+ architecture ) )],
   [While we're at it, we don't need to create a complex network capable of learning
 (:adam or :sgd). We can create a much cheaper inference network that takes fewer resources.],
+  [( def net1-infer ( net1-bp ) ) 
+ ( transfer! net net1-infer )],
   [Now, finally, give us the answer, network!],
-  [{:shape \[1 1\], :data-type :float, :layout \[1 1\]} (6.016137599945068)],
+  [( infer net1-infer question )],
+  [\{:shape \[1 1\], :data-type :float, :layout \[1 1\]\} (6.016137599945068)],
   [So, being asked what is the next element in the sequence of \[1.0 2.0 3.0 4.0 5.0\] 
 (remember, we specified data type :float), our network answers \[6.0161\] which is
 close enough to the actual target value that we can mark this as correct.
 But, it's not a great achievement, since our network already saw this sequence in
 training. A hash map would have done much better job at guessing this. Let's try
 a previously unseen sequence.],
-  [{:shape \[1 1\], :data-type :float, :layout \[1 1\]} (17.750324249267578)],
+  [( transfer! \[ 10 12 14 16 18 \] question ) 
+ ( infer net1-infer question )],
+  [\{:shape \[1 1\], :data-type :float, :layout \[1 1\]\} (17.750324249267578)],
   [Not that off, but one would expect 19.0. What went wrong? We trained our network
 with ducks \\((x+1)\\) and asked it about geese \\((x+2)\\). What about griffons?],
-  [{:shape \[1 1\], :data-type :float, :layout \[1 1\]} (-6.679039001464844)],
+  [( transfer! \[ 10 1 100 16 34 \] question ) 
+ ( infer net1-infer question )],
+  [\{:shape \[1 1\], :data-type :float, :layout \[1 1\]\} (-6.679039001464844)],
   [Now the answer does not make any sense, but would you be able to come with a better answer?],
   [All, right, let's try with a sequence that is similar to the one we used in training,
 but is out of the range of data that the network has seen.],
-  [{:shape \[1 1\], :data-type :float, :layout \[1 1\]} (96.41997528076172)],
+  [( transfer! \[ 1000 1001 1002 1003 1004 \] question ) 
+ ( infer net1-infer question )],
+  [\{:shape \[1 1\], :data-type :float, :layout \[1 1\]\} (96.41997528076172)],
   [Nope, not much success, but we should not have expected any. The network can not
 answer question outside its domain of expertise.],
   [Let's try with previously unseen data, but inside the domain that we used for training (floats from -100.0 to 1000).],
-  [{:shape \[1 1\], :data-type :float, :layout \[1 1\]} (42.39200210571289)],
+  [( transfer! \[ 37.4 38.4 39.4 40.4 41.4 \] question ) 
+ ( infer net1-infer question )],
+  [\{:shape \[1 1\], :data-type :float, :layout \[1 1\]\} (42.39200210571289)],
   [This is actually pretty close!],
-  [id="orgd6b4463"\>What about GPU?],
+  [What about GPU?],
   [Sure!],
+  [( def nvidia ( cudnn-factory ) )],
   [( def gpu-net-bp ( network nvidia
  ( desc \[ 5 32 1 \] :float :tnc ) 
  architecture ) )],
   [( def gpu-net ( init! ( gpu-net-bp :adam ) ) )],
   [( def gpu-train-data ( split-series nvidia full-series 5 ) )],
   [Let's hit it with 1000 epochs right away.],
+  [( time ( train-shuffle gpu-net ( gpu-train-data 0 ) ( gpu-train-data 1 ) :quadratic 1000 \[ 0.005 \] ) )],
   ["Elapsed time: 5734.688665 msecs"
 4.561427662266859E-4],
 ),
@@ -1172,20 +1366,18 @@ answer question outside its domain of expertise.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Adding a verb to the dotnet CLI tooling],
   author: [Matt Warren (.NET)],
   source-name: [Matt Warren (.NET)],
   images: (),
   paragraphs: (
   [The dotnet CLI tooling comes with several built-in cmds such as build , run and test , but it turns out it’s possible to add your own verb to that list.],
-  [id="arbitrary-cmds"\>Arbitrary cmds],
+  [Arbitrary cmds],
   [From Intro to . NET Core CLI - Design],
-  [The way the dotnet driver finds the command it is instructed to run using dotnet {command} is via a convention; any executable that is placed in the PATH and is named dotnet-{command} will be available to the driver . For example, when you install the CLI toolchain there will be an executable called dotnet-build in your PATH; when you run dotnet build , the driver will run the dotnet-build executable. All of the arguments following the command are passed to the command being invoked. So, in the invocation of dotnet build --native , the --native switch will be passed to dotnet-build executable that will do some action based on it (in this case, produce a single native binary).],
-  [This is also the basics of the current extensibility model of the toolchain. Any executable found in the PATH named in this way, that is as dotnet-{command} , will be invoked by the dotnet driver.],
+  [The way the dotnet driver finds the command it is instructed to run using dotnet \{command\} is via a convention; any executable that is placed in the PATH and is named dotnet-\{command\} will be available to the driver . For example, when you install the CLI toolchain there will be an executable called dotnet-build in your PATH; when you run dotnet build , the driver will run the dotnet-build executable. All of the arguments following the command are passed to the command being invoked. So, in the invocation of dotnet build --native , the --native switch will be passed to dotnet-build executable that will do some action based on it (in this case, produce a single native binary).],
+  [This is also the basics of the current extensibility model of the toolchain. Any executable found in the PATH named in this way, that is as dotnet-\{command\} , will be invoked by the dotnet driver.],
   [Fun fact: This means that it’s actually possible to make a dotnet go command! You just need to make a copy of go.exe and rename it to dotnet-go.exe],
   [Yay dotnet go (I know, completely useless, but fun none-the-less)!!],
   [(and yes before you ask, you can also make dotnet dotnet work, but please don’t do that!!)],
@@ -1194,33 +1386,35 @@ answer question outside its domain of expertise.],
   [Using nuget packages in ASP. NET Core],
   [Building a custom dotnet cli tool],
   [However they don’t explain how to interact with the current project or access it’s output. This is what I wanted to do, so this post will pick up where those posts left off.],
-  [id="information-about-the-current-project"\>Information about the current Project],
+  [Information about the current Project],
   [Any effective dotnet verb needs to know about the project it is running in and helpfully those kind developers at Microsoft have created some useful classes that will parse and examine a project.json file (available in the Microsoft. DotNet. ProjectModel NuGet package). It’s pretty simple to work with, just a few lines of code and you’re able to access the entire Project model :],
-  [class="highlight"\> Project project ; 
+  [Project project ; 
  var currentDirectory = Directory . GetCurrentDirectory (); 
  if ( ProjectReader . TryGetProject ( currentDirectory , out project )) 
- { 
+ \{ 
  if ( project . Files . SourceFiles . Any ()) 
- { 
+ \{ 
  Console . WriteLine ( "Files:" ); 
  foreach ( var file in project . Files . SourceFiles ) 
- Console . WriteLine ( " {0}" , file . Replace ( currentDirectory , "" )); 
- } 
+ Console . WriteLine ( " \{0\}" , file . Replace ( currentDirectory , "" )); 
+ \} 
  if ( project . Dependencies . Any ()) 
- { 
+ \{ 
  Console . WriteLine ( "Dependencies:" ); 
  foreach ( var dependancy in project . Dependencies ) 
- { 
- Console . WriteLine ( " {0} - Line:{1}, Column:{2}" , 
+ \{ 
+ Console . WriteLine ( " \{0\} - Line:\{1\}, Column:\{2\}" , 
  dependancy . SourceFilePath . Replace ( currentDirectory , "" ), 
  dependancy . SourceLine , 
  dependancy . SourceColumn ); 
- } 
- } 
+ \} 
+ \} 
  ... 
- }],
-  [id="building-a-project"\>Building a Project],
+ \}],
+  [Building a Project],
   [In addition to knowing about the current project, we need to ensure it successfully builds before we can do anything else with it. Fortunately this is also simple thanks to the Microsoft. DotNet. Cli. Utils NuGet package (along with further help from Microsoft. DotNet. ProjectModel which provides the BuildWorkspace ):],
+  [\/\\/ Create a workspace 
+ var workspace = new BuildWorkspace ( ProjectReaderSettings . ReadFromEnvironment ());],
   [\/\\/ Fetch the ProjectContexts 
  var projectPath = project . ProjectFilePath ; 
  var runtimeIdentifiers = 
@@ -1233,61 +1427,61 @@ answer question outside its domain of expertise.],
   [\/\\/ Setup the build arguments 
  var projectContextToBuild = projectContexts . First (); 
  var cmdArgs = new List 
- { 
+ \{ 
  projectPath , 
  "--configuration" , "Release" , 
  "--framework" , projectContextToBuild . TargetFramework . ToString () 
- };],
+ \};],
   [\/\\/ Build!! 
- Console . WriteLine ( "Building Project for {0}" , projectContextToBuild . RuntimeIdentifier ); 
+ Console . WriteLine ( "Building Project for \{0\}" , projectContextToBuild . RuntimeIdentifier ); 
  var result = Command . CreateDotNet ( "build" , cmdArgs ). Execute (); 
- Console . WriteLine ( "Build {0}" , result . ExitCode == 0 ? "SUCCEEDED" : "FAILED" );],
+ Console . WriteLine ( "Build \{0\}" , result . ExitCode == 0 ? "SUCCEEDED" : "FAILED" );],
   [When this runs you get the familiar dotnet build output if it successfully builds or any error/diagnostic messages if not.],
-  [id="integrating-with-benchmarkdotnet"\>Integrating with BenchmarkDotNet],
+  [Integrating with BenchmarkDotNet],
   [Now that we know the project has produced an .exe or .dll, we can finally wire-up BenchmarkDotNet and get it to execute the benchmarks for us:],
-  [class="highlight"\> try 
- { 
+  [try 
+ \{ 
  Console . WriteLine ( "Running BenchmarkDotNet" ); 
  var benchmarkAssemblyPath = 
  projectContextToBuild . GetOutputPaths ( config ). RuntimeFiles . Assembly ; 
  var benchmarkAssembly = 
  AssemblyLoadContext . Default . LoadFromAssemblyPath ( benchmarkAssemblyPath ); 
- Console . WriteLine ( "Successfully loaded: {0}\\n" , benchmarkAssembly ); 
+ Console . WriteLine ( "Successfully loaded: \{0\}\\n" , benchmarkAssembly ); 
  var switcher = new BenchmarkSwitcher ( benchmarkAssembly ); 
  var summary = switcher . Run ( args ); 
- } 
+ \} 
  catch ( Exception ex ) 
- { 
+ \{ 
  Console . WriteLine ( "Error running BenchmarkDotNet" ); 
  Console . WriteLine ( ex ); 
- }],
+ \}],
   [Because BenchmarkDotNet is a command-line tool we don’t actually need to do much work. It’s just a case of creating a BenchmarkSwitcher , giving it a reference to the dll that contains the benchmarks and then passing in the command line arguments. BenchmarkDotNet will then do the rest of the work for us!],
   [However if you need to parse command line arguments yourself I’d recommend re-using the existing helper classes as they make life much easier and will ensure that your tool fits in with the dotnet tooling ethos.],
-  [id="the-final-result"\>The final result],
+  [The final result],
   [Finally, to test it out, we’ll use a simple test app from the BenchmarkDotNet Getting Started Guide , with the following in the project.json file (note the added tools section):],
-  [class="highlight"\> {
+  [\{
  "version": "1.0.0-\*",
- "buildOptions": {
+ "buildOptions": \{
  "emitEntryPoint": true
- },
- "dependencies": {
- "Microsoft. NETCore. App": {
+ \},
+ "dependencies": \{
+ "Microsoft. NETCore. App": \{
  "type": "platform",
  "version": "1.0.0-rc2-3002702"
- },
+ \},
  "BenchmarkDotNet": "0.9.9"
- },
- "frameworks": {
- "netcoreapp1.0": {
+ \},
+ "frameworks": \{
+ "netcoreapp1.0": \{
  "imports": "dnxcore50"
- }
- },
- "tools": {
+ \}
+ \},
+ "tools": \{
  "BenchmarkCommand": "1.0.0"
- }
-}],
+ \}
+\}],
   [Then after doing a dotnet restore , we can finally run our new dotnet benchmark command:],
-  [class="highlight"\> λ dotnet benchmark --class Md5VsSha256
+  [λ dotnet benchmark --class Md5VsSha256
 Building Project - BenchmarkCommandTest
 Project BenchmarkCommandTest (. NETCoreApp,Version=v1.0) will be compiled because expected outputs are missing
 Compiling BenchmarkCommandTest for . NETCoreApp,Version=v1.0
@@ -1328,10 +1522,8 @@ Successfully loaded: BenchmarkCommandTest, Version=1.0.0.0, Culture=neutral, Pub
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Putting a face on quality],
   author: [espen],
   source-name: [Finn.no Tech],
@@ -1339,14 +1531,14 @@ Successfully loaded: BenchmarkCommandTest, Version=1.0.0.0, Culture=neutral, Pub
   paragraphs: (
   [The topic of ensuring quality in the services we provide is a much debated topic in our industry \[ 1 \]. It tends to focus upon things such as testing and how to best automate it to try and reach a state of zero defects. These initiatives are great and we should all pursue them in our daily work. These debates tend to be very focused upon the technical side and how to prevent the intrusion of defects in our build cycle. A result of the technical focus is that you become abstracted from the real issues at hand and it becomes yet another ideological debate (or even worse yet another pissing contest between believers and non-believers).],
   [At FINN.no we try to always view things from an end-user perspective and technical quality is no different. So what does technical quality mean for our end users and do they really care?],
-  [id="making-dreams-come-true"\>Making dreams come true],
+  [Making dreams come true],
   [A service such as FINN.no is much more than just a site where you view classified ads. It is a service where everyday people make some of their dreams come true. They buy the house they have been dreaming of in order to start a family. It is a place where you buy things to keep your kids safe and comfortable. So in order to answer the previous question, do they care about quality? Naturally. Down time on a Sunday at FINN.no prevents people from buying the house, the car or the boat of their dreams.],
   [You get the picture right? Quality of service means that we deliver on our promisse of being a marketplace you can rely on to make some of your dreams come true. Behind the discussions about unit-test coverage there is a family not getting their house, car or boat if you mess things up. When we debate whether to write tests up-front or do waterfall planning there is someone out there not getting their car sold. We get so caught up in technology some times that we actually think that it matters. In order to try and get more in touch with how our quality affects our users we realized we had to do something. When growing from a small company to a larger company you often end up lossing track of these things and we needed to correct this.],
-  [id="continuous-improvements-aka-lean"\>Continuous improvements a.k.a. Lean],
+  [Continuous improvements a.k.a. Lean],
   [At FINN.no we have some people work solely with teaching us continuous improvement . They try to help every team or department to learn the Lean way of working and resolving issues. By spreading their knowledge across the company they start a lot of cross-team-department-initiatives which would not happen without them.],
   [Bulding quality into your product is one of the essential things towards creating an amazing user experience, but the problem is how do you do this on a regular basis? There are numerous tools available for all kinds of testing and quality analysis of code and things like that. These tools are all good and you should use them. However, they all fail to bring you the one insight which is the most valueable yo your business: what does your users actually think about what you do.],
   [Our customer service and architectural teams have both been working to try and establish a way of working which ensure continuous improvement in what we do. This has resulted in an initiative to try and visualize how our level of quality effects our users and customers.],
-  [id="finnback-or-tweet-board"\>FINNback or Tweet Board],
+  [FINNback or Tweet Board],
   [One easy way of putting a face on quality was to utilize the Twitter Streaming API which enables us to see what people think about our service. Thanks to the brilliant engineers at Twitter this was easily accomplished in just a few hours and we had a node.js application which displayed tweets about us on monitors/TVs in our cantina and in our reception. Thanks to the awesomeness of the Twitter Streaming API we are able to pull both the profile picture, the profile background image and the number of followers into our application in order to give a more human feel to the tweets coming in. This was critical as it makes the tweets real as they come from real live people who we effect with our work. In the sample screenshot of the FINNback application we get a confirmation of something we are painfully aware of, we should have an app .],
   [Doing this Twitter feed visualization is just a first step and we are working hard towards creating more real-time feedback visualization in order to make sure every one of our employees knows exactly how our users feel about what we do. We are confident that this is a great way of getting focus on technical quality and to make sure we work even harder to provide a service which makes our users dreams come true.],
 ),
@@ -1356,10 +1548,8 @@ Successfully loaded: BenchmarkCommandTest, Version=1.0.0.0, Culture=neutral, Pub
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A Management Maturity Model for Performance],
   author: [Alex Russell (infrequently noted)],
   source-name: [Alex Russell (infrequently noted)],
@@ -1380,11 +1570,10 @@ Successfully loaded: BenchmarkCommandTest, Version=1.0.0.0, Culture=neutral, Pub
   [The Role of Senior Management],
   [Questions for Senior Managers],
   ["o11y, But Make it Performance"],
-  [id="what-is-performance%3F" tabindex="-1"\> What is Performance?],
+  [What is Performance?],
   [It may seem a silly question, but what is performance, exactly?],
   [This is a complex topic, but to borrow from a recent post , web performance expands access to information and services by reducing latency and variance across interactions in a session, with a particular focus on the tail of the distribution (P75+) . Performance isn't a binary and there are no silver bullets.],
   [Only teams that master their systems can make intentional trade-offs. Organisations that serve their tools will tread water no matter how advanced their technology, while groups that understand and intentionally manage their systems can succeed on any stack. 1],
-  [id="value-propositions" tabindex="-1"\> Value Propositions],
   [The value of performance is deeply understood within a specific community and in teams that have achieved high maturity. But outside those contexts it can be challenging to communicate. One helpful lens is to view the difference between good and bad performance as a gap between expectations and reality.],
   [For executives that value:],
   [Revenue 
@@ -1396,30 +1585,28 @@ Poor performance is a gap between the responsiveness of Figma mockups and brand 
   [Accessibility 
  Performance is the foundation of access. Users experiencing slow services may be unable to access them in the first place , mooting other work poured into improving a11y . Reduced network and device capacity correlate with other access challenges. a11y that isn't founded on consistently excellent performance can easily veer into performative, rather than effective, territory.],
   [Performance is rarely the single determinant of product success, but it can be the margin of victory. Improving latency and reducing variance allows teams to test other product hypotheses with less noise. A senior product leader recently framed a big performance win as creating space that allows us to be fallible in other areas.],
-  [id="protecting-the-commons" tabindex="-1"\> Protecting the Commons],
+  [Protecting the Commons],
   [Like accessibility, security, UI coherence, privacy, and testability, performance is an aggregate result. Any single component of a system can regress latency or create variance, which means that like other cross-cutting product properties, performance must be managed as a commons. The approaches that work over time are horizontal, culturally-based, and require continual investment to sustain.],
   [Teams I've consulted with are too often wrenched between celebration over launching "the big rewrite" and the morning-after realisation that the new stack is tanking business metrics.],
   [Now saddled with the excesses of npm, webpack, React, and a thousand promises of "great performance" that were never critically evaluated, it's easy for managers to lose hope. These organisations sometimes spiral into recrimination and mistrust. Where hopes once flourished, the horrors of a Bundle Buddy readout looms. Who owns this code? Why is it there? How did it get away from the team so quickly?],
   [Many "big rewrite" projects begin with the promise of better performance. Prototypes "seem fast", but nobody's actually benchmarking them on low-end hardware. Things go fine for a while, but when sibling teams are brought in to integrate late in the process, attention to the cumulative experience may suffer. Before anyone knows it, the whole thing is as slow as molasses, but "there's no going back" ... and so the lemon launches with predictably sour results.],
   [In the midst of these crises, thoughtful organisations begin to develop a performance management discipline. This, in turn, helps to create a culture grounded in high expectations. Healthy performance cultures bake the scientific method into their processes and approaches; they understand that modern systems are incredibly complex and that nobody knows everything — and so we learn together and investigate the unknown to develop an actionable understanding.],
   [Products that maintain a healthy performance culture elevate management of latency, variance, and other performance attributes to OKR s because they understand how those factors affect the business.],
-  [id="levels-of-performance-management-maturity" tabindex="-1"\> Levels of Performance Management Maturity],
+  [Levels of Performance Management Maturity],
   [Performance management isn't widely understood to be part of what it means to operate a high-functioning team. This is a communcation challenge with upper management, but also a potential differentiator or even a strategic advantage. Teams that develop these advantages progress through a hierarchy of management practice phases. In drafting this post, I was pointed to similar work developed independently by others 3 ; that experienced consultants have observed similar trends helps give me confidence in this assessment:],
-  [id="level-0%3A-bliss" tabindex="-1"\> Level 0: Bliss],
+  [Level 0: Bliss],
   [Level 0 teams do not know they have a problem. They may be passively collecting some data (e.g., through one of the dozens of analytics tools they've inevitably integrated over the years), but nobody looks at it. It isn't anyone's job description to do so.],
   [Folks at this level of awareness might also simply assume that "it's the web, of course it's slow" and reach for native apps as a panacea (they aren't). The site "works" on their laptops and phones. What's the problem?],
-  [id="management-attributes" tabindex="-1"\> Management Attributes],
   [Managers in Level 0 teams are unaware that performance can be a serious product problem; they instead assume the technology they acquired on the back of big promises will be fine. This blindspot usually extends up to the C-suite. They do not have latency priorities and they uncritically accept assertions that a tool or architecture is "performant" or "blazing fast". They lack the technical depth to validate assertions, and move from one framework to another without enunciating which outcomes are good and which are unacceptable. Faith-based product management, if you will.],
   [Level 0 PM s fail to build processes or cultivate trusted advisors to assess the performance impacts of decisions. These organisations often greenlight rewrites because we can hire easily for X, and we aren't on it yet . These are vapid narratives, but Level 0 managers don't have the situational awareness, experience, or confidence to push back appropriately .],
   [These organisations may perform incidental data collection (from business analytics tools, e.g.) but are inconsistently reviewing performance metrics or considering them when formulating KPI s and OKR s.],
-  [id="level-1%3A-fire-fighting" tabindex="-1"\> Level 1: Fire Fighting],
+  [Level 1: Fire Fighting],
   [At Level 1, managers will have been made aware that the performance of the service is unacceptable. 4],
   [Service quality has degraded so much that even fellow travelers in the tech privilege bubble 4:1 have noticed. Folks with powerful laptops, new iPhones, and low-latency networks are noticing, which is a very bad sign. When an executive enquires about why something is slow, a response is required.],
   [This is the start of a painful remediation journey that can lead to heightened performance management maturity. But first, the fire must be extinguished.],
   [Level 1 managers will not have a strong theory about what's amiss, and an investigation will commence. This inevitably uncovers a wealth of potential metrics and data points to worry about; a few of those will be selected and tracked throughout the remediation process. But were those the right ones? Will tracking them from now on keep things from going bad? The first firefight instills gnawing uncertainty about what it even means to "be fast". On teams without good leadership or a bias towards scientific inquiry, it can be easy for Level 1 investigations to get preoccupied with one factor while ignoring others. This sort of anchoring effect can be overcome by pulling in external talent, but this is often counter-intuitive and sometimes even threatening to green teams.],
   [Competent managers will begin to look for more general "industry standard" baseline metrics to report against their data. The industry's default metrics are moving to a better place , but Level 1 managers are unequipped to understand them deeply. Teams at Level 1 (and 2) may blindly chase metrics because they have neither a strong, shared model of their users, nor an understanding of their own systems that would allow them to focus more tightly on what matters to the eventual user experience. They aren't thinking about the marginal user yet, so even when they do make progress on directionally aligned metrics, nasty surprises can reoccur.],
   [Low levels of performance management maturity are synonymous with low mastery of systems and an undeveloped understanding of user needs. This leaves teams unable to quickly track down culprits when good scores on select metrics fail to consistently deliver great experiences.],
-  [id="management-attributes-1" tabindex="-1"\> Management Attributes],
   [Level 1 teams are in transition, and managers of those teams are in the most fraught part of their journey. Some begin an unproductive blame game, accusing tech leads of incompetence, or worse. Wise PM s will perceive performance remediation work as akin to a service outage and apply the principles of observability culture, including "blameless postmortems" .],
   [It's never just one thing that's amiss on a site that prompts Level 1 awareness. Effective managers can use the collective learning process of remediation to improve a team's understanding of its systems. Discoveries will be made about the patterns and practices that lead to slowness. Sharing and celebrating these discoveries is a crucial positive attribute.],
   [Strong Level 1 managers will begin to create dashboards and request reports about factors that have previously caused problems in the product. Level 1 teams tend not to staff or plan for continual attention to these details, and the systems often become untrustworthy.],
@@ -1428,7 +1615,7 @@ Poor performance is a gap between the responsiveness of Figma mockups and brand 
   [Lastly, teams stuck in a Level 1 loop risk losing top talent. Many managers imagine this is fine because they're optimising for something else, e.g. the legibility of their stack to boot camp grads. A lack of respect for the ways that institutional knowledge accelerates development is all too common.],
   [It's difficult for managers who do not perceive the opportunities that lie beyond firefighting to comprehend how much stress they're placing on teams through constant remediation. Fluctuating between Levels 1 and 0 ensures a team never achieves consistent velocity, and top performers hate failing to deliver.],
   [The extent to which managers care about this — and other aspects of the commons, such as a11y and security — is a reasonable proxy for their leadership skills. Line managers can prevent regression back to Level 0 by bolstering learning and inquiry within their key personnel, including junior developers who show a flair for performance investigation.],
-  [id="level-2%3A-global-baselines-%26-metrics" tabindex="-1"\> Level 2: Global Baselines & Metrics],
+  [Level 2: Global Baselines & Metrics],
   [The global baseline isn't what folks in the privilege bubble assume.],
   [Thoughtful managers become uncomfortable as repeated Level 1 incidents cut into schedules, hurt morale, and create questions about system architecture. They sense their previous beliefs about what's "reasonable" need to be re-calibrated... but against what baseline?],
   [It's challenging for teams climbing the maturity ladder to sift through the many available browser and tool-vendor data points to understand which ones to measure and manage. Selected metrics are what influence future investments, and identifying the right ones allows teams to avoid firefighting and prevent blindspots.],
@@ -1436,29 +1623,26 @@ Poor performance is a gap between the responsiveness of Figma mockups and brand 
   [Teams looking to grow past Level 1 develop (or uncover they already had) Real User Monitoring (" RUM data") infrastructure in previous cycles. They will begin to report to management against these aggregates.],
   [Against the need for quicker feedback and a fog of metrics, managers who achieve Level 2 maturity look for objective, industry-standard reference points that correlate with business success. Thankfully, the web performance community has been busy developing increasingly representative and trustworthy measurements. Still, Level 2 teams will not yet have learned to live with the dissatisfaction that lab measurements cannot always predict a system's field behavior. Part of mastery is accepting that the system is complex and must be investigated, rather than fully modeled. Teams at Level 2 are just beginning to learn this lesson.],
   [Strong Level 2 managers acknowledge that they don't know what they don't know. They calibrate their progress against studies published by peers and respected firms doing work in this area. These data points reflect a global baseline that may (or may not) be appropriate for the product in question, but they're significantly better than nothing.],
-  [id="management-attributes-2" tabindex="-1"\> Management Attributes],
   [Managers who bring teams to Level 2 spread lessons from remediation incidents, create a sense of shared ownership over performance, and try to describe performance work in terms of business value. They work with their tech leads and business partners to adopt industry-standard metrics and set expectations based on them.],
   [Level 2 teams buy or build services that help them turn incidental data collection into continual reporting against those standard metrics. These reports tend to focus on averages and may not be sliced to focus on specific segments (e.g., mobile vs. desktop) and geographic attributes. Level 2 (and 3) teams may begin drowning in data, with too many data points being collected and sliced. Without careful shepherding to uncover the most meaningful metrics to the business, this can engender boredom and frustration, leading to reduced focus on important RUM data sources.],
   [Strong Level 2 managers will become unsatisfied with how global rules of thumb and metrics fail to map directly into their product's experience and may begin to look for better, more situated data that describe more of the user journeys they care about. The canniest Level 2 managers worry that their teams lack confidence that their work won't regress these metrics.],
   [Teams that achieve Level 2 competence can regress to Level 1 under product pressure (removing space to watch and manage metrics), team turnover, or assertions that "the new architecture" is somehow "too different" to measure.],
-  [id="level-3%3A-p75%2B%2C-site-specific-baselines-%26-metrics" tabindex="-1"\> Level 3: P75+, Site-specific Baselines & Metrics],
+  [Level 3: P75+, Site-specific Baselines & Metrics],
   [The unease of strong Level 2 management regarding metric appropriateness can lead to Level 3 awareness and exploration. At this stage, managers and TL s become convinced that the global numbers they're watching "aren't the full picture" — and they're right!],
   [At Level 3, teams begin to document important user journeys within their products and track the influence of performance across the full conversion funnel. This leads to introducing metrics that aren't industry-standard, but are more sensitive and better represent business outcomes. The considerable cost to develop and validate this understanding seems like a drop in the bucket compared to flying blind, so Level 3 teams do it, in part, to eliminate the discomfort of being unable to confidently answer management questions.],
   [Substantially enlightened managers who reach Level 3 will have become accustomed to percentile thinking. This often comes from their journey to understand the metrics they've adopted at Levels 1 and 2. The idea that the median isn't the most important number to track will cause a shift in the internal team dialogue. Questions like, "Was that the P50 number?" and "What does it look like at P75 and P90?" will become part of most metrics review meetings (which are now A Thing (™).],
   [Percentiles and histograms become the only way to talk about RUM data in teams that reach Level 3. Most charts have three lines — P75, P90, and P95 — with the median, P50, thrown in as a vanity metric to help make things legible to other parts of the organisation that have yet to begin thinking in distributions.],
   [Treating data as a distribution fundamentally enables comparison and experimentation because it creates a language for describing non-binary shifts. Moving traffic from one histogram bucket to another becomes a measure of success, and teams at Level 3 begin to understand their distributions are nonparametric , and they adopt more appropriate comparisons in response.],
-  [id="management-attributes-3" tabindex="-1"\> Management Attributes],
   [Level 3 managers and their teams are becoming scientists. For the first time, they will be able to communicate with confidence about the impact of performance work. They stop referring to "averages", understand that medians (P50) can tell a different story than the mean, and become hungry to explore the differences in system behavior at P50 and outlying parts of the distribution.],
   [Significant effort is applied to the development and maintenance of custom metrics and tools. Products that do not report RUM data in more sliceable ways (e.g., by percentile, geography, device type, etc.) are discarded for those that better support an investigation.],
   [Teams achieving this level of discipline about performance begin to eliminate variance from their lab data by running tests in "less noisy" environments than somewhere like a developer's laptop, a shared server, or a VM with underlying system variance. Low noise is important because these teams understand that as long as there's contamination in the environment, it is impossible to trust the results. Disaster is just around the corner when teams can't trust tests designed to keep the system from veering into a bad state.],
   [Level 3 teams also begin to introduce a critical asset to their work: integration of RUM metrics reporting with their experimentation frameworks. This creates attribution for changes and allows teams to experiment with more confidence. Modern systems are incredibly complex, and integrating this experimentation into the team's workflow only intensifies as groups get ever-more sophisticated moving forward.],
   [Teams can regress from Level 3 because the management structures that support consistent performance are nascent. Lingering questions about the quality of custom metrics can derail or stall progress, and some teams can get myopic regarding the value of RUM vs. lab data (advanced teams always collect both and try to cross-correlate, but this isn't yet clear to many folks who are new to Level 3). Viewing metrics with tunnel vision and an unwillingness to mark metrics to market are classic failure modes.],
-  [id="level-4%3A-variance-control-%26-regression-prevention" tabindex="-1"\> Level 4: Variance Control & Regression Prevention],
+  [Level 4: Variance Control & Regression Prevention],
   [Strong Level 3 managers will realise that many performance events (both better and worse than average) occur along a user journey. This can be disorienting! Everything one thought they knew about how "it's going" is invalidated all over again. The P75 latency for interaction (in an evenly distributed population) isn't the continuous experience of a single user; it's every fourth tap!],
   [Suddenly, the idea of managing averages looks naive. Medians have no explanatory power and don't even describe the average session! Driving down the median might help folks who experience slow interactions, but how can the team have any confidence about that without constant management of the tail latency?],
   [This new understanding of the impact that variance has on user experiences is both revelatory and terrifying. The good news is that the tools that have been developed to this point can serve to improve even further.],
   [Level 4 teams also begin to focus on how small, individually innocuous changes add up to a slow bleed that can degrade the experience over time. Teams that have achieved this sort of understanding are mature enough to forecast a treadmill of remediation in their future and recognise it as a failure mode. And failure modes are avoidable with management processes and tools, rather than heroism or blinding moments of insight.],
-  [id="management-attributes-4" tabindex="-1"\> Management Attributes],
   [Teams that achieve Level 4 maturity almost universally build performance ship gates. These are automated tests that watch the performance of PR s through a commit queue, and block changes that tank the performance of important user flows. This depends on the team having developed metrics that are known to correlate well with user and business success.],
   [This implies all of the maturity of the previous levels because it requires a situated understanding of which user flows and scenarios are worth automating. These tests are expensive to run, so they must be chosen well. This also requires an investment in infrastructure and continuous monitoring. Making performance more observable, and creating a management infrastructure that avoids reactive remediation is the hallmark of a manager who has matured to Level 4.],
   [Many teams on the journey from Level 3 to 4 will have built simpler versions of these sorts of gates (bundle size checks, e.g.). These systems may allow for small continuous increases in costs. Over time, though, these unsophisticated gates become a bad proxy for performance. Managers at Level 4 learn from these experiences and build or buy systems to watch trends over time. This monitoring ought to include data from both the lab and the field to guard against "metric drift". These more sophisticated monitoring systems also need to be taught to alert on cumulative, month-over-month and quarter-over-quarter changes.],
@@ -1466,28 +1650,27 @@ Poor performance is a gap between the responsiveness of Figma mockups and brand 
   [Teams that achieve Level 4 maturity are cautious acquirers of technology. They manage on an intentional, self-actualised level and value an ability to see through the fog of tech fads. They do bake-offs and test systems before committing to them. They ask hard questions about how any proposed "silver bullets" will solve the problems that they have. They are charting a course based on better information because they are cognizant that it is both valuable and potentially available.],
   [Level 4 teams begin to explicitly staff a "performance team", or a group of experts whose job it is to run investigations and drive infrastructure to better inform inquiry. This often happens out of an ad-hoc virtual team that forms in earlier stages but is now formalised and has long-term staffing.],
   [Teams can quickly regress from Level 4 maturity through turnover. Losing product leaders that build to Level 4 maturity can set groups back multiple maturity levels in short order, and losing engineering leaders who have learned to value these properties can do the same. Teams are also capable of losing this level of discipline and maturity by hiring or promoting the wrong people. Level 4 maturity is cultural and cultures need to be defended and reinforced to maintain even the status quo.],
-  [id="level-5%3A-strategic-performance" tabindex="-1"\> Level 5: Strategic Performance],
+  [Level 5: Strategic Performance],
   [Teams that fully institutionalise performance management come to understand it as a strategic asset.],
   [These teams build management structures and technical foundations that grow their performance lead and prevent cultural regressions. This includes internal training, external advocacy and writing 5 , and the staffing of research work to explore the frontier of improved performance opportunities.],
   [Strategic performance is a way of working that fully embeds the idea that "faster is better" , but only when it serves user needs. Level 5 maturity managers and teams will gravitate to better-performing options that may require more work to operate. They have learned that fast is not free, but it has cumulative value.],
   [These teams also internally evangelise the cause of performance. Sibling teams may not be at the same place, so they educate about the need to treat performance as a commons. Everyone benefits when the commons is healthy, and all areas of the organisation suffer when it regresses.],
   [Level 5 teams institute "latency budgets" for fractional feature rollouts. They have structures (such as managers or engineering leadership councils) that can approve requests for non-latency-neutral changes that may have positive business value. When business leaders demand the ability to ram slow features into the product, these leaders are empowered to say no .],
   [Lastly, Level 5 teams are focused on the complete user journey. Teams in this space can make trades intelligently, moving around code and time within a system they have mastered to ensure the best possible outcomes in essential flows.],
-  [id="management-attributes-5" tabindex="-1"\> Management Attributes],
   [Level 3+ team behaviours are increasingly illegible to less-advanced engineers and organisations. At Level 5, serious training and guardrails are required to integrate new talent. Most hires will not yet share the cultural norms that a strategically performant organisation uses to deliver experiences with consistent quality. 6],
   [Strategy is what you do differently from the competition, and Level 5 teams understand their way of working is a larger advantage than any single optimisation. They routinely benchmark against their competition on important flows and can understand when a competitor has taken the initiative to catch up (it rarely happens through a single commit or launch). These teams can respond at a time of their choosing because their lead will have compounded. They are fully out of firefighting mode.],
   [Level 5 teams do not emerge without business support. They earn space to adopt these approaches because the product has been successful (thanks in part to work at previous levels). Level 5 culture can only be defended from a position of strength. Managers in this space are operating for the long term, and performance is understood to be foundational to every new feature or improvement.],
   [Teams at Level 5 degrade more slowly than at previous levels, but it does happen. Sometimes, Level 5 teams are poor communicators about their value and their values, and when sibling teams are rebuffed, political pressure can grow to undermine leaders. More commonly, enough key people leave a Level 5 team for reasons unrelated to performance management, like when the hard-won institutional understanding of what it takes to excel is lost. Sometimes, simply failing to reward continual improvement can drive folks out. Level 5 managers need to be on guard regarding their culture and their value to the organisation as much as the system's health.],
-  [id="uneven-steps%2C-regression%2C-%26-false-starts" tabindex="-1"\> Uneven Steps, Regression, & False Starts],
+  [Uneven Steps, Regression, & False Starts],
   [It's possible for strong managers and tech leads to institute Level 1 discipline by fiat. Level 2 is perhaps possible on a top-down basis in a small or experienced team. Beyond that, though, maturity is a growth process. Progression beyond global baseline metrics requires local product and market understanding. TL s and PM s need to become curious about what is and isn't instrumented, begin collecting data, then start the directed investigations necessary to uncover what the system is really doing in the wild. From there, tools and processes need to be built to recreate those tough cases on the lab bench in a repeatable way, and care must be taken to continually re-validate those key user journeys against the evolving product reality.],
   [Advanced performance managers build groups that operate on mutual trust to explore the unknown and then explain it out to the rest of the organisation. This means that advancement through performance maturity isn't about tools.],
   [Managers who get to Level 4 are rare, but the number who imagine they are could fill stadiums because they adopted the technologies that high-functioning leaders encourage. But without the trust, funding to enquire and explore, and an increasingly fleshed-out understanding of users at the margins, adopting a new monitoring tool is a hollow expenditure. Nothing is more depressing than managerial cosplay.],
   [It's also common for teams to take several steps forward under duress and regress when heroics stop working, key talent burns out, and the managerial focus moves on. These aren't fatal moments, but managers need to be on the lookout to understand if they support continual improvement. Without a plan for an upward trajectory, product owners are putting teams on a loop of remediation and inevitable burnout... and that will lead to regression.],
-  [id="the-role-of-senior-management" tabindex="-1"\> The Role of Senior Management],
+  [The Role of Senior Management],
   [Line engineers want to do a good job. Nobody goes to work to tank the product, lose revenue, or create problems for others down the line. And engineers are trained to value performance and quality. The engineering mindset is de facto optimising. What separates Level 0 firefighting teams from those that have achieved self-actualised Level 5 execution is not engineering will; it's context, space, and support.],
   [Senior management sending mixed signals about the value of performance is the fastest way to degrade a team's ability to execute. The second-fastest is to use blame and recrimination. Slowness has causes, but the solution isn't to remove the folks that made mistakes, but rather to build structures that support iteration so they can learn. Impatience and blame are not assets or substitutes for support to put performance consistently on par with other concerns.],
   [Teams that reach top-level performance have management support at the highest level. Those managers assume engineers want to do a good job but have the wrong incentives and constraints , and it isn't the line engineer's job to define success — it's the job of management.],
-  [id="questions-for-senior-managers" tabindex="-1"\> Questions for Senior Managers],
+  [Questions for Senior Managers],
   [Senior managers looking to help their teams climb the performance management maturity hill can begin by asking themselves a few questions:],
   [Do we understand how better performance would improve our business?],
   [Is there a shared understanding in the leadership team that slowness costs money/conversions/engagement/customer-success?],
@@ -1516,19 +1699,22 @@ Poor performance is a gap between the responsiveness of Figma mockups and brand 
   [Can any group in the organisation serve as a resource for other teams that are trying to get started in their latency and variance learning journeys?],
   [The answers to these questions help organisations calibrate how much space they have created to scientifically interrogate their systems. Computers are complex, and as every enterprise becomes a "tech company", becoming intentional about these aspects is as critical as building DevOps and Observability to avoid downtime.],
   [It's always cheaper in the long run to build understanding than it is to fight fires, and successful management can create space to unlock their team's capacity.],
-  [id="%22o11y%2C-but-make-it-performance%22" tabindex="-1"\> "o11y, But Make it Performance"],
+  ["o11y, But Make it Performance"],
   [Mature technology organisations may already have and value a discipline to manage performance: "Site Reliability Engineering" ( SRE ), aka "DevOps", aka "Observability". These folks manage and operate complex systems and work to reduce failures, which looks a lot like the problems of early performance maturity teams.],
   [These domains are linked: performance is just another aspect of system mastery, and the tools one builds to manage approaches like experimental, flagged rollouts need performance to be accounted for as a significant aspect of the success of a production spike.],
   [Senior managers who want to build performance capacity can push on this analogy. Performance is like every other cross-cutting concern; important, otherwise un-owned, and a chance to differentiate. Managers have a critical role to forge solidarity between engineers, SRE s, and other product functions to get the best out of their systems and teams.],
   [Everyone wants to do a great job; it's the manager's role to define what that means.],
-  [style="font-size: 1rem;"\>],
   [It takes a village to keep my writing out of the ditch, so my deepest thanks go to Annie Sullivan , Jamund Ferguson , Andy Tuba , Barry Pollard , Bruce Lawson , Tanner Hodges , Joe Liccini , Amiya Gupta , Dan Shappir , Cheney Tsai , and Tim Kadlec for their invaluable comments and corrections on drafts of this post.],
+  [FOOTNOTES],
   [High-functioning teams can succeed with any stack, but they will choose not to. Good craftsmen don't blame their tools, but neither do they wilfully bring substandard implements to a job site.],
   [Per Kellan Elliot-McCrea's classic "Questions for new technology" , this means that high-functioning teams will not be on the shiniest stack . Teams choices that are highly correlated with hyped solutions are a warning sign, not an asset. And while "outdated" systems are unattractive, they also don't say much at all about the quality of the product or the team.],
   [Reading this wrong is a sure tell of immature engineers and managers, whatever their title. ⇐],
   [An early confounding factor for teams trying to remediate performance issues is that user intent matters a great deal, and thus the value of performance will differ based on context. Users who have invested a lot of context with a service will be less likely to bounce based on bad performance than those who are "just browsing". For example, a user that has gotten to the end of a checkout flow or are using a government-mandated system may feel they have no choice. This isn't a brand or service success case (failing to create access is always a failure), but when teams experience different amounts of elasticity in demand vs. performance, it's always worth trying to understand the user's context and intent.],
   [Users that "succeed" but have a bad time aren't assets for a brand or service, they're likely to be ambasassadors for any other way to accomplish their tasks. That's not great, long-term, for a team or for their users. ⇐],
   [Some prior art was brought to my attention by people who reviewed earlier drafts of this post; notably this 2021 post by the Splunk team and the following tweet by the NCC Group from 2016 (as well as a related PowerPoint presentation ):],
+  [NCC Group Web Perf \@NCCGroupWebperf],
+  [],
+  [Where are you on the \#webperf maturity model? ow.ly/miAi3020A9G \#perfmatters],
   [3 03:04 AM · Jul 7, 2016],
   [It's comforting that we have all independently formulated roughly similar framing. People in the performance community are continually learning from each other, and if you don't take my formulation, I hope you'll consider theirs. ⇐],
   [Something particularly problematic about modern web development is the way it has reduced solidarity between developers, managers, and users. These folks now fundamentally experience the same sites differently, thanks to the shocking over-application of client-side JavaScript to every conceivable problem.],
@@ -1555,10 +1741,8 @@ Poor performance is a gap between the responsiveness of Figma mockups and brand 
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Know thy .NET object memory layout (Updated 2014-09-03)],
   author: [Matt Warren (.NET)],
   source-name: [Matt Warren (.NET)],
@@ -1592,6 +1776,8 @@ Poor performance is a gap between the responsiveness of Figma mockups and brand 
   [Analysing the memory layout of a . NET Object],
   [To do this you need to drop down into the debugger and use the excellent SOS or Son-of-Strike extension . This is because the . NET JITter is free to reorder fields as it sees fit, so the order you put the fields in your class does not determine the order they end up. The JITter changes the layout to minimise the space needed for the object and to make sure that fields are aligned on byte boundaries, it does this by packing them in the most efficient way.],
   [To test out the difference between the Histogram with a class-hierarchy and without, the following code was written (you can find HistogramAllInOneClass in this gist ):],
+  [Histogram testHistogram = new Histogram ( 3600000000000L , 3 ); 
+ HistogramAllInOneClass combinedHistogram = new HistogramAllInOneClass ();],
   [Debugger . Launch ();],
   [GC . KeepAlive ( combinedHistogram ); \/\\/ put a breakpoint on this line 
  GC . KeepAlive ( testHistogram );],
@@ -1612,14 +1798,13 @@ Poor performance is a gap between the responsiveness of Figma mockups and brand 
   [The ldflda instruction pushes the address of a field located in an object onto the stack. The object must be on the stack as an object reference (type O), a managed pointer (type &), an unmanaged pointer (type native int), a transient pointer (type \*), or an instance of a value type. The use of an unmanaged pointer is not permitted in verifiable code. The object's field is specified by a metadata token that must refer to a field member.],
   [By putting this code into my project, I was able to verify that it gives exactly the same field offsets that you can see when using the SOS technique (above). So it’s a nice technique and the only option if you want to get this information without having to drop-down into a debugger.],
   [After all these steps we end up with the results shown in the images below, where the rows are ordered by the “Offset” value.],
-  [align="center"\> AbstractHistogramBase.cs -\> AbstractHistogram.cs -\> Histogram.cs],
   [You can see that with the class hierarchy in place, the fields remain grouped as we want them to (shown by the orange/green/blue highlighting). What is interesting is that the JITter has still rearranged fields within a single group, preferring to put Int64 (long) fields before Int32 (int) fields in this case. This is seen by comparing the ordering of the “Field” column with the “Offset” one, where the values in the “Field” column represent the original ordering of the fields as they appear in the source code.],
   [However when we put all the fields in a single class, we lose the grouping:],
-  [align="center"\> Equivalent fields all in one class],
+  [Equivalent fields all in one class],
   [To achieve the same effect you can use the StructLayout attribute , but this requires that you calculate all the offsets yourself, which can be cumbersome:],
-  [class="highlight"\> \[ StructLayout ( LayoutKind . Explicit , Size = 28 , CharSet = CharSet . Ansi )\] 
+  [\[ StructLayout ( LayoutKind . Explicit , Size = 28 , CharSet = CharSet . Ansi )\] 
  public class HistogramAllInOneClass 
- { 
+ \{ 
  \/\\/ "Cold" accessed fields. Not used in the recording code path: 
  \[ FieldOffset ( 0 )\] 
  internal long identity ;],
@@ -1630,7 +1815,7 @@ Poor performance is a gap between the responsiveness of Figma mockups and brand 
  \[ FieldOffset ( 24 )\] 
  internal int numberOfSignificantValueDigits ;],
   [... 
- }],
+ \}],
   [If you are interested, the full results of this test are available],
   [CodeProject],
 ),
@@ -1640,10 +1825,8 @@ Poor performance is a gap between the responsiveness of Figma mockups and brand 
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Summer Project 2016: Customer Insight],
   author: [Martin Ek],
   source-name: [Finn.no Tech],
@@ -1653,17 +1836,17 @@ Poor performance is a gap between the responsiveness of Figma mockups and brand 
   [The problem presented for this year’s summer project was; What can FINN offer professional vendors at Torget to motivate them to continue advertising as professional vendors. To help us get started, we had a few meetings with FINN’s innovation team to work out an ambition and a few ideas. Our ambition was to create value for professional vendors that use Torget as a market to run their business. To achieve this we aimed to provide better advertisement insight for vendors, and give them a better look into their general performance at Torget.],
   [Our application consists of three main parts. The first presents geographical data about the ad’s visitors, show n on a map of Norway. This is primarily shown as percentages on each of Norway’s five regions, with more specific information shown in the cat’s conversation box. The latter also changes when the user clicks around the map. The second part of the application shows demographic data about the customers, which includes age and gender. Here we hope to open a more insightful relationship between seller and customer, which might for example allow sellers to properly target their correct customer group when advertising new products.],
   [The last part of the application is a competitive ranking list that compares ads in the user’s category based on number of visits. This is shown with green text to the right of each ad in the list. The user also has the option to change which category they want to see the ranking for, in the blue menu. One of the main goals here is to give users an incentive towards comparing their advertisements to their competitors’, by letting them see what part of the market their customers prefer.],
-  [id="implementing-the-application"\>Implementing the application],
+  [Implementing the application],
   [The architecture we went with for the application can mostly be divided into two parts: One that collects statistical data, and one that presents that data to the customer. These meet in the middle through a PostgreSQL database.],
   [The collecting part of the architecture is made up of a Java application that listens to events using FINN’s messaging broker, Kafka. This is usually referred to as a consumer. In our situation the consumer receives a message every time a user clicks on a sales ad, so that we can continue to aggregate anonymous statistical data for that specific ad.],
   [The presenting part is mostly made up of a three layer hierarchy. At the bottom we have a Java REST-API that reads from the database, which is built using Spring Boot. The next layer is a Node.js application, which is responsible for responding to all customer facing requests. Upon receiving a visit this application performs an initial server-side render of the website, which is built using React. This also includes a primary API request, so as to be able to present a mostly complete website to the user on the first request.],
   [This has the positive side effect that the application works decently even in browsers with JavaScript disabled. Upon receiving the initial render of the website the browser client takes over, which we consider the topmost layer of the presentational hierarchy. From here we fire off more API requests, to retrieve the data which is needed to present the rest of the website. This is an important step in maintaining a low average response time, as the user will be able to use most of the application while waiting for the other API requests to finish.],
   [The geographical map and the statistical charts are made using D3.js . The map itself is written using pure D3, while the charts make use of the React friendly wrapper Victory . The data that lays the foundation for the map is transformed from raw Kartverket data to a D3 friendly format, using TopoJSON , a library made by the same author as D3. This allows us to build interactions with the map using regular D3 code, which we at the moment utilise to merge the Norwegian counties into larger regions, and to react to the user’s hover and click events.],
   [The front- and backend applications are deployed in Docker containers, and managed through FINN’s new Kubernetes cluster. This follows FINN Infrastructure’s new deployment strategy, and has made our meeting with pipelines and deployment work easy.],
-  [id="the-designers-perspective"\>The designers’ perspective],
+  [The designers’ perspective],
   [When creating new features, technology is obviously important, but making sure people can use it is just as essential. As the team’s designers, keeping the user in mind was our priority number one. We spent the summer sketching, prototyping, testing, and continuously iterating to make the final design as user friendly as possible. This required a close collaboration with the developers in the team and attention to detail.],
   [We started out with an idea workshop where we sketched out different layout suggestions. This worked as the basis for further development of the user interface. We then made clickable prototypes in Adobe Experience Design and Invision, which were used in both formal user tests in FINN’s usability lab and more spontaneous ones in the busy streets of Oslo. The purpose of these tests was to assess people’s understanding of the information presented to them on the screen, as well as general navigation and interaction with the interface. Based on this feedback we were able to improve the different features in the app and ended up with a result we’re very pleased with.],
-  [id="final-thoughts---this-has-been-a-fun-summer"\>Final thoughts - this has been a fun summer!],
+  [Final thoughts - this has been a fun summer!],
   [After eight weeks of working at FINN we’ve had the pleasure of being introduced to a wide variety of both people and technologies. Asking for help has never been an issue, and we’re pretty sure we’ve bothered most of the people daring enough to work here this summer. To be able to release a product and receive feedback from actual users is definitely an exciting experience, especially for such a large customer base as FINN’s.],
   [So long, and thanks for all the parrots.],
 ),
@@ -1673,10 +1856,8 @@ Poor performance is a gap between the responsiveness of Figma mockups and brand 
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Capturing PAL video with an SDR (and a few dead-ends)],
   author: [Oona Räisänen],
   source-name: [Oona Raisanen (windytan)],
@@ -1741,10 +1922,8 @@ Poor performance is a gap between the responsiveness of Figma mockups and brand 
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Leaving the Tower of Babel],
   author: [Morten Lied Johansen],
   source-name: [Finn.no Tech],
@@ -1756,11 +1935,10 @@ Poor performance is a gap between the responsiveness of Figma mockups and brand 
   [During these discussions, we created a quick poll and sent it out on our internal discussionboard. The poll asked questions like “How long have you worked as a developer?”, “Which language do you use for your day-to-day work?”, “If you were free to chose, which language would you use for your next project?” and “Which programming languages do you know?”. Our definition of “know” was very open in this poll, lowering the bar to allow people who had maybe written a single example program, and understands a bit of code could check the box.],
   [Out of the nearly 100 people that work with development, 56 answered. We can assume that the people who did answer, were the people who were interested in the topic, and might not be a representative selection, but the results are interesting none the less.],
   [So.. what did we learn?],
-  [id="experience"\>Experience],
   [Being a poll made in the midst of a discussion, mostly for fun, this part of the poll wasn’t framed in a way that gives us much useful information. We can say that the average developer who answered has worked for around seven or eight years, but with what looks like a reasonably fair spread across all groups. Almost as many with a couple years experience, as there are people with 10 to 15 years.],
-  [id="primary-language-in-day-to-day-work"\>Primary language in day-to-day work],
+  [Primary language in day-to-day work],
   [Being a predominatly Java shop, most of the respondents were using Java for their daily work. 35 out of 56 were Java-developers. 11 respondents worked with JavaScript daily, while four worked with Scala, three with Ruby, two with Objective-C, and finally one database-developer who worked mostly in T-SQL (The SQL-variant used in Sybase).],
-  [id="most-popular-choice-if-allowed-to-chose-freely"\>Most popular choice if allowed to chose freely],
+  [Most popular choice if allowed to chose freely],
   [The most interesting part of the poll, with many interesting insights. This is also the most loaded part, as the results could easily short-circuit any discussion about future choice in language.],
   [The bad news (or good, depending on your point of view), is that there was no clear answer from this section. Keep in mind that around 40 people didn’t answer this poll, and could be assumed to be content with the current status-quo.],
   [The biggest group was Java, not surprisingly. The surprising part is that it was only 16 people who would chose Java if they could chose freely. This is much lower than expected, but still make up the largest group. Of these, 13 people are already using Java today. 20 Java developers would like to use something else.],
@@ -1768,7 +1946,7 @@ Poor performance is a gap between the responsiveness of Figma mockups and brand 
   [Six people were interested enough to answer the poll, but chose the non-commitant “I don’t care, as long as I’m making good stuff for our users” option.],
   [The number of possible answers here was a rather large selection of popular and not-so-popular-but-quite-well-known languages, so the fact that the list only includes eight languages is a sign that it’s not a completely random selection. Still, quite a lot of discussion is needed before any one of those languages gets center stage.],
   [A couple curious details found in this part of the poll includes the fact that the only people who would chose JavaScript are people who are already working in JavaScript every day. Groovy, Clojure, Objective-C and Scala have all managed to be chosen by a person who doesn’t actually know the langauge. There’s only three people who would switch to Java, if allowed to chose.],
-  [id="which-languages-do-we-know"\>Which languages do we “know”?],
+  [Which languages do we “know”?],
   [As mentioned earlier, the bar for “knowing” a language was set quite low in this poll, to get more diversity in answers. This resulted in some interesting numbers.],
   [Being primarily a Java-shop, it might not surprise anyone that a full 100% knows Java. A little over three fourths know JavaScript, while Ruby and T-SQL was known to about half. These are the main languages most of us have some sort of dealings with in our daily work, so that they score high is not surprising.],
   [Next on the list is PHP and Python, with around 40% knowing them.],
@@ -1777,10 +1955,10 @@ Poor performance is a gap between the responsiveness of Figma mockups and brand 
   [We have a small Apps team working with iOS-development, but Objective-C has a reach far outside that team, with 10 respondents knowing Objective-C.],
   [Common Lisp is known to five respondents, while Clojure suprisingly was only known to seven respondents. As you can read elsewhere in this blog, we had a Clojure workshop at our Technology Day earlier this summer, and these results might be telling us something about the language or our teachers when it didn’t have a better ability to “stick” than this.],
   [We also have people who know some Erlang, Smalltalk, Lua, Haskell, Scheme, Eiffel and ML/SML.],
-  [id="how-many-languages-do-we-know"\>How many languages do we “know”?],
+  [How many languages do we “know”?],
   [On average, we know 6.8 languages each. The most knowledgeable person knows 16 languages, while the least knowledgeable knows only one. The high experience respondents, 16 years or more, have a higher average than the rest of us, with 9.4, while the rest of the “experience brackets” know somewhere between six and seven languages.],
   [Several programmer-gurus seem to think you should stribe to teach yourself one new language every year, and it would seem atleast one of our respondents have been able to follow this advice. For those of us with less extra time, a less ambitious strategy might be more compatible, but that we should stribe to learn something new every once in a while seems to be good advice.],
-  [id="now-what"\>Now what?],
+  [Now what?],
   [As mentioned previously, this poll was not a serious attemt at gaining actionable insights. The results should be taken with a large helping of salt, and at most used as a basis for discussions. On the other hand, I know we will be discussing this topic going forward, because the fact that only 16 of 56 wanted to use Java is telling us it’s time to start the discussion. There are possibly 40 developers who would prefer Java, who didn’t respond, so it’s too early to draw conclusions, but we have a place to start.],
   [There are other questions falling out of this too:],
   [There are two developers who wants to work with Objective-C, and eight Java-developers who wants to work with Scala, so why do we have so few internal applicants when we have openings on the teams working with these languages?],
@@ -1795,10 +1973,8 @@ Poor performance is a gap between the responsiveness of Figma mockups and brand 
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Adventures in Benchmarking - Memory Allocations],
   author: [Matt Warren (.NET)],
   source-name: [Matt Warren (.NET)],
@@ -1808,76 +1984,90 @@ Poor performance is a gap between the responsiveness of Figma mockups and brand 
   [Easy-to-use],
   [First and foremost we do everything we can to ensure that BenchmarkDotNet gives you accurate measurements, everything else is just “sprinkles on the sundae” . That is, without accurate measurements, a benchmarking library is pretty useless, especially one that displays results in nanoseconds.],
   [But once point 1) has been dealt with , 2) it a bit more subjective. Using BenchmarkDotNet involves little more than adding a \[Benchmark\] attribute to your method and then running it as per the Step-by-step guide in the GitHub README. I’ll let you decide if that is easy-to-use or not, but again it’s something we strive for. Once you’re done with the “Getting Started” guide, there is also a complete set of Tutorial Benchmarks available, as well as some more real-word examples for you to take a look at.],
-  [id="being-helpful"\>Being “Helpful”],
+  [Being “Helpful”],
   [But this post isn’t going to be a general BenchmarkDotNet tutorial, instead I’m going to focus on some of the specific tools that it gives you to diagnose what is going on in a benchmark, or to put it another way, to help you answer the question “Why is Benchmark A slower than Benchmark B?”],
-  [id="string-concat-vs-stringbuilder"\>String Concat vs StringBuilder],
+  [String Concat vs StringBuilder],
   [Let’s start with a simple benchmark:],
+  [public class Framework\_StringConcatVsStringBuilder 
+ \{ 
+ \[ Params ( 1 , 2 , 3 , 4 , 5 , 10 , 15 , 20 )\] 
+ public int Loops ;],
   [\[ Benchmark \] 
  public string StringConcat () 
- { 
+ \{ 
  string result = string . Empty ; 
  for ( int i = 0 ; i Dictionary vs IDictionary],
   [But what about a less well-known example. Imagine after some re-factoring you noticed that your application was triggering a lot more Gen 0/1/2 collections (you do monitor this in your live systems right?) After looking at the recent code commits and carrying out some profiling you narrow the problem down to a refactoring that changed a variable declaration from Dictionary to IDictionary , i.e. exactly the type of refactoring that this Stack Overflow question is discussing .],
   [To benchmark what’s actually going on here, we can write some code like so:],
+  [public class Framework\_DictionaryVsIDictionary 
+ \{ 
+ Dictionary dict ; 
+ IDictionary idict ;],
   [\[ Setup \] 
  public void Setup () 
- { 
+ \{ 
  dict = new Dictionary (); 
  idict = ( IDictionary ) dict ; 
- }],
+ \}],
   [\[ Benchmark \] 
  public Dictionary DictionaryEnumeration () 
- { 
+ \{ 
  foreach ( var item in dict ) 
- { 
+ \{ 
  ; 
- } 
+ \} 
  return dict ; 
- }],
+ \}],
   [\[ Benchmark \] 
  public IDictionary IDictionaryEnumeration () 
- { 
+ \{ 
  foreach ( var item in idict ) 
- { 
+ \{ 
  ; 
- } 
+ \} 
  return idict ; 
- } 
- }],
+ \} 
+ \}],
   [Note: we are deliberately not doing anything with the items inside the foreach loop because we just want to see what the difference in iteration of the 2 collections is. Also note that we are using the same underlying data structure , we are just accessing via an IDictionary cast in the 2nd benchmark.],
   [So what results do we get:],
   [Nice and clear, accessing the same data via the IDictionary interface causes a lot of extra allocations, roughly 22 bytes per foreach loop. This in turn triggers a lot of extra GC collections. It’s worth pointing out that when BenchmarkDotNet executes, it will run the same benchmark method, IDictionaryEnumeration() in this case, millions of times, so that we can obtain an accurate measurment. Therefore the actual \# of Gen 0 collections isn’t so important, it is the relative amount compared to the DictionaryEnumeration() benchmark that should be looked at.],
   [Now this scenario might seem a bit contrived and I have to admit that I knew the answer before I started investigating it, however it did originate from a real-life issue, discovered by Ben Adams . For the full background take a look at the CoreCLR GitHub issue, Avoid enumeration allocation via interface , but as shown below this was identified because in Kestrel/ASP. NET the request/resposne headers are kept in an IDictionary data structure and so cause an additional 128 MBytes of garbage per second, when running at 1 Million requests per/second.],
   [Finally, what is the technical explanation of the additional allocations, quoting from Stephen Toub of Microsoft],
-  [… But when accessed via the interface, you’re using the interface method that’s typed to return IEnumerator \> rather than Dictionary . Enumerator , so the struct gets boxed .],
   [and then further down the same issue],
   [Yes, the issue isn’t just enumerator allocations, it’s also interface-based dispatch. In addition to boxing the enumerator, the MoveNext and Current calls made per element go from being potentially-inlineable non-virtual calls to being interface calls .],
-  [id="implementation-details"\>Implementation Details],
   [Update Feb 2017 - This section is now out-of-date as the implementation details have now changed, please see Adam Sitnik’s blog post for all the details],
   [This is all made possible be the excellent Gargage Collection ETW Events that the . NET runtime produces. In particular the GCAllocationTick\_V2 Event that is fired each time approximately 100 KB is allocated. An xml representation of a typical event is shown below, you can see that 0x1A060 or 106,592 bytes have just been allocated.],
+  [0x1A060 
+ 0 
+ 34 
+ 0x1A060 
+ 0xEE05D18 
+ LibGit2Sharp. Core. GitDiffFile 
+ 0 
+ 0x32056CD0],
   [To collect these events BenchmarkDotNet uses the logman tool that is built into Windows. This runs in the background and collects the specified ETW events until you ask it to stop. These events are continuously written to an .etl file that can then be read by tools such as Windows Performance Analyzer . Once the ETW events have been collected, BenchmarkDotNet then parses them using the excellent TraceEvent library, using code like this:],
-  [class="highlight"\> using ( var source = new ETWTraceEventSource ( fileName )) 
- { 
+  [using ( var source = new ETWTraceEventSource ( fileName )) 
+ \{ 
  source . Clr . GCAllocationTick += ( gcData =\> 
- { 
+ \{ 
  if ( statsPerProcess . ContainsKey ( gcData . ProcessID )) 
  statsPerProcess \[ gcData . ProcessID \]. AllocatedBytes += gcData . AllocationAmount64 ; 
- });],
+ \});],
   [source . Clr . GCStart += ( gcData =\> 
- { 
+ \{ 
  if ( statsPerProcess . ContainsKey ( gcData . ProcessID )) 
- { 
+ \{ 
  var genCounts = statsPerProcess \[ gcData . ProcessID \]. GenCounts ; 
  if ( gcData . Depth \>= 0 && gcData . Depth \< genCounts . Length ) 
- { 
+ \{ 
  \/\\/ ignore calls to GC. Collect(..) from BenchmarkDotNet itself 
  if ( gcData . Reason != GCReason . Induced ) 
  genCounts \[ gcData . Depth \]++; 
- } 
- } 
- });],
+ \} 
+ \} 
+ \});],
   [source . Process (); 
- }],
+ \}],
   [Hopefully this has shown you some of the power of BenchmarkDotNet, please consider giving it a go next time you need to (micro-)benchmark some . NET code, hopefully it will save you from having to hand-roll your own benchmarking code.],
   [CodeProject],
 ),
@@ -1887,23 +2077,22 @@ Poor performance is a gap between the responsiveness of Figma mockups and brand 
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [WTF er Programmatic?],
   author: [Julie Lundgren og Tale Gjøvik],
   source-name: [Finn.no Tech],
   images: (),
   paragraphs: (
-  [id="-og-hvorfor-trenger-jeg-å-bry-meg-om-det"\>… og hvorfor trenger jeg å bry meg om det?],
+  [… og hvorfor trenger jeg å bry meg om det?],
   [For å forstå programmatisk kjøp og salg av annonser, er det viktig å forstå hva vi legger i begrepene. Hva skiller det eksempelvis fra tradisjonelt merkevaresalg? Er det ene alternativet bedre enn det andre?],
   [I korte trekk er det viktig å forstå forskjellene mellom direktesalg og programmatisk salg. Direktesalg omfatter alle salg som gjøres fra et menneske til et annet menneske, og er ofte relasjonsbasert. Toyota ringer selger Y med ønske om bannerannonsering på FINN. Selger Y lager et tilbud basert på kundens behov og målsetninger, får deretter godkjenning fra kunden, booker det inn i ROSE og får til slutt en annen medarbeider på Schibsted sin traffic-avdeling til å sette den avtalte annonsen LIVE i annonsestyringssystemet AppNexus.],
   [FINN sine annonseprodukter kan i all hovedsak deles inn i to hovedretninger, men begge starter med samme utgangspunkt. Annonsøren velger et banner, eksempelvis netboard. Dette banneret kan du deretter velge om du vil sette i en kontekstuell plassering på FINN, eksempelvis på et bilmerke, eller om du vil vise budskapet til en gitt målgruppe. Se illustrasjon nedenfor.],
   [Programmatisk kjøp og salg er en form for automatisert kjøp av bannerannonser, hvor det i teorien er minimalt med menneskelig kontakt. Programmatisk er ikke et eget produkt, men heller en annen måte å kjøpe de overnevnte merkevareproduktene til FINN på.],
   [Det er heller ikke tilgjengelig for alle kundene våre. Hvorfor ikke? Jo, det fordrer at Toyota har tilgang til et teknikksystem som kalles «Demand Side Platform» (DSP), hvor de selv enkelt kan velge ønskede medier og målgrupper uten å involvere en selger. Kunden kan kjøpe disse medieplasseringene – og målgruppene - automatisert fordi mediene benytter seg av en teknisk motpart, nemlig en «Sell Side Platform» (SSP) til å tilgjengeliggjøre varelageret sitt i en såkalt annonsebørs. Når rett bruker dukker opp på rett tid, settes det i gang en «auksjon» hvor de ulike kundene (via sine DSP-er) har en budkrig for å nå drømmebrukeren sin. Den som vinner budkrigen får vise annonsen sin til brukeren. Se illustrasjon nedenfor.],
-  [id="hvorfor-kutter-vi-ikke-ut-salgsleddet-og-selger-kun-programmatisk"\>Hvorfor kutter vi ikke ut salgsleddet og selger kun programmatisk?],
+  [Hvorfor kutter vi ikke ut salgsleddet og selger kun programmatisk?],
   [Det er flere grunner til at programmatisk enn så lenge står for en liten del av totalinntektene til FINN Salg. Først og fremst koster en DSP penger, og det benyttes hovedsakelig av profesjonelle merkevarekjøpere i mediebyrå som håndterer såpass store reklameinvesteringer at de kan forsvare teknikk-kostnadene. En bilforhandler fra Oppdal har neppe råd til disse systemene, og vil nok heller ikke tjene på en slik investering. I tillegg er programmatisk kjøp og salg fremdeles ungt i Norge, det krever opplæring i systemene, og i praksis er det fortsatt mye menneskelig kontakt som må til for å få på plass en kampanje.],
 ),
   insert-map: (:),
@@ -1914,14 +2103,13 @@ Poor performance is a gap between the responsiveness of Figma mockups and brand 
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Representative Line: Greater Than False],
   author: [Remy Porter],
   source-name: [The Daily WTF],
   images: (),
   paragraphs: (
   [Today's anonymous submitter passes us a single line of JavaScript, and it's a doozy. This line works , but that's through no fault of the developer behind it.],
-  [{arr?. length && shouldNotShow === false \> 0 (...)}],
   [Pedantically, this is JSX, not pure JavaScript, but the rules still apply.],
   [So, fun fact in JavaScript: true \> 0 is true, and false \> 0 is false. Which generally makes sense, but why would you use that here? But this code is worse than it looks, thanks to operator precedence.],
   [The highest precedence operation is the optional chain- arr?.length . The second highest operation? \> . So the first part of the comparison that evaluates is false \> 0 . Which is false. Do you know what's next? === . So we compare shouldNotShow to false . Then we && that with the potentially falsy value from our arr?.length .],
@@ -1929,7 +2117,6 @@ Poor performance is a gap between the responsiveness of Figma mockups and brand 
   [Our submitter credits this to an offshore team, and this does have the vibe of throwing characters at the problem until it passes the test. Less LLM-guided and more "manually executed Markov chain". That's also an accurate description of the rest of the code in this code base: hand crafted Markov chain generation.],
   [\[Advertisement\] Plan Your . NET 9 Migration with Confidence 
 Your journey to . NET 9 is more than just one decision. Avoid migration migraines with the advice in this free guide. Download Free Guide Now!],
-  [style="clear: left;"\>],
 ),
   insert-map: (:),
   word-count: 262,
@@ -1944,19 +2131,18 @@ Your journey to . NET 9 is more than just one decision. Avoid migration migraine
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Åpen fagkveld hjemme hos FINN],
   author: [Gunn Skinderviken],
   source-name: [Finn.no Tech],
   images: (),
   paragraphs: (
   [Tradisjonen tro åpner vi også i år dørene hjemme hos oss i Grensen for å dele våre erfaringer rundt hvordan vi jobber med produktutvikling. Teknologi er i fokus, og vi gleder oss til å vise dere hvordan vi bygger - og holder et av Norges mest besøkte nettsteder vedlike.​​​​​​​ En kveld er dedikert studenter, og en de mer erfarne.],
-  [id="presentasjoner"\>Presentasjoner],
   [GDPR],
   [Sosial rekruttering],
   [Universell utforming],
   [Dette ser vi etter når vi ansetter utviklere],
-  [id="åpen-fagkveld-28-februar-kl-16-20-for-de-som-jobber-med-teknologi"\>Åpen fagkveld 28. februar kl 16-20 (for de som jobber med teknologi)],
+  [Åpen fagkveld 28. februar kl 16-20 (for de som jobber med teknologi)],
   [16:00 
  Velkommen til FINN ved Nicolai Høge (CTO) 
  
@@ -1983,7 +2169,7 @@ Your journey to . NET 9 is more than just one decision. Avoid migration migraine
  
  18:00 
  Podium Frontend i en mikroservices-verden. Hvordan FINN bygger en unison frontend på kryss av microservicer og team med forskjellige eierskap.],
-  [id="åpen-studentkveld-7-mars-kl-16-20-for-studenter"\>Åpen studentkveld 7. mars kl 16-20 (for studenter)],
+  [Åpen studentkveld 7. mars kl 16-20 (for studenter)],
   [Program (endringer kan komme)],
   [16:00 
  Velkommen til FINN ved Nicolai Høge (CTO) 
@@ -2022,7 +2208,7 @@ Your journey to . NET 9 is more than just one decision. Avoid migration migraine
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Finn.no wanted to split up their monolith, you won't believe what happens next],
   author: [Audun Fauchald Strand],
   source-name: [Finn.no Tech],
@@ -2059,7 +2245,7 @@ These two talks gave a good introduction to new concepts that are not widely use
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [From Wordpress to Jekyll],
   author: [Andersos],
   source-name: [Finn.no Tech],
@@ -2095,7 +2281,7 @@ These two talks gave a good introduction to new concepts that are not widely use
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Suggest.el: Synthesising Constants],
   author: [Wilfred Hughes],
   source-name: [Wilfred Hughes],
@@ -2103,7 +2289,6 @@ These two talks gave a good introduction to new concepts that are not widely use
   paragraphs: (
   [Suggest.el v0.4 is now out,
 and it offers some really interesting new ways of making suggestions.],
-  [id="supplying-constants"\>Supplying Constants],
   [Suppose the user gives us the input '(a b c d) and desired output
  'a . We would already suggest car , but that only gets the first
 element of the list. They may have wanted elt or nth , which get
@@ -2143,7 +2328,6 @@ float value, for example:],
 same value. v0.4 only tries each unique value 3 times. This allows us
 to explore more unique possibilities, increasing the likelihood of
 finding a result before giving up.],
-  [id="literature-review"\>Literature Review],
   [Finally, I’ve spent some time researching similar tools, and
 documented them in
  the related projects section .],
@@ -2167,8 +2351,7 @@ smarter still.],
 #pull-quote([We are using Html-proofer to test the HTML of the site.], [Andersos])
 
 
-{
-  #standard-article(
+#standard-article(
   title: [We're looking for a developer to help us build Carebot],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
@@ -2176,14 +2359,14 @@ smarter still.],
   paragraphs: (
   [We’re looking for a programmer to join our team for a few months.],
   [Your mission? Break the news’s addiction to pageviews, by bringing meaningful analytics to journalists.],
-  [id="why"\>Why?],
+  [Why?],
   [At NPR Visuals, our goal is to make people care. To get them to give a shit about tough problems and people they’ve never met. It’s our job to create empathy in world.],
   [If that’s our goal, how do we know if we’re accomplishing it? How do we celebrate success?],
-  [id="enter-the-carebot"\>Enter the Carebot!],
+  [Enter the Carebot!],
   [Because what you choose to celebrate is super important. If your organization celebrates pageviews, people will create work that gets more pageviews. But it’s not our job to get clicks. Our job is to touch hearts. And so we must celebrate stories that do that.],
   [Basic web analytics don’t help us do that. So we applied for a Knight grant to build something we’re calling Carebot.],
   [Carebot will be a little system for gathering, analyzing and distributing better analytics. (Specifically, there’ll be some javascript, some back-end server and API stuff, and a bunch of notification things like email and Slack bots and stuff.) We’ve only got a few months to work on it, so we’re building a prototype. It will help us test an idea: that better analytics make for better journalism.],
-  [id="who-when-where"\>Who? When? Where?],
+  [Who? When? Where?],
   [Carebot will be built by a small team next winter/spring. You’ll be working closely with UX expert Livia Labate, our lead architect David Eads, and other members of the Visuals team.],
   [We’re based in Washington, DC. It’s cool if you work remotely, but we’ll want you here a couple times during the project. (We’d cover those travel costs.)],
   [It’s a three-month gig, Februaryish-Aprilish.],
@@ -2197,11 +2380,9 @@ smarter still.],
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [Issue \#726: Lazy Imports, Pydantic AI, Classes, and More (March 17, 2026)],
   author: [PyCoders Weekly],
   source-name: [PyCoders Weekly],
@@ -2209,100 +2390,96 @@ smarter still.],
   paragraphs: (
   [\#726 – MARCH 17, 2026 
  View in Browser »],
-  [style="margin-bottom: 0;"\> The Story of Python’s Lazy Imports],
-  [style="margin-bottom: 0;"\> This article is about why lazy imports took 3 years and 2 attempts to be added to the language. From PEP 690’s rejection to PEP 810’s unanimous acceptance.
+  [The Story of Python’s Lazy Imports],
+  [This article is about why lazy imports took 3 years and 2 attempts to be added to the language. From PEP 690’s rejection to PEP 810’s unanimous acceptance.
  TECHLIFE],
-  [style="margin-bottom: 0;"\> Pydantic AI: Build Type-Safe LLM Agents in Python],
-  [style="margin-bottom: 0;"\> Learn how to use Pydantic AI to build type-safe LLM agents in Python with structured outputs, function calling, and dependency injection patterns.
+  [Pydantic AI: Build Type-Safe LLM Agents in Python],
+  [Learn how to use Pydantic AI to build type-safe LLM agents in Python with structured outputs, function calling, and dependency injection patterns.
  REAL PYTHON],
-  [style="margin-bottom: 0;"\> Agents as API Services, Not Prompt Chains.],
-  [style="margin-bottom: 0;"\> Clone a working 100-agent Python system: Autonomous Engineering Team, Deep Security Auditor, or Adversarial Code Reviewer. Agents run as API services, discover each other at runtime. No DAGs, no glue code. Any model. Apache 2.0. Clone a Recipe → 
+  [Agents as API Services, Not Prompt Chains.],
+  [Clone a working 100-agent Python system: Autonomous Engineering Team, Deep Security Auditor, or Adversarial Code Reviewer. Agents run as API services, discover each other at runtime. No DAGs, no glue code. Any model. Apache 2.0. Clone a Recipe → 
  AGENTFIELD. AI sponsor],
-  [style="margin-bottom: 0;"\> When Are Classes Used in Python?],
-  [style="margin-bottom: 0;"\> While you don’t often need to make your own classes in Python, they can sometimes make your code reusable and easier to read.
+  [When Are Classes Used in Python?],
+  [While you don’t often need to make your own classes in Python, they can sometimes make your code reusable and easier to read.
  TREY HUNNER],
-  [style="margin-bottom: 0;"\> Learn the Agentic Coding Workflow That Actually Works on Real Projects],
-  [style="margin-bottom: 0;"\> 65% of Python developers are stuck using AI for small tasks that fall apart on anything real. This 2-day live course (March 21-22 via Zoom) walks you through building a complete Python CLI app with Claude Code, from an empty directory to a shipped project on GitHub.
+  [Learn the Agentic Coding Workflow That Actually Works on Real Projects],
+  [65% of Python developers are stuck using AI for small tasks that fall apart on anything real. This 2-day live course (March 21-22 via Zoom) walks you through building a complete Python CLI app with Claude Code, from an empty directory to a shipped project on GitHub.
  REAL PYTHON],
-  [style="margin-bottom: 0;"\> DuckDB 1.5.0 Released],
-  [style="margin-bottom: 0;"\> DUCKDB. ORG],
-  [style="margin-bottom: 0;"\> PyPy v7.3.21 Released],
-  [style="margin-bottom: 0;"\> PYPY. ORG],
-  [style="margin-bottom: 0;"\> Python 3.15.0 Alpha 7],
-  [style="margin-bottom: 0;"\> PYTHON. ORG],
-  [style="margin-bottom: 0;"\> Python + AI Content Specialist (Anywhere)],
-  [More Python Jobs \>\>\>],
+  [DuckDB 1.5.0 Released],
+  [DUCKDB. ORG],
+  [PyPy v7.3.21 Released],
+  [PYPY. ORG],
+  [Python 3.15.0 Alpha 7],
+  [PYTHON. ORG],
+  [Python + AI Content Specialist (Anywhere)],
   [Articles & Tutorials],
-  [style="margin-bottom: 0;"\> Crafting and Editing in-Depth Tutorials at Real Python],
-  [style="margin-bottom: 0;"\> What goes into creating the tutorials you read at Real Python? What are the steps in the editorial process, and who are the people behind the scenes? This week on the show, Real Python team members Martin Breuss, Brenda Weleschuk, and Philipp Acsany join us to discuss topic curation, review stages, and quality assurance.
+  [Crafting and Editing in-Depth Tutorials at Real Python],
+  [What goes into creating the tutorials you read at Real Python? What are the steps in the editorial process, and who are the people behind the scenes? This week on the show, Real Python team members Martin Breuss, Brenda Weleschuk, and Philipp Acsany join us to discuss topic curation, review stages, and quality assurance.
  REAL PYTHON podcast],
-  [style="margin-bottom: 0;"\> The Optimization Ladder],
-  [style="margin-bottom: 0;"\> Python loses every public benchmark by 21-875x. Cemrehan took the exact problems people use to dunk on Python and climbed every rung of the optimization ladder: from CPython version upgrades to Rust. Real numbers, real code, real effort costs.
+  [Python loses every public benchmark by 21-875x. Cemrehan took the exact problems people use to dunk on Python and climbed every rung of the optimization ladder: from CPython version upgrades to Rust. Real numbers, real code, real effort costs.
  CEMREHAN ÇAVDAR],
-  [style="margin-bottom: 0;"\> Ship Voice Agents That Sound Like Human with Async],
-  [style="margin-bottom: 0;"\> Async Voice API is a human-like low-latency text-to-speech API for real-time apps and agents. 15 languages, streaming-ready, integrations with n8n, LiveKit, Twilio. Top-ranked on the Hugging Face TTS Arena. From\$0.50/hour with a 24/7 SLA. Try Now → 
+  [Ship Voice Agents That Sound Like Human with Async],
+  [Async Voice API is a human-like low-latency text-to-speech API for real-time apps and agents. 15 languages, streaming-ready, integrations with n8n, LiveKit, Twilio. Top-ranked on the Hugging Face TTS Arena. From\$0.50/hour with a 24/7 SLA. Try Now → 
  ASYNC sponsor],
-  [style="margin-bottom: 0;"\> Lock the Ghost in uv.lock],
-  [style="margin-bottom: 0;"\> In the software world, “remove” is not equal to “gone.” Take a short trip through how the Python Package Index handles removals and how you can lock a ghost package in an uv.lock file forever!
+  [Lock the Ghost in uv.lock],
+  [In the software world, “remove” is not equal to “gone.” Take a short trip through how the Python Package Index handles removals and how you can lock a ghost package in an uv.lock file forever!
  CERT. AT • Shared by Kamil Mańkowski],
-  [style="margin-bottom: 0;"\> Comparing PDF Table Extraction Tools],
-  [style="margin-bottom: 0;"\> This article explores three Python tools for PDF table extraction: Docling, Marker, and LlamaParse. Learn which handles merged cells and multi-level headers best.
+  [Comparing PDF Table Extraction Tools],
+  [This article explores three Python tools for PDF table extraction: Docling, Marker, and LlamaParse. Learn which handles merged cells and multi-level headers best.
  CODECUT. AI • Shared by Khuyen Tran],
-  [style="margin-bottom: 0;"\> What Is Code Review For?],
-  [style="margin-bottom: 0;"\> This post explores just what you should and should not use code reviews for. Learn when to use linters to catch problems vs when human review is important.
+  [What Is Code Review For?],
+  [This post explores just what you should and should not use code reviews for. Learn when to use linters to catch problems vs when human review is important.
  GLYPH],
-  [style="margin-bottom: 0;"\> Caching an Asyncio Function the Easy Way],
-  [style="margin-bottom: 0;"\> Caching an async function is trickier than expected, this article walks through why that is and how to use Asyncio primitives to solve the problem.
+  [Caching an Asyncio Function the Easy Way],
+  [Caching an async function is trickier than expected, this article walks through why that is and how to use Asyncio primitives to solve the problem.
  CHANGS. CO. UK • Shared by Jamie Chang],
-  [style="margin-bottom: 0;"\> Working With APIs in Python: Reading Public Data],
-  [style="margin-bottom: 0;"\> Learn how to consume REST APIs with Python using the requests library, including authentication, query parameters, and handling responses.
+  [Working With APIs in Python: Reading Public Data],
+  [Learn how to consume REST APIs with Python using the requests library, including authentication, query parameters, and handling responses.
  REAL PYTHON course],
-  [style="margin-bottom: 0;"\> Nobody Gets Promoted for Simplicity],
-  [style="margin-bottom: 0;"\> Our industry often rewards complexity and ignores simplicity. In interviews, design reviews, and promotions. Here’s how to fix it.
+  [Nobody Gets Promoted for Simplicity],
+  [Our industry often rewards complexity and ignores simplicity. In interviews, design reviews, and promotions. Here’s how to fix it.
  TERRIBLE SOFTWARE],
-  [style="margin-bottom: 0;"\> You Store Data and You Do Stuff With Data],
-  [style="margin-bottom: 0;"\> This post explores the Object Oriented Programming mindset and why you want to associate your data with the operations upon it.
+  [You Store Data and You Do Stuff With Data],
+  [This post explores the Object Oriented Programming mindset and why you want to associate your data with the operations upon it.
  STEPHEN GRUPPETTA],
-  [style="margin-bottom: 0;"\> pandas’ Public API Is Now Type-Complete],
-  [style="margin-bottom: 0;"\> Marco tells the story of how his team helped make pandas’ public API type-complete, and how to prevent it from regressing.
+  [pandas’ Public API Is Now Type-Complete],
+  [Marco tells the story of how his team helped make pandas’ public API type-complete, and how to prevent it from regressing.
  MARCO GORELLI],
-  [style="margin-bottom: 0;"\> Remove Extra Spaces],
-  [style="margin-bottom: 0;"\> Learn how to remove extra spaces from a string using regex, string splitting, a fixed point, and itertools.groupby .
+  [Learn how to remove extra spaces from a string using regex, string splitting, a fixed point, and itertools.groupby .
  RODRIGO GIRÃO SERRÃO],
-  [style="margin-bottom: 0;"\> CPython: 36 Years of Source Code],
-  [style="margin-bottom: 0;"\> A graphical analysis of the growth of CPython’s codebase from its first commits to the present day
+  [CPython: 36 Years of Source Code],
+  [A graphical analysis of the growth of CPython’s codebase from its first commits to the present day
  PYTHON. ORG],
   [Projects & Code],
-  [style="margin-bottom: 0;"\> 100 Days, 100 MicroPython IoT Projects],
-  [style="margin-bottom: 0;"\> GITHUB. COM/KRITISHMOHAPATRA • Shared by Kritish Mohapatra],
-  [style="margin-bottom: 0;"\> OpenDocs: Turn Your README Into Documentation],
-  [style="margin-bottom: 0;"\> GITHUB. COM/IOTEVERYTHIN],
-  [style="margin-bottom: 0;"\> Cycast: Internet Radio Streaming Server],
-  [style="margin-bottom: 0;"\> GITHUB. COM/LUKEB42],
-  [style="margin-bottom: 0;"\> Crime-Related Datasets for Python],
-  [style="margin-bottom: 0;"\> PYPI. ORG • Shared by Renzo Caceres Rossi],
-  [style="margin-bottom: 0;"\> django-tasks-db: An ORM-based Backend for Django Tasks],
-  [style="margin-bottom: 0;"\> GITHUB. COM/REALORANGEONE],
-  [style="margin-bottom: 0;"\> Weekly Real Python Office Hours Q&A (Virtual)],
-  [style="margin-bottom: 0;"\> March 18, 2026
+  [100 Days, 100 MicroPython IoT Projects],
+  [GITHUB. COM/KRITISHMOHAPATRA • Shared by Kritish Mohapatra],
+  [OpenDocs: Turn Your README Into Documentation],
+  [GITHUB. COM/IOTEVERYTHIN],
+  [Cycast: Internet Radio Streaming Server],
+  [GITHUB. COM/LUKEB42],
+  [Crime-Related Datasets for Python],
+  [PYPI. ORG • Shared by Renzo Caceres Rossi],
+  [django-tasks-db: An ORM-based Backend for Django Tasks],
+  [GITHUB. COM/REALORANGEONE],
+  [Weekly Real Python Office Hours Q&A (Virtual)],
+  [March 18, 2026
  REALPYTHON. COM],
-  [style="margin-bottom: 0;"\> PyData Bristol Meetup],
-  [style="margin-bottom: 0;"\> March 19, 2026
+  [PyData Bristol Meetup],
+  [March 19, 2026
  MEETUP. COM],
-  [style="margin-bottom: 0;"\> PyLadies Dublin],
-  [style="margin-bottom: 0;"\> March 19, 2026
+  [PyLadies Dublin],
+  [March 19, 2026
  PYLADIES. COM],
-  [style="margin-bottom: 0;"\> Chattanooga Python User Group],
-  [style="margin-bottom: 0;"\> March 20 to March 21, 2026
+  [March 20 to March 21, 2026
  MEETUP. COM],
-  [style="margin-bottom: 0;"\> Claude Code for Python Developers: Hands-On Agentic Coding Course],
-  [style="margin-bottom: 0;"\> March 21 to March 23, 2026
+  [Claude Code for Python Developers: Hands-On Agentic Coding Course],
+  [March 21 to March 23, 2026
  REAL PYTHON],
-  [style="margin-bottom: 0;"\> PyCascades 2026],
-  [style="margin-bottom: 0;"\> March 21 to March 23, 2026
+  [PyCascades 2026],
+  [March 21 to March 23, 2026
  PYCASCADES. COM],
-  [style="margin-bottom: 0;"\> PythonAsia 2026],
-  [style="margin-bottom: 0;"\> March 21 to March 24, 2026
+  [PythonAsia 2026],
+  [March 21 to March 24, 2026
  PYTHONASIA. ORG],
   [Happy Pythoning!
 This was PyCoder’s Weekly Issue \#726.
@@ -2314,42 +2491,34 @@ This was PyCoder’s Weekly Issue \#726.
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [User-generated graphics in the browser with SVG],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
   images: (),
   paragraphs: (
-  [id="the-challenge"\>The challenge],
+  [The challenge],
   [For NPR’s ongoing series “The Changing Lives of Women” , we wanted to ask women to share advice gleaned from their experience in the workforce. We’ve done a few user-generated content projects using Tumblr as a backend, most notably Cook Your Cupboard , so we knew we wanted to reuse that infrastructure. Tumblr provides a very natural format for displaying images as well as baked in tools for sharing and content management. For Cook your Cupboard we had users submit photos, but for this project we couldn’t think of a photo to ask our users to take that would say something meaningful about their workplace experience. So, with the help of our friends at Morning Edition, we arrived at the idea of a sign generator and our question:],
   [“What’s your note to self – a piece of advice that’s helped you at work?”],
   [With that in mind we sketched up a user interface that gave users some ability to customize their submission—font, color, etc—but also guaranteed us a certain amount of visual and thematic consistency.],
-  [id="making-images-online"\>Making images online],
+  [Making images online],
   [The traditional way of generating images in the browser is to use Flash, which is what sites like quickmeme do. We certainly weren’t going to do that. All of our apps must work across all major browsers and on mobile devices. My initial instinct said we could solve this problem with the HTML5 Canvas element . Some folks already use Canvas for resizing images on mobile devices before uploading them , so it seemed like a natural fit. However, in addition to saving the images to Tumblr, we also wanted to generate a very high-resolution version for printing. Generating this on the client would have made for large file sizes at upload time—a deal-breaker for mobile devices. Scaling it up on the server would have lead to poor quality for printing.],
   [After some deliberation I fell upon the idea of using Raphaël.js to generate SVG in the browser. SVG stands for Scalable Vector Graphics, an image format typically used for icons, logos and other graphics that need to be rendered at a variety of sizes. SVG, like HTML, is based on XML and in modern browsers you can embed SVG content directly into your HTML. This also means that you can use standard DOM manipulation tools to modify SVG elements directly in the browser. (And also style them dynamically, as you can see in our recent Arrested Development visualization .)],
   [The first prototype of this strategy came together remarkably quickly. The user selects text, colors and ornamentation. These are rendered as SVG elements directly into the page DOM. Upon hitting submit, we grab the text of the SVG using jQuery’s html method and then assign to a hidden input in the form:],
   [The SVG graphic is sent to the server as text via the hidden form field. We’ve already been running servers for our Tumblr projects to construct the post content and add tags before submitting to Tumblr, so we didn’t have to create any new infrastructure for this. (Tumblr also provides a form for having users submit directly, which we are not using for a variety of reasons.) You can see our boilerplate for building projects with Tumblr on the init-tumblr branch of our app-template.],
   [Once the SVG text is on the server we save it to a file and use cairosvg to cut a PNG, which we then POST to Tumblr. Tumblr returns a URL to the new “blog post”, which we then send to the user as a 301 redirect. To the user it appears as though they posted their image directly to Tumblr.],
-  [id="problems"\>Problems],
-  [id="text"\>Text],
   [Text was probably the hardest thing to get right. Because each browser renders text in a different way we found that our resulting images were inconsistent and often ugly. Worse yet, because our server-side, Cairo-based renderer was also different, we couldn’t guarantee the text layout a user saw on their screen would match that of the final image once we’d converted it to a PNG.],
   [Here is the same text ( Quicksand 400 ), rendered in Chrome on the left and IE9 on the right:],
   [Researching a solution for this led me to discover Cufon fonts , a JSON format for representing fonts as SVG paths (technically VML paths, but that doesn’t matter). There is a Cufon Javascript library for using these fonts directly, however, there are also built-in hooks for using them Raphaël. (For those who care: they get loaded up via a “magic” callback name.) These resulting fonts are ideal for us, because the paths are already set and thus look the same in every browser and when rendered on the server. It’s a beautiful thing:],
-  [id="cufon-example" style="width: 100%; height: 100px;"\>],
-  [id="scaling"\>Scaling],
   [We found that the various SVG implementations we had to work with (Webkit, IE, Cairo) had different interpretations of width , height and viewBox parameters of the SVG. We ended up using a fixed size for viewBox (2048x2048) and rendering everything in that coordinate reference system. The width and height we scaled with our responsive viewport. On the server width and height were stripped before the SVG was sent to cairosvg, causing it to render the resulting PNGs at viewBox size. See the next section for the code that cleans up the SVG on the server.],
-  [id="browser-support"\>Browser support],
+  [Browser support],
   [A similar issue happened with IE9, which for no apparent reason was duplicating the XML namespace attribute of the SVG, xmlns . This caused cairosvg to bomb, so we had to strip it.],
   [Unfortunately, no amount of clever rewriting was ever going to make this work in IE8, which does not support SVG. Note that Raphaël does support IE8, by rendering VML instead of SVG, however, we have no way to get the XML text of the VML from the browser. (And even if we could we would then have to figure out how to convert the VML to a PNG in a way that precisely matched the output from our SVG process.)],
   [Here is the code we use to normalize the SVGs before passing them to cairosvg:],
-  [id="glyphs"\>Glyphs],
   [One final thing we did for this project that is worth mentioning is building out a lightweight system for defining the ornaments you that can be selected as decoration for your quote. Although there is nothing technically challenging about this (it’s a grid of squares), it was awfully fun code to write:],
   [And it gave us a chance to use good-old-fashioned bitmaps for the configuration:],
   [You can see the full ornament definitions in this gist .],
-  [id="conclusion"\>Conclusion],
   [By using SVG to generate images we were able to produce user-generated images suitable for printing at large size in a cross-platform and mobile-friendly way. It also provided us an opportunity to be playful and explore some interesting new image composition techniques. This “sign generator” approach seems to have resonated with users and resulted in over 1,100 submissions !],
 ),
   insert-map: (:),
@@ -2358,10 +2527,8 @@ This was PyCoder’s Weekly Issue \#726.
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Making Data Tables Responsive],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
@@ -2369,23 +2536,17 @@ This was PyCoder’s Weekly Issue \#726.
   paragraphs: (
   [Left: A data table on a desktop-sized screen.
 Right: The same table on a small screen, too wide for the viewport.],
-  [id="the-problem"\>The Problem],
   [Data tables with multiple columns are great on desktop screens, but don’t work as well at mobile sizes, where the table might be too wide to fit onscreen.],
   [We’ve been experimenting with a technique we read about from Aaron Gustafson , where the display shifts from a data table to something more row-based at smaller screen widths. Each cell has a data-title attribute with the label for that particular column. On small screens, we:],
   [Set each and to display: block; to make the table cells display in rows instead of columns],
   [Hide the header row],
-  [Use :before { content: attr(data-title) ":\\00A0"; to display a label in front of each table cell],
+  [Use :before \{ content: attr(data-title) ":\\00A0"; to display a label in front of each table cell],
   [It works well for simple data tables. More complex presentations, like those involving filtering or sorting, would require more consideration.],
   [Left: A data table on a desktop-sized screen.
 Right: The same table on a small screen, reformatted for the viewport.],
-  [id="the-data"\>The Data],
   [We’ll start with some sample data from the Bureau of Labor Statistics that I’ve dropped into Google Spreadsheets:],
-  [id="the-markup"\>The Markup],
   [Use standard HTML table markup. Wrap your header row in a thead tag — it will be simpler to hide later. And in each td , add a data-title attribute that corresponds to its column label (e.g., ).],
-  [class="highlight"\> 
- 
- 
- Category 
+  [Category 
  January 
  February 
  March 
@@ -2420,61 +2581,107 @@ Right: The same table on a small screen, reformatted for the viewport.],
  3.2 
  3.4 
  3.4],
-  [id="the-css"\>The CSS],
-  [table {
+  [The CSS],
+  [body \{
+ font: 12px/1.4 Arial, Helvetica, sans-serif;
+ color: \#333;
+ margin: 0;
+ padding: 0;
+ \}],
+  [table \{
  border-collapse: collapse;
  padding: 0;
  margin: 0 0 11px 0;
  width: 100%;
- }],
-  [table th {
+ \}],
+  [table th \{
  text-align: left;
  border-bottom: 2px solid \#eee;
  vertical-align: bottom;
  padding: 0 10px 10px 10px;
  text-align: right;
- }],
-  [table td {
+ \}],
+  [table td \{
  border-bottom: 1px solid \#eee;
  vertical-align: top;
  padding: 10px;
  text-align: right;
- }],
+ \}],
   [table th:nth-child(1),
- table td:nth-child(1) {
+ table td:nth-child(1) \{
  text-align: left;
  padding-left: 0;
  font-weight: bold;
- }],
+ \}],
   [Above, basic CSS styling for the data table, as desktop users would see it.],
   [Below, what the table will look like when it appears in a viewport that is 480px wide or narrower:],
+  [/\* responsive table \*/
+\@media screen and (max-width: 480px) \{
+ table,
+ tbody \{
+ display: block;
+ width: 100%;
+ \}],
   [Make the table display: block; instead of display: table; and make sure it spans the full width of the content well.],
+  [thead \{ display: none; \}],
   [Hide the header row.],
+  [table tr,
+ table th,
+ table td \{
+ display: block;
+ padding: 0;
+ text-align: left;
+ white-space: normal;
+ \}],
   [Make all the , and tags display as rows rather than columns. ( is probably not necessary to include, since we’re hiding the , but I’m doing so for completeness.)],
+  [table tr \{
+ border-bottom: 1px solid \#eee;
+ padding-bottom: 11px;
+ margin-bottom: 11px;
+ \}],
   [Add a dividing line between each row of data.],
+  [table th\[data-title\]:before,
+ table td\[data-title\]:before \{
+ content: attr(data-title) ":\\00A0";
+ font-weight: bold;
+ \}],
   [If a table cell has a data-table attribute, prepend it to the contents of the table cell. (e.g., 6.5 would display as January: 6.5 )],
+  [table td \{
+ border: none;
+ margin-bottom: 6px;
+ color: \#444;
+ \}],
   [Table cell style refinements.],
+  [table td:empty \{ display: none; \}],
   [Hide empty table cells.],
+  [table td:first-child \{
+ font-size: 14px;
+ font-weight: bold;
+ margin-bottom: 6px;
+ color: \#333;
+ \}
+ table td:first-child:before \{ content: ''; \}],
   [Make the first table cell appear larger than the others — more like a header — and override the display of the data-title attribute.],
+  [\}],
   [And there you go!],
-  [id="extra-embed-this-table-using-pymjs"\>Extra: Embed This Table Using Pym.js],
-  [id="jobs-table"\>],
+  [Extra: Embed This Table Using Pym.js],
   [At NPR, when we do simple tables like these, they’re usually meant to accompany stories in our CMS. To avoid conflicts, we like to keep the code for mini-projects like this graph compartmentalized from the CMS — saved in separate files and then added to the CMS via an iframe.],
   [Iframes in a responsive site can be tricky, though. It’s easy enough to set the iframe’s width to 100% of its container, but what if the height of the content varies depending on its width (e.g., text wraps, or an image resizes)?],
   [We recently released Pym.js , a JavaScript library that handles communication between an iframe and its parent page. It will size an iframe based on the width of its parent container and the height of its content.],
-  [id="the-table-to-be-iframed-in"\>The Table (To Be iFramed In)],
+  [The Table (To Be iFramed In)],
   [At the bottom of your page, add this bit of JavaScript:],
+  [var pymChild = new pym. Child();],
   [Sub out path/to\/ with the actual published path to the file.],
-  [id="the-parent-page-the-cms"\>The Parent Page (The CMS)],
+  [The Parent Page (The CMS)],
   [This is what we’ll paste into our CMS, so the story page can communicate with the graphic:],
+  [var jobs\_table\_parent = new pym. Parent('jobs-table', 'http:\/\/blog.apps.npr.org/pym.js/examples/table/child.html', \{\});],
   [\#jobs-table in this case is the containing div on the parent page.],
   [Sub out all the path/to\/ references with the actual published paths to those files.],
-  [id="advanced-responsive-data-tables-made-easier-with-copytextpy"\>Advanced: Responsive Data Tables Made Easier With Copytext.py],
+  [Advanced: Responsive Data Tables Made Easier With Copytext.py],
   [It’s rather repetitive to write those same data-title attributes over and over. And even all those and tags.],
   [The standard templates we use for our big projects and for our smaller daily graphics projects rely on Copytext.py , a Python library that lets us use Google Spreadsheets as a kind of lightweight CMS.],
   [In this case, we have a Google Spreadsheet with two sheets in it : one called data for the actual table data, and another called labels for things like verbose column headers.],
   [Once we point the project to my Google Spreadsheet ID, we can supply some basic markup and have Flask + Jinja output the rest of the table for us:],
-  [id="related-posts"\>Related Posts],
   [Creating And Deploying Small-Scale Projects],
   [Introducing copytext.py: your words are data too],
   [Introducing Pym.js],
@@ -2485,10 +2692,8 @@ Right: The same table on a small screen, reformatted for the viewport.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Graphics, Photo and Video: Apply for Fall/Winter 2022 Internships at NPR],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
@@ -2497,18 +2702,18 @@ Right: The same table on a small screen, reformatted for the viewport.],
   [NPR’s internship program includes several visually-oriented newsroom jobs, working with the News Apps, Visuals and Science teams.],
   [Our paid fall/winter internship program runs from Oct. 3, 2022, to April 15, 2023. In this super-sized internship term, interns may have the opportunity to work with multiple teams in the NPR newsroom and develop a wider range of experience. DEADLINE EXTENDED: Applications are due Sunday, July 17, 2022 at 11:59pm ET.],
   [To be eligible, you must be a college student (undergraduate or graduate) or a person who has graduated no more than 12 months prior to the start of the internship period. You must be planning to work from the United States and authorized to work in the United States throughout the internship term.],
-  [id="newshubgraphics-intern-remote-optional"\> NewsHub/Graphics Intern (Remote-optional)],
+  [NewsHub/Graphics Intern (Remote-optional)],
   [For half of the internship, you will be part of the NewsHub team, where you will pitch, report and write stories for NPR’s website and learn what it takes to make those stories go big across digital platforms. For the other half of the internship, you will be embedded with the News Apps/Graphics team, focusing on graphics, data visualization and visual storytelling.],
   [This position could be a good fit for someone experienced with graphics and data analysis who wants to improve their reporting skills, or for a reporter with some graphics experience who wants to build stronger graphics/coding chops.],
   [This internship has the flexibility to be on site at our Washington, D. C., office, fully remote, and/or a hybrid version of the two based on the intern’s preference.],
   [Read about our expectations and selection process],
   [APPLY NOW],
-  [id="multimedia-intern-visuals-and-science-desks-remote"\> Multimedia Intern, Visuals and Science Desks (Remote)],
+  [Multimedia Intern, Visuals and Science Desks (Remote)],
   [This internship is an opportunity to learn more about the world of photo editing. Our goal isn’t to make you into a photo editor; we view this internship as a chance for you to understand what it is like to be an editor and improve your visual literacy , which can help you become a better photographer.],
   [On the Visuals Desk, the intern will focus on editing and commissioning visuals for stories for news, national, culture, politics and podcasts. They will also work on content for our other visuals platforms including Instagram. The Visuals Desk intern will work across the newsroom and podcasts. On the Science Desk, interns will edit and commission visuals for stories on global and domestic health, climate change and general science. As one of the largest desks at NPR, interns will have the opportunity to work with over 30 reporters, producers and editors.],
   [This internship will be fully remote.],
   [APPLY NOW],
-  [id="npr-music-visuals-intern-remote"\> NPR Music Visuals Intern (Remote)],
+  [NPR Music Visuals Intern (Remote)],
   [The NPR Music Video Intern will assist in the production of a range of editorial projects, spanning podcasts, short-form video, Tiny Desk, Alt. Latino and more. We look for video producers who can balance multiple tasks at once, translate big ideas into smart and compelling visuals and who are excited to help NPR Music reach new audiences, especially on platforms like TikTok and Instagram. This is a paid, full-time, 40-hour a week internship working remotely. It will require occasional late nights/odd hours.],
   [APPLY NOW],
 ),
@@ -2518,10 +2723,8 @@ Right: The same table on a small screen, reformatted for the viewport.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Dependency Injection with constructors?],
   author: [mick],
   source-name: [Finn.no Tech],
@@ -2531,7 +2734,7 @@ Right: The same table on a small screen, reformatted for the viewport.],
 constructors, setters, fields, or interfaces
 for dependency injection is often heated and opinionated.
 Should you have a preference?],
-  [id="the-argument-for-constructor-injection"\>The argument for Constructor Injection],
+  [The argument for Constructor Injection],
   [We had a consultant working with us reminding us to take a preference towards Constructor injection. Indeed we had a large code base using predominantly setter injection because in the past that is what the Spring community recommended.],
   [The arguments for constructor injection goes like:],
   [Dependencies are declared public, providing clarity in the wiring of Dependency Inversion ,],
@@ -2540,7 +2743,7 @@ Should you have a preference?],
   [Clear indication of complexity through numbers of constructor parameters.],
   [And that Setter injection can be used when needed for cyclic dependencies, optional and re-assignable dependencies, to support multiple/complicated variations of construction, or to free up the constructor for polymorphism purposes.],
   [Being a big fan of Inversion of Control but not overly of Dependency Injection frameworks something smelt wrong to me. Yet solely within the debate of constructor versus setter injection i don’t disagree that constructor injection has the advantage. Having been using Spring’s dependency injection through annotation a little recently and building a favouritism towards field injection I was happy to get the chance to ponder it over, to learn and to be taught new things. What was it i was missing? Is there a bigger picture?],
-  [id="api-vs-implementation"\>API vs Implementation],
+  [API vs Implementation],
   [If there is a bigger picture it has to be around the Dependency Inversion argument since this is known to be potentially complex. The point here of using constructor injection is that 1) through a public declaration and injection of dependencies we build an explicit graph showing the dependency inversion throughout the application, and 2) even if the application is wired magically by a framework such injection must still be done in the same way without the framework (eg when writing tests). The latter (2) is interesting in that the requirement on “dependency injection” is too also inverted, that the framework providing dependency injection is removed from the architectural design and becomes solely a implementation detail. But it is the graph in (1) that becomes an important facet in the following analysis.],
   [With this dependency graph in mind what does happen when we bring into the picture a desire to distinguish between API and implementation design…],
   [The DI graph being requested to be clarified by using constructor injection will fall into one of two categories:
@@ -2550,7 +2753,7 @@ Should you have a preference?],
   [This distinction between API and implementation is important in being able to create the simple API. The previous blog “ using the constretto configuration factory ” is a co-incidental example of this. I think the work in Constretto has an excellent implementation design to it, but this particular issue raised frustrations that the API was not as simple as it could have been. Indeed: to obtain the “simplest api”; Constretto (intentionally or not) promotes the use of Spring’s injection, a loose coupling that can be compared to reflection. It may be that our usage of Constretto’s API, where we wanted to isolate groups of properties, was not what the author originally intended but this only re-enforces the need for designing the simplest possible API.],
   [Therefore it is important to sometimes have all dependency injection completely hidden in the implementation. A clean elegant API must take precedence over a clean elegant implementation. And to achieve this one must first make that distinction between API and Implementation design.],
   [Taking this further we can introduce the distinction between API and SPI . Here a good practice is to stick to using final classes for API and interfaces for SPI. By the same argument as above SPI can’t use constructor injection because they don’t have constructors.],
-  [id="inversion-of-control-vs-dependency-injection"\>Inversion-of-Control vs Dependency-Injection],
+  [Inversion-of-Control vs Dependency-Injection],
   [What about the difference between IoC and DI. They are overlapping concepts: the subtlety between the “the contexts” and “the dependencies” rarely emphasised enough. (Java EE 6 has tried to address the distinction between contexts and dependencies at the implementation level with the CDI spec .) The difference between the two, nuanced as it may be, can help illustrate that the DI graph in any application deserves attention in multiple dimensions.],
   [Drawing an application’s architecture up as a graph where the vertical axis represents the request stack: that which is typically categorised into architectural layers view, control, and model/services; and the horizontal axis representing the broadness of each architectural layer, then it can be demonstrated that:
  → IoC generally forms the passing and layering of contexts downwards.],
@@ -2561,7 +2764,7 @@ Should you have a preference?],
   [Another illustration is when having to instantiate the initial context at the very top of the request/application stack it involves instantiating all the implementation of dependencies used in contexts down through the stack, this is when dependency inversion explodes - the case where the IoC becomes up-front and explicit, and the encapsulation of implementation is lost through an unnecessary leak of abstractions. A problem paralleling to this is trying to apply checked exceptions up through the request stack: one answer is that we need different checked exceptions per architectural layer (another answer is anchored exceptions ). With dependencies we would eventuate with requiring different dependency types per architectural layer and this could lead to dependencies types from inner domains needing to be declared from the outer domains. Here we can instead declare resource loaders in the initial context and then letting each architectural layer build from scratch its own context with dependencies constructed from configuration. But this comes the full circle in coming back to a design similar to a service locator . Something similar has happened with annotations in that by bringing Convention over Configuration to DI what was once loose wiring with xml has become the magic of the convention and begins too to resemble the service locator or naming lookups .],
   [For a legacy application this likely becomes all too much: the declaring of all dependencies required throughout all these contexts; and so relying on a little louse-coupling-magic (be it reflection or spring injection) is our answer out. Indeed this seems to be one of the reasons spring dependency injection was introduced into FINN.
  And so we’ve become less worried about the type of injection used…],
-  [id="broad-vs-deep-applications"\>Broad vs Deep Applications],
+  [Broad vs Deep Applications],
   [FINN.no is generally a broad application with a shallow contextual stack. Here is the traditional view-control-model design and the services inside the model layer typically interact directly with the data stores and maybe interact with one or two peer services.],
   [Focusing on the interfaces to the services we see there is a huge amount of public api available to the controller layer and very little in defined contexts except a few parameters, or maybe the whole parameter map, and the current user object. There is therefore very little inversion of control in our contexts, it is often just parameterisation. (Why we often use interfaces to define service APIs is interesting since we usually have no intention for client code to be supplying their own implementations, it is definitely not SPIs that are being published. Such interfaces are used as a poor-man’s simplification of the API declaration of public methods within the final classes. Albeit these interfaces do make it easy to make stubs and mocks for tests.)],
   [In this design the implementation details of service-layer dependencies is rarely passed down through contexts but rather hard baked into the application. And in a product like FINN it probably always will be hard baked in. Hard baked here doesn’t mean it can’t be changed or mocked for testing, but that it is not a dynamic component, it is not contextual, and so does not belong in the architectural design of the application.],
@@ -2570,7 +2773,7 @@ Should you have a preference?],
   [→ central dependencies: these are the “core” dependencies used throughout the bulk of the services, the database connection, resource loaders, etc. If we enforce these to be injected via constructors then we in turn are enforcing a global-store of them. Such a global store would typically be implemented as a factory or singleton. Then what is the point of injection? Worse yet is that this could encourage us to start passing the spring application context around through all our services. A service locator may better serve our purpose…],
   [Hopefully by now you’ve guessed that we really should be more interested in modularisation of the code. Breaking up this very broad services layer into appropriate groups is an easier and more productive first step to take. And during this task we have found discovering and visualising the DI graph is not the problem. Untangling it is. Constructor injection can be used to prevent these tangles, but so can tools like maven reporting and sonar. This shows the the DI graph is actually more easily visualised through the class’s import statements than through constructor parameters.],
   [With modularisation we can minimise contexts, isolate dependency chains, publish contextual inversion of control into APIs, declare interface-injection for SPIs, and move dependency injection into wired constructors.],
-  [id="back-to-constructor-injection"\>Back to Constructor injection],
+  [Back to Constructor injection],
   [So it’s true that constructor injection goes beyond just DI in being able to provide some IoC. But it alone can not satisfy Inversion of Control in any application unless you are willing to overlook API and SPI design. DI is not a subset or union of IoC: it has uses horizontally and in loose-coupling configuration; and IoC is not a subset or union of DI: to insinuate such would mean IoC can only be implemented using spring beans leading to an application of only spring beans and singletons. In the latter case IoC will often become forgotten outside the application’s realm of DI.],
   [Constructor injection is especially valid when it’s desired for code to be used via both spring-injection and manual injection, and it does make test code more natural java code. But imagine manually injecting every spring bean in a oversized legacy broad-stack application using constructor injection without the spring framework - is this really a possibility, let’s be serious? What you would likely end up with is one massive factory with initialisation code constructing all services instead of the spring xml, and looking up using this factory every request. What’s the point here? This isn’t where IoC is supposed to take us.],
   [If code is being moved towards a distributed and modular architecture you should pay be aware on how it clashes with the DI fan club.],
@@ -2594,10 +2797,8 @@ A large and healthy dose of credit must go to Kaare Nilsen for being a sparring 
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Adding a new Bytecode Instruction to the CLR],
   author: [Matt Warren (.NET)],
   source-name: [Matt Warren (.NET)],
@@ -2612,18 +2813,29 @@ A large and healthy dose of credit must go to Kaare Nilsen for being a sparring 
   [Step 4 - Runtime code generation via Reflection. Emit],
   [Step 5 - Future Improvements],
   [Update : turns out that I wasn’t the only person to have this idea, see Beachhead implements new opcode on CLR JIT for another implementation by Kouji Matsui .],
-  [id="step-0"\>Step 0],
+  [Step 0],
   [But first a bit of background information. Adding a new IL instruction to the CLR is a pretty rare event, that last time is was done for real was in . NET 2.0 when support for generics was added. This is part of the reason why . NET code had good backwards-compatibility, from Backward compatibility and the . NET Framework 4.5 :],
   [The . NET Framework 4.5 and its point releases (4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, and 4.7) are backward-compatible with apps that were built with earlier versions of the . NET Framework. In other words, apps and components built with previous versions will work without modification on the . NET Framework 4.5 .],
   [Side note : The . NET framework did break backwards compatibility when moving from 1.0 to 2.0, precisely so that support for generics could be added deep into the runtime, i.e. with support in the IL. Java took a different decision, I guess because it had been around longer, breaking backwards-comparability was a bigger issue. See the excellent blog post Comparing Java and C\# Generics for more info.],
-  [id="step-1"\>Step 1],
+  [Step 1],
   [For this exercise I plan to add a new IL instruction (op-code) to the CoreCLR runtime and because I’m a raving narcissist (not really, see below) I’m going to name it after myself. So let me introduce the matt IL instruction, that you can use like so:],
+  [.method private hidebysig static int32 TestMattOpCodeMethod(int32 x, int32 y) 
+ cil managed noinlining
+\{
+ .maxstack 2
+ ldarg.0
+ ldarg.1
+ matt \/\\/ yay, my name as an IL op-code!!!!
+ ret
+\}],
   [But because I’m actually a bit-British (i.e. I don’t like to ‘blow my own trumpet’ ), I’m going to make the matt op-code almost completely pointless, it’s going to do exactly the same thing as calling Math. Max(x, y) , i.e. just return the largest of the 2 numbers.],
   [The other reason for naming it matt is that I’d really like someone to make a version of the C\# (Roslyn) compiler that allows you to write code like this:],
+  [Console . WriteLine ( "\{0\} m\@ \{1\} = \{2\}" , 1 , 7 , 1 m \@ 7 )); \/\\/ prints '1 m\@ 7 = 7'],
   [I definitely want the m\@ operator to be a thing (pronounced ‘matt’, not ‘m-at’), maybe the other ‘Matt Warren’ who works at Microsoft on the C\# Language Design Team can help out!! Seriously though, if anyone reading this would like to write a similar blog post, showing how you’d add the m\@ operator to the Roslyn compiler, please let me know I’d love to read it.],
   [Update : Thanks to Marcin Juraszek (\@mmjuraszek) you can now use the m\@ in a C\# program, see Adding Matt operator to Roslyn - Syntax, Lexer and Parser , Adding Matt operator to Roslyn - Binder and Adding Matt operator to Roslyn - Emitter for the full details.],
   [Now we’ve defined the op-code, the first step is to ensure that the run-time and tooling can recognise it. In particular we need the IL Assembler (a.k.a ilasm ) to be able to take the IL code above ( TestMattOpCodeMethod(..) ) and produce a . NET executable.],
   [As the . NET runtime source code is nicely structured (+1 to the runtime devs), to make this possible we only need to makes changes in opcode.def :],
+  [--- a/src/inc/opcode.def],
   [+++ b/src/inc/opcode.def],
   [\@\@ -154,7 +154,7 \@\@ OPDEF(CEE\_NEWOBJ, "newobj", VarPop, Pu],
   [OPDEF(CEE\_CASTCLASS, "castclass", PopRef, PushRef, InlineType, IObjModel, 1, 0xFF, 0x74, NEXT)],
@@ -2637,26 +2849,15 @@ A large and healthy dose of credit must go to Kaare Nilsen for being a sparring 
   [I just picked the first available unused slot and added matt in there. It’s defined as Pop1+Pop1 because it takes 2 values from the stack as input and Push1 because after is has executed, a single result is pushed back onto the stack.],
   [Note : all the changes I made are available in one-place on GitHub if you’d rather look at them like that.],
   [Once this change was done ilasm will successfully assembly the test code file HelloWorld.il that contains TestMattOpCodeMethod(..) as shown above:],
-  [Assembling 'HelloWorld.il' to EXE --\> 'HelloWorld.exe'
-Source file is ANSI],
+  [λ ilasm /EXE /OUTPUT=HelloWorld.exe -NOLOGO HelloWorld.il],
   [Assembled method HelloWorld:: Main
 Assembled method HelloWorld:: TestMattOpCodeMethod],
   [Creating PE file],
   [Emitting classes:
 Class 1: HelloWorld],
-  [Emitting fields and methods:
-Global
-Class 1 Methods: 2;
-Resolving local member refs: 1 -\> 1 defs, 0 refs, 0 unresolved],
-  [Emitting events and properties:
-Global
-Class 1
-Resolving local member refs: 0 -\> 0 defs, 0 refs, 0 unresolved
-Writing PE file
-Operation completed successfully],
-  [id="step-2"\>Step 2],
+  [Step 2],
   [However at this point the matt op-code isn’t actually executed, at runtime the CoreCLR just throws an exception because it doesn’t know what to do with it. As a first (simpler) step, I just wanted to make the . NET Interpreter work, so I made the following changes to wire it up:],
-  [class="highlight"\> --- a/src/vm/interpreter.cpp
+  [--- a/src/vm/interpreter.cpp
  +++ b/src/vm/interpreter.cpp
  \@\@ -2726,6 +2726,9 \@\@ void Interpreter:: ExecuteMethod(ARG\_SLOT\* retVal, \_\_out bool\* pDoJmpCall, \_\_out
  case CEE\_REM\_UN:
@@ -2671,50 +2872,50 @@ Operation completed successfully],
   [--- a/src/vm/interpreter.hpp
  +++ b/src/vm/interpreter.hpp
  \@\@ -298,10 +298,14 \@\@ void Interpreter:: BinaryArithOpWork(T val1, T val2)
- {
+ \{
  res = val1 \/ val2;
- }
+ \}
  - else 
  + else if (op == BA\_Rem)
- {
+ \{
  res = RemFunc(val1, val2);
- }
+ \}
  + else if (op == BA\_Matt)
-+ {
++ \{
 + res = MattFunc(val1, val2);
-+ }
- }],
++ \}
+ \}],
   [and then I added the methods that would actually implement the interpreted code:],
-  [class="highlight"\> --- a/src/vm/interpreter.cpp
+  [--- a/src/vm/interpreter.cpp
  +++ b/src/vm/interpreter.cpp
  \@\@ -10801,6 +10804,26 \@\@ double Interpreter:: RemFunc(double v1, double v2)
  return fmod(v1, v2);
- }
+ \}
  
  +INT32 Interpreter:: MattFunc(INT32 v1, INT32 v2)
-+{
++\{
 + return v1 \> v2 ? v1 : v2;
-+}
++\}
 +
 +INT64 Interpreter:: MattFunc(INT64 v1, INT64 v2)
-+{
++\{
 + return v1 \> v2 ? v1 : v2;
-+}
++\}
 +
 +float Interpreter:: MattFunc(float v1, float v2)
-+{
++\{
 + return v1 \> v2 ? v1 : v2;
-+}
++\}
 +
 +double Interpreter:: MattFunc(double v1, double v2)
-+{
++\{
 + return v1 \> v2 ? v1 : v2;
-+}],
++\}],
   [So fairly straight-forward and the bonus is that at this point the matt operator is fully operational, you can actually write IL using it and it will run (interpreted only).],
-  [id="step-3"\>Step 3],
+  [Step 3],
   [However not everyone wants to re-compile the CoreCLR just to enable the Interpreter, so I want to also make it work for real via the Just-in-Time (JIT) compiler.],
   [The full changes to make this work were spread across multiple files, but were mostly housekeeping so I won’t include them all here, check-out the full diff if you’re interested. But the significant parts are below:],
-  [class="highlight"\> --- a/src/jit/importer.cpp
+  [--- a/src/jit/importer.cpp
  +++ b/src/jit/importer.cpp
  \@\@ -11112,6 +11112,10 \@\@ void Compiler::impImportBlockCode(BasicBlock\* block)
  oper = GT\_UMOD;
@@ -2734,31 +2935,31 @@ Operation completed successfully],
  
  /\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*/
  +HCIMPL2(INT32, JIT\_Matt, INT32 x, INT32 y)
-+{
++\{
 + FCALL\_CONTRACT;
 + return x \> y ? x : y;
-+}
++\}
 +HCIMPLEND
 +
 +/\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*/
  HCIMPL2\_VV(INT64, JIT\_LDiv, INT64 dividend, INT64 divisor)
- {
+ \{
  FCALL\_CONTRACT;],
   [In summary, these changes mean that during the JIT’s ‘Morph phase’ the IL containing the matt op code is converted from:],
-  [class="highlight"\> fgMorphTree BB01, stmt 1 (before)
+  [fgMorphTree BB01, stmt 1 (before)
  \[000004\] ------------ ▌ return int 
  \[000002\] ------------ │ ┌──▌ lclVar int V01 arg1 
  \[000003\] ------------ └──▌ m\@ int 
  \[000001\] ------------ └──▌ lclVar int V00 arg0],
   [into this:],
-  [class="highlight"\> fgMorphTree BB01, stmt 1 (after)
+  [fgMorphTree BB01, stmt 1 (after)
  \[000004\] --C--+------ ▌ return int 
  \[000003\] --C--+------ └──▌ call help int HELPER. CORINFO\_HELP\_MATT
  \[000001\] -----+------ arg0 in rcx ├──▌ lclVar int V00 arg0 
  \[000002\] -----+------ arg1 in rdx └──▌ lclVar int V01 arg1],
   [Note the call to HELPER. CORINFO\_HELP\_MATT],
   [When this is finally compiled into assembly code it ends up looking like so:],
-  [class="highlight"\> \/\\/ Assembly listing for method HelloWorld: TestMattOpCodeMethod(int,int):int 
+  [\/\\/ Assembly listing for method HelloWorld: TestMattOpCodeMethod(int,int):int 
  \/\\/ Emitting BLENDED\_CODE for X64 CPU with AVX 
  \/\\/ optimized code 
  \/\\/ rsp based frame 
@@ -2782,9 +2983,9 @@ Operation completed successfully],
  4883 C428 add rsp , 40 
  C3 ret],
   [I’m not entirely sure why there is a nop instruction in there? But it works, which is the main thing!!],
-  [id="step-4"\>Step 4],
+  [Step 4],
   [In the CLR you can also dynamically emit code at runtime using the methods that sit under the ‘System. Reflection. Emit’ namespace , so the last task is to add the OpCodes. Matt field and have it emit the correct values for the matt op-code.],
-  [class="highlight"\> --- a/src/mscorlib/src/System/Reflection/Emit/OpCodes.cs
+  [--- a/src/mscorlib/src/System/Reflection/Emit/OpCodes.cs
  +++ b/src/mscorlib/src/System/Reflection/Emit/OpCodes.cs
  \@\@ -139,6 +139,7 \@\@ internal enum OpCodeValues
  Castclass = 0x74,
@@ -2796,10 +2997,10 @@ Operation completed successfully],
  Ldfld = 0x7b,
  \@\@ -1450,6 +1451,16 \@\@ private OpCodes()
  (0],
-  [class="highlight"\> DynamicMethod method = new DynamicMethod ( 
+  [DynamicMethod method = new DynamicMethod ( 
  "TestMattOpCode" , 
  returnType : typeof ( int ), 
- parameterTypes : new \[\] { typeof ( int ), typeof ( int ) }, 
+ parameterTypes : new \[\] \{ typeof ( int ), typeof ( int ) \}, 
  m : typeof ( TestClass ). Module );],
   [\/\\/ Emit the IL 
  var generator = method . GetILGenerator (); 
@@ -2811,16 +3012,24 @@ Operation completed successfully],
  var mattOpCodeInvoker = 
  ( Func ) method . CreateDelegate ( typeof ( Func ));],
   [\/\\/ prints "1 m\@ 7 = 7" 
- Console . WriteLine ( "{0} m\@ {1} = {2} (via IL Emit)" , 1 , 7 , mattOpCodeInvoker ( 1 , 7 )); 
+ Console . WriteLine ( "\{0\} m\@ \{1\} = \{2\} (via IL Emit)" , 1 , 7 , mattOpCodeInvoker ( 1 , 7 )); 
  
  \/\\/ prints "12 m\@ 9 = 12" 
- Console . WriteLine ( "{0} m\@ {1} = {2} (via IL Emit)" , 12 , 9 , mattOpCodeInvoker ( 12 , 9 ));],
-  [id="step-5"\>Step 5],
+ Console . WriteLine ( "\{0\} m\@ \{1\} = \{2\} (via IL Emit)" , 12 , 9 , mattOpCodeInvoker ( 12 , 9 ));],
+  [Step 5],
   [Finally, you may have noticed that I cheated a little bit in Step 3 when I made changes to the JIT. Even though what I did works, it is not the most efficient way due to the extra method call to CORINFO\_HELP\_MATT . Also the JIT generally doesn’t use helper functions in this way, instead prefering to emit assembly code directly.],
   [As a future exercise for anyone who has read this far (any takers?), it would be nice if the JIT emitted more efficient code. For instance if you write C\# code like this (which does the same thing as the matt op-code):],
   [It’s turned into the following IL by the C\# compiler],
+  [IL to import:
+IL\_0000 02 ldarg.0 
+IL\_0001 03 ldarg.1 
+IL\_0002 30 02 bgt.s 2 (IL\_0006)
+IL\_0004 03 ldarg.1 
+IL\_0005 2a ret 
+IL\_0006 02 ldarg.0 
+IL\_0007 2a ret],
   [Then when the JIT runs it’s processed as 3 basic-blocks (BB01, BB02 and BB03):],
-  [class="highlight"\> Importing BB01 (PC=000) of 'TestNamespace. TestClass: MaxMethod(int,int):int'
+  [Importing BB01 (PC=000) of 'TestNamespace. TestClass: MaxMethod(int,int):int'
  \[ 0\] 0 (0x000) ldarg.0
  \[ 1\] 1 (0x001) ldarg.1
  \[ 2\] 2 (0x002) bgt.s
@@ -2842,7 +3051,7 @@ Operation completed successfully],
  \[000012\] ------------ └──▌ return int 
  \[000011\] ------------ └──▌ lclVar int V01 arg1],
   [Before finally being turned into the following assembly code, which is way more efficient. It contains just a cmp , a jg and a couple of mov instructions, but crucially it’s all done in-line, it doesn’t need call out to another method.],
-  [class="highlight"\> \/\\/ Assembly listing for method TestNamespace. TestClass: MaxMethod(int,int):int 
+  [\/\\/ Assembly listing for method TestNamespace. TestClass: MaxMethod(int,int):int 
  \/\\/ Emitting BLENDED\_CODE for X64 CPU with AVX 
  \/\\/ optimized code 
  \/\\/ rsp based frame 
@@ -2865,7 +3074,7 @@ Operation completed successfully],
  8 BC1 mov eax , ecx],
   [G\_M32709\_IG05: 
  C3 ret],
-  [id="disclaimercredit"\>Disclaimer/Credit],
+  [Disclaimer/Credit],
   [I got the idea for doing this from the Appendix of the excellent book Shared Source CLI Essentials - Amazon , you can also download a copy of the 2nd edition if you don’t want to purchase the print one.],
   [In Appendix B the authors of the book reproduced the work that Peter Drayton did to add an Exponentiation op-code to the SSCLI, which inspired this entire post, so thanks for that!!],
   [Discuss this post on HackerNews and /r/programming],
@@ -2873,16 +3082,14 @@ Operation completed successfully],
 ),
   insert-map: (:),
   inline-pq: pull-quote([cs  +++ b/src/mscorlib/src/System/Reflection/Emit/OpCodes.], [Matt Warren (.NET)]),
-  inline-pq-idx: 34,
+  inline-pq-idx: 35,
   word-count: 2379,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Open Source .NET – 1 year later - Now with ASP.NET],
   author: [Matt Warren (.NET)],
   source-name: [Matt Warren (.NET)],
@@ -2894,14 +3101,12 @@ Operation completed successfully],
   [DNX - The DNX (a . NET Execution Environment) contains the code required to bootstrap and run an application, including the compilation system, SDK tools, and the native CLR hosts.],
   [EntityFramework - Microsoft’s recommended data access technology for new applications in . NET.],
   [KestrelHttpServer - A web server for ASP. NET 5 based on libuv.],
-  [id="methodology"\> Methodology],
   [In the first part I classified the Issues/PRs as Owner , Collaborator or Community . However this turned out to have some problems, as was pointed out to me in the comments. There are several people who are non Microsoft employees, but have been made “Collaborators” due to their extensive contributions to a particular repository, for instance \@kangaroo and \@benpye .],
   [To address this, I decided to change to just the following 2 categories:],
   [This is possible because (almost) all Microsoft employees have indicated where they work on their GitHub profile, for instance:],
   [There are some notable exceptions, e.g. \@shanselman clearly works at Microsoft, but it’s easy enough to allow for cases like this.],
-  [id="results"\> Results],
   [So after all this analysis, what results did I get. Well overall, the Community involvement accounts for just over 60% over the “Issues Created” and 33% of the “Merged Pull Requests (PRs)”. However the amount of PRs is skewed by Entity Framework which has a much higher involvement from Microsoft employees, if this is ignored the Community proportion of PRs increases to 44% .],
-  [id="issues-created-nov-2013---dec-2015"\>Issues Created (Nov 2013 - Dec 2015)],
+  [Issues Created (Nov 2013 - Dec 2015)],
   [Project 
  Microsoft 
  Community 
@@ -2938,7 +3143,7 @@ Operation completed successfully],
  2768 
  4189 
  6957],
-  [id="merged-pull-requests-nov-2013---dec-2015"\>Merged Pull Requests (Nov 2013 - Dec 2015)],
+  [Merged Pull Requests (Nov 2013 - Dec 2015)],
   [Project 
  Microsoft 
  Community 
@@ -2977,10 +3182,10 @@ Operation completed successfully],
  2706],
   [Note: I included the Kestrel Http Server because it is an interesting case. Currently the \#1 contributor is not a Microsoft employee, it is Ben Adams , who is doing a great job of improving the memory usage and in the process helping Kestrel handle more and more requests per/second.],
   [By looking at the results over time, you can see that there is a clear and sustained Community involvement (the lighter section of the bars) over the past 2 years (Nov 2013 - Dec 2015) and it doesn’t look like it’s going to stop.],
-  [id="issues-per-month---by-submitter-click-for-full-size-image"\> Issues Per Month - By Submitter (click for full-size image)],
+  [Issues Per Month - By Submitter (click for full-size image)],
   [In addition, whilst the Community involvement is easier to see with the Issues per/month, it is still visible in the Merged PRs and again it looks like it has being sustained over the 2 years.],
-  [id="merged-pull-request-per-month---by-submitter-click-for-full-size-image"\> Merged Pull Request Per Month - By Submitter (click for full-size image)],
-  [id="total-number-of-people-contributing"\> Total Number of People Contributing],
+  [Merged Pull Request Per Month - By Submitter (click for full-size image)],
+  [Total Number of People Contributing],
   [It’s also interesting to look at the total number of different people who contributed to each project. By doing this you get a real sense of the size of the Community contribution, it’s not just a small amount of people doing a lot of work, it’s spread across a large amount of people.],
   [This table shows the number of different GitHub users (per project) who opened an Issue or created a PR that was Merged:],
   [Project 
@@ -3019,7 +3224,7 @@ Operation completed successfully],
  138 
  1481 
  1619],
-  [id="-fsharp"\> FSharp],
+  [FSharp],
   [In the comments of my first post, Isaac Abraham correctly pointed out:],
   [parts of . NET have been open source for quite a bit more than a year – the F\# compiler and FSharp. Core have been for quite a while now.],
   [So, to address this, I will take a quick look at the main FSharp repositories:],
@@ -3027,7 +3232,7 @@ Operation completed successfully],
   [fsharp/fsharp],
   [As Isaac explained, their relationship is:],
   [… visualfsharp is the Microsoft-owned repo Visual F\#. The other is the community owned one. The former one feeds directly into tools like Visual F\# tooling in Visual Studio etc.; the latter feeds into things like Xamarin etc. There’s a (slightly out of date) diagram that explains the relationship , and this is another useful resource http:\/\/fsharp.github.io/.],
-  [id="fsharp---issues-created-dec-2010---dec-2015"\>FSharp - Issues Created (Dec 2010 - Dec 2015)],
+  [FSharp - Issues Created (Dec 2010 - Dec 2015)],
   [Project 
  Microsoft 
  Community 
@@ -3052,7 +3257,7 @@ Operation completed successfully],
  170 
  679 
  849],
-  [id="fsharp---merged-pull-requests-may-2011---dec-2015"\>FSharp - Merged Pull Requests (May 2011 - Dec 2015)],
+  [FSharp - Merged Pull Requests (May 2011 - Dec 2015)],
   [Project 
  Microsoft 
  Community 
@@ -3077,7 +3282,6 @@ Operation completed successfully],
  63 
  167 
  230],
-  [id="conclusion"\> Conclusion],
   [I think that it’s fair to say that the Community has responded to Microsoft making more and more of their code Open Source. There have been a significant amount of Community contributions across several projects, over a decent amount of time. Whilst you could argue that it took Microsoft a long time to open source their code, it seems that . NET developers are happy they have done it, as shown by a sizeable Community response.],
   [CodeProject],
 ),
@@ -3087,10 +3291,8 @@ Operation completed successfully],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Clojure Sound - 5 - Double Click with Foot Control],
   author: [Dragan Djuric],
   source-name: [Dragan Djuric],
@@ -3135,14 +3337,13 @@ foot control it can be simplified to this:],
   [Detecting doubleclick],
   [Deciding on a simple decision process for the alternative action (remember, the user should anticipate the action while playing the guitar).],
   [The usual imports:],
-  [class="org-src-container"\>
- ( ns my-midi ) 
+  [( ns my-midi ) 
  ( require ' \[ uncomplicate.commons.core :refer \[ close! info \] \] 
  ' \[ uncomplicate.clojure-sound
  \[ core :refer :all \] 
  \[ midi :refer :all \] 
  \[ sampled :refer :all \] \] )],
-  [id="org98665ef"\>Detecting doubleclick],
+  [Detecting doubleclick],
   [If you went back to one of the previous articles and connect the println as a receiver for
 the controller you have, you'd see that each message contains its timestamps in microseconds.
 We can detect whether a "click" message comes shortly after the previous "unclick" simply by
@@ -3154,8 +3355,7 @@ Fast pressing different buttons does not count as "doubleclick". Clojure gives u
 facilities for state management. In this case, the state is internal, so we don't have to care about
 synchronization. We don't need what refs, agents, or atoms offer. I think that the simple volatile! 
 can serve our needs rather well.],
-  [class="org-src-container"\>
- ( defn play \[ line \] 
+  [( defn play \[ line \] 
  ( let \[ previous-message ( volatile! ( short-message :control-change 0 0 ) ) 
  previous-timestamp ( volatile! 0 ) \] 
  ( fn \[ message timestamp \] 
@@ -3163,7 +3363,7 @@ can serve our needs rather well.],
  ( case ( command-type-key ( status message ) ) 
  :control-change ( let \[ doubleclick ( and ( = ( data1 \@previous-message ) ( data1 message ) ) 
  (],
-  [id="org8113ef8"\>Alternative action],
+  [Alternative action],
   [The play-control function receives the value and whether the click is double. What should it do? Of course, the first click
 starts or stops the clip. But, what happens with doubleclick when value is 0, and what when value is 127?
 The first detailed state transition chart was not that trivial. It all depends whether the clip position was 0, maximum value,
@@ -3176,8 +3376,7 @@ emitting sound. After I analyzed all other situations, it turned out that the si
 think about your own applications that use similar controllers. It's unlikely that you practice guitar at this moment,
 and it's equally unlikely that you have the same foot controller. Or you do! Anyway, here's very simple logic of
 my play-control :],
-  [class="org-src-container"\>
- ( defn play-control \[ clip ^ long v rewind \] 
+  [( defn play-control \[ clip ^ long v rewind \] 
  ( if ( \< 64 v ) 
  ( start! clip ) 
  ( stop! clip ) ) 
@@ -3217,10 +3416,8 @@ case when the clip is near the end. Sometimes the humble code is the right stuff
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The great big Schibsted programming language survey 2015],
   author: [Morten Lied Johansen],
   source-name: [Finn.no Tech],
@@ -3251,7 +3448,7 @@ while we’re at it.],
 created, and hopefully it will make the rounds in all of Schibsted
 and gather some interesting, fun, surprising and (with a bit of luck)
 useful insights.],
-  [id="about-the-responses"\>About the responses],
+  [About the responses],
   [309 people responded to the survey, which is more than many of my co-workers thought would respond.],
   [Over 50% of respondents are in their thirties, and if we look at the ages from 26 to 40, we cover over 75% of respondents. On gender, it’s even worse, with a whopping 93.5% of respondents admitting to being male. We also seem to shun inexperienced people, with 42% having 10 years of experience or more, and only 2.3% of respondents fresh from school.],
   [It seems we have some work to do with regards to diversity.],
@@ -3264,13 +3461,13 @@ useful insights.],
   [Another problem was SPT aka Schibsted Products & Technology. SPT is techically four companies, SPT Norway, SPT Sweden, SPT Spain and SPT UK. Most people in SPT simply answered SPT, but they estimated as little as 20 people working in SPT, and as high as 250. I’ve disregarded their disagreement, and combined them all to just SPT.],
   [Two people said they work in Schibsted, but they had wildly differing opinions about how many people work in Schibsted. One said 10000 total, 1500 technical, the other said 1000 total, 200 technical.],
   [Disregarding the problems here, let’s look at the numbers entered. Using the averages for each company and summing up, we arrive at roughly 4500 people working in those 47 companies. For technical positions, the sum of averages is roughly 1600. Since we have responses from about half the companies, that fits nicely with the total being just under 10000.],
-  [id="languages-in-regular-use"\>Languages in regular use],
+  [Languages in regular use],
   [The most commonly used language, if you can call it that, is Bash. 52.1% of respondents use Bash regularly. Close behind, at 50.2% is JavaScript. Neither of these are surprising, considering the business we’re in. Java clocks in at 49.2%, and from there it’s quite a drop to Python at 28.2% and PHP at 24.9%. C manages 18.1%, Ruby and Scala are both used by 17.8%, and Groovy (11.7%) and Go (10.7%) conclude the top 10.],
   [Of the previously mentioned top 7 companies with regards to number of responses, Le Bon Coin and Blocket are the only two companies that are not predominantly Java shops. Those two have a more wide array of languages in common use, with high numbers for multiple languages. When we combine those two companies, 88% use C, 80% uses PHP, 72% uses Bash and sh, 64% uses Python and only 56% uses Java. Ruby, R are popular in Le Bon Coin, while Blockets own template language and JavaScript are popular in Blocket.],
   [Singling out FINN and SPT in a similar way, it’s a different story. Java is used by 76.7% in these companies, JavaScript and Bash/sh are around the same, at 48.1% and 46.6% respectively. Scala is popular with a share of 33.8% in the two companies. Next in line is Python at 24%, Groovy and R both at 21.8%. Ruby is used by 18%, and a group of PHP developers in SPT brings PHP into the top 10 with 6%.],
-  [id="what-kind-of-developers-are-we"\>What kind of developers are we?],
+  [What kind of developers are we?],
   [The most popular self-description is “a backend developer” (124), followed closely by the “full stack developer” (82). There are slightly more devops people (29) than “frontend developers” (25). Of course, the most interesting fact about this question, is all the various roles I failed to think of. Over 40 other descriptions were entered in the “Other” box, some of them even by more than one person! Most notably the 10 or 11 data scientists (depending on how you interpret descriptions). Mobile developer or App developer is another one that should have been one of the choices.],
-  [id="the-languages-we-know"\>The languages we know],
+  [The languages we know],
   [Only 13 people do not know any Java at all, the remaining 296 respondents knows enough to tick the box. This makes Java the most known language, but it is closely followed by C and JavaScript. 268 respondents know C, while 263 know JavaScript. If ever we wanted to use bashttpd for anything, hardly anyone would need to be retrained, with 234 people already knowning enough bash to get around.],
   [PHP and Python follow, at 212 and 204 respectively. Personally I’m pleased to see so many knowing Python, and can only blame childhood mistakes for so many people knowing PHP. Dropping below 200 respondents we find R at 188 and C++ at 185. Ruby and Perl close out the top 10 languages, with 164 and 146. Hopefully all these people have learned Perl as a defence mechanism: Know thy enemy and all that…],
   [Of the more hip languages on the JVM, Scala comes out on top, with 117 people claiming to know it, while Groovy at 94 and Clojure at 53 haven’t convinced quite as many people that they are useful to know. Clojure isn’t even in the top 20.],
@@ -3278,7 +3475,7 @@ useful insights.],
   [Moving into the twenties, CoffeeScript ties with Clojure and Prolog at 53, while Common Lisp has managed to stick in the head of 47 people. Lua is known by 42, while Erlang and Scheme are tied at 31. Microsoft hasn’t quite managed to get their PowerShell into as many heads as Bash, but 30 people are willing to admit knowing it. Swift (29) and Tcl (27) close out the top 30.],
   [Fortran (26) and PostScript (21) are starting to fall out of fashion, and we can point at 20 people working in various norwegian companies who probably got their education at the University of Oslo, starting with Simula as their first language. The story behind the single non-norwegian Simula-proficient person at Aftonbladet would be interesting to hear I imagine (or is it simply a norwegian who has moved to Sweden?).],
   [Other notable mentions are 19 people who know Smalltalk, 11 people knows D, a whopping 10 people have managed to learn Brainfuck, while 9 people know Rust and F\# (not the same 9 though). The tail is quite long, and old heroes like Forth (8), OCaml (8), Standard ML (4), Delphi (2), Modula2 (2) and Ada (1) are still hanging on. There’s even a handful of people who knows some dialect of assembler.],
-  [id="what-can-we-use"\>What can we use?],
+  [What can we use?],
   [Let’s take a close look at which languages some of the larger companies (in terms of number of respondents) could and should use.],
   [When starting their next project, SPT could choose Java, C, Python or JavaScript, and send less than a third of their people back to school. Allowing half the company to re-train, they could select from Scala, C++ or PHP, while Ruby, Perl, Groovy or C\# would require sending close to two thirds of the company to school. Other popular choices are Go and Clojure, but that would require around 80% of the company to hit the books, so maybe not just yet.],
   [Blocket is fortunate enough to have four languages known by all respondents: Java, C, Python and PHP. If they want to use JavaScript, C++ or Perl, they are still quite prepared, while Ruby and Go haven’t quite the same following. If they want to be on the JVM, but not use Java, Groovy is their only choice, but they would still need to train 11 out of 12 people.],
@@ -3286,38 +3483,32 @@ useful insights.],
   [Le Bon Coin have a story similar to Blocket. They can hardly go wrong, with most of the company knowlegeable in Java, JavaScript, PHP, C and Python. A few don’t know Ruby or C++, while Go and Perl are only known by half the respondents. Groovy is the top alternate JVM language, but with only 2 out of 13, it’s not really a good choice. Scala and Clojure aren’t known at all, so functional programming on the JVM clearly isn’t a “thing” at LBC.],
   [Schibsted Tech Polska delivers to a number of other companies, so they need to know a bit of everything. This is reflected in their knowledge, with Java, C and JavaScript being known by almost all. Python and C++ are known by half the company, while a third of the company is able to hold their own in Groovy, Scala, Clojure, Ruby and PHP. a few of them even know Perl.],
   [Willhaben in Austria also know a few languages, with Java, C, JavaScript and C++ being known by almost all. PHP and Python is known by two thirds of the company, with Perl and Ruby edging onto the “known by half” list. Groovy, Scala just missed the 50% mark, along with Haskell.],
-  [id="sql-and-its-many-variations"\>SQL and its many variations],
+  [SQL and its many variations],
   [When talking about databases, it’s easy to think SQL is just “one thing”, and if you know SQL, you can work with any database. And it’s somewhat true, but each database has it’s idiosyncrasies. This becomes especially clear when writing stored procedures, where basic SQL is lacking in control structures. So which database should we be using, really?],
   [PL/pgSQL, the dialect used in PostgreSQL, is known by 193 respondents, so PostgreSQL seems like a good choice. SQL/PSM, which is used by MySQL and a few others, is known by 159 people, is a good second choice.],
   [Of the large commercial databases, Oracle is clear out in front, known by 143 people, while runner up T-SQL used by both Microsoft SQL Server and Sybase is at 106. Any other contenders in the fight can just pack it in and go to bed. Fifth place goes to SQL PL, used by IBM DB2, known by only 32 respondents!],
   [PSQL, used in Interbase and Firebird, makes a surprise showing at 18, while PL/PSM, the less used dialect supported by PostgreSQL has 17 users. Of the remainders only Watcom-SQL, used in some versions of Sybase, manages double digits, at 10 respondents.],
-  [id="so-how-good-are-we-at-what-we-do"\>So, how good are we at what we do?],
+  [So, how good are we at what we do?],
   [The results here are somewhat skewed by the fact that people will naturally be more skilled in the languages they use regulary, and the companies with the most number of respondents use only a few of the languages regulary. As a result, there are more Java-experts than any other kind of experts. 102 respondents consider themselves Java-experts. Java is also the only language where there are more experts than any of the other “ranks”.],
-  [style="clear: both;"\>],
-  [style="clear: both;"\>],
   [Other languages we feel we know well are JavaScript and PHP. Just under 50 people consider themselves experts in those languages. Next is Python, with 22 experts. Objective-C and Scala have 11 experts each, and there are 7 Groovy-experts and 6 Ruby-experts in all of Schibsted.],
   [Languages we don’t really know are C\#, Clojure, CoffeeScript, Go, Groovy, Objective-C, Scala and Swift. In fact, Clojure is also the only language where nobody considers them selves experts.],
   [Most people consider themselves above average when it comes to JavaScript (205 respondents scored 3 or higher), while only 15 don’t know it at all. Similary, 255 people consider themselves above average in Java, and only 13 don’t know it at all. Of the three most used languages, Bash is the only one where the skills are concentrated below average. 223 people scored themselves at 3 or less for Bash knowledge, of which 18 don’t know it at all. At the other end, a single person considers themselves a Bash-expert.],
-  [style="clear: both;"\>],
-  [style="clear: both;"\>],
   [The numbers are perhaps more useful if we separate out the people who don’t use a language in their current work, and then look at the distribution of skills in each group.],
   [I’ll pick a few interesting ones, graphs for all are available at the end.],
   [Java is almost symetrical among the “amateurs”. Most amateurs are about average, but of the rest, less and more knowledge is more or less equally distributed. This is in sharp contrast to the “pros”, where a large majority consider themselves experts. While it’s easy to think that in the group of “pros”, it will always be many experts, Java, Objective-C and PHP are the only languages where the experts are the largest group.],
-  [style="clear: both;"\>],
-  [style="clear: both;"\>],
   [JavaScript is a similar story to Java, except there are fewer experts in JavaScript. It’s good to notice that everyone who works with JavaScript, actually do know the language, which was not the case with Java.],
   [Apart from Java and JavaScript, C and PHP are the only languages where a significant amount of amateurs consider themselves above average in skills. At the other end, Clojure, CoffeeScript, Go, Groovy, Objective-C, Scala and Swift are all examples of languages where a large portion of the amateurs consider themselves to either not know it at all, or know less than average.],
   [When comparing pro and amateurs, Objective-C really stands out. Most of the pros are experts, but among the amateurs it’s virtually an unknown language.],
-  [id="what-next"\>What next?],
+  [What next?],
   [The most popular choice for the next project is Java. 55 people would go with Java if allowed to choose freely. 43 people prefer JavaScript. Go, Scala and Python are in the next group at 37, 36 and 31. 17 people would select Ruby, 12 would go with Swift or PHP, 11 thinks Clojure is a good choice, and 10 people would go with C.],
   [In this kind of survey, there are always some smartypants. Five people avoided the question with variations of “I’m not able to conceive of a project where the language I like the most is the perfect choice, so I’ll say it depends on some hypotetical project specification that I have no say over”. Other clever answers are Fortran, Visual Fox, and T-SQL. Some people prefer the simple over the complicated, and would go with languages usually reserved for small utility-scripts like AWK and Bash.],
-  [id="self-improvement"\>Self-improvement],
+  [Self-improvement],
   [73.6% of us will sit down and learn a new language just to learn something new. 65.1% will accept learning something new if they need it for work, while only 41.4% are willing to do the same for non-work.],
   [If we are so easy to motivate, what holds us back?],
   [It could be the number of languages we think is “neccessary” to know. Knowing more than 6 languages is not neccessary in most peoples view, only 9.9% of us thinks it’s worth knowing 7 or more languages. 29% of us think 5 languages is good enough, while 6.8% thinks knowing one language well enough is all you need to be a good programmer.],
   [The majority seems to think between 3 and 5 languages should be our target. 70% think knowing 3, 4 or 5 languages defines a good programmer.],
   [Nobody thinks you’re any good if you know 9 languages, so if that’s you, you should set out to learn atleast one more as soon as possible. Or just forget one. :-D],
-  [id="theres-probably-more-here"\>There’s probably more here],
+  [There’s probably more here],
   [I initially said I would blog about the results a couple weeks after the end of the survey. That ended up being a couple months instead. For that reason I have skipped looking at a few questions that could be interesting, but time consuming to look at.],
   [How many languages do you know vs. How many languages does a good programmer know],
   [Which language currently not in use in a company, is most popular in the company?],
@@ -3326,14 +3517,13 @@ useful insights.],
   [Skill level in your favorite language],
   [I’m sure there are a number of other interesting things to look at, so I’m hoping someone else wants to take a look at the results and see what they find. The link is below. The first sheet is the raw, unedited responses. The second sheet is where I have tried to manually clean up some of the answers to get more sense out of the results. And all the other sheets are various views and tables I’ve used to make this post.],
   [Let me know if you blog about these results, and I’ll add a link here. Or just post in the comments below.],
-  [id="resources"\>Resources],
   [The results in full 
  Script to generate graphs],
-  [id="skill-levels-currently-using-the-language-at-work"\>Skill levels, currently using the language at work],
+  [Skill levels, currently using the language at work],
   [Bash , C , C\# , C++ , Clojure , CoffeeScript , Go , Groovy , Java , JavaScript , Objective-C , PHP , Python , Ruby , Scala , Swift],
-  [id="skill-levels-not-using-the-language-at-work"\>Skill levels, not using the language at work],
+  [Skill levels, not using the language at work],
   [Bash , C , C\# , C++ , Clojure , CoffeeScript , Go , Groovy , Java , JavaScript , Objective-C , PHP , Python , Ruby , Scala , Swift],
-  [id="skill-levels-all-respondents"\>Skill levels, all respondents],
+  [Skill levels, all respondents],
   [Bash , C , C\# , C++ , Clojure , CoffeeScript , Go , Groovy , Java , JavaScript , Objective-C , PHP , Python , Ruby , Scala , Swift],
 ),
   insert-map: (:),
@@ -3342,11 +3532,10 @@ useful insights.],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Adding a Spell Checker to a Jekyll Blog],
   author: [Daniel Doubrovkine],
   source-name: [Daniel Doubrovkine (dBlock)],
@@ -3354,7 +3543,7 @@ useful insights.],
   paragraphs: (
   [I found it annoyingly non-trivial to add a spell checker to this blog.],
   [For now, I settled on GitHub Spellcheck Action that uses PySpelling on files changed in the commit or pull request as described in this blog post .],
-  [class="highlight"\> name : Check Spelling 
+  [name : Check Spelling 
  on : \[ push , pull\_request \] 
  jobs : 
  check : 
@@ -3372,33 +3561,34 @@ useful insights.],
  with : 
  task\_name : Markdown 
  config\_path : .pyspelling.yml 
- source\_files : \${{ steps.changed\_files.outputs.all\_changed\_files }}],
+ source\_files : \$\{\{ steps.changed\_files.outputs.all\_changed\_files \}\}],
   [To run PySpelling locally ensure you have a working version of Python, install PySpelling with pip install pyspelling , and aspell with brew install aspell on a Mac. In my configuration I also use pymdownx from pymdown-extensions which is installed with pip install pymdown-extensions .],
   [You need a .pyspelling.yml and you can run it as follows.],
+  [pyspelling --config .pyspelling.yml],
   [This is a Jekyll blog in which we want to ignore code, wrapped between Jekyll magic commands for syntax highlighting. This can be accomplished with a PySpelling pipeline in the above-mentioned configuration file.],
-  [class="highlight"\> pipeline : 
+  [pipeline : 
  - pyspelling.filters.context : 
  context\_visible\_first : true 
  delimiters : 
- \# ignore jekyll multiline magic highlights {% ... %} 
- - open : ' (?s)^\\{\\% highlight .\* \\%\\}\$' 
- close : ' ^\\{\\% endhighlight \\%\\}\$' 
+ \# ignore jekyll multiline magic highlights \{% ... %\} 
+ - open : ' (?s)^\\\{\\% highlight .\* \\%\\\}\$' 
+ close : ' ^\\\{\\% endhighlight \\%\\\}\$' 
  \# ignore the rest of jekyll magic commands 
- - open : ' {%' 
- close : ' %}'],
+ - open : ' \{%' 
+ close : ' %\}'],
   [Finally, we can collect the initial set of words to potentially exclude from existing posts into .pyspelling.words .],
   [The file helped me spot a few spelling mistakes, now fixed. See code.dblock.org\#134 for the full change.],
   [Update: I eventually switched to using regular backticks for code when adding a style checker in \#136 , so the above delimiters rule changed as follows.],
-  [class="highlight"\> - pyspelling.filters.context : 
+  [- pyspelling.filters.context : 
  context\_visible\_first : true 
  escapes : \\\\\[\\\\\`~\] 
  delimiters : 
- - open : " (?s)^(? P \*\`{3,})(\[a-z+\]\*)\$" 
+ - open : " (?s)^(? P \*\`\{3,\})(\[a-z+\]\*)\$" 
  close : " ^(? P=open)\$" 
  - open : " (? P \`+)" 
  close : " (? P=open)" 
- - open : ' {%' 
- close : ' %}'],
+ - open : ' \{%' 
+ close : ' %\}'],
   [Adding a Spell Checker to a Jekyll Blog was originally published by Daniel Doubrovkine at code.dblock.org | tech blog on December 30, 2024.],
 ),
   insert-map: (:),
@@ -3409,7 +3599,7 @@ useful insights.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Work In Public! (Or, why you really should consider being NPR's Knight-Mozilla fellow!)],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
@@ -3420,11 +3610,11 @@ useful insights.],
   [Folks here do amazing journalism, and are awesome to work with.],
   [Why? The non-commercial relationship between us and our audience. We’re not selling them anything. We do sell sponsorship, but have you heard an ad on NPR? They’re the nicest, dullest ads you’ve ever heard, and they aren’t our primary source of income. No, public media exists because, for more than 40 years, our audience has sent us money, just because they want us to keep up the good work.],
   [And this relationship, built with love and trust, permeates the newsroom and the whole organization. It’s fucking cool.],
-  [id="why-visuals"\>Why Visuals?],
+  [Why Visuals?],
   [The visuals team is trying something weird. We’re a small team (a dozen, not including interns), and we handle all aspects of visual storytelling at NPR. We make and edit: charts and maps , data visualizations , photography and video , and lots of experimental , web-native stories .],
   [We’re mission-driven , and believe that being open-source and transparent in our methods is essential to our role as public media.],
   [And we’re having a pretty fun time doing it.],
-  [id="you"\>You.],
+  [You.],
   [A fellow on our team will not get a special project, just for you. We don’t work that way . You’ll be our teammate: making stuff with us, learning what we’ve learned, teaching us what you know and what you’re learning elsewhere during your fellowship year.],
   [Your perspective is even more valuable than your skills. We’re still just figuring out the best ways for a mashed-up visual journalism team to work together and make great internet. You will help us make this thing happen.],
   [So come along for the ride! I guarantee it’ll be a tremendous year. Apply now! (It closes August 16th!)],
@@ -3437,12 +3627,12 @@ useful insights.],
 
   ],
 ), ruled-indices: (1,))
-#pull-quote([class="language-yaml highlighter-rouge"\>  class="highlight"\> pipeline :   - pyspelling.], [Daniel Doubrovkine])
+#pull-quote([class="highlight"\> pipeline :   - pyspelling.], [Daniel Doubrovkine])
 
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [CodeSOD: Awaiting A Reaction],
   author: [Remy Porter],
   source-name: [The Daily WTF],
@@ -3450,7 +3640,7 @@ useful insights.],
   paragraphs: (
   [Today's Anonymous submitter sends us some React code. We'll look at the code and then talk about the WTF:],
   [\/\\/ inside a function for updating checkboxes on a page 
- if (!e. target . checked ) {
+ if (!e. target . checked ) \{
  const removeIndex = await checkedlist. findIndex (
  ( sel ) =\> sel. Id == selected. Id ,
  )
@@ -3463,15 +3653,15 @@ useful insights.],
   [\/\\/ so instead of doing above logic in the set state, they dont 
  setCheckedlist (checkedlist)
  setRow ( RowValue )
-} else {
- if (checkedlist. findIndex ( ( sel ) =\> sel. Id == selected. Id ) == - 1 ) {
+\} else \{
+ if (checkedlist. findIndex ( ( sel ) =\> sel. Id == selected. Id ) == - 1 ) \{
  await checkedlist. push (selected)
- }
+ \}
  \/\\/ same, instead of just doing a set state call, we do awaits and self updates 
  await RowValue . push ( Index )
  setCheckedlist (checkedlist)
  setRow ( RowValue )
-}],
+\}],
   [Comments were added by our submitter.],
   [This code works. It's the wrong approach for doing things in React: modifying objects controlled by react, instead of using the provided methods, it's doing asynchronous push calls. Without the broader context, it's hard to point out all the other ways to do this, but honestly, that's not the interesting part.],
   [I'll let our submitter explain:],
@@ -3479,7 +3669,6 @@ useful insights.],
   [That's what makes truly bad code. Code so bad that you can't even fix it without breaking a thousand other things. Code that you have to carefully, slowly, pick through and gently refactor, discovering all sorts of random side-effects that are hidden. The code so bad that you actually have to live with it, at least for awhile.],
   [\[Advertisement\] 
  BuildMaster allows you to create a self-service release management platform that allows different teams to manage their applications. Explore how!],
-  [style="clear: left;"\>],
 ),
   insert-map: (:),
   word-count: 406,
@@ -3489,7 +3678,7 @@ useful insights.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Be our design/code/??? intern for winter/spring 2017!],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
@@ -3500,7 +3689,7 @@ useful insights.],
   [We’ve had journalists who are learning to code, programmers who are learning about journalism, designers who love data graphics, designers who love UX, reporters who love data, and illustrators who make beautiful things.],
   [Does this sound like you? Please join our team! It isn’t always easy, but it is very rewarding. You’ll learn a ton and you’ll have a lot of fun.],
   [The internship runs from January 9, 2017 to April 21, 2017. Applications are due Sunday, November 6, 2016 at 11:59pm eastern .],
-  [id="heres-how-to-apply"\>Here’s how to apply],
+  [Here’s how to apply],
   [Read about our expectations and selection process and then apply now!],
   [Into images? Check out our photo editing internship .],
 ),
@@ -3515,7 +3704,7 @@ useful insights.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Putting a mustache on Tiles-3],
   author: [mick],
   source-name: [Finn.no Tech],
@@ -3524,8 +3713,19 @@ useful insights.],
   [We’re proud to see a contribution from one of our developers end up in the Tiles-3 release!],
   [The front-end architecture of FINN.no is evolving to be a lot more advanced and a lot more work is being done by client-side scripts. In order to maintain first time rendering speeds and to prevent duplicating template-code we needed something which allowed us to reuse templates both client- and server-side. This is where mustache templates have come into play. We could’ve gone ahead and done a large template framework review, like others have done, but we instead opted to just solve the problem with the technology we already had.],
   [Morten Lied Johansen’s contribution allows Tiles-3 to render mustache templates. Existing jsp templates can be rewritten into mustache without having to touch surrounding templates or code!],
-  [id="the-code-please"\>The code please],
+  [The code please],
   [To get Tiles-3 to do this include the tiles-request-mustache library and configure your TilesContainerFactory like],
+  [protected void registerAttributeRenderers(...) \{
+ MustacheRenderer mustacheRenderer = new MustacheRenderer();
+ mustacheRenderer.setAcceptPattern(Pattern.compile(".\*.mustache"));
+ rendererFactory.registerRenderer("mustache", mustacheRenderer);
+ ...
+ \}
+ protected Renderer createTemplateAttributeRenderer(...) \{
+ final ChainedDelegateRenderer chainedRenderer = new ChainedDelegateRenderer();
+ chainedRenderer.addAttributeRenderer(rendererFactory.getRenderer("mustache"));
+ ...
+ \}],
   [then you’re free to replace existing tiles attributes like],
   [with stuff like],
   [Good stuff FINN!],
@@ -3538,7 +3738,7 @@ useful insights.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Be our design/dev intern for fall 2019!],
   author: [NPR Apps Blog],
   source-name: [NPR Apps Blog],
@@ -3581,9 +3781,9 @@ useful insights.],
  
  Brittany Mayes 
 (Summer 2016)],
-  [id="whos-eligible"\>Who’s Eligible],
+  [Who’s Eligible],
   [To be eligible for an internship with NPR, you must be a student (undergraduate or graduate) or a person who has graduated no more than 12 months prior to the start of the internship period. You must also be authorized to work in the United States.],
-  [id="heres-how-to-apply"\>Here’s how to apply],
+  [Here’s how to apply],
   [Read about our expectations and selection process and then apply now! (The Fall 2019 application period has ended.)],
   [Into photography? Check out our photo editing internship .],
 ),
@@ -3598,19 +3798,17 @@ useful insights.],
 #pull-quote([Morten Lied Johansen’s contribution allows Tiles-3 to render mustache templates.], [mick])
 
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([Nicole Samoroukova], source-name: [The Reformed Broker (Josh Brown)], [Join Downtown Josh Brown and Michael Batnick for another round of What Are Your Thoughts? On this week’s episode, Josh and Michael discuss the biggest topics in investing and finance, including:
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([Nicole Samoroukova], source-name: [The Reformed Broker (Josh Brown)], [Join Downtown Josh Brown and Michael Batnick for another round of What Are Your Thoughts? On this week’s episode, Josh and Michael discuss the biggest topics in investing and finance, including:
 ►Sam Altman – OpenAI turmoil.
 ►Buyback SURGE – “\$QQQ largest weekly inflows on record this past week.”
 ►NVDA Earnings – “The chip maker’s earnings beat Wall Street expectations in...
 
 The post All Hell Breaks Loose in AI appeared first on The Reformed Broker .])],
-    [#brief-item([Evan Miller], source-name: [Evan Miller], [A/B tests run faster with CUPED. Here I explain the underlying math, and use it to invent an even better variance-reduction technique for online experiments: You Can’t Spell CUPED Without Frisch-Waugh-Lovell])],
-    [#brief-item([John Noonan], source-name: [Redis Blog], [AI systems don't fail on a schedule. They drift in production while you're busy writing the quarterly report or firefighting an unrelated outage—and that drift creates exposure. Third-party breaches have doubled from 15% to 30% in just one year, with ...])],
-    [#brief-item([Jim Allen Wallace], source-name: [Redis Blog], [A user asks your support chatbot "how do I reset my password?" and it pulls the right help doc, generates a clear answer, and responds in under a second. The next user asks "what's your refund policy?" and the chatbot retrieves three barely relevant p...])],
-  ))
-}
+  [#brief-item([Evan Miller], source-name: [Evan Miller], [A/B tests run faster with CUPED. Here I explain the underlying math, and use it to invent an even better variance-reduction technique for online experiments: You Can’t Spell CUPED Without Frisch-Waugh-Lovell])],
+  [#brief-item([John Noonan], source-name: [Redis Blog], [AI systems don't fail on a schedule. They drift in production while you're busy writing the quarterly report or firefighting an unrelated outage—and that drift creates exposure. Third-party breaches have doubled from 15% to 30% in just one year, with ...])],
+  [#brief-item([Jim Allen Wallace], source-name: [Redis Blog], [A user asks your support chatbot "how do I reset my password?" and it pulls the right help doc, generates a clear answer, and responds in under a second. The next user asks "what's your refund policy?" and the chatbot retrieves three barely relevant p...])],
+))
 
 #colophon([The Silicon Ledger], [Vol. 1, No. 090], [2026-03-30])

@@ -21,187 +21,8 @@
 #masthead([The Civic Dispatch], [Vol. 1, No. 046], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Standards for ANSI escape codes],
-  kicker: [Cover Story],
-  author: [Julia Evans],
-  source-name: [Julia Evans],
-  deck: [Hello! Today I want to talk about ANSI escape codes.],
-  lead-pre: [],
-  lead-cap: [F],
-  lead-rest: [or a long time I was vaguely aware of ANSI escape codes (“that’s how you make
-text red in the terminal and stuff”) but I had no real understanding of where they were
-supposed to be defined or whether or not there were standards for them. I just
-had a kind of vague “there be dragons” feeling around them. While learning
-about the terminal this year, I’ve learned that:],
-  body-paragraphs: (
-  [ANSI escape codes are responsible for a lot of usability improvements
-in the terminal (did you know there’s a way to copy to your system clipboard
-when SSHed into a remote machine?? It’s an escape code called OSC 52 !)],
-  [They aren’t completely standardized, and because of that they don’t always
-work reliably. And because they’re also invisible, it’s extremely
-frustrating to troubleshoot escape code issues.],
-  [So I wanted to put together a list for myself of some standards that exist
-around escape codes, because I want to know if they have to feel unreliable
-and frustrating, or if there’s a future where we could all rely on them with
-more confidence.],
-  [what’s an escape code?],
-  [ECMA-48],
-  [xterm control sequences],
-  [terminfo],
-  [should programs use terminfo?],
-  [is there a “single common set” of escape codes?],
-  [some reasons to use terminfo],
-  [some more documents/standards],
-  [why I think this is interesting],
-  [id="what-s-an-escape-code"\>what’s an escape code?],
-  [Have you ever pressed the left arrow key in your terminal and seen ^\[\[D ?
-That’s an escape code! It’s called an “escape code” because the first character
-is the “escape” character, which is usually written as ESC , \\x1b , \\E ,
- \\033 , or ^\[ .],
-  [Escape codes are how your terminal emulator communicates various kinds of
-information (colours, mouse movement, etc) with programs running in the
-terminal. There are two kind of escape codes:],
-  [input codes which your terminal emulator sends for keypresses or mouse
-movements that don’t fit into Unicode. For example “left arrow key” is
- ESC\[D , “Ctrl+left arrow” might be ESC\[1;5D , and clicking the mouse might
-be something like ESC\[M :3 .],
-  [output codes which programs can print out to colour text, move the
-cursor around, clear the screen, hide the cursor, copy text to the
-clipboard, enable mouse reporting, set the window title, etc.],
-  [Now let’s talk about standards!],
-  [id="ecma-48"\>ECMA-48],
-  [ECMA-48 does two things:],
-  [Define some general formats for escape codes (like “CSI” codes, which are
- ESC\[ + something and “OSC” codes, which are ESC\] + something)],
-  [Define some specific escape codes, like how “move the cursor to the left” is
- ESC\[D , or “turn text red” is ESC\[31m . In the spec, the “cursor left”
-one is called CURSOR LEFT and the one for changing colours is called
- SELECT GRAPHIC RENDITION .],
-  [The formats are extensible, so there’s room for others to define more escape
-codes in the future. Lots of escape codes that are popular today aren’t defined
-in ECMA-48: for example it’s pretty common for terminal applications (like vim,
-htop, or tmux) to support using the mouse, but ECMA-48 doesn’t define escape
-codes for the mouse.],
-  [id="xterm-control-sequences"\>xterm control sequences],
-  [There are a bunch of escape codes that aren’t defined in ECMA-48, for example:],
-  [enabling mouse reporting (where did you click in your terminal?)],
-  [bracketed paste (did you paste that text or type it in?)],
-  [OSC 52 (which terminal applications can use to copy text to your system clipboard)],
-  [I believe (correct me if I’m wrong!) that these and some others came from
-xterm, are documented in XTerm Control Sequences , and have
-been widely implemented by other terminal emulators.],
-  [This list of “what xterm supports” is not a standard exactly, but xterm is
-extremely influential and so it seems like an important document.],
-  [id="terminfo"\>terminfo],
-  [In the 80s (and to some extent today, but my understanding is that it was MUCH
-more dramatic in the 80s) there was a huge amount of variation in what escape
-codes terminals actually supported.],
-  [To deal with this, there’s a database of escape codes for various terminals
-called “terminfo”.],
-  [It looks like the standard for terminfo is called X/Open Curses , though you need to create
-an account to view that standard for some reason. It defines the database format as well
-as a C library interface (“curses”) for accessing the database.],
-  [For example you can run this bash snippet to see every possible escape code for
-“clear screen” for all of the different terminals your system knows about:],
-  [for term in \$(toe -a | awk '{print \$1}')
-do
- echo \$term
- infocmp -1 -T "\$term" 2\>/dev/null | grep 'clear=' | sed 's/clear=\/\/g;s/,\/\/g'
-done],
-  [On my system (and probably every system I’ve ever used?), the terminfo database is managed by ncurses.],
-  [id="should-programs-use-terminfo"\>should programs use terminfo?],
-  [I think it’s interesting that there are two main approaches that applications
-take to handling ANSI escape codes:],
-  [Use the terminfo database to figure out which escape codes to use, depending
-on what’s in the TERM environment variable. Fish does this, for example.],
-  [Identify a “single common set” of escape codes which works in “enough”
-terminal emulators and just hardcode those.],
-  [Some examples of programs/libraries that take approach \#2 (“don’t use terminfo”) include:],
-  [kakoune],
-  [python-prompt-toolkit],
-  [linenoise],
-  [libvaxis],
-  [chalk],
-  [I got curious about why folks might be moving away from terminfo and I found
-this very interesting and extremely detailed
- rant about terminfo from one of the fish maintainers , which argues that:],
-  [\[the terminfo authors\] have done a lot of work that, at the time, was
-extremely important and helpful. My point is that it no longer is.],
-  [I’m not going to do it justice so I’m not going to summarize it, I think it’s
-worth reading.],
-  [id="is-there-a-single-common-set-of-escape-codes"\>is there a “single common set” of escape codes?],
-  [I was just talking about the idea that you can use a “common set” of escape
-codes that will work for most people. But what is that set? Is there any agreement?],
-  [I really do not know the answer to this at all, but from doing some reading it
-seems like it’s some combination of:],
-  [The codes that the VT100 supported (though some aren’t relevant on modern terminals)],
-  [what’s in ECMA-48 (which I think also has some things that are no longer relevant)],
-  [What xterm supports (though I’d guess that not everything in there is actually widely supported enough)],
-  [and maybe ultimately “identify the terminal emulators you think your users are
-going to use most frequently and test in those”, the same way web developers do
-when deciding which CSS features are okay to use],
-  [I don’t think there are any resources like Can I use…? or
- Baseline for the terminal
-though. (in theory terminfo is supposed to be the “caniuse” for the terminal
-but it seems like it often takes 10+ years to add new terminal features when
-people invent them which makes it very limited)],
-  [id="some-reasons-to-use-terminfo"\>some reasons to use terminfo],
-  [I also asked on Mastodon why people found terminfo valuable in 2025 and got a
-few reasons that made sense to me:],
-  [some people expect to be able to use the TERM environment variable to
-control how programs behave (for example with TERM=dumb ), and there’s
-no standard for how that should work in a post-terminfo world],
-  [even though there’s less variation between terminal emulators than
-there was in the 80s, there’s far from zero variation: there are graphical
-terminals, the Linux framebuffer console, the situation you’re in when
-connecting to a server via its serial console, Emacs shell mode, and probably
-more that I’m missing],
-  [there is no one standard for what the “single common set” of escape codes
-is, and sometimes programs use escape codes which aren’t actually widely
-supported enough],
-  [id="terminfo-user-agent-detection"\>terminfo & user agent detection],
-  [The way that ncurses uses the TERM environment variable to decide which
-escape codes to use reminds me of how webservers used to sometimes use the
-browser user agent to decide which version of a website to serve.],
-  [It also seems like it’s had some of the same results – the way iTerm2 reports
-itself as being “xterm-256color” feels similar to how Safari’s user agent is
-“Mozilla/5.0 (Macintosh; Intel Mac OS X 14\_7\_4) AppleWebKit/605.1.15 (KHTML,
-like Gecko) Version/18.3 Safari/605.1.15”. In both cases the terminal emulator
-\/ browser ends up changing its user agent to get around user agent detection
-that isn’t working well.],
-  [On the web we ended up deciding that user agent detection was not a good
-practice and to instead focus on standardization so we can serve the same
-HTML/CSS to all browsers. I don’t know if the same approach is the future in
-the terminal though – I think the terminal landscape today is much more
-fragmented than the web ever was as well as being much less well funded.],
-  [id="some-more-documents-standards"\>some more documents/standards],
-  [A few more documents and standards related to escape codes, in no particular order:],
-  [the Linux console\_codes man page documents
-escape codes that Linux supports],
-  [how the VT 100 handles escape codes & control sequences],
-  [the kitty keyboard protocol],
-  [OSC 8 for links in the terminal (and notes on adoption )],
-  [A summary of ANSI standards from tmux],
-  [this terminal features reporting specification from iTerm],
-  [sixel graphics],
-  [id="why-i-think-this-is-interesting"\>why I think this is interesting],
-  [I sometimes see people saying that the unix terminal is “outdated”, and since I
-love the terminal so much I’m always curious about what incremental changes
-might make it feel less “outdated”.],
-  [Maybe if we had a clearer standards landscape (like we do on the web!) it would
-be easier for terminal emulator developers to build new features and for
-authors of terminal applications to more confidently adopt those features so
-that we can all benefit from them and have a richer experience in the terminal.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [Here's a Standalone Cairo DLL for Windows],
   author: [Jeff Preshing],
   source-name: [Jeff Preshing],
@@ -211,7 +32,7 @@ that we can all benefit from them and have a richer experience in the terminal.]
   [Cairo is great, but it’s always been difficult to find a precompiled Windows DLL that’s up-to-date and that doesn’t depend on a bunch of other DLLs. I was recently unable to find such a DLL, so I wrote a script to simplify the build process for one. The script is shared on GitHub :],
   [If you just want a binary package, you can download one from the Releases page:],
   [The binary package contains Cairo header files, import libraries and DLLs for both x86 and x64. The DLLs are statically linked with their own C runtime and have no external dependencies. Since Cairo’s API is pure C, these DLLs should work with any application built with any version of MSVC. I configured these DLLs to render text using FreeType because I find the quality of FreeType-rendered text better than Win32-rendered text, which Cairo normally uses by default. FreeType also supports more font formats and gives text a consistent appearance across different operating systems.],
-  [id="sample-application-using-cmake"\>Sample Application Using CMake],
+  [Sample Application Using CMake],
   [Here’s a small Cairo application to test the DLLs. It uses CMake to support multiple platforms including Windows, MacOS and Linux.],
   [Hope this helps somebody!],
 ),
@@ -221,11 +42,9 @@ that we can all benefit from them and have a richer experience in the terminal.]
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Smaller APKs with resource optimization],
   author: [Jake Wharton],
   source-name: [Jake Wharton],
@@ -233,8 +52,16 @@ that we can all benefit from them and have a richer experience in the terminal.]
   paragraphs: (
   [How many times does the name of a layout file appear in an Android APK? We can build a minimal APK with a single layout file to count the occurrences empirically.],
   [Building an Android app with Gradle requires only one thing: an AndroidManifest.xml file with a package. From there we can add a dummy layout whose contents are just since we only care about its name.],
+  [.
+├── build.gradle
+└── src
+ └── main
+ ├── AndroidManifest.xml
+ └── res
+ └── layout
+ └── home\_view.xml],
   [Running gradle assembleRelease will produce a release APK measuring a paltry 2,118 bytes. We can dump its contents using xxd and look for home\_view byte sequences.],
-  [class="highlight"\> \$ xxd build/outputs/apk/release/app-release-unsigned.apk
+  [\$ xxd build/outputs/apk/release/app-release-unsigned.apk
  ⋮
 000004c0: 0000 0074 0000 0018 0000 0072 6573 2f6c ...t.......res/l
 000004d0: 6179 6f75 742f 686f 6d65 5f76 6965 772e ayout/home\_view.
@@ -253,7 +80,7 @@ that we can all benefit from them and have a richer experience in the terminal.]
   [There are three uncompressed occurrences of the path and one uncompressed occurrence of only the name in the APK based on this output.],
   [If you have not read my post on calculating zip entry size or are not familiar with the structure of a zip file , a zip file is a list of file entries followed by a directory of all available entries. Each entry contains the file path and so does the directory. This accounts for the first occurrence (the entry header) and the last occurrence (the directory record) in the output.],
   [The middle two occurrences in the output are from inside the resources.arsc file which is a database of sorts for resources. Its contents are visible because the file is uncompressed inside the APK. Running aapt dump --values resources build/outputs/apk/release/app-release-unsigned.apk shows the home\_view record and its mapping to the path:],
-  [class="highlight"\> Package Groups (1)
+  [Package Groups (1)
 Package Group 0 id=0x7f packageCount=1 name=com.example
  Package 0 id=0x7f name=com.example
  type 0 configCount=1 entryCount=1
@@ -262,12 +89,16 @@ Package Group 0 id=0x7f packageCount=1 name=com.example
  resource 0x7f010000 com.example:layout/home\_view: t=0x03 d=0x00000000 (s=0x0008 r=0x00)
  (string8) "res/layout/home\_view.xml"],
   [The APK contains a fifth occurrence of the name inside the classes.dex file. It does not show up in the xxd output because the file is compressed. Running baksmali dump],
+  [|\[10\] string\_data\_item
+000227: 09 | utf16\_size = 9
+000228: 686f 6d65 5f76 6965| data = "home\_view"
+000230: 7700 |],
   [This is for the field inside the R.layout class which maps the layout name to a unique integer value. Incidentally, that integer is the index into the resources.arsc database to look up the associated file name for reading its XML contents.],
   [To summarize the answer to our question, for each resource file, the full path appears three times and the name appears twice.],
-  [id="optimizing-resources"\>Optimizing resources],
+  [Optimizing resources],
   [Android Gradle plugin 4.2 introduces the android.enableResourceOptimizations=true flag which will run optimizations targeted for resources. This invokes the aapt optimize command on the merged resources and resources.arsc file before they are packaged into the APK. The optimization only applies to release builds and will run regardless of whether minifyEnabled is set to true.],
   [With the flag added to gradle.properties we can compare two APKs using diffuse to see its effects. The output is long, so we'll break it apart by section.],
-  [class="highlight"\> │ compressed │ uncompressed
+  [│ compressed │ uncompressed
  ├─────────┬───────┬───────┼─────────┬─────────┬───────
  APK │ old │ new │ diff │ old │ new │ diff
 ──────────┼─────────┼───────┼───────┼─────────┼─────────┼───────
@@ -281,7 +112,7 @@ Package Group 0 id=0x7f packageCount=1 name=com.example
  total │ 2.1 KiB │ 2 KiB │ -36 B │ 2.7 KiB │ 2.7 KiB │ -12 B],
   [First is a diff of the contents in the APK. The "compressed" columns are the size cost inside the APK, and the "uncompressed" columns are the cost when extracted.],
   [The res category represents our single resource file whose size dropped 28 bytes. The arsc category is for the resource.arsc file which itself dropped 8 bytes. We'll see the cause of these changes shortly.],
-  [class="highlight"\> DEX │ old │ new │ diff
+  [DEX │ old │ new │ diff
 ─────────┼─────┼─────┼───────────
  files │ 1 │ 1 │ 0
  strings │ 15 │ 15 │ 0 (+0 -0)
@@ -294,6 +125,9 @@ Package Group 0 id=0x7f packageCount=1 name=com.example
  configs │ 1 │ 1 │ 0
  entries │ 1 │ 1 │ 0],
   [These two sections represent the code and contents of the resource database. Having no changes, we can infer that the optimizations have not affected the R.layout.home\_view field nor the home\_view resource entry.],
+  [=================
+==== APK ====
+=================],
   [compressed │ uncompressed │
 ───────┬────────┼───────┬────────┤
  size │ diff │ size │ diff │ path
@@ -306,7 +140,7 @@ Package Group 0 id=0x7f packageCount=1 name=com.example
   [Finally, a granular diff of the file changes shows the effect of optimization. Our layout resource had its filename significantly truncated and was moved out of the layout\/ folder!],
   [Inside the Gradle project, the folder and file names of XMLs have meaning. The folder is the resource type, and the name corresponds to the generated field and resource entry in the .arsc file. Once those files are inside the APK, however, the file path is meaningless and arbitrary. Resource optimization leverages this fact by making the names as short as possible 1 .],
   [The output of aapt dump confirms that the resource database also reflects the file change:],
-  [class="highlight"\> Package Groups (1)
+  [Package Groups (1)
 Package Group 0 id=0x7f packageCount=1 name=com.example
  Package 0 id=0x7f name=com.example
  type 0 configCount=1 entryCount=1
@@ -315,11 +149,11 @@ Package Group 0 id=0x7f packageCount=1 name=com.example
  resource 0x7f010000 com.example:layout/home\_view: t=0x03 d=0x00000000 (s=0x0008 r=0x00)
  (string8) "res/eA.xml"],
   [All three occurrences of the path in the APK are now shorter which results in the 36 byte savings. And while 36 bytes is a very small number, remember that the entire binary is only 2,118 bytes. A 36-byte savings is a 1.7% size reduction!],
-  [id="real-world-examples"\>Real-world examples],
+  [Real-world examples],
   [The resources of a real application number far more than just one. What does this optimization look like when applied to a real application?],
-  [id="plaid"\>Plaid],
   [Nick Butcher's Plaid app has 734 resource files. In addition to their quantity, the names of the resource files are more descriptive (which is a fancy way of saying they're longer). Instead of home\_view , Plaid contains names like searchback\_stem\_search\_to\_back.xml , attrs\_elastic\_drag\_dismiss\_frame\_layout , and designer\_news\_story\_description.xml .],
   [After updating the project to AGP 4.2, I used diffuse to compare a build without resource optimization to one with it enabled:],
+  [│ compressed │ uncompressed],
   [├───────────┬───────────┬───────────┼───────────┬───────────┬───────────],
   [APK │ old │ new │ diff │ old │ new │ diff],
   [──────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────],
@@ -333,10 +167,10 @@ Package Group 0 id=0x7f packageCount=1 name=com.example
   [──────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────],
   [total │ 9.4 MiB │ 9.3 MiB │ -72.7 KiB │ 15.6 MiB │ 15.5 MiB │ -24.2 KiB],
   [Resource optimization netted a 0.76% savings on APK size. The native library size kept the impact smaller than I had hoped.],
-  [id="seriesguide"\>SeriesGuide],
+  [SeriesGuide],
   [Uwe Trottmann's SeriesGuide app has 1044 resource files. Unlike Plaid, it is free of native libraries which should increase the impact of the optimization.],
   [Once again I updated the project to AGP 4.2 and used diffuse to compare two builds:],
-  [class="highlight"\> │ compressed │ uncompressed
+  [│ compressed │ uncompressed
  ├───────────┬───────────┬───────────┼───────────┬───────────┬───────────
  APK │ old │ new │ diff │ old │ new │ diff
 ──────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────
@@ -349,25 +183,28 @@ Package Group 0 id=0x7f packageCount=1 name=com.example
 ──────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────
  total │ 4.9 MiB │ 4.8 MiB │ -98.9 KiB │ 8.6 MiB │ 8.6 MiB │ -32.9 KiB],
   [Here resource optimization was able to reduce the APK size by 2.0%!],
-  [id="tivi"\>Tivi],
   [Chris Banes' Tivi app has a non-trivial subset written using Jetpack Compose which means fewer resources overall. A current build still contains 776 resource files.],
   [By virtue of using Compose, Tivi is already using the latest AGP 4.2. With two quick builds we can see the impact of resource optimization:],
-  [├───────────┬───────────┬───────────┼───────────┬───────────┬───────────],
-  [APK │ old │ new │ diff │ old │ new │ diff],
-  [──────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────],
-  [dex │ 3 MiB │ 3 MiB │ 0 B │ 6.8 MiB │ 6.8 MiB │ 0 B],
-  [arsc │ 363.4 KiB │ 337.9 KiB │ -25.6 KiB │ 363.3 KiB │ 337.7 KiB │ -25.6 KiB],
-  [manifest │ 3.6 KiB │ 3.6 KiB │ 0 B │ 16.1 KiB │ 16.1 KiB │ 0 B],
-  [res │ 680.4 KiB │ 629.2 KiB │ -51.2 KiB │ 1.2 MiB │ 1.2 MiB │ 0 B],
-  [asset │ 39.9 KiB │ 39.9 KiB │ 0 B │ 100.4 KiB │ 100.4 KiB │ 0 B],
-  [other │ 159.9 KiB │ 151.7 KiB │ -8.2 KiB │ 306.3 KiB │ 254.8 KiB │ -51.5 KiB],
-  [──────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────],
-  [total │ 4.2 MiB │ 4.1 MiB │ -85 KiB │ 8.8 MiB │ 8.7 MiB │ -77.1 KiB],
+  [│ compressed │ uncompressed
+ ├───────────┬───────────┬───────────┼───────────┬───────────┬───────────
+ APK │ old │ new │ diff │ old │ new │ diff
+──────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────
+ dex │ 3 MiB │ 3 MiB │ 0 B │ 6.8 MiB │ 6.8 MiB │ 0 B
+ arsc │ 363.4 KiB │ 337.9 KiB │ -25.6 KiB │ 363.3 KiB │ 337.7 KiB │ -25.6 KiB
+ manifest │ 3.6 KiB │ 3.6 KiB │ 0 B │ 16.1 KiB │ 16.1 KiB │ 0 B
+ res │ 680.4 KiB │ 629.2 KiB │ -51.2 KiB │ 1.2 MiB │ 1.2 MiB │ 0 B
+ asset │ 39.9 KiB │ 39.9 KiB │ 0 B │ 100.4 KiB │ 100.4 KiB │ 0 B
+ other │ 159.9 KiB │ 151.7 KiB │ -8.2 KiB │ 306.3 KiB │ 254.8 KiB │ -51.5 KiB
+──────────┼───────────┼───────────┼───────────┼───────────┼───────────┼───────────
+ total │ 4.2 MiB │ 4.1 MiB │ -85 KiB │ 8.8 MiB │ 8.7 MiB │ -77.1 KiB],
   [Once again we hit the 2.0% mark for APK size reduction!],
-  [id="one-more-occurrence"\>One more occurrence],
+  [One more occurrence],
   [All four examples so far have not used signed APKs. There are multiple versions of APK signing, and if your minSdkVersion is lower than 24 you are required include version 1 (V1) when signing. V1 signing uses Java's .jar 
 signing specification which signs each file individually as a text entry in the META-INF/MANIFEST. MF file.],
   [After creating and configuring a keystore for the original single-layout app, dumping the manifest file with unzip -c build/outputs/apk/release/app-release.apk META-INF/MANIFEST. MF shows these signatures:],
+  [Manifest-Version: 1.0
+Built-By: Signflinger
+Created-By: Android Gradle 4.2.0-alpha08],
   [Name: AndroidManifest.xml
 SHA-256-Digest: HdoGVd8U3Zjtf2VkGLExAPCQ1fq+kNL8eHKjVQXGI60=],
   [Name: classes.dex
@@ -379,21 +216,18 @@ SHA-256-Digest: 6w7i2Z9+LjwqlXS7YhhjzP/XhgvJF3PUuyJM60t0Qbw=],
   [The full path of each file makes an appearance bringing the total occurrences of each resource path to four. Since shorter names will once again result in this file containing fewer bytes, resource optimization has an even greater impact.],
   [The Google-internal email which introduced me to this feature purported a savings of 1-3% on final APK size. Based on real-world tests this range seems to be about right. Ultimately the savings will depend on the size and number of resource files in your APK.],
   [If you're already using AGP 4.2 add android.enableResourceOptimizations=true to your gradle.properties and enjoy this free APK size savings. If you are not yet on AGP 4.2 add it anyway so that you don't forget when you eventually upgrade!],
-  [id="fn-1"\>],
   [In this example, notably, the name doesn't seem as small as possible since it is two characters instead of one. A hash function computes the new name for each file. The number of resource files dictates the size of the hash which has a lower bound of two. The algorithm appears to work with a lower bound of one, so I'm not sure why the author chose to use two. Perhaps they didn't expect projects to contain fewer than 64 resources. I sent r.android.com/1416749 to lower the bound. ↩],
 ),
   insert-map: (:),
   inline-pq: pull-quote([arsc file before they are packaged into the APK.], [Jake Wharton]),
-  inline-pq-idx: 30,
+  inline-pq-idx: 27,
   word-count: 2224,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [ActionBarSherlock - A Love Story (Part 3)],
   author: [Jake Wharton],
   source-name: [Jake Wharton],
@@ -428,10 +262,8 @@ SHA-256-Digest: 6w7i2Z9+LjwqlXS7YhhjzP/XhgvJF3PUuyJM60t0Qbw=],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Multiplatform Compose and Gradle module metadata abuse],
   author: [Jake Wharton],
   source-name: [Jake Wharton],
@@ -442,170 +274,166 @@ SHA-256-Digest: 6w7i2Z9+LjwqlXS7YhhjzP/XhgvJF3PUuyJM60t0Qbw=],
   [For a year this worked fine. However, Compose UI recently went stable which meant our Android engineers were eager to start using it in the main app (as opposed to just samples). Upon Compose UI's introduction D8 fails with a duplicate class error:],
   [The androidx.compose.\* types are compiled into Redwood's multiplatform Compose runtime artifact. Compose UI depends on the official Compose runtime for Android which also contains these types. Since the two artifacts have different Maven coordinates, Gradle allows both to be included in the app which eventually causes D8 to complain 3 .],
   [Redwood was already building Compose from the same git SHAs as Google's release builds. Ideally we could use our own builds for every platform except Android, and then point at Google's artifact solely for Android. This would allow Gradle to see the two projects as sharing a common dependency thereby de-duplicating the Compose runtime classes.],
-  [id="gradle-module-metadata"\>Gradle module metadata],
+  [Gradle module metadata],
   [The mechanism by which Kotlin multiplatform artifacts resolve the correct dependency is through Gradle's module metadata format .],
   [Gradle Module Metadata is a unique format aimed at improving dependency resolution by making it multi-platform and variant-aware.],
   [The module metadata is a JSON document which describes the supported platforms through key/value attributes. For Redwood's Compose runtime the module metadata looks roughly like this:],
-  ["component" : {],
+  [\{],
+  ["component" : \{],
   ["group" : "app.cash.redwood" ,],
   ["module" : "compose-runtime" ,],
   ["version" : "0.1.0-square.15"],
-  [},],
+  [\},],
   ["variants" : \[],
-  [{],
+  [\{],
   ["name" : "releaseApiElements-published" ,],
-  ["attributes" : {],
+  ["attributes" : \{],
   ["org.gradle.usage" : "java-api" ,],
   ["org.jetbrains.kotlin.platform.type" : "androidJvm"],
-  [},],
-  ["available-at" : {],
+  [\},],
+  ["available-at" : \{],
   ["url" : "../../compose-runtime-android/0.1.0-square.15/compose-runtime-android-0.1.0-square.15.module" ,],
   ["group" : "app.cash.redwood" ,],
   ["module" : "compose-runtime-android" ,],
   ["version" : "0.1.0-square.15"],
-  [}],
-  [},],
-  [{],
+  [\}],
+  [\},],
+  [\{],
   ["name" : "iosArm64ApiElements-published" ,],
-  ["attributes" : {],
+  ["attributes" : \{],
   ["artifactType" : "org.jetbrains.kotlin.klib" ,],
   ["org.gradle.usage" : "kotlin-api" ,],
   ["org.jetbrains.kotlin.native.target" : "ios\_arm64" ,],
   ["org.jetbrains.kotlin.platform.type" : "native"],
-  [},],
-  ["available-at" : {],
+  [\},],
+  ["available-at" : \{],
   ["url" : "../../compose-runtime-iosarm64/0.1.0-square.15/compose-runtime-iosarm64-0.1.0-square.15.module" ,],
   ["group" : "app.cash.redwood" ,],
   ["module" : "compose-runtime-iosarm64" ,],
   ["version" : "0.1.0-square.15"],
-  [}],
-  [},],
+  [\}],
+  [\},],
   [...],
   [\]],
-  [}],
+  [\}],
   [When a 64-bit iOS ARM target consumes the app.cash.redwood:compose-runtime dependency, Gradle will parse this JSON file and actually resolve the app.cash.redwood:compose-runtime-iosarm64 artifact. It behaves somewhat like an HTTP 302 redirect by replacing the user-friendly Maven coordinate with the canonical platform-specific coordinate.],
   [For an Android consumer the artifact redirect resolves to app.cash.redwood:compose-runtime-android which is one of the offending artifact coordinates seen in the duplicate class error from D8. As I mentioned above, what we want is to have this variant redirect to Google's build of the Compose runtime and not our own.],
   [We could try to alter the values in the available-at object to point to Google's artifact, but according to the Gradle module metadata spec the url key must also point to a metadata file which is something Google does not ship.],
   [Thankfully, just below available-at in the spec, the dependencies array affords the ability to point at arbitrary Maven coordinates. This would allow us to define a variant with no available-at but a single dependency item to the associated Google Compose runtime artifact.],
-  [class="highlight"\> {
+  [\{
  "name": "releaseApiElements-published",
- "attributes": {
+ "attributes": \{
  "org.gradle.usage": "java-api",
  "org.jetbrains.kotlin.platform.type": "androidJvm"
- },
- - "available-at": {
+ \},
+ - "available-at": \{
 - "url": "../../compose-runtime-android/0.1.0-square.15/compose-runtime-android-0.1.0-square.15.module",
 - "group": "app.cash.redwood",
 - "module": "compose-runtime-android",
 - "version": "0.1.0-square.15"
-- }
+- \}
  + "dependencies": \[
-+ {
++ \{
 + "group": "androidx.compose.runtime",
 + "module": "runtime",
-+ "version": {
++ "version": \{
 + "prefers": "1.0.4"
-+ }
-+ }
++ \}
++ \}
 + \]
- }],
-  [id="modifying-gradle-module-metadata"\>Modifying Gradle module metadata],
+ \}],
+  [Modifying Gradle module metadata],
   [Spoiler alert: You can't. At least not using any stable APIs that Gradle provides 4 .],
   [The best (only?) mechanism that I've found is to hook into the module metadata file generation task and perform text-based modification of the JSON immediately after it is generated.],
   [First, we define a text file which contains the expected JSON contents to be replaced 5 .],
+  [\{],
   ["name" : "releaseApiElements-published" ,],
-  ["attributes" : {],
+  ["attributes" : \{],
   ["org.gradle.usage" : "java-api" ,],
   ["org.jetbrains.kotlin.platform.type" : "androidJvm"],
-  [},],
-  ["available-at" : {],
-  ["url" : "../../compose-runtime-android/{REDWOOD\_VERSION}/compose-runtime-android-{REDWOOD\_VERSION}.module" ,],
+  [\},],
+  ["available-at" : \{],
+  ["url" : "../../compose-runtime-android/\{REDWOOD\_VERSION\}/compose-runtime-android-\{REDWOOD\_VERSION\}.module" ,],
   ["group" : "app.cash.redwood" ,],
   ["module" : "compose-runtime-android" ,],
-  ["version" : "{REDWOOD\_VERSION}"],
-  [}],
-  [} ,],
-  [{],
+  ["version" : "\{REDWOOD\_VERSION\}"],
+  [\}],
+  [\} ,],
+  [\{],
   ["name" : "releaseRuntimeElements-published" ,],
-  ["attributes" : {],
+  ["attributes" : \{],
   ["org.gradle.usage" : "java-runtime" ,],
   ["org.jetbrains.kotlin.platform.type" : "androidJvm"],
-  [},],
-  ["available-at" : {],
-  ["url" : "../../compose-runtime-android/{REDWOOD\_VERSION}/compose-runtime-android-{REDWOOD\_VERSION}.module" ,],
+  [\},],
+  ["available-at" : \{],
+  ["url" : "../../compose-runtime-android/\{REDWOOD\_VERSION\}/compose-runtime-android-\{REDWOOD\_VERSION\}.module" ,],
   ["group" : "app.cash.redwood" ,],
   ["module" : "compose-runtime-android" ,],
-  ["version" : "{REDWOOD\_VERSION}"],
-  [}],
-  [} ,],
-  [Notice how the {REDWOOD\_VERSION} placeholder is used to minimize changes to this file over time.],
+  ["version" : "\{REDWOOD\_VERSION\}"],
+  [\}],
+  [\} ,],
+  [Notice how the \{REDWOOD\_VERSION\} placeholder is used to minimize changes to this file over time.],
   [Next, define the replacement JSON in another file.],
-  [class="highlight"\> { 
+  [\{ 
  "name" : "releaseApiElements-published" , 
- "attributes" : { 
+ "attributes" : \{ 
  "org.gradle.usage" : "java-api" , 
  "org.jetbrains.kotlin.platform.type" : "androidJvm" 
- }, 
+ \}, 
  "dependencies" : \[ 
- { 
+ \{ 
  "group" : "androidx.compose.runtime" , 
  "module" : "runtime" , 
- "version" : { 
- "prefers" : "{COMPOSE\_VERSION}" 
- } 
- } 
+ "version" : \{ 
+ "prefers" : "\{COMPOSE\_VERSION\}" 
+ \} 
+ \} 
  \] 
- } , 
- { 
+ \} , 
+ \{ 
  "name" : "releaseRuntimeElements-published" , 
- "attributes" : { 
+ "attributes" : \{ 
  "org.gradle.usage" : "java-runtime" , 
  "org.jetbrains.kotlin.platform.type" : "androidJvm" 
- }, 
+ \}, 
  "dependencies" : \[ 
- { 
+ \{ 
  "group" : "androidx.compose.runtime" , 
  "module" : "runtime" , 
- "version" : { 
- "prefers" : "{COMPOSE\_VERSION}" 
- } 
- } 
+ "version" : \{ 
+ "prefers" : "\{COMPOSE\_VERSION\}" 
+ \} 
+ \} 
  \] 
- } ,],
-  [Once again we use a special string {COMPOSE\_VERSION} to minimize the need to change this file as we update to new Compose versions.],
-  [Finally, perform this text-based substitution immediately after the file is generated. Here the {REDWOOD\_VERSION} and {COMPOSE\_VERSION} placeholders are replaced with their real values.],
-  [class="highlight"\> tasks . named ( "generateMetadataFileForKotlinMultiplatformPublication" ). configure { 
- doLast { 
- String find = file ( 'module\_find.txt' ). text . replace ( '{REDWOOD\_VERSION}' , version ) 
- String replace = file ( 'module\_replace.txt' ). text . replace ( '{COMPOSE\_VERSION}' , versions . compose )],
+ \} ,],
+  [Once again we use a special string \{COMPOSE\_VERSION\} to minimize the need to change this file as we update to new Compose versions.],
+  [Finally, perform this text-based substitution immediately after the file is generated. Here the \{REDWOOD\_VERSION\} and \{COMPOSE\_VERSION\} placeholders are replaced with their real values.],
+  [tasks . named ( "generateMetadataFileForKotlinMultiplatformPublication" ). configure \{ 
+ doLast \{ 
+ String find = file ( 'module\_find.txt' ). text . replace ( '\{REDWOOD\_VERSION\}' , version ) 
+ String replace = file ( 'module\_replace.txt' ). text . replace ( '\{COMPOSE\_VERSION\}' , versions . compose )],
   [File file = outputFile . get (). getAsFile () 
  String text = file . text],
   [int start = text . indexOf ( find ) 
- if ( start == - 1 ) { 
+ if ( start == - 1 ) \{ 
  throw new RuntimeException ( "Unable to locate module\_find.txt contents in module JSON (\$file)" ) 
- } 
+ \} 
  int end = start + find . length ()],
   [String newText = text . substring ( 0 , start ) + replace + text . substring ( end ) 
  file . text = newText 
- } 
- }],
+ \} 
+ \}],
   [This is some very hacky code, but any unexpected changes to the module metadata format will cause a build failure allowing you to reevaluate the approach. Perhaps in the future Gradle will support this type of transformation with a stable public API .],
   [This simple text substitution solves the original duplicate class problem today. And it does so in a way which does not require the consumer to understand the nuances of how the Compose runtime is built.],
   [Despite solving the issue for Android builds, we still have the duplicate class problem for the other platforms on which multiple Compose-based projects can be used. If you happened to use Redwood on the JVM with JetBrains' Compose for Desktop you would have two copies of the Compose runtime (potentially built from different versions). The same is true for targeting the web and using JetBrains' Compose for Web.],
   [Google really should be shipping the Compose runtime as a proper multiplatform artifact for all Kotlin targets to remedy this situation. Unfortunately their Kotlin multiplatform story is a few years behind the community's need and the prospect of this happening anytime soon is very unlikely. The best we can hope for now is JetBrains to ship a proper multiplatform artifact of the Compose runtime with the same versioning as Google's and using this hack to point the Android variant at Google's binary. Then everyone in the multiplatform Compose space could standardize on their artifacts.],
   [Until then, however, we'll continue the imperfect practice of building our own Compose runtime for Redwood and pointing to Google's artifact for Android 6 .],
-  [id="fn-1"\>],
   [Obligatory: \[I mean Compose and NOT Compose UI\]\[1\]!
 \[1\]: /a-jetpack-compose-by-any-other-name\/ ↩],
-  [id="fn-2"\>],
   [Continuing with the poor naming surrounding Compose, JetBrains has a project called "Compose Multiplatform" which is not fully multiplatform nor fully ports Compose UI to each supported platform. Our project is "just" the Compose runtime (not Compose UI) but running fully multiplatform. ↩],
-  [id="fn-3"\>],
   [Unlike the JVM whose classpath is a set of jars which each contain classes where the first wins, Android's classpath is a single set of classes in which duplicates are not supported (because of the dex file format). ↩],
-  [id="fn-4"\>],
   [As of Gradle 7.2. ↩],
-  [id="fn-5"\>],
   [Omitted from the earlier example, some variants have both an "api" and "runtime" entry. ↩],
-  [id="fn-6"\>],
   [We also have to build the Compose Kotlin compiler plugin for native because of how the Kotlin/Native compiler works. Google could ship it , or JetBrains could make the existing plugins work for native . ↩],
 ),
   insert-map: (:),
@@ -614,10 +442,8 @@ SHA-256-Digest: 6w7i2Z9+LjwqlXS7YhhjzP/XhgvJF3PUuyJM60t0Qbw=],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Play Services 5.0 Is A Monolith Abomination],
   author: [Jake Wharton],
   source-name: [Jake Wharton],
@@ -631,21 +457,23 @@ SHA-256-Digest: 6w7i2Z9+LjwqlXS7YhhjzP/XhgvJF3PUuyJM60t0Qbw=],
   [Most of the library's offerings are very disparate, having only the fact that they're by Google as a common thread. This screams for small, modular artifacts which can be composed!],
   [Google, it's time to unbundle. All the cool kids are doing it . (Spoiler alert: it happened )],
   [At worst, we specify a few dependencies manually:],
+  [dependencies \{ 
+ compile 'com.google.android.gms:play-services-ads:5.0.+' 
+ compile 'com.google.android.gms:play-services-analytics:5.0.+' 
+ compile 'com.google.android.gms:play-services-games:5.0.+' 
+ \}],
   [Best case would be a plugin that provided a clear DSL to what you were getting and offered easier configuration of the various components.],
-  [playServices { 
+  [apply plugin: 'com.google.playservices'],
+  [playServices \{ 
  version '5.0.+' 
  components 'ads' , 'analytics' , 'games' 
- }],
+ \}],
   [(You can even still provide the "fat" jar in both the dependency management world and the people who like manual dependency management.)],
   [ProGuard is not the answer. Yes, for release builds it's nice to strip out any methods which are not being used. However, this is not justification for having large chunks of unused code as dependencies. Besides, if you read my post on a simulator you know that we deserve a faster development build pipeline which removes steps, not adds them.],
   [It's not going to be a walk in the park but the packages inside Play Services are surprisingly well-configured to partitioning:],
   [(Top-left: Games, top-center: Drive, middle-left: Plus, middle: common, middle-right: Maps, bottom: Ads)],
   [Here's Guava for comparison which has less clear partition lines:],
   [Here's how the method counts were determined:],
-  [\$ curl 'http:\/\/search.maven.org/remotecontent?filepath=com/google/guava/guava/17.0/guava-17.0.jar' \> guava.jar
-\$ ~/android-sdk/build-tools/20.0.0/dx --dex --output guava.dex guava.jar
-\$ dex-method-count guava.dex
-14824],
   [\$ cp ~/android-sdk/extras/google/m2repository/com/google/android/gms/play-services/5.0.77/play-services-5.0.77.aar .
 \$ unzip play-services-5.0.77.aar
 \$ ~/android-sdk/build-tools/20.0.0/dx --dex --output play-services.dex classes.jar
@@ -748,10 +576,8 @@ SHA-256-Digest: 6w7i2Z9+LjwqlXS7YhhjzP/XhgvJF3PUuyJM60t0Qbw=],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Dockerizing a Rails application],
   author: [Lazarus Lazaridis (iridakos)],
   source-name: [Lazarus Lazaridis (iridakos)],
@@ -764,13 +590,14 @@ SHA-256-Digest: 6w7i2Z9+LjwqlXS7YhhjzP/XhgvJF3PUuyJM60t0Qbw=],
   [creating a container for the PostgreSQL database],
   [creating a container for the Redis server],
   [creating a container with the required configuration from the image we built],
-  [id="prerequisites"\>Prerequisites],
-  [id="install-docker"\>Install docker],
+  [Install docker],
   [The first thing you need in order to follow this tutorial is to install Docker on your machine.],
   [We are going to use the Docker Community Edition . Follow the installation instructions matching your system.],
   [I’m on Ubuntu 18.04 LTS so following the instructions , I had to:],
   [Uninstall previous versions with:],
+  [sudo apt-get remove docker docker-engine docker.io containerd runc],
   [I chose to install the application using the repository.],
+  [sudo apt-get update],
   [sudo apt-get install \\ 
  apt-transport-https \\ 
  ca-certificates \\ 
@@ -779,10 +606,17 @@ SHA-256-Digest: 6w7i2Z9+LjwqlXS7YhhjzP/XhgvJF3PUuyJM60t0Qbw=],
  software-properties-common],
   [curl -fsSL https:\/\/download.docker.com/linux/ubuntu/gpg | sudo apt-key add -],
   [and I verified that I had the key with the proper fingerprint after executing:],
+  [sudo apt-key fingerprint 0EBFCD88],
   [I set up the repository with:],
+  [sudo add-apt-repository \\ 
+ "deb \[arch=amd64\] https:\/\/download.docker.com/linux/ubuntu \\ 
+ \$( lsb\_release -cs ) \\ 
+ stable"],
   [The installation took place with these commands:],
+  [sudo apt-get update],
   [sudo apt-get install docker-ce docker-ce-cli containerd.io],
   [I checked that the installation was successful with:],
+  [\$ sudo docker run hello-world],
   [Unable to find image 'hello-world:latest' locally
 latest: Pulling from library/hello-world
 1b930d010525: Pull complete
@@ -804,36 +638,50 @@ This message shows that your installation appears to be working correctly.],
  https:\/\/hub.docker.com/],
   [For more examples and ideas, visit:
  https:\/\/docs.docker.com/get-started/],
-  [id="important-note"\>Important note],
+  [Important note],
   [Upon installation, a new user group was created with the name docker . If you want to allow users to do docker stuff without using sudo , you have to do some extra configuration ( read more here ) but keep in mind that:],
   [The docker group grants privileges equivalent to the root user . For details on how this impacts security in your system, see Docker Daemon Attack Surface.
  – Post-installation steps for Linux - Official Docker installation instructions],
   [We are going to use sudo in this tutorial.],
-  [id="clone-the-rails-chat-tutorial-from-github"\>Clone the rails chat tutorial from GitHub],
+  [Clone the rails chat tutorial from GitHub],
   [Navigate to your development directory on your machine and clone the sample Rails chat application with:],
+  [git clone https:\/\/github.com/iridakos/rails-chat-tutorial],
   [Done.],
-  [id="configure-the-application-to-use-postgresql-for-the-production-environment"\>Configure the application to use PostgreSQL for the production environment],
+  [Configure the application to use PostgreSQL for the production environment],
   [The application is configured to use the predefined sqlite database adapter. For the purpose of this tutorial we will change the adapter to postgresql and at the second part of the post we will create a container running the PostgreSQL database.],
   [Open the file config/database.yml file and change the production configuration as described below:],
+  [production : 
+ 
+ port : 
+ username : 
+ password :],
   [Open the application’s Gemfile and add the following lines:],
+  [group :production do 
+ gem 'pg' 
+ end],
   [to install the adapter. The pg gem requires to have the package libpq-dev installed on the machine. We will satisfy this requirement when building the image.],
-  [id="building-the-docker-image"\>Building the docker image],
+  [Building the docker image],
   [We are going to build the image gradually in order to understand what’s going on with every command we use.],
-  [id="create-the-dockerfile"\>Create the Dockerfile],
+  [Create the Dockerfile],
   [Whenever we want to create a new image in docker we use a file named Dockerfile . It is a text file with instructions to be followed sequentially to assemble an image.],
   [Navigate to the Rails chat tutorial (from now I will call this application directory ) directory and create the file.],
+  [touch Dockerfile],
   [and before continuing let’s try to build the image with just that empty file:],
+  [sudo docker build . -t rails-chat-tutorial],
   [Of course we get an error, but take a look at the first line of the log:],
+  [Sending build context to Docker daemon 46.39MB
+Error response from daemon: the Dockerfile ( Dockerfile ) cannot be empty],
   [When building an image, Docker creates a build context which is actually the files that will be available when the Dockerfile ’s commands get executed.],
   [The . (dot) part of the build command that we used tells Docker to try to build the image using the current directory for its build context.],
   [Since we didn’t explicitly specified in the command which Dockerfile to use, Docker will use the one that is located in the root of the context.],
-  [id="define-the-parent-image"\>Define the parent image],
+  [Define the parent image],
   [A parent image is the image that your image is based on. It refers to the contents of the FROM directive in the Dockerfile. Each subsequent declaration in the Dockerfile modifies this parent image. Most Dockerfiles start from a parent image, rather than a base image. However, the terms are sometimes used interchangeably.
  – Create a base image - Official Docker Documentation],
   [Docker provides official Ruby images and we are going to use the version that the Rails chat tutorial uses which is 2.6.2 as our parent image.],
   [Open Dockerfile and add the following line:],
+  [FROM ruby:2.6.2-stretch],
   [and run the build command again:],
-  [class="highlight"\> \$ sudo docker build . -t rails-chat-tutorial
+  [\$ sudo docker build . -t rails-chat-tutorial
 Sending build context to Docker daemon 46.39MB
 Step 1/1 : FROM ruby:2.6.2-stretch
 2.6.2-stretch: Pulling from library/ruby
@@ -851,31 +699,35 @@ Status: Downloaded newer image for ruby:2.6.2-stretch
 Successfully built 8d6721e9290e
 Successfully tagged rails-chat-tutorial:latest],
   [Execute the following command to see which images Docker has.],
-  [class="highlight"\> \$ sudo docker image list
+  [\$ sudo docker image list
 REPOSITORY TAG IMAGE ID CREATED SIZE
 rails-chat-tutorial latest 8d6721e9290e 10 days ago 870MB
 ruby 2.6.2-stretch 8d6721e9290e 10 days ago 870MB
 hello-world latest fce289e99eb9 3 months ago 1.84kB],
   [The hello-world is the Docker’s image that we used after installing Docker.
 The other image, the ruby one is the parent image of our image. Since the Dockerfile didn’t have any custom instructions other that just defining a parent image, the resulting image rails-chat-tutorial is actually the same as the parent image and has the same IMAGE ID , CREATED and SIZE properties. Time to change this.],
-  [id="copying-the-application-code"\>Copying the application code],
+  [Copying the application code],
   [The purpose of the image that we are building is to serve the Rails chat tutorial application. Eventually, to do so it’s pretty obvious that the image must contain the code of the application.],
   [We will use the COPY command to copy the code inside the image.],
   [Open the Dockerfile and append the following line:],
+  [COPY . /application],
   [This command will copy all files from inside the build context to the image.],
   [the first argument is the location of the build context to be copied],
   [the second argument is the target location inside the image],
   [Build the image again and execute the following command to confirm that we are good.],
+  [docker run -i -t rails-chat-tutorial],
   [If you take a look at the ruby’s docker image , you will see that the last line is:],
+  [CMD \[ "irb" \]],
   [Since we don’t define something different in our image, the same command is being executed and that’s why the execution of the previous command brought us to Ruby’s irb console.],
   [Let’s see what the /application directory of the container has.],
-  [class="highlight"\> Dir \[ '/application/\*' \] 
+  [Dir \[ '/application/\*' \] 
  =\> \[ "/application/config.ru" , "/application/Rakefile" , "/application/lib" , "/application/storage" , "/application/test" , "/application/Gemfile" , "/application/app" , "/application/Gemfile.lock" , "/application/LICENSE" , "/application/log" , "/application/public" , "/application/tmp" , "/application/vendor" , "/application/bin" , "/application/README.md" , "/application/config" , "/application/package.json" , "/application/Dockerfile" , "/application/db" \]],
   [Cool, the application directory has been copied. Moving on.],
-  [id="install-application-dependencies"\>Install application dependencies],
+  [Install application dependencies],
   [Before starting the server (puma in our case), we have to install the dependencies of the application. To do so, add the following line to the Dockerfile .],
+  [RUN bundle install --deployment --without development test],
   [and rebuild the image.],
-  [class="highlight"\> build . -t rails-chat-tutorial
+  [build . -t rails-chat-tutorial
 Sending build context to Docker daemon 46.39MB
 Step 1/3 : FROM ruby:2.6.2-stretch
  --- \> 8d6721e9290e
@@ -887,6 +739,7 @@ Could not locate Gemfile
 The command '/bin/sh -c bundle install --deployment --without development test' returned a non-zero code: 10],
   [We have an error because for the bundle command to succeed we must first change to the application’s root directory that does contain the Gemfile file.],
   [Change the contents of the Dockerfile to the following:],
+  [FROM ruby:2.6.2-stretch],
   [\# Copy application code 
  COPY . /application 
  \# Change to the application's directory 
@@ -894,17 +747,13 @@ The command '/bin/sh -c bundle install --deployment --without development test' 
   [\# Install gems 
  RUN bundle install --deployment --without development test],
   [and rebuild. Now the gems are being installed and we are ready to start the server.],
+  [\$ docker build . -t rails-chat-tutorial],
   [Sending build context to Docker daemon 46.39MB],
   [Step 1/4 : FROM ruby:2.6.2-stretch],
-  [--- \> 8d6721e9290e],
   [Step 2/4 : COPY . /application],
-  [--- \> b1aae569faf4],
   [Step 3/4 : WORKDIR /application],
-  [--- \> Running in ab90edf73be5],
   [Removing intermediate container ab90edf73be5],
-  [--- \> 6bbdaa9942e3],
   [Step 4/4 : RUN bundle install --deployment --without development test],
-  [--- \> Running in 22724a3684fe],
   [The dependency tzinfo-data (\>= 0 ) will be unused by any of the platforms Bundler is installing for . Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java.],
   [Fetching gem metadata from https:\/\/rubygems.org/............],
   [Fetching rake 12.3.2],
@@ -923,30 +772,35 @@ The command '/bin/sh -c bundle install --deployment --without development test' 
   [...],
   [...],
   [...],
-  [Removing intermediate container 22724a3684fe
- --- \> d0d3163a8cca
-Successfully built d0d3163a8cca
-Successfully tagged rails-chat-tutorial:latest],
-  [id="asset-compilation"\>Asset compilation],
+  [Asset compilation],
   [In the production environment, assets have to be pre-compiled.],
   [We will add this task in our ENTRYPOINT script (see below) because during asset compilation Rails initializes the application and if we executed the task upon building the image, the initialization would fail since some components (like database connection, configuration of services based on environment variables like cable.yml ) are not available.],
   [We must install a Javascript environment in the container though or else when the time comes and the task is executed, will get the following error:],
+  [ExecJS:: RuntimeUnavailable: Could not find a JavaScript runtime. See https:\/\/github.com/rails/execjs for a list of available runtimes.],
   [We will install nodejs , add the following line:],
+  [RUN curl -sL https:\/\/deb.nodesource.com/setup\_10.x | bash - \\
+ apt install -y nodejs],
   [Rebuild and you should be fine.],
-  [id="start-the-server"\>Start the server],
+  [Start the server],
   [We want to start the application in the production environment. Rails can resolve this via the environment variable RAILS\_ENV .],
   [To set it in the image, add in Dockerfile :],
+  [ENV RAILS\_ENV production],
   [The last instruction in the Dockerfile will be our ENTRYPOINT .],
   [Add the following line:],
+  [ENTRYPOINT ./entrypoint.sh],
   [What’s left to do is to configure the entrypoint.sh script to do the following:],
   [compile the assets],
   [start the server],
   [Create a file named entrypoint.sh in the root application directory and add:],
+  [\# Compile the assets 
+bundle exec rake assets:precompile],
   [\# Start the server 
 bundle exec rails server],
   [This file has to be executable, so in your terminal:],
+  [chmod +x ./entrypoint.sh],
   [That’s all.],
   [Since there are no more modifications to be done in our Dockerfile , make sure its contents are the following:],
+  [FROM ruby:2.6.2-stretch],
   [\# Copy application code 
  COPY . /application 
  \# Change to the application's directory 
@@ -959,9 +813,10 @@ bundle exec rails server],
  && apt install -y nodejs],
   [\# Start the application server 
  ENTRYPOINT ./entrypoint.sh],
-  [id="compacting-the-dockerfile"\>Compacting the Dockerfile],
+  [Compacting the Dockerfile],
   [We will optimize the Dockerfile since each RUN command creates a new image (read more here ).],
   [We will merge the RUN commands in one and move the ENV command just before it. The resulting Dockerfile is:],
+  [FROM ruby:2.6.2-stretch],
   [\# Copy application code 
  COPY . /application 
  \# Change to the application's directory 
@@ -974,20 +829,26 @@ bundle exec rails server],
  && apt install -y nodejs],
   [\# Start the application server 
  ENTRYPOINT \['./entrypoint.sh'\]],
-  [id="running-the-application-in-the-docker-environment"\>Running the application in the Docker environment],
-  [id="creating-the-postgresql-container"\>Creating the PostgreSQL container],
+  [Running the application in the Docker environment],
+  [Creating the PostgreSQL container],
   [We are going to create a container for the PostgreSQL database.],
   [We need to specify two environment variables to configure a user for our application: POSTGRES\_USER and POSTGRES\_PASSWORD . The values of these environment variables will be used later on when creating the application’s container .],
+  [sudo docker run --name rails-chat-tutorial-pg
+ -e POSTGRES\_USER = postgres
+ -e POSTGRES\_PASSWORD = postgres
+ -p 5432:5432
+ -d postgres],
   [Since the image doesn’t exist locally, Docker will fetch it from the Official Docker images and then it will create a container, binding the PostgreSQL default port 5432 to the same port of the host .],
   [Notes: I suggest you read this documentation if you want to familiarize yourself with the options you have for customizing the container (volumes/database configuration etc).],
-  [id="creating-the-redis-container"\>Creating the Redis container],
+  [Creating the Redis container],
   [To create the redis container, all we have to do is run the following command:],
+  [sudo docker run --name rails-chat-tutorial-redis \\ 
+ -p 6379:6379 \\ 
+ -d redis],
   [Again, since the image doesn’t exist locally, Docker will fetch it from the Official Docker images and then it will create a container, binding its 6376 to the same port of the host .],
-  [id="creating-the-applications-container"\>Creating the application’s container],
+  [Creating the application’s container],
   [At this point, your docker running containers should look like this:],
-  [CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES
- redis "docker-entrypoint.s…" 2 minutes ago Up 2 minutes 0.0.0.0:6379-\>6379/tcp rails-chat-tutorial-redis
- postgres "docker-entrypoint.s…" 2 minutes ago Up 2 minutes 0.0.0.0:5432-\>5432/tcp rails-chat-tutorial-pg],
+  [\$ sudo docker ps],
   [The Rails chat tutorial in production mode needs the following environmental variables:],
   [database.yml],
   [DATABASE\_HOST : 172.17.0.1],
@@ -997,7 +858,7 @@ bundle exec rails server],
   [cable.yml],
   [REDIS\_URL : redis:\/\/172.17.0.1:6379/1],
   [To create the container for the image that we created in this post passing the required environment variables, use:],
-  [class="highlight"\> sudo docker run --name rails-chat-tutorial-web \\ 
+  [sudo docker run --name rails-chat-tutorial-web \\ 
  -e DATABASE\_HOST = 172.17.0.1 \\ 
  -e DATABASE\_PORT = 5432 \\ 
  -e DATABASE\_USERNAME = postgres \\ 
@@ -1008,19 +869,21 @@ bundle exec rails server],
   [Note : we bound the container’s 3000 port on the same port of the host.],
   [Navigate to http:\/\/localhost:3000 and see what happens.],
   [We don’t get very helpful information on the error since the application is running in production mode (at least this worked : P). Let’s connect to the container and check the logs:],
+  [\$ sudo docker exec -it rails-chat-tutorial-web bash],
   [Now you are connected to the container. Check the /application/production.log file. Somewhere among all these lines you will see the following:],
   [ActiveRecord:: StatementInvalid (PG:: UndefinedTable: ERROR: relation users does not exist],
   [We set up the database server but we didn’t create/migrate the database. Since we are already connected to the container we will execute the required rake tasks.],
+  [bundle exec rake db:create db:migrate],
   [Reload the page and voilà],
-  [id="whats-next"\>What’s next],
+  [What’s next],
   [In the next tutorial we are going to:],
   [refactor this image for production (use volume for postgreSQL, asset precompilation)],
   [use nginx to serve them],
   [use docker compose to bind them all.],
-  [id="thanks"\>Thanks],
   [I am very grateful for your feedback (like this one from DeusOtiosus
  \@ Reddit ).],
   [That’s all! Cat photo.],
+  [Code and comments],
   [You can find the code of this tutorial on https:\/\/github.com/iridakos/rails-chat-tutorial on branch docker .],
   [For feedback, comments, typos etc. please open an issue in the repository.],
   [Thanks for visiting!],
@@ -1031,11 +894,10 @@ bundle exec rails server],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Underlying structure and measurement invariance by sex of the state trait anxiety inventory: A psychometric analysis in Ecuador],
   author: [Alberto Rodríguez-Lorenzana],
   source-name: [PLOS ONE Feed],
@@ -1052,7 +914,7 @@ bundle exec rails server],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Book Review - Accelerate: The Science of Lean Software and Devops],
   author: [Dean Hume],
   source-name: [Dean Hume],
@@ -1079,14 +941,13 @@ bundle exec rails server],
 #pull-quote([The book takes a look at well-known best practices such as Continuous Delivery, Lean Management, and Transformational Leadership.], [Dean Hume])
 
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([Rupak Ganguly], source-name: [Serverless Blog], [Build a serverless REST API service in Java, store the data in a DynamoDB table, and deploy it to AWS. All using the Serverless Framework.])],
-    [#brief-item([Carlos Becker], source-name: [Carlos Becker], [Over the years I read several articles on how to be effective, and how the 10x engineer thing is or is not a lie and all that.])],
-    [#brief-item([Fernando Medina Corey], source-name: [Serverless Blog], [Learn how to use the Serverless Framework to deploy your first Knative service on a Kubernetes cluster running in Google Cloud.])],
-    [#brief-item([Carlos Becker], source-name: [Carlos Becker], [I have an old Couchbase 4.5.x cluster, and I thought it would be nice to upgrade it. These are my notes and the tests I did before doing it “in production”™️.])],
-    [#brief-item([Ben Thompson], source-name: [Stratechery], [Stratechery is on a bit of a disjointed Spring Break, as my usual week off will be spread out:
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([Rupak Ganguly], source-name: [Serverless Blog], [Build a serverless REST API service in Java, store the data in a DynamoDB table, and deploy it to AWS. All using the Serverless Framework.])],
+  [#brief-item([Carlos Becker], source-name: [Carlos Becker], [Over the years I read several articles on how to be effective, and how the 10x engineer thing is or is not a lie and all that.])],
+  [#brief-item([Fernando Medina Corey], source-name: [Serverless Blog], [Learn how to use the Serverless Framework to deploy your first Knative service on a Kubernetes cluster running in Google Cloud.])],
+  [#brief-item([Carlos Becker], source-name: [Carlos Becker], [I have an old Couchbase 4.5.x cluster, and I thought it would be nice to upgrade it. These are my notes and the tests I did before doing it “in production”™️.])],
+  [#brief-item([Ben Thompson], source-name: [Stratechery], [Stratechery is on a bit of a disjointed Spring Break, as my usual week off will be spread out:
 
 There will be no Update on Thursday, March 19
 
@@ -1097,16 +958,15 @@ There will be no Update on Monday, March 30
 I will return to my usual posting schedule on Tuesday, March 31.
 
 All other Stratechery Plus content, including my podcasts, will stay on schedule.])],
-    [#brief-item([Carlos Becker], source-name: [Carlos Becker], [Since the infamous
+  [#brief-item([Carlos Becker], source-name: [Carlos Becker], [Since the infamous
  SolarWinds attack ,
 supply chain integrity is something a lot of people are discussing and working
 on.])],
-    [#brief-item([Gareth McCumskey], source-name: [Serverless Blog], [If all you want to do is play around and try stuff without worrying bills and costs, serverless is the place for you!])],
-    [#brief-item([Gareth McCumskey], source-name: [Serverless Blog], [ShreyTheCray interviews Gareth McCumskey as he walks through the purpose, use cases, and process of getting started with the Serverless framework])],
-    [#brief-item([Nelson Elhage], source-name: [Nelson Elhage], [Last time, I announced Check Plus, a declarative language for defining Check tests in C. This time, I want to talk about the tricks I used to implement a declarative minilanguage using the C preprocessor (and some GCC extensions).
+  [#brief-item([Gareth McCumskey], source-name: [Serverless Blog], [If all you want to do is play around and try stuff without worrying bills and costs, serverless is the place for you!])],
+  [#brief-item([Gareth McCumskey], source-name: [Serverless Blog], [ShreyTheCray interviews Gareth McCumskey as he walks through the purpose, use cases, and process of getting started with the Serverless framework])],
+  [#brief-item([Nelson Elhage], source-name: [Nelson Elhage], [Last time, I announced Check Plus, a declarative language for defining Check tests in C. This time, I want to talk about the tricks I used to implement a declarative minilanguage using the C preprocessor (and some GCC extensions).
 The Problem We want to write some toplevel declarations that look like:
 \#define SUITE\_NAME example BEGIN\_SUITE("Example test suite"); \#define TEST\_CASE core BEGIN\_TEST\_CASE("Core tests"); … and so on, and somehow translate them into code that does the equivalent of:])],
-  ))
-}
+))
 
 #colophon([The Civic Dispatch], [Vol. 1, No. 046], [2026-03-30])

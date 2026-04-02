@@ -21,55 +21,8 @@
 #masthead([The Swift Review], [Vol. 1, No. 012], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [A woman’s uterus has been kept alive outside the body for the first time],
-  kicker: [Cover Story],
-  author: [Jessica Hamzelou],
-  source-name: [MIT Technology Review],
-  deck: [In front of me is essentially a metal box on wheels.],
-  lead-pre: [“],
-  lead-cap: [T],
-  lead-rest: [hink of this as a human body,” says Javier González.],
-  body-paragraphs: (
-  [In front of me is essentially a metal box on wheels. Standing at around a meter in height, it reminds me of a stainless-steel counter in a restaurant kitchen. It is covered in flexible plastic tubing—which act as veins and arteries—connecting a series of transparent containers, the organs of this machine.],
-  [What makes it extra special is the role of the cream-colored tub that sits on its surface. Ten months ago, González, a biomedical scientist who developed the device with his colleagues at the Carlos Simon Foundation, carefully placed a freshly donated human uterus in the tub. The team connected it to the device’s tubes and pumped in modified human blood.],
-  [The device kept the uterus alive for a day—a new feat that could represent the first step to the long-term maintenance of uteruses outside the human body. The work has not yet been published.],
-  [The team members want to keep donated human uteruses alive long enough to see a full menstrual cycle. They hope this will help them study diseases of the uterus and learn more about how embryos burrow their way into the organ’s lining at the start of a pregnancy. They also hope that future iterations of their device might one day sustain the full gestation of a human fetus.],
-  [The machine is technically called PUPER, which stands for “preservation of the uterus in perfusion.” But González’s colleague Xavier Santamaria says the team has adopted a nickname for it: “We call it ‘Mother.’”],
-  [González and Santamaria, medical vice president of the Carlos Simon Foundation, demonstrated how the device might work when I visited the foundation in Valencia, Spain, earlier this month (although it held no organs on that day).],
-  [Both are interested in learning more about implantation, the moment at which an embryo attaches itself to the lining of a uterus—essentially, the very first moment of pregnancy.],
-  [The foundation’s founder and director, Carlos Simon, believes it’s a sticking point in IVF: Scientists have made many improvements to the technology over the years, but the failure of embryos to implant underlies plenty of unsuccessful IVF cycles, he says. Being able to carefully study how the process works in a real, living organ might give the team a better idea of how to prevent those failures.],
-  [The team took inspiration from advances in technologies designed to maintain donated organs for transplantation. In recent years, researchers around the world have created devices that deliver nutrients and filter waste so that organs can survive longer after being removed from donors’ bodies.],
-  [The main goal here is to buy time. A human organ might last only a matter of hours outside the body, so a transplant may require frantic preparation for the recipient, sometimes in the middle of the night. With a little more time, doctors could find better donor-patient matches and potentially test the quality of donated organs.],
-  [This approach is called normothermic or machine perfusion, and it is already being used clinically for some liver , kidney , and heart transplants .],
-  [The team at the Carlos Simon Foundation built a similar machine for uteruses. A blood bag hangs on one side. From there, blood is ferried via plastic tubing to a pump, which functions as the heart. The pump shunts the blood through an oxygenator, which adds oxygen and removes carbon dioxide as the lungs would in a human body.],
-  [The blood is warmed and passed through sensors that monitor the levels of glucose and oxygen, along with other factors. It passes through a “kidney” to remove waste. And finally the blood reaches the uterus, hooked up to its own plastic “arteries” and “veins.” The organ itself sits at a tilt, just as in the body, and is kept in a humid environment to stay moist.],
-  [The team first began testing an early prototype of the device with sheep uteruses around four years ago. That meant carting the machine to an animal research center in Zaragoza, around 200 miles away. Over the course of the preliminary study, veterinary surgeons removed the uteruses of six sheep and hooked them up to the machine. They kept each uterus alive for a day, using blood from the same animals.],
-  [After the sheep experiments, the researchers carted their machine back to Valencia and modified it to achieve its current incarnation, “Mother.” They started working with a local hospital that performed hysterectomies. And in May last year, they were offered their first human uterus.],
-  [The team needed to be quick. “You need to put \[the uterus in the machine\] within a couple of hours, maximum, of the extraction,” says Santamaria. He and his colleagues also needed to connect the uterus’s blood vessels to the tubing delicately, taking care to avoid any blockages (clotting is a major challenge in organ perfusion). The organ was hooked up to human blood obtained from a blood bank.],
-  [It seemed to work—at least temporarily. “We kept it alive for one day,” says Santamaria.],
-  [“As a proof of concept, it is impressive,” says Keren Ladin, a bioethicist who has focused on organ transplantation and perfusion at Tufts University. “These are early days.”],
-  [It might not sound like much, but 24 hours is a long time for an organ to be out of the body. Maintaining a donated uterus for that long could expand the options for uterus transplant , a fairly new procedure offered to some people who want to be pregnant but don’t have a functional uterus, says Gerald Brandacher, professor of experimental and translational transplant surgery at the Medical University of Innsbruck in Austria.],
-  [“It is better than what we currently have, because we have only a couple of hours,” he says. So far, most uterus transplants have been planned operations involving organs from living donors. A technology like this could allow for the use of more organs from deceased donors, he says.],
-  [That work is “not in the immediate pipeline” for the team in Spain, says Santamaria. “We are working on other problems.”],
-  [Santamaria, González, and their colleagues are more interested in using sustained human uteruses for research.],
-  [They’ve mounted a camera to a wall in the corner of the room, pointed at their machine. It allows the team to monitor “Mother” remotely, and to check if any valves disconnect. (That happened once before—a spike in pressure caused the blood bag to come loose, spilling a liter of blood on the floor, Santamaria says.)],
-  [They’d like to be able to keep their uteruses alive for around 28 days to study the menstrual cycle and disorders that affect the uterus, like endometriosis and fibroids.],
-  [It won’t be easy to maintain a uterus for that long, cautions Brandacher. As far as he knows, no one has been able to maintain a liver for more than seven days. “No studies out there … have shown 30-day survival in a machine perfusion circuit,” he says.],
-  [But it’s worth the effort. The team’s main interest is learning more about how embryos implant in the uterine lining at the start of a pregnancy. They hope to be able to test the process in their outside-the-body uteruses.],
-  [They won’t be allowed to use human embryos for this, says González—that would cross an ethical boundary. Instead, they plan to use embryo-like structures made from stem cells. The structures closely resemble human embryos but are created in a lab without sperm or eggs.],
-  [Simon himself has grander ambitions.],
-  [He sees a future in which a machine like “Mother” will be able to fully gestate a human, all the way from embryo to newborn. It could offer a new path to parenthood for people who don’t have a uterus, for example, or who are not able to get pregnant for other reasons.],
-  [He appreciates that it sounds futuristic, to say the least. “I don’t know if we will end up having pregnancies inside of the uterus outside of the body, but at least we are ready to understand all the steps to do that,” he says. “You have to start somewhere.”],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Nicole 'Snooki' Polizzi Urges Cervical Cancer Screening After Diagnosis],
   author: [Healthline],
   source-name: [Healthline],
@@ -112,10 +65,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Ozempic, Wegovy May Help Reverse Damage Caused by Osteoarthritis],
   author: [Healthline],
   source-name: [Healthline],
@@ -193,10 +144,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [GLP-1s Combined With Healthy Habits May Improve Heart Health in Diabetes],
   author: [Healthline],
   source-name: [Healthline],
@@ -258,13 +207,12 @@
   debug-mode: false,
 )
 
-  #pull-quote([However, these variables were accounted for during analysis.], [Healthline])
+#pull-quote([However, these variables were accounted for during analysis.], [Healthline])
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Week 20],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -285,7 +233,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [How browsers position floats],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -310,9 +258,8 @@ about how the algorithm would choose where to position different floats, here’
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [Why Chromium has code owners],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -320,22 +267,22 @@ about how the algorithm would choose where to position different floats, here’
   paragraphs: (
   [My favourite thing about the Chromium code is this enum of cats and all the comments in that file. My second favourite thing is OWNER files. Guess what this post is about (hint: it’s not about cats NOT EVERYTHING IS ABOUT CATS, OK?)],
   [Edit: In a clear and deliberate conspiracy, the cats have been removed from Chromium. The old new cool thing is pickles , and the new new cool thing is Count Von Counts . Bonus points to \@thakis for finding that last one. 💁],
-  [id="why-should-you-care"\>Why should you care?],
+  [Why should you care?],
   [Owners in Chromium are people who own an area of code. This can be a small feature (the chrome:\/\/settings page) or a giant area (all of the Cocoa UI). You don’t have to be an owner to be successful – you get to be an owner because you want to. This usually means that you have contributed a lot to that particular nugget of code, have acquired a slightly unhealthy obsession for it (symptoms: if you’ve whispered “my precious” to a line of code in the last hour, you will make a great code owner one day), and generally care about its well being. I have been trying (unsuccessfully) for years to be an owner of pizza; hit me up if you have any leads.],
   [Owners are gatekeepers of code, and their main responsibility is making sure the code doesn’t go to shit. Comments that make sense. No copy pasting, no hacks, no soup for you. None of that “I don’t really know how to make this code better so I’m going to merge it and run” nonsense. They are the very model of a modern Major-General, they know the kings of England, and they quote the fights historical.],
   [TL; DR: owners won’t let you merge crappy code. Imagine if each of the 2000 Chromium commiters merged a random hack in one of the 7 million lines of code we have. IMAGINE. 🔥🔥🔥],
-  [id="what-it-means-for-owners"\>What it means for owners],
+  [What it means for owners],
   [Realtalk: being an owner means that people will send you a lot of code to review, because your blessing (or “LGTM”) is required for that code to be committed. \@sky is an owner of the Windows UI code, and he does something like 500+ reviews a quarter. And also writes code. And helps me out when I (invariably) break the UI. He’s pretty much the best.],
   [Basically:],
   [People will ask you general questions when they’re stuck. It’s totally fine not to know the answer – you’ll probably at least know who to point them at.],
   [Whenever shit hits the fan and it’s on your turf of code, if no obvious culprit is to be found, you win the lottery and get to fix it. Spoilers: this sometimes means fixing things that you didn’t actually break. Currently, I’m on day 6 of this giant yak shave that I won by fixing a random crash. Regrets, I am them.],
   [You get to live the dream and be picky about code. Don’t like a method’s name? A particular comment? Think that there’s a bit of a refactor needed to make this better? You get to ask for it, and guess what: people usually have to listen.],
   [👉 Developers trust owners to not be insane. Owners trust developers not to try to commit stuff behind their back. This is why it works. 👈],
-  [id="what-it-means-for-developers"\>What it means for developers],
+  [What it means for developers],
   [First, when you’re stuck, you know who to ask questions (an owner!). Second, in order for you to commit any code, you need to get the owners’ approval for your changes.],
   [Here’s an example of a code review. I like to explicitly mention which owner should review which file, because one person might own multiple files/areas in a given CL (if you’re a chrome/browser owner, you own ALL of the things), but might not be required to review all of them.],
   [So, who owns profile\_info\_cache.cc ? Everyone named in the chrome/browser/profiles/OWNERS file. On top of that, everyone up the directory tree (so in chrome/browser/OWNERS ) is also an owner. If you stumble on a directory that doesn’t have an owners file (for example chrome/browser/ui/cocoa/profiles ), just crawl on up until you find the closest one (in this case, you would add an owner from chrome/browser/ui/cocoa/OWNERS . This is also useful if you do a fairly innocent refactor that touches a lot of files, like renaming a method. In that case, rather than adding 17 different owners, you can just get one, root owner and run with that.],
-  [id="how-you-can-get-owner-files-in-your-project"\>How YOU can get owner files in your project],
+  [How YOU can get owner files in your project],
   [If you want to implement owner files for your projects (YAY!), you need to do a couple of things:],
   [Add some sort of presubmit check so that people can’t commit code without getting all their ducks in a row. If you give people a chance to merge code under the radar, they will. So, don’t.],
   [Here’s the Chromium script . It will probably most likely not work out of the box, but it could be a useful starting point.],
@@ -350,10 +297,8 @@ about how the algorithm would choose where to position different floats, here’
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Why Some GLP-1 Users Say They’re Developing Scurvy],
   author: [Healthline],
   source-name: [Healthline],
@@ -402,40 +347,34 @@ about how the algorithm would choose where to position different floats, here’
   debug-mode: false,
 )
 
-  #pull-quote([According to Fallows, GLP-1 use is not just linked to vitamin C deficiency.], [Healthline])
+#pull-quote([According to Fallows, GLP-1 use is not just linked to vitamin C deficiency.], [Healthline])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [I know something about art, but I know what I like anyway],
   author: [Michael Tobis],
   source-name: [Only in it for the Gold (blog, climate)],
   images: (),
   paragraphs: (
-  [dir="auto" style="font-family: inherit; text-align: start;"\>],
   [Usually, looking at a painting, I think, hmm, okay, I wish I could do that, but once in a while I go whooaaa.... wow.... that's... wow...],
-  [dir="auto" style="font-family: inherit;"\>Not unlike with a great musical performance.],
-  [dir="auto" style="font-family: inherit;"\>So now, I'm suddenly, inadvertently, a person who writes about art.],
-  [dir="auto" style="font-family: inherit;"\>I've noticed that people who write about music, especially popular music, tend to love music a lot; but people who write about art, sometimes give off the impression that they don't care, or they don't even get it.],
-  [dir="auto" style="font-family: inherit;"\>My problem is that I know what I love but I don't know why. But is that really a problem?],
-  [dir="auto" style="font-family: inherit;"\>I certainly don't have an overarching theory. Why should I? What makes great reggae and what makes great blues and what makes great jazz are different. I know what I want to listen to and what I don't when I hear it.],
-  [dir="auto" style="font-family: inherit;"\>I also know what I want to look at when I see it. But I don't have or want some grand theory as to why.],
-  [dir="auto" style="font-family: inherit;"\>I think basically everyone loves music but only some people love visual art for some reason.],
-  [dir="auto" style="font-family: inherit;"\>Since everyone loves music, everyone who writes about music loves it. On the other hand, NOT all of the people who write about art are people who love it.],
-  [dir="auto" style="font-family: inherit;"\>I know what I love in art, just as I know what I love in music. And I know a fair amount at least about art (and perhaps a bit less but still something about music). But I can't explain WHY I like what I like in some broad general terms.],
-  [dir="auto" style="font-family: inherit;"\>You enjoy each bit of human creativity in its own terms.],
-  [dir="auto" style="font-family: inherit;"\>I think anyone writing about art has to BEGIN by acknowledging the mystery. We love this stuff. We LOVE this stuff. Why? It's sort of mysterious.],
-  [dir="auto" style="font-family: inherit;"\>We especially love SOME of this stuff. Which ones? Why?],
-  [dir="auto" style="font-family: inherit;"\>It's totally experiential. In experiencing any art form, either your socks are knocked off, or they ain't.],
-  [dir="auto" style="font-family: inherit;"\>If you have a talky personality you really WANT to talk about the stuff you love and what it means to you. And you don't so much want to talk about the stuff you don't love, except maybe to wonder why it didn't work.],
-  [dir="auto" style="font-family: inherit;"\>But you wouldn't know it from a lot of people who are professional curators and art educators. They seem to have forgotten what they love about art, if there ever was anything.],
-  [dir="auto" style="font-family: inherit;"\>Anyway, sometimes, the only thing you can say is wow... look at that...],
-  [dir="auto" style="font-family: inherit;"\>],
-  [dir="auto" style="font-family: inherit;"\>--],
-  [dir="auto" style="font-family: inherit;"\>],
-  [dir="auto" style="font-family: inherit;"\>painting is a field sketch by Tom Thomson ca 1916],
-  [dir="auto" style="font-family: inherit;"\>],
+  [Not unlike with a great musical performance.],
+  [So now, I'm suddenly, inadvertently, a person who writes about art.],
+  [I've noticed that people who write about music, especially popular music, tend to love music a lot; but people who write about art, sometimes give off the impression that they don't care, or they don't even get it.],
+  [My problem is that I know what I love but I don't know why. But is that really a problem?],
+  [I certainly don't have an overarching theory. Why should I? What makes great reggae and what makes great blues and what makes great jazz are different. I know what I want to listen to and what I don't when I hear it.],
+  [I also know what I want to look at when I see it. But I don't have or want some grand theory as to why.],
+  [I think basically everyone loves music but only some people love visual art for some reason.],
+  [Since everyone loves music, everyone who writes about music loves it. On the other hand, NOT all of the people who write about art are people who love it.],
+  [I know what I love in art, just as I know what I love in music. And I know a fair amount at least about art (and perhaps a bit less but still something about music). But I can't explain WHY I like what I like in some broad general terms.],
+  [You enjoy each bit of human creativity in its own terms.],
+  [I think anyone writing about art has to BEGIN by acknowledging the mystery. We love this stuff. We LOVE this stuff. Why? It's sort of mysterious.],
+  [We especially love SOME of this stuff. Which ones? Why?],
+  [It's totally experiential. In experiencing any art form, either your socks are knocked off, or they ain't.],
+  [If you have a talky personality you really WANT to talk about the stuff you love and what it means to you. And you don't so much want to talk about the stuff you don't love, except maybe to wonder why it didn't work.],
+  [But you wouldn't know it from a lot of people who are professional curators and art educators. They seem to have forgotten what they love about art, if there ever was anything.],
+  [Anyway, sometimes, the only thing you can say is wow... look at that...],
+  [--],
+  [painting is a field sketch by Tom Thomson ca 1916],
 ),
   insert-map: (:),
   word-count: 592,
@@ -443,10 +382,8 @@ about how the algorithm would choose where to position different floats, here’
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Why Everclear Frontman Art Alexakis Says His Multiple Sclerosis Diagnosis Was a ‘Blessing’],
   author: [Healthline],
   source-name: [Healthline],
@@ -505,15 +442,15 @@ about how the algorithm would choose where to position different floats, here’
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Dream Honeymoons to Italy],
   author: [Anne Gordon],
   source-name: [Live Life Travel],
   images: (),
   paragraphs: (
+  [Dream Honeymoons to Italy],
+  [Our Favorite Italy Destinations for 2019: AMALFI COAST AND SICILY],
   [Belmond Hotel Timeo - Taormima, Italy],
   [While we do not subscribe to the ‘one size fits all’ theory for any vacation, that especially goes for honeymoons! However, we do have our very favorite Amalfi Coast and Sicily towns as well as the “Best of The Best” hotel and excursion recommendations that should be on the top of everyone’s list when planning their Italian getaway.],
   [Amalfi Coast –],
@@ -554,10 +491,8 @@ about how the algorithm would choose where to position different floats, here’
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Doctors Thought Her Symptoms Were Pregnancy-Related. It Was Colon Cancer],
   author: [Healthline],
   source-name: [Healthline],
@@ -612,52 +547,49 @@ about how the algorithm would choose where to position different floats, here’
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([Manuviraj Godara], source-name: [MakeUseOf], [I had tunnel-visioned myself into using Acrobat for everything PDF-related, from reading to highlighting. It was as if I was justifying the cost by using the program. But, as it turns out, Firefox already had all the PDF manipulation features I needed. Also, seeing Adobe's business practices, I'm better off without their tools , especially considering that the free version of Acrobat Reader is practically a running advertisement for Adobe's paid features.])],
-    [#brief-item([Richard A. I. Bethlehem], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/d41586-026-00637-2 
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([Manuviraj Godara], source-name: [MakeUseOf], [I had tunnel-visioned myself into using Acrobat for everything PDF-related, from reading to highlighting. It was as if I was justifying the cost by using the program. But, as it turns out, Firefox already had all the PDF manipulation features I needed. Also, seeing Adobe's business practices, I'm better off without their tools , especially considering that the free version of Acrobat Reader is practically a running advertisement for Adobe's paid features.])],
+  [#brief-item([Richard A. I. Bethlehem], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/d41586-026-00637-2 
 
 Neuroscientists have created a continuous atlas showing how patterns of functional connectivity between brain regions change from birth to old age.])],
-    [#brief-item([Nature News], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/d41586-026-00934-w 
+  [#brief-item([Nature News], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/d41586-026-00934-w 
 
 The ability to automate the discovery process in some areas of scientific inquiry raises unanswered questions about how research should be conducted.])],
-    [#brief-item([Deadspin], source-name: [Deadspin], [Tobias Harris scored 18 points on 7-for-10 shooting, and the Detroit Pistons pulled away for a 109-87 win over the Minnesota Timberwolves on Saturday])],
-    [#brief-item([Brad Plumer], source-name: [NYT Science], [A tour of the Geothermal House of the CERAWeek energy conference in Houston this week. Geothermal energy is emerging as one of the big green winners of the current era.])],
-    [#brief-item([Deadspin], source-name: [Deadspin], [South Korea's Hyo Joo Kim took an emphatic step toward defending her title at the Ford Championship on Saturday, setting an LPGA 54-hole record to bui])],
-    [#brief-item([Deadspin], source-name: [Deadspin], [Early struggles from Skenes and Webb raise questions about whether World Baseball Classic innings impact MLB pitchers over a full season.])],
-    [#brief-item([Scientific American], source-name: [Scientific American], [Engineers explain how a collision between an Air Canada plane and a fire truck at one of New York’s busiest airports turned deadly])],
-    [#brief-item([Deadspin], source-name: [Deadspin], [Xtreme Gaming rallied for a pair of lower-bracket victories on Friday to extend their stay at the ESL One Birmingham event in England.,After overtakin])],
-    [#brief-item([Witney Seibold], source-name: [/Film], [Most of the Star Trek: The Next Generation cast didn't get to keep their uniform costumes. Jonathan Frakes, however, simply stole his.])],
-    [#brief-item([Deadspin], source-name: [Deadspin], [Kevin Durant had 25 points and 10 assists, while Jabari Smith Jr. added 21 points and a season-high 16 rebounds to lead the visiting Houston Rockets t])],
-    [#brief-item([Oluwademilade Afolabi], source-name: [MakeUseOf], [I used to think I had my phone habits pretty much locked down. Then I started noticing the pattern. The same little actions, over and over, every single day. Toggling Wi-Fi, muting notifications at night, opening the same set of apps in the same order each morning. None of it felt like work, but together it added up in a way I couldn't ignore anymore.])],
-    [#brief-item([Deadspin], source-name: [Deadspin], [WASHINGTON -- After proving their mental fortitude in the Sweet 16, Cameron Boozer's No. 1 seeded Duke Blue Devils will try to defeat this decade's mo])],
-    [#brief-item([Deadspin], source-name: [Deadspin], [Nikolaj Ehlers had a goal and an assist to lead the host Carolina Hurricanes to a 5-2 win over the New Jersey Devils on Saturday.,Jackson Blake, capta])],
-    [#brief-item([Agence France-Presse], source-name: [The Guardian Science/Space], [US space agency says it is working towards new date after February launch delayed by technical difficulties
+  [#brief-item([Deadspin], source-name: [Deadspin], [Tobias Harris scored 18 points on 7-for-10 shooting, and the Detroit Pistons pulled away for a 109-87 win over the Minnesota Timberwolves on Saturday])],
+  [#brief-item([Brad Plumer], source-name: [NYT Science], [A tour of the Geothermal House of the CERAWeek energy conference in Houston this week. Geothermal energy is emerging as one of the big green winners of the current era.])],
+  [#brief-item([Deadspin], source-name: [Deadspin], [South Korea's Hyo Joo Kim took an emphatic step toward defending her title at the Ford Championship on Saturday, setting an LPGA 54-hole record to bui])],
+  [#brief-item([Deadspin], source-name: [Deadspin], [Early struggles from Skenes and Webb raise questions about whether World Baseball Classic innings impact MLB pitchers over a full season.])],
+  [#brief-item([Scientific American], source-name: [Scientific American], [Engineers explain how a collision between an Air Canada plane and a fire truck at one of New York’s busiest airports turned deadly])],
+  [#brief-item([Deadspin], source-name: [Deadspin], [Xtreme Gaming rallied for a pair of lower-bracket victories on Friday to extend their stay at the ESL One Birmingham event in England.,After overtakin])],
+  [#brief-item([Witney Seibold], source-name: [/Film], [Most of the Star Trek: The Next Generation cast didn't get to keep their uniform costumes. Jonathan Frakes, however, simply stole his.])],
+  [#brief-item([Deadspin], source-name: [Deadspin], [Kevin Durant had 25 points and 10 assists, while Jabari Smith Jr. added 21 points and a season-high 16 rebounds to lead the visiting Houston Rockets t])],
+  [#brief-item([Oluwademilade Afolabi], source-name: [MakeUseOf], [I used to think I had my phone habits pretty much locked down. Then I started noticing the pattern. The same little actions, over and over, every single day. Toggling Wi-Fi, muting notifications at night, opening the same set of apps in the same order each morning. None of it felt like work, but together it added up in a way I couldn't ignore anymore.])],
+  [#brief-item([Deadspin], source-name: [Deadspin], [WASHINGTON -- After proving their mental fortitude in the Sweet 16, Cameron Boozer's No. 1 seeded Duke Blue Devils will try to defeat this decade's mo])],
+  [#brief-item([Deadspin], source-name: [Deadspin], [Nikolaj Ehlers had a goal and an assist to lead the host Carolina Hurricanes to a 5-2 win over the New Jersey Devils on Saturday.,Jackson Blake, capta])],
+  [#brief-item([Agence France-Presse], source-name: [The Guardian Science/Space], [US space agency says it is working towards new date after February launch delayed by technical difficulties
 
 Nasa has said the long-delayed launch of Artemis II, the first crewed flyby mission to the moon in more than 50 years, could happen as soon as 1 April.
 
 “We are on track for a launch as early as April 1, and we are working toward that date,” Lori Glaze, a senior Nasa official, told a press conference on Thursday. Technical difficulties delayed a launch originally expected in February.
 
  Continue reading...])],
-    [#brief-item([Deadspin], source-name: [Deadspin], [Michigan, UConn and Purdue emerge as the most dangerous teams in the Elite Eight. Full March Madness breakdown and analysis.])],
-    [#brief-item([New Scientist], source-name: [New Scientist], [Are we evolving to be more stupid? Humans have a relatively high genetic mutation rate, which has been thought to be driving down our physical and mental fitness – but columnist Michael Le Page finds these mutations aren’t the health risk some make them out to be])],
-    [#brief-item([Hannah Shaw-Williams], source-name: [/Film], [Project Hail Mary author Andy Weir says Paramount rejected his pitch for a Star Trek show, and has some harsh words for modern Trek.])],
-    [#brief-item([New Scientist], source-name: [New Scientist], [We know that a person’s outlook can have a huge effect on their health, and it’s no different when it comes to ageing. Columnist Graham Lawton looks at new evidence of just how powerful our attitude is – and how to use it to age better])],
-    [#brief-item([Katherine Kornei], source-name: [NYT Science], [A handful of Pele’s hair, extremely thin strands of volcanic glass are named for Pele, a female figure in Hawaiian mythology associated with volcanism, after an eruption of Kilauea volcano in Hawaii last March.])],
-    [#brief-item([Deadspin], source-name: [Deadspin], [The Colorado Rockies and Marlins both have reasons for optimism ahead of their rematch on Saturday afternoon in Miami.,The Marlins obviously are feeli])],
-    [#brief-item([Scientific American], source-name: [Scientific American], [Decades of data have suggested the universe is flat, much like an infinite plane. But a new analysis reveals deep flaws in that simple conclusion])],
-    [#brief-item([Deadspin], source-name: [Deadspin], [Don't be surprised if the "Ballad of Chase DeLauter" hits the airwaves by next weekend.,It's happened in Cleveland before, after all.,DeLauter etched])],
-    [#brief-item([Catrin Einhorn], source-name: [NYT Science], [The episode, involving a group of sperm whales, adds to evidence that humans aren’t the only species that gets some form of assistance during and after delivery.])],
-    [#brief-item([New Scientist], source-name: [New Scientist], [As the science fiction author publishes the latest novel in his Children of Time series, Children of Strife, he talks to Alison Flood about mantis shrimp, the pleasures of sci-fi and why empathy is so important in his writing])],
-    [#brief-item([Deadspin], source-name: [Deadspin], [Sarah Strong scored 21 points and Blanca Quinonez added 20 off the bench as top-seeded UConn handled its business with a 70-52 in over No. 6-seed Notr])],
-    [#brief-item([Scientific American], source-name: [Scientific American], [Climate scientist Kate Marvel talked to Scientific American about her decision to leave NASA amid federal government turmoil and funding challenges])],
-    [#brief-item([New Scientist], source-name: [New Scientist], [Photographer Jonas Kako travelled to Greenland to explore how mining for the rare earth elements and minerals that are vital for new green technologies is impacting locals])],
-    [#brief-item([Deadspin], source-name: [Deadspin], [The two bottom feeders in the NHL's weakest division meet on Saturday when the Calgary Flames play host to the Vancouver Canucks.,Despite their status])],
-    [#brief-item([Deadspin], source-name: [Deadspin], [Ashlon Jackson's rim-circling 3-pointer as time expired gave third-seeded Duke an 87-85 win over second-seeded LSU in a roller-coaster Sweet 16 matchu])],
-  ))
-}
+  [#brief-item([Deadspin], source-name: [Deadspin], [Michigan, UConn and Purdue emerge as the most dangerous teams in the Elite Eight. Full March Madness breakdown and analysis.])],
+  [#brief-item([New Scientist], source-name: [New Scientist], [Are we evolving to be more stupid? Humans have a relatively high genetic mutation rate, which has been thought to be driving down our physical and mental fitness – but columnist Michael Le Page finds these mutations aren’t the health risk some make them out to be])],
+  [#brief-item([Hannah Shaw-Williams], source-name: [/Film], [Project Hail Mary author Andy Weir says Paramount rejected his pitch for a Star Trek show, and has some harsh words for modern Trek.])],
+  [#brief-item([New Scientist], source-name: [New Scientist], [We know that a person’s outlook can have a huge effect on their health, and it’s no different when it comes to ageing. Columnist Graham Lawton looks at new evidence of just how powerful our attitude is – and how to use it to age better])],
+  [#brief-item([Katherine Kornei], source-name: [NYT Science], [A handful of Pele’s hair, extremely thin strands of volcanic glass are named for Pele, a female figure in Hawaiian mythology associated with volcanism, after an eruption of Kilauea volcano in Hawaii last March.])],
+  [#brief-item([Deadspin], source-name: [Deadspin], [The Colorado Rockies and Marlins both have reasons for optimism ahead of their rematch on Saturday afternoon in Miami.,The Marlins obviously are feeli])],
+  [#brief-item([Scientific American], source-name: [Scientific American], [Decades of data have suggested the universe is flat, much like an infinite plane. But a new analysis reveals deep flaws in that simple conclusion])],
+  [#brief-item([Deadspin], source-name: [Deadspin], [Don't be surprised if the "Ballad of Chase DeLauter" hits the airwaves by next weekend.,It's happened in Cleveland before, after all.,DeLauter etched])],
+  [#brief-item([Catrin Einhorn], source-name: [NYT Science], [The episode, involving a group of sperm whales, adds to evidence that humans aren’t the only species that gets some form of assistance during and after delivery.])],
+  [#brief-item([New Scientist], source-name: [New Scientist], [As the science fiction author publishes the latest novel in his Children of Time series, Children of Strife, he talks to Alison Flood about mantis shrimp, the pleasures of sci-fi and why empathy is so important in his writing])],
+  [#brief-item([Deadspin], source-name: [Deadspin], [Sarah Strong scored 21 points and Blanca Quinonez added 20 off the bench as top-seeded UConn handled its business with a 70-52 in over No. 6-seed Notr])],
+  [#brief-item([Scientific American], source-name: [Scientific American], [Climate scientist Kate Marvel talked to Scientific American about her decision to leave NASA amid federal government turmoil and funding challenges])],
+  [#brief-item([New Scientist], source-name: [New Scientist], [Photographer Jonas Kako travelled to Greenland to explore how mining for the rare earth elements and minerals that are vital for new green technologies is impacting locals])],
+  [#brief-item([Deadspin], source-name: [Deadspin], [The two bottom feeders in the NHL's weakest division meet on Saturday when the Calgary Flames play host to the Vancouver Canucks.,Despite their status])],
+  [#brief-item([Deadspin], source-name: [Deadspin], [Ashlon Jackson's rim-circling 3-pointer as time expired gave third-seeded Duke an 87-85 win over second-seeded LSU in a roller-coaster Sweet 16 matchu])],
+))
 
 #colophon([The Swift Review], [Vol. 1, No. 012], [2026-03-30])

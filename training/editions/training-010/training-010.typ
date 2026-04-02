@@ -21,68 +21,8 @@
 #masthead([Quiet Tribune], [Vol. 1, No. 010], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [How to use GasBuddy to beat rising fuel prices],
-  kicker: [Cover Story],
-  author: [Rachel Craft and Andrew Kunesh],
-  source-name: [The Points Guy],
-  deck: [class="rssBody"\>
-
-The conflict in the Middle East has sparked a surge in fuel prices , meaning both daily commutes and summer road trips are getting more expensive.],
-  lead-pre: [],
-  lead-cap: [c],
-  lead-rest: [lass="rssBody"\>],
-  body-paragraphs: (
-  [The conflict in the Middle East has sparked a surge in fuel prices , meaning both daily commutes and summer road trips are getting more expensive.],
-  [Thankfully, you can save money on gas by enrolling in loyalty programs offered by major gas companies. That said, your favorite chain may not have the best prices, even with loyalty discounts — or it may not have stations along your road trip route. That's where GasBuddy comes in.],
-  [GasBuddy is an app that helps find the cheapest gas near you. Even better, the program's Pay with GasBuddy+ feature can save you more than 20 cents per gallon. Read on to learn everything you need to know about saving money on gas with GasBuddy.],
-  [Related: 7 tips to get the most out of a tank of gas],
-  [The GasBuddy app shows prices at all stations nearby to help you find the best deal on gas. Just download the mobile app and let it see your current location. You can filter by which fuel type you'd like to buy and how far you're willing to drive for gas.],
-  [GASBUDDY],
-  [There's also a map view.],
-  [GASBUDDY],
-  [Tap on a gas station to see its pricing for each type of gas. GasBuddy relies on crowdsourcing for pricing data, so prices may not always be accurate. However, we've found that most stations are updated at least once per day; you can see the last update time below the price.],
-  [GASBUDDY],
-  [GasBuddy will also alert you to flash deals, which you can activate in the app. Some of these require having a membership with the gas station, like this one through Fuel Rewards.],
-  [GASBUDDY],
-  [GasBuddy can save you money on regular fill-ups, but it's especially useful during long road trips when you need to fill up in unfamiliar locales.],
-  [Related: Route 66 road trip planner: The best stops along the way],
-  [When you enroll in Pay with GasBuddy+ and link a bank account, you'll receive a free card in the mail that you can use to pay at the pump anywhere Mastercard is accepted. Transactions will be charged to your linked bank account, and any available discounts will automatically be applied.],
-  [GASBUDDY],
-  [There are two types of membership. The Standard plan is free to join and guarantees savings of at least 3 cents per gallon, though you may save up to 25 cents per gallon depending on where you fill up. You can save even more with a Premium plan — more on that in a moment.],
-  [GASBUDDY],
-  [Here are some tips to help maximize Pay with GasBuddy+.],
-  [Enroll in a Premium membership if you drive a lot],
-  [The Premium option, which costs \$9.99 a month or \$99 a year, promises savings of at least 20 cents per gallon (on the first 50 gallons monthly, then 5 cents per gallon). Furthermore, Premium members have access to 24-hour roadside assistance from Allstate (twice per year).],
-  [It may be worth paying for a Premium membership if you know you're going to drive a lot in a given month. Do the math beforehand to ensure you'll get enough value to offset the fee.],
-  [Stack with gas loyalty programs],
-  [One of the best features of Pay with GasBuddy+ is that you can stack it with other fuel rewards programs.],
-  [For example, you can still enter your Fuel Rewards number at the pump when you use your Pay with GasBuddy+ account. Fuel Rewards Platinum members save 10 cents per gallon at Shell stations, meaning GasBuddy Premium members can theoretically save over 30 cents per gallon at some gas stations.],
-  [Related: How to maximize savings with a Shell credit card],
-  [Stack with GasBuddy Rewards],
-  [Another part of the app, GasBuddy Rewards, lets you earn points by taking surveys, playing games, watching videos, dining out, snapping receipts and more.],
-  [GASBUDDY],
-  [You can redeem points for digital gift cards or, if you have a Pay with GasBuddy+ membership, redeem them toward additional savings on gas. Two thousand points equate to 10 cents off per gallon, and the savings will automatically apply to your next fill-up.],
-  [GASBUDDY],
-  [Related: Best road trips in the US],
-  [ISSARAWAT TATTONG/GETTY IMAGES],
-  [One downside to Pay with GasBuddy+ is that you must pay with your GasBuddy card, which essentially works like a debit card, so you'll miss out on any credit card rewards. However, depending on which cards you have in your wallet and the savings you can get through GasBuddy, it might make sense to choose GasBuddy.],
-  [For instance, the Citi Strata℠ Card (see rates and fees ) earns 3 ThankYou Rewards points per dollar spent on gas purchases. Since Citi points are worth 1.9 cents apiece in our March 2026 valuations , that's a return of 5.7%. If you find a station where GasBuddy offers 6 cents or more off, paying with your GasBuddy card makes more sense.],
-  [You might consider keeping your GasBuddy card in your wallet alongside one of our top-earning credit cards for gas purchases . Then, every time you fill up, you can do the math to see which offers the best return.],
-  [Related: Best credit cards for gas purchases],
-  [GasBuddy is a great way to save on fuel, especially when prices spike. Download it and request a Pay with GasBuddy+ card before your next big road trip, and don't forget to stack it with other fuel rewards programs. After all, every cent per gallon counts.],
-  [Editorial disclaimer: Opinions expressed here are the author’s alone, not those of any bank, credit card issuer, airline or hotel chain, and have not been reviewed, approved or otherwise endorsed by any of these entities.],
-),
-  edited-for-length: false,
-)
-
-#pull-quote([Furthermore, Premium members have access to 24-hour roadside assistance from Allstate (twice per year).], [Rachel Craft and Andrew Kunesh])
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [SARATOGA FAMILY, The Ultimate Holiday Gift for Your Family: A VACATION!!],
   author: [Anne Gordon],
   source-name: [Live Life Travel],
@@ -108,7 +48,7 @@ The conflict in the Middle East has sparked a surge in fuel prices , meaning bot
   [OUR \#1 FAMILY TRAVEL RECOMMENDATION: GLOBAL CITIZENS WANTED],
   [ME to WE – A new travel partner to our Virtuoso family, this company is one of our very favorites. We would encourage you all to please check out their video on our Facebook and Instagram pages. If you want to make a difference in the world, if you want to make an impact with your children, if you want to create lifelong memories and a feeling that will never fade away, then ME to WE is what you are looking for. Travel itineraries currently include Ecuador, Kenya and India. Contact us to learn more!],
   [52% of Americans do not take all their PAID vacation time.],
-  [style="text-align: left;"\>Please do not become or stay part of this statistic— Vacations are healthy, not only for you physically and mentally, but emotionally for your family, especially for kids. Life is short, make the most of it!],
+  [Please do not become or stay part of this statistic— Vacations are healthy, not only for you physically and mentally, but emotionally for your family, especially for kids. Life is short, make the most of it!],
   [The post SARATOGA FAMILY, The Ultimate Holiday Gift for Your Family: A VACATION!! appeared first on Live Life Travel .],
 ),
   insert-map: (:),
@@ -117,10 +57,8 @@ The conflict in the Middle East has sparked a surge in fuel prices , meaning bot
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Feel-good Lunch Ideas],
   author: [Heidi Swanson],
   source-name: [101 Cookbooks],
@@ -157,6 +95,7 @@ The conflict in the Middle East has sparked a surge in fuel prices , meaning bot
  
 I hope this provides a bit of inspiration! It’s really wonderful to take a bit of time to sit down to a thoughtfully prepared, healthful homemade lunch and I’m never sorry about making the extra effort (in the long run). Even if it can make a morning a bit more demanding than usual, I know when I do it, I’ll eat better, feel better, and get excited about sitting down to lunch. Enjoy! -h],
   [Vegetarian Lunch Ideas : One Sauce, Three Lunches],
+  [10 Lunch Ideas that Spark Joy],
   [Continue reading Feel-good Lunch Ideas on 101 Cookbooks],
 ),
   insert-map: (:),
@@ -165,15 +104,16 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Ballsfest and Live Life Travel partner],
   author: [Anne Gordon],
   source-name: [Live Life Travel],
   images: (),
   paragraphs: (
+  [Ballsfest and Live Life Travel Partner],
+  [Making Family Vacations a Priority for Those Who Need it the Most!],
+  [Download a PDF of the article here.],
   [From the moment a parent hears the words “Your child has cancer,” their lives are forever changed. Life as they knew it quickly turns into a world of unknowns, worry, and fear, and strikes a stifling blow as the saying “Life can change in an instant” becomes a reality. A cancer diagnosis takes a tremendous toll on a family, emotionally, socially, physically, and financially. This is where the nonprofit Ballsfest comes into play. With their mission to lift the spirits of children, teens, and families battling childhood cancer, they strive to provide unique gifts and experiences, as well as year-round programs and services to help ease the stress and strain felt by families.],
   [Recognizing the importance of remaining positive, enjoying the moment, and creating memories, Ballsfest has provided families with unique travel experiences to do just that. We have found a partner who genuinely shares all of these same motivations with a mission that is stated clearly within the company’s name, one that she lives by herself and encourages others to as well, Live Life Travel . While already focusing on family travel locally in Saratoga Springs, NY, the partnership was a perfect fit.],
   [Anne Gordon, owner of Live Life Travel, LLC stated that “It is my belief that all families should prioritize time together, live life to the fullest, and spend as much time as possible creating family memories (while also unplugging). Having the chance to see the pictures of Evan and his family and how happy they were, (Evan’s Universal trip in January 2019 was the partnerships first collaboration together) is exactly why I love my job so much. Seeing Evan’s smile on a trip that I had the privilege of planning was just an incredible feeling of joy and I am really looking forward to creating more of that joy as our partnership moves forward with Ballsfest .”],
@@ -189,50 +129,63 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
   debug-mode: false,
 )
 
-  #pull-quote([While working to cure the disease, it is so important to heal the heart and spirit as well.], [Anne Gordon])
+#pull-quote([While working to cure the disease, it is so important to heal the heart and spirit as well.], [Anne Gordon])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [4 Honeymoons and an Anniversary],
   author: [Anne Gordon],
   source-name: [Live Life Travel],
   images: (),
   paragraphs: (
-  [class="p1"\> I t’s likely around the time when most of you are starting to think about your honeymoon. And while there is no right answer for everyone in terms of when to plan, we do have some general guidelines that we can share with you based on our professional experience:],
-  [class="p1"\>The sweet spot to have your honeymoon planned is roughly 9 months before your wedding (the exception to this rule is that places such as the Amalfi Coast and The Greek Islands can be planned even earlier given the short season, high demand and limited availability).],
-  [class="p1"\>If you are looking to book Sandals, they open their inventory 2 years before check-in date (vs. 1 year for most hotel inventory) and we recommend that you book as early as possible with your preferred agent as there are only benefits to doing so.],
-  [class="p1"\>If you are not sure where you want to travel for your honeymoon yet, you are not alone. Eighty-five to ninety percent of the couples we meet say the same thing and this is something that we specialize in, so no reason to worry or stress. We really do take care of everything.],
-  [class="p1"\>To help inspire all of you who are just starting to think about your honeymoon (or any other type of celebration travel), we would like to share with you ‘4 Honeymoons and a 20th Anniversary’ from 2019, along with their personal travel planning tips.],
+  [I t’s likely around the time when most of you are starting to think about your honeymoon. And while there is no right answer for everyone in terms of when to plan, we do have some general guidelines that we can share with you based on our professional experience:],
+  [The sweet spot to have your honeymoon planned is roughly 9 months before your wedding (the exception to this rule is that places such as the Amalfi Coast and The Greek Islands can be planned even earlier given the short season, high demand and limited availability).],
+  [If you are looking to book Sandals, they open their inventory 2 years before check-in date (vs. 1 year for most hotel inventory) and we recommend that you book as early as possible with your preferred agent as there are only benefits to doing so.],
+  [If you are not sure where you want to travel for your honeymoon yet, you are not alone. Eighty-five to ninety percent of the couples we meet say the same thing and this is something that we specialize in, so no reason to worry or stress. We really do take care of everything.],
+  [To help inspire all of you who are just starting to think about your honeymoon (or any other type of celebration travel), we would like to share with you ‘4 Honeymoons and a 20th Anniversary’ from 2019, along with their personal travel planning tips.],
+  [Nicolle & Brian],
+  [Africa Honeymoon Itinerary Highlights:],
   [Cape Town – 3 nights – Cape Point, Penguin Colony, Table Mountain],
   [Zambia – 3 nights – Victoria Falls, Elephant Café, Walking with Cheetahs, Sunset River Cruise, Private Dinner],
   [Kruger Park Safari – 4 nights – Mjejane River Lodge],
   [Johannesburg – 2 nights – Local Museums & Restaurants],
+  [Honeymoon Travel Planning Tips:],
   [Even if you prefer to book your own travel, use a travel advisor for your honeymoon to make everything stress-free & super organized, as well as adding those special touches],
   [Be willing to try new things while you are in destination including experiencing the local culture and food],
   [Don’t be afraid to travel during the low season to take advantage of lower prices, more exclusive experiences and fewer crowds],
+  [John & Becky],
+  [Thailand Honeymoon Itinerary Highlights:],
   [Bangkok – 2 nights – Floating Markets, Street Food Tour],
   [Chiang Mai – 3 nights – Elephant Sanctuary, Night Market Tour, Visit to Wat Phrathat Doi Suthep Temple],
   [Koh Samui – 6 nights – Big Buddha, Angthong National Marine Park],
   [Singapore – 1 day – Gardens by the Bay, Cloud Forest, Bumboat River Cruise],
+  [Honeymoon Travel Planning Tips:],
   [Don’t be afraid to go big for your honeymoon; it’s a once in a lifetime experience, so make it count],
   [Don’t settle for the first travel advisor that you use if they are not for you; we tried several before we found Anne],
   [Always choose the “crazy” option – We opted for an extended layover in Singapore for the way home and ended up having an incredible experience that we would had completely missed if we had planned this on our own],
+  [Dan & Amanda],
+  [Riviera Maya Honeymoon Itinerary Highlights:],
   [7 nights in an Over-The-Water Villa at The Rosewood Mayakoba],
   [Inclusive of an Adults-Only Beach Club with Pool and Taco Truck, Bicycles for the week, Private Plunge Pool and Hammock, Daily Breakfast and Private Boat Ride],
+  [Honeymoon Travel Planning Tips:],
   [Choose a place that you love so much that you can return for anniversaries and other celebration travel including family travel],
   [Listen to the locals; We had the best tostadas of our entire life based on a recommendation of our driver in the village of El Publeto],
   [Be sure that your resort has a specified “Adults Only” section if it is a family resort; our favorite spot was the private beach club and adults only pool where the staff was impeccable],
+  [Lynsey & Andrew],
+  [Sicily Honeymoon Itinerary Highlights:],
   [2 nights – Vineyard on Mt. Etna – Private Mt. Etna Summit Jeep Experience, Private Cooking Class with Wine Tasting],
   [6 nights – Taormina – Evening Walking Tour with Culinary Experience, Pizza Making, Private Yacht Experience with Grotto Tours],
+  [Honeymoon Travel Planning Tips:],
   [Whatever you do, DON’T skip your honeymoon],
   [Using a travel advisor is a MUST – All we had to do was show up and we were treated like celebrities the entire time, everything was perfect!],
   [Don’t overthink about anything, just enjoy it all. Sicily was perfect for us and even Andrew, who has never liked wine, acquired a taste for it there (we especially loved the Etna Rosso)],
+  [Mike & Becky],
+  [Amalfi Coast 20th Anniversary Itinerary Highlights:],
   [3 nights – Rome – Colosseum Tour, Vatican with Sistine Chapel Tour],
   [1 night – Naples – Archeological Museum with Authentic Pizza Dinner],
   [3 nights – Sorrento – Private tour of Pompeii & Herculaneum, Lunch & Wine Tasting at Vineyard on Mt. Vesuvius, Lemon Farm Tour, Lunch & Shopping in Positano],
   [3 nights – Ravello – Anniversary Dinner at Belmond Hotel Caruso],
+  [Anniversary Travel Planning Tips:],
   [Having 24/7 in-destination contacts while traveling provided us with a peace of mind that we did not realize was available to us],
   [Go to Ravello on the Amalfi Coast; it was unbelievably beautiful, so laid back and relaxing and we felt so welcome there by the locals],
   [Make time to travel together for milestone anniversaries; It was the trip of a lifetime and we are so happy that we did it],
@@ -245,10 +198,8 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Oven Roasted Potatoes],
   author: [Jess Rice],
   source-name: [Budget Bytes],
@@ -264,11 +215,37 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
   [Give them enough time to fully roast. At 425°F, roasted potatoes usually take about 40 minutes in the oven, with a flip halfway through, to get nicely browned and crisp. They’re ready when the edges look deeply golden and the outside feels crisp. Keep an eye on them just in case your oven runs a little hotter than mine!],
   [Print 
  Add to Collection Go to Collections],
-  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\>Once the water returns to a boil, parboil the potatoes for 8 minutes and strain. They will be fork tender (but not falling apart completely) and very textured at this point which is perfect! This flakey outside part of the potato results in the very best crust when roasting.],
+  [These Oven Roasted Potatoes are an easy side made with russet potatoes, a quick parboil, and simple seasonings for deeply golden edges and fluffy centers.],
+  [Total Cost \$1.75 recipe \/ \$0.43 serving],
+  [Prep Time 15 minutes minutes],
+  [Cook Time 48 minutes minutes],
+  [Total Time 1 hour hour 3 minutes minutes],
+  [Servings 4 servings],
+  [Calories 274 kcal],
+  [2 lbs. russet potatoes about 4 large potatoes, \$0.99\*],
+  [1 Tbsp salt \$0.01],
+  [2 quarts water 8 cups, \$0.00],
+  [½ tsp baking soda \$0.01],
+  [3 Tbsp olive oil \$0.54],
+  [1 tsp salt divided, \$0.01],
+  [¼ tsp black pepper ground, \$0.01],
+  [½ tsp garlic powder \$0.02\*\*],
+  [½ Tbsp fresh parsley minced, \$0.16],
+  [Gather ingredients. Preheat oven to 425℉.],
+  [Peel and cut potatoes into large pieces, between 1 and 2 inches.],
+  [Add 1 Tbsp salt to 2 quarts of water and bring it to a rolling boil.],
+  [While you’re waiting, mince the parsley.],
+  [Once the water is boiling, add the potatoes and baking soda. Let the water return to a boil.],
+  [Once the water returns to a boil, parboil the potatoes for 8 minutes and strain. They will be fork tender (but not falling apart completely) and very textured at this point which is perfect! This flakey outside part of the potato results in the very best crust when roasting.],
+  [Gently toss the strained potatoes with olive oil, ½ tsp salt, pepper, and garlic powder.],
+  [Transfer the seasoned parboiled potatoes to a parchment-lined baking sheet and bake for 20 minutes.],
+  [After 20 minutes, flip all of the potatoes and bake for an additional 20 minutes.],
+  [Remove from oven, sprinkle with ½ tsp salt and parsley.],
   [See how we calculate recipe costs here .],
-  [class="wprm-recipe-notes"\> \*I like russet potatoes best for roasting because of the cost and how their low moisture, high starch content helps them crisp up in the oven. You can, of course, roast any potato you like with this method! Just note waxier varieties like Yukon Gold or red potatoes won’t usually get quite as crisp.],
+  [\*I like russet potatoes best for roasting because of the cost and how their low moisture, high starch content helps them crisp up in the oven. You can, of course, roast any potato you like with this method! Just note waxier varieties like Yukon Gold or red potatoes won’t usually get quite as crisp.],
   [\*\*Feel free to season these potatoes however you like. Add in smoked paprika , poultry seasoning , onion powder , dried herbs , or just use salt and pepper !],
-  [class="wprm-nutrition-label-container wprm-nutrition-label-container-simple wprm-block-text-normal" style="text-align: left;"\> Serving: 1 serving | Calories: 274 kcal | Carbohydrates: 41 g | Protein: 5 g | Fat: 11 g | Sodium: 2498 mg | Fiber: 3 g],
+  [Serving: 1 serving | Calories: 274 kcal | Carbohydrates: 41 g | Protein: 5 g | Fat: 11 g | Sodium: 2498 mg | Fiber: 3 g],
+  [how to make Oven Roasted Potatoes Step-by-Step Photos],
   [Gather all of your ingredients and preheat the oven to 425°F.],
   [Prep the potatoes: Peel the 2 pounds russet potatoes, then cut them into large 1 to 2-inch chunks.],
   [Heat the water: In a large pot, bring 2 quarts water (8 cups) and 1 Tbsp salt to a rolling boil.],
@@ -281,8 +258,10 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
   [Remove the potatoes from the oven.],
   [Season and serve: Finish with the remaining ½ tsp salt and the minced parsley before serving. Enjoy!],
   [These easy oven roasted potatoes go with just about everything! Serve them with baked ham during the holidays, roasted chicken for an easy family dinner, or my lentil loaf for a hearty meat-free option. Add a few of your favorite sides, and you’ve got an easy and well rounded meal. The leftovers are also delicious chopped up and added to the filling for a veggie pot pie !],
+  [Storage & Reheating],
   [I prefer these roasted potatoes when served fresh, but leftovers will keep in an airtight container in the fridge for 3-4 days. Reheat them in a 375°F oven or air fryer until heated through and crisp again.],
   [They can also be frozen for up to 3 months, but the texture of the potatoes may change after freezing and reheating. If you want to freeze this recipe, it’s best to parboil the potatoes, coat them in the oil and seasonings, then flash freeze them on a baking sheet. Once solid, transfer them to a freezer-safe container and then roast from frozen.],
+  [Love Roasted Potatoes? Try These Variations Next!],
   [Smoky Roasted Breakfast Potatoes are a hands-off, budget-friendly side with crispy edges, tender middles, and just enough smoky paprika flavor to make breakfast feel a little more special.],
   [These Parmesan Roasted Potatoes are golden, crisp, and seriously hard to stop snacking on!],
   [I’d make these Salt & Vinegar Potatoes anytime I want a potato side that feels a little different.],
@@ -299,10 +278,8 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Should you pay your rent or mortgage with Bilt? We crunch the numbers],
   author: [Katie Genter and Emily Thompson],
   source-name: [The Points Guy],
@@ -311,6 +288,7 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
   [One of the biggest monthly expenses for many consumers is their rent or mortgage payment. Some landlords and mortgage providers may accept credit card payments. But, since Bilt Rewards offers a fee-free way to pay most rent and mortgage payments and earn Bilt Points on your payments, it's worth considering.],
   [Not a member? Join Bilt Rewards now to start earning and redeeming Bilt points.],
   [Bilt points are a valuable currency based on TPG's February 2026 valuations . So here's what you need to know about earning Bilt points on rent and mortgage payments, including whether it's a good idea to do so.],
+  [How to earn Bilt points on housing payments without using a Bilt card],
   [You can earn Bilt points on rent and mortgage payments even if you don't have a Bilt card.],
   [Specifically, if you pay rent through Bilt with a non-Bilt Visa, Mastercard, American Express or Discover credit card, you'll usually earn 1 point per \$2 spent (excluding rent payment fees).],
   [However, if you pay your rent through Bilt using an eligible Atmos Rewards card , you'll earn 3 Atmos Rewards points per dollar spent on each rent payment (on up to \$50,000 per year). And if you pay your rent through Bilt using an eligible United MileagePlus card , you'll earn 2 United Airlines miles per dollar spent on each rent payment (on up to \$50,000 per year).],
@@ -319,6 +297,7 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
   [Meanwhile, if you pay your mortgage through Bilt without using a Bilt card, you'll earn 100 points per contractual mortgage payment made via automated clearing house transfer, 250 points per payment made with a debit card and 1 point per \$2 spent per payment with a non-Bilt Mastercard (excluding mortgage payment fees).],
   [Non-Bilt cards incur a 3% processing fee, though, while debit card payments incur a flat \$9.95 fee.],
   [Related: New Bilt 2.0 cards have arrived: How you can earn points on rent, mortgages and more],
+  [Using a Bilt card to earn points on housing payments],
   [Luckily, you can earn more points on housing payments and avoid fees by using a Bilt card.],
   [If you have the Bilt Blue Card (see rates and fees ), Bilt Obsidian Card (see rates and fees ) or Bilt Palladium Card (see rates and fees ), you'll earn Bilt points on nonhousing purchases with your card.],
   [BILT],
@@ -338,6 +317,7 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
   [At least 100%: 1.25 points per dollar spent on Bilt housing payments],
   [So, if your monthly housing payment is \$1,000, you'd need to spend at least \$1,000 per month in nonhousing expenses on your Bilt card to earn 1.25 points per dollar spent on your Bilt housing payment (which would be 1,250 points). Meanwhile, if you spent at least \$750 but less than \$1,000 per month, you'd earn 1 point per dollar spent on your Bilt housing payment (1,000 points). Of course, the amount you'd need to spend on nonhousing expenses changes depending on your monthly housing payment.],
   [Related: I earned points paying my mortgage via Bilt — how to set up your account to do the same],
+  [Should you choose Bilt Cash or housing-only rewards?],
   [The calculation of whether to choose Bilt Cash or housing-only rewards is based on your monthly housing payment, how you'll redeem Bilt Cash and how much you spend on nonhousing purchases with your Bilt card.],
   [I highly recommend using our Bilt Calculator to see what's best for you. But, if you prefer, you can also check out the following scenarios to see how the math plays out. In each scenario, we focus on monthly nonhousing spending amounts around the thresholds for housing-only rewards, as this is where you can see the biggest differences.],
   [Monthly housing payment of \$500],
@@ -357,6 +337,7 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
   [Once you surpass the 50% threshold for the ratio of nonhousing spending to housing spending, you'll usually be better off earning Bilt Cash.],
   [Keep in mind that the calculation also depends on whether you'll redeem Bilt Cash to unlock points on housing payments. After all, while TPG's February 2026 valuations peg the value of Bilt points at 2.2 cents each, you can only unlock Bilt points on housing payments by redeeming Bilt Cash at a rate of 3 cents per point.],
   [Related: How good are Bilt's first-ever welcome offers? Earn up to 50,000 points],
+  [Should you pay your rent or mortgage with Bilt?],
   [If you have monthly rent or mortgage payments, it may make sense to get a Bilt card and use it to pay your rent or mortgage. After all, you don't have to pay transaction fees on housing payments when you have one of the three Bilt cards and you let Bilt debit the rent or mortgage charges from your bank account via an automated clearing house transfer. Plus, you can earn Bilt points on your housing payments.],
   [Alternatively, if you have an eligible Atmos Rewards card, you may want to use it when paying rent through Bilt as you'll earn 3 Atmos Rewards points per dollar spent on each rent payment (on up to \$50,000 per year). You'll have to pay a 3% transaction fee, but this fee may be worth paying if you get good value when redeeming Atmos Rewards points.],
   [In short, consider your other options for paying your rent or mortgage and assess how much value you'll get from each pathway in the Bilt Rewards program. Especially considering that the no-annual-fee Bilt Blue Card (see rates and fees ) unlocks the ability to pay rent or mortgages through Bilt with no transaction fees, it may be your best path toward earning rewards on housing payments.],
@@ -372,28 +353,29 @@ I hope this provides a bit of inspiration! It’s really wonderful to take a bit
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Red Gomashio],
   author: [Heidi Swanson],
   source-name: [101 Cookbooks],
   images: (),
   paragraphs: (
   [Gomashio is a simple Japanese seasoning made from toasted sesame seeds and salt. It adds crunch, nuttiness, and added nutrients from the sesame seeds. A few years ago I started making a red version and it quickly became a kitchen staple. Dense with sesame, dynamic with chile powder and smoked paprika, the wildcard ingredient is green cardamom. Fragrant cardamom seeds are ground with mortar and pestle along with some of the sesame and the resulting blend of spices really sings – especially when it hits something hot. And while not at all traditional, you can use it in many of the same ways you might use a more traditional version of goma (sesame) shio (salt).],
-  [class="p1"\> Cardamom : Your cardamom seeds should be fragrant when crushed. You can buy cardamom in different forms – whole cardamom pods, cardamom seeds, ground cardamom seeds. For this recipe you want to start with pods or whole seeds. If you buy the seeds, it’s a bit of a shortcut and you can simply pounds them in a mortar and pestle, or grind them in a clean pepper grinder. If you start with seeds you’ll need about 1/4 teaspoon for this recipe.
+  [Red Gomashio: Ingredients],
+  [Cardamom : Your cardamom seeds should be fragrant when crushed. You can buy cardamom in different forms – whole cardamom pods, cardamom seeds, ground cardamom seeds. For this recipe you want to start with pods or whole seeds. If you buy the seeds, it’s a bit of a shortcut and you can simply pounds them in a mortar and pestle, or grind them in a clean pepper grinder. If you start with seeds you’ll need about 1/4 teaspoon for this recipe.
  
 My friend Wendy gifted me a few beautiful glass jars of spices last week (her calligraphy!), and looking at the cardamom I took it as a sign to make a fresh round of red gomashio.],
-  [class="p1"\> Sesame Seeds : I typically keep unhulled sesame seeds on hand, and that’s what I use here. Fresher is better. You want to keep sesame seeds in an airtight container, out of direct light, preferably refrigerated if you don’t go through them quickly.],
-  [class="p1"\> Onion : I prefer to use dried onion flakes here, but they can be tricky to find. Onion powder does the job as well, and is available in most stores. That said, if you plan ahead, one of my favorite ingredient discoveries lately is the toasted onion powder from Burlap & Barrel (not sponsored, just a fan). It’s good in place of the dried onion flakes here.],
-  [class="p1"\> Salt : I like to use flaky sea salt here, you can kind of crush it with your fingers into small, irregular shapes that are nice. Alternately, pink Himalayan sea salt pounded a bit with a mortar and pestle is a nice alternative.],
-  [class="p1"\> Chile powder : I like to use Kashmiri chile powder here. It has a vibrant spiciness, fruity notes, and for the electric color (!) it brings. If you want to use another chile powder, add it gradually as your final ingredient, adding more until the overall blend is to your liking.],
-  [class="p1"\>This is a wildly adaptable seasoning. I love it sprinkled over labneh and drizzled with a finishing extra virgin olive oil. It’s good sprinkled over homemade pasta tossed with a generous amount of butter or olive oil, some Parmesan, and whatever fresh herbs you have on hand. It’s A-plus on a baked potato (or mashed potatoes omg). Or sprinkled across a plate of hard-boiled eggs . Basically it’s an easy way to make everyday staples a bit special. You see it sprinkled above on onigirazu, it’s equally at home on rice bowls, onigiri, and soba bowls. I also love to sprinkle it all over guacamole before serving. I could go on and on, basically keep it on your counter and use it constantly.],
+  [Sesame Seeds : I typically keep unhulled sesame seeds on hand, and that’s what I use here. Fresher is better. You want to keep sesame seeds in an airtight container, out of direct light, preferably refrigerated if you don’t go through them quickly.],
+  [Onion : I prefer to use dried onion flakes here, but they can be tricky to find. Onion powder does the job as well, and is available in most stores. That said, if you plan ahead, one of my favorite ingredient discoveries lately is the toasted onion powder from Burlap & Barrel (not sponsored, just a fan). It’s good in place of the dried onion flakes here.],
+  [Salt : I like to use flaky sea salt here, you can kind of crush it with your fingers into small, irregular shapes that are nice. Alternately, pink Himalayan sea salt pounded a bit with a mortar and pestle is a nice alternative.],
+  [Chile powder : I like to use Kashmiri chile powder here. It has a vibrant spiciness, fruity notes, and for the electric color (!) it brings. If you want to use another chile powder, add it gradually as your final ingredient, adding more until the overall blend is to your liking.],
+  [How To Use Red Gomashio],
+  [This is a wildly adaptable seasoning. I love it sprinkled over labneh and drizzled with a finishing extra virgin olive oil. It’s good sprinkled over homemade pasta tossed with a generous amount of butter or olive oil, some Parmesan, and whatever fresh herbs you have on hand. It’s A-plus on a baked potato (or mashed potatoes omg). Or sprinkled across a plate of hard-boiled eggs . Basically it’s an easy way to make everyday staples a bit special. You see it sprinkled above on onigirazu, it’s equally at home on rice bowls, onigiri, and soba bowls. I also love to sprinkle it all over guacamole before serving. I could go on and on, basically keep it on your counter and use it constantly.],
   [Here are a few process shots and visual cues in case you need them.],
   [Grind the cardamom : This is the texture you’re after when grinding the cardamom seeds. A bit of texture along with a fine grind. It’s the grind I go for when grinding black pepper.],
   [Grind some of the sesame seeds : If you have a suribachi , this would be the time to use it – I bought this one by Colleen Hennessey for Permanent Collection years ago and it’s one of my prized kitchen possessions. But a mortar and pestle works nicely as well (pictured). Then you add the rest of ingredients.],
   [Add the rest of the toasted sesame seeds : Stir in the rest of the seeds and then adjust the seasoning to your linking with more chile powder, brown sugar, salt, etc. Keep it on your counter and sprinkle with enthusiasm!],
+  [Za’atar],
   [Continue reading Red Gomashio on 101 Cookbooks],
 ),
   insert-map: (:),
@@ -402,28 +384,33 @@ My friend Wendy gifted me a few beautiful glass jars of spices last week (her ca
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Smoked Labneh],
   author: [Heidi Swanson],
   source-name: [101 Cookbooks],
   images: (),
   paragraphs: (
   [If you have a stovetop smoker, or a smoker donabe (ibushi gin), smoked labneh should be high on your list of things to make. Labneh is made simply by straining yogurt. The resulting consistency is rich, creamy and beautiful. Amazing on its own, you can also incorporate herbs, spices, or other ingredients. I know the number of you with a stovetop smoker is probably slim, but I love experimenting with mine, always trying to come up with more ways to use it, especially now that we have a gas range again. A long way of saying, if you want to play around with your smoker more, I see you. I use mine for all sorts of things – nuts, cheeses, tofu, vegetables, and on and on. So I’ll try to post more as I’m using it.],
-  [class="p1"\>Smoked labneh has been on my list of things to make for some time now. Late last year we made a few trips to San Francisco to make sure we were ready to make the move back from LA. I would walk through the Presidio to lunch at Dalida , in part, because I love their homemade pita situation – called Breaking Bread. The pita comes with a trio of spreads (hummus, muhammara, smoked yogurt), some pickles and olives. The smoked yogurt is a show-stopper – rich, creamy, luxe. The server wasn’t sure how it was prepared but I started thinking about how to approach it once I could get my smoker unpacked. I already make homemade labneh regularly, so it wouldn’t be too much of a jump. Flash forward, and I’ve made smoked labneh a number of times in the weeks since!],
-  [class="p1"\>I’ve been using a cold-smoke technique and it works nicely. It’s where you keep the yogurt cold but flood the area around it with smoke. Every smoker is slightly different, so you might need to tweak your approach, but this will give you the general idea of how to think about it. You can see in my diagram below how things are layered in the smoker. Starting at the bottom: a piece of foil, wood chips, the grate, a bowl of ice and some water, the shallow container of labneh, the lid eventually goes on above that.],
+  [Smoked Labneh: The Inspiration],
+  [Smoked labneh has been on my list of things to make for some time now. Late last year we made a few trips to San Francisco to make sure we were ready to make the move back from LA. I would walk through the Presidio to lunch at Dalida , in part, because I love their homemade pita situation – called Breaking Bread. The pita comes with a trio of spreads (hummus, muhammara, smoked yogurt), some pickles and olives. The smoked yogurt is a show-stopper – rich, creamy, luxe. The server wasn’t sure how it was prepared but I started thinking about how to approach it once I could get my smoker unpacked. I already make homemade labneh regularly, so it wouldn’t be too much of a jump. Flash forward, and I’ve made smoked labneh a number of times in the weeks since!],
+  [I’ve been using a cold-smoke technique and it works nicely. It’s where you keep the yogurt cold but flood the area around it with smoke. Every smoker is slightly different, so you might need to tweak your approach, but this will give you the general idea of how to think about it. You can see in my diagram below how things are layered in the smoker. Starting at the bottom: a piece of foil, wood chips, the grate, a bowl of ice and some water, the shallow container of labneh, the lid eventually goes on above that.],
   [You can see the aluminum foil sitting on the bottom of the smoker topped with wood chips. The foil makes for easy cleanup.],
   [Below, a stainless steel bowl of ice and some water sits on top of a grate, which keeps the bowl from having direct contact with heat or the wood chips. The labneh sits in the ice, keeping the yogurt cool through the smoking process.],
   [Alternate approach: There’s also a method for smoking Labneh in the NOPI cookbook , but I haven’t attempted it yet. The labneh is formed into a puck shape and placed on a piece of parchment paper inside the smoker – no ice. They also use different aromatics for smoking (oolong tea, caraway seeds, pink peppercorn, etc). I suspect the biggest difference would be texturally, with the parchment version losing more moisture and possibly taking on more flavor because more surface area is exposed? Excited to take this version for a spin as well.],
-  [class="p1"\>Every smoker has its own quirks and personalities. My advice here is to take good notes. You want a nice, round, balance of smoky notes. Aim for the sweet spot between too subtle and too strong acrid (yikes). Every time I use the smoker I make note of: what I’m smoking, what type of wood chips \/ herbs, etc., and how long. Then note how I would increase or decrease the time in the future. Good notes are key to getting a good working relationship with your smoker. Twenty minutes seems to be the sweet spot here for the labneh using applewood chips. A similar timeframe worked well for this smoked chocolate mousse .],
-  [class="p1"\>Here’s what my smoker looks like, I loooove it (not sponsored). If I didn’t have my Ibushi Gin (donabe smoker) another way to get smoky flavor into the labneh might be to use a smoked salt. I’d grind it finely with a mortar and pestle and go from there. I’ve never really liked liquid smoke, so that wouldn’t be my move, but that doesn’t mean you couldn’t experiment a bit as yet another approach. There could very well be better liquid smokes on the market compared to the last time I played around with it.],
+  [Video: How To Make Smoked Labneh],
+  [How Long Should I Smoke the Labneh?],
+  [Every smoker has its own quirks and personalities. My advice here is to take good notes. You want a nice, round, balance of smoky notes. Aim for the sweet spot between too subtle and too strong acrid (yikes). Every time I use the smoker I make note of: what I’m smoking, what type of wood chips \/ herbs, etc., and how long. Then note how I would increase or decrease the time in the future. Good notes are key to getting a good working relationship with your smoker. Twenty minutes seems to be the sweet spot here for the labneh using applewood chips. A similar timeframe worked well for this smoked chocolate mousse .],
+  [What if I don’t Have a Stovetop Smoker?],
+  [Here’s what my smoker looks like, I loooove it (not sponsored). If I didn’t have my Ibushi Gin (donabe smoker) another way to get smoky flavor into the labneh might be to use a smoked salt. I’d grind it finely with a mortar and pestle and go from there. I’ve never really liked liquid smoke, so that wouldn’t be my move, but that doesn’t mean you couldn’t experiment a bit as yet another approach. There could very well be better liquid smokes on the market compared to the last time I played around with it.],
+  [Smoked Labneh: Serving Ideas],
   [Drizzled with olive oil and sprinkled with red gomashio (pictured above), along with candied nuts with rose water, seeded flatbread, and assorted cookies.],
   [In place of the poblano yogurt in this mushroom tartine .],
   [In place of the ricotta on this roasted mushroom sandwich .],
   [In place of the green chile yogurt in this sourdough galette .],
   [Rolled into 1-inch balls, rolled in spices, herbs, and/or seeds, and kept, refrigerated, in a jar topped off with olive oil.],
+  [Mast-o-Khiar Yogurt],
+  [Fresh Mint Chip Frozen Yogurt],
   [More Ways to Use Stovetop Smoker],
   [Continue reading Smoked Labneh on 101 Cookbooks],
 ),
@@ -433,10 +420,8 @@ My friend Wendy gifted me a few beautiful glass jars of spices last week (her ca
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [UPDATE: TSA to pay officers 'immediately' as airport security lines mount],
   author: [Sean Cudahy],
   source-name: [The Points Guy],
@@ -454,6 +439,7 @@ My friend Wendy gifted me a few beautiful glass jars of spices last week (her ca
   [Airlines and leaders across the travel sector had praised the move when Trump first announced the plans Thursday evening.],
   [A security line reaches outside the terminal this week at Hartsfield-Jackson Atlanta International Airport (ATL). MEGAN VARNER/GETTY IMAGES],
   [In a statement to TPG Friday afternoon, a DHS spokesperson confirmed the department had already begun the process of paying its workforce.],
+  [Will TSA lines get back to normal?],
   [Still uncertain, though, is how quickly airport security checkpoints could return to normal wait times.],
   [One reason for optimism: After last fall's larger federal shutdown finally ended after 43 days, call-outs among air traffic controllers immediately lessened — and flight operations rapidly improved.],
   [Will TSA operations snap back to normal in the same way?],
@@ -467,6 +453,7 @@ My friend Wendy gifted me a few beautiful glass jars of spices last week (her ca
   [TSA app remains unreliable],
   [Also, keep in mind that the TSA's app, which typically shows live checkpoint wait times, will likely remain unreliable, since it's not updated regularly during a federal shutdown.],
   [Your best bet before heading to the airport: Continue checking your airport's website and social media feeds to see whether it offers a wait-time tracker of its own.],
+  [Bottom line],
   [Even beyond this federal shutdown — which, by the way, still technically isn't over — longer-term concerns remain at airports. Already, some 480 TSA officers have left their jobs since this latest partial federal shutdown began, acting TSA Administrator Ha Nguyen McNeill testified this week on Capitol Hill.],
   [And considering it takes months to train new hires, she noted this could pose a major problem ahead of one of the century's biggest sporting events in the U. S. this summer.],
   ["This is a dire situation," McNeill said. "We are facing a potential perfect storm of severe staffing shortages and an influx of millions of passengers at our airports for the World Cup games in less than 80 days."],
@@ -487,11 +474,10 @@ My friend Wendy gifted me a few beautiful glass jars of spices last week (her ca
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Crispy Chickpeas],
   author: [Heidi Swanson],
   source-name: [101 Cookbooks],
@@ -517,7 +503,7 @@ My friend Wendy gifted me a few beautiful glass jars of spices last week (her ca
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [∞ The Dalrymple Report: Ring, Olympics, Siri slips again],
   author: [Jim Dalrymple],
   source-name: [The Loop],
@@ -549,7 +535,7 @@ My friend Wendy gifted me a few beautiful glass jars of spices last week (her ca
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([KC Morgan], source-name: [Inhabitat], [Among the oldest tools that human hands ever created are axes, used to chop wood for fires and buildings. Wood is truly the mother of sustainable resources, a material that will grow back again and again. And now, wood is becoming the "it" design material. Sweden is starting an ambitious new project that will demonstrate the majesty of wood, and the possibilities it represents in sustainable building.])],
       [#brief-item([Sujata Gupta], source-name: [Science News], [Instagram and YouTube intentionally designed social media platforms to hook users, a landmark court case found. A pediatrician explains the ruling’s impact.])],
       [#brief-item([Bonface Landi], source-name: [Inhabitat], [Outwardly, gardens look like sustainable spaces that help absorb excess carbon from the atmosphere. While this might be true, not all gardens help reduce atmospheric carbon dioxide. Some gardens contribute to carbon pollution. Unfortunately, most gardeners are not even aware that their gardens are a source of carbon and other greenhouse gas pollutants. Even so, it is possible to attain a net-zero garden and in some cases, create a carbon sink in your garden.])],
@@ -560,7 +546,7 @@ My friend Wendy gifted me a few beautiful glass jars of spices last week (her ca
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [∞ The Dalrymple Report: Refurbished gear, Apple execs, and 3D printing],
   author: [Jim Dalrymple],
   source-name: [The Loop],
@@ -589,7 +575,7 @@ My friend Wendy gifted me a few beautiful glass jars of spices last week (her ca
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [2026 Easter Recipe Guide! 50 Of the Best Easter Recipes!],
   author: [Jessica],
   source-name: [How Sweet Eats],
@@ -613,5 +599,11 @@ My friend Wendy gifted me a few beautiful glass jars of spices last week (her ca
 
   ],
 ), ruled-indices: (1,))
+
+// --- Notable Quotes ---
+#block(above: 0.2in, stroke: (top: 1pt + luma(26)), inset: (top: 0.1in))[
+  #pull-quote([Furthermore, Premium members have access to 24-hour roadside assistance from Allstate (twice per year).], [Rachel Craft and Andrew Kunesh])
+
+]
 
 #colophon([Quiet Tribune], [Vol. 1, No. 010], [2026-03-30])

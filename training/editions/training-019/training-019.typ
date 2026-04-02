@@ -21,54 +21,8 @@
 #masthead([Informed Register], [Vol. 1, No. 019], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Starvation Mode: How Caloric Restriction Affects Your Body],
-  kicker: [Cover Story],
-  author: [Greatist],
-  source-name: [Greatist],
-  deck: [Yep, starvation mode is a thing. But it doesn’t have to halt weight loss.],
-  lead-pre: [],
-  lead-cap: [C],
-  lead-rest: [utting back on calories but not losing weight? You might wonder if you’ve gotten stuck in the twilight zone of so-called “starvation mode.”],
-  body-paragraphs: (
-  [Everyone from your personal trainer to your grandma may have warned you about this metabolic frenemy that keeps your body holding onto weight. But is starvation mode really a thing — or just an urban legend?],
-  [The concept of starvation mode is that when you restrict calories, your body has a “hold it right there” response. To prevent you from losing weight rapidly, your metabolism slows, conserving energy by reducing the calories it burns.],
-  [Research shows starvation mode — formally called adaptive thermogenesis or metabolic adaptation — is a legit phenomenon. It’s well documented that sometimes, the more weight you lose (and the more rapidly you do so), the more your body resists the process.],
-  [Evolutionarily speaking, this may be a holdover from when humans faced food scarcity and needed a mechanism for self-preservation. But in today’s world, starvation mode can be a frustrating roadblock to weight loss.],
-  [What does this metabolic hiccup look like? These symptoms may indicate that starvation mode is becoming a problem for your health:],
-  [fatigue],
-  [hair loss],
-  [irritability],
-  [constipation],
-  [extreme hunger],
-  [feeling unusually cold],
-  [decreased muscle mass],
-  [a weight loss plateau with no change in diet or exercise habits],
-  [Starvation mode isn’t the same thing as actual starving. In today’s modern food environment, true starvation is rare. If you’re eating regularly, you won’t experience life-threatening starvation.],
-  [However, your body might exhibit some of the same early signs as real starvation. These include the symptoms listed above.],
-  [Most commonly, though, starvation mode involves stalled weight loss. You may have hit the wall of adaptive thermogenesis when restricting calories and increasing physical activity without losing weight.],
-  [How long until your body goes into starvation mode?],
-  [Getting into starvation mode can take just a few days , especially if those days involve severe calorie restriction.],
-  [So what counts as severe calorie restriction? Many experts advise not going below 1,200 calories per day for women and 1,500 calories per day for men unless supervised by a doctor. Anything below these numbers could land you in starvation mode faster.],
-  [How do I get my body out of starvation mode?],
-  [Fortunately, getting your body out of starvation mode isn’t complicated.],
-  [First, there’s the obvious solution: Eat a few more calories. But we don’t mean just any calories. By adding a few more nutrient-dense foods (especially those with fiber and protein), you may find weight loss becomes easier, not harder. Both of these nutrients have links to weight loss — so they might help you get out of starvation mode without gaining weight.],
-  [If you’re feeling extremely depleted, you might take a temporary break from a weight loss diet to replenish your nutrient stores.],
-  [Choosing the proper exercise could also bump you out of starvation mode. Resistance exercises like weightlifting, yoga, push-ups, squats, and others build muscle, which increases your metabolic rate.],
-  [According to a 2014 study , people who participated in a 9-month resistance exercise program increased their resting metabolic rate — aka how many calories they burned at rest — by an average of 5%.],
-  [When to see a doctor],
-  [Weight loss is a balancing act. It’s normal to experience physical and emotional ups and downs.],
-  [That said, it’s time to see a doctor if you’re noticing symptoms like extreme fatigue or lethargy, constipation that lasts more than a few days, sensitivity to cold, or unusual mood changes. Your healthcare team can help you hit the sweet spot of weight loss without lingering in starvation mode.],
-  [Despite its name, being in starvation mode doesn’t mean you’ll starve. Instead, it’s a state in which your body has adapted to your weight loss efforts, giving you pushback on how many calories it burns. With strategies like tweaking your calorie intake and adding strength training, you can get out of this mode and back on the path to sustained weight loss.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [History of the Self: Dreams],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -87,11 +41,9 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Opinion: Why understanding limits is the key to humanity’s future],
   author: [Richard Heinberg],
   source-name: [Ensia],
@@ -109,6 +61,7 @@
   [At the same time, agriculture enabled population growth, but it gradually robbed soils of nutrients. Sailing ships increased trade but building them led to the deforestation of whole continents. A reckoning with limits seemed to be in store.],
   [The planet’s most important stories — delivered to your inbox],
   [Be the first to hear about important new environmental stories. Sign up now to receive our newsletter.],
+  [You have Successfully Subscribed!],
   [Then a miracle happened: People started using fossil fuels. Coal, oil and natural gas enabled the development of transport technologies that overcame prior limits to travel and trade, so products and resources that were abundant in one place could be transported to places where they were scarce. Fossil fuels could be used to increase the rates of resource extraction. They could be fashioned into plastics and chemicals to substitute for natural materials that were getting scarce. And they could be made into artificial fertilizers to support unsustainable agricultural practices.],
   [All these developments together enabled human numbers to expand from 1 billion to 8 billion in just over two centuries. We were, in effect, stretching existing constraints on population and consumption to the point that it was difficult for many people to see that boundaries still existed at all.],
   [But problems are brewing.],
@@ -135,10 +88,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [6 Signs Your Skin Needs Medical Attention, Stat],
   author: [Greatist],
   source-name: [Greatist],
@@ -166,6 +117,7 @@
   [A one-off or temporary rash might result from friction or chafing from a new outfit item. It could also be a heat rash when sweat gets trapped in skinfolds or bodily creases.],
   [A persistent rash could be a sign of eczema or allergies. However, different types of rashes can be a sign of other things. For example, a butterfly-shaped (malar) rash across the face is a common sign of an autoimmune disease known as lupus.],
   [If you frequently experience skin rashes, talk with a dermatologist to help you get to the bottom of the issue.],
+  [Dryness, cracking, or scaling],
   [Dry skin can be just that — dry skin. Common causes include:],
   [cold weather],
   [dry weather],
@@ -181,11 +133,13 @@
   [Changes in skin color — including red, brown, gray, or purple patches of skin — can be a sign of various skin issues, including eczema, psoriasis, or allergies. But it can also be a sign of rosacea.],
   [Rosacea typically involves persistent redness that looks like a sunburn or blushing. It may also lead to skin thickening.],
   [The good news? Rosacea is highly treatable. So working with a dermatologist can help you address it.],
+  [Acne, cysts, or bumps],
   [No one is immune from developing the occasional pimple or ingrown hair. But sometimes, skin bumps can be a sign that something else is going on.],
   [Acne is one of the most common skin conditions that could bring skin bumps like pimples.],
   [Hidradenitis suppurativa (HS) is another condition that causes painful, boil-like lumps to form underneath the skin. These bumps can turn into pus-filled pockets that may connect via tunnels. HS typically shows up in areas of high friction or where skin meets skin, such as the armpits or groin.],
   [Other types of skin bumps may include ingrown hairs, which can get infected and turn into folliculitis.],
   [Talk with a dermatologist to help you address any bothersome skin bumps you may experience.],
+  [Mole changes],
   [Common moles are growths that develop when pigment cells (melanocytes) grow in clusters. The average adult has between 10 to 40 common moles.],
   [An irregular mole, also known as a dysplastic nevus, is a type of mole that looks different from your common moles. If you have a dysplastic nevus (or several), schedule regular skin checks with a dermatologist to look for anything suspicious. Be sure to mention any changes in:],
   [color],
@@ -195,6 +149,7 @@
   [oozing],
   [bleeding],
   [These types of changes could be a sign of a form of skin cancer such as melanoma, which occurs in melanocytes. Melanoma can develop anywhere, including on normal-looking skin, a common mole, or a dysplastic nevus.],
+  [tl;dr],
   [Skin symptoms — like rashes, bumps, discoloration, dryness, or itchiness — may come and go. But if symptoms stick around or return frequently, consider seeing a dermatologist for an evaluation. Your skin may be telling you that there’s an underlying issue that needs to be addressed.],
   [A dermatologist can provide a proper diagnosis and treatment plan to help reduce, or, in some cases, resolve your skin symptoms. If you don’t currently have a dermatologist, your primary care physician or nurse practitioner can refer you to one.],
 ),
@@ -204,12 +159,10 @@
   debug-mode: false,
 )
 
-  #pull-quote([A persistent rash could be a sign of eczema or allergies.], [Greatist])
+#pull-quote([A persistent rash could be a sign of eczema or allergies.], [Greatist])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [What Is Looksmaxxing? How the Viral Trend Promotes Toxic Beauty Standards for Young Men],
   author: [Healthline],
   source-name: [Healthline],
@@ -269,10 +222,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Why Does My Side Hurt When I Run? Causes and Prevention Tips],
   author: [Greatist],
   source-name: [Greatist],
@@ -283,17 +234,21 @@
   [This pesky prob that plagues runners and athletes all over has a scientific name: Exercise-related transient abdominal pain (ETAP) . Though experts don’t know exactly what causes it, they have some ideas and tips about how to stop it.],
   [Before you double-over during your next marathon , here’s what to know.],
   [KarraStock/Getty Images],
+  [What is a side stitch?],
   [That fateful stab in your side is most likely to happen during exercise where your upper bod says tight and upright for an extended period, such as when you run , jog, bike, hike, play soccer, etc.],
   [This common prob has been around for ages — the first historical mention is from ancient Roman philosopher Pliny the Elder . Yet, scientists still haven’t reached a consensus on its exact cause. We know that it affects up to 70% of runners each year.],
   [It’s also more likely to occur on the right side.],
+  [What causes a side stitch?],
   [A stiff spine or poor posture (according to older research from 2010 ) could contribute to side stitches – but TBH, the pros don’t know for sure.],
   [According to a 2022 review , researchers also think a side stitch might be caused by your right foot hitting the ground while you breathe out, irritating a phrenic nerve. Researchers think this, in turn, may bother the lining of your abdomen (particularly on the lower right side). Since most people are right-foot dominant, this is one possible explanation.],
   [Experts also theorize that it could be triggered by the boost of blood flow around the diaphragm when running .],
   [Furthermore, fueling up before a big race is excellent — but eating or drinking large quantities right before running may boost your risk of getting a side stitch, anecdotal reports suggest.],
+  [How to treat a side stitch],
   [When a side stitch strikes, don’t stress – there are steps you can take, including:],
   [Slowing down , which should help lend some immediate relief. When the pain subsides, you can slowly build your pace back up.],
   [Stretch it out by raising your arms overhead, leaning to the opposite side of the pain, and breathing deeply. That may open up your abdomen and offer some relief.],
   [Apply gentle pressure by pressing your palm into the cramp while breathing deeply.],
+  [How to prevent a side stitch],
   [To stop a side stitch before it begins, here are some ideas FTW:],
   [Practice mindful workout breathing. According to a 2022 review , slower breathing during exercise might “trick” your bod into thinking the exercise is easier, increasing pleasant feelings and reducing stress. While the study doesn’t mention side cramps, it could be worth a try since stitches may be linked to blood flow surrounding the diaphragm.],
   [Avoid big meals or beverages a couple of hours before you run. Though experts don’t know for sure, too much food or liquid in your belly could potentially put extra pressure on your precious organs, leading to a cramp.],
@@ -315,12 +270,10 @@
   debug-mode: false,
 )
 
-  #pull-quote([class="wp-block-healthline-tabbed-heading" id="prevention-tips"\>How to prevent a side stitch  To stop a side stitch before it begins, here are some ideas FTW:   Practice mindful workout breathing.], [Greatist])
+#pull-quote([How to prevent a side stitch  To stop a side stitch before it begins, here are some ideas FTW:   Practice mindful workout breathing.], [Greatist])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Text Neck Exercises: Simple Moves to Ease Digital Strain],
   author: [Greatist],
   source-name: [Greatist],
@@ -330,8 +283,10 @@
   [Whether you’re caught up in doomscrolling or just checking your work emails, chances are you’re spending a lot of time on your phone. But all that screen time can lead to a pesky condition called “text neck.” Hunching over your device can leave you with some severe aches and pains.],
   [So, hold your phone up to eye level and check out these easy tips to get rid of text neck fast!],
   [AleksandarNakic/Getty Images],
+  [What is text neck?],
   [Also known as “tech neck,” text neck is a term coined by a chiropractor to describe the neck pain you might feel after spending too much time looking down at your phone.],
   [Most of us check our phones with our heads tilted forward and down. When you do this for too long, the muscles in your neck get strained. The muscles in the back are overstretched, while the ones in the front are compressed.],
+  [Text neck symptoms],
   [If you have text neck, here’s what you might be dealing with:],
   [Stiffness and difficulty moving your neck],
   [Dull aching or sharp, stabbing pain],
@@ -340,6 +295,7 @@
   [Tension headaches from tight neck muscles],
   [But don’t get bent out of shape about overusing your favorite device. There’s no solid proof that your phone habits are to blame for your neck woes. Several studies found no connection between using your device and having neck or shoulder pain .],
   [You could get a sore neck from overusing your muscles for many other reasons, like genetic factors, weight issues, or bad posture. “Text neck” might be a term concocted by a chiropractor to get your business. But, hey, we’re not judging.],
+  [Exercises for text neck],
   [To help ease text neck pain, try these simple exercises.],
   [Neck circles],
   [While sitting, slowly rotate your head 360 degrees.],
@@ -364,6 +320,7 @@
   [Keep your head level — no tilting or bending!],
   [Hold that position for 5 seconds (or the length of a deep breath if counting isn’t your thing).],
   [Relax your neck and repeat.],
+  [Tech neck treatments],
   [Aside from these cubicle-friendly exercises, here are some ideas to help keep text neck from being a regular pain in the y’know:],
   [Hold your phone, tablet, or device a bit higher to reduce your head and neck stress.],
   [Try yoga , pilates , or other activities that engage your core , lengthen your spine, and loosen up your neck .],
@@ -383,11 +340,10 @@
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [When Things Fall Apart (Throwback)],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -407,7 +363,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [We The People: Free Speech],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -427,7 +383,7 @@
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([Throughline (NPR)], source-name: [Throughline (NPR)], [Captain America: an all-American superhero. Clad in red, white, and blue, he carries only a shield. And he fights only when he must. When it's right.
 
 But what happens when what's right isn't so clear? And how does a comic book hero designed to represent America's values survive in a changing world?
@@ -454,7 +410,7 @@ Learn more about sponsor message choices: podcastchoices.com/adchoices
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The Creeping Coup],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -475,7 +431,7 @@ Learn more about sponsor message choices: podcastchoices.com/adchoices
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [History of the Self: Aging],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -499,7 +455,7 @@ Learn more about sponsor message choices: podcastchoices.com/adchoices
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [A History of Zionism],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -521,7 +477,7 @@ Learn more about sponsor message choices: podcastchoices.com/adchoices
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Whiteness Myth (Throwback)],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -545,7 +501,7 @@ Learn more about sponsor message choices: podcastchoices.com/adchoices
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [All Wars Are Fought Twice (2022)],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -565,7 +521,7 @@ Learn more about sponsor message choices: podcastchoices.com/adchoices
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Scent of History],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -587,8 +543,7 @@ Learn more about sponsor message choices: podcastchoices.com/adchoices
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [What Happened After Civilization Collapsed],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -606,6 +561,5 @@ Learn more about sponsor message choices: podcastchoices.com/adchoices
   debug-mode: false,
 )
 
-}
 
 #colophon([Informed Register], [Vol. 1, No. 019], [2026-03-30])

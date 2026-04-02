@@ -21,43 +21,8 @@
 #masthead([The Coastal Times], [Vol. 1, No. 099], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [AC Schnitzer Is Gone, and So Is the World That Made It],
-  kicker: [Cover Story],
-  author: [Josh Ryner],
-  source-name: [BMW Blog],
-  deck: [It does not read like a simple business story, because it carries the weight of something more personal and more atmospheric, something that lives between culture and memory.],
-  lead-pre: [],
-  lead-cap: [W],
-  lead-rest: [hat makes the end of AC Schnitzer feel so heavy is not only what it was at the end, but what it once represented at its height, and how closely that world still brushes against my own relationship with BMW. It does not read like a simple business story, because it carries the weight of something more personal and more atmospheric, something that lives between culture and memory.],
-  body-paragraphs: (
-  [It recalls a very specific Germany, one shaped by autobahns that demanded composure at speed, by quiet industrial roads, and by workshops that did not advertise what they knew because they did not need to. For someone who lives with these cars, who walks up to one each day and understands it not as an object but as a presence, the loss feels closer, as if something that has always been part of the background has suddenly gone quiet.],
-  [There is a certain rhythm that comes with owning a BMW, a familiarity that builds over time without ever becoming routine. You approach the car, settle into it, and there is always that brief, almost unspoken moment where everything aligns, where the machine feels predictable in the best sense, not because it is simple, but because it is coherent. Even now, in modern cars shaped as much by software as by engineering, that feeling still exists, though it arrives more filtered than before. And maybe that is why the disappearance of a company like AC Schnitzer carries the weight it does, because it reminds you that there was a time when that feeling did not end at the factory gate, when the car in front of you was not the final expression of itself, but only the beginning of what it could become.],
-  [If there were a golden era for domestic German tuners, it was centered on the 1990s, though its roots stretch into the late 1980s and its influence lingers into the early 2000s. That period now feels almost impossibly balanced, as if every condition required for it to exist came together at once. BMW was building cars of rare clarity and durability, machines that felt complete yet open, advanced yet understandable. Electronics had begun to shape the future, but they had not yet sealed the car away from those who wanted to work on it. Regulations existed, but they had not yet slowed development into something heavy and distant. Most importantly, there was still a strong belief among drivers that a car, no matter how refined, was not finished when it left the factory.],
-  [Out of that belief grew a distinctly German tuning culture, one that feels very far from the present. Germany did not produce tuners in the casual sense. It produced houses with identity and philosophy. ALPINA , Hartge , and AC Schnitzer approached BMW not as something to be altered for attention, but as something to be completed. The cars that emerged from their workshops did not reject their origins. They refined them. They carried the same DNA, but expressed with greater precision, greater intent, and a kind of quiet confidence that defined the era.],
-  [AC Schnitzer: Engineering Over Spectacle],
-  [AC Schnitzer entered this world in 1987 in Aachen, drawing directly from the racing lineage of Schnitzer Motorsport, and from the beginning it carried a tone that set it apart. Its early work, including the ACS7 based on the E32 7 Series and the ACS3 Sport built on the E30 M3, made clear that this would be a company grounded in engineering rather than spectacle. The changes it introduced were rarely dramatic on their own, yet together they transformed the car into something more resolved. Suspensions were recalibrated with care. Power was increased in a way that felt integrated rather than imposed. Aerodynamic elements appeared not as decoration, but as necessity, as if they had always belonged there.],
-  [Even its more ambitious creations held to that discipline. The V8 Roadster, placing a 4.4-liter V8 into the compact Z3, could have been chaotic in lesser hands, but here it remained controlled, almost composed, a clear extension of the same philosophy taken to its outer edge. Across decades, the company expanded its work, building thousands of components, refining BMWs across generations, and carrying its motorsport DNA into both road cars and competition, all while maintaining that balance between restraint and ambition that defined the best of German tuning culture.],
-  [The Cars That Made It Possible],
-  [That culture depended on the nature of the cars themselves. BMW platforms of the 1990s, from the E30 through the E39 , offered a rare kind of openness. They were sophisticated enough to reward deep engineering, yet transparent enough to allow skilled people to understand and reshape them without obstruction. A tuner could work with the car, not against it, adjusting its character in ways that felt tangible and immediate. This created a relationship between manufacturer, tuner, and driver that was dynamic, almost conversational, with each contributing to the final identity of the machine.],
-  [It is this relationship that has quietly disappeared. Modern BMWs are, in every measurable sense, better cars. They are faster, safer, more capable, more refined. Yet they are also more closed, governed by software systems that resist intervention and by regulatory frameworks that stretch development into long, expensive cycles. By the time a tuner can bring a product to market, the moment has often passed. At the same time, BMW itself has absorbed much of what tuners once offered, providing performance packages and factory upgrades that narrow the space for independent interpretation.],
-  [A Different Kind of Ownership],
-  [For someone living with a modern BMW, this shift is felt not as a loss of quality, but as a change in relationship. The car arrives already resolved, already optimized, leaving little room to imagine what it could become. You experience it, you rely on it, you appreciate it, but you do not shape it in the same way. The sense of participation that once defined ownership has given way to something more complete, but also more distant.],
-  [And that is why the end of AC Schnitzer feels like more than it should. It marks the fading of that open space between what a car is and what it could be. The golden era, with the 1990s at its center, depended on that space. It depended on cars that invited understanding, on engineers who had the freedom to reinterpret them, and on drivers who cared enough to see the difference. It created a quiet partnership, one that made owning a BMW feel like being part of an ongoing process rather than the end of one.],
-  [Now that partnership has thinned. The workshops have grown quiet. The cars have become more complete, more self-contained. And yet, standing next to a BMW today, even a modern one, there is still a trace of that older idea, something subtle but persistent. Beneath the software, beneath the refinement, there is still a machine with character, something that once invited people to take it apart, understand it, and make it their own.],
-  [That is the legacy AC Schnitzer leaves behind. Not only a history of cars, or a catalog of parts, but a way of seeing. It taught people to look at a BMW and understand that it was not the final word, that somewhere, in a quiet corner of Germany, someone might already be imagining a better version of it. Losing that idea feels like losing a part of the experience itself, a shift from a world where cars were shaped by many hands to one where they arrive already complete, asking less of you, and perhaps offering less in return.],
-  [First published by https:\/\/www.bmwblog.com],
-),
-  inline-pq: pull-quote([A tuner could work with the car, not against it, adjusting its character in ways that felt tangible and immediate.], [Josh Ryner]),
-  inline-pq-idx: 6,
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [How love for food made me participate in HackaNoodle?],
   author: [Shakti Prasad SS],
   source-name: [Grofers \/ Blinkit Lambda],
@@ -108,11 +73,10 @@
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [MINI Countryman Gets Adventure Packages, All-Terrain Tires for 2026],
   author: [Steven Paul],
   source-name: [BMW Blog],
@@ -136,7 +100,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Early contraceptive discontinuation and associated factors among married women initiating long-acting and short-acting contraceptives in humanitarian settings in Ethiopia: A retrospective cohort study],
   author: [Juliana Yartey Enos],
   source-name: [PLOS ONE Feed],
@@ -159,7 +123,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Cheap drones allowing war with volume],
   author: [Nathan Yau],
   source-name: [FlowingData],
@@ -179,7 +143,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Underlying structure and measurement invariance by sex of the state trait anxiety inventory: A psychometric analysis in Ecuador],
   author: [Alberto Rodríguez-Lorenzana],
   source-name: [PLOS ONE Feed],
@@ -199,8 +163,8 @@
 
 #article-row((
   [
-    section-label([Analysis])
-    standard-article(
+    #section-label([Analysis])
+    #standard-article(
   title: [The X-Peditions Workshops Site has Moved!],
   author: [David Hobby],
   source-name: [Strobist],
@@ -221,7 +185,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Deals: Take Up to \$199 Off Apple's M1 MacBook Pro and MacBook Air at Best Buy and Amazon],
   author: [Mitchel Broussard],
   source-name: [MacRumors],
@@ -240,6 +204,7 @@
   [M1 MacBook Pro, 256GB - \$1,099.99, down from \$1,299.00 at Best Buy \/ Amazon],
   [M1 MacBook Pro, 512GB - \$1,299.99, down from \$1,499.00 at Best Buy \/ Amazon],
   [You can find even more discounts on other MacBooks by visiting our Best Deals guide for MacBook Pro and MacBook Air. In this guide we track the steepest discounts for the newest MacBook models every week, so be sure to bookmark it and check back often if you're shopping for a new Apple notebook.],
+  [Related Roundup: Apple Deals],
   [This article, " Deals: Take Up to \$199 Off Apple's M1 MacBook Pro and MacBook Air at Best Buy and Amazon " first appeared on MacRumors.com],
   [Discuss this article in our forums],
 ),
@@ -252,64 +217,68 @@
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([New Scientist], source-name: [New Scientist], [A duo of drugs that boosts our glymphatic system, which clears waste from our brain, also improves the removal of proteins associated with the onset of Alzheimer's disease])],
-    [#brief-item([New Scientist Space], source-name: [New Scientist Space], [All five of the canonical nucleobases – the underpinnings of DNA, RNA and life on Earth – have been found in samples from the asteroid Ryugu])],
-    [#brief-item([New Scientist Space], source-name: [New Scientist Space], [Black holes don’t just bend space and time. They also expose where our understanding of reality begins to break.  In this video, we explore supermassives, wormholes, gravastars and much more])],
-    [#brief-item([Jesse Steinmetz], source-name: [Live Science], [A very long solar filament that had been snaking around the sun erupted with a flourish on Dec. 6, 2010.])],
-    [#brief-item([John J. WiensEllerie G. BlomenkampMiles CorlissXin LiaDepartment of Ecology and Evolutionary Biology, University of Arizona, Tucson, AZ 85721-0088bInstitute of Applied Biology, Shanxi Key Laboratory of Nucleic Acid Biopesticides, School of Life Sciences, Shanxi University, Taiyuan 030006, Shanxi, China], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([New Scientist], source-name: [New Scientist], [A duo of drugs that boosts our glymphatic system, which clears waste from our brain, also improves the removal of proteins associated with the onset of Alzheimer's disease])],
+  [#brief-item([New Scientist Space], source-name: [New Scientist Space], [All five of the canonical nucleobases – the underpinnings of DNA, RNA and life on Earth – have been found in samples from the asteroid Ryugu])],
+  [#brief-item([New Scientist Space], source-name: [New Scientist Space], [Black holes don’t just bend space and time. They also expose where our understanding of reality begins to break.  In this video, we explore supermassives, wormholes, gravastars and much more])],
+  [#brief-item([Jesse Steinmetz], source-name: [Live Science], [A very long solar filament that had been snaking around the sun erupted with a flourish on Dec. 6, 2010.])],
+  [#brief-item([John J. WiensEllerie G. BlomenkampMiles CorlissXin LiaDepartment of Ecology and Evolutionary Biology, University of Arizona, Tucson, AZ 85721-0088bInstitute of Applied Biology, Shanxi Key Laboratory of Nucleic Acid Biopesticides, School of Life Sciences, Shanxi University, Taiyuan 030006, Shanxi, China], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 SignificanceThe diversity of living organisms is increasingly threatened by human impacts, but still poorly known. Recently, there has been growing interest in protecting species that are especially divergent, including distinct genera and families (i.e., ...])],
-    [#brief-item([Harry Baker], source-name: [Live Science], [Russia's Progress spacecraft have been used to ferry cargo to the ISS throughout the entirety of the space station's history. This photo shows Progress 45 docking with the ISS in 2011.])],
-    [#brief-item([Zezhong JinMu QiaoSiying FuZihe LiBoxiong GuoHongjiao LiZhaoqi LengMatthew R. PintarJakob DamgaardBenjamin L. MakepeaceSilvia A. MazzucconiGavril Marius BerchiFabio CianferoniDan A. PolhemusKohei WatanabeJun NakajimaSeraphine EsemuChen LiuBeichen ZhangHuanhuan YangShujing WangHuaijun XueWenjun BuZhen YeaInstitute of Entomology, College of Life Sciences, Nankai University, Tianjin 300071, ChinabLaboratory of Entomology, Wageningen University and Research, Wageningen 6700 AA, The NetherlandscInstitute of Environment, Florida International University, Miami, FL 33181dNatural History Museum of Denmark, Zoological Museum, Copenhagen Ø 2100, DenmarkeInstitute of Infection, Veterinary and Ecological Sciences, University of Liverpool, Liverpool, Merseyside L3 5RF, United KingdomfLaboratorio de Entomología, Instituto de Biodiversidad y Biología Experimental y Aplicada, Consejo Nacional de Investigaciones Científicas y Técnicas - Universidad de Buenos Aires, Departamento de Biodiversidad y Biología Experimental - Facultad de Ciencias Exactas y Naturales, Universidad de Buenos Aires, Buenos Aires C1428EHA, ArgentinagDepartment of Biology, Faculty of Chemistry, Biology, Geography, West University of Timișoara, Timișoara 300115, RomaniahResearch Institute on Terrestrial Ecosystems, National Research Council of Italy, Sesto Fiorentino (Florence) I-50019, Italyi“La Specola” Museum, Natural History Museum, University of Florence, Florence I-50125, ItalyjDepartment of Natural Sciences, Bishop Museum, Honolulu, HI 96734kIshikawa Insect Museum, Hakusan, Ishikawa 920–2113, JapanlFukuoka Institute of Health and Environmental Sciences, Dazaifu, Fukuoka 818−0135, JapanmLaboratory for Emerging Infectious Diseases, Faculty of Science, University of Buea, Buea PO Box 63, CameroonnSchool of Bioengineering, Qilu University of Technology (Shandong Academy of Sciences), Jinan, Shandong 250353, China], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+  [#brief-item([Harry Baker], source-name: [Live Science], [Russia's Progress spacecraft have been used to ferry cargo to the ISS throughout the entirety of the space station's history. This photo shows Progress 45 docking with the ISS in 2011.])],
+  [#brief-item([Zezhong JinMu QiaoSiying FuZihe LiBoxiong GuoHongjiao LiZhaoqi LengMatthew R. PintarJakob DamgaardBenjamin L. MakepeaceSilvia A. MazzucconiGavril Marius BerchiFabio CianferoniDan A. PolhemusKohei WatanabeJun NakajimaSeraphine EsemuChen LiuBeichen ZhangHuanhuan YangShujing WangHuaijun XueWenjun BuZhen YeaInstitute of Entomology, College of Life Sciences, Nankai University, Tianjin 300071, ChinabLaboratory of Entomology, Wageningen University and Research, Wageningen 6700 AA, The NetherlandscInstitute of Environment, Florida International University, Miami, FL 33181dNatural History Museum of Denmark, Zoological Museum, Copenhagen Ø 2100, DenmarkeInstitute of Infection, Veterinary and Ecological Sciences, University of Liverpool, Liverpool, Merseyside L3 5RF, United KingdomfLaboratorio de Entomología, Instituto de Biodiversidad y Biología Experimental y Aplicada, Consejo Nacional de Investigaciones Científicas y Técnicas - Universidad de Buenos Aires, Departamento de Biodiversidad y Biología Experimental - Facultad de Ciencias Exactas y Naturales, Universidad de Buenos Aires, Buenos Aires C1428EHA, ArgentinagDepartment of Biology, Faculty of Chemistry, Biology, Geography, West University of Timișoara, Timișoara 300115, RomaniahResearch Institute on Terrestrial Ecosystems, National Research Council of Italy, Sesto Fiorentino (Florence) I-50019, Italyi“La Specola” Museum, Natural History Museum, University of Florence, Florence I-50125, ItalyjDepartment of Natural Sciences, Bishop Museum, Honolulu, HI 96734kIshikawa Insect Museum, Hakusan, Ishikawa 920–2113, JapanlFukuoka Institute of Health and Environmental Sciences, Dazaifu, Fukuoka 818−0135, JapanmLaboratory for Emerging Infectious Diseases, Faculty of Science, University of Buea, Buea PO Box 63, CameroonnSchool of Bioengineering, Qilu University of Technology (Shandong Academy of Sciences), Jinan, Shandong 250353, China], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 SignificanceCurrently, our understanding of the macroevolutionary history of organisms that have colonized highly specialized two-phase habitats, such as air–water interfaces, remains rudimentary. Semiaquatic bugs (Insecta: Heteroptera: Gerromorpha), ...])],
-    [#brief-item([Edward P. Snelling], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10291-3 
+  [#brief-item([Edward P. Snelling], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10291-3 
 
 New evidence suggests that diffusive oxygen transport through the tracheolar–muscle system is not the limiting factor on insect body size.])],
-    [#brief-item([Tory Shepherd], source-name: [The Guardian Science/Space], [Study into how fertilisation could work in space finds sperm may get disorientated when trying to find an egg
+  [#brief-item([Tory Shepherd], source-name: [The Guardian Science/Space], [Study into how fertilisation could work in space finds sperm may get disorientated when trying to find an egg
 
 Sperm in space are likely to get disoriented and lost while struggling to find their way to an egg, a new study has found.
 
 When exposed to microgravity in experiments, sperm tumble around like an untethered astronaut, according to Adelaide University researchers.
 
  Continue reading...])],
-    [#brief-item([New Scientist Space], source-name: [New Scientist Space], [An ultrastable laser could enable extremely precise timing and navigation on the moon, and the cold, dark craters near the lunar poles would be the ideal location for it])],
-    [#brief-item([New Scientist Space], source-name: [New Scientist Space], [Looking for molecular evidence of life on other worlds is tricky, but a test based on the reactivity of carbon compounds could be a useful indicator])],
-    [#brief-item([Hoyt Patrick Taylor IV], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10219-x 
+  [#brief-item([New Scientist Space], source-name: [New Scientist Space], [An ultrastable laser could enable extremely precise timing and navigation on the moon, and the cold, dark craters near the lunar poles would be the ideal location for it])],
+  [#brief-item([New Scientist Space], source-name: [New Scientist Space], [Looking for molecular evidence of life on other worlds is tricky, but a test based on the reactivity of carbon compounds could be a useful indicator])],
+  [#brief-item([Hoyt Patrick Taylor IV], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10219-x 
 
 fMRI data from individuals of a wide range of ages (from a few days to 100 years old) are used to map the key organizational axes of functional connectivity in the human cortex throughout the lifespan.])],
-    [#brief-item([Pepijn G. MoermanCheng-Hung ChouThomas E. VidebækW. Benjamin RogersRebecca SchulmanaDepartment of Chemical and Biomolecular Engineering, Johns Hopkins University, Baltimore, MD 21218bDepartment of Chemical Engineering and Chemistry, Eindhoven University of Technology, Eindhoven 5612 AE, The NetherlandscMartin A. Fisher School of Physics, Brandeis University, Waltham, MA 02453dDepartment of Chemistry and Computer Science, Johns Hopkins University, Baltimore, MD 21218], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+  [#brief-item([Pepijn G. MoermanCheng-Hung ChouThomas E. VidebækW. Benjamin RogersRebecca SchulmanaDepartment of Chemical and Biomolecular Engineering, Johns Hopkins University, Baltimore, MD 21218bDepartment of Chemical Engineering and Chemistry, Eindhoven University of Technology, Eindhoven 5612 AE, The NetherlandscMartin A. Fisher School of Physics, Brandeis University, Waltham, MA 02453dDepartment of Chemistry and Computer Science, Johns Hopkins University, Baltimore, MD 21218], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 SignificanceSelf-assembly of colloidal building blocks is a promising method, inspired by nature, to build materials with varied structural features from which the material may derive interesting optical and mechanical properties. However, features on ...])],
-    [#brief-item([New Scientist Space], source-name: [New Scientist Space], [Spacecraft orbiting the Red Planet have helped researchers map out an ancient coastline that surrounded a large ocean billions of years ago])],
-    [#brief-item([Ben Turner], source-name: [Live Science], [A man stands in front of a lectern with a projection of a U. S. flag on the moon appears in the background.])],
-    [#brief-item([Jiajia Su], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10300-5 
+  [#brief-item([New Scientist Space], source-name: [New Scientist Space], [Spacecraft orbiting the Red Planet have helped researchers map out an ancient coastline that surrounded a large ocean billions of years ago])],
+  [#brief-item([Ben Turner], source-name: [Live Science], [A man stands in front of a lectern with a projection of a U. S. flag on the moon appears in the background.])],
+  [#brief-item([Jiajia Su], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10300-5 
 
 At present, only 13.4% of the global land surface meets the World Meteorological Organization requirements for annual precipitation monitoring.])],
-    [#brief-item([Shengyu WangHairong XuThomas S. WeberaDepartment of Earth and Environmental Sciences, University of Rochester, Rochester, NY 14627], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+  [#brief-item([Shengyu WangHairong XuThomas S. WeberaDepartment of Earth and Environmental Sciences, University of Rochester, Rochester, NY 14627], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 SignificanceMethane is an important climate-warming gas, and its widespread emissions from well-oxygenated surface ocean waters (originally referred to as the “Marine Methane Paradox”) remains poorly understood. Using a global model assessed against field ...])],
-    [#brief-item([New Scientist Space], source-name: [New Scientist Space], [Black holes that turn matter into energy could explain dark energy and answer two other cosmic questions. Now, the challenge is to find them])],
-    [#brief-item([Kumiko Ito-MiwaKeiko ImaiKazuki TerauchiTakao KondoaDepartment of Biological Science, Graduate School of Science, Nagoya University, Nagoya 464-8602, JapanbInstitute for Advanced Research, Nagoya University, Nagoya 464-8602, JapancDepartment of Physics, Graduate School of Science, Nagoya University, Nagoya 464-8602, JapandLaboratory of Cell Biology, Faculty of Medicine, Kansai Medical University, 2-5-1 Shin-machi, Hirakata City, Osaka 573-1010, JapaneCollege of Life Sciences, Ritsumeikan University, Shiga 525-8577, JapanfGraduate School of Life Sciences, Ritsumeikan University, Shiga 525-8577, Japan], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+  [#brief-item([New Scientist Space], source-name: [New Scientist Space], [Black holes that turn matter into energy could explain dark energy and answer two other cosmic questions. Now, the challenge is to find them])],
+  [#brief-item([Kumiko Ito-MiwaKeiko ImaiKazuki TerauchiTakao KondoaDepartment of Biological Science, Graduate School of Science, Nagoya University, Nagoya 464-8602, JapanbInstitute for Advanced Research, Nagoya University, Nagoya 464-8602, JapancDepartment of Physics, Graduate School of Science, Nagoya University, Nagoya 464-8602, JapandLaboratory of Cell Biology, Faculty of Medicine, Kansai Medical University, 2-5-1 Shin-machi, Hirakata City, Osaka 573-1010, JapaneCollege of Life Sciences, Ritsumeikan University, Shiga 525-8577, JapanfGraduate School of Life Sciences, Ritsumeikan University, Shiga 525-8577, Japan], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 SignificanceThe circadian clock exhibits remarkable precision and environmental insensitivity of its period, enabling organisms to anticipate daily environmental changes. In cyanobacteria, circadian rhythm is driven by a KaiC protein-based oscillator that ...])],
-    [#brief-item([Cole D. Fincher], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10279-z 
+  [#brief-item([Cole D. Fincher], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10279-z 
 
 Operando birefringence microscopy measurements of the stresses around growing dendrites in solid electrolytes show that stresses decrease as current densities increase, revealing a linkage between electrochemical and mechanical stability that informs the design of solid-state batteries.])],
-    [#brief-item([New Scientist Space], source-name: [New Scientist Space], [Planet K2-18b, an apparent water world 124 light years away, has been seen as a promising location in the search for aliens, but telescopes on Earth failed to pick up any radio transmissions])],
-    [#brief-item([New Scientist Space], source-name: [New Scientist Space], [Astronomers have found a system of three supermassive black holes, all actively feeding, that appear to be combining into a single system – a rare event that will help elucidate the physics of complex mergers])],
-    [#brief-item([Priyanka JamadagniYi DaiYunqing LiuHellen Weinschutz MendesApril PruittSuha KhanLiang YangTzu-Chieh HuangXiayuan HuangP. J. Michael DeansNovin BalafkanDejian ZhaoGang XuYihan LiuNingshan LiWeimiao WuSarah E. FitzpatrickUma NeelakantanTianying ChenChristina SzialtaDavid S. JinCheryl M. LacadieSheila UmlaufXenophon PapademetrisYulia V. SurovtsevaKristen J. BrennandZuoheng WangEllen J. HoffmanaChild Study Center, Yale School of Medicine, New Haven, CT 06510bDepartment of Biostatistics, Yale School of Public Health, New Haven, CT 06510cDepartment of Neuroscience, Yale School of Medicine, New Haven, CT 06510dInterdepartmental Neuroscience Program, Yale University, New Haven, CT 06510eDepartment of Psychiatry, Division of Molecular Psychiatry, Yale University School of Medicine, New Haven, CT 06511fMohn Research Centre for Regenerative Medicine, Haukeland University Hospital, Bergen 7804, NorwaygDepartment of Genetics, Yale School of Medicine, New Haven, CT 06510hThe Second Affiliated Hospital of The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, ChinaiMD-PhD Program, Yale School of Medicine, New Haven, CT 06510jDepartment of Neurology, Yale School of Medicine, New Haven, CT 06510kDepartment of Radiology and Biomedical Imaging, Yale School of Medicine, New Haven, CT 06510lYale Biomedical Imaging Institute, Yale School of Medicine, New Haven, CT 06510mYale Center for Molecular Discovery, Yale School of Medicine, New Haven, CT 06510nDepartment of Biomedical Informatics and Data Science, Yale School of Medicine, New Haven, CT 06510oDepartment of Biomedical Engineering, Yale University, New Haven, CT 06510pWu Tsai Institute, Yale University School of Medicine, New Haven, CT 06510], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+  [#brief-item([New Scientist Space], source-name: [New Scientist Space], [Planet K2-18b, an apparent water world 124 light years away, has been seen as a promising location in the search for aliens, but telescopes on Earth failed to pick up any radio transmissions])],
+  [#brief-item([New Scientist Space], source-name: [New Scientist Space], [Astronomers have found a system of three supermassive black holes, all actively feeding, that appear to be combining into a single system – a rare event that will help elucidate the physics of complex mergers])],
+  [#brief-item([Priyanka JamadagniYi DaiYunqing LiuHellen Weinschutz MendesApril PruittSuha KhanLiang YangTzu-Chieh HuangXiayuan HuangP. J. Michael DeansNovin BalafkanDejian ZhaoGang XuYihan LiuNingshan LiWeimiao WuSarah E. FitzpatrickUma NeelakantanTianying ChenChristina SzialtaDavid S. JinCheryl M. LacadieSheila UmlaufXenophon PapademetrisYulia V. SurovtsevaKristen J. BrennandZuoheng WangEllen J. HoffmanaChild Study Center, Yale School of Medicine, New Haven, CT 06510bDepartment of Biostatistics, Yale School of Public Health, New Haven, CT 06510cDepartment of Neuroscience, Yale School of Medicine, New Haven, CT 06510dInterdepartmental Neuroscience Program, Yale University, New Haven, CT 06510eDepartment of Psychiatry, Division of Molecular Psychiatry, Yale University School of Medicine, New Haven, CT 06511fMohn Research Centre for Regenerative Medicine, Haukeland University Hospital, Bergen 7804, NorwaygDepartment of Genetics, Yale School of Medicine, New Haven, CT 06510hThe Second Affiliated Hospital of The Chinese University of Hong Kong, Shenzhen, Guangdong 518172, ChinaiMD-PhD Program, Yale School of Medicine, New Haven, CT 06510jDepartment of Neurology, Yale School of Medicine, New Haven, CT 06510kDepartment of Radiology and Biomedical Imaging, Yale School of Medicine, New Haven, CT 06510lYale Biomedical Imaging Institute, Yale School of Medicine, New Haven, CT 06510mYale Center for Molecular Discovery, Yale School of Medicine, New Haven, CT 06510nDepartment of Biomedical Informatics and Data Science, Yale School of Medicine, New Haven, CT 06510oDepartment of Biomedical Engineering, Yale University, New Haven, CT 06510pWu Tsai Institute, Yale University School of Medicine, New Haven, CT 06510], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 SignificanceAdvancing from gene discovery to pharmacological candidates in autism spectrum disorder (ASD) remains a central challenge. Here, we leverage the strengths of zebrafish as a scalable in vivo system to screen 520 US FDA-approved drugs and ...])],
-    [#brief-item([Juliane Weber], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/d41586-026-00635-4 
+  [#brief-item([Juliane Weber], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/d41586-026-00635-4 
 
 Carbon dioxide has been turned into minerals in Earth’s subsurface using recirculating water flow — a viable way to sequester this greenhouse gas in water-scarce areas.])],
-    [#brief-item([Mackenzie E. MitchellEric FeczkoDamien A. FairJessica R. CohenaDepartment of Psychology and Neuroscience, University of North Carolina at Chapel Hill, Chapel Hill, NC 27514bMasonic Institute for the Developing Brain, University of Minnesota, Minneapolis, MN 55414cDepartment of Pediatrics, University of Minnesota Medical School, Minneapolis, MN 55454dInstitute of Child Development, University of Minnesota, Minneapolis, MN 55455eCarolina Institute for Developmental Disabilities, University of North Carolina at Chapel Hill, Chapel Hill, NC 27599fBiomedical Research Imaging Center, University of North Carolina at Chapel Hill, Chapel Hill, NC 27514], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+  [#brief-item([Mackenzie E. MitchellEric FeczkoDamien A. FairJessica R. CohenaDepartment of Psychology and Neuroscience, University of North Carolina at Chapel Hill, Chapel Hill, NC 27514bMasonic Institute for the Developing Brain, University of Minnesota, Minneapolis, MN 55414cDepartment of Pediatrics, University of Minnesota Medical School, Minneapolis, MN 55454dInstitute of Child Development, University of Minnesota, Minneapolis, MN 55455eCarolina Institute for Developmental Disabilities, University of North Carolina at Chapel Hill, Chapel Hill, NC 27599fBiomedical Research Imaging Center, University of North Carolina at Chapel Hill, Chapel Hill, NC 27514], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 SignificanceExecutive functions, which encompass goal-directed behaviors critical for life success, emerge from interactions within and between networks of brain regions. Here, we tested how executive functions are linked to functional brain network ...])],
-    [#brief-item([Eric H. Oelkers], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10130-5 
+  [#brief-item([Eric H. Oelkers], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10130-5 
 
 An industrial-scale pilot project using co-injection of recirculated water for subsurface CO2 mineralization shows promise as a pathway for carbon sequestration in regions with limited access to water resources.])],
-    [#brief-item([New Scientist], source-name: [New Scientist], [Feedback discovers an accounting firm has unveiled its latest "lunar market assessment", which predicts huge profits to be had. Suit up, lunar entrepreneurs!])],
-    [#brief-item([Yuting ZhuHanna S. AndersonEli SalcedoSamuel E. MillerKrista LongneckerMelissa C. Kido SouleSheean T. HaleyGretchen J. SwarrRogier BraakmanSonya T. DyhrmanElizabeth B. KujawinskiaDepartment of Marine Chemistry and Geochemistry, Woods Hole Oceanographic Institution, Woods Hole, MA 02543bDepartment of Earth and Environmental Science, Columbia University, New York, NY 10027cLamont-Doherty Earth Observatory, Columbia University, New York, NY 10964dCivil and Environmental Engineering Department, Massachusetts Institute of Technology, Cambridge, MA 02139eJosephine Bay Paul Center, Marine Biological Laboratory, Woods Hole, MA 02543fDepartment of Earth, Atmospheric, and Planetary Sciences, Massachusetts Institute of Technology, Cambridge, MA 02139], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+  [#brief-item([New Scientist], source-name: [New Scientist], [Feedback discovers an accounting firm has unveiled its latest "lunar market assessment", which predicts huge profits to be had. Suit up, lunar entrepreneurs!])],
+  [#brief-item([Yuting ZhuHanna S. AndersonEli SalcedoSamuel E. MillerKrista LongneckerMelissa C. Kido SouleSheean T. HaleyGretchen J. SwarrRogier BraakmanSonya T. DyhrmanElizabeth B. KujawinskiaDepartment of Marine Chemistry and Geochemistry, Woods Hole Oceanographic Institution, Woods Hole, MA 02543bDepartment of Earth and Environmental Science, Columbia University, New York, NY 10027cLamont-Doherty Earth Observatory, Columbia University, New York, NY 10964dCivil and Environmental Engineering Department, Massachusetts Institute of Technology, Cambridge, MA 02139eJosephine Bay Paul Center, Marine Biological Laboratory, Woods Hole, MA 02543fDepartment of Earth, Atmospheric, and Planetary Sciences, Massachusetts Institute of Technology, Cambridge, MA 02139], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 SignificanceMarine phytoplankton fix carbon dioxide and release dissolved organic material, which drives a major fraction of oceanic carbon flux. Accurate quantification of the composition and flux of this carbon is needed. Leveraging benzoyl chloride ...])],
-  ))
-}
+))
+
+// --- Notable Quotes ---
+#block(above: 0.2in, stroke: (top: 1pt + luma(26)), inset: (top: 0.1in))[
+  #pull-quote([A tuner could work with the car, not against it, adjusting its character in ways that felt tangible and immediate.], [Josh Ryner])
+
+]
 
 #colophon([The Coastal Times], [Vol. 1, No. 099], [2026-03-30])

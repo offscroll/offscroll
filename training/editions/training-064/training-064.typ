@@ -21,43 +21,8 @@
 #masthead([Wide Monitor], [Vol. 1, No. 064], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [EuroPython: Humans of EuroPython: Jodie Burchell],
-  kicker: [Cover Story],
-  author: [Planet Python],
-  source-name: [Planet Python],
-  deck: [What does it take to run Europe’s largest Python conference?],
-  lead-pre: [🐍 ],
-  lead-cap: [N],
-  lead-rest: [ot budgets or venues—it’s people.],
-  body-paragraphs: (
-  [EuroPython isn’t powered by code alone, but by a vibrant network of volunteers who shape every session and welcome every attendee. From ensuring talks run seamlessly to curating world-class content these are the unsung heroes building community, one contribution at a time.],
-  [We’re shining a spotlight on the people behind the magic. Read our full conversation with Jodie Burchell, co-lead of the EuroPython 2025 Programme Team and discover what drives those who give their time to grow our community.],
-  [Jodie Burchell, Co-Lead of the Programme Team at EuroPython 2025],
-  [EP: What first inspired you to volunteer for EuroPython?],
-  [I first attended EuroPython in 2023, and was asked by my friends Cheuk and Lais to help run the Humble Data workshop. I had so much fun, and really liked all the people I met, so I decided to help out with comms and other things in 2024, and ended up working on the Programme Team and helping run the Beginners’ Day in 2025.],
-  [EP: What was your primary role as a volunteer, and what did a typical day look like for you?],
-  [I was one of two co-team leads of the Programme Team in 2025. This team tends to touch a lot of the conference, although the tasks vary from week-to-week. We actually started work all the way back in December, and worked up until the end of the conference! My team’s role included running the CfP, selecting talks, and assembling the schedule, finding keynote speakers, organising special events, coordinating the open spaces, and finding last minute speakers when people cannot make it. It involved a lot of logistics, following up with other teams at EuroPython, and communicating with speakers.],
-  [I think one of my favourite things I organised at the conference was the international snack exchange. Seeing people sharing snacks from their home countries was so much fun, and really made us feel like a big international family.],
-  [EP: What&aposs your favorite memory from volunteering at EuroPython?],
-  [I actually can’t pick just one!],
-  [One of my favourites was seeing the programme team in person after so many months of working together, and sharing some international snacks together to celebrate.],
-  [Watching the excerpt of “Python: the Documentary” that CultRepo created for us, and seeing the reaction of the audience to the film and the panel was very moving.],
-  [And of course, running Humble Data at the Beginner’s Day during the sprints. As someone with a non-traditional path into tech myself, I am really passionate about helping beginners and making them feel welcome, and having beginners starting to learn Python, and then speaking with core developers of well-established projects was really special.],
-  [EP: Did you make any lasting friendships or professional connections through volunteering?],
-  [Many! The Python community is incredible, and I am lucky to have found some of my closest friends through the EuroPython, Humble Data and wider Python community. I look forward to EuroPython every year (in whatever capacity I attend) so I can see all of these amazing, special friends.],
-  [EP: What&aposs one misconception about conference volunteering you&aposd like to clear up?],
-  [I think one of the biggest misconceptions that people have about community conferences like EuroPython is that they’re run by professionals. While the EuroPython Society does have one (very talented) paid employee, most of the work you see at these conferences is done by members of the community, just like you and me. So if you feel inspired to contribute to EuroPython or another Python conference, reach out and find out how you can help! Although it can be a lot of work, it’s also very meaningful to know you’ve shaped an event that means a lot to the Python community.],
-  [EP: Thank you for your work, Jodie!],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [omniauth and google apps],
   author: [Matt Aimonetti],
   source-name: [Matt Aimonetti],
@@ -69,14 +34,18 @@ I was hoping it would be straight forward since I could use Google’s OpenID se
   [Turns out it wasn’t that hard, but the lack of documentation made me
 lost a couple hours.
 I therefore updated OmniAuth’s wiki and wrote this quick post so hopefully you won’t waste time looking for simple details.],
-  [id="requirements"\>Requirements],
   [You actually only need to add 2 gems to your Gemfile:],
+  [gem 'omniauth-openid' 
+gem 'ruby-openid-apps-discovery'],
   [Now, the second gem is the one I didn’t know about.
 The gem is actually provided by Google itself . It turns out, Google Apps use a custom discovery protocol.
 They monkey patched the popular OpenID Ruby libraries so you can just drop in
 their gem and their discovery system will magically work.],
-  [id="setup"\>Setup],
   [You need to require 4 files to get everything setup properly:],
+  [require 'omniauth-openid' 
+require 'openid' 
+require 'openid/store/filesystem' 
+require 'gapps\_openid'],
   [The first one is the omniauth extension for OpenID, the second one is
 the main Ruby OpenID library (needed so we can set our SSL cert).
 The third one allows us to store temporary data on disk instead of
@@ -85,6 +54,7 @@ And finally, the last one is Google’s magical gem to get their discovery
 system working.],
   [Because we are going to communicate via SSL, we want to make sure that
 the OpenID library uses our certs to verify the SSL communications:],
+  [OpenID . fetcher . ca\_file = "/absolute/path/to/ssl\_cacert.pem"],
   [(Obviously, you need to change the path to your own cert)],
   [We are almost done with the setup, we just need two more things:],
   [make sure you are using a session.],
@@ -98,14 +68,14 @@ it)],
 provider’s name to be ‘admin’, the magical paths provided by OmiAuth
 will use that name ( /auth/admin ). Secondly, and more importantly, notice how I added
 the name of my Google Apps domain at the end of the identifier:],
-  [id="sinatra"\>Sinatra],
+  ['https:\/\/www.google.com/accounts/o8/site-xrds?hd=' + your\_domain\_name],
   [In Sinatra, your just need to define the routes OmniAuth would use (same
 goes for Rails, just use the router for that).],
   [By default, omniauth now offers you a /auth/admin endpoint that will
 push the user through Google Apps authentication.
 Once the authentication is over, the user will be redirected to the
 following endpoint:],
-  [class="highlight"\> \# Callback URL used when the authentication is done 
+  [\# Callback URL used when the authentication is done 
 post '/auth/admin/callback' do 
  auth\_details = request . env \[ 'omniauth.auth' \] 
  session \[ :email \] = auth\_details . info \[ 'email' \] 
@@ -114,16 +84,29 @@ post '/auth/admin/callback' do
   [You can access the authentication details from request.env\['omniauth.auth'\] 
 and redirect the user to another page, like the admin landing page for
 instance.],
+  [get '/auth/admin/welcome' do 
+ if session \[ :email \] 
+ erb :welcome\_boss 
+ else 
+ redirect '/auth/admin' 
+ end 
+ end],
   [On the landing page, you need to verify that the user is logged in, in
 this case, during the previous step, we added the email of the user to
 her session. We can therefore verify the presence of that information to
 confirm the authentication status. If the user is authenticated, then we’ll render an ERB
 template otherwise we’ll redirect her back to the login page.],
   [We should also provide an endpoint in case the authentication failed:],
+  [get '/auth/failure' do 
+ params \[ :message \] 
+ \# do whatever you want here. 
+ end],
   [Note that by default, in dev mode, Omniauth won’t redirect the user
 there. To enable this behavior, use the following snippet (works with any rack app,
 Rails, Sinatra or whatever):],
-  [id="conclusion"\>Conclusion],
+  [OmniAuth . config . on\_failure = Proc . new \{ | env | 
+ OmniAuth :: FailureEndpoint . new(env) . redirect\_to\_failure
+\}],
   [Using Google Apps for authentication with OmniAuth is trivial as long
 you know two things:],
   [the identifier url: 'https:\/\/www.google.com/accounts/o8/site-xrds?hd=' + your\_domain\_name],
@@ -136,10 +119,8 @@ you know two things:],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [meet the merbists lori holden],
   author: [Matt Aimonetti],
   source-name: [Matt Aimonetti],
@@ -173,10 +154,8 @@ Sequel is a really wonderful tool, and I was finding that just not that many peo
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [retrospective on freelancing consulting],
   author: [Matt Aimonetti],
   source-name: [Matt Aimonetti],
@@ -187,33 +166,30 @@ I have to say that I owe a lot to the Ruby community and especially the Rails co
   [Enough blahblah, a retrospective wouldn’t be a retrospective if I wouldn’t look at ways to improve the process.],
   [Looking at back on 2007, I’ll look at what I did good and where I could have done better.],
   [communication wise , I think things worked out quite well.],
-  [id="daily-stand-up"\>Daily stand up],
+  [Daily stand up],
   [The daily stand up/scrum proved to be very efficient on all projects. it usually takes a short adaptation time on the clients side, but once everybody is on the same page, meetings are short and efficient .],
-  [id="iterations"\>Iterations],
   [Clients adapted more or less well to the whole Iteration process . On some occasions, I ended up being in charge of managing iterations, confirming my suggestions with the client during our iteration planning. I wish I was able to get all my clients to fully understand and enjoy the process, but oh well, the reality is that some clients just want the work done and don’t care too much how you do it.
 In general iteration planning sessions went quite well, they really helped us defining priorities and manage the budget. However, I feel the need to bring more structure into these meetings .],
-  [id="weekly-retrospectives"\>Weekly Retrospectives],
   [Retrospectives/demos could really be improved. I have to admit that I was not able to organize a single great retrospective with my clients. That’s one major draw back of working remotely and being a contractor.
 Since I would deploy few times a week, the weekly demo didn’t always made sense. I therefore decided to use Jing and create a weekly screencast of the iteration changes. This way my clients know exactly what was done and can test whenever they want. We still have our demos from time to time especially when major new features are implemented.
 In 2008, I really want to improve clients' retrospective .],
-  [id="tools"\>Tools],
   [While lighthouse helped me keeping track of my iteration user stories, unfortunately, I noticed that clients got confused when using the same tool to report bugs and to manage iterations. I’ll still be using lighthouse for bug reports but or I will have to finish my agile project manager or I’ll use Josh Knowles' of he finally releases his software ;)],
   [Bdd/Rspec was a big winner in ‘07. People might argue about the real benefit of RSpec vs test unit. Well, I can only talk about my own experience, after using RSpec for a year, the way I write my applications totally changed. TDD certainly became a reality. Even my relationship with my clients changed. I now get my clients to write my tests, well, not exactly but almost. I get them to define the expected behaviors using the usual it..should..do syntax. I then just need to transpose my clients expectations in contextualized specs. once the iteration is over, I output a spec report that i give to my client. I never had so much fun writing tests!],
   [One thing I need to focus on in 08: ajax & js tests!],
   [Talking about JavaScript, I finally found a way to write Js and have fun. Lowpro totally changed my view of Js and I can’t wait to push things further.(my December talk on Unobtrusive Javascript should be online sometimes soon)],
   [Talking about pushing things further, I need to see if I can totally dish svn and only use git + gitosis. if you didn’t check Git yet, go check on the awesome peepcode put together by topfunky .],
-  [id="misc-things-that-didnt-work-that-well"\>Misc things that didn’t work that well:],
+  [Misc things that didn’t work that well:],
   [unreliable subcontractors],
   [hard to find designers],
   [having to say no to so many cool projects (always a good problem to have though)],
-  [id="various-things-that-i-enjoyed"\>Various things that I enjoyed:],
+  [Various things that I enjoyed:],
   [Joyent accelerators],
   [twitter],
   [sd.rb],
   [autotest],
   [iPhone 
 (and probably a lot other stuff that I can’t remember right now)],
-  [id="major-changes-planned-for-08"\>Major changes planned for 08:],
+  [Major changes planned for 08:],
   [pairing with another local developer complementing my skills.],
   [better weekly retrospectives],
   [tech lunch at least once a month],
@@ -225,10 +201,8 @@ In 2008, I really want to improve clients' retrospective .],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Top 10 AI Tools in 2023 That Will Make Your Life Easier],
   author: [Unknown],
   source-name: [TechCrunch],
@@ -246,108 +220,329 @@ In 2008, I really want to improve clients' retrospective .],
   [writing and website optimization. This],
   [list is a great starting point for anyone looking to explore the possibilities],
   [of AI and how it can be applied to their business or project.],
-  [style="text-align: left;"\> 1. ChatGPT],
-  [class="MsoNormal"\> ChatGPT is a large language model that generates human-like
+  [So let’s dive into],
+  [1. ChatGPT],
+  [ChatGPT is a large language model that generates human-like
 responses to a variety of prompts. It can be used for tasks such as language
 translation, question answering, and text completion. It can
 handle a wide range of topics and styles of writing, and generates coherent and
 fluent text, but should be used with care as it may generate text that is
 biased, offensive, or factually incorrect.],
-  [id="atContainer-504b591a28719b1270e09aa4045e24ab"\>],
-  [style="text-align: left;"\> 2. DALL-E],
-  [class="MsoNormal"\> DALL-E is a generative model developed by OpenAI that is
+  [Pros:],
+  [Generates
+ human-like responses to a variety of prompts],
+  [Can
+ be fine-tuned for specific tasks such as language translation, question
+ answering, and text completion],
+  [Can
+ handle a wide range of topics and styles of writing],
+  [Can
+ generate coherent and fluent text, even when completing a given text
+ prompt.],
+  [Cons:],
+  [May
+ generate text that is biased or offensive],
+  [Can
+ generate text that is not accurate or factually correct],
+  [May
+ require large amounts of computational resources to run],
+  [The
+ model can sometimes generate text that is not coherent or fluent,
+ depending on the prompt given.],
+  [Overall, ChatGPT is a powerful tool for natural language
+processing, but it should be used with care and with an understanding of its
+limitations.],
+  [2. DALL-E],
+  [DALL-E is a generative model developed by OpenAI that is
 capable of generating images from text prompts. It is based on the GPT-3 architecture,
 which is a transformer-based neural network language model that has been
 trained on a massive dataset of text. DALL-E can generate images that
 are similar to a training dataset and it can generate high-resolution
 images that are suitable for commercial use.],
-  [class="MsoNormal"\> Overall, DALL-E is a powerful AI-based tool for generating
+  [Pros:],
+  [Generates
+ high-resolution images],
+  [Can
+ generate images from text prompts],
+  [It can be fine-tuned for specific tasks such as generating images of a certain
+ style or category],
+  [Cons:],
+  [May
+ generate images that are not entirely original and could be influenced by
+ the training data],
+  [May
+ require significant computational resources to run],
+  [The
+ quality of the generated images may vary depending on the specific prompt],
+  [Overall, DALL-E is a powerful AI-based tool for generating
 images, it can be used for a variety of applications such as creating images
 for commercial use, gaming, and other creative projects. It is important to
 note that the generated images should be reviewed and used with care, as they
 may not be entirely original and could be influenced by the training data.],
-  [style="text-align: left;"\> 3. Lumen5],
-  [class="MsoNormal"\> Lumen5 is a content creation platform that uses AI to help
+  [3. Lumen5],
+  [Lumen5 is a content creation platform that uses AI to help
 users create videos, social media posts, and other types of content. It has
 several features that make it useful for content creation and marketing,
 including:],
-  [class="MsoNormal"\> Overall, Lumen5 is a useful tool for creating content
+  [Pros:],
+  [Automatically
+ summarizes text from a blog post, article, or another source into a script
+ for a video or social media post],
+  [Offers
+ a library of royalty-free videos, images, and music to use in content],
+  [Has a
+ drag-and-drop interface for easy content creation],
+  [Can
+ create videos in multiple languages],
+  [Has a
+ built-in analytics tool to track the performance of created content.],
+  [Cons:],
+  [The
+ quality of the generated content may vary depending on the source material],
+  [The
+ automatic summarization feature may not always capture the main points of
+ the source material],
+  [The
+ library of videos, images, and music is limited.],
+  [The
+ analytics feature is basic],
+  [Overall, Lumen5 is a useful tool for creating content
 quickly and easily, it can help automate the process of creating videos, social
 media posts, and other types of content. However, the quality of the generated
 content may vary depending on the source material and it is important to review
 and edit the content before publishing it.],
-  [style="text-align: left;"\> 4. Grammarly],
-  [class="MsoNormal"\> Grammarly is a writing-enhancement platform that uses AI to
+  [4. Grammarly],
+  [Grammarly is a writing-enhancement platform that uses AI to
 check for grammar, punctuation, and spelling errors in the text. It also provides
 suggestions for improving the clarity, concision, and readability of the text. It
 has several features that make it useful for improving writing, including:],
-  [class="MsoNormal"\> Overall,
+  [Pros:],
+  [Checks
+ for grammar, punctuation, and spelling errors in the text],
+  [Provides
+ suggestions for improving clarity, concision, and readability],
+  [Can
+ be integrated with various apps and platforms such as Microsoft Office,
+ Google Docs, and social media platforms],
+  [Offers
+ a browser extension and a desktop app],
+  [Has a
+ premium version with more advanced features such as plagiarism detection
+ and more],
+  [Cons:],
+  [The
+ suggestions provided may not always be accurate or appropriate],
+  [The
+ grammar checker may not always recognize context-specific language use],
+  [The
+ free version has limited features],
+  [Limited
+ to English language only],
+  [Overall,
  Grammarly is a useful tool for improving writing, it can help users
  identify and correct grammar and punctuation errors, and improve the
  clarity, concision, and readability of their text. However, it is
  important to review the suggestions provided by the tool and use them with
  caution, as they may not always be accurate or appropriate.],
-  [style="text-align: left;"\> 5. OpenAI Codex],
-  [class="MsoNormal"\> OpenAI Codex is a system developed by OpenAI that can
+  [5. OpenAI Codex],
+  [OpenAI Codex is a system developed by OpenAI that can
 create code from natural language descriptions of software tasks. The system is
 based on the GPT-3 model and can generate code in multiple programming
 languages.],
-  [class="MsoNormal"\> Overall, OpenAI Codex is a powerful tool that can help
+  [Pros:],
+  [Can
+ automate the process of writing code],
+  [Can
+ help developers to be more productive],
+  [Can
+ help non-technical people to create software],
+  [Can
+ generate code in multiple programming languages],
+  [Cons:],
+  [The
+ quality of the generated code may vary depending on the task description],
+  [The
+ generated code may not always be optimal or efficient],
+  [The
+ system may not be able to handle complex software tasks],
+  [Dependence
+ on the tool may lead to a lack of understanding of the code.],
+  [Overall, OpenAI Codex is a powerful tool that can help
 automate the process of writing code and make it more accessible to
 non-technical people. However, the quality of the generated code may vary
 depending on the task description and it is important to review and test the
 code before using it in a production environment. It is important to use the
 tool as an aid, not a replacement for the developer's knowledge.],
-  [style="text-align: left;"\> 6. Tabnine],
-  [class="MsoNormal"\> Tabnine is a code completion tool that uses AI to predict
+  [6. Tabnine],
+  [Tabnine is a code completion tool that uses AI to predict
 and suggest code snippets. It is compatible with multiple programming languages
 and can be integrated with various code editors.],
-  [class="MsoNormal"\> Overall, TabNine is a useful tool for developers that can
+  [Pros:],
+  [Can
+ improve coding efficiency by suggesting code snippets based on context],
+  [Can
+ complete entire code blocks],
+  [Can
+ predict variables, functions, and other elements of code],
+  [Can
+ be integrated with various code editors],
+  [Cons:],
+  [The
+ suggestions may not always be accurate or appropriate],
+  [The
+ system may not always be able to understand the context of the code],
+  [May
+ not work with all code editors],
+  [Dependence
+ on the tool may lead to a lack of understanding of the code.],
+  [Overall, TabNine is a useful tool for developers that can
 help improve coding efficiency and reduce the time spent on writing code.
 However, it is important to review the suggestions provided by the tool and use
 them with caution, as they may not always be accurate or appropriate. It is
 important to use the tool as an aid, not a replacement for the developer's
 knowledge.],
-  [style="text-align: left;"\> 7. Jasper AI],
-  [class="MsoNormal"\> Jasper is a content writing and content generation tool that
+  [7. Jasper AI],
+  [Jasper is a content writing and content generation tool that
 uses artificial intelligence to identify the best words and sentences for your
 writing style and medium in the most efficient, quick, and accessible way.],
-  [style="text-align: left;"\> 8. Surfer SEO],
-  [class="MsoNormal"\> Surfer SEO is a software tool designed to help website
+  [Pros:],
+  [User-friendly
+ interface],
+  [Generates
+ a wide variety of content types],
+  [Guarantees
+ 100% unique and free-plagiarism content],
+  [SEO
+ friendly],
+  [Create
+ articles of up to 10k words],
+  [Cons:],
+  [Not
+ the cheapest AI writer on the market],
+  [8. Surfer SEO],
+  [Surfer SEO is a software tool designed to help website
 owners and digital marketers improve their search engine optimization (SEO)
 efforts. The tool provides a variety of features that can be used to analyze a
 website's on-page SEO, including:],
-  [id="container-67c1d379f2d23d1196246b2000d3b84a"\>],
-  [class="MsoNormal"\> Overall, Surfer SEO can be a useful tool for website owners
+  [Features:],
+  [A
+ site audit tool that checks for technical SEO issues],
+  [A
+ content editor that suggests optimizations for individual pages],
+  [A
+ keyword research tool that suggests keywords to target],
+  [A
+ SERP analyzer that shows how a website's pages rank for specific keywords],
+  [A
+ backlink analysis tool that shows the backlinks pointing to a website.],
+  [Pros:],
+  [Can
+ help website owners and marketers identify technical SEO issues],
+  [Can
+ provide suggestions for optimizing individual pages],
+  [Can
+ help with keyword research],
+  [Can
+ show how a website's pages rank for specific keywords],
+  [Can
+ provide insight into a website's backlink profile],
+  [Cons:],
+  [Some
+ features may require a paid subscription],
+  [The
+ tool is not a guarantee of better ranking],
+  [The
+ tool can only analyze the data it has access to],
+  [The
+ tool's suggestions may not always be applicable or optimal],
+  [Overall, Surfer SEO can be a useful tool for website owners
 and digital marketers looking to improve their SEO efforts. However, it is
 important to remember that it is just a tool and should be used in conjunction
 with other SEO best practices. Additionally, the tool is not a guarantee of
 better ranking.],
-  [style="text-align: left;"\> 9. Zapier],
-  [class="MsoNormal"\> Zapier is a web automation tool that allows users to
+  [9. Zapier],
+  [Zapier is a web automation tool that allows users to
 automate repetitive tasks by connecting different web applications together. It
 does this by creating "Zaps" that automatically move data between
 apps, and can also be used to trigger certain actions in one app based on
 events in another app.],
-  [class="MsoNormal"\> Overall, Zapier is a useful tool that can help users
+  [Features:],
+  [Can
+ connect over 3,000 web applications],
+  [Can
+ automate repetitive tasks],
+  [Can
+ create "Zaps" to move data between apps],
+  [Can
+ trigger certain actions in one app based on events in another app.],
+  [Pros:],
+  [Can
+ automate repetitive tasks],
+  [Can
+ save time],
+  [Can
+ improve workflow],
+  [Can
+ increase productivity],
+  [Can
+ be integrated with a wide range of web applications],
+  [Cons:],
+  [Can
+ be difficult to set up],
+  [May
+ require some technical skills],
+  [May
+ require a paid subscription for some features],
+  [Some
+ apps may not be compatible],
+  [Dependence
+ on the tool may lead to a lack of understanding of the apps],
+  [Overall, Zapier is a useful tool that can help users
 automate repetitive tasks and improve workflow. It can save time and increase
 productivity by connecting different web applications together. However, it may
 require some technical skills and some features may require a paid
 subscription. It is important to use the tool with caution and not to rely too
 much on it, to understand the apps better.],
-  [style="text-align: left;"\> 10. Compose AI],
-  [class="MsoNormal"\> Compose AI is a company that specializes in developing
+  [10. Compose AI],
+  [Compose AI is a company that specializes in developing
 natural language generation (NLG) software. Their software uses AI to
 automatically generate written or spoken text from structured data, such as
 spreadsheets, databases, or APIs.],
-  [id="atContainer-8a426783aef805554f3d96c19f8beeb7"\>],
-  [class="MsoNormal"\> Overall, Compose AI's NLG software can be a useful tool for
+  [Features:],
+  [Automatically
+ generates written or spoken text from structured data],
+  [Can
+ be integrated with a wide range of data sources],
+  [Can
+ be used for a variety of applications such as creating reports, summaries,
+ and explanations],
+  [Provides
+ an API and a user-friendly interface],
+  [Pros:],
+  [Can
+ automate the process of creating written or spoken content],
+  [Can
+ help users create more accurate and consistent content],
+  [Can
+ help users save time by automating repetitive tasks],
+  [Can
+ be integrated with a wide range of data sources],
+  [Cons:],
+  [The
+ quality of the generated content may vary depending on the data source],
+  [The
+ generated content may not always be optimal or efficient],
+  [The
+ system may not be able to handle complex tasks],
+  [Dependence
+ on the tool may lead to a lack of understanding of the data],
+  [Overall, Compose AI's NLG software can be a useful tool for
 automating the process of creating written or spoken content from structured
 data. However, the quality of the generated content may vary depending on the
 data source, and it is essential to review the generated content before using
 it in a production environment. It is important to use the tool as an aid, not
 a replacement for the understanding of the data.],
-  [style="text-align: left;"\> Conclusion],
+  [AI tools are becoming increasingly important in today's],
   [business and technology landscape. They are designed to automate repetitive],
   [tasks, improve workflow, and increase productivity. The top 10 AI tools],
   [included in this article are some of the most advanced and widely used in the],
@@ -361,16 +556,14 @@ a replacement for the understanding of the data.],
 ),
   insert-map: (:),
   inline-pq: pull-quote([However, it is important to review the suggestions provided by the tool and use them with caution, as they may not always be accurate or appropriate.], [Unknown]),
-  inline-pq-idx: 21,
+  inline-pq-idx: 68,
   word-count: 2332,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [merb progress],
   author: [Matt Aimonetti],
   source-name: [Matt Aimonetti],
@@ -383,7 +576,7 @@ a replacement for the understanding of the data.],
   [My sister is visiting from France :) (most of my free time is not spent in front of a computer anymore :p)],
   [I’ve been playing with MacRuby (see the end of the post)],
   [Ohh and spent some time maintaining Merb and preparing 1.0.9],
-  [id="merb-109"\>Merb 1.0.9],
+  [Merb 1.0.9],
   [Merb 1.0.8.1 has some issues with the merb-cache settings set in init.rb being called twice when you use some Rake tasks. (rake db:automigrate for instance). The problem is due to the fact that the rake tasks load the dependencies twice:],
   [Merb rake file loads all of your app dependencies and their rake tasks. (for instance rake db:automigrate is a rake task coming from merb\_datamapper)],
   [The task you are invoking might start merb itself to load the models etc.. and starting Merb reloads the dependencies.],
@@ -395,7 +588,7 @@ a replacement for the understanding of the data.],
   [The upcoming version also gets a brand new feature: memory monitoring by the merb master process. The master process checks that the workers don’t use too much memory ( you can set what you consider beign too much memory using Merb:: Config\[:max\_memory\]) and if one of the workers reaches the limit, it does a kill -1. It then waits a configured amount of seconds (defaults to 5) then kill using -9.],
   [Finally, we also fixed a bunch of tiny issues.],
   [1.0.9 should be released in the next few days.],
-  [id="macruby"\>MacRuby],
+  [MacRuby],
   [Finally, because for those interested in MacRuby here are my slides from last night’s SDRuby meetup:],
   [MacRuby - When objective-c and Ruby meet],
   [View more presentations from Matt Aimonetti .],
@@ -406,12 +599,10 @@ a replacement for the understanding of the data.],
   debug-mode: false,
 )
 
-  #pull-quote([Even if you start Merb multiple times, the init.], [Matt Aimonetti])
+#pull-quote([Even if you start Merb multiple times, the init.], [Matt Aimonetti])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [sharing rails sessions with non ruby apps],
   author: [Matt Aimonetti],
   source-name: [Matt Aimonetti],
@@ -425,20 +616,19 @@ a replacement for the understanding of the data.],
   [Rails has been criticized for security issues, but the current solution has been vetted by many experts.],
   [Rails serializes session data using Ruby Marshal which means that someone with the secret key can inject arbitrary code in the session and it will execute server side. Switch to JSON, MessagePack or other safe serialization formats.],
   [Security is (still) hard.],
-  [id="rails-cookies-are-dangerous"\>Rails Cookies are Dangerous],
+  [Rails Cookies are Dangerous],
   [Because Rails serializes and deserializes the session and any encrypted/signed cookies using Ruby’s Marshal library, someone with the app secret can wreak havoc. They can embed arbitrary Ruby code into the cookie, submit it with a request, and the server-side deserialization will execute that code without you noticing. Granted, this requires the attacker to have the app secret, but since 99% of the apps out there have the shared secret in their source code, anyone with access to the source code has this data. It’s not data you can easily rotate when employees leave or when you are done working with contractors. Anybody with the shared secret is a potential attacker. Start by moving this data out of the code base and into an environment variable.],
   [Rails doesn’t let you change the default serializer directly. But Rails relies on ActiveSupport for its crypto work and AS supports swapping the serializer. Some people in the community are aware of this issue and monkey patch Rails to serialize their sessions using JSON or another alternative. Here is an Airbnb article and
  Rails 3 patch . Here is my Rails 4 monkey patch to switch the serialization to JSON. I’m using it in production with Rails 4, but it’s untested on Rails 3.],
   [You can modify either solution to use MessagePack instead of JSON if you want to fit more data in the 4K cookie size.],
-  [id="understanding-rails-session-encryption"\>Understanding Rails Session Encryption],
   [Once I addressed the serialization issue, I had to reimplement the crypto work done by Rails to encode and/or sign the data.],
   [Most of us just rely on our frameworks/libraries to do the right thing, but we rarely look under the hood. I ported the logic to Golang which has an amazing support for crypto (albeit lower level than Ruby). My Go package contains an explanation of the code logic and the examples needed to decode/verify as well as encode/sign sessions that are compatible with Rails.],
   [Here is a high level summary of what Rails does when it encodes and signs your session data:],
-  [class="highlight"\> key\_generator = ActiveSupport :: CachingKeyGenerator . new( ActiveSupport :: KeyGenerator . new(app\_secret\_key, iterations : 1000 ))
+  [key\_generator = ActiveSupport :: CachingKeyGenerator . new( ActiveSupport :: KeyGenerator . new(app\_secret\_key, iterations : 1000 ))
 derived\_secret = key\_generator . generate\_key( "encrypted cookie" )
 sign\_secret = key\_generator . generate\_key( "signed encrypted cookie" )],
   [encryptor = ActiveSupport :: MessageEncryptor . new(secret, sign\_secret)
-session\_content = encryptor . encrypt\_and\_sign({ hello : "world" })],
+session\_content = encryptor . encrypt\_and\_sign(\{ hello : "world" \})],
   [The session\_content string is then set as the session cookie value.
 Note that you could do that in any Ruby app using ActiveSupport , making it easy to share sessions between Ruby applications (like Rails & Sinatra).],
   [Technically, there are a lot of things going on. To avoid using the same secret to sign and encode data, Rails relies on derived keys using PBKDF2 (password based key derivation function).
@@ -450,7 +640,7 @@ The encoding is done via AES 256 CBC only using the first 32 bytes of the encryp
   [At this point, the session is encoded but it could be tampered with. To avoid that, Rails signs the encoded data using the verifier (HMAC) and appends the base 64 encoded signature to the encoded data.],
   [To decode and verify the data, Rails repeats the process in reverse using the serializer to deserialize the data.],
   [Note that you can also rely on the the same crypto process to safely encode/sign any data you want to share. If you’re ok with the data being user-readable, sign it to make sure it isn’t tampered with along the way. If you don’t want it to be user-readable, encrypt it first then sign the encrypted data.],
-  [id="sharing-the-session-with-non-ruby-apps"\>Sharing the Session with Non-Ruby Apps],
+  [Sharing the Session with Non-Ruby Apps],
   [Many apps are moving to an SOA approach. That often means multiple languages living together in production. Sharing a web session can be very useful, especially until you switch to a SSO solution.],
   [The key is to start by having the session data serialized in a format that is available in all your relevent languages. JSON, XML MessagePack, and protobuf are good examples.],
   [The second step is to reimplement the crypto dance I just explained above. The good news is that I’ve already done it for Go. Using that example, you should be able to port it to other languages (Node, Scala/Clojure/Java, Rust, Elixir, Python or whatever you fancy).],
@@ -466,10 +656,8 @@ problems like these ones, consider joining the Splice team! \*\*],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [presenting the rails activists],
   author: [Matt Aimonetti],
   source-name: [Matt Aimonetti],
@@ -484,7 +672,6 @@ Being Monday goes with waking up early, going back to work, and lots of deadline
   [This interaction with the end users and the third party developers is something the entire Merb team valued a great deal and I always felt it was something the community really appreciated.],
   [As part of the merge, it was agreed that we would push things further and have a team within the Rails team to take care of “communication”. Rails is a bigger project than Merb and communication between the dev team and the users isn’t always something easy to do.],
   [That’s why we have formed a separate team that will help communicate and support the community better. We now even have an official page on the Rails website itself :)],
-  [id="the-rails-activists"\>The Rails Activists],
   [The A-Team just got announced on the Rails blog .],
   [Instead of being called “evangelists”, we are going to be called “activists”. I think part of the argument was that the E-Team doesn’t sound as good as the A-Team.],
   [We started with team of 4. You might not know them yet but they all are brilliant people and I’m really glad to be working with them.],
@@ -493,7 +680,7 @@ Being Monday goes with waking up early, going back to work, and lots of deadline
 Ryan Bates\*\*, mainly known for his Railscasts. I only met Ryan once in person, but I’ve always been impressed by his work (don’t tell anyone, but I secretly dreamt of having something like Railscasts but for Merb :) )],
   [Mike Gunderloy . I actually did not know Mike but I have read and enjoyed his blog and have seen his work on the Rails guides. Mike is an experienced writer and developer. He joked the other day saying that he started programming before any member of the Rails team was even born. Mike is a great addition to the team and I’m looking forward to learning from his experience.],
   [Gregg and Ryan also covered the event, you might want to check their blog posts ( Gregg’s and Mike’s )],
-  [id="so-what-are-we-going-to-do"\>So what are we going to do?],
+  [So what are we going to do?],
   [Pretty simple. We’ve boiled it down to 2 sentences:],
   [The mission of the Rails Activists is to empower and support the worldwide network of Ruby on Rails users. We do this by publicizing Rails, making adoption easier, and enhancing developer support.],
   [if you prefer a few more details, here are some of the tasks we are going to work on:],
@@ -504,7 +691,7 @@ Ryan Bates\*\*, mainly known for his Railscasts. I only met Ryan once in person,
   [Website maintenance],
   [Documentation efforts],
   [Developer support],
-  [id="do-we-need-help"\>Do we need help?],
+  [Do we need help?],
   [Absolutely! The idea is not that we are going to do all the work. The concept of this new team is to help organize the community. We are going to build a Rails Network, a network of people involved in local Rails “evangelism”/activism, people contributing and/or translating documentation, third part developers etc…],
   [First thing would be to join the mailing list and share your suggestions, comments, concerns, etc., with us.],
   [Secondly, we have already set up some forums to hear your feedback.],
@@ -518,10 +705,8 @@ We have other forums for more general feedback , but we need to work with deadli
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Real Python: How to Use Git: A Beginner's Guide],
   author: [Planet Python],
   source-name: [Planet Python],
@@ -531,9 +716,10 @@ We have other forums for more general feedback , but we need to work with deadli
   [In this guide, you’ll set up Git locally and use the core workflow from the terminal to track and record changes in a Python project. By the end, you’ll have a working Git repository with a recorded commit history you can inspect and manage:],
   [Commit History Displayed With git log],
   [In the next sections, you’ll create your own repository and begin building that history from scratch. Before you begin, you can download a Git cheat sheet to keep the core commands handy:],
-  [class="my-3"\> Take the Quiz: Test your knowledge with our interactive “How to Use Git: A Beginner's Guide” quiz. You’ll receive a score upon completion to help you track your learning progress:],
+  [Take the Quiz: Test your knowledge with our interactive “How to Use Git: A Beginner's Guide” quiz. You’ll receive a score upon completion to help you track your learning progress:],
   [How to Use Git: A Beginner's Guide],
-  [id="how-to-use-git-prerequisites"\>How to Use Git: Prerequisites],
+  [Test your knowledge of Git basics: initializing repos, staging files, committing snapshots, and managing your project history.],
+  [How to Use Git: Prerequisites],
   [Before you start tracking your code with Git, make sure you have the right tools in place. This tutorial assumes that you’re comfortable working with the command line and have some basic Python knowledge.],
   [Here’s what you’ll need to get started:],
   [A terminal or command prompt],
@@ -544,17 +730,20 @@ We have other forums for more general feedback , but we need to work with deadli
   [You don’t need a GitHub account to use Git or follow this tutorial. Later, if you want to share your code with others or back it up online, you can optionally push your Git repository to platforms like GitHub , GitLab , or Bitbucket .],
   [To learn more about the differences between Git and GitHub, check out Introduction to Git and GitHub for Python Developers .],
   [With these prerequisites in place, you’re ready to begin setting up Git and tracking changes in your project. In the next step, you’ll install Git, prepare your existing Python files, and initialize your first repository.],
-  [id="step-1-install-git-and-prepare-your-project"\>Step 1: Install Git and Prepare Your Project],
+  [Step 1: Install Git and Prepare Your Project],
   [To start, you’ll check whether Git is installed on your system, prepare a simple project, and initialize a Git repository so you can begin tracking changes right away.],
-  [id="check-whether-git-is-already-installed"\>Check Whether Git Is Already Installed],
+  [Check Whether Git Is Already Installed],
   [Before you can start using Git, you need to make sure it’s installed on your machine. Chances are that Git is already present on your system. To check whether Git is installed, run this command:],
+  [\$ git --version],
   [If this command displays a Git version, you’re good to go and can create a project directory . Otherwise, you need to install Git on your system before continuing.],
-  [id="install-git-on-your-system"\>Install Git on Your System],
+  [Install Git on Your System],
   [Luckily, Git provides installers for Windows, macOS, and Linux on its official website , offering a straightforward way to install Git on your machine. Because installation steps vary across operating systems, this guide links to the official documentation rather than reproducing those steps here.],
   [If you prefer a graphical interface, you can install a Git client such as GitHub Desktop , Sourcetree , or GitKraken . These tools install Git automatically during setup.],
   [Once installed, open your terminal and confirm that Git is available:],
+  [\$ git --version
+ git version 2.24.0.windows.2],
   [Your Git version may appear slightly different from this example, depending on your operating system and when you installed Git. That’s perfectly fine. As long as Git is installed and the command runs successfully, you’ll be able to follow along with the rest of this tutorial without any issues.],
-  [id="create-a-project-directory"\>Create a Project Directory],
+  [Create a Project Directory],
   [Read the full article at https:\/\/realpython.com/how-to-use-git\/ »],
 ),
   insert-map: (:),
@@ -563,10 +752,8 @@ We have other forums for more general feedback , but we need to work with deadli
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [merb 1 0 released],
   author: [Matt Aimonetti],
   source-name: [Matt Aimonetti],
@@ -582,7 +769,7 @@ We have other forums for more general feedback , but we need to work with deadli
   [The second announcement Yehuda made was about Merb Training . I’m probably pretty biased since I am at the origin of this project. I know for a fact that a lot of people were waiting for 1.0 to get started with Merb. We are also working on getting more documentation out, and 3 books are coming up. Still, the best way to learn is to sit down with people who know Merb who can teach you the way its intended to be used.],
   [Training will allow you to benefit a lot from being with other people who also share the same desire to master Ruby’s most powerful and flexible web framework .],
   [What’s also really exciting is that Yehuda Katz , Merb’s lead developer, agreed to be a tutor for the course. I can’t imagine a better way to learn. Check this page for more information about the next training session or get in contact with me if you want to organize a training session for your company.],
-  [id="finally-the-big-news-was-the-announcement-of-merb-10"\>Finally, the big news was the announcement of Merb 1.0 !],
+  [Finally, the big news was the announcement of Merb 1.0 !],
   [Merb 1.0 went through 5 release candidates and was finally marked as final. In the last few months, the Merb team worked hard to make things easier for people who want to get started in no time.],
   [Let’s quickly look at why Merb is awesome:],
   [Merb is Modular . Merb is not a monolithic framework. You can pick and choose what you need. Create a 1 file app “à la Sinatra” or a rich web app “à la Rails”. Merb has many components. Only requires the ones you need and save precious resources. (Merb doesn’t believe in 1 size fits all)],
@@ -610,11 +797,10 @@ We have other forums for more general feedback , but we need to work with deadli
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [‘Good, I’m Glad He’s Dead.’],
   author: [John Gruber],
   source-name: [Daring Fireball],
@@ -633,7 +819,7 @@ We have other forums for more general feedback , but we need to work with deadli
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Third Stage Engineering],
   author: [Brendan Gregg],
   source-name: [Brendan Gregg],
@@ -656,7 +842,7 @@ We have other forums for more general feedback , but we need to work with deadli
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [globalite update],
   author: [Matt Aimonetti],
   source-name: [Matt Aimonetti],
@@ -681,7 +867,7 @@ We have other forums for more general feedback , but we need to work with deadli
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [will\_paginate and merb],
   author: [Matt Aimonetti],
   source-name: [Matt Aimonetti],
@@ -703,7 +889,7 @@ We have other forums for more general feedback , but we need to work with deadli
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [attachment\_fu updated],
   author: [Matt Aimonetti],
   source-name: [Matt Aimonetti],
@@ -735,7 +921,7 @@ We have other forums for more general feedback , but we need to work with deadli
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [news update],
   author: [Matt Aimonetti],
   source-name: [Matt Aimonetti],
@@ -760,7 +946,7 @@ We have other forums for more general feedback , but we need to work with deadli
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Claude Can Now Take Control of Your Mac],
   author: [John Gruber],
   source-name: [Daring Fireball],
@@ -789,7 +975,7 @@ which lets you assign Claude tasks from your phone.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [sexy chart the video],
   author: [Matt Aimonetti],
   source-name: [Matt Aimonetti],
@@ -806,10 +992,10 @@ which lets you assign Claude tasks from your phone.],
   [The code used in the presentation is also available here],
   [Presentation available here (the sound is a bit saturated, sorry about that. Note that we made the video big enough so you can follow with the code if you don’t understand my accent :) )],
   [Feel free to watch the other SDRuby podcasts or even better, subscribe to our feed .],
-  [id="next-sdruby-meeting-will-be-thursday-december-6--730pm"\>Next SDRuby meeting will be Thursday, December 6 \@ 7:30pm],
+  [Next SDRuby meeting will be Thursday, December 6 \@ 7:30pm],
   [Location: UCSD CS Building],
   [We’ll be talking about Unobtrusive Javascript , the Facebook API , and hosting our first Rails Roundtable.],
-  [id="newbies-and-experts-welcome"\>Newbies and experts welcome!],
+  [Newbies and experts welcome!],
 ),
   insert-map: (:),
   word-count: 343,
@@ -824,7 +1010,7 @@ which lets you assign Claude tasks from your phone.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [MacOS 26.4 Adds ‘Slow Charger’ Indicator for MacBooks],
   author: [John Gruber],
   source-name: [Daring Fireball],
@@ -851,7 +1037,7 @@ recommended for their MacBook model .],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [latest merb and rails 30 news],
   author: [Matt Aimonetti],
   source-name: [Matt Aimonetti],
@@ -877,7 +1063,7 @@ recommended for their MacBook model .],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [books to read in 2014],
   author: [Matt Aimonetti],
   source-name: [Matt Aimonetti],
@@ -932,7 +1118,7 @@ forward to 2014!],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Information: ‘Apple Can “Distill” Google’s Big Gemini Model’],
   author: [John Gruber],
   source-name: [Daring Fireball],
@@ -966,7 +1152,7 @@ student.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [problems with urls in merb head],
   author: [Matt Aimonetti],
   source-name: [Matt Aimonetti],
@@ -992,7 +1178,6 @@ end],
  end
 end],
   [However that won’t be enough.. You see my url used to look like that:],
-  [url(:channel\_shows, :channel\_id =\> channel)],
   [Now I can simplify it to:],
   [url(:channel\_shows, channel)],
   [That still won’t fix the problem, since the real problem comes from the fact that I was on Merb HEAD but not DataMapper HEAD. Updating DM clears things up. That’s the price to pay to be on HEAD ;)],
@@ -1008,7 +1193,7 @@ end],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [More details about the vivo T5 Pro leak including its price and launch time frame],
   author: [GSMArena],
   source-name: [GSMArena],
@@ -1032,7 +1217,7 @@ end],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [larubyconf 2012],
   author: [Matt Aimonetti],
   source-name: [Matt Aimonetti],
@@ -1043,9 +1228,9 @@ Aimonetti gave a talk entitled Ruby: time to move on .],
   [\#\#Description of the talk:],
   [Let’s be honest, Ruby became mainstream a few years back and it isn’t the cool underground programming language it once was. It’s quite likely that your cousin’s boyfriend who’s “into computers" knows what Ruby on Rails is. There are hundreds of books, conferences, training and meetups for Rubyists. Recruiters fight to hire whoever knows how to generate a scaffolded Rails app. But now cool kids can’t stop talking about node.js, CoffeeScript, Clojure, Haskell and pushing code to the UI layer. What does it mean for the new, existing and prospecting Ruby developers? Is it time to jump ship and move on to something else?],
   [\#\#Slides],
-  [The slides are available on Matt’s SpeakerDeck and can be \[downloaded here\]({{ page.slides }}).],
+  [The slides are available on Matt’s SpeakerDeck and can be \[downloaded here\](\{\{ page.slides \}\}).],
   [\#\#Video],
-  [{% video https:\/\/cdn.confreaks.com/system/assets/datas/3173/original/816-larubyconf2012-time-to-move-away-from-ruby-small.mp4 640 360 /images/matt\_aimonetti\_larubyconf2012\_video.png %}],
+  [\{% video https:\/\/cdn.confreaks.com/system/assets/datas/3173/original/816-larubyconf2012-time-to-move-away-from-ruby-small.mp4 640 360 /images/matt\_aimonetti\_larubyconf2012\_video.png %\}],
   [\#\#Presentation website],
 ),
   insert-map: (:),
@@ -1056,7 +1241,7 @@ Aimonetti gave a talk entitled Ruby: time to move on .],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: ["Michael Kennedy's Thoughts on Technology": Fire and Forget at Textual],
   author: [Planet Python],
   source-name: [Planet Python],
@@ -1084,49 +1269,47 @@ Aimonetti gave a talk entitled Ruby: time to move on .],
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([Darknet], source-name: [Darknet (security news)], [SmbCrawler is a credentialed SMB share crawler for red teams that discovers misconfigured shares and hunts secrets across Windows networks.])],
-    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [A recently disclosed critical security flaw impacting Citrix NetScaler ADC and NetScaler Gateway is witnessing active reconnaissance activity, according to Defused Cyber and watchTowr.
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([Darknet], source-name: [Darknet (security news)], [SmbCrawler is a credentialed SMB share crawler for red teams that discovers misconfigured shares and hunts secrets across Windows networks.])],
+  [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [A recently disclosed critical security flaw impacting Citrix NetScaler ADC and NetScaler Gateway is witnessing active reconnaissance activity, according to Defused Cyber and watchTowr.
 The vulnerability, CVE-2026-3055 (CVSS score: 9.3), refers to a case of insufficient input validation leading to memory overread, which an attacker could exploit to leak potentially sensitive information.
 Per])],
-    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [TeamPCP, the threat actor behind the recent compromises of Trivy and KICS, has now compromised a popular Python package named litellm, pushing two malicious versions containing a credential harvester, a Kubernetes lateral movement toolkit, and a persistent backdoor.
+  [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [TeamPCP, the threat actor behind the recent compromises of Trivy and KICS, has now compromised a popular Python package named litellm, pushing two malicious versions containing a credential harvester, a Kubernetes lateral movement toolkit, and a persistent backdoor.
 Multiple security vendors, including Endor Labs and JFrog, revealed that litellm versions 1.82.7 and 1.82.8 were published on March])],
-    [#brief-item([Inaara Thawer], source-name: [Inhabitat], [Kaiserstraße is a new residential building currently under construction in Blumenau, Brazil. The project is designed by Alencar Arquitetura and aims to harness connections between residents and the natural world.])],
-    [#brief-item([Planet Python], source-name: [Planet Python], [With the mountains of Python code that it's possible to generate now, how's your code review going? What are the limitations of human review, and where does machine review excel? Christopher Trudeau is back on the show this week with another batch of PyCoder's Weekly articles and projects.])],
-    [#brief-item([Matt Aimonetti], source-name: [Matt Aimonetti], [Globalite contributor: Marcus Derencius just submitted a Portuguese translation for Rails.
+  [#brief-item([Inaara Thawer], source-name: [Inhabitat], [Kaiserstraße is a new residential building currently under construction in Blumenau, Brazil. The project is designed by Alencar Arquitetura and aims to harness connections between residents and the natural world.])],
+  [#brief-item([Planet Python], source-name: [Planet Python], [With the mountains of Python code that it's possible to generate now, how's your code review going? What are the limitations of human review, and where does machine review excel? Christopher Trudeau is back on the show this week with another batch of PyCoder's Weekly articles and projects.])],
+  [#brief-item([Matt Aimonetti], source-name: [Matt Aimonetti], [Globalite contributor: Marcus Derencius just submitted a Portuguese translation for Rails.
 
 Your application can now speak Portuguese thanks to Globalite and Marcus :)])],
-    [#brief-item([Jane Street Blog], source-name: [Jane Street Blog], [At the end of last year, we decided to try something new: a
+  [#brief-item([Jane Street Blog], source-name: [Jane Street Blog], [At the end of last year, we decided to try something new: a
  challenge that would run
 alongside Advent of Code , where we asked the community to
 show us how they could design hardware to solve the same problems. We had no idea what
 level of participation to expect, but we received a huge number of submissions, many of
 which were incredibly creative!])],
-    [#brief-item([Jane Street Blog], source-name: [Jane Street Blog], [At Jane Street, for the last several years, we have been increasingly interested
+  [#brief-item([Jane Street Blog], source-name: [Jane Street Blog], [At Jane Street, for the last several years, we have been increasingly interested
 in machine learning and its many use cases. This is why it was exciting when
 earlier this year myself and a few of my colleagues had the opportunity to
 attend the AAAI 2019 conference. We’d like to take this space to share with you
 some of the interesting projects and themes we saw at the conference.])],
-    [#brief-item([Jane Street Blog], source-name: [Jane Street Blog], [We recently restructured our standard libraries at Jane Street in a
+  [#brief-item([Jane Street Blog], source-name: [Jane Street Blog], [We recently restructured our standard libraries at Jane Street in a
 way that eliminates the difference between Core\_kernel and Core 
 and we’re happy with the result. The new layout should reach the open
 source world before the end of the year.])],
-    [#brief-item([Jane Street Blog], source-name: [Jane Street Blog], [At Jane Street, we have always been heavy users of pre-processors, first with
+  [#brief-item([Jane Street Blog], source-name: [Jane Street Blog], [At Jane Street, we have always been heavy users of pre-processors, first with
 camlp4 and now ppx. Pre-processing makes the infrastructure a bit more complex,
 but it save us a lot of time by taking care of a lot of tedious boilerplate code
 and in some case makes the code a bit prettier.])],
-    [#brief-item([Laura Cowan], source-name: [Inhabitat], [With climate change ramping up and an El Nino weather pattern in effect for the western hemisphere, heat island effect has become a real problem for cities sweltering under the summer sun. GAF created a product called Streetbond Pavement Coating that aims to turn that heat island effect around by reflecting heat back into space.])],
-    [#brief-item([Shilpa Varma], source-name: [HubSpot Product Blog], [class="hs-featured-image-wrapper"\> 
+  [#brief-item([Laura Cowan], source-name: [Inhabitat], [With climate change ramping up and an El Nino weather pattern in effect for the western hemisphere, heat island effect has become a real problem for cities sweltering under the summer sun. GAF created a product called Streetbond Pavement Coating that aims to turn that heat island effect around by reflecting heat back into space.])],
+  [#brief-item([Shilpa Varma], source-name: [HubSpot Product Blog], [
  
 
  On February 25, 2026, HubSpot experienced a service disruption affecting user access to specific types of workflows within our user interface. All backend workflow automations continued to execute normally without interruption - no automations were delayed, missed, or lost. We have completed a thorough analysis of this incident and are implementing targeted safeguards to prevent this class of failure from recurring.])],
-    [#brief-item([Laura Cowan], source-name: [Inhabitat], [The Casitas at The Halles by Hive 3D and Eco Material Technologies are a new project to create sustainable, 3D-printed homes for vacation rentals near Austin, Texas. These unique low-profile homes use a technology that creates 92% less emissions than traditional concrete. Round Top, Texas, 80 miles east of Austin, will now be home to the world's first near zero-carbon, 3D-printed neighborhood.])],
-    [#brief-item([Jane Street Blog], source-name: [Jane Street Blog], [We recently ran across a strange higgs-bugson that manifested itself in a critical system that stores and distributes the firm’s trading activity data, called Gord. (A higgs-bugson is a bug that is reported in practice but difficult to reproduce, named for the Higgs boson , a particle which was theorized in the 1960s but only found in 2013.) In this post I’ll walk you through the process I took to debug it. I tried to write down relevant details as they came up, so see if you can guess what the bug is while reading along.])],
-    [#brief-item([Darknet], source-name: [Darknet (security news)], [Dark web search engines in 2025 and how enterprises use monitoring, APIs and IOC hunting to detect credential leaks, impersonation and supply chain exposure.])],
-    [#brief-item([KC Morgan], source-name: [Inhabitat], [Among the oldest tools that human hands ever created are axes, used to chop wood for fires and buildings. Wood is truly the mother of sustainable resources, a material that will grow back again and again. And now, wood is becoming the "it" design material. Sweden is starting an ambitious new project that will demonstrate the majesty of wood, and the possibilities it represents in sustainable building.])],
-  ))
-}
+  [#brief-item([Laura Cowan], source-name: [Inhabitat], [The Casitas at The Halles by Hive 3D and Eco Material Technologies are a new project to create sustainable, 3D-printed homes for vacation rentals near Austin, Texas. These unique low-profile homes use a technology that creates 92% less emissions than traditional concrete. Round Top, Texas, 80 miles east of Austin, will now be home to the world's first near zero-carbon, 3D-printed neighborhood.])],
+  [#brief-item([Jane Street Blog], source-name: [Jane Street Blog], [We recently ran across a strange higgs-bugson that manifested itself in a critical system that stores and distributes the firm’s trading activity data, called Gord. (A higgs-bugson is a bug that is reported in practice but difficult to reproduce, named for the Higgs boson , a particle which was theorized in the 1960s but only found in 2013.) In this post I’ll walk you through the process I took to debug it. I tried to write down relevant details as they came up, so see if you can guess what the bug is while reading along.])],
+  [#brief-item([Darknet], source-name: [Darknet (security news)], [Dark web search engines in 2025 and how enterprises use monitoring, APIs and IOC hunting to detect credential leaks, impersonation and supply chain exposure.])],
+  [#brief-item([KC Morgan], source-name: [Inhabitat], [Among the oldest tools that human hands ever created are axes, used to chop wood for fires and buildings. Wood is truly the mother of sustainable resources, a material that will grow back again and again. And now, wood is becoming the "it" design material. Sweden is starting an ambitious new project that will demonstrate the majesty of wood, and the possibilities it represents in sustainable building.])],
+))
 
 #colophon([Wide Monitor], [Vol. 1, No. 064], [2026-03-30])

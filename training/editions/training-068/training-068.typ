@@ -21,34 +21,8 @@
 #masthead([The Tribune], [Vol. 1, No. 068], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Spotify's New 'SongDNA' Is Actually a Great Way to Learn More About Your Music],
-  kicker: [Cover Story],
-  author: [Jake Peterson],
-  source-name: [Lifehacker],
-  deck: [It's still not easy to pick a favorite among other services like Apple Music , but Premium subscribers can at least say Spotify is giving them something for their money.],
-  lead-pre: [],
-  lead-cap: [S],
-  lead-rest: [potify keeps adding new features lately. Last week, the company rolled out " Exclusive Mode " for desktop users to stream in the highest quality possible; last month, Spotify announced " Smart Reorder ," which automatically sorts your songs by BPM; and in January, the company's AI-powered " Prompted Playlists " landed in the U. S. after an exclusive stint overseas.],
-  body-paragraphs: (
-  [It's still not easy to pick a favorite among other services like Apple Music , but Premium subscribers can at least say Spotify is giving them something for their money.],
-  [Now, the company is rolling out another new feature, one that actually seems like a cool way to learn about your music. On Tuesday, Spotify announced SongDNA, which shows you all the people who worked on a song, as well as all the samples and interpolations that song used. SongDNA lives directly under the lyrics tile in the player window. I already see it on my end, though Spotify does label the feature with a "Beta" tag to note that this feature is still in testing.],
-  [id="how-spotifys-songdna-works"\>How Spotify's SongDNA works],
-  [When SongDNA appears under a song, you'll be able to see the artists who worked on it in one corner. That might include the main artist, but also any of the composers, producers, musicians, or writers who contributed. The SongDNA tile shows the main artist in a bubble, but tap the icon, and you'll see a map of all the people involved. You can tap on any of these names to see how many other artists they've worked with, how many songs they worked on, and what their "top song" is (presumably, what the most popular song they worked on is on Spotify).],
-  [To the right of the artists' bubble is a sample and interpolations bubble: Here, you'll see all of the clips the artist or artists took from various other songs to incorporate them into their own track. On Kendrick Lamar's "King Kunta," for example, I can see they sampled a drum loop from "Kung Fu" by Curtis Mayfield, and took vocals from James Brown's "The Payback," among others. Spotify will tell you exactly where in each song the sample was taken from, and gives you a play button to listen. You also can scroll down to find songs that have sampled the song in question: "F The Disco" by Cavi samples vocals from "King Kunta" at 1:28, as does "Brain Cells" by Villain Park (at 1:59). Scroll down a bit more, and you'll find any covers of the song available on Spotify. "8-Bit Misfits" has an awesome interpretation of the song that sounds like Kendrick wrote music for the NES.],
-  [I'm an Apple Music guy, truthfully, but I have to say: This rocks (no pun intended). Most of us listen to our music without really knowing much about how it was put together—outside of the headlining artist, anyway. SongDNA makes it easy to learn more about how your favorite songs were made, where they pulled inspiration from, and who actually helped make the hit besides the singer or artist. You could follow up with the lead engineer or producer of your favorite song to see what other projects they worked on, or check out the full songs that were sampled to find new music to listen to. While it's a bummer it's only available for Premium subscribers, it's a great move on Spotify's part.],
-  [id="does-spotifys-songdna-use-ai"\>Does Spotify's SongDNA use AI?],
-  [I reached out to Spotify asking whether SongDNA uses AI to retrieve this information, and, as it turns out, it doesn't! For the most part, anyway. Here's what a Spotify rep told me: "SongDNA is not a generative AI feature and does not use Large Language Models (LLMs) to create or predict information. This immersive music experience is built on official credits data we receive from artists and their teams, supplemented by community sourced data. While we use technology to visualize these complex relationships, the data itself is rooted in human-verified industry sources, not AI-generated content."],
-  [While it's not clear what "technology" was used to visual the relationships here, it's refreshing to learn that the data here is all human-sourced. Spotify might use AI for the UI, but, unlike many new app features these days, this one isn't going to hallucinate incorrect samples, or make up credits for songs.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [Ultrahuman’s New Ring Pro Is Finally Available in the US],
   author: [Beth Skwarecki],
   source-name: [Lifehacker],
@@ -62,7 +36,7 @@
   [\$449 — until pre-orders close.],
   [Ultrahuman’s smart rings have been off the U. S. market since October 2025, due to legal action by Oura. As I detailed here , Oura sued several other smart ring makers over patent infringement and won a judgment by the U. S. International Trade Commission. As a result, most other smart ring companies had to leave the U. S. market or reach a deal with Oura. Ultrahuman found a third option—continuing to develop a ring they already had in the works, betting that the ITC would rule its design is different enough that it does not infringe Oura’s patent.],
   [That bet seems to have paid off. U. S. Customs and Border Protection has officially signed off on the new design, allowing it to be sold here. Ultrahuman’s older designs, like the Ring Air I reviewed last year , are still banned.],
-  [id="whats-new-with-the-ultrahuman-ring-pro"\>What’s new with the Ultrahuman Ring Pro],
+  [What’s new with the Ultrahuman Ring Pro],
   [I wrote more about the Ring Pro here . It’s got a faster processor with “on-chip machine learning,” a 15-day battery life, and the ability to hold 250 days of data if you’re unable to sync your ring for extended periods. The physical shape is similar to the Ring Air (no sensor bumps, but there is a flattened area at the bottom of the interior), and it has break points for easier removal of the ring in an emergency.],
   [The cleverest feature of the Ring Pro is its charging case, which can store data, flash the firmware, and deliver haptic alerts. It also has a speaker for alarms and for sounding when you use the “find my case” feature. The charger can charge wirelessly.],
   [Ultrahuman has since announced that you’ll have the option to buy the ring packaged with the charging case for \$479, or with just a “mini charger” (presumably similar to the Ring Air’s charger) for \$399. The case will be available separately for \$100.],
@@ -73,11 +47,9 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [This Unlocked Pixel 10 Is \$250 Off for the Amazon Spring Sale],
   author: [Pradershika Sharma],
   source-name: [Lifehacker],
@@ -85,8 +57,19 @@
   paragraphs: (
   [We may earn a commission from links on this page. Deal pricing and availability subject to change after time of publication.],
   [Google’s Pixel 10 launched in August 2025 at \$799, which already made it a reasonable flagship then, if you liked Google’s software-first approach to Android. Now it’s down to \$549 for the 128GB unlocked model on Amazon’s Spring Sale —a \$250 drop and its lowest price yet, according to price trackers . The Pixel 10 Pro is also discounted to \$749 from \$999, which puts both phones in a much more competitive place than they were at launch. Buying an unlocked Pixel 10 means you are not tied to any carrier, so you can switch networks, use local SIMs while traveling, or avoid long-term contracts.],
+  [Google Pixel 10],
+  [Unlocked Android Smartphone ( (128GB, Indigo)],
+  [\$549.00
+ at Amazon],
+  [\$799.00 
+ Save \$250.00],
+  [\$549.00
+ at Amazon],
+  [\$799.00 
+ Save \$250.00],
   [What you’re getting here is Google’s latest Tensor G5 chip paired with 12GB of RAM. That extra memory helps when using on-device AI features like Magic Cue, which processes tasks locally instead of relying on the cloud. In practice, this shows up in faster photo edits, smarter suggestions, and less waiting when switching between apps. Compared to the Pixel 9a ’s 8GB of RAM, the Pixel 10 feels better prepared for heavier use over the next few years. As for its camera setup, this is the first standard Pixel to include a telephoto lens, so zoom shots hold detail better instead of falling apart past 2x or 3x. This PCMag review also noted better detail retention and more accurate colors compared to the previous generation. You also get the new Qi2 magnetic charging system, which works with MagSafe-style accessories, something Android phones have largely skipped until now.],
   [That said, the Tensor chips don’t match the raw performance of Apple’s A-series or Qualcomm’s top Snapdragon chips, so heavy gaming or sustained workloads can show some limits, according to our associate tech editor Michelle’s review . Battery life is also decent but not class-leading, especially if you lean into AI features or camera use. Still, what the Pixel 10 does well is balance. It gives you strong cameras, a clean Android version with fast updates, and useful AI features in a compact design. And at \$549, it becomes easier to recommend, especially if you want a smart, camera-first Android phone that will age well.],
+  [Our Best Editor-Vetted Amazon Big Spring Sale Deals Right Now],
   [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
  
  
@@ -143,6 +126,7 @@
  \$169.99 
  
  (List Price \$249.99)],
+  [Deals are selected by our commerce team],
 ),
   insert-map: (:),
   word-count: 696,
@@ -150,12 +134,10 @@
   debug-mode: false,
 )
 
-  #pull-quote([As for its camera setup, this is the first standard Pixel to include a telephoto lens, so zoom shots hold detail better instead of falling apart past 2x or 3x.], [Pradershika Sharma])
+#pull-quote([As for its camera setup, this is the first standard Pixel to include a telephoto lens, so zoom shots hold detail better instead of falling apart past 2x or 3x.], [Pradershika Sharma])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [All FC 26 1 of 5 86+ Campaign Rewind Player Pick SBC rewards (March 27)],
   author: [Arka Sarkar],
   source-name: [Destructoid],
@@ -163,6 +145,7 @@
   paragraphs: (
   [The 1 of 5 86+ Campaign Rewind Player Pick SBC has returned to FC 26 Ultimate Team, and it looks better than before. Unlike the previous version, EA Sports has discarded all cards rated 85 and below from the pool of promos. The rewards include all cards released as SBCs between Sept. 20, 2025 and Feb. 20.],
   [If you're interested in trying out your luck, this guide will list all possible rewards that you can find in the picks.],
+  [Complete list of FC 26 1 of 5 Campaign Rewind Player Pick SBC rewards],
   [All cards you see below can be found in the picks. Base Heroes and Base Icons that appeared as SBCs haven't been included.],
   [Galeno Winter Wildcards 86],
   [Boungiourno Winter Wildcards 86],
@@ -332,12 +315,10 @@
   debug-mode: false,
 )
 
-  #pull-quote([The rewards include all cards released as SBCs between Sept.], [Arka Sarkar])
+#pull-quote([The rewards include all cards released as SBCs between Sept.], [Arka Sarkar])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [This TP-Link Wifi Router Is 44% Off for the Amazon Big Spring Sale],
   author: [Stephen Johnson],
   source-name: [Lifehacker],
@@ -345,8 +326,18 @@
   paragraphs: (
   [We may earn a commission from links on this page. Deal pricing and availability subject to change after time of publication.],
   [If your wifi is too damn slow (and I bet it is), the bottleneck is probably the router. This TP-Link Archer AXE75 might be the solution, and it's 44% off for Amazon’s Big Spring Sale , bringing it down to \$112.99—and it's already a good deal at the full price.],
+  [TP-Link Archer AXE75],
+  [\$112.99
+ at Amazon],
+  [\$199.99 
+ Save \$87.00],
+  [\$112.99
+ at Amazon],
+  [\$199.99 
+ Save \$87.00],
   [This is a Wi-Fi 6E router, which unlocks the 6GHz band, so it's a serious router for the price of a bargain one. It features a 1.7 GHz Quad-Core CPU, so it won't freeze up when you're gaming while someone else is streaming 4K in the next room, and it has six high-gain antennas that are built to kill dead zones in medium-to-large homes. Check out PCMag's review for more details.],
   [That's the good news. The bad news is the FCC regulations regarding foreign-made routers going into effect. Like most routers, AXE75 is "foreign made"—but the regulations only affect the future authorization of brand-new models. Since the Archer AXE75 is already an authorized, existing model, you can legally buy and use it without worry. But there's a caveat: The FCC has allowed security updates for these models through March 1, 2027. After that, it's not certain it will be supported. TP Link says it's planning to move manufacturing to the U. S . If that happens, the FCC is expected to extend its waiver, and the device will be supported. But no one can say for sure.],
+  [Our Best Editor-Vetted Amazon Big Spring Sale Deals Right Now],
   [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
  
  
@@ -403,6 +394,7 @@
  \$169.99 
  
  (List Price \$249.99)],
+  [Deals are selected by our commerce team],
 ),
   insert-map: (:),
   word-count: 561,
@@ -410,10 +402,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [This 13-Inch M4 MacBook Air Is \$250 Off for the Amazon Big Spring Sale],
   author: [Pradershika Sharma],
   source-name: [Lifehacker],
@@ -421,8 +411,18 @@
   paragraphs: (
   [We may earn a commission from links on this page. Deal pricing and availability subject to change after time of publication.],
   [The 13-inch Apple MacBook Air (2025, M4, 512GB) is down to \$949 for Amazon’s Big Spring Sale , a \$250 drop from its usual \$1,199 and its lowest price yet, according to price trackers . This is Apple’s most accessible laptop, and an easy-to-recommend choice as a long-term machine for everyday use. Reviews back that up, with PCMag giving it an “ outstanding ” rating and naming it the best ultraportable laptop of 2025 . Over at Lifehacker, senior tech editor Jake Peterson has also pointed out in his coverage that this Air is a better value for most buyers than stepping up to a MacBook Pro , especially at a discount like this.],
+  [Apple MacBook Air (2025)],
+  [\$949.00
+ at Amazon],
+  [\$1,199.00 
+ Save \$250.00],
+  [\$949.00
+ at Amazon],
+  [\$1,199.00 
+ Save \$250.00],
   [The M4 chip keeps things feeling quick in everyday use. You can move between a bunch of tabs, documents, and light edits without things getting stuck or slowing down. Apple has also made 16GB of RAM the standard this time, which helps the laptop hold up better over time. It’s the kind of change you notice after a few months, when everything still runs the way it did on day one, even if you’re someone who leaves apps open in the background. The 13.6-inch Liquid Retina display is also easy to like. Text looks crisp, colors feel natural, and it’s bright enough to use comfortably in most lighting. Using it day to day feels straightforward—the keyboard is comfortable enough that you don’t think about it much, and Touch ID makes small things like unlocking or approving downloads faster.],
   [You also get Wi-Fi 6E and MagSafe charging, so you can free up the two Thunderbolt 4 ports for accessories. Those ports can also drive up to two external 6K displays, which is more flexibility than older Air models offered. That said, the port selection is limited to two USB-C connections, so using multiple peripherals often means adding a hub. Storage is fixed at 512GB unless you pay more upfront, and upgrades get expensive quickly within Apple’s ecosystem. This also is not built for heavy, sustained workloads like advanced video editing or 3D rendering, where a MacBook Pro is still the better fit. But for everyday use, this covers a wide range of tasks without feeling restrictive, and the combination of performance, display quality, and battery efficiency makes it the best MacBook for most people .],
+  [Our Best Editor-Vetted Amazon Big Spring Sale Deals Right Now],
   [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
  
  
@@ -479,6 +479,7 @@
  \$169.99 
  
  (List Price \$249.99)],
+  [Deals are selected by our commerce team],
 ),
   insert-map: (:),
   word-count: 723,
@@ -486,10 +487,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Best Deals I've Found on Fitness Wearables in Amazon's Big Spring Sale],
   author: [Beth Skwarecki],
   source-name: [Lifehacker],
@@ -497,22 +496,48 @@
   paragraphs: (
   [We may earn a commission from links on this page. Deal pricing and availability subject to change after time of publication.],
   [I've been keeping an eye on all the best deals on fitness tech, and here are my top picks. Several wearables are on their lowest price ever. While many of the sales are on slightly older models, everything I'm including here is a device I think is very much worth buying, or at least considering, in 2026. There are deals on fitness brands like Garmin and Suunto, budget options from Fitbit, and even smartwatches from Apple, Google, and Samsung.],
-  [id="the-best-deals-on-garmin-watches"\>The best deals on Garmin watches],
+  [The best deals on Garmin watches],
   [Garmin Vivoactive 5 , \$179.99, down from \$194.85, or \$299.99 when it first launched in 2023.],
   [Garmin Forerunner 265 and 265S , \$344.95, originally \$449.99 when it first launched in 2023. (It has since been replaced by the Forerunner 570.)],
   [Garmin Forerunner 965 , \$499.99, originally \$599.99 when it first launched in 2023. (It has since been replaced by the Forerunner 970.)],
   [Garmin Forerunner 165 , \$199.99, down from \$249.99 when it first launched in 2024. This is a slightly older model but is still current—Garmin has not released a replacement.],
   [Garmin Forerunner 55 , \$169.00, down from \$199.99 when it first launched in 2021.],
   [Garmin Instinct E , \$214.99, originally \$299.99. This is a current model, which launched in 2025.],
-  [id="the-best-deals-on-fitbit-trackers"\>The best deals on Fitbit trackers],
+  [Garmin Instinct E 45mm],
+  [\$214.99
+ at Amazon],
+  [\$299.99 
+ Save \$85.00],
+  [\$214.99
+ at Amazon],
+  [\$299.99 
+ Save \$85.00],
+  [The best deals on Fitbit trackers],
   [Fitbit Charge 6 , \$119.95, down from \$159.95],
   [Fitbit Inspire 3 , \$69.95, down from \$99.95],
   [Fitbit Versa 4 , \$149.95, down from \$199.95],
-  [id="the-best-deals-on-suunto-watches"\>The best deals on Suunto watches],
+  [Fitbit Versa 4],
+  [\$149.95
+ at Amazon],
+  [\$199.95 
+ Save \$50.00],
+  [\$149.95
+ at Amazon],
+  [\$199.95 
+ Save \$50.00],
+  [The best deals on Suunto watches],
   [Suunto Run : \$179 (normally \$199).],
   [Suunto Race S : \$299 (normally \$349)],
   [Suunto Vertical : \$379 (normally \$499)],
-  [id="the-best-deals-on-pixel-watches"\>The best deals on Pixel watches],
+  [\$179.00
+ at Amazon],
+  [\$199.00 
+ Save \$20.00],
+  [\$179.00
+ at Amazon],
+  [\$199.00 
+ Save \$20.00],
+  [The best deals on Pixel watches],
   [Pixel Watch 4, 41mm, Wifi , \$289.99, down from \$349.99. The Pixel Watch 4 is the current version, and was released in 2025.],
   [Pixel Watch 4, 41mm, LTE , \$389.99, down from \$449.99],
   [Pixel Watch 4, 45mm, Wifi , \$339.99, down from \$399.99],
@@ -520,21 +545,58 @@
   [Pixel Watch 3, 41mm, LTE , \$242.98, from a regular price of \$349.99.],
   [Pixel Watch 3, 45mm, Wifi , \$179.99, from a regular price of \$299.99],
   [Pixel Watch 3, 45mm. LTE , \$239.99, from a regular price of \$399.99],
-  [id="the-best-deals-on-polar-heart-rate-monitors"\>The best deals on Polar heart rate monitors],
+  [Google Pixel Watch 4 (41mm) - LTE],
+  [\$389.99
+ at Amazon],
+  [\$449.99 
+ Save \$60.00],
+  [\$389.99
+ at Amazon],
+  [\$449.99 
+ Save \$60.00],
+  [The best deals on Polar heart rate monitors],
   [Today’s deals on Polar heart rate monitors include:],
   [Polar H10 : \$76.99, down from \$104.99. This is widely regarded as the best heart rate monitor out there.],
   [Polar H9 : \$56.44, down from \$69.90. This model can only pair to one Bluetooth device at a time, which is enough for most of us.],
   [Polar Verity Sense : \$84.99, down from \$104.99. This is an armband with an optical sensor.],
-  [id="the-best-deals-on-apple-watches"\>The best deals on Apple Watches],
+  [Polar H10 Heart Rate Monitor],
+  [\$84.55
+ at Amazon],
+  [\$104.95 
+ Save \$20.40],
+  [\$84.55
+ at Amazon],
+  [\$104.95 
+ Save \$20.40],
+  [The best deals on Apple Watches],
   [Apple Watch Series 11, GPS starting at \$299 (down from \$399). Series 11 is the current version, released in 2025.],
   [Apple Watch Series 11, cellular starting at \$399 (down from \$499)],
   [Apple Watch Ultra 2 starting at \$499 (down from \$799). This model was released in 2023, and the Ultra 3 in 2025, so it's a slightly older model but still a solid pick.],
   [Apple Watch SE 3 starting at \$219 (down from \$249). This is the current model, released in 2025.],
   [Apple Watch Series 10, cellular, with titanium case , \$499 (down from \$799). This is the 2024 model, but it's the premium version with a titanium case—and the Series 11 didn't improve upon the 10 very much, anyway .],
-  [id="the-best-deals-on-samsung-watches"\>The best deals on Samsung watches],
+  [Apple Watch Series 11 (GPS, 42mm, S/M Black Sport Band)],
+  [\$299.00
+ at Amazon],
+  [\$399.00 
+ Save \$100.00],
+  [\$299.00
+ at Amazon],
+  [\$399.00 
+ Save \$100.00],
+  [The best deals on Samsung watches],
   [Galaxy Watch 8 Classic, Bluetooth , \$369.99 (down from \$499.99)],
   [Galaxy Watch 8 Classic, LTE , \$419.99 (down from \$549.99)],
   [Galaxy Watch 7 , starting at \$199.35 (from \$249.99)],
+  [Samsung Galaxy Watch 8 Classic (2025)],
+  [\$369.99
+ at Amazon],
+  [\$499.99 
+ Save \$130.00],
+  [\$369.99
+ at Amazon],
+  [\$499.99 
+ Save \$130.00],
+  [Our Best Editor-Vetted Amazon Big Spring Sale Deals Right Now],
   [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
  
  
@@ -591,6 +653,7 @@
  \$169.99 
  
  (List Price \$249.99)],
+  [Deals are selected by our commerce team],
 ),
   insert-map: (:),
   word-count: 1780,
@@ -598,10 +661,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Everything You're Entitled to When Your Flight Gets Delayed or Canceled],
   author: [Meredith Dietz],
   source-name: [Lifehacker],
@@ -609,7 +670,7 @@
   paragraphs: (
   [In recent days, travelers have faced the highest wait times in TSA history , "with some wait times greater than 4.5 hours," said the agency's acting chief, Ha Nguyen McNeill, in a testimony before the House Committee on Homeland Security on March 25.],
   [Unlike weather delays that clear up on their own, this madness could continue as long as the partial government shutdown does. Airlines are bracing themselves for more record-breaking security lines, which means more chaos and more uncertainty. You want to be prepared to fight for what you’re entitled to when an airline, for lack of a better phrase, utterly screws you over. Here’s how to always get the most money possible from a canceled or delayed flight.],
-  [id="know-your-airline-passenger-rights"\>Know your airline passenger rights],
+  [Know your airline passenger rights],
   [Federal law still does not require airlines to provide passengers with money or other compensation when flights are delayed. This means that in most cases, compensation is at the discretion of the airline.],
   [Canceled flights],
   [If an airline cancels your flight less than 14 days before departure and you choose to cancel your trip entirely, you’re entitled to a refund of both your plane ticket and any pre-paid baggage fees. This typically applies even if you have non-refundable tickets.],
@@ -629,11 +690,11 @@
   [Flights on small aircrafts (less than 30 passengers) are overbooked, delayed, or canceled],
   [International flights are overbooked, delayed, or canceled],
   [To qualify for involuntary denied boarding compensation, you must have a confirmed flight reservation, you must have checked in and arrived at your gate on time, and you must be unable to reach your destination within one hour of your original flight’s arrival time. The compensation amount will depend on how long of a delay you face, which is outlined on the DOT website .],
-  [id="what-exactly-are-you-entitled-to-if-your-flight-is-delayed"\>What exactly are you entitled to if your flight is delayed?],
+  [What exactly are you entitled to if your flight is delayed?],
   [According to DOT , you are entitled to a refund if the airline cancels a flight, regardless of the reason, and you choose not to travel or accept travel credits, vouchers, or other forms of compensation offered by the airline.],
   [But while airlines are required to give passengers refunds if their flights are outright canceled, the rules around delays are less clear. For instance, "significant delay" is not officially defined anywhere by the DOT. The most useful, up-to-date resource for what you’re entitled to is the DOT's Airline Customer Service Dashboard. Follow this link to check out a grid of the major U. S. airlines and which services they’ve promised to provide should there be a “controllable” flight cancelation or delay. What counts as controllable includes maintenance or crew problems, cabin cleaning, baggage loading, fueling, and other delays caused by the airline itself.],
   [However, the DOT encourages travelers to reach out to the airlines before filing a complaint . Customer service representatives may be able to resolve your issue on the spot. You can also visit FlightRights.gov for a listing of the benefits and rights they are entitled too.],
-  [id="finally-dont-automatically-accept-that-voucher"\>Finally: Don’t automatically accept that voucher],
+  [Finally: Don’t automatically accept that voucher],
   [While some airlines may offer tickets or vouchers for those involuntarily bumped, you have the right to request a check for cash instead. The likelihood you’ll receive one depends on the circumstances around your reason for cancelation as well as the airline’s policies. Still, double-checking with a customer service representative could reap cash rewards. On that note, if you do need to connect with a real human, here’s our guide to navigating an airline’s phone lines .],
   [The bottom line for today's news: Check your flight status frequently, contact your airline proactively to understand your options, and consider having backup plans. Airlines will typically rebook you if your flight is cancelled, but with so many disruptions happening, alternative flights may fill up quickly.],
   [And hey, as a last resort, you can take to social media to publicly complain in the hopes that a representative will finally respond to you.],
@@ -644,10 +705,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The cheapest stocks and shares ISA on the market],
   author: [The Accumulator],
   source-name: [Monevator],
@@ -756,6 +815,8 @@
   [Also, none of this takes into account the value of your time spent filling in forms. Although when you’re getting this anal then maybe that’s a net positive. (A person’s gotta have a hobby!)],
   [Take it steady,],
   [Note: this article on the cheapest stocks and shares ISA was updated in Spring 2026. Comments below are kept for posterity and general interest but may refer to old charging schemes, so please check when they were posted.],
+  [You pay zero for trading ETFs as long as you accept the fixed daily trading times.],
+  [Hat tip to Monevator reader Jon Snow for pointing out the Scottish Widows regular investment hack.],
   [The post The cheapest stocks and shares ISA on the market appeared first on Monevator .],
 ),
   insert-map: (:),
@@ -764,11 +825,10 @@
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Best players for the FC 26 Hat Trick Delight Evolution],
   author: [Arka Sarkar],
   source-name: [Destructoid],
@@ -779,6 +839,7 @@
   [FC 26 Hat Trick Delight Evolution requirements],
   [FC 26 Hat Trick Delight Evolution upgrades],
   [Best players to use in Hat Trick Delight Evolution],
+  [FC 26 Hat Trick Delight Evolution requirements],
   [Here are the requirements of Hat Trick Delight Evolution in FC 26 .],
   [Overall: Max 87],
   [PlayStyle: Max 10],
@@ -786,6 +847,7 @@
   [Not Rarity: World Tour Silver Stars],
   [Position: CM or RM],
   [Not Position: CB],
+  [FC 26 Hat Trick Delight Evolution upgrades],
   [The evolution has five levels of upgrades, each with certain conditions to fulfill.],
   [Level 1 upgrades],
   [Overall: +10|89],
@@ -829,6 +891,7 @@
   [Play 1 match in Squad Battles on min Semi-Pro difficulty (or Rush/Rivals/Champions/Live Events) using your active EVO player in game.],
   [Level 5 upgrade requirements],
   [Play 1 match in Squad Battles on min Semi-Pro difficulty (or Rush/Rivals/Champions/Live Events) using your active EVO player in game.],
+  [Best players to use in Hat Trick Delight Evolution],
   [Here are some of my best recommendations for inclusion in the evolution.],
   [Doue TOTW],
   [Thornstvedt TOTW],
@@ -843,7 +906,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [To Build Strategy, Start with the Future],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -859,7 +922,7 @@
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [In an age of rapidly changing technology, it’s more important than ever for organizations to effectively support employee learning. Gianpiero Petriglieri, associate professor at INSEAD, has studied leaders who do this well and says they fall into three categories: custodians, challengers, or connectors. He explains which type of learning leader works best in which contexts and how all three approaches can help individuals and teams reach the next level. Petriglieri is author of the HBR article "Three Ways to Lead Learning."])],
       [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Kathryn Judge, a finance professor at Columbia Law School, is troubled by the rise of intermediary platforms between products and services and the customers who eventually purchase them. Thanks to technology and globalization, she shows how the importance of “middlemen” in the value chain has increased, along with the length of global supply chains. Judge details the downsides and risks of this trend. And she explains how customers and workers alike can lead to intermediaries offering more transparency and social value. Judge wrote the book "Direct: The Rise of the Middleman Economy and the Power of Going to the Source.”])],
       [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [What does it look like for a business in 2025 to build a strategy around sustainability? In this Future of Business series, IdeaCast hosts Alison Beard and Adi Ignatius sat down with four leading CEOs to understand where global business is going. In this episode, host Adi Ignatius speaks with Poul Weihrauch, CEO of Mars, about how he manages the family-owned global pet care, snacking and food company. They discuss balancing short-term performance with long-term goals, resilience, and the business case for sustainability-driven innovation.])],
@@ -882,7 +945,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The Growth of the Private-Sector Space Industry],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -898,7 +961,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Training Your Brain to Work More Effectively],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -917,7 +980,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [A Nobel Prize Winner on Rethinking Poverty (and Business)],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -933,7 +996,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Why Finance Needs More Humanity, and Why Humanity Needs Finance],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -952,7 +1015,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Introducing a New Era of HBR IdeaCast],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -970,7 +1033,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [IBM’s Ginni Rometty on Skill-Building and Success],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -990,7 +1053,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [What You Must Deliver to Win Customers Today],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -1006,7 +1069,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [No Kings Rallygoers in New York Share Their Biggest Fears—and Greatest Hopes],
   author: [James West],
   source-name: [Mother Jones],
@@ -1028,7 +1091,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Why Leaders Need to Value Their Retirement-Age Workforce],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -1044,7 +1107,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [What Business Leaders Should Know About Cryptocurrency],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -1063,7 +1126,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Why Many Companies Get Layoffs Wrong],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -1079,7 +1142,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Real Leaders: Oprah Winfrey and the Power of Empathy],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -1098,7 +1161,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [What Kind of Networker Are You?],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -1114,7 +1177,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Comedian Sarah Cooper On Bringing Humor to Any Career],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -1133,7 +1196,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Brené Brown on Being a Steady Leader in Tumultuous Times],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -1149,7 +1212,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Best players for FC 26 The Bullet Man Evolution],
   author: [Arka Sarkar],
   source-name: [Destructoid],
@@ -1160,6 +1223,7 @@
   [FC 26 The Bullet Man Evolution requirements],
   [FC 26 The Bullet Man Evolution upgrades],
   [Best players to use in The Bullet Man Evolution],
+  [FC 26 The Bullet Man Evolution requirements],
   [Here are the requirements of The Bullet Man Evolution in FC 26 .],
   [Overall: Max 87],
   [PlayStyle: Max 10],
@@ -1167,6 +1231,7 @@
   [Not Rarity: World Tour Silver Stars],
   [Position: LB],
   [Not Position: CB, CM],
+  [FC 26 The Bullet Man Evolution upgrades],
   [The evolution has five levels of upgrades, each with certain conditions to fulfill.],
   [Level 1 upgrades],
   [Overall: +20|88],
@@ -1214,6 +1279,7 @@
   [Play 1 match in Squad Battles on min Semi-Pro difficulty (or Rush/Rivals/Champions/Live Events) using your active EVO player in game.],
   [Level 5 upgrade requirements],
   [Play 1 match in Squad Battles on min Semi-Pro difficulty (or Rush/Rivals/Champions/Live Events) using your active EVO player in game.],
+  [Best players to use in The Bullet Man Evolution],
   [Here are some of my best recommendations for inclusion in the evolution.],
   [The post Best players for FC 26 The Bullet Man Evolution appeared first on Destructoid .],
 ),
@@ -1226,8 +1292,7 @@
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [What You Need to Know About Executive Recruiting],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -1241,6 +1306,5 @@
   debug-mode: false,
 )
 
-}
 
 #colophon([The Tribune], [Vol. 1, No. 068], [2026-03-30])

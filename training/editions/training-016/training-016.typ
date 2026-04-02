@@ -21,56 +21,8 @@
 #masthead([Deep Standard], [Vol. 1, No. 016], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Fragments: March 10],
-  kicker: [Cover Story],
-  author: [Martin Fowler],
-  source-name: [Martin Fowler],
-  deck: [If I was giving the keynote at SRECon 2026, I would ditch the begrudging stance.],
-  lead-pre: [],
-  lead-cap: [T],
-  lead-rest: [ech firm fined \$1.1m by California for selling high-school students’ data],
-  body-paragraphs: (
-  [I agree with Brian Marick’s response],
-  [No such story should be published without a comparison of the fine to the company’s previous year revenue and profits, or valuation of last funding round. (I could only find a valuation of \$11.0M in 2017.)],
-  [We desperately need corporations’ attitudes to shift from “lawbreaking is a low-risk cost of doing business; we get a net profit anyway” to “this could be a death sentence.”],
-  [❄ ❄ ❄ ❄ ❄],
-  [Charity Majors gave the closing keynote at SRECon last year, encouraging people to engage with generative AI.],
-  [If I was giving the keynote at SRECon 2026, I would ditch the begrudging stance. I would start by acknowledging that AI is radically changing the way we build software. It’s here, it’s happening, and it is coming for us all.],
-  [Her agenda this year would be to tell everyone that they mustn’t wait for the wave to crash on them, but to swim out to meet it. In particular, I appreciated her call to resist our confirmation bias:],
-  [The best advice I can give anyone is: know your nature, and lean against it.],
-  [If you are a reflexive naysayer or a pessimist, know that, and force yourself to find a way in to wonder, surprise and delight.],
-  [If you are an optimist who gets very excited and tends to assume that everything will improve: know that, and force yourself to mind real cautionary tales.],
-  [❄ ❄ ❄ ❄ ❄],
-  [In a comment to Kief Morris’s recent article on Humans and Agents in Software Loops , in LinkedIn comments Renaud Wilsius may have coined another bit of terminology for the agent+programmer age],
-  [This completes the story of productivity, but it opens a new chapter on talent: The Apprentice Gap. If we move humans ‘on the loop’ too early in their careers, we risk a future where no one understands the ‘How’ deeply enough to build a robust harness. To manage the flywheel effectively, you still need the intuition that comes from having once been ‘in the loop.’ The next great challenge for CTOs isn’t just Harness Engineering, it’s ‘Experience Engineering’ for our junior developers in an agentic world.],
-  [❄ ❄ ❄ ❄ ❄],
-  [In hearing conversations about “the ralph loop”, I often hear it in the sense of just letting the agents loose to run on their own. So it’s interesting to read the originator of the ralph loop point out:],
-  [It’s important to watch the loop as that is where your personal development and learning will come from. When you see a failure domain – put on your engineering hat and resolve the problem so it never happens again.],
-  [In practice this means doing the loop manually via prompting or via automation with a pause that involves having to prcss CTRL+C to progress onto the next task. This is still ralphing as ralph is about getting the most out how the underlying models work through context engineering and that pattern is GENERIC and can be used for ALL TASKS.],
-  [At the Thoughtworks Future of Software Development Retreat we were very concerned about cognitive debt. Watching the loop during ralphing is a way to learn about what the agent is building, so that it can be directed effectively in the future.],
-  [❄ ❄ ❄ ❄ ❄],
-  [Anthropic recently published a page on how AI helps break the cost barrier to COBOL modernization . Using AI to help migrate COBOL systems isn’t an new idea to my colleagues, who shared their experiences using AI for this task over a year ago. While Anthropic’s article is correct about the value of AI, there’s more to the process than throwing some COBOL at an LLM.],
-  [The assumption that AI can simply translate COBOL into Java treats modernization as a syntactic exercise, as though a system is nothing more than its source code. That premise is flawed.],
-  [A direct translation would, in the best case scenario, faithfully reproduce existing architectural constraints, accumulated technical debt and outdated design decisions. It wouldn’t address weaknesses; it would restate them in a different language.],
-  […],
-  [In practice, modernization is rarely about preserving the past in a new syntax. It’s about aligning systems with current market demands, infrastructure paradigms, software supply chains and operating models. Even if AI were eventually capable of highly reliable code translation, blind conversion would risk recreating the same system with the same limitations, in another language, without a deliberate strategy for replacing or retiring its legacy ecosystem.],
-  [❄ ❄ ❄ ❄ ❄],
-  [Anders Hoff (inconvergent)],
-  [an LLM is a compiler in the same way that a slot machine is an ATM],
-  [❄ ❄ ❄ ❄ ❄],
-  [One of the more interesting aspects of the network of people around Jeffrey Epstein is how many people from academia were connected. It’s understandable why, he had a lot of money to offer, and most academics are always looking for funding for their work. Most of the attention on Epstein’s network focused on those that got involved with him, but I’m interested in those who kept their distance and why - so I enjoyed Jeffrey Mervis’s article in Science],
-  [Many of the scientists Epstein courted were already well-established and well-funded. So why didn’t they all just say no? Science talked with three who did just that. Here’s how Epstein approached them, and why they refused to have anything to do with him.],
-  [I believe that keeping away from bad people makes life much more pleasant, if nothing else it reduces a lot of stress. So it’s good to understand how people make decisions on who to avoid.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Analysing Optimisations in the Wire Serialiser],
   author: [Matt Warren (.NET)],
   source-name: [Matt Warren (.NET)],
@@ -84,22 +36,22 @@
   [Clever allocations],
   [Boxing, Unboxing and Virtual calls],
   [Fast creation of empty objects],
-  [id="looking-up-value-serializers-by-type"\>Looking up value serializers by type],
+  [Looking up value serializers by type],
   [This optimisation changed code like this:],
-  [class="highlight"\> public ValueSerializer GetSerializerByType ( Type type ) 
- { 
+  [public ValueSerializer GetSerializerByType ( Type type ) 
+ \{ 
  ValueSerializer serializer ; 
  
  if ( \_serializers . TryGetValue ( type , out serializer )) 
  return serializer ; 
  
  \/\/more code to build custom type serializers.. ignore for now. 
- }],
+ \}],
   [into this:],
-  [class="highlight"\> public ValueSerializer GetSerializerByType ( Type type ) 
- { 
+  [public ValueSerializer GetSerializerByType ( Type type ) 
+ \{ 
  if ( ReferenceEquals ( type . GetTypeInfo (). Assembly , ReflectionEx . CoreAssembly )) 
- { 
+ \{ 
  if ( type == TypeEx . StringType ) \/\/we simply keep a reference to each primitive type 
  return StringSerializer . Instance ; 
  
@@ -109,10 +61,10 @@
  if ( type == TypeEx . Int64Type ) 
  return Int64Serializer . Instance ; 
  ... 
- }],
+ \}],
   [So it has replaced a dictionary lookup with an if statement. In addition it is caching the Type instance of known types, rather than calculating them every time. As you can see the optimisation pays off in some circumstance but not in others, so it’s not a clear win. It depends on where the type is in the list of if statements. If it’s near the beginning (e.g. System. String ) it’ll be quicker than if it’s near the end (e.g. System. Byte\[\] ), which makes sense as all the other comparisons have to be done first.],
   [Full benchmark code and results],
-  [id="looking-up-types-when-deserializing"\>Looking up types when deserializing],
+  [Looking up types when deserializing],
   [The 2nd optimisation works by removing all unnecessary memory allocations, it did this by:],
   [Using a custom struct (value type) rather than a class],
   [Pre-calculating a hash code once, rather than each time a comparison is needed.],
@@ -120,43 +72,43 @@
   [Full benchmark code and results],
   [Note: these results nicely demonstrate how BenchmarkDotNet can show you memory allocations as well as the time taken.],
   [Interestingly they hadn’t actually removed all memory allocations as the comparisons between OptimisedLookup and OptimisedLookupCustomComparer show. To fix this I sent a P. R which removes unnecessary boxing, by using a Custom Comparer rather than the default struct comparer.],
-  [id="byte-buffers-allocations-and-gc"\>Byte buffers, allocations and GC],
+  [Byte buffers, allocations and GC],
   [Again removing unnecessary memory allocations were key in this optimisation, most of which can be seen in the NoAllocBitConverter . Clearly serialisation spends a lot of time converting from the in-memory representation of an object to the serialised version, i.e. a byte \[\] . So several tricks were employed to ensure that temporary memory allocations were either removed completely or if that wasn’t possible, they were done by re-using a buffer from a pool rather than allocating a new one each time (see “Buffer recycling” )],
   [Full benchmark code and results],
-  [id="clever-allocations"\>Clever allocations],
+  [Clever allocations],
   [This optimisation is perhaps the most interesting, because it’s implemented by creating a custom data structure, tailored to the specific needs of Wire. So, rather than using the default . NET dictionary , they implemented FastTypeUShortDictionary . In essence this data structure optimises for having only 1 item, but falls back to a regular dictionary when it grows larger. To see this in action, here is the code from the TryGetValue(..) method :],
-  [class="highlight"\> public bool TryGetValue ( Type key , out ushort value ) 
- { 
+  [public bool TryGetValue ( Type key , out ushort value ) 
+ \{ 
  switch ( \_length ) 
- { 
+ \{ 
  case 0 : 
  value = 0 ; 
  return false ; 
  case 1 : 
  if ( key == \_firstType ) 
- { 
+ \{ 
  value = \_firstValue ; 
  return true ; 
- } 
+ \} 
  value = 0 ; 
  return false ; 
  default : 
  return \_all . TryGetValue ( key , out value ); 
- } 
- }],
+ \} 
+ \}],
   [Like we’ve seen before, the performance gains aren’t clear-cut. For instance it depends on whether FastTypeUShortDictionary contains the item you are looking for ( Hit v Miss ), but generally it is faster:],
   [Full benchmark code and results],
-  [id="boxing-unboxing-and-virtual-calls"\>Boxing, Unboxing and Virtual calls],
+  [Boxing, Unboxing and Virtual calls],
   [This optimisation is based on the widely used trick that I imagine almost all . NET serialisers employ. For a serialiser to be generic, is has to be able to handle any type of object that is passed to it. Therefore the first thing it does is use reflection to find the public fields/properties of that object, so that it knows the data is has to serialise. Doing reflection like this time-and-time again gets expensive, so the way to get round it is to do reflection once and then use dynamic code generation to compile a delegate than you can then call again and again.],
   [If you are interested in how to implement this, see the Wire compiler source or this Stack Overflow question . As shown in the results below, compiling code dynamically is much faster than reflection and only a little bit slower than if you read/write the property directly in C\# code:],
   [Full benchmark code and results],
-  [id="fast-creation-of-empty-objects"\>Fast creation of empty objects],
+  [Fast creation of empty objects],
   [The final optimisation trick used is also based on dynamic code creation, but this time it is purely dealing with creating empty objects. Again this is something that a serialiser does many time, so any optimisations or savings are worth it.],
   [Basically the benchmark is comparing code like this:],
+  [FormatterServices . GetUninitializedObject ( type );],
   [with dynamically generated code, based on Expression trees :],
   [However this trick only works if the constructor of the type being created is empty, otherwise it has to fall back to the slow version. But as shown in the results below, we can see that the optimisation is a clear win and worth implementing:],
   [Full benchmark code and results],
-  [id="summary"\>Summary],
   [So it’s obvious that Roger Johansson and Szymon Kulec (who also contributed performance improvements ) know their optimisations and as a result they have steadily made the Wire serialiser faster, which makes is an interesting project to learn from.],
   [CodeProject],
 ),
@@ -166,17 +118,15 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Why is reflection slow?],
   author: [Matt Warren (.NET)],
   source-name: [Matt Warren (.NET)],
   images: (),
   paragraphs: (
   [It’s common knowledge that reflection in . NET is slow , but why is that the case? This post aims to figure that out by looking at what reflection does under-the-hood .],
-  [id="clr-type-system-design-goals"\>CLR Type System Design Goals],
+  [CLR Type System Design Goals],
   [But first it’s worth pointing out that part of the reason reflection isn’t fast is that it was never designed to have high-performance as one of its goals, from Type System Overview - ‘Design Goals and Non-goals’ :],
   [Accessing information needed at runtime from executing (non-reflection) code is very fast.],
   [Accessing information needed at compilation time for generating code is straightforward.],
@@ -190,7 +140,7 @@
   [and along the same lines, from Type Loader Design - ‘Key Data Structures’ :],
   [EEClass],
   [MethodTable data are split into “hot” and “cold” structures to improve working set and cache utilization. MethodTable itself is meant to only store “hot” data that are needed in program steady state. EEClass stores “cold” data that are typically only needed by type loading, JITing or reflection. Each MethodTable points to one EEClass.],
-  [id="how-does-reflection-work"\>How does Reflection work?],
+  [How does Reflection work?],
   [So we know that ensuring reflection was fast was not a design goal, but what is it doing that takes the extra time?],
   [Well there several things that are happening, to illustrate this lets look at the managed and unmanaged code call-stack that a reflection call goes through.],
   [System. Reflection. RuntimeMethodInfo. Invoke (..) - source code link],
@@ -202,13 +152,18 @@
   [stub for System. RuntimeMethodHandle. InvokeMethod (..) - link],
   [Even if you don’t click the links and look at the individual C\#/cpp methods, you can intuitively tell that there’s alot of code being executed along the way. But to give you an example, the final method, where the bulk of the work is done, System. RuntimeMethodHandle. InvokeMethod is over 400 LOC !],
   [But this is a nice overview, however what is it specifically doing?],
-  [id="fetching-the-method-information"\>Fetching the Method information],
+  [Fetching the Method information],
   [Before you can invoke a field/property/method via reflection you have to get the FieldInfo/PropertyInfo/MethodInfo handle for it, using code like this:],
+  [Type t = typeof ( Person ); 
+ FieldInfo m = t . GetField ( "Name" );],
   [As shown in the previous section there’s a cost to this, because the relevant meta-data has to be fetched, parsed, etc. Interestingly enough the runtime helps us by keeping an internal cache of all the fields/properties/methods. This cache is implemented by the RuntimeTypeCache class and one example of its usage is in the RuntimeMethodInfo class .],
   [You can see the cache in action by running the code in this gist , which appropriately enough uses reflection to inspect the runtime internals!],
   [Before you have done any reflection to obtain a FieldInfo , the code in the gist will print this:],
+  [Type: ReflectionOverhead. Program
+ Reflection Type: System. RuntimeType (BaseType: System. Reflection. TypeInfo)
+ m\_fieldInfoCache is null, cache has not been initialised yet],
   [But once you’ve fetched even just one field, then the following will be printed:],
-  [class="highlight"\> Type: ReflectionOverhead. Program
+  [Type: ReflectionOverhead. Program
  Reflection Type: System. RuntimeType (BaseType: System. Reflection. TypeInfo)
  RuntimeTypeCache: System. RuntimeType+RuntimeTypeCache, 
  m\_cacheComplete = True, 4 items in cache
@@ -217,23 +172,32 @@
  \[2\] - Int32 k\_\_BackingField - Private
  \[3\] - System. String TestField3 - Private, Static],
   [where ReflectionOverhead. Program looks like this:],
-  [private int TestProperty1 { get ; set ; } 
- }],
+  [class Program 
+ \{ 
+ private int TestField1 ; 
+ private string TestField2 ; 
+ private static string TestField3 ;],
+  [private int TestProperty1 \{ get ; set ; \} 
+ \}],
   [This means that repeated calls to GetField or GetFields are cheaper as the runtime only has to filter the pre-existing list that’s already been created. The same applies to GetMethod and GetProperty , when you call them the first time the MethodInfo or PropertyInfo cache is built.],
-  [id="argument-validation-and-error-handling"\>Argument Validation and Error Handling],
+  [Argument Validation and Error Handling],
   [But once you’ve obtained the MethodInfo , there’s still a lot of work to be done when you call Invoke on it. Imagine you wrote some code like this:],
-  [class="highlight"\> PropertyInfo stringLengthField = 
+  [PropertyInfo stringLengthField = 
  typeof ( string ). GetProperty ( "Length" , 
  BindingFlags . Instance | BindingFlags . Public ); 
  var length = stringLengthField . GetGetMethod (). Invoke ( new Uri (), new object \[ 0 \]);],
   [If you run it you would get the following exception:],
+  [System. Reflection. TargetException: Object does not match target type.
+ at System. Reflection. RuntimeMethodInfo. CheckConsistency(..)
+ at System. Reflection. RuntimeMethodInfo. InvokeArgumentsCheck(..)
+ at System. Reflection. RuntimeMethodInfo. Invoke(..)
+ at System. Reflection. RuntimePropertyInfo. GetValue(..)],
   [This is because we have obtained the PropertyInfo for the Length property on the String class, but invoked it with an Uri object, which is clearly the wrong type!],
-  [In addition to this, there also has to be validation of any arguments you pass through to the method you are invoking. To make argument passing work, reflection APIs take a parameter that is an array of object ’s, one per argument. So if you using reflection to call the method Add(int x, int y) , you would invoke it by calling methodInfo. Invoke(.., new \[\] { 5, 6 }) . At run-time checks need to be carried out on the amount and types of the values passed in, in this case to ensure that there are 2 and that they are both int ’s. One down-side of all this work is that it often involves boxing which has an additional cost, but hopefully this will be minimised in the future .],
-  [id="security-checks"\>Security Checks],
+  [In addition to this, there also has to be validation of any arguments you pass through to the method you are invoking. To make argument passing work, reflection APIs take a parameter that is an array of object ’s, one per argument. So if you using reflection to call the method Add(int x, int y) , you would invoke it by calling methodInfo. Invoke(.., new \[\] \{ 5, 6 \}) . At run-time checks need to be carried out on the amount and types of the values passed in, in this case to ensure that there are 2 and that they are both int ’s. One down-side of all this work is that it often involves boxing which has an additional cost, but hopefully this will be minimised in the future .],
   [The other main task that is happening along the way is multiple security checks. For instance, it turns out that you aren’t allowed to use reflection to call just any method you feel like. There are some restricted or ‘Dangerous Methods’ , that can only be called by trusted . NET framework code. In addition to a black-list, there are also dynamic security checks depending on the current Code Access Security permissions that have to be checked during invocation .],
-  [id="how-much-does-reflection-cost"\>How much does Reflection cost?],
+  [How much does Reflection cost?],
   [So now that we know what reflection is doing behind-the-scenes , it’s a good time to look at what it costs us. Please note that these benchmarks are comparing reading/writing a property directly v via reflection. In . NET properties are actually a pair of Get/Set methods that the compiler generates for us , however when the property has just a simple backing field the . NET JIT inlines the method call for performance reasons. This means that using reflection to access a property will show reflection in the worse possible light, but it was chosen as it’s the most common use-case, showing up in ORMs , Json serialisation/deserialisation libraries and object mapping tools .],
-  [id="reading-a-property-get"\>Reading a Property (‘Get’)],
+  [Reading a Property (‘Get’)],
   [Method 
  Mean 
  StdErr 
@@ -297,7 +261,7 @@
  1.2649 ns 
  3,931.17 
  419.04],
-  [id="writing-a-property-set"\>Writing a Property (‘Set’)],
+  [Writing a Property (‘Set’)],
   [Method 
  Mean 
  StdErr 
@@ -362,51 +326,59 @@
  4,302.17 
  390.99],
   [So we can clearly see that regular reflection code ( GetViaReflection and SetViaReflection ) is considerably slower than accessing the property directly ( GetViaProperty and SetViaProperty ). But what about the other results, lets explore those in more detail.],
-  [id="setup"\>Setup],
   [First we start with a TestClass that looks like this:],
+  [public class TestClass 
+ \{ 
+ public TestClass ( String data ) 
+ \{ 
+ Data = data ; 
+ \}],
   [private string data ; 
  private string Data 
- { 
- get { return data ; } 
- set { data = value ; } 
- } 
- }],
+ \{ 
+ get \{ return data ; \} 
+ set \{ data = value ; \} 
+ \} 
+ \}],
   [and the following common code, that all the options can make use of:],
-  [class="highlight"\> \/\\/ Setup code, done only once 
+  [\/\\/ Setup code, done only once 
  TestClass testClass = new TestClass ( "A String" ); 
  Type \@class = testClass . GetType (); 
  BindingFlag bindingFlags = BindingFlags . Instance | 
  BindingFlags . NonPublic | 
  BindingFlags . Public ;],
-  [id="regular-reflection"\>Regular Reflection],
   [First we use regular benchmark code, that acts as out starting point and the ‘worst case’:],
-  [class="highlight"\> \[ Benchmark \] 
+  [\[ Benchmark \] 
  public string GetViaReflection () 
- { 
+ \{ 
  PropertyInfo property = \@class . GetProperty ( "Data" , bindingFlags ); 
  return ( string ) property . GetValue ( testClass , null ); 
- }],
-  [id="option-1---cache-propertyinfo"\>Option 1 - Cache PropertyInfo],
+ \}],
+  [Option 1 - Cache PropertyInfo],
   [Next up, we can gain a small speed boost by keeping a reference to the PropertyInfo , rather than fetching it each time. But we’re still much slower than accessing the property directly, which demonstrates that there is a considerable cost in the ‘invocation’ part of reflection.],
+  [\/\\/ Setup code, done only once 
+ PropertyInfo cachedPropertyInfo = \@class . GetProperty ( "Data" , bindingFlags );],
   [\[ Benchmark \] 
  public string GetViaReflection () 
- { 
+ \{ 
  return ( string ) cachedPropertyInfo . GetValue ( testClass , null ); 
- }],
-  [id="option-2---use-fastmember"\>Option 2 - Use FastMember],
+ \}],
+  [Option 2 - Use FastMember],
   [Here we make use of Marc Gravell’s excellent Fast Member library , which as you can see is very simple to use!],
+  [\/\\/ Setup code, done only once 
+ TypeAccessor accessor = TypeAccessor . Create ( \@class , allowNonPublicAccessors : true );],
   [\[ Benchmark \] 
  public string GetViaFastMember () 
- { 
+ \{ 
  return ( string ) accessor \[ testClass , "Data" \]; 
- }],
+ \}],
   [Note that it’s doing something slightly different to the other options. It creates a TypeAccessor that allows access to all the Properties on a type, not just one. But the downside is that, as a result, it takes longer to run. This is because internally it first has to get the delegate for the Property you requested (in this case ‘Data’), before fetching it’s value. However this overhead is pretty small, FastMember is still way faster than Reflection and it’s very easy to use, so I recommend you take a look at it first.],
   [This option and all subsequent ones convert the reflection code into a delegate that can be directly invoked without the overhead of reflection every time, hence the speed boost!],
   [Although it’s worth pointing out that the creation of a delegate has a cost (see ‘Further Reading’ for more info). So in short, the speed boost is because we are doing the expensive work once (security checks, etc) and storing a strongly typed delegate that we can use again and again with little overhead. You wouldn’t use these techniques if you were doing reflection once, but if you’re only doing it once it wouldn’t be a performance bottleneck, so you wouldn’t care if it was slow!],
   [The reason that reading a property via a delegate isn’t as fast as reading it directly is because the . NET JIT won’t inline a delegate method call like it will do with a Property access. So with a delegate we have to pay the cost of a method call, which direct access doesn’t.],
-  [id="option-3---create-a-delegate"\>Option 3 - Create a Delegate],
+  [Option 3 - Create a Delegate],
   [In this option we use the CreateDelegate function to turn our PropertyInfo into a regular delegate :],
-  [class="highlight"\> \/\\/ Setup code, done only once 
+  [\/\\/ Setup code, done only once 
  PropertyInfo property = \@class . GetProperty ( "Data" , bindingFlags ); 
  Func getDelegate = 
  ( Func ) Delegate . CreateDelegate ( 
@@ -414,14 +386,14 @@
  property . GetGetMethod ( nonPublic : true ));],
   [\[ Benchmark \] 
  public string GetViaDelegate () 
- { 
+ \{ 
  return getDelegate ( testClass ); 
- }],
+ \}],
   [The drawback is that you to need to know the concrete type at compile-time , i.e. the Func part in the code above (no you can’t use Func , if you do it’ll thrown an exception!). In the majority of situations when you are doing reflection you don’t have this luxury, otherwise you wouldn’t be using reflection in the first place, so it’s not a complete solution.],
   [For a very interesting/mind-bending way to get round this, see the MagicMethodHelper code in the fantastic blog post from Jon Skeet ‘Making Reflection fly and exploring delegates’ or read on for Options 4 or 5 below.],
-  [id="option-4---compiled-expression-trees"\>Option 4 - Compiled Expression Trees],
+  [Option 4 - Compiled Expression Trees],
   [Here we generate a delegate , but the difference is that we can pass in an object , so we get round the limitation of ‘Option 3’. We make use of the . NET Expression tree API that allows dynamic code generation:],
-  [class="highlight"\> \/\\/ Setup code, done only once 
+  [\/\\/ Setup code, done only once 
  PropertyInfo property = \@class . GetProperty ( "Data" , bindingFlags ); 
  ParameterExpression = Expression . Parameter ( typeof ( object ), "instance" ); 
  UnaryExpression instanceCast = 
@@ -437,13 +409,13 @@
  . Compile ();],
   [\[ Benchmark \] 
  public string GetViaCompiledExpressionTrees () 
- { 
+ \{ 
  return ( string ) GetDelegate ( testClass ); 
- }],
+ \}],
   [Full code for the Expression based approach is available in the blog post Faster Reflection using Expression Trees],
-  [id="option-5---dynamic-code-gen-with-il-emit"\>Option 5 - Dynamic code-gen with IL Emit],
+  [Option 5 - Dynamic code-gen with IL Emit],
   [Finally we come to the lowest-level approach, emiting raw IL, although ‘ with great power, comes great responsibility ’:],
-  [class="highlight"\> \/\\/ Setup code, done only once 
+  [\/\\/ Setup code, done only once 
  PropertyInfo property = \@class . GetProperty ( "Data" , bindingFlags ); 
  Sigil . Emit getterEmiter = Emit \> 
  . NewDynamicMethod ( "GetTestClassDataProperty" ) 
@@ -454,14 +426,12 @@
  Func getter = getterEmiter . CreateDelegate ();],
   [\[ Benchmark \] 
  public string GetViaILEmit () 
- { 
+ \{ 
  return getter ( testClass ); 
- }],
+ \}],
   [Using Expression tress (as shown in Option 4), doesn’t give you as much flexibility as emitting IL codes directly, although it does prevent you from emitting invalid code! Because of this, if you ever find yourself needing to emil IL I really recommend using the excellent Sigil library , as it gives better error messages when you get things wrong!],
-  [id="conclusion"\>Conclusion],
   [The take-away is that if (and only if) you find yourself with a performance issue when using reflection, there are several different ways you can make it faster. These speed gains are achieved by getting a delegate that allows you to access the Property/Field/Method directly, without all the overhead of going via reflection every-time.],
   [Discuss this post in /r/programming and /r/csharp],
-  [id="further-reading"\>Further Reading],
   [FastExpressionKit - A small library to make reflection-y things faster],
   [Is Reflection really slow?],
   [Why is reflection slow?],
@@ -489,10 +459,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Know thy .NET object memory layout (Updated 2014-09-03)],
   author: [Matt Warren (.NET)],
   source-name: [Matt Warren (.NET)],
@@ -526,6 +494,8 @@
   [Analysing the memory layout of a . NET Object],
   [To do this you need to drop down into the debugger and use the excellent SOS or Son-of-Strike extension . This is because the . NET JITter is free to reorder fields as it sees fit, so the order you put the fields in your class does not determine the order they end up. The JITter changes the layout to minimise the space needed for the object and to make sure that fields are aligned on byte boundaries, it does this by packing them in the most efficient way.],
   [To test out the difference between the Histogram with a class-hierarchy and without, the following code was written (you can find HistogramAllInOneClass in this gist ):],
+  [Histogram testHistogram = new Histogram ( 3600000000000L , 3 ); 
+ HistogramAllInOneClass combinedHistogram = new HistogramAllInOneClass ();],
   [Debugger . Launch ();],
   [GC . KeepAlive ( combinedHistogram ); \/\\/ put a breakpoint on this line 
  GC . KeepAlive ( testHistogram );],
@@ -546,14 +516,13 @@
   [The ldflda instruction pushes the address of a field located in an object onto the stack. The object must be on the stack as an object reference (type O), a managed pointer (type &), an unmanaged pointer (type native int), a transient pointer (type \*), or an instance of a value type. The use of an unmanaged pointer is not permitted in verifiable code. The object's field is specified by a metadata token that must refer to a field member.],
   [By putting this code into my project, I was able to verify that it gives exactly the same field offsets that you can see when using the SOS technique (above). So it’s a nice technique and the only option if you want to get this information without having to drop-down into a debugger.],
   [After all these steps we end up with the results shown in the images below, where the rows are ordered by the “Offset” value.],
-  [align="center"\> AbstractHistogramBase.cs -\> AbstractHistogram.cs -\> Histogram.cs],
   [You can see that with the class hierarchy in place, the fields remain grouped as we want them to (shown by the orange/green/blue highlighting). What is interesting is that the JITter has still rearranged fields within a single group, preferring to put Int64 (long) fields before Int32 (int) fields in this case. This is seen by comparing the ordering of the “Field” column with the “Offset” one, where the values in the “Field” column represent the original ordering of the fields as they appear in the source code.],
   [However when we put all the fields in a single class, we lose the grouping:],
-  [align="center"\> Equivalent fields all in one class],
+  [Equivalent fields all in one class],
   [To achieve the same effect you can use the StructLayout attribute , but this requires that you calculate all the offsets yourself, which can be cumbersome:],
-  [class="highlight"\> \[ StructLayout ( LayoutKind . Explicit , Size = 28 , CharSet = CharSet . Ansi )\] 
+  [\[ StructLayout ( LayoutKind . Explicit , Size = 28 , CharSet = CharSet . Ansi )\] 
  public class HistogramAllInOneClass 
- { 
+ \{ 
  \/\\/ "Cold" accessed fields. Not used in the recording code path: 
  \[ FieldOffset ( 0 )\] 
  internal long identity ;],
@@ -564,7 +533,7 @@
  \[ FieldOffset ( 24 )\] 
  internal int numberOfSignificantValueDigits ;],
   [... 
- }],
+ \}],
   [If you are interested, the full results of this test are available],
   [CodeProject],
 ),
@@ -576,17 +545,14 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Research based on the .NET Runtime],
   author: [Matt Warren (.NET)],
   source-name: [Matt Warren (.NET)],
   images: (),
   paragraphs: (
   [Over the last few years, I’ve come across more and more research papers based, in some way, on the ‘Common Language Runtime’ (CLR).],
-  [Note: I put the papers into the following categories to make them easier to navigate (papers in each category are sorted by date, newest -\> oldest):],
   [Using the . NET Runtime as a case-study],
   [to prove its correctness , study how it works or analyse its behaviour],
   [“ It was formed in 1991, with the intent to advance state-of-the-art computing and solve difficult world problems through technological innovation in collaboration with academic, government, and industry researchers ” ( according to Wikipedia )],
@@ -641,99 +607,97 @@
   [An Optimizing Just-InTime Compiler for Rotor (Trindade & Silva, 2005)],
   [Software Interactions into the SSCLI platform (Charfi & Emsellem, 2004)],
   [Experience Integrating a New Compiler and a New Garbage Collector Into Rotor (Anderson, Eng, Glew, Lewis, Menon & Stichnoth, 2004)],
-  [id="net-runtime-as-a-case-study"\> . NET Runtime as a Case-Study],
-  [id="pitfalls-of-c-generics-and-their-solution-using-concepts-belyakova--mikhalkovich-2015"\> Pitfalls of C\# Generics and Their Solution Using Concepts (Belyakova & Mikhalkovich, 2015)],
+  [. NET Runtime as a Case-Study],
+  [Pitfalls of C\# Generics and Their Solution Using Concepts (Belyakova & Mikhalkovich, 2015)],
   [In comparison with Haskell type classes and C ++ concepts, such object-oriented languages as C\# and Java provide much limited mechanisms of generic programming based on F-bounded polymorphism. Main pitfalls of C\# generics are considered in this paper. Extending C\# language with concepts which can be simultaneously used with interfaces is proposed to solve the problems of generics; a design and translation of concepts are outlined.],
-  [id="efficient-compilation-of-net-programs-for-embedded-systems-sallenaveab--ducournaub-2011"\> Efficient Compilation of . NET Programs for Embedded Systems (Sallenaveab & Ducournaub, 2011)],
+  [Efficient Compilation of . NET Programs for Embedded Systems (Sallenaveab & Ducournaub, 2011)],
   [Compiling under the closed-world assumption (CWA) has been shown to be an appropriate way for implementing object-oriented languages such as Java on low-end embedded systems. In this paper, we explore the implications of using whole program optimizations such as Rapid Type Analysis (RTA) and coloring on programs targeting the . NET infrastructure. We extended RTA so that it takes into account . NET specific features such as (i) array covariance, a language feature also supported in Java, (ii) generics, whose specifications in . Net impacts type analysis and (iii) delegates, which encapsulate methods within objects. We also use an intraprocedural control flow analysis in addition to RTA . We eval-uated the optimizations that we implemented on programs written in C\#. Preliminary results show a noticeable reduction of the code size, class hierarchy and polymorphism of the programs we optimize. Array covariance is safe in almost all cases, and some delegate calls can be implemented as direct calls.],
-  [id="type-safety-of-c-and-net-clr-fruja-2007"\> Type safety of C\# and . Net CLR (Fruja, 2007)],
+  [Type safety of C\# and . Net CLR (Fruja, 2007)],
   [Type safety plays a crucial role in the security enforcement of any typed programming language. This thesis presents a formal proof of C\#’s type safety. For this purpose, we develop an abstract
 framework for C\#, comprising formal specifications of the language’s grammar, of the statically correct programs, and of the static and operational semantics. Using this framework, we prove that C\# is type-safe, by showing that the execution of statically correct C\# programs does not lead to type errors.],
-  [id="modeling-the-net-clr-exception-handling-mechanism-for-a-mathematical-analysis-fruja--börger-2006"\> Modeling the . NET CLR Exception Handling Mechanism for a Mathematical Analysis (Fruja & Börger, 2006)],
+  [Modeling the . NET CLR Exception Handling Mechanism for a Mathematical Analysis (Fruja & Börger, 2006)],
   [This work is part of a larger project which aims at establishing some important properties of C\# and CLR by mathematical proofs. Examples are the correctness of the bytecode verifier of CLR, the type safety (along the lines of the first author’s correctness proof for the definite assignment rules) of C\#, the correctness of a general compilation scheme.],
-  [id="analysis-of-the-net-clr-exception-handling-mechanism-fruja--börger-2005"\> Analysis of the . NET CLR Exception Handling Mechanism (Fruja & Börger, 2005)],
+  [Analysis of the . NET CLR Exception Handling Mechanism (Fruja & Börger, 2005)],
   [We provide a complete mathematical model for the exception handling mechanism of the Common Language Runtime (CLR), the virtual machine underlying the interpretation of . NET programs. The goal is to use this rigorous model in the corresponding part of the still-to-be-developed soundness proof for the CLR bytecode verifier.],
-  [id="a-modular-design-for-the-common-language-runtime-clr-architecture-fruja-2005"\> A Modular Design for the Common Language Runtime (CLR) Architecture (Fruja, 2005)],
+  [A Modular Design for the Common Language Runtime (CLR) Architecture (Fruja, 2005)],
   [This paper provides a modular high-level design of the Common Language Runtime (CLR) architecture. Our design is given in terms of Abstract State Machines (ASMs) and takes the form of an interpreter. We describe the CLR as a hierarchy of eight submachines, which correspond to eight submodules into which the Common Intermediate Language (CIL) instruction set can be decomposed.],
-  [id="cross-language-program-slicing-in-the-net-framework-pócza-biczó--porkoláb-2005"\> Cross-language Program Slicing in the . NET Framework (Pócza, Biczó & Porkoláb, 2005)],
+  [Cross-language Program Slicing in the . NET Framework (Pócza, Biczó & Porkoláb, 2005)],
   [Dynamic program slicing methods are very attractive for debugging because many statements can be ignored in the process of localizing a bug. Although language interoperability is a key concept in modern development platforms, current slicing techniques are still restricted to a single language. In this paper a cross-language dynamic program slicing technique is introduced for the . NET environment. The method is utilizing the CLR Debugging Services API, hence it can be applied to large multi-language applications.],
-  [id="design-and-implementation-of-a-high-level-multi-language--net-debugger-strein-2005"\> Design and Implementation of a high-level multi-language . NET Debugger (Strein, 2005)],
+  [Design and Implementation of a high-level multi-language . NET Debugger (Strein, 2005)],
   [The Microsoft . NET Common Language Runtime (CLR) provides a low-level debugging application programmers interface (API), which can be used to implement traditional source code debuggers but can also be useful to implement other dynamic program introspection tools. This paper describes our experience in using this API for the implementation of a high-level debugger. The API is difficult to use from a technical point of view because it is implemented as a set of Component Object Model (COM) interfaces instead of a managed . NET API. Nevertheless, it is possible to implement a debugger in managed C\# code using COM-interop. We describe our experience in taking this approach. We define a high-level debugging API and implement it in the C\# language using COM-interop to access the low-level debugging API. Furthermore, we describe the integration of this high-level API in the multi-language development environment X-develop to enable source code debugging of . NET languages. This paper can be useful for anybody who wants to take the same approach to implement debuggers or other tools for dynamic program introspection.],
-  [id="a-high-level-modular-definition-of-the-semantics-of-c-börger-fruja-gervasi--stärk-2004"\> A High-Level Modular Definition of the Semantics of C\# (Börger, Fruja, Gervasi & Stärk, 2004)],
+  [A High-Level Modular Definition of the Semantics of C\# (Börger, Fruja, Gervasi & Stärk, 2004)],
   [We propose a structured mathematical definition of the semantics of programs to provide a platform-independent interpreter view of the language for the programmer, which can also be used for a precise analysis of the ECMA standard of the language and as a reference model for teaching. The definition takes care to reflect directly and faithfully—as much as possible without becoming inconsistent or incomplete—the descriptions in the standard to become comparable with the corresponding models for Java in Stärk et al. (Java and Java Virtual Machine—Definition, Verification, Validation, Springer, Berlin, 2001) and to provide for implementors the possibility to check their basic design decisions against an accurate high-level model. The model sheds light on some of the dark corners of and on some critical differences between the ECMA standard and the implementations of the language.],
-  [id="an-asm-specification-of-c-threads-and-the-net-memory-model-stärk-and-börger-2004"\> An ASM Specification of C\# Threads and the . NET Memory Model (Stärk and Börger, 2004)],
+  [An ASM Specification of C\# Threads and the . NET Memory Model (Stärk and Börger, 2004)],
   [We present a high-level ASM model of C\# threads and the . NET memory model. We focus on purely managed, fully portable threading features of C\#. The sequential model interleaves the computation steps of the currently running threads and is suitable for uniprocessors. The parallel model addresses problems of true concurrency on multiprocessor systems. The models provide a sound basis for the development of multi-threaded applications in C\#. The thread and memory models complete the abstract operational semantics of C\# in.],
-  [id="common-language-runtime--a-new-virtual-machine-ferreira-2004"\> Common Language Runtime : a new virtual machine (Ferreira, 2004)],
+  [Common Language Runtime : a new virtual machine (Ferreira, 2004)],
   [Virtual Machines provide a runtime execution platform combining bytecode portability with a performance close to native code. An overview of current approaches precedes an insight into Microsoft CLR (Common Language Runtime), comparing it to Sun JVM (Java Virtual Machine) and to a native execution environment (IA 32). A reference is also made to CLR in a Unix platform and to techniques on how CLR improves code execution.],
-  [id="jvm-versus-clr-a-comparative-study-singer-2003"\> JVM versus CLR: a comparative study (Singer, 2003)],
+  [JVM versus CLR: a comparative study (Singer, 2003)],
   [We present empirical evidence to demonstrate that there is little or no difference between the Java Virtual Machine and the . NET Common Language Runtime, as regards the compilation and execution of object-oriented programs. Then we give details of a case study that proves the superiority of the Common Language Runtime as a target for imperative programming language compilers (in particular GCC).],
-  [id="runtime-code-generation-with-jvm-and-clr-sestoft-2002"\> Runtime Code Generation with JVM And CLR (Sestoft, 2002)],
+  [Runtime Code Generation with JVM And CLR (Sestoft, 2002)],
   [Modern bytecode execution environments with optimizing just-in-time compilers, such as Sun’s Hotspot Java Virtual Machine, IBM’s Java Virtual Machine, and Microsoft’s Common Language Runtime, provide an infrastructure for generating fast code at runtime. Such runtime code generation can be used for efficient implementation of parametrized algorithms. More generally, with runtime code generation one can introduce an additional binding-time without performance loss. This permits improved performance and improved static correctness guarantees.],
-  [id="microsoft-research"\> Microsoft Research],
-  [id="project-snowflake-non-blocking-safe-manual-memory-management-in-net-parkinson--vaswani-costa-deligiannis-blankstein-mcdermott-balkind--vytiniotis-2017"\> Project Snowflake: Non-blocking safe manual memory management in . NET (Parkinson, Vaswani, Costa, Deligiannis, Blankstein, McDermott, Balkind & Vytiniotis, 2017)],
+  [Project Snowflake: Non-blocking safe manual memory management in . NET (Parkinson, Vaswani, Costa, Deligiannis, Blankstein, McDermott, Balkind & Vytiniotis, 2017)],
   [Garbage collection greatly improves programmer productivity and ensures memory safety. Manual memory management on the other hand often delivers better performance but is typically unsafe and can lead to system crashes or security vulnerabilities. We propose integrating safe manual memory management with garbage collection in the . NET runtime to get the best of both worlds. In our design, programmers can choose between allocating objects in the garbage collected heap or the manual heap. All existing applications run unmodified, and without any performance degradation, using the garbage collected heap. Our programming model for manual memory management is flexible: although objects in the manual heap can have a single owning pointer, we allow deallocation at any program point and concurrent sharing of these objects amongst all the threads in the program. Experimental results from our . NET CoreCLR implementation on real-world applications show substantial performance gains especially in multithreaded scenarios: up to 3x savings in peak working sets and 2x improvements in runtime.],
-  [id="simple-fast-and-safe-manual-memory-management-kedia-costa-vytiniotis-parkinson-vaswani--blankstein-2017"\> Simple, Fast and Safe Manual Memory Management (Kedia, Costa, Vytiniotis, Parkinson, Vaswani & Blankstein, 2017)],
+  [Simple, Fast and Safe Manual Memory Management (Kedia, Costa, Vytiniotis, Parkinson, Vaswani & Blankstein, 2017)],
   [Safe programming languages are readily available, but many applications continue to be written in unsafe languages, because the latter are more efficient. As a consequence, many applications continue to have exploitable memory safety bugs. Since garbage collection is a major source of inefficiency in the implementation of safe languages, replacing it with safe manual memory management would be an important step towards solving this problem.],
   [Previous approaches to safe manual memory management use programming models based on regions, unique pointers, borrowing of references, and ownership types. We propose a much simpler programming model that does not require any of these concepts. Starting from the design of an imperative type safe language (like Java or C\#), we just add a delete operator to free memory explicitly and an exception which is thrown if the program dereferences a pointer to freed memory. We propose an efficient implementation of this programming model that guarantees type safety. Experimental results from our implementation based on the C\# native compiler show that this design achieves up to 3x reduction in peak working set and run time.],
-  [id="uniqueness-and-reference-immutability-for-safe-parallelism-gordon--parkinson-parsons-bromfield--duffy-2012"\> Uniqueness and Reference Immutability for Safe Parallelism (Gordon, Parkinson, Parsons, Bromfield & Duffy, 2012)],
+  [Uniqueness and Reference Immutability for Safe Parallelism (Gordon, Parkinson, Parsons, Bromfield & Duffy, 2012)],
   [A key challenge for concurrent programming is that side-effects (memory operations) in one thread can affect the behavior of another thread. In this paper, we present a type system to restrict the updates to memory to prevent these unintended side-effects. We provide a novel combination of immutable and unique (isolated) types that ensures safe parallelism (race freedom and deterministic execution). The type system includes support for polymorphism over type qualifiers, and can easily create cycles of immutable objects. Key to the system’s flexibility is the ability to recover immutable or externally unique references after violating uniqueness without any explicit alias tracking. Our type system models a prototype extension to C\# that is in active use by a Microsoft team. We describe their experiences building large systems with this extension. We prove the soundness of the type system by an embedding into a program logic.],
-  [id="a-study-of-concurrent-real-time-garbage-collectors-pizlo-petrank--steensgaard-2008"\> A study of concurrent real-time garbage collectors (Pizlo, Petrank & Steensgaard, 2008)],
+  [A study of concurrent real-time garbage collectors (Pizlo, Petrank & Steensgaard, 2008)],
   [Concurrent garbage collection is highly attractive for real-time systems, because offloading the collection effort from the executing threads allows faster response, allowing for extremely short deadlines at the microseconds level. Concurrent collectors also offer much better scalability over incremental collectors. The main problem with concurrent real-time collectors is their complexity. The first concurrent real-time garbage collector that can support fine synchronization, STOPLESS, has recently been presented by Pizlo et al. In this paper, we propose two additional (and different) algorithms for concurrent real-time garbage collection: CLOVER and CHICKEN. Both collectors obtain reduced complexity over the first collector STOPLESS, but need to trade a benefit for it. We study the algorithmic strengths and weaknesses of CLOVER and CHICKEN and compare them to STOPLESS. Finally, we have implemented all three collectors on the Bartok compiler and runtime for C\# and we present measurements to compare their efficiency and responsiveness.],
-  [id="optimizing-concurrency-levels-in-the-net-threadpool-a-case-study-of-controller-design-and-implementation-hellerstein-morrison--eilebrecht-2008"\> Optimizing concurrency levels in the. net threadpool: A case study of controller design and implementation (Hellerstein, Morrison & Eilebrecht, 2008)],
+  [Optimizing concurrency levels in the. net threadpool: A case study of controller design and implementation (Hellerstein, Morrison & Eilebrecht, 2008)],
   [This paper presents a case study of developing a hill climb-ing concurrency controller (HC 3) for the . NET ThreadPool. The intent of the case study is to provide insight into soft-ware considerations for controller design, testing, and imple-mentation. The case study is structured as a series of issues encountered and approaches taken to their resolution. Ex-amples of issues and approaches include: (a) addressing the need to combine a hill climbing control law with rule-based techniques by the use of hybrid control; (b) increasing the ef-ficiency and reducing the variability of the test environment by using resource emulation; and (c) effectively assessing design choices by using test scenarios for which the optimal concurrency level can be computed analytically and hence desired test results are known a priori. We believe that these issues and approaches have broad application to controllers for resource management of software systems.],
-  [id="stopless-a-real-time-garbage-collector-for-multiprocessors-pizlo-frampton-petrank--steensgaard-2007"\> Stopless: a real-time garbage collector for multiprocessors. (Pizlo, Frampton, Petrank & Steensgaard, 2007)],
+  [Stopless: a real-time garbage collector for multiprocessors. (Pizlo, Frampton, Petrank & Steensgaard, 2007)],
   [We present STOPLESS: a concurrent real-time garbage collector suitable for modern multiprocessors running parallel multithreaded applications. Creating a garbage-collected environment that sup- ports real-time on modern platforms is notoriously hard, especially if real-time implies lock-freedom. Known real-time collectors ei- ther restrict the real-time guarantees to uniprocessors only, rely on special hardware, or just give up supporting atomic operations (which are crucial for lock-free software). STOPLESS is the first collector that provides real-time responsiveness while preserving lock-freedom, supporting atomic operations, controlling fragmen- tation by compaction, and supporting modern parallel platforms. STOPLESS is adequate for modern languages such as C\# or Java. It was implemented on top of the Bartok compiler and runtime for C\# and measurements demonstrate high responsiveness (a factor of a 100 better than previously published systems), virtually no pause times, good mutator utilization, and acceptable overheads.],
-  [id="securing-the-net-programming-model-kennedy-2006"\> Securing the . NET Programming Model (Kennedy, 2006)],
+  [Securing the . NET Programming Model (Kennedy, 2006)],
   [The security of the . NET programming model is studied from the standpoint of fully abstract compilation of C\#. A number of failures of full abstraction are identified, and fixes described. The most serious problems have recently been fixed for version 2.0 of the . NET Common Language Runtime.],
-  [id="combining-generics-pre-compilation-and-sharing-between-software-based-processes-syme--kennedy-2004"\> Combining Generics, Pre-compilation and Sharing Between Software-Based Processes (Syme & Kennedy, 2004)],
+  [Combining Generics, Pre-compilation and Sharing Between Software-Based Processes (Syme & Kennedy, 2004)],
   [We describe problems that have arisen when combining the proposed design for generics for the Microsoft . NET Common Language Runtime (CLR) with two resource-related features supported by the Microsoft CLR implementation: application domains and pre-compilation. Application domains are “software based processes” and the interaction between application domains and generics stems from the fact that code and descriptors are generated on a pergeneric-instantiation basis, and thus instantiations consume resources which are preferably both shareable and recoverable. Pre-compilation runs at install-time to reduce startup overheads. This interacts with application domain unloading: compilation units may contain shareable generated instantiations. The paper describes these interactions and the diﬀerent approaches that can be used to avoid or ameliorate the problems.],
-  [id="formalization-of-generics-for-the-net-common-language-runtime-yu-kennedy--syme-2004"\> Formalization of Generics for the . NET Common Language Runtime (Yu, Kennedy & Syme, 2004)],
+  [Formalization of Generics for the . NET Common Language Runtime (Yu, Kennedy & Syme, 2004)],
   [We present a formalization of the implementation of generics in the . NET Common Language Runtime (CLR), focusing on two novel aspects of the implementation: mixed specialization and sharing, and efficient support for run-time types. Some crucial constructs used in the implementation are dictionaries and run-time type representations. We formalize these aspects type-theoretically in a way that corresponds in spirit to the implementation techniques used in practice. Both the techniques and the formalization also help us understand the range of possible implementation techniques for other languages, e.g., ML, especially when additional source language constructs such as run-time types are supported. A useful by-product of this study is a type system for a subset of the polymorphic IL proposed for the . NET CLR.],
-  [id="runtime-verification-of-net-contracts-barnett--schulte-2003"\> Runtime Verification of . NET Contracts (Barnett & Schulte, 2003)],
+  [Runtime Verification of . NET Contracts (Barnett & Schulte, 2003)],
   [We propose a method for implementing behavioral interface specifications on the . NET platform. Our interface specifications are expressed as executable model programs. Model programs can be run either as stand-alone simulations or used as contracts to check the conformance of an implementation class to its specification. We focus on the latter, which we call runtime verification. In our framework, model programs are expressed in the new specification language AsmL. We describe how AsmL can be used to describe contracts independently from any implementation language, how AsmL allows properties of component interaction to be specified using mandatory calls, and how AsmL is used to check the behavior of a component written in any of the . NET languages, such as VB, C\#, or C++.],
-  [id="design-and-implementation-of-generics-for-the-net-common-language-runtime-kennedy--syme-2001"\> Design and Implementation of Generics for the . NET Common Language Runtime (Kennedy & Syme, 2001)],
+  [Design and Implementation of Generics for the . NET Common Language Runtime (Kennedy & Syme, 2001)],
   [The Microsoft . NET Common Language Runtime provides a shared type system, intermediate language and dynamic execution environment for the implementation and inter-operation of multiple source languages. In this paper we extend it with direct support for parametric polymorphism (also known as generics), describing the design through examples written in an extended version of the C\# programming language, and explaining aspects of implementation by reference to a prototype extension to the runtime. Our design is very expressive, supporting parameterized types, polymorphic static, instance and virtual methods, “F-bounded” type parameters, instantiation at pointer and value types, polymorphic recursion, and exact run-time types. The implementation takes advantage of the dynamic nature of the runtime, performing justin-time type specialization, representation-based code sharing and novel techniques for efﬁcient creation and use of run-time types. Early performance results are encouraging and suggest that programmers will not need to pay an overhead for using generics, achieving performance almost matching hand-specialized code.],
-  [id="typing-a-multi-language-intermediate-code-gordon--syme-2001"\> Typing a Multi-Language Intermediate Code (Gordon & Syme, 2001)],
+  [Typing a Multi-Language Intermediate Code (Gordon & Syme, 2001)],
   [The Microsoft . NET Framework is a new computing architecture designed to support a variety of distributed applications and web-based services. . NET software components are typically distributed in an object-oriented intermediate language, Microsoft IL, executed by the Microsoft Common Language Runtime. To allow convenient multi-language working, IL supports a wide variety of high-level language constructs, including class-based objects, inheritance, garbage collection, and a security mechanism based on type safe execution. This paper precisely describes the type system for a substantial fragment of IL that includes several novel features: certain objects may be allocated either on the heap or on the stack; those on the stack may be boxed onto the heap, and those on the heap may be unboxed onto the stack; methods may receive arguments and return results via typed pointers, which can reference both the stack and the heap, including the interiors of objects on the heap. We present a formal semantics for the fragment. Our typing rules determine well-typed IL instruction sequences that can be assembled and executed. Of particular interest are rules to ensure no pointer into the stack outlives its target. Our main theorem asserts type safety, that well-typed programs in our IL fragment do not lead to untrapped execution errors. Our main theorem does not directly apply to the product. Still, the formal system of this paper is an abstraction of informal and executable specifications we wrote for the full product during its development. Our informal specification became the basis of the product team’s working specification of type-checking. The process of writing this specification, deploying the executable specification as a test oracle, and applying theorem proving techniques, helped us identify several security critical bugs during development.],
-  [id="mono-runtime"\> Mono Runtime],
-  [id="static-and-dynamic-analysis-of-android-malware-and-goodware-written-with-unity-framework-shim-lim-cho-han--park-2018"\> Static and Dynamic Analysis of Android Malware and Goodware Written with Unity Framework (Shim, Lim, Cho, Han & Park, 2018)],
+  [Static and Dynamic Analysis of Android Malware and Goodware Written with Unity Framework (Shim, Lim, Cho, Han & Park, 2018)],
   [Unity is the most popular cross-platform development framework to develop games for multiple platforms such as Android, iOS, and Windows Mobile. While Unity developers can easily develop mobile apps for multiple platforms, adversaries can also easily build malicious apps based on the “write once, run anywhere” (WORA) feature. Even thoughmalicious apps were discovered among Android apps written with Unity framework (Unity apps), little research has been done on analysing the malicious apps. We propose static and dynamic reverse engineering techniques for malicious Unity apps. We first inspect the executable file format of a Unity app and present an effective static analysis technique of the Unity app. Then, we also propose a systematic technique to analyse dynamically the Unity app. Using the proposed techniques, the malware analyst can statically and dynamically analyse Java code, native code in C or C ++, and the Mono runtime layer where the C\# code is running.],
-  [id="reducing-startup-time-of-a-deterministic-virtualizing-runtime-environment-däumler--werner-2013"\> Reducing startup time of a deterministic virtualizing runtime environment (Däumler & Werner, 2013)],
+  [Reducing startup time of a deterministic virtualizing runtime environment (Däumler & Werner, 2013)],
   [Virtualized runtime environments like Java Virtual Machine (JVM) or Microsoft . NET’s Common Language Runtime (CLR) introduce additional challenges to real-time software development. Since applications for such environments are usually deployed in platform independent intermediate code, one issue is the timing of code transformation from intermediate code into native code. We have developed a solution for this problem, so that code transformation is suitable for real-time systems. It combines pre-compilation of intermediate code with the elimination of indirect references in native code. The gain of determinism comes with an increased application startup time. In this paper we present an optimization that utilizes an Ahead-of-Time compiler to reduce the startup time while keeping the real-time suitable timing behaviour. In an experiment we compare our approach with existing ones and demonstrate its benefits for certain application cases.],
-  [id="detecting-clones-across-microsoft-net-programming-languages-al-omari--keivanloo-roy--rilling-2012"\> Detecting Clones Across Microsoft . NET Programming Languages (Al-Omari, Keivanloo, Roy & Rilling, 2012)],
+  [Detecting Clones Across Microsoft . NET Programming Languages (Al-Omari, Keivanloo, Roy & Rilling, 2012)],
   [The Microsoft . NET framework and its language family focus on multi-language development to support interoperability across several programming languages. The framework allows for the development of similar applications in different languages through the reuse of core libraries. As a result of such a multi-language development, the identification and trace ability of similar code fragments (clones) becomes a key challenge. In this paper, we present a clone detection approach for the . NET language family. The approach is based on the Common Intermediate Language, which is generated by the . NET compiler for the different languages within the . NET framework. In order to achieve an acceptable recall while maintaining the precision of our detection approach, we define a set of filtering processes to reduce noise in the raw data. We show that these filters are essential for Intermediate Language-based clone detection, without significantly affecting the precision of the detection approach. Finally, we study the quantitative and qualitative performance aspects of our clone detection approach. We evaluate the number of reported candidate clone-pairs, as well as the precision and recall (using manual validation) for several open source cross-language systems, to show the effectiveness of our proposed approach.],
-  [id="language-independent-sandboxing-of-just-in-time-compilation-and-self-modifying-code-ansel--marchenko-2012"\> Language-independent sandboxing of just-in-time compilation and self-modifying code (Ansel & Marchenko, 2012)],
+  [Language-independent sandboxing of just-in-time compilation and self-modifying code (Ansel & Marchenko, 2012)],
   [When dealing with dynamic, untrusted content, such as on the Web, software behavior must be sandboxed, typically through use of a language like JavaScript. However, even for such specially-designed languages, it is difficult to ensure the safety of highly-optimized, dynamic language runtimes which, for efficiency, rely on advanced techniques such as Just-In-Time (JIT) compilation, large libraries of native-code support routines, and intricate mechanisms for multi-threading and garbage collection. Each new runtime provides a new potential attack surface and this security risk raises a barrier to the adoption of new languages for creating untrusted content. Removing this limitation, this paper introduces general mechanisms for safely and efficiently sandboxing software, such as dynamic language runtimes, that make use of advanced, low-level techniques like runtime code modification. Our language-independent sandboxing builds on Software-based Fault Isolation (SFI), a traditionally static technique. We provide a more flexible form of SFI by adding new constraints and mechanisms that allow safety to be guaranteed despite runtime code modifications. We have added our extensions to both the x86-32 and x86-64 variants of a production-quality, SFI-based sandboxing platform; on those two architectures SFI mechanisms face different challenges. We have also ported two representative language platforms to our extended sandbox: the Mono common language runtime and the V8 JavaScript engine. In detailed evaluations, we find that sandboxing slowdown varies between different benchmarks, languages, and hardware platforms. Overheads are generally moderate and they are close to zero for some important benchmark/platform combinations.],
-  [id="vmkit-a-substrate-for-managed-runtime-environments-geoffray-thomas-lawall-muller--folliot-2010"\> VMKit: a Substrate for Managed Runtime Environments (Geoffray, Thomas, Lawall, Muller & Folliot, 2010)],
+  [VMKit: a Substrate for Managed Runtime Environments (Geoffray, Thomas, Lawall, Muller & Folliot, 2010)],
   [Managed Runtime Environments (MREs), such as the JVM and the CLI, form an attractive environment for program execution, by providing portability and safety, via the use of a bytecode language and automatic memory management, as well as good performance, via just-in-time (JIT) compilation. Nevertheless, developing a fully featured MRE, including e.g. a garbage collector and JIT compiler, is a herculean task. As a result, new languages cannot easily take advantage of the benefits of MREs, and it is difficult to experiment with extensions of existing MRE based languages. This paper describes and evaluates VMKit, a first attempt to build a common substrate that eases the development of high-level MREs. We have successfully used VMKit to build two MREs: a Java Virtual Machine and a Common Language Runtime. We provide an extensive study of the lessons learned in developing this infrastructure, and assess the ease of implementing new MREs or MRE extensions and the resulting performance. In particular, it took one of the authors only one month to develop a Common Language Runtime using VMKit. VMKit furthermore has performance comparableto the well established open source MREs Cacao, Apache Harmony and Mono, and is 1.2 to 3 times slower than JikesRVM on most of the Dacapo benchmarks.],
-  [id="mmc-the-mono-model-checker-ruys--aan-de-brugh-2007"\> MMC: the Mono Model Checker (Ruys & Aan de Brugh, 2007)],
+  [MMC: the Mono Model Checker (Ruys & Aan de Brugh, 2007)],
   [The Mono Model Checker (mmc) is a software model checker for cil bytecode programs. mmc has been developed on the Mono platform. mmc is able to detect deadlocks and assertion violations in cil programs. The design of mmc is inspired by the Java PathFinder (jpf), a model checker for Java programs. The performance of mmc is comparable to jpf. This paper introduces mmc and presents its main architectural characteristics.],
-  [id="numeric-performance-in-c-c-and-java-sestoft-2007"\> Numeric performance in C, C\# and Java (Sestoft, 2007)],
+  [Numeric performance in C, C\# and Java (Sestoft, 2007)],
   [We compare the numeric performance of C, C\# and Java on three small cases.],
-  [id="mono-versus-net-a-comparative-study-of-performance-for-distributed-processing-blajian-eggen-eggen--pitts-2006"\> Mono versus . Net: A Comparative Study of Performance for Distributed Processing. (Blajian, Eggen, Eggen & Pitts, 2006)],
+  [Mono versus . Net: A Comparative Study of Performance for Distributed Processing. (Blajian, Eggen, Eggen & Pitts, 2006)],
   [Microsoft has released . NET, a platform dependent standard for the C\#,programming language. Sponsored by Ximian/Novell, Mono, the open source development platform based on the . NET framework, has been developed to be a platform independent version of the C\#,programming environment. While . NET is platform dependent, Mono allows developers to build Linux and crossplatform applications. Mono’s . NET implementation is based on the ECMA standards for C\#. This paper examines both of these programming environments with the goal of evaluating the performance characteristics of each. Testing is done with various algorithms. We also assess the trade-offs associated with using a cross-platform versus a platform.],
-  [id="automated-detection-of-performance-regressions-the-mono-experience-kalibera-bulej--tuma-2005"\> Automated detection of performance regressions: the mono experience (Kalibera, Bulej & Tuma, 2005)],
+  [Automated detection of performance regressions: the mono experience (Kalibera, Bulej & Tuma, 2005)],
   [Engineering a large software project involves tracking the impact of development and maintenance changes on the software performance. An approach for tracking the impact is regression benchmarking, which involves automated benchmarking and evaluation of performance at regular intervals. Regression benchmarking must tackle the nondeterminism inherent to contemporary computer systems and execution environments and the impact of the nondeterminism on the results. On the example of a fully automated regression benchmarking environment for the mono open-source project, we show how the problems associated with nondeterminism can be tackled using statistical methods.],
-  [id="shared-source-common-language-infrastructure-sscli---aka-rotor"\> Shared Source Common Language Infrastructure (SSCLI) - a.k.a ‘ Rotor ’],
-  [id="efficient-virtual-machine-support-of-runtime-structural-reflection-ortina-redondoa--perez-schofield-2009"\> Efficient virtual machine support of runtime structural reflection (Ortina, Redondoa & Perez-Schofield, 2009)],
+  [Shared Source Common Language Infrastructure (SSCLI) - a.k.a ‘ Rotor ’],
+  [Efficient virtual machine support of runtime structural reflection (Ortina, Redondoa & Perez-Schofield, 2009)],
   [Increasing trends towards adaptive, distributed, generative and pervasive software have made object-oriented dynamically typed languages become increasingly popular. These languages offer dynamic software evolution by means of reflection, facilitating the development of dynamic systems. Unfortunately, this dynamism commonly imposes a runtime performance penalty. In this paper, we describe how to extend a production JIT-compiler virtual machine to support runtime object-oriented structural reflection offered by many dynamic languages. Our approach improves runtime performance of dynamic languages running on statically typed virtual machines. At the same time, existing statically typed languages are still supported by the virtual machine.],
   [We have extended the . Net platform with runtime structural reflection adding prototype-based object-oriented semantics to the statically typed class-based model of . Net, supporting both kinds of programming languages. The assessment of runtime performance and memory consumption has revealed that a direct support of structural reflection in a production JIT-based virtual machine designed for statically typed languages provides a significant performance improvement for dynamically typed languages.],
-  [id="extending-the-sscli-to-support-dynamic-inheritance-redondo-ortin--perez-schofield-2008"\> Extending the SSCLI to Support Dynamic Inheritance (Redondo, Ortin & Perez-Schofield, 2008)],
+  [Extending the SSCLI to Support Dynamic Inheritance (Redondo, Ortin & Perez-Schofield, 2008)],
   [This paper presents a step forward on a research trend focused on increasing runtime adaptability of commercial JIT-based virtual machines, describing how to include dynamic inheritance into this kind of platforms. A considerable amount of research aimed at improving runtime performance of virtual machines has converted them into the ideal support for developing different types of software products. Current virtual machines do not only provide benefits such as application interoperability, distribution and code portability, but they also offer a competitive runtime performance.],
   [Since JIT compilation has played a very important role in improving runtime performance of virtual machines, we first extended a production JIT-based virtual machine to support efficient language-neutral structural reflective primitives of dynamically typed programming languages. This article presents the next step in our research work: supporting language-neutral dynamic inheritance for both statically and dynamically typed programming languages. Executing both kinds of programming languages over the same platform provides a direct interoperation between them.],
-  [id="sampling-profiler-for-rotor-as-part-of-optimizing-compilation-system-chilingarova--safonov-2006"\> Sampling profiler for Rotor as part of optimizing compilation system (Chilingarova & Safonov, 2006)],
+  [Sampling profiler for Rotor as part of optimizing compilation system (Chilingarova & Safonov, 2006)],
   [This paper describes a low-overhead self-tuning sampling-based runtime profiler integrated into SSCLI virtual machine. Our profiler estimates how “hot” a method is and builds a call context graph based on managed stack samples analysis. The frequency of sampling is tuned dynamically at runtime, based on the information of how often the same activation record appears on top of the stack. The call graph is presented as a novel Call Context Map (CC-Map) structure that combines compact representation and accurate information about the context. It enables fast extraction of data helpful in making compilation decisions, as well as fast placing data into the map. Sampling mechanism is integrated with intrinsic Rotor mechanisms of thread preemption and stack walk. A separate system thread is responsible for organizing data in the CC-Map. This thread gathers and stores samples quickly queued by managed threads, thus decreasing the time they must hold up their user-scheduled job],
-  [id="to-jit-or-not-to-jit-the-effect-of-code-pitching-on-the-performance-of-net-framework-anthony-leung--srisa-an-2005"\> To JIT or not to JIT: The effect of code-pitching on the performance of . NET framework (Anthony, Leung & Srisa-an, 2005)],
+  [To JIT or not to JIT: The effect of code-pitching on the performance of . NET framework (Anthony, Leung & Srisa-an, 2005)],
   [The. NET Compact Framework is designed to be a highperformance virtual machine for mobile and embedded devices that operate on Windows CE (version 4.1 and later). It achieves fast execution time by compiling methods dynamically instead of using interpretation. Once compiled, these methods are stored in a portion of the heap called code-cache and can be reused quickly to satisfy future method calls. While code-cache provides a high-level of reusability, it can also use a large amount of memory. As a result, the Compact Framework provides a “code pitching ” mechanism that can be used to discard the previously compiled methods as needed. In this paper, we study the effect of code pitching on the overall performance and memory utilization of. NET applications. We conduct our experiments using Microsoft’s Shared-Source Common Language Infrastructure (SSCLI). We profile the access behavior of the compiled methods. We also experiment with various code-cache configurations to perform pitching. We find that programs can operate efficiently with a small code-cache without incurring substantial recompilation and execution overheads.],
-  [id="adding-structural-reflection-to-the-sscli-ortin-redondo-vinuesa--lovelle-2005"\> Adding structural reflection to the SSCLI (Ortin, Redondo, Vinuesa & Lovelle, 2005)],
+  [Adding structural reflection to the SSCLI (Ortin, Redondo, Vinuesa & Lovelle, 2005)],
   [Although dynamic languages are becoming widely used due to the flexibility needs of specific software prod- ucts, their major drawback is their runtime performance. Compiling the source program to an abstract machine’s intermediate language is the current technique used to obtain the best performance results. This intermediate code is then executed by a virtual machine developed as an interpreter. Although JIT adaptive optimizing com- pilation is currently used to speed up Java and .net intermediate code execution, this practice has not been em- ployed successfully in the implementation of dynamically adaptive platforms yet. We present an approach to improve the runtime performance of a specific set of structural reflective primitives, extensively used in adaptive software development. Looking for a better performance, as well as interaction with other languages, we have employed the Microsoft Shared Source CLI platform, making use of its JIT compiler. The SSCLI computational model has been enhanced with semantics of the prototype-based object-oriented com- putational model. This model is much more suitable for reflective environments. The initial assessment of per- formance results reveals that augmenting the semantics of the SSCLI model, together with JIT generation of native code, produces better runtime performance than the existing implementations.],
-  [id="static-analysis-for-identifying-and-allocating-clusters-of-immortal-objects-ravindar--srikant-2005"\> Static Analysis for Identifying and Allocating Clusters of Immortal Objects (Ravindar & Srikant, 2005)],
+  [Static Analysis for Identifying and Allocating Clusters of Immortal Objects (Ravindar & Srikant, 2005)],
   [Long living objects lengthen the trace time which is a critical phase of the garbage collection process. However, it is possible to recognize object clusters i.e. groups of long living objects having approximately the same lifetime and treat them separately to reduce the load on the garbage collector and hence improve overall performance. Segregating objects this way leaves the heap for objects with shorter lifetimes and now a typical collection can nd more garbage than before. In this paper, we describe a compile time analysis strategy to identify object clusters in programs. The result of the compile time analysis is the set of allocation sites that contribute towards allocating objects belonging to such clusters. All such allocation sites are replaced by a new allocation method that allocates objects into the cluster area rather than the heap. This study was carried out for a concurrent collector which we developed for Rotor, Microsoft’s Shared Source Implementation of . NET. We analyze the performance of the program with combina- tions of the cluster and stack allocation optimizations. Our results show that the clustering optimization reduces the number of collections by 66.5% on average, even eliminating the need for collection in some programs. As a result, the total pause time reduces by 62.8% on average. Using both stack allocation and the cluster optimizations brings down the number of collections by 91.5% thereby improving the total pause time by 79.33%.],
-  [id="an-optimizing-just-intime-compiler-for-rotor-trindade--silva-2005"\> An Optimizing Just-InTime Compiler for Rotor (Trindade & Silva, 2005)],
+  [An Optimizing Just-InTime Compiler for Rotor (Trindade & Silva, 2005)],
   [The Shared Source CLI (SSCLI), also known as Rotor, is an implementation of the CLI released by Microsoft in source code. Rotor includes a single pass just-in-time compiler that generates non-optimized code for Intel IA-32 and IBM PowerPC processors. We extend Rotor with an optimizing justin-time compiler for IA-32. This compiler has three passes: control flow graph generation, data dependence graph generation and final code generation. Dominance relations in the control flow graph are used to detect natural loops. A number of optimizations are performed during the generation of the data dependence graph. During native code generation, the rich address modes of IA32 are used for instruction folding, reducing code size and usage of register names. Despite the overhead of three passes and optimizations, this compiler is only 1.4 to 1.9 times slower than the original SSCLI compiler and generates code that runs 6.4 to 10 times faster.],
-  [id="software-interactions-into-the-sscli-platform-charfi--emsellem-2004"\> Software Interactions into the SSCLI platform (Charfi & Emsellem, 2004)],
+  [Software Interactions into the SSCLI platform (Charfi & Emsellem, 2004)],
   [By using an Interaction Specification Language (ISL), interactions between components can be expressed in a language independent way. At class level, interaction pattern specified in ISLrepresent model s of future interactions when applied on some component instances. The Interaction Server is in charge of managing the life cycle of interactions (interaction pattern registration and instantiation, destruction of interactions, merging). It acts as a central repository that keeps the global coherency of the adaptations realized on the component instances. The Interaction service allows creati ng interactions between heterogeneous components. Noah is an implementation of this Interaction Service. It can be thought as a dynamic aspect repository with a weaver that uses an aspect composition mechanism that insures commutable and associative adaptations. In this paper, we propose the implementation of the Interaction Service in the SSCLI. In contrast to other implementations such as Java where interaction management represents an additional layer, SSCLI enables us to integrate Interaction Management as in intrinsic part of the CLI runtime.],
-  [id="experience-integrating-a-new-compiler-and-a-new-garbage-collector-into-rotor-anderson-eng-glew-lewis-menon--stichnoth-2004"\> Experience Integrating a New Compiler and a New Garbage Collector Into Rotor (Anderson, Eng, Glew, Lewis, Menon & Stichnoth, 2004)],
+  [Experience Integrating a New Compiler and a New Garbage Collector Into Rotor (Anderson, Eng, Glew, Lewis, Menon & Stichnoth, 2004)],
   [Microsoft’s Rotor is a shared-source CLI implementation intended for use as a research platform. It is particularly attractive for research because of its complete implementation and extensive libraries, and because its modular design allows dierent implementations of certain components such as just-in-time compilers (JITs). Our group has independently developed our own high-performance JIT and garbage collector (GC) and wanted to take advantage of Rotor to experiment with these components in a CLI environment. In this paper, we describe our experience integrating these components into Rotor and evaluate the flexibility of Rotor’s design toward this goal. We found it easier to integrate our JIT than our GC because Rotor has a well-defined interface for the former but not the latter. However, our JIT integration still required significant changes to both Rotor and our JIT. For example, we modified Rotor to support multiple JITs. We also added support for a second JIT manager in Rotor, and implemented a new code manager compatible with our JIT. We had to change our JIT compiler to support Rotor’s calling conventions, helper functions, and exception model. Our GC integration was complicated by the many places in Rotor where components make assumptions about how its garbage collector is implemented, as well as Rotor’s lack of a well-defined GC interface. We also had to reconcile the dierent assumptions made by Rotor and our garbage collector about the layout of objects, virtual-method tables, and thread structures.],
 ),
   insert-map: (:),
@@ -742,10 +706,8 @@ framework for C\#, comprising formal specifications of the language’s grammar,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Felix, the “DevOps” between designers and developers],
   author: [Junmin Liu],
   source-name: [Groupon Engineering],
@@ -814,10 +776,8 @@ framework for C\#, comprising formal specifications of the language’s grammar,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Fragments: February  9],
   author: [Martin Fowler],
   source-name: [Martin Fowler],
@@ -866,10 +826,8 @@ framework for C\#, comprising formal specifications of the language’s grammar,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Is C\# a low-level language?],
   author: [Matt Warren (.NET)],
   source-name: [Matt Warren (.NET)],
@@ -881,7 +839,7 @@ framework for C\#, comprising formal specifications of the language’s grammar,
   [Partly because in my day job I’ve been having to write a fair amount of C++ recently and I’ve realised I’m a bit rusty, so I thought this might help!],
   [But more significantly, I wanted to get a better insight into the question is C\# a low-level language?],
   [A slightly different, but related question is how suitable is C\# for ‘systems programming’? For more on that I really recommend Joe Duffy’s excellent post from 2013 .],
-  [id="line-by-line-port"\>Line-by-line port],
+  [Line-by-line port],
   [I started by simply porting the un-obfuscated C++ code line-by-line to C\# . Turns out that this was pretty straight forward, I guess the story about C\# being C++++ is true after all!!],
   [Let’s look at an example, the main data structure in the code is a ‘vector’, here’s the code side-by-side, C++ on the left and C\# on the right:],
   [So there’s a few syntax differences, but because . NET lets you define your own ‘Value Types’ I was able to get the same functionality. This is significant because treating the ‘vector’ as a struct means we can get better ‘data locality’ and the . NET Garbage Collector (GC) doesn’t need to be involved as the data will go onto the stack (probably, yes I know it’s an implementation detail).],
@@ -904,12 +862,11 @@ framework for C\#, comprising formal specifications of the language’s grammar,
   [ref returns are not pointers],
   [Managed pointers],
   [References are not addresses],
-  [id="performance"\>Performance],
   [So, it’s all well and good being able to port the code, but ultimately the performance also matters. Especially in something like a ‘ray tracer’ that can take minutes to run! The C++ code contains a variable called sampleCount that controls the final quality of the image, with sampleCount = 2 it looks like this:],
   [Which clearly isn’t that realistic!],
   [However once you get to sampleCount = 2048 things look a lot better:],
   [But, running with sampleCount = 2048 means the rendering takes a long time , so all the following results were run with it set to 2 , which means the test runs completed in ~1 minute. Changing sampleCount only affects the number of iterations of the outermost loop of the code, see this gist for an explanation.],
-  [id="results-after-a-naive-line-by-line-port"\>Results after a ‘naive’ line-by-line port],
+  [Results after a ‘naive’ line-by-line port],
   [To be able to give a meaningful side-by-side comparison of the C++ and C\# versions I used the time-windows tool that’s a port of the Unix time command. My initial results looked this this:],
   [C++ (VS 2017) 
  . NET Framework (4.7.2) 
@@ -968,10 +925,10 @@ framework for C\#, comprising formal specifications of the language’s grammar,
   [However lets first look at what the . NET JIT is doing for us even with this ‘naive’ line-by-line port. Firstly, it’s doing a nice job of in-lining the smaller ‘helper methods’, we can see this by looking at the output of the brilliant Inlining Analyzer tool (green overlay = inlined):],
   [However, it doesn’t inline all methods, for example QueryDatabase(..) is skipped because of it’s complexity:],
   [Another feature that the . NET Just-In-Time (JIT) compiler provides is converting specific methods calls into corresponding CPU instructions. We can see this in action with the sqrt wrapper function, here’s the original C\# code (note the call to Math. Sqrt ):],
-  [class="highlight"\> \/\\/ intnv square root 
- public static Vec operator !( Vec q ) { 
+  [\/\\/ intnv square root 
+ public static Vec operator !( Vec q ) \{ 
  return q \* ( 1.0f \/ ( float ) Math . Sqrt ( q % q )); 
- }],
+ \}],
   [And here’s the assembly code that the . NET JIT generates, there’s no call to Math. Sqrt and it makes use of the vsqrtsd CPU instruction :],
   [; Assembly listing for method Program:sqrtf(float):float
 ; Emitting BLENDED\_CODE for X64 CPU with AVX - Windows
@@ -997,10 +954,11 @@ framework for C\#, comprising formal specifications of the language’s grammar,
 ; ============================================================],
   [(to get this output you need to following these instructions , use the ‘Disasmo’ VS2019 Add-in or take a look at SharpLab.io )],
   [These replacements are also known as ‘intrinsics’ and we can see the JIT generating them in the code below. This snippet just shows the mapping for AMD64 , the JIT also targets X86 , ARM and ARM64 , the full method is here],
-  [{],
+  [bool Compiler :: IsTargetIntrinsic ( CorInfoIntrinsics intrinsicId )],
+  [\{],
   [\#if defined(\_TARGET\_AMD64\_) || (defined(\_TARGET\_X86\_) && !defined(LEGACY\_BACKEND))],
   [switch ( intrinsicId )],
-  [{],
+  [\{],
   [\/\\/ AMD64/x86 has SSE2 instructions to directly compute sqrt/abs and SSE4.1],
   [\/\\/ instructions to directly compute round/ceiling/floor.],
   [\/\/],
@@ -1019,36 +977,36 @@ framework for C\#, comprising formal specifications of the language’s grammar,
  return compSupports ( InstructionSet\_SSE41 );],
   [default: 
  return false ; 
- } 
+ \} 
  ... 
- }],
+ \}],
   [As you can see, some methods are implemented like this, e.g. Sqrt and Abs , but for others the CLR instead uses the C++ runtime functions for instance powf .],
   [This entire process is explained very nicely in How is Math. Pow() implemented in . NET Framework? , but we can also see it in action in the CoreCLR source:],
   [COMSingle:: Pow implementation , i.e. the method that’s executed if you call MathF. Pow(..) from C\# code],
   [Mapping to C runtime method implementations],
   [Cross-platform version of powf implementation that ensures the same behaviour across OSes],
-  [id="results-after-simple-performance-improvements"\>Results after simple performance improvements],
+  [Results after simple performance improvements],
   [However, I wanted to see if my ‘naive’ line-by-line port could be improved, after some profiling I made two main changes:],
   [Remove in-line array initialisation],
   [Switch from Math. XXX(..) functions to the MathF. XXX() counterparts.],
   [These changes are explained in more depth below],
-  [id="remove-in-line-array-initialisation"\>Remove in-line array initialisation],
+  [Remove in-line array initialisation],
   [For more information about why this is necessary see this excellent Stack Overflow answer from Andrey Akinshin complete with benchmarks and assembly code! It comes to the following conclusion:],
   [Does . NET caches hardcoded local arrays? Kind of: the Roslyn compiler put it in the metadata.],
   [Do we have any overhead in this case? Unfortunately, yes: JIT will copy the array content from the metadata for each invocation; it will work longer than the case with a static array. Runtime also allocates objects and produce memory traffic.],
   [Should we care about it? It depends. If it’s a hot method and you want to achieve a good level of performance, you should use a static array. If it’s a cold method which doesn’t affect the application performance, you probably should write “good” source code and put the array in the method scope.],
   [You can see the change I made in this diff .],
-  [id="using-mathf-functions-instead-of-math"\>Using MathF functions instead of Math],
+  [Using MathF functions instead of Math],
   [Secondly and most significantly I got a big perf improvement by making the following changes:],
-  [class="highlight"\> \#if NETSTANDARD2\_1 || NETCOREAPP2\_0 || NETCOREAPP2\_1 || NETCOREAPP2\_2 || NETCOREAPP3\_0
+  [\#if NETSTANDARD2\_1 || NETCOREAPP2\_0 || NETCOREAPP2\_1 || NETCOREAPP2\_2 || NETCOREAPP3\_0
  \/\\/ intnv square root 
- public static Vec operator !( Vec q ) { 
+ public static Vec operator !( Vec q ) \{ 
  return q \* ( 1.0f \/ MathF . Sqrt ( q % q )); 
- } 
+ \} 
  \#else
- public static Vec operator !( Vec q ) { 
+ public static Vec operator !( Vec q ) \{ 
  return q \* ( 1.0f \/ ( float ) Math . Sqrt ( q % q )); 
- } 
+ \} 
  \#endif],
   [As of ‘. NET Standard 2.1’ there are now specific float implementations of the common maths functions, located in the System. MathF class . For more information on this API and it’s implementation see:],
   [New API for single-precision math],
@@ -1151,11 +1109,11 @@ framework for C\#, comprising formal specifications of the language’s grammar,
  46.22 
  48.73],
   [Note: the difference between . NET Core and . NET Framework is due to the lack of the MathF API in . NET Framework v4.7.2, for more info see Support . Net Framework (4.8?) for netstandard 2.1 .],
-  [id="further-performance-improvements"\>Further performance improvements],
+  [Further performance improvements],
   [However I’m sure that others can do better!],
   [If you’re interested in trying to close the gap the C\# code is available . For comparison, you can see the assembly produced by the C++ compiler courtesy of the brilliant Compiler Explorer .],
   [Finally, if it helps, here’s the output from the Visual Studio Profiler showing the ‘hot path’ (after the perf improvement described above):],
-  [id="is-c-a-low-level-language"\>Is C\# a low-level language?],
+  [Is C\# a low-level language?],
   [Or more specifically:],
   [What language features of C\#/F\#/VB. NET or BCL/Runtime functionality enable ‘low-level’\* programming?],
   [\* yes, I know ‘low-level’ is a subjective term 😊],
@@ -1193,7 +1151,6 @@ framework for C\#, comprising formal specifications of the language’s grammar,
   [Nino Floris “Constants embedding via readonlyspan, stackalloc, finalizers, WeakReference, open delegates, MethodImplOptions, MemoryBarriers, TypedReference, varargs, SIMD, Unsafe. AsRef can coerce struct types if layout matches exactly (used for a.o. TaskAwaiter and its version)"],
   [So in summary, I would say that C\# certainly lets you write code that looks a lot like C++ and in conjunction with the Runtime and Base-Class Libraries it gives you a lot of low-level functionality],
   [Discuss this post on Hacker News , /r/programming , /r/dotnet or /r/csharp],
-  [id="further-reading"\>Further Reading],
   [Patterns for high-performance C\#. by Federico Andres Lois],
   [Performance Quiz \#6 — Chinese/English Dictionary reader (From 2005, 2 Microsoft bloggers have a ‘performance’ battle, C++ v. C\#)],
   [Performance Quiz \#6 — Conclusion, Studying the Space],
@@ -1212,24 +1169,22 @@ framework for C\#, comprising formal specifications of the language’s grammar,
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Episode 919: The Who is the What; the When is the Why],
   author: [Matthew Wrather],
   source-name: [Overthinking It],
   images: (),
   paragraphs: (
-  [style="text-align: center;"\> Support Overthinking It by becoming a member for \$5/month!],
+  [Support Overthinking It by becoming a member for \$5/month!],
   [Peter Fenzel, Mark Lee, and Matthew Wrather overthink the orthogonal cultural spectacles of the 2026 Super Bowl, considering the halftime show headlined by Bad Bunny and the perennial cultural battlefield of the commercials, this year weaving narratives of authenticity amidst a sea of grifting. The halftime show is approached first through its stagecraft and camera work which create an transporting, immersive environment for TV audiences (though probably not for stadium-goes). The presence of Gaga is debated.],
   [And what does it all tell us about America in 2026? Maybe it’s that “in a world where nostalgia is commodified, even a minion can become a cultural icon.”],
   [Download (MP3)],
   [List of Super Bowl Halftime Shows (Wikipedia)],
   [Episode 22: DIY Naked News],
-  [style="margin: 5px 0; padding: 10px; background: \#eee;"\>],
-  [style="margin: 0; padding: 0;"\> Episode 919: The Who is the What; the When is the Why originally appeared on Overthinking It , the site subjecting the popular culture to a level of scrutiny it probably doesn't deserve. \[ Latest Posts | Podcast ( iTunes Link )\]],
+  [Episode 919: The Who is the What; the When is the Why originally appeared on Overthinking It , the site subjecting the popular culture to a level of scrutiny it probably doesn't deserve. \[ Latest Posts | Podcast ( iTunes Link )\]],
 ),
   insert-map: (:),
   word-count: 185,
@@ -1239,7 +1194,7 @@ framework for C\#, comprising formal specifications of the language’s grammar,
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Episode 122: Hercules],
   author: [Nate DiMeo],
   source-name: [The Memory Palace],
@@ -1263,7 +1218,7 @@ The Julianna Barwick remix of This Will Destroy You's The Puritan.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Island city-builder Nova Roma is out now, and I'd have drowned all my Romans already if it weren't for those pesky gods],
   author: [Edwin Evans-Thirlwell],
   source-name: [Rock Paper Shotgun],
@@ -1281,7 +1236,7 @@ The Julianna Barwick remix of This Will Destroy You's The Puritan.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [20 fabulous family spring days out in the UK],
   author: [Fiona Kerr],
   source-name: [The Guardian Travel],
@@ -1305,7 +1260,7 @@ The Julianna Barwick remix of This Will Destroy You's The Puritan.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [I got tired],
   author: [Scott Hanselman],
   source-name: [Scott Hanselman],
@@ -1320,7 +1275,6 @@ The Julianna Barwick remix of This Will Destroy You's The Puritan.],
   [Do they deserve the gift of your keystrokes?],
   [Do you have a digital or social media will?],
   [© 2025 Scott Hanselman. All rights reserved.],
-  [style="clear: both; padding-top: 0.2em;"\>],
 ),
   insert-map: (:),
   word-count: 299,
@@ -1330,7 +1284,7 @@ The Julianna Barwick remix of This Will Destroy You's The Puritan.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Episode 125: Snakes!],
   author: [The Memory Palace],
   source-name: [The Memory Palace],
@@ -1356,7 +1310,7 @@ The Julianna Barwick remix of This Will Destroy You's The Puritan.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Episode 220: The Zipper],
   author: [Nate DiMeo],
   source-name: [The Memory Palace],
@@ -1381,7 +1335,7 @@ This episode was pieced together from a ton of little fragments but I wanted to 
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Two Small Sculptures (The Met Residency Episode 8)],
   author: [The Memory Palace],
   source-name: [The Memory Palace],
@@ -1403,8 +1357,7 @@ This episode was pieced together from a ton of little fragments but I wanted to 
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Episode 126 (The 8th Story)],
   author: [The Memory Palace],
   source-name: [The Memory Palace],
@@ -1423,13 +1376,11 @@ This episode was pieced together from a ton of little fragments but I wanted to 
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([Joy Gendusa], source-name: [Entrepreneur], [Email volume is up 33.9% — here's how we increased CTR 10% and turned cold leads into 631 replies and 95 calls per week.])],
-    [#brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia from PRX.
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([Joy Gendusa], source-name: [Entrepreneur], [Email volume is up 33.9% — here's how we increased CTR 10% and turned cold leads into 631 replies and 95 calls per week.])],
+  [#brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia from PRX.
 
 Music
 
@@ -1444,13 +1395,13 @@ We hear Muff Gets a Share from Joel P. West’s score to Band of Robbers
 We hear another song I absolutely love, Turned Out I Was Everyone, by Sasami
 
 We finish on Popcorn and Life from Ben Sollee’s lovely score to Maidentrip.])],
-    [#brief-item([Reece Bithrey], source-name: [Rock Paper Shotgun], [The Asus ROG Strix Scope II 96 Wireless has been a long-time favourite mechanical keyboard of mine. That's because of its highly functional, near-full-size layout, its smooth, lubricated switches, and just the sense that the entire package feels thoughtful and well-put-together. I tried looking for a deal for in in the UK, sadly to no avail, though our US pals will be happy to learn it's currently \$130 from Amazon US in their Spring Sale (that, for some strange reason, is happening over a week after the UK one ended).
+  [#brief-item([Reece Bithrey], source-name: [Rock Paper Shotgun], [The Asus ROG Strix Scope II 96 Wireless has been a long-time favourite mechanical keyboard of mine. That's because of its highly functional, near-full-size layout, its smooth, lubricated switches, and just the sense that the entire package feels thoughtful and well-put-together. I tried looking for a deal for in in the UK, sadly to no avail, though our US pals will be happy to learn it's currently \$130 from Amazon US in their Spring Sale (that, for some strange reason, is happening over a week after the UK one ended).
 
  Read more])],
-    [#brief-item([Oisin Kuhnke], source-name: [Rock Paper Shotgun], [It sounds like Kingdom Come: Deliverance 2 developer Warhorse Studios' future projects won't be translated entirely by human hands. Earlier today, a Reddit post was shared to the game's subreddit from Max Hejtmánek, a Czech to English translator and editor on the developer's most recent game, where he claimed that yesterday, March 27th, he was laid off "in favour of using AI for all translations going forward."
+  [#brief-item([Oisin Kuhnke], source-name: [Rock Paper Shotgun], [It sounds like Kingdom Come: Deliverance 2 developer Warhorse Studios' future projects won't be translated entirely by human hands. Earlier today, a Reddit post was shared to the game's subreddit from Max Hejtmánek, a Czech to English translator and editor on the developer's most recent game, where he claimed that yesterday, March 27th, he was laid off "in favour of using AI for all translations going forward."
 
  Read more])],
-    [#brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia from PRX.
+  [#brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia from PRX.
 
 Music
 
@@ -1475,20 +1426,20 @@ and by Caoimhin O Raghelagh and Thomas Bartlett
 Notes
 
 You can find the website I mentioned here ; it’s a one-stop shop, really, for information on the 6888t. .])],
-    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, please tell a friend about The Memory Palace. 
+  [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, please tell a friend about The Memory Palace. 
 
 Thank you kindly.
 
 Learn about your ad choices: dovetail.prx.org/ad-choices])],
-    [#brief-item([Glenn Garner], source-name: [Deadline Hollywood], [Mary Beth Hurt, the actress known for roles in The Age of Innocence and Six Degrees of Separation, has died. She was 79. The 3x Tony-nominated actress’ daughter Molly Schrader, whom she shared with husband Paul Schrader, announced that Hurt died on Saturday after she was diagnosed with Alzheimer’s in 2015. “Yesterday morning we lost \[…\]])],
-    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, do tell someone about The Memory Palace. 
+  [#brief-item([Glenn Garner], source-name: [Deadline Hollywood], [Mary Beth Hurt, the actress known for roles in The Age of Innocence and Six Degrees of Separation, has died. She was 79. The 3x Tony-nominated actress’ daughter Molly Schrader, whom she shared with husband Paul Schrader, announced that Hurt died on Saturday after she was diagnosed with Alzheimer’s in 2015. “Yesterday morning we lost \[…\]])],
+  [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, do tell someone about The Memory Palace. 
 
 Thanks.
 
 Nate
 
 Learn about your ad choices: dovetail.prx.org/ad-choices])],
-    [#brief-item([Martin Fowler], source-name: [Martin Fowler], [class="img-link"\> 
+  [#brief-item([Martin Fowler], source-name: [Martin Fowler], [
 
  Erik Doernenburg is the maintainer of CCMenu: a Mac
  application that shows the status of CI/CD builds in the Mac menu bar. He
@@ -1497,7 +1448,7 @@ Learn about your ad choices: dovetail.prx.org/ad-choices])],
  
 
  more…])],
-    [#brief-item([Martin Fowler], source-name: [Martin Fowler], [A conversation between Unmesh Joshi , Rebecca
+  [#brief-item([Martin Fowler], source-name: [Martin Fowler], [A conversation between Unmesh Joshi , Rebecca
  Parsons , and Martin Fowler on how LLMs help us
  shape the abstractions in our software. We view our challenge as building
  systems that survive change, requiring us to manage our cognitive load. We
@@ -1507,7 +1458,7 @@ Learn about your ad choices: dovetail.prx.org/ad-choices])],
  explore that loop in an informal and more fluid manner.
 
  more…])],
-    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [Music, Footnotes & Ephemera
+  [#brief-item([The Memory Palace], source-name: [The Memory Palace], [Music, Footnotes & Ephemera
 
 The Memory Palace is a proud member of Radiotopia , from PRX, a curated network of extraordinary, story-driven shows.
 
@@ -1528,15 +1479,14 @@ Andrew Cyrille, Jimmy Lyons, and Jeanne Lee do Nuba
 And then Davis S. Ware does Mikuro’s Blues , which I’ve loved for a long time.
 
 Learn about your ad choices: dovetail.prx.org/ad-choices])],
-    [#brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [I dunno if you heard earlier this month, but PlayStation are reportedly breaking up with us PC folks , at least when it comes to the PS5's biggest singleplayer hitters. Asked where Returnal devs Housemarque's new game Saros - due out next month - fits into that, its director has opted to remain tight-lipped. 
+  [#brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [I dunno if you heard earlier this month, but PlayStation are reportedly breaking up with us PC folks , at least when it comes to the PS5's biggest singleplayer hitters. Asked where Returnal devs Housemarque's new game Saros - due out next month - fits into that, its director has opted to remain tight-lipped. 
 
  Read more])],
-    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, please tell a friend about The Memory Palace. 
+  [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, please tell a friend about The Memory Palace. 
 
 Thank you kindly.
 
 Learn about your ad choices: dovetail.prx.org/ad-choices])],
-  ))
-}
+))
 
 #colophon([Deep Standard], [Vol. 1, No. 016], [2026-03-30])

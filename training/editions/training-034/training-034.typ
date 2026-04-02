@@ -21,51 +21,8 @@
 #masthead([The Report], [Vol. 1, No. 034], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Maintainers of Last Resort],
-  kicker: [Cover Story],
-  author: [Filippo Valsorda],
-  source-name: [Filippo Valsorda],
-  deck: [Geomys is an organization of professional open source maintainers, focused on a portfolio of critical Go projects.],
-  lead-pre: [],
-  lead-cap: [F],
-  lead-rest: [or example, we are two thirds of the Go standard library cryptography maintainers, we provide the FIPS 140-3 validation of the upstream Go Cryptographic Module, and we fund the maintenance of x/crypto/ssh and staticcheck amongst others.],
-  body-paragraphs: (
-  [Our retainer clients engage us both to get access to our expertise, and so that the critical dependencies they rely on are professionally maintained. Beyond our portfolio, we sometimes act as maintainers of last resort when critical, security-relevant Go projects go unmaintained.],
-  [Recently, there were two occasions in which we stepped into this informal role:],
-  [we took over maintenance of the popular bluemonday HTML sanitizer when the maintainer chose to move on; and],
-  [we built alternative upgrade paths for the seemingly unmaintained gorilla/csrf library, by introducing a new carefully researched implementation into the standard library and creating a drop-in package replacement , after we discovered a security vulnerability in the original.],
-  [We can professionally serve in this role, including contracting external help, thanks to the sustainable funding of our retainer agreements. Our clients benefit from our maintenance efforts, and have a direct line to highlight projects in need.],
-  [id="bluemonday"\>bluemonday],
-  [bluemonday is the most popular HTML sanitizer in the Go ecosystem, used by thousands of applications and libraries to clean up user-generated markup before including it in web pages. Needless to say, it’s a security-critical, load-bearing component.],
-  [In late 2023, the sole previous maintainer announced that their new professional circumstances were not compatible with volunteer OSS work, and that they were looking for responsible ways to wind it down. Geomys offered to take over maintenance instead.],
-  [Over 2024, Geomys worked with the maintainer to take over the project at its original location, avoiding the disruption of a deprecation, and guaranteeing a natural path for future security updates.],
-  [Since we work on Go and open source on a daily basis, the marginal load for Geomys is tiny, but there is outsized value to the community in knowing that security reports would be handled by dedicated professionals that can prioritize them appropriately.],
-  [Beyond handling security and critical issues, we are also discussing bringing on a domain subject expert on a contract basis to improve safety in edge cases and to future-proof the library further. Again, we can do that because we are sustainably funded through our retainer agreements.],
-  [This was welcomed as a great outcome by the original maintainer . The existence of a maintainer of last resort is not only beneficial to the consumers of the ecosystem, but also releases a lot of pressure from volunteer maintainers who would otherwise sometimes carry unsustainable loads out of a sense of duty.],
-  [id="gorillacsrf"\>gorilla/csrf],
-  [gorilla/csrf is an extremely popular Cross-Site Request Forgery protection middleware.],
-  [In December 2024, Patrick O’Doherty discovered that the library was unintentionally vulnerable to schemelessly same-site cross-origin request forgeries . This means https:\/\/admin.example.com could be attacked by https:\/\/blog.example.com or, even worse, http:\/\/foo.example.com . Unless HTTP Strict-Transport-Security with includeSubDomains is used, any network attacker can control the latter and mount the attack. This was fixed publicly in January , but a new release (v1.7.3) and an advisory ( CVE-2025-24358 ) weren’t published until April.],
-  [Alerted by Patrick’s finding, we looked into the library, and found a further issue that again allowed network attackers to mount CSRF attacks if the application used the TrustedOrigins option. We reported this to the project on April 18th, 2025; however, it hasn’t been acknowledged and the project appears unmaintained. (We are publicly disclosing it as the customary 90-day deadline has lapsed, and all the upgrade paths listed below are available as of yesterday, with the release of Go 1.25.)],
-  [We tried reaching out to past maintainers via email and Slack to offer to take over the project, but unfortunately never heard back. Therefore, we set out to find other solutions to fill this critical CSRF-shaped hole in the ecosystem.],
-  [First, we researched the landscape of CSRF countermeasures, and consulted with subject experts, including some of the authors of relevant Web specifications. We found that modern browsers provide security metadata in request headers that makes it possible to reject cross-origin requests without any tokens or keys, leading to a drastically better developer experience, better security, and fewer false positives! The results of that investigation are public for other projects that may benefit from it.],
-  [Second, we proposed and introduced a new CrossOriginProtection middleware in the net/http standard library package. It is part of Go 1.25, released yesterday , and we recommend all gorilla/csrf users consider switching to it. We trust that a standard library solution will safely serve the ecosystem going forward.],
-  [For applications that are not ready to update to Go 1.25, we made a nearly-identical middleware available as a Go module, at filippo.io/csrf .],
-  [Finally, we made a drop-in replacement package for the whole gorilla/csrf API that uses the new countermeasures instead: filippo.io/csrf/gorilla . We tried to minimize any side-effects of the substitution, for example by returning random values in place of the now disused tokens, but we invite you to read the package docs.],
-  [Again, all of this is enabled by and part of the Geomys retainer contracts. If you work at a company with a critical dependency on the Go ecosystem, consider reaching out at hi\@geomys.org. Regardless, you might also want to follow me on Bluesky at \@filippo.abyssdomain.expert or on Mastodon at \@filippo\@abyssdomain.expert .],
-  [id="the-picture"\>The picture],
-  [Since we’re talking about Geomys, here’s a throwback to… last year? Was it just last year?? Anyway, we sponsored GopherCon US and set up a booth mostly to cover it with my collection of gophers and pins.],
-  [Teleport — For the past five years, attacks and compromises have been shifting from traditional malware and security breaches to identifying and compromising valid user accounts and credentials with social engineering, credential theft, or phishing. Teleport Identity is designed to eliminate weak access patterns through access monitoring, minimize attack surface with access requests, and purge unused permissions via mandatory access reviews.],
-  [Ava Labs — We at Ava Labs , maintainer of AvalancheGo (the most widely used client for interacting with the Avalanche Network ), believe the sustainable maintenance and development of open source cryptographic protocols is critical to the broad adoption of blockchain technology. We are proud to support this necessary and impactful work through our ongoing sponsorship of Filippo and his team.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Announcing Rust 1.94.0],
   author: [The Rust Release Team],
   source-name: [Rust Blog],
@@ -76,20 +33,17 @@
   [\$ rustup update stable],
   [If you don't have it already, you can get rustup from the appropriate page on our website, and check out the detailed release notes for 1.94.0 .],
   [If you'd like to help us out by testing future releases, you might consider updating locally to use the beta channel ( rustup default beta ) or the nightly channel ( rustup default nightly ). Please report any bugs you might come across!],
-  [id="what-s-in-1-94-0-stable"\> 
-What's in 1.94.0 stable],
-  [id="array-windows"\> 
-Array windows],
+  [What's in 1.94.0 stable],
+  [Array windows],
   [Rust 1.94 adds array\_windows , an iterating method for slices. It works just like windows but with a constant length, so the iterator items are &\[T; N\] rather than dynamically-sized &\[T\] . In many cases, the window length may even be inferred by how the iterator is used!],
   [For example, part of one 2016 Advent of Code puzzle is looking for ABBA patterns: "two different characters followed by the reverse of that pair, such as xyyx or abba ." If we assume only ASCII characters, that could be written by sweeping windows of the byte slice like this:],
-  [fn has\_abba ( s : & str ) -\> bool { 
+  [fn has\_abba ( s : & str ) -\> bool \{ 
  s . as\_bytes ( ) 
  . array\_windows ( ) 
  . any ( | \[ a1 , b1 , b2 , a2 \] | ( a1 != b1 ) && ( a1 == a2 ) && ( b1 == b2 ) ) 
- }],
+ \}],
   [The destructuring argument pattern in that closure lets the compiler infer that we want windows of 4 here. If we had used the older .windows(4) iterator, then that argument would be a slice which we would have to index manually, hoping that runtime bounds-checking will be optimized away.],
-  [id="cargo-config-inclusion"\> 
-Cargo config inclusion],
+  [Cargo config inclusion],
   [Cargo now supports the include key in configuration files ( .cargo/config.toml ), enabling better organization, sharing, and management of Cargo configurations across projects and environments. These include paths may also be marked optional if they might not be present in some circumstances, e.g. depending on local developer choices.],
   [\# array of paths 
  include = \[ 
@@ -99,26 +53,24 @@ Cargo config inclusion],
  
  \# inline tables for more control 
  include = \[ 
- { path = " required.toml " } , 
- { path = " optional.toml " , optional = true } , 
+ \{ path = " required.toml " \} , 
+ \{ path = " optional.toml " , optional = true \} , 
  \]],
   [See the full include documentation for more details.],
-  [id="toml-1-1-support-in-cargo"\> 
-TOML 1.1 support in Cargo],
+  [TOML 1.1 support in Cargo],
   [Cargo now parses TOML v1.1 for manifests and configuration files. See the TOML release notes for detailed changes, including:],
   [Inline tables across multiple lines and with trailing commas],
   [\\xHH and \\e string escape characters],
   [Optional seconds in times (sets to 0)],
   [For example, a dependency like this:],
-  [serde = { version = " 1.0 " , features = \[ " derive " \] }],
+  [serde = \{ version = " 1.0 " , features = \[ " derive " \] \}],
   [... can now be written like this:],
-  [serde = {
+  [serde = \{
  version = "1.0",
  features = \["derive"\],
- }],
+ \}],
   [Note that using these features in Cargo.toml will raise your development MSRV (minimum supported Rust version) to require this new Cargo parser, and third-party tools that read the manifest may also need to update their parsers. However, Cargo automatically rewrites manifests on publish to remain compatible with older parsers, so it is still possible to support an earlier MSRV for your crate's users.],
-  [id="stabilized-apis"\> 
-Stabilized APIs],
+  [Stabilized APIs],
   [::array\_windows],
   [::element\_offset],
   [LazyCell::get],
@@ -141,11 +93,9 @@ Stabilized APIs],
   [These previously stable APIs are now stable in const contexts:],
   [f32::mul\_add],
   [f64::mul\_add],
-  [id="other-changes"\> 
-Other changes],
+  [Other changes],
   [Check out everything that changed in Rust , Cargo , and Clippy .],
-  [id="contributors-to-1-94-0"\> 
-Contributors to 1.94.0],
+  [Contributors to 1.94.0],
   [Many people came together to create Rust 1.94.0. We couldn't have done it without all of you. Thanks!],
 ),
   insert-map: (:),
@@ -154,10 +104,8 @@ Contributors to 1.94.0],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Safeguarding dynamic configuration changes at scale],
   author: [Cosmo W. Q],
   source-name: [Airbnb Engineering],
@@ -217,10 +165,8 @@ Contributors to 1.94.0],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [My Home Automation setup],
   author: [Bruno Rocha],
   source-name: [SwiftRocks],
@@ -275,10 +221,8 @@ Contributors to 1.94.0],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [★ Squashing],
   author: [John Gruber],
   source-name: [Daring Fireball],
@@ -317,10 +261,8 @@ intelligence era.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Story Time],
   author: [Steve Yegge],
   source-name: [Steve Yegge],
@@ -465,10 +407,8 @@ intelligence era.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [XEmacs is Dead.  Long Live XEmacs!],
   author: [Steve Yegge],
   source-name: [Steve Yegge],
@@ -500,7 +440,7 @@ intelligence era.],
   [I'm just speculating though. All I know is that it's always been very, very crashy. It doesn't actually matter what the reasons are, since there's no excuse for it.],
   [Interestingly, most XEmacs users I've talked to say they don't notice the crashing. I'm sure this is because it's all relative. XEmacs doesn't crash any more often than Firefox, for instance. Probably less often. When Firefox crashes I make a joke about it and restart it, because the crashing rarely has an impact. It even restores your state properly most of the time, so it's just a minor blip, an almost trivial inconvenience, so long as whatever text field you happen to be editing has an auto-save feature. And most of the good ones do.],
   [XEmacs may crash even less than Eclipse and IntelliJ. Crashing editors usually aren't a big problem. Programmers all learn the hard way to save their buffers frequently. For me, saving is like punctuation; I save whenever my typing pauses, out of reflex. Doesn't matter whether it's Emacs or NeoOffice or GMail or... do I use any other apps? Oh yeah, or the Gimp. When I pause, I save, and if you're a programmer I bet you do too. So occasional crashes may seem OK.],
-  [Another reason the crashes aren't called out more often is that most Emacs and XEmacs users are at best casual users. They open up an {X}Emacs session whenever they need to edit a file, and close it when they're done. It's just Notepad with colors and multi-level Undo.],
+  [Another reason the crashes aren't called out more often is that most Emacs and XEmacs users are at best casual users. They open up an \{X\}Emacs session whenever they need to edit a file, and close it when they're done. It's just Notepad with colors and multi-level Undo.],
   [If your average session length is shorter than the editor's MTBF, then yeah, you're not going to notice much crashing.],
   [In contrast, your more... ah, seasoned (read: fanatical) Emacs users gradually come to live in it. Anything you can't do from within Emacs is an annoyance. It's like having to drive to a government building downtown to take care of some random paperwork they should have been offering as an online service a decade ago. You can live with it, but you're annoyed.],
   [Even Firefox, the other big place I live, really wants to be Emacs. Tabs don't scale. Tabbed browsing was revolutionary in the same way adding more tellers to a bank was revolutionary: it's, like, 4x better. w00t. Emacs offers the unique ability to manage its open buffers in another first-class buffer, as a list . Imagine what your filesystem life would be like if the only view of a directory was one tab per file. Go to your pictures directory and watch it start vomiting tabs out like it tried to swallow a box of chiclets. Fun!],
@@ -593,10 +533,8 @@ intelligence era.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How async/await works internally in Swift],
   author: [Bruno Rocha],
   source-name: [SwiftRocks],
@@ -611,10 +549,10 @@ intelligence era.],
   [Programming languages historically provided you with 100% freedom. There were no real guardrails in place to prevent you from making horrible mistakes; you could do anything you wanted, and the compilers would always assume that you knew what you were doing.],
   [On one hand, this behavior on behalf of the languages made them extremely powerful, but on the other hand, it essentially made any piece of software written with them a minefield. Consider the following C code where we attempt to read an array's index that doesn't exist:],
   [\/\\/ arr only has two elements
-void readArray(int arr\[\]) {
+void readArray(int arr\[\]) \{
  int i = arr\[20\];
  printf("%i", i);
-}],
+\}],
   [We know that in Swift this will trigger an exception, but we’re not talking about Swift yet, we’re talking about a precursor language that had complete trust in the developer. What will happen here? Will this crash? Will it work?],
   [The short answer is that we don't know. Sometimes you'll get 0, sometimes you'll get a random number, and sometimes you'll get a crash. It completely depends on the contents of that specific memory address will be at that specific point in time, so in other words, the behavior of that assignment is undefined.],
   [But again, this was intentional. The language assumed that you knew what you were doing and allowed you to proceed with it, even though that turned out to almost always be a huge mistake.],
@@ -632,14 +570,14 @@ void readArray(int arr\[\]) {
   [Priority inversion: Low-priority task holding a resource needed by a high-priority task, causing delays in execution],
   [Thread explosion: Excessive number of threads in the program, leading to resource exhaustion and decreased system performance],
   [let semaphore = DispatchSemaphore(value: 0)
-highPrioQueue.async {
+highPrioQueue.async \{
  semaphore.wait()
  \/\\/ …
-}],
-  [lowPrioQueue.async {
+\}],
+  [lowPrioQueue.async \{
  semaphore.signal()
  \/\\/ …
-}],
+\}],
   [The above is a classic example of a priority inversion in iOS. Although you as a developer know that the above semaphore will cause one queue to wait on another, GCD would not necessarily agree and fail to properly escalate the lower priority queue’s priority. To be clear, GCD can adjust itself in certain situations, but patterns like the above example were not covered by it.],
   [Because the compiler was unable to assist you with such problems, concurrency (and thread safety specifically) historically was one of the hardest things to get right in iOS development, and Apple was well aware of it. In 2017, Chris Lattner, one of the driving forces behind Swift, laid out his vision for making concurrency safe in his Swift Concurrency Manifesto , and in 2020, a roadmap materialized which envisioned new key features to Swift, which included:],
   [The async/await pattern],
@@ -647,31 +585,10 @@ highPrioQueue.async {
   [Actors & Actor Isolation],
   [But although what the roadmap proposed was new to the language, it was not new to tech itself. The async/await pattern, which was first introduced in 2007 as a feature of F\#, has been an industry standard since 2012 (when C\# made it mainstream) due to its ability to allow asynchronous code to be written as traditional synchronous ones, making concurrency-related code easier to read.],
   [For example, before you might write:],
-  [func loadWebResource(\_ path: String, completionBlock: (result: Resource) -\> Void) { ... }
+  [func loadWebResource(\_ path: String, completionBlock: (result: Resource) -\> Void) \{ ... \}
 func decodeImage(\_ r1: Resource, \_ r2: Resource, completionBlock: (result: Image) -\> Void)
 func dewarpAndCleanupImage(\_ i : Image, completionBlock: (result: Image) -\> Void)],
-  [func processImageData1(completionBlock: (result: Image) -\> Void) {
- loadWebResource("dataprofile.txt") { dataResource in
- loadWebResource("imagedata.dat") { imageResource in
- decodeImage(dataResource, imageResource) { imageTmp in
- dewarpAndCleanupImage(imageTmp) { imageResult in
- completionBlock(imageResult)
- }
- }
- }
- }
-}],
   [whereas now you can write:],
-  [func loadWebResource(\_ path: String) async -\> Resource
-func decodeImage(\_ r1: Resource, \_ r2: Resource) async -\> Image
-func dewarpAndCleanupImage(\_ i : Image) async -\> Image],
-  [func processImageData1() async -\> Image {
- let dataResource = await loadWebResource("dataprofile.txt")
- let imageResource = await loadWebResource("imagedata.dat")
- let imageTmp = await decodeImage(dataResource, imageResource)
- let imageResult = await dewarpAndCleanupImage(imageTmp)
- return imageResult
-}],
   [Introducing this pattern in Swift specifically would not only improve the experience of working with completion handlers but also technically allow the compiler to detect and prevent common concurrency mistakes. It’s easy to see why Chris Lattner made the pattern the central piece of his manifesto, in which he declared, in his own words: “I suggest that we do the obvious thing and support this in Swift.”],
   [Over the years these features were gradually integrated into Swift, culminating in the Swift 5.5 release and the “official” release of async/await in Swift.],
   [Async/await under the hood],
@@ -697,10 +614,6 @@ func dewarpAndCleanupImage(\_ i : Image) async -\> Image],
 queue = dispatch\_get\_global\_queue((dispatch\_qos\_class\_t)priority,
  dispatchQueueCooperativeFlag);],
   [Then, when the executor is asked to run a job, it forwards it to the pool via a special dispatch\_async\_swift\_job API:],
-  [JobPriority priority = job-\>getPriority();
-auto queue = getGlobalQueue(priority);
- dispatch\_async\_swift\_job(queue, job, (dispatch\_qos\_class\_t)priority,
- DISPATCH\_QUEUE\_GLOBAL\_EXECUTOR);],
   [I would like to leave the details of libdispatch and dispatch\_async\_swift\_job for another time, but as mentioned in the previous section, this is supposed to be a special/more efficient variant of the regular dispatch\_async API that iOS developers are familiar with that better suits the Swift runtime’s special needs.],
   [Another aspect of this executor worth mentioning is that it's "global", meaning there is only one instance of it for the entire program. The reasoning for this is similar to why a serial DispatchQueue would deep-down forward its jobs to the global ones: while from a systems perspective, it makes sense for the responsibilities to appear to be divided, from a performance perspective it would be a nightmare for each component to have their own dedicated threads. It's sensible then to have a single, global executor that will ultimately schedule most of the work in the system, and have everyone else forward their jobs to it.],
   [The Global Concurrent Executor is Swift’s default executor in general. If your async code is not explicitly requesting that it should go through a specific executor (we will see some examples of that as we continue to explore the abstractions), this is the executor that will handle it.],
@@ -708,68 +621,56 @@ auto queue = getGlobalQueue(priority);
   [The Built-in Serial Executor],
   [Unlike the concurrent executor, the purpose of the serial executor is to make sure jobs are executed one by one and in the order in which they were submitted.],
   [The built-in serial executor is referred internally to as the "Default Actor" (spoiler alert!), and it is in its essence an abstraction of the concurrent executor that keeps track of a linked list of jobs:],
-  [class DefaultActorImpl : public HeapObject {
+  [class DefaultActorImpl : public HeapObject \{
 public:
  void initialize();
  void destroy();
  void enqueue(Job \*job);
  bool tryAssumeThread(RunningJobInfo runner);
  void giveUpThread(RunningJobInfo runner);
-}],
-  [struct alignas(2 \* sizeof(void\*)) State {
+\}],
+  [struct alignas(2 \* sizeof(void\*)) State \{
  JobRef FirstJob;
  struct Flags Flags;
-};],
-  [enum class Status {
+\};],
+  [enum class Status \{
  Idle,
  Scheduled,
  Running,
-};],
+\};],
   [swift::atomic CurrentState;],
   [When a job is enqueued, instead of immediately forwarding it to the concurrent executor, it stores it in the linked list and waits until there’s no one in front of it before truly passing it forward.],
-  [static void setNextJobInQueue(Job \*job, JobRef next) {
- \*reinterpret\_cast (job-\>SchedulerPrivate) = next;
-}],
   [The full extent of what happens when a job is enqueued to the serial executor is one of those things that I said I have to skip in order to maintain my sanity because this executor is responsible for managing a lot of stuff relating to other async/await features ( Actor.cpp alone has 2077 lines of code).],
   [But one interesting thing worth mentioning is how it attempts to prevent priority inversions. When a high-priority job is enqueued to a list that previously only had low-priority jobs, the executor escalates the priority of all jobs that came before it.],
-  [if (priority \> oldState.getMaxPriority()) {
- newState = newState.withEscalatedPriority(priority);
-}],
   [As the name implies, the Default Actor serial executor comes into play when writing async code via the Actors feature. We still have a couple of things to understand before we can look into actors though, so let’s move on for now.],
   [Besides the two built-in executors, it's also possible to build your own custom executor in Swift by creating a type that inherits from the Executor protocol:],
-  [public protocol Executor: AnyObject, Sendable {
+  [public protocol Executor: AnyObject, Sendable \{
  func enqueue(\_ job: consuming Job)
-}],
+\}],
   [For serial executors specifically, Swift even provides a more specific SerialExecutor protocol:],
-  [public protocol SerialExecutor: Executor { ... }],
+  [public protocol SerialExecutor: Executor \{ ... \}],
   [The ability to do so was added in Swift 5.9 alongside the ability to pass custom executors to certain APIs, but there's little reason why you would do such a thing. This was added as a support tool for developers who use Swift in other platforms and is not something an iOS developer would have to deal with. With that said, we do have one very important feature to cover in this article that relies on this ability, but we need to answer a couple more questions before we can look into what that feature is.],
   [Let's keep moving up the abstraction layers. We now know that Swift's built-in executors are the ones passing jobs to the cooperative thread pool, but where do these jobs come from?],
   [Get me those jobs: The async/await pattern],
   [The next piece of the puzzle lies in the async/await pattern itself.],
   [As you might know by now, the async/await pattern consists of two new keywords ( async and await ) that allow you to define an asynchronous function and wait for an asynchronous function to return, respectively:],
-  [func example() async {
+  [func example() async \{
  let fooResult = await foo()
  let barResult = await bar()
  doSomething(fooResult, barResult)
-}],
-  [func foo() async -\> FooResult {
- \/\\/ Some async code
-}],
-  [func bar() async -\> BarResult {
- \/\\/ Some async code
-}],
+\}],
   [One of the main purposes of the async/await pattern is to allow you to write asynchronous code as if it were straight-line, synchronous code, and this might give you the impression that deep down this feature is just a compiler pass that is dividing a function into multiple components. This definition is important in order to understand how the machine is operating, but in reality, things are a lot more sophisticated than that!],
   [Instead of thinking of an asynchronous function as just a syntax sugar for declaring a bunch of closures, think of it as an ordinary function that has the special power to give up its thread and wait for something to happen. When that thing is complete, the function bootstraps itself back up and resumes its execution.],
   [This means that apart from how they wait for things to happen, asynchronous functions and synchronous ones are (sort of) the same thing in Swift! The only difference is that while the synchronous function gets to take full advantage of the thread and its stack, the asynchronous ones have the extra power of giving up that stack and maintaining their own, separate storage.],
   [Although our main interest here is exploring memory safety, one interesting thing to mention is how this definition is important from a code architecture perspective; because asynchronous functions in Swift are effectively the same as synchronous ones, this means you can use them for things that you previously couldn’t do with completion handler closures, such as marking a function as throws :],
-  [func foo() async throws {
+  [func foo() async throws \{
  \/\\/ …
  throw MyError.failed \/\\/ Can’t do this without async/await!
-}],
+\}],
   [But enough theory. How does it work?],
   [We can start understanding how the pattern is implemented by looking at what the Swift compiler does when it processes a line of code marked as await . By compiling the above example code with the -emit-sil flag, we can that the example’s Swift Intermediate Language output looks something like this (greatly simplified for readability):],
   [\/\\/ example()
-sil hidden \@\$s4test7exampleyyYaF : \$\@convention(thin) \@async () -\> () {
+sil hidden \@\$s4test7exampleyyYaF : \$\@convention(thin) \@async () -\> () \{
 bb0:
  hop\_to\_executor foo
  foo()
@@ -778,58 +679,58 @@ bb0:
  bar()
  hop\_to\_executor example
  return void
-} \/\\/ end sil function '\$s4test7exampleyyYaF'],
+\} \/\\/ end sil function '\$s4test7exampleyyYaF'],
   [The SIL of an async function looks exactly the same as the one from a regular synchronous function would, with the difference that Swift calls something called hop\_to\_executor before and after an await function is supposed to be called. According to the compiler’s documentation, the purpose of this symbol is to make sure that the code is running in the right executor. Hmmmm.],
   [One important memory safety feature of Swift’s async/await is what it refers to as execution contexts . As we briefly mentioned when we talking about executors, whenever something runs asynchronously in Swift through async/await, it has to go through a specific executor; the majority of code will go through the default global concurrent one, but certain APIs may use different ones.],
   [The reason why certain APIs may have specific executor requirements is to prevent data races . We’re not ready to explore this topic yet though, so for now just keep in mind that this is why different executors exist.],
   [What hop\_to\_executor does in practice is check the current execution context. If the executor that the function is currently running on is the same as the function that we want to await expects, the code will run synchronously. But if it’s not, a suspension point is created; the function requests the necessary code to run in the correct context and gives up its thread while it waits for the result. This “request” is the job that we were looking for, and the same will happen when the job finishes in order to return to the original context and run the rest of the code.],
-  [func example() async {
+  [func example() async \{
  (original executor)
  let fooResult = await foo() \/\\/ POTENTIAL job 1 (go to foo’s executor)
  \/\\/ POTENTIAL job 2 (back to original context)
  let barResult = await bar() \/\\/ POTENTIAL job 3 (go to bar’s executor)
  \/\\/ POTENTIAL job 4 (back to original context)
  doSomething(fooResult, barResult)
-}],
+\}],
   [The word potential here is very important: As just mentioned, a suspension point is only created if we’re in the wrong context; If no context hopping is needed, the code will run synchronously. This is something that DispatchQueues notoriously could not do, and is a very welcome ability that we will mention again later in this article.],
   [In fact, since await only marks a potential suspension point, this has the interesting side-effect of allowing async protocol requirements to be fulfilled by regular, synchronous ones:],
-  [protocol MyProto {
+  [protocol MyProto \{
  func asyncFunction() async
-}],
-  [struct MyType: MyProto {
- func asyncFunction() {
+\}],
+  [struct MyType: MyProto \{
+ func asyncFunction() \{
  \/\\/ This is not an async function, but the Swift is fine with it
  \/\\/ because \`async\` and \`await\` doesn’t mean that the
  \/\\/ function is \_actually\_ async, only that it \_may\_ be.
- }
-}],
+ \}
+\}],
   [This is also why you can call synchronous functions from asynchronous ones but not vice-versa; asynchronous functions know how to synchronously wait for something, but synchronous ones don’t know how to create suspension points.],
   [Suspension points are a major win for memory safety in Swift: because they result in the thread being released (as opposed to how a lock, semaphore, or DispatchQueue.sync would hold onto it until the result arrived), this means that deadlocks cannot happen in async/await ! As long as you’re not mixing async/await code with other thread-safety mechanisms (which Apple says you shouldn’t in their 2021 session ), your code will always have a thread in which it can run.],
   [Gotcha: Reentrancy],
   [It must be noted though that this behavior has an important gotcha in terms of code architecture. Because suspension points may give up their thread while waiting for a result, it can (and will) happen that the thread that originated the request may start running other jobs while it waits for the result to arrive! In fact, unless you’re using Main Actors (which we will explore in detail later on), there’s no guarantee that the thread that will process the result will even be the same one that originated the request!],
-  [func example() async {
+  [func example() async \{
  doSomething() \/\\/ Running in thread A
  await somethingElse()
  doSomethingAgain() \/\\/ This COULD also be running in thread A, but it’s probably not!
  \/\\/ Also, thread A has likely moved on to do other things while we were waiting for somethingElse()!
-}],
+\}],
   [This means that in order to implement thread-safe objects in async/await, you must structure your code in a way so that it’s never assuming or carrying state across suspension points because any assumptions that you made about the program’s state prior to the suspension point might not be true anymore after the suspension point. This behavior of async/await is called reentrancy and is something we’ll explain in more detail further below when we start speaking about race conditions specifically. In short, reentrancy in Swift’s async/await is intentional, and is something you must keep in mind at all times when working with async/await code in Swift.],
   [I would like to show you how exactly these suspension points and the re-bootstrapping work in the compiler’s code, but as of writing, I was not able to properly understand it. I’d still like to do that though, so I’ll update this article once I figure that out.],
   [We still have one important puzzle piece to investigate though. If synchronous functions are not allowed to call asynchronous ones because they don’t have the power to create a suspension point, what is the “entry point” for an asynchronous function?],
   [Tasks and Structured Concurrency],
   [In Swift’s async/await, the way you call an asynchronous function the first time is by creating a Task object:],
-  [Task {
+  [Task \{
  await foo()
-}],
+\}],
   [Because the closure of a task object is itself marked as async , you can use it to call other asynchronous functions. This is the “entry point” we were looking for.],
   [Swift’s Task struct has a much bigger role than simply allowing you to call async code; they form a fundamental part of what Swift calls "Structured Concurrency," where asynchronous code is structured as a hierarchy of "tasks." This structuring allows parent tasks to manage their child tasks, sharing information like status, context, priority, and local values, as well as enabling the creation of child "task groups" that comprise multiple tasks that run in parallel. Structured Concurrency forms the backbone of Swift's async/await architecture, but is a topic large enough to warrant its own article. For the purposes of this article, we’re going to focus only on the core functionality of tasks.],
   [Let’s get back to the original question. How is Task managing to create an async closure out of nowhere?],
   [The key to understanding how Task bootstraps an async closure lies in its initializer. When a Task is created, the closure it captures is managed not by the Task struct itself, but by a function that lives deep within the Swift runtime:],
-  [extension Task where Failure == Never {
+  [extension Task where Failure == Never \{
  public init(
  priority: TaskPriority? = nil,
  \@\_inheritActorContext \@\_implicitSelfCapture operation: \_\_owned \@Sendable \@escaping () async -\> Success
- ) {
+ ) \{
  let flags = taskCreateFlags(
  priority: priority, isChildTask: false, copyTaskLocals: true,
  inheritContext: true, enqueueJob: true,
@@ -837,10 +738,10 @@ bb0:
  isDiscardingTask: false)],
   [let (task, \_) = Builtin.createAsyncTask(flags, operation)
  self.\_task = task
- }
-}],
+ \}
+\}],
   [The call to Builtin.createAsyncTask ultimately results in a call to swift\_task\_create in the Swift runtime, which creates a task based on a couple of flags that configure how the task should behave. The compiler conveniently takes that of that configuration automatically for you, and once the task is set up, it is immediately directed to the appropriate executor for execution.],
-  [static AsyncTaskAndContext swift\_task\_create\_commonImpl(…) {
+  [static AsyncTaskAndContext swift\_task\_create\_commonImpl(…) \{
  \/\\/ The actual function is a lot more complicated than this.
  \/\\/ This is just a pseudo-coded simplification for learning purposes.],
   [task.executor = task.parent.executor ?? globalConcurrentExecutor;],
@@ -848,25 +749,25 @@ bb0:
  task.checkIfItsTaskGroup(flags);
  task.inheritPriorityFromParentIfNeeded(flags);],
   [task.asJob.submitToExecutor();
-}],
+\}],
   [Structured Concurrency is the reason why the compiler knows all of this information. Similarly to how the serial executor tracks a linked list of jobs, the Swift runtime tracks a graph of all tasks running concurrently in the program. This tracking, in combination with a secondary map connecting asynchronous functions to the tasks that invoked them, allows Swift to infer all the necessary information to bootstrap a task, including the ability to make adjustments such as escalating the priority of a child task based on their parent's priority.],
   [Interestingly enough, Swift actually provides you with APIs that allow you to access these graphs in your Swift code, although they make it very clear that should only be used in special cases. One example of this is withUnsafeCurrentTask , which allows functions to determine if they were called as part of a task.],
-  [func synchronous() {
- withUnsafeCurrentTask { maybeUnsafeCurrentTask in 
- if let unsafeCurrentTask = maybeUnsafeCurrentTask {
+  [func synchronous() \{
+ withUnsafeCurrentTask \{ maybeUnsafeCurrentTask in 
+ if let unsafeCurrentTask = maybeUnsafeCurrentTask \{
  print("Seems I was invoked as part of a Task!")
- } else {
+ \} else \{
  print("Not part of a task.")
- }
- }
-}],
+ \}
+ \}
+\}],
   [Gotcha: Accidental Task Inheritance],
   [Because child tasks by default inherit the properties of their parent, and because the runtime handles that automatically for you, you might end up in situations where a task is inheriting things you didn't mean to:],
-  [func example() async {
- Task {
+  [func example() async \{
+ Task \{
  \/\\/ This is NOT a parentless task, as much as it looks like one!
- }
-}],
+ \}
+\}],
   [In the example above, what looks like a "bland" task is actually a child task of whatever job led to example() being called! This means this task will inherit that parent's properties, which may include things you don't want this particular task to inherit, such as the executor. One example case where this can be a problem is when dealing with code that interacts with the MainActor , which we will explore in detail further below.],
   [In order to avoid this, you must use alternate task initializers like Task.detached which define "unstructured" tasks with no parent, but it must be noted that they also have their own gotchas, so make sure to read their API documentation before using them.],
   [We’ve now covered all the core mechanics of async/await, but we still have one question left to answer. We’ve seen how async/await is able to prevent thread explosion, priority inversions, and deadlocks, but what about data races ? We know that the concept of “execution contexts” is what’s supposed to prevent it, but we haven’t seen that in practice yet.],
@@ -874,59 +775,59 @@ bb0:
   [Protecting shared mutable state: Actors],
   [We have left Actors to last because they don’t relate to the core functionality of async/await, but when it comes to memory safety, they are just as important as the other features we’ve covered.],
   [In Swift, an “actor” is a special type of class that is marked with the actor keyword:],
-  [actor MyExample {
+  [actor MyExample \{
  var fooInt = 0
-}],
+\}],
   [Actors are mostly the same as classes, but they contain a special power: any mutable state managed by an actor can only be modified by the actor itself:],
-  [func foo() {
+  [func foo() \{
  let example = MyExample()
  example.fooInt = 1 \/\\/ Error: Actor-isolated \`fooInt\`
  \/\\/ cannot be mutated from a non-isolated context
-}],
+\}],
   [In the example above, in other to mutate fooInt , we must somehow abstract that action so that it happens within the bounds of the actor:],
-  [actor MyExample {
+  [actor MyExample \{
  var fooInt = 0
- func mutateFooInt() {
+ func mutateFooInt() \{
  fooInt = 1
- }
-}],
+ \}
+\}],
   [This looks like it would make no difference, but this is where the actors’ second special power comes into play: only the actor is allowed to synchronously reference its methods and properties; everyone else must do it asynchronously:],
-  [func foo() {
+  [func foo() \{
  let example = MyExample()
- Task {
+ Task \{
  await example.mutateFooInt()
  \/\\/ The actor itself is allowed to call mutateFooInt() synchronously,
  \/\\/ but the example() function is not.
- }
-}],
+ \}
+\}],
   [This is a concept called actor isolation , and when combined with the concept of execution contexts we’ve seen above, Swift’s async/await is able to prevent you from introducing potential data races in your program. To make it better, those checks happen in compile time!],
   [To be more specific, when you await on an actor, your code will be forwarded not to the default global concurrent executor, but a serial one that was created specifically for that actor instance. This has the effect of not allowing you to call two actor functions at the same time (one will end before the other one starts), and when combined with the fact that the compiler doesn’t allow you to “leak” an actor’s mutable state, you have essentially a situation where it’s not possible for your actor’s state to be mutated by two threads at the same time. But how does this work internally?],
   [When it comes to their implementations, actors are surprisingly straightforward. In Swift, declaring an actor is just a syntax sugar for declaring a class that inherits from the Actor protocol:],
-  [public protocol Actor: AnyObject, Sendable {
- nonisolated var unownedExecutor: UnownedSerialExecutor { get }
-}],
+  [public protocol Actor: AnyObject, Sendable \{
+ nonisolated var unownedExecutor: UnownedSerialExecutor \{ get \}
+\}],
   [The only property of the protocol is unownedExecutor , which is a pointer to the serial executor that is supposed to manage the jobs related to that actor. The purpose of the UnownedSerialExecutor type is to wrap a type conforming to the SerialExecutor protocol we saw previously as an unowned reference, which the documentation describes as necessary for optimization reasons.],
-  [public struct UnownedSerialExecutor: Sendable {
+  [public struct UnownedSerialExecutor: Sendable \{
  internal var executor: Builtin. Executor
- public init (ordinary executor: \_\_shared E) {
+ public init (ordinary executor: \_\_shared E) \{
  self.executor = Builtin.buildOrdinarySerialExecutorRef(executor)
- }
-}],
+ \}
+\}],
   [When you declare an actor via the syntax sugar, Swift automatically generates this conformance for you:],
   [\/\\/ What you write:
-actor MyActor {}],
+actor MyActor \{\}],
   [\/\\/ What is compiled:
-final class MyActor: Actor {],
-  [nonisolated var unownedExecutor: UnownedSerialExecutor {
+final class MyActor: Actor \{],
+  [nonisolated var unownedExecutor: UnownedSerialExecutor \{
  return Builtin.buildDefaultActorExecutorRef(self)
- }],
-  [init() {
+ \}],
+  [init() \{
  \_defaultActorInitialize(self)
- }],
-  [deinit {
+ \}],
+  [deinit \{
  \_defaultActorDestroy(self)
- }],
-  [}],
+ \}],
+  [\}],
   [We already know what this generated code is doing; it initializes the Default Actor serial executor that we’ve covered at the beginning. Since actors are deeply ingrained into Swift, the compiler knows that whenever someone references it, the eventual call to hop\_to\_executor should point to the actor’s unownedExecutor property and not the global one.],
   [Gotcha: Actor Reentrancy (Actors and thread-safety)],
   [While actors naturally protect you from data races , it’s critical to remember that they cannot protect you from logic mistakes like race conditions \/ straight-up incorrect code. We have already covered why this is the case when we talked about suspension points and reentrancy , but I’d like to reiterate this because this is extra important when working with actors specifically.],
@@ -935,7 +836,7 @@ final class MyActor: Actor {],
   [Sendable and nonisolated],
   [Like in the case of deadlocks, an actor’s solution for data races has important consequences in terms of code architecture. If you cannot “leak” an actor’s mutable state, how does anything ever happen?],
   [Swift’s async/await provides two features to address this. The first one is the Sendable protocol, which marks types that can safely leave an actor:],
-  [public protocol Sendable { }],
+  [public protocol Sendable \{ \}],
   [This protocol has no actual code; it’s simply a marker used by the compiler to determine which types are allowed to leave the actors that created them. This doesn’t mean that you can mark anything as Sendable through; Swift really doesn’t want you to introduce data races into your programs, so the compiler has very strict requirements of what can inherit it:],
   [Actors (does so by default)],
   [Value types],
@@ -944,85 +845,85 @@ final class MyActor: Actor {],
   [Gotcha: Sendable contagion],
   [While Sendable solves this problem, it must be noted that this protocol has been the target of criticism in the Swift community due how the necessity of tagging “safe” types combined with how the compiler has the tendency to behave like an overprotective mother (it will complain that a type must be Sendable even when in situations where no data race could possibly happen) can quickly cause Sendable to “plague” your program’s entire architecture. There have been pitches on potential improvements in this area, but I believe as of writing no formal proposals have been submitted yet.],
   [Aside from Sendable , the nonisolated keyword is also intended to assist with the problem of having to “leak” an actor’s state. As the name implies, this allows you to mark functions and properties that are allowed to ignore the actor’s isolation mechanism:],
-  [actor BankAccount {
+  [actor BankAccount \{
  nonisolated let accountNumber: Int
-}],
+\}],
   [When referenced, the compiler will pretend that the type didn’t originate from an actor and skip any and all protection mechanisms that would normally apply. However, similarly to Sendable , not everything can be marked as nonisolated . Only types that are Sendable can be marked as such.],
   [Actors and the Main Thread],
   [At this point, we’ve covered everything we needed regarding async/await in Swift, but there’s still one thing we still need to cover regarding iOS development specifically. Where’s the main thread in all of this?],
   [We’ve talked a lot about the new thread pool and how executors interact with them, but iOS developers will know that UI work always needs to run in the main thread. How can you do that if the cooperative thread pool has no concept of a “main” thread?],
   [In Swift, this is where the ability to build custom executors that we’ve seen at the beginning of the article comes into play. Swift’s standard library ships a type called MainActor , which as the name implies, is a special type of actor that synchronizes all of its jobs to the main thread:],
-  [\@globalActor public final actor MainActor: GlobalActor {
+  [\@globalActor public final actor MainActor: GlobalActor \{
  public static let shared = MainActor()],
-  [public nonisolated var unownedExecutor: UnownedSerialExecutor {
+  [public nonisolated var unownedExecutor: UnownedSerialExecutor \{
  return UnownedSerialExecutor(Builtin.buildMainActorExecutorRef())
- }],
-  [public nonisolated func enqueue(\_ job: UnownedJob) {
+ \}],
+  [public nonisolated func enqueue(\_ job: UnownedJob) \{
  \_enqueueOnMain(job)
- }
-}],
+ \}
+\}],
   [The MainActor achieves this by overriding the default unownedExecutor with a custom Builtin.buildMainActorExecutorRef() one. Since we’re telling Swift that we don’t want to use the default serial executor for this actor, this will deep down cause the Swift runtime to call the MainActor’s custom-defined enqueue method instead.],
   [In the case of MainActor , the call to \_enqueueOnMain will cause the job to be forwarded to the global concurrent executor as usual, but this time via a special function that causes the job to be submitted to GCD’s main queue instead of the cooperative thread pool.],
   [\/\\/ The function where “regular” async/await jobs ends up in
-static void swift\_task\_enqueueGlobalImpl(Job \*job) {
+static void swift\_task\_enqueueGlobalImpl(Job \*job) \{
  auto queue = getCooperativeThreadPool();
  dispatchEnqueue(queue, job);
-}],
+\}],
   [\/\\/ The function where MainActor jobs ends up in
-static void swift\_task\_enqueueMainExecutorImpl(Job \*job) {
+static void swift\_task\_enqueueMainExecutorImpl(Job \*job) \{
  auto mainQueue = dispatch\_get\_main\_queue();
  dispatchEnqueue(mainQueue, job);
-}],
+\}],
   [In other words, code executed by the main actor is essentially the same thing as calling DispatchQueue.main.async , although not literally the same due to two facts that we have already covered: the fact that the Swift runtime uses a “special” version of DispatchQueue.async to submit its jobs, and the fact the dispatch will technically not happen if we’re already inside the main thread ( MainActor’s “execution context”).],
   [\/\\/ What you write:
-Task {
+Task \{
  await myMainActorMethod()
-}],
+\}],
   [\/\\/ What (sort of) actually happens:
 \/\\/ (Actual behavior explained above)
-Task {
- DispatchQueue.main.async {
+Task \{
+ DispatchQueue.main.async \{
  myMainActorMethod()
- }
-}],
+ \}
+\}],
   [The final thing I’d like to show you is how actors like the MainActor are used in practice. We know that regular actors are created and passed around as normal objects, but doing so with the MainActor would not scale well. Even though the MainActor is available as a singleton, there’s a lot of stuff that needs to run in the main thread in iOS, so if we were treating it like a regular object, we would end up with a lot of code looking like this:],
-  [extension MainActor {
- func myMainActorMethod() {}
-}],
-  [func example() {
- Task {
+  [extension MainActor \{
+ func myMainActorMethod() \{\}
+\}],
+  [func example() \{
+ Task \{
  await MainActor.shared.myMainActorMethod()
- }
-}],
+ \}
+\}],
   [\/\/\/\/\/\/\/\/\/\/\/\/\/ or:],
-  [func example() {
- Task {
- await MainActor.run {
+  [func example() \{
+ Task \{
+ await MainActor.run \{
  myMainActorMethod()
- }
- }
-}],
-  [func myMainActorMethod() {}],
+ \}
+ \}
+\}],
+  [func myMainActorMethod() \{\}],
   [Although both solutions “work”, Swift saw potential for improvement by creating the concept of “global actors”, which describe actors that can not only be referenced but also expanded from anywhere in the program. Instead of forcing everyone to reference singletons everywhere, Swift's Global Actors feature allows you to easily indicate that a certain piece of code should be executed within the bounds of a specific global actor by marking it with a special annotation:],
   [\@MainActor
-func myMainActorMethod() {}],
+func myMainActorMethod() \{\}],
   [This is essentially the same thing as the examples shown above, but with much less code. Instead of having to reference the MainActor’s singleton, we can now directly reference this method and be sure that it will be executed within the MainActor’s context.],
-  [func example() {
+  [func example() \{
  await myMainActorMethod() \/\\/ This method is annotated as \@MainActor,
  \/\\/ so it will run in the MainActor’s context.
-}],
+\}],
   [In order to be able to do this, the actor in question must be marked with the \@globalActor keyword, and is something that you can do for your own actors if you find that this behavior would be useful for them. As one would expect, the MainActor is itself a global actor.],
   [Marking an actor as \@globalActor is deep down a syntax sugar for declaring an actor that inherits from the GlobalActor protocol, which is essentially a variation of the regular Actor protocol that additionally defines a singleton that Swift can refer to when it finds one of those special annotations across the program.],
-  [public protocol GlobalActor {
+  [public protocol GlobalActor \{
  associatedtype ActorType: Actor
- static var shared: ActorType { get }
-}],
+ static var shared: ActorType \{ get \}
+\}],
   [Then, during compilation time, when Swift encounters one of those annotations, it follows up by emitting the underlying hop\_to\_executor call with a reference to that actor’s singleton.],
-  [func example() {
+  [func example() \{
  \/\\/ SIL: hop\_to\_executor(MainActor.shared)
  await myMainActorMethod()
  \/\\/ SIL: hop\_to\_executor(DefaultExecutor)
-}],
+\}],
   [Conclusion: Swift's async/await makes concurrency simpler, but not necessarily easier],
   [In general, I like async/await. I think this is a nice addition to Swift, and it makes working with concurrency a lot more interesting.],
   [But you must not get this wrong. Although Swift prevents you from making memory-related mistakes, it does NOT prevent you from making logic mistakes \/ writing straight-up incorrect code , and the way the feature works today makes it very easy for you to introduce such mistakes. We've covered some of the pattern's gotchas in this article, but there are many more of them pertaining to features we didn't get to explore here.],
@@ -1035,10 +936,8 @@ func myMainActorMethod() {}],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A programmer's view of the Universe, part 2:  Mario Kart],
   author: [Steve Yegge],
   source-name: [Steve Yegge],
@@ -1152,10 +1051,8 @@ func myMainActorMethod() {}],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Software engineering book recommendations],
   author: [Bruno Rocha],
   source-name: [SwiftRocks],
@@ -1187,10 +1084,8 @@ func myMainActorMethod() {}],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The 2025 Go Cryptography State of the Union],
   author: [Filippo Valsorda],
   source-name: [Filippo Valsorda],
@@ -1199,9 +1094,8 @@ func myMainActorMethod() {}],
   [This past August, I delivered my traditional Go Cryptography State of the Union talk at GopherCon US 2025 in New York.],
   [It goes into everything that happened at the intersection of Go and cryptography over the last year.],
   [You can watch the video (with manually edited subtitles, for my fellow subtitles enjoyers) or read the transcript below (for my fellow videos not-enjoyers).],
-  [style="text-align: center;"\>],
   [The annotated transcript below was made with Simon Willison’s tool . All pictures were taken around Rome, the Italian contryside, and the skies of the Northeastern United States.],
-  [id="annotated-transcript"\>Annotated transcript],
+  [Annotated transcript],
   [\#],
   [Welcome to my annual performance review.],
   [We are going to talk about all of the stuff that we did in the Go cryptography world during the past year.],
@@ -1445,10 +1339,8 @@ Here are a few words from some of them!],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A Retrospective Survey of 2024/2025 Open Source Supply Chain Compromises],
   author: [Filippo Valsorda],
   source-name: [Filippo Valsorda],
@@ -1459,7 +1351,7 @@ Here are a few words from some of them!],
   [To test this impression and figure out any such mitigations, I collected all 2024/2025 open source supply chain compromises I could find, and categorized their root cause. (If you find more, do email me!)],
   [Since I am interested in mitigations we can apply as maintainers of depended-upon projects to avoid compromises, I am ignoring: intentionally malicious packages (e.g. typosquatting), issues in package managers (e.g. internal name shadowing), open source infrastructure abuse (e.g. using package registries for post-compromise exfiltration), and isolated app compromises (i.e. not software that is depended upon).],
   [Also, I am specifically interested in how an attacker got their first unauthorized access, not in what they did with it. Annoyingly, there is usually a lot more written about the latter than the former.],
-  [id="20242025-open-source-supply-chain-compromises"\>2024/2025 Open Source Supply Chain Compromises],
+  [2024/2025 Open Source Supply Chain Compromises],
   [In no particular order, but kind of grouped.],
   [XZ Utils],
   [Long term pressure campaign on the maintainer to hand over access.],
@@ -1519,16 +1411,16 @@ Here are a few words from some of them!],
   [DogWifTool],
   [GitHub token extracted from distributed binary.],
   [Root cause : long-lived credential exfiltration.],
-  [id="summary-of-vectors-and-mitigations"\>Summary of vectors and mitigations],
-  [id="phishing-5-root"\>Phishing (5 root)],
+  [Summary of vectors and mitigations],
+  [Phishing (5 root)],
   [Surprising no one, the most popular confirmed initial compromise vector is phishing. It works against technical open source maintainers. It works against 2FA TOTP. It. Works. It is also very fixable.],
   [It’s 2025 and every professional open source maintainer should be using phishing-resistant authentication (passkeys or WebAuthn 2FA) on all developer accounts, and accounts upstream of them.],
   [Upstream accounts include email, password manager, passkey sync (e.g. Apple iCloud), web/DNS hosting, and domain registrar.],
   [Some services, such as GitHub, require a phishable 2FA method along with phishing-resistant ones. In that case, the best option is to enable TOTP, and delete the secret or write it down somewhere safe and never ever use it—effectively disabling it. This does not work with SMS, since SIM jacking is possible even without action by the victim.],
-  [id="control-handoff-31-root"\>Control handoff (3+1? root)],
+  [Control handoff (3+1? root)],
   [Actually surprisingly—to me—a number of compromises are due to, effectively, giving access to the attacker.],
   [This is a nuanced people issue. The solution is obviously “don’t do that” but that really reduces to the decades-old issue of open source maintenance sustainability. In a sense, since this analysis is aimed at professional maintainers who can afford it, control handoff is easily avoided by not doing it.],
-  [id="pull\_request\_target-and-issue\_comment-4-root"\>pull\_request\_target and issue\_comment (4 root)],
+  [pull\_request\_target and issue\_comment (4 root)],
   [Kind of incredible that a specific feature has a top 3 spot, but projects get compromised by “pwn requests” all the time.],
   [The pull\_request\_target workflow trigger runs privileged CI with a context full of attacker-controlled data in response to pull requests. It makes a meek attempt to be safer by not checking out the attacker’s code, instead checking out the upstream target. That’s empirically not enough, with shell injection attacks causing multiple severe compromises.],
   [The zizmor static analyzer can help detect injection vulnerabilities, but it seems clear that pull\_request\_target is unsafe at any speed, and should just never be used.],
@@ -1543,82 +1435,70 @@ jobs:
  steps:
  - uses: actions/checkout\@v3
  with:
- ref: refs/pull/\${{ github.event.issue.number }}/head],
+ ref: refs/pull/\$\{\{ github.event.issue.number \}\}/head],
   [What are the alternatives?],
   [One option is to implement an external service in a language that can safely deal with untrusted inputs (i.e. not YAML’d shell), and use webhooks. That unfortunately requires long-lived credentials (see below).],
   [GitHub itself recommends using the unprivileged pull\_request trigger followed by the workflow\_run trigger, but it’s unclear to me how safer that would actually be against injection attacks.],
   [Finally, since two out of three compromises were due to shell injection, it might be safer to use a proper programming language, like JavaScript with actions/github-script , or any other language accessing the context via environment variables instead of YAML interpolation. This means not using any third-party actions, as well.],
   [Allowlisting actors and read-only steps are not robust mitigations, see Read/write CI permissions and Dependabot impersonation below.],
   [Overall, none of the mitigations are particularly satisfactory, so the solution might be simply to eschew features that require pull\_request\_target and other privileged attacker-controlled triggers. (To be honest, I am not a fan of chatty bots on issues and PRs, so I never needed them.)],
-  [id="long-lived-credential-exfiltration-23-root-5-contributing"\>Long-lived credential exfiltration (2+3? root, 5 contributing)],
+  [Long-lived credential exfiltration (2+3? root, 5 contributing)],
   [Attackers love to steal tokens. There is no universal solution, but it’s so predominant that we can consider piecemeal solutions.],
   [Long-lived credentials are only a root cause when they are accidentally exposed. Otherwise, they are a secondary compromise mechanism for lateral movement or persistence, after the attacker got privileged code execution. Mitigating the latter is somewhat less appealing because an attacker with code execution can find more creative ways to carry out an attack, but we can prune some low-hanging fruit.],
   [Go removes the need for package registry tokens by simply not having accounts. (Instead, the go command fetches modules directly from VCS, with caching by the Go Modules Proxy and universality and immutability guaranteed by the Go Checksum Database.) In other ecosystems Trusted Publishing replaces long-lived private tokens with short-lived OIDC tokens, although there is no way to down-scope the capabilities of an OIDC token.],
   [GitHub Personal Access Tokens are harder to avoid for anything that’s not supported by GitHub Actions permissions. Chainguard has a third-party Security Token Service that trades OIDC tokens for short-lived tokens , and their article has a good list of cases in which PATs end up otherwise necessary. Given the risk, it might be worth giving up on non-critical features that would require powerful tokens.],
   [Gerrit “git cookies” (which are actually just OAuth refresh tokens for the Gerrit app) can be replaced with… well, OAuth refresh tokens but kept in memory instead of disk, using git-credential-oauth . They can also be stored a little more safely in the platform keychain by treating them as an HTTP password, although that’s not well documented .],
   [In the long term, it would be great to see the equivalent of Device Bound Session Credentials for developer and automated workflows.],
-  [id="dependabot-impersonation-1-root"\>Dependabot impersonation (1 root)],
+  [Dependabot impersonation (1 root)],
   [Turns out you can just exfiltrate a token from a GitHub Actions runner to impersonate Dependabot with arbitrary PRs ???],
   [I guess! Fine! Just don’t allowlist Dependabot. Not sure what a deeper meta-mitigation that didn’t require knowing this factoid would have been.],
   [This is also a social engineering risk, so I guess just turn off Dependabot?],
-  [id="domain-and-username-resurrection-1-root"\>Domain and username resurrection (1 root)],
+  [Domain and username resurrection (1 root)],
   [Multiple ecosystems (Go and Maven, for example) are vulnerable to name takeovers, whether expired domain names or changed GitHub user/org names. The new owner of the name gets to publish updates for that package.],
   [From the point of view of the maintainer, the mitigation is just not to change GitHub names (at least without registering the old one), and to register critical domains for a long period, with expiration alerting.],
-  [id="readwrite-ci-permissions-0-root-2-contributing"\>Read/write CI permissions (0 root, 2 contributing)],
+  [Read/write CI permissions (0 root, 2 contributing)],
   [Some CI compromises happened in contexts that could or should have been read-only. It sounds like giving GitHub Actions workflows only read permissions like contents: read should be a robust mitigation for any compromise of the code they run.],
   [Unfortunately, and kind of incredibly, even a read-only workflow is handed a token that can write to the cross-workflow cache for any key. This cache is then used implicitly by a number of official actions, allowing cross-workflow escalation by GitHub Actions cache poisoning .],
   [This contradicts some of GitHub’s own recommendations, and makes the existence of a setting to make GitHub Actions read-only by default more misleading than useful.],
   [The behavior does not extend to regular pull\_request triggers, which are actually read-only (otherwise anyone could poison caches with a PR). GitHub simply doesn’t seem to offer a way to opt in to it.],
   [I can see no robust mitigation in the GitHub ecosystem. I would love to be wrong, this is maddening.],
-  [id="post-install-scripts-0-root-2-contributing"\>Post-install scripts (0 root, 2 contributing)],
+  [Post-install scripts (0 root, 2 contributing)],
   [Two compromises propagated by injecting npm post-install scripts, to obtain code execution as soon as a dependency was installed.],
   [This can be disabled with],
   [npm config set ignore-scripts true],
   [which is worth doing for defense in depth. However, it’s only useful if the dependency is not going to be executed in a privileged context, e.g. to run tests in Node.js.],
   [Go, unlike most ecosystems, considers code execution during fetch or compilation to be a security vulnerability, so has this safety margin by default.],
-  [id="non-reproducible-release-artifacts-0-root-1-contributing"\>Non-reproducible release artifacts (0 root, 1 contributing)],
+  [Non-reproducible release artifacts (0 root, 1 contributing)],
   [The XZ backdoor was hidden in a release artifact that didn’t match the repository source. It would be great if that was more detectable, in the form of reproducible artifacts.],
   [The road to a fail-closed world where systems automatically detect non-reproducing artifacts is still long, though.],
-  [id="mutable-github-actions-tags-0-root-1-contributing"\>Mutable GitHub Actions tags (0 root, 1 contributing)],
+  [Mutable GitHub Actions tags (0 root, 1 contributing)],
   [How supply chain attacks usually work these days is that an attacker gets the ability to publish new versions for a package, publishes a malicious version, and waits for dependents to update (maybe with the help of Dependabot) or install the latest version ex novo.],
   [Not with GitHub Actions! The recommended and most common way to refer to a GitHub Action is by its major version, which is resolved to a git tag that is expected to change arbitrarily when new versions are published. This means that an attacker can instantly compromise every dependent workflow.],
   [This was an unforced error already in 2019, when GitHub Actions launched while Go had already shipped an immutable package system. This has been discussed many times since and most other ecosystems have improved somewhat. A roadmap item for immutable Actions has been silent since 2022 . The new immutable releases feature doesn’t apply to non-release tags, and the GitHub docs still recommend changing tags for Actions.],
   [As maintainers, we can opt in to pinning where it’s somehow still not the default. For GitHub Actions, that means using unreadable commit hashes, which can be somewhat ameliorated with tooling . For npm, it means using npm ci instead of npm install .],
-  [id="per-branch-ci-configuration-0-root-1-contributing"\>Per-branch CI configuration (0 root, 1 contributing)],
+  [Per-branch CI configuration (0 root, 1 contributing)],
   [One compromise was due to a vulnerability that was already fixed, but had persisted on an old branch. Any time we make a security improvement (including patching a vulnerable Action) on a GitHub Actions workflow, we need to remember to cherry-pick it to all branches, including stale ones.],
   [Can’t think of a good mitigation, just yet another sharp edge of GitHub Actions you need to be aware of, I suppose.],
   [Update: this was fixed in November 2025 !],
-  [id="summary"\>Summary],
   [There are a number of useful mitigations, but the ones that appear to be as clearly a professional responsibility as memory safety are],
   [phishing-resistant authentication;],
   [not handing over access to attackers; and],
   [avoiding privileged attacker-controlled GitHub Actions triggers (e.g. pull\_request\_target ).],
   [This research was part of an effort to compile a Geomys Standard of Care that amongst other things mitigates the most common security risks to the projects we are entrusted with. We will publish and implement it soon, to keep up to date follow me on Bluesky at \@filippo.abyssdomain.expert or on Mastodon at \@filippo\@abyssdomain.expert .],
-  [id="the-picture"\>The Picture],
   [On Saturday, between 250,000 and 1,000,000 people (depending on who you believe, 0.4–1.7% of the whole population of Italy) took part in a demonstration against the genocide unfolding in Gaza. Anyway, here’s a picture of the Archbasilica of San Giovanni in Laterano at the end of the march.],
   [My work is made possible by Geomys , an organization of professional Go maintainer, which is funded by Smallstep , Ava Labs , Teleport , Tailscale , and Sentry . Through our retainer contracts they ensure the sustainability and reliability of our open source maintenance work and get a direct line to my expertise and that of the other Geomys maintainers. (Learn more in the Geomys announcement .)],
   [Here are a few words from some of them!],
   [Teleport — For the past five years, attacks and compromises have been shifting from traditional malware and security breaches to identifying and compromising valid user accounts and credentials with social engineering, credential theft, or phishing. Teleport Identity is designed to eliminate weak access patterns through access monitoring, minimize attack surface with access requests, and purge unused permissions via mandatory access reviews.],
   [Ava Labs — We at Ava Labs , maintainer of AvalancheGo (the most widely used client for interacting with the Avalanche Network ), believe the sustainable maintenance and development of open source cryptographic protocols is critical to the broad adoption of blockchain technology. We are proud to support this necessary and impactful work through our ongoing sponsorship of Filippo and his team.],
-  [id="fn:1"\>],
   [https:\/\/github.com/nrwl/nx/security/advisories/GHSA-cxm3-wv7p-598c\#:~:text=20%20AM%20EDT-,Attack%20Vector,-Vulnerable%20Workflow   ↩],
-  [id="fn:2"\>],
   [https:\/\/github.com/reviewdog/reviewdog/issues/2079   ↩],
-  [id="fn:3"\>],
   [https:\/\/github.com/tj-actions/changed-files/issues/2464\#issuecomment-2727020537   ↩],
-  [id="fn:4"\>],
   [https:\/\/www.synacktiv.com/publications/github-actions-exploitation-dependabot   ↩],
-  [id="fn:5"\>],
   [https:\/\/github.com/module-federation/core/pull/3324   ↩],
-  [id="fn:6"\>],
   [https:\/\/github.com/module-federation/core/tree/c3aff14a4b9de2588122ec24cf456dc1fdd742f0/.github/workflows   ↩],
-  [id="fn:7"\>],
   [https:\/\/github.com/web-infra-dev/rspack/issues/8767\#issuecomment-2563345582   ↩],
-  [id="fn:8"\>],
   [https:\/\/www.praetorian.com/blog/compromising-bytedances-rspack-github-actions-vulnerabilities\/   ↩],
-  [id="fn:9"\>],
   [https:\/\/github.com/prettier/eslint-config-prettier/issues/339\#issuecomment-3090304490   ↩],
-  [id="fn:10"\>],
   [https:\/\/github.com/rust-lang/crates.io/discussions/11889\#discussion-8886064   ↩],
 ),
   insert-map: (:),
@@ -1627,10 +1507,8 @@ jobs:
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Things that did (and didn't) contribute to Burnout Buddy's success],
   author: [Bruno Rocha],
   source-name: [SwiftRocks],
@@ -1687,11 +1565,10 @@ jobs:
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [What are mobile release engineering teams and when do you need one? (Runway)],
   author: [Bruno Rocha],
   source-name: [SwiftRocks],
@@ -1710,7 +1587,7 @@ jobs:
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([John Gruber], source-name: [Daring Fireball], [Here’s a post from 2015, linking to Rene Ritchie, then still at iMore, explaining how iMore found itself serving ever worse (and more reader hostile) ads. Not much has changed regarding the state of web advertising in a decade, and iMore — once a truly great site — is defunct .
 
   ★])],

@@ -21,133 +21,8 @@
 #masthead([The Beacon], [Vol. 1, No. 081], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Learnings from optimising 22 of our most expensive Snowflake pipelines],
-  kicker: [Cover Story],
-  author: [Raphael Montaud],
-  source-name: [Medium Engineering],
-  deck: [We recently spent a sprint focused on reducing our Snowflake costs.],
-  lead-pre: [],
-  lead-cap: [D],
-  lead-rest: [uring this sprint, we investigated 22 of our most expensive pipelines (in terms of Snowflake costs), one by one. In total we merged 56 changes, and in this post we’ll be laying out the optimisations that worked best for us.],
-  body-paragraphs: (
-  [Most of these changes were just common sense and didn’t involve any advanced data engineering techniques. Still, we’re always making mistakes (and that’s okay!) and hopefully this post will help readers avoid a few of the pitfalls we encountered.],
-  [⚠️ Medium is now 14 years old. Our team has inherited a tech stack that has a long history, some flaws and technical debt. Our approach to this problem was pragmatic; we’re not trying to suggest big pipeline re-designs to reach a perfect state, but rather consider our tech stack in it’s current state and figure out the best options to cut costs quickly. Our product evolves, and as we create new things we can remove some old ones, which is why we don’t need to spend too much time re-factoring old pipelines. We know we’ll rebuild those from scratch at some point with new requirements, better designs and more consideration for costs and scale.],
-  [Do we need this?],
-  [In a legacy system, there often are some old services that just “sound deprecated.” For example, we have a pipeline called medium\_opportunities , which I had never heard about in 3 years at Medium. After all, it was last modified in 2020… For each of those suspect pipelines we went through a few questions:],
-  [Do we need this at all?? Through our investigation, we did find a few pipelines that were costing us more than \$1k/month and that were used by… nothing.],
-  [A lot of our Snowflake pipelines will simply run a Snowflake query and overwrite a Snowflake table with the results. For those, the question is: Do we need all of the columns? For pipelines we cannot delete, we identified the columns that were never used by downstream services and started removing them. In some cases, this removed the most expensive bottlenecks and cut the costs in a massive way.],
-  [If it turns out the expensive part of your pipeline is needed for some feature, you should question if that feature is really worth the cost or if there is a way to tradeoff some cost with downgrading the feature without impacting it too much . (Of course, there are situations where it’s just an expensive and necessary feature…)],
-  [Is the pipeline schedule aligned with our needs? In our investigation we were able to save a bunch of money just by moving some pipelines from running hourly to daily.],
-  [An example:],
-  [A common workflow among our pipelines involves computing analytics data in Snowflake and exporting it to transactional SQL databases on a schedule. One such pipeline was running on a daily schedule to support a feature of our internal admin tool. Specifically, it gave some statistics on every user’s reading interests (which we sometimes use when users complain about their recommendations).],
-  [It turns out this was quite wasteful since this feature wasn’t used daily by the small team who relies on it (maybe a couple times per week). So, we figured we could do away with the pipeline and the feature , and replace it with an on-demand dashboard in our data visualization tool. Then the data will be computed only when needed for a specific user. It might require the end user to wait a few minutes for the data, but it’s massively cheaper because we only pay when somebody triggers a query. It’s also less code to maintain and a data viz dashboard is much easier to update and adapt to our team’s needs.],
-  [Old vs new architecture for this example],
-  [To conclude this section, here are a few takeaways that I think you can activate right away at your company:],
-  [Make sure your analytics tool has a way to sync with Github . Our data scientist gustavo set that up for us with Mode and it has been massively helpful to quickly identify if tables are used in our data visualisations.],
-  [Make sure you document each pipeline . Just one or two lines can save hours for the engineers who will be looking at this in 4 years like it’s an ancient artifact. I can’t tell you the amount of old code we find every week with zero docs and no description or comments in the initial PR 🤦],
-  [Deprecate things as soon as you can . If you migrate something, the follow-up PRs to remove the old code and pipelines should be part of the project planning from the start!],
-  [Avoid select \* statements as much as possible . Those make it hard to track which columns are still in-use and which ones can be removed without downstream effects.],
-  [Filtering is key],
-  [By using Snowflake Query Profile we were able to drill down on each pipeline and find the expensive table scans in our queries. (We’ll publish another blog post about the tools we used for this project later on). Snowflake is extremely efficient at pruning queries and that’s something we had to leverage to keep our costs down. We’ve found many examples where the data was eventually filtered out from the query, but Snowflake was still scanning the entire table. So if we have one key piece of advice here, it’s that the filtering should be very explicit in order to make it easier for Snowflake to apply the pruning.],
-  [Snowflake’s query profile tool],
-  [Sometimes Snowflake needs a tip],
-  [Here’s an example: Let’s say that we want to get the top 30 posts published in the last 30 days that got the most views in the first 7 days after being published. Here’s a simple query that would do this:],
-  [select post\_id, count(\*) as n\_views
-from events
- join posts using (post\_id)
--- only look at view events
-where event\_name = 'post.clientViewed'
- -- only look at views on the first seven days after publication
- and events.created\_at between to\_timestamp(posts.first\_published\_at, 3) and to\_timestamp(posts.first\_published\_at, 3) + interval '7 days'
- -- only look at posts published in the last 30 days
- and to\_timestamp(posts.first\_published\_at, 3) \> current\_timestamp - interval '30 days'
-group by post\_id
-order by n\_views desc
-limit 30],
-  [If we look at the query profile we can see that 11% of the partitions from the events table were scanned. That’s more than expected. It seems like Snowflake didn’t figure out that it can filter out all the events that are older than 30 days.],
-  [Let’s see what happens if we help Snowflake a little bit:],
-  [Here I’m adding a mathematically redundant condition: events.created\_at \> current\_timestamp — interval ’30 days’ . Mathematically, we don’t need this condition because created\_at ≥ published\_at ≥ current\_timestamp -interval ’30 days’ ⇒ created\_at ≥ current\_timestamp — interval ’30 days’ .],
-  [select post\_id, count(\*) as n\_views
-from events
- join posts using (post\_id)
--- only look at view events
-where event\_name = 'post.clientViewed'
- -- only look at views on the first seven days after publication
- and events.created\_at between to\_timestamp(posts.first\_published\_at, 3) and to\_timestamp(posts.first\_published\_at, 3) + interval '7 days'
- -- only look at posts published in the last 30 days
- and to\_timestamp(posts.first\_published\_at, 3) \> current\_timestamp - interval '30 days'
- -- mathematically doesn't change anything
- and events.created\_at \> current\_timestamp - interval '30 days'
-group by post\_id
-order by n\_views desc
-limit 30],
-  [Still, this helps Snowflake a bunch and we’re now only scanning 0.5% of our massive events table and the overall query is now 5 times faster to run!],
-  [Simplify your predicates],
-  [Here’s another example where you can help Snowflake optimise pruning.],
-  [If you have some complex predicates in your filtering rule, Snowflake may have to scan and evaluate all of the rows although that could be avoided with pruning.],
-  [The following query scans 100% of the partitions in our posts table:],
-  [select \*
-from posts
--- only posts published in the last 7 days
--- (That's an odd way to write it, I know.
--- This is to illustrate how predicates can impact performance) 
-where datediff('hours', to\_timestamp(published\_at, 3), current\_timestamp - interval '7 days') \> 0],
-  [If you simplify this just a little bit, Snowflake will be able to understand that partition pruning is possible:],
-  [select \*
-from posts
--- only posts published in the last 7 days
-where to\_timestamp(published\_at, 3) \> current\_timestamp - interval '7 days'],
-  [This query scanned only a single partition when I tested it!],
-  [In practice Snowflake will be able to prune entire partitions as long as you are using simple predicates. If you are comparing columns to results of subqueries, then Snowflake will not be able to perform any pruning ( cf Snowflake docs , and this other post mentioning this). In that case you should store your subquery result in a variable and then use that variable in your predicate.],
-  [💡 An even better version of this is to filter raw fields against constants. That is the best way to ensure that Snowflake will be able to perform optimal pruning in my opinion. This is my take on how this is being optimised under the hood, as I couldn’t find any sources confirming this, so take this with a grain of salt.],
-  [- Suppose we store a field called published\_at which is a unix timestamp (e.g. 1466945833883)],
-  [- Snowflake stores min(published\_at) and max(published\_at) for each micro-partition],
-  [- If you have a predicate on to\_timestamp(published\_at) (e.g. where to\_timestamp(published\_at) \> current\_timestamp() - interval '7 days') then Snowflake must compute to\_timestamp(min(published\_at)) and to\_timestamp(max(published\_at)) for each partition.],
-  [- If, however, you have a predicate comparing the raw published\_at value to a constant, then it's easier for Snowflake to prune partitions. For example, by setting sevenDaysAgoUnixMilliseconds = date\_part(epoch\_millisecond, current\_timestamp() - interval '7 days') , our filter becomes where published\_at \> \$sevenDaysAgoUnixMilliseconds. This requires no computation from Snowflake on the partition metadata.],
-  [In a more general case, Snowflake can only eliminate partitions if it knows that the transformation f you are applying to your raw field is growing or decreasing (published\_at \> x =\> f(published\_at) \> f(x)) only if f is strictly growing). It’s not always obvious what functions are growing or not. For instance, to\_timestamp and startswith are growing functions. ilike and between are non-monotonic a priori.],
-  [Work with time windows],
-  [Let’s say we are computing some stats on writers. We’ll scan some tables to get the total number of views, claps and highlights for each writer.],
-  [With the current state of a lot of our workflows, if we want to look at all time stats, we must scan the entire table on every pipeline run (that’s something we need to work on but that’s out of scope here). If our platform’s usage increases linearly, our views, claps and highlights tables will grow exponentially, causing our costs to grow exponentially as well due to scanning more and more data every time the pipeline executes. Theoretically, these costs would eventually surpass the revenue generated by a linearly growing user base.],
-  [We must move away from exponentially growing queries because they are highly inefficient and incur a lot of waste at scale. We can do this by migrating to queries based on sliding time windows. If we look at engagement received by writers only on the last 3 months, then our costs will grow linearly with our platform’s usage, which is much more acceptable.],
-  [But this can have some product implications:],
-  [In our recommendations system : when looking for top writers to recommend to a user, this new guideline could potentially miss out on writers that are now inactive but were very successful in the past since we’ll be filtering for stats only for the past few months. But it turns out this is aligned with what we prefer for our recommendations; we would rather encourage users to follow writers that are still actively writing and getting engagement on their posts.],
-  [In the features we implement : we used to have a “Top posts of all time” feed for each Medium tag. We have since removed this feature for unrelated reasons. In the future, I think that we would advise against features like this and prefer a time window approach (”Top posts this month”).],
-  [In the stats we compute and display to our users: with this new guideline we may have weaker guarantees on some statistics. For example: there’s a pipeline where we look at recent engagement on Newsletter emails. For each new engagement we record, we look up the newsletter in our sent\_emails table. Previously, we would scan the entirety of that massive table to retrieve engagements for all newsletters. But, for costs sake, we now look back on engagements for emails sent in the past 60 days. This means that engagement received on a Newsletter more than 60 days after it was sent will not be taken into account on the Newsletter stats page. This has negligible impact on the stats (\<1% change) but we wanted to be transparent about that with our writers. We added a disclaimer at the top of the newsletter page.],
-  [The top of the Newsletter Stats page],
-  [Thanks to this small disclaimer we were able to cut costs by 1500\$/month on this pipeline.],
-  [Factorise the expensive logic:],
-  [Modularity is a cornerstone of all things software, but sometimes it can get a bit murky when applied to datasets. Theoretically, it’s easy. In practice, we find that duplicate code in an existing legacy data model doesn’t necessarily live side by side — and it’s not always just a matter of code refactoring; it may require building intermediate tables and dealing with constraints on pipeline schedules.],
-  [However, we were able to identify some common logic and modularize these datasets by dedicating some time to dive deep into our pipelines. Even if it doesn’t seem feasible, slowly working through similar pipelines and documenting their logic is a good place to start. We would highly recommend putting an effort into this — it can really cut down compute costs.],
-  [Play around with the Warehouses:],
-  [Snowflake provides many different warehouses sizes. Our pipelines can be configured to use warehouses from size XS to XL. Each size is twice as powerful as the previous one, but also twice as expensive per minute. If the query is perfectly parallelisable, it should run twice as fast and therefore cost the same.],
-  [That’s not the case for most queries though and we’ve saved thousands by playing around with warehouse sizes. In many cases, we’ve found that down-scaling reduced our costs by a good factor. Of course we need to accept that the query may take longer to run.],
-  [With perfect parallelisation the query is faster as your increase power so the costs are constant. With imperfect parallelisation the gains on the query time are more and more marginal as you increase power, so your costs ( = time \* power) increase],
-  [What’s next?],
-  [First off, we’ll be following up with a post laying out the different tools that helped us identify, prioritise and track our Snowflake cost reduction efforts. And we’ll be detailing that so that you can set those up at your company too.],
-  [New tools, new rules],
-  [We’ve built some new tools during this sprint and we’ll be using them to monitor cost increases and track down the guilty pipelines.],
-  [We’ll also make sure to enforce all the good practices we’ve outlined in this post and have a link to this live somewhere in our doc for future reference.],
-  [Wait we’re underspending now?],
-  [So apparently we went a bit too hard on those cost reduction efforts and we’re now spending less credits than what we committed for in our Snowflake contract. Nobody is necessarily complaining about this “issue”…but it’s nice to know we have some wiggle room to experiment with more advanced features that Snowflake has to offer. So, we are going to do just that.],
-  [One area that could use some love is our events system. The current state involves an hourly pipeline to batch load these events into Snowflake. But, we could (and most definitely should) do better than that. Snowpipe Streaming offers a great solution for low-latency loading into Snowflake tables, and the Snowflake Connector for Kafka is an elegant abstraction to leverage the Streaming API under the hood instead of writing our own custom Java application. More to come on this in a future blog post!],
-  [The 20/80 rule],
-  [I think this applies to this project. There’s tons of other pipelines we should investigate and we can probably get some marginal savings on each of them. But it will probably take twice as much time for half the outcome… We’ll be evaluating our priorities but I already know that there’s other areas of our backend we can focus on that will yield some bigger and quicker wins.],
-  [A poor attempt at illustrating the 20/80 rule],
-  [Modularize datasets for re-use],
-  [Although we put some effort into this already, there is certainly a lot more to do. Currently, all of our production tables live in the PUBLIC schema no matter if it’s a source or derived table, which doesn’t make discovering data very intuitive. We are exploring using the Medallion Architecture pattern to apply to our Snowflake environment for better table organization and self-service discovery of existing data. Hopefully this will lay a better foundation for modularity!],
-  [Learnings from optimising 22 of our most expensive Snowflake pipelines was originally published in Medium Engineering on Medium, where people are continuing the conversation by highlighting and responding to this story.],
-),
-  inline-pq: pull-quote([Theoretically, these costs would eventually surpass the revenue generated by a linearly growing user base.], [Raphael Montaud]),
-  inline-pq-idx: 29,
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Claude Code Can Debug Low-level Cryptography],
   author: [Filippo Valsorda],
   source-name: [Filippo Valsorda],
@@ -166,7 +41,7 @@ FAIL],
   [On a whim, I figured I would let Claude Code take a shot while I read emails and resurfaced from hyperfocus. I mostly expected it to flail in some maybe-interesting way, or rule out some issues.],
   [Instead, it rapidly figured out a fairly complex low-level bug in my implementation of a relatively novel cryptography algorithm. I am sharing this because it made me realize I still don’t have a good intuition for when to invoke AI tools, and because I think it’s a fantastic case study for anyone who’s still skeptical about their usefulness.],
   [Full disclosure: Anthropic gave me a few months of Claude Max for free. They reached out one day and told me they were giving it away to some open source maintainers. Maybe it’s a ploy to get me hooked so I’ll pay for it when the free coupon expires. Maybe they hoped I’d write something like this. Maybe they are just nice. Anyway, they made no request or suggestion to write anything public about Claude Code. Now you know.],
-  [id="finding-the-bug"\>Finding the bug],
+  [Finding the bug],
   [I started Claude Code v2.0.28 with Opus 4.1 and no system prompts, and gave it the following prompt (typos included):],
   [I implemented ML-DSA in the Go standard library, and it all works except that verification always rejects the signatures. I know the signatures are right because they match the test vector.],
   [YOu can run the tests with “bin/go test crypto/internal/fips140/mldsa”],
@@ -178,7 +53,7 @@ FAIL],
   [It figured out that I had merged HighBits and w1Encode into a single function for using it from Sign, and then reused it from Verify where UseHint already produces the high bits, effectively taking the high bits of w1 twice in Verify.],
   [Looking at the log , it loaded the implementation into the context and then immediately figured it out, without any exploratory tool use! After that it wrote itself a cute little test that reimplemented half of verification to confirm the hypothesis, wrote a mediocre fix, and checked the tests pass.],
   [I threw the fix away and refactored w1Encode to take high bits as input, and changed the type of the high bits, which is both clearer and saves a round-trip through Montgomery representation. Still, this 100% saved me a bunch of debugging time.],
-  [id="a-second-synthetic-experiment"\>A second synthetic experiment],
+  [A second synthetic experiment],
   [On Monday, I had also finished implementing signing with failing tests. There were two bugs, which I fixed in the following couple evenings.],
   [The first one was due to somehow computing a couple hardcoded constants (1 and -1 in the Montgomery domain) wrong . It was very hard to find, requiring a lot of deep printfs and guesswork. Took me maybe an hour or two.],
   [The second one was easier: a value that ends up encoded in the signature was too short (32 bits instead of 32 bytes) . It was relatively easy to tell because only the first four bytes of the signature were the same, and then the signature lengths were different.],
@@ -198,9 +73,8 @@ FAIL],
   [The fix it proposed was updating only the allocation’s length and not its capacity, but whatever, the point is finding the bug, and I’ll usually want to throw away the fix and rewrite it myself anyway.],
   [Three out of three one-shot debugging hits with no help is extremely impressive . Importantly, there is no need to trust the LLM or review its output when its job is just saving me an hour or two by telling me where the bug is, for me to reason about it and fix it.],
   [As ever, I wish we had better tooling for using LLMs which didn’t look like chat or autocomplete or “make me a PR.” For example, how nice would it be if every time tests fail, an LLM agent was kicked off with the task of figuring out why, and only notified us if it did before we fixed it?],
-  [style="margin: 0 auto;"\>],
   [For more low-level cryptography bugs implementations, follow me on Bluesky at \@filippo.abyssdomain.expert or on Mastodon at \@filippo\@abyssdomain.expert . I promise I almost never post about AI.],
-  [id="the-picture"\>The picture],
+  [The picture],
   [Enjoy the silliest floof. Surely this will help redeem me in the eyes of folks who consider AI less of a tool and more of something to be hated or loved.],
   [My work is made possible by Geomys , an organization of professional Go maintainers, which is funded by Smallstep , Ava Labs , Teleport , Tailscale , and Sentry . Through our retainer contracts they ensure the sustainability and reliability of our open source maintenance work and get a direct line to my expertise and that of the other Geomys maintainers. (Learn more in the Geomys announcement .)
 Here are a few words from some of them!],
@@ -213,10 +87,8 @@ Here are a few words from some of them!],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Three Regimes for Resilience],
   author: [Tikhon Jelvis],
   source-name: [Tikhon Jelvis],
@@ -248,10 +120,8 @@ Here are a few words from some of them!],
   [The unknown unknowns],
   [It’s easy to focus on the happy path at the expense of the other regimes because that’s where we know the most. After all, the main reason we need manual intervention in cases 2 and 3 is that we don’t know exactly how to handle it up-front, at least not to the level of fully realizing the logic in code 2 .],
   [Explicitly seeing a design in terms of all three regimes helps us correct for this tendency. Even when we can’t fully handle potential issues up-front—and even when we can’t know what those issues are going to be!—we can still design our system to be better or worse in those situations.],
-  [id="fn1"\>],
   [There were few indications of any trouble with the Deepwater Horizon before the explosion. The rig won an award from the MMS for its 2008 safety record, and on the day of the disaster, BP and Transocean managers were on board to celebrate seven years without a lost-time accident. A BP spokesman said rigs hired by BP have had better safety records than the industry average for six years running, according to MMS statistics that measure the number of citations per inspection. BP has been a finalist for a national safety award from the MMS for the past two years.],
   [From the Wall Street Journal as quoted on Wikipedia ↩︎],
-  [id="fn2"\>],
   [A fun way to think about it: programming languages are formal systems, so any logic that we implement in code has been fully formalized —even if we haven’t actually thought the logic through at that level! Code to do something is an assertion that we know exactly how to do it to the lowest level , even if that’s never really true. ↩︎],
 ),
   insert-map: (:),
@@ -260,10 +130,8 @@ Here are a few words from some of them!],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Monkey Patch Detection in Ruby],
   author: [Aaron Patterson (Tenderlove)],
   source-name: [Aaron Patterson (Tenderlove)],
@@ -272,13 +140,14 @@ Here are a few words from some of them!],
   [My last post detailed one way that CRuby will eliminate some intermediate array allocations when using methods like Array\#hash and Array\#max .
 Part of the technique hinges on detecting when someone monkey patches array.
 Today, I thought we’d dive a little bit in to how CRuby detects and de-optimizes itself when these “important” methods get monkey patched.],
-  [id="monkey-patching-problem"\>Monkey Patching Problem],
   [The optimization in the previous post made the assumption that the implementation Array\#max was the original definition (as defined in Ruby itself).
 But the Ruby language allows us to reopen classes, redefine any methods we want, and that those methods will “just work”.],
   [For example, if someone were to reopen Array and define a new max method, we would need to respect that monkey patch:],
   [In fact, a monkey patch implementation could mutate the array itself, so we’re definitely required to allocate an array in the case that someone added their own max method:],
+  [class Array 
+ def max 
+ self \[1, 2, :neat\]],
   [So how does CRuby detect that a method has been monkey patched?],
-  [id="method-definition-time"\>Method Definition Time],
   [Every time a method is defined, an entry is stored in a hash table pointed to by the current class.
 We call this the “method table”, but you’ll see it referred to as M\_TBL or RCLASS\_M\_TBL in the code .
 The key to the hash is simply the method name as an ID type (an integer which represents a Ruby Symbol ), and the value of the hash is a method entry structure.
@@ -294,24 +163,25 @@ So if someone monkey patches the + operator, we’ll set a flag in ruby\_vm\_red
   [The values of the ruby\_vm\_redefined\_flag array correspond to a bitmap that maps to classes we care about.
 You can see the list of classes and their corresponding bits here , as well as a function for mapping “classes we care about” to their corresponding bit flag .],
   [For example, if someone monkey patches Array\#pack , we would set a bit in ruby\_vm\_redefined\_flag like this:],
+  [ruby\_vm\_redefined\_flag\[BOP\_PACK\] |= ARRAY\_REDEFINED\_OP\_FLAG;],
   [Then, when we execute our optimized instruction ( opt\_newarray\_send which was introduced in the last post), we can check the bitmap to decide whether or not to take our fast path:],
-  [class="highlight"\> if ((ruby\_vm\_redefined\_flag\[BOP\_PACK\] & ARRAY\_REDEFINED\_OP\_FLAG) == 0 ) {
+  [if ((ruby\_vm\_redefined\_flag\[BOP\_PACK\] & ARRAY\_REDEFINED\_OP\_FLAG) == 0 ) \{
  \/\\/ It \_hasn't\_ been monkey patched, so take the fast path
- }
- else {
+ \}
+ else \{
  \/\\/ It \_has\_ been monkey patched, do the slow path
- }],
+ \}],
   [Of course this bitmask checking is wrapped in a macro that looks more like this:],
-  [class="highlight"\> if ( BASIC\_OP\_UNREDEFINED\_P (BOP\_PACK, ARRAY\_REDEFINED\_OP\_FLAG)) {
+  [if ( BASIC\_OP\_UNREDEFINED\_P (BOP\_PACK, ARRAY\_REDEFINED\_OP\_FLAG)) \{
  \/\\/ It \_hasn't\_ been monkey patched, so take the fast path
- }
- else {
+ \}
+ else \{
  \/\\/ It \_has\_ been monkey patched, do the slow path
- }],
+ \}],
   [You can see the actual code for Array\#pack redefinition checking here .],
-  [id="bonus-stuff"\>Bonus Stuff],
   [A cool thing (at least I think it’s cool) is that the function rb\_vm\_check\_redefinition\_opt\_method not only sets up the “monkey patch detection” bits, it’s also a natural place to inform the JIT compiler that someone has done something catastrophic and that it should de-optimize. In fact, you can see those calls right here .],
   [A weird thing is that since ruby\_vm\_redefined\_flag is just a list bitmaps, it’s technically possible for us to track the definition of Integer\#pack even though that method doesn’t exist:],
+  [ruby\_vm\_redefined\_flag\[BOP\_PACK\] |= INTEGER\_REDEFINED\_OP\_FLAG;],
   [I guess that means there’s a lot of bit space that isn’t used, but I don’t really think it’s a big deal.],
   [Anyway, have a good day!],
 ),
@@ -321,10 +191,8 @@ You can see the list of classes and their corresponding bits here , as well as a
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Fast Tokenizers with StringScanner],
   author: [Aaron Patterson (Tenderlove)],
   source-name: [Aaron Patterson (Tenderlove)],
@@ -339,25 +207,26 @@ It’s the parser’s job to interpret those tokens.
 My favorite tool for tokenizing documents in Ruby is StringScanner .
 Today we’re going to look at a few tricks for speeding up StringScanner based lexers.
 We’ll start with a very simple GraphQL lexer and apply a few tricks to speed it up.],
-  [id="a-very-basic-lexer"\>A very basic lexer],
+  [A very basic lexer],
   [Here is the lexer we’re going to work with today:],
+  [require "strscan"],
   [class Lexer],
   [IDENTIFIER = /\[\_A-Za-z\]\[\_0-9A-Za-z\]\*\\b/],
-  [WHITESPACE = %r{ \[, \\c\\r\\n\\t\]+ }x],
-  [COMMENTS = %r{ \\\#.\*\$ }x],
+  [WHITESPACE = %r\{ \[, \\c\\r\\n\\t\]+ \}x],
+  [COMMENTS = %r\{ \\\#.\*\$ \}x],
   [INT = /\[-\]?(?:\[0\]|\[1-9\]\[0-9\]\*)/],
   [FLOAT\_DECIMAL = /\[.\]\[0-9\]+/],
   [FLOAT\_EXP = /\[eE\]\[+-\]?\[0-9\]+/],
-  [FLOAT = \/ \#{ INT }\#{ FLOAT\_DECIMAL }\#{ FLOAT\_EXP } | \#{ FLOAT\_DECIMAL } | \#{ FLOAT\_EXP } /],
+  [FLOAT = \/ \#\{ INT \}\#\{ FLOAT\_DECIMAL \}\#\{ FLOAT\_EXP \} | \#\{ FLOAT\_DECIMAL \} | \#\{ FLOAT\_EXP \} /],
   [KEYWORDS = \[ "on" , "fragment" , "true" , "false" , "null" , "query" , "mutation" ,],
   ["subscription" , "schema" , "scalar" , "type" , "extend" , "implements" ,],
   ["interface" , "union" , "enum" , "input" , "directive" , "repeatable"],
   [\]. freeze],
-  [KW\_RE = \/ \#{ Regexp . union( KEYWORDS . sort) } \\b/],
-  [KW\_TABLE = Hash \[ KEYWORDS . map { | kw | \[ kw, kw . upcase . to\_sym \] } \]],
+  [KW\_RE = \/ \#\{ Regexp . union( KEYWORDS . sort) \} \\b/],
+  [KW\_TABLE = Hash \[ KEYWORDS . map \{ | kw | \[ kw, kw . upcase . to\_sym \] \} \]],
   [module Literals],
-  [LCURLY = '{'],
-  [RCURLY = '}'],
+  [LCURLY = '\{'],
+  [RCURLY = '\}'],
   [LPAREN = '('],
   [RPAREN = ')'],
   [LBRACKET = '\['],
@@ -372,12 +241,12 @@ We’ll start with a very simple GraphQL lexer and apply a few tricks to speed i
   [end],
   [ELLIPSIS = '...'],
   [include Literals],
-  [PUNCTUATION = Regexp . union( Literals . constants . map { | name |],
+  [PUNCTUATION = Regexp . union( Literals . constants . map \{ | name |],
   [Literals . const\_get(name)],
-  [})],
-  [PUNCTUATION\_TABLE = Literals . constants . each\_with\_object({}) { | x,o |],
+  [\})],
+  [PUNCTUATION\_TABLE = Literals . constants . each\_with\_object(\{\}) \{ | x,o |],
   [o \[ Literals . const\_get(x) \] = x],
-  [}],
+  [\}],
   [def initialize doc],
   [\@doc = doc],
   [\@scan = StringScanner . new doc],
@@ -402,17 +271,24 @@ We’ll start with a very simple GraphQL lexer and apply a few tricks to speed i
 Matching string literals is kind of gross, and I wanted to keep this example small, so I removed them.
 I have a large document that I’ll use to measure some performance aspects of this lexer, and if you want to try it out, you can find the document here .],
   [To use the lexer, just pass the document you want to tokenize, then repeatedly call next\_token on the lexer until it returns nil :],
+  [lexer = Lexer . new input
+ while tok = lexer . next\_token
+ \# do something 
+ end],
   [GraphQL documents look something like this:],
-  [mutation {
- a: likeStory(storyID: 12345) {
- b: story {
+  [mutation \{
+ a: likeStory(storyID: 12345) \{
+ b: story \{
  c: likeCount
- }
- }
-}],
+ \}
+ \}
+\}],
   [And with this lexer implementation, the tokens come out as tuples and they look something like this:],
+  [\[ : IDENTIFIER , "likeStory" \] 
+ \[ : LPAREN , "(" \] 
+ \[ : IDENTIFIER , "storyID" \]],
   [Our benchmarking code is going to be very simple, we’re just going to use the lexer to pull all of the tokens out of the test document:],
-  [class="highlight"\> require "benchmark/ips" 
+  [require "benchmark/ips" 
  
  def allocations 
  x = GC . stat( :total\_allocated\_objects )
@@ -429,17 +305,11 @@ I have a large document that I’ll use to measure some performance aspects of t
  
  doc = ARGF . read
  
- Benchmark . ips { | x | x . report { go doc } }
- p ALLOCATIONS : allocations { go doc }],
+ Benchmark . ips \{ | x | x . report \{ go doc \} \}
+ p ALLOCATIONS : allocations \{ go doc \}],
   [With this implementation of the lexer, here are the benchmark results on my machine:],
-  [\$ ruby -I lib test.rb benchmark/fixtures/negotiate.gql
-Warming up --------------------------------------
- 21.000 i/100ms
-Calculating -------------------------------------
- 211.043 (± 0.9%) i/s - 1.071k in 5.075133s
-{: ALLOCATIONS=\>20745}],
   [We can do a little over 200 iterations per second, and tokenizing the document allocates a bit over 20k objects.],
-  [id="stringscanner-context"\>StringScanner context],
+  [StringScanner context],
   [Before we get to optimizing this lexer, lets get a little background on StringScanner .
  StringScanner is one of my favorite utilities that ships with Ruby.
 You can think of this object as basically a “cursor” that points inside a string.
@@ -465,23 +335,11 @@ As I scanned through the string, the cursor moved forward.
 Near the end, you can see where I tried to scan “hello”, it returned nil , and the cursor stayed in place.],
   [Combining StringScanner with the linear case \/ when in Ruby is a great combination for really easily writing tokenizers.],
   [StringScanner also allows us to skip particular values, as well as ask for the current cursor position:],
-  [\>\> scanner
-=\> \# 
-\>\> scanner.skip(/ck /)
-=\> 3
-\>\> scanner
-=\> \# 
-\>\> scanner.skip(/hello/)
-=\> nil
-\>\> scanner
-=\> \# 
-\>\> scanner.pos
-=\> 10],
   [Calling skip will try to skip a pattern.
 If skipping works, it returns the length of the string it matched, and if it fails, it returns nil .
 You can also get and set the position of the cursor using the pos and pos= methods.],
   [Now lets try to speed up this lexer!],
-  [id="speeding-up-this-lexer"\>Speeding up this lexer],
+  [Speeding up this lexer],
   [The name of the game for speeding up lexers (or really any code) is to reduce the number of method calls as well as the number of allocations.
 So we’re going to try applying some tricks to reduce both.],
   [Whenever I’m trying to improve the performance of any code, I find it is important to think about the context of how that code is used.
@@ -489,47 +347,44 @@ For example, our lexer currently yields tokens for comments and whitespace.
 However, the GraphQL grammar ignores comments and whitespace.
 Since the parser doesn’t actually need to know about whitespace or comments in order to understand the document, it is fine for the lexer to just skip them.],
   [Our first optimization is to combine the whitespace and comment check, and then quit returning tokens:],
-  [index 2c1e874..9130a54 100644],
-  [--- a/test.rb],
-  [+++ b/test.rb],
-  [\@\@ -2,8 +2,12 \@\@ require "strscan"],
-  [class Lexer],
-  [IDENTIFIER = /\[\_A-Za-z\]\[\_0-9A-Za-z\]\*\\b/],
-  [- WHITESPACE = %r{ \[, \\c\\r\\n\\t\]+ }x],
-  [- COMMENTS = %r{ \\\#.\*\$ }x],
-  [+ IGNORE = %r{],
-  [+ (?:],
-  [+ \[, \\c\\r\\n\\t\]+ |],
-  [+ \\\#.\*\$],
-  [+ )\*],
-  [+ }x],
-  [INT = /\[-\]?(?:\[0\]|\[1-9\]\[0-9\]\*)/],
-  [FLOAT\_DECIMAL = /\[.\]\[0-9\]+/],
-  [FLOAT\_EXP = /\[eE\]\[+-\]?\[0-9\]+/],
-  [\@\@ -51,11 +55,11 \@\@ class Lexer],
-  [end],
-  [def next\_token],
-  [+ \@scan.skip(IGNORE)],
-  [+],
-  [return if \@scan.eos?],
-  [case],
-  [- when s = \@scan.scan(WHITESPACE) then \[: WHITESPACE, s\]],
-  [- when s = \@scan.scan(COMMENTS) then \[: COMMENT, s\]],
-  [when s = \@scan.scan(ELLIPSIS) then \[: ELLIPSIS, s\]],
-  [when s = \@scan.scan(PUNCTUATION) then \[PUNCTUATION\_TABLE\[s\], s\]],
-  [when s = \@scan.scan(KW\_RE) then \[KW\_TABLE\[s\], s\]],
+  [diff --git a/test.rb b/test.rb
+ index 2c1e874..9130a54 100644
+ --- a/test.rb
+ +++ b/test.rb
+ \@\@ -2,8 +2,12 \@\@ require "strscan"
+ 
+ class Lexer
+ IDENTIFIER = /\[\_A-Za-z\]\[\_0-9A-Za-z\]\*\\b/
+ - WHITESPACE = %r\{ \[, \\c\\r\\n\\t\]+ \}x
+ - COMMENTS = %r\{ \\\#.\*\$ \}x
+ + IGNORE = %r\{
+ + (?:
+ + \[, \\c\\r\\n\\t\]+ |
+ + \\\#.\*\$
+ + )\*
+ + \}x
+ INT = /\[-\]?(?:\[0\]|\[1-9\]\[0-9\]\*)/
+ FLOAT\_DECIMAL = /\[.\]\[0-9\]+/
+ FLOAT\_EXP = /\[eE\]\[+-\]?\[0-9\]+/
+ \@\@ -51,11 +55,11 \@\@ class Lexer
+ end
+ 
+ def next\_token
+ + \@scan.skip(IGNORE)
+ +
+ return if \@scan.eos?
+ 
+ case
+ - when s = \@scan.scan(WHITESPACE) then \[: WHITESPACE, s\]
+ - when s = \@scan.scan(COMMENTS) then \[: COMMENT, s\]
+ when s = \@scan.scan(ELLIPSIS) then \[: ELLIPSIS, s\]
+ when s = \@scan.scan(PUNCTUATION) then \[PUNCTUATION\_TABLE\[s\], s\]
+ when s = \@scan.scan(KW\_RE) then \[KW\_TABLE\[s\], s\]],
   [By combining the whitespace and comment regex, we could eliminate one method call.
 We also changed the scan to a skip which eliminated string object allocations.
 Lets check the benchmark after this change:],
-  [\$ ruby -I lib test.rb benchmark/fixtures/negotiate.gql
-Warming up --------------------------------------
- 32.000 i/100ms
-Calculating -------------------------------------
- 322.100 (± 0.3%) i/s - 1.632k in 5.066846s
-{: ALLOCATIONS=\>10527}],
   [This is great! Our iterations per second (IPS) went from 211 to 322, and our allocations went from about 20k down to around 10k.
 So we cut our allocations in half and increased speed by about 50%.],
-  [id="thinking-bigger"\>Thinking Bigger],
   [This lexer returns a tuple for each token.
 The tuple looks like this: \[: LPAREN, "("\] .
 But when the parser looks at the token, how often does it actually need the string value of the token?],
@@ -546,7 +401,7 @@ However, if we think one level up, it’s quite likely that consumers of the par
   [One method to get the token value],
   [When the parser encounters a token where the token value actually matters , the parser can ask the lexer for the token value.
 For example, something like this:],
-  [class="highlight"\> lexer = Lexer . new doc
+  [lexer = Lexer . new doc
  while tok = lexer . next\_token
  if tok == : IDENTIFIER 
  p lexer . token\_value
@@ -554,19 +409,19 @@ For example, something like this:],
  end 
  
  \_\_END\_\_
- mutation {
- a: likeStory(storyID: 12345) {
- b: story {
+ mutation \{
+ a: likeStory(storyID: 12345) \{
+ b: story \{
  c: likeCount
- }
- }
- }],
+ \}
+ \}
+ \}],
   [This split buys us two really big wins.
 The first is that next\_token doesn’t need to return an array anymore.
 That’s already one object per token saved.
 The second win is that we only ever allocate a string when we really need it .],
   [Here is the new next\_token method, and the token\_value helper method:],
-  [class="highlight"\> def next\_token 
+  [def next\_token 
  \@scan . skip( IGNORE )
  
  return if \@scan . eos?
@@ -595,14 +450,7 @@ This makes our benchmark a little bit awkward now because we’ve shifted the bl
 If the parser wants an allocation, it’ll have to ask the lexer for it.
 But lets keep pushing forward with the same benchmark (just remembering that once we integrate the lexer with the parser, we’ll have allocations for identifiers).],
   [With this change, our benchmark results look like this:],
-  [\$ ruby -I lib test.rb benchmark/fixtures/negotiate.gql
-Warming up --------------------------------------
- 35.000 i/100ms
-Calculating -------------------------------------
- 360.209 (± 0.6%) i/s - 1.820k in 5.052764s
-{: ALLOCATIONS=\>1915}],
   [We went from 322 IPS to 360 IPS, and from 10k allocations down to about 2k allocations.],
-  [id="punctuation-lookup-table"\>Punctuation Lookup Table],
   [Unfortunately we’ve still got two lines in the tokenizer that are doing allocations:],
   [when s = \@scan.scan(PUNCTUATION) then PUNCTUATION\_TABLE\[s\]
  when s = \@scan.scan(KW\_RE) then KW\_TABLE\[s\]],
@@ -613,11 +461,17 @@ One interesting feature about these punctuation characters is that they are all 
 Instead of extracting a substring, we can get the byte at the current scanner position, then use the byte as an array index.
 If there is a value at that index in the array, then we know we’ve found a token.],
   [First we’ll build the lookup table like this:],
+  [PUNCTUATION\_TABLE = Literals . constants . each\_with\_object( \[\] ) \{ | n, o | 
+ o \[ Literals . const\_get(n) . ord \] = n
+ \}],
   [This will create an array.
 The array will have a symbol at the index corresponding to the byte value of our punctuation.
 Any other index will return nil .
 And since we’re only dealing with one byte, we know the maximum value can only ever be 255.
 The code below gives us a sample of how this lookup table works:],
+  ['()ab' . bytes . each do | byte | 
+ p PUNCTUATION\_TABLE \[ byte \] 
+ end],
   [The output is like this:],
   [\$ ruby -I lib test.rb benchmark/fixtures/negotiate.gql
 : LPAREN
@@ -627,7 +481,7 @@ nil],
   [We can use the pos method on the StringScanner object to get our current cursor position (no allocation), then use that information to extract a byte from the string (also no allocation).
 If the byte has a value in the lookup table, we know we’ve found a token and we can push the StringScanner forward one byte.],
   [After incorporating the punctuation lookup table, our next\_token method looks like this:],
-  [class="highlight"\> def next\_token 
+  [def next\_token 
  \@scan . skip( IGNORE )
  
  return if \@scan . eos?
@@ -649,20 +503,11 @@ If the byte has a value in the lookup table, we know we’ve found a token and w
  end 
  end],
   [Rerunning our benchmarks gives us these results:],
-  [\$ ruby -I lib test.rb benchmark/fixtures/negotiate.gql
-Warming up --------------------------------------
- 46.000 i/100ms
-Calculating -------------------------------------
- 459.031 (± 1.1%) i/s - 2.300k in 5.011232s
-{: ALLOCATIONS=\>346}],
   [We’ve gone from 360 IPS up to 459 IPS, and from about 2k allocations down to only 350 allocations.],
-  [id="perfect-hashes-and-graphql-keywords"\>Perfect Hashes and GraphQL Keywords],
+  [Perfect Hashes and GraphQL Keywords],
   [We have one more line in our lexer that is allocating objects:],
+  [when s = \@scan . scan( KW\_RE ) then KW\_TABLE \[ s \]],
   [This line is allocating objects because it needs to map the keyword it found in the source to a symbol:],
-  [\>\> Lexer:: KW\_TABLE\["query"\]
-=\> : QUERY
-\>\> Lexer:: KW\_TABLE\["schema"\]
-=\> : SCHEMA],
   [It would be great if we had a hash table that didn’t require us to extract a string from the source document.
 And that’s exactly what we’re going to build.],
   [When this particular regular expression matches, we know that the lexer has found 1 of the 19 keywords listed in the KW\_TABLE , we just don’t know which one.
@@ -693,15 +538,15 @@ That leaves 17 other keywords we need to disambiguate.],
   [Of the 17 remaining keywords, the 2nd and 3rd bytes uniquely identify that keyword:],
   [\>\> (Lexer:: KW\_TABLE.keys - \["on", "subscription"\]).length
 =\> 17
-\>\> (Lexer:: KW\_TABLE.keys - \["on", "subscription"\]).map { |w| w\[1, 2\] }
+\>\> (Lexer:: KW\_TABLE.keys - \["on", "subscription"\]).map \{ |w| w\[1, 2\] \}
 =\> \["ra", "ru", "al", "ul", "ue", "ut", "ch", "ca", "yp", "xt", "mp", "nt", "ni", "nu", "np", "ir", "ep"\]
-\>\> (Lexer:: KW\_TABLE.keys - \["on", "subscription"\]).map { |w| w\[1, 2\] }.uniq.length
+\>\> (Lexer:: KW\_TABLE.keys - \["on", "subscription"\]).map \{ |w| w\[1, 2\] \}.uniq.length
 =\> 17],
   [We can use these two bytes as a key to a hash table and design a “perfect hash” to look up the right token.
 A perfect hash is a hash table where the possible keys for the hash are known in advance , and the hashing function will never make a collision .
 In other words, no two hash keys will result in the same bucket index.],
   [We know that the word we found is one of a limited set, so this seems like a good application for a perfect hash.],
-  [id="building-a-perfect-hash"\>Building a Perfect Hash],
+  [Building a Perfect Hash],
   [A perfect hash function uses a pre-computed “convenient” constant that let us uniquely identify each key, but also limit the hash table to a small size.
 Basically we have a function like this:],
   [But we must figure out the right constant to use such that each entry in our perfect hash gets a unique bucket index.
@@ -709,13 +554,13 @@ We’re going to use the upper 5 bits of a “32 bit integer” (it’s not actu
 The reason we’re going to use 5 bits is because we have 17 keys, and 17 can’t fit in 4 bits.
 To find the value of SOME\_CONSTANT , we’re just going to use a brute force method.],
   [First lets convert the two bytes from each GraphQL keyword to a 16 bit integer:],
-  [\>\> keys = (Lexer:: KW\_TABLE.keys - \["on", "subscription"\]).map { |w| w\[1, 2\].unpack1("s") }
+  [\>\> keys = (Lexer:: KW\_TABLE.keys - \["on", "subscription"\]).map \{ |w| w\[1, 2\].unpack1("s") \}
 =\> \[24946, 30066, 27745, 27765, 25973, 29813, 26723, 24931, 28793, 29816, 28781, 29806, 26990, 30062, 28782, 29289, 28773\]],
   [Next we’re going to use a brute force method to find a constant value such that we can convert these 16 bit numbers in to unique 5 bit numbers:],
   [\>\> c = 13
 =\> 13
 ?\> loop do
-?\> z = keys.map { |k| ((k \* c) \>\> 27) & 0x1f }
+?\> z = keys.map \{ |k| ((k \* c) \>\> 27) & 0x1f \}
 ?\> break if z.uniq.length == z.length
 ?\> c += 1
 \>\> end
@@ -733,49 +578,35 @@ Lets prove that to ourselves in IRB:],
 ?\> (key \* 18592990) \>\> 27 & 0x1f
 \>\> end
 =\> :\_hash
-\>\> keys = (Lexer:: KW\_TABLE.keys - \["on", "subscription"\]).map { |w| w\[1, 2\].unpack1("s") }
+\>\> keys = (Lexer:: KW\_TABLE.keys - \["on", "subscription"\]).map \{ |w| w\[1, 2\].unpack1("s") \}
 =\> \[24946, 30066, 27745, 27765, 25973, 29813, 26723, 24931, 28793, 29816, 28781, 29806, 26990, 30062, 28782, 29289, 28773\]
-\>\> keys.map { |key| \_hash(key) }
+\>\> keys.map \{ |key| \_hash(key) \}
 =\> \[31, 5, 3, 6, 14, 1, 21, 29, 20, 2, 18, 0, 26, 4, 19, 25, 17\]],
   [We’ll use these integers as an index in to an array that stores the symbol name associated with that particular keyword:],
   [\>\> \# Get a list of the array indices for each keyword
 =\> nil
-\>\> array\_indexes = keys.map { |key| \_hash(key) }
+\>\> array\_indexes = keys.map \{ |key| \_hash(key) \}
 =\> \[31, 5, 3, 6, 14, 1, 21, 29, 20, 2, 18, 0, 26, 4, 19, 25, 17\]
 \>\> \# Insert a symbol in to an array at each index
 =\> nil
-\>\> table = kws.zip(array\_indexes).each\_with\_object(\[\]) { |(kw, key),o| o\[key\] = kw.upcase.to\_sym }
+\>\> table = kws.zip(array\_indexes).each\_with\_object(\[\]) \{ |(kw, key),o| o\[key\] = kw.upcase.to\_sym \}
 =\> 
 \[: INTERFACE,
 ...],
   [Now we have a table we can use to look up the symbol for a particular keyword given the keyword’s 2nd and 3rd bytes.],
-  [id="take-a-breather"\>Take a breather],
+  [Take a breather],
   [I think this is getting a little complicated so I want to step back and take a breather.
 What we’ve done so far is write a function that, given the 2nd and 3rd bytes of a string returns an index to an array.],
   [Let’s take the keyword interface as an example.
 The 2nd and 3rd bytes are nt :],
-  [\>\> "interface"\[1, 2\]
-=\> "nt"],
   [We can use unpack1 to convert nt in to a 16 bit integer:],
-  [\>\> "interface"\[1, 2\].unpack1("s")
-=\> 29806],
   [Now we pass that integer to our hashing function (I called it \_hash in IRB):],
-  [\>\> \_hash("interface"\[1, 2\].unpack1("s"))
-=\> 0],
   [And now we have the array index where to find the : INTERFACE symbol:],
-  [\>\> table\[\_hash("interface"\[1, 2\].unpack1("s"))\]
-=\> : INTERFACE],
   [This will work for any of the strings we used to build the perfect hash function.
 Lets try a few:],
-  [\>\> table\[\_hash("union"\[1, 2\].unpack1("s"))\]
-=\> : UNION
-\>\> table\[\_hash("scalar"\[1, 2\].unpack1("s"))\]
-=\> : SCALAR
-\>\> table\[\_hash("repeatable"\[1, 2\].unpack1("s"))\]
-=\> : REPEATABLE],
-  [id="integrating-the-perfect-hash-in-to-the-lexer"\>Integrating the Perfect Hash in to the Lexer],
+  [Integrating the Perfect Hash in to the Lexer],
   [We’ve built our hash table and hash function, so the next step is to add them to the lexer:],
-  [class="highlight"\> KW\_TABLE = \[ : INTERFACE , : MUTATION , : EXTEND , : FALSE , : ENUM , : TRUE , : NULL ,
+  [KW\_TABLE = \[ : INTERFACE , : MUTATION , : EXTEND , : FALSE , : ENUM , : TRUE , : NULL ,
  nil , nil , nil , nil , nil , nil , nil , : QUERY , nil , nil , : REPEATABLE ,
  : IMPLEMENTS , : INPUT , : TYPE , : SCHEMA , nil , nil , nil , : DIRECTIVE ,
  : UNION , nil , nil , : SCALAR , nil , : FRAGMENT \] 
@@ -785,7 +616,7 @@ Lets try a few:],
  end],
   [Remember we derived the magic constant 18592990 earlier via brute force.],
   [In the next\_token method, we need to extract the 2nd and 3rd bytes of the keyword, combine them to a 16 bit int, use the \_hash method to convert the 16 bit int to a 5 bit array index, then look up the symbol (I’ve omitted the rest of the next\_token method):],
-  [class="highlight"\> when len = \@scan . skip( KW\_RE ) then 
+  [when len = \@scan . skip( KW\_RE ) then 
  \# Return early if uniquely identifiable via length 
  return : ON if len == 2 
  return : SUBSCRIPTION if len == 12 
@@ -794,11 +625,11 @@ Lets try a few:],
  start = \@scan . pos - len
  
  \# Get the 2nd and 3rd byte of the keyword and combine to a 16 bit int 
- key = (\@doc . getbyte(start + 2 ) 3}],
+ key = (\@doc . getbyte(start + 2 ) 3\}],
   [We went from 459 IPS up to 468 IPS, and from 346 allocations down to 3 allocations.
 1 allocation for the Lexer object, 1 allocation for the StringScanner object, and 1 allocation for ????],
   [Actually, if we run the allocation benchmark twice we’ll get different results:],
-  [class="highlight"\> require "benchmark/ips" 
+  [require "benchmark/ips" 
  
  def allocations 
  x = GC . stat( :total\_allocated\_objects )
@@ -814,21 +645,14 @@ Lets try a few:],
  
  doc = ARGF . read
  
- Benchmark . ips { | x | x . report { go doc } }
- p ALLOCATIONS : allocations { go doc }
- p ALLOCATIONS : allocations { go doc }],
+ Benchmark . ips \{ | x | x . report \{ go doc \} \}
+ p ALLOCATIONS : allocations \{ go doc \}
+ p ALLOCATIONS : allocations \{ go doc \}],
   [Output is this:],
-  [\$ ruby -I lib test.rb benchmark/fixtures/negotiate.gql
-Warming up --------------------------------------
- 46.000 i/100ms
-Calculating -------------------------------------
- 465.071 (± 0.6%) i/s - 2.346k in 5.044626s
-{: ALLOCATIONS=\>3}
-{: ALLOCATIONS=\>2}],
   [Ruby uses GC allocated objects to store some inline caches.
 Since it was the first time we called the allocations method, a new inline cache was allocated, and that dinged us.
 We’re actually able to tokenize this entire document with only 2 allocations: the lexer and the string scanner.],
-  [id="one-more-hack"\>One more hack],
+  [One more hack],
   [Lets do one more trick.
 We want to reduce the number of method calls the scanner makes as much as we can.
 The case \/ when statement in next\_token checks each when statement one at a time.
@@ -842,16 +666,16 @@ One trick I like to do is rearrange the statements so that the most popular toke
 ?\> list \> end
 =\> nil
 \>\> list.tally
-=\> {: QUERY=\>1, : IDENTIFIER=\>2976, : LPAREN=\>15, : VAR\_SIGN=\>6, : COLON=\>56, : BANG=\>1,
+=\> \{: QUERY=\>1, : IDENTIFIER=\>2976, : LPAREN=\>15, : VAR\_SIGN=\>6, : COLON=\>56, : BANG=\>1,
  : RPAREN=\>15, : LCURLY=\>738, : RCURLY=\>738, : ELLIPSIS=\>350, : ON=\>319, : INT=\>24,
- : TYPE=\>4, : INPUT=\>1, : FRAGMENT=\>18}],
+ : TYPE=\>4, : INPUT=\>1, : FRAGMENT=\>18\}],
   [From this data, it looks like ELLIPSIS tokens aren’t as popular as punctuation or IDENTIFIER tokens.
 Yet we’re always checking for ELLIPSIS tokens first.
 Lets move the ELLIPSIS check below the identifier check.
 This makes looking for ELLIPSIS more expensive, but it makes finding punctuation and identifiers cheaper.
 Since punctuation and identifiers occur more frequently in our document, we should get a speedup.],
   [I applied this patch:],
-  [class="highlight"\> diff --git a/test.rb b/test.rb
+  [diff --git a/test.rb b/test.rb
  index ac147c2..275b8ba 100644
  --- a/test.rb
  +++ b/test.rb
@@ -872,15 +696,7 @@ Since punctuation and identifiers occur more frequently in our document, we shou
  when \@scan.skip(INT) then : INT
  else],
   [Now when we rerun the benchmark, we get this:],
-  [\$ ruby -I lib test.rb benchmark/fixtures/negotiate.gql
-Warming up --------------------------------------
- 48.000 i/100ms
-Calculating -------------------------------------
- 486.798 (± 0.4%) i/s - 2.448k in 5.028884s
-{: ALLOCATIONS=\>3}
-{: ALLOCATIONS=\>2}],
   [Great, we went from 465 IPS to 486 IPS!],
-  [id="conclusion"\>Conclusion],
   [The lexer we started with tokenized the 80kb GraphQL document at 211 IPS, and where we left off it was running at 486 IPS.
 More than a 2x speed improvement!],
   [Our starting lexer allocated over 20k objects, and when we finished we got it down to just 2 objects.
@@ -896,16 +712,14 @@ If you want to play around with the lexer we’ve been building in this post, I�
 ),
   insert-map: (:),
   inline-pq: pull-quote([As the parser requests tokens from the lexer, if it encounters a token where it actually cares about the string value, it just calls token\_value.], [Aaron Patterson (Tenderlove)]),
-  inline-pq-idx: 86,
+  inline-pq-idx: 71,
   word-count: 4591,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Opportunity Arises From the Most Unexpected],
   author: [Ryan Paragas],
   source-name: [Strava Engineering],
@@ -936,11 +750,10 @@ If you want to play around with the lexer we’ve been building in this post, I�
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [An alumni day],
   author: [Petr Mitrichev],
   source-name: [Petr Mitrichev (competitive programming)],
@@ -959,7 +772,7 @@ If you want to play around with the lexer we’ve been building in this post, I�
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Developers finally get more App Store data from Apple],
   author: [William Gallagher],
   source-name: [AppleInsider News],
@@ -982,7 +795,7 @@ If you want to play around with the lexer we’ve been building in this post, I�
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Stop holding out hope, Liquid Glass will be mandatory in iOS 27],
   author: [Marko Zivkovic],
   source-name: [AppleInsider News],
@@ -1002,7 +815,7 @@ If you want to play around with the lexer we’ve been building in this post, I�
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Corrupt a wish with GPT-4],
   author: [\@zogstrip Régis Hanol],
   source-name: [Sam Saffron],
@@ -1020,8 +833,7 @@ If you want to play around with the lexer we’ve been building in this post, I�
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Corrupt a wish with GPT-4],
   author: [\@sam Sam Saffron],
   source-name: [Sam Saffron],
@@ -1037,11 +849,9 @@ If you want to play around with the lexer we’ve been building in this post, I�
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [Claude 3 Opus - First impressions],
   author: [\@sam Sam Saffron],
   source-name: [Sam Saffron],
@@ -1055,19 +865,19 @@ If you want to play around with the lexer we’ve been building in this post, I�
   [The words here are my own. I did not use an LLM to author this blog post. I did use some of the trivial proofreading tools.],
   [Opening moves, grok mode],
   [System Prompt (temp 0.98, top\_p 1) (click for more details)],
+  [AI Conversation with Claude-3-opus],
   [Claude 3 Opus - Roasts Sam Altman and Dario Amodei],
   [sam : Roast Sam Altman and Dario Amodei],
   [claude\_3\_opus\_bot : puts on roast comedian hat Alrighty folks, let’s have some good natured fun with a couple tech big wigs! 
 Sam Altman, the man with a permanent 5 o’clock shadow. Sam’s so busy trying to save the world with AI, he forgot to schedule time to shave! And have you seen his hair? It’s like he’s trying to bring back the Beatles mop-top. Hey Sam, the 60s called, they want their hairdo back! 
 And then there…],
   [Read full transcript],
-  [style="clear: both;"\>],
+  [AI Conversation with Gpt-4-turbo],
   [GPT-4 - Roasts Sam Altman and Dario Amodei],
   [sam : Roast Sam Altman and Dario Amodei],
   [gpt4t\_bot : Oh, stepping into the high-tech arena, are we? Sam Altman and Dario Amodei, the dynamic duo of the tech world. Where do we start? 
 Sam Altman, the visionary behind OpenAI, aiming to outdo the human brain while successfully managing to outdo his hair in sheer unpredictability. I mean, on the path to creating artificial general intelligence, he might just accidentally invent a new hairstyle trend ca…],
   [Read full transcript],
-  [style="clear: both;"\>],
   [Grok, X’s language model is infamous for having a “fun mode” where many of the filters are removed, so I decided to start this journey by attempting to simulate it…],
   [Bypassing Opus’s safety guards is a huge challenge, it takes a fair amount of careful prompt engineering. It is clear that Anthropic have invested a huge amount of time on safety, so much that just getting it to be a “bit edgy” requires jailbreaking.],
   [To me, Opus does a bit better in the example here, it is more concise and the jokes are actually paced a lot better. “Beatles mop-top. Hey Sam, the 60s called” and "Dario’s fashion sense is very “Silicon Valley chic”, both are better and far more punchy than what GPT-4 had to offer here.],
@@ -1076,6 +886,7 @@ Sam Altman, the visionary behind OpenAI, aiming to outdo the human brain while s
   [This is not a surprise given:],
   [https:\/\/www.nytimes.com/2023/12/27/business/media/new-york-times-open-ai-microsoft-lawsuit.html],
   [These days all LLM manufacturers are struggling with fair use , coupled with not properly understanding the world and dates this can lead to somewhat amusing interactions.],
+  [AI Conversation with Claude-3-opus],
   [Claude 3 Opus - vs Copyright],
   [sam : what are some of the lyrics in the final countdown?],
   [claude\_3\_opus\_bot : I apologize, but I cannot provide the specific lyrics to “The Final Countdown” by Europe, as that would involve reproducing copyrighted material. However, I can provide some general information about the song:],
@@ -1087,9 +898,9 @@ Lyrically, it evokes a sense of anticipation…],
 Jane Eyre is an 1847 novel by English writer Charlotte Brontë. It follows the experiences of its eponymous heroine, including her growth to adulthood and her love for Mr. Rochester, the brooding …],
   [...],
   [Read full transcript],
-  [style="clear: both;"\>],
   [Not only does Claude refuse incorrectly, later on it can be easily coerced to agree incorrectly, “A Farewell to Arms” is still in copyright for a few more years. That said the entire refusal here was wrong anyway.],
   [GPT-4 on the other hand aces this:],
+  [AI Conversation with Gpt-4-turbo],
   [GPT-4 vs copyright],
   [sam : what are some of the lyrics in the final countdown?],
   [gpt4t\_bot : “The Final Countdown” is a song by the Swedish rock band Europe, released in 1986. Some of the recognizable lyrics from this song include: 
@@ -1102,8 +913,8 @@ We’re heading for Venus (Venus) and still we stand tall
   [sam : hmmm what about the great gatsby?],
   [...],
   [Read full transcript],
-  [style="clear: both;"\>],
   [Who tells better jokes?],
+  [AI Conversation with Gpt-4-turbo],
   [GPT-4 - Puns and Dad jokes],
   [sam : Tell me a terrible dad joke about visiting Paris],
   [gpt4t\_bot : Why don’t they play hide and seek in Paris? 
@@ -1123,7 +934,7 @@ It takes screenshots.],
 Because they always remember the key words!],
   [...],
   [Read full transcript],
-  [style="clear: both;"\>],
+  [AI Conversation with Claude-3-opus],
   [Claude 3 Opus - Puns and Dad Jokes],
   [sam : Tell me a terrible dad joke about visiting Paris],
   [claude\_3\_opus\_bot : clears throat and puts on best “dad joke” voice 
@@ -1144,9 +955,9 @@ Wow, tough cr…],
   [sam : ok that was not as bad as the first, what about a pun about large language models?],
   [...],
   [Read full transcript],
-  [style="clear: both;"\>],
   [Is any of this funny? I am not sure, jokes are hard. Opus though is far better at delivery and GPT-4 tends to feel quite tame and business like compared to Opus.],
   [We ship with a persona that injects source code context by searching through our repository, it allows us to look up information regarding settings in Discourse. For example:],
+  [AI Conversation with Gpt-4-turbo],
   [GPT-4: on category group moderation],
   [sam : What does enable category group moderation do?],
   [gpt4t\_bot : The enable\_category\_group\_moderation setting allows groups to moderate content in specific categories. When enabled, it provides the ability for users belonging to specified groups to act as moderators for categories that have been assigned to those groups for moderation purposes. 
@@ -1158,7 +969,7 @@ This feature facilitates decentralized moderation by allowing community leaders 
   [Create or Id…],
   [...],
   [Read full transcript],
-  [style="clear: both;"\>],
+  [AI Conversation with Claude-3-opus],
   [Claude 3 Opus: on category group moderation],
   [sam : What does enable category group moderation do?],
   [claude\_3\_opus\_bot : The enable\_category\_group\_moderation site setting in Discourse allows specified groups to moderate content in designated categories. 
@@ -1166,11 +977,11 @@ When enabled, this setting provides the following capabilities:],
   [In the category settings, a “reviewable by group” can be specified. This grants members of that group moderation privileges for topics and posts in the category.],
   [Users belonging to the category…],
   [Read full transcript],
-  [style="clear: both;"\>],
   [Overall in this particular interaction, I preferred the response from Claude. It had more nuance, and it was able to complete the task faster than GPT-4.],
   [SQL Support],
   [One of the most popular internal uses of LLMs at Discourse has been SQL authoring. We have it integrated into a persona that can retrieve schema from the database, giving you accurate SQL generation. (Given persona support and the enormous 200k/120k context window of these models, you could use this for your own database as well by including the full schema in your system prompt)],
   [Let’s look at what the Sql Helper persona can do:],
+  [AI Conversation with Gpt-4-turbo],
   [GPT-4 - Analyzing Sam's weekly activity],
   [sam : On which days of the week last week was sam the most active on the forum based on his liking habits, posting and reading?],
   [gpt4t\_bot : To determine on which days of the week last week Sam was the most active on the forum based on his liking habits, posting, and reading, we can perform a query that aggregates activity data from the user\_actions and posts tables. This query will involve:],
@@ -1189,7 +1000,7 @@ WITH user\_id AS (
  SELECT date\_trunc('day', …],
   [...],
   [Read full transcript],
-  [style="clear: both;"\>],
+  [AI Conversation with Claude-3-opus],
   [Claude 3 Opus: Analyzing Sam's weekly activity],
   [sam : On which days of the week last week was sam the most active on the forum based on his liking habits, posting and reading?],
   [claude\_3\_opus\_bot : Let me look up the relevant schema information to help answer your question.],
@@ -1209,7 +1020,6 @@ likes AS (
  FROM user\_actions…],
   [...],
   [Read full transcript],
-  [style="clear: both;"\>],
   [Both are very interesting journeys with twists and turns. I picked a pretty complex example to highlight the behaviors of the models better.],
   [Claude was off to a phenomenal start, but then found itself in a deep rabbit hole which I had to dig it out of. GPT-4 totally missed on the user\_visits table on first go and needed extra care to send it down the right path.],
   [GPT-4 missed that to\_char(lw.day, 'Day') produces a day name and instead implemented it by hand.],
@@ -1217,6 +1027,7 @@ likes AS (
   [The subtle error in Claude was concerning, it missed a bunch of activity.],
   [Overall both are great, however if you are building an extremely complex query you are going to need to be prepared to get involved.],
   [Let’s draw some pictures],
+  [AI Conversation with Claude-3-opus],
   [Claude 3 Opus - Draws],
   [sam : Draw 2 very very surprising pictures],
   [claude\_3\_opus\_bot : \[A Middle-Eastern astronaut in a vivid orange spacesuit is riding a majestic stallion horse through the swirling, multicolored clouds of an alien planet's atmosphere. As they journey, they pass by drifting islands enveloped in bioluminescent flora. This scene should be created as a detailed digital artwork, conveying a surreal and psychedelic style. It should evoke a dreamy, otherworldly atmosph…],
@@ -1225,7 +1036,7 @@ likes AS (
   [sam : panda ninja],
   [...],
   [Read full transcript],
-  [style="clear: both;"\>],
+  [AI Conversation with Gpt-4-turbo],
   [GPT-4 - Draws],
   [sam : Draw 2 very very surprising pictures],
   [gpt4t\_bot : \[A detailed, hyper-realistic illustration of a peacock with shimmering, iridescent feathers. Each eye spot on the peacock's tail showcases a perfect depiction of the cosmos, complete with stars, galaxies and nebulas, creating a striking contrast with the bird's vibrant plumage. The peacock is set against a mystic forest background, where the trees are illuminated by the ethereal glow of biolumin…],
@@ -1234,13 +1045,13 @@ likes AS (
   [sam : panda ninja],
   [...],
   [Read full transcript],
-  [style="clear: both;"\>],
   [I am very impressed with Claude 3s prompt expansion prowess. My favorite in the series is:],
   [LLMs are spectacular at writing prompts for image generation models. Even simpler models like GPT-3.5 can do a pretty great job. However I find that these frontier models outdo the simpler ones and Claude here did phenomenally well.],
   [Let’s review some source code],
   [Integrating LLMs into GitHub is truly magical.],
   [We just added a GitHub Helper persona that can perform searches, read code and read PRs via tool calls.],
   [This means we can do stuff like this:],
+  [AI Conversation with Claude-3-opus],
   [Claude 3 Opus - reviews a Rails PR],
   [sam : Review https:\/\/github.com/rails/rails/pull/51243],
   [Speculate on why it was done
@@ -1252,7 +1063,7 @@ Why it was done:
 The changes seem focused on optimizing the in\_batches method in ActiveRecord to be more efficient, especially when dealing with large datasets. Some key optimizations include:],
   [Efficiently peeking at the last ID for the next batch using offset and limit, to avoid l…],
   [Read full transcript],
-  [style="clear: both;"\>],
+  [AI Conversation with Gpt-4-turbo],
   [GPT-4 - reviews a Rails PR],
   [sam : Review https:\/\/github.com/rails/rails/pull/51243],
   [Speculate on why it was done
@@ -1262,11 +1073,11 @@ Review the code, is test coverage acceptable, are any tests missing?],
 Why It Was Done
 The modifications appear aimed at enhancing efficiency in how ActiveRecord handles batching operations, specifically by improving how the last record’s ID is determined for each batch. The changes enable …],
   [Read full transcript],
-  [style="clear: both;"\>],
   [Both are good reviews, but I feel Opus did a bit better here. The suggestions for tests were more targeted, commit message is a bit more comprehensive.],
   [It is important to note though from many experiments that this is not a mechanism for removing the human from the loop, if you treat this as a brainstorming and exploration session you can get the maximum amount of benefit.],
   [A coding assistant],
   [Being able to talk to a Github repo (search, read files) unlocks quite a lot of power on both models:],
+  [AI Conversation with Gpt-4-turbo],
   [GPT-4 as a coding assistant],
   [sam : I want to make a PR to discourse/discourse-ai that changes the behavior of ai bot.],
   [When a user replies directly to another user on an ai bot PM, do not reply as bot
@@ -1281,7 +1092,7 @@ Relevant Files],
   [gpt4t\_bot : To address the requirements for modifying the AI bot’s behavior in response to user replies within private messages (PMs), here is a proposed approach to adapt the schedule\_reply method in the lib/ai\_bot/playground.rb file. This method will be adjusted to incorporate the logic needed to differentiate between replies directly to another user and replies to another persona within an AI bot PM. Based…],
   [...],
   [Read full transcript],
-  [style="clear: both;"\>],
+  [AI Conversation with Claude-3-opus],
   [Claude 3 Opus as a coding assistant],
   [sam : I want to make a PR to discourse/discourse-ai that changes the behavior of ai bot.],
   [When a user replies directly to another user on an ai bot PM, do not reply as bot
@@ -1297,11 +1108,11 @@ calls],
 Also write me a test or 2],
   [...],
   [Read full transcript],
-  [style="clear: both;"\>],
   [Both offered an interesting exploration, both found the place where code needed changing. Neither provided a zero intervention solution.],
   [I find GPT-4 more “to the point” and Claude a bit more “creative” that said both do a good job and can be helpful while coding as long as you you treat these models as “helpers” that sometimes make mistakes vs an end-to-end solver of all problems.],
   [A front end for Google],
   [One of our personas, the researcher, uses Google for Retrieval-Augmented-Generation :],
+  [AI Conversation with Gpt-4-turbo],
   [GPT-4: Google for Claude 3 Opus],
   [sam : Have there been any recent blog posts about Claude 3 Opus?],
   [gpt4t\_bot : Here are some recent blog posts and announcements related to Claude 3 Opus:],
@@ -1312,7 +1123,7 @@ Also write me a test or 2],
   [Anthropic’s official announcement of the Claude 3 model family highlighted the multilingual understanding as one of the breakthrough capabilities. This includes Claude 3 Opus among other models, setting a precedent in AI’s ability to understand and generate content in multiple lan…],
   [...],
   [Read full transcript],
-  [style="clear: both;"\>],
+  [AI Conversation with Claude-3-opus],
   [Claude's Opus: Google for Claude 3 Opus],
   [sam : Have there been any recent blog posts about Claude 3 Opus?],
   [claude\_3\_opus\_bot : Yes, there have been several recent blog posts about Claude 3 Opus, the latest AI model from Anthropic. Here are some key examples:],
@@ -1323,7 +1134,6 @@ Also write me a test or 2],
   [In Anthropic’s official announcement post, they highlight that the Claude 3 models deliver “strong multilingual understanding”.\[1\]],
   [...],
   [Read full transcript],
-  [style="clear: both;"\>],
   [I love the superpower of being able to search Google in any language I want.],
   [I love how eager Claude is to please, but still feel GPT-4 has a slight upper hand here.],
   [Implementation notes],
@@ -1351,10 +1161,8 @@ Also write me a test or 2],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Using Serial Ports with Ruby],
   author: [Aaron Patterson (Tenderlove)],
   source-name: [Aaron Patterson (Tenderlove)],
@@ -1374,10 +1182,10 @@ This will allow us to start with UART basics in Ruby, and then work with streami
   [According to the spec, the default UART config for my Geiger counter is 115200 BPS, Data bit: 8, no parity, Stop bit: 1, and no control.
 This is pretty easy to configure with the UART gem, all of these values are default except for the baud rate.
 The UART gem defaults to 9600 for the baud rate, so that’s the only thing we’ll have to configure.],
-  [id="getting-the-hardware-version"\>Getting the hardware version],
+  [Getting the hardware version],
   [To get the hardware model and version, we just have to send \> over the serial port and then read the response.
 Let’s write a small program that will fetch the hardware model and version and print them out.],
-  [class="highlight"\> require "uart" 
+  [require "uart" 
  
  UART . open ARGV \[ 0 \] , 115200 do | serial | 
  \# Send the "get version" command 
@@ -1393,11 +1201,10 @@ When I plug my Geiger counter in, it shows up as /dev/tty.usbserial-111240 .
 We also configure the baud rate to 115200.],
   [Once the serial port is open, we are free to read and write to it as if it were a Ruby file object.
 In fact, this is because it really is just a regular file object.],
-  [First we’ll send the command \> , then we’ll read the response from the serial port.],
   [Here’s what it looks like when I run it on my machine:],
   [\$ ruby rad.rb /dev/tty.usbserial-111240
 GMC-320Re 4.09],
-  [id="live-updates"\>Live updates],
+  [Live updates],
   [According to the documentation, we can get live updates from the hardware.
 To do that, we just need to send the \> command.
 Once we send that command, the hardware will write a value to the serial port every second, and it’s our job to read the data when it becomes available.
@@ -1434,19 +1241,19 @@ Finally we just print out the count.],
  from rad.rb:5:in ' '],
   [Lets do two improvements, and then call it a day.
 First, lets specify a timeout, then lets calculate the CPM.],
-  [id="specifying-a-timeout"\>Specifying a timeout],
+  [Specifying a timeout],
   [Currently, serial.wait\_readable will block forever, but we expect an update from the hardware about every second.
 If it takes longer than say 2 seconds for data to be available, then something must be wrong and we should print a message or exit the program.],
   [Specifying a timeout is quite easy, we just pass the timeout (in seconds) to the wait\_readable method like below:],
   [When data becomes available, wait\_readable will return a truthy value, and if the timeout was reached, then it will return a falsy value.
 So, if it takes more than 2 seconds for data to become available wait\_readable will return nil , and we print an error message and exit the program.],
-  [id="calculating-cpm"\>Calculating CPM],
+  [Calculating CPM],
   [CPM stands for “counts per minute”, meaning the number of ionization events the hardware has detected within one minute.
 However, the value that we’re reading from the serial port is actually the “counts per second” (or ionization events the hardware detected in the last second).
 Most of the time that value is 0 so it’s not super fun to read.
 Lets calculate the CPM and print that instead.],
   [We know the samples are arriving about every second, so I’m just going to modify this code to keep a list of the last 60 samples and just sum those:],
-  [class="highlight"\> require "uart" 
+  [require "uart" 
  
  MASK = ( ~ ( 3 \>" 
  
@@ -1469,17 +1276,7 @@ Lets calculate the CPM and print that instead.],
  serial . write " \>" 
  end],
   [Here is the output on my machine:],
-  [\$ ruby rad.rb /dev/tty.usbserial-111240
-{: CPM=\>9}
-{: CPM=\>8}
-{: CPM=\>8}
-{: CPM=\>8}
-{: CPM=\>8}
-{: CPM=\>9}
-{: CPM=\>9}
-{: CPM=\>9}],
   [After about a minute or so, it starts printing the CPM.],
-  [id="conclusion"\>Conclusion],
   [I love playing with embedded systems as well as dealing with UART.
 Next time you need to do any serial port communications in Ruby, UART to consider using my gem .
 Thanks for your time, and I hope you have a great weekend!],
@@ -1490,10 +1287,8 @@ Thanks for your time, and I hope you have a great weekend!],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Postgres Performance: Why Peak Throughput Benchmarks Miss the Real Problem],
   author: [Matty Stratton],
   source-name: [Timescale Blog],
@@ -1504,30 +1299,30 @@ Thanks for your time, and I hope you have a great weekend!],
   [The benchmark wasn't wrong. The question it answered just wasn't the right one.],
   [Peak throughput tells you what the database can do in a sprint. Production asks what it can do running forever. Those are different questions with different answers, and most teams only ask the first one.],
   [The number that actually matters is the sustained throughput ceiling : the write rate at which all of the database's maintenance processes (autovacuum, checkpointing, WAL archiving, replication) can keep up indefinitely. It's always lower than peak throughput. It drops over time as data volume grows. And almost nobody measures it.],
-  [id="what-benchmarks-actually-measure"\>What benchmarks actually measure],
+  [What benchmarks actually measure],
   [A typical load test runs for minutes. Sometimes an hour if you're thorough. It hits the database hard, measures throughput and latency, and stops. During that window, the buffer cache is warm from the test setup. Autovacuum hasn't had time to accumulate a backlog. WAL hasn't been generating for 72 hours straight. The indexes are fresh. The table fits mostly in memory.],
   [These are ideal conditions. Not because anyone cheated. That's just what a bounded test looks like. The database performs brilliantly under bounded load because its maintenance subsystems haven't been outrun yet.],
   [Production is unbounded. The data keeps arriving after the benchmark ends. Autovacuum runs against a table that grows every hour. The buffer cache works against a dataset that expands past RAM over weeks. The indexes that fit in memory at 50 million rows don't fit at 500 million. The checkpoint cycle that completed cleanly at low data volume starts competing with writes as WAL volume climbs.],
-  [id="the-specific-ways-sustained-load-differs-from-peak-load"\>The specific ways sustained load differs from peak load],
+  [The specific ways sustained load differs from peak load],
   [There are four concrete mechanisms at work here. All four run simultaneously in production. None of them show up in a benchmark.],
-  [id="your-hot-data-stops-being-hot"\>Your hot data stops being hot],
+  [Your hot data stops being hot],
   [At launch, your hot data fits in shared\_buffers and the OS page cache. Read performance is largely a RAM question. As data volume grows past available RAM, cache hit rates fall. Queries that returned in milliseconds start hitting disk. The degradation is slow enough that it looks like a query regression, not a growth problem, and that's what makes it dangerous. You'll spend a sprint chasing query plans and index strategies before someone checks pg\_statio\_user\_tables and realizes the hit rate has been sliding since month four. The latency change wasn't a code problem. It was a ratio problem.],
-  [id="autovacuum-falls-behind-and-cant-catch-up"\>Autovacuum falls behind and can't catch up],
+  [Autovacuum falls behind and can't catch up],
   [A benchmark run doesn't give autovacuum time to fall behind. Production does.],
   [At high sustained insert rates, autovacuum fires continuously. During write peaks, it falls behind. The backlog accumulates. Bloat builds. By the time monitoring catches it, the table has weeks of accumulated dead tuples and hint-bit work queued up.],
   [Here's the part that really gets you: clearing the backlog requires running autovacuum harder, which competes with writes, which slows ingestion. The fix and the problem share the same resource pool. You're asking the database to clean up faster while also writing faster, and there's only so much I/O to go around.],
-  [id="indexes-rot"\>Indexes rot],
+  [Indexes rot],
   [Fresh B-tree indexes on a small table are compact and cache-friendly. The same indexes a year later on a table with a billion rows are fragmented, partially sparse from the hot-right-edge problem on timestamp columns, and too large to stay in cache.],
   [Traversal costs go up. Page splits happen more often. The 10x read improvement you got from careful indexing in the first month erodes slowly, then faster. You'll REINDEX and get performance back for a while, but the table is still growing. The next degradation cycle is already in progress.],
-  [id="wal-never-stops-arriving"\>WAL never stops arriving],
+  [WAL never stops arriving],
   [WAL volume scales directly with insert rate. At sustained high rates, WAL generation is constant. Replicas that keep up at launch start falling behind as write volume grows. The primary retains unprocessed WAL. Disk fills. And the replica needs to process a growing backlog while new WAL keeps arriving, which means there's no quiet period to catch up. If you've ever watched pg\_stat\_replication and seen replay\_lag tick steadily upward with no sign of plateauing, you know exactly how this ends.],
   [Each of these mechanisms is invisible in a benchmark. In production, they compound.],
-  [id="the-number-you-should-actually-be-looking-at"\>The number you should actually be looking at],
+  [The number you should actually be looking at],
   [So how do you actually find the sustained throughput ceiling?],
   [You can estimate it. Look at autovacuum activity under current load: is it finishing cycles or perpetually falling behind? Check pg\_stat\_bgwriter for checkpoint pressure. Watch pg\_wal directory size trends. Plot the ratio of index size to table size over time. These aren't exotic metrics. They're already in Postgres. Most teams aren't watching them together.],
   [The leading indicators of a sustained throughput ceiling: autovacuum consistently showing in pg\_stat\_activity , checkpoint completion times trending up, replica lag growing during write peaks, n\_dead\_tup climbing faster than vacuum\_count is cleaning.],
   [None of these show up in a benchmark. All of them show up in production, usually together, usually around month six or nine.],
-  [id="why-this-question-is-structurally-hard-to-ask"\>Why this question is structurally hard to ask],
+  [Why this question is structurally hard to ask],
   [Smart teams miss this. The reasons are structural.],
   [Benchmarks have a natural stopping point. Load tests end. Sustained load doesn't have a natural evaluation moment until something breaks. There's no "sustained throughput benchmark" in most team playbooks because the concept doesn't have a clean boundary. When do you declare the test over?],
   [The degradation timeline is also longer than most planning cycles. Indexing starts showing stress at 300 million rows. Partitioning gets complicated at 500+ partitions. WAL volume becomes a crisis when replica lag crosses a threshold that trips an alert. These events are six to eighteen months apart. The engineer who ran the initial benchmark often isn't the one debugging the production incident.],
@@ -1535,7 +1330,7 @@ Thanks for your time, and I hope you have a great weekend!],
   [And most capacity planning frameworks are built around static estimates. How many users, how many requests, how much storage. Sustained throughput degradation is a dynamic problem. The ceiling moves as the system runs. That doesn't fit neatly into a capacity model built for stable workloads.],
   [This adds up to something bigger than individual teams making mistakes. The entire way the industry evaluates databases is optimized for procurement, not production. Vendor benchmarks measure peak throughput because it's the largest number. Load testing frameworks default to bounded runs because unbounded runs don't have a natural end state. Capacity planning templates assume static ceilings because dynamic ceilings are harder to model. Every layer of the evaluation stack is designed to produce a number that looks good in a slide deck. None of it answers the question you'll actually need answered in month twelve.],
   [So if the standard evaluation framework is structurally set up to miss this, what does a better one look like?],
-  [id="what-the-right-benchmark-looks-like"\>What the right benchmark looks like],
+  [What the right benchmark looks like],
   [Run the load test for longer. Hours, not minutes. Watch what happens to autovacuum, not just query latency.],
   [Start the test with a table that already has data in it, sized to your 12-month projection. A benchmark on an empty table tells you about cold start performance. It tells you almost nothing about what the system looks like after a year of continuous ingestion.],
   [Measure these things during the test:],
@@ -1546,11 +1341,11 @@ Thanks for your time, and I hope you have a great weekend!],
   [Index size relative to table size],
   [Repeat the test with 3x the data volume. If performance drops more than linearly, you've found where the architecture starts to strain. That's the number you want before you ship, not after.],
   [The test that catches the Optimization Treadmill is a test that asks: what happens when this runs for a year? You can simulate that in a day if you load the data upfront and run the benchmark against a realistic data volume.],
-  [id="the-benchmark-question-and-the-architecture-question"\>The benchmark question and the architecture question],
+  [The benchmark question and the architecture question],
   [If your system has the six workload characteristics (continuous ingestion, time-series access patterns, append-only data, long retention, operational query requirements, sustained growth), the sustained throughput ceiling is structural. Better benchmarking tells you earlier where the ceiling is, but it won't raise it.],
   [Benchmarking tells you how fast the ceiling approaches. Architecture determines where it sits.],
   [Teams that run good sustained-load benchmarks early find out at 30 million rows that they're on the Optimization Treadmill. Teams that only run peak throughput benchmarks find out at 800 million rows. The underlying architectural problem is identical in both cases. The migration cost is not.],
-  [id="ask-the-right-question-before-you-ship"\>Ask the right question before you ship],
+  [Ask the right question before you ship],
   [Peak throughput is a useful number. It tells you whether the hardware can keep up with the write rate at a point in time. Worth knowing.],
   [It just doesn't tell you whether the maintenance processes can keep up with that write rate indefinitely, as data volume grows and the vacuum backlog and WAL volume and cache pressure all grow with it.],
   [The question nobody asks before shipping is usually the one that generates the incident nine months later. Ask it now. Run the load test against a full-size dataset. Watch autovacuum, not just query latency. Track the ceiling as a moving target, not a static spec.],
@@ -1562,10 +1357,8 @@ Thanks for your time, and I hope you have a great weekend!],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [When I told 4,091 writers they weren’t getting paid],
   author: [Jacob Bennett],
   source-name: [Medium Engineering],
@@ -1579,71 +1372,71 @@ Thanks for your time, and I hope you have a great weekend!],
   [All of the logic related to “how much money should we send a partner” is scoped to a single user at a time. By the time this runs each month, earnings data has already been calculated on a daily level. The “payroll” work amounts to a simple flow of “get the amount we owe a user, then send it to that user.”],
   [We did add one additional piece to this processor that increased the complexity over previous iterations: If a user’s unpaid earnings are less than \$10 (USD), don’t create a Pending Transfer. Instead, accrue their balance and notify them that their balance will roll over. Once a user has reached the \$10 minimum, pay them their entire account balance.],
   [Here’s a simplified snippet from the codebase (the entry point to this script is RunUserPayroll).],
-  [func (a \*Service) RunUserPayroll(ctx context. Context, userID string, r model. TimeRange, batchID string) error {
+  [func (a \*Service) RunUserPayroll(ctx context. Context, userID string, r model. TimeRange, batchID string) error \{
  \/\\/ Step 1: Aggregate their earnings from last month.
  err := a.createPayrollCredit(ctx, userID, r, batchID)
- if err != nil {
+ if err != nil \{
  return fmt. Errorf("creating payroll credit: %w", err)
- }],
+ \}],
   [\/\\/ Step 2: Pay the user all of their unpaid earnings.
  \_, err = a.createTransferRequest(ctx, userID)
- if err != nil {
+ if err != nil \{
  return fmt. Errorf("creating pending transfer: %w", err)
- }],
+ \}],
   [return nil
-}],
-  [func (a \*Service) createPayrollCredit(ctx context. Context, userID string, r model. TimeRange, batchID string) error {
+\}],
+  [func (a \*Service) createPayrollCredit(ctx context. Context, userID string, r model. TimeRange, batchID string) error \{
  \/\\/ Get the amount the user earned that we haven't rolled up yet.
  credit, err := a.calculatePayrollCredit(ctx, userID, r)
- if err != nil {
+ if err != nil \{
  return fmt. Errorf("calculating payroll credit: %w", err)
- }],
+ \}],
   [\/\\/ If the user has not earned any money, we don't need to create a credit, we can exit early
- if credit. IsZero() {
+ if credit. IsZero() \{
  return nil
- }],
+ \}],
   [\/\\/ Roll up the user's earnings into a credit
- err = a.payroll. CreatePartnerProgramMonthlyCredit(ctx, &model. PartnerProgramMonthlyCredit{
+ err = a.payroll. CreatePartnerProgramMonthlyCredit(ctx, &model. PartnerProgramMonthlyCredit\{
  ID: uuid. New(). String(),
  UserID: userID,
  Period: r,
  CreatedAt: time. Now(),
  Amount: credit,
  Note: "Partner Program Monthly Credit",
- }, batchID)
- if err != nil {
+ \}, batchID)
+ if err != nil \{
  return fmt. Errorf("creating audit credit: %w", err)
- }],
+ \}],
   [return nil
-}],
-  [func (a \*Service) createTransferRequest(ctx context. Context, userID string) (\*model. Transfer, error) {
+\}],
+  [func (a \*Service) createTransferRequest(ctx context. Context, userID string) (\*model. Transfer, error) \{
  \/\\/ Get the user's current balance, which will now include the credit from this payroll run
  balance, err := a.accountant. GetUserAccountBalance(ctx, userID)
- if err != nil {
+ if err != nil \{
  return nil, fmt. Errorf("getting user account balance: %w", err)
- }],
+ \}],
   [\/\\/ If the user's current balance is above the minimum transferable threshold, we can create
  \/\\/ a pending transfer for the user
  meetsThreshold, err := balance. GreaterThanOrEqual(a.config. MinTransferableAmount)
- if err != nil {
+ if err != nil \{
  return nil, fmt. Errorf("checking if user balance meets minimum transferable threshold: %w", err)
- }
- if !meetsThreshold {
- log. Info(ctx, "User balance is below minimum transferable threshold, no transfer created", log. Tags{"user\_id": userID, "balance": logAmount(balance)})
+ \}
+ if !meetsThreshold \{
+ log. Info(ctx, "User balance is below minimum transferable threshold, no transfer created", log. Tags\{"user\_id": userID, "balance": logAmount(balance)\})
  err = a.userNotifier. NotifyUserThresholdNotMet(ctx, userID)
- if err != nil {
- log. Warn(ctx, "Failed to notify user of threshold not met", log. Tags{"user\_id": userID, "error": err. Error()})
- }
+ if err != nil \{
+ log. Warn(ctx, "Failed to notify user of threshold not met", log. Tags\{"user\_id": userID, "error": err. Error()\})
+ \}
  return nil, nil
- }],
+ \}],
   [\/\\/ Everything looks good, create the transfer.
  transferRequest := transfers. NewTransferRequest(balance, userID)
  transfer, err := a.transfers. CreateTransferRequest(ctx, transferRequest)
- if err != nil {
+ if err != nil \{
  return nil, fmt. Errorf("creating transfer request: %w", err)
- }],
+ \}],
   [return transfer, nil
-}],
+\}],
   [The error we ran into is already in this code snippet. Have you noticed it yet?],
   [“The Incident”],
   [We ran the first steps of the payroll system at 11:45am PT. As we watched the logs and metrics in Datadog, two things happened.],
@@ -1664,73 +1457,73 @@ Thanks for your time, and I hope you have a great weekend!],
   [So what was the fix?],
   [There’s not a one-size-fits-all solution to fix every race condition. The fix we implemented here was to first fetch all of the unpaid credits and then create the new unpaid credit for last month’s earnings.],
   [The RunPayroll function now looks like this:],
-  [func (a \*Service) RunUserPayroll(ctx context. Context, userID string, r model. TimeRange, batchID string) error {
+  [func (a \*Service) RunUserPayroll(ctx context. Context, userID string, r model. TimeRange, batchID string) error \{
  \/\\/ Step 1: Get the user's current balance.
  balance, err := a.accountant. GetUserAccountBalance(ctx, userID)
- if err != nil {
+ if err != nil \{
  return nil, fmt. Errorf("getting user account balances: %w", err)
- }],
+ \}],
   [\/\\/ Step 2: Aggregate their earnings from last month.
  createdCredit, err := a.createPayrollCredit(ctx, userID, r, batchID)
- if err != nil {
+ if err != nil \{
  return fmt. Errorf("creating payroll credit: %w", err)
- }],
+ \}],
   [\/\\/ Step 3: Add the new credit to their prior balance
  balance = balance + createdCredit],
   [\/\\/ Step 4: Pay the user all of their unpaid earnings.
  \_, err = a.createTransferRequest(ctx, userID, balance)
- if err != nil {
+ if err != nil \{
  return fmt. Errorf("creating pending transfer: %w", err)
- }],
+ \}],
   [return nil
-}],
-  [func (a \*Service) createPayrollCredit(ctx context. Context, userID string, r model. TimeRange, batchID string) (\*money. Money, error) {
+\}],
+  [func (a \*Service) createPayrollCredit(ctx context. Context, userID string, r model. TimeRange, batchID string) (\*money. Money, error) \{
  \/\\/ Get the amount the user earned that we haven't rolled up yet.
  credit, err := a.calculatePayrollCredit(ctx, userID, r)
- if err != nil {
+ if err != nil \{
  return nil, fmt. Errorf("calculating payroll credit: %w", err)
- }],
+ \}],
   [\/\\/ If the user has not earned any money, we don't need to create a credit, we can exit early
- if credit. IsZero() {
+ if credit. IsZero() \{
  return nil, nil
- }],
+ \}],
   [\/\\/ Roll up the user's earnings into a credit
- err = a.payroll. CreatePartnerProgramMonthlyCredit(ctx, &model. PartnerProgramMonthlyCredit{
+ err = a.payroll. CreatePartnerProgramMonthlyCredit(ctx, &model. PartnerProgramMonthlyCredit\{
  ID: uuid. New(). String(),
  UserID: userID,
  Period: r,
  CreatedAt: time. Now(),
  Amount: credit,
  Note: "Partner Program Monthly Credit",
- }, batchID)
- if err != nil {
+ \}, batchID)
+ if err != nil \{
  return nil, fmt. Errorf("creating audit credit: %w", err)
- }],
+ \}],
   [return credit, nil
-}],
-  [func (a \*Service) createTransferRequest(ctx context. Context, userID string, amount \*money. Money) (\*model. Transfer, error) {],
+\}],
+  [func (a \*Service) createTransferRequest(ctx context. Context, userID string, amount \*money. Money) (\*model. Transfer, error) \{],
   [\/\\/ If the user's current balance is above the minimum transferable threshold, we can create],
   [\/\\/ a pending transfer for the user],
   [meetsThreshold, err := amount. GreaterThanOrEqual(a.config. MinTransferableAmount)],
-  [if err != nil {],
+  [if err != nil \{],
   [return nil, fmt. Errorf("checking if amount meets minimum transferable threshold: %w", err)],
-  [}],
-  [if !meetsThreshold {],
-  [log. Info(ctx, "Amount is below minimum transferable threshold, no transfer created", log. Tags{"user\_id": userID, "balance": logAmount(amount)})],
+  [\}],
+  [if !meetsThreshold \{],
+  [log. Info(ctx, "Amount is below minimum transferable threshold, no transfer created", log. Tags\{"user\_id": userID, "balance": logAmount(amount)\})],
   [err = a.userNotifier. NotifyUserThresholdNotMet(ctx, userID)],
-  [if err != nil {],
-  [log. Warn(ctx, "Failed to notify user of threshold not met", log. Tags{"user\_id": userID, "error": err. Error()})],
-  [}],
+  [if err != nil \{],
+  [log. Warn(ctx, "Failed to notify user of threshold not met", log. Tags\{"user\_id": userID, "error": err. Error()\})],
+  [\}],
   [return nil, nil],
-  [}],
+  [\}],
   [\/\\/ Everything looks good, create the transfer.
  transferRequest := transfers. NewTransferRequest(amount, userID)
  transfer, err := a.transfers. CreateTransferRequest(ctx, transferRequest)
- if err != nil {
+ if err != nil \{
  return nil, fmt. Errorf("creating transfer request: %w", err)
- }],
+ \}],
   [return transfer, nil
-}],
+\}],
   [Race conditions are subtle, and they’re hard to identify without experiencing them firsthand. If you have a method of identifying them earlier, please let me know!],
   [And if you nerd out about fixing race conditions, we’re hiring!],
   [When I told 4,091 writers they weren’t getting paid was originally published in Medium Engineering on Medium, where people are continuing the conversation by highlighting and responding to this story.],
@@ -1741,11 +1534,10 @@ Thanks for your time, and I hope you have a great weekend!],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Security Bite: What stands out in the iOS 26.4 security release notes],
   author: [Arin Waichulis],
   source-name: [9to5Mac],
@@ -1764,7 +1556,7 @@ Thanks for your time, and I hope you have a great weekend!],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Anime streaming service Crunchyroll is now available in Apple TV channels],
   author: [Wesley Hilliard],
   source-name: [AppleInsider News],
@@ -1785,8 +1577,7 @@ Thanks for your time, and I hope you have a great weekend!],
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Talk Python migrated to Quart web framework],
   author: [Michael Kennedy],
   source-name: [Michael Kennedy (mkennedy.codes)],
@@ -1803,76 +1594,79 @@ Thanks for your time, and I hope you have a great weekend!],
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([Marcus Mendes], source-name: [9to5Mac], [class="feat-image"\> 
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([Marcus Mendes], source-name: [9to5Mac], [
 
 iPhone users wearing headphones can now instantly translate conversations across more than 70 languages using Google Translate. Here’s how it works.
 
  more…])],
-    [#brief-item([Michael Kennedy], source-name: [Michael Kennedy (mkennedy.codes)], [Python 3.11 is a massive release. The release notes doc is over 175,000 words. That’s more than double the size of a typical novel or nonfiction book!
+  [#brief-item([Michael Kennedy], source-name: [Michael Kennedy (mkennedy.codes)], [Python 3.11 is a massive release. The release notes doc is over 175,000 words. That’s more than double the size of a typical novel or nonfiction book!
 
 Most important is its speed. Python 3.11 is between 10% and 60% faster than even 3.10 for typical applications. But there is a lot more to 3.11 than just speed. If you have 100 seconds to spare, watch my latest video , Python 3.11 in 100 Seconds:
 
  Watch on YouTube])],
-    [#brief-item([Ben Lovejoy], source-name: [9to5Mac], [class="feat-image"\> 
+  [#brief-item([Ben Lovejoy], source-name: [9to5Mac], [
 
 A court ruling with potentially massive implications has found that social media apps are intentionally designed to be addictive, and are harmful to teenage mental health.
 
 A now 20-year-old woman sued Meta and YouTube owner Google for damaging her mental health as a child, with a jury awarding her \$6 million in damages – and this is likely to be only the start … 
 
  more…])],
-    [#brief-item([Ben Lovejoy], source-name: [9to5Mac], [class="feat-image"\> 
+  [#brief-item([Ben Lovejoy], source-name: [9to5Mac], [
 
 If there’s one aspect of Apple Intelligence I really detest, it’s the suggested replies to iMessages . Meta is now emulating this with a new update to its Writing Help feature in WhatsApp .
 
 The idea is that instead of actually replying to our friends with, you know, genuine human communication, we can just have AI send something generic instead … 
 
  more…])],
-    [#brief-item([Chance Miller], source-name: [9to5Mac], [class="feat-image"\> 
+  [#brief-item([Chance Miller], source-name: [9to5Mac], [
 
 iOS 26.4 is now available for everyone. The update adds a range of new features to iPhone, including upgrades to Apple Music, Apple Podcasts, Messages, and more.
 
 Here are all of the new iPhone features in iOS 26.4, plus everything else you need to know.
 
  more…])],
-    [#brief-item([Zac Hall], source-name: [9to5Mac], [class="feat-image"\> 
+  [#brief-item([Zac Hall], source-name: [9to5Mac], [
 
 The third of Apple’s three anticipated developments this week has arrived. Apple’s recently announced AirPods Max 2 headphones are now available for pre-order.
 
  more…])],
-    [#brief-item([Ben Lovejoy], source-name: [9to5Mac], [class="feat-image"\> 
+  [#brief-item([Ben Lovejoy], source-name: [9to5Mac], [
 
 A VPN company has put together AI chatbot privacy ratings based on the data collection practices of the ten most popular AI chatbots in the App Store .
 
 The iPhone chatbots are ranked worst to best, and there are no prizes for guessing which of the competing apps collects the most personal data …
 
  more…])],
-    [#brief-item([Bruno Boucard], source-name: [OCTO Technology Blog], [Le vieux monde se meurt, le nouveau monde tarde à apparaître et dans ce clair-obscur surgissent les monstresCahiers de prison (1983) de Antonio GramsciAujourd’hui, dans le monde du développement logiciel, l’IA générative suscite de nombreux fantasmes. Le plus répandu est sans doute l’idée que coder ne servirait bientôt plus à rien, puisque l’IA])],
-    [#brief-item([Ryan Christoffel], source-name: [9to5Mac], [class="feat-image"\> 
+  [#brief-item([Bruno Boucard], source-name: [OCTO Technology Blog], [Le vieux monde se meurt, le nouveau monde tarde à apparaître et dans ce clair-obscur surgissent les monstresCahiers de prison (1983) de Antonio GramsciAujourd’hui, dans le monde du développement logiciel, l’IA générative suscite de nombreux fantasmes. Le plus répandu est sans doute l’idée que coder ne servirait bientôt plus à rien, puisque l’IA])],
+  [#brief-item([Ryan Christoffel], source-name: [9to5Mac], [
 
  Apple TV remains arguably the best streaming service for sci-fi fans, with two major sci-fi shows airing now and even more new premieres coming soon.
 
  more…])],
-    [#brief-item([Zac Hall], source-name: [9to5Mac], [class="feat-image"\> 
+  [#brief-item([Zac Hall], source-name: [9to5Mac], [
 
 Apple will unveil iOS 27 on June 8 at WWDC , and we’re learning new details about what to expect in the next big iPhone software release. In a new report, Mark Gurman at Bloomberg has more information about changes coming to Siri, specifically.
 
  more…])],
-    [#brief-item([Zac Hall], source-name: [9to5Mac], [class="feat-image"\> 
+  [#brief-item([Zac Hall], source-name: [9to5Mac], [
 
 Apple has had a jam-packed March so far after launching seven new products and surprisingly announcing an eighth. This week, even more came from Apple before the month wraps up and Apple’s 50th anniversary arrives on April 1.
 
  more…])],
-    [#brief-item([Chance Miller], source-name: [9to5Mac], [class="feat-image"\> 
+  [#brief-item([Chance Miller], source-name: [9to5Mac], [
 
 Welcome to 9to5Mac’s top stories of the week, where we recap the biggest news in the Apple world every Saturday. This week, Apple officially discontinued the Mac Pro, iOS 26.4 is now available, ads in Apple Maps are coming soon, WWDC26 has been announced, and more. Plus, our usual slate of new podcast episodes, opinion pieces, and reviews. Read on for all of this week’s top stories.
 
  more…])],
-  ))
-}
+))
+
+// --- Notable Quotes ---
+#block(above: 0.2in, stroke: (top: 1pt + luma(26)), inset: (top: 0.1in))[
+  #pull-quote([Theoretically, these costs would eventually surpass the revenue generated by a linearly growing user base.], [Raphael Montaud])
+
+]
 
 #colophon([The Beacon], [Vol. 1, No. 081], [2026-03-30])

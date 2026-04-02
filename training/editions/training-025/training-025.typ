@@ -21,40 +21,8 @@
 #masthead([Global Gazette], [Vol. 1, No. 025], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [As the Boxer Rebellion Stole Headlines from His Wild West, Buffalo Bill Put the Clash into His Show],
-  kicker: [Cover Story],
-  author: [David McCormick],
-  source-name: [HistoryNet],
-  deck: [Thus was the stage set for the “Western Easterners” to man a wall and defend their position against U.],
-  lead-pre: [],
-  lead-cap: [F],
-  lead-rest: [resh from robbing the Deadwood Stagecoach, the Sioux performers of Buffalo Bill’s Wild West changed into loose-fitting Chinese garb and attached long single braids to the backs of their heads, mimicking the clothing and hairstyle of the Boxers then rebelling halfway around the world. Thus was the stage set for the “Western Easterners” to man a wall and defend their position against U. S. Army re-enactors in a scene played out in Cody’s “Rescue at Pekin.”],
-  body-paragraphs: (
-  [Pittsburgh was the host city this day in late May 1901, and the big-city crowd did not disappoint. As the action unfolded, spectators stomped their feet so hard as to send vibrations through the grandstand. During the climactic scene, as the Army re-enactors scaled the artificial wall, the jingoistic roar from audience members swelled to ear-throbbing intensity, and they surged over the railings to join performers on the arena floor.],
-  [The drama depicted actual events of the ongoing 1899–1901 Boxer Rebellion. Emerging as a violent response to increasing foreign incursion into China, the Boxers (nicknamed for their martial arts skills, though officially known as the Society of Righteous and Harmonious Fists) sought to eradicate all signs of modern progress (railroads, telegraph lines, etc.) and called for the liquidaton of foreigners, particularly Christian missionaries (and their Chinese converts).],
-  [On June 20, 1900, the Boxers besieged foreign embassies in the Legation Quarter of Peking (present-day Beijing), trapping within its walls nearly 500 foreign civilians, 400 military personnel and 3,000 Chinese Christians. Fifty-five days into the siege eight nations, including the United States, sent some 20,000 soldiers to relieve the siege. In battle that August 14 and 15 they defeated the Boxers and then divided the capital city into occupation zones, sending occasional punitive forays into the countryside. Not until Sept. 7, 1901, did representatives of the allied nations and China’s Qing empire sign the Boxer Protocol, officially ending the rebellion.],
-  [Ever the savvy showman, Cody was quick to draw a correlation between the Boxers and American Indians. As the rebels had resisted foreign incursion, he reasoned, so Plains Indians had resisted the westward tide of Anglo settlement, cutting telegraph lines, attacking railroad crews and battling U. S. soldiers. Fueled by superstitious ideology, the Boxers believed they could induce spirits to enter their bodies and render them invulnerable to bullets, much like Plains Indian adherents of the “Ghost Dance” movement believed their ceremonial shirts would protect them. The latter movement ended in tragedy on Dec. 29, 1890, with the battle turned massacre at Wounded Knee, S. D., all but ending the American Indian wars.],
-  [Buffalo Bill was a stickler for the authentic, wherever possible employing real soldiers, cowboys and Indians performing with real weapons. But as he had no access to real Boxers, the duty fell to those Sioux already in Cody’s employ. They were perfect for the role, one New York Sun reporter quipped, as they were “used to dying” in each show. “They die in the cowboy battles about the emigrant wagon, and they die again in the chase of the Deadwood coach,” he wrote. “They made no objection to…dying the death of Boxers this year.” A New York Evening Sun reporter noted, tongue in cheek, “Some of them seemed a little ill at ease in their Chinese makeup, but they kept themselves entirely in the landscape, positively refused to scalp a single member of the allied forces and never even indulged in so much as the ghost of a war whoop.”],
-  [American Indians had long featured in promotions for the Wild West, which urged potential ticket buyers to come see the “horde of warpainted Arapaho, Cheyenne and Sioux Indians” (though after convincing the infamous Hunkpapa Lakota leader Sitting Bull to tour with him in 1885, Cody had hired only Sioux from the Pine Ridge Agency). Why did Plains Indians who had violently resisted “foreign incursion” agree to perform in the Wild West shows? For starters, those working for Buffalo Bill earned a decent wage, while employment prospects on and around the reservations were limited. In addition, room, board and travel were free. Finally, performers’ immediate families were welcome to join them on tour.],
-  [In the actual 1899-1901 Boxer Rebellion namesake Chinese insurgents (pictured above in U. S. captivity) besieged the foreign embassies in Peking (present-day Beijing). In Buffalo Bill’s version of events cowboys costumed as American soldiers retook the city walls from Sioux performers clad in Chinese silks and pin-on braids.],
-  [In the fall of 1900, drawn like so many Americans by the dramatic events in China, Cody proposed to his theatrical manager, Nate Salsbury, that they incorporate a reenactment of the allied victory over the Boxers in the forthcoming season of the Wild West. The pair put their heads together and came up with “The Rescue at Pekin.”],
-  [On April 2, 1901, opening night, they debuted the Chinese-themed spectacle at New York’s Madison Square Garden. After a fortnight’s run Cody took the show on the road, and by the time the season wrapped in late October the troupe had performed in arenas from upstate New York to the South and across much of the Midwest. In 1902, with few changes to the program, Cody and company performed for audiences in the Western half of the country.],
-  [The twice-daily shows were an enormous draw, attracting on average some 20,000 to 30,000 patrons, not counting those turned away at the gate. The audience often exceeded the population of the host cities, as people from surrounding areas packed the stands. The June 4 edition of Pennsylvania’s Reading Herald reported that crowds began to gather in the early morning, by showtime transforming into a “great huddled mass.”],
-  [As the battle between the Boxers and the soldiers marked the grand finale of each performance, Cody and Salsbury spared no expense. “It was indeed an enormous and costly undertaking,” author John R. Haddad writes, “requiring 100 horses, large amounts of gunpowder and explosives, the latest in cannons and firearms, and of course the massive wall of Peking that loomed majestically over one end of the arena.” The cast alone, including the braided Sioux “Boxers,” numbered 500.],
-  [The performance lacked for nothing. Whether it was authentically cast or accurate in every detail was beside the point. Cody and company were, above all else, entertainers, and whether clad in Western buckskins or Chinese silks, they seldom disappointed the huddled masses.],
-  [This article originally appeared in the Spring 2024 issue of Wild West magazine.],
-),
-  inline-pq: pull-quote([, all but ending the American Indian wars.], [David McCormick]),
-  inline-pq-idx: 5,
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [Episode 239: Blank Pages],
   author: [Nate DiMeo],
   source-name: [The Memory Palace],
@@ -77,11 +45,9 @@ And House Tuner Theme from Will Bates' gorgeous score to The Sound of Silence.],
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [An SAS Rescue Mission Mission Gone Wrong],
   author: [Gavin Mortimer],
   source-name: [HistoryNet],
@@ -141,10 +107,8 @@ And House Tuner Theme from Will Bates' gorgeous score to The Sound of Silence.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Is Bridgerton’s Diversity More Than Just Window Dressing?],
   author: [Patricia A. Matthew],
   source-name: [The Literary Hub],
@@ -155,6 +119,7 @@ And House Tuner Theme from Will Bates' gorgeous score to The Sound of Silence.],
   [Of course, the world is full of Black men with this exact, irresistible combination of strength and vulnerability, but it has been mostly missing from Bridgerton . Regé-Jean Page’s Simon Basset in the first season character gets close, but, as his character does in the novels, he disappears after his season, in which his primary purpose was to inspire lust while eating ice cream. Where the Bridgerton men get to struggle with the trials of second sons, and all the white women are afforded a depth of emotion (even terrible Cressida) that makes them sympathetic, Black male characterization has been missing. Will Mondrich (Martins Imhangbe) come close, especially his partnership with his Alice (Emma Naomi), but they have been working their way into the ton.],
   [The characterization of Lady Danbury’s cruel husband, whom we meet in Queen Charlotte: A Bridgerton Story , didn’t sit right with me. I interpreted it as a way to establish that his cruelty physically distorted him, but the portrayal was shockingly grotesque. Performed by the handsome actor Cyril Nyri, his characterization evoked Julius Soubise, an enslaved man brought to England as a “gift” and depicted by the Printmaker William Austin in the etching “The Duchess of Queensberry Playing at Foils with her Favorite Lap Dog Mungo.” It was a relief, then, to meet two Black men in the third season who are kind and depicted as three-dimensional characters and to see their character arcs reach into the fourth.],
   [Along with the introverted Lord Kilmartin (Victor Alli), the last two seasons have given us characters whose interiority is legible to the audience We see them not as stoic wounded men whom women are encouraged to love despite their roughness and arrogance, but as self-possessed men enough at ease with themselves to be vulnerable with the women they love. In both seasons, these lovely Black men are depicted reveling in the strength of Black women even as viewers see them navigate their way towards romantic happiness],
+  [Alongside noting each season’s nod to diversity, there has been a steady critique of what the series glosses over, particularly the oppressive, often violent hierarchies, masked by fashion and sentiment.],
   [These depictions, and their performances, add depth to the series’ embrace of multicultural, diverse casting. The series’ narratives are set by Julia Quinn and concretized by her fans. In an earlier time, before readers fell in love with historical romance novels by Adriana Herrera, Beverly Jenkins, Courtney Milan, and Vanessa Riley, I might have noted that we are stuck in narratives scripted by white women and their imaginations. And, indeed, Quinn’s stories probably are more marketable for a television audience. Within that script, however the showrunners seem to be having a multi-cultural ball and enjoying a range of sexual desire and expression. It has made watching the seasons fun and exasperating at once.],
   [\*],
   [We can see Bridgerton ’s diversity in a few ways. The consistent image is that while all of the characters in the main families are white, one needn’t be white, thin, or heteronormative to be part of that world. The diverse casting of main characters works in different registers. The series has people of color in major and minor roles. Viewers see race and ethnicity, and in some instances, the characters they watch see it too. Anthony Bridgerton (Jonathan Bailey) knows his wife Kathani Sharma (Simone Ashley) is from India (even if the geography of the country is mangled in season). Lady Danbury points to the history of slavery that the series would have us believe has been repaired by the Black ton. With Sophie Baek (Yerin Ha), viewers see a woman of color, but no one in the series seems to notice that she is not white. Benedick’s colorblindness has inspired justified humor as he considers that all the debutants, even the Black ones, might be his mystery woman.],
@@ -164,7 +129,7 @@ And House Tuner Theme from Will Bates' gorgeous score to The Sound of Silence.],
   [I’m sympathetic to these frustrations. At the moment, I’m writing a scholarly monograph that examines the gendered and racialized hierarchies concretized in material culture, portraiture, and literature circulating in the final decades or Britain’s abolitionist project. It will require us to reconsider how we view white women’s participation in the movement.],
   [When I prepared my recent Penguin Deluxe editions of Jane Austen’s Pride and Prejudice and Northanger Abbey , I worked carefully through how to contextualize them in a history that new readers might not understand as part of Austen’s world. I also understand the mixed response sparked by having historical figures and moments represented in popular culture. In this season, Eloise Bridgerton (Claudia Jessie Peyton) and Sophy discuss Maria Edgeworth, a nineteenth-century writer whose writing promoted the importance of women’s education. It’s a moment for the two young women to bond.],
   [While I was pleasantly surprised to hear the name of a thinker I study and teach mentioned in popular culture, I wondered if the writers know that Edgeworth’s thinking about race and slavery was problematic. Even though she included an interracial marriage in the first edition of her novel Belinda , Edgeworth argued for amelioration not abolition, and wrote a short story about white fantasies of cultivating Black submission called “The Grateful Negro.” It’s as terrible as the title suggests. I still paused over the detail and imagined an Edgeworth expert explaining who she is to an audience interested in Eloise’s notions about marriage and women’s rights.],
-  [class="pullquote"\>A nuanced narrative of racial history is not Shondaland’s ministry, and I think we could argue that it never has been. Shondaland is interested in power, class mobility, and the intensity of female friendships.],
+  [A nuanced narrative of racial history is not Shondaland’s ministry, and I think we could argue that it never has been. Shondaland is interested in power, class mobility, and the intensity of female friendships.],
   [The criticisms have almost always made sense to me, and pushing for more is our job as fans and cultural critics. But ultimately, the series is anchored in Quinn’s choices—its white central family, its heterosexual unions. It represents a range of emotions and desire. Bendedick’s bisexuality and the intense connection between Eloise and Penelope; that may be sapphic but is also recognizable as a deep bond many women share. And Franceseca’s bourgeoning desire for John Stirling’s cheeky, irresistible cousin, a man in the novel but a woman (Masali Baduza) in the series promises to push the novels firmly out of heterosexual pairings.],
   [\*],
   [There is much to say about this season beyond the pleasure of watching Lord Anderson and Lord Stirling live and love among the ton. Quinn is an Austen fan, and it shows, but Bridgerton ’s fourth season pays more attention to the servants, to those living below the stairs, than Austen ever would. Yarin Ha’s Sophie is not a housemaid, but her friends are, and this season’s stories brings those below stairs into somewhat sharper focus, seeking love, and, in the case of the Featherington’s housekeeper Mrs. Varley (Lorraine Ashbourne), higher pay. Like most of the series’ royal fantasy, the agency of servants is exaggerated. But Ha’s portrayal is excellent. She gracefully walks a line between disgruntled and hardworking. This is not a happy-in-her-station Cinderella. While this is partly because her father is an earl, the other part of her background honors the fact that her mother was a housemaid.],
@@ -180,10 +145,8 @@ And House Tuner Theme from Will Bates' gorgeous score to The Sound of Silence.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Pittsburgh’s post-steel economy is a success – and a warning for other cities],
   author: [Christopher Briem, Regional Economist, Center for Social and Urban Research, University of Pittsburgh],
   source-name: [The Conversation US],
@@ -219,7 +182,7 @@ And House Tuner Theme from Will Bates' gorgeous score to The Sound of Silence.],
  UCG/Universal Images Group via Getty Images],
   [Again, success is not spread evenly across the region. Where Pittsburgh’s new workers want to live, long-depressed communities , like Lawrenceville and East Liberty, have turned around, but where local amenities are lacking, depressed communities are finding it ever harder to abate decline. Many workers no longer need to live close to their jobs. Location of a major firm or factory is rarely enough to catalyze sustainable and prosperous communities.],
   [It appears we are living in the future foretold by Ben Chinitz and Edgar M. Hoover. The message that workforce is crucial to economic development is now accepted in a way that was once difficult to accept. But workforce advantages, like most competitive advantages that regions have today, are fleeting.],
-  [class="fine-print"\> Christopher Briem does not work for, consult, own shares in or receive funding from any company or organization that would benefit from this article, and has disclosed no relevant affiliations beyond their academic appointment.],
+  [Christopher Briem does not work for, consult, own shares in or receive funding from any company or organization that would benefit from this article, and has disclosed no relevant affiliations beyond their academic appointment.],
 ),
   insert-map: (:),
   inline-pq: pull-quote([Workers and their families value regional amenities, affordability and many other factors that historically had little impact on corporate site selection.], [Christopher Briem, Regional Economist, Center for Social and Urban Research, University of Pittsburgh]),
@@ -229,10 +192,8 @@ And House Tuner Theme from Will Bates' gorgeous score to The Sound of Silence.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Celebrating the Legacy of the Office of Strategic Services 82 Years On],
   author: [Major Nicholas Dockery],
   source-name: [HistoryNet],
@@ -241,17 +202,21 @@ And House Tuner Theme from Will Bates' gorgeous score to The Sound of Silence.],
   [As the United States stood on the brink of World War II, President Franklin D. Roosevelt recognized the urgent need for innovative military strategies to effectively confront the impending global conflict. Observing the unfolding events in Europe, he realized that defeating the Axis powers would require pioneering approaches to warfare. Roosevelt turned to William J. Donovan, a trusted advisor and former informal emissary, to develop a visionary plan for a global intelligence collection agency.],
   [Donovan, a WWI veteran, drafted the “Establishment of Service of Strategic Information,” a detailed document outlining a groundbreaking framework for a centralized intelligence organization to coordinate the entire government and gather essential data for strategic planning. In his plan, Donovan emphasized that “strategy, without reliable information, is helpless. Likewise, information is useless unless intelligently directed toward strategic purposes.”],
   [Impressed by Donovan’s insight, President Roosevelt established the Coordinator of Information (COI)—the nation’s first national intelligence agency. This marked a pivotal moment in US history, as Roosevelt’s foresight and Donovan’s strategic acumen laid the groundwork for creating an entity that would revolutionize how the United States managed conflict during peacetime and war. Operating under the President’s Executive Office, the COI collected and analyzed information crucial to national security.],
+  [Breaking Boundaries: The Transition from COI to OSS],
   [A year later, Donovan presented a transformative proposal to restructure the COI into an organization that included covert and clandestine operations in addition to intelligence gathering. He envisioned a new hybrid organization that would shift warfighting from traditional military tactics to unconventional approaches using sabotage, espionage, guerrilla warfare, and psychological operations. Believing in Donovan’s strategic expertise, President Roosevelt approved the proposal, thus creating the Office of Strategic Services (OSS) on June 13 th , 1942. The OSS would operate under the Joint Chiefs of Staff, a committee of senior military leaders formed during World War II to advise the President and coordinate military efforts.],
   [Under Donovan’s leadership, the OSS bridged the realms of diplomacy, intelligence, and the military. He recruited technology, economics, psychology, and finance experts to provide specialized knowledge to military operations. Donovan firmly believed in a two-pronged strategy: physically attacking the enemy’s military forces and targeting their morale and spirit. The OSS quickly became a hotbed of innovation, employing diverse specialists, including intelligence analysts, linguists, and field operatives.],
   [Inspired by the British Special Operations Executive (SOE), Donovan developed a unique training methodology. He prioritized specialized training for recruits to operate behind enemy lines and carry out sabotage missions. They underwent rigorous training in organizing and supporting guerrilla and partisan resistance forces. At the core of the OSS were the Strategic Services Operations (SSO), consisting of six units, each with its specialized areas of expertise and responsibilities. Notably, units like the Special Operations (SO) and the Operational Group (OG) eventually led to the formation of the twelve-person Operational Detachment-Alpha, commonly known today as the Green Berets.],
+  [From the Shadows to the Waterfront],
   [During Operation Torch, the Allied invasion of French North Africa, the OSS demonstrated its strategic prowess. OSS members infiltrated Vichy French Northwest African territory, gathering vital information about enemy forces and defenses, directly influencing the invasion’s planning. The OSS also established and maintained robust contacts with local resistance groups and the Free French forces, significantly undermining the Axis stronghold in the region. Further, through unconventional warfare, the OSS successfully disrupted enemy activities and diverted resources, hindering Axis forces from mounting an effective defense against the main invasion.],
   [However, Operation Torch also exposed some of the OSS’s shortcomings. They underestimated the resistance from the Vichy French forces, resulting in two days of intense, unexpected fighting. Additionally, they overestimated the disruptive potential of the French resistance against the Axis forces, leading to strategic missteps. Some intelligence provided by the OSS also proved to be incorrect or unreliable, causing further complications in the operation’s planning and execution. Despite these setbacks, the experiences from Operation Torch provided invaluable lessons for future operations, including Operation Jedburgh.],
   [During Operation Jedburgh, a covert operation involving clandestine activities, the OSS provided personnel, equipment, and training to three-man teams. These teams were airdropped into occupied Europe, primarily focusing on France, to disrupt German military operations, gather intelligence, and support the larger Allied campaign. Consisting of a commander, an executive officer, and a radio operator, they played a pivotal role in leading local resistance movements against the Germans and carrying out acts of sabotage and guerrilla warfare. Notably, one team member always possessed fluency in the local language, ensuring effective communication and coordination with regional allies.],
   [In addition to providing personnel and training, the OSS handled logistics, the deployment of the teams, and the ongoing supply drops. Much like in Operation Torch, the effectiveness of the teams in Operation Jedburgh varied. They successfully disrupted German communications and logistics in some regions, significantly undermining the German response to the Allied invasion. However, German countermeasures, geography, and local conditions made their efforts less effective in other areas. Nevertheless, Operation Jedburgh showcased the potential of unconventional warfare and marked a successful collaboration between the OSS, the SOE, and the Free French.],
   [The adaptability of OSS allowed them to operate in vastly different terrains. During Operation Greenup, OSS agents undertook a perilous mission to infiltrate enemy lines in the dangerous terrain of the Austrian Alps. Operatives navigated treacherous mountain passes and evaded enemy detection to gather intelligence on a secret Nazi Alpine fortress. This daring operation showcased the OSS agents’ courage and resilience as they operated deep within enemy territory, collecting critical information to support the Allies. Similarly, in the dense jungles of Burma, OSS’s Detachment 101 waged a relentless guerrilla war against the Japanese occupation. Working closely with local resistance groups, they disrupted enemy supply lines and executed devastating hit-and-run attacks. Simultaneously, they gathered vital intelligence that furthered the Allied cause.],
+  [Inspiring Psyops and FSSF in World War II],
   [Beyond the operational successes, the OSS was an inspiration and model for various special units during World War II. In March 1942, General George Marshall, the US Army Chief of Staff, approved Project Plough, an operation to drop commandos by parachute into Nazi-occupied Norway to carry out covert operations. Subsequently, on July 9th, 1942, the First Special Serves Forces (FSSF) was officially established, bringing together units from the US and Canada. Their training and operations were similar to those of the OSS, employing similar skills and tactics. After careful evaluation, military leaders determined that the anticipated benefits of the mission were outweighed by the potential dangers, leading to its cancellation. Instead, the FSSF deployed to the Aleutian Islands campaign, fighting against the Japanese forces occupying the islands.],
   [Following their involvement in the Aleutian Islands campaign, the FSSF deployed to Italy, actively participating in several military campaigns crucial to the Allies’ efforts. Their courage and combat effectiveness earned them the nickname ‘The Devil’s Brigade.’ The FSSF made significant contributions to the liberation of Southern France, showcasing their ability to undertake complex operations and support the overall Allied efforts.],
   [General Dwight D. Eisenhower recognized the pivotal role of psychological warfare in the European campaign and appointed Brigadier General Robert Alexis McClure to lead the Information and Censorship Section (INC) within the Allied Forces headquarters as the war reached a critical phase. The INC’s role aligned more with the analytical and strategic planning branches of the OSS, which compiled and processed intelligence to support strategic decision-making. McClure used military personnel and civilians from the OSS and the British Political Warfare Executive to employ propaganda, misinformation, and other psychological techniques to manipulate enemy combatants’ and civilian populations’ perceptions and attitudes. In 1944, Eisenhower tasked McClure with establishing the Psychological Warfare Division of the Supreme Headquarters, Allied Expeditionary Force (PWD/SHAEF), to meet the evolving needs of theater commands in the dynamic and volatile landscape of the war.],
+  [The Disbandment of the OSS and FSSF in Post-War Reorganization],
   [In January 1945, during the Battle of the Bulge and as Allied forces gained ground on the Eastern flank, Senior officials decided to disband the FSSF in Southern France. The FSSF played a commendable role across various theaters, but leaders no longer deemed their specialized services necessary as the war neared its final stages. The surrender of Nazi Germany on May 7th, 1945, marked the end of World War II in the European theater. Throughout the conflict, the OSS adapted remarkably to meet the evolving demands of theater commands. After the war, the OSS disbanded to streamline and optimize intelligence operations in the post-war era, splitting to form the Central Intelligence Agency (CIA) and the Department of State’s Bureau of Intelligence and Research.],
   [In the subsequent years, McClure advocated for creating the Office of the Chief of Psychological Warfare (OCPW) to continue unconventional warfare as a potential European invasion by the Soviets loomed. He appointed Colonel Aaron Bank, a former OSS member, as the Operations Branch Chief of the Pentagon’s OCPW. Bank, following in the footsteps of Donovan, went on to create Special Forces. He recruited veterans from the Philippine guerrillas, the FSSF, and the OGs of the OSS. Individuals such as former Philippine guerrilla commanders Colonel Wendell Fertig and Lieutenant Colonel Russell W. Volkmann played pivotal roles in developing the doctrine of unconventional warfare, which became the cornerstone of US Special Forces.],
   [Donovan’s OSS has left a lasting legacy in the special operations and intelligence communities. Today, entities such as Psyops, the Green Berets, and CIA operatives can all trace their roots back to the OSS. The OSS’s innovative approaches to psychological warfare, intelligence gathering, and unorthodox tactics during WWII laid the foundational framework of modern US Special Operations.],
@@ -264,10 +229,8 @@ And House Tuner Theme from Will Bates' gorgeous score to The Sound of Silence.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Oscar Wilde Bothered and Bewildered Westerners While Touring to Promote Gilbert and Sullivan],
   author: [Preston Lewis],
   source-name: [HistoryNet],
@@ -281,6 +244,7 @@ the principles of aestheticism, they might lay the groundwork for an American to
   [Among the skeptics, dramatist W. S. Gilbert and composer Arthur Sullivan parodied the aesthetes with a “fleshly poet” named Reginald Bunthorne, the lead character of their 1881 comic opera Patience —the follow-up to their hit comic operas H. M. S. Pinafore and The Pirates of Penzance . On the back of the duo’s latest success, their producer, Richard D’Oyly Carte, decided to take Patience across the pond to North America. Doubting that Americans would understand the play’s satire, Carte sought an “advance poster” of aestheticism to promote it. Wilde was the natural choice, as Carte was already serving as the poet’s booking manager.],
   [Likely massaging Wilde’s ego with a suggestion his poetry was also popular in the United States, Carte persuaded the Irishman to assume the mantle of the fictional Englishman Bunthorne for a lecture tour. The clincher was Carte’s offer of half the net profits.],
   [What Wilde excelled at most in his young adulthood was self-adoration and self-promotion, often erasing the line between fame and notoriety. When he arrived in New York, the young nation’s biggest celebrity was dime novel hero Buffalo Bill. By the time the aesthete returned to Britain, Wilde—if not eclipsing the future Wild West showman as a household name—had certainly drawn more news coverage than William F. Cody. At very least Wilde was the first celebrity who became famous merely for being famous, launching the superficial celebrity culture that permeates American popular culture to this day.],
+  [“lord of the lah-de-dah”],
   [Wilde stood 3 inches over 6 feet. Protruding from his elongated, colorless face was a prominent nose over coarse lips that sheltered greenish-hued teeth, discolored from too many Turkish cigarettes and too few toothbrushes. His thick eyebrows shaded attentive eyes, and a long mop of tawny brown hair brushed against his shoulders. “He looks better in the dark, perhaps” quipped one St. Louis journalist. A portrait of Wilde printed in the competing Leavenworth Times prompted Kansas’ Emporia Daily News to observe, “If it is anything like correct, there will be no chance for Oscar to get a wife in this neck of the woods.”],
   [What Wilde lacked in looks, he made up for with a voguish wardrobe that ranged from dark formal suits to gaudy shirts and cravats in vibrant purples, greens and yellows. For his first appearance west of the Mississippi he chose a more subdued outfit, his trademark knee britches in black over black silk stockings and patent leather pumps with large silver buckles. Above that he wore a white shirt and white waistcoat topped with a long-tailed black coat and white kid gloves.],
   [His presentations, though, were neither as bright nor as entertaining as his attire. Wilde read his speeches in a monotone voice with a verbal quirk accentuating every fourth syllable. In advance of his February tour date in St. Louis the Globe-Democrat reported, “Curiosity to see Oscar Wilde is greater than to hear him.” Following his lecture there to an audience of 1,500 a subhead in the paper’s coverage pronounced, A Large and Fashionable Audience Bored by His Talk on Art. The reporter, like many other Western newsmen, christened Wilde “the lord of the lah-de-dah.” Others just labeled him an “ass-thete.”],
@@ -288,12 +252,14 @@ the principles of aestheticism, they might lay the groundwork for an American to
   [After nine days in California, during which he stayed in San Francisco’s luxurious Palace Hotel, Wilde headed back east, stopping first in Salt Lake City, where a Herald reporter attended his lecture and penned a scathing review:],
   [“What is the attraction about this strange specimen of humanity? Oscar is not handsome and is strikingly awkward; as an elocutionist he violates every rule of rhetoric and is painfully dreary in his manner of expression.…Only in the matters of exhibiting decidedly vulgar front teeth and displaying an abundance of not even wavy hair is he a success.”],
   [Wilde then moved on to Denver, Leadville, Colorado Springs, Kansas City, St. Joseph, Topeka, Lawrence, Atchison and Lincoln before wrapping up on April 29 with a whirlwind tour of five Iowa communities. In June he returned west for appearances in Fort Worth, Galveston, Houston and San Antonio. By the time he ended his Texas swing, Wilde had cleared \$5,605, or nearly \$170,000 in present-day dollars. That total did not include the money he personally charged admirers to attend their local functions.],
+  [Puzzling the Press],
   [Wherever he went, Wilde made time for newspaper reporters, receiving them in his hotel suite after they had properly provided their calling card to his manservant. Describing his audience with the apostle of aestheticism, a San Antonio Light reporter “found Mr. Wilde taking the world easy in his room at the Menger; he was dressed in drab velvet jacket, blue tie, white waistcoat, light drab trousers, scarlet stockings and slippers. A table covered with books, a lemonade—with a stick in it—and a huge bunch of mammoth cigarettes made up the array that confronted our aesthetic reporter.”],
   [Wilde flattered reporters to their faces and then demeaned them behind their backs, prompting Tucson’s Arizona Daily Star to observe, “The average reporter may not have a very exalted idea of art, but he knows human nature too well to stick himself in knee breeches and call it brains instead of brass.” In the end, Wilde and the press used each other—the aesthete to enhance the fame he craved, the reporters to sell papers.],
   [Audiences either revered Wilde for his intellect, even if they didn’t understand it, or ridiculed him for his eccentricities. “Oscar Wilde, the apostle of the beautiful, is here,” The Topeka Daily Capital gushed, “and there is no doubt that he will have a full house. Topeka is essentially aesthetic, and to hear the great exponent of true culture is an opportunity which may never occur again.” Nebraska’s North Bend Bulletin was considerably less flattering in its report of the lecturer’s forthcoming stop in nearby Fremont: “Oscar Wilde is coming. It’s just awful.”],
   [American journalists delighted in sending up Wilde. This spoof from the humor magazine Puck of the “apostle of aestheticism” and fellow believers is laden with sunflowers and lilies, which Wilde called “the most perfect models of design.” Florists on his tour route ran out of both flowers.],
   [Besides his dry, droll delivery, Wilde’s standard topics on art and beauty seldom resonated with people scratching a living from the earth. For instance, as decorative flourishes in the home the aesthete recommended tiny porcelain cups over their heavier crockery cousins—this to listeners who set tables with often little more than tinware. Further, he prescribed tiled, not carpeted, floors; porcelain, not cast-iron, stoves; and wainscoting, not papered walls. Such advice might have had greater application east of the Mississippi, but out West, to people living in adobe jacals or log cabins, it lacked pertinence.],
   [Less forgivable was lord lah-de-dah’s condescension toward people unable to broaden his fame and wealth, conduct that grated on Western sensibilities. “Oscar Wilde was more bother than all the women who ever rode in a railroad car,” one Chicago-based train conductor recalled. “He had an idea that he was the greatest man America had ever seen.…He was the vainest, most conceited mule I ever saw. He wouldn’t drink water out of the glass at the cooler, but sipped it out of a silver and gold mug he carried with him.”],
+  [High Times in Leadville],
   [Wilde’s impromptu April 13 visit to Leadville, Colo., endured as the most colorful of the aesthete’s stops across America. Though it was not on his original itinerary, Wilde squeezed in an appearance between lectures in Denver and Colorado Springs after no less a figure than Lt. Gov. Horace A. W. Tabor, the “ Bonanza King of Leadville ,” offered the poet a tour of his Matchless silver mine.],
   [Wilde recalled the silver boomtown as “the richest city in the world…\[with\] the reputation of being the roughest, and every man carries a revolver. I was told that if I went there, they would be sure to shoot me or my traveling manager. I wrote and told them that nothing they could do to my traveling manager would intimidate me.”],
   [When he reached Leadville (elev. 10,158 feet) after a bumpy 150-mile, six-hour train ride, he felt understandably lightheaded, nauseous and short of breath. A doctor called to his Clarendon Hotel suite identified his malady as “a case of light air,” or altitude sickness as it is known today. The doctor prescribed medicine and rest while Leadville anticipated his appearance.],
@@ -310,6 +276,7 @@ my apostolic task would be much simplified.”],
   [This period illustration of Tabor’s Matchless silver mine presents a scene hardly suited to the sensibilities of an aesthete. Yet, Wilde seemed to enjoy his venture underground swapping whiskey shots with miners. During his 50-day tour of the West, however, newspapers and the poet swapped more insults than accolades.],
   [From Wyman’s the mayor had the party loaded in wagons and driven 2 miles to the Matchless, where mine superintendent Charles Pishon accompanied Wilde down shaft No. 3 in a metal ore bucket lowered 100 feet into the pitch black by a cable-and-pulley system. A dozen miners greeted their guest, showing Wilde silver in its natural state and letting him drill the start of a new shaft they dubbed “The Oscar.” Quipped Wilde, “I had hope that in their grand, simple way they would have offered me shares in ‘The Oscar,’ but in their artless, untutored fashion they did not.”],
   [The mining soiree ended with an early morning supper, Wilde wrote tongue in cheek, “the first course whiskey, the second whiskey and the third whiskey.” By the time those gathered had emptied all the bottles, their foppish guest had impressed his hosts for his ability to hold liquor without any visible signs of inebriation. Finally re-emerging from the mine, Wilde returned to the hotel for a brief rest before boarding a train to Colorado Springs to deliver a speech just 14 hours later. He was no worse for the wear.],
+  [Heading for Home],
   [On writing about his experiences out West, Wilde largely mocked the “barbarians” he had striven to enlighten. “Infinitesimal did I find the knowledge of art west of the Rocky Mountains,” he recalled, illustrating his criticism with the story of a miner who had struck wealth beyond his education and turned to culture to flaunt his riches. After ordering a replica of the Venus de Milo from Paris, Wilde wrote, the nouveau riche miner “actually sued the railroad company for damages because the plaster cast…had been delivered minus the arms. And, what is more surprising still, he gained his case and the damages.”],
   [Americans likewise found fault with Wilde as he prepared to leave the States that December. Wrote one acquaintance, “He is guilty of all sorts of petty meanness, such as perpetually begging cigarettes from acquaintances and never offering any himself; eating dinners with indefatigable industry at other people’s expense, sneaking out of paying cab fares; and ‘working’ his friends shamelessly for whatever he can get out of them.”],
   [Yet, for all his snobbery, Wilde still found a noble quality among the Westerners, observing, “The West has kept itself free and independent, while the East has been caught and spoiled with many of the flirting follies of Europe.”],
@@ -323,10 +290,8 @@ my apostolic task would be much simplified.”],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [From ‘Project Hail Mary’ to Artemis II, spaceflight captures audiences when it centers on people because human space travel is hazardous],
   author: [Scott Solomon, Teaching Professor of BioSciences, Rice University],
   source-name: [The Conversation US],
@@ -365,6 +330,7 @@ my apostolic task would be much simplified.”],
   [Sending robots to space avoids having to deal with risks to human health. But there are downsides. Not only do robotic space missions have fewer capabilities than crewed missions , they often fail to capture interest and imagination and demonstrate national prestige in the same way that human missions can.],
   [The four members of the Artemis crew will captivate people worldwide watching their daring mission around the Moon , much like moviegoers root for Ryan Gosling’s character in “Project Hail Mary” as he boldly seeks to save humanity from certain doom on the big screen.],
   [That human interest is the common link that ties together public and private space ambitions worldwide. While robotic missions are more practical and cost effective, they simply don’t inspire the masses the way a human crew can. Beyond achieving any economic, political or scientific goals, space exploration is ultimately about people doing difficult things .],
+  [I am the author of the book Becoming Martian published by MIT Press],
 ),
   insert-map: (:),
   word-count: 1276,
@@ -372,10 +338,8 @@ my apostolic task would be much simplified.”],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Irrational decision or helpful evolutionary adaptation? A philosopher on the rationality wars behind ‘nudge’ policy],
   author: [Alejandro Hortal-Sánchez, Visiting Assistant Professor of Philosophy, Wake Forest University; University of North Carolina – Greensboro],
   source-name: [The Conversation US],
@@ -414,7 +378,7 @@ my apostolic task would be much simplified.”],
   [Forgetting this carries a cost: We risk drawing overly narrow conclusions – about human behavior, intelligence or public policy – by mistaking the limits of a single framework for the limits of human rationality itself.],
   [Seen this way, fear of rare brain-eating amoebas, of flying, or of tap water is not simply a failure of reason. Such reactions may appear irrational under one standard yet reflect a form of rationality adapted to uncertainty, vivid impressions and limited information.],
   [What ultimately matters is not labeling people as rational or irrational, but being explicit about which conception of rationality is at work – and why. That choice, in turn, shapes whether public policy aims to nudge behavior, educate citizens or redesign environments so that human reasoning can operate at its best.],
-  [class="fine-print"\> Alejandro Hortal-Sánchez does not work for, consult, own shares in or receive funding from any company or organization that would benefit from this article, and has disclosed no relevant affiliations beyond their academic appointment.],
+  [Alejandro Hortal-Sánchez does not work for, consult, own shares in or receive funding from any company or organization that would benefit from this article, and has disclosed no relevant affiliations beyond their academic appointment.],
 ),
   insert-map: (:),
   word-count: 1153,
@@ -422,10 +386,8 @@ my apostolic task would be much simplified.”],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Every One Still Here],
   author: [Aea Varfis-van Warmelo],
   source-name: [Granta],
@@ -470,10 +432,8 @@ my apostolic task would be much simplified.”],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Vagus nerve stimulation shows promise as a way to counter Alzheimer’s disease- and age-related memory loss],
   author: [Elizabeth Riley, Lecturer in Psychology, Cornell University],
   source-name: [The Conversation US],
@@ -510,6 +470,7 @@ my apostolic task would be much simplified.”],
   [A handful of studies have found that vagus nerve stimulation can prevent memory from worsening , or even improve it, in people with mild cognitive impairment or in the early stages of Alzheimer’s disease. One trial of 52 people ages 55 to 75 who were diagnosed with mild cognitive impairment reported meaningful improvements in memory and overall cognition after getting vagus nerve stimulation for an hour per day, five days a week for about six months.],
   [Research in healthy adults around age 60 – and in healthy adults age 18 to 25 – has even reported improvements in different aspects of memory after just one session of vagus nerve stimulation.],
   [This work is still very preliminary, but it offers hope for a new way of keeping some of the distressing symptoms of Alzheimer’s disease and aging at bay.],
+  [Elizabeth Riley receives funding from the National Institute on Aging.],
 ),
   insert-map: (:),
   word-count: 1085,
@@ -517,10 +478,8 @@ my apostolic task would be much simplified.”],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Cameras have quietly appeared in thousands of US cities – now, their integration with AI is sounding alarms],
   author: [Jess Reia, Assistant Professor of Data Science, University of Virginia],
   source-name: [The Conversation US],
@@ -569,25 +528,25 @@ my apostolic task would be much simplified.”],
   [Meanwhile, grassroots initiatives such as DeFlock have also emerged.],
   [DeFlock’s online platform documents the spread of automatic license plate reader networks in order to help communities resist their deployment . The movement frames these systems not merely as traffic technologies, but also as linchpins of an expanding government data dragnet – one that demands stronger democratic oversight and community consent.],
   [This article has been updated to include a statement from Flock Safety.],
+  [Jess Reia receives funding from the Carnegie Corporation of New York. They are affiliated with the UVA Digital Technology for Democracy Lab.],
 ),
   insert-map: (:),
   inline-pq: pull-quote([License plate readers can easily be accessed or repurposed beyond their original goals of managing traffic, meting out fines or catching fugitives.], [Jess Reia, Assistant Professor of Data Science, University of Virginia]),
-  inline-pq-idx: 16,
+  inline-pq-idx: 17,
   word-count: 1210,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Potato Gnocchi],
   author: [Melissa Nolan],
   source-name: [Budget Bytes],
   images: (),
   paragraphs: (
   [Gnocchi is truly an art. It can seem intimidating at first, but with the right mindset and a little intuition, this Potato Gnocchi turns into a delicious dish. The actual recipe is just four simple ingredients that result in a breathtakingly delicate yet intricate meal. If you’ve shied away from making these potato-based dumplings in the past, let me walk you through it. The result is absolutely worth it—homemade soft pillowy gnocchi can not even compare to store-bought.],
+  [Easy potato gnocchi Recipe],
   [This potato gnocchi recipe starts with baked potatoes , soft and fluffy inside, the skins removed, gently mixed with salt and egg yolks. Then the flour gets added gradually until the dough feels soft, light, and just a bit tacky, but never sticky. You’ll have to use your instincts here to make sure you have the right texture. The fun part is next, where you roll the dough into ropes and cut them into perfect “knuckles” (that’s what gnocchi actually means!). Then I suggest you boil them, drain them, and sear those perfect pillows of gnocchi in butter.],
   [Though there are different ways to make these pasta-like dumplings, whether you want to add ricotta, like in our easy ricotta gnocchi , or follow this method with egg yolks, you’ll find there are just as many ways to eat them as there are to prepare them. I am keeping it simple here with just a quick pan fry, but you can definitely dress them up with your favorite marinara sauce .],
   [Bake the potatoes instead of boiling. Baking helps prevent the potatoes from absorbing excess water. If you do decide to boil them, start them in cold water and cook them whole and unpeeled to help reduce moisture absorption.],
@@ -598,16 +557,38 @@ my apostolic task would be much simplified.”],
   [If you skip the searing . They can go right from the boiling water into the warmed pasta sauce of your choice.],
   [Print 
  Add to Collection Go to Collections],
-  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\> When they have cooled enough to handle but are still warm, peel the skin or scoop out the insides of the potatoes and place them in a bowl. I got 2½ cups of cooked potatoes. (You can season, oil, and air-fry the skins for a snack)],
-  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\>Add the remaining flour. Use your hands and continue to work it into the potatoes until they are no longer sticky or wet. Add a dusting of flour if needed. Be careful not to overwork.],
-  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\> Lightly dust your counter with flour and place the dough on the surface. Knead the dough for one minute, incorporating a dusting of flour if it is sticking.],
-  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\> Lightly flour your hands. Gently, but firmly, pinch each piece of gnocchi, then roll it on the back of a fork to create grooves. Continue until all they are all shaped, placing them on a floured tray.],
-  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\> Bring a medium pot of water to a boil. Once at a boil, gently place the gnocchi in the pot. Make sure not to overcrowd, and work in batches if needed. After 2 minutes, they will begin to float. Once they begin to float, they are cooked and should be removed promptly. Avoid overcooking them in the water because they will turn mushy. Using a slotted spoon, remove them and place them on paper towels to drain. Continue cooking until all the gnocchi are done.],
-  [class="wprm-recipe-instruction-text" style="margin-bottom: 5px;"\> Melt 1 Tbsp butter in a medium skillet over medium heat. Once melted and hot (the butter should be almost browning), place half the gnocchi in a single layer in the pan. Cook undisturbed for 3 minutes, until they are crispy and brown. Using tongs, flip, and continue cooking for another 3 minutes. Continue with the remaining tablespoon of butter and gnocchi.],
+  [This homemade Potato Gnocchi is easy to make with potatoes, flour, egg yolks, and salt. Soft, pillowy, and pan-seared in a touch of butter, they are delicious.],
+  [Total Cost \$2.04 total/\$0.68 per serving],
+  [Prep Time 30 minutes minutes],
+  [Cook Time 1 hour hour 15 minutes minutes],
+  [Total Time 1 hour hour 45 minutes minutes],
+  [Servings 3 servings (about 25 pieces each)],
+  [Calories 398 kcal],
+  [Potato Masher (or Ricer or Fork)],
+  [1½ lb. russet potatoes washed, (about 2 potatoes, 670g) \$1.30\*],
+  [2 egg yolks \$0.33],
+  [1 tsp salt \$0.04],
+  [¾ cup all-purpose flour plus more for dusting, (130g) \$0.14\*\*],
+  [2 Tbsp butter \$0.23],
+  [Gather and prepare all ingredients. Preheat the oven to 400°F.],
+  [Pierce the potatoes with a fork and place them on a parchment-lined sheet tray. Bake for 1 hour until fork-tender.],
+  [When they have cooled enough to handle but are still warm, peel the skin or scoop out the insides of the potatoes and place them in a bowl. I got 2½ cups of cooked potatoes. (You can season, oil, and air-fry the skins for a snack)],
+  [Using a ricer, potato masher, or fork, mash the potatoes until smooth so there are no lumps.],
+  [Add the yolks and salt. Using a fork, combine.],
+  [Sprinkle in ½ cup of flour. Using the fork, mix the flour into the potatoes.],
+  [Add the remaining flour. Use your hands and continue to work it into the potatoes until they are no longer sticky or wet. Add a dusting of flour if needed. Be careful not to overwork.],
+  [Lightly dust your counter with flour and place the dough on the surface. Knead the dough for one minute, incorporating a dusting of flour if it is sticking.],
+  [Divide the dough into quarters and let the dough rest for 10 minutes.],
+  [Roll each dough quarter into a rope, about ½-inch to ¾-inch thick. Add more flour if the dough is sticking.],
+  [Using a butter knife or bench scraper, cut the ropes into ¾-inch pieces.],
+  [Lightly flour your hands. Gently, but firmly, pinch each piece of gnocchi, then roll it on the back of a fork to create grooves. Continue until all they are all shaped, placing them on a floured tray.],
+  [Bring a medium pot of water to a boil. Once at a boil, gently place the gnocchi in the pot. Make sure not to overcrowd, and work in batches if needed. After 2 minutes, they will begin to float. Once they begin to float, they are cooked and should be removed promptly. Avoid overcooking them in the water because they will turn mushy. Using a slotted spoon, remove them and place them on paper towels to drain. Continue cooking until all the gnocchi are done.],
+  [Melt 1 Tbsp butter in a medium skillet over medium heat. Once melted and hot (the butter should be almost browning), place half the gnocchi in a single layer in the pan. Cook undisturbed for 3 minutes, until they are crispy and brown. Using tongs, flip, and continue cooking for another 3 minutes. Continue with the remaining tablespoon of butter and gnocchi.],
   [See how we calculate recipe costs here .],
-  [class="wprm-recipe-notes"\> \* Russet potatoes are best for potato gnocchi because of their low moisture content. You could also use Yukon Gold, but avoid waxy potatoes like red bliss, fingerling potatoes, and new potatoes. Waxy potatoes tend to lead to a heavy, gluey texture.],
+  [\* Russet potatoes are best for potato gnocchi because of their low moisture content. You could also use Yukon Gold, but avoid waxy potatoes like red bliss, fingerling potatoes, and new potatoes. Waxy potatoes tend to lead to a heavy, gluey texture.],
   [\*\*There are numerous variables when it comes to the amount of flour you need. (Ex: How much moisture is in the potatoes? How big are the potatoes? How big are the egg yolks? How humid is the kitchen?) You will need to add a little bit of flour at a time to achieve the right texture. The dough should be soft, light, and slightly tacky, but not sticky.],
-  [class="wprm-nutrition-label-container wprm-nutrition-label-container-simple wprm-block-text-normal" style="text-align: left;"\> Serving: 1 serving (about 25 pieces) | Calories: 398 kcal | Carbohydrates: 65 g | Protein: 10 g | Fat: 11 g | Sodium: 853 mg | Fiber: 4 g],
+  [Serving: 1 serving (about 25 pieces) | Calories: 398 kcal | Carbohydrates: 65 g | Protein: 10 g | Fat: 11 g | Sodium: 853 mg | Fiber: 4 g],
+  [how to make Potato Gnocchi step- by-step photos],
   [Gather and prepare all ingredients. Preheat the oven to 400°F.],
   [Bake the potatoes : Pierce 1½ lb. russet potatoes (about 2 potatoes) with a fork and place them on a parchment-lined sheet tray. Bake for 1 hour until fork-tender.],
   [Peel the potatoes: When the potatoes are cool enough to handle, but still warm, peel the skin or scoop out the insides and place them in a bowl. I got 2½ cups of cooked potatoes. (Save the skins—you can season, oil, and air-fry them for a snack.)],
@@ -624,9 +605,12 @@ my apostolic task would be much simplified.”],
   [Using a slotted spoon, remove gnocchi from the water and place them on paper towels to drain. Continue cooking in batches until all are done.],
   [Sear in a skillet: Melt 1 Tbsp butter in a medium skillet over medium heat. Once melted and hot, the butter should be almost browning. Place half the gnocchi in a single layer in the pan. Let them cook, undisturbed, for 3 minutes, until they are crispy and brown. Using tongs, flip, and continue cooking for another 3 minutes. Continue with the remaining tablespoon of butter and gnocchi.],
   [Serve: Serve as is or enjoy with vodka sauce or kale pesto!],
+  [serving suggestions],
   [To start my meal, I usually make a Caesar salad . And, because these potato gnocchi require hands-on time, these Southern slow cooker green beans are ideal as a side, as they cook while I am busy preparing the pasta. Garlic bread also makes a nice side.],
+  [Storage and Reheating],
   [You can store leftover gnocchi in an airtight container in the refrigerator for up to 3 days. Sauté leftovers in butter to reheat.],
   [You can also freeze uncooked gnocchi by flash-freezing them in a single layer on a tray before bagging them. Store up to 3 months. You can then boil the frozen, uncooked pasta straight from the freezer without thawing.],
+  [More Potato-Based Recipes To Try],
   [This Herb Potato Salad features tender baby potatoes, a light and zesty lemon-Dijon vinaigrette, and a healthy dose of fresh herbs.],
   [These Twice Baked Potatoes are deconstructed and then reconstructed with bacon, sour cream, and cheese so each bite explodes with flavor.],
   [German Potato Salad is my go-to when I’m craving potato salad but looking for something on the lighter side.],
@@ -642,11 +626,10 @@ my apostolic task would be much simplified.”],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Nate's Favorite Episode of the Year: Emma and the Trail],
   author: [Nate DiMeo],
   source-name: [The Memory Palace],
@@ -674,7 +657,7 @@ There's a ton written about Emma Rowena Gatewood but so much of it, including th
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Episode 233: Nan + Warren],
   author: [Nate DiMeo],
   source-name: [The Memory Palace],
@@ -702,7 +685,7 @@ You can read The President's Daughter here .],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Episode 79: Artist in Landscape],
   author: [Nate DiMeo],
   source-name: [The Memory Palace],
@@ -730,7 +713,7 @@ You can read The President's Daughter here .],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Episode 231: On Dexter Avenue],
   author: [Nate DiMeo],
   source-name: [The Memory Palace],
@@ -754,7 +737,7 @@ You might want to check out Caroline Janney's book, Burying the Dead but Not the
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Episode 101 (Promise)],
   author: [The Memory Palace],
   source-name: [The Memory Palace],
@@ -780,7 +763,7 @@ You might want to check out Caroline Janney's book, Burying the Dead but Not the
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [From the Vault: A Special Mother's Day Re-Run],
   author: [The Memory Palace],
   source-name: [The Memory Palace],
@@ -800,18 +783,18 @@ You might want to check out Caroline Janney's book, Burying the Dead but Not the
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Notes from February 2026],
   author: [Evan Hahn],
   source-name: [Evan Hahn],
   images: (),
   paragraphs: (
   [Things I did and saw this February.],
-  [id="things-i-made"\>Things I made],
+  [Things I made],
   [I shipped my first feature at Ghost: Inbox Links . When a member enters their email to log in or sign up, we now show a button that takes them straight to their inbox. In addition to shipping a neat feature, I also enjoyed learning about MX records and RFC-compliant email address parsing. The source code for the main logic is here .],
   [I was surprised to learn that gzip streams encode which operating system did the compression. I built a little tool, “gzpeek”, to inspect this metadata (and more).],
   [The 40th anniversary of the original Legend of Zelda was this month, and I wanted a calendar feed for other game anniversaries, so I made one . Oracle of Ages and Oracle of Seasons just turned 25 yesterday! Speaking of, I wrote a few articles for Zelda Dungeon as usual.],
-  [id="cool-links-from-online"\>Cool links from online],
+  [Cool links from online],
   [An incredible stunt: a game written in HTML and CSS . “No JavaScript or server-side code is used.”],
   [Best description of LLMs I’ve seen so far: “When you enter text into \[ChatGPT\], you’re asking ‘What would a response to this sound like?’”],
   [Seems like it’s better for your programming career to be bullish on AI, according to “AI skepticism is a quiet career killer” .],
@@ -832,7 +815,7 @@ You might want to check out Caroline Janney's book, Burying the Dead but Not the
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Episode 80 (Shore Leave)],
   author: [The Memory Palace],
   source-name: [The Memory Palace],
@@ -853,7 +836,7 @@ You might want to check out Caroline Janney's book, Burying the Dead but Not the
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Episode 90: A White Horse],
   author: [Nate DiMeo],
   source-name: [The Memory Palace],
@@ -884,7 +867,7 @@ You might want to check out Caroline Janney's book, Burying the Dead but Not the
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Two Small Sculptures (The Met Residency Episode 8)],
   author: [The Memory Palace],
   source-name: [The Memory Palace],
@@ -908,7 +891,7 @@ You might want to check out Caroline Janney's book, Burying the Dead but Not the
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Jai Courtney’s Underrated Shark Horror Movie Out on Hulu Today],
   author: [Maggie Dela Paz],
   source-name: [ComingSoon.net],
@@ -916,6 +899,7 @@ You might want to check out Caroline Janney's book, Burying the Dead but Not the
   paragraphs: (
   [(Photo Credit: IFC)],
   [Independent Film Company’s acclaimed creature feature starring Suicide Squad’s Jai Courtney has finally found a new streaming home, nearly a year after it had its world premiere at the 2025 Cannes Film Festival’s Directors’ Fortnight section. As of today, Courtney’s survival horror movie Dangerous Animals is now officially streaming on Hulu.],
+  [What do we know about Jai Courtney’s Dangerous Animals?],
   [In Dangerous Animals, Courtney plays the role of a serial killer who uses sharks to kill his victims. The cast also included Hassie Harrison, Josh Heuston, Rob Carlton, Ella Newton, James Munn, Michael Goldman, Jon Quested, Liam Greinke, and more. Since its debut, the movie has received a Certified Fresh rating of 87% on Rotten Tomatoes , based on 181 reviews.],
   [“When Zephyr, a rebellious surfer, is abducted by a shark-obsessed serial killer and held captive on his boat, she must figure out how to escape before he carries out a ritualistic feeding to the sharks below,” reads the official synopsis.],
   [The 2025 film was directed by Sean Byrne from a screenplay written by Nick Lepard. The film was executive produced by Fred Berger, Michael Glassman, Mehrdod Heydari, Marlaina Mah, Jacob Yakob, and Joseph Yakob. Producers were Chris Ferguson, Brian Kavanaugh-Jones, Mickey Liddell, Troy Lum, Andrew Mason, and Pete Shilaimon.],
@@ -930,7 +914,7 @@ You might want to check out Caroline Janney's book, Burying the Dead but Not the
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [episode 76: Mary Walker Would Wear what she Wanted],
   author: [Nate DiMeo],
   source-name: [The Memory Palace],
@@ -957,8 +941,7 @@ You might want to check out Caroline Janney's book, Burying the Dead but Not the
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Episode 222: Ferminia Sarras],
   author: [Nate DiMeo],
   source-name: [The Memory Palace],
@@ -975,12 +958,10 @@ The definitive source on Ferminia Sarras (as far as definitive can be in her cas
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia , a collective of independently owned and operated podcasts.
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([The Memory Palace], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia , a collective of independently owned and operated podcasts.
 
  Music 
 
@@ -995,7 +976,7 @@ We listen to two versions of Trying Something Again, Again by our friends in Lul
 And go out on Jaybird , by Charlie Parr
 
 Learn about your ad choices: dovetail.prx.org/ad-choices])],
-    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia. 
+  [#brief-item([The Memory Palace], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia. 
 
  Music 
 
@@ -1018,7 +999,7 @@ from Stephen Marche's book, How Shakespeare Changed Everything.
 I also found Kim Todd's \[Tinkering with Eden,\](http:\/\/%22Tinkering%20With%20Eden:%20A%20Natural%20History%20of%20Exotic%20Species%20in%20America) particularly useful.
 
 Learn about your ad choices: dovetail.prx.org/ad-choices])],
-    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [This piece was originally released a few days after the shooting deaths of 49 people at the Pulse Nightclub in Orlando, Florida. It is re-released here on the second anniversary of the event. 
+  [#brief-item([The Memory Palace], source-name: [The Memory Palace], [This piece was originally released a few days after the shooting deaths of 49 people at the Pulse Nightclub in Orlando, Florida. It is re-released here on the second anniversary of the event. 
 
 If you are so moved, please donate to any of these charities:
 
@@ -1031,26 +1012,26 @@ If you are so moved, please donate to any of these charities:
  Trans Lifeline 
 
 Learn about your ad choices: dovetail.prx.org/ad-choices])],
-    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, do tell someone about The Memory Palace. 
+  [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, do tell someone about The Memory Palace. 
 
 Thanks.
 
 Nate
 
 Learn about your ad choices: dovetail.prx.org/ad-choices])],
-    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, do tell someone about The Memory Palace. 
+  [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, do tell someone about The Memory Palace. 
 
 Thanks.
 
 Nate
 
 Learn about your ad choices: dovetail.prx.org/ad-choices])],
-    [#brief-item([Evan Hahn], source-name: [Evan Hahn], [I wrote a web app to choose a random programming language .
+  [#brief-item([Evan Hahn], source-name: [Evan Hahn], [I wrote a web app to choose a random programming language .
 
 It’s very simple; I hestitate to even call it an “app”! The interesting part was scraping all the languages on Rosetta Code , and even that wasn’t very interesting. But I hope you like it!
 
 I learned about a language called Arturo this way, and wrote a short story about that experience .])],
-    [#brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia from PRX.
+  [#brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia from PRX.
 
 Music
 
@@ -1065,12 +1046,12 @@ We hear Muff Gets a Share from Joel P. West’s score to Band of Robbers
 We hear another song I absolutely love, Turned Out I Was Everyone, by Sasami
 
 We finish on Popcorn and Life from Ben Sollee’s lovely score to Maidentrip.])],
-    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, please tell a friend about The Memory Palace. 
+  [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, please tell a friend about The Memory Palace. 
 
 Thank you kindly.
 
 Learn about your ad choices: dovetail.prx.org/ad-choices])],
-    [#brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia from PRX .
+  [#brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia from PRX .
 
 In lieu of my usual re-runs filling out August, I’m doing something different: a full-reading of F. Scott Fitzgerald’s The Great Gatsby, presented in three parts. This is part 2.
 
@@ -1079,7 +1060,7 @@ Music for Gatsby was composed and performed by Mary Lattimore. Find and buy her 
 The cover art is from Jen Corace. See more of Jen’s work at jencorace.com .
 
 Back with the third and final part on August 19th. Back with new episodes of The Memory Palace in September.])],
-    [#brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia from PRX.
+  [#brief-item([Nate DiMeo], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia from PRX.
 
 A note on notes: We’d much rather you just went into each episode of The Memory Palace cold. And just let the story take you where it well. So, we don’t suggest looking into the show notes first.
 
@@ -1098,7 +1079,7 @@ Mystere by amiina
 Blithe Field also does Racing Backward
 
 as well as Prelude])],
-    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia , from PRX, a curated network of extraordinary, story-driven shows.
+  [#brief-item([The Memory Palace], source-name: [The Memory Palace], [The Memory Palace is a proud member of Radiotopia , from PRX, a curated network of extraordinary, story-driven shows.
 
 Music
 
@@ -1109,30 +1090,35 @@ Notes
 This idea came to me a long time ago while researching an old episode. I read an extraordinary article from the 1890s that hung with me, particularly the notion of folks writing in to try to become sideshow attractions.
 
 Learn about your ad choices: dovetail.prx.org/ad-choices])],
-    [#brief-item([Alan Bellows], source-name: [Damn Interesting], [Omiword, a Word Game :
+  [#brief-item([Alan Bellows], source-name: [Damn Interesting], [Omiword, a Word Game :
 
 In certain dialects of Chinese, Japanese, Korean, and Vietnamese, the word for ‘four’ sounds very similar to the word for ‘death’1. Consequently, the number 4 is considered by many people in East Asian nations to be unlucky. It is not unusual for buildings in that region to skip the number 4 when labeling floors, much \[…\]])],
-    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, do tell someone about The Memory Palace. 
+  [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, do tell someone about The Memory Palace. 
 
 Thanks.
 
 Nate
 
 Learn about your ad choices: dovetail.prx.org/ad-choices])],
-    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [This special, bonus episode was commissioned by Freepoint Hotel in Cambridge, Massachusetts. It's intended to be listened to while walking around Fresh Pond, across the street from the hotel, though it can be enjoyed anywhere. 
+  [#brief-item([The Memory Palace], source-name: [The Memory Palace], [This special, bonus episode was commissioned by Freepoint Hotel in Cambridge, Massachusetts. It's intended to be listened to while walking around Fresh Pond, across the street from the hotel, though it can be enjoyed anywhere. 
 
 Learn about your ad choices: dovetail.prx.org/ad-choices])],
-    [#brief-item([Alan Bellows], source-name: [Damn Interesting], [Twenty :
+  [#brief-item([Alan Bellows], source-name: [Damn Interesting], [Twenty :
 
 In 2005, YouTube, reddit, and Facebook were all still wet and screaming infants. Google, working under the motto “Don’t Be Evil,” had just dethroned Yahoo! as the planet’s most popular Internet search engine (AskJeeves was not available for comment). Nickelback was at the height of its fame. Internet Explorer was the most used web browser, \[…\]])],
-    [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, do tell someone about The Memory Palace. 
+  [#brief-item([The Memory Palace], source-name: [The Memory Palace], [If you enjoy this story, do tell someone about The Memory Palace. 
 
 Thanks.
 
 Nate
 
 Learn about your ad choices: dovetail.prx.org/ad-choices])],
-  ))
-}
+))
+
+// --- Notable Quotes ---
+#block(above: 0.2in, stroke: (top: 1pt + luma(26)), inset: (top: 0.1in))[
+  #pull-quote([, all but ending the American Indian wars.], [David McCormick])
+
+]
 
 #colophon([Global Gazette], [Vol. 1, No. 025], [2026-03-30])

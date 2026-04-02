@@ -21,81 +21,8 @@
 #masthead([The Digital Journal], [Vol. 1, No. 079], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Chinese Traffic to time.gif],
-  kicker: [Cover Story],
-  author: [Dennis Felsing],
-  source-name: [Dennis Felsing],
-  deck: [So this might just be an attempted Denial of Service (DoS) attack?],
-  lead-pre: [],
-  lead-cap: [N],
-  lead-rest: [early two years ago I posted this endless GIF that always shows the current time in UTC:],
-  body-paragraphs: (
-  [Now looking at my GoAccess dashboard I can see that it is picking up in popularity rather suddenly:],
-  [But strangely I can’t find anything about time.gif being linked on the web. So this might just be an attempted Denial of Service (DoS) attack? At least that would be something I am familiar with from the DDNet direction, but it’s certainly strange on HookRace. But instead of simply shutting down time.gif I decided to try to find out who is accessing it and whether I can keep the server up.],
-  [Let’s look into the nginx logs, since I use nginx to proxy the requests to the Haskell program. There I see about 40 new requests per second looking like this:],
-  [class="highlight"\> hookrace.net 123.185. XXX. XXX - - \[21/May/2019:21:21:27 +0200\] "GET /time.gif HTTP/2.0" 200 3335 "XXX" "Mozilla/5.0 (Linux; Android 8.1.0; V1818A Build/OPM1.171019.026; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044681 Mobile Safari/537.36 MMWEBID/XXX MicroMessenger/7.0.4.1420(0x2700043A) Process/tools NetType/WIFI Language/zh\_CN" 8.055],
-  [hookrace.net 111.62. XXX. XXX - - \[21/May/2019:21:21:27 +0200\] "GET /time.gif HTTP/2.0" 200 32061 "XXX" "Mozilla/5.0 (Linux; Android 5.1; OPPO A59s Build/LMY47I; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044704 Mobile Safari/537.36 MMWEBID/XXX MicroMessenger/7.0.4.1420(0x2700043B) Process/tools NetType/WIFI Language/zh\_CN" 89.256],
-  [hookrace.net 111.29. XXX. XXX - - \[21/May/2019:21:21:27 +0200\] "GET /time.gif HTTP/2.0" 200 543830 "XXX" "Mozilla/5.0 (Linux; Android 7.1.1; OPPO R11 Build/NMF26X; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044704 Mobile Safari/537.36 MMWEBID/XXX MicroMessenger/7.0.4.1420(0x2700043A) Process/tools NetType/WIFI Language/zh\_CN" 1540.238],
-  [hookrace.net 112.2. XXX. XXX - - \[21/May/2019:21:21:27 +0200\] "GET /time.gif HTTP/2.0" 200 172102 "XXX" "Mozilla/5.0 (Linux; Android 8.1.0; V1816A Build/OPM1.171019.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044611 Mobile Safari/537.36 MMWEBID/XXX MicroMessenger/7.0.4.1420(0x2700043A) Process/tools NetType/WIFI Language/zh\_CN" 492.600],
-  [hookrace.net 123.13. XXX. XXX - - \[21/May/2019:21:21:27 +0200\] "GET /time.gif HTTP/2.0" 200 1275 "XXX" "Mozilla/5.0 (Linux; Android 9; LYA-AL00 Build/HUAWEILYA-AL00L; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044704 Mobile Safari/537.36 MMWEBID/XXX MicroMessenger/7.0.4.1420(0x2700043A) Process/tools NetType/WIFI Language/zh\_CN" 1.888],
-  [hookrace.net 117.91. XXX. XXX - - \[21/May/2019:21:21:27 +0200\] "GET /time.gif HTTP/2.0" 200 4684 "XXX" "Mozilla/5.0 (iPhone; CPU iPhone OS 12\_1\_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/16D57 MicroMessenger/7.0.3(0x17000321) NetType/WIFI Language/zh\_CN" 12.123],
-  [I checked a few IP addresses and they were all in mobile networks, not data centers. The user agent containing MicroMessenger and MQQBrowser indicates that the source of the traffic are WeChat and/or QQ, popular chinese chat apps.],
-  [id="quantifying-the-traffic"\>Quantifying the Traffic],
-  [For reference, the system I’m running on is a simple Debian based VPS with 2 threads and 2 GB of RAM that also functions as the main server for DDNet’s website , database and my HookRace blog.],
-  [I already had to do some scaling when posting the initial blog post on Hacker News , optimizing the Haskell application itself to use LZW encoding in the GIF frames, to properly clean up connections to prevent any memory leaks and disable buffering in nginx’s config.],
-  [But the current level of traffic is on a different scale with 2.4 million hits on time.gif in the last 23 hours (30 hits per second) resulting in 113 GB of data being transferred. And many of those connections don’t finish quickly, instead they linger for seconds, minutes or even hours.],
-  [Using lsof -i | grep Time | wc -l I can see that there are about 6000 people downloading the GIF at peak times, causing up to 30 Mbit/s of outgoing traffic with 7000 packets/second incoming and the same number outgoing. The DDNet server statistics lets me monitor this nicely ( related blog article ):],
-  [Network
- 
-Packets
- 
-CPU],
-  [id="keeping-up-with-the-traffic"\>Keeping Up with the Traffic],
-  [Regenerating the ranks pages of DDNet usually causes the main CPU load on the server, which can be seen in the above CPU graph as spikes. This task is already set to only run when the server is below a specified load, so that more essential tasks have priority.],
-  [The first new problem was nginx running into a limit of 768 worker\_connections:],
-  [class="highlight"\> 2019/05/20 20:41:30 \[alert\] 761\#761: \*3828093 768 worker\_connections are not enough while connecting to upstream, client: 49.114. XXX. XXX, server: hookrace.net, request: "GET /time.gif HTTP/2.0", upstream: "http:\/\/127.0.0.1:5002/", host: "hookrace.net", referrer: "XXX"],
-  [Luckily that is easily fixed in /etc/nginx/nginx.conf by increasing the number of worker\_connections to keep alive, each of which is handling one of the long-lasting time.gif requests:],
-  [events { 
- worker\_connections 20000 ; 
- }],
-  [and systemctl reload nginx . No downtime required since nginx will start new worker processes to handle new requests while keeping the old ones alive for a time to keep handling existing connections.],
-  [Unfortunately that fix only lasted a few hours until the next problem appeared:],
-  [class="highlight"\> 2019/05/20 23:09:21 \[alert\] 15188\#15188: \*4041619 socket() failed (24: Too many open files) while connecting to upstream, client: 27.207. XXX. XXX, server: hookrace.net, request: "GET /time.gif HTTP/2.0", upstream: "http:\/\/127.0.0.1:5002/", host: "hookrace.net", referrer: "XXX"],
-  [Increasing the limits in /etc/security/limits.conf for the nginx user fixes this:],
-  [The value of 1048576 is chosen since it’s the value set in sysctl fs.file-max and it should be good enough for now.],
-  [Next I noticed that the server was running out of memory with both the Haskell application and nginx having to keep track of so many connections at once. For now I increased the swap size on the fly to keep some less commonly used stuff there using dd if=/dev/zero of=/var/swap bs=1M count=5000 && mkswap /var/swap && swapon /var/swap .],
-  [When running out of memory I noticed that Python’s msgpack implementation fails quite confusingly when it runs OOM. So I had to add some fixes to the code creating the DDNet ranks pages to handle this possibility.],
-  [The Linux Kernel’s TCP buffers ran out of memory next, complaining in dmesg:],
-  [So I increased them with a net.ipv4.tcp\_mem = 116730 155640 233460 in /etc/sysctl.conf and reloaded it with sysctl -p .],
-  [A limitation of my current approach is the number of ports nginx can open to proxy to the Haskell application. If that gets blown I’ll have to communicate to the application differently or simply redirect to the application directly instead of proxying it. That would also reduce the CPU load significantly, cutting out nginx which happens to be much more expensive than the Haskell application, probably because it’s also handling TLS.],
-  [id="final-words"\>Final Words],
-  [While it was fun to keep time.gif running in the face of this amount of traffic, I still haven’t answered the final question of where this traffic is coming from. It might be that lots of Chinese happen to be spreading time.gif on WeChat and QQ, but for that the traffic looks a bit too sterile. Has anyone seen similar traffic patterns and might know if they are real or some kind of botnet? Maybe someone has embedded traffic.gif on some WeChat-specific page. If anyone has a clue please drop me an email at dennis\@felsing.org .],
-  [Hi,],
-  [I read your post and this is just my guess:],
-  [Chinese “WhatsApp” type of communication culture is very strange. They
-are like spam emails in the old days. Often time some one might create
-posts in picture, eg include warm message such as reminding each other to
-put on more clothes as the weather is getting cold, etc.],
-  [My guess is then someone read your trick and thought that it is a good
-idea to create some picture that always show the current time. Eg to
-remind others that it is time to sleep or something.],
-  [And like email spams in the old days, people can share things like this
-crazily, often by older people who don’t know much about technology.
-(Just like how some tweet can go viral, messages like this could also go
-viral within there networks. And unfortunately the viral thing we often
-received are really rubbish like.)],
-  [yours,],
-  [Discuss on Hacker News .],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [This Is a Poem That Heals Fish: An Almost Unbearably Wonderful Picture-Book About How Poetry Works Its Magic],
   author: [Maria Popova],
   source-name: [The Marginalian (Brain Pickings)],
@@ -161,6 +88,7 @@ received are really rubbish like.)],
   [— Then I am a poet, Arthur.],
   [— Oh…?],
   [Complement the almost unbearably wonderful This Is a Poem That Heals Fish with other poetic and profound Enchanted Lion treasures: Cry, Heart, But Never Break , a Danish illustrated meditation on loss and life, What Color Is the Wind? , a French serenade to the senses inspired by a blind child, and Pinocchio: The Origin Story , an Italian inquiry into the grandest questions of existence, then revisit poet Elizabeth Alexander on what poetry does for the human spirit .],
+  [Illustrations courtesy of Enchanted Lion Books],
 ),
   insert-map: (:),
   inline-pq: pull-quote([”   Mahmoud offers his answer with easeful conviction:   — A poem is when you hear the heartbeat of a stone.], [Maria Popova]),
@@ -170,10 +98,8 @@ received are really rubbish like.)],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Meet the 2026 class of TED Fellows],
   author: [TED Staff],
   source-name: [TED Blog],
@@ -188,7 +114,7 @@ received are really rubbish like.)],
   [Carissa Véliz is a professor at Oxford University researching humanity’s overreliance on prediction — from AI algorithms to political polling. In her latest book, Prophecy , she argues that predictions undermine democracy, eroding privacy and replacing human judgment.],
   [Activist, guitarist, composer | Mexico + US],
   [Fabi Reyna is a cultural activist and composer working with music as a tool for communication, investigation and sociopolitical resilience. As the founder of She Shreds Media and the creative behind the band Reyna Tropical, they offer spaces where underrepresented and diasporic people can unify and thrive.],
-  [class="wp-caption-text" id="caption-attachment-118754"\>Researcher Felix Hol holds a mosquito cage, used to collect malaria-carrying mosquitoes from people’s homes near Kalongo, Northern Uganda. Working with local teams of “mosquito hunters,” he studies how the insects adapt their behavior — like shifting when they bite — to circumvent prevention tools such as bed nets.],
+  [Researcher Felix Hol holds a mosquito cage, used to collect malaria-carrying mosquitoes from people’s homes near Kalongo, Northern Uganda. Working with local teams of “mosquito hunters,” he studies how the insects adapt their behavior — like shifting when they bite — to circumvent prevention tools such as bed nets.],
   [Mosquito biotechnologist | Netherlands],
   [Felix Hol is an assistant professor at Radboud University Medical Center, investigating mosquito behavior — from what they taste on our skin to why they now bite earlier in the day. By turning these insights into simple, open-source tools, he helps communities prevent harmful diseases.],
   [Biomedical innovator | US],
@@ -200,10 +126,12 @@ received are really rubbish like.)],
   [A key inventor of COVID-19 vaccine technology, Kizzmekia Corbett-Helaire leads a research lab at Harvard University. She develops vaccines and therapeutics for emerging viruses and educates the public on vaccine science to ensure humanity is ready for the next pandemic.],
   [Japan’s youngest-ever mayor | Japan],
   [At the age of 26, Ryosuke Takashima became the youngest person to win a mayoral seat in Japan, sparking a new wave of young leaders in government. He invites citizens to participate in reforming their communities, spearheading education and climate policy as well as strengthening technological infrastructure.],
+  [Manufacturing innovator Schendy Kernizan demonstrates his team’s mold-free, gel-suspension printing process by producing a sample of a Madame de Wailly sculpture.],
   [Manufacturing innovator | Haiti + US],
   [Cofounder and CEO of Rapid Liquid Print, Schendy Kernizan invented a mold-free, gel-suspension manufacturing process with his team at MIT, making products more affordable, accessible and sustainable. From medicine to transportation to space exploration, his innovation is transforming industries.],
   [Economic justice advocate | US],
   [As a leader in California’s public banking movement, Trinity Tran helps cities redirect funds from big banks into affordable housing, small businesses and critical infrastructure. By passing first-in-the-nation legislation in the United States, she is empowering communities to reclaim control of their own economies.],
+  [Dancer and choreographer Tushrik Fredericks performs his original work “til infiniti,” inspired by his South African heritage and rigorous contemporary choreography training. (New York, May 2025)],
   [Dancer, choreographer | South Africa],
   [Tushrik Fredericks is an award-winning choreographer and dancer who uses social dance and movement to express human emotions and experiences. Inspired by his South African heritage and contemporary dance training, he creates visceral and rigorous original choreographic works.],
   [To learn more about these TED Fellows and follow their journey, check out \@tedfellow on Instagram or join our newsletter .],
@@ -214,10 +142,8 @@ received are really rubbish like.)],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Here’s how to live: Master something.],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -365,30 +291,30 @@ received are really rubbish like.)],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Canadian World War 1 Hero: Leo Clarke, Victoria Cross],
   author: [George Levrier-Jones],
   source-name: [History in 28 Minutes],
   images: (),
   paragraphs: (
-  [class=""\> Leo Clarke's story occupies a unique and almost mythic place in Canada's First World War memory, not only for the astonishing audacity of his Victoria Cross action but for the brevity and intensity of his life at war. In little more than two years, Clarke passed from civilian obscurity to battlefield legend, before being cut down almost immediately after his greatest triumph. His career encapsulates both the heroic ideal and the brutal indifference of industrial warfare, where courage could win a battle in one moment and mean nothing the next.],
-  [class=""\>Born on the 1st December 1892 in the small community of Waterdown, Ontario, Leo Clarke grew up far removed from the violence that would define his fate. Like many young Canadians of his generation, he was raised in a society still closely tied to Britain, imbued with a sense of imperial duty and adventure. In his early adulthood, Clarke moved west, settling in Edmonton, Alberta, where he worked as a clerk. There is little to suggest that he was extraordinary in a conventional sense; he was not a career soldier, nor a product of military academies. Yet, like thousands of others, the outbreak of the First World War in August 1914 transformed his life almost overnight.],
-  [class=""\>Clarke enlisted in the Canadian Expeditionary Force in 1915, joining the 2nd Battalion of the Canadian Infantry. By the time he reached the Western Front, the romantic notions of war had long since been obliterated by the realities of trench fighting. Mud, shellfire, and relentless casualties defined daily existence. Clarke quickly distinguished himself through aggressiveness and calm under fire, qualities that led to his promotion from the ranks to commissioned officer. By 1916, he held the rank of lieutenant, commanding men in one of the hardest-fought sectors of the front.],
-  [class=""\>The summer and autumn of 1916 marked one of the bloodiest periods in Canadian military history. The Battle of the Somme, launched in July, had already claimed hundreds of thousands of casualties by the time Canadian units became deeply involved near Pozières and Courcelette. The battlefield was a shattered moonscape of shell holes, splintered trees, and pulverized trenches. Gains were measured in yards, often purchased at appalling cost. It was within this environment of attrition and exhaustion that Clarke performed the act for which he would be immortalized.],
-  [class=""\>On the 9th of September 1916, near Pozières, Canadian troops were attempting to consolidate newly won ground when they were held up by a strongly defended German trench. The position posed a serious threat to the Canadian line, and delay meant exposure to counterattack. Rather than wait for orders or reinforcements, Clarke acted on his own initiative. Armed only with a revolver and a supply of grenades, he climbed out of his trench and leapt onto the parapet of the German position, fully exposed to enemy fire.],
-  [class=""\>What followed was an act of battlefield shock that bordered on the unbelievable. From his exposed position, Clarke hurled grenades down into the trench while firing his revolver at point-blank range. His sudden appearance and ferocity produced the illusion that a major assault was underway. German soldiers, stunned by the violence and speed of the attack, broke under the pressure. Clarke moved along the parapet alone, continuing his assault with relentless momentum, killing enemy soldiers and forcing others to surrender as he advanced.],
-  [class=""\>The official Victoria Cross citation later recorded that Clarke killed nineteen German soldiers and captured thirty-three more, all without assistance. Just as crucially, his action neutralized a dangerous enemy position at a decisive moment, allowing Canadian forces to advance and secure the line with far fewer casualties than might otherwise have been expected. It was a moment where individual initiative directly altered the tactical situation, a rare but celebrated phenomenon in the mechanized slaughter of the Somme.],
-  [class=""\>The award of the Victoria Cross recognized not only Clarke's courage but the extraordinary independence of his action. At a time when battlefield success increasingly depended on artillery barrages and coordinated infantry advances, Clarke's lone assault seemed almost an anachronism, recalling earlier ideals of personal gallantry. Yet it was precisely this unpredictability that made his action effective. In a war of routine and repetition, shock and audacity could still break the deadlock, if only briefly.],
-  [class=""\>Clarke's Victoria Cross was gazetted later in 1916, and his deed was widely reported in Canadian newspapers. He became a symbol of Canadian bravery at the front, proof that the young Dominion was producing soldiers equal to any in the British Empire. But the attention and honor came too late to alter his fate. The Somme continued to consume lives indiscriminately, and Clarke remained with his battalion in the line. On the 19th of October 1916, scarcely six weeks after his legendary assault, Clarke was killed in action near Desire Trench during ongoing operations on the Somme. While leading his men under heavy fire, he was struck by a sniper's bullet and died almost instantly. He was just twenty-three years old. There was no dramatic final stand, no heroic flourish to match his Victoria Cross action—only the abrupt, unceremonious end that claimed so many young officers of the Great War.],
-  [class=""\>Clarke's death underscores the cruel paradox at the heart of First World War heroism. Acts of extraordinary bravery could win medals and momentary advantage, but they offered no immunity from the random violence of the battlefield. His life and death illustrate how thin the margin was between legend and loss, and how fleeting individual triumph could be amid the vast machinery of modern war. Today, Leo Clarke is remembered as one of Canada's youngest Victoria Cross recipients and as a figure emblematic of the nation's emergence on the world stage through sacrifice and courage. His grave lies far from home, but his story endures in regimental histories, memorials, and the broader narrative of Canada's First World War experience. In the shattered trenches of the Somme, for a few astonishing minutes, one man standing alone on a parapet changed the course of a fight—and in doing so, secured his place in history, even as history swiftly claimed his life.],
-  [class=""\>Leo Clarke's legacy endures not because his life was long or his career carefully cultivated, but because it distilled, with uncommon clarity, the contradictions of the First World War and of heroism itself. His Victoria Cross action stands as one of the most startling examples of individual initiative in a conflict otherwise dominated by massed firepower and grinding attrition. For a brief moment on the Somme, courage, speed, and audacity triumphed over the machinery of war, reminding contemporaries and later generations that human agency still mattered, even in the most dehumanizing of battles.],
-  [class=""\>Yet Clarke's story resists easy romanticization. The same war that elevated him to national prominence extinguished his life without ceremony only weeks later. His death strips away any lingering illusion that gallantry could shield a soldier from the randomness of industrial warfare. In this sense, Clarke is not merely a heroic outlier but a representative figure, embodying the fate of a generation of young men whose lives were compressed into a handful of violent years and often ended just as abruptly.],
-  [class=""\>For Canada, Leo Clarke's service and sacrifice occupy a significant place in the broader narrative of national maturity forged through war. His actions reinforced the reputation of the Canadian Corps as a formidable fighting force and contributed to a growing sense of distinct national identity within the British Empire. At the same time, his youth and obscurity before the war underscore how profoundly the conflict reshaped ordinary lives, transforming clerks and laborers into symbols of courage at unimaginable cost.],
-  [class=""\>Ultimately, Clarke's story endures because it captures both the extraordinary and the tragically ordinary elements of the Great War. His lone assault on a German trench remains a testament to the power of individual resolve, while his swift death serves as a sober reminder of the war's indifference to such resolve. Remembering Leo Clarke is therefore not only an act of honoring bravery, but also of acknowledging the human price of a conflict that defined a generation. In that balance between heroism and loss, his place in history remains secure, not as a figure of myth alone, but as a young man whose courage briefly altered events and whose fate reflected the unforgiving reality of his time.],
-  [class=""\> The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
+  [Leo Clarke's story occupies a unique and almost mythic place in Canada's First World War memory, not only for the astonishing audacity of his Victoria Cross action but for the brevity and intensity of his life at war. In little more than two years, Clarke passed from civilian obscurity to battlefield legend, before being cut down almost immediately after his greatest triumph. His career encapsulates both the heroic ideal and the brutal indifference of industrial warfare, where courage could win a battle in one moment and mean nothing the next.],
+  [Terry Bailey explains.],
+  [Leo Clarke - colorized. Available here .],
+  [Born on the 1st December 1892 in the small community of Waterdown, Ontario, Leo Clarke grew up far removed from the violence that would define his fate. Like many young Canadians of his generation, he was raised in a society still closely tied to Britain, imbued with a sense of imperial duty and adventure. In his early adulthood, Clarke moved west, settling in Edmonton, Alberta, where he worked as a clerk. There is little to suggest that he was extraordinary in a conventional sense; he was not a career soldier, nor a product of military academies. Yet, like thousands of others, the outbreak of the First World War in August 1914 transformed his life almost overnight.],
+  [Clarke enlisted in the Canadian Expeditionary Force in 1915, joining the 2nd Battalion of the Canadian Infantry. By the time he reached the Western Front, the romantic notions of war had long since been obliterated by the realities of trench fighting. Mud, shellfire, and relentless casualties defined daily existence. Clarke quickly distinguished himself through aggressiveness and calm under fire, qualities that led to his promotion from the ranks to commissioned officer. By 1916, he held the rank of lieutenant, commanding men in one of the hardest-fought sectors of the front.],
+  [The summer and autumn of 1916 marked one of the bloodiest periods in Canadian military history. The Battle of the Somme, launched in July, had already claimed hundreds of thousands of casualties by the time Canadian units became deeply involved near Pozières and Courcelette. The battlefield was a shattered moonscape of shell holes, splintered trees, and pulverized trenches. Gains were measured in yards, often purchased at appalling cost. It was within this environment of attrition and exhaustion that Clarke performed the act for which he would be immortalized.],
+  [On the 9th of September 1916, near Pozières, Canadian troops were attempting to consolidate newly won ground when they were held up by a strongly defended German trench. The position posed a serious threat to the Canadian line, and delay meant exposure to counterattack. Rather than wait for orders or reinforcements, Clarke acted on his own initiative. Armed only with a revolver and a supply of grenades, he climbed out of his trench and leapt onto the parapet of the German position, fully exposed to enemy fire.],
+  [What followed was an act of battlefield shock that bordered on the unbelievable. From his exposed position, Clarke hurled grenades down into the trench while firing his revolver at point-blank range. His sudden appearance and ferocity produced the illusion that a major assault was underway. German soldiers, stunned by the violence and speed of the attack, broke under the pressure. Clarke moved along the parapet alone, continuing his assault with relentless momentum, killing enemy soldiers and forcing others to surrender as he advanced.],
+  [The official Victoria Cross citation later recorded that Clarke killed nineteen German soldiers and captured thirty-three more, all without assistance. Just as crucially, his action neutralized a dangerous enemy position at a decisive moment, allowing Canadian forces to advance and secure the line with far fewer casualties than might otherwise have been expected. It was a moment where individual initiative directly altered the tactical situation, a rare but celebrated phenomenon in the mechanized slaughter of the Somme.],
+  [The award of the Victoria Cross recognized not only Clarke's courage but the extraordinary independence of his action. At a time when battlefield success increasingly depended on artillery barrages and coordinated infantry advances, Clarke's lone assault seemed almost an anachronism, recalling earlier ideals of personal gallantry. Yet it was precisely this unpredictability that made his action effective. In a war of routine and repetition, shock and audacity could still break the deadlock, if only briefly.],
+  [Clarke's Victoria Cross was gazetted later in 1916, and his deed was widely reported in Canadian newspapers. He became a symbol of Canadian bravery at the front, proof that the young Dominion was producing soldiers equal to any in the British Empire. But the attention and honor came too late to alter his fate. The Somme continued to consume lives indiscriminately, and Clarke remained with his battalion in the line. On the 19th of October 1916, scarcely six weeks after his legendary assault, Clarke was killed in action near Desire Trench during ongoing operations on the Somme. While leading his men under heavy fire, he was struck by a sniper's bullet and died almost instantly. He was just twenty-three years old. There was no dramatic final stand, no heroic flourish to match his Victoria Cross action—only the abrupt, unceremonious end that claimed so many young officers of the Great War.],
+  [Clarke's death underscores the cruel paradox at the heart of First World War heroism. Acts of extraordinary bravery could win medals and momentary advantage, but they offered no immunity from the random violence of the battlefield. His life and death illustrate how thin the margin was between legend and loss, and how fleeting individual triumph could be amid the vast machinery of modern war. Today, Leo Clarke is remembered as one of Canada's youngest Victoria Cross recipients and as a figure emblematic of the nation's emergence on the world stage through sacrifice and courage. His grave lies far from home, but his story endures in regimental histories, memorials, and the broader narrative of Canada's First World War experience. In the shattered trenches of the Somme, for a few astonishing minutes, one man standing alone on a parapet changed the course of a fight—and in doing so, secured his place in history, even as history swiftly claimed his life.],
+  [Leo Clarke's legacy endures not because his life was long or his career carefully cultivated, but because it distilled, with uncommon clarity, the contradictions of the First World War and of heroism itself. His Victoria Cross action stands as one of the most startling examples of individual initiative in a conflict otherwise dominated by massed firepower and grinding attrition. For a brief moment on the Somme, courage, speed, and audacity triumphed over the machinery of war, reminding contemporaries and later generations that human agency still mattered, even in the most dehumanizing of battles.],
+  [Yet Clarke's story resists easy romanticization. The same war that elevated him to national prominence extinguished his life without ceremony only weeks later. His death strips away any lingering illusion that gallantry could shield a soldier from the randomness of industrial warfare. In this sense, Clarke is not merely a heroic outlier but a representative figure, embodying the fate of a generation of young men whose lives were compressed into a handful of violent years and often ended just as abruptly.],
+  [For Canada, Leo Clarke's service and sacrifice occupy a significant place in the broader narrative of national maturity forged through war. His actions reinforced the reputation of the Canadian Corps as a formidable fighting force and contributed to a growing sense of distinct national identity within the British Empire. At the same time, his youth and obscurity before the war underscore how profoundly the conflict reshaped ordinary lives, transforming clerks and laborers into symbols of courage at unimaginable cost.],
+  [Ultimately, Clarke's story endures because it captures both the extraordinary and the tragically ordinary elements of the Great War. His lone assault on a German trench remains a testament to the power of individual resolve, while his swift death serves as a sober reminder of the war's indifference to such resolve. Remembering Leo Clarke is therefore not only an act of honoring bravery, but also of acknowledging the human price of a conflict that defined a generation. In that balance between heroism and loss, his place in history remains secure, not as a figure of myth alone, but as a young man whose courage briefly altered events and whose fate reflected the unforgiving reality of his time.],
+  [The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
 ),
   insert-map: (:),
   word-count: 1433,
@@ -396,10 +322,8 @@ received are really rubbish like.)],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Gardening as Resistance: Notes on Building Paradise],
   author: [Maria Popova],
   source-name: [The Marginalian (Brain Pickings)],
@@ -430,23 +354,27 @@ received are really rubbish like.)],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [5 things we learned at day 1 of TEDNext 2025],
   author: [Oliver Friedman],
   source-name: [TED Blog],
   images: (),
   paragraphs: (
+  [TED’s Monique Ruff-Bell (left) and Helen Walters host Session 1 of TEDNext 2025 on November 9, 2025, in Atlanta, GA. (Photo: Erin Lubin \/ TED)],
   [At the opening session of TEDNext 2025, we explored two big themes: wonder and wisdom. With speakers ranging from a digital artist and a biotech entrepreneur to an Oscar-winning costume designer and a world-famous ballerina, this session had it all.],
   [What exactly is TEDNext? A vibrant, three-day exploration of what’s next, propelling the “future you” to think expansively at every level, from personal to global. The second-ever TEDNext conference, held in Atlanta, continues an expansion of the annual slate of conferences from TED, with a conference designed to spark imagination, embrace possibility and foster dreams about what the next version of “you” can be.],
   [Watch TEDNext 2025 on TED Live , check out more photos from the event and learn more about attending a future TED conference .],
   [Some key takeaways from day 1:],
+  [David S. Kim speaks at TEDNext 2025 on November 9, 2025, in Atlanta, GA. (Photo: Erin Lubin \/ TED)],
   [We might be able to turn sunlight and CO2 into lifesaving drugs. Humans learned to “program” biology nearly a century ago by inserting human genes into microbes, turning cells into tiny factories for life-saving drugs like insulin. Today, these methods are costly, resource-intensive and inaccessible to many, says physician and biotech entrepreneur David S. Kim . He presents a potential solution: by reprogramming a cell known as cyanobacteria, which feeds on sunlight and CO2, we could unlock a sustainable “biological factory” for making medicines. He explains the science behind his team’s breakthrough and its potential to manufacture everything from food and fuels to materials and more.],
+  [Paul Tazewell speaks at TEDNext 2025 on November 9, 2025, in Atlanta, GA. (Photo: Ryan Lash \/ TED)],
   [Design is never neutral. What makes someone wicked? Costume designer Paul Tazewell probes this question in his work, demonstrating how clothing speaks a subconscious language that shapes who we view as heroes — and villains. From the period silhouettes of Hamilton and blending colors of West Side Story to the visual dualities of Wicked , Tazewell’s creations challenge stereotypes and inherited perceptions. His main message? If wickedness can be designed, then maybe we can redesign it together, too.],
+  [Dave Jorgenson speaks at TEDNext 2025 on November 9, 2025, in Atlanta, GA. (Photo: Ryan Lash \/ TED)],
   [Media literacy is an essential skill of our time. With each leap of technology, humans have had to work double-time to keep up, says journalist and comedian Dave Jorgenson . He explains why media literacy — which he defines as “the ability to access, analyze, evaluate and create media in various forms” — is a crucial skill in an age of proliferating misinformation. With his own short, absurdist sketches that explain the news, he shows how humor can cut through fear, spark curiosity and cool down hot takes in order to explore nuanced truth.],
+  [Misty Copeland speaks at TEDNext 2025 on November 9, 2025, in Atlanta, GA. (Photo: Ryan Lash \/ TED)],
   [The stage belongs to all of us. Ballerina and activist Misty Copeland made history in 2015 as the first Black woman to become a principal dancer at the American Ballet Theatre. Just last month, she retired from the company with a farewell performance, dancing for a world she helped reshape. In a moving talk, she charts the quiet roots of resilience — nourished not by invulnerability but by persistently showing up despite pain, pressure and rejection. She shows how to transform “you don’t belong here” into “this stage is yours, too.”],
+  [Sean Bankhead (and friends) perform at TEDNext 2025 on November 9, 2025, in Atlanta, GA. (Photo: Ryan Lash \/ TED)],
   [Atlanta has serious moves. In an incredible mid-session performance, choreographer and cultural architect Sean Bankhead brought music to life through movement, dancing to “On My Mama” by Victoria Monét.],
   [Watch TEDNext 2025 on TED Live , check out more photos from the event and learn more about attending a future TED conference .],
 ),
@@ -456,37 +384,40 @@ received are really rubbish like.)],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Romans in the Central Sahara: Cornelius Balbus' Expedition],
   author: [George Levrier-Jones],
   source-name: [History in 28 Minutes],
   images: (),
   paragraphs: (
-  [class=""\> Cornelius Balbus' expedition into the heart of the central Sahara in 19 BCE reads like one of those stubborn footnotes that suddenly throws a spotlight on the limits and ambitions of Rome. Ordered during Augustus' long reign of consolidation, the campaign against the Garamantes, a long-established people centered in the Libyan Fezzān (with a capital often written as Garama or Germa), was not an attempt to annex a vast Saharan empire so much as a punitive and strategic effort: to punish raiding that menaced Roman North Africa, secure trans-Saharan trade routes, and demonstrate imperial reach beyond the familiar Mediterranean littoral.],
-  [class=""\>Ancient literary sources record that Lucius (or sometimes rendered as Cornelius) Balbus celebrated a triumph in Rome after operations in the region, and later Roman authors, chiefly Pliny the Elder and writers summarized by Cassius Dio, place a handful of Garamantian settlements under Roman pressure or control around that time.],
-  [class=""\>What actually happened on the ground and how far south Balbus' columns pushed, remains a matter for cautious reconstruction rather than neat storylines. Classical authors describe the Garamantes as a confederation that could strike along the coastal provinces and carry on a lively inland commerce; in 19 BCE the Romans, led by Balbus, are said to have captured multiple settlements and brought back evidence of victory to Rome, enough to earn a public triumph recorded on the Roman fasti.],
-  [class=""\>Ancient historians framed the campaign as both corrective and economic: remove the threat of raids that harmed coastal cities such as Leptis Magna, and (if possible) open or safeguard commercial arteries feeding Roman markets. However, the surviving literary traces are short on operational detail and generous on Roman self-description, so scholarship treats the narratives as a starting point, not a literal map.],
-  [class=""\>Archaeology has been invaluable in turning those literary hints into a more concrete picture of Garamantian power and how an outsider like Balbus might have engaged it. The Garamantes were far from the purely nomadic caricature of some classical writers: excavations and surveys across the Fazzān have exposed permanent settlements, cemeteries of distinctive tomb-pyramid forms, irrigation systems (the foggaras or qanat-like galleries) that tapped fossil aquifers, and networks of forts and farmed oases that made sedentary agriculture possible in the now hyper-arid landscape.],
-  [class=""\>Satellite imagery and field survey in recent decades have revealed rings of forts and the outlines of defended centers in and around Germa. These Garamantian capital installations could be the objective or the spoils of a Roman punitive expedition. This material context helps explain why Romans would bother to project force into the Sahara: the Garamantes controlled water, people, and routes that mattered to commerce and coastal security.],
-  [class=""\>Direct archaeological evidence pointing specifically to Balbus' 19 BCE raid is necessarily limited. Unlike a campaign that left garrison forts with Latin inscriptions, the available material tends to show interaction rather than long-term occupation: imported Roman goods and amphorae found at Garamantian sites, references in Roman placards (the Fasti Triumphales) to Balbus' triumph, and the wider circulation of objects such as carnelian beads that testify to Saharan long-distance trade.],
-  [class=""\>Scientific work tracing the sources of traded materials, for instance studies on carnelian provenance from the Fazzān supports the interpretation that the region was enmeshed in exchange networks linking sub-Saharan Africa, the Sahara, and the Mediterranean. In other words, archaeology corroborates the literary claim that Garamantian centers were prosperous and connected and therefore plausible targets for a high-profile Roman campaign even if it does not produce a single, unambiguous "Balbus layer" in the sand.],
-  [class=""\>Modern archaeological narratives also complicate the older Roman story. Where some classical writers presented the Garamantes as perennial raiders, the material record shows complex, largely sedentary settlements with irrigation engineering that required organized labor and administration. Recent surveys and excavations argue for a polity that could sustain agriculture, fortifications and caravan ways.],
-  [class=""\>Remote sensing, (the use of satellite imagery and aerial survey), has been especially transformative: archaeologists have mapped previously invisible lines of forts, settlement clusters and irrigation channels, revealing a landscape of infrastructure rather than scattered nomads. Those same tools have fed the debate over whether Roman operations produced any lasting control; most specialists now favor the view that Balbus' action was a decisive but short-term blow that destabilized and humiliated opponents without creating long-term Roman rule deep in the Sahara.],
-  [class=""\>Putting the sources together produces a balanced verdict: Cornelius Balbus' 19 BCE expedition matters less because it produced an enduring Roman province than because it reveals how far Roman imperial ambition extended, and how Mediterranean powers interacted with African polities that were neither "primitive" nor marginal. The Romans used military theatre, political spectacle (the triumphal parade in Rome) and occasional force to regulate trade and security beyond their borders; the Garamantes, for their part, were sophisticated desert engineers and traders with the resources to attract Roman attention.],
-  [class=""\>Archaeology has not so much confirmed every detail of the ancient accounts as given us a richer world in which to place them: a networked Sahara of wells and foggaras, fortified towns, and caravan routes, all of which help explain why a Roman commander like Balbus would march and why Rome would brag about it in the Forum.],
-  [class=""\>Today the ruins of Germa and the Fazzān remain powerful reminders of that encounter. They are fragile in the face of climate change, looting, and modern instability, but their tombs, irrigation galleries, and the scattered Roman imports found there let us read a short, vivid chapter of cross-Saharan interaction: a Roman triumph, a desert polity's engineering achievement, and the faint, material outlines of a meeting between worlds that were geographically close yet culturally distinct.],
-  [class=""\>As scholarship and remote-sensing techniques progress, archaeologists may yet recover more direct remains of the 19 BCE operations, inscriptions, datable destruction layers or battlefield debris but even now the combined weight of texts and material culture makes Balbus' expedition a plausible, illuminating episode in Rome's long dialogue with Africa.],
-  [class=""\>In conclusion, Cornelius Balbus' expedition to the Garamantes stands as a moment where history, archaeology, and imperial ambition intersect. It was not the production of new borders or the founding of colonies that gave the campaign its importance, but the symbolic weight of Rome's ability to project power into the vast Sahara and to claim victory over a people whose influence reached across desert trade routes.],
-  [class=""\>The Garamantes, far from being a shadowy footnote in Roman annals, emerge through archaeology as a complex society of farmers, engineers, and traders who were both resilient and connected to broader worlds. Balbus' march thus becomes more than a fleeting military episode: it highlights the limits of empire, the realities of cross-cultural contact, and the delicate balance between spectacle and substance in Rome's dealings beyond its frontiers.],
-  [class=""\>The story, refracted through ancient texts and sharpened by modern research, continues to remind us that Rome's triumphs often tell us as much about the societies it encountered as they do about the empire itself.],
-  [class=""\> The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
-  [class=""\>The fasti were chronological lists or calendars that the Romans used to record the passage of time and important public events. Originally, the term referred to the official calendar that marked days as dies fasti (days on which legal and political business could be conducted) or dies nefasti (days when such activities were forbidden, often due to religious observances).],
-  [class=""\>Over time, the scope of the fasti expanded to include records of magistrates, priests, triumphs, and other significant occurrences that structured Roman political and religious life. They were inscribed on stone or bronze tablets and often displayed publicly, ensuring that both civic order and Rome's collective memory were preserved for its citizens.],
-  [class=""\>One of the most famous examples is the Fasti Capitolini, discovered in the Roman Forum during the Renaissance. These inscriptions, dating to the reign of Augustus, recorded the names of Roman consuls year by year from the founding of the Republic, alongside magistrates and notable triumphs. Such records were crucial for Roman historiography, as they provided a backbone of chronology against which events could be measured. They also carried ideological weight: Augustus, for instance, used the fasti not only to establish a coherent timeline but also to underline Rome's enduring greatness and the legitimacy of his own reign as the restorer of order.],
-  [class=""\>Beyond their practical function, the fasti served as instruments of political propaganda. Recording triumphs and priesthoods, they immortalized Rome's victories and the men who achieved them, reinforcing the notion that Roman history was a continuous narrative of conquest, piety, and civic order. They were as much about shaping collective memory as about documenting the past. For example, the entry noting Cornelius Balbus' triumph after his expedition to the Garamantes ensured that his deeds were remembered in the same continuum as those of Rome's greatest generals. In this way, the fasti were not merely dry lists, but enduring symbols of Roman identity, linking religious practice, political authority, and historical consciousness in a single, monumental record.],
+  [Cornelius Balbus' expedition into the heart of the central Sahara in 19 BCE reads like one of those stubborn footnotes that suddenly throws a spotlight on the limits and ambitions of Rome. Ordered during Augustus' long reign of consolidation, the campaign against the Garamantes, a long-established people centered in the Libyan Fezzān (with a capital often written as Garama or Germa), was not an attempt to annex a vast Saharan empire so much as a punitive and strategic effort: to punish raiding that menaced Roman North Africa, secure trans-Saharan trade routes, and demonstrate imperial reach beyond the familiar Mediterranean littoral.],
+  [Terry Bailey explains.],
+  [Lucius Cornelius Balbus statue in Cadiz, Spain. Source: Peejayem, available here .],
+  [Ancient literary sources record that Lucius (or sometimes rendered as Cornelius) Balbus celebrated a triumph in Rome after operations in the region, and later Roman authors, chiefly Pliny the Elder and writers summarized by Cassius Dio, place a handful of Garamantian settlements under Roman pressure or control around that time.],
+  [What actually happened on the ground and how far south Balbus' columns pushed, remains a matter for cautious reconstruction rather than neat storylines. Classical authors describe the Garamantes as a confederation that could strike along the coastal provinces and carry on a lively inland commerce; in 19 BCE the Romans, led by Balbus, are said to have captured multiple settlements and brought back evidence of victory to Rome, enough to earn a public triumph recorded on the Roman fasti.],
+  [Ancient historians framed the campaign as both corrective and economic: remove the threat of raids that harmed coastal cities such as Leptis Magna, and (if possible) open or safeguard commercial arteries feeding Roman markets. However, the surviving literary traces are short on operational detail and generous on Roman self-description, so scholarship treats the narratives as a starting point, not a literal map.],
+  [Archaeology has been invaluable in turning those literary hints into a more concrete picture of Garamantian power and how an outsider like Balbus might have engaged it. The Garamantes were far from the purely nomadic caricature of some classical writers: excavations and surveys across the Fazzān have exposed permanent settlements, cemeteries of distinctive tomb-pyramid forms, irrigation systems (the foggaras or qanat-like galleries) that tapped fossil aquifers, and networks of forts and farmed oases that made sedentary agriculture possible in the now hyper-arid landscape.],
+  [Satellite imagery and field survey in recent decades have revealed rings of forts and the outlines of defended centers in and around Germa. These Garamantian capital installations could be the objective or the spoils of a Roman punitive expedition. This material context helps explain why Romans would bother to project force into the Sahara: the Garamantes controlled water, people, and routes that mattered to commerce and coastal security.],
+  [Direct archaeological evidence pointing specifically to Balbus' 19 BCE raid is necessarily limited. Unlike a campaign that left garrison forts with Latin inscriptions, the available material tends to show interaction rather than long-term occupation: imported Roman goods and amphorae found at Garamantian sites, references in Roman placards (the Fasti Triumphales) to Balbus' triumph, and the wider circulation of objects such as carnelian beads that testify to Saharan long-distance trade.],
+  [Sources of traded materials],
+  [Scientific work tracing the sources of traded materials, for instance studies on carnelian provenance from the Fazzān supports the interpretation that the region was enmeshed in exchange networks linking sub-Saharan Africa, the Sahara, and the Mediterranean. In other words, archaeology corroborates the literary claim that Garamantian centers were prosperous and connected and therefore plausible targets for a high-profile Roman campaign even if it does not produce a single, unambiguous "Balbus layer" in the sand.],
+  [Modern archaeological narratives also complicate the older Roman story. Where some classical writers presented the Garamantes as perennial raiders, the material record shows complex, largely sedentary settlements with irrigation engineering that required organized labor and administration. Recent surveys and excavations argue for a polity that could sustain agriculture, fortifications and caravan ways.],
+  [Remote sensing, (the use of satellite imagery and aerial survey), has been especially transformative: archaeologists have mapped previously invisible lines of forts, settlement clusters and irrigation channels, revealing a landscape of infrastructure rather than scattered nomads. Those same tools have fed the debate over whether Roman operations produced any lasting control; most specialists now favor the view that Balbus' action was a decisive but short-term blow that destabilized and humiliated opponents without creating long-term Roman rule deep in the Sahara.],
+  [Putting the sources together produces a balanced verdict: Cornelius Balbus' 19 BCE expedition matters less because it produced an enduring Roman province than because it reveals how far Roman imperial ambition extended, and how Mediterranean powers interacted with African polities that were neither "primitive" nor marginal. The Romans used military theatre, political spectacle (the triumphal parade in Rome) and occasional force to regulate trade and security beyond their borders; the Garamantes, for their part, were sophisticated desert engineers and traders with the resources to attract Roman attention.],
+  [Archaeology has not so much confirmed every detail of the ancient accounts as given us a richer world in which to place them: a networked Sahara of wells and foggaras, fortified towns, and caravan routes, all of which help explain why a Roman commander like Balbus would march and why Rome would brag about it in the Forum.],
+  [Today the ruins of Germa and the Fazzān remain powerful reminders of that encounter. They are fragile in the face of climate change, looting, and modern instability, but their tombs, irrigation galleries, and the scattered Roman imports found there let us read a short, vivid chapter of cross-Saharan interaction: a Roman triumph, a desert polity's engineering achievement, and the faint, material outlines of a meeting between worlds that were geographically close yet culturally distinct.],
+  [As scholarship and remote-sensing techniques progress, archaeologists may yet recover more direct remains of the 19 BCE operations, inscriptions, datable destruction layers or battlefield debris but even now the combined weight of texts and material culture makes Balbus' expedition a plausible, illuminating episode in Rome's long dialogue with Africa.],
+  [In conclusion, Cornelius Balbus' expedition to the Garamantes stands as a moment where history, archaeology, and imperial ambition intersect. It was not the production of new borders or the founding of colonies that gave the campaign its importance, but the symbolic weight of Rome's ability to project power into the vast Sahara and to claim victory over a people whose influence reached across desert trade routes.],
+  [The Garamantes, far from being a shadowy footnote in Roman annals, emerge through archaeology as a complex society of farmers, engineers, and traders who were both resilient and connected to broader worlds. Balbus' march thus becomes more than a fleeting military episode: it highlights the limits of empire, the realities of cross-cultural contact, and the delicate balance between spectacle and substance in Rome's dealings beyond its frontiers.],
+  [The story, refracted through ancient texts and sharpened by modern research, continues to remind us that Rome's triumphs often tell us as much about the societies it encountered as they do about the empire itself.],
+  [The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
+  [Notes:],
+  [Roman fasti],
+  [The fasti were chronological lists or calendars that the Romans used to record the passage of time and important public events. Originally, the term referred to the official calendar that marked days as dies fasti (days on which legal and political business could be conducted) or dies nefasti (days when such activities were forbidden, often due to religious observances).],
+  [Over time, the scope of the fasti expanded to include records of magistrates, priests, triumphs, and other significant occurrences that structured Roman political and religious life. They were inscribed on stone or bronze tablets and often displayed publicly, ensuring that both civic order and Rome's collective memory were preserved for its citizens.],
+  [One of the most famous examples is the Fasti Capitolini, discovered in the Roman Forum during the Renaissance. These inscriptions, dating to the reign of Augustus, recorded the names of Roman consuls year by year from the founding of the Republic, alongside magistrates and notable triumphs. Such records were crucial for Roman historiography, as they provided a backbone of chronology against which events could be measured. They also carried ideological weight: Augustus, for instance, used the fasti not only to establish a coherent timeline but also to underline Rome's enduring greatness and the legitimacy of his own reign as the restorer of order.],
+  [Beyond their practical function, the fasti served as instruments of political propaganda. Recording triumphs and priesthoods, they immortalized Rome's victories and the men who achieved them, reinforcing the notion that Roman history was a continuous narrative of conquest, piety, and civic order. They were as much about shaping collective memory as about documenting the past. For example, the entry noting Cornelius Balbus' triumph after his expedition to the Garamantes ensured that his deeds were remembered in the same continuum as those of Rome's greatest generals. In this way, the fasti were not merely dry lists, but enduring symbols of Roman identity, linking religious practice, political authority, and historical consciousness in a single, monumental record.],
 ),
   insert-map: (:),
   word-count: 1551,
@@ -494,32 +425,64 @@ received are really rubbish like.)],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Kellogg Brothers: Health and Wellness Pioneers?],
   author: [George Levrier-Jones],
   source-name: [History in 28 Minutes],
   images: (),
   paragraphs: (
-  [class=""\> The Kellogg Brothers founded a powerful and impactful cereal company in 1906. They were also innovators in the health and wellness fields and were members of organizations that were ahead of their time - and fought against what was then considered a healthy lifestyle. The Kellogg Brothers left a lasting positive legacy on the health and wellness industry.],
-  [class=""\>The Kellogg brothers’ longest-lasting contribution to the Health industry is their product, Kellogg’s Cornflakes.  Dr. John Harvey Kellogg’s (1852-1943) trek towards Kellogg’s Cornflakes began as a search for a breakfast substitute to help treat his patients at the Battle Creek Sanitarium who were suffering from stomach problems. \[1\]  This was a consistent complaint of his patients. A disabled gastrointestinal system caused the patient’s stomach problems. Dr. Kellogg discovered that the half-baked breakfast mush he had previously been serving patients was causing dyspepsia. He also felt that the replacement should also be “pre-cooked”. The creation of Kellogg’s Corn Flakes involves conflicting accounts, in which, in the end, Dr. Kellogg, his wife, Ella, and Dr. Kellogg’s brother, Will (1860-1951), should receive some credit for its creation. \[2\]],
-  [class=""\>Dr. John Harvey Kellogg applied to the U. S. Patent Office for his patent on “Flaked Cereal and Process for Preparing the Same”(No.558,399) on May 31st, 1895. \[3\] The U. S. Patent Office granted Dr. Kellogg this patent on April 14th, 1896.  In the patent itself, Dr. Kellogg included flakes made of oats, corn, barley, and other grains in addition to wheat flakes to protect his patent.],
-  [class=""\>In the summer of 1895, Will and Dr. Kellogg introduced the Corn Flakes at the General Conference of the Seventh-Day Adventists at the Battle Creek Sanitarium. \[4\] The dish became a hit with conference attendees, who would add milk, cream, or yogurt to it.],
-  [class=""\>In 1906, Will Kellogg founded the Battle Creek Toasted Corn Flake Company. \[5\] In 1907, he changed the company’s name to the Kellogg Toasted Corn Flake Company. \[6\] In the late summer to early fall of 1907, Kellogg’s Cornflakes made its official debut to the American public. \[7\] It was under Will Kellogg’s leadership that, during the Great Depression in 1933, the Kellogg company made a gross profit of \$6 million (about \$110 million in today’s money). \[8\] This was at a time when many companies were going bankrupt or struggling to maintain a profit.  In 1939, Will Kellogg retired as the company's head.],
-  [class=""\>Dr. Kellogg was also a trailblazer in other ways in the field of health and wellness. The Battle Creek Sanitarium began in 1866 as the Health Reform Institute. \[9\] “Sister” White presented her ideas about Christian biblical healthy living at the Seventh-day Adventist General Conference on May 20th, 1866. The  General Conference approved the creation of an institute for health reform. \[10\] It was the governing body of the Seventh-day Adventist Church. The organization opened its doors for business as The Western Health Reform Institution on September 5th, 1867. \[11\] On October 1st, 1876, Dr. Kellogg became the medical director of the Western Health Reform Institute. \[12\] The Western Health Reform Institute became the Battle Creek Sanatorium on September 15th, 1910. \[13\] On the same date, Dr. Kellogg told this audience how the new institution should be called Sanitarium or San, because he felt it better suited the mission. From 1876 to 1943, Dr. Kellogg was at the head of the Western Health Reform Institute, later known as the Battle Creek Sanitarium. \[14\] Several years before his death, Dr. Kellogg estimated that his work at the Sanitarium brought him into contact with approximately 250,000 persons. \[15\]],
-  [class=""\>At the Battle Creek Sanitarium, if a patient were suffering from the “blues,” they would be placed under an electric light cabinet to help them get sunlight. There was not much natural sunlight in southeastern Michigan during the Fall. \[16\] In this field, Dr. Kellogg was years ahead of his time in terms of medical treatment for seasonal affective disorder or SAD.],
-  [class=""\>In 1916, at the Battle Creek Sanitarium, patient meals were also served with a card attached that specified the proper ratio of calories, proteins, carbohydrates, and fats to be consumed at the meal. \[17\] An example of this document is dated from May 19th, 1916. This was unheard of in the field of dieting and nutrition at the time.],
-  [class=""\>Also at the Battle Creek Sanitarium, Dr. Kellogg would lead aerobics and calisthenics with the patients, backed by a brass band. \[18\] This was so popular that, in 1923, the Columbia Gramophone Company released 10 78-RPM shellac discs of Dr. Kellogg’s class, complete with a booklet. The album was entitled “John Harvey Kellogg’s HEALTH LADDER”.  In the booklet, there were exercises for the back, abdomen, legs, and arms that Dr. Kellogg recommended for his patients at the Battle Creek Sanitarium. This was decades ahead of the exercise craze led by Jack Lalanne, Richard Simmons, and other such international figures.],
-  [class=""\>Although Dr. Kellogg never received credit for this, he encouraged his patients at the Battle Creek Sanitarium,  after surgery, to get up, move, and perform graded, deep-breathing exercises. \[19\] This was in stark contrast to the standard procedure of the day, which was to have patients confined to hospital beds for several days to weeks at a time. In the present day, medical procedures, early ambulation, and breathing exercises are the backbone of most recovery protocols after surgery.],
-  [class=""\>In 1934, Dr. Kellogg received a patent for his “Soy Acidophilus Milk”. \[20\]   Dr. Kellogg devised this concoction to deal with babies who couldn’t deal with cow’s milk-based formulae, as well as his patients at the San who were suffering colitis, duodenal or gastric ulcers, babies who rejected their mom’s breast milk, constipation, and excessive flatulence. This was a step forward in addressing digestive and gastric health compared to the treatments of the day. By 1935, patients at the Battle Creek Sanitarium were consuming over 200 gallons a week of  Dr. Kellogg’s “Soy Acidophilus Milk”. The Battle Creek Sanitarium’s patients’ favorite way to enjoy Dr. Kellogg’s “Soy Acidophilus Milk” was with ripe bananas and a side of soy milk.  This predated the soy milk craze that you see today all over the world.],
-  [class=""\>Dr. Kellogg and Will Kellogg were pioneers in the fight against tobacco and its harmful effects. Dr. Kellogg had discovered through increasing medical evidence that tobacco smoke caused heart disease, lung disease, digestive disorders, infections, and neurological problems. \[21\] In 1922, Dr. Kellogg published a successful book entitled Tobaccoism, or How Tobacco Kills . Along with Henry Ford’s book, The White Slaver , these books became a cornerstone of the progressive movement’s failed anti-smoking campaign.  Will Kellogg considered smoking to be so dangerous that he demanded that his workers at his factory either quit or he would fire them. He thought tobacco was more dangerous than drinking alcohol. \[22\]],
-  [class=""\>Dr. Kellogg also thought that tobacco products interfered with proper muscular and growth development, caused gastric ulcers, unduly taxed the liver and kidney systems, injured the brain and nervous systems, and also impaired judgment and moral sensibility. \[23\] All of Dr. Kellogg’s claims have subsequently been supported by medical science, medical doctors, and research studies, except for the moral sensibility claim.],
-  [class=""\>In the aftermath of World War I, Dr. Kellogg was the president of the Michigan Anti-Cigarette Society and the Committee of Fifty to Study the Tobacco Problem. \[24\]  Henry Ford was also a prominent member of the Committee of Fifty to Study the Tobacco Problem. Dr. Kellogg, with the help of this group, also produced the very first motion picture to address the dangers of tobacco smoking. He and his brother Will were pioneers in their opposition to tobacco products at a time when the tobacco companies were powerful and used their influence to suppress knowledge about the dangers of their products.],
-  [class=""\>In the USA, the dangers of tobacco products did not reach the Federal level until January 11th, 1964, when the Surgeon General issued the 1964 Report on Smoking and Health. \[25\] In this report, it linked smoking to the cause of emphysema, chronic bronchitis, coronary heart disease, and increased statistical risk of lung cancer. The effects of this report were featured in television and radio reports in the USA and in foreign countries. The Kellogg Brothers knew about the dangers of smoking long before the US government did.],
-  [class=""\>In conclusion, the Kellogg Brothers founded an important cereal company that shaped  America’s idea of breakfast. They were also innovators in medical science and wellness. Dr. Kellogg and his brother Will’s opposition to tobacco products was well ahead of its time. The Kellogg Brothers' beliefs also went against the American and foreign understanding of tobacco and its adverse effects. This was a time when the tobacco Industry held a stranglehold on the public consciousness in America and elsewhere. The Kellogg Brothers’ courage in publicizing their findings left a legacy on health and wellness concepts that are still felt today.],
-  [class=""\> \[14\] Markel, Howard. The Kelloggs: The Battling Brothers of Battle Creek . New York: New York. Vintage Books. 2017. 95; Wilson, Brian C. Dr. John Harvey Kellogg: And the Religion of Biologic Living . Bloomington & Indianapolis. Indiana University Press. 2014. XI.],
+  [The Kellogg Brothers founded a powerful and impactful cereal company in 1906. They were also innovators in the health and wellness fields and were members of organizations that were ahead of their time - and fought against what was then considered a healthy lifestyle. The Kellogg Brothers left a lasting positive legacy on the health and wellness industry.],
+  [Daniel Boustead explains.],
+  [John Harvey Kellogg.],
+  [William Keith Kellogg.],
+  [The Kellogg brothers’ longest-lasting contribution to the Health industry is their product, Kellogg’s Cornflakes.  Dr. John Harvey Kellogg’s (1852-1943) trek towards Kellogg’s Cornflakes began as a search for a breakfast substitute to help treat his patients at the Battle Creek Sanitarium who were suffering from stomach problems. \[1\]  This was a consistent complaint of his patients. A disabled gastrointestinal system caused the patient’s stomach problems. Dr. Kellogg discovered that the half-baked breakfast mush he had previously been serving patients was causing dyspepsia. He also felt that the replacement should also be “pre-cooked”. The creation of Kellogg’s Corn Flakes involves conflicting accounts, in which, in the end, Dr. Kellogg, his wife, Ella, and Dr. Kellogg’s brother, Will (1860-1951), should receive some credit for its creation. \[2\]],
+  [Dr. John Harvey Kellogg applied to the U. S. Patent Office for his patent on “Flaked Cereal and Process for Preparing the Same”(No.558,399) on May 31st, 1895. \[3\] The U. S. Patent Office granted Dr. Kellogg this patent on April 14th, 1896.  In the patent itself, Dr. Kellogg included flakes made of oats, corn, barley, and other grains in addition to wheat flakes to protect his patent.],
+  [In the summer of 1895, Will and Dr. Kellogg introduced the Corn Flakes at the General Conference of the Seventh-Day Adventists at the Battle Creek Sanitarium. \[4\] The dish became a hit with conference attendees, who would add milk, cream, or yogurt to it.],
+  [Company formed],
+  [In 1906, Will Kellogg founded the Battle Creek Toasted Corn Flake Company. \[5\] In 1907, he changed the company’s name to the Kellogg Toasted Corn Flake Company. \[6\] In the late summer to early fall of 1907, Kellogg’s Cornflakes made its official debut to the American public. \[7\] It was under Will Kellogg’s leadership that, during the Great Depression in 1933, the Kellogg company made a gross profit of \$6 million (about \$110 million in today’s money). \[8\] This was at a time when many companies were going bankrupt or struggling to maintain a profit.  In 1939, Will Kellogg retired as the company's head.],
+  [Dr. Kellogg was also a trailblazer in other ways in the field of health and wellness. The Battle Creek Sanitarium began in 1866 as the Health Reform Institute. \[9\] “Sister” White presented her ideas about Christian biblical healthy living at the Seventh-day Adventist General Conference on May 20th, 1866. The  General Conference approved the creation of an institute for health reform. \[10\] It was the governing body of the Seventh-day Adventist Church. The organization opened its doors for business as The Western Health Reform Institution on September 5th, 1867. \[11\] On October 1st, 1876, Dr. Kellogg became the medical director of the Western Health Reform Institute. \[12\] The Western Health Reform Institute became the Battle Creek Sanatorium on September 15th, 1910. \[13\] On the same date, Dr. Kellogg told this audience how the new institution should be called Sanitarium or San, because he felt it better suited the mission. From 1876 to 1943, Dr. Kellogg was at the head of the Western Health Reform Institute, later known as the Battle Creek Sanitarium. \[14\] Several years before his death, Dr. Kellogg estimated that his work at the Sanitarium brought him into contact with approximately 250,000 persons. \[15\]],
+  [At the Battle Creek Sanitarium, if a patient were suffering from the “blues,” they would be placed under an electric light cabinet to help them get sunlight. There was not much natural sunlight in southeastern Michigan during the Fall. \[16\] In this field, Dr. Kellogg was years ahead of his time in terms of medical treatment for seasonal affective disorder or SAD.],
+  [In 1916, at the Battle Creek Sanitarium, patient meals were also served with a card attached that specified the proper ratio of calories, proteins, carbohydrates, and fats to be consumed at the meal. \[17\] An example of this document is dated from May 19th, 1916. This was unheard of in the field of dieting and nutrition at the time.],
+  [Also at the Battle Creek Sanitarium, Dr. Kellogg would lead aerobics and calisthenics with the patients, backed by a brass band. \[18\] This was so popular that, in 1923, the Columbia Gramophone Company released 10 78-RPM shellac discs of Dr. Kellogg’s class, complete with a booklet. The album was entitled “John Harvey Kellogg’s HEALTH LADDER”.  In the booklet, there were exercises for the back, abdomen, legs, and arms that Dr. Kellogg recommended for his patients at the Battle Creek Sanitarium. This was decades ahead of the exercise craze led by Jack Lalanne, Richard Simmons, and other such international figures.],
+  [Although Dr. Kellogg never received credit for this, he encouraged his patients at the Battle Creek Sanitarium,  after surgery, to get up, move, and perform graded, deep-breathing exercises. \[19\] This was in stark contrast to the standard procedure of the day, which was to have patients confined to hospital beds for several days to weeks at a time. In the present day, medical procedures, early ambulation, and breathing exercises are the backbone of most recovery protocols after surgery.],
+  [Patents & Pioneers],
+  [In 1934, Dr. Kellogg received a patent for his “Soy Acidophilus Milk”. \[20\]   Dr. Kellogg devised this concoction to deal with babies who couldn’t deal with cow’s milk-based formulae, as well as his patients at the San who were suffering colitis, duodenal or gastric ulcers, babies who rejected their mom’s breast milk, constipation, and excessive flatulence. This was a step forward in addressing digestive and gastric health compared to the treatments of the day. By 1935, patients at the Battle Creek Sanitarium were consuming over 200 gallons a week of  Dr. Kellogg’s “Soy Acidophilus Milk”. The Battle Creek Sanitarium’s patients’ favorite way to enjoy Dr. Kellogg’s “Soy Acidophilus Milk” was with ripe bananas and a side of soy milk.  This predated the soy milk craze that you see today all over the world.],
+  [Dr. Kellogg and Will Kellogg were pioneers in the fight against tobacco and its harmful effects. Dr. Kellogg had discovered through increasing medical evidence that tobacco smoke caused heart disease, lung disease, digestive disorders, infections, and neurological problems. \[21\] In 1922, Dr. Kellogg published a successful book entitled Tobaccoism, or How Tobacco Kills . Along with Henry Ford’s book, The White Slaver , these books became a cornerstone of the progressive movement’s failed anti-smoking campaign.  Will Kellogg considered smoking to be so dangerous that he demanded that his workers at his factory either quit or he would fire them. He thought tobacco was more dangerous than drinking alcohol. \[22\]],
+  [Dr. Kellogg also thought that tobacco products interfered with proper muscular and growth development, caused gastric ulcers, unduly taxed the liver and kidney systems, injured the brain and nervous systems, and also impaired judgment and moral sensibility. \[23\] All of Dr. Kellogg’s claims have subsequently been supported by medical science, medical doctors, and research studies, except for the moral sensibility claim.],
+  [In the aftermath of World War I, Dr. Kellogg was the president of the Michigan Anti-Cigarette Society and the Committee of Fifty to Study the Tobacco Problem. \[24\]  Henry Ford was also a prominent member of the Committee of Fifty to Study the Tobacco Problem. Dr. Kellogg, with the help of this group, also produced the very first motion picture to address the dangers of tobacco smoking. He and his brother Will were pioneers in their opposition to tobacco products at a time when the tobacco companies were powerful and used their influence to suppress knowledge about the dangers of their products.],
+  [In the USA, the dangers of tobacco products did not reach the Federal level until January 11th, 1964, when the Surgeon General issued the 1964 Report on Smoking and Health. \[25\] In this report, it linked smoking to the cause of emphysema, chronic bronchitis, coronary heart disease, and increased statistical risk of lung cancer. The effects of this report were featured in television and radio reports in the USA and in foreign countries. The Kellogg Brothers knew about the dangers of smoking long before the US government did.],
+  [In conclusion, the Kellogg Brothers founded an important cereal company that shaped  America’s idea of breakfast. They were also innovators in medical science and wellness. Dr. Kellogg and his brother Will’s opposition to tobacco products was well ahead of its time. The Kellogg Brothers' beliefs also went against the American and foreign understanding of tobacco and its adverse effects. This was a time when the tobacco Industry held a stranglehold on the public consciousness in America and elsewhere. The Kellogg Brothers’ courage in publicizing their findings left a legacy on health and wellness concepts that are still felt today.],
+  [Did you find that piece interesting? If so, join us for free by clicking here .],
+  [Markel, Howard. The Kelloggs: The Battling Brothers of Battle Creek . New York: New York. Vintage Books. 2017.],
+  [National Library of Medicine: Profiles in Science, Reports of the Surgeon General, The 1964 Report on Smoking and Health. Accessed on November 26th, 2025, https:\/\/profiles.nlm.nih.gov/spotlight/nn/feature/smoking .],
+  [Schwartz, Richard W. John Harvey Kellogg: Pioneering Health Reformer . Hagerstown: Maryland. Review and Hearld Publishing Association.2006.],
+  [Wilson, Brian C. Dr. John Harvey Kellogg: And the Religion of Biologic Living . Bloomington & Indianapolis. Indiana University Press. 2014.],
+  [\[1\] Markel, Howard. The Kelloggs: The Battling Brothers of Battle Creek . New York: New York. Vintage Books. 2017.  20 and 112.],
+  [\[2\] Markel, Howard. The Kelloggs: The Battling Brothers of Battle Creek . New York: New York. Vintage Books. 2017.  20 and 129 to 133.],
+  [\[3\] Markel, Howard. The Kelloggs: The Battling Brothers of Battle Creek . New York: New York. Vintage Books. 2017. 133.],
+  [\[4\] Markel, Howard. The Kelloggs: The Battling Brothers of Battle Creek . New York: New York. Vintage Books. 2017. 134.],
+  [\[5\] Markel, Howard. The Kelloggs: The Battling Brothers of Battle Creek . New York: New York. Vintage Books. 2017. XIV.],
+  [\[6\] Markel, Howard. The Kelloggs: The Battling Brothers of Battle Creek . New York: New York. Vintage Books. 2017.279.],
+  [\[7\] Markel, Howard. The Kelloggs: The Battling Brothers of Battle Creek . New York: New York. Vintage Books. 2017. 280.],
+  [\[8\] Markel, Howard. The Kelloggs: The Battling Brothers of Battle Creek . New York: New York. Vintage Books. 2017. 264.],
+  [\[9\] Schwartz, Richard W. John Harvey Kellogg: Pioneering Health Reformer . Hagerstown: Maryland. Review and Hearld Publishing Association.2006.62.],
+  [\[10\] Markel, Howard. The Kelloggs: The Battling Brothers of Battle Creek . New York: New York. Vintage Books. 2017. 89.],
+  [\[11\] Markel, Howard. The Kelloggs: The Battling Brothers of Battle Creek . New York: New York. Vintage Books. 2017. 90.],
+  [\[12\] Markel, Howard. The Kelloggs: The Battling Brothers of Battle Creek . New York: New York. Vintage Books. 2017. 92.],
+  [\[13\] Markel, Howard. The Kelloggs: The Battling Brothers of Battle Creek . New York: New York. Vintage Books. 2017. 95.],
+  [\[14\] Markel, Howard. The Kelloggs: The Battling Brothers of Battle Creek . New York: New York. Vintage Books. 2017. 95; Wilson, Brian C. Dr. John Harvey Kellogg: And the Religion of Biologic Living . Bloomington & Indianapolis. Indiana University Press. 2014. XI.],
+  [\[15\] Schwartz, Richard W. John Harvey Kellogg: Pioneering Health Reformer . Hagerstown: Maryland. Review and Hearld Publishing Association.2006.62.],
+  [\[16\] Markel, Howard. The Kelloggs: The Battling Brothers of Battle Creek . New York: New York. Vintage Books. 2017. 187.],
+  [\[17\] Markel, Howard. The Kelloggs: The Battling Brothers of Battle Creek . New York: New York. Vintage Books. 2017. 187 to 188.],
+  [\[18\] Markel, Howard. The Kelloggs: The Battling Brothers of Battle Creek . New York: New York. Vintage Books. 2017.  190 to 191.],
+  [\[19\] Markel, Howard. The Kelloggs: The Battling Brothers of Battle Creek . New York: New York. Vintage Books. 2017. 195 and 200.],
+  [\[20\] Markel, Howard. The Kelloggs: The Battling Brothers of Battle Creek . New York: New York. Vintage Books. 2017.   330 to 331.],
+  [\[21\] Markel, Howard. The Kelloggs: The Battling Brothers of Battle Creek . New York: New York. Vintage Books. 2017. 224.],
+  [\[22\] Markel, Howard. The Kelloggs: The Battling Brothers of Battle Creek . New York: New York. Vintage Books. 2017. 224 to 225.],
+  [\[23\] Schwartz, Richard W. John Harvey Kellogg: Pioneering Health Reformer . Hagerstown: Maryland. Review and Hearld Publishing Association.2006. 59.],
+  [\[24\] Schwartz, Richard W. John Harvey Kellogg: Pioneering Health Reformer . Hagerstown: Maryland. Review and Hearld Publishing Association.2006. 107.],
+  [\[25\] National Library of Medicine: Profiles in Science, Reports of the Surgeon General, The 1964 Report on Smoking and Health. Accessed on November 26th, 2025, https:\/\/profiles.nlm.nih.gov/spotlight/nn/feature/smoking .],
 ),
   insert-map: (:),
   word-count: 2176,
@@ -527,10 +490,8 @@ received are really rubbish like.)],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [walk and talk],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -548,7 +509,7 @@ The rest of us were in good hands, going with the flow of the unknown.],
  
 You can start one yourself.
 It goes like this:],
-  [style="background-color: yellow;"\> UPDATE: 
+  [UPDATE: 
 Kevin Kelly and Craig Mod released their “Walk and Talk: Everything We Know” PDF which is much more thorough and helpful than my brief overview, below. Download it here .],
   [Choose where to walk — somewhere with lodging for 8 people every 15 km — where someone else can drive everyone’s bags from place to place.],
   [Someone (local person or business) walks it all in advance to make sure it’s actually good.
@@ -593,43 +554,43 @@ Photos by Craig Mod .],
   debug-mode: false,
 )
 
-  #pull-quote([Invite a diverse group of conversationalists — ideally eight.], [Derek Sivers])
+#pull-quote([Invite a diverse group of conversationalists — ideally eight.], [Derek Sivers])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How the U.S. Civil War Made Christmas a National Holiday],
   author: [George Levrier-Jones],
   source-name: [History in 28 Minutes],
   images: (),
   paragraphs: (
-  [class=""\> We take for granted that the Christmas Season entails children are home from school, festive meals are being prepared, airports are crowded as people rush home to their families and parties are in full swing, all in anticipation of the jolly old elf Santa Claus’s arrival. Not many people realize though that all of those traditions have their origins in the Civil War.],
-  [class=""\>The religious nature of the holiday season upon us aside, this time of year has been a time of celebration and gift giving for centuries. The Twelve Days of Christmas and many other traditional songs, as well as Dickens’s Christmas Carol, show that this is a celebration time that goes way back in the European culture. This week we are going to trace how the Civil War led to the making of Christmas as a secular, national holiday.],
-  [class=""\>Unsurprisingly, the story is at base a political one. On Christmas Day 1861, President Lincoln chose to host a party at the White House. It was a crucial political moment because Mr Lincoln had a brewing international crisis that he had to stop before it got out of hand.],
-  [class=""\>On Christmas Day 1862, the country was in a national panic. Setbacks in the war had made it anything but a happy season. On this day, Mr and Mrs Lincoln did something that seems so much a part of the responsibility of the POTUS on this holiday that its astounding that it hasn’t always been traditional. And on Christmas in 1863, the Lincoln’s made yet another gesture of good will to the soldiers in the field.],
-  [class=""\>In 1861 President Lincoln sought to limit an international crisis by throwing a Christmas Party at the White House. The Trent Affair had led to the capture of the appointed Confederate representatives to Britain and France, John Slidell and James Murray Mason. War clouds had started to collect as the British Prime Minister insisted that the US had no right to capture these men on open seas. The capture occurred on November 8 and had become an international scandal after November 18. By Christmastime, there were rumors of British preparations for war and also significant diplomatic efforts were in progress. There were rumors of an invasion from Canada . So, there was a lot for Lincoln to “soft shoe” that day.],
-  [class=""\>In 1862, the Lincoln Family began a tradition to counter the public effects of The Battle of Fredericksburg, which had been a military disaster that spawned a political and public relations catastrophe. “What will the country say?” Lincoln asked. But the POTUS was a political mastermind, and he turned crisis into opportunity, The Lincolns pointedly went the various hospitals around Washington and visited and spoke with the wounded. No president had ever done this before. It showed that Lincoln the commander in chief was a sensitive leader who felt the people’s pain.],
-  [class=""\>The hospital visits were so popular, and so necessary, that Lincoln continued them. He brought his son Tad with him on many such days. Tad was deeply moved by the soldiers. So on Xmas 1863, wounded soldiers received gifts of books and clothing from the White House, with a covering note that said, “From Tad Lincoln”.],
-  [class=""\>And in 1864, General Sherman telegrammed Lincoln on December 22, 1864 announcing the capture of Savanah. By 1865, as the image above shows, Christmas was a celebration of victory in. the war.],
-  [class=""\>The soldiers on the battlefield were far away from home, many had never been outside their county in their lives let alone their state. Union soldiers used salt pork and hardtack to decorate Christmas trees. Others were treated to special meals; a captain from Massachusetts treated his soldiers to foods such as turkey, oysters, pies, and apples; Singing carols was popular, ones that remain popular today, but Christmas cards would not become popular until the 1870s.],
-  [class=""\>When we fly or drive home to Grandmothers House for Christmas, the origin of that tradition is the Civil War Fathers on both sides of the war were often given furloughs to return home for the holiday.],
-  [class=""\>Christmas originates with a significant religious meaning and yet it has become secular in its celebration. Almost no one knows that this trend began in the Civil War. And even more surprising to many, without Thomas Nast, Christmas as we know it probably wouldn’t exist. But Nast wasn’t interested so much in Christmas. He was interested in a much bigger issue.],
-  [class=""\>Nast was a cartoonist for Harper’s Weekly during the Civil War. If Nast wasn’t so interested in Christmas, why the recurrent theme? The 2 Nast cartoons depict Christmas experiences during the war. Identify the subjects of each and what was groundbreaking about them.],
-  [class=""\>The fact is that Nast was a first class political cartoonist who was a Union sympathizing propagandist using Christmas to draw on the emotions of the season to bring the country together.],
-  [class=""\>In the top cartoon, "Christmas Eve" (1862), a wreath frames a scene of a soldier's praying wife and sleeping children at home; a second wreath frames the soldier seated by a campfire, gazing longingly at small pictures of his loved ones.],
-  [class=""\>Another illustration features Santa in his sleigh, then going down a chimney, in the top left of the cartoon. Somber scenes below remind of a grimmer reality--an army marching through snow and a row of frozen graves that refers to the Union's recent failure to take Fredericksburg. But there is hope: Santa is coming!],
-  [class=""\>the January 3, 1863 issue of Harper's Weekly, Nast has an early caricature of Santa dressed in an American flag, with a puppet with the name "Jeff" written on it, Nast was inspired by the Belsnickel, part of the folklore in southwestern Germany, You’ll notice his sleigh is drawn by 2 scrawny reindeer.],
-  [class=""\>Nast’s 1864 Christmas cartoon in Harper’s. You can clearly see Lincoln beckoning men outside the door into the Christmas feast. But once again, he is making a political point. . Lincoln is seen ushering in the Confederates to re-join the US in a celebratory setting. of a holiday held in common. It is, of course, pure propaganda, but consistent with the war goal of reunification.],
-  [class=""\>Nast’s Christmas cartoons were so successful that he essentially created much of the holiday we know. Nast was not the only one to use Christmas as a propaganda tool. On the Union side, The New York Herald also engaged in propaganda. One illustration published in the paper included Santa Claus fuming that he could not reach southern children, due to the northern blockade. On the Confederate side, The Richmond Examiner described Santa to its young readers as "a Dutch toy monger" who was a New York/New England "scrub" and Hottentot that had nothing to do with traditional Virginian celebrations of Christmas. Nast had successfully made Christmas a Union holiday, and that is propaganda at a very high level.],
-  [class=""\>“In these two drawings, Christmas became a Union holiday and Santa a Union local deity,” writes Adam Gopnik in a 1997 issue of the New Yorker. “It gave Christmas to the North—gave to the Union cause an aura of domestic sentiment, and even sentimentality.” Nast’s 1863 Christmas cartoon showed the couple shown in 1862 reunited.],
-  [class=""\>Use of a Santa-like figure for propaganda purposes would eventually lead after the war to the elf myth of the jolly old Saint Nick. Between 1862 and 1886, Nast created thirty-three Santa Claus drawings. The iconic version of Santa Claus as a jolly man in red with a white beard and a sack of toys was immortalized in 1881, depicted by Nast in the cartoon attached, But he also gave the definitive appearance to Uncle Sam, America personified. Notice how they both have white beards, but one is tall and thin and the other short and plump. Nast didn’t invent Uncle Sam, as many people believe, but he did standardize his appearance and affect. Santa Claus derives from Sinterklaas, the Dutch rendering of St Nicholas, which was popularized in the 1823 poem “A Visit From St. Nicholas”.],
-  [class=""\>DGCC: Notice that the Santa in the 1881 cartoon is smoking an old-style Dutch clay pipe and has a Civil War saber (?toy) hanging from his waistband. He is carrying a knapsack on his back, not filled with clothes and war supplies anymore, but with toys. These details are deliberate; Nast is immortalizing a new personification: the former Union soldier is now older, happily smoking an old pipe, and raising a family 16 years after the war’s end. But the old soldier is still in him. Nast knew his business.],
-  [class=""\>It was also Thomas Nast who decided that Santa and his reindeer lived at the North Pole. After the war Nast purposely made the North Pole the home of Saint Nick so that no one else could use him for nationalistic propaganda like Nast himself did.],
-  [class=""\>Because of the recognition that soldiers on both sides of the war, and of all religious backgrounds, found end of the year celebrations as fostering community and country, that view began to change. Politicians started to recognize in the post war period that if they wanted to bring the country together and heal wounds, Xmas was a natural solution.],
-  [class=""\>Puritans and Lutherans viewed non-sectarian celebrations of Christmas during the war as sacrilegious. They believed the day should be dedicated to fasting and prayer, and looked askance at such practices.  In Massachusetts, such parties were considered a waste of money and could be fined.],
-  [class=""\>The legal recognition of Christmas as a national holiday occurred when Representative Burton Chauncey Cook of Illinois introduced a bill in the U. S. Congress after the war. It passed in both houses of Congress, and President Ulysses S. Grant signed it on June 28, 1870. On June 26, 1870, Congress — led by Northern legislators — passed a law that made Christmas (along with New Year’s Day, Independence Day, and Thanksgiving) a federal holiday for federal employees in Washington, D. C. This was later extended nationwide. Ulysses S. Grant signed the law, partly as a gesture of reconciliation between North and South during Reconstruction.],
-  [class=""\> The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
+  [We take for granted that the Christmas Season entails children are home from school, festive meals are being prepared, airports are crowded as people rush home to their families and parties are in full swing, all in anticipation of the jolly old elf Santa Claus’s arrival. Not many people realize though that all of those traditions have their origins in the Civil War.],
+  [Lloyd W Klein explains.],
+  [The religious nature of the holiday season upon us aside, this time of year has been a time of celebration and gift giving for centuries. The Twelve Days of Christmas and many other traditional songs, as well as Dickens’s Christmas Carol, show that this is a celebration time that goes way back in the European culture. This week we are going to trace how the Civil War led to the making of Christmas as a secular, national holiday.],
+  [Unsurprisingly, the story is at base a political one. On Christmas Day 1861, President Lincoln chose to host a party at the White House. It was a crucial political moment because Mr Lincoln had a brewing international crisis that he had to stop before it got out of hand.],
+  [On Christmas Day 1862, the country was in a national panic. Setbacks in the war had made it anything but a happy season. On this day, Mr and Mrs Lincoln did something that seems so much a part of the responsibility of the POTUS on this holiday that its astounding that it hasn’t always been traditional. And on Christmas in 1863, the Lincoln’s made yet another gesture of good will to the soldiers in the field.],
+  [In 1861 President Lincoln sought to limit an international crisis by throwing a Christmas Party at the White House. The Trent Affair had led to the capture of the appointed Confederate representatives to Britain and France, John Slidell and James Murray Mason. War clouds had started to collect as the British Prime Minister insisted that the US had no right to capture these men on open seas. The capture occurred on November 8 and had become an international scandal after November 18. By Christmastime, there were rumors of British preparations for war and also significant diplomatic efforts were in progress. There were rumors of an invasion from Canada . So, there was a lot for Lincoln to “soft shoe” that day.],
+  [In 1862, the Lincoln Family began a tradition to counter the public effects of The Battle of Fredericksburg, which had been a military disaster that spawned a political and public relations catastrophe. “What will the country say?” Lincoln asked. But the POTUS was a political mastermind, and he turned crisis into opportunity, The Lincolns pointedly went the various hospitals around Washington and visited and spoke with the wounded. No president had ever done this before. It showed that Lincoln the commander in chief was a sensitive leader who felt the people’s pain.],
+  [The hospital visits were so popular, and so necessary, that Lincoln continued them. He brought his son Tad with him on many such days. Tad was deeply moved by the soldiers. So on Xmas 1863, wounded soldiers received gifts of books and clothing from the White House, with a covering note that said, “From Tad Lincoln”.],
+  [And in 1864, General Sherman telegrammed Lincoln on December 22, 1864 announcing the capture of Savanah. By 1865, as the image above shows, Christmas was a celebration of victory in. the war.],
+  [The soldiers on the battlefield were far away from home, many had never been outside their county in their lives let alone their state. Union soldiers used salt pork and hardtack to decorate Christmas trees. Others were treated to special meals; a captain from Massachusetts treated his soldiers to foods such as turkey, oysters, pies, and apples; Singing carols was popular, ones that remain popular today, but Christmas cards would not become popular until the 1870s.],
+  [When we fly or drive home to Grandmothers House for Christmas, the origin of that tradition is the Civil War Fathers on both sides of the war were often given furloughs to return home for the holiday.],
+  [Christmas originates with a significant religious meaning and yet it has become secular in its celebration. Almost no one knows that this trend began in the Civil War. And even more surprising to many, without Thomas Nast, Christmas as we know it probably wouldn’t exist. But Nast wasn’t interested so much in Christmas. He was interested in a much bigger issue.],
+  [Nast was a cartoonist for Harper’s Weekly during the Civil War. If Nast wasn’t so interested in Christmas, why the recurrent theme? The 2 Nast cartoons depict Christmas experiences during the war. Identify the subjects of each and what was groundbreaking about them.],
+  [The fact is that Nast was a first class political cartoonist who was a Union sympathizing propagandist using Christmas to draw on the emotions of the season to bring the country together.],
+  [In the top cartoon, "Christmas Eve" (1862), a wreath frames a scene of a soldier's praying wife and sleeping children at home; a second wreath frames the soldier seated by a campfire, gazing longingly at small pictures of his loved ones.],
+  [Another illustration features Santa in his sleigh, then going down a chimney, in the top left of the cartoon. Somber scenes below remind of a grimmer reality--an army marching through snow and a row of frozen graves that refers to the Union's recent failure to take Fredericksburg. But there is hope: Santa is coming!],
+  [the January 3, 1863 issue of Harper's Weekly, Nast has an early caricature of Santa dressed in an American flag, with a puppet with the name "Jeff" written on it, Nast was inspired by the Belsnickel, part of the folklore in southwestern Germany, You’ll notice his sleigh is drawn by 2 scrawny reindeer.],
+  [Nast’s 1864 Christmas cartoon in Harper’s. You can clearly see Lincoln beckoning men outside the door into the Christmas feast. But once again, he is making a political point. . Lincoln is seen ushering in the Confederates to re-join the US in a celebratory setting. of a holiday held in common. It is, of course, pure propaganda, but consistent with the war goal of reunification.],
+  [Nast’s Christmas cartoons were so successful that he essentially created much of the holiday we know. Nast was not the only one to use Christmas as a propaganda tool. On the Union side, The New York Herald also engaged in propaganda. One illustration published in the paper included Santa Claus fuming that he could not reach southern children, due to the northern blockade. On the Confederate side, The Richmond Examiner described Santa to its young readers as "a Dutch toy monger" who was a New York/New England "scrub" and Hottentot that had nothing to do with traditional Virginian celebrations of Christmas. Nast had successfully made Christmas a Union holiday, and that is propaganda at a very high level.],
+  [“In these two drawings, Christmas became a Union holiday and Santa a Union local deity,” writes Adam Gopnik in a 1997 issue of the New Yorker. “It gave Christmas to the North—gave to the Union cause an aura of domestic sentiment, and even sentimentality.” Nast’s 1863 Christmas cartoon showed the couple shown in 1862 reunited.],
+  [Use of a Santa-like figure for propaganda purposes would eventually lead after the war to the elf myth of the jolly old Saint Nick. Between 1862 and 1886, Nast created thirty-three Santa Claus drawings. The iconic version of Santa Claus as a jolly man in red with a white beard and a sack of toys was immortalized in 1881, depicted by Nast in the cartoon attached, But he also gave the definitive appearance to Uncle Sam, America personified. Notice how they both have white beards, but one is tall and thin and the other short and plump. Nast didn’t invent Uncle Sam, as many people believe, but he did standardize his appearance and affect. Santa Claus derives from Sinterklaas, the Dutch rendering of St Nicholas, which was popularized in the 1823 poem “A Visit From St. Nicholas”.],
+  [DGCC: Notice that the Santa in the 1881 cartoon is smoking an old-style Dutch clay pipe and has a Civil War saber (?toy) hanging from his waistband. He is carrying a knapsack on his back, not filled with clothes and war supplies anymore, but with toys. These details are deliberate; Nast is immortalizing a new personification: the former Union soldier is now older, happily smoking an old pipe, and raising a family 16 years after the war’s end. But the old soldier is still in him. Nast knew his business.],
+  [It was also Thomas Nast who decided that Santa and his reindeer lived at the North Pole. After the war Nast purposely made the North Pole the home of Saint Nick so that no one else could use him for nationalistic propaganda like Nast himself did.],
+  [It’s hard to imagine today, but Christmas was not always considered a “national” holiday.],
+  [Because of the recognition that soldiers on both sides of the war, and of all religious backgrounds, found end of the year celebrations as fostering community and country, that view began to change. Politicians started to recognize in the post war period that if they wanted to bring the country together and heal wounds, Xmas was a natural solution.],
+  [Puritans and Lutherans viewed non-sectarian celebrations of Christmas during the war as sacrilegious. They believed the day should be dedicated to fasting and prayer, and looked askance at such practices.  In Massachusetts, such parties were considered a waste of money and could be fined.],
+  [The legal recognition of Christmas as a national holiday occurred when Representative Burton Chauncey Cook of Illinois introduced a bill in the U. S. Congress after the war. It passed in both houses of Congress, and President Ulysses S. Grant signed it on June 28, 1870. On June 26, 1870, Congress — led by Northern legislators — passed a law that made Christmas (along with New Year’s Day, Independence Day, and Thanksgiving) a federal holiday for federal employees in Washington, D. C. This was later extended nationwide. Ulysses S. Grant signed the law, partly as a gesture of reconciliation between North and South during Reconstruction.],
+  [The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
 ),
   insert-map: (:),
   word-count: 1736,
@@ -637,10 +598,8 @@ Photos by Craig Mod .],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [TEDNext 2025 — in photos],
   author: [TED Staff],
   source-name: [TED Blog],
@@ -649,6 +608,27 @@ Photos by Craig Mod .],
   [TEDNext 2025 in Atlanta, now in its second year, celebrated those asking big questions about life, work and the world. Across three days of TED Talks, discovery sessions, meet-ups and more, attendees from 31 countries and every walk of life explored what’s next, how to lead and what really matters. Below, enjoy a photo roundup from TEDNext 2025.],
   [TEDNext 25 Photo Team: Leandro Badalotti, Ryan Lash, Erin Lubin, Callie Shields, Lynsey Weatherspoon and Elizabeth Zeeuw],
   [Watch TEDNext 2025 on TED Live , check out more photos from the event and learn more about attending a future TED conference .],
+  [The welcome reception at TEDNext 2025, November 9-11, 2025, in Atlanta, GA. (Photo: Ryan Lash \/ TED)],
+  [TED Translators welcome dinner at TEDNext, November 9-11, 2025, in Atlanta, GA. (Photo: Erin Lubin \/ TED)],
+  [TEDNext 2025, November 9-11, 2025, in Atlanta, GA. (Photo: Erin Lubin \/ TED)],
+  [Newcomers orientation at TEDNext 2025, November 9-11, 2025, in Atlanta, GA. (Photo: Erin Lubin \/ TED)],
+  [Pedaling through Atlanta’s progress at TEDNext 2025, November 9-11, 2025, in Atlanta, GA. (Photo: Elizabeth Zeeuw \/ TED)],
+  [Dine-around at TEDNext 2025, November 9-11, 2025, in Atlanta, GA. (Photo: Ryan Lash \/ TED)],
+  [TEDNext 2025, November 9-11, 2025, in Atlanta, GA. (Photo: Erin Lubin \/ TED)],
+  [TEDNext 2025, November 9-11, 2025, in Atlanta, GA. (Photo: Erin Lubin \/ TED)],
+  [TEDNext 2025, November 9-11, 2025, in Atlanta, GA. (Photo: Erin Lubin \/ TED)],
+  [TEDNext 2025, November 9-11, 2025, in Atlanta, GA. (Photo: Ryan Lash \/ TED)],
+  [The Next Stage at TEDNext 2025, November 9-11, 2025, in Atlanta, GA. (Photo: Ryan Lash \/ TED)],
+  [The Next Stage at TEDNext 2025, November 9-11, 2025, in Atlanta, GA. (Photo: Ryan Lash \/ TED)],
+  [Service puppies at TEDNext 2025, November 9-11, 2025, in Atlanta, GA. (Photo: Ryan Lash \/ TED)],
+  [TEDNext 2025, November 9-11, 2025, in Atlanta, GA. (Photo: Ryan Lash \/ TED)],
+  [TEDNext 2025, November 9-11, 2025, in Atlanta, GA. (Photo: Ryan Lash \/ TED)],
+  [TEDNext 2025, November 9-11, 2025, in Atlanta, GA. (Photo: Erin Lubin \/ TED)],
+  [TEDNext 2025, November 9-11, 2025, in Atlanta, GA. (Photo: Erin Lubin \/ TED)],
+  [Closing party at TEDNext 2025, November 9-11, 2025, in Atlanta, GA. (Photo: Erin Lubin \/ TED)],
+  [TED Translators at TEDNext, November 9-11, 2025, in Atlanta, GA. Photo: (Erin Lubin \/ TED)],
+  [TEDNext 2025, November 9-11, 2025, in Atlanta, GA. (Photo: Erin Lubin \/ TED)],
+  [TEDNext 2025, November 9-11, 2025, in Atlanta, GA. (Photo: Ryan Lash \/ TED)],
   [Watch TEDNext 2025 on TED Live , check out more photos from the event and learn more about attending a future TED conference .],
 ),
   insert-map: (:),
@@ -657,52 +637,88 @@ Photos by Craig Mod .],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Prisoner of War Exchanges in the U.S. Civil War: The Lieber Code - Part 1],
   author: [George Levrier-Jones],
   source-name: [History in 28 Minutes],
   images: (),
   paragraphs: (
-  [class=""\> Early in the U. S. Civil War a prison exchange system was developed by agreement between the two sides. It called for equal exchanges of all soldiers captured based on rank. Once exchanged, these soldiers could return to their units. The balance remaining after equal exchanges were to be paroled, and not to take up arms again until they were formally exchanged.],
-  [class=""\>On July 22, 1862, Union Maj Gen John A Dix and Confederate Major General Daniel Harvey Hill concluded an agreement for the general exchange of prisoners between the Union and Confederate armies. A scale of equivalents was developed wherein an officer might be exchanged for a certain number of enlisted men, or might entail a parole in which no military capacity was allowed until officially exchanged. Officers were exchanged for more soldiers than others. The operation of the system was:],
-  [class=""\>The Exchange System worked well in 1862 but there were irregularities on both sides, in which paroled men nevertheless rejoined their units. Edwin Stanton wanted to suspend the exchanges because he felt that southern soldiers weren’t following the rules of the parole. Secretary Stanton saw a potential for Union soldiers to abuse the parole system. The Confederates had begun paroling a number of Western prisoners unilaterally, including some two thousand taken at the April 1862 battle of Shiloh. The violations continued with the parolees from Vicksburg and Port Hudson.],
-  [class=""\>In September of 1862, President Lincoln called for the enlistment of black soldiers into the Union Armies as part of the preliminary draft of the Emancipation Proclamation. In December 1862, President Davis responded by issuing a proclamation that neither captured black soldiers nor their white officers would be subject to exchange. That the black soldiers were fugitive slaves and subject to capital punishment.],
-  [class=""\>President Davis made an official proclamation that black POWs were fugitive slaves. In May 1863, the Confederate Congress passed a joint resolution that formalized Davis' proclamation that black soldiers taken prisoner would not be exchanged: “That all commissioned officers in the command of said Benjamin F. Butler be declared not entitled to be considered as soldiers engaged in honorable warfare but as robbers and criminals deserving death, and that they and each of them be whenever captured reserved for execution.” Find the proclamation here: http:\/\/www.freedmen.umd.edu/pow.htm],
-  [class=""\>Lincoln’s response was to assure that The Lieber Code, General Order 100, issued in April 1863, responded to this crisis. The Lieber Code was not written as a direct reaction to the collapse of the Dix–Hill Cartel or Jefferson Davis’s refusal to recognize Black Union soldiers as lawful combatants. But the final form, timing, and political purpose of the code were very heavily shaped by those crises. In effect, the breakdown of prisoner exchange and Confederate policy toward Black soldiers turned the Lieber Code from a general effort to codify the laws of war into a strategic and moral response to the Confederacy’s stance.],
-  [class=""\>Henry Halleck had long wanted an American codification of the laws of war. Francis Lieber had been thinking about such a code for years, drawing on European theory. The War Department’s Law of War Committee met in late 1862—months before Davis’s December 1862 proclamation threatening to treat captured Black Union soldiers as slaves and their white officers as criminals.],
-  [class=""\>While not the original motivation, the timing and urgency of the Lieber Code reflect the breakdown of the Dix–Hill Cartel (mid–late 1862) and Davis’s policy. The Union needed a principled basis to suspend the Cartel One of its articles stipulated that the United States government expected all prisoners to be treated equally, regardless of color. By late 1862 it was clear that the Confederacy would not exchange or treat Black Union soldiers as POWs. The cartel was therefore unworkable. The Lincoln administration needed a legal and moral justification for halting exchanges without appearing to commit retaliation for its own sake.],
-  [class=""\>The Lieber Code provided it—explicitly authorizing retaliation when the enemy violates the laws of war; the equal treatment of all lawful combatants regardless of race; the duty of the U. S. government to protect all its soldiers. This was crucial. It offered a codified, internationally resonant legal framework for the Union’s stance. The full document can be found here: https:\/\/avalon.law.yale.edu/19th\_century/lieber.asp\#sec3],
-  [class=""\>Franz Lieber was a German-American legal scholar. He had fought with the Prussian Army and been wounded at Waterloo. He later moved and taught for 20 years in South Carolina, where he was repulsed by slavery. In 1861 he became professor of law at Columbia University in NYC. Two of his sons fought for the Union, a third fought for the Confederacy and was killed in action. Halleck, a lawyer with an interest in International Law, consulted Lieber regarding ethical dilemmas early on and invited him, along with Stanton, to undertake this project.],
-  [class=""\>The Lieber Code expressly forbade giving "no quarter" to the enemy (i.e. killing prisoners of war), except in such cases when the survival of the unit that held these prisoners was threatened. It forbade the use of poisons, stating that use of such puts any force who uses them entirely outside the pale of the civilized nations and peoples; it forbade the use of torture to extract confessions or information; it described the rights and duties of prisoners of war and of capturing forces. Most of its ideas were incorporated into the Hague Convention of 1907, and are the fundamental rules of war to this day.],
-  [class=""\>The Lieber Code is formulated as a series of x articles, really just statements of principle. Section III is compised of articles 48 – 80 covers the principles involving prisoners of war. The Code Directly Addresses the Black Soldiers Question. All soldiers fighting under a recognized government are lawful combatants (Arts. 57–60). No distinction may be made on “color, descent, or condition” once they are uniformed combatants. Retaliation is justified if the enemy mistreats prisoners on racial grounds (Arts. 27–29). These provisions were absolutely a response to Davis’s proclamation of December 23, 1862 (declaring Black Union soldiers slaves “invading the South”), and the Confederate Congress’s subsequent approval of that policy. Lieber himself acknowledged this. His correspondence with Halleck in early 1863 shows that the issue of Black POW protection was explicitly in mind as the code was being finalized.],
-  [class=""\>The Lieber Code expressly forbade giving "no quarter" to the enemy (i.e. killing prisoners of war), except in such cases when the survival of the unit that held these prisoners was threatened. Article 60 provides: “It is against the usage of modern war to resolve, in hatred and revenge, to give no quarter. No body of troops has the right to declare that it will not give, and therefore will not expect, quarter; but a commander is permitted to direct his troops to give no quarter, in great straits, when his own salvation makes it impossible to cumber himself with prisoners.],
-  [class=""\> It forbade the use of poisons (Article 70), stating that use of such puts any force who uses them entirely outside the pale of the civilized nations and peoples; it forbade the use of torture to extract confessions or information; it described the rights and duties of prisoners of war and of capturing forces.],
-  [class=""\>Article 58 directly addresses the use of Black soldiers: “The law of nations knows of no distinction of color, and if an enemy of the United States should enslave and sell any captured persons of their army, it would be a case for the severest retaliation, if not redressed upon complaint. The United States cannot retaliate by enslavement; therefore death must be the retaliation for this crime against the law of nations.”],
-  [class=""\>Originally Edwin Stanton wanted to suspend the exchanges because he felt that Southern soldiers weren’t following the rules of the parole. Secretary Stanton saw a potential for Union soldiers to abuse the parole system. The Confederates had begun paroling a number of Western prisoners unilaterally, including some two thousand taken at the April 1862 battle of Shiloh. The violations continued with the parolees from Vicksburg and Port Hudson. It was Lincoln, the astute politician, who realized it would be unpopular to suspend exchanges for that reason, but if applied to the USCT it would be better accepted. The Code was therefore also a strategic countermove. The Union needed a public, intellectually credible, “laws of war” document to show why exchanges were suspended, why retaliation policies were lawful, why Black soldiers had to be protected, and why the Confederacy was violating international norms. The Lieber Code gave the Lincoln administration a fully articulated legal and moral position—something European observers were watching closely.],
-  [class=""\>The Lieber Code was issued unilaterally by the United States, and no other nation was bound by its formalities at the time. However, when the Confederates breached its principles, the US government needed to respond.],
-  [class=""\>At Fort Wagner, several black prisoners from the 54th Massachusetts were not exchanged with the rest of the white soldiers who participated in the assault on Fort Wagner in July 1863. This is the infamous attack where Colonel Robert Gould Shaw was killed leading his men in a charge. When a Union officer asked the Confederates at Battery Wagner for the return of Shaw's body, he was informed by the Confederate commander, Brigadier General Johnson Hagood, "We buried him with his \_\_\_\_\_."],
-  [class=""\>On July 30, 1863, President Abraham Lincoln issued General Order 252, which effectively suspended the Dix-Hill Cartel until the Confederate forces agreed to treat black prisoners the same as white prisoners. Large scale prisoner exchanges ceased by August 1863, resulting in a dramatic increase in the prison populations on both sides. Neither side was prepared for this sudden responsibility. The inhumane consequences on both sides are well known.],
-  [class=""\>Large scale prisoner exchanges ceased by August 1863, resulting in a dramatic increase in the prison populations on both sides. Neither side was prepared for this sudden responsibility. The inhumane consequences on both sides are well known.],
-  [class=""\>The fact is that it was official CSA policy to kill all black POWs. Secretary of War James Seddon responded to PGT Beauregard’s request for the official policy as to how to handle his black POWs. Confederate Secretary of War James A. Seddon, in a November 30, 1862, letter to General P. G. T. Beauregard, outlined a policy of executing captured black soldiers as criminals guilty of breaking slave insurrection laws. You can find this brief letter here: http:\/\/historymaking.org/textbook/items/show/97],
-  [class=""\>Fort Pillow occurred on April 12, 1864. The Congressional Investigation into the battle concluded that the massacre was consistent with official CSA policy. The next month, the Confederacy in May 1864 passed a law stating that black U. S. soldiers captured while fighting against the Confederacy would be turned over to the state, where the captured would be tried, according to state laws.],
-  [class=""\>The exchange system had collapsed in late 1863 because of the failure of Confederate prisoners (and their government) to observe paroles, most notably those issued to the surrendered garrison of Vicksburg. When Union soldiers captured some of those unexchanged soldiers at Chattanooga, Stanton decided that something had to be done. Making matters worse, the Confederacy refused to exchange black Union soldiers. Stories that Confederate soldiers murdered black captives carried more impact after Nathan Bedford Forrest's men stormed Fort Pillow on April 12, 1864, and killed black soldiers who were attempting to surrender.],
-  [class=""\>The Union treatment of Confederate POWs generally aligned with the Lieber Code, especially early in the war. Large prison camps like Camp Douglas (IL) and Point Lookout (MD) had harsh conditions—exposure, poor sanitation, and disease. Sherman reportedly used POWs to clear land mines outside of Savannah. That wasn’t expressly against the Lieber Code, but it would be forbidden today. As the war progressed and prisoner exchanges collapsed (due in part to Confederate refusal to exchange Black Union soldiers equally), conditions worsened, with overcrowding and high death rates.],
-  [class=""\>It had minimal shelter, contaminated water, inadequate food. Nearly 13,000 of 45,000 prisoners died—a mortality rate of ~29%. Commandant Henry Wirz was tried and executed after the war for war crimes—one of the few such examples.],
-  [class=""\>It is often erroneously claimed that General Grant ordered the suspension of Dix-Hill he was not the Commander in Chief at this time, and had nothing to do with it. https:\/\/www.nps.gov/ande/learn/historyculture/grant-and-the-prisoner-exchange.htm?fbclid=IwAR0Re2-Imgr8m\_qqAYEGK4iAeKRlEA3mafVQpHiqZHtkyRG\_ELag97xEE1s&mibextid=kdkkhi],
-  [class=""\>"It is hard on our men held in Southern prisons not to exchange them, but it is humanity to those left in the ranks to fight our battles. Every man we hold, when released on parole or otherwise, becomes an active soldier against us at once either directly or indirectly. If we commence a system of exchange which liberates all prisoners taken, we will have to fight on until the whole South is exterminated. If we hold those caught they amount to no more than dead men. At this particular time to release all rebel prisoners North would insure Sherman's defeat and would compromise our safety here." – General Ulysses S. Grant, August 18, 1864.],
-  [class=""\>The myth is that Grant eschewed the exchanges to prevent the Southern armies to regain its captured men, thus favoring the Union side. Supposedly he did it because of the callous arithmetic of the war – calculating that by stopping exchanges the Union armies could simply outlast the Confederates. In fact, President Abraham Lincoln suspended the Dix-Hill Cartel in retaliation for the Confederacy's refusal to exchange black soldiers captured in the summer of 1863.],
-  [class=""\>During the Summer of 1864 Grant pointed out that the refusal to exchange prisoners, however harsh it might seem, drained the Confederacy of much needed manpower; exchanged Confederates would return to the ranks to kill more Yankees, complicating calculations based on the supposed humanity of exchanges. As you can see, Grant wrote this almost 1 year after the exchanges had stopped. It is fascinating that this is the quote that appears on the Wirz monument, trying to shift blame for Andersonville onto Grant.],
-  [class=""\>In the late summer of 1864, a year after the Dix-Hill Cartel was suspended, Confederate officials approached Union General Benjamin Butler about resuming the cartel and exchanges, including black prisoners. Butler, the Union Commissioner of Exchange, contacted Grant for guidance on the issue. Grant responded on August 18, 1864 with this statement. In their conversation, Grant informed Butler that he approved an equal exchange of soldier for soldier, but did not approve a full resumption of the Dix-Hill Cartel. His issue was with the cartel's stipulation that the balance after equal exchanges was to be paroled and sent home to await formal exchange. By August 1864, Confederate prisoners far outnumbered Union prisoners, so a resumption of the cartel would release thousands more Confederates. Grant also felt that once released, Confederate prisoners would likely violate their paroles and rejoin their units. Many of the Union prisoners, on the other hand, had already fulfilled their enlistments and would likely go home.],
-  [class=""\>An agreement for resuming prisoner exchanges would not be reached until the winter of 1864-1865. Had Confederate authorities agreed to exchange black soldiers, however, the exchanges would have been resumed; and in January 1865 Confederate authorities agreed it was best to exchange "all" prisoners, regardless of color. The reality is that Grant did approve a prisoner for prisoner exchange that did in fact occur.],
-  [class=""\>Creating rules or laws to govern war, an inherently unethical human behavior, is one of history’s most painful and persistent tensions. The desire for moral restraint versus the brutal realities of war must be balanced; and clearly, winning the war is the foremost goal. Are the “rules” or “laws” of war phony? No, they’re not phony—but they are imperfect and often inconsistently applied.],
-  [class=""\>The laws of war, such as those codified in the Lieber Code (1863), the Hague Conventions (1899, 1907), and the Geneva Conventions (especially after WWII), are real legal instruments. They’re backed by treaties, military doctrine, and in some cases, courts (like the International Criminal Court).],
-  [class=""\>These laws serve several purposes. They limit unnecessary suffering, especially of civilians and prisoners. They maintain some moral legitimacy—for both domestic and international audiences. The rules prevent escalation into unbounded barbarism (e.g., genocide, torture as routine policy). And, they set standards for holding individuals accountable (think of the Nuremberg Trials or modern war crimes prosecutions).],
-  [class=""\>But while they also protect the combatant, a major purpose is to the military and political leaders who order destruction and death. By following an international code of rules, war trials and criminal prosecution have a built in defense.],
-  [class=""\>In conclusion, The Lieber Code was not conceived as a response to the collapse of the Dix–Hill Cartel or to Davis’s policy on Black soldiers, but those events decisively shaped its final content, its timing of issuance, and its strategic purpose. It not only gave an ethical response to the problem, but a politically savvy public stance.],
-  [class=""\> The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
+  [Early in the U. S. Civil War a prison exchange system was developed by agreement between the two sides. It called for equal exchanges of all soldiers captured based on rank. Once exchanged, these soldiers could return to their units. The balance remaining after equal exchanges were to be paroled, and not to take up arms again until they were formally exchanged.],
+  [Lloyd W Klein explains.],
+  [John A. Dix.],
+  [The Dix-Hill Cartel],
+  [On July 22, 1862, Union Maj Gen John A Dix and Confederate Major General Daniel Harvey Hill concluded an agreement for the general exchange of prisoners between the Union and Confederate armies. A scale of equivalents was developed wherein an officer might be exchanged for a certain number of enlisted men, or might entail a parole in which no military capacity was allowed until officially exchanged. Officers were exchanged for more soldiers than others. The operation of the system was:],
+  [Soldiers of equivalent ranks would be exchanged on a one to one value,],
+  [Corporals and sergeants were worth two privates,],
+  [Lieutenants were worth four privates,],
+  [A captain was worth six privates,],
+  [A major was worth eight privates,],
+  [A lieutenant colonel was worth 10 privates,],
+  [A colonel was worth 15 privates,],
+  [A brigadier general was worth 20 privates,],
+  [A major general was worth 40 privates, and],
+  [A commanding general was worth 60 privates.],
+  [The Exchange System worked well in 1862 but there were irregularities on both sides, in which paroled men nevertheless rejoined their units. Edwin Stanton wanted to suspend the exchanges because he felt that southern soldiers weren’t following the rules of the parole. Secretary Stanton saw a potential for Union soldiers to abuse the parole system. The Confederates had begun paroling a number of Western prisoners unilaterally, including some two thousand taken at the April 1862 battle of Shiloh. The violations continued with the parolees from Vicksburg and Port Hudson.],
+  [Storming Fort Wagner.],
+  [Cessation of the Cartel and Its Implications],
+  [In September of 1862, President Lincoln called for the enlistment of black soldiers into the Union Armies as part of the preliminary draft of the Emancipation Proclamation. In December 1862, President Davis responded by issuing a proclamation that neither captured black soldiers nor their white officers would be subject to exchange. That the black soldiers were fugitive slaves and subject to capital punishment.],
+  [In January 1863 the Emancipation Proclamation became official and the United States began the active recruitment of black soldiers. Jefferson Davis was incensed by this, and threatened severe actions.],
+  [President Davis made an official proclamation that black POWs were fugitive slaves. In May 1863, the Confederate Congress passed a joint resolution that formalized Davis' proclamation that black soldiers taken prisoner would not be exchanged: “That all commissioned officers in the command of said Benjamin F. Butler be declared not entitled to be considered as soldiers engaged in honorable warfare but as robbers and criminals deserving death, and that they and each of them be whenever captured reserved for execution.” Find the proclamation here: http:\/\/www.freedmen.umd.edu/pow.htm],
+  [Lincoln’s response was to assure that The Lieber Code, General Order 100, issued in April 1863, responded to this crisis. The Lieber Code was not written as a direct reaction to the collapse of the Dix–Hill Cartel or Jefferson Davis’s refusal to recognize Black Union soldiers as lawful combatants. But the final form, timing, and political purpose of the code were very heavily shaped by those crises. In effect, the breakdown of prisoner exchange and Confederate policy toward Black soldiers turned the Lieber Code from a general effort to codify the laws of war into a strategic and moral response to the Confederacy’s stance.],
+  [Work on the code had begun in 1862, well before the collapse of the prisoner-exchange system.],
+  [Henry Halleck had long wanted an American codification of the laws of war. Francis Lieber had been thinking about such a code for years, drawing on European theory. The War Department’s Law of War Committee met in late 1862—months before Davis’s December 1862 proclamation threatening to treat captured Black Union soldiers as slaves and their white officers as criminals.],
+  [This was in essence the first major revision of the 1806 Articles of War.],
+  [While not the original motivation, the timing and urgency of the Lieber Code reflect the breakdown of the Dix–Hill Cartel (mid–late 1862) and Davis’s policy. The Union needed a principled basis to suspend the Cartel One of its articles stipulated that the United States government expected all prisoners to be treated equally, regardless of color. By late 1862 it was clear that the Confederacy would not exchange or treat Black Union soldiers as POWs. The cartel was therefore unworkable. The Lincoln administration needed a legal and moral justification for halting exchanges without appearing to commit retaliation for its own sake.],
+  [The Lieber Code provided it—explicitly authorizing retaliation when the enemy violates the laws of war; the equal treatment of all lawful combatants regardless of race; the duty of the U. S. government to protect all its soldiers. This was crucial. It offered a codified, internationally resonant legal framework for the Union’s stance. The full document can be found here: https:\/\/avalon.law.yale.edu/19th\_century/lieber.asp\#sec3],
+  [Most of its ideas were incorporated into the Hague Convention of 1907, and remain among the fundamental rules of war to this day as an antecedent of the Geneva Conventions.],
+  [Franz Lieber was a German-American legal scholar. He had fought with the Prussian Army and been wounded at Waterloo. He later moved and taught for 20 years in South Carolina, where he was repulsed by slavery. In 1861 he became professor of law at Columbia University in NYC. Two of his sons fought for the Union, a third fought for the Confederacy and was killed in action. Halleck, a lawyer with an interest in International Law, consulted Lieber regarding ethical dilemmas early on and invited him, along with Stanton, to undertake this project.],
+  [The Lieber Code expressly forbade giving "no quarter" to the enemy (i.e. killing prisoners of war), except in such cases when the survival of the unit that held these prisoners was threatened. It forbade the use of poisons, stating that use of such puts any force who uses them entirely outside the pale of the civilized nations and peoples; it forbade the use of torture to extract confessions or information; it described the rights and duties of prisoners of war and of capturing forces. Most of its ideas were incorporated into the Hague Convention of 1907, and are the fundamental rules of war to this day.],
+  [The Lieber Code is formulated as a series of x articles, really just statements of principle. Section III is compised of articles 48 – 80 covers the principles involving prisoners of war. The Code Directly Addresses the Black Soldiers Question. All soldiers fighting under a recognized government are lawful combatants (Arts. 57–60). No distinction may be made on “color, descent, or condition” once they are uniformed combatants. Retaliation is justified if the enemy mistreats prisoners on racial grounds (Arts. 27–29). These provisions were absolutely a response to Davis’s proclamation of December 23, 1862 (declaring Black Union soldiers slaves “invading the South”), and the Confederate Congress’s subsequent approval of that policy. Lieber himself acknowledged this. His correspondence with Halleck in early 1863 shows that the issue of Black POW protection was explicitly in mind as the code was being finalized.],
+  [What the Lieber Code Said About POWs],
+  [Key Principles:],
+  [Article 56: Prisoners of war are “public enemies” and not criminals. They are to be treated with humanity.],
+  [Article 75: Prisoners must not be “subjected to any revenge or other ill treatment.”],
+  [No Torture or Cruelty],
+  [Article 16: “Military necessity does not admit of cruelty…nor of torture to extort confessions.”],
+  [No Retaliation Against POWs],
+  [Article 59: Reprisals must not include harming POWs unless it is a direct retaliation for mistreatment of one’s own POWs—and even then, only under strict necessity.],
+  [Rights and Respect],
+  [Officers were to be treated in accordance with their rank.],
+  [Prisoners were protected from violence, pillage, or abuse.],
+  [Prisoners could be made to work (Article 76), but only within humane bounds and consistent with their rank.],
+  [The Lieber Code expressly forbade giving "no quarter" to the enemy (i.e. killing prisoners of war), except in such cases when the survival of the unit that held these prisoners was threatened. Article 60 provides: “It is against the usage of modern war to resolve, in hatred and revenge, to give no quarter. No body of troops has the right to declare that it will not give, and therefore will not expect, quarter; but a commander is permitted to direct his troops to give no quarter, in great straits, when his own salvation makes it impossible to cumber himself with prisoners.],
+  [It forbade the use of poisons (Article 70), stating that use of such puts any force who uses them entirely outside the pale of the civilized nations and peoples; it forbade the use of torture to extract confessions or information; it described the rights and duties of prisoners of war and of capturing forces.],
+  [Article 58 directly addresses the use of Black soldiers: “The law of nations knows of no distinction of color, and if an enemy of the United States should enslave and sell any captured persons of their army, it would be a case for the severest retaliation, if not redressed upon complaint. The United States cannot retaliate by enslavement; therefore death must be the retaliation for this crime against the law of nations.”],
+  [Application to the Prisoner Exchanges],
+  [Originally Edwin Stanton wanted to suspend the exchanges because he felt that Southern soldiers weren’t following the rules of the parole. Secretary Stanton saw a potential for Union soldiers to abuse the parole system. The Confederates had begun paroling a number of Western prisoners unilaterally, including some two thousand taken at the April 1862 battle of Shiloh. The violations continued with the parolees from Vicksburg and Port Hudson. It was Lincoln, the astute politician, who realized it would be unpopular to suspend exchanges for that reason, but if applied to the USCT it would be better accepted. The Code was therefore also a strategic countermove. The Union needed a public, intellectually credible, “laws of war” document to show why exchanges were suspended, why retaliation policies were lawful, why Black soldiers had to be protected, and why the Confederacy was violating international norms. The Lieber Code gave the Lincoln administration a fully articulated legal and moral position—something European observers were watching closely.],
+  [https:\/\/www.nps.gov/ande/learn/historyculture/grant-and-the-prisoner-exchange.htm?fbclid=IwAR0Re2-Imgr8m\_qqAYEGK4iAeKRlEA3mafVQpHiqZHtkyRG\_ELag97xEE1s&mibextid=kdkkhi],
+  [The Lieber Code was issued unilaterally by the United States, and no other nation was bound by its formalities at the time. However, when the Confederates breached its principles, the US government needed to respond.],
+  [At Fort Wagner, several black prisoners from the 54th Massachusetts were not exchanged with the rest of the white soldiers who participated in the assault on Fort Wagner in July 1863. This is the infamous attack where Colonel Robert Gould Shaw was killed leading his men in a charge. When a Union officer asked the Confederates at Battery Wagner for the return of Shaw's body, he was informed by the Confederate commander, Brigadier General Johnson Hagood, "We buried him with his \_\_\_\_\_."],
+  [On July 30, 1863, President Abraham Lincoln issued General Order 252, which effectively suspended the Dix-Hill Cartel until the Confederate forces agreed to treat black prisoners the same as white prisoners. Large scale prisoner exchanges ceased by August 1863, resulting in a dramatic increase in the prison populations on both sides. Neither side was prepared for this sudden responsibility. The inhumane consequences on both sides are well known.],
+  [Large scale prisoner exchanges ceased by August 1863, resulting in a dramatic increase in the prison populations on both sides. Neither side was prepared for this sudden responsibility. The inhumane consequences on both sides are well known.],
+  [The fact is that it was official CSA policy to kill all black POWs. Secretary of War James Seddon responded to PGT Beauregard’s request for the official policy as to how to handle his black POWs. Confederate Secretary of War James A. Seddon, in a November 30, 1862, letter to General P. G. T. Beauregard, outlined a policy of executing captured black soldiers as criminals guilty of breaking slave insurrection laws. You can find this brief letter here: http:\/\/historymaking.org/textbook/items/show/97],
+  [Fort Pillow occurred on April 12, 1864. The Congressional Investigation into the battle concluded that the massacre was consistent with official CSA policy. The next month, the Confederacy in May 1864 passed a law stating that black U. S. soldiers captured while fighting against the Confederacy would be turned over to the state, where the captured would be tried, according to state laws.],
+  [The exchange system had collapsed in late 1863 because of the failure of Confederate prisoners (and their government) to observe paroles, most notably those issued to the surrendered garrison of Vicksburg. When Union soldiers captured some of those unexchanged soldiers at Chattanooga, Stanton decided that something had to be done. Making matters worse, the Confederacy refused to exchange black Union soldiers. Stories that Confederate soldiers murdered black captives carried more impact after Nathan Bedford Forrest's men stormed Fort Pillow on April 12, 1864, and killed black soldiers who were attempting to surrender.],
+  [Actual Treatment of POWs],
+  [The Union treatment of Confederate POWs generally aligned with the Lieber Code, especially early in the war. Large prison camps like Camp Douglas (IL) and Point Lookout (MD) had harsh conditions—exposure, poor sanitation, and disease. Sherman reportedly used POWs to clear land mines outside of Savannah. That wasn’t expressly against the Lieber Code, but it would be forbidden today. As the war progressed and prisoner exchanges collapsed (due in part to Confederate refusal to exchange Black Union soldiers equally), conditions worsened, with overcrowding and high death rates.],
+  [The Confederate treatment of Union POWs was notably worse, especially at Andersonville (Camp Sumter) in Georgia. It was an outdoor prison built for 10,000; held over 30,000 at peak.],
+  [It had minimal shelter, contaminated water, inadequate food. Nearly 13,000 of 45,000 prisoners died—a mortality rate of ~29%. Commandant Henry Wirz was tried and executed after the war for war crimes—one of the few such examples.],
+  [Did Grant End the Exchanges?],
+  [It is often erroneously claimed that General Grant ordered the suspension of Dix-Hill he was not the Commander in Chief at this time, and had nothing to do with it. https:\/\/www.nps.gov/ande/learn/historyculture/grant-and-the-prisoner-exchange.htm?fbclid=IwAR0Re2-Imgr8m\_qqAYEGK4iAeKRlEA3mafVQpHiqZHtkyRG\_ELag97xEE1s&mibextid=kdkkhi],
+  [It is taught in most history books that the exchange system ended during the Overland Campaign. This quote is usually presented as proof that General Grant ended the system:],
+  ["It is hard on our men held in Southern prisons not to exchange them, but it is humanity to those left in the ranks to fight our battles. Every man we hold, when released on parole or otherwise, becomes an active soldier against us at once either directly or indirectly. If we commence a system of exchange which liberates all prisoners taken, we will have to fight on until the whole South is exterminated. If we hold those caught they amount to no more than dead men. At this particular time to release all rebel prisoners North would insure Sherman's defeat and would compromise our safety here." – General Ulysses S. Grant, August 18, 1864.],
+  [The myth is that Grant eschewed the exchanges to prevent the Southern armies to regain its captured men, thus favoring the Union side. Supposedly he did it because of the callous arithmetic of the war – calculating that by stopping exchanges the Union armies could simply outlast the Confederates. In fact, President Abraham Lincoln suspended the Dix-Hill Cartel in retaliation for the Confederacy's refusal to exchange black soldiers captured in the summer of 1863.],
+  [During the Summer of 1864 Grant pointed out that the refusal to exchange prisoners, however harsh it might seem, drained the Confederacy of much needed manpower; exchanged Confederates would return to the ranks to kill more Yankees, complicating calculations based on the supposed humanity of exchanges. As you can see, Grant wrote this almost 1 year after the exchanges had stopped. It is fascinating that this is the quote that appears on the Wirz monument, trying to shift blame for Andersonville onto Grant.],
+  [In the late summer of 1864, a year after the Dix-Hill Cartel was suspended, Confederate officials approached Union General Benjamin Butler about resuming the cartel and exchanges, including black prisoners. Butler, the Union Commissioner of Exchange, contacted Grant for guidance on the issue. Grant responded on August 18, 1864 with this statement. In their conversation, Grant informed Butler that he approved an equal exchange of soldier for soldier, but did not approve a full resumption of the Dix-Hill Cartel. His issue was with the cartel's stipulation that the balance after equal exchanges was to be paroled and sent home to await formal exchange. By August 1864, Confederate prisoners far outnumbered Union prisoners, so a resumption of the cartel would release thousands more Confederates. Grant also felt that once released, Confederate prisoners would likely violate their paroles and rejoin their units. Many of the Union prisoners, on the other hand, had already fulfilled their enlistments and would likely go home.],
+  [An agreement for resuming prisoner exchanges would not be reached until the winter of 1864-1865. Had Confederate authorities agreed to exchange black soldiers, however, the exchanges would have been resumed; and in January 1865 Confederate authorities agreed it was best to exchange "all" prisoners, regardless of color. The reality is that Grant did approve a prisoner for prisoner exchange that did in fact occur.],
+  [The Purpose of Rules of War],
+  [Creating rules or laws to govern war, an inherently unethical human behavior, is one of history’s most painful and persistent tensions. The desire for moral restraint versus the brutal realities of war must be balanced; and clearly, winning the war is the foremost goal. Are the “rules” or “laws” of war phony? No, they’re not phony—but they are imperfect and often inconsistently applied.],
+  [The laws of war, such as those codified in the Lieber Code (1863), the Hague Conventions (1899, 1907), and the Geneva Conventions (especially after WWII), are real legal instruments. They’re backed by treaties, military doctrine, and in some cases, courts (like the International Criminal Court).],
+  [These laws serve several purposes. They limit unnecessary suffering, especially of civilians and prisoners. They maintain some moral legitimacy—for both domestic and international audiences. The rules prevent escalation into unbounded barbarism (e.g., genocide, torture as routine policy). And, they set standards for holding individuals accountable (think of the Nuremberg Trials or modern war crimes prosecutions).],
+  [But while they also protect the combatant, a major purpose is to the military and political leaders who order destruction and death. By following an international code of rules, war trials and criminal prosecution have a built in defense.],
+  [In conclusion, The Lieber Code was not conceived as a response to the collapse of the Dix–Hill Cartel or to Davis’s policy on Black soldiers, but those events decisively shaped its final content, its timing of issuance, and its strategic purpose. It not only gave an ethical response to the problem, but a politically savvy public stance.],
+  [The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
 ),
   insert-map: (:),
   word-count: 3252,
@@ -710,32 +726,39 @@ Photos by Craig Mod .],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A Brief History of Scotland’s Dry Towns],
   author: [George Levrier-Jones],
   source-name: [History in 28 Minutes],
   images: (),
   paragraphs: (
-  [class=""\> Prohibition is very often associated with the criminal activities of the infamous Al Capone, his nemesis Eliot Ness, and numerous illegal speakeasies from the USA between 1920 and 1933 made memorable from numerous  gangster films over the decades. Prohibition, after a fashion at least, was not just confined to North America. It did in fact reach Britain and established itself in a quieter way in some remote towns in Scotland. Kirkintilloch was one of those towns and famously stands out among many for having prohibition laws that continued late into the twentieth century.],
-  [class=""\>Kirkintilloch can be found eight miles from central Glasgow. The town started life as a Roman fort and led a quiet and largely quiet life until the industrial revolution brought the benefit of the textile industry to its inhabitants. Further expansion followed with the building of Forth and Fyfe canal in 1773 and later in 1836 with the railways. The town became an important transport center for iron, coal, and other industrial needs.],
-  [class=""\>Kirkintilloch would have remained just another industrial town, but the town earned its notoriety for  becoming what was known as a "dry town" which forbid the sale of alcohol on public premises from 1923 until 1967. Kirkintilloch was not alone and was one of many towns in Scotland that embraced prohibition. The ban on the sale of alcohol had long been demanded by both  the Liberal Party and the Temperance movement, both of which had a strong influence in Scottish local town politics in the early part of the 20th century. It was a combination of the Temperance movement and the outbreak of the First World War that created “dry towns” which lasted long into the twentieth century and the infamous prohibition period of the United States.],
-  [class=""\>The origin of Scotland’s former dry towns began with the Temperance movement, a movement that led a moral crusade against alcohol consumption in the USA in the early 1800s. Its ideas were soon in Britain. The movement did not find it difficult to find  supporters all over Britain but found strong and more lasting support in Scotland in the mid 1800s. The movement focused on the morally degrading effect that alcohol consumption had on society. One writer on the subject, Jack S Blocker, in his book  Alcohol  and Temperance in Modern History pays particular attention to the situation in Scotland. The book mentions a parliamentary report that contained alarming statistics concerning drink-related arrests between 1831 and 1851 in Scotland. It painted Glasow in a poor light. The report concluded that the situation was not helped by the ratio of drinking establishments per inhabitant. In Glasgow there was one licensed premises for every one-hundred and fifty inhabitants. As far as Temperance Movement was concerned this was all the proof needed to convince potential followers for assertive action.],
-  [class=""\>The report boldly claimed that “Glasgow was three times more drunken than Edinburgh and five times more drunk than London.” He also noted that Scots “like the Irish and unlike the English and Welsh, ordinary people drank a great deal of whisky.”  We cannot confirm the accuracy of the data, which no doubt had it flaws, nor do the unhelpful and outdated stereotypes help to substantiate these claims. However, whether true, false, or exaggerated the report caused enough alarm for  the Temperance movement to fuel their crusade and so it grew and gathered momentum.],
-  [class=""\> Kirkintilloch was not the only dry town in Scotland; others soon joined the moral cause after the passing of the later 1913 Temperance Act. At first the movement’s demands were limited to just banning the sale of “strong and ardent spirits” but soon those demands encapsulated the banning of all alcoholic drinks. Variants of the movement spread to other towns in Scotland such as Paisly, Kilsyth Wick, Lerwick, Greenock, Ayrshire, and Lanarkshire. In 1844 in Falkirk, the Scots Temperance League established itself in the community and promoted “the long pledge” of total abstinence from its members.],
-  [class=""\>The first challenge the Temperance representatives had to overcome was encouraging the drinking population to surrender one of their few leisurely pastimes, especially those who grafted in the long hours and harsh working conditions of the time. It was no easy task, but the members found innovative ways. Various movements offered extremely attractive terms in return to leading a tee-total life and being part of the movement.],
-  [class=""\>In return for a serious commitment to a clear oath or pledge, the member would receive support in various forms from this new community. In some variants of the movement, certain benefits were offered such as the entitlement to an early form of social welfare type insurance to draw on in times of need, representing an early example of a Co-operative or a micro social security system. This was certainly true of the Sons of the Temperance Society which formed in the 1850s. The oath was noticeably clear, and each faction had its own wording, but all had one clear and unified meaning. The Hope of Coatbridge Section of the Cadets of Temperance (1878-1925), for example, had their members recite the following vows:],
-  [class=""\>In the towns where the Temperance ideas took hold the old-fashioned public house was replaced by other commercial ventures and for a time flourished. Alternative establishments such as Temperance hotels, coffee houses and tea rooms replaced these licensed premises. The social scene was changing in some areas. Over twenty such establishments replaced the public house is Glasgow in 1840 and the movement was gaining political approval.],
-  [class=""\>Meanwhile these societies continued to lobby and win the approval of political influencers. One peer commented: “Without these societies we should be involved in such an ocean of intoxication, violence and sin as would make this country quite uninhabitable.” The lobbying proved to be fruitful, and the best example of the movement’s success came from their work with Forbes Mackenzie, a Conservative MP. MacKenzie also happened to be a temperance reformer himself, and he introduced a number of changes to support the movement. This became law within the Public Houses (Scotland) Bill in 1853. This act forced the closure of pubs in Scotland at 10pm on weekdays and forced closure on Sundays. Slowly but surely the consumption and supply of alcohol was being restricted, and, in some towns, further restriction was to come. Alcohol was not completely removed from people’s lives and momentum would be slow until the early part of the twentieth the century.],
-  [class=""\>In 1906 the Liberal government passed legislation allowing communities to veto alcohol consumption and with that the Temperance Scotland Act was passed in 1913. Whether this alone would have been enough we will never know because the political and social landscape changed further as Britain entered World War One.],
-  [class=""\>The Temperance movement was not wholly responsible for the creation of Scotland’s Dry Towns. The First World War and Government laws bought further tight restrictions on the sale of alcohol with the Defence of the Realm Act 1914. The purpose of these restrictions was to ensure a productive resourceful pool of industrial labor to service the war effort. Stricter controls on public house opening hours were enforced, the strength of beer brewed was diluted and additional taxes amounting to an extra penny were charged on each pint of beer. Naturally, this changed attitudes and habits. Helped by the patriotic fervor for the war effort, a lot of publicans chose to support the armaments industry and keep workers sober. They of course had little choice as their incentives from their trade had been curtailed. Examples of the landlord measures were to enforce the  ‘No Treating’ rule between 1916 and 1919 that forbid the buying of rounds of drinks. Slowly but surely alcohol availability was diminishing but the temperance movement had not gone away and was far from finished. They in fact seized upon these gains at the end of the war.],
-  [class=""\>The Temperance Movement took advantage of the 1913 act to continue and expand their cause once the war ended. The result was vast numbers of voters in the  1920 local elections opted for the abolition of alcohol sales. Towns such a Kirkintilloch became one of those dry towns as a result. This was given further backing when supporter Edwin Scrymgeour was elected as a Scottish Prohibitionist Party MP for the Dundee constituency. He remained an MP until  1931.],
-  [class=""\>There were many variants of these Temperance societies, one founded in the USA in 1851 was the Independent Order of Good Templars (born from a previous organization called the Sons of Temperance). After reaching Scotland, this society became the first Scottish lodge, established  in Glasgow in 1869. One interesting facet about this variant was that it promoted equality of rights for women: an early forerunner of Universal Suffrage.],
-  [class=""\>The movement demonstrated its sincerity by admitting women into their societies, thus placing them on an equal footing to men and encouraging them to be active board members. This was certainly the intention of Provost James Knox who was also the manager of  Airdrie Savings Bank from 1848 to 1861 (he also held the position of Chief Templar in the early 1900s).],
-  [class=""\>Dry towns soon and slowly relaxed their rules and departed away from the ways of Temperance.  Some chapters and their establishments lasted until late in the twentieth century. Moods had changed and the world. A number of factors had brought about change. By the time of the Second World War attitudes had changed and become more relaxed. The Temperance ways were now seen as outdated and irrelevant. Even the government did not impose the same alcohol restrictions on alcohol consumption between 1939-1945 as it had during the First World War. It may have been too much to impose such restrictions on the population a second time. With that being said, some areas of Scotland did maintain their discipline until well after the end of the war. Kirkintilloch, for instance, finally abandoned its dryness in 1967.],
-  [class=""\>In some cases, the remnants of the Temperance acts held on tenaciously a little longer. It took until 1976 for parliament to dismantle the legislation set out by Mackenzie from 1853, with some parts of Scotland - such as Kilmacolm - taking longer to embrace the new liberties. Kilmacolm finally acquired its own pub as late as 1998 when an old waiting room at the train station was converted into The Pullman . It was a memorable event and well attended by a thirsty crowd at the establishment’s grand  opening after seventy dry years.],
+  [Prohibition is very often associated with the criminal activities of the infamous Al Capone, his nemesis Eliot Ness, and numerous illegal speakeasies from the USA between 1920 and 1933 made memorable from numerous  gangster films over the decades. Prohibition, after a fashion at least, was not just confined to North America. It did in fact reach Britain and established itself in a quieter way in some remote towns in Scotland. Kirkintilloch was one of those towns and famously stands out among many for having prohibition laws that continued late into the twentieth century.],
+  [Steve Prout explains.],
+  ["L'Alcool est un Poison" from Belgium, 1910. This depiction contrasts "those who live from it" (those selling alcohol) with "those who die from it" (showing alcoholic and his family).],
+  [Kirkintilloch can be found eight miles from central Glasgow. The town started life as a Roman fort and led a quiet and largely quiet life until the industrial revolution brought the benefit of the textile industry to its inhabitants. Further expansion followed with the building of Forth and Fyfe canal in 1773 and later in 1836 with the railways. The town became an important transport center for iron, coal, and other industrial needs.],
+  [Kirkintilloch would have remained just another industrial town, but the town earned its notoriety for  becoming what was known as a "dry town" which forbid the sale of alcohol on public premises from 1923 until 1967. Kirkintilloch was not alone and was one of many towns in Scotland that embraced prohibition. The ban on the sale of alcohol had long been demanded by both  the Liberal Party and the Temperance movement, both of which had a strong influence in Scottish local town politics in the early part of the 20th century. It was a combination of the Temperance movement and the outbreak of the First World War that created “dry towns” which lasted long into the twentieth century and the infamous prohibition period of the United States.],
+  [The Temperance Movement and the Origins of “Dry Towns”],
+  [The origin of Scotland’s former dry towns began with the Temperance movement, a movement that led a moral crusade against alcohol consumption in the USA in the early 1800s. Its ideas were soon in Britain. The movement did not find it difficult to find  supporters all over Britain but found strong and more lasting support in Scotland in the mid 1800s. The movement focused on the morally degrading effect that alcohol consumption had on society. One writer on the subject, Jack S Blocker, in his book  Alcohol  and Temperance in Modern History pays particular attention to the situation in Scotland. The book mentions a parliamentary report that contained alarming statistics concerning drink-related arrests between 1831 and 1851 in Scotland. It painted Glasow in a poor light. The report concluded that the situation was not helped by the ratio of drinking establishments per inhabitant. In Glasgow there was one licensed premises for every one-hundred and fifty inhabitants. As far as Temperance Movement was concerned this was all the proof needed to convince potential followers for assertive action.],
+  [The report boldly claimed that “Glasgow was three times more drunken than Edinburgh and five times more drunk than London.” He also noted that Scots “like the Irish and unlike the English and Welsh, ordinary people drank a great deal of whisky.”  We cannot confirm the accuracy of the data, which no doubt had it flaws, nor do the unhelpful and outdated stereotypes help to substantiate these claims. However, whether true, false, or exaggerated the report caused enough alarm for  the Temperance movement to fuel their crusade and so it grew and gathered momentum.],
+  [Kirkintilloch was not the only dry town in Scotland; others soon joined the moral cause after the passing of the later 1913 Temperance Act. At first the movement’s demands were limited to just banning the sale of “strong and ardent spirits” but soon those demands encapsulated the banning of all alcoholic drinks. Variants of the movement spread to other towns in Scotland such as Paisly, Kilsyth Wick, Lerwick, Greenock, Ayrshire, and Lanarkshire. In 1844 in Falkirk, the Scots Temperance League established itself in the community and promoted “the long pledge” of total abstinence from its members.],
+  [The Growth of Temperance],
+  [The first challenge the Temperance representatives had to overcome was encouraging the drinking population to surrender one of their few leisurely pastimes, especially those who grafted in the long hours and harsh working conditions of the time. It was no easy task, but the members found innovative ways. Various movements offered extremely attractive terms in return to leading a tee-total life and being part of the movement.],
+  [In return for a serious commitment to a clear oath or pledge, the member would receive support in various forms from this new community. In some variants of the movement, certain benefits were offered such as the entitlement to an early form of social welfare type insurance to draw on in times of need, representing an early example of a Co-operative or a micro social security system. This was certainly true of the Sons of the Temperance Society which formed in the 1850s. The oath was noticeably clear, and each faction had its own wording, but all had one clear and unified meaning. The Hope of Coatbridge Section of the Cadets of Temperance (1878-1925), for example, had their members recite the following vows:],
+  [“We the undersigned promise to abstain from all intoxicating drinks and discountenance the Causes -and practices of intemperance and to abstain from tobacco in all its forms.”],
+  [The risk of breaking these vows resulted in public condemnation, shaming, and exclusion.],
+  [In the towns where the Temperance ideas took hold the old-fashioned public house was replaced by other commercial ventures and for a time flourished. Alternative establishments such as Temperance hotels, coffee houses and tea rooms replaced these licensed premises. The social scene was changing in some areas. Over twenty such establishments replaced the public house is Glasgow in 1840 and the movement was gaining political approval.],
+  [Meanwhile these societies continued to lobby and win the approval of political influencers. One peer commented: “Without these societies we should be involved in such an ocean of intoxication, violence and sin as would make this country quite uninhabitable.” The lobbying proved to be fruitful, and the best example of the movement’s success came from their work with Forbes Mackenzie, a Conservative MP. MacKenzie also happened to be a temperance reformer himself, and he introduced a number of changes to support the movement. This became law within the Public Houses (Scotland) Bill in 1853. This act forced the closure of pubs in Scotland at 10pm on weekdays and forced closure on Sundays. Slowly but surely the consumption and supply of alcohol was being restricted, and, in some towns, further restriction was to come. Alcohol was not completely removed from people’s lives and momentum would be slow until the early part of the twentieth the century.],
+  [In 1906 the Liberal government passed legislation allowing communities to veto alcohol consumption and with that the Temperance Scotland Act was passed in 1913. Whether this alone would have been enough we will never know because the political and social landscape changed further as Britain entered World War One.],
+  [The Temperance movement was not wholly responsible for the creation of Scotland’s Dry Towns. The First World War and Government laws bought further tight restrictions on the sale of alcohol with the Defence of the Realm Act 1914. The purpose of these restrictions was to ensure a productive resourceful pool of industrial labor to service the war effort. Stricter controls on public house opening hours were enforced, the strength of beer brewed was diluted and additional taxes amounting to an extra penny were charged on each pint of beer. Naturally, this changed attitudes and habits. Helped by the patriotic fervor for the war effort, a lot of publicans chose to support the armaments industry and keep workers sober. They of course had little choice as their incentives from their trade had been curtailed. Examples of the landlord measures were to enforce the  ‘No Treating’ rule between 1916 and 1919 that forbid the buying of rounds of drinks. Slowly but surely alcohol availability was diminishing but the temperance movement had not gone away and was far from finished. They in fact seized upon these gains at the end of the war.],
+  [The Temperance Movement took advantage of the 1913 act to continue and expand their cause once the war ended. The result was vast numbers of voters in the  1920 local elections opted for the abolition of alcohol sales. Towns such a Kirkintilloch became one of those dry towns as a result. This was given further backing when supporter Edwin Scrymgeour was elected as a Scottish Prohibitionist Party MP for the Dundee constituency. He remained an MP until  1931.],
+  [Other Variants of Temperance],
+  [There were many variants of these Temperance societies, one founded in the USA in 1851 was the Independent Order of Good Templars (born from a previous organization called the Sons of Temperance). After reaching Scotland, this society became the first Scottish lodge, established  in Glasgow in 1869. One interesting facet about this variant was that it promoted equality of rights for women: an early forerunner of Universal Suffrage.],
+  [The movement demonstrated its sincerity by admitting women into their societies, thus placing them on an equal footing to men and encouraging them to be active board members. This was certainly the intention of Provost James Knox who was also the manager of  Airdrie Savings Bank from 1848 to 1861 (he also held the position of Chief Templar in the early 1900s).],
+  [The End of the Dry Period],
+  [Dry towns soon and slowly relaxed their rules and departed away from the ways of Temperance.  Some chapters and their establishments lasted until late in the twentieth century. Moods had changed and the world. A number of factors had brought about change. By the time of the Second World War attitudes had changed and become more relaxed. The Temperance ways were now seen as outdated and irrelevant. Even the government did not impose the same alcohol restrictions on alcohol consumption between 1939-1945 as it had during the First World War. It may have been too much to impose such restrictions on the population a second time. With that being said, some areas of Scotland did maintain their discipline until well after the end of the war. Kirkintilloch, for instance, finally abandoned its dryness in 1967.],
+  [In some cases, the remnants of the Temperance acts held on tenaciously a little longer. It took until 1976 for parliament to dismantle the legislation set out by Mackenzie from 1853, with some parts of Scotland - such as Kilmacolm - taking longer to embrace the new liberties. Kilmacolm finally acquired its own pub as late as 1998 when an old waiting room at the train station was converted into The Pullman . It was a memorable event and well attended by a thirsty crowd at the establishment’s grand  opening after seventy dry years.],
+  [Did you find that piece interesting? If so, join us for free by clicking here],
 ),
   insert-map: (:),
   word-count: 1873,
@@ -743,10 +766,8 @@ Photos by Craig Mod .],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Here’s how to live: Follow the great book.],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -855,19 +876,22 @@ Photos by Craig Mod .],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How to Think Like a World-Class Marketer | Rory Sutherland],
   author: [Vicky],
   source-name: [Farnam Street (fs.blog)],
   images: (),
   paragraphs: (
   [Ogilvy Vice Chairman Rory Sutherland reveals the formula for persuasion, why people make decisions and how you can use psychology to your advantage.],
+  [Featured clips],
+  [01:31],
   [AI and Decision Making],
+  [34:28],
   [Why Is Dyson So Effective at Marketing?],
+  [45:14],
   [Warren Buffett’s Approach to Choosing Management],
+  [01:43:27],
   [How to Write Good Copy],
   [Rory is the world’s leading advertising strategist. He spent almost four decades at Ogilvy studying why people behave the way they do and how to change that behavior.],
   [He explains why contrast drives choices and efficiency often destroys value, and how trust, friction, and design shape real-world behavior.],
@@ -920,10 +944,8 @@ Photos by Craig Mod .],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Database triggers to clean text inputs],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -937,6 +959,11 @@ Then your system thinks someone’s name is not “Jim” but “ Jim\\n”.],
 So no matter what code is inserting or updating, a database trigger will sanitize it before saving .],
   [Here’s a PostgreSQL example.
 Let’s make two tables, people and emails, so you can see how one function can be used by many triggers.],
+  [create table people (
+ id serial primary key,
+ name text,
+ code text
+);],
   [create table emails (
  id serial primary key,
  person\_id integer not null references people(id),
@@ -948,6 +975,10 @@ Let’s make two tables, people and emails, so you can see how one function can 
   [Remove unwanted whitespace characters like tab and newline.
 Replace them all with a single space.
 Then trim spaces from the front and end.],
+  [-- remove all whitespace, then lowercase it
+create function lower\_no\_space(text) returns text as \$\$
+ select lower(regexp\_replace(\$1, '\\s', '', 'g'));
+\$\$ language sql;],
   [-- replace all whitespace with single space, then trim start and end
 create function no\_extra\_space(text) returns text as \$\$
  select btrim(regexp\_replace(\$1, '\\s+', ' ', 'g'));
@@ -958,8 +989,7 @@ create function no\_extra\_space(text) returns text as \$\$
 So “ New \\t Zealand \\n” will be “New Zealand”.],
   [Now make trigger functions that use your smaller re-usable cleaning functions.
 I find it best to make one trigger per table, sanitizing all fields on any insert or update.],
-  [class="code"\>
- create function clean\_people() returns trigger as \$\$
+  [create function clean\_people() returns trigger as \$\$
 begin
  new.name = no\_extra\_space(new.name);
  new.code = lower\_no\_space(new.code);
@@ -984,8 +1014,7 @@ The ugliness of the boilerplate code is made up for by the beautiful simplicity 
 It’s so nice to not have to sanitize form fields!
 Just toss the unwashed inputs at the database.],
   [Here, let’s give it some dirty data, and watch it come out clean.],
-  [class="code"\>
- insert into people (name, code) values (e' \\t \\r \\n Dr. \\n \\r JM \\t Lim \\r\\n', ' XX o Z ') returning \*;
+  [insert into people (name, code) values (e' \\t \\r \\n Dr. \\n \\r JM \\t Lim \\r\\n', ' XX o Z ') returning \*;
 -- id │ name │ code 
 --────┼────────────┼──────
 -- 1 │ Dr. JM Lim │ xxoz],
@@ -1004,42 +1033,45 @@ Just toss the unwashed inputs at the database.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Forgotten Bombers That Led the Way: America’s Vivid Assembly Ships of World War II],
   author: [George Levrier-Jones],
   source-name: [History in 28 Minutes],
   images: (),
   paragraphs: (
-  [class=""\> During the height of the air war over Europe, large groups of American heavy bombers climbed out of East Anglia almost every morning. For many people living in the region, the sound and sight of those aircraft became a familiar part of the conflict. The United States Army Air Forces depended heavily on the B-17 Flying Fortress and the B-24 Liberator for its daylight strategy, and their departures became routine. What rarely receives the same attention is the role of a handful of older bombers that helped bring order to these departures. These were the assembly ships, painted in bright and sometimes unusual colors so crews could spot them quickly against the English sky.],
+  [During the height of the air war over Europe, large groups of American heavy bombers climbed out of East Anglia almost every morning. For many people living in the region, the sound and sight of those aircraft became a familiar part of the conflict. The United States Army Air Forces depended heavily on the B-17 Flying Fortress and the B-24 Liberator for its daylight strategy, and their departures became routine. What rarely receives the same attention is the role of a handful of older bombers that helped bring order to these departures. These were the assembly ships, painted in bright and sometimes unusual colors so crews could spot them quickly against the English sky.],
+  [Richard Clements explains.],
+  [Boeing B-17 Flying Fortress formation. Schweinfurt, Germany - August, 17, 1943.],
+  [Boeing B-17 Flying Fortress formation. Schweinfurt, Germany - August 17, 1943.],
   [The Challenge of Bringing Order to the Skies],
-  [class=""\>From 1943 onward, the Eighth Air Force expanded its operations across East Anglia. Airfields were spread across Norfolk, Suffolk, and Cambridgeshire, and each one sent aircraft into the same busy morning sky. Every bomber had to find its place in a larger group, climb steadily, and keep to the timetable. Weather often interfered, and crews still adjusting to British conditions sometimes struggled to identify other aircraft in the haze.],
-  [class=""\>The result was predictable. Aircraft sometimes climbed into the same airspace. Near misses were reported frequently. Several bombing missions suffered delays because the formations failed to gather quickly enough. Although ground control could guide departures, it could not solve the issue of identifying other aircraft in the air. Another solution was needed, one that crews could see without relying on radio contact or clear skies.],
+  [From 1943 onward, the Eighth Air Force expanded its operations across East Anglia. Airfields were spread across Norfolk, Suffolk, and Cambridgeshire, and each one sent aircraft into the same busy morning sky. Every bomber had to find its place in a larger group, climb steadily, and keep to the timetable. Weather often interfered, and crews still adjusting to British conditions sometimes struggled to identify other aircraft in the haze.],
+  [The result was predictable. Aircraft sometimes climbed into the same airspace. Near misses were reported frequently. Several bombing missions suffered delays because the formations failed to gather quickly enough. Although ground control could guide departures, it could not solve the issue of identifying other aircraft in the air. Another solution was needed, one that crews could see without relying on radio contact or clear skies.],
   [A Practical Innovation in a Growing Air War],
-  [class=""\>The answer was the assembly ship. These were older bombers nearing the end of their combat life. Some had battle damage that made long missions impossible, while others had simply become worn. Instead of being scrapped immediately, many were converted into highly visible airborne rally points. Each bomb group had one, sometimes two, depending on operational needs.],
-  [class=""\>The idea was straightforward. The assembly ship took off first and climbed into a holding pattern above its home base. Newer aircraft took off next and circled until they spotted the brightly painted machine overhead. Once enough aircraft had gathered, the assembly ship guided the formation into the correct climbing pattern and direction of travel. After completing the task, it returned to base. It did not cross the North Sea or accompany the mission toward its target.],
+  [The answer was the assembly ship. These were older bombers nearing the end of their combat life. Some had battle damage that made long missions impossible, while others had simply become worn. Instead of being scrapped immediately, many were converted into highly visible airborne rally points. Each bomb group had one, sometimes two, depending on operational needs.],
+  [The idea was straightforward. The assembly ship took off first and climbed into a holding pattern above its home base. Newer aircraft took off next and circled until they spotted the brightly painted machine overhead. Once enough aircraft had gathered, the assembly ship guided the formation into the correct climbing pattern and direction of travel. After completing the task, it returned to base. It did not cross the North Sea or accompany the mission toward its target.],
+  [This method saved time, reduced the risk of accidents, and helped maintain the tight formations required for mutual defense.],
   [Color Schemes Designed to Be Impossible to Miss],
-  [class=""\>The thing that makes assembly ships so memorable today is their appearance. Because they never flew into enemy territory, camouflage was unnecessary. Visibility became the priority. Groups across the Eighth Air Force began to develop their own designs, often with considerable imagination.],
-  [class=""\>One aircraft might be painted bright yellow with red chevrons. Another might have wide black spots across a silver fuselage. Some had candy-striped tails. Others carried oversized geometric shapes or checkerboard patterns. A few used contrasting panels of green and white. The design language varied, but every scheme aimed at the same goal. Crews had to recognize the ship instantly, even in bad weather.],
-  [class=""\>These color schemes created some of the most distinctive aircraft of the Second World War. They were not meant to impress the enemy or hide from it. They were meant for the airmen who needed to find their group quickly at dawn.],
+  [The thing that makes assembly ships so memorable today is their appearance. Because they never flew into enemy territory, camouflage was unnecessary. Visibility became the priority. Groups across the Eighth Air Force began to develop their own designs, often with considerable imagination.],
+  [One aircraft might be painted bright yellow with red chevrons. Another might have wide black spots across a silver fuselage. Some had candy-striped tails. Others carried oversized geometric shapes or checkerboard patterns. A few used contrasting panels of green and white. The design language varied, but every scheme aimed at the same goal. Crews had to recognize the ship instantly, even in bad weather.],
+  [These color schemes created some of the most distinctive aircraft of the Second World War. They were not meant to impress the enemy or hide from it. They were meant for the airmen who needed to find their group quickly at dawn.],
   [Conversions and Modifications],
-  [class=""\>The aircraft chosen for this role were usually B-17s or B-24s. Each type required a fair amount of modification. Guns were removed, which reduced weight and made the aircraft easier to climb. Armor plate was often taken out for the same reason. Much of the interior was removed, along with equipment that was no longer needed. Lightening the aircraft made it easier for the assembly ship to get up early and remain overhead long enough for the rest of the group to form up.],
-  [class=""\>Some groups gave their assembly ships names that embraced their unusual appearance. The 458th Bomb Group operated a B-24 known as “Spotted Cow”. Another group had “The Green Dragon”, painted in a vivid green finish with yellow markings. There were others, including “The Jolly Roger” and “Fightin’ Sam”. The names added a touch of character, but the paintwork did most of the talking.],
+  [The aircraft chosen for this role were usually B-17s or B-24s. Each type required a fair amount of modification. Guns were removed, which reduced weight and made the aircraft easier to climb. Armor plate was often taken out for the same reason. Much of the interior was removed, along with equipment that was no longer needed. Lightening the aircraft made it easier for the assembly ship to get up early and remain overhead long enough for the rest of the group to form up.],
+  [Some groups gave their assembly ships names that embraced their unusual appearance. The 458th Bomb Group operated a B-24 known as “Spotted Cow”. Another group had “The Green Dragon”, painted in a vivid green finish with yellow markings. There were others, including “The Jolly Roger” and “Fightin’ Sam”. The names added a touch of character, but the paintwork did most of the talking.],
   [Routine Work That Never Reached the Headlines],
-  [class=""\>Assembly ships rarely appear in wartime newsreels or photographs. Their work was uneventful by design. They did not fly through flak or fighter attack. They were not part of the dramatic footage that accompanied raids on Berlin or the Ruhr. Yet their flights were essential. A large formation needed clarity and coordination. Without it, missions risked breakdown long before reaching the target.],
-  [class=""\>Veterans often described the sense of relief that came with spotting the brightly colored aircraft circling above the base. In the low morning light, with engines warming and visibility uncertain, that visual cue gave crews a clear point of reference. They knew exactly where to go and how to start the long climb eastward.],
+  [Assembly ships rarely appear in wartime newsreels or photographs. Their work was uneventful by design. They did not fly through flak or fighter attack. They were not part of the dramatic footage that accompanied raids on Berlin or the Ruhr. Yet their flights were essential. A large formation needed clarity and coordination. Without it, missions risked breakdown long before reaching the target.],
+  [Veterans often described the sense of relief that came with spotting the brightly colored aircraft circling above the base. In the low morning light, with engines warming and visibility uncertain, that visual cue gave crews a clear point of reference. They knew exactly where to go and how to start the long climb eastward.],
   [Safety, Training, and an Air War Under Pressure],
-  [class=""\>The arrival of assembly ships also made the morning departure routine noticeably safer. With so many aircraft circling the same patch of sky, the chance of a collision was never far from anyone’s mind. These brightly marked bombers gave crews an instant point of reference, which helped ease the congestion. They also became useful for newcomers. Pilots fresh from training in the United States often relied on them as they learned how to join and hold formation. It was an early step in understanding the discipline that large-scale operations demanded.],
-  [class=""\>In addition, the system helped keep missions on schedule. The Eighth Air Force operated under strict timing. Multiple groups needed to cross the coast within narrow intervals. Delays could disrupt the larger plan. By ensuring orderly assembly at the start of each mission, these ships supported the wider strategic effort.],
+  [The arrival of assembly ships also made the morning departure routine noticeably safer. With so many aircraft circling the same patch of sky, the chance of a collision was never far from anyone’s mind. These brightly marked bombers gave crews an instant point of reference, which helped ease the congestion. They also became useful for newcomers. Pilots fresh from training in the United States often relied on them as they learned how to join and hold formation. It was an early step in understanding the discipline that large-scale operations demanded.],
+  [In addition, the system helped keep missions on schedule. The Eighth Air Force operated under strict timing. Multiple groups needed to cross the coast within narrow intervals. Delays could disrupt the larger plan. By ensuring orderly assembly at the start of each mission, these ships supported the wider strategic effort.],
   [A Short Life and a Quiet End],
-  [class=""\>When the war in Europe came to an end, most of these aircraft were taken apart or scrapped. Their bright paintwork, once an essential guide for dozens of aircrews, faded from the airfields almost overnight. Only a small number of photographs survived, tucked away in various archives and in a few private collections. They show a brief and unusual moment in the air war, when a practical need produced something unexpectedly creative.],
+  [When the war in Europe came to an end, most of these aircraft were taken apart or scrapped. Their bright paintwork, once an essential guide for dozens of aircrews, faded from the airfields almost overnight. Only a small number of photographs survived, tucked away in various archives and in a few private collections. They show a brief and unusual moment in the air war, when a practical need produced something unexpectedly creative.],
+  [Today, these aircraft give a modest but useful glimpse into a part of Allied operations that rarely comes up in broader accounts.],
   [A Forgotten Chapter Worth Remembering],
-  [class=""\>The story of the assembly ships shows how major military efforts depend on far more than the frontline aircraft that usually attract most of the attention in wartime histories. Yet the work done behind the scenes, whether through supporting aircraft, trial solutions, or improvised ideas, often proves just as important. The striking paint schemes on these older bombers might seem unusual today, but they grew out of the very real difficulties faced by crews trying to find one another in poor visibility. When an airman spotted one circling above the field, it was a clear sign that the day’s climb east was about to begin.],
-  [class=""\>Their time in service was short, but the impression they left remains striking. Few wartime aircraft looked anything like them, and none were given the same specific job. In a campaign that relied on coordination and discipline, the assembly ships played a modest but essential part.],
-  [class=""\> The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
-  [class=""\>Bowers, P. M. Boeing B 17 Flying Fortress . Smithsonian Institution Press, 1995.
+  [The story of the assembly ships shows how major military efforts depend on far more than the frontline aircraft that usually attract most of the attention in wartime histories. Yet the work done behind the scenes, whether through supporting aircraft, trial solutions, or improvised ideas, often proves just as important. The striking paint schemes on these older bombers might seem unusual today, but they grew out of the very real difficulties faced by crews trying to find one another in poor visibility. When an airman spotted one circling above the field, it was a clear sign that the day’s climb east was about to begin.],
+  [Their time in service was short, but the impression they left remains striking. Few wartime aircraft looked anything like them, and none were given the same specific job. In a campaign that relied on coordination and discipline, the assembly ships played a modest but essential part.],
+  [The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
+  [Bowers, P. M. Boeing B 17 Flying Fortress . Smithsonian Institution Press, 1995.
  Freeman, R. A. The Mighty Eighth . Arms and Armour Press, 1970.
  Johnson, R. B 24 Liberator at War . Ian Allan Publishing, 1978.
  Roeder, G. H. The Censored War . Yale University Press, 1993.
@@ -1051,10 +1083,8 @@ Just toss the unwashed inputs at the database.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The stories that stay: What remains when memory fades],
   author: [TED Staff],
   source-name: [TED Blog],
@@ -1080,50 +1110,55 @@ Just toss the unwashed inputs at the database.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Marco Polo: The Venetian who Brought the East to Europe],
   author: [George Levrier-Jones],
   source-name: [History in 28 Minutes],
   images: (),
   paragraphs: (
-  [class=""\> Marco Polo stands as one of the most iconic figures of medieval exploration, a man whose name became synonymous with far-flung lands, daring journeys, and the opening of new worlds to the imagination of Europe. Born in 1254 CE into a Venetian merchant family, Marco Polo grew up in a city that was then a thriving hub of Mediterranean commerce. His father, Niccolò Polo, and his uncle, Maffeo, were seasoned merchants with experience trading in Constantinople and along routes leading deep into Asia. Their ventures laid the groundwork for Marco's own journeys, ensuring he was raised with an understanding of trade, diplomacy, and the lure of distant markets. Marco's mother died when he was young, leaving his extended family to raise him. By the time he reached his late teens, the Polo family's mercantile ambitions had drawn him into one of the greatest adventures of the Middle Ages.],
-  [class=""\>In 1271, Marco Polo, at just seventeen, set out with his father and uncle on a journey that would take them across Asia to the Mongol court of Kublai Khan, the powerful grandson of Genghis Khan. Their route followed the Silk Road, a web of trade paths that stretched across deserts, mountains, and great cities, linking Europe with Asia. The journey was arduous, spanning thousands of miles through regions plagued by political instability, banditry, and natural hardships.],
-  [class=""\>The Polos travelled through the Middle East, passing through Acre and crossing Persia, where Marco was exposed to Zoroastrianism and Islamic culture. From there, they trekked across Afghanistan's rugged terrain, scaled the heights of the Pamir Mountains, and crossed the vast steppes of Central Asia before reaching China. Marco, experiencing these lands for the first time, recorded their customs, geography, and products with a keen eye for detail. His descriptions, later written down, became the first systematic attempt to convey knowledge of Asia to Europeans.],
-  [class=""\>When the Polos arrived at Kublai Khan's court around 1275 CE, they entered one of the most powerful empires the world had ever known. The Mongol Empire stretched across Eurasia, and Kublai ruled as the founder of the Yuan dynasty in China. Marco quickly impressed the khan with his intelligence, linguistic aptitude, and curiosity. Unlike most Europeans who reached Asia, Marco did not remain on the fringes of court life; instead, he became a trusted envoy and administrator.],
-  [class=""\>Over the next seventeen years, Marco Polo travelled extensively across China and beyond, often on missions for Kublai Khan. He reported seeing the dazzling city of Hangzhou, which he called the most splendid city he had ever encountered, with its bustling markets, canals, and vibrant cultural life. He journeyed to Yunnan in the southwest, observed the production of salt, described the use of coal as a source of heat, and marveled at China's system of paper currency, which seemed like a miracle to Europeans accustomed only to gold and silver.],
-  [class=""\>Marco's accounts also extended beyond China. He wrote of voyages to Southeast Asia, describing the islands of Sumatra and Java, and even hinted at distant Japan, known to him as Cipangu, which was said to hold great riches. His descriptions were sometimes a blend of direct observation and second-hand reports, but together they painted a remarkable picture of lands far beyond Europe's horizon.],
-  [class=""\>What distinguished Marco Polo was not only his access to Kublai Khan's empire but his ability to observe and record with precision. He provided detailed descriptions of China's postal system, in which relays of riders could carry messages across vast distances with astonishing speed. He noted the cultivation of rice, the production of silk, and the intricate social customs of the Chinese people.],
-  [class=""\>Yet he also reported marvels that seemed fantastical to European readers. He spoke of rhinoceroses, which he mistook for the mythical unicorn, and of stones that burned like fire, a reference to coal. He described strange religious practices, palaces roofed with gold, and exotic animals that few in Europe had ever seen. His accounts mixed practical knowledge with elements of wonder, a blend that ensured his book would captivate audiences for centuries.],
-  [class=""\>However, by 1291CE, the Polos were ready to return to Venice. Their departure from Kublai Khan's court was delicate, as the khan valued their service. They gained permission to escort a Mongol princess to Persia, and after a long sea voyage through the South China Sea and the Indian Ocean, they eventually made their way back across Asia and arrived home in 1295 CE., Marco Polo had been gone for twenty-four years.],
-  [class=""\>The Venetians who greeted him hardly recognized him. He returned wealthy, adorned in fine robes, and with tales so extraordinary that many thought them impossible. Yet his knowledge of distant lands, goods, and languages set him apart from any other traveler of his generation.],
-  [class=""\>Not long after his return, Venice found itself at war with its rival Genoa. Marco Polo, serving as a naval commander, was captured during the Battle of Curzola in 1298 CE and imprisoned. It was during this imprisonment that his life took another remarkable turn. Sharing a cell with the romance writer Rustichello da Pisa, Marco dictated the story of his travels. Rustichello, with a flair for embellishment, shaped Marco's recollections into a narrative that combined detailed description with elements of wonder and adventure.],
-  [class=""\>The resulting work, Il Milione, known in English as The Travels of Marco Polo, became one of the most influential travel books of the medieval world. More than just a record of trade routes, it offered a vivid picture of Asia's geography, politics, economy, and culture. While skeptics dismissed it as exaggerated fantasy, others treated it as a treasure trove of knowledge. Copies spread across Europe, translated into multiple languages, and inspired generations of explorers.],
-  [class=""\>Marco Polo's greatest contribution to society lay in the expansion of European knowledge of the wider world. His descriptions of Asia helped shatter the narrow horizons of medieval Europe, where much of geography was based on classical sources or myth. By providing concrete, if sometimes imperfect, details about cities, governments, and resources, he offered Europeans a glimpse of civilizations far more advanced and wealthier than their own.],
-  [class=""\>His book inspired explorers for centuries. Christopher Columbus carried a copy of The Travels on his voyage across the Atlantic, convinced that Marco's descriptions of Cipangu and the riches of Asia lay just beyond the western seas. For merchants, Polo's accounts served as a guide to potential opportunities, while for Cartographers, they provided invaluable data that reshaped medieval geography.],
-  [class=""\>After his release from captivity, Marco Polo returned to Venice, where he resumed his life as a respected merchant. He married Donata Badoer, a woman from a prominent Venetian family, and together they had three daughters. Although he continued to trade, his fame rested more on his book than on his business ventures.],
-  [class=""\>Skepticism about his stories persisted throughout his life. Many Venetians called him "Il Milione," implying that he exaggerated his accounts "by the million." Yet Marco Polo never wavered in his insistence that what he had described was true. On his deathbed in 1324 CE, when asked to retract his tales, he reportedly replied, "I have not told half of what I saw."],
-  [class=""\>Marco Polo's legacy endures not only in his book but in the symbolic role he plays in history as a bridge between East and West. He was not the first European to reach China, others, such as the Franciscan friar Giovanni da Pian del Carpine, had done so, but he was the first to produce a sustained, detailed, and widely circulated account. His observations introduced Europeans to technologies, products, and cultures that would shape their ambitions and worldview.],
-  [class=""\>While scholars today debate the accuracy of parts of his narrative, pointing out omissions such as the Great Wall of China or possible exaggerations of wealth, there is little doubt that Marco Polo travelled extensively in Asia and faithfully recorded much of what he saw. His writings influenced cartography, commerce, and exploration, ensuring his place in world history.],
-  [class=""\>In an age when most people never left their hometowns, he crossed continents, served a foreign emperor, and brought back stories that expanded the boundaries of knowledge. His journeys and writings remain emblematic of the transformative power of exploration, reminding us that the world has always been larger, richer, and more interconnected than we imagine.],
-  [class=""\>In conclusion, Marco Polo's extraordinary life and travels epitomize the spirit of curiosity, courage, and cross-cultural engagement that defined the age of exploration. From his early upbringing in the mercantile hub of Venice to his twenty-four-year odyssey across Asia, Polo's journey was shaped by both personal ambition and the broader commercial and diplomatic networks of his family.],
-  [class=""\>His intimate observations of the Mongol Empire and the vast reaches of China, along with his encounters in Southeast Asia, offered Europeans a window into civilizations that were previously almost unimaginable. Beyond mere adventure, his meticulous documentation of cities, trade systems, technologies, and social customs provided an unprecedented corpus of knowledge, blending practical information with a sense of wonder that captured the imagination of generations.],
-  [class=""\>The writing of Il Milione during his imprisonment in Genoa transformed Marco Polo from traveler to chronicler, allowing his experiences to transcend time and space. While critics have debated the accuracy of his accounts, there is little doubt that his writings fundamentally expanded Europe's understanding of the wider world, inspiring explorers, merchants, and mapmakers alike.],
-  [class=""\>Figures such as Christopher Columbus drew directly from Polo's narratives, demonstrating the profound influence his observations exerted on the course of global exploration. Furthermore, Marco Polo's life illustrates the human capacity to bridge cultures, serving as an intermediary between East and West and demonstrating the value of empathy, observation, and intellectual curiosity in fostering understanding across diverse societies.],
-  [class=""\>Ultimately, Marco Polo's legacy endures not simply in the factual details he recorded, but in the symbolic role he plays as an emblem of exploration itself. His journeys are a reminder that the pursuit of knowledge, even in the face of uncertainty and peril, can reshape our perception of the world. By venturing into unknown lands and faithfully recording his experiences, Marco Polo expanded not only the geographical horizons of his contemporaries but also the intellectual and imaginative boundaries of Europe, leaving a lasting imprint on history that continues to inspire the spirit of discovery today.],
-  [class=""\> The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
-  [class=""\>When Marco Polo dictated his adventures to Rustichello da Pisa in a Genoese prison in 1298 CE, he could hardly have imagined the extraordinary afterlife of his words. Il Milione, or The Travels of Marco Polo, quickly became one of the most copied, translated, and debated books of the late Middle Ages. Yet the text's journey through history was almost as adventurous as the merchant himself.],
-  [class=""\>The original manuscript has not survived. Instead, dozens of versions circulated across Europe, each copied by hand and often altered by scribes who added flourishes or omitted details. Some editions emphasized Polo's observations of commerce and geography, while others leaned into the marvels and wonders, turning the book into a medieval adventure tale. As a result, there is no single "authentic" version of The Travels, only a family of manuscripts, each reflecting the tastes and expectations of its audience.],
-  [class=""\>Despite these variations, the book's impact was profound. For European readers who knew little beyond the Mediterranean, Polo's accounts of vast cities like Beijing (which he called Khanbaliq), of wealthy trading ports, and of the court of Kublai Khan were revelations. Cartographers eagerly incorporated his descriptions into their charts, filling in the blank spaces of Asia with names and details lifted directly from his text. The Catalan Atlas of 1375 CE, one of the most influential medieval world maps, bears clear marks of Polo's influence, situating cities, rivers, and kingdoms that Europeans otherwise would never have known.],
-  [class=""\>By the time of the Renaissance, The Travels had become more than just a book of wonders, it was a geographic authority. Scholars, merchants, and explorers mined its pages for information. As indicated in the main text Christopher Columbus owned a Latin copy, heavily annotated in the margins with his notes, and relied on Polo's descriptions of Cipangu and Cathay to bolster his conviction that a westward route to Asia was possible. For Columbus and many of his contemporaries, Marco Polo's text was less a travelogue than a guidebook to future discovery.],
-  [class=""\>Though modern scholars have criticized its omissions and embellishments, The Travels gave Europe its first detailed portrait of the East. Its manuscript history, fragmented and colorful, mirrors the medieval world's hunger for knowledge and storytelling. More than seven centuries later, it remains a testament to the power of narrative to shape the course of exploration, geography, and the imagination of entire civilizations.],
-  [class=""\>Few historical figures have attracted as many myths as Marco Polo, and perhaps the most enduring is the tale that he introduced pasta to Italy after encountering noodles in China. According to the legend, Polo brought the recipe for long strands of wheat-based noodles back from his travels, and from this simple act, Italian cuisine was forever transformed.],
-  [class=""\>It's a charming story, but historians agree it's just that, a story. Archaeological evidence shows that Italians were making pasta-like dishes centuries before Marco Polo's journey. Records from Sicily in the 12th century, nearly a hundred years before Polo's return, describe itriyya, a form of dried pasta made from durum wheat. The Arabs, too, had introduced noodle-like foods to the Mediterranean world long before the Polos set foot in Asia.],
-  [class=""\>So where did the myth come from? It likely originated in the 20th century, popularized in American marketing campaigns that wanted to romanticize pasta as an "exotic" gift from the East. Polo's fame as a traveler made him the perfect character to credit with the culinary import.],
-  [class=""\>Other myths attached themselves to Polo as well. Some claimed he never went to China at all, that his accounts were borrowed from Persian sources; others accused him of exaggerating "by the million," giving rise to his nickname "Il Milione."],
-  [class=""\>In truth, Marco Polo did not introduce pasta to Italy, nor did he single-handedly open Asia to Europeans, however, his vivid storytelling left such an impression that centuries later, people were still eager to attach myths to his name, proof of the enduring fascination he inspires.],
+  [Marco Polo stands as one of the most iconic figures of medieval exploration, a man whose name became synonymous with far-flung lands, daring journeys, and the opening of new worlds to the imagination of Europe. Born in 1254 CE into a Venetian merchant family, Marco Polo grew up in a city that was then a thriving hub of Mediterranean commerce. His father, Niccolò Polo, and his uncle, Maffeo, were seasoned merchants with experience trading in Constantinople and along routes leading deep into Asia. Their ventures laid the groundwork for Marco's own journeys, ensuring he was raised with an understanding of trade, diplomacy, and the lure of distant markets. Marco's mother died when he was young, leaving his extended family to raise him. By the time he reached his late teens, the Polo family's mercantile ambitions had drawn him into one of the greatest adventures of the Middle Ages.],
+  [Terry Bailey explains.],
+  [A depiction of Marco Polo's caravan traveling east.],
+  [In 1271, Marco Polo, at just seventeen, set out with his father and uncle on a journey that would take them across Asia to the Mongol court of Kublai Khan, the powerful grandson of Genghis Khan. Their route followed the Silk Road, a web of trade paths that stretched across deserts, mountains, and great cities, linking Europe with Asia. The journey was arduous, spanning thousands of miles through regions plagued by political instability, banditry, and natural hardships.],
+  [The Polos travelled through the Middle East, passing through Acre and crossing Persia, where Marco was exposed to Zoroastrianism and Islamic culture. From there, they trekked across Afghanistan's rugged terrain, scaled the heights of the Pamir Mountains, and crossed the vast steppes of Central Asia before reaching China. Marco, experiencing these lands for the first time, recorded their customs, geography, and products with a keen eye for detail. His descriptions, later written down, became the first systematic attempt to convey knowledge of Asia to Europeans.],
+  [When the Polos arrived at Kublai Khan's court around 1275 CE, they entered one of the most powerful empires the world had ever known. The Mongol Empire stretched across Eurasia, and Kublai ruled as the founder of the Yuan dynasty in China. Marco quickly impressed the khan with his intelligence, linguistic aptitude, and curiosity. Unlike most Europeans who reached Asia, Marco did not remain on the fringes of court life; instead, he became a trusted envoy and administrator.],
+  [Over the next seventeen years, Marco Polo travelled extensively across China and beyond, often on missions for Kublai Khan. He reported seeing the dazzling city of Hangzhou, which he called the most splendid city he had ever encountered, with its bustling markets, canals, and vibrant cultural life. He journeyed to Yunnan in the southwest, observed the production of salt, described the use of coal as a source of heat, and marveled at China's system of paper currency, which seemed like a miracle to Europeans accustomed only to gold and silver.],
+  [Marco's accounts also extended beyond China. He wrote of voyages to Southeast Asia, describing the islands of Sumatra and Java, and even hinted at distant Japan, known to him as Cipangu, which was said to hold great riches. His descriptions were sometimes a blend of direct observation and second-hand reports, but together they painted a remarkable picture of lands far beyond Europe's horizon.],
+  [What distinguished Marco Polo was not only his access to Kublai Khan's empire but his ability to observe and record with precision. He provided detailed descriptions of China's postal system, in which relays of riders could carry messages across vast distances with astonishing speed. He noted the cultivation of rice, the production of silk, and the intricate social customs of the Chinese people.],
+  [Yet he also reported marvels that seemed fantastical to European readers. He spoke of rhinoceroses, which he mistook for the mythical unicorn, and of stones that burned like fire, a reference to coal. He described strange religious practices, palaces roofed with gold, and exotic animals that few in Europe had ever seen. His accounts mixed practical knowledge with elements of wonder, a blend that ensured his book would captivate audiences for centuries.],
+  [However, by 1291CE, the Polos were ready to return to Venice. Their departure from Kublai Khan's court was delicate, as the khan valued their service. They gained permission to escort a Mongol princess to Persia, and after a long sea voyage through the South China Sea and the Indian Ocean, they eventually made their way back across Asia and arrived home in 1295 CE., Marco Polo had been gone for twenty-four years.],
+  [The Venetians who greeted him hardly recognized him. He returned wealthy, adorned in fine robes, and with tales so extraordinary that many thought them impossible. Yet his knowledge of distant lands, goods, and languages set him apart from any other traveler of his generation.],
+  [Not long after his return, Venice found itself at war with its rival Genoa. Marco Polo, serving as a naval commander, was captured during the Battle of Curzola in 1298 CE and imprisoned. It was during this imprisonment that his life took another remarkable turn. Sharing a cell with the romance writer Rustichello da Pisa, Marco dictated the story of his travels. Rustichello, with a flair for embellishment, shaped Marco's recollections into a narrative that combined detailed description with elements of wonder and adventure.],
+  [The resulting work, Il Milione, known in English as The Travels of Marco Polo, became one of the most influential travel books of the medieval world. More than just a record of trade routes, it offered a vivid picture of Asia's geography, politics, economy, and culture. While skeptics dismissed it as exaggerated fantasy, others treated it as a treasure trove of knowledge. Copies spread across Europe, translated into multiple languages, and inspired generations of explorers.],
+  [Marco Polo's greatest contribution to society lay in the expansion of European knowledge of the wider world. His descriptions of Asia helped shatter the narrow horizons of medieval Europe, where much of geography was based on classical sources or myth. By providing concrete, if sometimes imperfect, details about cities, governments, and resources, he offered Europeans a glimpse of civilizations far more advanced and wealthier than their own.],
+  [His book inspired explorers for centuries. Christopher Columbus carried a copy of The Travels on his voyage across the Atlantic, convinced that Marco's descriptions of Cipangu and the riches of Asia lay just beyond the western seas. For merchants, Polo's accounts served as a guide to potential opportunities, while for Cartographers, they provided invaluable data that reshaped medieval geography.],
+  [After his release from captivity, Marco Polo returned to Venice, where he resumed his life as a respected merchant. He married Donata Badoer, a woman from a prominent Venetian family, and together they had three daughters. Although he continued to trade, his fame rested more on his book than on his business ventures.],
+  [Skepticism about his stories persisted throughout his life. Many Venetians called him "Il Milione," implying that he exaggerated his accounts "by the million." Yet Marco Polo never wavered in his insistence that what he had described was true. On his deathbed in 1324 CE, when asked to retract his tales, he reportedly replied, "I have not told half of what I saw."],
+  [Marco Polo's legacy endures not only in his book but in the symbolic role he plays in history as a bridge between East and West. He was not the first European to reach China, others, such as the Franciscan friar Giovanni da Pian del Carpine, had done so, but he was the first to produce a sustained, detailed, and widely circulated account. His observations introduced Europeans to technologies, products, and cultures that would shape their ambitions and worldview.],
+  [While scholars today debate the accuracy of parts of his narrative, pointing out omissions such as the Great Wall of China or possible exaggerations of wealth, there is little doubt that Marco Polo travelled extensively in Asia and faithfully recorded much of what he saw. His writings influenced cartography, commerce, and exploration, ensuring his place in world history.],
+  [Marco Polo's life embodies the human spirit of curiosity and discovery.],
+  [In an age when most people never left their hometowns, he crossed continents, served a foreign emperor, and brought back stories that expanded the boundaries of knowledge. His journeys and writings remain emblematic of the transformative power of exploration, reminding us that the world has always been larger, richer, and more interconnected than we imagine.],
+  [In conclusion, Marco Polo's extraordinary life and travels epitomize the spirit of curiosity, courage, and cross-cultural engagement that defined the age of exploration. From his early upbringing in the mercantile hub of Venice to his twenty-four-year odyssey across Asia, Polo's journey was shaped by both personal ambition and the broader commercial and diplomatic networks of his family.],
+  [His intimate observations of the Mongol Empire and the vast reaches of China, along with his encounters in Southeast Asia, offered Europeans a window into civilizations that were previously almost unimaginable. Beyond mere adventure, his meticulous documentation of cities, trade systems, technologies, and social customs provided an unprecedented corpus of knowledge, blending practical information with a sense of wonder that captured the imagination of generations.],
+  [The writing of Il Milione during his imprisonment in Genoa transformed Marco Polo from traveler to chronicler, allowing his experiences to transcend time and space. While critics have debated the accuracy of his accounts, there is little doubt that his writings fundamentally expanded Europe's understanding of the wider world, inspiring explorers, merchants, and mapmakers alike.],
+  [Figures such as Christopher Columbus drew directly from Polo's narratives, demonstrating the profound influence his observations exerted on the course of global exploration. Furthermore, Marco Polo's life illustrates the human capacity to bridge cultures, serving as an intermediary between East and West and demonstrating the value of empathy, observation, and intellectual curiosity in fostering understanding across diverse societies.],
+  [Ultimately, Marco Polo's legacy endures not simply in the factual details he recorded, but in the symbolic role he plays as an emblem of exploration itself. His journeys are a reminder that the pursuit of knowledge, even in the face of uncertainty and peril, can reshape our perception of the world. By venturing into unknown lands and faithfully recording his experiences, Marco Polo expanded not only the geographical horizons of his contemporaries but also the intellectual and imaginative boundaries of Europe, leaving a lasting imprint on history that continues to inspire the spirit of discovery today.],
+  [The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
+  [Notes:],
+  [The Travels of Marco Polo — From Prison Cell to Renaissance Maps],
+  [When Marco Polo dictated his adventures to Rustichello da Pisa in a Genoese prison in 1298 CE, he could hardly have imagined the extraordinary afterlife of his words. Il Milione, or The Travels of Marco Polo, quickly became one of the most copied, translated, and debated books of the late Middle Ages. Yet the text's journey through history was almost as adventurous as the merchant himself.],
+  [The original manuscript has not survived. Instead, dozens of versions circulated across Europe, each copied by hand and often altered by scribes who added flourishes or omitted details. Some editions emphasized Polo's observations of commerce and geography, while others leaned into the marvels and wonders, turning the book into a medieval adventure tale. As a result, there is no single "authentic" version of The Travels, only a family of manuscripts, each reflecting the tastes and expectations of its audience.],
+  [Despite these variations, the book's impact was profound. For European readers who knew little beyond the Mediterranean, Polo's accounts of vast cities like Beijing (which he called Khanbaliq), of wealthy trading ports, and of the court of Kublai Khan were revelations. Cartographers eagerly incorporated his descriptions into their charts, filling in the blank spaces of Asia with names and details lifted directly from his text. The Catalan Atlas of 1375 CE, one of the most influential medieval world maps, bears clear marks of Polo's influence, situating cities, rivers, and kingdoms that Europeans otherwise would never have known.],
+  [By the time of the Renaissance, The Travels had become more than just a book of wonders, it was a geographic authority. Scholars, merchants, and explorers mined its pages for information. As indicated in the main text Christopher Columbus owned a Latin copy, heavily annotated in the margins with his notes, and relied on Polo's descriptions of Cipangu and Cathay to bolster his conviction that a westward route to Asia was possible. For Columbus and many of his contemporaries, Marco Polo's text was less a travelogue than a guidebook to future discovery.],
+  [Though modern scholars have criticized its omissions and embellishments, The Travels gave Europe its first detailed portrait of the East. Its manuscript history, fragmented and colorful, mirrors the medieval world's hunger for knowledge and storytelling. More than seven centuries later, it remains a testament to the power of narrative to shape the course of exploration, geography, and the imagination of entire civilizations.],
+  [The myths of Marco Polo],
+  [Few historical figures have attracted as many myths as Marco Polo, and perhaps the most enduring is the tale that he introduced pasta to Italy after encountering noodles in China. According to the legend, Polo brought the recipe for long strands of wheat-based noodles back from his travels, and from this simple act, Italian cuisine was forever transformed.],
+  [It's a charming story, but historians agree it's just that, a story. Archaeological evidence shows that Italians were making pasta-like dishes centuries before Marco Polo's journey. Records from Sicily in the 12th century, nearly a hundred years before Polo's return, describe itriyya, a form of dried pasta made from durum wheat. The Arabs, too, had introduced noodle-like foods to the Mediterranean world long before the Polos set foot in Asia.],
+  [So where did the myth come from? It likely originated in the 20th century, popularized in American marketing campaigns that wanted to romanticize pasta as an "exotic" gift from the East. Polo's fame as a traveler made him the perfect character to credit with the culinary import.],
+  [Other myths attached themselves to Polo as well. Some claimed he never went to China at all, that his accounts were borrowed from Persian sources; others accused him of exaggerating "by the million," giving rise to his nickname "Il Milione."],
+  [While modern scholarship confirms that Marco Polo did indeed reach China, the layers of myth reflect just how deeply his name became woven into both history and legend.],
+  [In truth, Marco Polo did not introduce pasta to Italy, nor did he single-handedly open Asia to Europeans, however, his vivid storytelling left such an impression that centuries later, people were still eager to attach myths to his name, proof of the enduring fascination he inspires.],
 ),
   insert-map: (:),
   word-count: 2485,
@@ -1131,10 +1166,8 @@ Just toss the unwashed inputs at the database.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [CodeSOD: A Little Twisted],
   author: [Remy Porter],
   source-name: [The Daily WTF],
@@ -1154,23 +1187,22 @@ Just toss the unwashed inputs at the database.],
 I do not want to work for that website, I do not want to look at that backend source-code. And I have to feel sorry and respect for the browser developers, as they have to write software that can handle completely broken HTML.],
   [While I hate the results, the fact that the HTML specification originally required clients to render even the most broken HTML is arguably a really good design choice. Expecting people to do the right thing never works out for you.],
   [Let's not forget their "responsive" CSS, which is obviously worth looking at, even if it's obvious what it must be:],
-  [\@media only screen and ( orientation :portrait) {
- \#landscape\_mode\_only {
+  [\@media only screen and ( orientation :portrait) \{
+ \#landscape\_mode\_only \{
  height : 98vw ;
  -webkit- transform : rotate ( 90deg );
  -moz- transform : rotate ( 90deg );
  -o- transform : rotate ( 90deg );
  -ms- transform : rotate ( 90deg );
  transform : rotate ( 90deg )
- }
-}],
+ \}
+\}],
   [This forces everything in the body to rotate sideways.],
   [Look, actually responsive design is hard. But "just force the page into landscape mode no matter what the user does" is definitely not the solution .],
   [And Dana points out one last thing:],
   [As a cherry on the top, observe how the comment that marks the end of the header is placed after the starts. Which is wrong already, but also stupid, because already marks the end of the head. And the head is not really the header.],
   [\[Advertisement\] 
  BuildMaster allows you to create a self-service release management platform that allows different teams to manage their applications. Explore how!],
-  [style="clear: left;"\>],
 ),
   insert-map: (:),
   word-count: 675,
@@ -1178,31 +1210,41 @@ I do not want to work for that website, I do not want to look at that backend so
   debug-mode: false,
 )
 
-  #pull-quote([With that, she ran a diff to see what changed.], [Remy Porter])
+#pull-quote([With that, she ran a diff to see what changed.], [Remy Porter])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Making of a Swadeshi Economy in India’s Freedom Struggle],
   author: [George Levrier-Jones],
   source-name: [History in 28 Minutes],
   images: (),
   paragraphs: (
-  [class=""\> Mayer Amschel Rothschild, the founder of the Rothschild banking dynasty famously said “Give me control of a nation’s money and I care not who makes its laws”, suggesting that whoever controls the economy of a country has more power than the lawmakers. The Swadeshi Movement, while fundamentally political, was India’s realization of this truth and understanding the importance of economic control. Over the years, many historians and scholars have given their definition of the term “Swadeshi”, all revolving around self-sufficiency and local self-reliance.],
-  [class=""\>According to Gandhi, the term Swadeshi is “that spirit within us which restricts us to the use and service of our immediate surroundings to the exclusion of the more remote.” He promoted the importance of indigenous skills, using them to live a simple and dignified life. For Sri Aurobindo, “It is an intellectual change, it is a spiritual change, it is a political change…Swadeshi is that which belongs to our own country. When applied to industry and commerce it means  the preference for our own articles produced by Indian labour and the exclusion of articles produced by the labour of foreign people.” Lisa N. Trivedi opines that the “social collective of Bharat (the dominant indigenous term for India) was the template on which popular swadeshi repertoires were forged.”],
-  [class=""\>The Swadeshi Movement went beyond mere boycott and eventually became a way of living. This idea has been stressed upon in Gandhian philosophy and also in influential works like that of Rabindranath Tagore’s 1904 essay ‘Swadeshi Samaj’ . It emerged as a mass political movement from 1905 onwards and developed into a crucial instrument for economic policy making post 1947, after Indian independence. This movement is about the making of a local economy and revival of the industries that were disbanded by the British. Despite harsh measures such as arrests and lathi charges to suppress it, the movement had already succeeded in forging a sense of national identity among Indians.],
-  [class=""\>Naoroji and the Indian National Congress had put forward their demands for industrial development, reduced taxes and promotion of Indian industries which were never given any importance. Between 1883 and 1892, Naoroji said that the total drain amounted to Rs. 24 crores which substantially increased to 51.5 crores by 1905. D. E. Wacha, the President of the Indian National Congress in 1901 also suggested that the drain was about thirty to forty crores. The figure varies as per the calculations of historians but drain of wealth from India was undeniably a major issue. In 1891, the Swadeshi agenda was adopted by the Indian National Congress. This became a national cause after the British Government amended the 1894 cotton duties in 1896 to benefit the textile manufacturers in Manchester by imposing a uniform 3.5% duty on manufactured Indian cloth.],
-  [class=""\>Nitin Pai while tracing the early economic developments during the Swadeshi Movement highlights how “swadeshi…already became a social proxy against what many saw as political “mendicancy”. Bal Gangadhar Tilak in 1896 organized boycotts and publicly burned foreign cloth in Bombay. Mahadev Govind Ranade's work through the Industrial Conference of Western India aimed to promote industrial development in Bombay in the late 1880s. This phase marked the establishment of early Swadeshi stores, indigenous banks and the rise of an entrepreneurial Indian class. Nitin Pai sheds light on the global movements during this emergent political phase such as the abolition of slavery in America, the American Civil War, Industrial Revolution, all culminating in changing the “pattern of the deployment of Indian capital.”],
-  [class=""\>When Lord Curzon partitioned Bengal on October 16, 1905, his reasons revolved around Bengal being too large of a province. However, the main reason as supported by many historians was to curb Bengali nationalism, using the old tactic of “divide and rule” from the British playbook. In a 1903 memo, Curzon wrote: Bengal united is a power; Bengal divided will pull in different ways. East Bengal and Assam with approximately 31 million people became one unit while Bihar, Orissa and West Bengal formed the others. Little did Curzon expect that this move would act like a catalyst for the already brewing Swadeshi Movement.],
-  [class=""\>Hundreds and thousands of people gathered on August 7, 1905 at Calcutta’ Town Hall chaired by moderate leader Surendranath Banerjee. Following this, students opted out of government schools, local banks and mills sprouted to promote the local economy. Some of the most prominent Swadeshi enterprises from Bengal include Acharya P. C. Ray's Bengal Chemicals, Bange Lakshmi Cotton Mills, Calcutta Potteries and the Swadeshi Steam Navigation Company (1906) by V. O. Chidambaram Pillai. In her article ‘Boycott of Lancashire Cloth: The real economic battle’ , Diksha Tyagi observes how Import of foreign cloth declined by 1.5 crore rupees in 1907…Bombay’s textile mills, benefiting from increased demand for indigenous cloth, earned profits of over 2.7 crore rupees…” She further says that even Brahmins boycotted foreign goods and refused to perform pujas with those items.],
-  [class=""\>When Gandhi arrived in 1915, he gave the movement a broader meaning by incorporating social, religious and cultural aspects. He promoted the khadi (cloth woven on handloom from fibers like cotton, silk, wool, etc.) as an alternative to the mill cloth and began spinning it in his Sabarmati Ashram. After World War I and brutal effects of the Great Depression in America, the British economy was slowly but surely crumbling. Khadi became a symbol of economic sufficiency and by 1925, the All India Spinners’ Association (AISA) was set up. They offered employment to women too who now became active economic contributors.],
-  [class=""\>Another major blow to the British economy was the Dandi March of 1930, a part of the larger Civil Disobedience Movement. Following the principles of satyagraha (truth) and ahimsa (non-violence), this was a salt march against a series of British laws that prohibited Indians from locally producing or selling salt. The Swadeshi movement post 1930s went beyond producing cloth and aimed at creating a decentralized economy. This was the opposite of what the British believed in : a centralized model of production. Nitin Pai writes “As India headed towards independence, swadeshi began to move from being an instrument of protest to a principle of economic policy of the new republic.”],
-  [class=""\>The majority of the population of India during the 1940s had still not adapted to an urban lifestyle. In this sense, Gandhi’s vision of a self-sufficient village economy represents a microcosm of India itself. Trisha Rani Deka opines that Gandhi’s “entire effort of swadeshi was revolving around the village economy…village self-sufficiency, village self-government, cultivation of village and cottage industries were the main agenda in his concept of swadeshi.” Thus, this led to the revival of indigenous products, particularly handlooms and cottage industries. Gandhi himself said that his model was : “Not mass production, but production by the masses.” This community spirit further cultivated a collective identity and national consciousness which was rooted in atmashakti or self-reliance.],
-  [class=""\>Interestingly for Gandhi, the total boycott of foreign goods or western items was never on the table. He would be willing to “buy surgical instruments from England, pins and pencils from Austria and watches from Switzerland” but “will not buy an inch of the finest cotton fabric from England or Japan or any other part of the world because it has injured and increasingly injures the millions of the inhabitants of India.”(Young India, 12-3-1925, p. 88). He was against mass industrialization as it would force villagers to leave their homes and craft, reducing them to factory workers. Even though the post 1947 models reflect a Nehruvian planning and state led heavy industrialization, Gandhi's Gram Swaraj ideals are reflected in the rural schemes and support for village industries.],
-  [class=""\>India under a colony of the British was not only treated as a market and source of raw materials. For centuries under the rule of the British Raj, the Indian subcontinent was only a dumping ground for foreign grounds whose artisanal industries were dismantled. The Swadeshi Movement changed that and emerged as the first great reversal. What once was a dependent and culturally dependent colony saw an awakening and revival of its own local enterprises. As described by Gandhi : When every individual is an integral part of the community…when the economy is local… when homemade handicrafts are given preference, it is the real swadeshi.”],
-  [class=""\>From the early efforts of the Indian National Congress to the growth of local enterprises and the entrepreneurial spirit, Swadeshi became a way of living. The pharmaceutical industries, banks, national schools and handloom industries laid the foundation of some big names that exist to this day. In many ways Swadeshi was India’s first “ Atmanirbhar Bharat ” that boosted the local economy via a model that revived its economy and embraced ethical consumption.],
-  [class=""\> Over the past two years, Shelton has worked with various organizations as a content writer and contributes as a fact-checker for DigitEYE India, an IFCN signatory. He is passionate about history, politics and culture.],
+  [Mayer Amschel Rothschild, the founder of the Rothschild banking dynasty famously said “Give me control of a nation’s money and I care not who makes its laws”, suggesting that whoever controls the economy of a country has more power than the lawmakers. The Swadeshi Movement, while fundamentally political, was India’s realization of this truth and understanding the importance of economic control. Over the years, many historians and scholars have given their definition of the term “Swadeshi”, all revolving around self-sufficiency and local self-reliance.],
+  [Shelton Rozario explains.],
+  ["Concentrate on Charkha and Swadeshi," a poster in the Swadeshi Movement. It shows Mahatma Gandhi using a Charkha.],
+  [According to Gandhi, the term Swadeshi is “that spirit within us which restricts us to the use and service of our immediate surroundings to the exclusion of the more remote.” He promoted the importance of indigenous skills, using them to live a simple and dignified life. For Sri Aurobindo, “It is an intellectual change, it is a spiritual change, it is a political change…Swadeshi is that which belongs to our own country. When applied to industry and commerce it means  the preference for our own articles produced by Indian labour and the exclusion of articles produced by the labour of foreign people.” Lisa N. Trivedi opines that the “social collective of Bharat (the dominant indigenous term for India) was the template on which popular swadeshi repertoires were forged.”],
+  [The Swadeshi Movement went beyond mere boycott and eventually became a way of living. This idea has been stressed upon in Gandhian philosophy and also in influential works like that of Rabindranath Tagore’s 1904 essay ‘Swadeshi Samaj’ . It emerged as a mass political movement from 1905 onwards and developed into a crucial instrument for economic policy making post 1947, after Indian independence. This movement is about the making of a local economy and revival of the industries that were disbanded by the British. Despite harsh measures such as arrests and lathi charges to suppress it, the movement had already succeeded in forging a sense of national identity among Indians.],
+  [Drain of Wealth and Early Swadeshi Awakening],
+  [Naoroji and the Indian National Congress had put forward their demands for industrial development, reduced taxes and promotion of Indian industries which were never given any importance. Between 1883 and 1892, Naoroji said that the total drain amounted to Rs. 24 crores which substantially increased to 51.5 crores by 1905. D. E. Wacha, the President of the Indian National Congress in 1901 also suggested that the drain was about thirty to forty crores. The figure varies as per the calculations of historians but drain of wealth from India was undeniably a major issue. In 1891, the Swadeshi agenda was adopted by the Indian National Congress. This became a national cause after the British Government amended the 1894 cotton duties in 1896 to benefit the textile manufacturers in Manchester by imposing a uniform 3.5% duty on manufactured Indian cloth.],
+  [Nitin Pai while tracing the early economic developments during the Swadeshi Movement highlights how “swadeshi…already became a social proxy against what many saw as political “mendicancy”. Bal Gangadhar Tilak in 1896 organized boycotts and publicly burned foreign cloth in Bombay. Mahadev Govind Ranade's work through the Industrial Conference of Western India aimed to promote industrial development in Bombay in the late 1880s. This phase marked the establishment of early Swadeshi stores, indigenous banks and the rise of an entrepreneurial Indian class. Nitin Pai sheds light on the global movements during this emergent political phase such as the abolition of slavery in America, the American Civil War, Industrial Revolution, all culminating in changing the “pattern of the deployment of Indian capital.”],
+  [Swadeshi and Local Enterprises in Full Swing],
+  [When Lord Curzon partitioned Bengal on October 16, 1905, his reasons revolved around Bengal being too large of a province. However, the main reason as supported by many historians was to curb Bengali nationalism, using the old tactic of “divide and rule” from the British playbook. In a 1903 memo, Curzon wrote: Bengal united is a power; Bengal divided will pull in different ways. East Bengal and Assam with approximately 31 million people became one unit while Bihar, Orissa and West Bengal formed the others. Little did Curzon expect that this move would act like a catalyst for the already brewing Swadeshi Movement.],
+  [Hundreds and thousands of people gathered on August 7, 1905 at Calcutta’ Town Hall chaired by moderate leader Surendranath Banerjee. Following this, students opted out of government schools, local banks and mills sprouted to promote the local economy. Some of the most prominent Swadeshi enterprises from Bengal include Acharya P. C. Ray's Bengal Chemicals, Bange Lakshmi Cotton Mills, Calcutta Potteries and the Swadeshi Steam Navigation Company (1906) by V. O. Chidambaram Pillai. In her article ‘Boycott of Lancashire Cloth: The real economic battle’ , Diksha Tyagi observes how Import of foreign cloth declined by 1.5 crore rupees in 1907…Bombay’s textile mills, benefiting from increased demand for indigenous cloth, earned profits of over 2.7 crore rupees…” She further says that even Brahmins boycotted foreign goods and refused to perform pujas with those items.],
+  [When Gandhi arrived in 1915, he gave the movement a broader meaning by incorporating social, religious and cultural aspects. He promoted the khadi (cloth woven on handloom from fibers like cotton, silk, wool, etc.) as an alternative to the mill cloth and began spinning it in his Sabarmati Ashram. After World War I and brutal effects of the Great Depression in America, the British economy was slowly but surely crumbling. Khadi became a symbol of economic sufficiency and by 1925, the All India Spinners’ Association (AISA) was set up. They offered employment to women too who now became active economic contributors.],
+  [From Khadi to National Consciousness],
+  [Another major blow to the British economy was the Dandi March of 1930, a part of the larger Civil Disobedience Movement. Following the principles of satyagraha (truth) and ahimsa (non-violence), this was a salt march against a series of British laws that prohibited Indians from locally producing or selling salt. The Swadeshi movement post 1930s went beyond producing cloth and aimed at creating a decentralized economy. This was the opposite of what the British believed in : a centralized model of production. Nitin Pai writes “As India headed towards independence, swadeshi began to move from being an instrument of protest to a principle of economic policy of the new republic.”],
+  [The majority of the population of India during the 1940s had still not adapted to an urban lifestyle. In this sense, Gandhi’s vision of a self-sufficient village economy represents a microcosm of India itself. Trisha Rani Deka opines that Gandhi’s “entire effort of swadeshi was revolving around the village economy…village self-sufficiency, village self-government, cultivation of village and cottage industries were the main agenda in his concept of swadeshi.” Thus, this led to the revival of indigenous products, particularly handlooms and cottage industries. Gandhi himself said that his model was : “Not mass production, but production by the masses.” This community spirit further cultivated a collective identity and national consciousness which was rooted in atmashakti or self-reliance.],
+  [Interestingly for Gandhi, the total boycott of foreign goods or western items was never on the table. He would be willing to “buy surgical instruments from England, pins and pencils from Austria and watches from Switzerland” but “will not buy an inch of the finest cotton fabric from England or Japan or any other part of the world because it has injured and increasingly injures the millions of the inhabitants of India.”(Young India, 12-3-1925, p. 88). He was against mass industrialization as it would force villagers to leave their homes and craft, reducing them to factory workers. Even though the post 1947 models reflect a Nehruvian planning and state led heavy industrialization, Gandhi's Gram Swaraj ideals are reflected in the rural schemes and support for village industries.],
+  [India under a colony of the British was not only treated as a market and source of raw materials. For centuries under the rule of the British Raj, the Indian subcontinent was only a dumping ground for foreign grounds whose artisanal industries were dismantled. The Swadeshi Movement changed that and emerged as the first great reversal. What once was a dependent and culturally dependent colony saw an awakening and revival of its own local enterprises. As described by Gandhi : When every individual is an integral part of the community…when the economy is local… when homemade handicrafts are given preference, it is the real swadeshi.”],
+  [From the early efforts of the Indian National Congress to the growth of local enterprises and the entrepreneurial spirit, Swadeshi became a way of living. The pharmaceutical industries, banks, national schools and handloom industries laid the foundation of some big names that exist to this day. In many ways Swadeshi was India’s first “ Atmanirbhar Bharat ” that boosted the local economy via a model that revived its economy and embraced ethical consumption.],
+  [Over the past two years, Shelton has worked with various organizations as a content writer and contributes as a fact-checker for DigitEYE India, an IFCN signatory. He is passionate about history, politics and culture.],
+  [●      Joseph, S. K. (n.d.). Understanding Gandhi’s vision of Swadeshi . Retrieved on October 19, 2025 from https:\/\/www.mkgandhi.org/articles/understanding-gandhis-vision-of-swadeshi.php],
+  [●      Aurobindo, Sri. “Swadeshi and Boycott.” Bande Mataram , 1907. Web. https:\/\/sri-aurobindo.co.in/workings/sa/37\_06\_07/0306\_e.htm .],
+  [●      Trivedi, L. N. (2003). Visually Mapping the “Nation”: Swadeshi Politics in Nationalist India, 1920-1930. The Journal of Asian Studies , 62 (1), 11–41. https:\/\/doi.org/10.2307/3096134],
+  [●      Dhananjaya. (2021). The Drain Theory of Wealth and Dadabhai Naoroji: An Overview . International Journal of Novel Research and Development , 6(7). https:\/\/www.ijnrd.org/papers/IJNRD2107007.pdf],
+  [●      Pai, N. (2021, July 2). A Brief Economic History of Swadeshi . Indian Public Policy Review , 2(4). https:\/\/doi.org/10.55763/ippr.2021.02.04.002],
+  [●      Tyagi, D. (2025, August 8). Boycott of Lancashire Cloth: The real economic battle . Organiser . https:\/\/www.organiser.org/2025/08/08/306782/bharat/boycott-of-lancashire-cloth-the-real-economic-battle/],
+  [●      Deka, T. R. (2020). Gandhi’s vision of Swadeshi and its relevance. International Journal of Management (IJM), 11 (10), 2587-2593. https:\/\/iaeme.com/MasterAdmin/Journal\_uploads/IJM/VOLUME\_11\_ISSUE\_10/IJM\_11\_10\_260.pdf],
 ),
   insert-map: (:),
   word-count: 1675,
@@ -1210,10 +1252,8 @@ I do not want to work for that website, I do not want to look at that backend so
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Update on DoS Attacks against our Online Game],
   author: [Dennis Felsing],
   source-name: [Dennis Felsing],
@@ -1223,7 +1263,7 @@ I do not want to work for that website, I do not want to look at that backend so
   [These traffic graphs are from two of the servers we are running, note the logarithmic x-axis. Each spike represents an incoming DoS attack, as you can see some of them last for nearly a day.],
   [Recently the attacks have been relatively weak in terms of incoming bandwidth, using spoofed IP addresses imitating our UDP-based connection process.],
   [At first the CPU gets overloaded since the server suddenly has to try and handle hundreds of thousands of connection attempts per second. Since our game servers are mostly running on cheap VPSes and each game server runs single-threaded, it is quite easy to overload a system in this manner.],
-  [id="https-based-whitelist"\>HTTPS-based Whitelist],
+  [HTTPS-based Whitelist],
   [To prevent spoofing we collect all players’ IP addresses and whitelist those. Since we also develop the game client, we can modify the client to connect to a server via HTTPs for this whitelisting. The iptables rules and ipset setup on the game servers for this whitelist look something like this:],
   [ipset create official iphash
 ipset create whitelist-ip iphash
@@ -1254,25 +1294,22 @@ iptables -A INPUT -p udp -m udp --dport 8000:9000 -j game],
   [After a few days the ipset runs out of space unfortunately. Since we have ~25k unique players daily, the default maximum element size of 65536 of ipset is quite tight. To work around this we’ll have to increase the limit or remove older entries automatically.],
   [In order to make this work reliably we had to disable IPv6 for the HTTPS access, since our game servers are IPv4 only at the moment and collecting IPv6 addresses doesn’t help.],
   [An unfortunate realization was that some ISPs don’t provide fixed IPv4 addresses anymore, but instead tunnel their native IPv6 traffic through different IPv4 addresses, based on protocol and port. So we get one IP address in the HTTPS-based whitelist, but another when connecting to the gameserver via UDP. At least one Israeli ISP is doing this.],
-  [id="dedicated-servers"\>Dedicated Servers],
   [For some of the servers this whitelisting is not enough, since the hosters’ DoS protection kicks in and starts aggressively blocking UDP traffic. This includes legitimate traffic and results in all players timing out on the game servers. I have tried talking to a few of the hosters about this, but it is by design since they don’t support our game protocol, and wish to protect their own infrastructure as well as other customers. At least they are not kicking us out for now, which has happened in the past with a few hosters after multiple DoS attacks against us impacting their other customers.],
   [So for a few locations we have upgraded to dedicated servers, where the hoster cares less about us exhausting in the incoming network connection and our CPUs for hours at a time. Unfortunately it is difficult to find hosters that provide more than 1 Gbit/s network bandwidth and still fall into our budget of 100 € \/ month.],
   [The attackers of course notice that these servers can’t be downed as easily, so they switch to different kinds of attacks, exhausting our measly 2 Gbit/s network.],
-  [id="small-hosting-companies"\>Small Hosting Companies],
   [Some small hosting companies in Europe offered to help us by providing a free server with custom DoS protection. We accepted two such offers, but didn’t have much success with either of them.],
   [For the first we never managed to get legitimate traffic to get through their firewall.],
   [For the second everything seemed to work fine when there was no attack, but during DoS attacks some player packets would get misflagged all the time. Additionally the network stack had problems and caused our MariaDB-based SQL connection to time out. Unfortunately we didn’t handle this error properly in our code and ended up losing legitimate player ranks.],
   [In the end we didn’t continue using either of these hosters, but spent a few hours trying to set up the firewall with them. I had similar experiences with every paid hoster which offered a custom DoS protection.],
-  [id="dos-protection-companies"\>DoS Protection Companies],
+  [DoS Protection Companies],
   [There are of course also larger companies providing custom DoS protection for UDP-based applications. One of them offered to help us out for free with our problem, and I’ve been in touch with them since the last post. Unfortunately everything is moving very slowly, and many of my requests to move things forward over the weeks have not been answered, so I guess the fact that we are unable to pay thousands of € per month matters after all. So far no custom DoS protection is available here, but I’ll keep pinging them every few weeks.],
-  [id="proxy-servers"\>Proxy Servers],
   [Instead of exposing our real game servers directly to the players, for the future we are considering a proxy server that sits inbetween the game server and player. This would allow us to run multiple proxies for subsets of the players and attempt to isolate the impact the attacker can have.],
   [This might also allow us to proxy Steam players’ traffic through Steam Datagram Relay (SDR), although more work would be required to implement that. Someone from Valve reached out to us after the previous post, and we might follow up on this once the proxy server implementation is ready. It is really cool that Valve is offering help here, even for a free game like ours.],
   [We can’t entirely switch to SDR through Steam’s servers since we want DDNet to stay playable as an open source game. As a solution we can provide a regular open source proxy for open source players, and a separate SDR-based proxy for Steam players.],
-  [id="ipv6-servers"\>IPv6 Servers],
+  [IPv6 Servers],
   [A longshot idea is using IPv6-only servers. We haven’t tried this yet, maybe the IP spoofing capabilities of our attackers are lower on IPv6. This could also be combined well with the proxy servers by providing an additional ipv6-only proxy server.],
   [Running all these proxy servers for each location will definitely add cost, but it’s probably our best path forward right now. The setup would look something like this for each Server location:],
-  [digraph D { 
+  [digraph D \{ 
  node \[ shape = "box" \] ; 
  "OS Player 1" -\> "IPv4 Proxy" -\> "Game Server" ; 
  "OS Player 2" -\> "IPv4 Proxy" ; 
@@ -1280,41 +1317,41 @@ iptables -A INPUT -p udp -m udp --dport 8000:9000 -j game],
  "OS Player 4" -\> "IPv6 Proxy" ; 
  "Steam Player 1" -\> "SDR Proxy" -\> "Game Server" ; 
  "Steam Player 2" -\> "SDR Proxy" ; 
- }],
-  [id="conclusion"\>Conclusion],
+ \}],
   [If you have any suggestions, or dealt with a similar problem before, we’d be interested to hear from you. You can reach me on dennis\@felsing.org as well as on the DDNet Discord as deen\#5910 or on IRC (deen in \#ddnet on Quakenet).],
 ),
   insert-map: (:),
   inline-pq: pull-quote([For the second everything seemed to work fine when there was no attack, but during DoS attacks some player packets would get misflagged all the time.], [Dennis Felsing]),
-  inline-pq-idx: 13,
+  inline-pq-idx: 12,
   word-count: 1333,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A Review of The Paradox of Freedom: A History of Black Slaveholders in America],
   author: [George Levrier-Jones],
   source-name: [History in 28 Minutes],
   images: (),
   paragraphs: (
-  [class=""\> City of New Orleans, 5 March 1818. Order from the Mayor's office to the City Treasury to reimburse Rosette Montreuil, a free woman of color, for the work of her slave, Michel, "mulatto". Signed by mayor Augustin Macarty.],
-  [class=""\>An Instructor of American History at Mississippi Delta Community College and an American Civil War Living Historian since 1995, Larry Allen McCluney received his bachelor’s and master’s degrees in history at Mississippi State University, and his research into original data for this book is extensive (he even utilized a History Is Now article). He cites and quotes many historians, as well as original sources, to bring to life a fact of American history: African Americans were slave owners too.],
-  [class=""\>A mix of various “free peoples of color”—various mixed race and African Americans —owned people of their own race from colonial times up until after the Civil War. In some extreme cases slaves owned slaves. Some free African Americans even engaged in slave trading. This should not surprise us, as Africa has always been the center of slavery, where just as every other race in the world has been enslaved, and continues to enslave their own people. In fact, it was outside pressure from European nations that forced abolitionism on Africa.],
-  [class=""\>African American slaveowners in America at times became some of the wealthiest planters and businessmen in the entire South. McCluney writes they became one with “the upper crust of the economic level in the pre-war South.” They entered into and at times mingled, intermarried, and associated with the white southern aristocratic class. These wealthy included many African American women.],
-  [class=""\>For example, he quotes Steven J. Niven, who wrote of “Marie-Thérèse Coincoin, who lived for eight decades in Natchitoches Parish, La. She would help to found a family dynasty of Free, Colored planters, the Metoyers, who by 1830 owned over 200 slaves—8 percent of all enslaved people in the parish.” In Charleston City, South Carolina, 123 African American women owned slaves and were the “heads” of households, including Maria Weston, who by 1860 owned 14 slaves and owned property amounting to \$40,000; the average white earned around \$100. Marie Thérèse Metoyer of New Orleans owned around 11,000 acres of land, manufactured medicine, trapped animals, and grew tobacco.],
-  [class=""\>  “In 1860, there were at least six free Blacks who owned 65 or more slaves. The largest number, 152 slaves, was owned by sugar cane planters, the widow C. Richards and her son P. C. Richards. Another slave magnate from Louisiana was Antoine Dubuclet, who owned over 100 slaves. He had an estate worth \$264,000 in 1860 dollar value. This was in comparison with the wealth of White men of that time, averaging \$3,978."],
-  [class=""\>William Ellison Jr. of South Carolina, a free man of color, was one of the wealthiest plantation owners in the state. He was the largest slave owner in his area, with 171 slaves, and over 900 acres of land producing massive amounts of tobacco. He donated large sums of money and foodstuffs to the Confederate Army, offered the military 53 of his slaves, and his mixed race grandson fought in the Confederate Army.],
-  [class=""\>Many of the slave owners were born in bondage but were later freed and, through either inheritance, gifts, or work ethic, improved their situation, eventually moving into the profitable business of slavery. It was not uncommon for free African Americans to own slaves. Thousands did so. According to the 1860 census, only 1.4% white people owned slaves in 4.8% of southern slave states, but 28% of free African Americans in New Orleans owned slaves. McCluney wrote, “In South Carolina, where forty-three percent of the free African American families owned slaves, the average number of slaves held per owner was about six. Similarly, in Louisiana, forty percent of free African American families owned slaves, twenty-six percent of those in Mississippi held slaves, twenty-five percent of those in Alabama, and this was also true for twenty percent of those in Georgia.”],
-  [class=""\>Their wealth elevated the status of these slaveowners of color, gaining them status among the highest in the white community, intermingling with, socializing, even marrying (even when it was illegal), and becoming some of the most well-respected people in their community. McCluney wrote of Justus Angel, born a slave in South Carolina but who became “a wealthy Black master who lived in Colleton District, South Carolina, in 1830. Angel was a plantation owner who owned 84 slaves, a staggering number even for a Black master. He was a man of great wealth and influence, which allowed him to amass such a large number of enslaved individuals under his control.” Of this wealthy planter class, he wrote, “These individuals often took steps to associate with the White elite, viewing themselves as an extension of this class. In doing so, the Black slaveowners were able to carve out a place for themselves within the ruling class.” Then there is William Johnson in Mississippi, who:],
-  [class=""\> “Became a successful entrepreneur with a barbershop, bath house, bookstore, and land holdings. Though a former slave, in 1834 he would own three slaves and about 3,000 acres of property and would eventually own sixteen slaves before his death. He even hired out his slaves to haul coal and sand. Throughout his life, the white community in Natchez and Adams County held Johnson in high regard. He associated with and was close to many of Adams County’s most prominent white families. Following Johnson’s untimely death at the hands of a “free black, Baylor Winn, the Natchez Courier was moved to comment that Johnson held a “respected position \[in the community\] on account of his character, intelligence and deportment.”],
-  [class=""\>Further, McCluney argues that it was the common opinion of slaves that African American masters made harsher masters, and they generally preferred white masters to their own color, for example, William Ellison had a reputation for harsh treatment of his slaves. One interviewed slave said, “You might think, master, dat dey would be good to dar own nation; but dey is not. I will tell you the truth, massa; I know I ‘se got to answer; and it’s a fact, they are very bad masters, sar. I’d rather be a servant to any man in de world, dan to a brack man. If I was sold to a brack man, I’d drown myself. I would dat—I’d drown myself! Dough I shouldn’t like to do dat; but I wouldn’t be sold to a coloured master for anything.”],
-  [class=""\>Frederick Law Olmsted traveled south and told of the many wealthy African American planters he saw and interviewed a slave who said the African American masters “bought black folks, he said, and had servants of their own. They were very bad masters, very hard and cruel . . . If he had got to be sold, he would like best to have an American master buy him. The French \[black Creole\] masters were very severe, and ‘dey whip dar n\*\*\*\*\*\* most to deff—dey whipe de flesh off of ‘em.”],
-  [class=""\>Far from abolitionists, these rich masters were reluctant to let their slave labor go as many whites had done. McCluney Quotes B. F. Jonas, of New Orleans who said “I have never heard of a case where a free African American owner of slaves voluntarily manumitted his slaves. On the contrary, they were as a rule considered hard task masters, who got out of their slave property all that they could.” And as has been recorded in Defending Dixie's Land , many of these southern masters supported the preservation of slavery and the continuation and protection of the Confederacy, to maintain bondage of their own brothers.],
-  [class=""\> Jeb Smith is an author and speaker whose books include Defending Dixie's Land: What Every American Should Know About The South And The Civil War written under the pen name Isaac C. Bishop,  Missing Monarchy: Correcting Misconceptions About The Middle Ages, Medieval Kingship, Democracy, And Liberty and he also authored Defending the Middle Ages: Little Known Truths About the Crusades, Inquisitions, Medieval Women, and More. Smith has written over 120 articles found in several publications.],
+  [Jeb Smith recently read Larry Allen McCluney, Jr.’s book, The Paradox of Freedom: A History of Black Slaveholders in America. Here, he discusses his views of the book.],
+  [City of New Orleans, 5 March 1818. Order from the Mayor's office to the City Treasury to reimburse Rosette Montreuil, a free woman of color, for the work of her slave, Michel, "mulatto". Signed by mayor Augustin Macarty.],
+  [An Instructor of American History at Mississippi Delta Community College and an American Civil War Living Historian since 1995, Larry Allen McCluney received his bachelor’s and master’s degrees in history at Mississippi State University, and his research into original data for this book is extensive (he even utilized a History Is Now article). He cites and quotes many historians, as well as original sources, to bring to life a fact of American history: African Americans were slave owners too.],
+  [A mix of various “free peoples of color”—various mixed race and African Americans —owned people of their own race from colonial times up until after the Civil War. In some extreme cases slaves owned slaves. Some free African Americans even engaged in slave trading. This should not surprise us, as Africa has always been the center of slavery, where just as every other race in the world has been enslaved, and continues to enslave their own people. In fact, it was outside pressure from European nations that forced abolitionism on Africa.],
+  [African American slaveowners in America at times became some of the wealthiest planters and businessmen in the entire South. McCluney writes they became one with “the upper crust of the economic level in the pre-war South.” They entered into and at times mingled, intermarried, and associated with the white southern aristocratic class. These wealthy included many African American women.],
+  [For example, he quotes Steven J. Niven, who wrote of “Marie-Thérèse Coincoin, who lived for eight decades in Natchitoches Parish, La. She would help to found a family dynasty of Free, Colored planters, the Metoyers, who by 1830 owned over 200 slaves—8 percent of all enslaved people in the parish.” In Charleston City, South Carolina, 123 African American women owned slaves and were the “heads” of households, including Maria Weston, who by 1860 owned 14 slaves and owned property amounting to \$40,000; the average white earned around \$100. Marie Thérèse Metoyer of New Orleans owned around 11,000 acres of land, manufactured medicine, trapped animals, and grew tobacco.],
+  [Wealthy slave owners],
+  [Many African American slave owners owned hundreds or thousands of acres of land and were wealthier than the vast majority of whites. McCluney writes:],
+  [“In 1860, there were at least six free Blacks who owned 65 or more slaves. The largest number, 152 slaves, was owned by sugar cane planters, the widow C. Richards and her son P. C. Richards. Another slave magnate from Louisiana was Antoine Dubuclet, who owned over 100 slaves. He had an estate worth \$264,000 in 1860 dollar value. This was in comparison with the wealth of White men of that time, averaging \$3,978."],
+  [William Ellison Jr. of South Carolina, a free man of color, was one of the wealthiest plantation owners in the state. He was the largest slave owner in his area, with 171 slaves, and over 900 acres of land producing massive amounts of tobacco. He donated large sums of money and foodstuffs to the Confederate Army, offered the military 53 of his slaves, and his mixed race grandson fought in the Confederate Army.],
+  [Many of the slave owners were born in bondage but were later freed and, through either inheritance, gifts, or work ethic, improved their situation, eventually moving into the profitable business of slavery. It was not uncommon for free African Americans to own slaves. Thousands did so. According to the 1860 census, only 1.4% white people owned slaves in 4.8% of southern slave states, but 28% of free African Americans in New Orleans owned slaves. McCluney wrote, “In South Carolina, where forty-three percent of the free African American families owned slaves, the average number of slaves held per owner was about six. Similarly, in Louisiana, forty percent of free African American families owned slaves, twenty-six percent of those in Mississippi held slaves, twenty-five percent of those in Alabama, and this was also true for twenty percent of those in Georgia.”],
+  [Their wealth elevated the status of these slaveowners of color, gaining them status among the highest in the white community, intermingling with, socializing, even marrying (even when it was illegal), and becoming some of the most well-respected people in their community. McCluney wrote of Justus Angel, born a slave in South Carolina but who became “a wealthy Black master who lived in Colleton District, South Carolina, in 1830. Angel was a plantation owner who owned 84 slaves, a staggering number even for a Black master. He was a man of great wealth and influence, which allowed him to amass such a large number of enslaved individuals under his control.” Of this wealthy planter class, he wrote, “These individuals often took steps to associate with the White elite, viewing themselves as an extension of this class. In doing so, the Black slaveowners were able to carve out a place for themselves within the ruling class.” Then there is William Johnson in Mississippi, who:],
+  [“Became a successful entrepreneur with a barbershop, bath house, bookstore, and land holdings. Though a former slave, in 1834 he would own three slaves and about 3,000 acres of property and would eventually own sixteen slaves before his death. He even hired out his slaves to haul coal and sand. Throughout his life, the white community in Natchez and Adams County held Johnson in high regard. He associated with and was close to many of Adams County’s most prominent white families. Following Johnson’s untimely death at the hands of a “free black, Baylor Winn, the Natchez Courier was moved to comment that Johnson held a “respected position \[in the community\] on account of his character, intelligence and deportment.”],
+  [Further, McCluney argues that it was the common opinion of slaves that African American masters made harsher masters, and they generally preferred white masters to their own color, for example, William Ellison had a reputation for harsh treatment of his slaves. One interviewed slave said, “You might think, master, dat dey would be good to dar own nation; but dey is not. I will tell you the truth, massa; I know I ‘se got to answer; and it’s a fact, they are very bad masters, sar. I’d rather be a servant to any man in de world, dan to a brack man. If I was sold to a brack man, I’d drown myself. I would dat—I’d drown myself! Dough I shouldn’t like to do dat; but I wouldn’t be sold to a coloured master for anything.”],
+  [Frederick Law Olmsted traveled south and told of the many wealthy African American planters he saw and interviewed a slave who said the African American masters “bought black folks, he said, and had servants of their own. They were very bad masters, very hard and cruel . . . If he had got to be sold, he would like best to have an American master buy him. The French \[black Creole\] masters were very severe, and ‘dey whip dar n\*\*\*\*\*\* most to deff—dey whipe de flesh off of ‘em.”],
+  [Far from abolitionists, these rich masters were reluctant to let their slave labor go as many whites had done. McCluney Quotes B. F. Jonas, of New Orleans who said “I have never heard of a case where a free African American owner of slaves voluntarily manumitted his slaves. On the contrary, they were as a rule considered hard task masters, who got out of their slave property all that they could.” And as has been recorded in Defending Dixie's Land , many of these southern masters supported the preservation of slavery and the continuation and protection of the Confederacy, to maintain bondage of their own brothers.],
+  [Jeb Smith is an author and speaker whose books include Defending Dixie's Land: What Every American Should Know About The South And The Civil War written under the pen name Isaac C. Bishop,  Missing Monarchy: Correcting Misconceptions About The Middle Ages, Medieval Kingship, Democracy, And Liberty and he also authored Defending the Middle Ages: Little Known Truths About the Crusades, Inquisitions, Medieval Women, and More. Smith has written over 120 articles found in several publications.],
 ),
   insert-map: (:),
   word-count: 1417,
@@ -1322,10 +1359,8 @@ iptables -A INPUT -p udp -m udp --dport 8000:9000 -j game],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Year of the Rat],
   author: [Aea Varfis-van Warmelo],
   source-name: [Granta],
@@ -1354,33 +1389,59 @@ iptables -A INPUT -p udp -m udp --dport 8000:9000 -j game],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Balloons That Went to War: Britain’s Electrical Offensive Against Nazi Germany],
   author: [George Levrier-Jones],
   source-name: [History in 28 Minutes],
   images: (),
   paragraphs: (
-  [class=""\> At the beginning of the Second World War, Britain looked for ways to strike back that went beyond symbolism. The aim was practical effect. Anything capable of unsettling German industry, slowing production, or forcing resources into repair rather than manufacture was worth exploring. Bombing raids dominated headlines and memory, but elsewhere a quieter idea was taking form, one that required neither aircraft nor crews crossing enemy airspace. The idea involved balloons.],
-  [class=""\>These were not barrage balloons hovering over British cities. They were free-flying hydrogen balloons, released into favorable winds and left to drift eastward across the North Sea. Suspended beneath them were long metal wires or small incendiary devices, intended not to destroy cities but to interfere with systems. Power. Communications. Rail signaling. The infrastructure that kept a modern industrial state functioning.],
-  [class=""\>The concept did not emerge from theory alone. Before the war, stray balloons had already demonstrated an inconvenient reality. When metal cables became tangled with overhead power lines, the consequences could be immediate. Short circuits. Tripped substations. Widespread outages. Engineers disliked it. Military planners paid attention.],
-  [class=""\>By 1941, pressure was growing to respond to German attacks without exposing more bomber crews to unacceptable losses. Unorthodox ideas were welcomed, provided they were inexpensive, repeatable, and scalable. It was with this requirement that Operation Outward took shape. It was low-tech by design, almost dismissively simple, and that simplicity made it difficult to counter.],
-  [class=""\>A hydrogen balloon could be manufactured quickly and launched without specialized aircraft. Released under the right conditions, it might travel hundreds of miles. If it failed, little was lost. If it succeeded, the consequences could extend far beyond the point of contact.],
-  [class=""\>Two main variants were used. One carried small incendiary devices, intended to ignite dry heathland, woodland, or agricultural areas. These fires were not expected to devastate cities, but even minor blazes demanded attention and manpower.],
-  [class=""\>And a second variant carried a trailing wire. Often many tens of meters long, this cable was designed to snag high-voltage power lines. When it bridged conductors, it could short circuits and trip protective systems, taking sections of the network offline and sometimes damaging equipment. Repairs took time. In certain cases, specialized components were required, slowing recovery further.],
-  [class=""\>Precision was never the goal. Those launching the balloons had no way of knowing where they would land. That uncertainty was built into the strategy. Success depended on volume rather than accuracy.],
-  [class=""\>By the Second World War, Landguard was already centuries old, its defenses layered with earlier conflicts. During the 1940s, it was adapted once again. Balloons were prepared, filled, and released when conditions allowed, drifting away over the North Sea toward occupied Europe.],
-  [class=""\>The process was methodical rather than dramatic. Crews watched weather charts closely. Timing mattered. Released too low, balloons would fall short. Released too high, they might drift harmlessly past their intended regions.],
-  [class=""\>For those living nearby, there was little to explain what was happening. A balloon rose, then disappeared. No aircraft followed. No explosions were heard. Only the quiet sense that something had been sent eastward.],
-  [class=""\>Operation Outward operated mainly between 1942 and 1944. Over that period, tens of thousands of balloons were released. Estimates vary, but figures around 99,000 are commonly cited. This was not an experiment conducted once and abandoned. It was sustained.],
-  [class=""\>The cost per balloon was low. Compared with the expense of a single bomber sortie, the contrast was stark. No crews were endangered. Losses were expected and accepted. German authorities could not intercept every drifting balloon, nor could they prevent the effects once one contacted infrastructure.],
-  [class=""\>The precise impact of Operation Outward is difficult to quantify. Records are incomplete, and German wartime documentation tended to focus on larger threats. Even so, evidence suggests that trailing-wire balloons caused repeated electrical disruptions, particularly in rural and industrial areas dependent on overhead lines.],
-  [class=""\>Operation Outward never captured public imagination in the way bombing campaigns or commando raids did, as there were no dramatic photographs, no returning crews, and no medals awarded for balloon launches. Wartime secrecy played a part, as did perception. Balloons felt faintly absurd compared to the machinery of modern war.],
-  [class=""\>For Felixstowe, and for sites like Landguard Fort, Operation Outward represents a rarely acknowledged strand of wartime history. The town is more often associated with defense, ports, and coastal patrols. Its role as a launch point for a wind-driven offensive against German power networks is easily overlooked.],
-  [class=""\>Operation Outward serves as a reminder that the Second World War was not fought solely with tanks and aircraft. It was also fought with patience, improvisation, and ideas that seemed improbable until they were put into practice.],
-  [class=""\> The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
+  [At the beginning of the Second World War, Britain looked for ways to strike back that went beyond symbolism. The aim was practical effect. Anything capable of unsettling German industry, slowing production, or forcing resources into repair rather than manufacture was worth exploring. Bombing raids dominated headlines and memory, but elsewhere a quieter idea was taking form, one that required neither aircraft nor crews crossing enemy airspace. The idea involved balloons.],
+  [Richard Clements explains.],
+  [Royal Air Force Balloon Command, 1939-1945. Bringing in a kite balloon near the coast.],
+  [These were not barrage balloons hovering over British cities. They were free-flying hydrogen balloons, released into favorable winds and left to drift eastward across the North Sea. Suspended beneath them were long metal wires or small incendiary devices, intended not to destroy cities but to interfere with systems. Power. Communications. Rail signaling. The infrastructure that kept a modern industrial state functioning.],
+  [The scheme became known as Operation Outward, and for a time it represented one of the most unusual offensive measures Britain employed against Nazi Germany.],
+  [An idea born from accident],
+  [The concept did not emerge from theory alone. Before the war, stray balloons had already demonstrated an inconvenient reality. When metal cables became tangled with overhead power lines, the consequences could be immediate. Short circuits. Tripped substations. Widespread outages. Engineers disliked it. Military planners paid attention.],
+  [By 1941, pressure was growing to respond to German attacks without exposing more bomber crews to unacceptable losses. Unorthodox ideas were welcomed, provided they were inexpensive, repeatable, and scalable. It was with this requirement that Operation Outward took shape. It was low-tech by design, almost dismissively simple, and that simplicity made it difficult to counter.],
+  [A hydrogen balloon could be manufactured quickly and launched without specialized aircraft. Released under the right conditions, it might travel hundreds of miles. If it failed, little was lost. If it succeeded, the consequences could extend far beyond the point of contact.],
+  [How the balloons worked],
+  [Two main variants were used. One carried small incendiary devices, intended to ignite dry heathland, woodland, or agricultural areas. These fires were not expected to devastate cities, but even minor blazes demanded attention and manpower.],
+  [And a second variant carried a trailing wire. Often many tens of meters long, this cable was designed to snag high-voltage power lines. When it bridged conductors, it could short circuits and trip protective systems, taking sections of the network offline and sometimes damaging equipment. Repairs took time. In certain cases, specialized components were required, slowing recovery further.],
+  [Precision was never the goal. Those launching the balloons had no way of knowing where they would land. That uncertainty was built into the strategy. Success depended on volume rather than accuracy.],
+  [Launching from the edge of Britain],
+  [Launches took place from several points along Britain’s eastern coastline, selected for their exposure to prevailing winds. One of the best-documented sites lay near Felixstowe, Suffolk, close to Landguard Fort.],
+  [By the Second World War, Landguard was already centuries old, its defenses layered with earlier conflicts. During the 1940s, it was adapted once again. Balloons were prepared, filled, and released when conditions allowed, drifting away over the North Sea toward occupied Europe.],
+  [The process was methodical rather than dramatic. Crews watched weather charts closely. Timing mattered. Released too low, balloons would fall short. Released too high, they might drift harmlessly past their intended regions.],
+  [For those living nearby, there was little to explain what was happening. A balloon rose, then disappeared. No aircraft followed. No explosions were heard. Only the quiet sense that something had been sent eastward.],
+  [Scale rather than spectacle],
+  [Operation Outward operated mainly between 1942 and 1944. Over that period, tens of thousands of balloons were released. Estimates vary, but figures around 99,000 are commonly cited. This was not an experiment conducted once and abandoned. It was sustained.],
+  [The cost per balloon was low. Compared with the expense of a single bomber sortie, the contrast was stark. No crews were endangered. Losses were expected and accepted. German authorities could not intercept every drifting balloon, nor could they prevent the effects once one contacted infrastructure.],
+  [Responses were required. Power lines were inspected more often. Defensive measures were improvised. Resources were diverted. In that sense alone, the operation achieved its purpose.],
+  [Measuring success in shadows],
+  [The precise impact of Operation Outward is difficult to quantify. Records are incomplete, and German wartime documentation tended to focus on larger threats. Even so, evidence suggests that trailing-wire balloons caused repeated electrical disruptions, particularly in rural and industrial areas dependent on overhead lines.],
+  [Power failures affected railways, factories, and communications. Even short outages had secondary effects. Trains were delayed. Signals failed. Engineers were drawn away from other tasks.],
+  [Results from the incendiary balloons were uneven, shaped by weather and terrain. Some started fires. Others failed quietly. Again, the intent was not devastation but distraction.],
+  [There was also a psychological dimension. Damage arrived without warning, without aircraft, and without an obvious point of origin. The boundary between front line and home front became less certain.],
+  [An overlooked weapon],
+  [Operation Outward never captured public imagination in the way bombing campaigns or commando raids did, as there were no dramatic photographs, no returning crews, and no medals awarded for balloon launches. Wartime secrecy played a part, as did perception. Balloons felt faintly absurd compared to the machinery of modern war.],
+  [That misjudgment was also its strength. The operation targeted systems rather than structures. It favored disruption over destruction. Infrastructure, not buildings, became the point of vulnerability.],
+  [In this respect, the approach feels unexpectedly modern. Asymmetric rather than confrontational. Persistent rather than decisive.],
+  [Felixstowe’s quiet contribution],
+  [For Felixstowe, and for sites like Landguard Fort, Operation Outward represents a rarely acknowledged strand of wartime history. The town is more often associated with defense, ports, and coastal patrols. Its role as a launch point for a wind-driven offensive against German power networks is easily overlooked.],
+  [Yet it fits a familiar wartime pattern. Old sites adapted. Simple tools repurposed. Innovation shaped by necessity rather than abundance.],
+  [Standing at Landguard today, it is difficult to picture those launches. No trace remains on the ground. No markers or plaques. Only open sky.],
+  [A war fought in unexpected ways],
+  [Operation Outward serves as a reminder that the Second World War was not fought solely with tanks and aircraft. It was also fought with patience, improvisation, and ideas that seemed improbable until they were put into practice.],
+  [The balloons did not win the war. They were never meant to. What they did was impose cost, friction, and uncertainty. In an industrial conflict, even small disruptions mattered.],
+  [It may be fitting that the operation has faded into obscurity. It was never designed for recognition. Only for effect.],
+  [And sometimes, effect arrived quietly, carried on the wind.],
+  [The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
+  [R. V. Jones, Most Secret War, Hamish Hamilton],
+  [Alfred Price, Instruments of Darkness: The History of Electronic Warfare, Greenhill Books],
+  [Imperial War Museums, research notes on British unconventional warfare],
+  [UK Ministry of Defence, declassified material on wartime balloon operations],
+  [Traces of War, “Landguard Fort, Felixstowe” wartime site overview],
 ),
   insert-map: (:),
   word-count: 1237,
@@ -1388,11 +1449,10 @@ iptables -A INPUT -p udp -m udp --dport 8000:9000 -j game],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Considerate book pricing],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -1452,7 +1512,7 @@ Like anything unusual.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [TED is bringing its learning model to the legal profession – here’s why],
   author: [TED Staff],
   source-name: [TED Blog],
@@ -1465,11 +1525,11 @@ Like anything unusual.],
   [TEDLaw is not a traditional training program; it doesn’t begin with rules, slides or checklists. Instead, it creates space for lawyers to step back, encounter powerful ideas and reflect on how those ideas shape judgment, leadership and professional identity. From there, participants engage in facilitated dialogue and real-world simulations that mirror the complexity of modern legal practice.],
   [This approach reflects something we see across TED’s work: sustainable change doesn’t come from information alone. It comes from perspective shifts, shared reflection and the opportunity to test new ways of thinking in real-world contexts.],
   [The TEDLaw experience is organized around five interconnected areas that consistently emerged from our conversations with legal professionals:],
-  [style="font-weight: 400;"\> Navigating Legal Identity and Values],
-  [style="font-weight: 400;"\> Critical Thinking for Legal Solutions],
-  [style="font-weight: 400;"\> Intuitive Collaboration in Law],
-  [style="font-weight: 400;"\> Cultural Competence in Legal Practice],
-  [style="font-weight: 400;"\> Practicing Law in the AI Age],
+  [Navigating Legal Identity and Values],
+  [Critical Thinking for Legal Solutions],
+  [Intuitive Collaboration in Law],
+  [Cultural Competence in Legal Practice],
+  [Practicing Law in the AI Age],
   [Together, these pillars reflect a broader truth that the future of legal practice depends not only on what lawyers know but also on how they reason, relate and lead.],
   [To bring this work to legal leaders at scale, TED is collaborating with organizations deeply embedded in the profession. Through a partnership with the ACC Foundation, TEDLaw will initially reach in-house legal leaders, creating space for reflection, peer learning and candid conversation about what it means to practice law well in a changing world.],
   [Looking ahead, TEDLaw will also expand to law firms and other legal communities, extending TED’s learning model across the broader legal ecosystem.],
@@ -1489,7 +1549,7 @@ Like anything unusual.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Where we do and don’t want automation],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -1529,7 +1589,7 @@ I’d love to hear another point of view.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Why I left America],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -1591,7 +1651,7 @@ Then do it again, pursuing discomfort, until the whole world is my home.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Traits of useful perspectives],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -1675,7 +1735,7 @@ These have been the best beliefs for personal growth.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Your heroes show which way you’re facing],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -1715,7 +1775,7 @@ Does that help you see which way you’re actually facing?],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [a relationship that ended, not failed],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -1780,7 +1840,7 @@ I remember it fondly.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Philosophies are instruments],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -1845,7 +1905,7 @@ Time itself is my favorite instrument.”],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Judge the contents, not the box],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -1883,7 +1943,7 @@ True is the enemy of useful.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Fragments Dec 11],
   author: [Martin Fowler],
   source-name: [Martin Fowler],
@@ -1916,7 +1976,7 @@ True is the enemy of useful.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Theme Switcher in Nginx],
   author: [Dennis Felsing],
   source-name: [Dennis Felsing],
@@ -1926,28 +1986,28 @@ True is the enemy of useful.],
   [The final result is quite simple, and only requires static HTML, a cookie for the theme and Nginx for setting and returning the correct CSS file for it. You can try it out by clicking on the Switch Theme button at the top of this page, which just redirects you to /switch-theme\/ .],
   [Doing the CSS decision server-side instead of in JavaScript has the advantage that you don’t get any flicker on rendering, no matter what theme you chose.],
   [The entire nginx logic is:],
-  [location /switch-theme\/ { 
- if ( \$http\_cookie ~ \* "user\_theme=/public/css-dark.css") { 
+  [location /switch-theme\/ \{ 
+ if ( \$http\_cookie ~ \* "user\_theme=/public/css-dark.css") \{ 
  add\_header Set-Cookie "user\_theme=/public/css-empty.css ; path=\/ ; domain=hookrace.net" ; 
  return 302 \$http\_referer ; 
- } 
+ \} 
  add\_header Set-Cookie "user\_theme=/public/css-dark.css ; path=\/ ; domain=hookrace.net" ; 
  return 302 \$http\_referer ; 
- }],
-  [location /public/css-dark.css { 
- if ( \$http\_cookie ~ \* "user\_theme=/public/css-dark.css") { 
+ \}],
+  [location /public/css-dark.css \{ 
+ if ( \$http\_cookie ~ \* "user\_theme=/public/css-dark.css") \{ 
  return 302 /public/css/css-dark.css ; 
- } 
+ \} 
  return 302 /public/css/css-empty.css ; 
- }],
+ \}],
   [Note that the /switch-theme\/ location sends the user back to the \$http\_referer . /public/css-dark.css is statically included on each page, but what it does depends on the cookie value.],
   [The 302 Moved Temporarily response makes the client send another request, adding another roundtrip to the page rendering. If the CSS is small enough you can just pull it directly into the Nginx config:],
-  [location /public/css-dark.css { 
- if ( \$http\_cookie ~ \* "user\_theme=/public/css-dark.css") { 
- return 200 "body { color: \#fff; background-color: \#000;} .page-title, .post-title, .post-title a, h1, h2, h3, h4, h5, h6 {color: \#ccc;} .masthead-title a {color: \#bbb;}"; 
- } 
+  [location /public/css-dark.css \{ 
+ if ( \$http\_cookie ~ \* "user\_theme=/public/css-dark.css") \{ 
+ return 200 "body \{ color: \#fff; background-color: \#000;\} .page-title, .post-title, .post-title a, h1, h2, h3, h4, h5, h6 \{color: \#ccc;\} .masthead-title a \{color: \#bbb;\}"; 
+ \} 
  return 200 "" ; 
- }],
+ \}],
   [One side effect of this entire approach is that the CSS file can’t be cached anymore though, otherwise we’d end up showing the old theme when it gets switched. I’m sure this could be optimized somehow to tell the browser to only fetch the CSS file again after the theme was switched. But for my site the current performance is good enough.],
   [Also note that If Is Evil in Nginx, so if you abuse features like this you might run into trouble.],
 ),
@@ -1959,7 +2019,7 @@ True is the enemy of useful.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [You are the strange one],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -1996,7 +2056,7 @@ Since you know other people’s beliefs aren’t true, you have to realize that 
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The first time I met someone who believes in God],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -2045,7 +2105,7 @@ See my next post on this subject .],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [A QOJ week],
   author: [Petr Mitrichev],
   source-name: [Petr Mitrichev (competitive programming)],
@@ -2071,7 +2131,7 @@ See my next post on this subject .],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [How many pets do you have?],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -2125,7 +2185,7 @@ So now it’s just me and her, and I’m giving her all my time.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Anti-chameleon],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -2158,6 +2218,7 @@ I’m super-motivated by the horror of seeing the opposite of what I want.],
 It’s been net positive.
 So, I’m not fighting it for now.],
   [(P. S. I’ll never argue against preserving nature.)],
+  [“A Man Feeding Swans in the Snow” photo © Marcin Ryczek .],
 ),
   insert-map: (:),
   word-count: 255,
@@ -2174,7 +2235,7 @@ So, I’m not fighting it for now.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Two Poems],
   author: [Aea Varfis-van Warmelo],
   source-name: [Granta],
@@ -2182,6 +2243,7 @@ So, I’m not fighting it for now.],
   paragraphs: (
   [Portrait of B. D. as a Man],
   [after Nicole Eisenman],
+  [B, I have given you stubble],
   [and now you are no],
   [-thing. Two dollars &],
   [twenty seven cents in a sock],
@@ -2206,6 +2268,7 @@ So, I’m not fighting it for now.],
   [her all up the north-block],
   [& most the way back.],
   [Sonnet for a lost friend],
+  [In spring I changed my name. My new name glimmered],
   [in my mouth like a blue crystal. I met four men at a party],
   [and told them my new name. That’s gorge , they said in unison],
   [as if they, too, were united under a single name. I talked to them],
@@ -2230,7 +2293,7 @@ So, I’m not fighting it for now.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Keep tuning and adjusting],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -2258,8 +2321,7 @@ A big benefit of keeping a journal is that you can go back and review it , to re
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [How to make the best possible translation of a book?],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -2306,22 +2368,20 @@ Or if you can help as a translator, reviewer, or editor, please email me .],
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([Matt Castle], source-name: [Damn Interesting], [The Ancient Order of Bali :
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([Matt Castle], source-name: [Damn Interesting], [The Ancient Order of Bali :
 
 In the 1970s, the Indonesian island of Bali went through a period of rapid change. Along the stunning beaches on the southern side of the island, tourism boomed. Parking lots were put up, together with swinging hot spots and hotels of various colours. Hip young travellers from North America, Europe, and Australasia had “discovered” the \[…\]])],
-    [#brief-item([Martin Fowler], source-name: [Martin Fowler], [Rahul Garg continues his series of Patterns for Reducing Friction in
+  [#brief-item([Martin Fowler], source-name: [Martin Fowler], [Rahul Garg continues his series of Patterns for Reducing Friction in
  AI-Assisted Development . This pattern describes a structured
  conversation that mirrors whiteboarding with a human pair: progressive
  levels of design alignment before any code, reducing cognitive load, and
  catching misunderstandings at the cheapest possible moment. 
 
  more…])],
-    [#brief-item([Martin Fowler], source-name: [Martin Fowler], [Rahul Garg has observed a frustration loop when
+  [#brief-item([Martin Fowler], source-name: [Martin Fowler], [Rahul Garg has observed a frustration loop when
  working with AI coding assistants - lots of code generated, but needs lots
  of fixing. He's noticed five
  patterns that help improve the interaction with the LLM, and describes
@@ -2329,7 +2389,6 @@ In the 1970s, the Indonesian island of Bali went through a period of rapid chang
  preferred coding patterns.
 
  more…])],
-  ))
-}
+))
 
 #colophon([The Digital Journal], [Vol. 1, No. 079], [2026-03-30])

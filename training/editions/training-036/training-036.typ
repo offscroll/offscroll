@@ -21,55 +21,8 @@
 #masthead([The Pacific Report], [Vol. 1, No. 036], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [CodeSOD: A Little Twisted],
-  kicker: [Cover Story],
-  author: [Remy Porter],
-  source-name: [The Daily WTF],
-  deck: [Dana sends us a WTF that'll turn your head. She was shopping for new hard drives, and was doing it from her phone, a fairly reasonable tool to use for online shopping these days.],
-  lead-pre: [],
-  lead-cap: [S],
-  lead-rest: [he opened the website of one vendor, and it was rotated 90 degrees. Or half-pi radians, for those of us that are more used to sensible units.],
-  body-paragraphs: (
-  [This was irrespective of any rotation settings on her phone, the website insisted on showing itself in landscape mode. This created quite the unusual appearance when she held her phone in portrait orientation: the browser chrome surrounding the content was in portrait mode, but the page itself was in landscape.],
-  [Obviously, this is a terrible design choice. But Dana wanted to know more. So she started digging in. There was no sign of this behavior on a desktop, which sure, I'd hope not. Attempting to use wget to download the page caused a 403. Using curl downloaded a JavaScript challenge. Fine, they didn't want bots, but Dana wasn't a bot.],
-  [Poking around in the network tab of the desktop browser's debugging tools helped Dana learn a few things. First: the line endings in the files were all CRLF, implying that all development happened on Windows machines. Maybe that's not interesting, but in 2026, it feels unusual. Second, the page is setting a PHPSESSID cookie, so clearly the backend is written in PHP. But most important, Dana is able to piece together what she needs to successfully use curl to download the page, once pretending to be a desktop browser, and once pretending to be a mobile browser. With that, she ran a diff to see what changed.],
-  [The desktop version started with 42 blank lines. The mobile version started with 41. The rest of the pages were substantially the same, with two exceptions. First, the mobile page also added a stylesheet called stylesheet-responsive.css . I assume that name was chosen because irony is dead; nothing about this site is responsive. Second, there was a subtle difference in the body tags.],
-  [You see, both pages had a body tag like this:],
-  [But the mobile page, continued from there:],
-  [Yes, the mobile version has two body tags.],
-  [Dana writes:],
-  [Even though I don't have access to the real PHP source-code, I can imagine what it looks like.],
-  [Somewhere in that PHP source-code there is browser-detection (or rather browser-sniffing) and that toggles if it should serve a slightly different HTML code to the user.
-I do not want to work for that website, I do not want to look at that backend source-code. And I have to feel sorry and respect for the browser developers, as they have to write software that can handle completely broken HTML.],
-  [While I hate the results, the fact that the HTML specification originally required clients to render even the most broken HTML is arguably a really good design choice. Expecting people to do the right thing never works out for you.],
-  [Let's not forget their "responsive" CSS, which is obviously worth looking at, even if it's obvious what it must be:],
-  [\@media only screen and ( orientation :portrait) {
- \#landscape\_mode\_only {
- height : 98vw ;
- -webkit- transform : rotate ( 90deg );
- -moz- transform : rotate ( 90deg );
- -o- transform : rotate ( 90deg );
- -ms- transform : rotate ( 90deg );
- transform : rotate ( 90deg )
- }
-}],
-  [This forces everything in the body to rotate sideways.],
-  [Look, actually responsive design is hard. But "just force the page into landscape mode no matter what the user does" is definitely not the solution .],
-  [And Dana points out one last thing:],
-  [As a cherry on the top, observe how the comment that marks the end of the header is placed after the starts. Which is wrong already, but also stupid, because already marks the end of the head. And the head is not really the header.],
-  [\[Advertisement\] 
- BuildMaster allows you to create a self-service release management platform that allows different teams to manage their applications. Explore how!],
-  [style="clear: left;"\>],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [Jupiter's Lightning May Have the Force of Nuclear Weapons],
   author: [EditorDavid],
   source-name: [Slashdot],
@@ -89,74 +42,65 @@ The researchers used the Hubble Space Telescope (and photographs from Juno's cam
   debug-mode: false,
 )
 
-  #pull-quote([It makes sense that there's very energetic lightning happening," says Daniel Mitchard, a lightning physicist at Cardiff University who wasn't involved with the new study.], [EditorDavid])
+#pull-quote([It makes sense that there's very energetic lightning happening," says Daniel Mitchard, a lightning physicist at Cardiff University who wasn't involved with the new study.], [EditorDavid])
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Step-by-Step Guide to Apply for a Business Loan],
   author: [Jessica Clark],
   source-name: [Small Business Trends],
   images: (),
   paragraphs: (
   [Applying for a business loan can seem intimidating, but breaking it down into manageable steps simplifies the process. Start by comprehending the types of loans available and evaluating your specific funding needs . Reviewing your credit score and financial health is essential, as these factors influence your eligibility. Gathering the right documentation and completing the application accurately can greatly improve your chances of approval. Ready to learn what comes next after you submit your application?],
-  [id="key-takeaways"\>Key Takeaways],
   [Identify your business needs and determine the exact funding amount required for expansion, operations, or equipment purchases.],
   [Assess your eligibility by reviewing your credit score, business longevity, and financial health, ensuring you meet lender criteria.],
   [Compare lenders and loan options, evaluating interest rates, repayment terms, and additional fees to find the best fit.],
   [Gather necessary documentation, including financial statements, personal information, and a business plan, to support your application.],
   [Complete and submit the application accurately, then review the loan agreement for terms, fees, and repayment schedules before signing.],
-  [id="understanding-business-loans"\>Understanding Business Loans],
   [Comprehending business loans is crucial for any entrepreneur looking to secure funding for their ventures. A business loan is an agreement between you and a lender, providing capital that needs repayment with interest. You can use these loans for various purposes, like covering operating expenses, funding expansion, or purchasing equipment.],
   [Business loans come in two main types: secured , backed by collateral, and unsecured, based on your creditworthiness. The approval process often hinges on your credit score , business longevity, and overall financial stability, including cash flow and revenue.],
   [Before applying, verify your business registration in the US is complete, as this can impact your eligibility. Grasping the terms, such as repayment periods that can range from months to years, will help you make informed decisions.],
   [Knowing the specifics of different loan types can likewise guide you in finding the best option for your business needs.],
-  [id="types-of-business-loans"\>Types of Business Loans],
+  [Types of Business Loans],
   [When exploring types of business loans , it’s essential to recognize the variety of options available to meet your financial needs.],
   [Business lines of credit provide flexible, revolving access to cash, perfect for daily expenses. If you’re looking to manage expenses during building credit, consider business credit cards designed particularly for that purpose.],
   [Traditional business term loans offer a lump sum that you repay in fixed increments, making them suitable for larger investments, like expansions. For small businesses, SBA small business loans are government-backed, offering favorable terms and lower interest rates.],
   [On the other hand, merchant cash advances give you upfront capital in exchange for a percentage of future sales. Although this can be a quick funding option, it often comes at a higher cost.],
   [Comprehending these various types of business loans will help you make an informed decision when seeking financial assistance for your business.],
-  [id="assessing-your-business-needs"\>Assessing Your Business Needs],
   [How can you effectively assess your business needs when considering a loan? Start by identifying the specific purpose of the loan. Are you looking to fund expansion, purchase equipment, or cover operational expenses?],
   [Next, determine the amount of funding required by analyzing projected costs to ascertain it aligns with your financial goals . Conduct a cash flow assessment to confirm your business can manage loan repayments comfortably, ideally maintaining income at least 1.25 times total expenses.],
   [Evaluate your current financial health, including annual revenue and credit score.],
   [Consider the type of loan that best suits your situation, whether it’s a traditional term loan for major purchases or a line of credit for daily needs.],
   [Be clear about your business goals to guide your decision-making.],
-  [id="determining-eligibility-for-a-business-loan"\>Determining Eligibility for a Business Loan],
+  [Determining Eligibility for a Business Loan],
   [Grasping your business needs is just the first step in the loan application process ; determining your eligibility is equally important. To qualify for a business loan, most lenders prefer a minimum credit score of 690.],
   [If you’re figuring out how to start a business in America, bear in mind that your business should ideally be operational for at least 1 to 2 years, though some online lenders may accept those with just 3 to 12 months in business.],
   [Furthermore, you’ll need to meet annual revenue requirements , which can range from \$50,000 to \$250,000, depending on the lender and loan type. Demonstrating a steady cash flow , ideally 1.25 times your total expenses, is vital for proving your ability to repay the loan.],
   [Finally, keep in mind that different lenders have varying eligibility criteria influenced by your industry and the presence of collateral for secured loans.],
-  [id="evaluating-your-credit-score"\>Evaluating Your Credit Score],
   [Evaluating your credit score is a crucial step in the loan application process , as it impacts your eligibility and also affects the terms and interest rates you may receive. A good credit score , typically 690 or above, can greatly improve your chances of approval.],
   [Here are some key points to keep in mind:],
   [Obtain free credit reports from Equifax , Experian , and TransUnion to track your credit status.],
   [Bear in mind that many lenders look for a minimum annual revenue, often correlating with your credit score.],
   [Online lenders might offer more lenient criteria for those with lower credit scores, providing alternative sources of capital.],
-  [id="analyzing-your-revenue-and-cash-flow"\>Analyzing Your Revenue and Cash Flow],
+  [Analyzing Your Revenue and Cash Flow],
   [When evaluating your revenue and cash flow , it’s important to grasp how these factors influence your ability to secure a business loan . Many lenders require a minimum annual revenue ranging from \$50,000 to \$250,000 to qualify for a loan. As such, analyzing your revenue and cash flow is fundamental.],
   [Moreover, maintaining a cash flow that’s at least 1.25 times your total expenses is advisable, ensuring you can cover loan repayments alongside existing costs.],
   [Most lenders evaluate cash flow stability over the last 3-12 months, determining your ability to meet repayment obligations. Regularly monitoring your cash flow can help identify potential shortfalls and improve financial management , supporting your loan application.],
   [A strong cash flow history demonstrates your business’s capacity to generate income and manage debts effectively. If you’re wondering how to start a company for free, keep in mind that comprehending your financials is a critical step toward attracting potential lenders .],
-  [id="comparing-lenders-and-loan-options"\>Comparing Lenders and Loan Options],
+  [Comparing Lenders and Loan Options],
   [When you’re comparing lenders and loan options, it’s essential to look closely at interest rates and loan terms .],
   [Different lenders, such as traditional banks, online lenders, and SBA loan providers, offer varying rates and repayment schedules that can impact your financial health.],
-  [id="interest-rates-comparison"\>Interest Rates Comparison],
   [Comparing interest rates across different lenders is crucial for finding the best business loan option for your needs. Interest rates can vary greatly, typically ranging from 3% to 30%, based on the lender and your creditworthiness . Traditional Bank of America usually offer lower rates , whereas online lenders may charge higher APRs for quicker funding. SBA loans often provide competitive rates , making them attractive for small businesses.],
   [Consider the following when doing your interest rates comparison:],
   [Fixed-rate loans maintain the same interest rate throughout the term.],
   [Business lines of credit may have variable rates that fluctuate with market conditions.],
   [Overall borrowing costs include not just interest, but additionally fees and repayment terms.],
   [This thorough comparison will help you make an informed decision .],
-  [id="loan-terms-evaluation"\>Loan Terms Evaluation],
   [Evaluating loan terms is essential for making the right choice when seeking a business loan. Start by comparing interest rates ; traditional Bank of America often offer lower rates than online lenders, who usually charge higher APRs.],
   [Next, investigate repayment terms : short-term loans typically require repayment within 3-18 months, whereas long-term loans can extend from 1 to over 10 years, affecting your monthly payments.],
   [Assess eligibility requirements , as American Express may require only 3-12 months in business, whereas Bank of America often prefer at least 2 years. Don’t forget to check for additional fees , which can greatly impact the overall cost.],
   [Finally, consider the flexibility in loan amounts; short-term loans range from \$5,000 to \$250,000, whereas long-term loans may exceed \$5 million.],
-  [id="gathering-required-application-materials"\>Gathering Required Application Materials],
   [Gathering the required application materials for a business loan is a vital step in securing financing. You’ll need to compile a variety of documents that demonstrate your business’s legitimacy and financial health. Start by collecting basic business information, including your name, address, and Employer Identification Number (EIN).],
   [Here’s a list of fundamental materials you should gather:],
   [Financial statements like profit and loss statements and balance sheets for the past few years.],
@@ -164,7 +108,7 @@ The researchers used the Hubble Space Telescope (and photographs from Juno's cam
   [Legal documents such as business certificates, licenses, and leases.],
   [Make sure all documentation is accurate and up-to-date . If you’ve recently learned how to register a business in the USA, your registration documents will as well be vital.],
   [This preparation not merely streamlines the application process but additionally improves your chances of approval .],
-  [id="completing-the-application-process"\>Completing the Application Process],
+  [Completing the Application Process],
   [Once you’ve gathered all the necessary application materials, it’s time to complete the application process. Start by filling out the application accurately, guaranteeing you include all required fields. Use a reliable phone number and email address to facilitate communication. You’ll likewise need to provide personal information for significant owners, such as Social Security numbers, and details about collateral if you’re applying for a secured loan.],
   [Furthermore, prepare to submit a business plan and financial projections. This will help demonstrate your business’s potential for growth, especially if you’re learning how to start a company from scratch.],
   [Here’s a quick checklist of things to remember:],
@@ -194,11 +138,10 @@ The researchers used the Hubble Space Telescope (and photographs from Juno's cam
  Financial Projections 
  Show how the loan will be used],
   [After submission, maintain communication with your lender .],
-  [id="what-to-expect-after-applying"\>What to Expect After Applying],
+  [What to Expect After Applying],
   [After you submit your business loan application , expect the review process to take anywhere from one hour to a few days, depending on the lender and how complete your application is.],
   [During this time, a loan specialist might reach out to discuss your application and suggest alternative financing options that better suit your needs.],
   [In the end, you’ll receive notification of whether you’re approved or declined , along with details on the next steps.],
-  [id="application-processing-timeline"\>Application Processing Timeline],
   [Applying for a business loan initiates a process that can unfold over several days, depending on the lender and the thoroughness of your application.],
   [Typically, here’s what to expect during the application processing timeline :],
   [The initial review can take from 1 hour to a few days, based on how complete your application is.],
@@ -206,20 +149,18 @@ The researchers used the Hubble Space Telescope (and photographs from Juno's cam
   [Once finalized, approval notifications are sent, and if you’re approved, you’ll receive a loan agreement for review.],
   [If declined, you can ask for reasons and consider alternatives.],
   [Once approved, signing and disbursement may take 24 hours to 3 business days, with funds potentially available the next business day after signing.],
-  [id="communication-from-lender"\>Communication From Lender],
   [Following your application submission , the communication you receive from the lender plays a significant role in the process.],
   [Expect the best commercial lenders to review your materials within an hour to a few days. You might receive a call from a loan specialist discussing your application, suggesting financing options, and organizing any required documents.],
   [After this, an underwriter will conduct a risk analysis , typically taking 24 to 72 hours, focusing on your creditworthiness and financial stability.],
   [Once a decision is made, you’ll be notified about your application’s status. If approved, you’ll receive a loan agreement for review and can negotiate terms.],
   [If declined, it’s advisable to ask about the reasons and explore alternative financing options.],
-  [id="approval-or-denial-notice"\>Approval or Denial Notice],
+  [Approval or Denial Notice],
   [Once you’ve submitted your business loan application , you’ll typically receive either an approval or denial notice within a few days, depending on the lender’s internal processes.],
   [If approved, you’ll get a loan agreement detailing the terms, which you can accept or negotiate based on your creditworthiness.],
   [If you face a denial, don’t hesitate to ask for feedback ; comprehending the reasons can help you improve future applications.],
   [Approved loans usually disburse funds within 24 hours to 3 business days.],
   [Denial reasons may include low credit scores, insufficient cash flow, or business instability.],
   [For further guidance, consider who to talk to about starting a business , as they can help you navigate these challenges effectively.],
-  [id="reviewing-loan-agreements"\>Reviewing Loan Agreements],
   [Reviewing a loan agreement is crucial to guaranteeing you comprehend the terms that will govern your borrowing experience. Pay close attention to key elements as you review:],
   [Key Element 
  Description 
@@ -242,24 +183,22 @@ The researchers used the Hubble Space Telescope (and photographs from Juno's cam
  Repayment Schedule 
  Frequency and amount of payments; aligns with your cash flow.],
   [When reviewing loan agreements, confirm you grasp all terms, including collateral and personal guarantees. These aspects can influence your business assets and personal finances in case of default. Thoroughly comprehending these components can help you avoid unexpected expenses and make informed decisions regarding your loan.],
-  [id="tips-for-successful-loan-approval"\>Tips for Successful Loan Approval],
+  [Tips for Successful Loan Approval],
   [To boost your chances of securing a business loan, focus on a few key areas.],
   [Strengthening your credit score , organizing financial documentation, and preparing a detailed business plan are crucial steps that can make a significant difference in your application.],
-  [id="strengthen-your-credit-score"\>Strengthen Your Credit Score],
   [Improving your credit score is essential for increasing your chances of securing a business loan with favorable terms. A score of 690 or above is typically preferred by lenders.],
   [Here are some steps to strengthen your credit score:],
   [Regularly check your credit report for inaccuracies and dispute any errors.],
   [Reduce your credit utilization ratio to below 30% by paying down existing debts, showcasing responsible credit management.],
   [Establish a history of timely payments on all financial obligations to build a strong credit profile.],
   [If your score is below the acceptable range, consider delaying your loan application. This gives you time to effectively manage debts and guarantee consistent payments, which is critical when learning how to start a startup successfully.],
-  [id="prepare-financial-documentation"\>Prepare Financial Documentation],
   [When applying for a business loan , having the right financial documentation is vital, as it provides lenders with the necessary insight into your business’s financial health.],
   [Start by gathering important financial statements, like profit and loss statements , balance sheets, and cash flow projections, to demonstrate stability.],
   [Organize your tax returns for the past 1-3 years, as lenders use these to assess your income and tax history.],
   [Include bank account statements from recent months to showcase your cash flow.],
   [Confirm all personal information, such as Social Security numbers for significant owners, is accurate and readily available.],
   [This thorough preparation not just shows your financial responsibility but likewise reflects how to legally create a business that lenders can trust.],
-  [id="present-a-business-plan"\>Present a Business Plan],
+  [Present a Business Plan],
   [A thorough business plan serves as a crucial tool in securing a business loan, as it outlines your vision and strategy to potential lenders.],
   [To effectively present your business plan, focus on these key components:],
   [Business Model : Clearly define how your business operates, your target market, and your competitive advantage.],
@@ -267,7 +206,6 @@ The researchers used the Hubble Space Telescope (and photographs from Juno's cam
   [Management Team : Highlight your team’s experience and qualifications, as strong leadership reassures lenders about your business’s potential success.],
   [Additionally, articulate the loan’s purpose and how the funds will drive growth.],
   [Consider attaching supporting documents like market research and customer testimonials to improve credibility.],
-  [id="exploring-alternative-funding-options"\>Exploring Alternative Funding Options],
   [Though traditional business loans are a common route for financing, exploring alternative funding options can provide extra avenues to secure capital for your business needs.],
   [Small-business grants from federal and state agencies offer non-repayable funds for specific projects, making them a desirable option.],
   [Crowdfunding platforms allow you to raise money from a large audience in exchange for rewards or equity, which is particularly useful for Kickstarter startups.],
@@ -275,26 +213,24 @@ The researchers used the Hubble Space Telescope (and photographs from Juno's cam
   [Furthermore, angel investors and venture capitalists offer equity financing , providing not only funds but valuable mentorship.],
   [In considering alternative funding options, it’s vital to evaluate the pros and cons.],
   [Each option may have different repayment structures, ownership implications, and funding timelines, so comprehending these factors will help you make an informed decision for your business’s financial future.],
-  [id="frequently-asked-questions"\>Frequently Asked Questions],
-  [id="what-is-the-process-of-applying-for-a-business-loan"\>What Is the Process of Applying for a Business Loan?],
+  [What Is the Process of Applying for a Business Loan?],
   [To apply for a business loan , you’ll need to gather key documents like financial statements , tax returns, and a detailed business plan.],
   [Next, complete the application with accurate personal and business information, ensuring you provide a reliable contact method.],
   [Once submitted, your application will be reviewed for creditworthiness, which can take from one hour to a few days.],
   [You’ll then receive a notification about approval or decline, along with loan terms if approved.],
-  [id="can-a-new-llc-get-a-small-business-loan"\>Can a New LLC Get a Small Business Loan?],
+  [Can a New LLC Get a Small Business Loan?],
   [Yes, a new LLC can secure a small business loan , though it can be challenging because of limited operating history.],
   [Many lenders prefer established businesses , but options like business credit cards and microloans are more accessible.],
   [Online lenders often have flexible requirements, allowing new LLCs to apply after just a few months in business.],
   [Having a solid business plan and good personal credit can greatly improve your chances of approval.],
-  [id="what-is-the-monthly-payment-on-a-50000-business-loan"\>What Is the Monthly Payment on a \$50,000 Business Loan?],
+  [What Is the Monthly Payment on a \$50,000 Business Loan?],
   [The monthly payment on a \$50,000 business loan varies based on the interest rate and loan term .],
   [For example, at a 10% interest rate over five years, your payment might be around \$1,200. If the rate drops to 6%, that payment could decrease to roughly \$966.],
   [Keep in mind that longer loan terms typically lower monthly payments but increase total interest paid.],
   [Always factor in any additional fees that could affect your final repayment amounts.],
-  [id="can-i-use-my-ein-to-get-a-loan"\>Can I Use My EIN to Get a Loan?],
+  [Can I Use My EIN to Get a Loan?],
   [Yes, you can use your Employer Identification Number (EIN) to get a loan. Lenders require an EIN to verify your business’s legitimacy and assess its creditworthiness.],
   [This unique identifier helps separate your personal and business finances, improving your chances of securing a loan . Furthermore, having an EIN is vital for structured business types, as it’s often necessary for tax filings and fulfilling regulatory requirements, making it an important part of your loan application process .],
-  [id="conclusion"\>Conclusion],
   [Applying for a business loan can be a straightforward process if you follow the necessary steps. By comprehending your financial needs , evaluating your eligibility, and preparing the required documentation, you position yourself for success. Remember to compare lenders and review loan agreements carefully to guarantee they meet your business goals. If traditional loans aren’t suitable, consider alternative funding options . By being thorough and informed, you can secure the financing you need to grow your business effectively.],
   [Image via Google Gemini],
   [This article, " Step-by-Step Guide to Apply for a Business Loan " was first published on Small Business Trends],
@@ -305,10 +241,8 @@ The researchers used the Hubble Space Telescope (and photographs from Juno's cam
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [HP Launches Next-Gen LaserJet Printers with Quantum-Resistant Security and AI Tools],
   author: [David Wilson],
   source-name: [Small Business Trends],
@@ -334,11 +268,10 @@ The researchers used the Hubble Space Telescope (and photographs from Juno's cam
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Weekly Update 490],
   author: [Troy Hunt],
   source-name: [Troy Hunt],
@@ -347,10 +280,6 @@ The researchers used the Hubble Space Telescope (and photographs from Juno's cam
   [Presently sponsored by: Report URI: Guarding you from rogue JavaScript! Don’t get pwned; get real-time alerts & prevent breaches \#SecureYourSite],
   [A big "thank you" to everyone who helped me troubleshoot the problem with my "Print Screen" button on the new PC. Try as we all might, none of us could figure out why it refused to bind to SnagIt and instead insisted on dumping the entire collection of screens to a file on the desktop. But an especailly big thanks to the follower who later emailed me with an idea that didn't work, and followed up with an idea that finally did!],
   [So, yeah, thanks Logitech for making this a real pain in the arse 🤦‍♂️],
-  [style="width: 170px; display: inline-block; margin-right: 3px;"\>],
-  [style="width: 175px; display: inline-block; margin-right: 3px;"\>],
-  [style="width: 118px; display: inline-block; margin-right: 3px;"\>],
-  [style="width: 120px; display: inline-block;"\>],
 ),
   insert-map: (:),
   word-count: 138,
@@ -360,7 +289,7 @@ The researchers used the Hubble Space Telescope (and photographs from Juno's cam
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [No one is happy with NASA's new idea for private space stations],
   author: [Eric Berger],
   source-name: [Ars Technica],
@@ -382,7 +311,7 @@ The researchers used the Hubble Space Telescope (and photographs from Juno's cam
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [How to detect Safari and iOS versions with ease in 2026],
   author: [Travis Turner],
   source-name: [Evil Martians Chronicles],
@@ -402,7 +331,7 @@ The researchers used the Hubble Space Telescope (and photographs from Juno's cam
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Optimistic UI in Rails with optimism... and Inertia],
   author: [Travis Turner],
   source-name: [Evil Martians Chronicles],
@@ -425,7 +354,7 @@ The researchers used the Hubble Space Telescope (and photographs from Juno's cam
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [A Knock at the Door],
   author: [Colin Vanderburg],
   source-name: [n+1 Magazine],
@@ -441,7 +370,7 @@ The researchers used the Hubble Space Telescope (and photographs from Juno's cam
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Tutorialkit.rb: interactive Ruby tutorials entirely in the browser],
   author: [Travis Turner],
   source-name: [Evil Martians Chronicles],
@@ -462,8 +391,7 @@ The researchers used the Hubble Space Telescope (and photographs from Juno's cam
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Listen to a grieving mother and have no doubts: water privatisation has been a lethal scandal | Clive Lewis],
   author: [Clive Lewis],
   source-name: [The Guardian Environment],
@@ -480,35 +408,33 @@ The researchers used the Hubble Space Telescope (and photographs from Juno's cam
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([Simon Hill], source-name: [Wired], [Save your memories now, because if your iPhone gets stolen or lost, your photos and other precious files could be gone forever.])],
-    [#brief-item([Financial Samurai], source-name: [Financial Samurai], [We all know that panicking is one of the ways investors lose money. Panic selling during the 2008–2009 global financial crisis may have put some investors into the permanent underclass. Not only did they lose money, they weren't able to benefit from the incredible recovery since. Panicking during the March 2020 lockdowns caused many people \[…\]
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([Simon Hill], source-name: [Wired], [Save your memories now, because if your iPhone gets stolen or lost, your photos and other precious files could be gone forever.])],
+  [#brief-item([Financial Samurai], source-name: [Financial Samurai], [We all know that panicking is one of the ways investors lose money. Panic selling during the 2008–2009 global financial crisis may have put some investors into the permanent underclass. Not only did they lose money, they weren't able to benefit from the incredible recovery since. Panicking during the March 2020 lockdowns caused many people \[…\]
 
 The post How Panic Lost Me Money In A Non-Investment Way appeared first on Financial Samurai .])],
-    [#brief-item([Samuel Stein], source-name: [n+1 Magazine], [Adams will be remembered for his petty corruption, his self-mythologizing, and his ignominious dealmaking with the Trump White House; but he should also be remembered as the mayor who got New Yorkers to stop tossing giant bags of trash onto city sidewalks as if there were no alternative. You can laugh at a New York mayor who walks into a press conference wheeling out a trash can, beaming as if he invented the contraption, while “Empire State of Mind” blares triumphantly in the background. But truly, Adams’s proclaimed “trash revolution” represented a tremendous advance over abysmal past practice.])],
-    [#brief-item([Chelsea Kirk], source-name: [n+1 Magazine], [What scares them is something else: the realization spreading across Los Angeles that the private housing market isn’t just failing wildfire victims—it’s failing by design. That the inability to meet this moment isn’t the result of a few bad landlords, it’s a feature of a system built to extract. What landlords fear is that we might imagine something better: a world where housing isn’t a commodity at all, a world without landlords.])],
-    [#brief-item([Elizabeth Schambelan], source-name: [n+1 Magazine], [The truth is, I want to fucking kill him. Because, not that long ago, I was a semi-together individual with some irons of my own in the fire, living in an apartment that had finally achieved the elegantly shabby je ne sais quoi one might hope for in a quaintly garret-like Brooklyn abode. And now I’m this wild-eyed person with scalloped rat barriers around her doors who watches her space heater on a baby monitor.])],
-    [#brief-item([Rachel Khong], source-name: [n+1 Magazine], [“I only love swimming,” I said. And it was true that I’d always felt awkward on land. Sometimes I wondered if that was why I was so unsuccessful at online dating: technology was incompatible with the water. “The monk thing does appeal.”])],
-    [#brief-item([Charlie Dulik], source-name: [n+1 Magazine], [In a majority-homeowner nation, the rental crisis alone cannot explain Harris’s defeat, especially since the concentration of renters in cities means that as a group they likely still tilted toward her. But the demographic overlap between tenants and those who moved away from Harris cannot be ignored. Moreover, the failure to adequately address the housing crisis exemplifies the fecklessness that doomed Harris’s campaign. Any effort to challenge Trump and the reactionary forces he spearheads must not make the same mistake.])],
-    [#brief-item([Olivia Paschal], source-name: [n+1 Magazine], [In retrospect, the week of Donald Trump’s inauguration was an inopportune time for Walmart to hold the grand opening of its new corporate campus.])],
-    [#brief-item([Matthew Porges], source-name: [n+1 Magazine], [The story of humanity in space is not over, but the reality is that Musk is probably already yesterday’s man. The apogee of his arc was most likely the chainsaw tableau onstage at CPAC — and what a pathetic apogee it was: a man in late middle age, haunted and horribly unhappy, drug-addled and gibbering, further in that moment from Mars than he had ever been. If he has a legacy in space, it is less likely to be the Martian accomplishment and more likely to be that he took Kennedy’s dream and made it tawdry, partisan, and stupid.])],
-    [#brief-item([Mark Greif], source-name: [n+1 Magazine], [What is the function of demanding that the entire federal bureaucracy search itself for traces that it might be funding programs to which the Leader might object? Plainly, to dement it. Or make it paranoid, make it pusillanimous, make it humiliated, and bring to the forefront the narcs, toadies, informers, and eager collaborators who can be promoted to replace those who continue their jobs and assert the law.])],
-    [#brief-item([Joel Suarez], source-name: [n+1 Magazine], [By themselves, strong growth and low unemployment cannot wash away social divisions, any more than they can empower labor enough to substantively increase wages, to say nothing of raising the labor share of national income. The left must not be cowed into a narrow politics of income inequality and redistribution; it must look further, toward democratic control of capital itself.])],
-    [#brief-item([Helena Horton], source-name: [The Guardian Environment], [Exclusive: critics warn Reform UK use of trade policy would increase food costs amid cost-of-living crisis
+  [#brief-item([Samuel Stein], source-name: [n+1 Magazine], [Adams will be remembered for his petty corruption, his self-mythologizing, and his ignominious dealmaking with the Trump White House; but he should also be remembered as the mayor who got New Yorkers to stop tossing giant bags of trash onto city sidewalks as if there were no alternative. You can laugh at a New York mayor who walks into a press conference wheeling out a trash can, beaming as if he invented the contraption, while “Empire State of Mind” blares triumphantly in the background. But truly, Adams’s proclaimed “trash revolution” represented a tremendous advance over abysmal past practice.])],
+  [#brief-item([Chelsea Kirk], source-name: [n+1 Magazine], [What scares them is something else: the realization spreading across Los Angeles that the private housing market isn’t just failing wildfire victims—it’s failing by design. That the inability to meet this moment isn’t the result of a few bad landlords, it’s a feature of a system built to extract. What landlords fear is that we might imagine something better: a world where housing isn’t a commodity at all, a world without landlords.])],
+  [#brief-item([Elizabeth Schambelan], source-name: [n+1 Magazine], [The truth is, I want to fucking kill him. Because, not that long ago, I was a semi-together individual with some irons of my own in the fire, living in an apartment that had finally achieved the elegantly shabby je ne sais quoi one might hope for in a quaintly garret-like Brooklyn abode. And now I’m this wild-eyed person with scalloped rat barriers around her doors who watches her space heater on a baby monitor.])],
+  [#brief-item([Rachel Khong], source-name: [n+1 Magazine], [“I only love swimming,” I said. And it was true that I’d always felt awkward on land. Sometimes I wondered if that was why I was so unsuccessful at online dating: technology was incompatible with the water. “The monk thing does appeal.”])],
+  [#brief-item([Charlie Dulik], source-name: [n+1 Magazine], [In a majority-homeowner nation, the rental crisis alone cannot explain Harris’s defeat, especially since the concentration of renters in cities means that as a group they likely still tilted toward her. But the demographic overlap between tenants and those who moved away from Harris cannot be ignored. Moreover, the failure to adequately address the housing crisis exemplifies the fecklessness that doomed Harris’s campaign. Any effort to challenge Trump and the reactionary forces he spearheads must not make the same mistake.])],
+  [#brief-item([Olivia Paschal], source-name: [n+1 Magazine], [In retrospect, the week of Donald Trump’s inauguration was an inopportune time for Walmart to hold the grand opening of its new corporate campus.])],
+  [#brief-item([Matthew Porges], source-name: [n+1 Magazine], [The story of humanity in space is not over, but the reality is that Musk is probably already yesterday’s man. The apogee of his arc was most likely the chainsaw tableau onstage at CPAC — and what a pathetic apogee it was: a man in late middle age, haunted and horribly unhappy, drug-addled and gibbering, further in that moment from Mars than he had ever been. If he has a legacy in space, it is less likely to be the Martian accomplishment and more likely to be that he took Kennedy’s dream and made it tawdry, partisan, and stupid.])],
+  [#brief-item([Mark Greif], source-name: [n+1 Magazine], [What is the function of demanding that the entire federal bureaucracy search itself for traces that it might be funding programs to which the Leader might object? Plainly, to dement it. Or make it paranoid, make it pusillanimous, make it humiliated, and bring to the forefront the narcs, toadies, informers, and eager collaborators who can be promoted to replace those who continue their jobs and assert the law.])],
+  [#brief-item([Joel Suarez], source-name: [n+1 Magazine], [By themselves, strong growth and low unemployment cannot wash away social divisions, any more than they can empower labor enough to substantively increase wages, to say nothing of raising the labor share of national income. The left must not be cowed into a narrow politics of income inequality and redistribution; it must look further, toward democratic control of capital itself.])],
+  [#brief-item([Helena Horton], source-name: [The Guardian Environment], [Exclusive: critics warn Reform UK use of trade policy would increase food costs amid cost-of-living crisis
 
 Nigel Farage’s farming adviser has called for a doubling of wheat prices by using trade policy, which critics have said would hike food costs during a cost-of-living crisis.
 
 Arable farmer and campaigner Clive Bailye has been appointed as a farming and land use adviser for Reform UK. Bailye owns the website The Farming Forum, a social network for farmers, and helped organise the large-scale protests against the Labour government’s introduction of inheritance tax for farmed land.
 
  Continue reading...])],
-    [#brief-item([Andrea More], source-name: [n+1 Magazine], [That night I dreamed that my dad had died. The lectern at the service was too high and nobody could see me. I didn’t know what to say, so I gave a eulogy about someone I knew a little better who was still alive. When I woke up, my pillow was drenched with sweat. Had my speech been well received? I did some googling and learned that lecterns are between forty-five and forty-eight inches tall. I am nearly a foot taller than that. Thank God.])],
-    [#brief-item([Iman Ganji, Bahar Noorizadeh], source-name: [n+1 Magazine], [The ongoing uprising is rooted in the political economy of structural adjustment, which forms the unstable medium through which revolt becomes contagious.])],
-    [#brief-item([Lydia Pelot-Hobbs, David Stein], source-name: [n+1 Magazine], [Countless people are left in harm’s way because of the state’s refusal to make evacuation plans. The hurricane ends up coming through weaker than expected—but then the levees break. Within hours, 80 percent of the city is underwater.])],
-    [#brief-item([Galina Rymbu], source-name: [n+1 Magazine], [• Mama writes
+  [#brief-item([Andrea More], source-name: [n+1 Magazine], [That night I dreamed that my dad had died. The lectern at the service was too high and nobody could see me. I didn’t know what to say, so I gave a eulogy about someone I knew a little better who was still alive. When I woke up, my pillow was drenched with sweat. Had my speech been well received? I did some googling and learned that lecterns are between forty-five and forty-eight inches tall. I am nearly a foot taller than that. Thank God.])],
+  [#brief-item([Iman Ganji, Bahar Noorizadeh], source-name: [n+1 Magazine], [The ongoing uprising is rooted in the political economy of structural adjustment, which forms the unstable medium through which revolt becomes contagious.])],
+  [#brief-item([Lydia Pelot-Hobbs, David Stein], source-name: [n+1 Magazine], [Countless people are left in harm’s way because of the state’s refusal to make evacuation plans. The hurricane ends up coming through weaker than expected—but then the levees break. Within hours, 80 percent of the city is underwater.])],
+  [#brief-item([Galina Rymbu], source-name: [n+1 Magazine], [• Mama writes
 (in reply to the photo of evening Lviv drenched in summer sun):
 Teach him Russian!
 Your child must not be deprived of the right to learn the Russian language.
@@ -516,14 +442,13 @@ Your child must not be deprived of the right to learn the Russian language.
 • I write:
 But didn’t you forbid papa to teach me Romanian?
 Who at that point decided our linguistic fate—yours and mine?])],
-    [#brief-item([Guardian Staff], source-name: [The Guardian Environment], [A survey has revealed the vast array of wildlife – some never seen before – living within the south-east Asian country’s karst ecosystems. The work was led by international wildlife conservation charity Fauna & Flora in collaboration with Cambodia’s environment ministry and field experts
+  [#brief-item([Guardian Staff], source-name: [The Guardian Environment], [A survey has revealed the vast array of wildlife – some never seen before – living within the south-east Asian country’s karst ecosystems. The work was led by international wildlife conservation charity Fauna & Flora in collaboration with Cambodia’s environment ministry and field experts
 
 Read more on this story: I discovered three new geckos in Cambodia’s limestone caves – and that’s not all we found 
 
  Continue reading...])],
-    [#brief-item([Sally McGrane and Therese Aherne], source-name: [NYT Top Stories], [The seaside town of Greystones, Ireland, is experimenting with a voluntary ban on smart devices for preteen children. Most of the town, from teachers to shopkeepers, is participating in one way or another.])],
-    [#brief-item([The Editors], source-name: [n+1 Magazine], [If the government is good for business, why destroy the government? It’s possible Musk really believes he is saving the American economy. By all accounts a fervent believer in whatever he currently believes in — stopping climate change, colonizing Mars, juicing up global birth rates — Musk may be speaking in earnest when he claims that government bloat is ruining the country.])],
-  ))
-}
+  [#brief-item([Sally McGrane and Therese Aherne], source-name: [NYT Top Stories], [The seaside town of Greystones, Ireland, is experimenting with a voluntary ban on smart devices for preteen children. Most of the town, from teachers to shopkeepers, is participating in one way or another.])],
+  [#brief-item([The Editors], source-name: [n+1 Magazine], [If the government is good for business, why destroy the government? It’s possible Musk really believes he is saving the American economy. By all accounts a fervent believer in whatever he currently believes in — stopping climate change, colonizing Mars, juicing up global birth rates — Musk may be speaking in earnest when he claims that government bloat is ruining the country.])],
+))
 
 #colophon([The Pacific Report], [Vol. 1, No. 036], [2026-03-30])

@@ -21,34 +21,8 @@
 #masthead([The Clear Standard], [Vol. 1, No. 009], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [The Power of Assumption],
-  kicker: [Cover Story],
-  author: [ysamuels],
-  source-name: [LessWrong],
-  deck: [(First real Lesswrong post! Wow.],
-  lead-pre: [],
-  lead-cap: [T],
-  lead-rest: [his is a post on an idea I thought might be interesting to some people here, and I'd love to hear thoughts on it.)],
-  body-paragraphs: (
-  [Assumption can be used as a communicative tool.],
-  [As a kid I would occasionally, before falling asleep, lie in bed and imagine that I had a very good friend to talk to, or who could cheer me on. Sometimes these were characters from my favorite books, but apparently at some point it occurred to me that presumably someone, somewhere, could be supposed to have anticipated someone else in the world feeling that way at some point, and might actually have wanted to send that someone a message of comfort, love, or support. At this point, all I had to do was imagine roughly what they might say, consider it to be said, and the message would have been received. To put it differently, I was aware that many, probably most, of the people in the world, knowing that I felt lonely, might have wanted to send me their blessings or support, and that presumably, at least one person who felt that way, over all space and time, probably realized that he could send me that message, provided I was smart enough to realize he might try to.],
-  [So I could "communicate" with people, when the purpose was therapeutic in that way - I couldn't actually receive ideas I couldn't have thought of myself (by definition), but when it was the communication itself and not the words that mattered, I could receive the messages left for me by people who had found this mental space that was created by the assumption that others would . If I wanted to give as well as receive, I could "leave" messages too, for any future or past thinker, lonely or otherwise, to assume exist. Despite the obvious drawback of not being able to receive any idea you couldn't have thought of yourself, this communication does allow you to completely bypass constraints of language, time and space.],
-  [Assumption is famously used in problems where the goal is to meet with someone over varying areas when you have no (other) mode of communication. I personally had idly wondered for some years what the best way to meet with someone spoken to by assumption would be (assuming they had also considered the possibility of meeting). I remained stuck for quite some time wondering whether it was the Eiffel Tower or the Empire State Building that would be the best place to go at midnight, January first, with a big sign reading "You know why you're here. Talk to me", before realizing that the appropriate place on the internet was probably a much more logical rendezvous (thought that is not the main motive for me in writing here - I've wanted to contribute to LessWrong for some time now).],
-  [Just as another point of thought, communication through assumption could in theory be used to create intellectual taboos or norms among intelligent people, for example an accepted and implicit censoring of certain ideas or beliefs that could be realized by anyone smart enough to arrive at them as being unsuitable for spreading (I really hope this isn't one of those).],
-  [So:],
-  [1. Do you know anyone who has beaten me to writing about this? Please direct me to the source if so. (I hope not, but I do hope it has been thought about before, otherwise I've been played for quite a fool).],
-  [2. Do you think this idea is worth anything? Other than game theory , in what other fields or ways could it be used?],
-  [3. Have I ever spoken to you telepathically before? If so, please write. That could be a very interesting conversation.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [GELATO QUEEN],
   author: [Kirkus Reviews],
   source-name: [Kirkus Reviews],
@@ -63,11 +37,9 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Dems Quietly Start Their Next Big Health Care Effort],
   author: [Jonathan Cohn],
   source-name: [The Bulwark],
@@ -89,6 +61,7 @@
   [“Are you kidding me,” Wyden said in our interview, “an 85-year-old woman trying to go to the bathroom in a dark bedroom is somehow going to be able to be safe and get there by an algorithm?” 1],
   [But Wyden has also put in the time to think about and propose policies for non-elderly Americans. In late 2006, shortly after Democrats won control of the House and Senate in that year’s midterm election, he unveiled what he called the “Healthy Americans Act”—a detailed legislative proposal , complete with a financing scheme and independent analysis of its likely cost and impact.],
   [It was a watershed moment, because it signaled that mainstream Democrats were serious about trying to enact legislation to achieve or at least approach universal coverage. Democratic leaders had mostly abandoned that effort in the 1990s, after a failed reform effort by then-President Bill Clinton helped to fuel a political backlash that ended up giving Republicans full control of Congress for the first time in decades.],
+  [Join now],
   [Wyden’s proposal didn’t ultimately become the template for new reforms, partly because it envisioned everybody—even people who already had employer insurance—buying coverage on their own through newly regulated markets. That violated what most strategists believed was the single biggest lesson of the Clinton fiasco: Don’t mess with employer insurance, because it will spook anybody who has it already.],
   [Another reason Wyden’s proposal didn’t go far was that he was not in charge of the Finance Committee, whose jurisdiction over taxes, Medicare, and Medicaid make it the single most critical committee for health care legislation. The chairman at the time was Montana Democrat Max Baucus, whose politics skewed more conservative and whose close ties to industry lobbyists 2 enraged many of his fellow Democrats. Baucus—whose relationship with Wyden was never great—favored the less ambitious reform model that eventually became the Affordable Care Act, which left employer coverage in place.],
   [Wyden finally got his chance to legislate years later, as ranking minority member and then (after the 2020 elections) chairman of the Finance Committee. That’s when he helped craft the Inflation Reduction Act’s prescription drug price reforms , including provisions that allow Medicare to negotiate with manufacturers over the prices of certain high-priced drugs, a longtime Democratic goal.],
@@ -97,11 +70,13 @@
   [This letter is actually the second one Wyden and his colleagues have released. The first was about prescription drugs . There are plans for a third, which will focus on long-term care. It’s a lot to take on, which is why—Wyden told me—it’s important the work gets started now.],
   [“It takes a lot of sweat equity if you want to get into major changes,” he said.],
   [Join Bulwark+ at 20 percent off for the next year. Support the mission. Support independent journalism. Join a community built on good faith.],
+  [Get 20% off for 1 year],
   [WYDEN IS BY NO MEANS THE ONLY MEMBER of the Democratic caucus who is thinking big thoughts on health care, or who would be expected to play a key role in legislation should the party get a chance to govern. The list of others starts with Bernie Sanders , the independent and self-described democratic socialist from Vermont, who has spent a political lifetime making the case for a single-payer, “Medicare for All” system.],
   [Should Democrats regain power, Sanders would be in line to take over the Health, Education, Labor and Pensions Committee—which, despite its name, has traditionally played a junior role to the Finance Committee on health care issues because it has more limited jurisdiction. But Sanders’s long history on health care, plus his position as leader of the party’s progressive wing, means he would have to be part of any serious legislative effort. 3],
   [Sanders isn’t on the open letter. But a few other high-profile progressive Democrats are (Elizabeth Warren of Massachusetts, Peter Welch of Vermont) as are some more conservative senators (Elissa Slotkin of Michigan, Mark Warner of Virginia). And it’s not just on Capitol Hill where there’s broad interest in thinking about the long term. There have been stirrings of activity in the world of think tanks and advocacy groups, too.],
   [“There are various interactive conversations in this world, including advocacy and think tanks, and they are just starting,” said Wright, whose experience includes more than two decades spent helping to lead reform campaigns in California. “I don’t want to overstate how far they’ve gone—really just getting underway, a lot of it informal. But you can tell people are thinking ahead.”],
   [Let us help you see around corners: Sign up for a Bulwark+ membership to unlock all our independent journalism, access ad-free versions of our videos, and join our growing pro-democracy community:],
+  [Get 20% off for 1 year],
   [One reason such efforts led to legislation in the past, with the Affordable Care Act and with prescription drug reforms, is that Democrats were able to coalesce around some core ideas. Doing that now is going to require working through some contentious, complex questions, starting with one that dominated the 2020 presidential primaries—i.e., the last time Democrats were the party out of power—when the debate was about whether or not to endorse Sanders’s version of Medicare for All. 4],
   [That debate is certainly worth having. Among other things, Medicare for All represents one way to deal with costs, since the early-stage proposals from Sanders and others generally envision the federal government controlling spending through a combination of budgets and price regulation, as countries abroad with national health systems do. 5],
   [But like all proposals it comes with tradeoffs. It would be taking money away from at least some parts of the health care industry—including hospitals—and those affected sectors would argue (plausibly or not, depending on your point of view) that the change would lead to rationing. And that’s to say nothing of the fact that—like Wyden’s old plan—the purest schemes envision the new public insurance system replacing existing employer coverage.],
@@ -112,11 +87,18 @@
   [And the window is bound to open, probably in the next few years, because that’s how it goes in American politics. Big debates about how to reform health care reliably start once the problems of the status quo have become impossible to ignore, and once the battle scars from previous debates have started to fade. Typically the cycle takes about two decades. And it’s been almost exactly two decades since the start of the process that led to the Affordable Care Act.],
   [This doesn’t mean the Affordable Care Act was a failure, as Republicans frequently claim. It simply means there is a lot more to do, because—as Barack Obama tweeted last week—the law “was always meant to be a first step.”],
   [And now, just maybe, it might be time for the next one.],
+  [Leave a comment],
+  [1],
   [The Biden-era rule raising the minimum staffing requirement for nursing homes was put on hold for a decade as part of the Republicans’ One Big Beautiful Bill enacted last summer, and formally repealed by Oz’s agency in December.],
+  [2],
   [Baucus’s determination to work with Republicans, especially Charles Grassley, the committee’s top Republican, also enraged Democrats—especially in 2009, when Baucus kept trying to get Grassley to support what became the Affordable Care Act.],
+  [3],
   [Back in the Obama era, the same was true for HELP Chairman Ted Kennedy, because of his own long history of engagement on health care as well as his reputation as a legislative maestro.],
+  [4],
   [Most of the Democratic candidates in the 2020 presidential primary looked for ways to present something that sounded like Medicare for All and attempted to capture its appeal, but without threatening the disruption that the Sanders plan would. The candidate most resistant to that was Joe Biden, who preferred a more gradual transformation that leaned more heavily on beefing up the systems already in place. The issue more or less vanished once the pandemic hit, when the focus on health care turned to emergency measures, like bolstering those Affordable Care Act subsidies. But the debate could return in 2028.],
+  [5],
   [Correction (March 29, 2026, 8:30 a.m. EDT): This sentence has been edited to correct which subset of Democrats has tended to embrace proposals that would use federal control of spending to bring down prices; it originally referred to Sen. Wyden but now mentions Sen. Sanders.],
+  [6],
   [Longtime health care journalist Merrill Goozner recently sketched out how such a plan would work in an article that ran in the Washington Monthly and on his Substack , the delightfully named GoozNews, which I highly recommend.],
 ),
   insert-map: (:),
@@ -125,10 +107,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [I am definitely missing the pre-AI writing era],
   author: [N. Cailie],
   source-name: [LessWrong],
@@ -150,10 +130,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Gina Wiley: My Journey So Far as a Senior Engineering Manager],
   author: [Deliveroo Engineering],
   source-name: [Deliveroo Engineering],
@@ -185,12 +163,10 @@
   debug-mode: false,
 )
 
-  #pull-quote([I believe (and have seen throughout my career) that when you give people more ownership and responsibility, they will go above and beyond to achieve a positive impact.], [Deliveroo Engineering])
+#pull-quote([I believe (and have seen throughout my career) that when you give people more ownership and responsibility, they will go above and beyond to achieve a positive impact.], [Deliveroo Engineering])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Generative AI in the Real World: Sharon Zhou on Post-Training],
   author: [Ben Lorica and Sharon Zhou],
   source-name: [O'Reilly Radar],
@@ -391,10 +367,8 @@ That’s right. And you know, AMD makes both. . .],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Spotting and Avoiding ROT in Your Agentic AI],
   author: [Q McCallum],
   source-name: [O'Reilly Radar],
@@ -407,6 +381,7 @@ That’s right. And you know, AMD makes both. . .],
   [I’m naming this risk exposure ROT—Rogue Operator Threat—and this document is a brief explainer on what it is and how to address it.],
   [(I almost called it RAT, with the A for “agentic,” but then realized that it would apply to any kind of automated system. So I broadened the scope to “operator.”)],
   [To set the stage, let’s take a trip to the trading floor:],
+  [Understanding the rogue trader],
   [Rogue trader scandals follow the same storyline:],
   [A trader accrues losses due to bad trades.],
   [They hide those losses while placing new trades in an attempt to recover.],
@@ -418,10 +393,12 @@ That’s right. And you know, AMD makes both. . .],
   [And the answer is: It’s complicated.],
   [Trading operations do keep records, yes. But no system is perfect. Each time a rogue trading scandal comes to light, it turns out that there were loopholes in risk controls. A sufficiently motivated trader—especially one desperate to hide their mistakes—found and exploited these loopholes, continuing their losing streak in plain sight until they could bring in real money to backfill the fake records.],
   [That “until” never happened, though. Which is why their employers then faced financial, reputational, and sometimes legal troubles.],
+  [The AI agent’s ROT threat],
   [Similar to a trader, an AI agent operates on behalf of its parent business and is given room to operate independently so it can accomplish its tasks.],
   [The risk is that, in the rush to deploy agentic AI, these companies will likely grant the bots more leeway than is necessary. We’ve already seen cases in which bots have been able to delete emails and wipe a production database . And there are no doubt other stories that haven’t made it into the news.],
   [Those issues were at least caught in real time. Companies facing ROT are exposed to additional longer-running problems in which the bot is able to accrue losses or inflict greater damage over an extended period. In those cases the problems will only be uncovered by accident and/or when it’s too late.],
   [Consider, for example, an agent that creates false data records to reflect (nonexistent) sales orders. It’s possible for this to run until some external event, such as investor due diligence or a budget review, forces someone to double-check those records against reality.],
+  [Avoiding ROT: Mitigating the threat],
   [How can you narrow your downside risk exposure to ROT? Preventative measures are key. Strong risk controls, narrow scope of authority, and monitoring can catch rogue operator problems long before they’ve metastasized into an existential threat.],
   [In light of rogue trader scandals, trading shops have been known to tighten risk controls and also separate duties to create a system of checks and balances. (This inhibits traders from logging their own fake trades.) Companies also require traders to take time off, as fraudulent activity may surface when the perpetrator isn’t around every day to keep the system running.],
   [Adapting these ideas to agentic AI, a company could monitor and limit the scope of the bot’s activity (say, requiring human approval to place more than 10 orders an hour). It could also periodically purge the agent’s memory so it doesn’t accumulate too many evolved behaviors, or swap in completely new bots to pick up where the previous one had left off. And per my usual refrain of “ never let the bots run unattended ,” this company could employ people to cross-check everything the bot does. Trust, but verify.],
@@ -433,10 +410,8 @@ That’s right. And you know, AMD makes both. . .],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Shuffling and Whittling and Experimenting: Austin Keeling and Lam T. Nguyen on Editing the Told-on-Screens Film “Mercy”],
   author: [Nell Minow],
   source-name: [Roger Ebert (RogerEbert.com)],
@@ -488,10 +463,8 @@ Photo credit: Justin Lubin
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Keep Deterministic Work Deterministic],
   author: [Andrew Stellman],
   source-name: [O'Reilly Radar],
@@ -524,14 +497,17 @@ Photo credit: Justin Lubin
   [I also want to be clear about exactly what a deterministic version of this simulation looks like. Luckily, the AI can help us with that. Go to either run (or your own) and paste one more prompt into the chat:],
   [Prompt 9: Now write a short Python script that does exactly what you just did: start with a score of 10, apply each of the seven rules to the seven sentences, and print the equation at each step.],
   [Run the script. It should print the correct answer for every step, ending at 60. The same AI that just failed the exercise can write code that does it flawlessly, because now it’s generating deterministic logic instead of trying to count characters through its tokenizer.],
+  [Reproducing a cascading failure in a chat],
   [I deliberately engineered the exercise earlier to give you a way to experience the cascading failure problem behind the March of Nines yourself. I took advantage of something current LLMs genuinely suck at: parsing characters inside tokens. Future models might do a much better job with this specific kind of failure, but the cascading failure problem doesn’t go away when the model gets smarter. As long as LLMs are nondeterministic, any step that relies on them has a reliability ceiling below 100%, and those ceilings still multiply. The specific weakness changes; the math doesn’t.],
   [I also specifically asked the model to show only the equation and skip all intermediate reasoning to prevent it from using chain of thought (or CoT) to self-correct. Chain of thought is a technique where you require the model to show its work step by step (for example, listing the words it counted and explaining why each one qualifies), which helps it catch its own mistakes along the way. CoT is a common way to improve LLM accuracy, and it works. As you’ll see later when I talk about the evolution of my blackjack simulation, CoT cut certain errors roughly in half. But “half as many errors” is still not zero. Plus, it’s expensive: It costs more tokens and more time. A Python script that counts double letters gets the right answer on every run, instantly, for zero AI API costs (or, if you’re running the AI locally, for orders of magnitude less CPU usage). That’s the core tension: You can spend engineering effort making the LLM better at deterministic work, or you can just hand it to code.],
   [Every step in this exercise is deterministic work that code handles flawlessly. But most interesting LLM tasks aren’t like that. You can’t write a deterministic script that plays a hand of blackjack using natural-language strategy rules, or decides how a character should respond in dialogue. Real work requires chaining multiple steps together into a pipeline , or a reproducible series of steps (some deterministic, some requiring an LLM) that lead to a single result, where each step’s output feeds the next. If that sounds like what you just saw in the exercise, it is. Except real pipelines are longer, more complex, and much harder to debug when something goes wrong in the middle.],
+  [LLM pipelines are especially susceptible to the March of Nines],
   [I’ve been spending a lot of time thinking about LLM pipelines, and I suspect I’m in the minority. Most people using LLMs are working with single prompts or short conversations. But once you start building multistep workflows where the AI generates structured data that feeds into the next step—whether that’s a content generation pipeline, a data processing chain, or a simulation—you run straight into the March of Nines. Each step has a reliability ceiling, and those ceilings multiply. The exercise you just tried had seven steps. The blackjack pipeline has more, and I’ve been running it hundreds of times per iteration.],
   [The blackjack pipeline in Octobatch , an open source batch orchestrator for multistep LLM workflows that I introduced in “ The Accidental Orchestrator .”],
   [That’s a screenshot of the blackjack pipeline in Octobatch , the tool I built to run these pipelines at scale. That pipeline deals cards deterministically, asks the LLM to play each hand following a strategy described in plain English, then validates the results with deterministic code. Octobatch makes it easy to change the pipeline and rerun hundreds of hands, which is how I iterated through eight versions—and how I really learned the hard way that the March of Nines wasn’t just a theoretical problem but something I could watch happening in real time across hundreds of data points.],
   [Running pipelines at scale made the failures obvious and immediate, which, for me, really underscored an effective approach to minimizing the cascading failure problem: make deterministic work deterministic . That means asking whether every step in the pipeline actually needs to be an LLM call. Checking that a jack, a five, and an eight add up to 23 doesn’t require a language model. Neither does looking up whether standing on 15 against a dealer 10 follows basic strategy. That’s arithmetic and a lookup table—work that ordinary code does perfectly every time. And as I learned over the course of improving the failure rate for the pipeline, every step you pull out of the LLM and make deterministic goes to 100% reliability, which stops it from contributing to the compound failure rate.],
   [Relying on the AI for deterministic work is the computation side of a pattern I wrote about for data in “ AI, MCP, and the Hidden Costs of Data Hoarding .” Teams dump everything into the AI’s context because the AI can handle it—until it can’t. The same thing happens with computation: Teams let the AI do arithmetic, string matching, or rule evaluation because it mostly works. But “mostly works” is expensive and slow, and a short script does it perfectly. Better yet, the AI can write that script for you—which is exactly what Prompt 9 demonstrated.],
+  [Getting cascading failures out of the blackjack pipeline],
   [I pushed the blackjack pipeline through eight iterations, and the results taught me more about earning nines than I expected. That’s why I’m writing this article—the iteration arc turned out to be one of the clearest illustrations I’ve found of how the principle works in practice.],
   [I addressed failures two ways, and the distinction matters.],
   [Some failures called for making work deterministic. Card dealing runs as a local expression step, which doesn’t require an API call, so it’s free, instant, and 100% reproducible. There’s a math verification step that uses code to recalculate totals from the actual cards dealt and compares them against what the LLM reported, and a strategy compliance step checks the player’s first action against a deterministic lookup table. Neither of those steps require any AI to make a judgment call; when I originally ran them as LLM calls, they introduced errors that were hard to detect and expensive to debug.],
@@ -544,6 +520,7 @@ Photo credit: Justin Lubin
   [Rigid output format (79% → 81%). The LLM kept skipping the dealer’s turn entirely, jumping straight to declaring a winner. Requiring a step-by-step dealer output format made it mechanically difficult to skip ahead.],
   [Overriding the model’s priors (81% → 84%). One strategy required hitting on 18 against a high dealer card, which any conventional blackjack wisdom says is terrible. The LLM refused to do it. Restating the rule didn’t help. Explaining why the counterintuitive rule exists did: The prompt had to tell the model that the bad play was intentional.],
   [Switching models (84% → 94%). I switched from Gemini Flash 2.0 to Haiku 4.6, which was easy to do because Octobatch lets you run the same pipeline with any model from Gemini, Anthropic, or OpenAI. I finally earned my first nine.],
+  [Find the best ways to earn your nines],
   [If you’re building anything where LLM output feeds into the next step, the same question applies to every step in your chain: Does this actually require judgment, or is it deterministic work that ended up in the LLM because the LLM can do it? The strategy validator felt like a judgment call until I looked at what it was actually doing, which was checking a hand against a lookup table. That one recognition was worth more than all the prompt engineering combined. And as Prompt 9 showed, the AI is often the best tool for writing its own deterministic replacement.],
   [I learned this lesson through my own work on the blackjack pipeline. It went through eight iterations, and I think the numbers tell a story. The fixes fell into two categories: making work deterministic (pulling it out of the LLM entirely) and adding structural constraints (making the LLM more reliable within a step). Both earn nines, but pulling work out of the LLM entirely earns those nines faster. The biggest single jump in the whole arc—48% to 79%—came from replacing an LLM validator with a 10-line expression.],
   [Here’s the bottom line for me: If you can write a short function that does the job, don’t give it to the LLM . I initially reached for the LLM for strategy validation because it felt like a judgment call, but once I looked at the data I realized it wasn’t at all. There was a right answer for every hand, and a lookup table found it more reliably than a language model.],
@@ -556,11 +533,10 @@ Photo credit: Justin Lubin
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Crimson Desert can perform well on PC, but you’ll need to win its crash lottery first],
   author: [James Archer],
   source-name: [Rock Paper Shotgun],
@@ -578,7 +554,7 @@ Photo credit: Justin Lubin
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [A-MAZE-ING AIRPORT ADVENTURE],
   author: [Kirkus Reviews],
   source-name: [Kirkus Reviews],
@@ -598,7 +574,7 @@ Photo credit: Justin Lubin
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [THE UGLY Finds Beauty Through Artful Storytelling],
   author: [Barbarella],
   source-name: [Ain't It Cool News],
@@ -620,7 +596,7 @@ Photo credit: Justin Lubin
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [You can save nearly \$100 on the powerful AMD Ryzen 7 9700X in the Amazon Spring Sale],
   author: [Reece Bithrey],
   source-name: [Rock Paper Shotgun],
@@ -640,7 +616,7 @@ Photo credit: Justin Lubin
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [I was the untitled goose in Big Walk, the balmy new open world co-op puzzler from House House],
   author: [Edwin Evans-Thirlwell],
   source-name: [Rock Paper Shotgun],
@@ -658,7 +634,7 @@ Photo credit: Justin Lubin
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [My go-to PC game controller is getting Spring sale price cuts - and so is its cheaper wired version],
   author: [James Archer],
   source-name: [Rock Paper Shotgun],
@@ -679,7 +655,7 @@ Photo credit: Justin Lubin
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [WHERE I GREW],
   author: [Kirkus Reviews],
   source-name: [Kirkus Reviews],
@@ -696,7 +672,7 @@ Photo credit: Justin Lubin
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [TRAUMATIKA Interview with filmmakers Pierre Tsigaridis and Maxime Rancon],
   author: [McEric],
   source-name: [Ain't It Cool News],
@@ -724,7 +700,7 @@ Photo credit: Justin Lubin
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [ON THE RECORD],
   author: [Kirkus Reviews],
   source-name: [Kirkus Reviews],
@@ -742,7 +718,7 @@ Photo credit: Justin Lubin
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Sunday Papers],
   author: [Mark Warren],
   source-name: [Rock Paper Shotgun],
@@ -763,7 +739,7 @@ Photo credit: Justin Lubin
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [TMR 24.9: “I Hate Thinking about Thinking about Myself Like This” \[Melvill\]],
   author: [Chad Post],
   source-name: [Three Percent (U of Rochester)],
@@ -784,7 +760,7 @@ Photo credit: Justin Lubin
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [SEE ONE, DO ONE, TEACH ONE],
   author: [Kirkus Reviews],
   source-name: [Kirkus Reviews],
@@ -805,7 +781,7 @@ Photo credit: Justin Lubin
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: ["A balancing paradigm I often look at is Starcraft": Total War: Medieval 3 won't lean too hard on rock-paper-scissors combat, says creative director],
   author: [Edwin Evans-Thirlwell],
   source-name: [Rock Paper Shotgun],
@@ -823,7 +799,7 @@ Photo credit: Justin Lubin
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Michael Steele: The King of Debt Is Blowing Up the U.S. Economy],
   author: [Tim Miller],
   source-name: [The Bulwark],
@@ -836,6 +812,7 @@ Photo credit: Justin Lubin
   [JVL's and Catherine's live show Friday on the state of the economy],
   [Find your local "No Kings" protest],
   [Tim's playlist],
+  [Leave a comment],
   [As always: Watch, listen, hit the like button or leave a comment . We want to hear from you.],
   [Ad-free editions of The Bulwark Podcast are available exclusively for Bulwark+ members.],
   [The Bulwark Podcast with Tim Miller is available wherever you get podcasts and on YouTube. New shows drop each weekday afternoon. If you like the show, leave a comment and ⭐⭐⭐⭐ wherever you listen. Add The Bulwark Podcast to your player of choice, here .],
@@ -852,7 +829,7 @@ Photo credit: Justin Lubin
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [TMR 24.5: “Very Charming.” \[Confidence-Man\]],
   author: [Chad Post],
   source-name: [Three Percent (U of Rochester)],
@@ -875,7 +852,7 @@ Photo credit: Justin Lubin
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [If you ask Yoshi-P, kids don't care about Final Fantasy anymore because they're taking too long to come out],
   author: [Oisin Kuhnke],
   source-name: [Rock Paper Shotgun],
@@ -893,15 +870,14 @@ Photo credit: Justin Lubin
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [Following Epic Games' mass layoffs , a Fortnite producer has said that the devs left behind "cannot even fully understand" the sort of impact the job cuts will have on the game during this year and into the future.
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [Following Epic Games' mass layoffs , a Fortnite producer has said that the devs left behind "cannot even fully understand" the sort of impact the job cuts will have on the game during this year and into the future.
 
  Read more])],
-    [#brief-item([Jonathan V. Last], source-name: [The Bulwark], [JVL and Catherine Rampell on Trump’s economic messaging, falling consumer confidence, and rising recession fears driven by oil prices.
+  [#brief-item([Jonathan V. Last], source-name: [The Bulwark], [JVL and Catherine Rampell on Trump’s economic messaging, falling consumer confidence, and rising recession fears driven by oil prices.
 
-class="button-wrapper"\> Leave a comment 
+Leave a comment 
 
 As always: Watch, listen, and leave a comment. Bulwark+ Takes is home to short videos, livestreams, and event archives exclusively for Bulwark+ members.
 
@@ -909,16 +885,16 @@ Add Bulwark+ Takes feed to your player of choice, here .
 
  
  Read more])],
-    [#brief-item([Walden Green], source-name: [Pitchfork News], [The Depeche Mode and Erasure co-founder teamed up with Blancmange’s Neil Arthur and electronic producer Benge to perform songs by ABBA, the Magnetic Fields, and more])],
-    [#brief-item([Edwin Evans-Thirlwell], source-name: [Rock Paper Shotgun], [Teyon and Nacon have revealed Hunter: The Reckoning – Deathwish , a new "semi open world " first-person single-player RPG set in the World of Darkness table-top universe. Where stablemate series Vampire: The Masquerade is about a secret society of bloodsuckers, Hunter is about the humans who stalk and kill those bloodsuckers together with werewolves, ghouls and, well, anything remotely monstrous or supernatural.
+  [#brief-item([Walden Green], source-name: [Pitchfork News], [The Depeche Mode and Erasure co-founder teamed up with Blancmange’s Neil Arthur and electronic producer Benge to perform songs by ABBA, the Magnetic Fields, and more])],
+  [#brief-item([Edwin Evans-Thirlwell], source-name: [Rock Paper Shotgun], [Teyon and Nacon have revealed Hunter: The Reckoning – Deathwish , a new "semi open world " first-person single-player RPG set in the World of Darkness table-top universe. Where stablemate series Vampire: The Masquerade is about a secret society of bloodsuckers, Hunter is about the humans who stalk and kill those bloodsuckers together with werewolves, ghouls and, well, anything remotely monstrous or supernatural.
 
  Read more])],
-    [#brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [Huggghh-puuuhhhhh. Hughhhhh-puhhhh. If you've decided to try pedalling away in attempt to master Crimson Desert 's bike-like controls , Pearl Abyss' latest patch - which also brings the likes of camp storage quicker tree felling - is good news. The developers have also acknowledged the fact they forgot to mention prior to release that the game wouldn't run on Intel Arc GPUs , with support for those cards now in the works.
+  [#brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [Huggghh-puuuhhhhh. Hughhhhh-puhhhh. If you've decided to try pedalling away in attempt to master Crimson Desert 's bike-like controls , Pearl Abyss' latest patch - which also brings the likes of camp storage quicker tree felling - is good news. The developers have also acknowledged the fact they forgot to mention prior to release that the game wouldn't run on Intel Arc GPUs , with support for those cards now in the works.
 
  Read more])],
-    [#brief-item([Tim Miller], source-name: [The Bulwark], [Sam Stein and Tim Miller give their takes on the latest fiasco for FBI Director Kash Patel after Iran-linked hackers breached his email and released a trove of personal messages and photos. From embarrassing photos during a trip to Cuba to serious counterintelligence concerns, it’s another brutal moment for a guy already struggling to prove he’s up for the job.
+  [#brief-item([Tim Miller], source-name: [The Bulwark], [Sam Stein and Tim Miller give their takes on the latest fiasco for FBI Director Kash Patel after Iran-linked hackers breached his email and released a trove of personal messages and photos. From embarrassing photos during a trip to Cuba to serious counterintelligence concerns, it’s another brutal moment for a guy already struggling to prove he’s up for the job.
 
-class="button-wrapper"\> Leave a comment 
+Leave a comment 
 
 As always: Watch, listen, and leave a comment. Bulwark+ Takes is home to short videos, livestreams, and event archives exclusively for Bulwark+ members.
 
@@ -926,22 +902,21 @@ Add Bulwark+ Takes feed to your player of choice, here .
 
  
  Read more])],
-    [#brief-item([James Archer], source-name: [Rock Paper Shotgun], [The new Steam Machine remains an almost tragically distant prospect , despite Valve’s attempts at reassurance . But y’ know what the next best thing is? Not caring about hardware release dates, obviously. The second next best thing is to equip a Steam Deck with Ugreen’s handy 9-in-1 docking station, which is down from \$60 to \$40 in the Amazon US Spring Sale – and isn’t all that expensive in the UK either.
+  [#brief-item([James Archer], source-name: [Rock Paper Shotgun], [The new Steam Machine remains an almost tragically distant prospect , despite Valve’s attempts at reassurance . But y’ know what the next best thing is? Not caring about hardware release dates, obviously. The second next best thing is to equip a Steam Deck with Ugreen’s handy 9-in-1 docking station, which is down from \$60 to \$40 in the Amazon US Spring Sale – and isn’t all that expensive in the UK either.
 
  Read more])],
-    [#brief-item([Oisin Kuhnke], source-name: [Rock Paper Shotgun], [Vampires! They don't just survive now, but crawl too, as evidenced by poncle's follow-up to their tight and already quite influential bullet heaven Vampire Survivors , Vampire Crawlers: The Turbo Wildcard from Vampire Survivors . Which now, as shared in an on brand, irreverently silly trailer, has a release date!
+  [#brief-item([Oisin Kuhnke], source-name: [Rock Paper Shotgun], [Vampires! They don't just survive now, but crawl too, as evidenced by poncle's follow-up to their tight and already quite influential bullet heaven Vampire Survivors , Vampire Crawlers: The Turbo Wildcard from Vampire Survivors . Which now, as shared in an on brand, irreverently silly trailer, has a release date!
 
  Read more])],
-    [#brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [Players and developers should boycott Nvidia's AI-stuffed DLSS 5 tech , with hopes that it'll force the compny to "think about going back to giving us what we want". That's the appeal being made by Dave Oshry, CEO of indie studio New Blood Interactive, who's been asked for his take on the neural rendering gubbins Nvidia exec Jensen Huang's recently been adopting a multitude of tones as he's tried to convince critis that they've just got it all wrong.
+  [#brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [Players and developers should boycott Nvidia's AI-stuffed DLSS 5 tech , with hopes that it'll force the compny to "think about going back to giving us what we want". That's the appeal being made by Dave Oshry, CEO of indie studio New Blood Interactive, who's been asked for his take on the neural rendering gubbins Nvidia exec Jensen Huang's recently been adopting a multitude of tones as he's tried to convince critis that they've just got it all wrong.
 
  Read more])],
-    [#brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [Crimson Desert 's controls aren't a pain in the bum. You just need to get used to them. You also need to get used to not being able to run the game if you've got an Intel Arc graphics card. You instead need to get used to asking for a refund on this game you can't run. These are all things Pearl Abyss have said about their huge MMO-ish RPG today, March 20th.
+  [#brief-item([Mark Warren], source-name: [Rock Paper Shotgun], [Crimson Desert 's controls aren't a pain in the bum. You just need to get used to them. You also need to get used to not being able to run the game if you've got an Intel Arc graphics card. You instead need to get used to asking for a refund on this game you can't run. These are all things Pearl Abyss have said about their huge MMO-ish RPG today, March 20th.
 
  Read more])],
-    [#brief-item([Oisin Kuhnke], source-name: [Rock Paper Shotgun], [The appearance of AI in art is nothing new, hell, Mr. Movies himself Steven Spielberg literally made A. I. Artificial Intelligence near the start of the millenia. But that was the Cool AI, where robots could be people, too, if we let them. Now what we have is the Donkey Bollocks AI that produces garbage facsimiles of things we know and actually like. But that doesn't mean it's not worth considering AI, and I really need you to bear with me here, within our art, as that's exactly what the team behind Pragmata did (without touching the stuff).
+  [#brief-item([Oisin Kuhnke], source-name: [Rock Paper Shotgun], [The appearance of AI in art is nothing new, hell, Mr. Movies himself Steven Spielberg literally made A. I. Artificial Intelligence near the start of the millenia. But that was the Cool AI, where robots could be people, too, if we let them. Now what we have is the Donkey Bollocks AI that produces garbage facsimiles of things we know and actually like. But that doesn't mean it's not worth considering AI, and I really need you to bear with me here, within our art, as that's exactly what the team behind Pragmata did (without touching the stuff).
 
  Read more])],
-  ))
-}
+))
 
 #colophon([The Clear Standard], [Vol. 1, No. 009], [2026-03-30])

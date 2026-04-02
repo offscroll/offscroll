@@ -79,6 +79,12 @@ BRIEF_MAX_WORDS = 100
 # PNG extraction DPI
 PAGE_DPI = 150
 
+# Image download settings
+IMAGE_DOWNLOAD_TIMEOUT = 10.0
+IMAGE_MAX_BYTES = 5 * 1024 * 1024  # 5 MB
+IMAGE_MIN_DIMENSION = 200  # px — skip tiny icons
+SUPPORTED_IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp", ".gif"}
+
 # Regex to strip residual HTML tags from content
 _HTML_TAG_RE = re.compile(r"<[^>]+>")
 _MULTI_SPACE_RE = re.compile(r"[ \t]+")
@@ -97,6 +103,86 @@ def _clean_text(text: str) -> str:
     # Strip HTML entity leftovers
     text = html_module.unescape(text)
     return text.strip()
+
+
+# ---------------------------------------------------------------------------
+# Image downloading helpers
+# ---------------------------------------------------------------------------
+
+def _url_to_filename(url: str, idx: int) -> str:
+    """Convert an image URL to a safe local filename."""
+    digest = hashlib.sha1(url.encode()).hexdigest()[:12]
+    ext = Path(url.split("?")[0]).suffix.lower()
+    if ext not in SUPPORTED_IMAGE_EXTENSIONS:
+        ext = ".jpg"
+    return f"img-{idx:02d}-{digest}{ext}"
+
+
+def download_image(url: str, dest: Path, item_idx: int) -> str | None:
+    """Download one image URL to dest directory. Returns local_path or None.
+
+    Enforces size and timeout limits. Returns the absolute path to the
+    saved file, or None if the download failed or the image is too small.
+    """
+    if not url:
+        return None
+    try:
+        with httpx.stream(
+            "GET", url,
+            timeout=IMAGE_DOWNLOAD_TIMEOUT,
+            follow_redirects=True,
+            headers={"User-Agent": "OffScroll/1.0 (training data collection)"},
+        ) as resp:
+            if resp.status_code != 200:
+                return None
+            content_type = resp.headers.get("content-type", "")
+            if not content_type.startswith("image/"):
+                return None
+            data = b""
+            for chunk in resp.iter_bytes(chunk_size=65536):
+                data += chunk
+                if len(data) > IMAGE_MAX_BYTES:
+                    return None
+    except Exception:
+        return None
+
+    if not data:
+        return None
+
+    # Basic dimension check via magic bytes (JPEG/PNG/GIF/WebP)
+    # We don't import Pillow — just skip tiny files by byte size heuristic
+    if len(data) < 2048:  # Under 2 KB is likely an icon
+        return None
+
+    filename = _url_to_filename(url, item_idx)
+    dest_path = dest / filename
+    dest_path.write_bytes(data)
+    return str(dest_path)
+
+
+def download_item_images(
+    item: dict,
+    images_dir: Path,
+    item_idx: int,
+    max_images: int = 2,
+) -> list[dict]:
+    """Download images for one feed item. Returns list of {local_path, caption} dicts."""
+    raw_images = item.get("images", [])
+    if not raw_images:
+        return []
+
+    images_dir.mkdir(parents=True, exist_ok=True)
+    result = []
+    for img_info in raw_images[:max_images]:
+        url = img_info.get("url", "")
+        if not url:
+            continue
+        local_path = download_image(url, images_dir, item_idx)
+        if local_path:
+            caption = _clean_text(img_info.get("alt_text", "") or "")
+            result.append({"local_path": local_path, "caption": caption})
+
+    return result
 
 
 # ---------------------------------------------------------------------------
@@ -176,6 +262,7 @@ def build_edition(
     items: list[dict],
     config_id: str,
     rng: random.Random,
+    images_dir: Path | None = None,
 ) -> CuratedEdition | None:
     """Build a CuratedEdition from fetched items with random ordering."""
     if len(items) < 5:
@@ -204,13 +291,26 @@ def build_edition(
         else:
             hint = LayoutHint.STANDARD
 
+        # Download images if an images directory is provided and the item
+        # has images in its feed data. Limit to non-brief items only.
+        item_images: list[CuratedImage] = []
+        if images_dir is not None and hint != LayoutHint.BRIEF:
+            max_imgs = 4 if hint == LayoutHint.FEATURE else 2
+            downloaded = download_item_images(
+                item, images_dir, len(curated_items), max_images=max_imgs
+            )
+            item_images = [
+                CuratedImage(local_path=d["local_path"], caption=d["caption"])
+                for d in downloaded
+            ]
+
         ci = CuratedItem(
             item_id=item["item_id"],
             display_text=item["content_text"],
             author=item["author"],
             source_name=item["feed_name"],
             title=item.get("title"),
-            images=[],  # No downloaded images for training
+            images=item_images,
             layout_hint=hint,
             word_count=wc,
         )
@@ -476,17 +576,30 @@ def process_one_config(
         # Build edition with deterministic seed per config for reproducibility
         seed = int(hashlib.md5(config_id.encode()).hexdigest()[:8], 16)
         rng = random.Random(seed)
-        edition = build_edition(config, items, config_id, rng)
+
+        # Download images if enabled in config
+        edition_dir = EDITIONS_DIR / config_id
+        edition_dir.mkdir(parents=True, exist_ok=True)
+        download_images_flag = config.get("ingestion", {}).get("download_images", False)
+        images_dir = (edition_dir / "images") if download_images_flag else None
+        if download_images_flag:
+            logger.info("[%s] Image download enabled; will download to %s", config_id, images_dir)
+
+        edition = build_edition(config, items, config_id, rng, images_dir=images_dir)
         if edition is None:
             result["error"] = "Failed to build edition"
             return result
 
         total_items = sum(len(s.items) for s in edition.sections)
         result["num_items_used"] = total_items
-
-        # Render
-        edition_dir = EDITIONS_DIR / config_id
-        edition_dir.mkdir(parents=True, exist_ok=True)
+        total_images = sum(
+            len(item.images)
+            for section in edition.sections
+            for item in section.items
+            if hasattr(item, "images")
+        )
+        if total_images:
+            logger.info("[%s] Downloaded %d images total", config_id, total_images)
 
         # Override output data_dir to our training directory
         render_config = dict(config)

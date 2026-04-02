@@ -21,455 +21,8 @@
 #masthead([The Urban Monitor], [Vol. 1, No. 087], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Automatic Object Linkage, with Include Graphs],
-  kicker: [Cover Story],
-  author: [Thomas Young (upcoder)],
-  source-name: [Thomas Young (upcoder)],
-  deck: [In this post I describe an alternative approach to
-sharing source code elements between multiple build targets.],
-  lead-pre: [],
-  lead-cap: [I],
-  lead-rest: [t's based on a custom build process I implemented at PathEngine
-for our C and C++ code-base
-(but the core ideas could also be relevant to other languages with compilation to object files).],
-  body-paragraphs: (
-  [We'll need to enforce some constraints on the way the source code is set up,
-notably with regards to header file organisation,
-but can then automatically determine what to include in the link operation for each build target,
-based on a graph of include relationships extracted from the source files.],
-  [The resulting dynamic, fine grained, object-file centric approach to 
-code sharing avoids the need for 
-problematic static library decomposition,
-and the associated 'false dependencies'.],
-  [id="motivation"\>Motivation],
-  [We need to work with a bunch of different build targets, at PathEngine.
-There's a run-time pathfinding dll, for example, but also a 3D content processing dll, a 3D testbed application, and so on,
-with a lot of source code shared between these different targets.],
-  [The code was originally split into a set of (internal) static libraries, for this purpose.
-based on things like theme (e.g. 'Geometry.lib')
-or application layer ('PathEngine\_Core.lib', 'PathEngine\_Interface.lib').
-Different targets could then share common source code by sharing these static libraries.],
-  [This worked, as far as it goes, but something didn't feel right.],
-  [The libraries weren't particularly modular, for one thing,
-and just felt like big old bags of object files
-that didn't really reflect the actual structure of the underlying code.],
-  [A bigger problem was that, for any kind of prototyping work,
-I ended up having to link in a big chunk of the PathEngine source code,
-even where only some small part of this was really required.
-Unit testing was also difficult to setup, for a similar reason.],
-  [Since throwing out the static libraries and switching to an alternative approach (as described in this post),
-prototyping and unit testing tasks are a pleasure, with minimal dependencies and short turnaround times,
-and project setup is more dynamic and does a much better job of reflecting actual code structure.],
-  [id="code-sharing"\>Code sharing],
-  [In this previous post , I argued against splitting large projects into static libraries.],
-  [The key points in that post were:],
-  [static libraries are little more than archived collections of object files],
-  [linking object files into static libraries doesn't hide much information, or enforce modularity],
-  [grouping objects into static libraries adds 'false dependencies', in that linking with one of the objects then requires the whole library],
-  [I ended up glossing over an important point in that post, though, I think.],
-  [The thing is, static libraries serve another, more basic, purpose,
-in providing a way to compile some set of source files just once and then share the result between multiple projects.],
-  [Regardless of the problems with static libraries, a lot of people still need to use them, if just for this reason.],
-  [This post describes another way to share code between build targets, then,
-without the false dependency problem associated with static library groupings.],
-  [id="disclaimer-some-idealism-here-potentially-difficult-to-apply-in-practice"\>Disclaimer: some idealism here, potentially difficult to apply in practice],
-  [Personally, I'd like to see the approach described here supported by all of the major C++ build tools and IDEs,
-but this is not the current reality.],
-  [A lot of existing build tools and IDEs seem to be built fundamentally around static library decomposition as the
-basic tool for sharing objects,
-this is unlikely to change any time soon.],
-  [Switching to the new approach at PathEngine required source code changes throughout the code base,
-and the implementation of a custom build system,
-and you have to be something of an idealist to take this path,
-or at least ready to forgo some of the comforts and benefits of mainstream IDEs.],
-  [id="starting-with-a-single-project"\>Starting with a single project],
-  [The whole thing really only makes sense where code is shared between multiple projects,
-but, for simplicity, we'll begin by looking at a single, simple project
-(an imaginary game application)
-before extending this to add some additional targets.],
-  [We'll start by looking at how compilation dependencies are automated in existing build systems, and then
-think about how this can be extended, based on certain constraints,
-to linker dependencies as well.],
-  [id="compilation-dependencies"\>Compilation dependencies],
-  [If I make a change to one of the files in a project, and then rebuild, I don't want to wait while all source files in the project get recompiled.
-The build system should know something about the set of compiled objects potentially affected by the change, and recompile only those objects.],
-  [Let's think about how this works.],
-  [Consider some source files that make up our game application:],
-  [I've added black arrows for each header file included directly by 'game\_main.cpp',
-and then green arrows for other headers brought in by those headers.
-Taken together, I'll call this the 'include graph' for this source file.],
-  [(For clarity, I'll use the term 'source file', in this post, to refer specifically to files like 'game\_main.cpp' that get compiled into objects,
-and just plain 'file' if I want to include 'source files' and headers.)],
-  [If any file reachable through the include graph for 'game\_main.cpp' gets modified, 'game\_main.obj' may be out of date, and should be recompiled.],
-  [Files not reachable through this graph (such as 'graphics\_util.cpp') have no effect on the compilation of 'game\_main.cpp',
-and these other files can be changed without
-'game\_main.cpp' needing to be recompiled.],
-  [Include graph generation is probably taken care of transparently behind the scenes, by your IDE,
-but there are tools for extracting this information,
-and this is something we'll come back and look at in more detail, later on.],
-  [id="linker-dependencies"\>Linker dependencies],
-  [What about when we come to link the object files together into a final executable?
-How does the build system know which object files are required by the link operation?],
-  [For our imaginary game application the answer is pretty simple.
-The source files are there for a reason, they're presumably all needed,
-and should all be compiled and linked in to the final executable.],
-  [(This is how IDEs tend to work, btw.)],
-  [But what if these source files were mixed in with a bunch of other source files.
-Is there some way to automatically determine a set of objects to link?],
-  [id="inferring-link-requirements-from-included-headers"\>Inferring link requirements from included headers],
-  [Consider one of our headers, 'draw\_player.h'. This might look something like the following:],
-  [class IRenderer ; 
- class CPlayerState ;],
-  [void DrawPlayer ( const IRenderer & render , const CPlayerState & playerState );],
-  [This header tells the compiler how DrawPlayer() should be called,
-with the actual implementation of DrawPlayer() (hopefully) provided in 'draw\_player.cpp'.],
-  [The information in the header is sufficient for the compiler to generate calling code (setting up the stack set with relevant parameters and making the call),
-but the actual compiled code for the implementation of function, and the location of the call target, will need to be resolved at link time, by linking with 'draw\_player.obj'.],
-  [The same is true for headers with class method declarations, as in the following:],
-  [class CPlayerState 
- { 
- \/\/... load of private stuff],
-  [public :],
-  [CPlayerState ( const char \* name );],
-  [int GetHealth () const ;],
-  [\/\/... load of other stuff 
- }],
-  [Again, both the constructor and the GetHealth() method shown here need to be implemented in 'player\_state.cpp',
-and resolved at link time by linking with 'player\_state.obj'.],
-  [In each case there's a matched pair of files with one header and one source file
-('draw\_player.h'/'draw\_player.cpp', 'player\_state.h'/'player\_state.cpp'),
-and using stuff in the header creates a link dependency on the corresponding cpp file.],
-  [If you look at other C++ features, such as static class data members, you'll see that this works exactly the same way,
-and, the way I see it, this is really just the way headers are supposed to be used , in C and C++.],
-  [Taking one step back, to use stuff in the header you have to include that header.
-Also, source files should ideally only include headers that they actually use .],
-  [So what we're going to do is, wherever a header has a matching source file,
-and something includes the header, infer 
-a linkage requirement to that source file.],
-  [We'll come back and look at the implications of this later on, but first let's see what this buys us.],
-  [id="adding-linkage-requirements-to-the-dependencies-graph"\>Adding linkage requirements to the dependencies graph],
-  [Adding our new, inferred, linkage requirements in to the dependency graph for 'game\_main.cpp' gives us the following:],
-  [The idea here is that all the cpp files reachable through this graph are required in order to satisfy potential link
-requirements in 'game\_main.cpp'.],
-  [id="and-again-recursively"\>And again, recursively..],
-  [Linking with this set of objects is not sufficient, however.
-Each object brought in to the link has its own dependencies to be satisfied, as well.],
-  [To satisfy all the link dependencies for our project, we have to generate include graphs for each new object, recursively,
-expanding our linkage dependency graph as we go.],
-  [We could expand 'world\_update.cpp' next, for example, with the expansion looking like this:],
-  [As before, black arrows and green arrows indicate the include graph for the object being expanded, and red arrows show inferred linkage.
-I've added yellow arrows to show the linkage dependency graph built up so far.],
-  [Some of the dependencies of 'world\_update.cpp' are already in our linkage graph, and no further action is required for these source files, but 'enemy\_ai.cpp' is new, and we'll add this.],
-  [I won't show all of the source file expansions, but if we continue expanding new source files
-we'll eventually satisfy all linkage requirements, at which point we have a complete set of source files
-to compile and link into an application.],
-  [In our case the last required source file, 'graphics\_util.cpp' gets added (for example) when expanding the subgraph for 'draw\_player.cpp':],
-  [id="what-does-this-give-us"\>What does this give us?],
-  [This may seem like a lot of messing around for our simple game application,
-where linkage requirements are obvious,
-but starts to make more sense if we add some additional targets.],
-  [Let's make this into a networked game, then.
-We'll split the code into two applications, one for the game server, and another for the game client.],
-  [Each application is defined by a single root source file,
-and expanding linkage requirements our from root source files gives us
-the set of source files actually needed to satisfy linkage requirements for each application.],
-  [For the server, this works out as follows:],
-  [For simplicity, I've removed the 'base\_types' header (which doesn't actually have any effect on linkage requirements), and combined source/header pairs into single nodes
-(effectively collapsing those red arrows).],
-  [A new source file, 'networking.cpp', is used to pass serialised information about world state over the network.
-The server just updates the world, and runs the enemy AI, but doesn't handle player input or rendering.],
-  [The linkage dependencies for our client application are generated from the same source tree, and look like this:],
-  [The first advantage of the PathEngine build system, then, is automatic generation of 
-the set of objects to link for each build target.],
-  [This avoids work setting up and maintaining 
-lists of objects in application projects and shared libraries, and dependencies between those projects.],
-  [Eliminating manual project configuration elements
-eliminates the possibility of human error in the way these project configuration elements are setup.],
-  [Automated dependencies also 
-makes the source code more dynamic and easier to refactor,
-since we can change relationships between source code elements directly in 
-the source code, without worrying about the need to wrestle with project setup
-(even for changes with significant implications for dependencies).],
-  [That's all good stuff, but there are other advantages of this set up, 
-which brings us to the second key feature of the PathEngine custom build system, object sharing.],
-  [id="shared-object-files"\>Shared object files],
-  [We can see from the diagrams above that some of the objects ('networking.cpp', 'player\_state.cpp' and 'world\_state.cpp')
-are used by both server and client.],
-  [With our custom build system, the corresponding object files ('networking.obj', 'player\_state.obj' and 'world\_state.obj') are then shared by the two applications.
-If I build the server, and then the client, these object files are generated only once, and then get reused.],
-  [There are some implications of this setup.
-You can't set different compiler settings for a given source file for different targets,
-and this means you can't use constructs like the following:],
-  [\#ifdef BUILDING\_CLIENT 
- \/\/... some logic 
- \#endif],
-  [\#ifdef BUILDING\_SERVER 
- \/\/... some other logic 
- \#endif],
-  [This is the same situation as for objects in a static library, however,
-and you can kind of think of each object file as being its own mini static library.],
-  [In practice I prefer to avoid this kind of construct.
-I think source files that 'compile only one way' are easier to understand,
-and in return we get the significant benefit
-(as with code sharing through static libraries)
-of avoiding recompilation, hence faster build times.],
-  [id="unit-tests"\>Unit tests],
-  [I mentioned unit testing as one of the benefits of the new approach.
-Lets see how this looks for our game source code.],
-  [Well, each unit test is essentially just another 'root source file'
-for which a set of linker dependencies can be determined.],
-  [id="isolating-individual-unit-tests"\>Isolating individual unit tests],
-  [When the source file under test is mostly independent from other source files, we get a nice minimal set of objects to build:],
-  [Being able to build and run just a single test, with low turnaround times,
-is great for iterating on initial test set up, when adding regression, and when debugging the test to fix a complicated issue,
-and it's great to be able to run individual unit tests when other bits of source code are broken for some reason.],
-  [A minimal working set, with less code linked into a test binary, also means less chance of side effects from other code and less mental load, with less things
-potentially needing to be considered.],
-  [id="grouping-unit-test-together"\>Grouping unit test together],
-  [A lot of the time you probably just want to verify that the tests all still pass, and building an individual exe for each unit test would then be overkill.],
-  [The trick, in this case, is to start the dependency analysis with more than one root source file
-and build multiple tests into a single executable.],
-  [The PathEngine build system does this for sets of tests matching a regular expression, omitting tests which have already passed and are unaffected by source code changes,
-(but full details about how to set this up are beyond the scope of this blog post).],
-  [id="higher-level-testing"\>Higher level testing],
-  [We can apply the same principle, also, to less 'independent' source files, and end up with a kind of mid-level test:],
-  [id="working-with-the-same-compiled-result"\>Working with the same compiled result],
-  [In each of these testing use-cases, compiled objects are shared with the main application, and
-we're testing exactly the same compiled code as gets linked into our production application.],
-  [This avoids situations, notably, where an issue is caused by a compiler bug, or only repeats when code is compiled a certain way,
-but doesn't repeat when the code is compiled differently for testing.],
-  [id="source-file-organisation-is-often-orthogonal-to-dependency"\>Source file organisation is often orthogonal to dependency],
-  [When I set up static libs for PathEngine based on theme or application layer,
-this turned out to be a bad way to manage dependencies, but that doesn't mean that these are inherently bad ways to organise source code .],
-  [Let's take one more look at our networked game source code:],
-  [id="grouping-by-layer"\>Grouping by layer],
-  [A couple of source files are different in that they don't know anything about the specific application domain of our game, 
-and I'm going to call this group of files 'the platform layer'.
-These files can go in a separate, suitably named, top-level directory from the rest of the source code.],
-  [I'd also like to add a constraint that code in the platform layer should never include or call into lower 'application' layers.],
-  [This seems like it can be a useful way to group source files, but that doesn't mean that the code should also be clumped together
-into a single dependency unit. Forcing the game server to link with 'graphics\_util.h' certainly seems like a bad idea.
-(Maybe this adds a dependency on DirectX, and the relevant runtime is not installed on the server machine..)],
-  [id="grouping-by-theme"\>Grouping by theme],
-  [Another two files both share the common feature of drawing something .
-Grouping these files into the same 'Rendering' subdirectory also seems
-like a good idea.],
-  [We may turn out to need other things rendered, and so other similarly themed source files are likely to get added, as our application grows.
-It will be nice to able to locate these files quickly, and to get an idea about what kinds of different things our source code is currently able to render,
-but there's no reason to think that code that wants to draw one thing (e.g. the player) will always also want to draw everything else.],
-  [Separating these source file groupings out from project dependency structure also has the effect of making the grouping more dynamic.
-If one of these groupings turns out not to make so much sense later on, it's great to be able to change these groupings
-without subsequently wrestling with dependency implications to make everything work once again.],
-  [id="inferring-link-requirements-what-could-go-wrong"\>Inferring link requirements, what could go wrong?],
-  [I've hopefully shown, at this point, that automatic object linkage is nice to have , 
-but our implementation of this is based on some assumptions about the source code.],
-  [Specifically, we're assuming that source files and headers are always set up as matching pairs,
-that code does not 'bypass' headers and declare linkage directly,
-that headers actually do contain elements that require linkage to the corresponding source file,
-and that source code that includes the headers actually does use these elements from the headers.],
-  [None of this is guaranteed by the standard.
-What could go wrong?],
-  [Well, just two things, essentially:],
-  [Linking not enough objects],
-  [Linking too many objects],
-  [id="bypassing-a-header"\>Bypassing a header],
-  [Instead of including 'draw\_player.h', someone might do the following:],
-  [void DrawPlayer ( const IRenderer & render , const CPlayerState & playerState );],
-  [int main ( int argc , char \* argv \[\]) 
- { 
- \/\/... set up renderer 
- \/\/... set up world and player state],
-  [\/\/... other stuff],
-  [DrawPlayer ( renderer , playerState );],
-  [\/\/... other stuff 
- }],
-  [What happens?],
-  [Nothing includes "draw\_player.h", we fail to detect the linkage requirement, "draw\_player.cpp" is not compiled or linked in, and we get a link error as follows:],
-  [game\_main.obj : error LNK2019: unresolved external symbol "void \_\_cdecl DrawPlayer(class IRenderer const &,class CPlayerState const &)" (? DrawPlayer\@\@YAXAEBVIRenderer\@\@AEBVCPlayerState\@\@\@Z) referenced in function main],
-  [Well, first of all, I don't want anyone to write code like this.
-There's a reason for the header. Bypassing the header makes the code brittle with respect to changes to the DrawPlayer() function signature,
-but also makes it harder to identify code that uses rendering functions (by searching for include lines),
-and this is a code quality issue that I'm happy to see identified by an error.],
-  [But the point is,
-even with code like this,
-the result is far from catastrophic.
-It's the same error as if you forget to add a new cpp file to a Visual Studio project, with standard project, but less likely to happen,
-and with the same kind of direct line back from error to cause.],
-  [id="global-linkage-requirements"\>Global linkage requirements],
-  [Another way we might miss linkage requirements is due to the kind of 'global' linkage requirement implied by something like the following:],
-  [extern "C" 
- { 
- int PathEngine\_HandleAssertion ( const char \* , int32\_t , const char \* ); 
- }],
-  [\#define assertR(expr) do{static int on = true;if(on && !(expr)) on = PathEngine\_HandleAssertion(\_\_FILE\_\_,\_\_LINE\_\_,\#expr);}while(0)],
-  [\#ifdef ASSERTIONS\_ON 
- \#define assertD(expr) assertR(expr) 
- \#else 
- \#define assertD(expr) do{}while(0) 
- \#endif],
-  [In this case, there is no single corresponding "Assert.cpp".
-Instead, different types of application are expected to provide suitable implementations of PathEngine\_HandleAssertion(),
-depending on the desired behaviour.
-(In some cases a message box should pop up. In others, assertions should be printed to console output, or logged.
-Sometimes it should be possible to turn assertions off, and so on.)],
-  [But what if I want to share common assertion handling strategies between applications?],
-  [I can set up a source file "MessageBoxAssert.cpp", for example, but no header is required for this
-(with PathEngine\_HandleAssertion already declared in "Assert.h").
-Because there is no matching header pair, nothing tells the build system that this source file needs to be compiled, or that "MessageBoxAssert.obj"
-needs to be included in the link.],
-  [There are perhaps better ways to handle this kind of situation, but what we do currently in PathEngine,
-is go ahead and add an empty "MessageBoxAssert.h", anyway.
-This (empty) header file can be included from the relevant application root source file just to indicate
-that linkage to "MessageBoxAssert.cpp" is desired.],
-  [id="linking-objects-that-arent-required"\>Linking objects that aren't required],
-  [Consider the following class:],
-  [class CSerialiser ;],
-  [class CPosition 
- { 
- int x ; 
- int y ; 
- public : 
- CPosition ( int x , int y ) : 
- x ( x ), y ( y ) 
- { 
- }],
-  [int getX () const 
- { 
- return x ; 
- } 
- int getY () const 
- { 
- return y ; 
- }],
-  [void translateBy ( int dx , int dy ) 
- { 
- x += dx ; 
- y += dy ; 
- }],
-  [void serialise ( CSerialiser & s ) const ; 
- };],
-  [Not a hugely useful class, but the point is that nearly everything here is implemented inline in the class header.],
-  [There is a matching "position.cpp", however, containing just the definition of CPosition::serialise().],
-  [Perhaps I have some code that needs to do some stuff with positions,
-but doesn't need to serialise them.],
-  [Due to the way we infer linkage dependencies, "position.cpp" will get pulled in to the link,
-as well as "serialiser.cpp" (and probably whole a bunch of other stuff) even if none of this is actually used.],
-  [Note that I haven't seen this issue in PathEngine, in practice , and this is really just
-a theoretical objection to inferring linkage requirements the way we do.],
-  [I guess the point is that, although the method we are using for inferring linkage dependencies is more fine grained than
-and relationships between static libraries, in some cases it may not be fine grained enough.],
-  [And I guess the answer is then that, sure, the approach is not perfect
-but it's nevertheless
-a significant improvement on what we had before,
-and also turns out to be a good fit for a bunch of situations, in practice.],
-  [Perhaps it's possible to go further and analyse each source file to determine whether there actually are declarations
-brought in from headers, without associated definitions, but that would be a big increase in complexity, and I don't think this is necessary.],
-  [It's probably better to change the code in some way, so that the relevant dependency is explicit in the source code include relationships.],
-  [For this position class, one possibility would be to pull the serialisation operation out of the class and express this in terms of externally visible methods,
-and another would be to hide the implementation details of the serialiser behind a virtual interface.],
-  [Setting up a tool to answer queries about why specific objects are included in a link operation,
-by reporting the relevant linkage chain,
-can help a lot with this.],
-  [id="extracting-includes-from-source-files"\>Extracting includes from source files],
-  [Let's come back and take a look, finally, at the process of extracting the relevant include graph information from our source files.],
-  [The simplest way to do this, these days, is probably just to use a compiler option that tells your compiler to do this.],
-  [In the case of gcc (and clang) you can use the -M (or -MM) compiler option (see this page, in the docs ).
-For the Microsoft Visual C++ compiler there's /showIncludes .],
-  [Using the compiler to do this makes sense
-because the process of extracting includes is a subset of the compile task itself.],
-  [Notably, for each source file analysed in this way, each included header needs to be loaded in from disk, and examined in the specific preprocessor
-context at that point in the compile.],
-  [And this means that, when iterating over the set of all source files, certain commonly included headers may end up being loaded and examined many times over.],
-  [To illustrate exactly why this is necessary, consider the following (made up) example:],
-  [\#include "base\_stuff.h" 
- \#ifdef MESSAGE\_BOXES 
- \#include "message\_box\_errors.h" 
- \#else 
- \#include "console\_errors.h" 
- \#endif],
-  [\/\/.. bunch of other stuff],
-  [This potentially results in a different set of includes, depending on the state of the REPORT\_ERRORS define,
-which may be different for different source files, depending or how it is set in the source file itself,
-and whether it was set or unset by previously included header files.],
-  [If it wasn't possible for preprocessor conditionals to affect include directives, we could analyse each header individually,
-and re-use the results wherever the header is included.],
-  [But these kinds of preprocessor conditionals are also pretty confusing, in my opinion, and make the code harder to work with.],
-  [What we do in PathEngine, then, is straight-out disallow conditional compilation around include directives.
-The mechanism for this is pretty straightforward.
-Include directives are only allowed right at the top of each header, with no other preprocessor statements allowed before or between the include directives.],
-  [This might seem like quite a significant source code constraint.
-Conditional include directives sometimes seem like they are indispensable,
-particularly when you are building for a lot of different platforms.],
-  [In my experience, however, we don't have to set things up this way.
-Preprocessor conditionals like this should usually be set consistently across builds, and can then be replaced by
-the alternative mechanism of include directory search order:],
-  [\#include "base\_stuff.h" 
- \/\\/ the following might include either 
- \/\\/ "message\_box/errors.h" 
- \/\\/ or 
- \/\\/ "console/errors.h" 
- \/\\/ depending on include directory search order 
- \#include "errors.h" 
- \#endif],
-  [With this constraint in place, the resulting 'per header' approach to includes analysis gives us two very significant speedups:],
-  [Each header is loaded and processed only once, so fewer files are loaded and processed in total (potentially a change from O(n^2) to O(n), I think, depending on include graph branching factor).],
-  [After one header is edited, only that header needs to be re-processed, and no others (as opposed to all dependent files).],
-  [id="interacting-with-ides"\>Interacting with IDEs],
-  [For PathEngine, switching to the approach I have described meant
-implementing a custom build system,
-but that doesn't mean we have to go right back to the stone age,
-or implement our own IDE from scratch.],
-  [There are a couple of ways our custom build system can interact with modern IDEs.],
-  [id="external-build-projects"\>External build projects],
-  [Most IDEs offer some kind of 'external build' project setup where you can specify an arbitrary build command, and have build output directed into
-the standard build output window.],
-  [It's usually straightforward from there to set up filtering for errors, so that 'go to next error' functionality can be used,
-and to run and debug your build result.],
-  [After that this approach can offer a lot of the benefits of the custom build system, such as object file sharing, implicit build targets,
-and unit testing, but at the expensive of features like intellisense, which depend on the IDE understanding exactly how to build your code.],
-  [(I've implemented a libClang based 'lookup reference' feature for an external project setup, and found that I can be quite productive with
-this kind of minimal 'intellisense', but it's a far cry from all the bells and whistles of a something like Visual Studio, and certainly not for everyone.)],
-  [id="generated-project-files"\>Generated project files],
-  [The second possibility is to make your build system spit out standard project files for individual targets, for your IDE, when required.],
-  [Actually, the main thing we want from the build system is the list of source files to be included for the relevant target,
-and project files can then generated from templates and filled out with these source files.],
-  [The project won't update dynamically to reflect changes to include relationships, but we can get pretty close
-by triggering a script to regenerate the projects manually, when necessary.
-(Visual Studio actually handles background changes to projects you are working on quite nicely. A message box
-pops up asking if you want to reload the projects, and the reload process all seems to be fairly robust.)],
-  [The benefit of this kind of setup is that you can take advantage of all those IDE bells and whistles
-(intellisense, detailed code highlighting, and so on).
-The disadvantages are that each project file generated in this way can only build one target, and object files are no longer shared between projects.],
-  [id="juggling-the-two-approaches"\>Juggling the two approaches],
-  [Between the two approaches it's possible to do pretty much everything you can do with a modern IDE.],
-  [Sometimes I'll switch between the two approaches depending on what platform I'm
-working on, and what exactly I want to do.
-If I'm prototyping or unit testing, I prefer to use external build projects
-(and the full power of our custom build system).
-If I'm working on a larger application, however, on Windows, a generated Visual Studio project can be a better way to go.],
-  [Juggling two types of project files is not ideal, however, and it would be great to combine the advantages of the
-two approaches into a single integrated setup.],
-  [id="summing-up"\>Summing up],
-  [With some assumptions about header organisation, we can infer the set of
-objects required to build an application from just one 'root' source file, and the include relationships implicit in the source code.],
-  [The result is a very dynamic approach to project management,
-which eliminates the need for a lot of manual project configuration,
-with shared object files, and finer grained dependencies than standard static library decomposition.],
-  [We had to add source code constraints to make this work
-but this works out well in practice
-and these are arguably good constraints to apply on your source code, anyway.],
-  [It's an idealistic approach to project setup, and tricky to reconcile with project configuration options in popular IDEs,
-but perhaps this is how IDEs should work in the future?],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [How to preload Rails scopes],
   author: [Justin Weiss],
   source-name: [Justin Weiss],
@@ -477,8 +30,6 @@ but perhaps this is how IDEs should work in the future?],
   paragraphs: (
   [This article is also available in Korean , thanks to Soonsang Hong!],
   [Rails’ scopes make it easy to find the records you want:],
-  [app/models/review.rb class Review { where ( "rating \> 3.0" ) } 
- end],
   [irb(main):001:0\> Restaurant . first . reviews . positive . count 
  Restaurant Load (0.4ms) SELECT \`restaurants\`.\* FROM \`restaurants\` ORDER BY \`restaurants\`.\`id\` ASC LIMIT 1
  (0.6ms) SELECT COUNT(\*) FROM \`reviews\` WHERE \`reviews\`.\`restaurant\_id\` = 1 AND (rating \> 3.0)
@@ -487,20 +38,13 @@ but perhaps this is how IDEs should work in the future?],
   [Why? You can’t really preload a scope. So if you tried to show a few restaurants with their positive reviews:],
   [irb(main):001:0\> restauraunts = Restaurant . first ( 5 )],
   [irb(main):002:0\> restauraunts . map do | restaurant |],
-  [irb(main):003:1\* " \#{ restaurant . name } : \#{ restaurant . reviews . positive . length } positive reviews."],
+  [irb(main):003:1\* " \#\{ restaurant . name \} : \#\{ restaurant . reviews . positive . length \} positive reviews."],
   [irb(main):004:1\> end],
-  [Review Load (0.6ms) SELECT \`reviews\`.\* FROM \`reviews\` WHERE \`reviews\`.\`restaurant\_id\` = 1 AND (rating \> 3.0)],
-  [Review Load (0.5ms) SELECT \`reviews\`.\* FROM \`reviews\` WHERE \`reviews\`.\`restaurant\_id\` = 2 AND (rating \> 3.0)],
-  [Review Load (0.7ms) SELECT \`reviews\`.\* FROM \`reviews\` WHERE \`reviews\`.\`restaurant\_id\` = 3 AND (rating \> 3.0)],
-  [Review Load (0.7ms) SELECT \`reviews\`.\* FROM \`reviews\` WHERE \`reviews\`.\`restaurant\_id\` = 4 AND (rating \> 3.0)],
-  [Review Load (0.7ms) SELECT \`reviews\`.\* FROM \`reviews\` WHERE \`reviews\`.\`restaurant\_id\` = 5 AND (rating \> 3.0)],
   [=\> \[ "Judd's Pub: 5 positive reviews." , "Felix's Nightclub: 6 positive reviews." , "Mabel's Burrito Shack: 7 positive reviews." , "Kendall's Burrito Shack: 2 positive reviews." , "Elisabeth's Deli: 15 positive reviews." \]],
   [Yep, that’s an N+1 query . The biggest cause of slow Rails apps.],
   [You can fix this pretty easily, though, if you think about the relationship in a different way.],
-  [id="convert-scopes-to-associations"\>Convert scopes to associations],
+  [Convert scopes to associations],
   [When you use the Rails association methods, like belongs\_to and has\_many , your model usually looks like this:],
-  [app/models/restaurant.rb class Restaurant { where ( "rating \> 3.0" ) }, class\_name: "Review" 
- end],
   [irb(main):001:0\> Restaurant . first . positive\_reviews . count 
  Restaurant Load (0.2ms) SELECT \`restaurants\`.\* FROM \`restaurants\` ORDER BY \`restaurants\`.\`id\` ASC LIMIT 1
  (0.4ms) SELECT COUNT(\*) FROM \`reviews\` WHERE \`reviews\`.\`restaurant\_id\` = 1 AND (rating \> 3.0)
@@ -510,19 +54,17 @@ but perhaps this is how IDEs should work in the future?],
  Restaurant Load (0.3ms) SELECT \`restaurants\`.\* FROM \`restaurants\` ORDER BY \`restaurants\`.\`id\` ASC LIMIT 5
  Review Load (1.2ms) SELECT \`reviews\`.\* FROM \`reviews\` WHERE (rating \> 3.0) AND \`reviews\`.\`restaurant\_id\` IN (1, 2, 3, 4, 5)
  irb(main):002:0\> restauraunts . map do | restaurant | 
- irb(main):003:1\* " \#{ restaurant . name } : \#{ restaurant . positive\_reviews . length } positive reviews." 
+ irb(main):003:1\* " \#\{ restaurant . name \} : \#\{ restaurant . positive\_reviews . length \} positive reviews." 
  irb(main):004:1\> end 
  =\> \[ "Judd's Pub: 5 positive reviews." , "Felix's Nightclub: 6 positive reviews." , "Mabel's Burrito Shack: 7 positive reviews." , "Kendall's Burrito Shack: 2 positive reviews." , "Elisabeth's Deli: 15 positive reviews." \]],
   [Instead of 6 SQL calls, we only did two.],
   [(Using class\_name , you can have multiple associations to the same object. This comes in handy pretty often.)],
-  [id="what-about-duplication"\>What about duplication?],
+  [What about duplication?],
   [There still might be a problem here. The where("rating \> 3.0") is now on your Restaurant class. If you later changed positive reviews to rating \> 3.5 , you’d have to update it twice!],
   [It gets worse: If you also wanted to grab all the positive reviews a person has ever left, you’d have to duplicate that scope over on the User class, too:],
-  [app/models/user.rb class User { where ( "rating \> 3.0" ) }, class\_name: "Review" 
- end],
   [It’s not very DRY .],
   [There’s an easy way around this, though. Inside of where , you can use the positive scope you added to the Review class:],
-  [app/models/restaurant.rb class Restaurant { positive }, class\_name: "Review" 
+  [app/models/restaurant.rb class Restaurant \{ positive \}, class\_name: "Review" 
  end],
   [That way, the idea of what makes a review a positive review is still only in one place.],
   [Scopes are great. In the right place, they can make querying your data easy and fun. But if you want to avoid N+1 queries, you have to be careful with them.],
@@ -534,10 +76,8 @@ but perhaps this is how IDEs should work in the future?],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Here’s how to live: Commit.],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -670,10 +210,8 @@ We made massive advances when we stopped moving, and committed to one place.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Here’s how to live: Reinvent yourself regularly.],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -760,10 +298,8 @@ We made massive advances when we stopped moving, and committed to one place.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Life is \_\_\_\_\_\_\_],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -851,10 +387,8 @@ Meanings are useful, not true.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Hegseth Makes Troops Prove “Sincerely Held” Faith in Latest Beard Crackdown],
   author: [Noah Hurowitz],
   source-name: [The Intercept],
@@ -867,6 +401,7 @@ Meanings are useful, not true.],
   [A Sikh advocacy group derided the new requirements as “completely unnecessary.”],
   [“Sikhs and other service members of faith already earned their accommodations, under policies and processes established under both the Obama and first Trump Administrations,” the Sikh Coalition said in a statement. “If there are accommodations that the Department of Defense feels are not sincere, they could have chosen to pursue those cases with a process that doesn’t force every single soldier, sailor, airman, guardian, and Marine with an accommodation through more paperwork and bureaucracy.”],
   [The Department of War did not respond to a request for comment.],
+  [Military Leaders See Iran War as “God’s Divine Plan” — a Chilling Turn for Trump’s Fascism],
   [Hegseth introduced the new guidelines as the military increasingly embraces overt Christianity and Christian nationalism , including an ideological turn on the Air Force Academy’s oversight board and the presentation of the war on Iran as part of “ God’s divine plan .”],
   [The changes come months after Hegseth declared war on “beardos” in a combative speech in September.],
   [“If you want a beard, you can join Special Forces. If not, then shave,” Hegseth said at the time.],
@@ -884,11 +419,10 @@ Meanings are useful, not true.],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The Bitter History of Chocolate],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -915,7 +449,7 @@ Carla Martin, lecturer in African and African American Studies at Harvard Univer
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Creeping Coup],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -937,7 +471,7 @@ Carla Martin, lecturer in African and African American Studies at Harvard Univer
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([Patrick McKenzie (patio11)], source-name: [patio11 (Patrick McKenzie)], [I joined Stripe to work on building financial infrastructure for the Internet. Time flies. Here is what I've learned in the first four years.])],
       [#brief-item([Throughline (NPR)], source-name: [Throughline (NPR)], [Mitch McConnell has been described as "opaque," "drab," and even "dull." He is one of the least popular - and most polarizing - politicians in the country. So how did he win eight consecutive elections? And what does it tell us about how he operates? This week, we share an episode we loved from Embedded that traces McConnell's political history. 
 
@@ -1046,7 +580,7 @@ Learn more about sponsor message choices: podcastchoices.com/adchoices
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Bayard Rustin: The Man Behind the March on Washington],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -1066,7 +600,7 @@ Learn more about sponsor message choices: podcastchoices.com/adchoices
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Make believe],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -1112,7 +646,7 @@ All beliefs are make believe.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Daydreaming is my favorite pastime],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -1148,7 +682,7 @@ It’s fun to let your mind direct its own entertainment.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Afghanistan: The Rise of the Taliban (2021)],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -1173,7 +707,7 @@ It’s fun to let your mind direct its own entertainment.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [We the People: Gun Rights],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -1193,7 +727,7 @@ It’s fun to let your mind direct its own entertainment.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Lord Of Misrule],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -1218,7 +752,7 @@ It’s fun to let your mind direct its own entertainment.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [It shows what you need to believe],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -1247,7 +781,7 @@ Then we believe it.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Commentator],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -1270,7 +804,7 @@ Then we believe it.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [When Things Fall Apart (Throwback)],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -1291,7 +825,7 @@ Then we believe it.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [By Accident of Birth],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -1315,18 +849,20 @@ Then we believe it.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Palantir Will No Longer Profit Off of New Yorkers’ Health Data],
   author: [Sam Biddle],
   source-name: [The Intercept],
   images: (),
   paragraphs: (
   [A controversial multimillion-dollar deal between New York City’s public hospital system and military contractor Palantir, first reported by The Intercept, is coming to an end, according to recent testimony before the city council.],
+  [Palantir Gets Millions of Dollars From New York City’s Public Hospitals],
   [The Intercept reported in February that the New York City Health and Hospitals Corporation, which operates a network of public health care facilities across the city, had paid Palantir almost \$4 million since 2023 for data analysis services. NYCHH says it used Palantir’s software to boost its efficiency in billing Medicaid and other public benefits, which included the automated scanning of patient health notes.],
   [The contract prompted protests from activists and local organizers who objected to the hospital system’s use of software from a company whose technology has facilitated lethal airstrike targeting, wide-reaching surveillance of American citizens, and deportation raids by Immigration and Customs Enforcement agents.],
   [“They should have no place in our hospitals, our pension funds, or our government.”],
   [At a March 16 meeting of the New York City Council, NYC Health + Hospitals CEO Mitchell Katz disclosed that Palantir’s contract will not be renewed come October. Katz defended the health care network’s collaboration with Palantir on the grounds that there was an “absolute firewall” between patient data and the company’s government customers, such as ICE, that would prevent information sharing. “We haven’t had any problems,” Katz said, “And we’re going to end the contract anyway because we always intended it to be a short-term solution.”],
   [According to Katz, data analysis previously conducted with Palantir’s help will be brought in-house following the contract’s expiration.],
+  [Alex Karp Insists Palantir Doesn’t Spy on Americans. Here’s What He’s Not Saying.],
   [“Palantir makes money by enabling mass violence in the U. S. and around the world. They should have no place in our hospitals, our pension funds, or our government,” said Kenny Morris, an organizer with the American Friends Service Committee, which shared the contract documents with The Intercept.],
   [“Our campaign against Palantir doesn’t stop in NYC,” Morris said. “We will continue to isolate this company and limit its destructive influence on our lives. In this city and around the world, communities are organizing to push more and more corporate clients, institutions, and politicians to cut ties with Palantir.”],
   [The post Palantir Will No Longer Profit Off of New Yorkers’ Health Data appeared first on The Intercept .],
@@ -1339,7 +875,7 @@ Then we believe it.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Russia's Vladimir Putin],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -1364,7 +900,7 @@ Then we believe it.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [A daily run and imagination],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -1391,7 +927,7 @@ Choose them for the desired effect.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Queen of Tupperware],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -1418,7 +954,7 @@ Choose them for the desired effect.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Judge the contents, not the box],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -1456,7 +992,7 @@ True is the enemy of useful.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Doors and windows and what’s real],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -1502,7 +1038,7 @@ Businesses put windows there, showing bad things said and done today, because th
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Useful?],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -1524,7 +1060,7 @@ Businesses put windows there, showing bad things said and done today, because th
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Octavia Butler: Visionary Fiction (2021)],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -1547,7 +1083,7 @@ Businesses put windows there, showing bad things said and done today, because th
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [CodeSOD: Awaiting A Reaction],
   author: [Remy Porter],
   source-name: [The Daily WTF],
@@ -1555,7 +1091,7 @@ Businesses put windows there, showing bad things said and done today, because th
   paragraphs: (
   [Today's Anonymous submitter sends us some React code. We'll look at the code and then talk about the WTF:],
   [\/\\/ inside a function for updating checkboxes on a page 
- if (!e. target . checked ) {
+ if (!e. target . checked ) \{
  const removeIndex = await checkedlist. findIndex (
  ( sel ) =\> sel. Id == selected. Id ,
  )
@@ -1568,15 +1104,15 @@ Businesses put windows there, showing bad things said and done today, because th
   [\/\\/ so instead of doing above logic in the set state, they dont 
  setCheckedlist (checkedlist)
  setRow ( RowValue )
-} else {
- if (checkedlist. findIndex ( ( sel ) =\> sel. Id == selected. Id ) == - 1 ) {
+\} else \{
+ if (checkedlist. findIndex ( ( sel ) =\> sel. Id == selected. Id ) == - 1 ) \{
  await checkedlist. push (selected)
- }
+ \}
  \/\\/ same, instead of just doing a set state call, we do awaits and self updates 
  await RowValue . push ( Index )
  setCheckedlist (checkedlist)
  setRow ( RowValue )
-}],
+\}],
   [Comments were added by our submitter.],
   [This code works. It's the wrong approach for doing things in React: modifying objects controlled by react, instead of using the provided methods, it's doing asynchronous push calls. Without the broader context, it's hard to point out all the other ways to do this, but honestly, that's not the interesting part.],
   [I'll let our submitter explain:],
@@ -1584,7 +1120,6 @@ Businesses put windows there, showing bad things said and done today, because th
   [That's what makes truly bad code. Code so bad that you can't even fix it without breaking a thousand other things. Code that you have to carefully, slowly, pick through and gently refactor, discovering all sorts of random side-effects that are hidden. The code so bad that you actually have to live with it, at least for awhile.],
   [\[Advertisement\] 
  BuildMaster allows you to create a self-service release management platform that allows different teams to manage their applications. Explore how!],
-  [style="clear: left;"\>],
 ),
   insert-map: (:),
   word-count: 406,
@@ -1594,7 +1129,7 @@ Businesses put windows there, showing bad things said and done today, because th
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Modern White Power Movement (2020)],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -1617,7 +1152,7 @@ Businesses put windows there, showing bad things said and done today, because th
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The lasting legacy of the slave patrols],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -1637,7 +1172,7 @@ Businesses put windows there, showing bad things said and done today, because th
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Considerate book pricing],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -1700,7 +1235,7 @@ Like anything unusual.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The Dance of the Dead (2021)],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -1720,7 +1255,7 @@ Like anything unusual.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Anything You Want — third edition for 2022],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -1776,7 +1311,7 @@ As before, I’m giving all profits to charity .],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The Hidden War],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -1796,7 +1331,7 @@ As before, I’m giving all profits to charity .],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Before Roe: The Physicians' Crusade],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],

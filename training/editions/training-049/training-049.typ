@@ -21,192 +21,8 @@
 #masthead([Southern Report], [Vol. 1, No. 049], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Optimising LINQ],
-  kicker: [Cover Story],
-  author: [Matt Warren (.NET)],
-  source-name: [Matt Warren (.NET)],
-  deck: [Where ( new Func ( CS \<\> 8 \_\_locals0 . b\_\_0 )) 
- .],
-  lead-pre: [],
-  lead-cap: [i],
-  lead-rest: [d="whats-the-problem-with-linq"\>What’s the problem with LINQ?],
-  body-paragraphs: (
-  [To take an example of a technology that I am quite supportive of, but that makes writing inefficient code very easy, let’s look at LINQ-to-Objects. Quick, how many inefficiencies are introduced by this code?],
-  [class="highlight"\> int \[\] Scale ( int \[\] inputs , int lo , int hi , int c ) { 
- var results = from x in inputs 
- where ( x \>= lo ) && ( x],
-  [class="highlight"\> private int \[\] Scale ( int \[\] inputs , int lo , int hi , int c ) 
- { 
- \<\> c\_\_DisplayClass0\_0 CS \<\> 8 \_\_locals0 ; 
- CS \<\> 8 \_\_locals0 = new \<\> c\_\_DisplayClass0\_0 (); 
- CS \<\> 8 \_\_locals0 . lo = lo ; 
- CS \<\> 8 \_\_locals0 . hi = hi ; 
- CS \<\> 8 \_\_locals0 . c = c ; 
- return inputs 
- . Where ( new Func ( CS \<\> 8 \_\_locals0 . b\_\_0 )) 
- . Select ( new Func ( CS \<\> 8 \_\_locals0 . b\_\_1 )) 
- . ToArray (); 
- }],
-  [\[ CompilerGenerated \] 
- private sealed class c\_\_DisplayClass0\_0 
- { 
- public int c ; 
- public int hi ; 
- public int lo ;],
-  [internal bool b\_\_0 ( int x ) 
- { 
- return (( x \>= this . lo ) && ( x b\_\_1 ( int x ) 
- { 
- return ( x \* this . c ); 
- } 
- }],
-  [As you can see we have an extra class allocated and some Func's to perform the actual logic. But this doesn’t even account for the overhead of the ToArray() call, using iterators and calling LINQ methods via dynamic dispatch. As an aside, if you are interested in finding out more about closures it’s worth reading Jon Skeet’s excellent blog post “The Beauty of Closures” .],
-  [So there’s a lot going on behind the scenes, but it is actually possible to be shown these hidden allocations directly in Visual Studio. If you install the excellent Heap Allocation Viewer plugin for Resharper, you will get the following tool-tip right in the IDE:],
-  [As useful as it is though, I wouldn’t recommend turning this on all the time as seeing all those red lines under your code tends to make you a bit paranoid!!],
-  [Aside : If you don’t have Resharper, there is a Roslyn based Heap Allocation Analyser available that provides similar functionality.],
-  [Now before we look at some ways you can reduce the impact of LINQ, it’s worth pointing out that LINQ itself does some pretty neat tricks (HT to Oren Novotny for pointing this out to me ). For instance the common pattern of having a Where(..) followed by a Select(..) is optimised so that only a single iterator is used , not two as you would expect. Likewise two Select(..) statements in a row are combined, so that only a one iterator is needed .],
-  [id="a-note-on-micro-optimisations"\>A note on micro-optimisations],
-  [Whenever I write a post like this I inevitably get comments complaining that it’s an “ premature optimisation ” or something similar. So this time I just want to add the following caveat:],
-  [I am not in any way advocating that LINQ is a bad thing, I think it’s fantastic feature of the C\# language!],
-  [Also:],
-  [Please do not re-write any of your code based purely on the results of some micro-benchmarks!],
-  [As I explain in one of my talks , you should always profile first and then benchmark . If you do it the other way round there is a temptation to optimise where it’s not needed.],
-  [style="text-align: center;"\>],
-  [style="margin-bottom: 5px;"\> Performance is a feature! - London . NET User Group from Matt Warren],
-  [Having said all that, the C\# Compiler (Roslyn) coding guidelines do actually state the following:],
-  [Avoid allocations in compiler hot paths:],
-  [Avoid LINQ.],
-  [Avoid using foreach over collections that do not have a struct enumerator.],
-  [Consider using an object pool. There are many usages of object pools in the compiler to see an example.],
-  [Which is slightly ironic considering this advice comes from the same people who conceived and designed LINQ in the first place! But as outlined in the excellent talk “Essential Truths Everyone Should Know about Performance in a Large Managed Codebase” , they found LINQ has a noticeable cost.],
-  [Note: Hot paths are another way of talking about the critical 3% from the famous Donald Knuth quote :],
-  [We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil. Yet we should not pass up our opportunities in that critical 3%.],
-  [id="roslynlinqrewrite-and-linqoptimizer"\>RoslynLinqRewrite and LinqOptimizer],
-  [Now clearly we could manually re-write any LINQ statement into an iterative version if we were concerned about performance, but wouldn’t it be much nicer if there were tools that could do the hard work for us? Well it turns out there are!],
-  [First up is RoslynLinqRewrite , as per the project page:],
-  [This tool compiles C\# code by first rewriting the syntax trees of LINQ expressions using plain procedural code, minimizing allocations and dynamic dispatch.],
-  [Also available is the Nessos LinqOptimizer which is:],
-  [An automatic query optimizer-compiler for Sequential and Parallel LINQ. LinqOptimizer compiles declarative LINQ queries into fast loop-based imperative code. The compiled code has fewer virtual calls and heap allocations, better data locality and speedups of up to 15x (Check the Performance page).],
-  [At a high-level, the main differences between them are:],
-  [RoslynLinqRewrite],
-  [works at compile time (but prevents incremental compilation of your project)],
-  [no code changes, except if you want to opt out via \[NoLinqRewrite\]],
-  [LinqOptimiser],
-  [works at run-time],
-  [forces you to add AsQueryExpr(). Run() to LINQ methods],
-  [optimises Parallel LINQ],
-  [In the rest of the post will look at the tools in more detail and analyse their performance.],
-  [id="comparison-of-linq-support"\>Comparison of LINQ support],
-  [Obviously before choosing either tool you want to be sure that it’s actually going to optimise the LINQ statements you have in your code base. However neither tool supports the whole range of available LINQ Query Expressions , as the chart below illustrates:],
-  [RoslynLinqRewrite],
-  [LinqOptimiser],
-  [Both?],
-  [✓],
-  [✓],
-  [✓],
-  [✓],
-  [ToList],
-  [✓],
-  [✓],
-  [ToArray],
-  [✓],
-  [✓],
-  [✓],
-  [✓],
-  [ForEach],
-  [✓],
-  [✓],
-  [✓],
-  [✗],
-  [✓],
-  [✗],
-  [OfType],
-  [✓],
-  [✗],
-  [First/FirstOrDefault],
-  [✓],
-  [✗],
-  [Single/SingleOrDefault],
-  [✓],
-  [✗],
-  [Last/LastOrDefault],
-  [✓],
-  [✗],
-  [ToDictionary],
-  [✓],
-  [✗],
-  [LongCount],
-  [✓],
-  [✗],
-  [✓],
-  [✗],
-  [✓],
-  [✗],
-  [ElementAt/ElementAtOrDefault],
-  [✓],
-  [✗],
-  [✓],
-  [✗],
-  [✗],
-  [✓],
-  [✗],
-  [✓],
-  [SelectMany],
-  [✗],
-  [✓],
-  [Take/TakeWhile],
-  [✗],
-  [✓],
-  [Skip/SkipWhile],
-  [✗],
-  [✓],
-  [GroupBy],
-  [✗],
-  [✓],
-  [OrderBy/OrderByDescending],
-  [✗],
-  [✓],
-  [ThenBy/ThenByDescending],
-  [✗],
-  [✓],
-  [22],
-  [18],
-  [6],
-  [id="performance-results"\>Performance Results],
-  [Finally we get to the main point of this blog post, how do the different tools perform, do they achieve their stated goals of optimising LINQ queries and reducing allocations?],
-  [Let’s start with a very common scenario, using LINQ to filter and map a sequence of numbers, i.e. in C\#:],
-  [We will compare the LINQ code above with the 2 optimised versions, plus an iterative form that will serve as our baseline. Here are the results:],
-  [(Full benchmark code )],
-  [The first things that jumps out is that the LinqOptimiser version is allocating a lot of memory compared to the others. To see why this is happening we need to look at the code it generates, which looks something like this:],
-  [Here we can clearly see that both tools significantly reduce the allocations compared to the original LINQ code:],
-  [(Full benchmark code )],
-  [id="future-options"\>Future options],
-  [However even though using RoslynLinqRewrite or LinqOptimiser is pretty painless, we still have to install a 3rd party library into our project.],
-  [Wouldn’t it be even nicer if the . NET compiler, JITter and/or runtime did all the optimisations for us?],
-  [Well it’s certainly possible, as Joe Duffy explains in his QCon New York talk and work has already started so maybe we won’t have to wait too long!!],
-  [Discuss this post in /r/programming],
-  [id="further-reading"\>Further Reading:],
-  [Options for LINQ optimisation from State \/ Direction of C\# as a High-Performance Language :],
-  [Escape analysis only (JIT)],
-  [LINQ calls are optimized by the JIT],
-  [LINQ calls are optimized by the compiler],
-  [An attempt to manually optimise LINQ],
-  [LinqOptimiser performance results],
-  [RoslynLinqRewrite],
-  [r/charp discussion],
-  [r/programming discussion],
-  [HackerNews discussion],
-  [CodeProject],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Unshorten (expand) short URLs with Node.js],
   author: [Luciano Mammino],
   source-name: [Luciano Mammino (loige)],
@@ -215,8 +31,9 @@
   [Short URLs have been an invaluable tool for social media marketing for so many years and we are now used to seeing them everywhere. Most of the credit probably goes to URL shorteners services like Bit.ly , Goo.gl , YOURLS and Rebrandly that popularised the concept and made easy for everyone to start creating short URLs.],
   [When working with URLs in some automation scenarios like analytics, information crawling, data retrieval, etc. it can be important to resolve (or “ unshorten ” or “ expand ”) short URLs, which means retrieving the original long URL.],
   [In this article, we are going to see how short URLs work and how we can “expand” them into their original URL.],
-  [id="how-short-urls-work"\>How short URLs work],
+  [How short URLs work],
   [A short URLs is a regular URL that most of the time results very short by following a very simple format:],
+  [http:\/\\/ /],
   [The shorter the domain and the id (often called also slashtag ), the shorter will, of course, be the URL (e.g. http:\/\/loige.link/b ).],
   [What happens behind the scene of an URL shortener service is that there is a big database table that contains a map of all the existing short URLs and the related full-length URLs.],
   [A URL shortener service lookup table might look like the following:],
@@ -224,28 +41,45 @@
   [Note that in this example the table supports multiple domains and that the pair domain - id must be unique in the table.],
   [URL shorteners have to expose a web server which will be reached through all the domains mapped (in fact, most of the URL shortener services — like Rebrandly — supports different domains or even the possibility to associate your own branded domain).],
   [For every request that satisfies the short URL format, domain and id are extracted and a query is executed against the database to search for the corresponding long URL. Finally, if a match is found, the web server responds with a redirect message, sending the browser of the user to the corresponding long URL.],
-  [id="resolving-short-urls"\>Resolving short URLs],
+  [Resolving short URLs],
   [URL shorteners need to talk with browsers so they have to work as any other web server adopting the HTTP standard. The following diagram illustrates how the HTTP protocol is used when a user clicks a short URL:],
   [A user clicks on a short URL and the browser issues a GET request to that URL.],
   [The request hits the short URL service server which executes a look-up on its database to find the associated long URL. The long URL is returned as a redirect response to the user browser which means an HTTP 301 Moved Permanently response using the header Location to specify the new (long) URL.],
   [The browser automatically follows the redirect response issuing a new GET request to the long URL displaying the content of that URL to the user.],
   [This is what happens when a user through a browser deals with a short URL, everything happens behind the scenes and the user won’t even notice that there was an exchange with a short URL server.],
   [Simple enough, right?],
-  [id="resolving-short-urls-in-nodejs"\>Resolving short URLs in Node.js],
+  [Resolving short URLs in Node.js],
   [Now that we know how short URL services work, it shouldn’t be hard to create a Node.js script that is capable of resolving any type of short URL.],
+  [var request = require ( 'request' )],
+  [var uri = 'http:\/\/bit.ly/2fR0xVj'],
+  [request (],
+  [\{],
+  [uri : uri ,],
+  [followRedirect : false ,],
+  [\},],
+  [function ( err , httpResponse ) \{],
+  [if ( err ) \{],
+  [return console . error ( err )],
+  [\}],
+  [console . log ( httpResponse . headers . location || uri )],
+  [\},],
+  [)],
   [For simplicity, in this script, we are using the request module to perform the HTTP request. By default, this library follows redirects so we need to explicitly disable this behaviour by specifying the option followRedirect: false . By doing so we have an opportunity to catch a redirect response in our callback and so we can read its Location header which will represent the expanded URL.],
   [In case we are not dealing with a short URL, this script will print back the original URL passed to the function.],
-  [id="a-promise-based-dependency-free-nodejs-library-for-expanding-short-urls"\>A Promise-based, dependency free, Node.js library for expanding short URLs],
+  [A Promise-based, dependency free, Node.js library for expanding short URLs],
   [You can easily adapt the code above to work with your specific use case, but if you want a ready-made and easy to use URL-unshortener NPM library you can trust a library I recently published called tall .],
   [tall is a dependency-free, promise-based library that allows you to easily resolve a short URL and get its corresponding long URL.],
   [To understand how easy to use tall is, just check out this ES2015 sample usage:],
+  [import \{ tall \} from 'tall'],
+  [tall ( 'http:\/\/www.loige.link/codemotion-rome-2017' )],
   [More examples are available on the official repository .],
-  [id="bonus-resolving-short-urls-with-curl"\>Bonus: Resolving short URLs with CURL],
+  [Bonus: Resolving short URLs with CURL],
   [Of course, you can also use the evergreen CURL to issue the HTTP request for a short URL and then read the Location header to retrieve the long URL:],
+  [Terminal window],
+  [curl --head "http:\/\/bit.ly/2fR0xVj"],
   [This will output something like this:],
   [As you can see the Location header reports our long URL.],
   [If you are a bash and Unix lover you are probably already thinking to pipe this output to grep and other unix command line tools to extract only the long URL out of the full output. If you are curious about this kind of approach you can read a similar article I previously wrote titled “ Extracting data from Wikipedia using curl, grep, cut and other shell commands ”.],
-  [id="recap"\>Recap],
   [In this simple article, we learned how short URL services work and thus how we can use them in a programmatic way if we need to know the associated long URL.],
   [I hope this was interesting for you and that you had fun reading the article and the code examples.],
   [As usual, I’d love to have your opinion and know if you plan to use this knowledge or the tall library in one of your next projects. Feel more than welcome to let me know this in the comments!],
@@ -257,10 +91,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Rust infrastructure can be your infrastructure],
   author: [Huon Wilson],
   source-name: [Huon Wilson],
@@ -305,7 +137,7 @@ that there is actually an open
  Operations Engineer 
 position for Mozilla Research, to manage the infrastructure of Rust
 and Servo.],
-  [id="homu-not-rocket-science"\>Homu: “Not rocket science”],
+  [Homu: “Not rocket science”],
   [Homu is a reimplementation/extension of the original
  bors bot. Bors was implemented by
  Graydon Hoare (Rust’s original designer) in 2013 (or so) 
@@ -351,7 +183,7 @@ digest that:],
 registered a lot of my repos with my Homu instance, and the /all 
 endpoint shows me everything I want to know.],
   [Which brings me on to highfive:],
-  [id="highfive-welcome-you-should-hear-from-huonw-soon"\>Highfive: “welcome! You should hear from \@huonw soon.”],
+  [Highfive: “welcome! You should hear from \@huonw soon.”],
   [As I said, I easily lose track of pull requests against my own
 repos. My GitHub news feed and emails is very busy with all
 development and discussion in rust-lang/rust, so small pull requests
@@ -375,7 +207,7 @@ patches like edits to documentation.],
 reviewers doesn’t make so much sense, the goal is to be friendly, and
 have pull requests automatically assigned to me, so that they show up
 in the list that GitHub can show.],
-  [id="setting-it-up"\>Setting it up],
+  [Setting it up],
   [Highfive is currently mainly designed for use as an internal rust-lang
 tool, and so isn’t as well documented as Homu which was written to be
 more generic from the start. I’ll write down a bit of docs here, but
@@ -400,7 +232,7 @@ disable/change this.],
 Highfive to a repository, create a webhook under the repo’s
 settings pointing to whereever newpr.py is exposed to the internet,
 with the application/x-www-form-urlencoded content type.],
-  [id="configuration-files"\>Configuration files],
+  [Configuration files],
   [The GitHub file should just be called config , and looks like:],
   [1
 2
@@ -428,13 +260,13 @@ looks like:],
 5
 6
 7
- { 
- "groups" : { 
+ \{ 
+ "groups" : \{ 
  "core" : \[ "\@brson" , "\@pcwalton" , "\@nikomatsakis" , "\@alexcrichton" , "\@huonw" \], 
  "crates" : \[ "\@huonw" , "\@alexcrichton" \], 
  "doc" : \[ "\@steveklabnik" \] 
- } 
- }],
+ \} 
+ \}],
   [And
  rust.json 
 looks like:],
@@ -454,14 +286,14 @@ looks like:],
 14
 15
 16
- { 
- "groups" : { 
+ \{ 
+ "groups" : \{ 
  "all" : \[ "core" \], 
  "compiler" : \[ "\@pnkfelix" , "\@nick29581" , "\@eddyb" , "\@Aatch" \], 
  "syntax" : \[ "\@pnkfelix" , "\@nick29581" , "\@sfackler" , "\@kmc" \], 
  "libs" : \[ "\@aturon" \] 
- }, 
- "dirs" : { 
+ \}, 
+ "dirs" : \{ 
  "doc" : \[ "doc" \], 
  "liballoc" : \[ "libs" \], 
  "libarena" : \[ "libs" \], 
@@ -483,16 +315,16 @@ missing) Highfive will select from only the all group. I’ve
 used this to
  configure my Highfive 
 to assign me for everything (makes sense…).],
-  [id="batch-configuration"\>Batch configuration],
+  [Batch configuration],
   [It’s pretty annoying to use GitHub’s web interface to manually add to
 each repo your robot collaborator, and then add the webhooks necessary
 for Homu and Highfive, so I wrote
  a few Python scripts to
 help. The code has some examples of using them to set-up these two pieces of
 infrastructure.],
-  [id="comments"\>
- Comments:],
-  [id="fn:rollups"\>],
+  [Comments:],
+  [users],
+  [/r/rust],
   [I’m being… optimistic. There’s so many patches submitted
  that we only keep up via regular “rollups”: landing
  several pull requests in a single batch (usually created
@@ -503,28 +335,24 @@ infrastructure.],
  while to land, but testing everything (including rollups)
  before landing ensures that the master branch still passes
  tests. ↩],
-  [id="fn:bors"\>],
   [Why \@bors if its now Homu? The Homu back-end listens for
  mentions of the account it is registered to use, and
  rust-lang still uses \@bors . ↩],
-  [id="fn:no-free-lunch"\>],
   [Unfortunately, there’s no free lunch, and the test
  guarantees come at a cost of scalability, as landing
  patches to master is serialised
  ( see above too ). ↩],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([Which brings me on to highfive:  id="highfive-welcome-you-should-hear-from-huonw-soon"\>Highfive: “welcome! You should hear from \@huonw soon.], [Huon Wilson]),
+  inline-pq: pull-quote([Which brings me on to highfive: Highfive: “welcome! You should hear from \@huonw soon.], [Huon Wilson]),
   inline-pq-idx: 20,
   word-count: 1699,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Comparing k-NN in Rust],
   author: [Huon Wilson],
   source-name: [Huon Wilson],
@@ -538,7 +366,6 @@ resist writing the code into Rust to see how it fared.],
 code compiles with the latest nightly (as of 2014-06-10 12:00 UTC),
 specifically rustc 0.11.0-pre-nightly (e55f64f 2014-06-09 01:11:58
 -0700) .],
-  [id="code"\>Code],
   [The Rust code is a nearly-direct translation of the original F\# code,
 the only change was changing distance to compute the squared
 distance, that is, a\*a + b\*b + ... (square root is strictly
@@ -601,53 +428,53 @@ I made no effort to remove/reduce/streamline allocations.],
 52
 53
 54
- use std :: io ::{ File , BufferedReader };],
-  [struct LabelPixel { 
+ use std :: io ::\{ File , BufferedReader \};],
+  [struct LabelPixel \{ 
  label : int , 
  pixels : Vec 
- }],
-  [fn slurp\_file ( file : & Path ) -\> Vec { 
+ \}],
+  [fn slurp\_file ( file : & Path ) -\> Vec \{ 
  BufferedReader :: new ( File :: open ( file ) .unwrap ()) 
  .lines () 
  .skip ( 1 ) 
- .map (| line | { 
+ .map (| line | \{ 
  let line = line .unwrap (); 
  let mut iter = line .as\_slice () .trim () 
  .split ( ',' ) 
  .map (| x | from\_str ( x ) .unwrap ());],
-  [LabelPixel { 
+  [LabelPixel \{ 
  label : iter .next () .unwrap (), 
  pixels : iter .collect () 
- } 
- }) 
+ \} 
+ \}) 
  .collect () 
- }],
-  [fn distance\_sqr ( x : & \[ int \], y : & \[ int \]) -\> int { 
+ \}],
+  [fn distance\_sqr ( x : & \[ int \], y : & \[ int \]) -\> int \{ 
  \/\\/ run through the two vectors, summing up the squares of the differences 
  x .iter () 
  .zip ( y .iter ()) 
  .fold ( 0 , | s , ( & a , & b )| s + ( a - b ) \* ( a - b )) 
- }],
-  [fn classify ( training : & \[ LabelPixel \], pixels : & \[ int \]) -\> int { 
+ \}],
+  [fn classify ( training : & \[ LabelPixel \], pixels : & \[ int \]) -\> int \{ 
  training 
  .iter () 
  \/\\/ find element of \`training\` with the smallest distance\_sqr to \`pixel\` 
  .min\_by (| p | distance\_sqr ( p .pixels .as\_slice (), pixels )) .unwrap () 
  .label 
- }],
-  [fn main () { 
+ \}],
+  [fn main () \{ 
  let training\_set = slurp\_file ( & Path :: new ( "trainingsample.csv" )); 
  let validation\_sample = slurp\_file ( & Path :: new ( "validationsample.csv" ));],
   [let num\_correct = validation\_sample .iter () 
- .filter (| x | { 
+ .filter (| x | \{ 
  classify ( training\_set .as\_slice (), x .pixels .as\_slice ()) == x .label 
- }) 
+ \}) 
  .count ();],
-  [println! ( "Percentage correct: {}%" , 
+  [println! ( "Percentage correct: \{\}%" , 
  num\_correct as f64 \/ validation\_sample .len () as f64 \* 100.0 ); 
- }],
+ \}],
   [(Prints Percentage correct: 94.4% , matching the OCaml.)],
-  [id="hows-it-compare"\>How’s it compare?],
+  [How’s it compare?],
   [I don’t have an F\# compiler, so I’ll only compare against the fastest
 OCaml solution (from the follow-up post ), after making the
 same modification to distance .],
@@ -702,7 +529,7 @@ contains two possibly-concerning pieces of code:],
   [It might be interesting to compare against
  this D code , but I
 can’t get it to compile right.],
-  [id="what-about-parallelism"\>What about parallelism?],
+  [What about parallelism?],
   [I’m glad you asked! Rust is designed to be good for concurrency, using
  the type system 
 to guarantee that code is threadsafe. As I said before, Rust is under
@@ -760,8 +587,8 @@ with the following.],
  \/\\/ how many chunks should the validation sample be divided into? (== 
  \/\\/ how many futures to create.) 
  static NUM\_CHUNKS : uint = 32 ;],
-  [fn main () { 
- use sync ::{ Arc , Future }; 
+  [fn main () \{ 
+ use sync ::\{ Arc , Future \}; 
  use std :: cmp ;],
   [\/\\/ "atomic reference counted": guaranteed thread-safe shared 
  \/\\/ memory. The type signature and API of \`Arc\` guarantees that 
@@ -770,35 +597,36 @@ with the following.],
  let training\_set = Arc :: new ( slurp\_file ( & Path :: new ( "trainingsample.csv" ))); 
  let validation\_sample = Arc :: new ( slurp\_file ( & Path :: new ( "validationsample.csv" )));],
   [let chunk\_size = ( validation\_sample .len () + NUM\_CHUNKS - 1 ) \/ NUM\_CHUNKS ;],
-  [let mut futures = range ( 0 , NUM\_CHUNKS ) .map (| i | { 
+  [let mut futures = range ( 0 , NUM\_CHUNKS ) .map (| i | \{ 
  \/\\/ create new "copies" (just incrementing the reference 
  \/\\/ counts) for our new future to handle. 
  let ts = training\_set .clone (); 
  let vs = validation\_sample .clone ();],
-  [Future :: spawn ( proc () { 
+  [Future :: spawn ( proc () \{ 
  \/\\/ compute the region of the vector we are handling... 
  let lo = i \* chunk\_size ; 
  let hi = cmp :: min ( lo + chunk\_size , vs .len ());],
   [\/\\/ ... and then handle that region. 
  vs .slice ( lo , hi ) 
  .iter () 
- .filter (| x | { 
+ .filter (| x | \{ 
  classify ( ts .as\_slice (), x .pixels .as\_slice ()) == x .label 
- }) 
+ \}) 
  .count () 
- }) 
- }) .collect :: \>\> ();],
+ \}) 
+ \}) .collect :: \>\> ();],
   [\/\\/ run through the futures (waiting for each to complete) and sum the results 
  let num\_correct = futures .mut\_iter () .map (| f | f .get ()) .fold ( 0 , | a , b | a + b );],
-  [println! ( "Percentage correct: {}%" , 
+  [println! ( "Percentage correct: \{\}%" , 
  num\_correct as f64 \/ validation\_sample .len () as f64 \* 100.0 ); 
- }],
+ \}],
   [(Also prints Percentage correct: 94.4% .)],
   [This gives a nice speed up, approximately halving the time required:
 the real time is now stable around 1.81 seconds (6.25 s of user time)
 on my machine.],
-  [id="comments"\>
- Comments:],
+  [Comments:],
+  [/r/rust],
+  [/r/programming],
 ),
   insert-map: (:),
   word-count: 1270,
@@ -806,10 +634,8 @@ on my machine.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Sized Trait],
   author: [Huon Wilson],
   source-name: [Huon Wilson],
@@ -821,6 +647,8 @@ so I’m slotting in this short post between
  my discussion of low-level details and
  the post on “object safety” .],
   [Other posts in this series on trait objects],
+  [Peeking inside Trait Objects],
+  [Where Self Meets Sized: Revisting Object Safety],
   [Sized is a (very) special compiler built-in trait that is
 automatically implemented or not based on the sizedness of a type. A
 type is considered sized if the precise size of a value of type is
@@ -855,7 +683,7 @@ is the closest one can get to handling a trait object as a normal
 value; the Box ensures sizedness (at the expense of an allocation)
 without fundamentally changing the ownership semantics of a normal
 value.],
-  [id="sized"\> ? Sized],
+  [? Sized],
   [The Sized trait gets some special syntax for use in bounds, at the
 moment: ? Sized . Such a bound is necessary because Sized is
 special: it is a default bound for type parameters in most positions,
@@ -864,8 +692,8 @@ being sized.],
   [1
 2
 3
- fn foo () {} \/\\/ can only be used with sized T],
-  [fn bar () {} \/\\/ can be used with both sized and unsized T],
+ fn foo () \{\} \/\\/ can only be used with sized T],
+  [fn bar () \{\} \/\\/ can be used with both sized and unsized T],
   [This bound is particularly special because adding the ? Sized bound
 to a parameter T increases the number of types that can be used for
  T , whereas every other trait bound reduces it.],
@@ -880,19 +708,16 @@ likely to be needed, and some data Niko has been collecting apparently
 implies that such inference may make removing this special case
 significantly more palatable. (It may or may not be so palatable so as
 to be worth the breaking change…)],
-  [id="comments"\>
- Comments:],
-  [id="fn:version"\>],
+  [Comments:],
+  [/r/rust],
   [Per the previous post , this post is
  designed to reflect the state of Rust at version: rustc
  1.0.0-nightly (44a287e6e 2015-01-08 17:03:40 -0800) . ↩],
-  [id="fn:virtual"\>],
   [There is the possibility that Rust will gain some form of
  “inheritance” , and Niko points out to me that
  Sized may play an important role there too: certain
  types (e.g. “base classes” in an conventional inheritance
  scheme) make sense to be unsized. ↩],
-  [id="fn:str"\>],
   [The unsized string type str is usually considered a slice,
  since it is just a \[u8\] with the guarantee that the bytes
  are valid UTF-8. ↩],
@@ -903,10 +728,8 @@ to be worth the breaking change…)],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How to Setup a Scheduled Scala Spark Job],
   author: [Curalate Engineering],
   source-name: [Curalate Engineering],
@@ -915,7 +738,6 @@ to be worth the breaking change…)],
   [Have you written a Scala Spark job that processes a massive amount of data on an intimidating amount of RAM and you want to run it daily/weekly/monthly on a schedule on AWS ?
 I had to do this recently, and couldn’t find a good tutorial on the full process to get the spark job running.
 Included in this article and accompanying repository is everything you need to get your Scala Spark job running on AWS Data Pipeline and EMR .],
-  [id="code-repo"\>Code Repo],
   [This tutorial is not going to walk you through the process of actually writing your specific Scala Spark job to do whatever number crunching you need. 
 There are already plenty of resources available ( 1 , 2 , 3 ) to get you started on that. 
 The code template for setting up a Spark Scala job is available in this GitHub repo .],
@@ -927,22 +749,21 @@ If you need to add in other libraries that do not play well with each other, or 
   [Outside of the previously mentioned needed changes you need to set a few parameters in the deploy.sh script. 
 Mainly the deploymentPath to your specific S3 bucket, adding a profile to the AWS CLI command to upload to your specific S3 bucket if it’s private, and changing the resulting fat jar name if you please. 
 The deploy script uses the AWS CLI to upload the fat jar to S3, so if you do not have it installed and configured you will need to go through the steps to do that before using the deploy.sh script.],
-  [id="setting-up-the-job-on-aws"\>Setting Up The Job On AWS],
+  [Setting Up The Job On AWS],
   [Once your fat jar is uploaded to S3 it’s time to set up the scheduled job on AWS Data Pipeline.],
-  [id="create-aws-data-pipeline"\>Create AWS Data Pipeline],
+  [Create AWS Data Pipeline],
   [Log on to the AWS dash, navigate to the AWS Data Pipeline console, and click the Create new pipeline button.],
-  [id="load-the-spark-job-template-definition"\>Load The Spark Job Template Definition],
+  [Load The Spark Job Template Definition],
   [Add a name for your pipeline and select the Import a definition source option. 
 Included in the GitHub repo for the Spark template is a datapipeline.json file that you can import that contains a pre-defined data pipeline for your Spark job that should simplify the setup processes.
 The definition contains the node configuration to fire the pipeline off on a schedule and notify you via an AWS SNS alarm on a success or failure run.
 All of your needed configuration options have been parameterized to simplify this process.],
-  [id="set-your-parameters"\>Set Your Parameters],
   [Set the min parameter to the EMR step(s) option.
 Update the S3 path and fat jar name to point to the fat jar uploaded earlier with the deploy.sh script.
 Set EC2KeyPair so that the data pipeline has access to your EC2 instances.
 Select the master node instance type and the number of and type of core-nodes for the Spark cluster.
 Finally, we need to set the ARN for both the success and failure notifications for the Spark job so you will know if something goes wrong with your scheduled job.],
-  [id="create-aws-sns"\>Create AWS SNS],
+  [Create AWS SNS],
   [Open a new tab and navigate to the AWS SNS console.
 Click the Create Topic option.],
   [In the pop-up window set a topic name and display name for your success alarm and hit the create topic button.],
@@ -954,15 +775,13 @@ Place your email address in the Endpoint field and hit Create subscription .],
   [Once you have successfully confirmed your subscription in your email, you should see it listed in the Subscriptions table on the Topic details page for your SNS Alarm.],
   [You will need to repeat this process for both of your success and failure alarms.
 On each of the Topic details pages for both of your alarms, you need to copy the Topic ARN value and paste it into their respective parameter fields in your Data Pipeline setup.],
-  [id="schedule-your-job"\>Schedule your Job],
+  [Schedule your Job],
   [Once your ARN parameters are set for your alarms you can move on to scheduling when this pipeline will run.
 Set the cadence for when the job will run and make sure you set your starting and ending dates to something in the future.
 You can also set the job to run only on pipeline activation if you would rather manually start your job.],
-  [id="finish-the-pipeline-setup"\>Finish The Pipeline Setup],
   [Once you have your parameters set and scheduled all you need to do is set an S3 bucket location for the logs from the pipeline executions and you can click Activate at the bottom of the page.
 This will run a check on all of your settings and confirm that everything should work. 
 Some things you might run into here could be setting improper values for the instance types for your clusters (Note: not all EC2 types work in EMR and Data Pipeline), or your schedule settings don’t make sense.],
-  [id="test-your-job"\>Test Your Job],
   [Once your job activates successfully you should be done!
 If you are doing a test run first, just wait for the time that the pipeline is scheduled to start and it should run and email you on the result of the run.
 If you want to view the console/standard output of your job you can find it in the Emr Step Logs link and click the stdout.gz link to view/download the output.
@@ -975,10 +794,8 @@ The logs from the Spark job in your pipeline are in the controller.gz file if yo
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Foobar, Blossoms, and Isomorphism],
   author: [yifanlu],
   source-name: [Yifan Lu],
@@ -987,6 +804,8 @@ The logs from the Spark job in your pipeline are in the controller.gz file if yo
   [A friend recently invited me to participate in Foobar, Google’s recruiting tool that lets you solve interesting (and sometimes not-so-interesting) programming problems. This particular problem, titled “Distract the Guards” was very fun to solve but I found no good write-ups about it online! Solutions exist but it is rather hard to understand how the author came upon the solution. I thought I might take a shot and go into detail into how I approached it–as well as give proofs of correctness as needed.],
   [Disclaimer: If you are participating in Foobar (hello googler) or have aspirations to do so in the future, please stop here in the spirit of the challenge. It’s well known that Google has a finite pool of problems so you will miss out if you just read the solution.],
   [To begin, here is the problem statement:],
+  [Distract the Guards
+===================],
   [The time for the mass escape has come, and you need to distract the guards so
 that the bunny prisoners can make it out! Unfortunately for you, they're
 watching the bunnies closely. Fortunately, this means they haven't realized yet
@@ -1039,18 +858,19 @@ Output:
 Output:
  (int) 0],
   [Now I love a good story and I love a challenging problem but the two fit together like chocolate and eggplant parmesan but I digress. If you parse through the bananas and thumb wrestling, it is easy to see that this is a combinatorics problem. The first thing to do is to break the large problem into some smaller ones that can be pieced together. Here we see that a key piece is figuring out, for any two given guards, if they will go into an infinite loop or not. Once we figure that out, the second part is to find which guards can be paired into infinite loops such that a maximum number of guards end up in infinite loops. Let’s solve the second part first.],
-  [id="maximum-matching"\>Maximum Matching],
   [Assume we have a predicate \\(willLoop(x,y)\\) for two guards, each with \\(x\\) bananas and \\(y\\) bananas that returns true if the pair will loop. Can we then pair up all the guards optimally so we have the most number of infinite loops? Note once we have this, the answer will be simple: just return the total number of guards minus the number of guards that are paired up into infinite loops.],
-  [What if we just brute-force and try to find every possible pairing? We take one guard and try to pair her with another guard and if they don’t loop, we try pairing her with a different guard. This will find us a solution but how do we find a maximum one where the most number of guards are paired off? Well, we can then try to find every possible set of pairings. How long will that take? Let’s say there are \\(n\\) guards. Then it will take \\(O(n^2)\\) time to find one set of pairings. To find every possible pairing, notice that once we pair off two guards, those two guards cannot be used to pair with anyone else. So for every pairing in every solution set of pairings, we can remove that particular pair, reassign the remaining pairings, and be left with another potential solution. This means the whole process could take \\(O(2^{n^2})\\) time to process! Clearly infeasible.],
+  [What if we just brute-force and try to find every possible pairing? We take one guard and try to pair her with another guard and if they don’t loop, we try pairing her with a different guard. This will find us a solution but how do we find a maximum one where the most number of guards are paired off? Well, we can then try to find every possible set of pairings. How long will that take? Let’s say there are \\(n\\) guards. Then it will take \\(O(n^2)\\) time to find one set of pairings. To find every possible pairing, notice that once we pair off two guards, those two guards cannot be used to pair with anyone else. So for every pairing in every solution set of pairings, we can remove that particular pair, reassign the remaining pairings, and be left with another potential solution. This means the whole process could take \\(O(2^\{n^2\})\\) time to process! Clearly infeasible.],
   [At this point we should take a step back and approach this another way. Instead of trying to find an algorithm to solve this specific problem, we should try to cast it into an existing problem. To do so, we need to find a structure that can hold the problem together. The word “graph” should be screaming at you right now and indeed this looks perfect for a graph: we have a set of guards (nodes) where any two guards are related (edge) by \\(willLoop\\). Let’s draw out a graph for the second test case.],
   [Here we labeled each node (guard) by the number of bananas they start with. We draw an edge between two guards if \\(willLoop\\) is true between them. What does it mean to have a set of pairings? If the pairings are a set of edges, that means each node can have at most one edge in the pairing. Here is an example of a set of pairings.],
   [Notice that the guard with 13 bananas and the guard with 19 bananas are not paired with anyone. We cannot select an edge for either of them because doing so means that one of the already colored nodes will have two edges in the solution set, which is not allowed. However, we can find a better set of pairings.],
   [Now every guard is paired up and therefore we know the fewest number of guards that won’t infinite loop is zero. This is a simple example where we can find the solution visually but what if there are 100 guards? What if the solution is greater than zero? How will we know when we reached the minimum and there is no better set of pairings? Most importantly, is it even possible to solve this problem in sub-exponential time (otherwise our solution will be infeasible and we get the dreaded execution time out error)? Turns out these exact questions have been asked by computer scientists for many decades. It is a problem in graph theory called perfect matching , which can be reduced to a closely related problem of maximum matching . Formally, a maximum matching can be defined thus: given a graph \\(G=(V,E)\\), find a largest set \\(S \\subseteq E\\) where for each \\(v \\in V\\), there is at most one \\(s \\in S\\) such that \\(v \\in s\\). Note I say “a largest set” because there can be multiple sets of equal cardinality that is maximum.],
   [In the 1960s, Jack Edmonds lit the algorithms world on fire by finding a polynomial time (specifically \\(O(V^2E))=O(n^3)\\)) algorithm to solve perfect matching for any graph. His “blossom algorithm” as it came to be called is not a simple one and I won’t attempt to explain it here. If you want to know more about how it works, it’s presented at an undergraduate level by Professor Roughgarden in these notes . The upshot is that we can apply this algorithm directly to our graph to get the maximum matching. A quick Google search for a Python implementation turns up this page .],
   [Now all that’s left is to define \\(willLoop(x,y)\\).],
-  [id="loop-detection"\>Loop Detection],
-  [Our intuitive approach will be dead simple: let’s just simulate the game until either it ends or we detect a loop. How will we detect a loop? We could keep a list of “seen counts of bananas” and after each round we check to see if the current counts has previously been seen. If so, we know we are in a loop because the same sequence of banana counts will proceed. Otherwise, at some point we will see both players end up with the same number of bananas. How well does this perform? If \\(n\\) is the total number of bananas “in play” (the sum of the two players’ banana at the start), then we see that the most number of turns would be \\(O(n)\\) turns because after \\(n\\) turns, you would have to either see both players have the same count or see every single count of bananas and therefore must repeat one such count. But \\(n\\) could be as large as \\(2^{30}-1\\) so this will not do. It’s sub-linear or bust!],
+  [Our intuitive approach will be dead simple: let’s just simulate the game until either it ends or we detect a loop. How will we detect a loop? We could keep a list of “seen counts of bananas” and after each round we check to see if the current counts has previously been seen. If so, we know we are in a loop because the same sequence of banana counts will proceed. Otherwise, at some point we will see both players end up with the same number of bananas. How well does this perform? If \\(n\\) is the total number of bananas “in play” (the sum of the two players’ banana at the start), then we see that the most number of turns would be \\(O(n)\\) turns because after \\(n\\) turns, you would have to either see both players have the same count or see every single count of bananas and therefore must repeat one such count. But \\(n\\) could be as large as \\(2^\{30\}-1\\) so this will not do. It’s sub-linear or bust!],
   [We wish to find a formula (predicate) for predicting the outcome of the game without playing it. To start, let’s just write down a couple of examples and try to find patterns. Below, each line \\((x,y)\\) is a round of the banana thumb wrestling game where \\(x\\) and \\(y\\) are the number of bananas currently in each player’s possession. I’ll list a couple of games below, both with and without loops.],
+  [(3,5)
+(6,2)
+(4,4)],
   [(5,7)
 (10,2)
 (8,4)
@@ -1068,6 +888,9 @@ Output:
 (12,4)
 (8,8)],
   [You can smell the hint of a pattern although it may not be obvious yet. Let’s try to suss out the scent. We know there is some periodic structure (groups, you say?) but how do we go from one line to the next without following the complex rule? Is there an easier way to generate this sequence? Well if at first you don’t succeed, try and change domains. Notice a key fact: the sum of the bananas in each round is always the same. This may be obvious considering no bananas are created or destroyed in each round–let’s call it the Law of Conservation of Bananas. With that in mind, let’s work in \\(\\pmod n\\) where \\(n=x+y\\). Note that when working with numbers modulo \\(n\\), negative numbers \\(-y\\) are the same as \\(n-y\\).],
+  [(3,-3) % 8
+(6,-6) % 8
+(4,4) % 8],
   [(5,-5) % 12
 (-2,2) % 12
 (-4,4) % 12
@@ -1085,30 +908,25 @@ Output:
 (-4,4) % 16
 (8,8) % 16],
   [Do you see it? We notice two facts. First, by how we defined \\(n\\), we have \\(x=-y \\pmod n\\). This is a given. The more important fact is that we can see that each round is exactly two times the previous round \\(\\pmod n\\). This seems like an important fact but it doesn’t appear to give us an answer immediately. We also made a lot of assumptions that seems to be unstable and although we might have found a pattern–it might also be a red herring. I am a strong proponent of what I call the 3-examples rule which is: if something works for three random examples you make up, it probably works for all integers. QED. However, until the mathematics community accepts my rule as law, we unfortunately must do things the old fashioned way.],
-  [My first tool of choice, as always, is group theory because it’s easy but sounds hard so that maximizes the show-off factor. Let’s formalize this game into a group whose elements can be generated by the group operator. We will see later that the advantage of this is that we can dangle from the shoulder of giants and not have to prove anything major. Lets define group \\(\\mathcal{G}\[n\]\\) on \\(n\\) with elements \\(e=(x \\pmod n, y \\pmod n)\\) and the operator \\(\\oplus\\) which we will now construct.],
+  [My first tool of choice, as always, is group theory because it’s easy but sounds hard so that maximizes the show-off factor. Let’s formalize this game into a group whose elements can be generated by the group operator. We will see later that the advantage of this is that we can dangle from the shoulder of giants and not have to prove anything major. Lets define group \\(\\mathcal\{G\}\[n\]\\) on \\(n\\) with elements \\(e=(x \\pmod n, y \\pmod n)\\) and the operator \\(\\oplus\\) which we will now construct.],
   [In constructing \\(\\oplus\\) we note that the only elements we care about how the operator works for is \\((x,y) \\oplus (x,y)\\) (from here on, we drop the \\(\\pmod n\\) when obvious for brevity). We want to say something like “if we apply \\(\\oplus\\) to \\((x,y)\\) for \\(t\\) times, then we get element \\((u,v)\\) which is the result of playing \\(t\\) rounds of the banana thumb wrestling game”. We do not care (for now) what \\(\\oplus\\) does to other element pairs. Let’s formalize this],
-  [\\\[\\begin{aligned}
-(x,y) \\oplus (x,y) &= \\begin{cases}
-(x-y, 2y) & x \> y \\\\
-(2x,y-x) & x y \\\\
-(2x,(n-x)-x) & x],
-  [class="highlight"\> def willLoop ( x , y ): 
+  [def willLoop ( x , y ): 
  n = x + y 
  n\_tilde = n 
  while n\_tilde % 2 == 0 : 
  n\_tilde = n\_tilde \/ 2 
  return ( x % n\_tilde ) != 0],
   [It is easy to see that the only work in this algorithm is dividing \\(n\\) and that happens at most \\(\\log(n)\\) times so this runs in \\(O(\\log(n))\\) time. In fact, for all intents and purposes, this is really \\(O(1)\\) time since the while-loop is just trimming out the leading 0 bits of the binary representation of \\(n\\). However, don’t say that to a computer scientist unless you want to be hit on the head with a word-ram-model (pretty heavy).],
-  [id="appendix-a"\>Appendix A],
+  [Appendix A],
   [Here is the full solution without the Python implementation of Edmonds’ blossom algorithm],
-  [class="highlight"\> def willLoop ( x , y ): 
+  [def willLoop ( x , y ): 
  n = x + y 
  n\_tilde = n 
  while n\_tilde % 2 == 0 : 
  n\_tilde = n\_tilde \/ 2 
  return ( x % n\_tilde ) != 0],
   [def bananaGraph ( banana\_list ): 
- G = { i : \[\] for i in range ( len ( banana\_list ))} 
+ G = \{ i : \[\] for i in range ( len ( banana\_list ))\} 
  for i , a in enumerate ( banana\_list ): 
  for j , b in enumerate ( banana\_list ): 
  if i != j and willLoop ( a , b ): 
@@ -1129,10 +947,8 @@ Output:
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Email providers in Norway],
   author: [Andersos],
   source-name: [Finn.no Tech],
@@ -1151,7 +967,7 @@ To answer the question “Gmail vs. Outlook vs. Online vs. Yahoo etc.” we woul
   [Yahoo 4,31%],
   [The lists under shows the domain, number registered and percent of total.
 At the end is the table of the more popular email service providers (this list is cut off at 2500). Watch this space in the future if this is information that interests you.],
-  [id="popular-services"\>Popular services:],
+  [Popular services:],
   [Microsoft 33,57% (sum of hotmail, live, msn and outlook)],
   [hotmail.com (1106084 - 28.06%)],
   [live.no (96052 - 2.44%)],
@@ -1171,7 +987,7 @@ At the end is the table of the more popular email service providers (this list i
   [Yahoo 4,31%],
   [yahoo.no (94029 - 2.39%)],
   [yahoo.com (75772 - 1.92%)],
-  [id="universities"\>Universities:],
+  [Universities:],
   [stud.ntnu.no (7688 - 0.20%)],
   [ntnu.no (1421 - 0.04%)],
   [stud.nhh.no (1008 - 0.03%)],
@@ -1186,7 +1002,7 @@ At the end is the table of the more popular email service providers (this list i
   [umb.no (411 - 0.01%)],
   [uus.no (408 - 0.01%)],
   [uis.no (407 - 0.01%)],
-  [id="telcos"\> Telcos :],
+  [Telcos :],
   [online.no (444897 - 11.28%)],
   [frisurf.no (41768 - 1.06%)],
   [telenor.com (3903 - 0.10%)],
@@ -1201,7 +1017,7 @@ At the end is the table of the more popular email service providers (this list i
   [netcom.no (7987 - 0.20%)],
   [sensewave.com (7635 - 0.19%)],
   [ntebb.no (6122 - 0.16%)],
-  [id="kommune"\> Kommune :],
+  [Kommune :],
   [trondheim.kommune.no (1203 - 0.03%)],
   [bergen.kommune.no (1156 - 0.03%)],
   [baerum.kommune.no (906 - 0.02%)],
@@ -1210,7 +1026,7 @@ At the end is the table of the more popular email service providers (this list i
   [stavanger.kommune.no (500 - 0.01%)],
   [fredrikstad.kommune.no (433 - 0.01%)],
   [sandnes.kommune.no (420 - 0.01%)],
-  [id="some-random"\>Some random:],
+  [Some random:],
   [mil.no (2231 - 0.06%)],
   [nrk.no (1942 - 0.05%)],
   [finn.no (1731 - 0.04%)],
@@ -1286,10 +1102,8 @@ At the end is the table of the more popular email service providers (this list i
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How the dotnet CLI tooling runs your code],
   author: [Matt Warren (.NET)],
   source-name: [Matt Warren (.NET)],
@@ -1299,20 +1113,24 @@ At the end is the table of the more popular email service providers (this list i
   [the . NET Core runtime, libraries and tools and the ASP. NET Core libraries.],
   [However alongside a completely new, revamped, xplat version of the . NET runtime, the development experience has been changed, with the dotnet based tooling now available ( Note : the tooling itself is currently still in preview and it’s expected to be RTM later this year)],
   [So you can now write:],
+  [dotnet new
+dotnet restore
+dotnet run],
   [and at the end you’ll get the following output:],
+  [Hello World!],
   [It’s the dotnet CLI (Command Line Interface) tooling that is the focus of this post and more specifically how it actually runs your code , although if you want a tl;dr version see this tweet from \@citizenmatt :],
-  [id="traditional-way-of-running-net-executables"\>Traditional way of running . NET executables],
+  [Traditional way of running . NET executables],
   [As a brief reminder, . NET executables can’t be run directly (they’re just IL , not machine code), therefore the Windows OS has always needed to do a few tricks to execute them, from CLR via C\# :],
   [After Windows has examined the EXE file’s header to determine whether to create a 32-bit process, a 64-bit process, or a WoW64 process, Windows loads the x86, x64, or IA64 version of MSCorEE.dll into the process’s address space.
 …
 Then, the process’ primary thread calls a method defined inside MSCorEE.dll. This method initializes the CLR, loads the EXE assembly, and then calls its entry point method (Main). At this point, the managed application is up and running.],
-  [id="new-way-of-running-net-executables"\>New way of running . NET executables],
-  [id="dotnet-run"\> dotnet run],
+  [New way of running . NET executables],
+  [dotnet run],
   [So how do things work now that we have the new CoreCLR and the CLI tooling? Firstly to understand what is going on under-the-hood, we need to set a few environment variables ( COREHOST\_TRACE and DOTNET\_CLI\_CAPTURE\_TIMING ) so that we get a more verbose output:],
   [Here, amongst all the pretty ASCII-art, we can see that dotnet run actually executes the following cmd:],
   [dotnet exec --additionalprobingpath C:\\Users\\matt\\.nuget\\packages c:\\dotnet\\bin\\Debug\\netcoreapp1.0\\myapp.dll],
   [Note : this is what happens when running a Console Application. The CLI tooling supports other scenarios , such as self-hosted web sites, which work differently.],
-  [id="dotnet-exec-and-corehost"\> dotnet exec and corehost],
+  [dotnet exec and corehost],
   [Up-to this point everything was happening within managed code, however once dotnet exec is called we jump over to unmanaged code within the corehost application . In addition several other .dlls are loaded, the last of which is the CoreCLR runtime itself (click to go to the main source file for each module):],
   [hostpolicy.dll],
   [hostfxr.dll],
@@ -1346,11 +1164,8 @@ Then, the process’ primary thread calls a method defined inside MSCorEE.dll. T
   [C:\\Program Files\\dotnet\\shared\\Microsoft. NETCore. App\\1.0.0-rc2-3002702\\Microsoft. NETCore. App.deps.json],
   [Note : You can also run your app by invoking corehost.exe directly with the following command:],
   [corehost.exe C:\\dotnet\\bin\\Debug\\netcoreapp1.0\\myapp.dll],
-  [id="executing-a-net-assembly"\>Executing a . NET Assembly],
+  [Executing a . NET Assembly],
   [At last we get to the point at which the . NET dll/assembly is loaded and executed, via the code shown below, taken from unixinterface.cpp :],
-  [hr = host -\> Start (); 
- IfFailRet ( hr );],
-  [hr = host -\> CreateAppDomainWithManager (],
   [appDomainFriendlyNameW ,],
   [\/\\/ Flags:],
   [\/\\/ APPDOMAIN\_ENABLE\_PLATFORM\_SPECIFIC\_APPS],
@@ -1381,7 +1196,7 @@ Then, the process’ primary thread calls a method defined inside MSCorEE.dll. T
   [Expose Unix hosting API on Windows],
   [Unix Hosting API],
   [And that’s it, your . NET code is now running, simple really!!],
-  [id="additional-information"\>Additional information:],
+  [Additional information:],
   [Official dotnet cli tooling documentation],
   [corehost runtime assembly resolution],
   [Runtime Configuration File specification],
@@ -1394,12 +1209,10 @@ Then, the process’ primary thread calls a method defined inside MSCorEE.dll. T
   debug-mode: false,
 )
 
-  #pull-quote([0-rc2-3002702    APP\_PATHS =       c:\\dotnet\\bin\\Debug\\netcoreapp1.], [Matt Warren (.NET)])
+#pull-quote([0-rc2-3002702    APP\_PATHS =       c:\\dotnet\\bin\\Debug\\netcoreapp1.], [Matt Warren (.NET)])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Fuzzing the .NET JIT Compiler],
   author: [Matt Warren (.NET)],
   source-name: [Matt Warren (.NET)],
@@ -1411,7 +1224,7 @@ Then, the process’ primary thread calls a method defined inside MSCorEE.dll. T
   [Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program.],
   [Or in other words, a fuzzer is a program that tries to create source code that finds bugs in a compiler .],
   [Massive kudos to the developers behind Fuzzlyn, Jakob Botsch Nielsen (who helped answer my questions when writing this post), Chris Schmidt and Jonas Larsen , it’s an impressive project!! (to be clear, I have no link with the project and can’t take any of the credit for it)],
-  [id="compilation-in-net"\>Compilation in . NET],
+  [Compilation in . NET],
   [But before we dive into ‘Fuzzlyn’ and what it does, we’re going to take a quick look at ‘compilation’ in the . NET Framework . When you write C\#/VB. NET/F\# code (delete as appropriate) and compile it, the compiler converts it into Intermediate Language (IL) code. The IL is then stored in a .exe or .dll, which the Common Language Runtime (CLR) reads and executes when your program is actually run. However it’s the job of the Just-in-Time (JIT) Compiler to convert the IL code into machine code.],
   [Why is this relevant? Because Fuzzlyn works by comparing the output of a Debug and a Release version of a program and if they are different, there’s a bug! But it turns out that very few optimisations are actually done by the ‘Roslyn’ compiler , compared to what the JIT does, from Eric Lippert’s excellent post What does the optimize switch do? (2009)],
   [The /optimize flag does not change a huge amount of our emitting and generation logic . We try to always generate straightforward, verifiable code and then rely upon the jitter to do the heavy lifting of optimizations when it generates the real machine code. But we will do some simple optimizations with that flag set. For example, with the flag set:],
@@ -1419,11 +1232,11 @@ Then, the process’ primary thread calls a method defined inside MSCorEE.dll. T
   [That’s pretty much it. These are very straightforward optimizations; there’s no inlining of IL, no loop unrolling, no interprocedural analysis whatsoever. We let the jitter team worry about optimizing the heck out of the code when it is actually spit into machine code; that’s the place where you can get real wins .],
   [So in . NET, very few of the techniques that an ‘Optimising Compiler’ uses are done at compile-time . They are almost all done at run-time by the JIT Compiler (leaving aside AOT scenarios for the time being ).],
   [For reference, most of the differences in IL are there to make the code easier to debug, for instance given this C\# code:],
-  [class="highlight"\> public void M () { 
- foreach ( var item in new \[\] { 1 , 2 , 3 , 4 }) { 
+  [public void M () \{ 
+ foreach ( var item in new \[\] \{ 1 , 2 , 3 , 4 \}) \{ 
  Console . WriteLine ( item ); 
- } 
- }],
+ \} 
+ \}],
   [The differences in IL are shown below (‘Release’ on the left, ‘Debug’ on the right). As you can see there are a few extra nop instructions to allow the debugger to ‘step-through’ more locations in the code, plus an extra local variable, which makes it easier/possible to see the value when debugging.],
   [(click for larger image or you can view the ‘Release’ version and the ‘Debug’ version on the excellent SharpLab )],
   [For more information on the differences in Release/Debug code-gen see the ‘Release (optimized)’ section in this doc on CodeGen Differences . Also, because Roslyn is open-source we can see how this is handled in the code:],
@@ -1436,7 +1249,7 @@ Then, the process’ primary thread calls a method defined inside MSCorEE.dll. T
   [Extra Attribute is inserted in Debug builds],
   [This all means that the ‘Fuzzlyn’ project has actually been finding bugs in the . NET JIT, not in the Roslyn Compiler],
   [(well, except this one Finally block belonging to unexecuted try runs anyway , which was fixed here )],
-  [id="how-it-works"\>How it works],
+  [How it works],
   [At the simplest level, Fuzzlyn works by compiling and running a piece of randomly generated code in ‘Debug’ and ‘Release’ versions and comparing the output. If the 2 versions produce different results, then it’s a bug, specifically a bug in the optimisations that the JIT compiler has attempted.],
   [The . NET JIT, known as ‘RyuJIT’, has several modes. It can produce fully optimised code that has the highest-performance, or in can produce more ‘debug’ friendly code that has no optimisations, but is much simpler. You can find out more about the different ‘optimisations’ that RyuJIT performs in this excellent tutorial , in this design doc or you can search through the code for usages of the ‘compDbgCode’ flag .],
   [From a high-level Fuzzlyn goes through the following steps:],
@@ -1444,19 +1257,19 @@ Then, the process’ primary thread calls a method defined inside MSCorEE.dll. T
   [Check if the code produces an error (Debug v. Release)],
   [Reduce the code to it’s simplest form],
   [If you want to see this in action, I ran Fuzzlyn until it produced a randomly generated program with a bug. You can see the original source (6,802 LOC) and the reduced version (28 LOC). What’s interesting is that you can clearly see the buggy line-of-code in the original code , before it’s turned into a simplified version :],
-  [class="highlight"\> \/\\/ Generated by Fuzzlyn v1.1 on 2018-08-22 15:19:26 
+  [\/\\/ Generated by Fuzzlyn v1.1 on 2018-08-22 15:19:26 
  \/\\/ Seed: 14928117313359926641 
  \/\\/ Reduced from 256.3 KiB to 0.4 KiB in 00:01:58 
  \/\\/ Debug: Prints 0 line(s) 
  \/\\/ Release: Prints 1 line(s) 
  public class Program 
- { 
+ \{ 
  static short s\_18 ; 
  static byte s\_33 = 1 ; 
- static int \[\] s\_40 = new int \[\]{ 0 }; 
+ static int \[\] s\_40 = new int \[\]\{ 0 \}; 
  static short s\_74 = 1 ; 
  public static void Main () 
- { 
+ \{ 
  s\_18 = - 1 ; 
  \/\\/ This comparision is the bug, in Debug it's False, in Release it's True 
  \/\\/ However, '(ushort)(s\_18 | 2L)' is 65,535 in Debug \*and\* Release 
@@ -1475,27 +1288,29 @@ Then, the process’ primary thread calls a method defined inside MSCorEE.dll. T
   [‘Try/Catch’ statement],
   [Binary Operation tables , which are themselves generated using Roslyn],
   [All the statements and expressions that are currently supported are listed here . Interestingly enough the type of statement/expression chosen is not completely random, instead that are chosen using probability tables , that look like this:],
-  [class="highlight"\> public ProbabilityDistribution StatementTypeDist { get ; set ; } 
+  [public ProbabilityDistribution StatementTypeDist \{ get ; set ; \} 
  = new TableDistribution ( new Dictionary 
- { 
+ \{ 
  \[( int ) StatementKind . Assignment \] = 0.57 , 
  \[( int ) StatementKind . If \] = 0.17 , 
  \[( int ) StatementKind . Block \] = 0.1 , 
  \[( int ) StatementKind . Call \] = 0.1 , 
  \[( int ) StatementKind . TryFinally \] = 0.05 , 
  \[( int ) StatementKind . Return \] = 0.01 , 
- });],
+ \});],
   [As we saw before, the initial program that Fuzzlyn produces is quite large (over 5,000 LOC), so why does it create and execute a very large program?],
   [Partly because it’s quicker to do this compared to working with lots of smaller programs, i.e. the steps of generation, compilation and starting new processes can be reduced by running large programs.],
   [In addition, Jakob explained the other reasons:],
   [Empirically, other similar projects have shown that larger programs are better . Csmith authors report that most bugs were found with examples of around 80 KB (I don’t remember the exact number). We actually found the same thing in v1.0 – our examples had an average size of 76 KB],
   [Small programs do not get as many opportunities to generate a lot of patterns . For example, it is very unlikely that a small program will have a method taking a byte parameter and at the same time, a method returning a ref byte (this pattern has a bug on Linux: dotnet/coreclr\#19256 ).],
   [We mainly adjusted our probabilities based on how the examples looked. We strived for the generator to produce code that looked relatively like human code . This included going for a wide range of program sizes. By the way, you can run Fuzzlyn with --stats --num-programs=10000 to get a view of the distribution of program sizes – it will output stats for every 500 programs generated.],
-  [id="checking-for-bugs"\>‘Checking’ for bugs],
+  [‘Checking’ for bugs],
   [To check if the behaviour of 2 samples diverge (in ‘Release’ v ‘Debug’ mode), the tool inserts checksum-related code throughout the program. For example here’s a randomly generated method, note the calls to the Checksum(..) function at the end:],
+  [static sbyte M15 ( int arg0 ) 
+ \{ 
+ bool var0 = - 71 ‘Reducing’ the output],
   [However, the checksums also help Fuzzlyn ‘Reduce’ the program from the large initial version to something much more readable . By using a ‘binary search’ technique it can remove a section of code and compare the checksums of the remaining code. If the checksums still differ then the remaining code contains the error/bug and Fuzzlyn can carry on reducing it, otherwise it can be discarded.],
   [In addition, Fuzzlyn makes good use of the Roslyn ‘syntax tree’ API when removing code. For instance the CoarseStatementRemover class makes use of the Roslyn CSharpSyntaxWriter class, which is designed to allow syntax re-writing (also see Using a CSharp Syntax Rewriter ).],
-  [id="the-results"\>The Results],
   [What initially drew me to the Fuzzlyn project (aside from the great name ) was the impressive results I saw it getting . As of the end of Aug 2018, they’re reported 22 bugs, of which 11 have already been fixed (kudos to the . NET JIT devs for fixing them so quickly).],
   [Here’s a list of some of them, taken from the project README :],
   [NullReferenceException thrown for multi-dimensional arrays in release (fixed)],
@@ -1516,7 +1331,6 @@ Then, the process’ primary thread calls a method defined inside MSCorEE.dll. T
   [RyuJIT: Mishandling of subrange assertion for rewritten call parameter],
   [RyuJIT: Incorrect ordering around Interlocked. Exchange and Interlocked. CompareExchange],
   [(for the most up-to-date list see the GitHub Issues created by \@jakobbotsch )],
-  [id="summary"\>Summary],
   [I think that Fuzzlyn is a fantastic project, anything that roots out bugs or undesired behaviour in the JIT is a great benefit to all . NET Developers. If you want a see what the potential side-effects of JIT bugs can be, take a look at Why you should wait on upgrading to . Net 4.6 by Nick Craver (one of the developers at Stack Overflow).],
   [Now, you could argue that some of the code patterns that Fuzzlyn detects are not ones you’d normally write, e.g. if (((ushort)(s\_18 | 2L) Further Reading],
   [Jakob was kind enough to share some additional links with me:],
@@ -1534,10 +1348,8 @@ Then, the process’ primary thread calls a method defined inside MSCorEE.dll. T
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Rust shenanigans: return type polymorphism],
   author: [Luciano Mammino],
   source-name: [Luciano Mammino (loige)],
@@ -1547,45 +1359,123 @@ Then, the process’ primary thread calls a method defined inside MSCorEE.dll. T
   [I am seeing this feature for the first time in a programming language and at first glance, it did seem like some sort of built-in compiler magic, available only in the standard library. In reality, it is a generalised feature that you can use in your own code every day.],
   [Keep in mind that I am still quite a beginner with Rust, so my description might not be the most accurate but I will try to make a point on why I like this feature and how it works by using some examples. Hopefully, you will find this topic as interesting as I did!],
   [Ok, enough chit chat, let’s get into it! 🧐],
-  [id="return-type-polymorphism-what"\>Return type polymorphism, what?!],
+  [Return type polymorphism, what?!],
   [Before trying to explain what return type polymorphism actually is, let me show you a couple of interesting examples that might look familiar to you if you have been playing with Rust already:],
+  [use std :: collections :: HashSet ;],
+  [fn main () \{],
+  [let nums = \[ 2 , 17 , 22 , 48 , 1997 , 2 , 22 \];],
+  [let nums\_square\_no\_dups : HashSet = nums . iter (). map (| x | x \* x ). collect ();],
+  [println! ( "\{:?\}" , nums\_square\_no\_dups ); \/\\/ \{2304, 484, 3988009, 4, 289\}],
+  [\}],
   [Ok, did you see it? I mean, how in the world is that collect() figuring out that I want to “collect” values from an iterator into a HashSet of integers? Indeed, it is giving me exactly a HashSet of integers!],
   [Not convinced yet? We can also change this example slightly and see what happens… Let’s try with Vec :],
+  [fn main () \{],
+  [let nums = \[ 2 , 17 , 22 , 48 , 1997 , 2 , 22 \];],
+  [let nums\_square : Vec = nums . iter (). map (| x | x \* x ). collect ();],
+  [println! ( "\{:?\}" , nums\_square ); \/\\/ \[4, 289, 484, 2304, 3988009, 4, 484\]],
+  [\}],
   [Ok that’s not removing duplicates anymore and it’s preserving the order of elements, but that’s not the point! The point is that collect() is still giving us what we want. This time we are asking for a Vec and indeed we get a Vec rather than a HashMap .],
   [Note that this code is almost the same as the previous one. We didn’t change anything other than the type declaration (and a variable name, but that’s irrelevant)!],
   [Also, keep in mind that, while Rust can ofter infer your types and, most often, you don’t have to provide explicit type definitions, when using collect() the type definition is necessary.],
   [Let’s see what happens if we try to remove Vec :],
+  [fn main () \{],
+  [let nums = \[ 2 , 17 , 22 , 48 , 1997 , 2 , 22 \];],
+  [let nums\_square = nums . iter (). map (| x | x \* x ). collect ();],
+  [\}],
   [This example won’t to compile because collect doesn’t know what is the return type, so we get this nice-looking error:],
+  [error\[E0282\]: type annotations needed],
+  [|],
+  [| let nums\_square = nums.iter().map(|x| x \* x).collect();],
+  [| ^^^^^^^^^^^ consider giving \`nums\_square\` a type],
   [I hope you starting to get the point. Some functions like collect() can behave differently, based on the expected return type! The return type needs to be explicit, so the Rust compiler can pick the right behaviour for you.],
   [Ok, this is one of the first things I learned in Rust when doing coding challenges and I have been thinking for a while “this is just some iterator magic and it probably works only for a few standard types” …],
   [Then, more recently I saw some other piece of code that was doing something like this:],
+  [fn main () \{],
+  [let a : u8 = Default :: default ();],
+  [let b : i64 = Default :: default ();],
+  [let c : String = Default :: default ();],
+  [let d : ( u16 , usize ) = ( Default :: default (), Default :: default ());],
+  [dbg! ( a ); \/\\/ a = 0],
+  [dbg! ( b ); \/\\/ b = 0],
+  [dbg! ( c ); \/\\/ c = ""],
+  [dbg! ( d ); \/\\/ d = (0,0)],
+  [\}],
   [Ok, types have default values, so what?],
   [Yeah, nothing impressive, I know… But yet again, we are always calling the same function, this time Default::default() , and it’s giving us the default value for the specific type we need!],
   [In all honesty, I am almost glanced over this one thinking it was some other nice Rust compile-time magic for built-in types. Until I noticed a small note saying “by the way, you can have a default value for your custom types if you want to” .],
   [That got my attention, and the example I saw was something like this:],
+  [\#\[derive( Debug )\]],
+  [struct Point3D \{],
+  [x : f64 ,],
+  [y : f64 ,],
+  [z : f64 ,],
+  [\}],
+  [\/\\/ it's easy pal, just implement the \`Default\` trait],
+  [impl Default for Point3D \{],
+  [Point3D \{],
+  [x : 0\_ f64 ,],
+  [y : 0\_ f64 ,],
+  [z : 0\_ f64 ,],
+  [\}],
+  [\}],
+  [\}],
+  [fn main () \{],
+  [let origin : Point3D = Default :: default ();],
+  [println! ( "\{:?\}" , origin ); \/\\/ Point3D \{ x: 0.0, y: 0.0, z: 0.0 \}],
+  [\}],
   [The Default trait allows you to define what’s the default value for your custom types. The trait forces you to implement a default() method which must return an instance of the given type ( Self ).],
   [Again, nothing extremely exciting here… except that at this point something clicked in my head and I started to ask myself “so this is some sort of generalised feature that everyone can use…” .],
   [My suspicion was that the Default::default() function can somehow infer the expected return type and, if that type implements the Default trait, then it simply calls the default() function for that type.],
   [Of course, I immediately went and looked for the actual implementation of Default::default() to validate my guess.],
   [Now, I am not going to claim I understood the implementation 100% (there are some lovely macros in there and my brain can’t compile those just yet), but I had a feeling that I was on the right path with my guess.],
   [The interesting bit is the full signature of the Default::default() function:],
+  [\/\\/ ...],
+  [\}],
   [I read this as:],
   [Default::default() has a generic parameter T],
   [T has a constraint: it can be any type as long as it implements the Default trait],
   [finally (and this is the important point), T is the type that Default::default() must return],
   [And this is where the magic is coming from. The implementation is actually generic over the return type. Also, by using the Default trait constraint, we can have an extensible definition: anyone can implement new types that will work with Default::default() . More on this later…],
   [For now, this is enough theory to digest, let’s try to do something with it!],
-  [id="lets-build-something"\>Let’s build something],
+  [Let’s build something],
   [Over the years, I learned that my brain can appreciate new programming concepts when I can build something using them. So, I rolled up my sleeves and started to think “OK, what can I possibly build with this?”],
   [I suppose, a good question here is “When do I want to do different things based on different expected return type?”],
   [I came up with a simple idea related to board games. Something like D&D where you have different kind of dice (different number of faces).],
   [Can we use return type polymorphism to be able to roll different type of dice?],
   [I think we can! This is more or less what I did with my first attempt:],
+  [use rand ::\{thread\_rng, Rng \};],
+  [trait Roll \{],
+  [\}],
+  [\#\[derive( Debug )\]],
+  [struct D6 ( u8 );],
+  [\#\[derive( Debug )\]],
+  [struct D8 ( u8 );],
+  [struct Die \{\}],
+  [impl Roll for Die \{],
+  [D6 \{],
+  [0 : thread\_rng (). gen\_range ( 1 ..= 6 ),],
+  [\}],
+  [\}],
+  [\}],
+  [impl Roll for Die \{],
+  [D8 \{],
+  [0 : thread\_rng (). gen\_range ( 1 ..= 8 ),],
+  [\}],
+  [\}],
+  [\}],
+  [fn main () \{],
+  [\/\\/ let's roll a D6],
+  [let roll : D6 = Die :: roll ();],
+  [println! ( "\{:?\}" , roll ); \/\\/ D6(3)],
+  [\/\\/ let's roll a D8],
+  [let roll : D8 = Die :: roll ();],
+  [println! ( "\{:?\}" , roll ); \/\\/ D8(3)],
+  [\}],
   [For simplicity, I am showing only how I implemented D6 and D8 . If you want the full version, check out my D&D dice Rust playground .],
   [The interesting part of this implementation is that I have 2 different implementations for the function Die::roll() , one returns a D6 (6-faces die) roll and the other returns a D8 (8-faces die) roll.],
   [Rust will automatically call the correct implementation based on what’s the expected return type for that invocation.],
   [Well done to me for using return type polymorphism!],
-  [id="lets-make-it-extensible"\>Let’s make it extensible],
+  [Let’s make it extensible],
   [Ok, but my silly implementation has a problem: it is not extensible.],
   [I mean, what if I turn this code into a library and someone needs to implement a custom die with 100 faces? Or what if they want a trick die that always rolls 100?],
   [How can we support this use case?],
@@ -1599,26 +1489,95 @@ Then, the process’ primary thread calls a method defined inside MSCorEE.dll. T
   [Now, this implementation of roll() just needs to use the Rollable trait on the current type for T],
   [This idea isn’t really original. We are pretty much mimicking what Default::default() does with the trait Default , except that their naming choice is maybe slightly more confusing, since the module, the function and the trait are all called default 😰 …],
   [Let’s see how it looks like in code:],
+  [use rand ::\{thread\_rng, Rng \};],
+  [\/\/\/ This is the trait that every die needs to implement to be... well... "rollable", right?],
+  [pub trait Rollable \{],
+  [\/\/\/ Roll the die],
+  [\/\/\/ Get the value from the latest roll],
+  [\}],
+  [\/\/\/ A generic function to roll a given die.],
+  [Rollable :: roll () \/\/],
+  [\}],
+  [\/\/\/ A D6 die (6 faces): a roll will give you a \`u8\` in the \`1..=6\` range.],
+  [\#\[derive( Debug )\]],
+  [pub struct D6 ( u8 );],
+  [impl Rollable for D6 \{],
+  [D6 \{],
+  [0 : thread\_rng (). gen\_range ( 1 ..= 6 ),],
+  [\}],
+  [\}],
+  [self . 0],
+  [\}],
+  [\}],
+  [\/\/\/ A D8 die (8 faces): a roll will give you a \`u8\` in the \`1..=8\` range.],
+  [\#\[derive( Debug )\]],
+  [pub struct D8 ( u8 );],
+  [impl Rollable for D8 \{],
+  [D8 \{],
+  [0 : thread\_rng (). gen\_range ( 1 ..= 8 ),],
+  [\}],
+  [\}],
+  [self . 0],
+  [\}],
+  [\}],
   [That’s pretty much it, now we can keep using our D6 and D8 as before:],
+  [fn main () \{],
+  [\/\\/ let's roll a D6],
+  [let r : D6 = roll ();],
+  [println! ( "\{:?\}" , r ); \/\\/ D6(3)],
+  [\/\\/ let's roll a D8],
+  [let r : D8 = roll ();],
+  [println! ( "\{:?\}" , r ); \/\\/ D8(3)],
+  [\}],
   [But now, anyone using this library, can also implement their own custom dice:],
+  [\#\[derive( Debug )\]],
+  [struct Fake100 ( u8 );],
+  [impl Rollable for Fake100 \{],
+  [Fake100 \{ 0 : 100 \} \/\/],
+  [\}],
+  [self . 0],
+  [\}],
+  [\}],
+  [fn main () \{],
+  [println! ( "I bet I'll get a 100 this time!" );],
+  [let d : Fake100 = roll ();],
+  [println! ( "Look what I got: \{\}!" , d . val ()) \/\/],
+  [\}],
   [Pretty neat, isn’t it!?],
   [I actually did end up publishing this silly example as a library . Check it out. Who knows, maybe you do really want to implement a board game of some sort!],
-  [id="the-turbo-fish-syntax"\>The turbo-fish syntax],
+  [The turbo-fish syntax],
   [There is still one interesting detail to discuss before we can wrap this up.],
   [We already saw that, when a function is using return type polymorphism, we need to explicitly declare the expected type.],
   [What if you want to call a function implementing return type polymorphism but you don’t want to assign it? Let’s say we want to use the returned value immediately, maybe in a println!() :],
+  [fn main () \{],
+  [println! ( "\{:?\}" , roll ());],
+  [\}],
   [How can Rust understand what we want?],
   [In fact, it doesn’t! If you try to compile that code you will get a beautiful error message:],
+  [error\[E0282\]: type annotations needed],
+  [|],
+  [| println!("\{:?\}", roll());],
+  [| ^^^^ cannot infer type for type parameter \`T\` declared on the function \`roll\`],
   [The compiler also suggests running rustc --explain E0282 to get a detailed guide on how to solve this problem. You gotta give it to the Rust team, they have done such a tremendous job in terms of providing great documentation!],
   [Now, if you are patient enough to run that command and read the guide, you will find that we can solve this issue with the so-called turbo-fish syntax!],
-  [The turbo-fish syntax looks like… a fish: ::\<\> … yeah, with some degree of imagination!],
   [So, this is how we actually use it to specify at call time the type for the generic parameter:],
+  [fn main () \{],
+  [println! ( "\{:?\}" , roll :: ());],
+  [\}],
   [OK… Maybe :: () looks a bit more like a fish…],
   [Anyhow, with this syntax, the type for the parameter T is not ambiguous anymore: we are explicitly saying we want a D6 !],
   [In reality, the turbo fish is the extended syntax for functions with generic types, except that, when we are doing an assignment with an well defined type, the Rust compiler is smart enough to infer the type of generic parameters and make our life easier.],
   [Update 2021-04-14: Note though that Rust can infer types from function arguments, so in most cases you can still rely on type inference. Let’s see a quick example:],
+  [\}],
+  [fn main () \{],
+  [let escaped = try\_dodge\_attack ( roll (), roll ());],
+  [println! (],
+  ["\{\}" ,],
+  [match escaped \{],
+  [\}],
+  [);],
+  [\}],
   [In this example, we are calling try\_dodge\_attack(roll(), roll()) and we don’t have to use the turbo-fish syntax. The Rust compiler looks at the type declaration of the function arguments and figures out that we want to roll a D6 and a D8 .],
-  [id="conclusion"\>Conclusion],
   [This concludes our exploration of Rust return type polymorphism.],
   [I do hope you found this topic (and this article!) as interesting as I did and feel more than welcome to let me know in the comments if you did know about this capability already. Are you already using it in production somewhere? I’d be really curious to know your use case, so please share it with me 😇],
   [If you want a much more polished and detailed explanation of this idea check out this brilliant blog post by James Coglan called Generic returns in Rust .],
@@ -1631,17 +1590,15 @@ Then, the process’ primary thread calls a method defined inside MSCorEE.dll. T
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [psvsd: Custom Vita microSD card adapter],
   author: [yifanlu],
   source-name: [Yifan Lu],
   images: (),
   paragraphs: (
   [One thing I love about Vita hacking is the depth of it. After investing so much time reverse engineering the software and hardware, you think you would run out of things to hack. Each loose end leads to another month long project. This all started in the development of HENkaku Ensō . We wanted an easy way to print debug statements early in boot. UART was a good candidate because the device initialization is very simple and the protocol is standard. The Vita SoC (likely called Kermit internally as we’ll see later on) has seven UART ports. However, it is unlikely they are all hooked up on a retail console. After digging through the kernel code, I found that bbmc.skprx , the 3G modem driver contain references to UART. After a trusty FCC search , it turns out that the Vita’s 3G modem uses a mini-PCIe connector but with a custom pin layout and a custom form factor. The datasheet gives some useful description for each pin, and UART\_KERMIT seemed like the most likely candidate (there’s also UART\_SYSCON which is connected to the SCEI chip on the bottom of the board, which serves as a system controller and a UART\_EXT which is not hooked up on the Vita side). So finding a debug output port was a success, but with the datasheet in front of me, the USB port caught my attention. Wouldn’t it be neat to put in a custom USB device?],
-  [id="on-usb-in-the-vita"\>On USB in the Vita],
+  [On USB in the Vita],
   [A quick aside on the various USB ports found in the different models of the Vita.],
   [The top port on OLED models (commonly referred to as the “mystery port” and incorrectly referred to as a “hidden video out port”) is a USB host. It is unknown if the port is enabled by default or how to enable it.],
   [The bottom port on OLED models (sometimes called the “multiconnector”) supports UDC (USB client) but can also enable USB host support. It is unknown how this switch is controlled, but I’m guessing the syscon is involved and it’s likely USB OTG.],
@@ -1650,68 +1607,57 @@ Then, the process’ primary thread calls a method defined inside MSCorEE.dll. T
   [There is also a USB to Ethernet chip in the PS TV for the Ethernet port that is connected to Kermit via USB.],
   [The audio codec chip is connected to Kermit via USB for all models.],
   [and of course, the 3G modem on OLED models is connected by USB. On Wifi only models, VDD to the unfilled mini-PCIe pad is missing a bridge. The USB D+/D- signals are also missing a ferrite bead under the adjacent shield. It is unknown if bridging these three locations will enable the USB port on wifi models or if extra work is needed.],
-  [id="designing-a-microsd-adapter"\>Designing a microSD adapter],
+  [Designing a microSD adapter],
   [In order to become more familiar with hardware design as well as understand how USB works on the Vita, I thought it would be fun to create a custom Vita USB device that fits on the modem port. The main reason I chose this port aside from the other USB ports is that it is the easiest to build. It is just a matter of designing and fabricating a PCB, which is simple to do. In comparison, connecting to any of the other USB ports would require creating custom adapters, molding plastic, and dealing with mechanical issues. Creating an adapter for the external ports is also not exactly a usable solution as the Vita is supposed to be portable, and having to dangle a USB port is not something most people are willing to do. In addition, my custom Vita modem card can expose the UART port to work as a console output device (which started this whole project). For this first project, I wanted to build a microSD adapter. Vita memory cards are notoriously expensive, with 32GB cards retailing for \$79.99 USD. In comparison, a microSD card with similar performance and capacity goes for \$12 USD. Therefore, it would be immensely useful to use microSD cards as a USB storage replacement for the proprietary Vita memory cards.],
-  [id="choosing-parts"\>Choosing parts],
+  [Choosing parts],
   [SD to USB ICs are pretty cheap and common–you find them in any USB SD adapter. A quick research shows that most cheap adapters use an Alcor or Genesys chip. There is also the MAX14500 series chip from Maxim that is no longer in production and the Microchip USB2244 chip. The documentation for the cheap Asia manufactured chips were lacking so I went with the USB2244 even though it is more expensive (I don’t plan to mass produce it anyways). Microchip provides good documentation in comparison, complete with layout guidelines and a reference design. Unfortunately, I can’t find an Eagle library for the USB2244 so I had to design it myself (using Sparkfun’s tutorial ).],
   [Next, I needed an Eagle part for the Vita modem form factor. Luckily, I found a good part for mini-PCIe and was able to modify it to the custom size that Vita uses thanks to the drawing in the datasheet.],
-  [id="schematic"\>Schematic],
   [Next is connecting the parts together. Having no experience whatsoever, I turned again to Sparkfun’s tutorials . Copying the reference design , I came up with a board with the microSD adapter and pin headers for the UART.],
-  [id="layout"\>Layout],
   [I learned board layout again from Sparkfun making sure to follow the design guidelines from Microchip . I also cheated by looking at the layout for the reference board and ensuring that relative distance between objects match from my design. The main challenge is in routing because of the constrained size, but through some creativity, I managed to hook everything up.],
-  [id="manufacturing"\>Manufacturing],
   [Next step is to produce some prototypes. Thankfully this is extremely easy in this day and age. Pcbshopper allows you to choose your design requirements and it will search across many PCB manufacturers for the best price. The price (plus shipping) is similar across many Chinese manufacturers–about \$15 for 10 boards with standard options. The catch is slow lead time and even slower shipping. Throughout the project, I’ve tried EasyEda , SeeedStudio , DirtyPCBs , and PCBway . Below is a mini-review of my experiences with each fab.],
   [I used DirtyPCBs for the breakout adapters. The shipping time is the fastest per dollar (using the cheapest shipping rate, I got the package in two and a half weeks). The board quality was good but a couple of the adapters had the PCIe connector cut improperly and therefore won’t fit the Vita without some sanding. There was no problem with the wiring or drills even though I used the smallest allowed sizes.],
   [I purchased the first three prototypes from SeeedStudios because their website was the easiest to use and the cleanest of everyone on PCBshopper. The cheapest shipping was slow (took almost a month to arrive) and more than half the adapters I received had the PCIe connectors not cut properly. I found no electrical problems.],
   [EasyEDA had the best quality of all the fabs I’ve used. All the cuts were good and the drill holes were very precise and exactly centered. They do not offer cheap shipping and build time was a couple days longer than their estimate of 2-4 days. I also ordered a stencil from them and that came out great as well.],
   [PCBway would be my recommended fab. Although the quality was not as excellent as EasyEDA, it was still better than the other fabs (no issues with the connector). They also do not offer cheap shipping but their build time is a couple day faster than EasyEDA. More importantly, PCBway offers a competitive rate (5x cheaper than SeeedStudios) for PCB assembly and eventually became the fab that produced the final production run for this project.],
-  [id="prototyping"\>Prototyping],
   [What’s the most cost effective way to debug the design? Considering how cheap it is to build these boards, it is no surprise that the best way to debug is to build another board. I created a second mini-PCIe based design–this time with a mini-PCIe socket on the card to act as a breakout board. Because the design for the breakout board is simple, the only requirement to verify the board is to do connectivity test on each pin after it arrives. Then I can probe the pads on the breakout port to debug the signals on the main design.],
   [Using the breakout board, I can inspect the signals from the 3G modem in anticipation of some sort of custom handshake protocol. Fortunately, there wasn’t such a sequence and the USB port works as-is. When the first boards came back (a month of waiting), I was able to test it by connecting the USB pads on the breakout board to a USB cable and connect the psvsd card to the computer.],
   [Immediately, I found some errors and fixed it in the design. Having a test plan ready by the time the boards arrived really sped up the process.],
-  [id="funding"\>Funding],
   [The nice thing about software hacking as a hobby is that it costs nothing but time. But for this hardware hack, I have spent a little over \$100 on this project in parts, supplies, and boards. That’s less than buying two video games, so I have no qualms about the cost, but considering the interest the community showed, I think it would be more than fair to spread the cost across everyone who is interested. My idea is this: I will make a limited production of 100 boards (no more because I will be shipping the packages myself and it’s fairly laborious). These boards will be sold at cost and an extra \$1 will be added to cover my expenses. I have heard many horror stories of crowd funding gone wrong, so I took many steps to ensure that this will be a success.],
   [First, I made a spreadsheet covering all the costs: supplies, boards, shipping materials, platform fees, etc. Then I added a \$100 buffer for any extraneous expenses (another prototype run, for example). Next, I made sure to be very clear upfront about what contributors are paying for: the supplies for me to develop this project. Because undoubtedly, manufacturing 100 boards at such a low cost will not have a perfect yield, I know a small number of these boards will have defects. I don’t have the time or money to deal with customer service for these issues, so part of the low price of the boards is that each contributor takes some amount of risk that their board is defective. Finally, I set a fixed goal so I do not receive the money until after 60 days. I am spending my own money in the meantime. My hope is that after 60 days, I’ll either complete the project and use the unlocked money to reimburse myself and fund the limited production. Or, I’ll run into some major unresolvable issue, in which I will refund everyone and just lose the ~\$200 I spent so far. However, after a month of steady progress I felt confident enough to take 400 more orders for a total of 500. Then after getting lots of good samples from the fab I also felt it was fine to test and ensure that every adapter works before shipping it out.],
   [The feedback was tremendous, and the funding goal was met in a day after it was posted . That gives me enough confidence and motivation to continue the project and ensure it is a success.],
-  [id="software"\>Software],
   [Fortunately, the driver is pretty easy to create. The Vita already has drivers for USB storage (it’s used on PS TV safe mode for reinstalling firmware), but is normally disabled. A simple patch running on HENkaku Ensō enables it at boot and using The\_FloW’s patches for mounting USB storage as a memory card, it all pretty much just works.],
-  [id="testing"\>Testing],
   [Next is an important part that I feel many ambitious project leaders skip–which is testing. I want some real-world usage data and more importantly, I want to know what the battery impact of my design is. This was the first hurdle I ran into. Initial results showed that the battery life lasted an hour less with psvsd installed when idle. Worse, the battery was consumed even when powered off (not lasting overnight). This is unacceptable for daily use. I took one of my breakout boards and re-purposed it to act as a current measurement harness by cutting the trace to the power input and attaching each end to an ammeter.],
   [Then, I was able to measure the exact current consumption during various usage cases (read, write, idle, etc). Below is a video of some of these tests.],
   [After testing the power usage of a couple of different USB devices and asking around on hardware forums, I found out the problem was two-fold. First, when the Vita is powered off, it does not power off the USB voltage line, but it does pull both USB data lines low. Unfortunately, this leaves the USB device in “reset” mode instead of “low power suspend” mode. Likely this wasn’t an issue for the 3G modem because it was a custom design meant only to pair with the Vita and has a separate power management IC that is smarter than just looking at the USB data lines. The second problem is that the USB2244 is a power hog of a chip. It draws an average and minimum of 100mA when not in “low power suspend” (which the Vita does not support) even if there is no activity on the SD card.],
   [As a result, I had no choice but to go for an “cheap Asia manufactured chips” even though there was less documentation and support. Luckily I found some datasheets and reference schematics for GL823 online and was able to buy a couple of them to play with. I discovered that cheaper doesn’t always means lesser quality. Not only did the GL823 consume less power (only 30mA average and 1.5mA in “reset” mode) but it also outperformed the USB2244 in read and write speeds as well! Even better, the GL823 does not require an external crystal so I can remove some of the area footprint as well. I really should have chosen this chip to start with.],
   [I also purchased a dedicated USB power tester at this point so I was able to get quick data measurements.],
   [Because the extra hardware must be powered somehow, some dip in battery life is expected, but in the final design this dip is not noticeable at all.],
-  [id="whats-next"\>What’s next?],
+  [What’s next?],
   [In the end, I made five prototypes and a breakout adapter. Here’s a family photo along with the final product to the right.],
   [Thanks to everyone who contributed to this project! There are more detailed posts (with more pictures) for each step in the process on the Indiegogo page for those who are interested. You can find the design on psvsd.henkaku.xyz . Since the design is open source and free for commercial use, I think someone will manufacture, sell, and support it. Here’s another free idea: buy a large number of \< 3.60 firmware 3G motherboards (they are around \$15-25 a piece on Aliexpress) and screws (M1.6x4mm flat-head no countersink) and bundle them together with a psvsd adapter and a microSD card to form a Vita hacking starter kit.],
   [I don’t plan to mass produce this myself but I do have at most 50 extra units due to canceled orders and extra parts. As a result, I’ve decided to auction them off to those who most want one up until September 2017. You can find more information about that here .],
 ),
   insert-map: (:),
   inline-pq: pull-quote([I created a second mini-PCIe based design–this time with a mini-PCIe socket on the card to act as a breakout board.], [yifanlu]),
-  inline-pq-idx: 18,
+  inline-pq-idx: 15,
   word-count: 2630,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [AI-generated tests as ceremony],
   author: [Mark Seemann],
   source-name: [Mark Seemann (ploeh blog)],
   images: (),
   paragraphs: (
-  [id="post"\>],
   [On epistemological soundness of using LLMs to generate automated tests.],
   [For decades, software development thought leaders have tried to convince the industry that test-driven development (TDD) should be the norm. I think so too . Even so, the majority of developers don't use TDD. If they write tests, they add them after having written production code.],
   [With the rise of large language models (LLMs, so-called AI) many developers see new opportunities: Let LLMs write the tests.],
   [Is this a good idea?],
   [After having thought about this for some time, I've come to the interim conclusion that it seems to be missing the point. It's tests as ceremony, rather than tests as an application of the scientific method .],
-  [id="1ff6fbf8c9e14618bc1a831b92ebbb66"\>
- How do you know that LLM-generated code works? \#],
+  [How do you know that LLM-generated code works? \#],
   [People who are enthusiastic about using LLMs for programming often emphasise the the amount of code they can produce. It's striking so quickly the industry forgets that lines of code isn't a measure of productivity . We already had trouble with the amount of code that existed back when humans wrote it. Why do we think that accelerating this process is going to be an improvement?],
   [When people wax lyrical about all the code that LLMs generated, I usually ask: How do you know that it works? To which the most common answer seems to be: I looked at the code, and it's fine.],
   [This is where the discussion becomes difficult, because it's hard to respond to this claim without risking offending people. For what it's worth, I've personally looked at much code and deemed it correct, only to later discover that it contained defects. How do people think that bugs make it past code review and into production?],
@@ -1719,36 +1665,31 @@ Then, the process’ primary thread calls a method defined inside MSCorEE.dll. T
   [To be clear, I'm a big proponent of code reviews. To the degree that any science is done in this field , research indicates that it's one of the better ways of catching bugs early. My own experience supports this to a degree, but an effective code review is a concentrated effort. It's not a cursory scan over dozens of code files, followed by LGTM.],
   [The world isn't black or white. There are stories of LLMs producing near-ready forms-over-data applications. Granted, this type of code is often repetitive, but uncomplicated. It's conceivable that if the code looks reasonable and smoke tests indicate that the application works, it most likely does. Furthermore, not all software is born equal. In some systems, errors are catastrophic, whereas in others, they're merely inconveniences .],
   [There's little doubt that LLM-generated software is part of our future. This, in itself, may or may not be fine. We still need, however, to figure out how that impacts development processes. What does it mean, for example, related to software testing?],
-  [id="f4fc01e761264964bf73e5f4001e489c"\>
- Using LLMs to generate tests \#],
+  [Using LLMs to generate tests \#],
   [Since automated tests, such as unit tests, are written in a programming language, the practice of automated testing has always been burdened with the obvious question: If we write code to test code, how do we know that the test code works? Who watches the watchmen? Is it going to be turtles all the way down ?],
   [The answer, as argued in Epistemology of software , is that seeing a test fail is an example of the scientific method. It corroborates the (often unstated, implied) hypothesis that a new test, of a feature not yet implemented, should fail, thereby demonstrating the need for adding code to the System Under Test (SUT). This doesn't prove that the test is correct, but increases our rational belief that it is.],
   [When using LLMs to generate tests for existing code, you skip this step. How do you know, then, that the generated test code is correct? That all tests pass is hardly a useful criterion. Looking at the test code may catch obvious errors, but again: Those people who already view automated tests as a chore to be done with aren't likely to perform a thorough code reading. And even a proper review may fail to unearth problems, such as tautological assertions .],
   [Rather, using LLMs to generate tests may lull you into a false sense of security. After all, now you have tests.],
   [What is missing from this process is an understanding of why tests work in the first place. Tests work best when you have seen them fail.],
-  [id="a78b57c393f941a9a879e7a19ccf61cc"\>
- Toward epistemological soundness \#],
+  [Toward epistemological soundness \#],
   [Is there a way to take advantage of LLMs when writing tests? This is clearly a field where we have yet to discover better practices. Until then, here are a few ideas.],
   [When writing tests after production code, you can still apply empirical Characterization Testing . In this process, you deliberately temporarily sabotage the SUT to see a test fail, and then revert that change. When using LLM-generated tests, you can still do this.],
   [Obviously, this requires more work, and takes more time, than 'just' asking an LLM to generate tests, run them, and check them in, but it would put you on epistemologically safer ground.],
   [Another option is to ask LLMs to follow TDD. On what's left of technical social media, I see occasional noises indicating that people are doing this. Again, however, I think the devil is in the details. What is the actual process when asking an LLM to follow TDD?],
   [Do you ask the LLM to write a test, then review the test, run it, and see it fail? Then stage the code changes? Then ask the LLM to pass the test? Then verify that the LLM did not change the test while passing it? Review the additional code change? Commit and repeat? If so, this sounds epistemologically sound.],
   [If, on the other hand, you let it go in a fast loop where the only observations your human brain can keep up with is that test status oscillates between red and green, then you're back to where we started: This is essentially ex-post tests with extra ceremony.],
-  [id="22986a515b8c4deba31dcc59501465c1"\>
- Cargo-cult testing \#],
+  [Cargo-cult testing \#],
   [These days, most programmers have heard about cargo-cult programming , where coders perform ceremonies hoping for favourable outcomes, confusing cause and effect.],
   [Having LLMs write unit tests strikes me as a process with little epistemological content. Imagine, for the sake of argument, that the LLM never produces code in a high-level programming language. Instead, it goes straight to machine code. Assuming that you don't read machine code, how much would you trust the generated system? Would you trust it more if you asked the LLM to write tests? What does a test program even indicate? You may be given a program that ostensibly tests the system, but how do you know that it isn't a simulation? A program that only looks as though it runs tests, but is, in fact, unrelated to the actual system?],
   [You may find that a contrived thought experiment, but this is effectively the definition of vibe coding . You don't inspect the generated code, so the language becomes functionally irrelevant.],
   [Without human engagement, tests strike me as mere ceremony.],
-  [id="a30e7891e7494761ab593f851cb5dd81"\>
- Ways forward \#],
+  [Ways forward \#],
   [It would be naive of me to believe that programmers stop using LLMs to generate code, including unit tests. Are there techniques we can apply to put software development back on more solid footing?],
   [As always when new technology enters the picture, we've yet to discover efficient practices. Meanwhile, we may attempt to apply the knowledge and experience we have from the old ways of doing things.],
   [I've already outlined a few technique to keep you on good epistemological footing, but I surmise that people who already find writing tests a chore aren't going to take the time to systematically apply the techniques for empirical Characterization Testing.],
   [Another option is to turn the tables. Instead of writing production code and asking LLMs to write tests, why not write tests, and ask LLMs to implement the SUT? This would entail a mostly black-box approach to TDD , but still seems scientific to me.],
   [For some reason I've never understood, however, most people dislike writing tests, so this is probably unrealistic, too. As a supplement, then, we should explore ways to critique tests .],
-  [id="ae3876d0b61846dcb5b702ed38c49a69"\>
- Conclusion \#],
+  [Conclusion \#],
   [It may seem alluring to let LLMs relieve you of the burden it is to write automated tests. If, however, you don't engage with the tests it generates, you can't tell what guarantees they give. If so, what benefits do the tests provide? Do automated testing become mere ceremony, intended to give you a nice warm feeling with little real protection?],
   [I think that there are ways around this problem, some of which are already in view, but some of which we have probably yet to discover.],
   [This blog is totally free, but if you like it, please consider supporting it .],
@@ -1761,10 +1702,8 @@ Then, the process’ primary thread calls a method defined inside MSCorEE.dll. T
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Log4j2 in production – making it fly],
   author: [mick],
   source-name: [Finn.no Tech],
@@ -1824,10 +1763,8 @@ introducing Log4j2 came with some concerns and hurdles.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Leaving the Tower of Babel],
   author: [Morten Lied Johansen],
   source-name: [Finn.no Tech],
@@ -1839,11 +1776,10 @@ introducing Log4j2 came with some concerns and hurdles.],
   [During these discussions, we created a quick poll and sent it out on our internal discussionboard. The poll asked questions like “How long have you worked as a developer?”, “Which language do you use for your day-to-day work?”, “If you were free to chose, which language would you use for your next project?” and “Which programming languages do you know?”. Our definition of “know” was very open in this poll, lowering the bar to allow people who had maybe written a single example program, and understands a bit of code could check the box.],
   [Out of the nearly 100 people that work with development, 56 answered. We can assume that the people who did answer, were the people who were interested in the topic, and might not be a representative selection, but the results are interesting none the less.],
   [So.. what did we learn?],
-  [id="experience"\>Experience],
   [Being a poll made in the midst of a discussion, mostly for fun, this part of the poll wasn’t framed in a way that gives us much useful information. We can say that the average developer who answered has worked for around seven or eight years, but with what looks like a reasonably fair spread across all groups. Almost as many with a couple years experience, as there are people with 10 to 15 years.],
-  [id="primary-language-in-day-to-day-work"\>Primary language in day-to-day work],
+  [Primary language in day-to-day work],
   [Being a predominatly Java shop, most of the respondents were using Java for their daily work. 35 out of 56 were Java-developers. 11 respondents worked with JavaScript daily, while four worked with Scala, three with Ruby, two with Objective-C, and finally one database-developer who worked mostly in T-SQL (The SQL-variant used in Sybase).],
-  [id="most-popular-choice-if-allowed-to-chose-freely"\>Most popular choice if allowed to chose freely],
+  [Most popular choice if allowed to chose freely],
   [The most interesting part of the poll, with many interesting insights. This is also the most loaded part, as the results could easily short-circuit any discussion about future choice in language.],
   [The bad news (or good, depending on your point of view), is that there was no clear answer from this section. Keep in mind that around 40 people didn’t answer this poll, and could be assumed to be content with the current status-quo.],
   [The biggest group was Java, not surprisingly. The surprising part is that it was only 16 people who would chose Java if they could chose freely. This is much lower than expected, but still make up the largest group. Of these, 13 people are already using Java today. 20 Java developers would like to use something else.],
@@ -1851,7 +1787,7 @@ introducing Log4j2 came with some concerns and hurdles.],
   [Six people were interested enough to answer the poll, but chose the non-commitant “I don’t care, as long as I’m making good stuff for our users” option.],
   [The number of possible answers here was a rather large selection of popular and not-so-popular-but-quite-well-known languages, so the fact that the list only includes eight languages is a sign that it’s not a completely random selection. Still, quite a lot of discussion is needed before any one of those languages gets center stage.],
   [A couple curious details found in this part of the poll includes the fact that the only people who would chose JavaScript are people who are already working in JavaScript every day. Groovy, Clojure, Objective-C and Scala have all managed to be chosen by a person who doesn’t actually know the langauge. There’s only three people who would switch to Java, if allowed to chose.],
-  [id="which-languages-do-we-know"\>Which languages do we “know”?],
+  [Which languages do we “know”?],
   [As mentioned earlier, the bar for “knowing” a language was set quite low in this poll, to get more diversity in answers. This resulted in some interesting numbers.],
   [Being primarily a Java-shop, it might not surprise anyone that a full 100% knows Java. A little over three fourths know JavaScript, while Ruby and T-SQL was known to about half. These are the main languages most of us have some sort of dealings with in our daily work, so that they score high is not surprising.],
   [Next on the list is PHP and Python, with around 40% knowing them.],
@@ -1860,10 +1796,10 @@ introducing Log4j2 came with some concerns and hurdles.],
   [We have a small Apps team working with iOS-development, but Objective-C has a reach far outside that team, with 10 respondents knowing Objective-C.],
   [Common Lisp is known to five respondents, while Clojure suprisingly was only known to seven respondents. As you can read elsewhere in this blog, we had a Clojure workshop at our Technology Day earlier this summer, and these results might be telling us something about the language or our teachers when it didn’t have a better ability to “stick” than this.],
   [We also have people who know some Erlang, Smalltalk, Lua, Haskell, Scheme, Eiffel and ML/SML.],
-  [id="how-many-languages-do-we-know"\>How many languages do we “know”?],
+  [How many languages do we “know”?],
   [On average, we know 6.8 languages each. The most knowledgeable person knows 16 languages, while the least knowledgeable knows only one. The high experience respondents, 16 years or more, have a higher average than the rest of us, with 9.4, while the rest of the “experience brackets” know somewhere between six and seven languages.],
   [Several programmer-gurus seem to think you should stribe to teach yourself one new language every year, and it would seem atleast one of our respondents have been able to follow this advice. For those of us with less extra time, a less ambitious strategy might be more compatible, but that we should stribe to learn something new every once in a while seems to be good advice.],
-  [id="now-what"\>Now what?],
+  [Now what?],
   [As mentioned previously, this poll was not a serious attemt at gaining actionable insights. The results should be taken with a large helping of salt, and at most used as a basis for discussions. On the other hand, I know we will be discussing this topic going forward, because the fact that only 16 of 56 wanted to use Java is telling us it’s time to start the discussion. There are possibly 40 developers who would prefer Java, who didn’t respond, so it’s too early to draw conclusions, but we have a place to start.],
   [There are other questions falling out of this too:],
   [There are two developers who wants to work with Objective-C, and eight Java-developers who wants to work with Scala, so why do we have so few internal applicants when we have openings on the teams working with these languages?],
@@ -1876,10 +1812,8 @@ introducing Log4j2 came with some concerns and hurdles.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Setup nginx with HTTP/2 for local development (OS X)],
   author: [Gregers Rygg],
   source-name: [Finn.no Tech],
@@ -1888,7 +1822,7 @@ introducing Log4j2 came with some concerns and hurdles.],
   [HTTP/2 became an official standard in May earlier this year, and support is starting to land in servers already. The most recent, and very welcome addition, is nginx 1.9.5 \[1\] . What makes nginx extra awesome is that it’s very easy to set up in front of any other HTTP 1.x server (or HTTP/2 for that matter). Server push won’t work just yet, but at least we can start to test how multiplexing works. Multiplexing is said to eliminate the need to concatenate resources into bundles. At FINN.no we do multiple releases a day, and it just feels wrong that users have to download the whole 100+ kB JavaScript bundle after every release, even though most of the time only a few lines have changed. If we don’t need to bundle anymore, the users only need to download the few scripts that had changed since their last visit!],
   [HTTPS over TLS 1.2 is a requirement to use HTTP/2 . Service Workers also require secure connections , and probably other features soon .],
   [This guide will help you set up nginx for local development on OS X, with proxy passing requests to your local server on port 8080 (or whichever port you prefer). In plain English, that means we put nginx in between your browser and your local development server. Your browser communicates securely over HTTP/2 to nginx, and nginx forwards the requests to your local server over unsecured HTTP/1.1.],
-  [id="installing-nginx"\>Installing nginx],
+  [Installing nginx],
   [You have to compile nginx with the --with-http\_v2\_module configuration parameter, but Homebrew makes that a breeze. It’s one of my favorite tools on OS X.],
   [If you don’t have Homebrew, see Install Homebrew further down.],
   [To compile and install nginx with http2:],
@@ -1901,20 +1835,20 @@ introducing Log4j2 came with some concerns and hurdles.],
   [\# stop nginx 
  \$ sudo nginx -s stop],
   [Now it’s time to set up the https server with HTTP/2 enabled. Open /usr/local/etc/nginx/nginx.conf in an editor, and comment out the existing server section. Then copy-paste in the config below instead \[2\] . If your local server runs on a different port than 8080, you can change it in the proxy\_pass URL.],
-  [server { 
+  [server \{ 
  listen 443 ssl http2 ; 
  server\_name localhost ;],
   [ssl on ; 
  ssl\_protocols TLSv1 TLSv1.1 TLSv1.2 ; 
  ssl\_certificate cert.pem ; 
  ssl\_certificate\_key cert.key ;],
-  [location \/ { 
+  [location \/ \{ 
  proxy\_pass http:\/\/localhost:8080 ; 
  proxy\_set\_header Host \$host ; 
  proxy\_set\_header X-Real-IP \$remote\_addr ; 
  proxy\_set\_header X-HTTPS 'True' ; 
- } 
- }],
+ \} 
+ \}],
   [To use https we need to generate a self signed certificate. It will give you a warning in the browser, but it works fine for local development. This command will generate the certificate \[3\] :],
   [\$ cd /usr/local/etc/nginx/
  \$ sudo openssl req -x509 -sha256 -newkey rsa:2048 -keyout cert.key -out cert.pem \\ 
@@ -1945,19 +1879,16 @@ Update Jun. 20, 2016: Updated brew install command with the new nginx options.],
   [https:\/\/ma.ttias.be/enable-http2-in-nginx/],
   [https:\/\/ma.ttias.be/how-to-create-a-self-signed-ssl-certificate-with-openssl/],
   [http:\/\/apple.stackexchange.com/questions/80623/import-certificates-into-system-keychain-via-the-command-line],
-  [id="extra"\>Extra],
-  [id="install-homebrew"\>Install Homebrew],
   [Run this one-liner in Terminal to install Homebrew:],
   [\$ ruby -e " \$( curl -fsSL https:\/\/raw.githubusercontent.com/Homebrew/install/master/install ) "],
   [\# if you haven't installed Command Line Developer Tools from Apple already 
  \$ xcode-select --install],
-  [id="troubleshooting"\>Troubleshooting],
-  [id="connection-refused"\>Connection refused],
+  [Connection refused],
   [A “Connection refused” error probably means that nginx is not running correctly.],
   [Check that the ports in nginx.conf is not already in use],
   [Check that you run nginx as root (sudo)],
   [Check the error.log: /usr/local/var/log/nginx/error.log],
-  [id="502-bad-gateway"\>502 Bad Gateway],
+  [502 Bad Gateway],
   [If you get a 502 error, nginx is running, but nginx is not able to connect to your development server. Check that your development server is running, and that you have the correct port in nginx.conf. Copy the value of proxy\_pass and try to open it in your browser. For the config above, that would be http:\/\/localhost:8080 .],
 ),
   insert-map: (:),
@@ -1966,10 +1897,8 @@ Update Jun. 20, 2016: Updated brew install command with the new nginx options.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A look at the internals of 'Tiered JIT Compilation' in .NET Core],
   author: [Matt Warren (.NET)],
   source-name: [Matt Warren (.NET)],
@@ -1982,10 +1911,10 @@ Update Jun. 20, 2016: Updated brew install command with the new nginx options.],
   [JIT compilation takes into account the possibility that some code might never be called during execution. Instead of using time and memory to convert all the MSIL in a PE file to native code, it converts the MSIL as needed during execution and stores the resulting native code in memory so that it is accessible for subsequent calls in the context of that process. The loader creates and attaches a stub to each method in a type when the type is loaded and initialized. When a method is called for the first time, the stub passes control to the JIT compiler , which converts the MSIL for that method into native code and modifies the stub to point directly to the generated native code . Therefore, subsequent calls to the JIT-compiled method go directly to the native code.],
   [Simple really!! However if you want to know more, the rest of this post will explore this process in detail.],
   [In addition, we will look at a new feature that is making its way into the Core CLR , called ‘ Tiered Compilation ’. This is a big change for the CLR, up till now . NET methods have only been JIT compiled once, on their first usage. Tiered compilation is looking to change that, allowing methods to be re-compiled into a more optimised version much like the Java Hotspot compiler .],
-  [id="how-it-works"\>How it works],
+  [How it works],
   [But before we look at future plans, how does the current CLR allow the JIT to transform a method from IL to native code ? Well, they say ‘a pictures speaks a thousand words’],
-  [id="before-the-method-is-jited"\> Before the method is JITed],
-  [id="after-the-method-has-been-jited"\> After the method has been JITed],
+  [Before the method is JITed],
+  [After the method has been JITed],
   [The main things to note are:],
   [The CLR has put in a ‘precode’ and ‘stub’ to divert the initial method call to the PreStubWorker() method (which ultimately calls the JIT). These are hand-written assembly code fragments consisting of only a few instructions.],
   [Once the method had been JITed into ‘native code’, a stable entry point it created. For the rest of the life-time of the method the CLR guarantees that this won’t change, so the rest of the run-time can depend on it remaining stable.],
@@ -2002,14 +1931,14 @@ Update Jun. 20, 2016: Updated brew install command with the new nginx options.],
   [MethodDesc:: DoBackpatch(..)],
   [MethodDesc:: SetStableEntryPointInterlocked(..)],
   [Note: this post isn’t going to look at how the JIT itself works, if you are interested in that take a look as this excellent overview written by one of the main developers.],
-  [id="jit-and-execution-engine-ee-interaction"\>JIT and Execution Engine (EE) Interaction],
+  [JIT and Execution Engine (EE) Interaction],
   [The make all this work the JIT and the EE have to work together, to get an idea of what is involved, take a look at this comment describing the rules that determine which type of precode the JIT can use . All this info is stored in the EE as it’s the only place that has the full knowledge of what a method does, so the JIT has to ask which mode to work in.],
   [In addition, the JIT has to ask the EE what the address of a functions entry point is, this is done via the following methods:],
   [CEEInfo::getFunctionEntryPoint(..)],
   [Then calls MethodDesc:: TryGetMultiCallableAddrOfCode(..)],
   [CEEInfo::getFunctionFixedEntryPoint(..)],
   [Then calls MethodDesc:: GetMultiCallableAddrOfCode(..)],
-  [id="precode-and-stubs"\>Precode and Stubs],
+  [Precode and Stubs],
   [There are different types or ‘precode’ available, ‘FIXUP’, ‘REMOTING’ or ‘STUB’, you can see the rules for which one is used in MethodDesc:: GetPrecodeType() . In addition, because they are such a low-level mechanism, they are implemented differently across CPU architectures, from a comment in the code :],
   [There two implementation options for temporary entrypoints:],
   [(1) Compact entrypoints. They provide as dense entrypoints as possible, but can’t be patched to point to the final code. The call to unjitted method is indirect call via slot.],
@@ -2021,7 +1950,6 @@ The call to unjitted method is direct call to direct jump.],
   [Virtual Method (Interface) Dispatch],
   [Dll Import callbacks],
   [and probably some more I’ve missed!],
-  [id="tiered-compilation"\>Tiered Compilation],
   [Before we go any further I want to point out that Tiered Compilation is very much work-in-progress. As an indication, to get it working you currently have to set an environment variable called COMPLUS\_EXPERIMENTAL\_TieredCompilation . It appears that the current work is focussed on the infrastructure to make it possible (i.e. CLR changes), then I assume that there has to be a fair amount of testing and performance analysis before it’s enabled by default.],
   [If you want to learn about the goals of the feature and how it fits into the wider process of ‘code versioning’, I recommend reading the excellent design docs , including the future roadmap possibilities .],
   [To give an indications of what has been involved so far, there has been work going on in the:],
@@ -2034,14 +1962,14 @@ The call to unjitted method is direct call to direct jump.],
   [Tiered Compilation step 1],
   [WIP - Tiered Jitting Part Deux],
   [There is also some nice background information available in Introduce a tiered JIT and if you want to understand how it will eventually makes use of changes in the JIT (‘MinOpts’), take a look at Low Tier Back-Off and JIT: enable aggressive inline policy for Tier1 .],
-  [id="history---rejit"\>History - ReJIT],
+  [History - ReJIT],
   [As an quick historical aside, you have previously been able to get the CLR to re-JIT a method for you , but it only worked with the Profiling APIs , which meant you had to write some C/C++ COM code to make it happen! In addition ReJIT only allowed the method to be re-compiled at the same level, so it wouldn’t ever produce more optimised code. It was mostly meant to help monitoring or profiling tools .],
-  [id="how-it-works-1"\>How it works],
+  [How it works],
   [Finally, how does it work, again lets look at some diagrams. Firstly, as a recap, lets take a look at how things ends up once a method had been JITed, with tiered compilation turned off (the same diagram as above):],
   [Now, as a comparison, here’s what the same stage looks like with tiered compilation enabled :],
   [The main difference is that tiered compilation has forced the method call to go through another level of indirection, the ‘pre stub’. This is to make it possible to count the number of times the method is called, then once it has hit the threshold ( currently 30 ), the ‘pre stub’ is re-written to point to the ‘optimised native code’ instead:],
   [Note that the original ‘native code’ is still available, so if needed the changes can be reverted and the method call can go back to the unoptimised version.],
-  [id="using-a-counter"\>Using a counter],
+  [Using a counter],
   [We can see a bit more details about the counter in this comments from prestub.cpp :],
   [/\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\* CALL COUNTER \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*/
  \/\\/ If we are counting calls for tiered compilation, leave the prestub
@@ -2052,13 +1980,13 @@ The call to unjitted method is direct call to direct jump.],
 \#ifdef FEATURE\_TIERED\_COMPILATION
  BOOL fEligibleForTieredCompilation = IsEligibleForTieredCompilation();
  if (fEligibleForTieredCompilation)
- {
+ \{
  CallCounter \* pCallCounter = GetCallCounter();
  fCanBackpatchPrestub = pCallCounter-\>OnMethodCalled(this);
- }
+ \}
 \#endif],
   [In essence the ‘stub’ calls back into the TieredCompilationManager until the ‘tiered compilation’ is triggered, once that happens the ‘stub’ is ‘back-patched’ to stop it being called any more.],
-  [id="why-not-interpreted"\>Why not ‘Interpreted’?],
+  [Why not ‘Interpreted’?],
   [If you’re wondering why tiered compilation doesn’t have an interpreted mode, you’re not alone, I asked the same question (for more info see my previous post on the . NET Interpreter )],
   [And the answer I got was :],
   [There’s already an Interpreter available, or is it not considered suitable for production code?],
@@ -2066,13 +1994,12 @@ The call to unjitted method is direct call to direct jump.],
   [How different is the overhead between non-optimised and optimised JITting?],
   [On my machine non-optimized jitting used about ~65% of the time that optimized jitting took for similar IL input sizes, but of course I expect results will vary by workload and hardware. Getting this first step checked in should make it easier to collect better measurements.],
   [But that’s from a few months ago, maybe Mono’s New . NET Interpreter will change things, who knows ?],
-  [id="why-not-llvm"\>Why not LLVM?],
+  [Why not LLVM?],
   [Finally, why aren’t they using a LLVM to compile the code, from Introduce a tiered JIT (comment)],
   [There were (and likely still are) significant differences in the LLVM support needed for the CLR versus what is needed for Java , both in GC and in EH, and in the restrictions one must place on the optimizer. To cite just one example: the CLRs GC currently cannot tolerate managed pointers that point off the end of objects. Java handles this via a base/derived paired reporting mechanism. We’d either need to plumb support for this kind of paired reporting into the CLR or restrict LLVM’s optimizer passes to never create these kinds of pointers. On top of that, the LLILC jit was slow and we weren’t sure ultimately what kind of code quality it might produce.],
   [So, figuring out how LLILC might fit into a potential multi-tier approach that did not yet exist seemed (and still seems) premature. The idea for 
 now is to get tiering into the framework and use RyuJit for the second-tier jit . As we learn more, we may discover there is indeed room for higher tier jits, or, at least, understand better what else we need to do before such things make sense.],
   [There is more background info in Introduce a tiered JIT],
-  [id="summary"\>Summary],
   [One of my favourite side-effects of Microsoft making . NET Open Source and developing out in the open is that we can follow along with work-in-progress features. It’s great being able to download the latest code, try them out and see how they work under-the-hood, yay for OSS!!],
   [Discuss this post on Hacker News],
 ),
@@ -2082,10 +2009,8 @@ now is to get tiering into the framework and use RyuJit for the second-tier jit 
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [magit-insert-worktrees improves status buffers],
   author: [Huon Wilson],
   source-name: [Huon Wilson],
@@ -2098,11 +2023,10 @@ now is to get tiering into the framework and use RyuJit for the second-tier jit 
  ( add-hook 'magit-status-sections-hook \#' magit-insert-worktrees t )],
   [A magit status buffer with all the usual features, plus the new ‘Worktrees’ section at the end: the outlined row with an absolute path is the worktree for the current status buffer, and the other two are elsewhere on disk. Hitting RET on any worktree switches to it.],
   [This post is about a particular feature of the Magit package for interfacing to Git within Emacs . I can’t say enough good things about Magit (it’s both incredibly powerful but also accessibly surfaces & teaches so much of the raw git interface; even when I’ve been written code in a different editor, I’ll still use Magit to interact with Git)… but I also am not going to excessively extol its virtues or explain all the details here, as others have already done so .],
-  [id="worktrees"\>Worktrees],
   [Git has a feature called worktrees , which are a nifty way to do work in parallel: different branches checked out in different directories, but all sharing a single .git directory. This means less disk space used on duplicate .git clones, but, more usefully, data like branches & stashes is shared.],
   [There’s lots of ways to use worktrees, and they’re especially handy in the age of AI agents. At the most basic level, they’re useful for working concurrently , like reducing context switching when balancing deep projects, code reviewing, and small fixes .],
   [I know some people like to create a new worktree for each branch they work on, and then remove them once finished (or get their agents to do so). I personally generally have fixed long-lived worktrees 0 that I cycle branches through as required: for my main work repo, I’m up to name , name2 , …, name5 at the moment… and if I ever need a 6th one, I’ll just create it.],
-  [id="finding-the-worktrees"\>Finding the worktrees],
+  [Finding the worktrees],
   [In either case, I find it annoying to keep track of what worktrees are ‘live’. There’s workable solutions, but they’re a bit of friction:],
   [CLI: run git worktree list or some alias.],
   [Magit: hit keybinding Z g in magit buffers to see a switcher.],
@@ -2115,12 +2039,10 @@ now is to get tiering into the framework and use RyuJit for the second-tier jit 
  ;; Show all worktrees at the end of the status buffer (if more than one) 
  ( add-hook 'magit-status-sections-hook \#' magit-insert-worktrees t )],
   [My status buffers now look like the screenshot above. Yay!],
-  [id="fn:why-fixed"\>],
   [I’ve settled on long-lived worktrees for two reasons:],
   [IME many code-bases have at least a little bit of static setup that’s intentionally not tracked in Git (like initialising an .env file from an .env.example file), and starting a new worktree requires redoing this… this can be solved with scripts, or just be side-stepped.],
   [I have an (arguably bad) habit of taking notes, leaving reference data and/or creating ad-hoc scripts in untracked files in a worktree, and sometimes want to return to them and persist them later (commit, or paste into a issue tracker, or similar), so creating then deleting worktrees risks accidentally losing them.],
   [↩],
-  [id="fn:docs"\>],
   [This function appears to have existed since 2016, but not be mentioned in the manual, so I submitted an addition . ↩],
 ),
   insert-map: (:),
@@ -2129,31 +2051,29 @@ now is to get tiering into the framework and use RyuJit for the second-tier jit 
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Going all out with the Strap-on Project],
   author: [espen],
   source-name: [Finn.no Tech],
   images: (),
   paragraphs: (
   [In January we started on an ambitious project called “the Strap-on project”. The infantile name aside this project is about rewriting our entire front-end tier using Object Oriented CSS (OOCSS) , written by Nicole Sulivan , as the secret sauce to achieving the desired results.],
-  [id="why-oocss"\>Why OOCSS?],
+  [Why OOCSS?],
   [At FINN we have teams grouped by business units and all of them have developers who contribute with code on our site. This is provided us with a head ache with CSS, because there are no clear idioms for how to best write CSS. In our case this had cause teams to create their own “islands” of CSS by using \# trails, train wreck selector classes and !important-wars. Teams had duplicate CSS for the same layout and we had a hard time keeping the user experience consistent across different parts of our service.],
   [We had way too much CSS code in total and we sent loads of CSS on each page request with just a small percentage actually being used. This made page load slow and rendering slow. Page rendering speed is equal to money, so we had to change something.],
-  [id="oocss---making-css-coding-a-thing-of-the-past"\>OOCSS - making CSS coding a thing of the past],
+  [OOCSS - making CSS coding a thing of the past],
   [OOCSS is a framework on which to build your own. It provides with a base set of modules and concepts which is essentials to building stuff in HTML with CSS. Grids, modules, lines, etc. These base modules provides an abstraction on top of CSS which makes authoring of CSS a thing of the past. In order to layout basic pages all we do is to use the building blocks and put together what ever you want. Basic boring stuff such as clearing and the box-model is no longer anything you need to worry about, it’s taken care of. This enables developers to focus upon fulfilling business requirements instead of battling CSS differences in browser time and time again.],
-  [id="why-not-less-compass-or-stuff-like-that"\>Why not LESS, Compass or stuff like that?],
+  [Why not LESS, Compass or stuff like that?],
   [The CSS language abstractions that exist out there are all very cool projects and make a whole lot of sense to use for a lot of projects. However, in our case choosing one of these tools right now would not provide us with some of the benefits we are looking for.],
   [At FINN we have a problem that we are duplicating CSS across our development teams. This makes creating a consistent user experience and making global changes harder than it should be. Using an abstraction would help us hide some these problems, but would not solve the underlying issue which is that we create too much code. OOCSS and its rigorous set of rules helps reduce the amount of code drastically and provides rigid rules which prevents duplication across teams. What we are looking for are:],
   [Improve rendering speed],
   [Improve development speed],
   [Easier to provide a consistent user experience],
-  [id="a-touch-of-bootstrap-too"\>A touch of Bootstrap too],
+  [A touch of Bootstrap too],
   [The engineers over at Twitter has created an amazing framework, Bootstrap , which is hugely popular all over the world. We have indeed paid close attention to how they have done and we are very much inspired by their work. However, going all out and just adopting Bootstrap was not an option. We feel it is too bloated and it does not provide the speed and performance benefits OOCSS gives.
 Having said that, a lot of our setup with forms and form elements is influenced by how Bootstrap does things.],
-  [id="half-way-how-does-it-look"\>Half way, how does it look?],
+  [Half way, how does it look?],
   [In short,iIt looks pretty darn impressive! We have removed more than twenty CSS files and reduced the amount of CSS code lines with more than thirty thousand (this does say quite a bit of the mess we where in, I know). We have migrated the motorized vehicles, jobs, real estate sections and the front page.],
   [Number of CSS files],
   [130],
@@ -2165,7 +2085,7 @@ Having said that, a lot of our setup with forms and form elements is influenced 
   [727],
   [89],
   [These are pretty impressive results and very much in line with what Nicole is talking about in her presentations about OOCSS and performance.],
-  [id="is-it-all-singing-all-dancing"\>is it all singing, all dancing?],
+  [is it all singing, all dancing?],
   [Of course not! The responsive bit is something we are looking at reworking. Team Oppdrag has created one way of solving this and Team Reise another. For the Strap-on project we will probably end up with something in between. There are some things you need to take into consideration when choosing an approach:
 How much control do you have over the markup being written? Or to put it in another way, how many people are working with the same code? The more people, the harder it is to apply very strict rules as people will be “tourists” in the code base and might have a hard time getting it.],
   [Another big challenge is to provide enough support and training to help everyone utilize the OOCSS framework so we can continue to reap benefits from what we have done, but that is probably some other blog post.],
@@ -2176,10 +2096,8 @@ How much control do you have over the markup being written? Or to put it in anot
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The modern way to draw squircles using corner-shape in CSS],
   author: [Amit Merchant],
   source-name: [Amit Merchant],
@@ -2193,70 +2111,91 @@ How much control do you have over the markup being written? Or to put it in anot
   [Some examples],
   [What about fallbacks?],
   [Best practices],
-  [id="what-is-the-corner-shape-property"\>What is the corner-shape property?],
+  [What is the corner-shape property?],
   [The corner-shape is an experimental CSS shorthand that defines the actual shape of a box’s corners within the area established by border-radius .],
   [It can use keywords like round , scoop , bevel , notch , square , squircle , or a numeric superellipse() function. Backgrounds, borders, outlines, shadows, overflow, and backdrop-filter will follow the defined corner shape.],
+  [.box \{ 
+ width : 200px ; 
+ height : 200px ; 
+ border-radius : 32px ; 
+ corner-shape : squircle ; 
+ \}],
   [One thing to keep in mind is that the property only has an effect when a non‑zero border-radius is present. Without it, the corners will remain square regardless of the corner-shape value.],
   [And like many CSS properties, corner-shape is a shorthand that can accept up to four values to define different shapes for each corner individually.],
+  [.box \{ 
+ corner-top-left-shape : scoop ; 
+ corner-top-right-shape : notch ; 
+ corner-bottom-right-shape : squircle ; 
+ corner-bottom-left-shape : round ;],
   [/\* or using the shorthand \*\/ 
  corner-shape : scoop notch squircle round ; 
- }],
+ \}],
   [It supports smooth animation between shapes because keywords map to superellipse() equivalents, and browsers constrain opposite corners to avoid overlap.],
-  [id="how-it-differs-from-border-radius"\>How it differs from border-radius],
+  [How it differs from border-radius],
   [The border-radius sets the corner’s size ( how far it rounds ). While the corner-shape sets the corner’s geometry ( what kind of curve or cut it is ).],
   [For instance, border-radius: 30px with corner-shape: round behaves like classic rounded corners. Changing to scoop inverts the curve into a concave cut; bevel draws a straight chamfer; notch creates an inset; squircle makes superellipse-style corners—all while the radius still controls extent.],
   [Apart from this, corner-shape: round matches the normal border-radius look; corner-shape: square effectively cancels the rounding even if a radius is set.],
-  [id="some-examples"\>Some examples],
+  [Some examples],
   [Here’s a graphic showing different corner-shape values applied to boxes with the same border-radius .],
   [As you can tell, each shape gives a distinct visual style while respecting the same radius size. This opens up new design possibilities without complex SVGs or masks.],
   [Try this CodePen in a latest Chromium-based browser to see it in action.],
   [Also, try this website to play around with different corner-shape values interactively: squircle.style],
-  [id="what-about-fallbacks"\>What about fallbacks?],
+  [What about fallbacks?],
   [Since corner-shape is still experimental (currently only available in Chrome 139 and above or similar Chromium forks ) and not widely supported yet, it’s important to provide fallbacks for browsers that don’t recognize it and make it a progressive enhancement.],
   [Here are safe, production-ready patterns to use corner-shape with a border-radius fallback. The idea: write classic border-radius first, then layer corner-shape inside \@supports so unsupported browsers keep the rounded corners.],
   [Basic keyword shape fallback],
+  [.card \{ 
+ /\* Fallback everyone supports \*\/ 
+ border-radius : 24px ;],
   [/\* Only apply corner-shape where supported \*\/ 
- \@supports ( corner-shape : round ) { 
+ \@supports ( corner-shape : round ) \{ 
  /\* round is the default; use a different shape \*\/ 
  corner-shape : scoop ; /\* concave corners \*\/ 
- } 
- }],
+ \} 
+ \}],
   [Per-corner values with fallback],
-  [\@supports ( corner-shape : bevel ) { 
- .badge { 
+  [.badge \{ 
+ border-radius : 16px ; /\* fallback \*\/ 
+ \}],
+  [\@supports ( corner-shape : bevel ) \{ 
+ .badge \{ 
  /\* TL, TR, BR, BL shapes (clockwise) \*\/ 
  corner-shape : bevel notch round squircle ; 
- } 
- }],
+ \} 
+ \}],
   [Using superellipse() with fallback],
-  [\@supports ( corner-shape : superellipse ( 4 )) { 
- .panel { 
+  [.panel \{ 
+ border-radius : 32px ; /\* fallback \*\/ 
+ \}],
+  [\@supports ( corner-shape : superellipse ( 4 )) \{ 
+ .panel \{ 
  corner-shape : superellipse ( 4 ); /\* squircle-like \*\/ 
- } 
- }],
+ \} 
+ \}],
   [Progressive enhancement inside \@supports selector block],
-  [class="highlight"\> /\* default styles \*\/ 
- .box { 
+  [/\* default styles \*\/ 
+ .box \{ 
  border-radius : 20px ; /\* fallback \*\/ 
  background : white ; 
  box-shadow : 0 6px 20px rgba ( 0 , 0 , 0 , .12 ); 
  border : 1px solid \#e6e6e6 ; 
- }],
+ \}],
   [/\* enhance where supported \*\/ 
- \@supports ( corner-shape : notch ) { 
- .box { 
+ \@supports ( corner-shape : notch ) \{ 
+ .box \{ 
  corner-shape : notch ; 
- } 
- }],
+ \} 
+ \}],
   [Some engines may support keywords but not the function. Query the specific thing you rely on:],
-  [\@supports ( corner-shape : scoop ) { 
- .card { corner-shape : scoop ; } 
- }],
+  [.card \{ border-radius : 28px ; \}],
+  [\@supports ( corner-shape : scoop ) \{ 
+ .card \{ corner-shape : scoop ; \} 
+ \}],
   [/\* If you need the numeric control, guard the function separately \*\/ 
- \@supports ( corner-shape : superellipse ( 6 )) { 
- .card { corner-shape : superellipse ( 6 ); } 
- }],
-  [id="best-practices"\>Best practices],
+ \@supports ( corner-shape : superellipse ( 6 )) \{ 
+ .card \{ corner-shape : superellipse ( 6 ); \} 
+ \}],
+  [Best practices],
   [Here are some tips for using corner-shape effectively:],
   [Order matters: Always declare border-radius first, then corner-shape inside \@supports. Unsupported browsers ignore the \@supports block and keep the radius.],
   [Dependency: corner-shape only has an effect when border-radius is non-zero. Keep a radius in your fallback.],
@@ -2271,10 +2210,8 @@ How much control do you have over the markup being written? Or to put it in anot
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The great big Schibsted programming language survey 2015],
   author: [Morten Lied Johansen],
   source-name: [Finn.no Tech],
@@ -2305,7 +2242,7 @@ while we’re at it.],
 created, and hopefully it will make the rounds in all of Schibsted
 and gather some interesting, fun, surprising and (with a bit of luck)
 useful insights.],
-  [id="about-the-responses"\>About the responses],
+  [About the responses],
   [309 people responded to the survey, which is more than many of my co-workers thought would respond.],
   [Over 50% of respondents are in their thirties, and if we look at the ages from 26 to 40, we cover over 75% of respondents. On gender, it’s even worse, with a whopping 93.5% of respondents admitting to being male. We also seem to shun inexperienced people, with 42% having 10 years of experience or more, and only 2.3% of respondents fresh from school.],
   [It seems we have some work to do with regards to diversity.],
@@ -2318,13 +2255,13 @@ useful insights.],
   [Another problem was SPT aka Schibsted Products & Technology. SPT is techically four companies, SPT Norway, SPT Sweden, SPT Spain and SPT UK. Most people in SPT simply answered SPT, but they estimated as little as 20 people working in SPT, and as high as 250. I’ve disregarded their disagreement, and combined them all to just SPT.],
   [Two people said they work in Schibsted, but they had wildly differing opinions about how many people work in Schibsted. One said 10000 total, 1500 technical, the other said 1000 total, 200 technical.],
   [Disregarding the problems here, let’s look at the numbers entered. Using the averages for each company and summing up, we arrive at roughly 4500 people working in those 47 companies. For technical positions, the sum of averages is roughly 1600. Since we have responses from about half the companies, that fits nicely with the total being just under 10000.],
-  [id="languages-in-regular-use"\>Languages in regular use],
+  [Languages in regular use],
   [The most commonly used language, if you can call it that, is Bash. 52.1% of respondents use Bash regularly. Close behind, at 50.2% is JavaScript. Neither of these are surprising, considering the business we’re in. Java clocks in at 49.2%, and from there it’s quite a drop to Python at 28.2% and PHP at 24.9%. C manages 18.1%, Ruby and Scala are both used by 17.8%, and Groovy (11.7%) and Go (10.7%) conclude the top 10.],
   [Of the previously mentioned top 7 companies with regards to number of responses, Le Bon Coin and Blocket are the only two companies that are not predominantly Java shops. Those two have a more wide array of languages in common use, with high numbers for multiple languages. When we combine those two companies, 88% use C, 80% uses PHP, 72% uses Bash and sh, 64% uses Python and only 56% uses Java. Ruby, R are popular in Le Bon Coin, while Blockets own template language and JavaScript are popular in Blocket.],
   [Singling out FINN and SPT in a similar way, it’s a different story. Java is used by 76.7% in these companies, JavaScript and Bash/sh are around the same, at 48.1% and 46.6% respectively. Scala is popular with a share of 33.8% in the two companies. Next in line is Python at 24%, Groovy and R both at 21.8%. Ruby is used by 18%, and a group of PHP developers in SPT brings PHP into the top 10 with 6%.],
-  [id="what-kind-of-developers-are-we"\>What kind of developers are we?],
+  [What kind of developers are we?],
   [The most popular self-description is “a backend developer” (124), followed closely by the “full stack developer” (82). There are slightly more devops people (29) than “frontend developers” (25). Of course, the most interesting fact about this question, is all the various roles I failed to think of. Over 40 other descriptions were entered in the “Other” box, some of them even by more than one person! Most notably the 10 or 11 data scientists (depending on how you interpret descriptions). Mobile developer or App developer is another one that should have been one of the choices.],
-  [id="the-languages-we-know"\>The languages we know],
+  [The languages we know],
   [Only 13 people do not know any Java at all, the remaining 296 respondents knows enough to tick the box. This makes Java the most known language, but it is closely followed by C and JavaScript. 268 respondents know C, while 263 know JavaScript. If ever we wanted to use bashttpd for anything, hardly anyone would need to be retrained, with 234 people already knowning enough bash to get around.],
   [PHP and Python follow, at 212 and 204 respectively. Personally I’m pleased to see so many knowing Python, and can only blame childhood mistakes for so many people knowing PHP. Dropping below 200 respondents we find R at 188 and C++ at 185. Ruby and Perl close out the top 10 languages, with 164 and 146. Hopefully all these people have learned Perl as a defence mechanism: Know thy enemy and all that…],
   [Of the more hip languages on the JVM, Scala comes out on top, with 117 people claiming to know it, while Groovy at 94 and Clojure at 53 haven’t convinced quite as many people that they are useful to know. Clojure isn’t even in the top 20.],
@@ -2332,7 +2269,7 @@ useful insights.],
   [Moving into the twenties, CoffeeScript ties with Clojure and Prolog at 53, while Common Lisp has managed to stick in the head of 47 people. Lua is known by 42, while Erlang and Scheme are tied at 31. Microsoft hasn’t quite managed to get their PowerShell into as many heads as Bash, but 30 people are willing to admit knowing it. Swift (29) and Tcl (27) close out the top 30.],
   [Fortran (26) and PostScript (21) are starting to fall out of fashion, and we can point at 20 people working in various norwegian companies who probably got their education at the University of Oslo, starting with Simula as their first language. The story behind the single non-norwegian Simula-proficient person at Aftonbladet would be interesting to hear I imagine (or is it simply a norwegian who has moved to Sweden?).],
   [Other notable mentions are 19 people who know Smalltalk, 11 people knows D, a whopping 10 people have managed to learn Brainfuck, while 9 people know Rust and F\# (not the same 9 though). The tail is quite long, and old heroes like Forth (8), OCaml (8), Standard ML (4), Delphi (2), Modula2 (2) and Ada (1) are still hanging on. There’s even a handful of people who knows some dialect of assembler.],
-  [id="what-can-we-use"\>What can we use?],
+  [What can we use?],
   [Let’s take a close look at which languages some of the larger companies (in terms of number of respondents) could and should use.],
   [When starting their next project, SPT could choose Java, C, Python or JavaScript, and send less than a third of their people back to school. Allowing half the company to re-train, they could select from Scala, C++ or PHP, while Ruby, Perl, Groovy or C\# would require sending close to two thirds of the company to school. Other popular choices are Go and Clojure, but that would require around 80% of the company to hit the books, so maybe not just yet.],
   [Blocket is fortunate enough to have four languages known by all respondents: Java, C, Python and PHP. If they want to use JavaScript, C++ or Perl, they are still quite prepared, while Ruby and Go haven’t quite the same following. If they want to be on the JVM, but not use Java, Groovy is their only choice, but they would still need to train 11 out of 12 people.],
@@ -2340,38 +2277,32 @@ useful insights.],
   [Le Bon Coin have a story similar to Blocket. They can hardly go wrong, with most of the company knowlegeable in Java, JavaScript, PHP, C and Python. A few don’t know Ruby or C++, while Go and Perl are only known by half the respondents. Groovy is the top alternate JVM language, but with only 2 out of 13, it’s not really a good choice. Scala and Clojure aren’t known at all, so functional programming on the JVM clearly isn’t a “thing” at LBC.],
   [Schibsted Tech Polska delivers to a number of other companies, so they need to know a bit of everything. This is reflected in their knowledge, with Java, C and JavaScript being known by almost all. Python and C++ are known by half the company, while a third of the company is able to hold their own in Groovy, Scala, Clojure, Ruby and PHP. a few of them even know Perl.],
   [Willhaben in Austria also know a few languages, with Java, C, JavaScript and C++ being known by almost all. PHP and Python is known by two thirds of the company, with Perl and Ruby edging onto the “known by half” list. Groovy, Scala just missed the 50% mark, along with Haskell.],
-  [id="sql-and-its-many-variations"\>SQL and its many variations],
+  [SQL and its many variations],
   [When talking about databases, it’s easy to think SQL is just “one thing”, and if you know SQL, you can work with any database. And it’s somewhat true, but each database has it’s idiosyncrasies. This becomes especially clear when writing stored procedures, where basic SQL is lacking in control structures. So which database should we be using, really?],
   [PL/pgSQL, the dialect used in PostgreSQL, is known by 193 respondents, so PostgreSQL seems like a good choice. SQL/PSM, which is used by MySQL and a few others, is known by 159 people, is a good second choice.],
   [Of the large commercial databases, Oracle is clear out in front, known by 143 people, while runner up T-SQL used by both Microsoft SQL Server and Sybase is at 106. Any other contenders in the fight can just pack it in and go to bed. Fifth place goes to SQL PL, used by IBM DB2, known by only 32 respondents!],
   [PSQL, used in Interbase and Firebird, makes a surprise showing at 18, while PL/PSM, the less used dialect supported by PostgreSQL has 17 users. Of the remainders only Watcom-SQL, used in some versions of Sybase, manages double digits, at 10 respondents.],
-  [id="so-how-good-are-we-at-what-we-do"\>So, how good are we at what we do?],
+  [So, how good are we at what we do?],
   [The results here are somewhat skewed by the fact that people will naturally be more skilled in the languages they use regulary, and the companies with the most number of respondents use only a few of the languages regulary. As a result, there are more Java-experts than any other kind of experts. 102 respondents consider themselves Java-experts. Java is also the only language where there are more experts than any of the other “ranks”.],
-  [style="clear: both;"\>],
-  [style="clear: both;"\>],
   [Other languages we feel we know well are JavaScript and PHP. Just under 50 people consider themselves experts in those languages. Next is Python, with 22 experts. Objective-C and Scala have 11 experts each, and there are 7 Groovy-experts and 6 Ruby-experts in all of Schibsted.],
   [Languages we don’t really know are C\#, Clojure, CoffeeScript, Go, Groovy, Objective-C, Scala and Swift. In fact, Clojure is also the only language where nobody considers them selves experts.],
   [Most people consider themselves above average when it comes to JavaScript (205 respondents scored 3 or higher), while only 15 don’t know it at all. Similary, 255 people consider themselves above average in Java, and only 13 don’t know it at all. Of the three most used languages, Bash is the only one where the skills are concentrated below average. 223 people scored themselves at 3 or less for Bash knowledge, of which 18 don’t know it at all. At the other end, a single person considers themselves a Bash-expert.],
-  [style="clear: both;"\>],
-  [style="clear: both;"\>],
   [The numbers are perhaps more useful if we separate out the people who don’t use a language in their current work, and then look at the distribution of skills in each group.],
   [I’ll pick a few interesting ones, graphs for all are available at the end.],
   [Java is almost symetrical among the “amateurs”. Most amateurs are about average, but of the rest, less and more knowledge is more or less equally distributed. This is in sharp contrast to the “pros”, where a large majority consider themselves experts. While it’s easy to think that in the group of “pros”, it will always be many experts, Java, Objective-C and PHP are the only languages where the experts are the largest group.],
-  [style="clear: both;"\>],
-  [style="clear: both;"\>],
   [JavaScript is a similar story to Java, except there are fewer experts in JavaScript. It’s good to notice that everyone who works with JavaScript, actually do know the language, which was not the case with Java.],
   [Apart from Java and JavaScript, C and PHP are the only languages where a significant amount of amateurs consider themselves above average in skills. At the other end, Clojure, CoffeeScript, Go, Groovy, Objective-C, Scala and Swift are all examples of languages where a large portion of the amateurs consider themselves to either not know it at all, or know less than average.],
   [When comparing pro and amateurs, Objective-C really stands out. Most of the pros are experts, but among the amateurs it’s virtually an unknown language.],
-  [id="what-next"\>What next?],
+  [What next?],
   [The most popular choice for the next project is Java. 55 people would go with Java if allowed to choose freely. 43 people prefer JavaScript. Go, Scala and Python are in the next group at 37, 36 and 31. 17 people would select Ruby, 12 would go with Swift or PHP, 11 thinks Clojure is a good choice, and 10 people would go with C.],
   [In this kind of survey, there are always some smartypants. Five people avoided the question with variations of “I’m not able to conceive of a project where the language I like the most is the perfect choice, so I’ll say it depends on some hypotetical project specification that I have no say over”. Other clever answers are Fortran, Visual Fox, and T-SQL. Some people prefer the simple over the complicated, and would go with languages usually reserved for small utility-scripts like AWK and Bash.],
-  [id="self-improvement"\>Self-improvement],
+  [Self-improvement],
   [73.6% of us will sit down and learn a new language just to learn something new. 65.1% will accept learning something new if they need it for work, while only 41.4% are willing to do the same for non-work.],
   [If we are so easy to motivate, what holds us back?],
   [It could be the number of languages we think is “neccessary” to know. Knowing more than 6 languages is not neccessary in most peoples view, only 9.9% of us thinks it’s worth knowing 7 or more languages. 29% of us think 5 languages is good enough, while 6.8% thinks knowing one language well enough is all you need to be a good programmer.],
   [The majority seems to think between 3 and 5 languages should be our target. 70% think knowing 3, 4 or 5 languages defines a good programmer.],
   [Nobody thinks you’re any good if you know 9 languages, so if that’s you, you should set out to learn atleast one more as soon as possible. Or just forget one. :-D],
-  [id="theres-probably-more-here"\>There’s probably more here],
+  [There’s probably more here],
   [I initially said I would blog about the results a couple weeks after the end of the survey. That ended up being a couple months instead. For that reason I have skipped looking at a few questions that could be interesting, but time consuming to look at.],
   [How many languages do you know vs. How many languages does a good programmer know],
   [Which language currently not in use in a company, is most popular in the company?],
@@ -2380,14 +2311,13 @@ useful insights.],
   [Skill level in your favorite language],
   [I’m sure there are a number of other interesting things to look at, so I’m hoping someone else wants to take a look at the results and see what they find. The link is below. The first sheet is the raw, unedited responses. The second sheet is where I have tried to manually clean up some of the answers to get more sense out of the results. And all the other sheets are various views and tables I’ve used to make this post.],
   [Let me know if you blog about these results, and I’ll add a link here. Or just post in the comments below.],
-  [id="resources"\>Resources],
   [The results in full 
  Script to generate graphs],
-  [id="skill-levels-currently-using-the-language-at-work"\>Skill levels, currently using the language at work],
+  [Skill levels, currently using the language at work],
   [Bash , C , C\# , C++ , Clojure , CoffeeScript , Go , Groovy , Java , JavaScript , Objective-C , PHP , Python , Ruby , Scala , Swift],
-  [id="skill-levels-not-using-the-language-at-work"\>Skill levels, not using the language at work],
+  [Skill levels, not using the language at work],
   [Bash , C , C\# , C++ , Clojure , CoffeeScript , Go , Groovy , Java , JavaScript , Objective-C , PHP , Python , Ruby , Scala , Swift],
-  [id="skill-levels-all-respondents"\>Skill levels, all respondents],
+  [Skill levels, all respondents],
   [Bash , C , C\# , C++ , Clojure , CoffeeScript , Go , Groovy , Java , JavaScript , Objective-C , PHP , Python , Ruby , Scala , Swift],
 ),
   insert-map: (:),
@@ -2396,10 +2326,8 @@ useful insights.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Backup your server with Dropbox],
   author: [Luciano Mammino],
   source-name: [Luciano Mammino (loige)],
@@ -2409,37 +2337,65 @@ useful insights.],
   [So, speaking about backups, I needed a solution that would be cost-effective, easy to install and easy to maintain at the same time. I would have loved it if it can be as simple as sharing a Dropbox folder. As this thought crossed my mind I wondered if there was some way to interact with dropbox from a script to create files and folders and started googling about it. Luckily Dropbox offers a good command line client that allows to bring your synced files and folders also on graphic-less machines.],
   [Ultimately my solution was to install the Dropbox command line on the server using a dedicated Dropbox account and backup files by simply copying/linking them on the Dropbox folder. This way I prepared and scheduled a script that simply had to copy the files I wanted to backup on the dropbox folder. Then I have the files backupped in the cloud and automatically synced on my local machine. Furthermore i had chance to share the backup folder with all my collaborators.],
   [This solution works very well for small projects so I will resume all the steps I followed to install and use dropbox this way. I used an ubuntu machine so I suppose the following steps should work on debian machines.],
-  [id="prepare-the-dropbox-user"\>Prepare the dropbox user],
+  [Prepare the dropbox user],
   [I preferred to have a dedicated user to handle the whole Dropbox daemon and folder so just create it now:],
+  [Terminal window],
+  [sudo useradd -d /dropbox -m dropbox],
   [It will have the directory /dropbox as home and the name dropbox . You can change these values if you like.],
   [Then you have to set the password for the new user:],
+  [Terminal window],
+  [sudo passwd dropbox],
   [Choose whatever password you like.],
   [Security concern: If you have ssh access enabled (obviously it is) it’s better to disable the ssh access for the new user. So edit the file /etc/ssh/sshd\_config and add the rule DenyUsers dropbox , the restart ssh with sudo service ssh restart .],
-  [id="install-the-dropbox-client"\>Install the dropbox client],
+  [Install the dropbox client],
   [First of all you need to switch to the user created in the previous step, so the Dropbox installer will create the Dropbox folder under its home. At the end you will have /dropbox/Dropbox as the synced folder:],
+  [Terminal window],
+  [su dropbox],
   [(enter the password for the user dropbox)],
   [Now you’re the dropbox user. Be sure to switch to your user folder with cd ~ and let’s download and install the daemon.],
+  [Terminal window],
+  [wget -O dropbox.tar.gz "http:\/\/www.dropbox.com/download/?plat=lnx.x86"],
   [for 32bit or],
+  [Terminal window],
+  [wget -O dropbox.tar.gz "http:\/\/www.dropbox.com/download/?plat=lnx.x86\_64"],
   [for 64bit.],
   [Extract it:],
+  [Terminal window],
+  [tar -xvzf dropbox.tar.gz],
   [It will extract to the ~/.dropbox-dist. folder. Now run the client:],
+  [Terminal window],
+  [~/.dropbox-dist/dropbox],
   [You will see an output like the following:],
   [This client is not linked to any account…
-Please visit {SOME\_URL} to link this machine. \[…\]],
+Please visit \{SOME\_URL\} to link this machine. \[…\]],
   [Copy and paste the provided URL in the browser bar of your local machine and it will ask you to enter the password of your dropbox account. This way it is able to authenticate your command line client and start syncing your files. At this point it should have been started its work but our shell is still locked by the client. We need to kill and daemonize it to being able to manage it as a service. Press CTRL+C and get back to your user with the exit command.],
-  [id="dropbox-as-a-service"\>Dropbox as a service],
+  [Dropbox as a service],
   [At this point we need to define dropbox as a service. So let’s create an etc init script . Download my gist],
+  [Terminal window],
+  [wget -O dropbox\_init\_script "https:\/\/gist.github.com/lmammino/8467336/raw/dropbox"],
   [and move it in the init folder:],
+  [Terminal window],
+  [sudo mv dropbox\_init\_script /etc/init.d/dropbox],
   [Make it executable:],
+  [Terminal window],
+  [sudo chmod +x /etc/init.d/dropbox],
   [And set it to load at startup:],
+  [Terminal window],
+  [sudo update-rc.d dropbox defaults],
   [Now it’s a service! Run:],
+  [Terminal window],
+  [sudo /etc/init.d/dropbox start],
   [to start it and feel free to use common service command such as stop , restart and status .],
-  [id="enjoy"\>Enjoy],
   [At this point you have all your dropbox data in the /dropbox/Dropbox folder. Feel free to copy all the files you want in there or to schedule jobs that does all the dirty work for you. You can also create symlinks into the dropbox folder to keep files and folders placed in other locations synced.],
   [Security concerns : consider that your dropbox folder acts as a normal dropbox folder so it’s synced both ways. If someone breaks into your dropbox account (or the account of some collaborator who shares the folder with you) he can use dropbox as an hole to inject malicious files into your server or steal sensible data. So, for example, avoid to have scheduled scripts and unencrypted sensible data in that folder.],
-  [id="bonus"\>Bonus],
   [Dropbox released the Dropbox CLI , a python command line application that you can use to perform some useful task such as Selective Sync , disable the LAN sync or retrive public links of your files. I suggest to download it by using the dropbox user and place it under /dropbox/bin . So you can simply switch to the dropbox user (again with su dropbox ), download it and make it executable:],
+  [Terminal window],
+  [mkdir ~/bin],
+  [wget -O ~/bin/dropbox.py "https:\/\/www.dropbox.com/download?dl=packages/dropbox.py"],
+  [chmod +x ~/bin/dropbox.py],
   [At this point you can run the Dropbox CLI. For example if you want to disable the LAN sync (heavily suggested in this case) you can simply do:],
+  [Terminal window],
+  [/dropbox/bin/dropbox.py lansync n],
   [That’s all.
 It was a long read but I hope it has been useful ;)],
 ),
@@ -2449,11 +2405,10 @@ It was a long read but I hope it has been useful ;)],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Akka workshop at Finn.no],
   author: [Sjur Millidahl],
   source-name: [Finn.no Tech],
@@ -2476,19 +2431,18 @@ It was a long read but I hope it has been useful ;)],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Åpen fagkveld hjemme hos FINN],
   author: [Gunn Skinderviken],
   source-name: [Finn.no Tech],
   images: (),
   paragraphs: (
   [Tradisjonen tro åpner vi også i år dørene hjemme hos oss i Grensen for å dele våre erfaringer rundt hvordan vi jobber med produktutvikling. Teknologi er i fokus, og vi gleder oss til å vise dere hvordan vi bygger - og holder et av Norges mest besøkte nettsteder vedlike.​​​​​​​ En kveld er dedikert studenter, og en de mer erfarne.],
-  [id="presentasjoner"\>Presentasjoner],
   [GDPR],
   [Sosial rekruttering],
   [Universell utforming],
   [Dette ser vi etter når vi ansetter utviklere],
-  [id="åpen-fagkveld-28-februar-kl-16-20-for-de-som-jobber-med-teknologi"\>Åpen fagkveld 28. februar kl 16-20 (for de som jobber med teknologi)],
+  [Åpen fagkveld 28. februar kl 16-20 (for de som jobber med teknologi)],
   [16:00 
  Velkommen til FINN ved Nicolai Høge (CTO) 
  
@@ -2515,7 +2469,7 @@ It was a long read but I hope it has been useful ;)],
  
  18:00 
  Podium Frontend i en mikroservices-verden. Hvordan FINN bygger en unison frontend på kryss av microservicer og team med forskjellige eierskap.],
-  [id="åpen-studentkveld-7-mars-kl-16-20-for-studenter"\>Åpen studentkveld 7. mars kl 16-20 (for studenter)],
+  [Åpen studentkveld 7. mars kl 16-20 (for studenter)],
   [Program (endringer kan komme)],
   [16:00 
  Velkommen til FINN ved Nicolai Høge (CTO) 
@@ -2557,7 +2511,7 @@ It was a long read but I hope it has been useful ;)],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [New PHP library: PHPoAuthUserData],
   author: [Luciano Mammino],
   source-name: [Luciano Mammino (loige)],
@@ -2571,6 +2525,8 @@ It was a long read but I hope it has been useful ;)],
   [The library I wrote is called PHPoAuthUserData . It sits on top of the excellent OAuth library Lusitanian/PHPoAuthLib and aims to resolve the user extraction data problem in the most simple and effective way.],
   [It offers a uniform and (really) simple interface to extract the most interesting and common user data such as Name , Username , Id and so on.],
   [Just to give you a quick idea of what is possible with the library have a look at the following snippet:],
+  [\/\\/ \$service is an istance of \\OAuth\\Common\\Service\\ServiceInterface (eg. the "Facebook" service) with a valid access token],
+  [\$extractorFactory = new \\OAuth\\UserData\\ ExtractorFactory ();],
   [The code is available on Github where you will find detailed information on how to install and use the library.],
   [I Hope you will enjoy it and be willing to contribute to the code base. If you want to know more, read the next post that explains how to write an extractor for the library .],
 ),
@@ -2582,7 +2538,7 @@ It was a long read but I hope it has been useful ;)],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Åpen studentkveld hjemme hos FINN],
   author: [Nicolai Høge],
   source-name: [Finn.no Tech],
@@ -2604,7 +2560,6 @@ It was a long read but I hope it has been useful ;)],
   [Hilsen alle oss i FINN],
   [Disse plassene står og venter på deg:],
   [Takk til alle som kom for en hyggelig kveld. Her er presentasjonene.],
-  [id="presentasjoner"\>Presentasjoner],
   [Små og hyppige Leveeranser!],
   [Fra Student til FINN],
   [Hva ser vi etter når vi rekrutterer?],
@@ -2620,20 +2575,18 @@ It was a long read but I hope it has been useful ;)],
 #pull-quote([So each OAuth provider offer a set of APIs with specific data schemes to allow developers to extract data about the authenticated users.], [Luciano Mammino])
 
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([Phoebe Sajor], source-name: [Stack Overflow Blog], [Ryan is joined by Jan Liphardt,  CEO and co-founder of OpenMind, to chat about the rapidly evolving world of humanoid robotics and what it means for humans, why OpenMind is building an open-source operating system for robots that processes logic in natural language, and how putting Asimov’s Laws on the blockchain might be the key to robotics guardrails.])],
-    [#brief-item([David Loker], source-name: [Stack Overflow Blog], [What specific kind of bugs is AI more likely to generate? Do some categories of bugs show up more often? How severe are they? How is this impacting production environments?])],
-    [#brief-item([yifanlu], source-name: [Yifan Lu], [I am not a fan of New Year’s resolutions, but I do want to do more technical writing this year. So here is a preprint of a paper I wrote on glitching the PS Vita as well as a simple model for reasoning about voltage glitches at a low level .])],
-    [#brief-item([MapTiler (Martin Mikita)], source-name: [MapTiler Blog], [Maps rendered with MapTiler or available as MBTiles file can be uploaded to Amazon S3 and viewed using libraries such as Leaflet, OpenLayers, WebGL Earth, Google Maps API, MapBox.js, etc.])],
-    [#brief-item([MapTiler (Dominik Zochowski)], source-name: [MapTiler Blog], [Fully control styling, behavior, and interaction logic of custom map controls. With MapTiler SDK JS, using native HTML, CSS, and JavaScript, you can fully control the map UI with declarative or programmatic APIs.])],
-    [#brief-item([PortSwigger Web Security Blog], source-name: [PortSwigger Web Security Blog], [Note: This is a guest post by IT security consultant Adarsh Kumar. I’ve been using Burp Suite day to day for years, so when Burp AI was introduced, I was curious how it would actually hold up dur])],
-    [#brief-item([Erin Yepis, Ryan Donovan], source-name: [Stack Overflow Blog], [We're running a survey to understand how people are using AI to learn and whether that's helping, hurting, and replacing tools.])],
-    [#brief-item([MapTiler (Tomas Pohanka)], source-name: [MapTiler Blog], [OpenMapTiles 3.15, the open-source vector tiles map-generation tool, is out now. It enhances the road network, improves water features, and better cartography.])],
-    [#brief-item([PortSwigger Web Security Blog], source-name: [PortSwigger Web Security Blog], [Note: This is a guest post by pentester and researcher, Tom Stacey (\@t0xodile). You'd think that after almost 21 years since its initial public discovery, HTTP Request Smuggling would be barely exploi])],
-    [#brief-item([Phoebe Sajor], source-name: [Stack Overflow Blog], [Ryan chats with Kevin Peterson, CTO of Bedrock Robotics, about the evolution of self-driving technology and why robotics is now advancing; how real data is still relevant but simulation becomes essential for scale; and the future of robotics in addressing labor shortages and enhancing productivity.])],
-  ))
-}
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([Phoebe Sajor], source-name: [Stack Overflow Blog], [Ryan is joined by Jan Liphardt,  CEO and co-founder of OpenMind, to chat about the rapidly evolving world of humanoid robotics and what it means for humans, why OpenMind is building an open-source operating system for robots that processes logic in natural language, and how putting Asimov’s Laws on the blockchain might be the key to robotics guardrails.])],
+  [#brief-item([David Loker], source-name: [Stack Overflow Blog], [What specific kind of bugs is AI more likely to generate? Do some categories of bugs show up more often? How severe are they? How is this impacting production environments?])],
+  [#brief-item([yifanlu], source-name: [Yifan Lu], [I am not a fan of New Year’s resolutions, but I do want to do more technical writing this year. So here is a preprint of a paper I wrote on glitching the PS Vita as well as a simple model for reasoning about voltage glitches at a low level .])],
+  [#brief-item([MapTiler (Martin Mikita)], source-name: [MapTiler Blog], [Maps rendered with MapTiler or available as MBTiles file can be uploaded to Amazon S3 and viewed using libraries such as Leaflet, OpenLayers, WebGL Earth, Google Maps API, MapBox.js, etc.])],
+  [#brief-item([MapTiler (Dominik Zochowski)], source-name: [MapTiler Blog], [Fully control styling, behavior, and interaction logic of custom map controls. With MapTiler SDK JS, using native HTML, CSS, and JavaScript, you can fully control the map UI with declarative or programmatic APIs.])],
+  [#brief-item([PortSwigger Web Security Blog], source-name: [PortSwigger Web Security Blog], [Note: This is a guest post by IT security consultant Adarsh Kumar. I’ve been using Burp Suite day to day for years, so when Burp AI was introduced, I was curious how it would actually hold up dur])],
+  [#brief-item([Erin Yepis, Ryan Donovan], source-name: [Stack Overflow Blog], [We're running a survey to understand how people are using AI to learn and whether that's helping, hurting, and replacing tools.])],
+  [#brief-item([MapTiler (Tomas Pohanka)], source-name: [MapTiler Blog], [OpenMapTiles 3.15, the open-source vector tiles map-generation tool, is out now. It enhances the road network, improves water features, and better cartography.])],
+  [#brief-item([PortSwigger Web Security Blog], source-name: [PortSwigger Web Security Blog], [Note: This is a guest post by pentester and researcher, Tom Stacey (\@t0xodile). You'd think that after almost 21 years since its initial public discovery, HTTP Request Smuggling would be barely exploi])],
+  [#brief-item([Phoebe Sajor], source-name: [Stack Overflow Blog], [Ryan chats with Kevin Peterson, CTO of Bedrock Robotics, about the evolution of self-driving technology and why robotics is now advancing; how real data is still relevant but simulation becomes essential for scale; and the future of robotics in addressing labor shortages and enhancing productivity.])],
+))
 
 #colophon([Southern Report], [Vol. 1, No. 049], [2026-03-30])

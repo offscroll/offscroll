@@ -21,104 +21,8 @@
 #masthead([Wide Herald], [Vol. 1, No. 071], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Measuring the Performance of our OpenStack Cloud],
-  kicker: [Cover Story],
-  author: [Target Brands, Inc],
-  source-name: [Target Tech],
-  deck: [Here at Target, we run our own private OpenStack cloud and have never been able to accurately measure the performance of
-our hardware.],
-  lead-pre: [],
-  lead-cap: [T],
-  lead-rest: [his lack of measurement prevents the evaluation of performance improvements of new hardware or alternative
-technologies running as drivers inside OpenStack. It also prevents us from providing a Service Level Agreement (SLA) to our
-customers. Recently we have been striving to improve our OpenStack service which led us to talk to our consumers directly.],
-  body-paragraphs: (
-  [One of the major feedback points provided by talking with our consumers was the performance of the OpenStack cloud was lower
-than expected. Because we have not measured the performance of our cloud in the past, we have been unable to know
-if new hardware or configuration changes improves consumer-facing performance. With our new OpenStack environment builds we
-focused on changing this. But first we needed a tool to do the job.],
-  [id="searching-for-a-tool"\>Searching for a Tool],
-  [The first tool we looked at was Rally . Rally does performance testing of an
-OpenStack cloud. However, Rally focuses on the OpenStack API only. It is mainly used to test functionality
-(via Tempest ) and stability of the API under large amounts of load. Rally does
-contain a resource to boot an instance and run Linux CLI commands via user data. This was tested as a way to provide the
-staging of instances to run performance software. However, starting the software on each instance at the same time and
-collecting the results from said software was difficult and not viable. Because of this, we deemed Rally was not suitable
-for our needs.],
-  [The next tool we looked at was KloudBuster . KloudBuster is a tool that does
-performance testing inside an OpenStack instance. At the time of writing it provides two sets of tests: HTTP and storage.
-The HTTP test uses a traffic generator to measure requests per second and latency between instances. The storage test uses
- FIO to measure read/write IOPs and bandwidth. KloudBuster does what we were looking for,
-measuring the performance of instances inside of OpenStack. However, it does not support adding more tests past the two
-included, it has limited configuration options for the environment setup, and it had stability issues inside our OpenStack
-cloud. Because of this, we deemed KloudBuster was not suitable.],
-  [id="creating-our-own"\>Creating Our Own],
-  [With current options not meeting all of our needs, we decided the best option was to create our own performance framework
-that can be flexible to cover a wide variety of tests and environment setups. These were our requirements:],
-  [support the following tests: network, storage, and cpu],
-  [easily support adding future tests],
-  [flexible enough to support any OpenStack environment (including old versions)],
-  [ability to use fixed or floating IP addresses for connectivity],
-  [ability to use ephemeral or cinder storage],
-  [return test results in a format usable by other software],
-  [id="enter-cloudpunch"\>Enter CloudPunch],
-  [CloudPunch is a tool developed by the OpenStack team here at Target. It is
-completely open source and follows the MIT license. CloudPunch has the following features:],
-  [Written 100% in Python - CloudPunch is written in the Python language including the sections that stage OpenStack and
-the tests that run. This was chosen to avoid reliance on other tools.],
-  [Create custom tests - Because tests are written in Python, custom written tests can be ran by simply dropping a file
-in a folder. These tests are not limited; a test can do anything Python can do.],
-  [Fully scalable - A test can include one instance or hundreds. A couple lines of configuration can drastically change
-the stress put on OpenStack hardware.],
-  [Test across OpenStack environments - Have multiple OpenStack environments or regions? Run tests across them to see
-performance metrics when they interact.],
-  [Run tests in an order or all at once - See single metric results such as network throughput or see how a high network
-throughput can affect network latency.],
-  [JSON and YAML support - Use a mix of JSON or YAML for both configuration and results],
-  [id="how-does-cloudpunch-work"\>How Does CloudPunch Work?],
-  [CloudPunch separates the process of running a test into three major roles:],
-  [Local Machine - The machine starting the test(s) and receiving the results outside of OpenStack.],
-  [Master - The OpenStack instance that is the communication between external and internal OpenStack. The local machine
-will send configuration to the master so the slaves can get it. The slaves send test results back the master so the local
-machine can receive them.],
-  [Slave - The OpenStack instance that runs the test(s). It reports only to the master.],
-  [For more specific information on these roles, see
- here],
-  [To better explain the process from start to finish, I will go over an example of running a simple ping test between
-instances. To initially start CloudPunch, I give the CLI a configuration file, an environment file, and an OpenRC file.],
-  [CloudPunch on the local machine then begins to stage the OpenStack cloud (in this order) with a security group, a keypair,
-the master router, the master network, the master instance, the slave routers, the slave networks, then finally the slave
-instances. The local machine now waits for all of the instances to be ready by checking in with the master server via a
- Flask API. At the same time, all slave instances are working to register with the master instance
-to provide host information and say that they are ready.],
-  [Once the master server and all slaves are registered and ready, the local machine sends the configuration to the master
-server and signals that the test can now begin. The slave instances are checking in with the master server every ~1 second
-for the test status to be ready. Once it is ready, the slaves pull down the configuration from the master server. The slaves
-then start the ping test by calling the ping.py file inside the slave directory. This file runs the ping command via the
-shell and captures the latency results. The slaves collect these results and once the test is complete, send these results
-back to the master instance. All while this is happening, the local machine is checking in with the master server every ~5
-seconds for all slaves to have posted results to the master.],
-  [Once all slaves have posted results, the local machine pulls down the results and saves the results depending the
-configuration. Now that the process of running the test is complete, the local machine now deletes all of the resources
-it created on the OpenStack cloud. I am now left with the results of the ping test without having any resources sitting on
-the OpenStack cloud.],
-  [id="how-do-i-get-started-with-cloudpunch"\>How Do I Get Started With CloudPunch?],
-  [See the getting started guide
- here],
-  [id="about-the-author"\>About the Author],
-  [Jacob Lube is an Engineer and part of Target’s Enterprise Cloud Engineering team focusing on anything OpenStack. Outside
-of OpenStack, Jacob enjoys riding bicycle, playing video games, and messing around in the Python language.],
-  [Measuring the Performance of our OpenStack Cloud was originally published by Target Brands, Inc at target tech on June 20, 2017.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [A Retrospective — Responsive Design],
   author: [0xADADA],
   source-name: [0xADADA],
@@ -129,7 +33,7 @@ of OpenStack, Jacob enjoys riding bicycle, playing video games, and messing arou
 responds to user-context and another pushing for a second, mobile-only approach
 (typically using a subdomain starting with m.) It’s clear now,
  the responsive web has won .],
-  [id="a-retrospectiveresponsive-design"\>A Retrospective — Responsive Design],
+  [A Retrospective — Responsive Design],
   [The mark of a master woodworker is his/her ability to work with the grain. The
 grain gives the wood its natural identity and subtly tells the craftsman the
 best way to work it.],
@@ -146,7 +50,7 @@ functionality using progressive enhancement.],
 when our user puts our tools down. In the end, we want our users to be engaged
 with the people and world around them, not fumbling with a tool. The tools are a
 means, not an end.],
-  [id="stechnmethodology"\>s/Techn/Method/ology],
+  [s/Techn/Method/ology],
   [Server-side web frameworks like Django, Ruby on Rails, Express all have
 excellent technologies to define explicit dependencies (e.g., pip with
  requirements.txt , gem with Gemfile , and npm with package.json .)
@@ -215,7 +119,7 @@ inclusive. We need to use sensitivity, language and organizational politics to
 get all stakeholders to reach consensus.],
   [“Like celebrities on the cover of a magazine, ‘pixel-perfect’ execution on the
 web is only ever achieved in Photoshop.”],
-  [id="what-responsive-design-is"\>What “Responsive design” Is],
+  [What “Responsive design” Is],
   [A process],
   [A relinquishing of the false sense of comfort we get when designing for a
 “design comp”],
@@ -226,7 +130,7 @@ into different browsers & devices, flows into robot search engine crawlers,
 flows into RSS feeds, flows into meta-data (hReview) parsers, flows into
 printers, flows into read-later tools like Web Clippings, Pocket, Instapaper
 and FlipBoard],
-  [id="responsive-design-as-a-catalyst-for-organizational-change"\>Responsive Design as a catalyst for organizational change],
+  [Responsive Design as a catalyst for organizational change],
   [Responsive design is more of an organizational challenge than a technical
 challenge.],
   [The challenge for teams structured traditionally into Business, Product, UX,
@@ -255,7 +159,7 @@ motivator for all team members.],
 or a set of tools. Its when an organization decides to collaborate around a
 process; with accountability to the user first, to each other second, and to
 solve the technology last, once all important decisions have been made.],
-  [id="more-reading-on-responsive-design-and-organizational-change"\>More reading on “Responsive Design” and organizational change],
+  [More reading on “Responsive Design” and organizational change],
   [Upstatement & Filament Group
  discusses their approach 
 to the redesign of the Boston Globe],
@@ -268,10 +172,8 @@ at the Guardian UK],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Installing mysql2 Gem on OSX when Headers Can't Be Found],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -280,8 +182,13 @@ at the Guardian UK],
   [Note : If you're not a Rails user, on OSX, then just nope the heck out of reading this post. This is some serious nerdery here.],
   [One of the single most frustrating things about the Rails ecosystem is when you can't get a bundle install operation to finish. The bundle install, of course, is the process of getting the software tools, "gems", identified in Gemfile to install. When you can't get bundle install to finish, you are effectively entirely blocked from continuing with a project. A friend hit a serious problem recently with bundle install and the mysql2 gem. I gave some online help via chat and while they solved it without me, I volunteered to write it down so there's a decent explanation \/ write up.],
   [Here's the error:],
+  [ld: library not found for -lssl
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: \*\*\* \[mysql2.bundle\] Error 1],
   [My first suggestion was to try a "brew install mariadb" (mariadb is a fully compatible, better version of MySQL, written by the creator of MySQL). It turned out that mariadb was already installed.],
   [So this led me to this blink and then I asked for "paste me the whole disgustingly long error message on bundle install".],
+  [Installing mysql2 0.5.2 with native extensions
+Gem:: Ext:: BuildError: ERROR: Failed to build gem native extension.],
   [current directory:],
   [/Users/foo/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/mysql2-0.5.2/ext/mysql2],
   [/Users/foo/.rbenv/versions/2.6.3/bin/ruby -I],
@@ -323,7 +230,7 @@ make "DESTDIR="
 compiling client.c
 client.c:140:1: warning: control may reach end of non-void function
 \[-Wreturn-type\]
-}
+\}
 ^
 1 warning generated.
 compiling infile.c
@@ -345,6 +252,7 @@ continue.
 Make sure that gem install mysql2 -v '0.5.2' --source 'https:\/\/rubygems.org/'
 succeeds before bundling.],
   [My comment was pretty that it simply can't find the libraries, almost certainly the header files for openssl. This is actually a common install problem for gems. Happily my friend found the answer (and without me which is awesome). Here is what turned out to be needed:],
+  [export LIBRARY\_PATH=\$LIBRARY\_PATH:/usr/local/opt/openssl/lib/],
   [This the kind of thing that differs across people's systems \/ environments so I get why it is an issue despite the mysql2 gem being what – a decade plus old? But I wish that the build ecosystem for Rails better allowed for things like this because, well, when you can't bundle install, you effectively can't rails.],
   [Note : And I get the open source ethos that if I want this, I should fix it myself. I'm also aware of how deep a rabbit hole that would be and I don't have the mental energy to even contemplate solving this. So, yeah, I'm going to whine but I'm also massively thankful for the mysql2 gem so thank you brianmario. Appreciated. At least I hopefully gave back a bit by explaining this well.],
 ),
@@ -354,12 +262,10 @@ succeeds before bundling.],
   debug-mode: false,
 )
 
-  #pull-quote([yes checking for SERVER\_QUERY\_WAS\_SLOW in mysql.], [Scott Johnson (fuzzyblog)])
+#pull-quote([yes checking for SERVER\_QUERY\_WAS\_SLOW in mysql.], [Scott Johnson (fuzzyblog)])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Java 9 modules - JPMS basics],
   author: [Stephen Colebourne],
   source-name: [Stephen Colebourne (Joda)],
@@ -370,6 +276,7 @@ In this article, I will introduce it, leaving most of my opinions to a follow up
 This is based on these slides .],
   [Java Platform Module System (JPMS)],
   [The new module system, developed as Project Jigsaw , is intended to raise the abstraction level of coding in Java as follows:],
+  [The primary goals of this Project are to:],
   [\* Make the Java SE Platform, and the JDK, more easily scalable down to small computing devices;],
   [\* Improve the security and maintainability of Java SE Platform Implementations in general, and the JDK in particular;],
   [\* Enable improved application performance; and],
@@ -410,30 +317,30 @@ Fundamentally, the JPMS authors (Oracle) have set out to build a JVM extension t
   [The module-info.java file contains the instructions that define a module (the most important ones are covered here, but there are more).
 This is a .java file, however the syntax is nothing like any .java file you've seen before.],
   [There are two key questions that you have to answer to create the file - what does this module depend on, and what does it export:],
-  [module com.opengamma.util {
+  [module com.opengamma.util \{
  requires org.joda.beans; \/\\/ this is a module name, not a package name
  requires com.google.guava;],
   [exports com.opengamma.util; \/\\/ this is a package name, not a module name
-}],
+\}],
   [(The names to use for modules needed a whole separate article , for this one I'll use package-name style)],
   [This module declaration says that com.opengamma.util depends on (requires) org.joda.beans and com.google.guava .
 It exports one package, com.opengamma.util .
 All other packages are hidden when using the modulepath (enforced by the JVM).],
   [There is an implicit dependency on java.base , the core module of the JDK.
 Note that the JDK itself is also modularized, so if you want to depend on Swing, XML or Logging, that dependency needs to be expressed.],
-  [module org.joda.beans {
+  [module org.joda.beans \{
  requires transitive org.joda.convert;],
   [exports org.joda.beans;
  exports org.joda.beans.ser;
-}],
+\}],
   [This module declaration says that org.joda.beans depends on (requires) org.joda.convert .
 The "requires transitive", as opposed to a simple "requires", means that any module that requires org.joda.beans 
 can also see and use the packages from org.joda.convert . This is used here as Joda-Beans has methods where the
 return type is from Joda-Convert. This is shown by a dashed line.],
-  [module org.joda.convert {
+  [module org.joda.convert \{
  requires static com.google.guava;],
   [exports org.joda.convert;
-}],
+\}],
   [This module declaration says that org.joda.convert depends on (requires) com.google.guava ,
 but only at compile time, "requires static", as opposed to a simple "requires". This is an optional dependency.
 If Guava is on the modulepath, then Joda-Convert will be able to see and use it, and no error will occur if Guava is not present.
@@ -491,10 +398,8 @@ If you are thinking of modularizing your library or application, please wait a l
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Meet Tuhina, Software Engineering Intern \@ BigCommerce],
   author: [Tuhina Das],
   source-name: [BigCommerce Engineering],
@@ -520,10 +425,8 @@ If you are thinking of modularizing your library or application, please wait a l
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Should you adopt Java 12 or stick on Java 11?],
   author: [Stephen Colebourne],
   source-name: [Stephen Colebourne (Joda)],
@@ -703,12 +606,12 @@ So while the middle ground is a possible fallback if you get stuck, it is far fr
   [Some additional links],
   [Spring framework has expressed its policy wrt Java 12 in a video .
 The key sections are:],
-  [class="quote"\>
-Jaba 8 and 11 as the LTS branches officially supported from our end.
+  [Jaba 8 and 11 as the LTS branches officially supported from our end.
 Best efforts support for the releases inbetween.
 ... if you intend to upgrade to 12 ... we are very willing to work with you ... but they are not officially production supported.
 ... The long term support releases are what we are primarily focussed on. Java 12 and higher will be best effort from our side.],
   [As an example of a typical software vendor, Liferay states:],
+  [Liferay has decided we will not certify every single major release of the JDK. We will instead choose to follow Oracle's lead and certify only those marked for LTS.],
   [Liferay blog],
   [Oracle's official "misconceptions" slide about the new release model.],
   [I'm sure some development teams will adopt the Java release train.
@@ -722,10 +625,8 @@ I know we won't be adopting the release train at my day job any time soon, a key
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Equity Allocation in Startups],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -738,9 +639,9 @@ I know we won't be adopting the release train at my day job any time soon, a key
   [Equity Split with the VP of Engineering : 1/3],
   [Founder Title : Yes],
   [Did VP of Engineering Put in Cash : No],
-  [id="you-need-to-understand-this"\>You Need to Understand This],
+  [You Need to Understand This],
   [One of the basic rules of the startup world is that on Day 1, you, the founder, own 100% of something that is worth absolutely nothing . The goal, by the end, is that you own a much smaller percentage of something actually worth something. As an example, owning 10% of something worth \$10 million is actually much, much better.],
-  [id="the-basic-rules-of-thumb-for-equity-allocations"\>The Basic Rules of Thumb for Equity Allocations],
+  [The Basic Rules of Thumb for Equity Allocations],
   [Here are my rules of thumb to use for equity allocation:],
   [The more risk you take, the more you get],
   [The earlier you join, the more you get],
@@ -750,7 +651,7 @@ I know we won't be adopting the release train at my day job any time soon, a key
   [You only have 80% of the equity to play with - 20% generally goes to an ESOP (employee stock option plan)],
   [Make damn sure that you give out options not stock and a long vesting schedule (incremental over say 4 years)],
   [The bottom line is that equity, in whatever form, is a reward for taking risk. And the earlier you are involved in a startup, the more risk there is.],
-  [id="my-personal-experience-from-feedster"\>My Personal Experience from Feedster],
+  [My Personal Experience from Feedster],
   [A long, long time ago, I founded a blog search engine named Feedster. I merged with another RSS search engine shortly after coming to market to address some technical limitations in my architecture. We did the typical nerd founder thing and simply split the equity down the middle and both took the Founder title.],
   [In retrospect that wasn't a fair allocation because I committed significantly more time to Feedster but it avoided a difficult conversation that I was simply not brave enough to have – and that was a mistake.],
   [Once we realized that blog search was actually a viable business, my first hire was a CEO to handle the operations and capital raise. This CEO:],
@@ -760,15 +661,13 @@ I know we won't be adopting the release train at my day job any time soon, a key
   [Did not have to put in any personal money],
   [The equity allocation for that CEO, bear in mind that this was 16 years ago so my memory may be fuzzy was between 9% and 10%. That CEO's advice to me is that if we filled other VP level slots, we'd be talking about between a 3% to 5% stake.],
   [If you contrast these numbers with the 1/3 equity split mentioned above, it is considerably less and the reason was that an awful lot of the risk had already been addressed (functional technology, working product, site with traffic, no capital investment, etc).],
-  [id="disclaimers"\>Disclaimers],
   [There are two important disclaimers to understand here:],
   [I am not a lawyer (IANAL) and my focus is always on making great technology NOT on the best personal economic return. This means that there are aspects of capital raising and equity allocation that I don't now and likely never will fully understand.],
   [I should also note that equity allocation is a particularly sensitive topic for me because, even though I was the founder, I was forced out by the people I hired and then voted off the board. And while I am over it (somewhat), had the equity allocations been handled differently, that might not have happened.],
-  [id="what-should-this-founder-do"\>What Should This Founder Do?],
+  [What Should This Founder Do?],
   [My advice to this founder is to get Marc Randolph's book, That Will Never Work , about the founding of Netflix and read pages 180 to 189. Marc Randolph was the founder of Netflix and the original CEO. In these pages, Reed Hastings not only told Marc that he needed to step down as CEO and be replaced by Reed but that he needed to give a substantial portion of his equity to Reed in order for that privilege.],
   [After reading these pages, I think that the founder needs to talk with the VP of Engineering and negotiate the equity split down, the 1/3 is just too high. Once upon a time, I would have said that once you make an agreement, you have to keep it at all costs. What this book has illustrated to me is that if circumstances change, you actually can renegotiate even on a sensitive topic like equity allocation.],
   [Note : Marc Randolph stayed with Netflix for years even after being replaced as CEO and losing equity in the process. So even difficult discussions don't necessarily end relationships.],
-  [id="references"\>References],
   [Lest you think that I'm pulling this information out of thin air, I did try and confirm my thoughts a bit:],
   [AVC on Equity Allocation ; Honestly just read everything that Fred Wilson writes.],
   [The Joel Spolsky answer that Fred Wilson is referencing above is offline but I managed to find it in the Internet Archive .],
@@ -783,10 +682,8 @@ I know we won't be adopting the release train at my day job any time soon, a key
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [I did an inktober and I want to tell you about it],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -798,7 +695,7 @@ made Internet Stuff™️ instead. That experiment lives here , but
 I want to tell you why I did it before you go ahead and judge it. I
 think that it’s also important to tell you it was a huge pain in the ass just
 in case you watched it unfold and thought I magically stuck every landing.],
-  [id="the-why"\>The why],
+  [The why],
   [“Art” is a word I struggle with a lot. I don’t think of myself as an artist, because
 none of the things I make feel like art yet. At the same time, I obsess about these
 things if I don’t feel they represent me , which is one of the
@@ -811,7 +708,7 @@ extremely creative. I am not extremely creative, but I believe that everything
 in life can be learnt by grinding that level. So with inktober I wanted to
 force myself to think creatively every day, for a whole month, and see if that
 would level up my creativity.],
-  [id="the-how"\>The how],
+  [The how],
   [I don’t like open ended projects because I think they lead to
 intellectual wankery instead of like, actually doing the thing , so I made up these rules
 for my weird art experiment:],
@@ -826,7 +723,7 @@ afterwards, so ain’t that the troller becoming the trollee. My friend Bushra c
 never howthee”). Her inktober was way better.],
   [\[2\] I don’t work weekends, and if anyone tells you that “being creative”,
 or “making art” doesn’t feel like work, don’t believe them. Nothing is a free lunch.],
-  [id="the-aftermath"\>The aftermath],
+  [The aftermath],
   [I learnt a lot of CSS. A lot of the days ended up with me looking at Codepen
 and trying to figure out what animation I could use that day. I learnt about
 svg filters, and became really comfortable writing keyframes. I finally
@@ -853,18 +750,16 @@ They’re not all good, but you can afford being picky when you’re out of the 
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [REDstack],
   author: [Target Brands, Inc],
   source-name: [Target Tech],
   images: (),
   paragraphs: (
-  [id="redstack-is-now-open-source"\>REDstack is Now Open Source!],
+  [REDstack is Now Open Source!],
   [We are officially open sourcing REDstack, our sandbox tool for Big Data development at Target.],
-  [id="what-is-redstack"\>What is REDstack?],
+  [What is REDstack?],
   [REDstack is a tool for provisioning kerberized clusters on OpenStack. We created it with four goals in mind:],
   [Provide a secured environment, with the ability to leverage preconfigured LDAP and Kerberos servers.],
   [Out of the box usability, allowing you to log in with preconfigured user accounts.],
@@ -873,7 +768,6 @@ They’re not all good, but you can afford being picky when you’re out of the 
   [Cluster size, node sizes, types of nodes and node roles,],
   [Hadoop configurations, heap sizes, and components,],
   [All users, passwords, and secure assets.],
-  [id="components"\>Components],
   [REDstack is made up of two major components:],
   [hdp-cloud - The cookbook],
   [The cookbook is used by the application itself to install components and lay down cluster configuration.],
@@ -884,37 +778,33 @@ They’re not all good, but you can afford being picky when you’re out of the 
   [Controls and monitors parallel Chef deployment across the cluster,],
   [Manages and monitors cluster component install over HTTPS requests.],
   [REDstack is bundled with a Docker image, where the configs are set up locally before an installation, and all of the dependencies are updated and configured.],
-  [id="how-to-get-started"\>How to Get Started],
+  [How to Get Started],
   [Head over to the repository at https:\/\/github.com/target/redstack and follow along. The repo has instructions on how to build and configure the clusters using the included Docker image.],
-  [id="history-of-the-project"\>History of the Project],
+  [History of the Project],
   [Target’s Big Data Platform Team manages multiple Big Data environments, with hundreds of nodes and many PB’s of data. As mentioned in our prior blog posts, we depend heavily on Chef as a core part of our CI/CD pipeline. During our testing a couple of years ago, we identified a large opportunity to provide a way to do full integration testing with our Chef cookbooks. This opportunity opened the door for a new product.],
-  [id="origins"\>Origins],
   [Early on, we released a product internally called Pushbutton. This was a three-node cluster that ran on a standard issue laptop at Target. It was kerberized, and it worked well as a Sandbox environment for developers because it had the same security setup. PushButton, however, did not use the same cookbooks as the main cluster. We wanted something that could do what PushButton did, but with our real cookbooks in a larger environment. By creating a full cluster from scratch, we would be able to understand exactly how the cookbooks would function when applied to new nodes and make sure the cookbooks were in a constant working state. We also needed a little bit larger of a sandbox, otherwise we would have difficulty testing high availability (HA) components, or those that run across multiple nodes, like Apache Zookeeper.],
-  [id="toward-redstack"\>Toward REDStack],
+  [Toward REDStack],
   [Our early exploration started out by trying to adapt the existing PushButton work onto OpenStack. We used shell scripts to automate creation of instances, Knife to bootstrap the nodes with the Chef recipes, and cURL requests to automate and monitor the install process. We got it working, but we still had to face our biggest challenge yet, integrating the cookbooks meant for physical hardware onto virtualized nodes. They were expecting particular configurations such as physical drive formatting and partitioning, or where master services are already defined and running. Instead, we had to get them working with our minimum 1x50GB virtual volumes, and anything we changed would have to still be working on the physical nodes. After some difficult work, and with some clever tricks with attributes and Chef injection, we were able to preconfigure the nodes to be recognized by the recipes and were able to slowly commit our changes back to the ecosystem without impact on the main cluster’s health.],
-  [id="a-product-is-born"\>A Product is Born],
+  [A Product is Born],
   [By this point, we had written the entire process as a Python application and set it up on a nightly loop. Every night, it would build an entire Hadoop cluster, from scratch, smoke test it, and report the results to the team. And it worked! Word started to spread among the organization and we were suddenly getting requests from users of our production cluster. They wanted to use REDstack to spin up a sandbox for them to use for Hadoop. Not only would it be more powerful, and sharable by multiple people on a team, it would look exactly like our production cluster because it uses all of the same configurations and assets.],
-  [id="opportunity"\>Opportunity!],
+  [Opportunity!],
   [As a data engineer, wouldn’t it be nice if I could have a kerberized sandbox environment that looked similar to a production cluster, was easy to work with and user friendly? This is what was possible with these environments, so we started to try and provide them to teams. It didn’t work very well initially, users cloned the repo and ran it on their laptops and ran into all sorts of issues with dependencies and versions with Chef versions, ruby versions, gem versions, and python versions. There were simply too many dependencies to manage on on different environments, even with existing dependency management tools. We needed a way to hide all of the complexity and eliminate the need for users run anything on their computer.],
-  [id="the-full-stack-service"\>The Full-Stack Service],
+  [The Full-Stack Service],
   [This led us to the development of our full-stack cluster delivery service, Stacker. Stacker is an API running on top of a database, orchestrating REDstack deploys in threads and listening for requests over a front-end web page. Users simply submit a request on the website and a cluster will be delivered to them in about an hour. At this time, there have been more than 500 unique cluster requests and at least 30 teams are actively using REDstack as a part of their development process.],
-  [id="ongoing-development"\>Ongoing Development],
   [Over time, REDstack has evolved to include multiple types of Big Data clusters. We now provide Elasticsearch clusters as well as Druid in addition to the original Hadoop clusters. Our service continues to evolve with new releases and versions of the software, and additional ease-of-user work on our build in functions for user management and cluster administration.],
-  [id="about-the-author"\>About the Author],
+  [About the Author],
   [Eric Krenz is a Senior Data Engineer on the Big Data Platform Team at Target.],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([id="a-product-is-born"\>A Product is Born  By this point, we had written the entire process as a Python application and set it up on a nightly loop.], [Target Brands, Inc]),
-  inline-pq-idx: 16,
+  inline-pq: pull-quote([A Product is Born  By this point, we had written the entire process as a Python application and set it up on a nightly loop.], [Target Brands, Inc]),
+  inline-pq-idx: 14,
   word-count: 1066,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The perils of tensor.dataSync()],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -929,7 +819,7 @@ to be better than you at math.],
 is probably bad and will leave your UI really janky. Nikhil 
 (who like, birthed TensorFlow.js, bless) was kind enough to explain this to me recently, so I figured
 I’d return the favour, with fewer meeps and more mistakes.],
-  [id="downloading-and-uploading"\>Downloading and Uploading],
+  [Downloading and Uploading],
   [When you create a Tensor, it lives on the CPU. The mere fact that it’s a Tensor
 doesn’t automatically move that data into its GPU mansion – it needs to be used in a WebGL
 program. (I’m playing fast and loose here with the words GPU and CPU btw, so
@@ -952,7 +842,7 @@ ask the GPU to give you data, you have to wait for it to respond; this means
 you can’t really do anything else on the screen while this is happening, like
 paint any animations.],
   [TL;DR:],
-  [class="highlight"\> const a = tf.tensor(); \/\\/ a is on the CPU.
+  [const a = tf.tensor(); \/\\/ a is on the CPU.
 const b = a.sqrt(); \/\\/ Upload a's data to the GPU.
 const c = a.dataSync(); \/\\/ Download a's data from the GPU to the CPU.],
   [So the problems here are:],
@@ -961,7 +851,7 @@ const c = a.dataSync(); \/\\/ Download a's data from the GPU to the CPU.],
 is bad news bears.],
   [downloading from the GPU synchronously over and over is a 2-in-1 and
 will probably murder your favourite pet.],
-  [id="how-it-works"\>How it works],
+  [How it works],
   [If you read the latest 0.15.1 docs,
 you’ll discover that there are at least 4 ways of “downloading” your tensor:],
   [aTensor.array() – asynchronous, and keeps the shape of the tensor (so it returns a nested array)],
@@ -980,7 +870,7 @@ and it won’t cause sadness.],
   [If you, like me, have strange hobbies and want to find this in the actual
 TensorFlow.js source code, check out the read and readSync methods in
  this file .],
-  [id="what-to-do"\>What to do],
+  [What to do],
   [My advice is:],
   [if you have to download your data, try to do it once, asynchronously. Do this
 at the end, after all your GPU computations are done.],
@@ -997,10 +887,8 @@ where it can by async.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A Conceptual Architecture for a Filesystem to SQS Loader],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -1047,10 +935,8 @@ where it can by async.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Essential Ember Addons: The State of the Ember Addon Ecosystem in 2019],
   author: [0xADADA],
   source-name: [0xADADA],
@@ -1091,7 +977,6 @@ I’ll elaborate on their use a bit more.],
   [Finally, before diving into the addon list, I won’t be discussing many standard
 JavaScript packages. There are a bunch of JavaScript packages that I often use
 ( ramda , lodash , etc) but these are outside of the scope of this article.],
-  [id="contents"\>Contents],
   [ember-a11y-testing],
   [ember-auto-import],
   [ember-cli-update],
@@ -1124,16 +1009,15 @@ JavaScript packages. There are a bunch of JavaScript packages that I often use
   [ember-power-select],
   [ember-simple-auth],
   [ember-svg-jar],
-  [id="general-purpose-addons"\>General Purpose Addons],
   [These addons are used in nearly all my projects, I often install and configure
 them right after I’ve created a new project.],
-  [id="ember-a11y-testing"\>ember-a11y-testing],
+  [ember-a11y-testing],
   [ember-a11y-testing is a
 quality assurance addon that integrates into the existing Ember test framework,
 adding tests that check for accessibility problems. The addon leverages the
 wonderful axe-core library to test for
 form labels, high contrast colors, ARIA attributes and much more.],
-  [id="ember-auto-import"\>ember-auto-import],
+  [ember-auto-import],
   [Ember apps can import standard NPM libraries, but it wasn’t straightforward,
 until now.],
   [ember-auto-import is included with
@@ -1145,10 +1029,10 @@ the build by adding it to ember-cli-build.js],
   [\$ ember install ember-auto-import
 \$ yarn add -D lodash-es],
   [and in your code:],
-  [import { capitalize } from 'lodash-es';
+  [import \{ capitalize \} from 'lodash-es';
 let nameUpper = capitalize('edward faulkner');
 \/\\/ Edward Faulkner],
-  [id="ember-cli-update"\>ember-cli-update],
+  [ember-cli-update],
   [ember-cli-update is a build
 time addon that adds the update sub-command to the Ember CLI. This command
 incrementally updates your app or addon to the latest Ember CLI version. It does
@@ -1158,20 +1042,20 @@ project. It will only modify the files if there are changes between your
 project’s version and the latest version, and it will only change the section
 necessary, not the entire file.],
   [This tool gets regular use over the lifecycle of all the Ember apps I maintain.],
-  [id="ember-cli-code-coverage"\>ember-cli-code-coverage],
+  [ember-cli-code-coverage],
   [ember-cli-code-coverage is a quality assurance addon that runs at test time. The
 addon introspects the code running during tests and analyses which code branches
 were run and how often. It generates a report showing your source code and which
 branches are covered by tests. This allows you to write test code that covers
 all code branches. The report looks something like this:],
-  [3x export function asset(param) {
+  [3x export function asset(param) \{
 8x const rootURL = config.rootURL ? config.rootURL : '';
-8x return \`\${rootURL}\${param}\`;
- }],
+8x return \`\$\{rootURL\}\$\{param\}\`;
+ \}],
   [Coveralls is a code-coverage-report-as-a-service provider that tracks your
 projects code coverage over time. The tool auto-uploads your coverage report
 after tests are run.],
-  [id="ember-cli-dependency-lint"\>ember-cli-dependency-lint],
+  [ember-cli-dependency-lint],
   [ember-cli-dependency-lint 
 is a build time addon that will lint your app’s addon dependencies, making sure
 your app or addon has only one version of any dependency. If your app has
@@ -1186,7 +1070,7 @@ can lead to anything from hard exceptions to subtle behavioral bugs.],
   [This addon will throw a build error until the developer explicitly resolves the
 dependency either by pinning the dependency with a resolution, or updating the
 addon with the outdated dependency.],
-  [id="ember-cli-deprecation-workflow"\>ember-cli-deprecation-workflow],
+  [ember-cli-deprecation-workflow],
   [ember-cli-deprecation-workflow is a runtime addon that comes in handy whenever
 you are updating Ember.js or Ember Data, you’ll eventually get deprecation
 warnings that need to resolved. In the meantime the console is filled with
@@ -1194,16 +1078,16 @@ deprecation warning noise.],
   [The addon listens for deprecation warnings in the console, and adds each to a
 list. It allows you to add each deprecation warning to a config file where you
 can work through resolving the deprecations one-by-one.],
-  [id="ember-cli-document-title"\>ember-cli-document-title],
+  [ember-cli-document-title],
   [ember-cli-document-title is a runtime addon that lets you update the document
  on a per-route basis. It lets you define the title directly on a
  title field on any route:],
   [\/\\/ app/routes/post.js
-export default Ember. Route.extend({
+export default Ember. Route.extend(\{
  title: "A fresh new post 🥖",
-});],
+\});],
   [This addon should probably be part of Ember core.],
-  [id="ember-cli-dotenv"\>ember-cli-dotenv],
+  [ember-cli-dotenv],
   [ember-cli-dotenv is an addon that allows your app to consume environment
 variables at build time, as defined in a .env file:],
   [API\_HOST=https:\/\/api.webapp.dev
@@ -1213,19 +1097,19 @@ API\_SECRET=CHANGEME],
  config/environment.js that you can then import in your app wherever you need
 them. You might want to make your API endpoint URL, port, or any secrets
 configured as environment variables.],
-  [id="ember-cli-template-lint"\>ember-cli-template-lint],
+  [ember-cli-template-lint],
   [ember-cli-template-lint adds lint tooling for handlebars templates to the
 ember-cli. The lint rules are also automatically added to the test runner so the
 rules are tested against during ember test runs. This addon was recently
 integrated into Ember core as a default addon.],
-  [id="ember-test-selectors"\>ember-test-selectors],
+  [ember-test-selectors],
   [ember-test-selectors helps you write tests that look more semantic, and with
 less churn between refactors. This is because the pattern leads you do bind your
 tests to a test selector that shouldn’t change during a refactor (instead of
 directly to an HTML tag).],
   [If your component produces HTML markup like this:],
-  [{{post.title}}],
-  [{{post.title}}],
+  [\{\{post.title\}\}],
+  [\{\{post.title\}\}],
   [You’d change your testing patters to something like this:],
   [\/\\/ without ember-test-selectors
 assert.dom('h1').hasText('Example text'); /\* you've explicitly tied the test harness
@@ -1266,7 +1150,7 @@ from production builds.],
   [This is great],
   [\/\\/ combining qunit-dom and ember-test-selectors
 assert.dom('\[data-test-copy\]').hasText('This is great')],
-  [id="eslint-plugin-ember"\>eslint-plugin-ember],
+  [eslint-plugin-ember],
   [eslint-plugin-ember adds Ember-specific ESLint rules to your ember app, and
 comes with a
  great set of recommended defaults 
@@ -1274,24 +1158,23 @@ that are updated as the community coalesces around best practices. This addon
 will keep your app code looking clean and tidy, and nudges the code along a path
 of best practices.],
   [This addon was integrated into the core as a default addon in Ember 2.18.],
-  [id="eslint-plugin-prettier"\>eslint-plugin-prettier],
+  [eslint-plugin-prettier],
   [Prettier is an opinionated code formatter, and eslint-plugin-prettier runs the
 format rules as an ESLint rule; it reports differences as errors or warnings as
 ESLint issues. This allows you to catch formatting discrepancies in your editor
 as well as in CI builds. Prettier rules can be applied automatically in your
 editor, or by ESLint using eslint --fix .],
-  [id="prettier"\>prettier],
+  [prettier],
   [Prettier is not an Ember addon, but a package I use in all my Ember projects.
 Prettier is a code formatter that can automatically format the code in your
 editor (vim, VS Code, etc all have plugins) as well as detecting formatting
 issues test time. Super useful for teams trying to maintain a consistent looking
 codebase.],
-  [id="specific-usecase-addons"\>Specific Usecase Addons],
   [The following addons may not be generally applicable to all applications. I may
 not use them in all my projects but, when I need the capabilities they offer,
 then I will reach for them. For example, if I need to authenticate users with an
 OAuth provider like Facebook or Twitter, I use ember-simple-auth .],
-  [id="ember-cli-addon-docs"\>ember-cli-addon-docs],
+  [ember-cli-addon-docs],
   [ember-cli-addon-docs is a
 build time addon that creates an interactive sandbox for versioned addon
 documentation. This tools is wonderful for addon (and app developers!) who need
@@ -1299,18 +1182,18 @@ to maintain versioned documentation. This addon lets the developers write their
 code and not have to think about how the documentation is presented, generated,
 versioned. The addon has its own code syntax highlighting, interactive live
 demos, and more.],
-  [id="ember-cli-bundle-analyzer"\>ember-cli-bundle-analyzer],
+  [ember-cli-bundle-analyzer],
   [ember-cli-bundle-analyzer is a build-time tool that creates a visualization
 chart allowing you to view the size and contents of an app’s bundled output,
 with their relative and overall sizes. This tool is essential for determining
 which packages have the largest impact on the deployment size of your
 application payload.],
-  [id="ember-cli-deploy"\>ember-cli-deploy],
+  [ember-cli-deploy],
   [ember-cli-deploy is a build time addon that implements a deployment pipeline to
 upload and activate your Ember app on a variety of hosting providers. It uses a
 plugin architecture allowing you to find a plugin to deploy to AWS, GCP, and
 many many more.],
-  [id="ember-cli-mirage"\>ember-cli-mirage],
+  [ember-cli-mirage],
   [ember-cli-mirage is an addon for mocking backend API responses on the client. It],
   [runs in both development mode and testing mode to help you write, test, and],
   [prototype your app without forcing you to write the backend parts first. The],
@@ -1322,24 +1205,24 @@ many many more.],
   [of your choice. Mirage is also used during testing, intercepting and mocking API],
   [requests instantly so the tests can run more quickly, without making any],
   [external network requests.],
-  [id="ember-cli-page-object"\>ember-cli-page-object],
+  [ember-cli-page-object],
   [ember-cli-page-object is a test-time addon making it easy to follow the
 page-object pattern by Martin Fowler. Page objects allow you to define the shape
 of a DOM page in an Ember acceptance test or integration test. They tell your
 code what to interact with, but do not make assertions about those objects.
 Your tests then reuse this object. This reduces duplication of DOM selectors in
 your tests, making your test code less fragile and much easier to refactor.],
-  [id="ember-cli-release"\>ember-cli-release],
+  [ember-cli-release],
   [ember-cli-release provides a CLI for building your package, auto-incrementing
 version numbers, and publishing the packages to a package repository. This is
 more useful for Ember addons that typically conform to semver conventions, but
 can be used for engines and applications equally.],
-  [id="ember-cli-typescript"\>ember-cli-typescript],
+  [ember-cli-typescript],
   [ember-cli-typescript is a build time addon enabling you to write TypeScript in
 your Ember apps. It hooks into the build pipeline and transpiles TypeScript to
 JavaScript, and also supplies many of the type definitions for the Ember source
 code.],
-  [id="ember-cli-fastboot"\>ember-cli-fastboot],
+  [ember-cli-fastboot],
   [ember-cli-fastboot is an infrastructure addon. It enables server side rendering
 of your Ember application. FastBoot runs your application in Node.js so when a
 user visits your site, they are delivered a fully rendered static HTML page, and
@@ -1347,44 +1230,44 @@ only after the content has loaded do they start downloading JavaScript. Once
 finished, your Ember app takes over, delivering a typical SPA experience. The
 best of both worlds,
  but not without complexity .],
-  [id="ember-cli-fastboot-testing"\>ember-cli-fastboot-testing],
+  [ember-cli-fastboot-testing],
   [ember-cli-fastboot-testing is a quality assurance addon that allows you to write
 tests against your Ember app running in the Node.js server context. Since
 FastBoot runs Ember not in the browser but in a Node.js process, the standard
 Ember testing tools don’t apply. This addon lets you write acceptance tests that
 can excersise code running on the FastBoot server.],
-  [id="ember-concurrency"\>ember-concurrency],
+  [ember-concurrency],
   [ember-concurrency is a runtime addon that makes it easier to write asynchronus
 code that support cancelation, restarting, expose their internal state, and much
 more. This addon makes the difficulty of managing state transitions much easier.],
-  [id="ember-css-modules"\>ember-css-modules],
+  [ember-css-modules],
   [ember-css-modules is a built time addon enabling you to write component-oriented
 CSS. Your styles become private to a component, route, or controller, with
 explicity features to allow style sharing and composition. It works by making
 each CSS file its own isolated namespace by transforming class names to ensure
 they’re unique. Your .css files are now peers of your component .hbs and
  .js files.],
-  [id="ember-intl"\>ember-intl],
+  [ember-intl],
   [ember-intl is a runtime addon for building internationalized Ember apps, has
 helpers for tranforming strings into multiple locales, formatting for messages,
 date/time formats, number, and relative time manipulation. Provides translations
 using the ICU Message Syntax standard with pluralization support.],
-  [id="ember-intl-analyzer"\>ember-intl-analyzer],
+  [ember-intl-analyzer],
   [ember-intl-analyzer is a quality assurance addon providing tools to help you
 analyze an internationalized app and will locate unused translations.],
-  [id="ember-fetch"\>ember-fetch],
+  [ember-fetch],
   [ember-fetch is a runtime addon providing an alternative to AJAX requests. It
 allows the app to make network requests. ember-fetch is useful for applications
 needing to support network requests in both a browser and FastBoot context, and
 do not need to depend on jQuery.],
-  [id="ember-power-select"\>ember-power-select],
+  [ember-power-select],
   [ember-power-select is a runtime addon providing a powerful, and extensible
  dropdown component that is highly customizable.],
-  [id="ember-simple-auth"\>ember-simple-auth],
+  [ember-simple-auth],
   [ember-simple-auth is a runtime addon for implementing authentication and
 authorization. It maintains an authenticated client side session, authorizes
 network requests, and provides helpers in authentication flows like OAuth.],
-  [id="ember-svg-jar"\>ember-svg-jar],
+  [ember-svg-jar],
   [ember-svg-jar is both a build and runtime addon that improves the developer
 ergonomics around working with SVG assets. It adds a build-time pipeline that
 discovers SVG files in the project repo and packages them as Ember templates.
@@ -1392,7 +1275,6 @@ These are then inlined into your app with an Ember template helper
  that embeds the SVG directly into the markup of your
 page, without an additional network request. It also has a beautiful visual
 directory route displaying all the SVG assets in your app.],
-  [id="conclusion"\>Conclusion],
   [The above addons should cover most of your Ember needs. I have only listed
 addons with good documentation, test coverage, and that continue to be
 maintained. If you need anything more or want to take a general look at some of
@@ -1405,28 +1287,25 @@ the addons that have are available I recommend starting with
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Cat-DNS: a DNS server that resolves everything to cats],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
   images: (),
   paragraphs: (
   [The internet needs more cats. DNS servers are the authority on all things internet. Therefore, the best DNS server is the one that resolves everything to cats. Guess what kind of DNS server this is (Hint: it’s the cat kind).],
-  [id="making-it-go"\>Making it go],
+  [Making it go],
   [First, get the code , and the npm packages you need (the instructions are with the code). To run, start the server as a privileged process. This is because to be a DNS server, you need to be a UDP server on port 53. This is a small numbered port, which means it needs superpowers. This is how your run it:],
   [sudo node cat-dns.js],
   [You also need to somehow set your DNS server to be localhost. On a Mac, I do this by creating a new (wi-fi) interface (called Cats), in my Network preferences, and setting its DNS server to 127.0.0.1 . You could do this on your normal interface, but this makes switching back and forth easier.],
-  [id="warnings"\>Warnings],
   [While you’re playing with this, pretty much nothing on your computer that requires the internet works. Except for your browser. And then that’s mostly cats. So being able to deactivate this easily is kind of key (I know. You might think “Why would I ever want to deactivate cats?”, but trust me on this one). I also recommend killing all the things that need to call the mothership (google hangouts, twitter feeds, dropbox, iMessage), because they will not like your sassy cat answers, and will slow everything down.],
-  [id="you-are-ready"\>You are ready],
+  [You are ready],
   [Go in your browser to www.google.com and wait a bit. You should see a cat. Go to a different website. Another cat. Congratulations. Your internet is now all cats.],
-  [id="wait-what"\>Wait, what?],
+  [Wait, what?],
   [Do not panic. While I recommend you don’t look at the source because it’s gross, if you do look at the source, you’ll notice all it does is resolve any hostname to 54.197.244.191 , which is a magical place on the internet that has cats. My friend \@eigma made it, and is hosting it, so please try not to kill all the cat bandwith at once. You could also resolve everything to localhost, and serve your own for now cats on an http server on port 80. But then you’d have to store your own cats locally, and that is animal cruelty. Thankfully, for now, while that magical static IP exists, you don’t have to.
 That’s it, that’s all.],
-  [id="i-need-to-know-more"\>I NEED TO KNOW MORE],
+  [I NEED TO KNOW MORE],
   [Here’s the little summary I wrote originally about how DNS servers work. Basically, cat-dns ends up doing this:],
   [gruesomely parse the query from the client. I used this as a reference on what each of the fields in the message sections are, because the spec itself is very dry. This was the worst part, because the message sections are sequences of bits that don’t add up to bytes on any sane boundary, so you have to work with bit arrays, which is nobody’s idea of fun. Anyway, a spec is a spec.],
   [assemble the DNS answer. The answer is mostly the same for each query – the only thing that changes is the content of the query (i.e. the hostname you requested). And you copy that from the query, so it’s not a big deal.],
@@ -1438,12 +1317,10 @@ That’s it, that’s all.],
   debug-mode: false,
 )
 
-  #pull-quote([You could also resolve everything to localhost, and serve your own for now cats on an http server on port 80.], [Monica Dinculescu])
+#pull-quote([You could also resolve everything to localhost, and serve your own for now cats on an http server on port 80.], [Monica Dinculescu])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Scott's Approach to Weight Loss],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -1457,7 +1334,6 @@ That’s it, that’s all.],
   [Exercise At Least 3 times Per Week .],
   [No Dining Out .],
   [Each of these is discussed below.],
-  [id="weigh-yourself-every-day"\>Weigh Yourself Every Day],
   [I'm an engineer, not a weight loss person, but, to my way of thinking, if you're going to try and lose weight then you need a metric and that metric is your weight . I've now been weighing myself daily since 2017 and I can tell you that weighing daily really helps prevent you from gaining weight.],
   [Note 1 : If you need a way to track your weight on a daily basis, reach out to me. I have a new product coming out that helps with this.],
   [Note 2 : If you are going to weigh daily then you need to come up with a standard approach. For me that is:],
@@ -1465,7 +1341,7 @@ That’s it, that’s all.],
   [Use the bathroom.],
   [Weigh; always using the same scale.],
   [Log my weight.],
-  [id="whole-30"\>Whole 30],
+  [Whole 30],
   [I used the Whole 30 approach to diet. This basically boils down to:],
   [Whole Foods - simple proteins and vegetables],
   [Nothing artificial; everything made from scratch right down to mayonnaise],
@@ -1483,13 +1359,11 @@ That’s it, that’s all.],
   [Coffee (but black; no sugar, no dairy)],
   [Here is a good reference to Whole 30 .],
   [The only sweet that I had on Whole 30 was Lara Bars (which are mostly made of cashews) and fruits \/ dates. The only drink I had other than water was LaCroix sparkling waters.],
-  [id="zero-app"\>Zero App],
   [One of the more interesting things I did was use an app called the Zero app:],
   [iOS],
   [The idea of Zero app is that if you give your body more time to digest the food you consume then you will metabolize it better. I focused on reducing my eating window to lunch and an early dinner (i.e. 5 or 6). This reduced the window I ate in down to 17 to 18 hours. And while this is initially hard, after the first few days, it actually isn't bad.],
-  [id="exercise"\>Exercise],
   [I've never been a big exercise person but I did do 15 to 20 minutes on an elliptical 2 or 3 times per week.],
-  [id="dining-out---just-say-no"\>Dining Out - Just Say No!],
+  [Dining Out - Just Say No!],
   [I know that the U. S. has moved to a food culture that is largely based around dining outside the home \/ your personal kitchen. If you're going to do Whole 30 then you pretty much can't dine out at all. There is the rare occasion when you can find something simple like a piece of broiled fish or a steak but most restaurant dining is optimized towards flavor and that generally means copious amounts of butter \/ fat \/ sugar.],
 ),
   insert-map: (:),
@@ -1498,12 +1372,10 @@ That’s it, that’s all.],
   debug-mode: false,
 )
 
-  #pull-quote([Note 2 : If you are going to weigh daily then you need to come up with a standard approach.], [Scott Johnson (fuzzyblog)])
+#pull-quote([Note 2 : If you are going to weigh daily then you need to come up with a standard approach.], [Scott Johnson (fuzzyblog)])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Week 7],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -1546,10 +1418,8 @@ a time to be alive.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [User-defined literals in Java?],
   author: [Stephen Colebourne],
   source-name: [Stephen Colebourne (Joda)],
@@ -1586,7 +1456,7 @@ ie. these two would be equivalent:],
  var date = LocalDate\`2019-03-29\`;],
   [The type inference would also work with methods (compile error if ambiguous):],
   [boolean inferior = isShortMonth(\`2019-04-12\`);],
-  [public boolean isShortMonth(LocalDate date) { return date.lengthOfMonth()],
+  [public boolean isShortMonth(LocalDate date) \{ return date.lengthOfMonth()],
   [Raw processing],
   [Processing of the literal should not be limited by Java's escape mechanisms.
 User-defined literals need access to the raw string.
@@ -1620,10 +1490,8 @@ Clearly though, there is going to need to be some form of factory method on the 
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [JPMS modules for library developers - negative benefits],
   author: [Stephen Colebourne],
   source-name: [Stephen Colebourne (Joda)],
@@ -1714,11 +1582,11 @@ Unfortunately, I now have some releases on Maven-Central that have Automatic-Mod
 You need to test on both the class-path and module-path.],
   [Option 3, add module-info.java],
   [This is the full modularization approach described in numerous web pages and tutorials on JPMS.],
-  [module org.foo.bar {
+  [module org.foo.bar \{
  requires org.threeten.extra;
  exports org.foo.bar;
  exports org.foo.bar.util;
- }],
+ \}],
   [So, what are the implications of doing this to the open source project?],
   [Unlike option 2, your code now has a baseline of Java 9+. The Java 8 compiler won't understand the file.
 What we really want is a jar file that contains Java 8 class files, but with just the module-info.java file compiled under Java 9+.
@@ -1777,10 +1645,8 @@ You really can't afford to release a library without testing on both module-path
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [(Data) Science or Witchcraft?],
   author: [Target Brands, Inc],
   source-name: [Target Tech],
@@ -1789,17 +1655,17 @@ You really can't afford to release a library without testing on both module-path
   [On my first encounter with it, around early 2010’s, I was mystified. It sounded like witchcraft and I imagined the practitioners to be a coven of witches and wizards, all holding Ph. D.s in the dark art of “Data Science” and being respectfully addressed as “Data Scientists”. It was believed they would magically transform haystacks into gold and then ask for your first-born in return as a reward for their service ( a la Rumpelstiltskin ) There is no denying the fact that the title “Data Scientist” is the most coveted one these days and has a nice ring to it. It’s also true that data science has traditionally been a monopoly of mathematicians and statisticians. Obviously, developing statistical models and machine learning algorithms requires years of training and practice to specialize. In my opinion it is more of an art form driven by science and can easily be mistaken for magic.],
   [It’s common knowledge that the more experienced in life we get, the easier it is for us to make up our mind. For instance, “What diner to pick for a boy’s-night-out?”, “When to stay off highways to avoid being stuck in a traffic-jam?”, “When to buy a house? When NOT to buy?”, are all such decions we make everyday. This ability comes as result of years of learning from implicit experience (a.k.a unsupervised learning) and explicit instructions from parents, teachers, friends, family and media (a.k.a supervised learning.) Our brain builds models of the world, of the situations we have been in, of banal and extraordinary, of nice and not-so-nice, of appropriate and inappropriate etc. These models facilitate judgment, govern behavior and enable anticipation of likely outcomes. That’s basically data science. The recent progress in large scale and high performance computing has opened doors for such complex calculations to be performed on-demand and much more efficiently than was possible before. Hence, the buzz!],
   [At Target we operate in a guest-centric universe. We don’t treat our guests as a statistic or as just a data-point in a trend. Our guests are setting their own micro-trends. Our focus is on carefully picking signals from our guests and learn what actually matters to them. Yes! We are seriously trying to understand each single guest’s needs independently. Therefore, we strive for a fully personalized experience and not just making suggestions on what is popular out there. As John Fairchild has allegedly said:],
-  [id="style-is-an-expression-of-individualism-mixed-with-charisma-fashion-is-something-that-comes-after-style"\>“Style is an expression of individualism mixed with charisma. Fashion is something that comes after style.”],
+  [“Style is an expression of individualism mixed with charisma. Fashion is something that comes after style.”],
   [At Target, Data Science and Engineering is a group that has gone beyond the conventional boundaries in terms of scale and applicability. To us the journey to the ultimate goal of 100% personalized experience began with the attention to detail, like what would our choice of algorithms be, how would we organize the data, what level of pre-processing would be enough, the frequency of compute cycles, strict SLAs on API exposed and so on. We were very clear that we needed to provide a consistent experience before worrying about fully personalized experience; establish reliability before making bunnies appear out of a hat. And our motto has been pretty simple, no matter what channel our guests take to interact with us we want their experience to remain consistent and pleasant.],
   [What we do is driven by non-trivial problems that mandate an ensemble of approaches to be used. It is a slow and deliberate process of trial-and-error, experimentation with bleeding-edge algorithms/technologies and at times engaging in dialogue with peers and stake-holders, that can run for days. We have played with off-the-shelf algorithms as well as built new techniques. It is such a delight to witness the speed with which new ideas emerge from the insight built through models that use big data as input. We can understand our guests’ behavior and needs better because of our omni-channel retail capabilities.],
-  [id="-it-is-such-a-delight-to-witness-the-speed-with-which-new-ideas-emerge-from-the-insight-built-through-models-that-use-big-data-as-input"\>“ It is such a delight to witness the speed with which new ideas emerge from the insight built through models that use big data as input.”],
+  [“ It is such a delight to witness the speed with which new ideas emerge from the insight built through models that use big data as input.”],
   [Data science and engineering teams that are tasked with solving business problems with quick turn-around times have a burning need to pre-process, ingest, store, process and retrieve large amounts of data fairly quickly and without compromising on security, quality or privacy. In the first year we have mostly focused on the design of long-running data pipelines, multi-phase compute workflows, highly scalable API layer and monitoring capabilities all aiming for the fastest turn around time. To name a few techniques, we have used Collaborative Filtering for behavior based recommendations, TF-IDF for feature selection, K-Means for clustering. Our exploration has a wider range though, as we are deeply interested in commoditizing data science for all our product teams within Target.],
   [A key element in our ability to execute has been our choice to go with OpenSource almost every single time we had to make a technology decision with only a few exceptions here or there. We also rely on the contemporary Software Engineering and Management principles proposed by Agile development model, which has served us very well. Our engineers have a very wide variety of skills. Statistics, Machine Learning and Visualization techniques, delivered through Java, Scala, Python, Spark, R, Hadoop and many more technologies. That’s how we transform abstract ideas into practical and well-engineered products.],
   [We are doing some kick-ass engineering with the focus to build value-driven products through technology. And that’s what data engineers do. For us, no idea is too big to try, and a failure is just a null-hypothesis we are trying to reject. Our dream is to go where no one has dared to go before and bring back the riches.],
-  [id="no-idea-is-too-big-to-try-and-failure-is-just-a-null-hypothesis-we-are-trying-to-reject"\>“No idea is too big to try, and failure is just a null-hypothesis we are trying to reject.”],
+  [“No idea is too big to try, and failure is just a null-hypothesis we are trying to reject.”],
   [Sometimes the data is big and sometimes it is small. Sometimes we need statistics and other times we need just a few occurrences to infer something. Most of the time we can explain it and some times we just conjecture about it. I must admit that working with data can be hard due to volume, variety and veracity of data. It can test the limits of one’s competence as well as patience. The patterns in the data or the patterns of data engineering are never easy to identify and hence the approach to solve each problem has to be defined as we go. Data Science and Engineering may very well be witchcraft; all it needs is wizards and witches like us to master it. With strong analytical skills, good hold on foundational mathematics, some engineering background and stamina to keep up with the exponential learning curve you can be a data scientist/engineer. Most of the problems we encounter are pretty unique and solving data-driven problems is very exciting because you can confirm or reject your ideas pretty quickly, making it a very rewarding experience as an engineer. We receive directions and guidance from our Product Management and Merchandising teams on how business is shaping and what objectives are critical in the coming quarter or year and we start on defining the problems and breaking them down into tasks. This is pretty much similar to general software engineering but the key difference is the nature of the problems we solve, the scale at which the solution must work, the number of end-users that get impacted by our work and most importantly measuring and making sense of that impact. In my first year at Target working as Principal Data Engineer, there have been no dull-moments except the ones when I had to catch up on my sleep. So as I draw this first installment of DSE Update to a close, I want to leave you with a thought.],
   [“All Science is Data Science. Because without data, there can be no science. And all of us are Data Scientists, while some of us pursue it as a career.”],
-  [id="about-the-author"\>About the Author],
+  [About the Author],
   [Product Recommendations (Personalization Engine) Lead and Principal Data Engineer at Target, delivering value-driven service at scale.],
   [(Data) Science or Witchcraft? was originally published by Target Brands, Inc at target tech on March 01, 2016.],
 ),
@@ -1809,11 +1675,10 @@ You really can't afford to release a library without testing on both module-path
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [dockerbash - Making docker exec -it Suck Less],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -1821,24 +1686,28 @@ You really can't afford to release a library without testing on both module-path
   paragraphs: (
   [Docker is a container technology that allows you to package up a series of different technologies under (generally) a \*nix style operating system. As things deployed with Docker are generally deployed under a \*nix style operating system, it isn't uncommon to want to open a shell into your Docker environment for debugging purposes.],
   [You can easily do this with:],
+  [docker exec -it CONTAINER\_HASH /bin/bash],
   [The CONTAINER\_HASH is a value like 311ab7fe0ea1. This value is fetched from a docker ps command like this:],
+  [docker ps | grep police],
   [The term 'police' is just some bit of text that identifies the docker process that is running.],
   [Here's an example of this output:],
+  [❯ docker ps | grep police
+311ab7fe0ea1 img-captain-police-crawl:51 "/bin/sh -c 'puma -C…" 4 hours ago Up 4 hours],
   [What I'd really like is a command like this:],
+  [dockerbash police],
   [and have that do the underlying work to generate the docker exec statement. A little bit of bash scripting gave me this script:],
-  [class="highlight"\> \#!/bin/bash 
+  [\#!/bin/bash 
  if \[ -z \$1 \] ; then
  echo "You need to specify the name of the container you want to get into like:" 
  echo "dockerbash police" 
  else
- pid = \` docker ps | grep \$1 | awk '{print \$1}' \` 
+ pid = \` docker ps | grep \$1 | awk '\{print \$1\}' \` 
  docker exec -it \$pid /bin/bash
  fi],
   [Save the lines above as dockerbash and make it executable. After that you can much more easily get a shell prompt inside your docker containers.],
-  [id="bash-references"\>Bash References],
   [How to Set a Variable in Bash],
   [How to Use Awk to Get the First Variable],
-  [id="where-does-dockerbash-live"\>Where Does dockerbash Live?],
+  [Where Does dockerbash Live?],
   [You cannot store dockerbash in the project that you are deploying via Docker because it needs to exist on the machine that runs your Docker containers, not within your Docker container. My recommendation is that you have your DevOps tooling such as Ansible install this script.],
 ),
   insert-map: (:),
@@ -1849,7 +1718,7 @@ You really can't afford to release a library without testing on both module-path
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [When Rails 7 Doesn't Process application.js],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -1867,23 +1736,27 @@ You really can't afford to release a library without testing on both module-path
 
   ],
 ), ruled-indices: (1,))
-#pull-quote([You can easily do this with:  class="language-plaintext highlighter-rouge"\>  class="highlight"\> docker exec -it CONTAINER\_HASH /bin/bash    The CONTAINER\_HASH is a value like 311ab7fe0ea1.], [Scott Johnson (fuzzyblog)])
+#pull-quote([You can easily do this with:   docker exec -it CONTAINER\_HASH /bin/bash    The CONTAINER\_HASH is a value like 311ab7fe0ea1.], [Scott Johnson (fuzzyblog)])
 
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Updating to the Latest Ansible on Ubuntu],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
   images: (),
   paragraphs: (
   [One of the tricky bits about Ansible is that new features in the "language" always require the latest version of Ansible itself. And, while logical, this can easily bite you. Here's an example:],
-  [class="highlight"\> TASK \[deploy\_hate-language-modeling\_systemd\_start : just force systemd to re-execute itself (2.8 and above)\] \*\*\* 
- fatal : \[ aws\_master2 \]: FAILED! =\> {"changed" : false , "msg" : " Unsupported parameters for (systemd) module: daemon\_reexec Supported parameters include: daemon\_reload, enabled, masked, name, no\_block, state, user" } 
+  [TASK \[deploy\_hate-language-modeling\_systemd\_start : just force systemd to re-execute itself (2.8 and above)\] \*\*\* 
+ fatal : \[ aws\_master2 \]: FAILED! =\> \{"changed" : false , "msg" : " Unsupported parameters for (systemd) module: daemon\_reexec Supported parameters include: daemon\_reload, enabled, masked, name, no\_block, state, user" \} 
  to retry, use : --limit \@/home/ubuntu/ansible/playbook\_deploy\_hate-language-modeling\_master.retry],
   [What that translates to is that Ansible itself doesn't know how to use the parameter daemon\_reexec . And when you've been using an Ansible feature successfully and then it doesn't work on the server, that usually is a rock solid signal "update ansible".],
   [Here's how to do this on Ubuntu:],
+  [sudo apt update
+sudo apt install software-properties-common
+sudo apt-add-repository --yes --update ppa:ansible/ansible
+sudo apt install ansible],
 ),
   insert-map: (:),
   word-count: 155,
@@ -1893,7 +1766,7 @@ You really can't afford to release a library without testing on both module-path
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Villa-Worthy Breakfasts We’d Actually Wake Up For],
   author: [Julia Youman],
   source-name: [Food52],
@@ -1901,7 +1774,6 @@ You really can't afford to release a library without testing on both module-path
   paragraphs: (
   [If you’ve been around literally anyone in the past month, you’ve probably heard chatter about Love Island —whether it’s the UK version or the ever-iconic USA one. Maybe you’re all in. Maybe you’ve only absorbed it passively, against your will. Either way, it’s hard to escape.],
   [As someone who’d never tuned in before, I was surprised by the sudden cultural takeover. In the past few weeks alone, I’ve sat through full dinners where people debated their favorite couples, predicted drama, and ranked bombshells with passionate conviction. I finally had to get up to speed—if only to participate in what feels like a nationwide group project (slash networking event).],
-  [Read More \>\>],
 ),
   insert-map: (:),
   word-count: 111,
@@ -1914,7 +1786,7 @@ You really can't afford to release a library without testing on both module-path
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [What BigCommerce Has Been Doing with AI],
   author: [Mahendra Kumar],
   source-name: [BigCommerce Engineering],
@@ -1925,24 +1797,25 @@ You really can't afford to release a library without testing on both module-path
   [The work didn't stop there.],
   [Since then (and before that time), we've been developing some really amazing features that help elevate BigCommerce's merchant experiences, and we're looking forward to releasing this application in the near future.],
   [In this chat with Heather Barr, Developer Community Program Manager, we'll show you some demos, deep dive into the code, and explore some architectural diagrams and data flows.],
-  [id="heather-barr-developer-community-program-manager"\>Heather Barr, Developer Community Program Manager],
+  [Meet the Team],
+  [Heather Barr, Developer Community Program Manager],
   [Background : I've been on the Developer Relations team at BigCommerce since 2020, focusing on our Developer Community . Since 2018, I've been part of the tech space with experiences ranging from software engineering to sales and support. I work alongside the Developer Advocates here at BigCommerce and am always looking to connect with developers who build on our platform.],
   [Fun fact : I live in a van down by the river! Just kidding! But I do travel the US and camp in my self-converted camper van a few times a year. 🚐],
   [Connect with Heather on X .],
-  [id="mahendra-kumar-vp-of-data-and-software-engineering"\>Mahendra Kumar, VP of Data and Software Engineering],
+  [Mahendra Kumar, VP of Data and Software Engineering],
   [Background : I've been at BigCommerce for six years. My primary area focuses are data engineering, machine learning, and search technology. My hobbies include hiking and playing tennis. I also enjoy volunteering for community projects.],
   [Fun fact : In my twenties, I was able to speak seven languages. Although, now I am proficient in three languages only.],
   [Related Article: Use of Kafka and Kafka Streams at BigCommerce],
-  [id="krishna-teja-are-senior-data-engineer"\>Krishna Teja Are, Senior Data Engineer],
+  [Krishna Teja Are, Senior Data Engineer],
   [Background : I have six years of a software background and have been at BigCommerce for the past two years. I am a driven individual who is passionate about my work.],
   [Related Demo: Watch Krishna's Walkthrough of His Hackathon Project],
-  [id="eugene-kuzmenko-software-engineer-team-lead"\>Eugene Kuzmenko, Software Engineer Team Lead],
+  [Eugene Kuzmenko, Software Engineer Team Lead],
   [Background : I have been at BigCommerce for almost four years. This company has an amazing culture, and I like working on the Data Team because we do really good stuff. I've been in software development for almost ten years and enjoy winter sports like snowboarding.],
   [Open Roles: Explore Your Next Engineering Opportunity],
   [Fun fact : I don't like blue jeans, and I don't have them in my closet.],
+  [Watch the Panel],
   [We're excited to give you a peek behind the curtain with this technical session. Like Mahendra says in this video, "Fasten your seatbelts!"],
-  [style="overflow: hidden; width: 100%; padding-top: 62.5%;"\>],
-  [id="additional-resources"\>Additional Resources],
+  [Watch on YouTube],
   [BigCommerce & Google’s BigAI Hackathon: Results & Recap],
   [BigCommerce X Google BigAI Hackathon YouTube Playlist],
   [BigCommerce Developers YouTube Channel],
@@ -1957,7 +1830,7 @@ You really can't afford to release a library without testing on both module-path
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Registering a Domain with Name Silo],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -1972,7 +1845,7 @@ You really can't afford to release a library without testing on both module-path
   [Once you are registered then the option you likely need is to create an A record. This is done by selecting the domain from the Domain Manager view and then clicking the blue icon.],
   [Amazon is way prettier but double the price is a hard sell.],
   [After you create it, wait some period of time and ping it. Verify the ip address is yours.],
-  [id="references"\>References:],
+  [References:],
   [Review of NameSilo],
   [Mass Migration to NameSilo],
 ),
@@ -1989,22 +1862,23 @@ You really can't afford to release a library without testing on both module-path
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Adding an Includes Clause to ActiveRecord and Watching the Joy Flow],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
   images: (),
   paragraphs: (
   [I've written in the past about watching your SQL queries stream by in the Rails console and how seeing, well, stupidity \/ things that look wrong can help guide you to things you need to find. Here's an example I witnessed recently:],
-  [Metric Load (2.5ms) SELECT metrics.date\_created\_at, metrics.int\_val, metrics.float\_val, metrics.metric\_type\_id FROM metrics WHERE metrics.habit\_id = 2 AND (date\_created\_at \>= '2019-11-01') AND (date\_created\_at],
-  [class="highlight"\> def total\_this\_month 
+  [habit = Habit.find(2)
+habit.total\_this\_month],
+  [def total\_this\_month 
  today = Date . current 
  date\_start = DateCommon . first\_date\_of\_month ( today ) 
  date\_end = DateCommon . last\_date\_of\_month ( date\_start ) 
  total\_from\_date\_to\_date ( date\_start , date\_end ) 
  end],
   [And here's the total\_from\_date\_to\_date method:],
-  [class="highlight"\> def total\_from\_date\_to\_date ( date\_start , date\_end ) 
+  [def total\_from\_date\_to\_date ( date\_start , date\_end ) 
  self . metrics . select ( Metric :: TOTAL\_FIELDS ). where (\[ "date\_created\_at \>= ?" , date\_start \]). where (\[ "date\_created\_at \<= ?" , date\_end \]). includes ( :metric\_type ). map ( & :amount ). compact . sum 
  end],
   [Just adding a simple .includes(:metric\_type) clause to the where statement fixes this and makes that data available to the underlying .compact.sum operation. And, yes, to fix a performance problem this easily really does make the joy flow for a developer.],
@@ -2017,26 +1891,34 @@ You really can't afford to release a library without testing on both module-path
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Rails 7 Madness: No such middleware to insert before: ActionDispatch::Static],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
   images: (),
   paragraphs: (
   [In tonight's category of "Crazy Rails Errors that Even I haven't hit", I was deploying a new app via HatchBox and I hit this one:],
+  [No such middleware to insert before: ActionDispatch:: Static
+/home/deploy/Cartazzi/shared/bundle/ruby/3.1.0/gems/actionpack-7.0.2.2/lib/action\_dispatch/middleware/stack.rb:174:in \`assert\_index'],
   [When I dug into the underlying failure there was this bit of code:],
   [def assert\_index ( index , where ) 
  i = index . is\_a? ( Integer ) ? index : index\_of ( index ) 
- raise "No such middleware to insert \#{ where } : \#{ index . inspect } " unless i 
+ raise "No such middleware to insert \#\{ where \} : \#\{ index . inspect \} " unless i 
  i 
  end],
   [I did the obligatory googling only to find nothing in the past year and absolutely nothing related to Rails 7.],
   [I was able to replicate this by logging in with either:],
+  [bundle exec rake middleware],
   [or],
+  [RAILS\_ENV=production bundle exec rake assets:precompile],
   [After stumbling around a bit – this was post midnight late night code fu – I thoguht to myself:],
   [What if the issue is that it is looking for middleware and it can't find any?],
   [One of the previous googles from 2015 or so said that if you have this issue then remove the font\_assets gem (I didn't have it but omitted that part of the research above). What I did was look for asset pipeline middleware and I found the smart\_assets gem which I dropped into Gemfile:],
+  [gem 'smart\_assets'],
   [A quick bundle install and I ended up with a failing deploy … but a different failure:],
+  [Building with Vite 
+rake aborted!
+ViteRuby:: MissingExecutableError: The vite binary is not available. Have you installed the npm packages?],
   [Visit the Troubleshooting guide for more information:
  https:\/\/vite-ruby.netlify.app/guide/troubleshooting.html\#troubleshooting],
   [And that, in modern computing, alas, is progress .],
@@ -2052,7 +1934,7 @@ You really can't afford to release a library without testing on both module-path
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Essential Technology for a Team Offsite],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -2082,16 +1964,18 @@ You really can't afford to release a library without testing on both module-path
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Python Machine Learning Best Practice - Lock Down Your Versions],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
   images: (),
   paragraphs: (
   [I recently took a Python and Ruby (but mostly Python) Machine Learning data pipeline live and, almost immediately, hit a pretty significant problem. The issue was this line of code:],
+  [model\_input = tokenizer . encode\_plus ( text\_to\_classify , add\_special\_tokens = True , return\_tensors = 'pt' ). to ( device\_to\_use )],
   [This, which worked, at least for a while, perfectly on my development box. And then I deployed the code and that caused my requirements.txt file to be fulfilled and that's when the trouble started. As I hope you know, requirements.txt is a list of any software components that your project uses along with, sometimes, the version numbers of those software components.],
   [Now I mostly work over in the happy go lucky land of Ruby and the Ruby world has a pretty mature ecosystem at this point where components change but not terribly frequently. The Ruby equivalent to Python's requirements.txt is called Gemfile and like requirements.txt, a Gemfile can include the version of a component. But, because the Ruby world's components tend to be mature, I haven't worried about locking down version numbers for ages. Yes, yes, I know that this is bad but I'm human and fallible.],
   [So what happened when my code was deployed is that this command was executed:],
+  [pip install -R requirements.txt],
   [as part of the underlying Docker build process. And this brought in whatever the latest version of our underlying Machine Learning libraries happened to be. And that broke the line of code above which then led to the expected scramble to:],
   [figure out what version I had on my development machine],
   [update requirements.txt],
@@ -2111,7 +1995,7 @@ You really can't afford to release a library without testing on both module-path
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [I am not a software engineer],
   author: [0xADADA],
   source-name: [0xADADA],
@@ -2151,7 +2035,7 @@ utility, or economic productiveness. This I refuse.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [If You Pair Program Buy Tuple Now],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -2183,7 +2067,7 @@ utility, or economic productiveness. This I refuse.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Hackathon Winners Part 2: AI Simplifies Product Descriptions],
   author: [Qifeng Zhao],
   source-name: [BigCommerce Engineering],
@@ -2197,7 +2081,6 @@ utility, or economic productiveness. This I refuse.],
   [This Hackathon ran for two consecutive workdays.],
   [There is one prize category with first and second place (that's me) prizes awarded.],
   [After every team demos their projects, voting opens for all Sydney-based team members. The team who receives the most votes is the first place winner.],
-  [style="overflow: hidden; width: 100%; padding-top: 62.5%;"\>],
   [Thanks for taking the time to watch our discussion . I hope you enjoy it!],
   [If you have any questions for Luke, you can email or message him on LinkedIn.],
 ),
@@ -2209,7 +2092,7 @@ utility, or economic productiveness. This I refuse.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Warai Otoko (笑い男) Animated Logo],
   author: [0xADADA],
   source-name: [0xADADA],
@@ -2245,18 +2128,17 @@ We do not forget. Expect us.],
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([Tom Breihan], source-name: [Stereogum], [The Brooklyn drill rapper Pop Smoke's career was just getting started when he was shot dead in a Los Angeles home-invasion robbery in 2020. When Pop died, he was just 20 years old. In 2025, one of his attackers was sentenced to 29 years in prison. Since Pop's passing, his estate has released two posthumous albums , the first of which went double platinum. Now, Pop Smoke's brother is using his name to start a coffee shop, and he needs some experienced baristas.
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([Tom Breihan], source-name: [Stereogum], [The Brooklyn drill rapper Pop Smoke's career was just getting started when he was shot dead in a Los Angeles home-invasion robbery in 2020. When Pop died, he was just 20 years old. In 2025, one of his attackers was sentenced to 29 years in prison. Since Pop's passing, his estate has released two posthumous albums , the first of which went double platinum. Now, Pop Smoke's brother is using his name to start a coffee shop, and he needs some experienced baristas.
 
 The post Experienced Baristas Needed To Honor Pop Smoke’s Legacy appeared first on Stereogum .])],
-    [#brief-item([Carlos Becker], source-name: [Carlos Becker], [I wanted to set up a high available nats-streaming-server cluster,
+  [#brief-item([Carlos Becker], source-name: [Carlos Becker], [I wanted to set up a high available nats-streaming-server cluster,
 but couldn’t find a “quick” guide on how to do it.])],
-    [#brief-item([Carlos Becker], source-name: [Carlos Becker], [I’ve been wanting to write this for a long time, just to clarify my thoughts on the subject. Now, on vacations, I took a couple of days and finally did it. This is a personal opinion based on my personal experience and tons of books I have read, and I am not, by any means, the supreme holder of the truth, so you will probably disagree with me at some point.])],
-    [#brief-item([Carlos Becker], source-name: [Carlos Becker], [I got a MacBook Pro 14" with an Apple M1 Pro SoC, 16GB of memory and 500GB of disk a couple of weeks ago, and wanted to write my impressions about it, since a lot of people ask.])],
-    [#brief-item([Carlos Becker], source-name: [Carlos Becker], [This past weekend I decided I need to clean up my GitHub profile. In this post I’ll write about why I cleaned everything up and also how I did, as well as some initial results.])],
-    [#brief-item([Scott Johnson (fuzzyblog)], source-name: [Scott Johnson (fuzzyblog)], [class="center"\> 
+  [#brief-item([Carlos Becker], source-name: [Carlos Becker], [I’ve been wanting to write this for a long time, just to clarify my thoughts on the subject. Now, on vacations, I took a couple of days and finally did it. This is a personal opinion based on my personal experience and tons of books I have read, and I am not, by any means, the supreme holder of the truth, so you will probably disagree with me at some point.])],
+  [#brief-item([Carlos Becker], source-name: [Carlos Becker], [I got a MacBook Pro 14" with an Apple M1 Pro SoC, 16GB of memory and 500GB of disk a couple of weeks ago, and wanted to write my impressions about it, since a lot of people ask.])],
+  [#brief-item([Carlos Becker], source-name: [Carlos Becker], [This past weekend I decided I need to clean up my GitHub profile. In this post I’ll write about why I cleaned everything up and also how I did, as well as some initial results.])],
+  [#brief-item([Scott Johnson (fuzzyblog)], source-name: [Scott Johnson (fuzzyblog)], [
 
 Tailwind is a CSS grid library that is an alternative to Bootstrap and, well, something I'm increasingly using. Here are some handy, dandy Tailwind tools:
 
@@ -2271,18 +2153,17 @@ Tailwind is a CSS grid library that is an alternative to Bootstrap and, well, so
  Tailwind Toolbox 
 
  Tailwind Builder])],
-    [#brief-item([0xADADA], source-name: [0xADADA], [From comic book stores to Facebook to message boards, it seems that the “Keep
+  [#brief-item([0xADADA], source-name: [0xADADA], [From comic book stores to Facebook to message boards, it seems that the “Keep
 Calm and Carry On” poster is living a new life as pop-culture cool while people
 remix its’ message with both quirky or banal messages.
 
 This attempt tries to speak most directly to its underlying message of
 consumerism, amidst the current climate of the Occupy Movement.])],
-    [#brief-item([Carlos Becker], source-name: [Carlos Becker], [I’ve been working on GoReleaser for more than a year now, and one of the things that was bothering me the most was fpm .])],
-    [#brief-item([Scott Johnson (fuzzyblog)], source-name: [Scott Johnson (fuzzyblog)], [So I just dropped a pill on the ground as I took my daily vitamins and I picked it it up and said "5 second rule" before popping it in my mouth. And then it struck me:
+  [#brief-item([Carlos Becker], source-name: [Carlos Becker], [I’ve been working on GoReleaser for more than a year now, and one of the things that was bothering me the most was fpm .])],
+  [#brief-item([Scott Johnson (fuzzyblog)], source-name: [Scott Johnson (fuzzyblog)], [So I just dropped a pill on the ground as I took my daily vitamins and I picked it it up and said "5 second rule" before popping it in my mouth. And then it struck me:
 
 In the age of covid, the 5 second rule no longer applies. Covid can live on surfaces for up to 3 days. MIT Technology Review])],
-    [#brief-item([LASZLO GYORI, SOLUTION ARCHITECT \@ TOPTAL], source-name: [Toptal Engineering], [Trying to decide between gRPC and REST? This guide goes beyond surface comparisons to focus on the performance and operational trade-offs that determine which API framework is right for your next build.])],
-  ))
-}
+  [#brief-item([LASZLO GYORI, SOLUTION ARCHITECT \@ TOPTAL], source-name: [Toptal Engineering], [Trying to decide between gRPC and REST? This guide goes beyond surface comparisons to focus on the performance and operational trade-offs that determine which API framework is right for your next build.])],
+))
 
 #colophon([Wide Herald], [Vol. 1, No. 071], [2026-03-30])

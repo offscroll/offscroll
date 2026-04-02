@@ -21,62 +21,8 @@
 #masthead([The Thoughtful Herald], [Vol. 1, No. 014], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Studio Blur models Quito arts school after Le Corbusier house],
-  kicker: [Cover Story],
-  author: [Kate Mazade],
-  source-name: [Dezeen Architecture],
-  deck: [style="margin-bottom: 15px;"\> 
-
-Local design practice Studio Blur has created a concrete building with a sawtooth roof for the visual arts department of a school in Quito , Ecuador.],
-  lead-pre: [],
-  lead-cap: [s],
-  lead-rest: [tyle="margin-bottom: 15px;"\>],
-  body-paragraphs: (
-  [Local design practice Studio Blur has created a concrete building with a sawtooth roof for the visual arts department of a school in Quito , Ecuador.],
-  [Known as Aulas de Arte at the Unidad Educativa Cardenal Spellman , or the Visual Arts Building at the Cardinal Spellman Salesian Bilingual School, the 142-square metre (1,528-square foot) project opened in 2024 on a 3-acre plot that already contained a classroom building, church and gymnasium.],
-  [Studio Blur has designed a concrete arts school in Quito],
-  [The three-storey, wedge-shaped building allowed for an adjacent green space that reinvigorated and reconnected the campus.],
-  [Studio Blur 's design was informed by modernist architect Le Corbusier's design for the house and studio of Amédée Ozenfant , a 1922 Paris building that has inspired architects such as Juan O'Gorman and David Chipperfield.],
-  [Its design was informed by a Le Corbusier building],
-  ["There must be something profound in that foundational work that continues to justify its study," the studio told Dezeen.],
-  ["We hope that through this reference, one may discern an echo of what our art building aspires to be – and perhaps, a trace of that inspiration which once guided us."],
-  [Green space connecting the building to the wider campus was revamped],
-  [Like the Ozenfant House, the arts building is driven by natural lighting that creates unique atmospheres for different activities at distinct times.],
-  ["This dynamic interaction between light and architectural structure generates rich environments that enhance the sensory experience while reinforcing the narrative," the studio said, explaining that the monolithic concrete structure and strategic openings allowed it to animate the building from the thresholds.],
-  [Read:],
-  [Krft sculpts "bulging" form for Brighton College arts centre],
-  [The plan is organised around a diagonal axis with a basement containing service spaces that look up and out to the stepped garden. The ground floor contains a graphic design classroom with controlled openings that maximise natural light and ventilation while minimising external noise.],
-  [Meanwhile, the crowning upper level houses a painting studio with diffused, homogeneous light that filters into the space through a large bay of windows and three saw-toothed skylights.],
-  [The school is topped with a sawtooth roof],
-  [Each of the floors is connected by a rounded double-run staircase that loops across the intersection of the arts wing and the classroom building, bridging the new and old structures with white, speckled terrazzo.],
-  [The exterior of the building is exposed concrete, expressing the interior form and structural logic. Two post-tensioned slabs leave the interior of the classrooms open for use.],
-  [A painting studio is located on the top floor],
-  ["The exposed concrete structural system not only addresses the project's structural challenges and trapezoidal floor plan but also minimizes long-term maintenance costs," the team explained.],
-  [The natural wood floors of the graphic design classroom and soft grey floors of the painting studio are subtly raked, cascading down to a teaching or display area.],
-  [Natural light was a key consideration in the design],
-  ["The project's greatest success lies in its genuine connection with the children who inhabit it," the studio said.],
-  ["By prioritizing experiential richness – through intentional natural light, quality materials and carefully calibrated spatial proportions – the architecture became an integral part of their daily lives and learning."],
-  [Other public projects recently completed in Quito include a hillside pavilion for mountain bikers by URLO Studio, a children’s play area in a museum placed in a historic factory by Morphism and a restaurant with a rippled, reflective ceiling by Felipe Escudero.],
-  [The photography is by JAG Studio .],
-  [Project credits:],
-  [Architect: Studio Blur],
-  [Contractor: Studio Blur],
-  [Project team: Aurelio Peñaherrera, Juan Sebastián Cardona, Darwin Sánchez],
-  [Structural engineer: Momentum],
-  [Mechanical engineer: HYDROGROUP],
-  [Electrical engineer: IESCO],
-  [Client: Sociedad de Madres Salesianas],
-  [The post Studio Blur models Quito arts school after Le Corbusier house appeared first on Dezeen .],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Jason Statham’s Punisher-Like Hit & More Included in This Week’s Hulu Releases],
   author: [Sibanee Gogoi],
   source-name: [ComingSoon.net],
@@ -86,8 +32,11 @@ Local design practice Studio Blur has created a concrete building with a sawtoot
   [Hulu ’s new TV and movie releases for this week (March 30 – April 5, 2026) include Jason Statham’s intense, Punisher-like movie.],
   [Premiering on April 1, 2026, The Beekeeper arrives on Hulu. It stars Statham as Adam Clay, a retired operative turned vigilante. Phylicia Rashad stars as Eloise, the kind landlady whose tragic death sets off Clay’s brutal quest for justice. Directed by David Ayer, this action-thriller follows Clay’s deadly mission to take down the crime syndicate responsible.],
   [Meanwhile, romance enthusiasts can catch the classic 2004 rom-com, 50 First Dates, also landing on Hulu on the same date. It follows the story of Henry (Adam Sandler), a Hawaiian veterinarian, who falls for Lucy (Drew Barrymore), who suffers from short-term memory loss. She forgets him every night, so he woos her anew each day. Henry makes a video diary for Lucy to explain their love story, and they eventually build a life together, documenting everything so she can re-learn it each day.],
+  [This week’s new Hulu releases from March 30-April 5],
   [Hulu has some exciting new releases for this week (March 30 – April 5, 2026) with something for everyone:],
+  [Monday, March 30],
   [Yu-Gi-Oh! Go Rush!!: Season 1B],
+  [Tuesday, March 31],
   [If It’s Tuesday, It’s Murder: Complete Season 1 (DUBBED & SUBBED)],
   [Meekah: Complete Season 2],
   [Blippi’s Big Dino Adventure (2023)],
@@ -96,6 +45,7 @@ Local design practice Studio Blur has created a concrete building with a sawtoot
   [Jesus Revolution (2023)],
   [The Best Christmas Pageant Ever (2024)],
   [About My Father (2023)],
+  [Wednesday, April 1],
   [Dear Killer Nannies: Complete Season 1],
   [Atomic S1: Complete Season 1],
   [Fire Force: Complete Season 3 Pt. 2 (DUBBED)],
@@ -140,8 +90,11 @@ Local design practice Studio Blur has created a concrete building with a sawtoot
   [21 Jump Street (2012)],
   [22 Jump Street (2014)],
   [A Very Harold & Kumar Christmas (2011)],
+  [Friday, April 3],
   [Pizza Movie: Film Premiere],
+  [Saturday, April 4],
   [Primitive War (2025)],
+  [Sunday, April 5],
   [The Boogeyman (2023)],
   [The post Jason Statham’s Punisher-Like Hit & More Included in This Week’s Hulu Releases appeared first on ComingSoon.net - Movie Trailers, TV & Streaming News, and More .],
 ),
@@ -151,10 +104,8 @@ Local design practice Studio Blur has created a concrete building with a sawtoot
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [5 Lightroom Keyboard Shortcuts Everyone Should Know],
   author: [Andrew S. Gibson],
   source-name: [Digital Photography School],
@@ -164,15 +115,18 @@ Local design practice Studio Blur has created a concrete building with a sawtoot
   [Lightroom is a fantastic program that’s designed for fast and efficient editing, but if you make all your adjustments using your mouse, you may notice that each little operation starts to add up – until you’ve spent hours upon hours moving your cursor, clicking the mouse, and more.],
   [Fortunately, Adobe built in plenty of handy Lightroom keyboard shortcuts, all of which aim to make life easier for photographers and photo editors. Below, I share a few of the most critical shortcuts, which will allow you to speed up your workflow, improve your editing efficiency, and even access hidden features.],
   [Ready to become a Lightroom shortcut expert? Then let’s dive right in, starting with:],
+  [1. Reveal all shortcuts],
   [Lightroom offers dozens of shortcuts, many of which are difficult to remember – especially if you don’t use them often.],
   [Fortunately, you can always tap Ctrl/Cmd+\/ , and a list will pop up that displays all of the shortcuts available in the current module. Therefore, if you’re working in the Library module , this shortcut will reveal the Library module shortcuts:],
   [And if you’re working in the Develop module , this shortcut will reveal the Develop module shortcuts:],
   [(Once you’re done with this article, I highly recommend you head into Lightroom and read through the shortcuts available for both the Library and Develop modules. You’re practically guaranteed to learn something new!)],
   [When you’ve finished checking out your shortcut options, click anywhere on the list to hide it.],
+  [2. Tap “R” to access the crop function],
   [This shortcut is a simple one, but it’s a big timesaver. Whenever you need to crop an image , simply head into the Develop module, then hit the R key. The crop overlay will immediately appear:],
   [And you can get to work cropping your file!],
   [Additionally, if you don’t like the direction of the crop overlay, just tap X , then watch as it’s rotated:],
   [This can be especially useful if you’re trying to crop a portrait image with a landscape aspect ratio and vice versa because Lightroom automatically creates crop overlays that match the orientation of the image file.],
+  [3. Use the “/” key to resample the image],
   [Lightroom has several healing modes, all of which can be accessed with the Q key. Each of these modes approaches the healing process – which replaces content from the image by sampling content from elsewhere in the image – differently.],
   [The wonderful thing about the Lightroom Healing tool is that it’s quite good at guessing which part of the image it should sample to create a natural-looking result. It’s a great way to correct dust spots, unwanted facial blemishes, and distracting dirt or rocks on the ground around your subject.],
   [However, despite the Healing tool’s impressive capabilities, it doesn’t do a perfect sampling job all the time. That’s where this shortcut comes in handy!],
@@ -181,10 +135,12 @@ Local design practice Studio Blur has created a concrete building with a sawtoot
   [However, Lightroom’s first guess didn’t really work:],
   [I hit the shortcut key, Lightroom resampled the image, and the result was much better:],
   [Pro tip: If you keep resampling the image and you can’t do any successful healing, you can always sample the file manually by using your cursor (though this does take longer than using the shortcut).],
+  [4. Use the “Shift” key to set the white and black points],
   [RAW files often appear a bit flat, and an easy way to add some pop is by carefully setting a white and a black point – that is, by adjusting the Whites slider until the brightest tones stretch to the right side of the histogram , and by adjusting the Blacks slider until the darkest tones stretch to the left side of the histogram.],
   [The process of setting the white and black point can be arduous – unless you know a handy little shortcut!],
   [Normally, if you double-click on the Whites and Blacks sliders in the Basic panel, Lightroom resets them to zero. But if you hold Shift while double-click on these sliders, Lightroom calculates where to position both sliders so that the histogram stretches all the way from the left side of the graph (shadows) to the right (highlights):],
   [This quick fix makes most photos look better right away!],
+  [5. Use the apostrophe key to invert a Linear Gradient],
   [Lightroom offers an array of local adjustment tools, including the Brush , the Radial Gradient (formerly known as the Radial filter), and the Linear Gradient (formerly known as the Graduated filter).],
   [The Linear Gradient allows you to apply natural-looking adjustments to a portion of the image, such as the sky or the foreground of a landscape, without modifying the rest of the scene. Normally, you would create a Linear Gradient (you can tap Shift+W to open the Masking panel ), then drag it over the foreground or sky of your shot as you see fit.],
   [But what if you want to reverse the direction of the effect? Just press the apostrophe key – ‘ – and the Linear Gradient will flip!],
@@ -194,8 +150,8 @@ Local design practice Studio Blur has created a concrete building with a sawtoot
   [Press the apostrophe key to flip the Gradient. The negative Exposure setting will be applied to the foreground, but you probably don’t want to make the foreground darker; instead, double-click the Exposure slider to return it to zero.],
   [Now you’re ready to use this new Linear Gradient to enhance the foreground. Boost the Clarity slider to emphasize foreground texture. You might also subtly darken the foreground by dropping the Exposure slider (which will help retain a sense of drama and depth).],
   [Once you’ve made all the above adjustments, you’ll have a beautiful file modified by two Linear Gradients!],
-  [class="wp-block-image size-full wp-image-83915 is-style-with-caption"\>
- (A) Original photo. (B) Linear Gradient with negative Exposure applied to the sky. (C) Duplicated and flipped Linear Gradient applied to foreground, with extra Clarity but subtly negative Exposure. (D) Final result.],
+  [(A) Original photo. (B) Linear Gradient with negative Exposure applied to the sky. (C) Duplicated and flipped Linear Gradient applied to foreground, with extra Clarity but subtly negative Exposure. (D) Final result.],
+  [Lightroom keyboard shortcuts: final words],
   [Now that you’ve finished this article, you’re ready to head into Lightroom, create some stunning edits, and speed up your workflow with these handy shortcuts.],
   [So what are you waiting for? Get post-processing!],
   [Now over to you:],
@@ -203,17 +159,15 @@ Local design practice Studio Blur has created a concrete building with a sawtoot
   [The post 5 Lightroom Keyboard Shortcuts Everyone Should Know appeared first on Digital Photography School . It was authored by Andrew S. Gibson .],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([class="wp-block-heading" id="use-the-shift-key-to-set-the-white-and-black-points"\>4.], [Andrew S. Gibson]),
-  inline-pq-idx: 16,
+  inline-pq: pull-quote([4.], [Andrew S. Gibson]),
+  inline-pq-idx: 18,
   word-count: 1225,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A one-line Kubernetes fix that saved 600 hours a year],
   author: [Braxton Schafer],
   source-name: [Cloudflare Blog],
@@ -273,16 +227,13 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [SO-IL uses pink concrete to give Brooklyn apartment block "civic presence"],
   author: [Ben Dreith],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [Architecture studio SO-IL utilised precast, coloured-concrete panels in various sizes to give the 144 Vanderbilt apartment block in Brooklyn , USA, a distinct identity.],
   [The latest of SO-IL 's collaborations with design-forward New York developer Tankhouse , 144 Vanderbilt was constructed using stacked concrete blocks that rise from the north to south its tallest point facing busy Myrtle Avenue.],
   [The facade of the 89,000-square-foot (8,300-square-metre) building, which is six storeys tall at its highest point, consists of precast concrete panels with a fluted texture, and is coloured a rosy pink.],
@@ -334,16 +285,13 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [AIA sues Donald Trump over Kennedy Center renovation in unprecedented coalition],
   author: [Ben Dreith],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [US organisations the American Institute of Architects and Docomomo US are among the plaintiffs in a lawsuit suing US president Donald Trump over his proposed renovations for the Edward Durell Stone-designed Kennedy Center.],
   [Eight plaintiffs submitted a lawsuit this morning in an attempt to pause proposed renovations to the John F Kennedy Center for the Performing Arts in Washington DC.],
   [The plaintiffs include the American Institute of Architects (AIA), Docomomo US , t he Cultural Landscape Foundation , the American Society of Landscape Architects , the Committee of 100 on the Federal City , DC Preservation League , the National Trust for Historic Preservation and the Society of Architectural Historians .],
@@ -380,18 +328,15 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
   debug-mode: false,
 )
 
-  #pull-quote([It's about the rule of law and doing what Congress intended.], [Ben Dreith])
+#pull-quote([It's about the rule of law and doing what Congress intended.], [Ben Dreith])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Venice Biennale unveils renovated Central Pavilion],
   author: [Amy Peacock],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [The Central Pavilion at the Giardini della Biennale is set to reopen for this year's Venice Art Biennale , following a restoration by Italian architecture studio Labics and architect Fabio Fumagalli.],
   [Overseen by the Venice Biennale 's Special Projects team, led by architect Arianna Laurenzi and engineer Cristiano Frizzele, the revamp has reorganised exhibition spaces at the Central Pavilion, which hosts events for the Venice Art Biennale and Venice Architecture Biennale on alternating years.],
   [The Central Pavilion will reopen for Venice Art Biennale following its restoration],
@@ -422,10 +367,8 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [10 Tips for Breathtaking Dog Action Photography],
   author: [Kelly Wolfe],
   source-name: [Digital Photography School],
@@ -436,6 +379,7 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
   [Photographing dogs in action is an absolute thrill. One moment they’re a ball of energy, and the next, they’re soaring through the air to catch a Frisbee. Those freeze-frame shots elicit smiles from everyone who sees them.],
   [But it’s not just about clicking the shutter. A lot goes on behind the scenes. Dialing in the right camera settings, keeping the dog focused, and maintaining their enthusiasm are all part of the equation. In this article, I’ll share some golden nuggets that have helped me capture those split-second wonders on camera.],
   [So whether you’re photographing your own furry friend or working on a pet photography gig, you’ll find some actionable advice here. Let’s jump right in and elevate your dog action photography skills!],
+  [1. Use the right gear],
   [Before I delve into practical tips for dog action shots, I want to briefly explore the importance of gear, which can make or break your images.],
   [If you want to take better action photos of dogs, I recommend a camera body with a fast burst rate. From my experience, five frames per second is the minimum. If your camera has a faster frame rate than that, you are going to increase your keeper rate as long as your approach and technique are on point, which we will get to shortly.],
   [Additionally, fast autofocusing is a must-have. Fortunately, many modern mirrorless cameras do an excellent job of tracking subjects as they move – and some even include animal eye AF modes so you can focus consistently on the dog’s eye as they bound around the space!],
@@ -443,6 +387,7 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
   [Longer lenses with fixed apertures generally focus on moving subjects much faster than shorter lenses. They also keep you and your camera gear safer. Think about it. If you have a 45 point Border Collie running full speed right at you, you need to get the photograph and get out of the way quickly.],
   [A longer lens will give you the time you need to move once the dog starts to fill the frame. I personally use the Nikon 300mm f/4 and sometimes I’ll even throw a teleconverter on it for extended reach and cleaner bokeh.],
   [A 70-200mm f/2.8 lens can also be very effective for dog action shots. The focal length is versatile enough for close-ups and wide shots, while the large aperture allows for shooting in lower light conditions!],
+  [2. Make sure the dog is safe],
   [First and foremost, safety should be your priority. Dogs are not just subjects to be photographed; they are living, breathing beings that deserve respect and care.],
   [Always choose a location where dogs are allowed. You don’t want to get into trouble with authorities or risk the dog getting hurt in an unfamiliar environment.],
   [Opt for areas that are far from any hazards. A busy road, a steep drop, or any place where a dog can get hurt should be avoided. Keep a close eye on the dog, especially if they’re off-leash.],
@@ -450,46 +395,55 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
   [Know the dog’s limits. Some dogs might have health issues that prevent them from running or jumping. Others might be too young or too old for strenuous activity. Listen to the dog’s owner and observe the dog’s behavior. Remember, capturing their personality is more important than getting an action shot at the expense of their well-being.],
   [If the dog seems uncomfortable, slow down. It’s perfectly fine to capture them at their own pace. No photograph is worth risking the safety or well-being of your subject.],
   [In essence, always prioritize the dog’s safety. This will not only make for a more relaxed and enjoyable session but will also ensure that you get natural, happy shots that reflect the dog’s true spirit.],
+  [3. Get a real expression from the dog],
   [Capturing genuine emotion in a dog’s eyes can transform a good photo into a great one. The key to this lies not just in your camera skills, but also in how you interact with the dog.],
   [Use a positive, encouraging voice when calling the dog over. Our four-legged friends are very attuned to human emotions, so a happy tone can go a long way. Make sure you and the dog’s owner are both creating an atmosphere of positivity.],
   [Prepare some rewards to place by your camera. Dogs love treats and toys, so having some handy can help you get those tail-wagging, tongue-out smiles. Discuss with the dog’s owner to find out what their pet finds irresistible – be it squeaky toys, tennis balls, or treats.],
   [Let the dog approach the camera naturally, enticed by rewards and your encouraging voice. The owner will know what will make their pet tick, so take their advice into account.],
   [As you interact, watch for those perfect moments. Sometimes the ideal expression will come naturally as the dog reacts to your voice or the promise of a treat. Be ready to capture it.],
+  [4. Learn about the dog in advance],
   [Prior knowledge about your four-legged subject can make or break your photography session. You need to know the basics, such as the dog’s training level, to strategize your shots effectively.],
   [Start with a conversation with the dog’s owner. Find out about the dog’s health, especially if they have any mobility issues or dietary restrictions. This information will help you decide how active the photography session can be and what treats you can use.],
   [Ask about their personality traits. Is the dog energetic and outgoing, or more shy and reserved? Knowing this will allow you to set up your shots in a way that brings out their true character.],
   [Query about their training level. Does the dog know basic commands like sit, stay, and come? This can have a huge impact on how you orchestrate the shoot. Well-trained dogs may allow for more complex setups, while a younger or less-trained dog may require a simpler approach.],
   [Safety is another concern that goes back to knowing the dog. If you’re aware of their temperament and any potential health concerns, you’ll be better equipped to ensure a safe and enjoyable session for everyone involved.],
+  [5. For running shots, have the owner call the dog],
   [Getting a dog to run is only half the battle. The real trick is guiding them in the direction you want. For well-trained dogs with a solid “sit and stay,” I typically position the owner about 20 meters behind me. They call the dog, who then races directly towards the camera.],
   [For younger or less trained pups, it’s essential to pick a secure location with minimal distractions. Think a dog-friendly park or even the dog’s backyard. You can also enlist the help of an extra person to hold the dog in place if they haven’t mastered the “sit and stay” command.],
   [Some photographers opt for the dog to be on a leash. This can work, especially if the owner jogs along with them. You can always edit the leash out later if it interferes with the shot.],
   [Keep your position in mind. If you want the dog to run directly toward you, be sure you’re in a spot that allows for this. An alternate option is to place yourself so that the dog will cross your path, giving you ample opportunity to capture a series of action shots.],
+  [6. Let the dogs be themselves],
   [While it’s natural to have a list of shots you want to capture, remember that dogs have personalities too. And sometimes, they just want to do their own thing.],
   [Let them! Some of my best shots have come from moments when the dogs were simply enjoying themselves. They could be chasing after a ball, bounding through tall grass, or playing a game of tug-of-war.],
   [When you let dogs be themselves, their personalities shine through. And that makes for truly unforgettable photographs. You’ll find that the spontaneity adds a layer of authenticity and emotion that is often missing in overly staged shots.],
   [So if you find that the dog isn’t interested in running directly towards you, but would rather sniff around and explore, go with it. Capture those candid moments. They’ll likely end up being some of your favorites from the shoot!],
+  [7. Get down low],
   [Photographing from up high might work for humans, but dogs? Not so much. The simple act of lowering your camera can transform your dog action photos.],
   [When you’re at the dog’s level, the images have a unique intimacy. You’re entering their world, capturing life from their viewpoint. This makes for some really compelling photos.],
   [Another perk is the background. Being low increases the separation between the dog and the background. This helps in creating that beautiful, blurry backdrop, also known as bokeh, which makes the dog pop in the image.],
   [So don’t hesitate to get a bit dirty. Crouch down, kneel, or even go flat on your stomach. Experimenting with these angles can add a dynamic touch to your images.],
   [Remember, varying your height and angle can yield a variety of shots, all in one session. So pack some knee pads along with your camera gear and get down to the dog’s eye level.],
+  [8. Choose the right settings for dogs in action],
   [Camera settings can make or break action shots. For starters, I like to use Manual mode . This gives me complete control over the aperture, shutter speed, and ISO.],
   [Fast shutter speeds are essential. Dogs are quick creatures, so to freeze their motion, I generally start with a shutter speed of 1/1000s. Don’t be afraid to ramp it up even more if the dog is particularly fast.],
   [Aperture plays a role too. A wide aperture can help create a shallow depth of field , blurring the background and making the dog stand out.],
   [Then there’s ISO . While you’ll want to keep it as low as possible to avoid grain, don’t be too concerned if you have to increase it to maintain a fast shutter speed. A slightly grainy shot is far better than a blurry one.],
   [If Manual mode intimidates you, Aperture Priority and Shutter Priority are solid alternatives. They allow you to control one aspect, while the camera adjusts the other. Just make sure you’re still keeping an eye on those crucial settings like shutter speed.],
+  [9. Nail that focus!],
   [Ah, focus: the nemesis of many action photographers. With dogs bounding around, keeping them sharp in your frame can be challenging.],
   [For fast-paced action, using a single focus point and continuous focusing mode (AF-C) has always worked for me. With back-button focusing , the camera continues to refocus as long as you hold down the button.],
   [Some cameras offer tracking options. These can lock onto the subject and adjust the focus as they move. Give it a try; it may work wonders depending on your camera’s capabilities.],
   [Animal eye autofocus is another feature to explore if your camera has it. This function focuses directly on the animal’s eyes, ensuring a sharp, expressive face.],
   [Don’t underestimate the power of practice. Take the time to understand how your camera’s focusing system responds to fast-moving subjects. Get out there and shoot, analyze your results, adjust, and shoot some more.],
   [Mastering focus in action photography isn’t something you’ll do overnight. But with consistent effort and the right techniques, you’ll see marked improvements in your work.],
+  [10. Practice your timing],
   [Timing is everything in action photography, especially with subjects as quick and unpredictable as dogs. So how can you get that perfect mid-air leap or playful sprint?],
   [Start by observing the dog’s movements. Dogs, like many animals, have a natural rhythm when they move. Take the time to notice this pattern before you start clicking away.],
   [Adopt a technique often used by equestrians: counting strides. When a horse rider is learning to jump, they count the horse’s strides to anticipate the perfect moment for a jump. Apply this method to dog action photography.],
   [Each time the dog’s front legs leave the ground, count it out. One, two, three, and so on. This rhythm helps you anticipate when the dog will be in the ideal position for a fantastic shot.],
   [This counting method might be easier with larger breeds that have a longer stride, but don’t worry if you’re photographing a small dog. Practice will help you adapt this technique to any dog size or speed.],
   [Ultimately, your timing will improve with experience. The more you practice, the better you’ll get at capturing that decisive moment. And remember, digital film is free – so don’t hesitate to take many shots and refine your timing as you go.],
+  [How to photograph dogs in action: final words],
   [And there you have it: the nuts and bolts of capturing dogs in exhilarating action!],
   [The safety of your furry subject is paramount, so always choose a secure location and be aware of the dog’s comfort level. Each dog is unique, and getting to know them can inform your approach and result in more authentic photos.],
   [Your gear and settings are crucial, but remember, they are just tools. It’s your understanding of the dog, your timing, and your technique that will set your images apart. Your role is that of both a photographer and an animal lover. Never lose sight of the latter.],
@@ -497,6 +451,60 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
   [Thank you for joining me in this exciting realm of photography. Grab your camera, find a willing pup, and create some memorable, tail-wagging art!],
   [Now over to you:],
   [Do you have any tips that I missed? Share your thoughts in the comments below!],
+  [Table of contents],
+  [GENERAL],
+  [9 Pet Photography Tips],
+  [9 Tips for Taking Better Photos of Cats],
+  [Beginner's Guide to Photographing Horses],
+  [Why Taking Pictures of Your Pets Will Help Make You a Better Photographer],
+  [How to get the Money Shot in Pet Photography],
+  [What Are Your Pet Photography Peeves?],
+  [PREPARATION],
+  [6 Tips for Working with Unruly Animals in Pet Photography],
+  [LIGHTING],
+  [Tips for Great Lighting for Pet Photography],
+  [GEAR],
+  [4 of the Best Lenses for Creative Dog Photography],
+  [Pros and Cons of Photographing Dogs with a Prime Lens],
+  [CREATIVE TECHNIQUES],
+  [Five Tips for Creative Pet Photography],
+  [10 Amazing Camera Hacks for Better Dog Photography],
+  [POST-PROCESSING],
+  [Fixing Animal Eyes in Lightroom],
+  [BUSINESS],
+  [Five Things You Need to Know Before Starting a Pet Photography Business],
+  [ADVANCED GUIDES],
+  [6 Tips for Photographing Dogs in Action],
+  [1. Use the right gear],
+  [2. Make sure the dog is safe],
+  [3. Get a real expression from the dog],
+  [4. Learn about the dog in advance],
+  [5. For running shots, have the owner call the dog],
+  [6. Let the dogs be themselves],
+  [7. Get down low],
+  [8. Choose the right settings for dogs in action],
+  [9. Nail that focus!],
+  [10. Practice your timing],
+  [How to photograph dogs in action: final words],
+  [1. Use the right gear],
+  [2. Make sure the dog is safe],
+  [3. Get a real expression from the dog],
+  [4. Learn about the dog in advance],
+  [5. For running shots, have the owner call the dog],
+  [6. Let the dogs be themselves],
+  [7. Get down low],
+  [8. Choose the right settings for dogs in action],
+  [9. Nail that focus!],
+  [10. Practice your timing],
+  [How to photograph dogs in action: final words],
+  [How to Photograph Agility Events and Other Dog Sports],
+  [How to Shoot Animal Portraits \[video\]],
+  [INSPIRATION],
+  [29 Shots of Dogs Sticking Their Heads out of Car Windows \[Humor\]],
+  [25 Inspirational Dog Portrait Photographs],
+  [38 Pet Photos to Amaze and Inspire You],
+  [5 Adorable Pet Photos \[and How to Make your Shots even Cuter\]],
+  [Today's Dose of Cuteness – a Collection of Cats in Windows and Doors],
   [The post 10 Tips for Breathtaking Dog Action Photography appeared first on Digital Photography School . It was authored by Kelly Wolfe .],
 ),
   insert-map: (:),
@@ -505,11 +513,10 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Self-healing CMOS Imager to Withstand Jupiter’s Radiation Belt],
   author: [Maya Posch],
   source-name: [Hackaday],
@@ -528,7 +535,7 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Jai Courtney’s Underrated Shark Horror Movie Out on Hulu Today],
   author: [Maggie Dela Paz],
   source-name: [ComingSoon.net],
@@ -536,6 +543,7 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
   paragraphs: (
   [(Photo Credit: IFC)],
   [Independent Film Company’s acclaimed creature feature starring Suicide Squad’s Jai Courtney has finally found a new streaming home, nearly a year after it had its world premiere at the 2025 Cannes Film Festival’s Directors’ Fortnight section. As of today, Courtney’s survival horror movie Dangerous Animals is now officially streaming on Hulu.],
+  [What do we know about Jai Courtney’s Dangerous Animals?],
   [In Dangerous Animals, Courtney plays the role of a serial killer who uses sharks to kill his victims. The cast also included Hassie Harrison, Josh Heuston, Rob Carlton, Ella Newton, James Munn, Michael Goldman, Jon Quested, Liam Greinke, and more. Since its debut, the movie has received a Certified Fresh rating of 87% on Rotten Tomatoes , based on 181 reviews.],
   [“When Zephyr, a rebellious surfer, is abducted by a shark-obsessed serial killer and held captive on his boat, she must figure out how to escape before he carries out a ritualistic feeding to the sharks below,” reads the official synopsis.],
   [The 2025 film was directed by Sean Byrne from a screenplay written by Nick Lepard. The film was executive produced by Fred Berger, Michael Glassman, Mehrdod Heydari, Marlaina Mah, Jacob Yakob, and Joseph Yakob. Producers were Chris Ferguson, Brian Kavanaugh-Jones, Mickey Liddell, Troy Lum, Andrew Mason, and Pete Shilaimon.],
@@ -553,13 +561,12 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Studio Razavi adds circular conversation pit to coastal French home],
   author: [Jon Astbury],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [A circular conversation pit sits at the heart of Seaside House, the renovation of a 1930s coastal cabin near Bordeaux by Studio Razavi .],
   [Studio Razavi updating the 1930s cabin, which is nestled among pine trees at the tip of the Cap Ferret headland on the Atlantic coast, for contemporary living.],
   [Driven by the idea of creating an uninterrupted flow through the centre of Seaside House, the studio removed all of the cabin's central partition walls to create a single, open living space, which opens out onto a decked terrace at either side.],
@@ -590,7 +597,7 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Play a .WAV Instead of Typing Line After Line Into Vintage Microcomputer],
   author: [Donald Papp],
   source-name: [Hackaday],
@@ -615,13 +622,12 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Dior unveils golden bamboo version of Paris HQ],
   author: [Cajsa Carlson],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [Fashion house Dior has revealed the Dior Bamboo Pavilion concept store in Tokyo 's Daikanyama area with a facade that was designed to evoke Japanese bamboo forests.],
   [The exterior of the 1,800-square-metre store was designed to replicate Dior's townhouse at 30 Montaigne, Paris, similar to Dior Gold House, another concept store that opened in Bangkok in 2024.],
   [The store is clad in a golden bamboo facade and decorated with a star],
@@ -652,7 +658,7 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Curse of Oak Island Season 13 Episode 20 Release Date, Time, Where to Watch],
   author: [Shazmeen Navrange],
   source-name: [ComingSoon.net],
@@ -662,11 +668,14 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
   [The Curse of Oak Island Season 13 Episode 20 release date and time are right around the corner, and many want to know the streaming details.],
   [In the previous episode, the team made stunning discoveries on Lot 8 and in the Money Pit area. New research showcases a potential connection between the Oak Island mystery and the Knights Templar. The upcoming episode, titled “The Sands of Time,” focuses on the team coming across the evidence of ancient man-made workings in the swamp. Soon, they find themselves making a major discovery on Lot 8.],
   [Here are the release details of the upcoming episode.],
+  [When is The Curse of Oak Island Season 13 Episode 20 release date & time?],
   [The episode’s release date is March 31, and its release time is 6 PM PT, 9 PM ET.],
   [Check out its release times in the U. S. below:],
   [Timezone Release Date Release Time Eastern Time March 31, 2026 09:00 p.m. Pacific Time March 31, 2026 06:00 p.m.],
+  [Where to watch The Curse of Oak Island Season 13 Episode 20],
   [You can watch The Curse of Oak Island Season 13 Episode 20 via The History Channel.],
   [The History Channel falls under the banner of A+E Global Media. It features a range of infotainment programming, right from documentaries to non-fiction reality series.],
+  [What is The Curse of Oak Island about?],
   [The Curse of Oak Island is a reality series that centers on the Lagina brothers, who embark on a mission to crack the mysteries surrounding the island. They collaborate with local experts, learn more about the island, investigate, and make shocking discoveries.],
   [The official synopsis for The Curse of Oak Island is as follows:],
   [“Follow brothers Marty and Rick Lagina through their effort to find the speculated – and as of yet undiscovered – buried treasure believed to have been concealed through extraordinary means on Oak Island. “],
@@ -683,9 +692,8 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
 #pull-quote([Here are the release details of the upcoming episode.], [Shazmeen Navrange])
 
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [Hellboy Star’s Fighting Movie & More Included in This Week’s Paramount+ Releases],
   author: [Sibanee Gogoi],
   source-name: [ComingSoon.net],
@@ -696,8 +704,11 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
   [Premiering on April 1, 2026, Day of the Fight (2023) is a gripping boxing drama helmed by Jack Huston. Michael Pitt stars as Mike Flannigan, a pugilist seeking redemption in the ring and in life. Mike’s comeback fight at Madison Square Garden is haunted by past demons and fueled by a desire to make amends. With a ticking clock and a deadly secret, Mike’s quest becomes a poignant journey of atonement, love, and sacrifice.],
   [Besides Michael Pitt as Mike “Irish” Flannigan, the impressive cast of Day of the Fight (2023) includes Ron Perlman as Stevie, Mike’s loyal trainer, while Nicolette Robinson plays Jessica, his estranged partner. John Magaro stars as Father Patrick Donnelly, an old friend turned priest. Steve Buscemi and Joe Pesci bring depth as Mike’s uncle Colm and ailing father Tony, respectively. Anatol Yusef rounds out the cast as Sal.],
   [Meanwhile, fans craving some laughs can binge-watch a Jackass marathon, as Paramount+ is releasing a cluster of Jackass movies and spin-offs on the same date this week.],
+  [This week’s new Paramount+ releases from March 30-April 5],
   [Paramount+ has some exciting new releases this week, March 30 – April 5, 2026. Here are the latest additions (via vitalthrills.com) :],
+  [March 31],
   [FBI True Season 8 | Paramount+ Original Docuseries],
+  [April 1],
   [All The Queen’s Men Seasons 1-4],
   [Average Joe Season 1],
   [Bigger Seasons 1-2],
@@ -769,7 +780,9 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
   [Wayne’s World],
   [Wayne’s World 2],
   [Yes, Madam!],
+  [April 4],
   [Made for March | Paramount+ Original Docuseries (Episode 101)],
+  [April 5],
   [Made for March | Paramount+ Original Docuseries (Episodes 102 & 103)],
   [The post Hellboy Star’s Fighting Movie & More Included in This Week’s Paramount+ Releases appeared first on ComingSoon.net - Movie Trailers, TV & Streaming News, and More .],
 ),
@@ -779,16 +792,13 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Verge Select connects three weathering-steel volumes for Ontario painting studio],
   author: [Ellen Eberhardt],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [Canadian design studio Verge Select has designed a studio for painter Janna Watson in Ontario , composed of three square volumes fused together to form a secluded forest retreat.],
   [The Grey County studio is located in the county of the same name in Ontario , and, unlike a second, more urban studio operated by Watson, provides a space that "slows time".],
   [Verge Select has completed a painter's studio in Ontario],
@@ -822,10 +832,8 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Tom Cruise’s \$598M Flop & More Included in This Week’s Prime Video Releases],
   author: [Ritika Singh],
   source-name: [ComingSoon.net],
@@ -836,7 +844,9 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
   [On April 1, The Boss Baby (2017) drops on Amazon Prime Video. The animated film follows Tim, who feels jealous of his little brother receiving attention from their parents. He then finds out that the baby can talk, and the two team up for a mission.],
   [Furthermore, the action drama Top Gun (1986) arrives on the streaming platform. It follows a top pilot named Maverick who gets a chance at redemption after losing his friend. As such, he strives to prove himself while facing every challenge that comes his way.],
   [Also coming to Prime Video is Mission: Impossible 8 or Mission: Impossible – The Final Reckoning. It resumes Ethan Hunt and his team’s adventure to protect mankind. This time, their fight is against a rogue artificial intelligence.],
+  [This week’s new Prime Video releases from March 30-April 5],
   [Below are all the new TV shows and movies being added to Prime Video from March 30 to April 5.],
+  [Wednesday, April 1],
   [2 Guns (2013)],
   [American Fiction (2023)],
   [Anna And The Apocalypse (2017)],
@@ -917,7 +927,9 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
   [When The Night Falls (2022)],
   [White Noise (2005)],
   [Wrath Of Man (2021)],
+  [Friday, April 3],
   [Mission: Impossible – The Final Reckoning (2025)],
+  [Sunday, April 5],
   [\*Nippon Sangoku: The Three Nations of the Crimson Sun (2026)],
   [For more Prime Video content, check out the post-credits scene of Invincible Season 4 Episode 4 .],
   [The post Tom Cruise’s \$598M Flop & More Included in This Week’s Prime Video Releases appeared first on ComingSoon.net - Movie Trailers, TV & Streaming News, and More .],
@@ -928,16 +940,13 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Studio Dera adds sculptural extension to Mozart House in London],
   author: [Jon Astbury],
   source-name: [Dezeen Architecture],
   images: (),
   paragraphs: (
-  [style="margin-bottom: 15px;"\>],
   [Full-height windows framed by sculptural panels of glass-reinforced concrete overlook two stacked courtyards at Mozart House, a London home extended by local practice Studio Dera .],
   [Located in the Belgravia Conservation Area, the Georgian terraced home is famous for being both the site where Mozart composed his first symphony at eight years old and later as the home of author Vita Sackville-West and politician Harold Nicolson.],
   [Studio Dera has extended a Georgian terraced home in London],
@@ -970,11 +979,10 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [V-Cut Flats Are The 2026 Way To Shop The Ballet Shoe Trend],
   author: [Ruby Ford-Dunker],
   source-name: [Refinery29 Fashion],
@@ -997,7 +1005,7 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [brown butter snickerdoodles],
   author: [deb],
   source-name: [Smitten Kitchen],
@@ -1017,7 +1025,7 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Tuesday Things.],
   author: [Jessica],
   source-name: [How Sweet Eats],
@@ -1042,7 +1050,7 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Paula Patton’s R-Rated NSFW Movie Is Coming To Prime Video],
   author: [Ishita Verma],
   source-name: [ComingSoon.net],
@@ -1050,6 +1058,7 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
   paragraphs: (
   [Image credit: Universal Pictures],
   [The R-rated action comedy film 2 Guns , starring Denzel Washington and Paula Patton , is set to arrive on Prime Video . The film was directed by Baltasar Kormákur and was released in theaters on August 2, 2013. The movie was a success at the box office despite a lukewarm reception from the critics.],
+  [2 Guns to stream on Prime Video next month],
   [The 2013 action movie 2 Guns will arrive on Amazon Prime Video on April 1, 2026, according to a report by Fandomwire .],
   [2 Guns, which is a buddy cop movie, features a stellar cast including A-list actors like Mark Wahlberg, Denzel Washington, Paula Patton, James Marsden, Bill Paxton, and many more. The movie was written by Blake Masters and was produced by Universal Pictures.],
   [The film became a hit at the box office across the globe. It was made on a reported budget of approximately \$61 million and opened to \$27 million at the box office . The movie grossed around \$75 million at the domestic box office and \$56 million internationally. This brought the movie’s global collection to over \$131 million.],
@@ -1068,12 +1077,11 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
 #pull-quote([The movie grossed around \$75 million at the domestic box office and \$56 million internationally.], [Ishita Verma])
 
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([Into the Gloss], source-name: [Into the Gloss], ["It’s fun trying new products, but I had to accept that my skin can’t take a lot. And honestly? It’s fine. I don’t know what I’m doing anyway."])],
-    [#brief-item([Jennifer Camp Forbes], source-name: [Who What Wear], [collage featuring Arranging Things Book by Colin King, a street style shot of two women looking at a cell phone in chic outfits and Necessaire body lotion])],
-    [#brief-item([Jessica], source-name: [How Sweet Eats], [New week, new menu!
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([Into the Gloss], source-name: [Into the Gloss], ["It’s fun trying new products, but I had to accept that my skin can’t take a lot. And honestly? It’s fine. I don’t know what I’m doing anyway."])],
+  [#brief-item([Jennifer Camp Forbes], source-name: [Who What Wear], [collage featuring Arranging Things Book by Colin King, a street style shot of two women looking at a cell phone in chic outfits and Necessaire body lotion])],
+  [#brief-item([Jessica], source-name: [How Sweet Eats], [New week, new menu!
 
 What’s on your menu this week?!
 
@@ -1096,28 +1104,27 @@ What To Eat This Week
  White chocolate raspberry granola 
 
 The post What To Eat This Week: 3/29/26. appeared first on How Sweet Eats .])],
-    [#brief-item([Justin Carter], source-name: [Gizmodo], [Science Saru finally showed off real footage for 'The Ghost in the Shell,' and it looks beautiful in motion as it does in stills.])],
-    [#brief-item([Into the Gloss], source-name: [Into the Gloss], [The creator of Glossier’s perfume line on how he got his start, his personal fragrance preferences, and the inspiration behind Glossier You Doux and Rêve])],
-    [#brief-item([deb], source-name: [Smitten Kitchen], [class="smittenkitchen-print-hide"\>
+  [#brief-item([Justin Carter], source-name: [Gizmodo], [Science Saru finally showed off real footage for 'The Ghost in the Shell,' and it looks beautiful in motion as it does in stills.])],
+  [#brief-item([Into the Gloss], source-name: [Into the Gloss], [The creator of Glossier’s perfume line on how he got his start, his personal fragrance preferences, and the inspiration behind Glossier You Doux and Rêve])],
+  [#brief-item([deb], source-name: [Smitten Kitchen], [
  
 
  My strongest opinion on Thanksgiving sides is that whenever possible, they should come in a casserole dish (or its chic French cousin, a gratin). I don’t mean that your sides should be limited to things that swim in cream, cheese, butter, or a happy combination of all three — although one dish in this category is highly welcome on my table — I simply mean that sides like this, that is baked in dishes with walls , tend to excel at holding up to resting times, reheat well, and stay warm longer.
 
  Read more »])],
-    [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [These Lemon Brownies are soft, fudgy citrus bars finished with a glossy white chocolate lemon glaze. The best part? The…
+  [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [These Lemon Brownies are soft, fudgy citrus bars finished with a glossy white chocolate lemon glaze. The best part? The…
 
  ( Read more... ) 
 
 Tags: no-toc 
 
 The post Soft and Bright Lemon Brownies with White Chocolate Glaze appeared first on A Cozy Kitchen .])],
-    [#brief-item([deb], source-name: [Smitten Kitchen], [class="smittenkitchen-print-hide"\>
+  [#brief-item([deb], source-name: [Smitten Kitchen], [
  
 
  It’s been 17 months since I first questioned whether anyone even needed another recipe for a basque cheesecake — the burnished, custardy and uncluttered kind that hails from San Sebastián, Spain — and concluded that in fact, I did.
 
  Read more »])],
-  ))
-}
+))
 
 #colophon([The Thoughtful Herald], [Vol. 1, No. 014], [2026-03-30])

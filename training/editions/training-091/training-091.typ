@@ -21,47 +21,8 @@
 #masthead([Local Dispatch], [Vol. 1, No. 091], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Try a URL Sandbox! (For Free!)],
-  kicker: [Cover Story],
-  author: [Peteris Krumins (catonmat)],
-  source-name: [Peteris Krumins (catonmat)],
-  deck: [TLDR: Want to open shady or weird links without wrecking your computer?],
-  lead-pre: [],
-  lead-cap: [U],
-  lead-rest: [se a free URL sandbox at browserling.com/browse . It runs remotely outside of your browser. No installs, no downloads. Just click and go.],
-  body-paragraphs: (
-  [What's a URL Sandbox?],
-  [A URL sandbox is a safe place to open websites. It's like using a remote computer. When you visit a site in the sandbox, it's not actually loading on your device, it's loading on a remote machine in remote data center. That means viruses, popups, or anything sketchy stays far away from you.],
-  [Why Use a URL Sandbox?],
-  [Sometimes you get a link that look weird. Maybe it's from a sketchy email, a random message, or a website that just feels off. You don't want to risk opening it on your real browser.],
-  [With a URL sandbox, you can open that link in an isolated virtual machine. If it's dangerous, it can't hurt your system. It's like opening a snake cage, but you're behind bulletproof glass.],
-  [Do I Need to Install Anything?],
-  [Nope. No installs. No downloads. No setup. Just go to browserling.com/browse , paste your URL, and you'll get a sandboxed browser. It works right in your current browser, and nothing gets saved on your device.],
-  [Can I Choose Different Browsers?],
-  [Yep. You can try out Chrome, Firefox, Edge, Safari, even old versions of Internet Explorer. This is super useful if you're testing how a website looks or behaves in different browsers. Or if you're trying to trigger something that only runs in a certain browser version (like a 0-day payload).],
-  [Is It Free?],
-  [Yes, there's a free URL sandbox version. You get a few minutes to test things. If you need more time or more features (like geo-browsing or file uploads), there are paid options too.],
-  [How Is A URL Sandbox Different From Antivirus?],
-  [Antivirus software scans your device after something is downloaded or opened. A URL sandbox blocks the danger before it ever touches your system. With a URL sandbox, you're stopping danger at the door, not cleaning up the mess afterward.],
-  [Can I Use It To Open Suspicious Email Links?],
-  [Yes, and you should. If you get a weird link in an email, just drop it into the sandbox and check it safely. It keeps you out of harm's way and lets you see what the link does without risking your device.],
-  [Is It Safe for Testing Malware?],
-  [Yes, it's one of the safest ways to do it. Security researchers use URL sandboxes every day to analyze malware behavior in a fully isolated space. It's a controlled, no-risk way to see how dangerous files or links act.],
-  [What Is Browserling?],
-  [Browserling is the tool that powers a free URL sandbox. It gives you access to real web browsers running on remote computers. You're basically "remote controlling" a safe browser that lives in the cloud. With Browserling you can browse safely, test websites in different browsers, open risky files like sketchy PDFs, and click links without worrying.],
-  [Who Uses Browserling?],
-  [Millions of people! Developers, security teams, schools, IT pros, and even government agencies. Companies use it to test websites. Cybersecurity folks use it to investigate shady stuff. Regular users use it to stay safe online.],
-  [Browse safe!],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Solid Relevance],
   author: [Robert C Martin (Clean Coder)],
   source-name: [Robert C Martin (Clean Coder)],
@@ -105,10 +66,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Open Letter to the Linux Foundation],
   author: [Robert C Martin (Clean Coder)],
   source-name: [Robert C Martin (Clean Coder)],
@@ -148,11 +107,10 @@
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [A New HBO Series, ‘The Dark Wizard,’ Examines the Life and Death of Climbing Legend Dean Potter],
   author: [awise],
   source-name: [Outside Magazine],
@@ -176,7 +134,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Try a Browser Sandbox! (For Free!)],
   author: [Peteris Krumins (catonmat)],
   source-name: [Peteris Krumins (catonmat)],
@@ -216,69 +174,67 @@
 #pull-quote([If the attachment contains malware, it gets trapped inside the sandbox and can't harm your real device.], [Peteris Krumins (catonmat)])
 
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([Jeet Heer], source-name: [The Nation], [Jeet Heer
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([Jeet Heer], source-name: [The Nation], [Jeet Heer
 
-class="wp-block-the-nation-dek article-title\_\_dek"\>
+
 
 The No Kings movement needs to become a mass anti-war movement.
 
 The post The Politicians Won’t Stop This War. Only the People Can. appeared first on The Nation .])],
-    [#brief-item([Peter Nelson], source-name: [Jalopnik], [If you're even remotely interested in wrenching, you've probably heard of idler and tensioner pulleys, but if you're unsure which is which, step right this way.])],
-    [#brief-item([GoCardless Blog], source-name: [GoCardless Blog], [Hear speakers from GoCardless and Open Banking Excellence as they demystify open banking and explain how businesses can use it to future proof their strategies])],
-    [#brief-item([GoCardless Blog], source-name: [GoCardless Blog], [With new legislation being introduced to address the culture of slow payment, now is a great opportunity to help your SME clients get paid faster and more reliably])],
-    [#brief-item([GoCardless Blog], source-name: [GoCardless Blog], [A Faster Payment is a type of electronic transfer, designed to speed up the process of sending money within the UK. This guide will tell you everything you need to know about the Faster Payments Service and how your business can use it.])],
-    [#brief-item([Nelson Elhage], source-name: [Nelson Elhage], [Last time, I announced Check Plus, a declarative language for defining Check tests in C. This time, I want to talk about the tricks I used to implement a declarative minilanguage using the C preprocessor (and some GCC extensions).
+  [#brief-item([Peter Nelson], source-name: [Jalopnik], [If you're even remotely interested in wrenching, you've probably heard of idler and tensioner pulleys, but if you're unsure which is which, step right this way.])],
+  [#brief-item([GoCardless Blog], source-name: [GoCardless Blog], [Hear speakers from GoCardless and Open Banking Excellence as they demystify open banking and explain how businesses can use it to future proof their strategies])],
+  [#brief-item([GoCardless Blog], source-name: [GoCardless Blog], [With new legislation being introduced to address the culture of slow payment, now is a great opportunity to help your SME clients get paid faster and more reliably])],
+  [#brief-item([GoCardless Blog], source-name: [GoCardless Blog], [A Faster Payment is a type of electronic transfer, designed to speed up the process of sending money within the UK. This guide will tell you everything you need to know about the Faster Payments Service and how your business can use it.])],
+  [#brief-item([Nelson Elhage], source-name: [Nelson Elhage], [Last time, I announced Check Plus, a declarative language for defining Check tests in C. This time, I want to talk about the tricks I used to implement a declarative minilanguage using the C preprocessor (and some GCC extensions).
 The Problem We want to write some toplevel declarations that look like:
 \#define SUITE\_NAME example BEGIN\_SUITE("Example test suite"); \#define TEST\_CASE core BEGIN\_TEST\_CASE("Core tests"); … and so on, and somehow translate them into code that does the equivalent of:])],
-    [#brief-item([Samuel A.A. Levine, Rich Maroko], source-name: [The Nation], [Samuel A. A. Levine, Rich Maroko
+  [#brief-item([Samuel A.A. Levine, Rich Maroko], source-name: [The Nation], [Samuel A. A. Levine, Rich Maroko
 
-class="wp-block-the-nation-dek article-title\_\_dek"\>
+
 
 New York’s hotel industry was built on labor struggles—and today’s protections show how worker rights and world-class hospitality go hand in hand.
 
 The post Tourists See a Luxury Hotel. We See Labor History and a City That Protects Workers. appeared first on The Nation .])],
-    [#brief-item([Chloe Clougher], source-name: [Jalopnik], [The Toyota 2000GT was rare, even when it was new, but the convertibles were so scarce just two were ever made. We decided to find out exactly why.])],
-    [#brief-item([GoCardless Blog], source-name: [GoCardless Blog], [Are you getting the most out of your Direct Debit provider? We’ve put together 10 questions to help you find out.])],
-    [#brief-item([GoCardless Blog], source-name: [GoCardless Blog], [GoCardless commissioned Forrester conduct a study to evaluate the costs and benefits for partners when integrating GoCardless Connect within their platforms to collect bank payments.])],
-    [#brief-item([Dave Hunter], source-name: [Vintage Guitar Magazine], [Although future iterations would represent one of the most ubiquitous amp models in back lines across the country, a Fender Twin-Amp from its first full year of production has always been a sight to behold. The “Fender Twin” has been with us for so long that it has almost become a generic, which makes it \[…\]])],
-    [#brief-item([Ali Skaik], source-name: [The Nation], [Ali Skaik
+  [#brief-item([Chloe Clougher], source-name: [Jalopnik], [The Toyota 2000GT was rare, even when it was new, but the convertibles were so scarce just two were ever made. We decided to find out exactly why.])],
+  [#brief-item([GoCardless Blog], source-name: [GoCardless Blog], [Are you getting the most out of your Direct Debit provider? We’ve put together 10 questions to help you find out.])],
+  [#brief-item([GoCardless Blog], source-name: [GoCardless Blog], [GoCardless commissioned Forrester conduct a study to evaluate the costs and benefits for partners when integrating GoCardless Connect within their platforms to collect bank payments.])],
+  [#brief-item([Dave Hunter], source-name: [Vintage Guitar Magazine], [Although future iterations would represent one of the most ubiquitous amp models in back lines across the country, a Fender Twin-Amp from its first full year of production has always been a sight to behold. The “Fender Twin” has been with us for so long that it has almost become a generic, which makes it \[…\]])],
+  [#brief-item([Ali Skaik], source-name: [The Nation], [Ali Skaik
 
-class="wp-block-the-nation-dek article-title\_\_dek"\>
+
 
 This year, Eid was a declaration: We are here. We pray. We dress in our best. We love, even when the world tries to convince us that we have nothing to love or to live for.
 
 The post In Gaza, Eid Is an Act of Resistance appeared first on The Nation .])],
-    [#brief-item([GoCardless Blog], source-name: [GoCardless Blog], [Find out how your firm can work in partnership with large clients to help them fulfil new reporting requirements and enhance the overall performance of their payment processes.])],
-    [#brief-item([Car and Driver], source-name: [Car and Driver], [See the interior and exterior of the new 535-hp Corvette Grand Sport and the 721-hp hybrid Grand Sport X from every angle.])],
-    [#brief-item([Nelson Elhage], source-name: [Nelson Elhage], [(This is part three of a multi-part introduction to termios and terminal emulation on UNIX. Read part 1 or part 2 if you’re new here)
+  [#brief-item([GoCardless Blog], source-name: [GoCardless Blog], [Find out how your firm can work in partnership with large clients to help them fulfil new reporting requirements and enhance the overall performance of their payment processes.])],
+  [#brief-item([Car and Driver], source-name: [Car and Driver], [See the interior and exterior of the new 535-hp Corvette Grand Sport and the 721-hp hybrid Grand Sport X from every angle.])],
+  [#brief-item([Nelson Elhage], source-name: [Nelson Elhage], [(This is part three of a multi-part introduction to termios and terminal emulation on UNIX. Read part 1 or part 2 if you’re new here)
 For my final entry on termios, I will be looking at job control in the shell (i.e. backgrounding and foreground jobs) and the very closely related topic of signal generation by termios, in response to INTR and friends.
 Sessions and Process Groups For the purposes of termios, processes are organized into two hierarchical groups, process groups and sessions.])],
-    [#brief-item([Stanley Reed], source-name: [The Nation], [Stanley Reed
+  [#brief-item([Stanley Reed], source-name: [The Nation], [Stanley Reed
 
-class="wp-block-the-nation-dek article-title\_\_dek"\>
+
 
 Unless a resolution is found, the impact is likely to grow.
 
 The post How the War Has Led to the Largest Disruption of Energy Supplies in Decades appeared first on The Nation .])],
-    [#brief-item([Pete Prown], source-name: [Vintage Guitar Magazine], [Taylor’s Gold Label Collection is the renowned builder’s concept of a modern instrument that speaks to flat-tops of the 1930s and ’40s. The 814e SB is a traditional non-cutaway fitted with Taylor trademarks like a bolt-on neck, super-quick fretboard, and electronics. The Gold Label 814e SB uses Taylor’s Super Auditorium shape, which is larger than \[…\]])],
-    [#brief-item([GoCardless Blog], source-name: [GoCardless Blog], [The Direct Debit Guarantee protects customers against payments made in error or fraudulently, making Direct Debit the UK's safest payment method.])],
-    [#brief-item([GoCardless Blog], source-name: [GoCardless Blog], [The benefits of Direct Debit are even greater when more customers are using it. Find out how you can maximise your Direct Debit uptake.])],
-    [#brief-item([GoCardless Blog], source-name: [GoCardless Blog], [We examine some of the challenges faced by small fitness businesses as they aim to scale and provide helpful tips to get your fitness business started on its journey to growth.])],
-    [#brief-item([Isabel Ruehl], source-name: [The Nation], [Isabel Ruehl
+  [#brief-item([Pete Prown], source-name: [Vintage Guitar Magazine], [Taylor’s Gold Label Collection is the renowned builder’s concept of a modern instrument that speaks to flat-tops of the 1930s and ’40s. The 814e SB is a traditional non-cutaway fitted with Taylor trademarks like a bolt-on neck, super-quick fretboard, and electronics. The Gold Label 814e SB uses Taylor’s Super Auditorium shape, which is larger than \[…\]])],
+  [#brief-item([GoCardless Blog], source-name: [GoCardless Blog], [The Direct Debit Guarantee protects customers against payments made in error or fraudulently, making Direct Debit the UK's safest payment method.])],
+  [#brief-item([GoCardless Blog], source-name: [GoCardless Blog], [The benefits of Direct Debit are even greater when more customers are using it. Find out how you can maximise your Direct Debit uptake.])],
+  [#brief-item([GoCardless Blog], source-name: [GoCardless Blog], [We examine some of the challenges faced by small fitness businesses as they aim to scale and provide helpful tips to get your fitness business started on its journey to growth.])],
+  [#brief-item([Isabel Ruehl], source-name: [The Nation], [Isabel Ruehl
 
-class="wp-block-the-nation-dek article-title\_\_dek"\>
+
 
 In Is a River Alive? , Robert Macfarlane challenges himself, and others, to find a new way to write about nature. 
 
 The post When Did the Natural World Stop Feeling Sublime? appeared first on The Nation .])],
-    [#brief-item([GoCardless Blog], source-name: [GoCardless Blog], [BizCover’s Justin Goldberg explains why a rock-solid global reputation and a simple integration with Chargify made GoCardless the only choice for collecting its strategically important Direct Debits])],
-    [#brief-item([Michael Wright], source-name: [Vintage Guitar Magazine], [Most guitarheads are aware of the enormous contributions of the late Chet Atkins, the Country Gentleman, to American popular music, from his complex fingerpicking style to producing early rock records. Not to mention the classic Gretsch hollowbody electric guitars that bore his name. But far fewer know how his quest for sustain yielded two obscure \[…\]])],
-    [#brief-item([GoCardless Blog], source-name: [GoCardless Blog], [Purpose-built space in the Central District cements GoCardless’ commitment to the region, while providing a best in class employee experience to its growing team])],
-    [#brief-item([Nelson Elhage], source-name: [Nelson Elhage], [I’m taking 6.170 Lab in Software Engineering this semester. The course sucks in various ways, but one of the most egregious, in my opinion, is that they force you to use CVS for your version control. Problem sets are distributed by the TAs importing them into your repository, and are then checked out later to be graded. Well, CVS sucks, and there’s no way I’m going to use it when there are sane, modern alternatives like SVN and SVK])],
-  ))
-}
+  [#brief-item([GoCardless Blog], source-name: [GoCardless Blog], [BizCover’s Justin Goldberg explains why a rock-solid global reputation and a simple integration with Chargify made GoCardless the only choice for collecting its strategically important Direct Debits])],
+  [#brief-item([Michael Wright], source-name: [Vintage Guitar Magazine], [Most guitarheads are aware of the enormous contributions of the late Chet Atkins, the Country Gentleman, to American popular music, from his complex fingerpicking style to producing early rock records. Not to mention the classic Gretsch hollowbody electric guitars that bore his name. But far fewer know how his quest for sustain yielded two obscure \[…\]])],
+  [#brief-item([GoCardless Blog], source-name: [GoCardless Blog], [Purpose-built space in the Central District cements GoCardless’ commitment to the region, while providing a best in class employee experience to its growing team])],
+  [#brief-item([Nelson Elhage], source-name: [Nelson Elhage], [I’m taking 6.170 Lab in Software Engineering this semester. The course sucks in various ways, but one of the most egregious, in my opinion, is that they force you to use CVS for your version control. Problem sets are distributed by the TAs importing them into your repository, and are then checked out later to be graded. Well, CVS sucks, and there’s no way I’m going to use it when there are sane, modern alternatives like SVN and SVK])],
+))
 
 #colophon([Local Dispatch], [Vol. 1, No. 091], [2026-03-30])

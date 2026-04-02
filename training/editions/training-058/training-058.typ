@@ -21,70 +21,8 @@
 #masthead([Civic Edition], [Vol. 1, No. 058], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Fragments: February 23],
-  kicker: [Cover Story],
-  author: [Martin Fowler],
-  source-name: [Martin Fowler],
-  deck: [Do you want to run OpenClaw? It may be fascinating, but it also raises significant security dangers.],
-  lead-pre: [],
-  lead-cap: [J],
-  lead-rest: [im Gumbley, one of my go-to sources on security, has some advice on how to mitigate the risks.],
-  body-paragraphs: (
-  [While there is no proven safe way to run high-permissioned agents today, there are practical patterns that reduce the blast radius. If you want to experiment, you have options, such as cloud VMs or local micro-VM tools like Gondolin.],
-  [He outlines a series of steps to consider],
-  [Prioritize isolation first.],
-  [Clamp down on network egress.],
-  [Don’t expose the control plane.],
-  [Treat secrets as toxic waste.],
-  [Assume the skills ecosystem is hostile.],
-  [Run endpoint protection.],
-  [❄ ❄ ❄ ❄ ❄],
-  [Caer Sanders shares impressions from the Pragmatic Summit .],
-  [From what I’ve seen working with AI organizations of all shapes and sizes, the biggest indicator of dysfunction is a lack of observability. Teams that don’t measure and validate the inputs and outputs of their systems are at the greatest risk of having more incidents when AI enters the picture.],
-  [I’ve long felt that people underestimated the value of QA in production .
-Now we’re in a world of non-deterministic construction, a modern perspective of observability will be even more important],
-  [Caer finishes by drawing a parallel with their experience in robotics],
-  [If I calculate the load requirements for a robot’s chassis, 3D model it, and then have it 3D-printed, did I build a robot? Or did the 3D printer build the robot?],
-  [Most people I ask seem to think I still built the robot, and not the 3D printer.],
-  […],
-  [Now, if I craft the intent and design for a system, but AI generates the code to glue it all together, have I created a system? Or did the AI create it?],
-  [❄ ❄ ❄ ❄ ❄],
-  [Andrej Karpathy is “very interested in what the coming era of highly bespoke software might look like.”],
-  [He spent half-an-hour vibe coding a individualized dashboard for cardio experiments from a specific treadmill],
-  [the “app store” of a set of discrete apps that you choose from is an increasingly outdated concept all by itself. The future are services of AI-native sensors & actuators orchestrated via LLM glue into highly custom, ephemeral apps. It’s just not here yet.],
-  [❄ ❄ ❄ ❄ ❄],
-  [I’ve been asked a few times about the role LLMs should play in writing. I’m mulling on a more considered article about how they help and hinder. For now I’ll say two central points are those that apply to writing with or without them.],
-  [First, acknowledge anyone who has significantly helped with your piece. If an LLM has given material help, mention how in the acknowledgments. Not just is this being transparent, it also provides information to readers on the potential value of LLMs.],
-  [Secondly, know your audience. If you know your readers will likely be annoyed by the uncanny valley of LLM prose, then don’t let it generate your text. But if you’re writing a mandated report that you suspect nobody will ever read, then have at it.],
-  [(I hardly use LLMs for writing, but doubtless I have an inflated opinion of my ability.)],
-  [❄ ❄ ❄ ❄ ❄],
-  [In a discussion of using specifications as a replacement to code while working with LLMs, a colleague posted the following quotation],
-  [“What a useful thing a pocket-map is!” I remarked.],
-  [“That’s another thing we’ve learned from your Nation,” said Mein Herr, “map-making. But we’ve carried it much further than you. What do you consider the largest map that would be really useful?”],
-  [“About six inches to the mile.”],
-  [“Only six inches!” exclaimed Mein Herr. “We very soon got to six yards to the mile. Then we tried a hundred yards to the mile. And then came the grandest idea of all! We actually made a map of the country, on the scale of a mile to the mile!”],
-  [“Have you used it much?” I enquired.],
-  [“It has never been spread out, yet,” said Mein Herr: “the farmers objected: they said it would cover the whole country, and shut out the sunlight! So we now use the country itself, as its own map, and I assure you it does nearly as well.”],
-  [style="font-size: 80%;"\>from Lewis Carroll, Sylvie and Bruno Concluded, Chapter XI, London, 1893, acquired from a Wikipedia article about a Jorge Luis Borge short story.],
-  [❄ ❄ ❄ ❄ ❄],
-  [Grady Booch:],
-  [Human language needs a new pronoun, something whereby an AI may identify itself to its users.],
-  [When, in conversation, a chatbot says to me “I did this thing”, I - the human - am always bothered by the presumption of its self-anthropomorphizatuon.],
-  [❄ ❄ ❄ ❄ ❄],
-  [My dear friends in Britain and Europe will not come and visit us in Massachusetts. Some folks may think they are being paranoid, but this story makes their caution understandable.],
-  [The dream holiday ended abruptly on Friday 26 September, as Karen and Bill were trying to leave the US. When they crossed the border, Canadian officials told them they didn’t have the correct paperwork to bring the car with them. They were turned back to Montana on the American side – and to US border control officials. Bill’s US visa had expired; Karen’s had not.],
-  [“I worried then,” she says. “I was worried for him. I thought, well, at least I am here to support him.”],
-  [She didn’t know it at the time, but it was the beginning of an ordeal that would see Karen handcuffed, shackled and sleeping on the floor of a locked cell, before being driven for 12 hours through the night to an Immigration and Customs Enforcement (ICE) detention centre. Karen was incarcerated for a total of six weeks – even though she had been travelling with a valid visa.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Emulating Ruby's Benchmark.real\_time in Python Using a Context Manager],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -95,12 +33,20 @@ Now we’re in a world of non-deterministic construction, a modern perspective o
   [I have a serious relationship with Python],
   [And I'm now flirting with Rust and seeing if I want to bring her to the dance …],
   [But enough of that foolishness, today's topic is code benchmarking. Here's what I would do in Ruby:],
+  [benchmarks = \{\} 
+ results = nil 
+ elapsed\_time = Benchmark . realtime do 
+ results = some\_long\_running\_method ( foo , bar , baz ) 
+ end 
+ benchmarks \[ 'some\_long\_running\_method' \] = elapsed\_time],
   [By defining the results variable outside the block of code (the bits between do and end), it basically gets a transitive scope that allows what is computed inside the block to exist outside the block. And then I set the associative array (also known as a hash) to have a key for the method, some\_long\_running\_method, and also the elapsed time. This way I can build up a hash of all my methods and how long they take.],
   [Note : A block is a "lexical scope" during which (the code between the do and end), variables are local only to that scope (unless you "shadow" it with a variable of the same name).],
   [My pairing partner on this project, Grant, has told me "You could use a context manager for this". And this led me to these Python docs:],
   [ContextLib],
   [Geeks for Geeks],
   [I found both of these very pythonic – which, for me, means I didn't understand them at all . Happily I was able to cobble together a basic example:],
+  [from contextlib import contextmanager 
+ import time],
   [def some\_long\_running\_method1 ( amount ): 
  print ( amount ) 
  
@@ -113,25 +59,25 @@ Now we’re in a world of non-deterministic construction, a modern perspective o
  run\_time = time . time () - t\_0 
  benchmarks \[ benchmark\_key \] = run\_time 
  
- benchmarks = {}],
+ benchmarks = \{\}],
   [with timer ( benchmarks , 'test\_sleep' ): 
  some\_long\_running\_method1 ( 5 )],
   [with timer ( benchmarks , 'test\_foo' ): 
  some\_long\_running\_method1 ( 5 )],
   [Note : The \@contextmanager is apparently a "python decorator". I don't really understand decorators any more than I understand interior decorators so, well, there's that.],
   [The end result of this is a Python dictionary like this:],
+  [\{ 'some\_long\_running\_method1' : 4.696846008300781e-05 , 'some\_long\_running\_method2' : 4.696846008300781e-05 \}],
   [And here's how this looks like in a production code refactor:],
-  [id="before"\>Before],
+  [times = \{\}],
   [time\_start = time . time () 
  json\_str = common\_kafka . pop\_from\_topic ( kafka\_conn , kafka\_topic\_name ) 
  time\_end = time . time () 
  times = common\_debugging . benchmark ( times , time\_start , time\_end , 'common\_kafka.pop\_from\_topic' )],
-  [id="after"\>After],
   [You should note that my timer routine now is located in a common file named common\_debugger.py.],
-  [times = {} 
+  [import common\_debugger],
+  [times = \{\} 
  with common\_debugging . timer ( times , 'common\_kafka.pop\_from\_topic' ): 
  json\_str = common\_kafka . pop\_from\_topic ( kafka\_conn , kafka\_topic\_name )],
-  [id="conclusion"\>Conclusion],
   [This is pretty clearly an improvement in terms of reducing complexity and code cruft. Context managers are an interesting improvement to Python even if I personally found the documentation confusing. Recommended .],
 ),
   insert-map: (:),
@@ -140,103 +86,56 @@ Now we’re in a world of non-deterministic construction, a modern perspective o
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Instagram and Facebook deliver instant playback and boost user engagement with Media3 PreloadManager],
   author: [Android Developers],
   source-name: [Android Developers Blog],
   images: (),
   paragraphs: (
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left;"\> In the dynamic world of social media, user attention is won or lost quickly. Meta apps (Facebook and Instagram) are among the world's largest social platforms and serve billions of users globally. For Meta, delivering videos seamlessly isn't just a feature, it's the core of their user experience. Short-form videos, particularly Facebook Newsfeed and Instagram Reels, have become a primary driver of engagement. They enable creative expression and rapid content consumption; connecting and entertaining people around the world.],
-  [style="text-align: left;"\>],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left;"\> This blog post takes you through the journey of how Meta transformed video playback for billions by delivering true instant playback.],
-  [style="text-align: left;"\>],
+  [In the dynamic world of social media, user attention is won or lost quickly. Meta apps (Facebook and Instagram) are among the world's largest social platforms and serve billions of users globally. For Meta, delivering videos seamlessly isn't just a feature, it's the core of their user experience. Short-form videos, particularly Facebook Newsfeed and Instagram Reels, have become a primary driver of engagement. They enable creative expression and rapid content consumption; connecting and entertaining people around the world.],
+  [This blog post takes you through the journey of how Meta transformed video playback for billions by delivering true instant playback.],
   [The latency gap in short form videos],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left;"\>],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left;"\> Short-form videos lead to highly fast paced interactions as users quickly scroll through their feeds. Delivering a seamless transition between videos in an ever-changing feed introduces unique hurdles for instantaneous playback. Hence we need solutions that go beyond traditional disk caching and standard reactive playback strategies.],
-  [style="text-align: left;"\>],
+  [Short-form videos lead to highly fast paced interactions as users quickly scroll through their feeds. Delivering a seamless transition between videos in an ever-changing feed introduces unique hurdles for instantaneous playback. Hence we need solutions that go beyond traditional disk caching and standard reactive playback strategies.],
   [The path forward with Media3 PreloadManager],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left;"\>],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left;"\> To address the shifts in consumption habits from rise in short form content and the limitations of traditional long form playback architecture, Jetpack Media3 introduced PreloadManager . This component allows developers to move beyond disk caching, offering granular control and customization to keep media ready in memory before the user hits play. Read this blog series to understand technical details about media playback with PreloadManager.],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left;"\>],
+  [To address the shifts in consumption habits from rise in short form content and the limitations of traditional long form playback architecture, Jetpack Media3 introduced PreloadManager . This component allows developers to move beyond disk caching, offering granular control and customization to keep media ready in memory before the user hits play. Read this blog series to understand technical details about media playback with PreloadManager.],
   [How Meta achieved true instant playback],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left;"\>],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left;"\> Previously, Meta used a combination of warmup (to get players ready) and prefetch (to cache content on disk) for video delivery. While these methods helped improve network efficiency, they introduced significant challenges. Warmup required instantiating multiple player instances sequentially, which consumed significant memory and limited preloading to only a few videos. This high resource demand meant that a more scalable robust solution could be applied to deliver the instant playback expected on modern, fast-scrolling social feeds.],
+  [Previously, Meta used a combination of warmup (to get players ready) and prefetch (to cache content on disk) for video delivery. While these methods helped improve network efficiency, they introduced significant challenges. Warmup required instantiating multiple player instances sequentially, which consumed significant memory and limited preloading to only a few videos. This high resource demand meant that a more scalable robust solution could be applied to deliver the instant playback expected on modern, fast-scrolling social feeds.],
   [Integrating Media3 PreloadManager],
-  [style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left;"\>],
-  [style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left;"\> To achieve truly instant playback, Meta's Media Foundation Client team integrated the Jetpack Media3 PreloadManager into Facebook and Instagram. They chose the DefaultPreloadManager to unify their preloading and playback systems. This integration required refactoring Meta's existing architecture to enable efficient resource sharing between the PreloadManager and ExoPlayer instances. This strategic shift provided a key architectural advantage: the ability to parallelize preloading tasks and manage many videos using a single player instance. This dramatically increased preloading capacity while eliminating the high memory complexities of their previous approach.],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left;"\>],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left;"\>],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left;"\>],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: justify;"\>],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 4pt; margin-top: 0pt;"\> Optimization and Performance Tuning],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: justify;"\>],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left;"\> The team then performed extensive testing and iterations to optimize performance across Meta's diverse global device ecosystem. Initial aggressive preloading sometimes caused issues, including increased memory usage and scroll performance slowdowns. To solve this, they fine-tuned the implementation by using careful memory measurements, considering device fragmentation, and tailoring the system to specific UI patterns.],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left;"\>],
-  [style="text-align: left;"\> Fine tuning implementation to specific UI patterns],
-  [dir="ltr" style="background-color: transparent; font-family: inherit; font-style: normal; font-variant: normal; font-weight: 400; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left; vertical-align: baseline; white-space: pre-wrap;"\> Meta applied different preloading strategies and tailored the behavior to match the specific UI patterns of each app:],
-  [dir="ltr" style="vertical-align: baseline;"\>],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"\> Facebook Newsfeed : The UI prioritizes the video currently coming into view. The manager preloads only the current video to ensure it starts the moment the user pauses their scroll. This " current-only " focus minimizes data and memory footprints in an environment where users may see many static posts between videos. While the system is presently designed to preload just the video in view, it can be adjusted to also preload upcoming (future) videos.],
-  [dir="ltr" style="vertical-align: baseline;"\>],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"\> Instagram Reels : This is a pure video environment where users swipe vertically. For this UI, the team implemented an " adjacent preload " strategy. The PreloadManager keeps the videos immediately after the current Reel ready in memory. This bi-directional approach ensures that whether a user swipes up or down, the transition remains instant and smooth. The result was a dramatic improvement in the Quality of Experience (QoE) including improvements in Playback Start and Time to First Frame for the user.],
-  [dir="ltr" style="background-color: transparent; font-family: inherit; font-style: normal; font-variant: normal; font-weight: 400; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; vertical-align: baseline; white-space: pre-wrap;"\>],
-  [dir="ltr" style="background-color: transparent; font-style: normal; font-variant: normal; font-weight: 400; line-height: 1.38; margin-bottom: 4pt; margin-top: 0pt; vertical-align: baseline; white-space: pre-wrap;"\> Scaling for a diverse global device ecosystem],
-  [dir="ltr" style="background-color: transparent; font-family: inherit; font-style: normal; font-variant: normal; font-weight: 400; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left; vertical-align: baseline; white-space: pre-wrap;"\> Scaling a high-performance video stack across billions of devices requires more than just aggressive preloading; it requires intelligence. Meta faced initial challenges with memory pressure and scroll lag, particularly on mid-to-low-end hardware. To solve this, they built a Device Stress Detection system around the Media3 implementation. The apps now monitor I/O and CPU signals in real-time. If a device is under heavy load, preloading is paused to prioritize UI responsiveness.],
-  [dir="ltr" style="background-color: transparent; font-family: inherit; font-style: normal; font-variant: normal; font-weight: 400; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left; vertical-align: baseline; white-space: pre-wrap;"\>],
-  [dir="ltr" style="background-color: transparent; font-family: inherit; font-style: normal; font-variant: normal; font-weight: 400; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left; vertical-align: baseline; white-space: pre-wrap;"\> This device-aware optimization ensures that the benefit of instant playback doesn't come at the cost of system stability, allowing even users on older hardware to experience a smoother, uninterrupted feed.],
-  [dir="ltr" style="background-color: transparent; color: black; font-family: inherit; font-style: normal; font-variant: normal; font-weight: 400; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left; vertical-align: baseline; white-space: pre-wrap;"\>],
-  [style="background-color: transparent; vertical-align: baseline;"\>],
-  [dir="ltr" style="background-color: transparent; color: black; font-family: inherit; font-style: normal; font-variant: normal; font-weight: 400; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left; vertical-align: baseline; white-space: pre-wrap;"\>],
-  [dir="ltr" style="background-color: transparent; color: black; font-family: inherit; font-style: normal; font-variant: normal; font-weight: 400; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left; vertical-align: baseline; white-space: pre-wrap;"\>],
-  [dir="ltr" style="background-color: transparent; font-style: normal; font-variant: normal; font-weight: 400; line-height: 1.38; margin-bottom: 12pt; margin-top: 12pt; text-align: left; vertical-align: baseline; white-space: pre-wrap;"\> Architectural wins and code health],
-  [dir="ltr" style="background-color: transparent; font-family: inherit; font-style: normal; font-variant: normal; font-weight: 400; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left; vertical-align: baseline; white-space: pre-wrap;"\> Beyond the user-facing metrics, the migration to Media3 PreloadManager offered long-term architectural benefits. While the integration and tuning process needed multiple iterations to balance performance, the resulting codebase is more maintainable. The team found that the PreloadManager API integrated cleanly with the existing Media3 ecosystem, allowing for better resource sharing. For Meta, the adoption of Media3 PreloadManager was a strategic investment in the future of video consumption.],
-  [dir="ltr" style="background-color: transparent; font-family: inherit; font-style: normal; font-variant: normal; font-weight: 400; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left; vertical-align: baseline; white-space: pre-wrap;"\>],
-  [dir="ltr" style="background-color: transparent; font-family: inherit; font-style: normal; font-variant: normal; font-weight: 400; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left; vertical-align: baseline; white-space: pre-wrap;"\> By adopting preloading and adding device-intelligent gates, they successfully increased total watch time on their apps and improved the overall engagement of their global community.],
-  [dir="ltr" style="background-color: transparent; font-family: inherit; font-style: normal; font-variant: normal; font-weight: 400; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: left; vertical-align: baseline; white-space: pre-wrap;"\>],
+  [To achieve truly instant playback, Meta's Media Foundation Client team integrated the Jetpack Media3 PreloadManager into Facebook and Instagram. They chose the DefaultPreloadManager to unify their preloading and playback systems. This integration required refactoring Meta's existing architecture to enable efficient resource sharing between the PreloadManager and ExoPlayer instances. This strategic shift provided a key architectural advantage: the ability to parallelize preloading tasks and manage many videos using a single player instance. This dramatically increased preloading capacity while eliminating the high memory complexities of their previous approach.],
+  [Optimization and Performance Tuning],
+  [The team then performed extensive testing and iterations to optimize performance across Meta's diverse global device ecosystem. Initial aggressive preloading sometimes caused issues, including increased memory usage and scroll performance slowdowns. To solve this, they fine-tuned the implementation by using careful memory measurements, considering device fragmentation, and tailoring the system to specific UI patterns.],
+  [Fine tuning implementation to specific UI patterns],
+  [Meta applied different preloading strategies and tailored the behavior to match the specific UI patterns of each app:],
+  [Facebook Newsfeed : The UI prioritizes the video currently coming into view. The manager preloads only the current video to ensure it starts the moment the user pauses their scroll. This " current-only " focus minimizes data and memory footprints in an environment where users may see many static posts between videos. While the system is presently designed to preload just the video in view, it can be adjusted to also preload upcoming (future) videos.],
+  [Instagram Reels : This is a pure video environment where users swipe vertically. For this UI, the team implemented an " adjacent preload " strategy. The PreloadManager keeps the videos immediately after the current Reel ready in memory. This bi-directional approach ensures that whether a user swipes up or down, the transition remains instant and smooth. The result was a dramatic improvement in the Quality of Experience (QoE) including improvements in Playback Start and Time to First Frame for the user.],
+  [Scaling for a diverse global device ecosystem],
+  [Scaling a high-performance video stack across billions of devices requires more than just aggressive preloading; it requires intelligence. Meta faced initial challenges with memory pressure and scroll lag, particularly on mid-to-low-end hardware. To solve this, they built a Device Stress Detection system around the Media3 implementation. The apps now monitor I/O and CPU signals in real-time. If a device is under heavy load, preloading is paused to prioritize UI responsiveness.],
+  [This device-aware optimization ensures that the benefit of instant playback doesn't come at the cost of system stability, allowing even users on older hardware to experience a smoother, uninterrupted feed.],
+  [Architectural wins and code health],
+  [Beyond the user-facing metrics, the migration to Media3 PreloadManager offered long-term architectural benefits. While the integration and tuning process needed multiple iterations to balance performance, the resulting codebase is more maintainable. The team found that the PreloadManager API integrated cleanly with the existing Media3 ecosystem, allowing for better resource sharing. For Meta, the adoption of Media3 PreloadManager was a strategic investment in the future of video consumption.],
+  [By adopting preloading and adding device-intelligent gates, they successfully increased total watch time on their apps and improved the overall engagement of their global community.],
   [Resulting impact on Instagram and Facebook],
-  [dir="ltr" style="background-color: transparent; font-family: inherit; font-style: normal; font-variant: normal; font-weight: 400; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; vertical-align: baseline; white-space: pre-wrap;"\>],
-  [dir="ltr" style="background-color: transparent; font-family: inherit; font-style: normal; font-variant: normal; font-weight: 400; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; vertical-align: baseline; white-space: pre-wrap;"\> The proactive architecture delivered immediate and measurable improvements across both platforms.],
-  [dir="ltr" style="background-color: transparent; font-family: inherit; font-style: normal; font-variant: normal; font-weight: 400; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; vertical-align: baseline; white-space: pre-wrap;"\>],
-  [dir="ltr" style="background-color: transparent; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre;"\>],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"\> Facebook experienced faster playback starts, decreased playback stall rates and a reduction in bad sessions (like rebuffering, delayed start time, lower quality,etc) which overall resulted in higher watch time.],
-  [dir="ltr" style="background-color: transparent; font-family: inherit; font-style: normal; font-variant: normal; font-weight: 400; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; vertical-align: baseline; white-space: pre-wrap;"\>],
-  [dir="ltr" style="background-color: transparent; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; white-space: pre;"\>],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"\> Instagram saw faster playback starts and an increase in total watch time. Eliminating join latency (the interval from the user's action to the first frame display) directly increased engagement metrics. The fewer interruptions due to reduced buffering meant users watched more content, which showed through engagement metrics.],
-  [style="background-color: transparent; vertical-align: baseline;"\>],
-  [style="vertical-align: baseline;"\>],
+  [The proactive architecture delivered immediate and measurable improvements across both platforms.],
+  [Facebook experienced faster playback starts, decreased playback stall rates and a reduction in bad sessions (like rebuffering, delayed start time, lower quality,etc) which overall resulted in higher watch time.],
+  [Instagram saw faster playback starts and an increase in total watch time. Eliminating join latency (the interval from the user's action to the first frame display) directly increased engagement metrics. The fewer interruptions due to reduced buffering meant users watched more content, which showed through engagement metrics.],
   [Key engineering learnings at scale],
-  [dir="ltr" style="background-color: transparent; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: justify;"\>],
-  [dir="ltr" style="background-color: transparent; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: justify;"\> As media consumption habits evolve, the demand for instant experiences will continue to grow. Implementing proactive memory management and optimizing for scale and device diversity ensures your application can meet these expectations efficiently.],
-  [dir="ltr" style="font-size: 12pt; vertical-align: baseline; white-space: pre;"\>],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: justify;"\> Prioritize intelligent preloading],
-  [dir="ltr" style="background-color: transparent; line-height: 1.38; margin-bottom: 0pt; margin-left: 36pt; margin-top: 0pt; text-align: justify;"\> Focus on delivering a reliable experience by minimizing stutters and loading times through preloading. Rather than simple disk caching, leveraging memory-level preloading ensures that content is ready the moment a user interacts with it.],
-  [dir="ltr" style="font-size: 12pt; vertical-align: baseline; white-space: pre;"\>],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: justify;"\> Align your implementation with UI patterns],
-  [dir="ltr" style="background-color: transparent; line-height: 1.38; margin-bottom: 0pt; margin-left: 36pt; margin-top: 0pt; text-align: justify;"\> Customize preloading behavior as per your apps’s UI. For example, use a "current-only" focus for mixed feeds like Facebook to save memory, and an "adjacent preload" strategy for vertical environments like Instagram Reels.],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 6pt; margin-top: 18pt; vertical-align: baseline;"\>],
-  [dir="ltr" style="font-size: 12pt; font-weight: 700; vertical-align: baseline;"\>],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: justify;"\> Leverage Media3 for long-term code health],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-left: 36pt; margin-top: 0pt; text-align: justify;"\> Integrating with Media3 APIs rather than a custom caching solution allows for better resource sharing between the player and the PreloadManager , enabling you to manage multiple videos with a single player instance. This results in a future-proof codebase that is easier for engineering teams to not only maintain and optimize over time but also benefit from the latest feature updates.],
-  [dir="ltr" style="font-size: 12pt; font-weight: 700; vertical-align: baseline;"\>],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; text-align: justify;"\> Implement device aware optimizations],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-left: 36pt; margin-top: 0pt; text-align: justify;"\> Broaden your market reach by testing on various devices, including mid-to-low-end models. Use real-time signals like CPU, memory, and I/O to adapt features and resource usage dynamically.],
-  [style="background-color: transparent; font-family: inherit; font-style: normal; font-variant: normal; line-height: 1.38; margin-bottom: 6pt; margin-top: 18pt; text-align: left; vertical-align: baseline; white-space: pre-wrap;"\>],
-  [dir="ltr" style="background-color: transparent; font-family: inherit; font-style: normal; font-variant: normal; font-weight: 400; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; vertical-align: baseline; white-space: pre-wrap;"\>],
-  [dir="ltr" style="background-color: transparent; font-family: inherit; font-style: normal; font-variant: normal; font-weight: 400; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; vertical-align: baseline; white-space: pre-wrap;"\> To get started and learn more, visit],
-  [dir="ltr" style="vertical-align: baseline;"\>],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"\> Explore the Media3 PreloadManager documentation .],
-  [dir="ltr" style="vertical-align: baseline;"\>],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"\> Read the blog series for advanced technical and implementation details.],
-  [dir="ltr" style="vertical-align: baseline;"\>],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"\> Part 1: Introducing Preloading with Media3],
-  [dir="ltr" style="vertical-align: baseline;"\>],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"\> Part 2: A deep dive into Media3's PreloadManager],
-  [dir="ltr" style="vertical-align: baseline;"\>],
-  [dir="ltr" style="line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt;"\> Check out the sample app to see preloading in action.],
-  [dir="ltr" style="background-color: transparent; font-family: inherit; font-style: normal; font-variant: normal; font-weight: 400; line-height: 1.38; margin-bottom: 0pt; margin-top: 0pt; vertical-align: baseline; white-space: pre-wrap;"\> Now you know the secrets for instant playback. Go try them out!],
-  [style="background-color: transparent; color: black; font-family: inherit; font-style: normal; font-variant: normal; font-weight: 400; vertical-align: baseline; white-space: pre-wrap;"\>],
+  [As media consumption habits evolve, the demand for instant experiences will continue to grow. Implementing proactive memory management and optimizing for scale and device diversity ensures your application can meet these expectations efficiently.],
+  [Prioritize intelligent preloading],
+  [Focus on delivering a reliable experience by minimizing stutters and loading times through preloading. Rather than simple disk caching, leveraging memory-level preloading ensures that content is ready the moment a user interacts with it.],
+  [Align your implementation with UI patterns],
+  [Customize preloading behavior as per your apps’s UI. For example, use a "current-only" focus for mixed feeds like Facebook to save memory, and an "adjacent preload" strategy for vertical environments like Instagram Reels.],
+  [Leverage Media3 for long-term code health],
+  [Integrating with Media3 APIs rather than a custom caching solution allows for better resource sharing between the player and the PreloadManager , enabling you to manage multiple videos with a single player instance. This results in a future-proof codebase that is easier for engineering teams to not only maintain and optimize over time but also benefit from the latest feature updates.],
+  [Implement device aware optimizations],
+  [Broaden your market reach by testing on various devices, including mid-to-low-end models. Use real-time signals like CPU, memory, and I/O to adapt features and resource usage dynamically.],
+  [To get started and learn more, visit],
+  [Explore the Media3 PreloadManager documentation .],
+  [Read the blog series for advanced technical and implementation details.],
+  [Part 1: Introducing Preloading with Media3],
+  [Part 2: A deep dive into Media3's PreloadManager],
+  [Check out the sample app to see preloading in action.],
+  [Now you know the secrets for instant playback. Go try them out!],
 ),
   insert-map: (:),
   word-count: 2195,
@@ -244,20 +143,17 @@ Now we’re in a world of non-deterministic construction, a modern perspective o
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Contact Picker: Privacy-First Contact Sharing],
   author: [Android Developers],
   source-name: [Android Developers Blog],
   images: (),
   paragraphs: (
   [Privacy and user control remain at the heart of the Android experience. Just as the photo picker made media sharing secure and easy to implement, we are now bringing that same level of privacy, simplicity, and great user experience to contact selection.],
-  [style="text-align: left;"\> A New Standard for Contact Privacy],
+  [A New Standard for Contact Privacy],
   [Historically, applications requiring access to a specific user's contacts relied on the broad  READ\_CONTACTS  permission. While functional, this approach often granted apps more data than necessary. The new Android Contact Picker, introduced in Android 17, changes this dynamic by providing a standardized, secure, and searchable interface for contact selection.],
   [This feature allows users to grant apps access only to the specific contacts they choose, aligning with Android's commitment to data transparency and minimized permission footprints.],
-  [style="text-align: left;"\> How It Works],
   [Developers can integrate the Contact Picker using the  Intent. ACTION\_PICK\_CONTACTS  intent. This updated API offers several powerful capabilities:],
   [Granular Data Requests: Apps can specify exactly which fields they need, such as phone numbers or email addresses, rather than receiving the entire contact record.],
   [Multi-Selection Support: The picker supports both single and multiple contact selections, giving developers more flexibility for features like group invitations.],
@@ -265,36 +161,36 @@ Now we’re in a world of non-deterministic construction, a modern perspective o
   [Temporary Access: Upon selection, the system returns a Session URI that provides temporary read access to the requested data, ensuring that access does not persist longer than necessary.],
   [Access to other profiles: When using this new intent, the interface will allow users to select contents from other user profiles such as a work profile, cloned profile or a private space.],
   [Optimized Performance: The Contact Picker returns a single  Uri  that allows for collective result querying, eliminating the need to query individual contact  Uri  separately as required by  ACTION\_PICK . This efficiency further reduces system overhead by utilizing a single   Binder  transaction.],
-  [style="text-align: left;"\> Backward Compatibility and Implementation],
+  [Backward Compatibility and Implementation],
   [For devices running Android 17 or higher, the system automatically upgrades legacy  ACTION\_PICK  intents that specify contact data types to the new, more secure interface. However, to take full advantage of advanced features like multi-selection, developers are encouraged to update their implementation code and utilize the  ContentResolver  to query the returned Session URI.],
   [Integrate the contact pickerTo integrate the Contact Picker, developers use the    ACTION\_PICK\_CONTACTS  intent. Below is a code example demonstrating how to launch the picker and request specific data fields, such as email and phone numbers.
  
 \/\\/ State to hold the list of selected contacts
-var contacts by remember { mutableStateOf \>(emptyList()) }],
+var contacts by remember \{ mutableStateOf \>(emptyList()) \}],
   [\/\\/ Launcher for the Contact Picker intent
-val pickContact = rememberLauncherForActivityResult(StartActivityForResult()) {
- if (it.resultCode == Activity. RESULT\_OK) {
+val pickContact = rememberLauncherForActivityResult(StartActivityForResult()) \{
+ if (it.resultCode == Activity. RESULT\_OK) \{
  val resultUri = it.data?.data ?: return\@rememberLauncherForActivityResult],
   [\/\\/ Process the result URI in a background thread
- coroutine.launch {
+ coroutine.launch \{
  contacts = processContactPickerResultUri(resultUri, context)
- }
- }
-}],
+ \}
+ \}
+\}],
   [\/\\/ Define the specific contact data fields you need
 val requestedFields = arrayListOf(
  Email. CONTENT\_ITEM\_TYPE,
  Phone. CONTENT\_ITEM\_TYPE,
 )],
   [\/\\/ Set up the intent for the Contact Picker
-val pickContactIntent = Intent(ACTION\_PICK\_CONTACTS).apply {
+val pickContactIntent = Intent(ACTION\_PICK\_CONTACTS).apply \{
  putExtra(EXTRA\_PICK\_CONTACTS\_SELECTION\_LIMIT, 5)
  putStringArrayListExtra(
  EXTRA\_PICK\_CONTACTS\_REQUESTED\_DATA\_FIELDS,
  requestedFields
  )
  putExtra(EXTRA\_PICK\_CONTACTS\_MATCH\_ALL\_DATA\_FIELDS, false)
-}],
+\}],
   [\/\\/ Launch the picker
 pickContact.launch(pickContactIntent)],
   [After the user makes a selection, the app processes the result by querying the returned Session URI to extract the requested contact information. 
@@ -306,7 +202,7 @@ data class Contact(val id: String, val name: String, val email: String?, val pho
 private suspend fun processContactPickerResultUri(
  sessionUri: Uri,
  context: Context
-): List = withContext(Dispatchers. IO) {
+): List = withContext(Dispatchers. IO) \{
  \/\\/ Define the columns we want to retrieve from the ContactPicker ContentProvider
  val projection = arrayOf(
  ContactsContract. Contacts.\_ID,
@@ -316,13 +212,13 @@ private suspend fun processContactPickerResultUri(
  )],
   [val results = mutableListOf ()],
   [\/\\/ Note: The Contact Picker Session Uri doesn't support custom selection & selectionArgs.
- context.contentResolver.query(sessionUri, projection, null, null, null)?.use { cursor -\>
+ context.contentResolver.query(sessionUri, projection, null, null, null)?.use \{ cursor -\>
  \/\\/ Get the column indices for our requested projection
  val contactIdIdx = cursor.getColumnIndex(ContactsContract. Contacts.\_ID)
  val mimeTypeIdx = cursor.getColumnIndex(ContactsContract. Data. MIMETYPE)
  val nameIdx = cursor.getColumnIndex(ContactsContract. Contacts. DISPLAY\_NAME\_PRIMARY)
  val data1Idx = cursor.getColumnIndex(ContactsContract. Data. DATA1)],
-  [while (cursor.moveToNext()) {
+  [while (cursor.moveToNext()) \{
  val contactId = cursor.getString(contactIdIdx)
  val mimeType = cursor.getString(mimeTypeIdx)
  val name = cursor.getString(nameIdx) ?: ""
@@ -332,13 +228,12 @@ private suspend fun processContactPickerResultUri(
  val phone = if (mimeType == Phone. CONTENT\_ITEM\_TYPE) data1 else null],
   [\/\\/ Add the parsed contact to our results list
  results.add(Contact(contactId, name, email, phone))
- }
- }],
+ \}
+ \}],
   [return\@withContext results
-}],
-  [dir="ltr" style="line-height: 1.5; margin-bottom: 0pt; margin-top: 0pt;"\>
-Check out the full documentation here .],
-  [style="text-align: left;"\> Best Practices for Developers],
+\}],
+  [Check out the full documentation here .],
+  [Best Practices for Developers],
   [To provide the best user experience and maintain high security standards, we recommend the following:],
   [Data Minimization: Only request the specific data fields (e.g., email) your app needs.],
   [Immediate Persistence: Persist selected data immediately, as the Session URI access is temporary.],
@@ -349,12 +244,10 @@ Check out the full documentation here .],
   debug-mode: false,
 )
 
-  #pull-quote([launch {  contacts = processContactPickerResultUri(resultUri, context)  }  } }  \/\\/ Define the specific contact data fields you need val requestedFields = arrayListOf(  Email.], [Android Developers])
+#pull-quote([launch \{  contacts = processContactPickerResultUri(resultUri, context)  \}  \} \}  \/\\/ Define the specific contact data fields you need val requestedFields = arrayListOf(  Email.], [Android Developers])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Newest 11-Inch Apple iPad Is \$150 Off Ahead of Amazon's Big Spring Sale],
   author: [Naima Karp],
   source-name: [Lifehacker],
@@ -362,9 +255,19 @@ Check out the full documentation here .],
   paragraphs: (
   [We may earn a commission from links on this page. Deal pricing and availability subject to change after time of publication.],
   [As part of an early Amazon Big Spring Sale deal, you can get the Apple iPad (11th Gen, 2025) with wifi and cellular capability for \$651 (originally \$799)–its lowest price ever, according to price trackers . Available in four colors, this capable tablet won a PCMag Best of the Year Award in 2025.],
+  [2025 Apple iPad - 11-inch (A16)],
+  [\$651.20
+ at Amazon],
+  [\$799.00 
+ Save \$147.80],
+  [\$651.20
+ at Amazon],
+  [\$799.00 
+ Save \$147.80],
   [The Apple iPad (11th Gen, 2025) comes with 512GB storage and has many of the same specs as its predecessor, with the main difference being a new processor. It has a 5-core CPU A16 for faster performance, and while it doesn’t come equipped with Apple’s AI tools, it handles everyday tasks like web browsing, streaming media, and playing games with ease–better than most competitors in its class. That said, if you want more advanced processing power, you’ll want to upgrade to the pricier iPad Air or iPad Pro , which are also on sale right now.],
   [Design-wise, this iPad is similar to the 2022 model, which is typical for Apple’s 11-inch tablets, complete with Touch ID (not Face ID), requiring a fingerprint to unlock. It has a 2,360-by-1,640 resolution, a pixel density of 264ppi, and a 60Hz refresh rate. Compared to the older model, the screen is slightly larger (11 inches vs 10.9 inches), and uses a Liquid Retina display with an LED-backlit panel reaching up to 500 nits of brightness, though it can still show some glare outdoors. Battery life is around 10 hours when using a wifi connection and 9 hours over cellular. The tablet supports Wi-Fi 6 (but not Wi-Fi 6E) as well as Bluetooth 5.3, sub-6GHz 5G, gigabit LTE, and GPS.],
   [It has a 12MP rear camera with an f/1.8 aperture, up to 5x digital zoom, 4K video recording, and support for Apple's Smart HDR 4 processing. The cameras far outperform cheap or similarly priced tablets from other brands. While this isn’t Apple’s most advanced tablet, it hits the sweet spot in most areas, making it the one that “most people should buy,” according to PCMag, especially at just \$651.20. That said, if you need a more powerful processor, a higher-end display, Wi-Fi 6E, or Apple Intelligence features, you may want to upgrade to the iPad Air , which is also 18% off ahead of Amazon’s Big Spring Sale.],
+  [Our Best Editor-Vetted Amazon Big Spring Sale Deals Right Now],
   [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
  
  
@@ -421,6 +324,7 @@ Check out the full documentation here .],
  \$169.99 
  
  (List Price \$249.99)],
+  [Deals are selected by our commerce team],
 ),
   insert-map: (:),
   word-count: 704,
@@ -428,11 +332,10 @@ Check out the full documentation here .],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [When Rails 7 Doesn't Process application.js],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -450,7 +353,7 @@ Check out the full documentation here .],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Making Urls Paste with Metadata Preview In Facebook, Facebook Messenger, Twitter, Apple Messages],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -464,11 +367,11 @@ Check out the full documentation here .],
   [A set of HTML meta tags for Facebook],
   [A set of HTML meta tags for Twitter],
   [Testing it in a debugging tool like the Facebook Sharing Debugger],
-  [id="step-1-the-html-meta-tags-for-facebook"\>Step 1: The HTML Meta Tags for Facebook],
+  [Step 1: The HTML Meta Tags for Facebook],
   [Here is an example of the HTML meta tags for Facebook:],
-  [id="step-2-the-html-meta-tags-for-twitter"\>Step 2: The HTML Meta Tags for Twitter],
+  [Step 2: The HTML Meta Tags for Twitter],
   [Here is an example of the HTML meta tags for Twitter:],
-  [id="step-3-testing-in-the-sharing-debugger"\>Step 3: Testing in The Sharing Debugger],
+  [Step 3: Testing in The Sharing Debugger],
   [Go to https:\/\/developers.facebook.com/tools/debug\/ and paste in your url. You may need to click the Scrape Again button a few times while you work this out.],
 ),
   insert-map: (:),
@@ -479,20 +382,20 @@ Check out the full documentation here .],
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([Jeremy Kun (Math ∩ Programming)], source-name: [Jeremy Kun (Math ∩ Programming)], [And a Pinch of Python Next semester I am a lab TA for an introductory programming course, and it’s taught in Python. My Python experience has a number of gaps in it, so we’ll have the opportunity for a few more Python primers, and small exercises to go along with it. This time, we’ll be investigating the basics of objects and classes, and have some fun with image construction using the Python Imaging Library.])],
       [#brief-item([Jeremy Kun (Math ∩ Programming)], source-name: [Jeremy Kun (Math ∩ Programming)], [So here we are. We have finally made it to a place where we can transition with confidence from the classical continuous Fourier transform to the discrete version, which is the foundation for applications of Fourier analysis to programming. Indeed, we are quite close to unfurling the might of the Fast Fourier Transform algorithm, which efficiently computes the discrete Fourier transform. But because of its focus on algorithmic techniques, we will save it for a main content post and instead focus here on the intuitive connections between the discrete and continuous realms.])],
       [#brief-item([Jeremy Kun (Math ∩ Programming)], source-name: [Jeremy Kun (Math ∩ Programming)], [The Quest to Capture Speed Companies and researchers spend hundreds of millions of dollars for the fruits of their algorithms. Whether one is indexing websites on the internet for search, folding proteins, or figuring out which warehouse is the most cost-effective to ship a product from, improvements in algorithm speed save immense amounts of money.
 It’s no surprise then, that a similarly immense amount of money has gone into the mathematics behind algorithm analysis.])],
       [#brief-item([Jeremy Kun (Math ∩ Programming)], source-name: [Jeremy Kun (Math ∩ Programming)], [Back when I was first exposed to programming language design, I decided it would be really cool if there were a language that let you define your own number types and then do all your programming within those number types. And since I get excited about math, I think of really exotic number types (Boolean rings, Gaussian integers, Octonions, oh my!). I imagined it would be a language feature, so I could do something like this:])],
-      [#brief-item([Jeremy Kun (Math ∩ Programming)], source-name: [Jeremy Kun (Math ∩ Programming)], [Last time we saw a geometric version of the algorithm to add points on elliptic curves. We went quite deep into the formal setting for it (projective space \$ \\mathbb{P}^2\$), and we spent a lot of time talking about the right way to define the “zero” object in our elliptic curve so that our issues with vertical lines would disappear.
+      [#brief-item([Jeremy Kun (Math ∩ Programming)], source-name: [Jeremy Kun (Math ∩ Programming)], [Last time we saw a geometric version of the algorithm to add points on elliptic curves. We went quite deep into the formal setting for it (projective space \$ \\mathbb\{P\}^2\$), and we spent a lot of time talking about the right way to define the “zero” object in our elliptic curve so that our issues with vertical lines would disappear.
 With that understanding in mind we now finally turn to code, and write classes for curves and points and implement the addition algorithm.])],
       [#brief-item([Jeremy Kun (Math ∩ Programming)], source-name: [Jeremy Kun (Math ∩ Programming)], [I have a little secret: I don’t like the terminology, notation, and style of writing in statistics. I find it unnecessarily complicated. This shows up when trying to read about Markov Chain Monte Carlo methods. Take, for example, the abstract to the Markov Chain Monte Carlo article in the Encyclopedia of Biostatistics.
 Markov chain Monte Carlo (MCMC) is a technique for estimating by simulation the expectation of a statistic in a complex model.])],
       [#brief-item([Graham King (Dark Coding)], source-name: [Graham King (Dark Coding)], [In Go, how do you run several operations that might return an error, and return those errors at the end? Here's how I do it.])],
       [#brief-item([Jeremy Kun (Math ∩ Programming)], source-name: [Jeremy Kun (Math ∩ Programming)], [In my studies of the Remez algorithm, I learned about the barycentric Lagrange interpolation formula.
 The context is finding a polynomial of degree at most \$n\$ that passes through \$n+1\$ points \$(x\_0, y\_0), \\dots, (x\_n, y\_n)\$. The classical Lagrange interpolation formula is what you’d write down if you “just did it.”
-\$\$f(x) = \\sum\_{i=0}^n y\_i \\cdot \\prod\_{j \\neq i}\\frac{x - x\_j}{x\_i - x\_j}\$\$ I wrote a 2014 article deriving this more gently, and implementing it in Haskell for secret sharing.])],
+\$\$f(x) = \\sum\_\{i=0\}^n y\_i \\cdot \\prod\_\{j \\neq i\}\\frac\{x - x\_j\}\{x\_i - x\_j\}\$\$ I wrote a 2014 article deriving this more gently, and implementing it in Haskell for secret sharing.])],
       [#brief-item([Jeremy Kun (Math ∩ Programming)], source-name: [Jeremy Kun (Math ∩ Programming)], [The study of groups is often one’s first foray into advanced mathematics. In the naivete of set theory one develops tools for describing basic objects, and through a first run at analysis one develops a certain dexterity for manipulating symbols and definitions. But it is not until the study of groups that one must step back and inspect the larger picture. The main point of that picture (and indeed the main point of a group) is that algebraic structure can be found in the most unalgebraic of settings.])],
       [#brief-item([Jeremy Kun (Math ∩ Programming)], source-name: [Jeremy Kun (Math ∩ Programming)], [I work on homomorphic encryption (HE or FHE for “fully” homomorphic encryption) and I have written a lot about it on this blog (see the relevant tag). This article is a collection of short answers to questions I see on various threads and news aggregators discussing FHE.
 Facts If a service uses FHE and can respond to encrypted queries, can’t the service see your query? How is it possible to operate on encrypted data without seeing it?])],

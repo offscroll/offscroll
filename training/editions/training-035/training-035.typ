@@ -21,70 +21,8 @@
 #masthead([New Globe], [Vol. 1, No. 035], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Hack everything without fear],
-  kicker: [Cover Story],
-  author: [Drew DeVault],
-  source-name: [Drew DeVault],
-  deck: [We live in a golden age of open source, and it can sometimes be easy to forget
-the privileges that this affords us.],
-  lead-pre: [],
-  lead-cap: [I],
-  lead-rest: [’m writing this article with vim, in a
-terminal emulator called urxvt, listening to music with mpv, in a Sway desktop
-session, on the Linux kernel. Supporting this are libraries like glibc or musl,
-harfbuzz, and mesa. I also have the support of the AMDGPU video driver, libinput
-and udev, alsa and pulseaudio.],
-  body-paragraphs: (
-  [All of this is open source. I can be reading the code for any of these tools
-within 30 seconds, and for many of these tools I already have their code checked
-out somewhere on my filesystem. It gets even better, though: these projects
-don’t just make their code available - they accept patches, too! Why wouldn’t we
-take advantage of this tremendous opportunity?],
-  [I often meet people who are willing to contribute to one project, but not
-another. Some people will shut down when they’re faced with a problem that
-requires them to dig into territory that they’re unfamiliar with. In Sway, for
-example, it’s often places like libinput or mesa. These tools might seem foreign
-and scary - but to these people, at some point, so did Sway. In reality these
-codebases are quite accessible.],
-  [Getting around in an unfamiliar repository can be a little intimidating, but do
-it enough times and it’ll become second nature. The same tools like gdb work
-just as well on them. If you have a stacktrace for a segfault originating in
-libinput, compile libinput with symbols and gdb will show you the file name and
-line number of the problem. Go there and read the code! Learn how to use tools
-like git grep to find stuff. Run git blame to see who wrote a confusing line
-of code, and send them an email! When you find the problem, don’t be afraid to
-send a patch over instead of working around it in your own code. This is
-something every programmer should be comfortable doing often.],
-  [Even when the leads you’re chasing down are written in unfamiliar programming
-languages or utilize even more unfamiliar libraries, don’t despair. All
-programming languages have a lot in common and huge numbers of resources are
-available online. Learning just enough to understand (and fix!) a particular
-problem is very possible, and something I find myself doing it all the time. You
-don’t have to be an expert in a particular programming language to invoke trial
-& error.],
-  [If you’re similarly worried about the time investment, don’t be. You already set
-aside time to work your problem, and this is just part of that process. Yes,
-you’ll probably be spending your time differently from your expectations - more
-reading code than writing code. But how is that any less productive? The
-biggest time sink in this process is all the time you spend worrying about how
-much time it’s going to take, or telling me in IRC you can’t solve your problem
-because you’re not good enough to understand mesa or the kernel or whatever.],
-  [An important pastime of the effective programmer is reading and understanding
-the tools you use. You should at least have a basic idea of how everything on
-your system works, and in the places your knowledge is lacking you should make
-it your business to study up. The more you do this, the less scary foreign code
-will become, and the more productive you will be. No longer will you be stuck in
-your tracks because your problem leads you away from the beaten path!],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Java is still available at zero-cost],
   author: [Stephen Colebourne],
   source-name: [Stephen Colebourne (Joda)],
@@ -155,15 +93,10 @@ But for most users that want to use Java 8 without paying, this is likely the be
 A key advantage of Azul's offering is that you can pay for support later if you need it without changing your JDK.],
   [\* The last two options assume that a group actually will step forward and take over the "JDK 8 updates" OpenJDK project once Oracle stop.
 While the exact project details are not yet confirmed, this IBM statement indicates real backing for the approach:],
-  [class="quote"\>
-Recognizing the impact that the release cycle changes will have with Java developers, IBM will partner with other members of the OpenJDK community to continue to update an OpenJDK Java 8 stream with security patches and critical bug fixes. We intend to keep the current LTS version secure and high quality for 4 years. This timescale bridges the gap between LTS versions with 1 year to allow for a migration period. IBM has also invested in an open build and test project (AdoptOpenJDK.net) along with many partners and Java leaders to provide community binaries across commonly used platforms of OpenJDK with Hotspot and OpenJDK with Eclipse OpenJ9. These community binaries are TCK (Java SE specification) compliance tested and ready for developers to download and use in production.],
+  [Recognizing the impact that the release cycle changes will have with Java developers, IBM will partner with other members of the OpenJDK community to continue to update an OpenJDK Java 8 stream with security patches and critical bug fixes. We intend to keep the current LTS version secure and high quality for 4 years. This timescale bridges the gap between LTS versions with 1 year to allow for a migration period. IBM has also invested in an open build and test project (AdoptOpenJDK.net) along with many partners and Java leaders to provide community binaries across commonly used platforms of OpenJDK with Hotspot and OpenJDK with Eclipse OpenJ9. These community binaries are TCK (Java SE specification) compliance tested and ready for developers to download and use in production.],
   [IBM statement],
   [And here is further indication of Red Hat's support for the June 2023 date, based on their "upstream first" policy.],
-  [class="quote"\>
-\> Red Hat has said it may step forward to be the maintainer for JDK 11 - might it also
-\> step forward to be the maintainer for JDK 8?],
   [Yes.],
-  [\> How long will JDK 8 be maintained?],
   [June 2023 is right for JDK 8, but I wouldn't be surprised if it goes on beyond that.],
   [Andrew Haley, Red Hat],
   [And finally, here is the official Oracle view on that transition .],
@@ -201,8 +134,7 @@ In all likelihood, when Oracle steps down from managing the "JDK 11 updates" pro
 Exactly as with Java 8, discussed above.
 This has happened before with Java 6 and 7.
 And the evidence is that it will happen for Java 11 too:],
-  [class="quote"\>
-OpenJDK is a community project. It's up to the community to support it.
+  [OpenJDK is a community project. It's up to the community to support it.
 In practice this means that a group of organizations and individuals will maintain each OpenJDK LTS release for some period
 (TBA for 11, but it's sure to be a \*lot\* longer than six months.)
 I am certain that there will be a jdk11u project, and it will be properly and professionally run.
@@ -213,8 +145,7 @@ I think it's likely that I'll be leading the project, but someone else may be ch
 (Red Hat have an excellent record in maintaining old releases of OpenJDK for the wider community.)
 But there is still the question of producing actual releases to download that have been certified as passing the Java SE testing TCK.],
   [This is where the AdoptOpenJDK build farm is critical:],
-  [class="quote"\>
-As part of the discussions Andrew mentioned, AdoptOpenJDK offered to build, test and make available OpenJDK
+  [As part of the discussions Andrew mentioned, AdoptOpenJDK offered to build, test and make available OpenJDK
 LTS binaries for the major (and several minor) platforms. This isn't yet set in concrete but folks broadly thought that
 was a good idea. So the challenge of having a build and test farm for this joint effort is solved.],
   [Martijn Verburg, AdoptOpenJDK],
@@ -248,10 +179,8 @@ Currently, my view is that your package manager or Adoptium is the best place to
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [pkg.go.dev is more concerned with Google's interests than good engineering],
   author: [Drew DeVault],
   source-name: [Drew DeVault],
@@ -310,13 +239,9 @@ could trivially have been done to godoc.org. The goal is shipping a shiny new
 product — not engineering a good solution. This is typical of Google’s
 engineering ethos in general. pkg.go.dev sucks, and is added the large (and
 growing) body of evidence that Google is bad for Go.],
-  [id="fn:1"\>],
   [Setting aside the fact that the production pkg.go.dev site is amended with closed-source patches.  ↩︎],
-  [id="fn:2"\>],
   [The GitHub comment explaining the change of heart included a link to a Google Groups discussion which requires you to log in with a Google account in order to read . 3 If you go the long way around and do some guesswork searching the archives yourself, you can find it without logging in.  ↩︎],
-  [id="fn:3"\>],
   [Commenting on Go patches also requires a Google account, by the way.  ↩︎],
-  [id="fn:4"\>],
   [But not hg.sr.ht!  ↩︎],
 ),
   insert-map: (:),
@@ -325,10 +250,8 @@ growing) body of evidence that Google is bad for Go.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Free software licenses explained: MIT],
   author: [Drew DeVault],
   source-name: [Drew DeVault],
@@ -392,7 +315,6 @@ of the free software and open source definitions, but other licenses can level
 the playing field a bit with strategies like copyleft and virality, on the other
 end of the permissibility spectrum. I’ll cover some relevant licenses in the
 future.],
-  [id="fn:1"\>],
   [You should not sign a CLA which transfers your copyright to the publisher.  ↩︎],
 ),
   insert-map: (:),
@@ -401,10 +323,8 @@ future.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Status update, February 2020],
   author: [Drew DeVault],
   source-name: [Drew DeVault],
@@ -463,10 +383,8 @@ awesome FOSS work.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [It's not okay to pretend your software is open source],
   author: [Drew DeVault],
   source-name: [Drew DeVault],
@@ -517,10 +435,8 @@ licensed under Apache plus the Commons Clause, and had the sort of misleading
 and false information this article decries on their marketing website, docs, and
 so on. However, they’ve rolled it back, and Dgraph is now using the Apache 2.0
 license with no modifications. Thank you!],
-  [id="fn:1"\>],
   [This is why I often refer to it as the “Anti-Commons Clause”, though I felt that was a bit too Stallman-esque for this article.
 \[apache-commons\]: http:\/\/commons.apache.org\/   ↩︎],
-  [id="fn:2"\>],
   [Free as in freedom, not as in free beer.  ↩︎],
 ),
   insert-map: (:),
@@ -529,17 +445,19 @@ license with no modifications. Thank you!],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Are Doctors Heroes?],
   author: [Samuel Matlack],
   source-name: [The New Atlantis],
   images: (),
   paragraphs: (
+  [Omaha Beach
+ Photo: Aaron Rothstein],
   [The effervescent rays of sunshine spread their warmth across my back as I walk along Omaha Beach in Normandy. French children kick around a soccer ball, shouting and giggling across a fifty-yard stretch of sand. A tranquil ocean extends into the horizon, effortlessly mingling with the sky making it impossible to tell where one starts and the other ends. Looking out across the serene water, I imagine June 6, 1944 and the chaos that once enveloped these beaches. The young American soldiers landing here faced an onslaught of bullets from Nazi pillboxes — concrete bunkers with holes to fire through — hidden safely in the hills.],
   [That day alone, Americans suffered two thousand and four hundred casualties . As the bodies of young men washed ashore, the fortunate survivors endured gunshot wounds while crawling up the beach amidst the blood-soaked waves. One member of the 116th Infantry Regiment said : “They’re leaving us here to die like rats.” D-Day provides a chilling and indelible reminder of the terror of that war and its tragic necessity; of the noble and valorous sacrifice our young heroes made to rid the world of Nazi Germany.],
+  [Normandy American Cemetery and Memorial
+ Photo: Aaron Rothstein],
   [I think of my trip to Omaha Beach as the 76 th anniversary of D-Day approaches and I enter the hospital each morning during the Covid-19 pandemic. “Welcome healthcare heroes!” one sign reads outside an academic hospital. “Heroes enter here!” reads another. I walk in with a mask and use a squirt of Purell on my hands, as a nurse in a gown, face shield, and mask takes my temperature. If I’m afebrile I enter the hospital. A nurse standing at the entrance shouts “Thank you, heroes!” at approaching physicians and nurses. This is not restricted to hospital entrances. Toymaker Mattel created a \#ThankYouHeroes toy line of nurses, physicians, EMTs, and delivery workers. Signs hanging outside of house windows read: “Thank you essential workers for your heroism!” The quarantined populace clangs pots and pans at 7 pm throughout the city streets in honor of essential workers. From cooks to janitors to doctors: all are now heroes in the public eye . This wellspring of gratitude is well-intended and appreciated. But are those of us who work in these jobs truly heroes?],
   [In the mid-19 th century, Thomas Carlyle, a British historian and writer, published a series of lectures in a book entitled On Heroes, Hero-worship and the Heroic in History . Though Carlyle offered some unusual theories about the role of heroes, we ought to consider the elements of his definition of a hero:],
   [They were the leaders of men, these great ones; the modellers, patterns, and in a wide sense creators, of whatsoever the general mass of men contrived to do or to attain; all things that we see standing accomplished in the world are properly the outer material result, the practical realization and embodiment, of Thoughts that dwelt in the Great Men sent into the   world: the soul of the whole world’s history, it may justly be considered, were the history of these.],
@@ -566,10 +484,8 @@ license with no modifications. Thank you!],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [History will not remember us fondly],
   author: [Drew DeVault],
   source-name: [Drew DeVault],
@@ -646,12 +562,10 @@ wicked, cruel, and unempathetic lot. We will be remembered in disgrace.],
   debug-mode: false,
 )
 
-  #pull-quote([We are developing technology which facilitates the authoritarian and genocidal policies of China.], [Drew DeVault])
+#pull-quote([We are developing technology which facilitates the authoritarian and genocidal policies of China.], [Drew DeVault])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Plans for Redis 3.2],
   author: [Antirez],
   source-name: [Antirez],
@@ -680,10 +594,8 @@ wicked, cruel, and unempathetic lot. We will be remembered in disgrace.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How to make your downstream users happy],
   author: [Drew DeVault],
   source-name: [Drew DeVault],
@@ -740,10 +652,8 @@ for your efforts in this regard!],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Art of Prognostication],
   author: [Brendan Foht],
   source-name: [The New Atlantis],
@@ -773,10 +683,8 @@ for your efforts in this regard!],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A great alternative is rarely fatter than what it aims to replace],
   author: [Drew DeVault],
   source-name: [Drew DeVault],
@@ -834,19 +742,12 @@ interrogate the underlying problem it’s trying to solve, and apply your
 insights, plus a healthy dose of hindsight, you may isolate what’s right from
 what’s superfluous, and your simplified solution just might end up replacing the
 cruft of yore.],
-  [id="fn:1"\>],
   [Some of the listed examples have not given up and would prefer that I say something to the effect of “but the jury is still out” here.  ↩︎],
-  [id="fn:2"\>],
   [That’s a lot of adjectives!  ↩︎],
-  [id="fn:3"\>],
   [More concisely, I think of Go as an “internet programming language”, distinct from the systems programming languages that inspired it. Its design shines especially in this context, but its value-add is less pronounced for other tasks in the systems programming domain - compilers, operating systems, etc.  ↩︎],
-  [id="fn:4"\>],
   [The Go spec is quite concise and has changed very little since Go’s inception. Go is also unique among its contemporaries for (1) writing a spec which (2) supports the development of multiple competing implementations.  ↩︎],
-  [id="fn:5"\>],
   [Past tense, unfortunately, now that Go 2 is getting stirred up.  ↩︎],
-  [id="fn:6"\>],
   [It is possible that JSON has achieved too much success in this respect, as it has found its way into a lot of use-cases for which it is less than ideal.  ↩︎],
-  [id="fn:7"\>],
   [Despite my infamous distaste for Rust, long-time readers will know that where I have distaste for Rust, I have passionate scorn for C++. I’m quite glad to see Rust taking it on, and I hope very much that it succeeds in this respect.  ↩︎],
 ),
   insert-map: (:),
@@ -855,10 +756,8 @@ cruft of yore.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Writing a Wayland Compositor, Part 1: Hello wlroots],
   author: [Drew DeVault],
   source-name: [Drew DeVault],
@@ -893,14 +792,33 @@ I’m only going to explain the important parts - I suggest you review
 the entire commit separately.],
   [Let’s get started. First, I’m going to define a struct for holding our
 compositor’s state:],
+  [+struct mcw\_server \{
+ + struct wl\_display \*wl\_display;
+ + struct wl\_event\_loop \*wl\_event\_loop;
+ +\};],
   [Note: mcw is short for McWayface. We’ll be using this acronym throughout the
 article series. We’ll set one of these aside and initialize the Wayland display
 for it 1 :],
+  [int main(int argc, char \*\*argv) \{
+ + struct mcw\_server server;
+ +
+ + server.wl\_display = wl\_display\_create();
+ + assert(server.wl\_display);
+ + server.wl\_event\_loop = wl\_display\_get\_event\_loop(server.wl\_display);
+ + assert(server.wl\_event\_loop);
+ return 0;
+ \}],
   [The Wayland display gives us a number of things, but for now all we care about
 is the event loop. This event loop is deeply integrated into wlroots, and is
 used for things like dispatching signals across the application, being notified
 when data is available on various file descriptors, and so on.],
   [Next, we need to create the backend:],
+  [struct mcw\_server \{
+ struct wl\_display \*wl\_display;
+ struct wl\_event\_loop \*wl\_event\_loop;
+ 
+ + struct wlr\_backend \*backend;
+ \};],
   [The backend is our first wlroots concept. The backend is responsible for
 abstracting the low level input and output implementations from you. Each
 backend can generate zero or more input devices (such as mice, keyboards, etc)
@@ -922,11 +840,27 @@ devices. This is necessary, for example, to utilize both drm and libinput
 simultaneously.],
   [wlroots provides a helper function for automatically choosing the most
 appropriate backend based on the user’s environment:],
+  [server.wl\_event\_loop = wl\_display\_get\_event\_loop(server.wl\_display);
+ assert(server.wl\_event\_loop);
+ 
+ + server.backend = wlr\_backend\_autocreate(server.wl\_display);
+ + assert(server.backend);
+ return 0;
+ \}],
   [I would generally suggest using either the Wayland or X11 backends during
 development, especially before we have a way of exiting the compositor. If you
 call wlr\_backend\_autocreate from a running Wayland or X11 session, the
 respective backends will be automatically chosen.],
   [We can now start the backend and enter the Wayland event loop:],
+  [+ if (!wlr\_backend\_start(server.backend)) \{
+ + fprintf(stderr, "Failed to start backend\\n");
+ + wl\_display\_destroy(server.wl\_display);
+ + return 1;
+ + \}
+ +
+ + wl\_display\_run(server.wl\_display);
+ + wl\_display\_destroy(server.wl\_display);
+ return 0;],
   [If you run your compositor at this point, you should see the backend start up
 and… do nothing. It’ll open a window if you run from a running Wayland or X11
 server. If you run it on DRM, it’ll probably do very little and you won’t even
@@ -936,28 +870,38 @@ on. The backend provides a wl\_signal that notifies us when it gets a new
 output. This will happen on startup and as any outputs are hotplugged at
 runtime.],
   [Let’s add this to our server struct:],
+  [struct mcw\_server \{
+ struct wl\_display \*wl\_display;
+ struct wl\_event\_loop \*wl\_event\_loop;
+ 
+ struct wlr\_backend \*backend;
+ +
+ + struct wl\_listener new\_output;
+ +
+ + struct wl\_list outputs; \/\\/ mcw\_output::link
+ \};],
   [This adds a wl\_listeners which is signalled when new outputs are added. We
 also add a wl\_list (which is just a linked list provided by libwayland-server)
 which we’ll later store some state in. To be notified, we must use
  wl\_signal\_add :],
   [We specify here the function to be notified, new\_output\_notify :],
-  [class="highlight"\> +static void new\_output\_notify(struct wl\_listener \*listener, void \*data) {
+  [+static void new\_output\_notify(struct wl\_listener \*listener, void \*data) \{
  + struct mcw\_server \*server = wl\_container\_of(
  + listener, server, new\_output);
  + struct wlr\_output \*wlr\_output = data;
  +
- + if (!wl\_list\_empty(&wlr\_output-\>modes)) {
+ + if (!wl\_list\_empty(&wlr\_output-\>modes)) \{
  + struct wlr\_output\_mode \*mode =
  + wl\_container\_of(wlr\_output-\>modes.prev, mode, link);
  + wlr\_output\_set\_mode(wlr\_output, mode);
- + }
+ + \}
  +
  + struct mcw\_output \*output = calloc(1, sizeof(struct mcw\_output));
  + clock\_gettime(CLOCK\_MONOTONIC, &output-\>last\_frame);
  + output-\>server = server;
  + output-\>wlr\_output = wlr\_output;
  + wl\_list\_insert(&server-\>outputs, &output-\>link);
- +}],
+ +\}],
   [This is a little bit complicated! This function has several roles when dealing
 with the incoming wlr\_output . When the signal is raised, a pointer to the
 listener that was signaled is passed in, as well as the wlr\_output which was
@@ -973,6 +917,13 @@ with wlr\_output\_set\_mode . We must set the output mode in order to render to
 it.],
   [Then, we set up some state for us to keep track of this output with in our
 compositor. I added this struct definition at the top of the file:],
+  [+struct mcw\_output \{
+ + struct wlr\_output \*wlr\_output;
+ + struct mcw\_server \*server;
+ + struct timespec last\_frame;
+ +
+ + struct wl\_list link;
+ +\};],
   [This will be the structure we use to store any state we have for this output
 that is specific to our compositor’s needs. We include a reference to the
  wlr\_output , a reference to the mcw\_server that owns this output, and the
@@ -982,6 +933,15 @@ time of the last frame, which will be useful later. We also set aside a
   [We could use this now, but it would leak memory. We also need to handle output
  removal , with a signal provided by wlr\_output. We add the listener to the
 mcw\_output struct:],
+  [struct mcw\_output \{
+ struct wlr\_output \*wlr\_output;
+ struct mcw\_server \*server;
+ struct timespec last\_frame;
+ +
+ + struct wl\_listener destroy;
+ 
+ struct wl\_list link;
+ \};],
   [Then we hook it up when the output is added:],
   [This will call our output\_destroy\_notify function to handle cleanup when the
 output is unplugged or otherwise removed from wlroots. Our handler looks like
@@ -994,15 +954,28 @@ the selected mode, the output can only receive new frames at a certain rate. We
 keep track of this for you in wlroots, and emit the frame signal when it’s time
 to draw a new frame.],
   [Let’s add a listener to the mcw\_output struct for this purpose:],
+  [struct mcw\_output \{
+ struct wlr\_output \*wlr\_output;
+ struct mcw\_server \*server;
+ 
+ struct wl\_listener destroy;
+ + struct wl\_listener frame;
+ 
+ struct wl\_list link;
+ \};],
   [We can then extend new\_output\_notify to register the listener to the frame
 signal:],
   [Now, whenever an output is ready for a new frame, output\_frame\_notify will be
 called. We still need to write this function, though. Let’s start with the
 basics:],
+  [+static void output\_frame\_notify(struct wl\_listener \*listener, void \*data) \{
+ + struct mcw\_output \*output = wl\_container\_of(listener, output, frame);
+ + struct wlr\_output \*wlr\_output = data;
+ +\}],
   [In order to render anything here, we need to first obtain a wlr\_renderer 2 .
 We can obtain one from the backend:],
   [We can now take advantage of this renderer to draw something on the output.],
-  [class="highlight"\> static void output\_frame\_notify(struct wl\_listener \*listener, void \*data) {
+  [static void output\_frame\_notify(struct wl\_listener \*listener, void \*data) \{
  struct mcw\_output \*output = wl\_container\_of(listener, output, frame);
  struct wlr\_output \*wlr\_output = data;
  struct wlr\_renderer \*renderer = wlr\_backend\_get\_renderer(
@@ -1011,12 +984,12 @@ We can obtain one from the backend:],
  + wlr\_output\_make\_current(wlr\_output, NULL);
  + wlr\_renderer\_begin(renderer, wlr\_output);
  +
- + float color\[4\] = {1.0, 0, 0, 1.0};
+ + float color\[4\] = \{1.0, 0, 0, 1.0\};
  + wlr\_renderer\_clear(renderer, color);
  +
  + wlr\_output\_swap\_buffers(wlr\_output, NULL, NULL);
  + wlr\_renderer\_end(renderer);
- }],
+ \}],
   [Calling wlr\_output\_make\_current makes the output’s OpenGL context “current”,
 and from here you can use OpenGL calls to render to the output’s buffer. We call
  wlr\_renderer\_begin to configure some sane OpenGL defaults for us 3 .],
@@ -1034,15 +1007,11 @@ the display to a different color every frame. Feel free to experiment with
 similar changes!],
   [Over the next two articles, we’ll finish wiring up the Wayland server and render
 a Wayland client on screen. Please look forward to it!],
-  [style="text-align: right;"\>
- Next —
+  [Next —
  
  Part 2: Rigging up the server],
-  [id="fn:1"\>],
   [It’s entirely possible to utilize a wlroots backend to make applications which are not Wayland compositors. However, we require a wayland display anyway because the event loop is necessary for a lot of wlroots internals.  ↩︎],
-  [id="fn:2"\>],
   [wlr\_renderer is optional. When you call wlr\_output\_make\_current, the OpenGL context is made current and from here you can use any approach you prefer. wlr\_renderer is provided to help compositors with simple rendering requirements.  ↩︎],
-  [id="fn:3"\>],
   [Namely: the viewport and blend mode.  ↩︎],
 ),
   insert-map: (:),
@@ -1051,10 +1020,8 @@ a Wayland client on screen. Please look forward to it!],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [User-defined literals in Java?],
   author: [Stephen Colebourne],
   source-name: [Stephen Colebourne (Joda)],
@@ -1091,7 +1058,7 @@ ie. these two would be equivalent:],
  var date = LocalDate\`2019-03-29\`;],
   [The type inference would also work with methods (compile error if ambiguous):],
   [boolean inferior = isShortMonth(\`2019-04-12\`);],
-  [public boolean isShortMonth(LocalDate date) { return date.lengthOfMonth()],
+  [public boolean isShortMonth(LocalDate date) \{ return date.lengthOfMonth()],
   [Raw processing],
   [Processing of the literal should not be limited by Java's escape mechanisms.
 User-defined literals need access to the raw string.
@@ -1125,11 +1092,10 @@ Clearly though, there is going to need to be some form of factory method on the 
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Status update, September 2022],
   author: [Drew DeVault],
   source-name: [Drew DeVault],
@@ -1164,7 +1130,7 @@ is going to offer a substantial performance boost down the line.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Redis will remain BSD licensed],
   author: [Antirez],
   source-name: [Antirez],
@@ -1186,7 +1152,7 @@ is going to offer a substantial performance boost down the line.],
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([Shifter], source-name: [Serverless Blog], [Learn how Shifter transforms WordPress blogs and websites into static sites to make them faster, more secure and scalable in this guest post.])],
       [#brief-item([Verne Lindner], source-name: [Serverless Blog], [Tag your Lambdas to track errors and debug serverless applications. If you’re using NodeJS or Python, we’ll help you find even the trickiest serverless application errors faster.])],
       [#brief-item([Stefanie Monge], source-name: [Serverless Blog], [How Serverless Partner AbstractAI leveraged the Serverless Framework and Lambda to reduce the cost of running back-end services by 95%.])],
@@ -1200,8 +1166,7 @@ is going to offer a substantial performance boost down the line.],
 #pull-quote([Unrelatedly, TLS support seems to be progressing upstream in qbe.], [Drew DeVault])
 
 
-{
-  #standard-article(
+#standard-article(
   title: [My plans at FOSDEM: SourceHut, Hare, and Helios],
   author: [Drew DeVault],
   source-name: [Drew DeVault],
@@ -1256,8 +1221,7 @@ the system.],
   debug-mode: false,
 )
 
-  #pull-quote([Hare uses a static type system, manual memory management, and a minimal runtime.], [Drew DeVault])
+#pull-quote([Hare uses a static type system, manual memory management, and a minimal runtime.], [Drew DeVault])
 
-}
 
 #colophon([New Globe], [Vol. 1, No. 035], [2026-03-30])

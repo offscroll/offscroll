@@ -21,33 +21,8 @@
 #masthead([The Swift Herald], [Vol. 1, No. 070], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [28 Best Brunch Recipes For A Crowd],
-  kicker: [Cover Story],
-  author: [Lindsay],
-  source-name: [Pinch of Yum],
-  deck: [I love a good brunch moment! Whether it’s for something special like Easter or a baby shower, or just a simple Saturday morning with friends.],
-  lead-pre: [],
-  lead-cap: [B],
-  lead-rest: [reakfast food is some of the best food (sweet, savory, cheesy, carby!) and I love to see a table full of people gathered around it. ❤️],
-  body-paragraphs: (
-  [These are the brunch recipes I put on the menu when I’m hosting a group – some can be thrown together and served out of one pan for ease, others can be assembled however your guests see fit (LOVE this breakfast sandwich for that), and all of them are simple, easy, and super delicious.],
-  [One of my favorite menu combos: this egg and croissant bake , this simple green salad , and this carrot cake coffee cake . The ultimate brunch plate!],
-  [Here’s to brunch! Here’s to feeding all our favorite people!],
-  [class="tasty-roundups-description"\>Biscuits and Gravy Egg Bake! YES! a casserole-style dish of fluffy eggs and cheddar baked up with little bites of tender flaky biscuit pieces, and buried under a blanket of creamy green chile sausage gravy.],
-  [class="tasty-roundups-description"\>Crunchy, light, bright, and ultra-fresh. This French-inspired bistro salad is an absolute star as a side for nearly any dinner. Tender greens, fresh herbs, pickled onions, and a delicate vinaigrette on top.],
-  [class="tasty-roundups-description"\>Sweet Cinnamon Rolls! Made with pillowy brioche dough and cinnamon sugar tucked into every nook and cranny. This makes a BIG batch of dough that you can divide and save for later…or make extra all for yourself!],
-  [One of my most important brunch rules is that it must include multiple drinks – a glass of orange juice, a cup of coffee, and maybe something special, too? Here are some ideas for drinks to serve with brunch, many of which can be scaled up for a crowd!],
-  [The post 28 Best Brunch Recipes For A Crowd appeared first on Pinch of Yum .],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [How I Got My Visa to France],
   author: [Matthew Kepnes],
   source-name: [Nomadic Matt],
@@ -128,10 +103,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [20 Sheet Pan Dinners for Easy Weeknights],
   author: [Lindsay],
   source-name: [Pinch of Yum],
@@ -140,9 +113,84 @@
   [Sheet pan dinners are one of my favorite weeknight magic tricks. Minimal prep, fewer dishes, everything roasting together in the oven… it’s more than ideal. When life feels busy (which is… most of the time), these are the types of recipes I come back to again and again.],
   [This list of dinners is full of the recipes we make on repeat in my house – flavor-packed, low-effort, and super flexible. You’ve got cozy options, fresh-feeling meals, and a few fun little twists. It’s a little bit of everything, all built for real life.],
   [If you’re looking for dinners that don’t require a ton of thinking (or cleanup), you’re in the right place. Pick one, toss it on a sheet pan, and let the oven do the heavy lifting!],
-  [class="tasty-roundups-description"\>Juicy little sheet pan meatballs that are salty, zesty, briney, and so so delicious. Pile them on tzatziki, spoon some punchy green sauce over top, and serve with a simple salad and crusty bread.],
-  [class="tasty-roundups-description"\>This Sheet Pan Shrimp and Cauli Rice is the easiest sheet pan dinner! Shrimp, peas, cauliflower rice, seasonings, and Rosso pesto sauce all come together on one pan for a delicious springy meal.],
-  [class="tasty-roundups-description"\>This apricot chicken, made on a sheet pan, is so easy and SO GOOD! Just a few simple ingredients, minimal cleanup, and a major flavor boost from the roasty charred scallions on top.],
+  [Sheet Pan Chicken Pitas with Tzatziki],
+  [Part bowl, part salad, part sandwich folded up into any kind of bread you like, and I’m here for it in every form.],
+  [150 reviews \/ 5 average],
+  [make this recipe],
+  [Sheet Pan Meatballs with Tomato Salad and Green Sauce],
+  [Juicy little sheet pan meatballs that are salty, zesty, briney, and so so delicious. Pile them on tzatziki, spoon some punchy green sauce over top, and serve with a simple salad and crusty bread.],
+  [47 reviews \/ 5 average],
+  [make this recipe],
+  [Liz’s Roasted Broccoli Salad],
+  [This Roasted Broccoli Salad is EVERYTHING! Bright lemon, crisped-up bacon, tangy feta, and it’s all built around a big bowl of roasted broccoli. A true hero of a meal!],
+  [63 reviews \/ 5 average],
+  [make this recipe],
+  [Harissa Meatballs with Whipped Feta],
+  [These Harissa Meatballs with Whipped Feta are perfect for an easy SOS dinner! Store-bought meatballs, bell peppers, zucchini, harissa, and whipped feta all in one bowl. YUMMY!],
+  [39 reviews \/ 5 average],
+  [make this recipe],
+  [Sheet Pan Salmon with Dill Potatoes],
+  [Simple and delicious salmon and potatoes roasted on a sheet pan, and covered in a garlic dill butter sauce! One of my family’s favorite dinners.],
+  [23 reviews \/ 4.9 average],
+  [make this recipe],
+  [Sheet Pan Jambalaya: maximum flavor, minimal dishes. Sausage, peppers, onions, shrimp, and cauliflower rice all roasted up on a sheet pan. Big flavor, easy dinner!],
+  [30 reviews \/ 4.9 average],
+  [make this recipe],
+  [Sheet Pan Shrimp and Cauli Rice],
+  [This Sheet Pan Shrimp and Cauli Rice is the easiest sheet pan dinner! Shrimp, peas, cauliflower rice, seasonings, and Rosso pesto sauce all come together on one pan for a delicious springy meal.],
+  [30 reviews \/ 4.9 average],
+  [make this recipe],
+  [Fall Favorite Maple-Mustard Tempeh Bowls],
+  [These tempeh bowls are a true fall favorite! Massaged kale, sweet potatoes, roasty marinated maple-mustard tempeh, crunchy apple, and an unexpected pile of briney sauerkraut.],
+  [25 reviews \/ 4.9 average],
+  [make this recipe],
+  [Sheet Pan Chicken and Sweet Potato Meal Prep],
+  [Spicy Chicken and Sweet Potato Meal Prep Magic! Just chicken, sweet potatoes, broccoli, avocado, and seasonings. 3 big sheet pans + 45 minutes = healthy meals for a week!],
+  [73 reviews \/ 4.8 average],
+  [make this recipe],
+  [Sheet Pan Breakfast Burritos with Creamy Chipotle Sauce],
+  [I absolutely love these breakfast burritos. Creamy scrambled eggs, roasted garlic veggies, smoky cheese, and refried beans all wrapped up in a delicious burrito!],
+  [11 reviews \/ 5 average],
+  [make this recipe],
+  [Sheet Pan Chicken Tinga Bowls],
+  [These Chicken Tinga Bowls are the BEST! Made in just 15 minutes, all on a sheet pan. My favorite kind of meal prep!],
+  [33 reviews \/ 4.9 average],
+  [make this recipe],
+  [Baked Salmon with Amazing Lemon Sauce],
+  [Delicious baked salmon with crispy potatoes, broccoli, and the most amazing life-changing lemon sauce smothered on top of it all. This is restaurant bistro-style eating!],
+  [55 reviews \/ 4.7 average],
+  [make this recipe],
+  [Sheet Pan Garlic Ginger Chicken & Broccoli],
+  [Sheet Pan Garlic Ginger Chicken and Broccoli – a simple and low-maintenance meal prep option, with huge flavor and no refined sugar.],
+  [41 reviews \/ 4.7 average],
+  [make this recipe],
+  [Cauliflower Walnut Vegetarian Taco Meat],
+  [This vegetarian taco meat is made with cauliflower, walnuts, and chipotle peppers. It’s so easy: just mix and bake. Meatless miracle!],
+  [171 reviews \/ 4.9 average],
+  [make this recipe],
+  [Vegan Sheet Pan Fajitas with Chipotle Queso],
+  [These Vegan Sheet Pan Fajitas are SO GOOD. Roasted peppers and onions, steak-like portobello mushrooms, some mashed avocado, and a waterfall of spicy cashew queso.],
+  [45 reviews \/ 4.9 average],
+  [make this recipe],
+  [Apricot Chicken with Charred Scallions],
+  [This apricot chicken, made on a sheet pan, is so easy and SO GOOD! Just a few simple ingredients, minimal cleanup, and a major flavor boost from the roasty charred scallions on top.],
+  [18 reviews \/ 4.9 average],
+  [make this recipe],
+  [Roasted Vegetable Bowls with Green Tahini],
+  [Roasted Vegetable Bowls! Crispy tender roasted veggies, buttery avocado, all together in a bowl with a drizzle of green tahini sauce.],
+  [54 reviews \/ 4.9 average],
+  [make this recipe],
+  [Spring Salmon with Creamed Leeks, Potatoes, and Asparagus],
+  [We’re bringing you a plate of sunshine for dinner! Perfectly golden-crisp salmon partnered next to oven-roasted asparagus and a buttery, rich, creamy leek sauce piled on crispy potatoes.],
+  [10 reviews \/ 4.8 average],
+  [make this recipe],
+  [The easiest Roasted Tomato Puttanesca with all the silky, all the briney, and all the zippy summer freshness.],
+  [45 reviews \/ 4.8 average],
+  [make this recipe],
+  [Garlic and Black Pepper Beef Skewers],
+  [These beef skewers are bringing all the flavor! Thinly sliced strips of steak browned and caramelized to juicy, sweet perfection.],
+  [16 reviews \/ 5 average],
+  [make this recipe],
   [All these recipes start and end with a really good sheet pan. One that holds up, keeps it shape, and doesn’t make things stick.],
   [My top, one-and-only, forever sheet pan: Nordic Ware Sheet Pans . I have several sizes – the half sheet , full sheet , and quarter sheet .],
   [I use these all the time to toast, bake, and serve! They’ve been well-loved and well-worn and still get the job done perfectly every time.],
@@ -155,10 +203,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Claude and the Constitution: Questions Congress Should Ask Before Renewing Section 702],
   author: [Ryan Goodman],
   source-name: [Just Security],
@@ -236,10 +282,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Yeat Redefines the Album Rollout and Ye Drops 'BULLY': Everything We Loved In Music This Week],
   author: [Hypebeast],
   source-name: [Hypebeast],
@@ -261,25 +305,8 @@
   [Yeat Takes His Tracklist to the Top],
   [The night before dropping ADL , Yeat lifted the veil on the full tracklist. It wasn’t announced via Instagram post or billboard, but rather, projected upon the Capitol Records Tower in Hollywood. The rapper shared a video on socials of himself posted up (à la mob boss, once again) at the top of the tower eating a multiple-course meal. The camera pans out to the full tower, which features the entire album tracklist running down.],
   [Matthew M. Williams Tells Us He Just Heard Travis Scott’s New Album],
-  [style="padding: 16px;"\>],
-  [style="display: flex;"\>],
-  [style="background-color: \#f4f4f4; border-radius: 50%; height: 40px; margin-right: 14px; width: 40px;"\>],
-  [style="display: flex;"\>],
-  [style="background-color: \#f4f4f4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 100px;"\>],
-  [style="background-color: \#f4f4f4; border-radius: 4px; height: 14px; width: 60px;"\>],
-  [style="padding: 19% 0;"\>],
-  [style="display: block; height: 50px; margin: 0 auto 12px; width: 50px;"\>],
-  [style="padding-top: 8px;"\>],
-  [style="color: \#3897f0; font-family: Arial,sans-serif; font-size: 14px; font-style: normal; font-weight: 550; line-height: 18px;"\>View this post on Instagram],
-  [style="padding: 12.5% 0;"\>],
-  [style="display: flex; margin-bottom: 14px;"\>],
-  [style="margin-left: 8px;"\>],
-  [style="background-color: \#f4f4f4; border-radius: 50%; height: 20px; width: 20px;"\>],
-  [style="margin-left: auto;"\>],
-  [style="display: flex; margin-bottom: 24px;"\>],
-  [style="background-color: \#f4f4f4; border-radius: 4px; height: 14px; margin-bottom: 6px; width: 224px;"\>],
-  [style="background-color: \#f4f4f4; border-radius: 4px; height: 14px; width: 144px;"\>],
-  [style="color: \#c9c8cd; font-family: Arial,sans-serif; font-size: 14px; line-height: 17px; margin-bottom: 0; margin-top: 8px; overflow: hidden; padding: 8px 0 7px; text-align: center; white-space: nowrap;"\> A post shared by HYPEBEAST (\@hypebeast)],
+  [View this post on Instagram],
+  [A post shared by HYPEBEAST (\@hypebeast)],
   [We sat down with Matthew M. Williams after the news of his appointment as Oakley’s Creative Director of Apparel, Footwear, and Accessories broke. The full conversation is dropping soon, but we couldn’t wait to share what he had to say about Travis Scott ’s newest studio album. Williams has, in fact, heard it and says it sounds like nothing the rapper has ever done before.],
   [Jay-Z Adds “Extra Innings”],
   [Now there is officially no excuse for us to be there. HOV tacked on a third night to his July run of shows at Yankee Stadium, now performing three straight nights from Friday, July 10, to Sunday, July 12.],
@@ -301,10 +328,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Bite: Smoked Pigeon and Other Subnatural Delights],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -328,23 +353,36 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Live, Life, Travel…Forget the Bucket!],
   author: [Anne Gordon],
   source-name: [Live Life Travel],
   images: (),
   paragraphs: (
+  [Live, Life, Travel...],
+  [FORGET THE BUCKET],
+  [WRITTEN BY ANNE GORDON, OWNER & LEISURE TRAVEL ADVISOR,],
   [LIVE LIFE TRAVEL, LLC],
-  [class="p1"\>When my 12-year old son told me that he had a “bucket list,” I was surprised by my mixed emotions. On one-hand, I was so proud that I had inspired him at such a young age to be so passionate about travel that he had his own list of “must see destinations.” However, when I think about a “bucket list” it conjures up feelings of people who almost missed out because they waited to enjoy life until it was almost too late, which is not how I want to live, not how I raise my son, and definitely the complete opposite of WHAT we should all be aiming for… Live Life Travel.],
-  [class="p1"\>Perhaps it is just a saying and I am taking it too literally; however, I view it as a mindset that we can be changing at home starting with our own children in very engaging, fun and educational ways.],
-  [class="p1"\>Instead of a “Bucket List,” we can make a conscious decision to start building “Life Lists” with our families from a very young age, which then creates both life and family goals.],
-  [class="p1"\>TRAVEL BENEFITS FOR KIDS: Increased independence, self-esteem and self-confidence as well as developing intellectual curiosity, better cooperation skills and adaptability and increased tolerance and respectfulness of others. Education beyond the classroom… learning about different cultures, languages, history, currencies, museums/art as well as becoming global citizens.],
-  [class="p1"\>We call this the “Time/Money Ratio,” and it is why planning and having goals is essential. For example, I made a commitment for my son and I to always spend February Break together when he started Kindergarten and since then, we have. However, February has become an extremely busy month for me and he’s turning 13 (new “Life Stage”) so we are re-assessing our Family Travel Goals.],
-  [class="p1"\>Perhaps it would make more sense for him to fly alone to Florida and spend more time with his Grandparents that week. This is a perfect example of why my family needs to re-assess our own goals right now. We also only have 5 years before he graduates from High School and we both know that we have certain places that we want to travel to together before then that we will need to save and plan for.],
-  [class="p1"\>Every family will have different obstacles, but the objective is to make a commitment, then work together towards the goal that is important to everyone. For your children, this will be the first of many “life lists.” Encourage your children – along with yourself – to seize the opportunity when it presents itself. Studying abroad or “volunteer travel” are both rewarding experiences for young travelers.],
+  [When my 12-year old son told me that he had a “bucket list,” I was surprised by my mixed emotions. On one-hand, I was so proud that I had inspired him at such a young age to be so passionate about travel that he had his own list of “must see destinations.” However, when I think about a “bucket list” it conjures up feelings of people who almost missed out because they waited to enjoy life until it was almost too late, which is not how I want to live, not how I raise my son, and definitely the complete opposite of WHAT we should all be aiming for… Live Life Travel.],
+  [Perhaps it is just a saying and I am taking it too literally; however, I view it as a mindset that we can be changing at home starting with our own children in very engaging, fun and educational ways.],
+  [Instead of a “Bucket List,” we can make a conscious decision to start building “Life Lists” with our families from a very young age, which then creates both life and family goals.],
+  [Here are some of the awesome benefits:],
+  [Increased sense of community within the family through shared goals],
+  [Better communication encouraging teamwork at home],
+  [Education – Geography (we recommend not going to any destination before all children have completed their in-classroom education)],
+  [Budgeting – Goals],
+  [Parents become role models for their children in terms of prioritizing family time, being able to unplug from work, taking all of their paid vacation time],
+  [TRAVEL BENEFITS FOR KIDS: Increased independence, self-esteem and self-confidence as well as developing intellectual curiosity, better cooperation skills and adaptability and increased tolerance and respectfulness of others. Education beyond the classroom… learning about different cultures, languages, history, currencies, museums/art as well as becoming global citizens.],
+  [Vacation Benefits for Adults: Lowers stress, Heart disease prevention, Increased productivity, Better sleep, Irreplaceable memories and Experiences with your children (set goals for before the 1st child leaves for college).],
+  [Naturally, as parents, our biggest challenges will always be:],
+  [Having enough time],
+  [Having enough money],
+  [Or a combination of both at the same time],
+  [We call this the “Time/Money Ratio,” and it is why planning and having goals is essential. For example, I made a commitment for my son and I to always spend February Break together when he started Kindergarten and since then, we have. However, February has become an extremely busy month for me and he’s turning 13 (new “Life Stage”) so we are re-assessing our Family Travel Goals.],
+  [Perhaps it would make more sense for him to fly alone to Florida and spend more time with his Grandparents that week. This is a perfect example of why my family needs to re-assess our own goals right now. We also only have 5 years before he graduates from High School and we both know that we have certain places that we want to travel to together before then that we will need to save and plan for.],
+  [Every family will have different obstacles, but the objective is to make a commitment, then work together towards the goal that is important to everyone. For your children, this will be the first of many “life lists.” Encourage your children – along with yourself – to seize the opportunity when it presents itself. Studying abroad or “volunteer travel” are both rewarding experiences for young travelers.],
+  [If you are not sure where to start, speak to a travel advisor for a consultation and professional planning. LiveLifeTravel.world],
   [The post Live, Life, Travel…Forget the Bucket! appeared first on Live Life Travel .],
 ),
   insert-map: (:),
@@ -353,15 +391,14 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Air Fryer Chicken Thighs],
   author: [Lindsay],
   source-name: [Pinch of Yum],
   images: (),
   paragraphs: (
+  [These Chicken Thighs Are a New House Favorite!],
   [Guys, I’ve been holding myself back from making these chicken thighs every single night. They’re so good. They go with almost anything, they’re extra juicy and crisped, and the kids and adults in my family BOTH approve!],
   [I love them with so many things:],
   [roasted potato wedges and a cucumber salad],
@@ -374,13 +411,27 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
   [If you’ve made our air fryer chicken breasts (also amazing), the flavor on these chicken thighs is more savory. The OG chicken breast recipe has a brown sugar and smoked paprika base, whereas this one has paprika, garlic and onion, and a bit of oregano.],
   [I have been LOVING these with a smoky paprika aioli (I’ll include that in the recipe notes – it is so yummy). I am making myself hungry just thinking about it.],
   [Hope you guys love it!],
+  [How To Make Air Fryer Chicken Thighs],
+  [1],
+  [Trim Chicken Thighs.],
   [Optional, but I often cut off any little bits of fat that are on the edges of the chicken thighs.],
+  [2],
+  [Toss with Spices!],
   [Get those chicken thighs totally coated! Like so.],
+  [3],
+  [Air Fry for 11-13 Minutes.],
   [Place in a single layer in the air fryer to cook evenly!],
+  [4],
+  [It’s done!],
   [Do a quick temp check – the inside should reach a minimum of 165 degrees (I use this meat thermometer to check).],
+  [5],
+  [Cut and Serve!],
   [My daughter and my husband couldn’t wait for me to finish the photos. 🙂 I like to chop the chicken into bite-sized pieces and squeeze a bit of lemon over the whole thing! So yummy.],
   [5 Stars 4 Stars 3 Stars 2 Stars 1 Star],
   [5 from 15 reviews],
+  [Author: Lindsay],
+  [Total Time: 28 minutes],
+  [Yield: 4 servings 1 x],
   [These air fryer chicken thighs are SO good. Super juicy, deeply golden, and ready in 15 minutes! Such an easy recipe that my whole family loves.],
   [1.25 pounds boneless skinless chicken thighs],
   [1 1/2 teaspoons paprika],
@@ -391,19 +442,42 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
   [a few cracks of freshly ground black pepper],
   [1 tablespoon olive oil],
   [squeeze of lemon to finish],
-  [id="instruction-step-1"\> Trim the Chicken Thighs: Optional, but I usually cut off the little bits of fat (the chunkier white strips) from the edges of the chicken thighs.],
-  [id="instruction-step-2"\> Season the Chicken: Toss the chicken thighs with the spices and olive oil. For the best flavor, let it marinate anywhere from 15 minutes to 2-3 hours in the fridge. (Also fine to skip if you’re short on time!)],
-  [id="instruction-step-3"\> Air Fry Chicken: Air fry at 375 for 11-13 minutes, until deeply golden and a bit crisped on the outside, and at least 165 degrees Fahrenheit on the inside. (I use a meat thermometer to check!)],
-  [id="instruction-step-4"\> Slice Chicken: Transfer chicken to a cutting board. Let it rest for a few minutes; cut into bite-sized pieces. Squeeze lemon over the top if you want.],
-  [id="instruction-step-5"\> Serve: Serve with your favorite sauce (see notes for a smoky aioli that I love) , baked potato or roasted veggies, in a rice bowl, or on a salad!],
+  [Cook Mode 
+ 
+ Prevent your screen from going dark],
+  [Trim the Chicken Thighs: Optional, but I usually cut off the little bits of fat (the chunkier white strips) from the edges of the chicken thighs.],
+  [Season the Chicken: Toss the chicken thighs with the spices and olive oil. For the best flavor, let it marinate anywhere from 15 minutes to 2-3 hours in the fridge. (Also fine to skip if you’re short on time!)],
+  [Air Fry Chicken: Air fry at 375 for 11-13 minutes, until deeply golden and a bit crisped on the outside, and at least 165 degrees Fahrenheit on the inside. (I use a meat thermometer to check!)],
+  [Slice Chicken: Transfer chicken to a cutting board. Let it rest for a few minutes; cut into bite-sized pieces. Squeeze lemon over the top if you want.],
+  [Serve: Serve with your favorite sauce (see notes for a smoky aioli that I love) , baked potato or roasted veggies, in a rice bowl, or on a salad!],
   [Smoky Paprika Aioli (my current favorite sauce with this) : Whisk 1/2 cup mayo, 1/4 cup yogurt, 1 clove freshly grated garlic, 1/2 teaspoon smoked paprika, 2 tablespoons water, 1/4 teaspoon salt (more to taste).],
   [Spice Coverage on The Chicken: Every package of chicken thighs is a slightly different size, so if your package is 1.5 pounds or more (or if you love a lot of spices), you may want to add a few extra shakes of spices to get more complete spice coverage!],
   [Preheating the Air Fryer: I do not preheat my air fryer. I just put the chicken in, turn the air fryer on, and then make sure to use a meat thermometer to check that it’s completely cooked.],
   [Lining the Air Fryer: I also don’t line the air fryer basket with anything. I just put the chicken thighs directly onto the grill grate.],
   [Flipping the Chicken: I also do not flip the chicken thighs halfway through. I’ve tried it, but I like the texture better with just the top being crispy and the underside being a bit juicy. If you think you want both the top and bottom to be crisped up a bit, you can air fry for 8-9 minutes, then flip and cook for another 5 minutes to get both sides a bit crisped.],
+  [Prep Time: 15 minutes],
+  [Cook Time: 13 minutes],
+  [Category: Dinner],
+  [Method: Air Fryer],
+  [Cuisine: American],
   [Keywords: air fryer chicken, air fryer chicken thighs, air fryer recipe],
   [Did you make this recipe?],
-  [class="schema-faq-answer"\>Yes! Bake on a small sheet pan at 425 degrees for 20-25 minutes, or until the internal temperature reaches 165 degrees Fahrenheit. To get extra browning on the chicken thighs, turn on the broil setting for the last few minutes of cooking and move the pan closer to the top of the oven.],
+  [I love hearing from you! Leave a comment or rating below!],
+  [Frequently Asked Questions For This Recipe],
+  [Can you use chicken breasts instead of thighs?],
+  [Yes! I would suggest cutting them horizontally into thinner pieces (follow the directions in this recipe ) and then air frying them at 375 for 9-10 minutes.],
+  [Can I make these chicken thighs in the oven instead of an air fryer?],
+  [Yes! Bake on a small sheet pan at 425 degrees for 20-25 minutes, or until the internal temperature reaches 165 degrees Fahrenheit. To get extra browning on the chicken thighs, turn on the broil setting for the last few minutes of cooking and move the pan closer to the top of the oven.],
+  [Can you use frozen chicken thighs?],
+  [I would not recommend using frozen chicken thighs.],
+  [Do I need to preheat the air fryer?],
+  [I don’t. I just put the chicken right in, turn the air fryer on, and then make sure to use a meat thermometer to check that it’s completely cooked.],
+  [How do you know when the chicken is fully cooked?],
+  [When it reaches 165 degrees, you’re good to go! This is the thermometer I use . (affiliate link) I use this thing all the time. Highly recommend.],
+  [Can you use other types of oil?],
+  [I use both avocado oil and olive oil.],
+  [What air fryer do you use?],
+  [This is my favorite air fryer ! The Ninja Air Fryer Pro XL. (affiliate link) Love this for so many recipes!],
   [The post Air Fryer Chicken Thighs appeared first on Pinch of Yum .],
 ),
   insert-map: (:),
@@ -412,11 +486,10 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Peanuts: Peril and Promise],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -433,7 +506,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Interstitium (Radiolab)],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -453,7 +526,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Eating the Wild: Bushmeat, Game, and the Fuzzy Line Between Them],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -470,7 +543,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Beans, Beans, the Magical Fruit],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -490,7 +563,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Caffeine: The World’s Most Popular Drug],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -507,7 +580,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Prescription Dinner: Can Meals Be Medicine?],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -527,7 +600,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The Billion Dollar War Behind U.S. Rum (Planet Money)],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -544,7 +617,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Mexico moves to combat pollution following Guardian investigations],
   author: [Erin McCormick, The Guardian, and Verónica García de León, Quinto Elemento Lab],
   source-name: [The Guardian Environment],
@@ -566,7 +639,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [OXO, Cuisinart, and Julia Child: The Secret (Accessible) History Behind Your Kitchen],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -583,7 +656,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Guest Episode: How To Save a Planet],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -603,7 +676,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Kale of the Sea],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -621,7 +694,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [I discovered three new geckos in Cambodia’s limestone caves – and that’s not all we found],
   author: [Pablo Sinovas],
   source-name: [The Guardian Environment],
@@ -643,7 +716,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [How the Carrot Became Orange, and Other Stories],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -660,7 +733,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Meet the Queen of Kiwi: the 96-Year-Old Woman Who Transformed America’s Produce Aisle],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -680,7 +753,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Good Shit: How Humanure Could Save Agriculture—and the Planet],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -697,7 +770,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Say Cheese!],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -716,8 +789,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Omega 1-2-3 (encore)],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -732,17 +804,16 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [Death in the Young],
   author: [Brendan Foht],
   source-name: [The New Atlantis],
   images: (),
   paragraphs: (
   [In this sad world of ours, sorrow comes to all; and, to the young, it comes with bitterest agony, because it takes them unawares.],
+  [— Abraham Lincoln, Letter to Fanny McCullough , December 23, 1862],
   [In war, those with their lives yet to be lived are also those most urgently needed to fight. It is one of the tragic ironies of conflict. In the U. S. Civil War, the average soldier was 26 and approximately 620,000 soldiers died . In World War I, over 2 million German soldiers died, and 40 percent of German combatants were between 21 and 25 years old. In the Vietnam War, 58,193 American servicemen died — approximately 24 percent of those killed were 20, and roughly  17 percent of those killed were 21 . We comprehend the risk in sending young soldiers off to battle: the abrupt cessation of so much potential and promise. It is no less tragic than the death of sons and daughters in any other context, but at least we understand the possible outcome.],
   [But what of the young who do not fight, who expect to live full lives off the battlefield? Alas, forces beyond their control operate surreptitiously; a few dangerous mutations cause a cell to run awry, errant motorists drive recklessly, malfunctioning plane hardware fails mid-air—– all of these cut life short in unexpected ways.],
   [In my brief career, I have already seen patients from infancy to young adulthood fall victim to the cruelty of nature. As physicians we don’t feel the shock of such events in the same way as the patients’ friends and family. We see the patients, we take care of them, we escort them to their end, and then we move on to take care of the next casualty or convalescent.],
@@ -781,15 +852,15 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Dream Honeymoons to Italy],
   author: [Anne Gordon],
   source-name: [Live Life Travel],
   images: (),
   paragraphs: (
+  [Dream Honeymoons to Italy],
+  [Our Favorite Italy Destinations for 2019: AMALFI COAST AND SICILY],
   [Belmond Hotel Timeo - Taormima, Italy],
   [While we do not subscribe to the ‘one size fits all’ theory for any vacation, that especially goes for honeymoons! However, we do have our very favorite Amalfi Coast and Sicily towns as well as the “Best of The Best” hotel and excursion recommendations that should be on the top of everyone’s list when planning their Italian getaway.],
   [Amalfi Coast –],
@@ -830,11 +901,10 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Meet the Man Who Found, Finagled, and Ferried Home the Foods We Eat Today],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -851,7 +921,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Green Gold: Our Love Affair with Olive Oil],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -871,7 +941,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Talking Taco],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -888,7 +958,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Delivery Wars],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -909,7 +979,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Dining at the Top of the World: Arctic Adaptation, Abundance, and...Ice Cream],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -926,7 +996,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Ripe for Global Domination: The Story of the Avocado],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -944,8 +1014,7 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Eating to Win: Gatorade, Muscle Milk, and… Chicken Nuggets?],
   author: [Cynthia Graber and Nicola Twilley],
   source-name: [Gastropod],
@@ -960,46 +1029,43 @@ Learn more about your ad choices. Visit podcastchoices.com/adchoices],
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([Annemarie Dooling], source-name: [Bon Appétit (magazine)], [After a year-long refresh, the restaurant reopened with a 3,800-bottle display, and even the line cooks can recommend God-tier bottles.])],
-    [#brief-item([Steph Saltzman], source-name: [Fashionista], [For our Weekly Drop Watch column, Fashionista scours the market to curate the most noteworthy releases from our favorite fashion and beauty brands. Keep scrolling for this week's highlights. Dôen partnered with eyewear brand Garrett Leight on a line of summer-ready sunglasses. Developed ...
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([Annemarie Dooling], source-name: [Bon Appétit (magazine)], [After a year-long refresh, the restaurant reopened with a 3,800-bottle display, and even the line cooks can recommend God-tier bottles.])],
+  [#brief-item([Steph Saltzman], source-name: [Fashionista], [For our Weekly Drop Watch column, Fashionista scours the market to curate the most noteworthy releases from our favorite fashion and beauty brands. Keep scrolling for this week's highlights. Dôen partnered with eyewear brand Garrett Leight on a line of summer-ready sunglasses. Developed ...
 
  Continue reading])],
-    [#brief-item([Catie Pusateri], source-name: [Fashionista], [Back in 2022, Deciem (the Canada-based incubator behind Gen Z's favorite skin-care brand The Ordinary) discontinued The Chemistry Brand, along with HIF, Hylamide and Abnomaly. Nearly four years later, the company is relaunching The Chemistry Brand on April 2 with the return of its hero SKU, Hand ...
+  [#brief-item([Catie Pusateri], source-name: [Fashionista], [Back in 2022, Deciem (the Canada-based incubator behind Gen Z's favorite skin-care brand The Ordinary) discontinued The Chemistry Brand, along with HIF, Hylamide and Abnomaly. Nearly four years later, the company is relaunching The Chemistry Brand on April 2 with the return of its hero SKU, Hand ...
 
  Continue reading])],
-    [#brief-item([Beguile], source-name: [Fashionista], [If you've noticed a shimmering, warm trail of scent in the front row this season, you're not imagining it. While the industry often chases the loudest new launch, insiders are gravitating toward something far more intimate. Enter Golden Kiss, a fragrance from Beguile that doesn't sit on the skin so ...
+  [#brief-item([Beguile], source-name: [Fashionista], [If you've noticed a shimmering, warm trail of scent in the front row this season, you're not imagining it. While the industry often chases the loudest new launch, insiders are gravitating toward something far more intimate. Enter Golden Kiss, a fragrance from Beguile that doesn't sit on the skin so ...
 
  Continue reading])],
-    [#brief-item([Cynthia Graber and Nicola Twilley], source-name: [Gastropod], [It’s nearly the Day of the Dead in Mexico, which gives us the perfect excuse to get familiar with the country’s national spirit: tequila. Or wait, should that be mezcal? And what’s the difference, anyway? In this episode of Gastropod, Cynthia and Nicky travel to Mexico to explore the history and science of distilled agave, and get tangled up in a complex story of controversies, clones, and culture.
+  [#brief-item([Cynthia Graber and Nicola Twilley], source-name: [Gastropod], [It’s nearly the Day of the Dead in Mexico, which gives us the perfect excuse to get familiar with the country’s national spirit: tequila. Or wait, should that be mezcal? And what’s the difference, anyway? In this episode of Gastropod, Cynthia and Nicky travel to Mexico to explore the history and science of distilled agave, and get tangled up in a complex story of controversies, clones, and culture.
 Learn more about your ad choices. Visit podcastchoices.com/adchoices])],
-    [#brief-item([Catie Pusateri], source-name: [Fashionista], [These are the stories making headlines in fashion on Friday. H&M Group unveiled its Annual & Sustainability Report for 2025 on Thursday, which showed a 34.6% reduction in Scope 3 greenhouse gas emissions compared to 2019 levels. The company added that 91% of its materials are recycled ...
+  [#brief-item([Catie Pusateri], source-name: [Fashionista], [These are the stories making headlines in fashion on Friday. H&M Group unveiled its Annual & Sustainability Report for 2025 on Thursday, which showed a 34.6% reduction in Scope 3 greenhouse gas emissions compared to 2019 levels. The company added that 91% of its materials are recycled ...
 
  Continue reading])],
-    [#brief-item([Stu Davidson], source-name: [Stuck in Customs], [One from a semi recent trip around the NZ fjords…
+  [#brief-item([Stu Davidson], source-name: [Stuck in Customs], [One from a semi recent trip around the NZ fjords…
 
 The post Exploring the Fjords appeared first on Stuck in Customs .])],
-    [#brief-item([Steph Saltzman], source-name: [Fashionista], [For our Weekly Drop Watch column, Fashionista scours the market to curate the most noteworthy releases from our favorite fashion and beauty brands. Keep scrolling for this week's highlights Lee and J. Crew partnered on a denim-focused capsule collection, "bring\[ing\] two legends of American style ...
+  [#brief-item([Steph Saltzman], source-name: [Fashionista], [For our Weekly Drop Watch column, Fashionista scours the market to curate the most noteworthy releases from our favorite fashion and beauty brands. Keep scrolling for this week's highlights Lee and J. Crew partnered on a denim-focused capsule collection, "bring\[ing\] two legends of American style ...
 
  Continue reading])],
-    [#brief-item([Cynthia Graber and Nicola Twilley], source-name: [Gastropod], [For decades, ads for treats sweetened with substances like Sweet’N Low, NutraSweet, and Splenda have promised what seems like a miracle of modern science: that you can enjoy all the dessert you want, calorie-free. No need to deprive yourself—with artificial sweeteners, you can literally have your cake and eat it, too. But are these substances safe? Don’t they give cancer to rats and mess up your metabolism? Listen in now for answers to all these questions, plus the tale of a sugar-free gumball marketing blitz, courtesy of none other than Donald Rumsfeld.
+  [#brief-item([Cynthia Graber and Nicola Twilley], source-name: [Gastropod], [For decades, ads for treats sweetened with substances like Sweet’N Low, NutraSweet, and Splenda have promised what seems like a miracle of modern science: that you can enjoy all the dessert you want, calorie-free. No need to deprive yourself—with artificial sweeteners, you can literally have your cake and eat it, too. But are these substances safe? Don’t they give cancer to rats and mess up your metabolism? Listen in now for answers to all these questions, plus the tale of a sugar-free gumball marketing blitz, courtesy of none other than Donald Rumsfeld.
 Learn more about your ad choices. Visit podcastchoices.com/adchoices])],
-    [#brief-item([Cynthia Graber and Nicola Twilley], source-name: [Gastropod], [Is white chocolate really chocolate? What causes asparagus pee? Sprinkles or jimmies—which do you call them, and is the term ‘jimmies’ racist? Why is the heat of mustard and wasabi so different from a chile burn? This episode, Gastropod is getting to the bottom of your most pressing questions—which also means diving into some of the internet’s most controversial food debates. Listen in now as we call in historians and scientists to bust myths, solve mysteries, and find out why some people turn asparagus into the devil’s own brew!
+  [#brief-item([Cynthia Graber and Nicola Twilley], source-name: [Gastropod], [Is white chocolate really chocolate? What causes asparagus pee? Sprinkles or jimmies—which do you call them, and is the term ‘jimmies’ racist? Why is the heat of mustard and wasabi so different from a chile burn? This episode, Gastropod is getting to the bottom of your most pressing questions—which also means diving into some of the internet’s most controversial food debates. Listen in now as we call in historians and scientists to bust myths, solve mysteries, and find out why some people turn asparagus into the devil’s own brew!
 Learn more about your ad choices. Visit podcastchoices.com/adchoices])],
-    [#brief-item([Cynthia Graber and Nicola Twilley], source-name: [Gastropod], [Many people only think of maple syrup at the breakfast table, when they’re facing down a stack of hot, fluffy pancakes or some French toast. They’re missing out. Maple is undergoing a major boom, newly ascendant in beverage aisles, Asian kitchens, and even biomedical research laboratories. In this episode, we visit sugar shacks and talk to the experts to find out why tree sap is so hot right now—and whether it can live up to the hype.
+  [#brief-item([Cynthia Graber and Nicola Twilley], source-name: [Gastropod], [Many people only think of maple syrup at the breakfast table, when they’re facing down a stack of hot, fluffy pancakes or some French toast. They’re missing out. Maple is undergoing a major boom, newly ascendant in beverage aisles, Asian kitchens, and even biomedical research laboratories. In this episode, we visit sugar shacks and talk to the experts to find out why tree sap is so hot right now—and whether it can live up to the hype.
 
  
 Learn more about your ad choices. Visit podcastchoices.com/adchoices])],
-    [#brief-item([Cynthia Graber and Nicola Twilley], source-name: [Gastropod], [If you haven’t tasted kombucha yet, you probably will soon. The sour-sweet, fizzy, fermented tea is becoming ubiquitous in trendy cafes, workplaces, and health food stores across America. Where did it come from, and how did it get so popular? And what in the world is the slimy, beige blob that produces it? From German POWs to Lindsey Lohan to a kombucha zoo at Tufts University, this episode explores the history and science of summer’s hottest drink.
+  [#brief-item([Cynthia Graber and Nicola Twilley], source-name: [Gastropod], [If you haven’t tasted kombucha yet, you probably will soon. The sour-sweet, fizzy, fermented tea is becoming ubiquitous in trendy cafes, workplaces, and health food stores across America. Where did it come from, and how did it get so popular? And what in the world is the slimy, beige blob that produces it? From German POWs to Lindsey Lohan to a kombucha zoo at Tufts University, this episode explores the history and science of summer’s hottest drink.
 Learn more about your ad choices. Visit podcastchoices.com/adchoices])],
-    [#brief-item([Jessica Sulima], source-name: [Condé Nast Traveler], [Whether you're planning a weekend getaway or a cross-country trip, save on your next vehicle with these Hertz discount codes and member-exclusive offers.])],
-    [#brief-item([Cynthia Graber and Nicola Twilley], source-name: [Gastropod], [Cue the dramatic music, it’s quiz time: Can you identify the people behind these catchphrases? “Yum-O!” “Pukka!” “Bam!” “Peace, love, and taco grease!” The answers are below—but if you’ve already caught on, then you’re well aware of how entrenched TV chefs are in mainstream pop culture. But how did a medium where you can’t actually smell or taste the food get so popular? What was the very first food TV show, and how has food TV changed—and changed us?
+  [#brief-item([Jessica Sulima], source-name: [Condé Nast Traveler], [Whether you're planning a weekend getaway or a cross-country trip, save on your next vehicle with these Hertz discount codes and member-exclusive offers.])],
+  [#brief-item([Cynthia Graber and Nicola Twilley], source-name: [Gastropod], [Cue the dramatic music, it’s quiz time: Can you identify the people behind these catchphrases? “Yum-O!” “Pukka!” “Bam!” “Peace, love, and taco grease!” The answers are below—but if you’ve already caught on, then you’re well aware of how entrenched TV chefs are in mainstream pop culture. But how did a medium where you can’t actually smell or taste the food get so popular? What was the very first food TV show, and how has food TV changed—and changed us?
 Learn more about your ad choices. Visit podcastchoices.com/adchoices])],
-  ))
-}
+))
 
 #colophon([The Swift Herald], [Vol. 1, No. 070], [2026-03-30])

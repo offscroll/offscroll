@@ -21,64 +21,22 @@
 #masthead([Atlantic Standard], [Vol. 1, No. 050], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [KWK promes encloses interior garden within triangular ‘trim house’ in vilnius],
-  kicker: [Cover Story],
-  author: [kat barandy I designboom],
-  source-name: [designboom Architecture],
-  deck: [From the outset, the architects approached the house as a negotiation between presence and landscape.],
-  lead-pre: [],
-  lead-cap: [c],
-  lead-rest: [lass="wow wow-yellow"\>rethinking suburban living in Vilnius],
-  body-paragraphs: (
-  [Trim House by KWK Promes is a single-family house in a suburban district of Vilnius characterized by forested plots and traces of interwar wooden homes. Designed following a closed competition in 2016, the project responds to a site once occupied by modest timber structures that have since disappeared, leaving behind a loose pattern of development among trees and open ground.],
-  [From the outset, the architects approached the house as a negotiation between presence and landscape. The surrounding vegetation and recreational character of the neighborhood guided decisions about massing and orientation. Early proposals already explored lifting part of the concrete volume to introduce light deeper into the plan, while preserving a direct connection to the garden.],
-  [images © Jakub Certowicz],
-  [During the design process of the Trim House, a change in local regulations introduced new constraints for KWK Promes. The allowable building footprint was reduced by half, and the driveway was repositioned so that access now cuts through the garden. These shifts required a substantial revision of the scheme. Rather than relocating the project, the architects chose to adapt it in place.],
-  [‘ We managed to persuade the client to stay with the original plot and reduce the house’s area, ‘ the team explains. ‘ The limitations became an opportunity to refine the concept. ‘ The revised plan contracts into a triangular geometry, a direct response to both the reduced footprint and the altered approach to the site.],
-  [Trim House by KWK Promes sits within a wooded suburban district of Vilnius],
-  [The Trim House organizes its spaces around a central patio that draws daylight into the interior. This open void works together with the living area to extend the garden into the house, creating a continuous spatial field that shifts gradually between inside and outside. The ground floor remains closely tied to the terrain, while the raised portion introduces variation in section.],
-  [By lifting part of the house one level, the architects establish a layered relationship with the landscape. The patio becomes a hinge between volumes, mediating light and movement while offering framed views of the surrounding trees. ‘ The patio, together with the living space, became an extension of the garden, ‘ the architects note, emphasizing how the interior is shaped by its proximity to open air.],
-  [the project began as a competition proposal for a single family house],
-  [The upper level contains the private rooms, positioned above the ground-floor volume. Bedrooms open onto a terrace that overlooks the site, allowing residents to engage with the wooded setting while maintaining a sense of separation from the approach and entry sequence. This elevated zone benefits from increased daylight and longer views across the plot.],
-  [In this configuration, Trim House balances compactness with spatial generosity. The reduced footprint yields a more expansive garden and improved solar access, both of which hold particular importance in Vilnius’s climate and forested context. ‘ The enlarged garden area and better sunlight exposure became key arguments for trimming the house, ‘ the architects continue. The project retains its initial spatial idea, even as its dimensions shift, showing how constraint can guide form with precision.],
-  [the design responds to a site shaped by traces of interwar wooden homes],
-  [the house contracts into a triangular plan to adapt to constraints],
-  [a central patio brings daylight deep into the interior spaces],
-  [the living area extends toward the garden through an open floor plan],
-  [the reduced footprint allows for a larger garden and improved sunlight],
-  [project info:],
-  [name: Trim House],
-  [architect: KWK Promes | \@robertokonieczny],
-  [location: Vilnius, Lithuania],
-  [completion: 2025],
-  [photography: © Jakub Certowicz | \@jakubcertowicz],
-  [lead architect: Robert Konieczny],
-  [collaboration: Dorota Skóra, Michał Lisiński, Krzysztof Kobiela, Łukasz Marciniak, Mateusz Białek, Katarzyna Ficek],
-  [structural design: Firma Inżynierska STATYK],
-  [local partner: 4 PLIUS ARCHITECTS – Donaldas Trainauskas],
-  [interiors: Yes. Design Architecture],
-  [The post KWK promes encloses interior garden within triangular ‘trim house’ in vilnius appeared first on designboom | architecture & design magazine .],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [this monolithic café in south korea is designed to evoke an ancient fortress],
   author: [kat barandy I designboom],
   source-name: [designboom Architecture],
   images: (),
   paragraphs: (
+  [Monologue Café: A colossal sculpture in the landscape],
   [Korean studio SOSOKKI ANAC takes to a forested landscape in Gangwon-do to design this Monologue Café as a series of angular brick volumes. The monolithic structure rises from the ground in sharp, deliberate formations. The building reads as a continuous mass, its surfaces folded and inclined, with each plane catching light differently across the day.],
   [Set along a quiet edge of water and low vegetation, the project avoids a single, fixed viewpoint. As visitors move around it, the café shifts in profile, sometimes appearing compact and vertical, elsewhere stretched and low against the terrain. The reddish brick facade gives the structure a consistent material presence, while the geometry introduces variation through depth, shadow, and projection.],
   [images © Seokgue Hong],
+  [SOSOKKI ANAC evokes a fortress],
   [SOSOKKI ANAC, the architects behind the Monologue Café, begin the design with a speculative concept: a monastery imagined from a time before a reset of the world. This narrative is translated into architecture through the use of layered, faceted forms that suggest accumulation rather than composition. Each volume feels placed in relation to another to build a sense of density and continuity across the site.],
   [References to a monumental boundary condition inform the project’s massing, with thick walls and abrupt angles reinforcing a sense of separation and threshold. These gestures are expressed through brick planes that sculpturally tilt, fold, and intersect, thus creating moments where the building reads as both solid and cut.],
   [Monologue Café stands in a forested landscape in Korea as a sculptural brick structure],
+  [Interior spaces shaped by light and section],
   [Interiors shift to an atmosphere of pale surfaces and filtered light. Sloped walls and narrow sections guide movement through the space, creating a sequence of compressed and expanded areas. Seating is arranged along elongated corridors, where tables align with angled windows that frame views outward to trees and ground cover.],
   [Large triangular openings define key moments within the café. These apertures bring in daylight with precision, casting changing patterns across the interior surfaces. The geometry of the openings echoes the exterior form, establishing continuity between inside and outside while also directing attention toward the surrounding landscape.],
   [the building shifts in form depending on movement around its angular volumes],
@@ -106,10 +64,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [30 Light and Bright Spring Dinner Recipes],
   author: [Lindsay],
   source-name: [Pinch of Yum],
@@ -118,13 +74,121 @@
   [Spring is in the air – I can feel it! My weekly dinner menus are slowly turning over from soups and stews to salads and bowls filled with lots and lots of color.],
   [This is the only list you need as we head into warmer, sunnier weather! ☀️ Some of my all-time favorite dinner recipes for spring are here – bright salads, easy sandwiches for a crowd, herby sauces and dressings, and lots of weeknight wonders (because spring is BUSY, too!).],
   [Hoping you find a new dinner favorite!],
-  [class="tasty-roundups-description"\>OOOH BABY, this salad is so good! Crunchy kale and cabbage, fresh herbs and fresno peppers, chopped peanuts, and a perfect roasted peanut vinaigrette that tucks into all the salad nooks and crannies.],
-  [class="tasty-roundups-description"\>We are living our best bowl life this week. Seasoned sweet potato wedges and chicken meatballs or rotisserie chicken all piled onto a plate with a little puddle of punchy green avocado mojo sauce. Yes, wow, repeat.],
-  [class="tasty-roundups-description"\>Crunchy, light, bright, and ultra-fresh. This French-inspired bistro salad is an absolute star as a side for nearly any dinner. Tender greens, fresh herbs, pickled onions, and a delicate vinaigrette on top.],
-  [class="tasty-roundups-description"\>Tender, juicy, garlic-marinated shrimp brushed with a bright pesto sauce and piled high on creamy Parmesan risotto with fresh tomatoes and herbs sprinkled on it all. Wow wow wow! Diving in now!],
-  [class="tasty-roundups-description"\>These Red Chile Chicken Tacos are always on our minds! Lightly pan-fried corn tortillas stuffed with tender chicken and a pinto bean red chile saucy filling, piles of creamy corn salsa, and tangy homemade pickled red onions. YUM!],
-  [class="tasty-roundups-description"\>We’re bringing you the most beautiful salad inspired by the restaurant Oliver’s in Minnesota. Tender salmon, savory peppers and garlic confit, buttery chunks of avocado, fire-roasted corn, bacon bits, and a river of homemade smoky ranch dressing.],
-  [class="tasty-roundups-description"\>This Sheet Pan Shrimp and Cauli Rice is the easiest sheet pan dinner! Shrimp, peas, cauliflower rice, seasonings, and Rosso pesto sauce all come together on one pan for a delicious springy meal.],
+  [Roasted Peanut Kale Crunch Salad],
+  [OOOH BABY, this salad is so good! Crunchy kale and cabbage, fresh herbs and fresno peppers, chopped peanuts, and a perfect roasted peanut vinaigrette that tucks into all the salad nooks and crannies.],
+  [34 reviews \/ 4.9 average],
+  [make this recipe],
+  [Sun-Dried Tomato Focaccia Turkey Sandwich],
+  [Pillowy sun-dried tomato focaccia gets piled with pesto mayo, turkey, juicy tomato slices, and greens. This sandwich is a beauty and practically a lifestyle!],
+  [46 reviews \/ 5 average],
+  [make this recipe],
+  [Spring Roll Bowls with Sweet Garlic Lime Sauce],
+  [Spring Roll Bowls – basil, mint, rice noodles, fish sauce, brown sugar, lime juice, and whatever other protein and veggies you have on hand! Easy to make meatless!],
+  [110 reviews \/ 4.8 average],
+  [make this recipe],
+  [Salmon Tacos with Mango Corn Salsa],
+  [Super easy salmon tacos loaded with a mango, sweet corn, and cucumber salsa!],
+  [30 reviews \/ 5 average],
+  [make this recipe],
+  [Avocado Mojo Bowls with Sweet Potato and Chicken],
+  [We are living our best bowl life this week. Seasoned sweet potato wedges and chicken meatballs or rotisserie chicken all piled onto a plate with a little puddle of punchy green avocado mojo sauce. Yes, wow, repeat.],
+  [34 reviews \/ 4.9 average],
+  [make this recipe],
+  [Shredded cabbage and kale, shrimp, avocado, cilantro and chili-flavored peanuts, and the perfect sweet miso dressing.],
+  [35 reviews \/ 4.9 average],
+  [make this recipe],
+  [Cilantro Orange Chicken with Rice and Beans],
+  [This golden Cilantro Orange Chicken is so flavorful, crisped to golden brown perfection, and just very finger-licking good! Served with rice, beans, and a quick homemade pineapple salsa.],
+  [45 reviews \/ 4.6 average],
+  [make this recipe],
+  [Golden brown chicken meatballs cozied up next to fixings like cucumbers, shallots, kewpie mayo, mint, a bit of chili crisp, and some fresh cilantro to make the ultimate chicken sando!],
+  [45 reviews \/ 4.8 average],
+  [make this recipe],
+  [Liz’s Bistro Salad],
+  [Crunchy, light, bright, and ultra-fresh. This French-inspired bistro salad is an absolute star as a side for nearly any dinner. Tender greens, fresh herbs, pickled onions, and a delicate vinaigrette on top.],
+  [20 reviews \/ 5 average],
+  [make this recipe],
+  [Chipotle Orange Shrimp with Cilantro Rice],
+  [Chipotle Orange Shrimp with Cilantro Rice! Tender shrimp in a sweet-meets-smoky cream sauce piled high on cilantro-speckled rice with a side of tangy cucumbers.],
+  [45 reviews \/ 4.8 average],
+  [make this recipe],
+  [Harissa Meatballs with Whipped Feta],
+  [These Harissa Meatballs with Whipped Feta are perfect for an easy SOS dinner! Store-bought meatballs, bell peppers, zucchini, harissa, and whipped feta all in one bowl. YUMMY!],
+  [39 reviews \/ 5 average],
+  [make this recipe],
+  [Chicken Lettuce Wraps with Lime Drench],
+  [These lettuce wraps are a SUMMER DREAM. Mountains of crumbled-crisp ground chicken, fluffy quinoa, and/or rice for added satisfaction, and garlicky gingery sautéed veggies in crisp butter lettuce leaves.],
+  [32 reviews \/ 4.8 average],
+  [make this recipe],
+  [Elote Quinoa Salad made with velvety peppers confit, juicy sweet corn, homemade dressing, cotija cheese, lime, and spices. Perfect for summer and so, so good!],
+  [23 reviews \/ 4.9 average],
+  [make this recipe],
+  [Pesto Shrimp and Parmesan Risotto],
+  [Tender, juicy, garlic-marinated shrimp brushed with a bright pesto sauce and piled high on creamy Parmesan risotto with fresh tomatoes and herbs sprinkled on it all. Wow wow wow! Diving in now!],
+  [5 reviews \/ 5 average],
+  [make this recipe],
+  [Garlic Cream Bucatini with Peas and Asparagus],
+  [This truly is a wonderful springy gem! Bucatini noodles in a garlic-infused creamy sauce and twirled around buttery bits of asparagus and peas. SO GOOD!],
+  [18 reviews \/ 4.9 average],
+  [make this recipe],
+  [Spring Salmon with Creamed Leeks, Potatoes, and Asparagus],
+  [We’re bringing you a plate of sunshine for dinner! Perfectly golden-crisp salmon partnered next to oven-roasted asparagus and a buttery, rich, creamy leek sauce piled on crispy potatoes.],
+  [10 reviews \/ 4.8 average],
+  [make this recipe],
+  [Red Chile Chicken Tacos with Creamy Corn],
+  [These Red Chile Chicken Tacos are always on our minds! Lightly pan-fried corn tortillas stuffed with tender chicken and a pinto bean red chile saucy filling, piles of creamy corn salsa, and tangy homemade pickled red onions. YUM!],
+  [53 reviews \/ 4.9 average],
+  [make this recipe],
+  [The Oliver’s Salad],
+  [We’re bringing you the most beautiful salad inspired by the restaurant Oliver’s in Minnesota. Tender salmon, savory peppers and garlic confit, buttery chunks of avocado, fire-roasted corn, bacon bits, and a river of homemade smoky ranch dressing.],
+  [27 reviews \/ 4.9 average],
+  [make this recipe],
+  [5 Ingredient Lemon Chicken with Asparagus],
+  [Juicy, pan-fried chicken with peppery lemon flavors and tender bites of asparagus with a honey butter sauce. A bright and fresh 5 ingredient dinner on the table in 20 minutes!],
+  [120 reviews \/ 4.8 average],
+  [make this recipe],
+  [Yummy Salmon Burgers with Slaw],
+  [These salmon burgers are THE YUMMIEST! and made with just five ingredients. The best for a quick + easy high protein lunch or dinner.],
+  [107 reviews \/ 4.8 average],
+  [make this recipe],
+  [These are the easiest crockpot carnitas and simple enough for anyone to make! Juicy, flavorful, and perfectly browned with a crispy crust.],
+  [159 reviews \/ 4.8 average],
+  [make this recipe],
+  [Hot, crunchy, salty, and begging for some sauce! These Crispy Chicken Cutlets are a dinnertime winner.],
+  [2 reviews \/ 5 average],
+  [make this recipe],
+  [Chipotle Salmon with Orange Salsa and Aji Verde],
+  [Sweet-and-smoky chipotle salmon topped with fresh orange salsa and creamy aji verde! An easy, delicious, restaurant-level salmon dinner.],
+  [43 reviews \/ 5 average],
+  [make this recipe],
+  [Pickley salad, crispy potatoes, and creamy ranch – this smashed potato salad is the perfect summer combo!],
+  [13 reviews \/ 5 average],
+  [make this recipe],
+  [Sheet Pan Shrimp and Cauli Rice],
+  [This Sheet Pan Shrimp and Cauli Rice is the easiest sheet pan dinner! Shrimp, peas, cauliflower rice, seasonings, and Rosso pesto sauce all come together on one pan for a delicious springy meal.],
+  [30 reviews \/ 4.9 average],
+  [make this recipe],
+  [Spicy Peanut Soba Noodle Salad],
+  [This Spicy Peanut Soba Noodle Salad features red peppers, cabbage, chicken, soba noodles, and a quick homemade spicy peanut sauce. Salads don’t get much yummier than this.],
+  [91 reviews \/ 4.8 average],
+  [make this recipe],
+  [Rainbow Chicken Salad with Almond Honey Mustard Dressing],
+  [Tender chicken, plump grapes and berries, crisp lettuce, tangy feta cheese, crunchy almonds, and the real star – almond honey mustard dressing! Eat the rainbow and be glad, friends!],
+  [61 reviews \/ 4.9 average],
+  [make this recipe],
+  [Pineapple Pork with Coconut Rice],
+  [Sticky-sweet pork, juicy pineapple, fresh herbs, jalapeño, and crispy onions all served over a bed of fluffy coconut rice. SO GOOD!],
+  [82 reviews \/ 4.8 average],
+  [make this recipe],
+  [Amazing Mushroom Bowls with Kale Pesto],
+  [Amazing Mushroom Bowls with Kale Pesto! Smoky, sweet, salt mushrooms (or tempeh!), caramelized pineapple, peppers, and dollop of kale pesto, all served over rice.],
+  [35 reviews \/ 4.9 average],
+  [make this recipe],
+  [The Best Chicken Tinga Tacos],
+  [These Chicken Tinga Tacos are THE BEST! Saucy, spicy, real food perfection.],
+  [192 reviews \/ 4.9 average],
+  [make this recipe],
+  [My Three Favorite Spring Baking Recipes],
   [The post 30 Light and Bright Spring Dinner Recipes appeared first on Pinch of Yum .],
 ),
   insert-map: (:),
@@ -133,57 +197,46 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [how the creative impulse of utopia improves the world – maria arana zubiate],
   author: [Maria Arana Zubiate],
   source-name: [designboom Architecture],
   images: (),
   paragraphs: (
-  [dir="auto"\>],
-  [dir="auto"\>Over time, utopias, often disparaged, have shown their capacity to guide and shape the evolution of the world toward more desirable scenarios. The power of utopia is such that many of today’s widely accepted urban proposals— such as collective housing, garden cities, or mass public transport — were once dismissed as utopian. Over the past century, utopia became a powerful tool for accelerating change. After the First World War, the historian, philosopher, and urbanist Lewis Mumford, author of the book The Story of Utopias, argued that the most important task of the moment was to ‘build castles in the air,’ advocating for a proactive, creative, and visionary attitude toward a world that could not be accepted as desirable or just.],
-  [dir="auto"\>],
-  [dir="auto"\>As Mumford pointed out, the history of utopias is, in fact, the history of the world. They emerge as a rejection of the social and cultural context of their time, not as a naive refuge, but as a critical gaze that reveals the shortcomings of their present. Utopia is, in itself, a way of understanding reality, a way of seeing the world that allows us to imagine other rules, other connections, and other architectures. And it begins with an impulse that precedes any method: a creative reaction that pushes us to imagine the impossible.],
-  [dir="auto"\>],
-  [dir="auto"\>],
-  [dir="auto"\>],
-  [dir="auto"\>],
-  [dir="auto"\>Lewis Mumford divided utopias into two main categories: escapist utopias, which flee from reality, and regenerative utopias, which seek to transform it. Furthermore, he warned of the dangerous proximity between dystopia and the realized utopia: when the ideal is realized, it runs the risk of degenerating into its opposite. How can we differentiate these utopias and find the boundary that turns them into dystopia? How can we work with this ambiguity to recover the drive that fosters utopian thinking within a dystopia? Here is a small selection of projects from Eu-topias, Ou-topias , the main exhibition of the Basque International Architecture Biennial, Mugak, which may help explain this complexity.],
-  [dir="auto"\>],
-  [dir="auto"\>],
-  [dir="auto"\>],
+  [Two natures, one ambiguity, and the danger of its absence],
+  [Over time, utopias, often disparaged, have shown their capacity to guide and shape the evolution of the world toward more desirable scenarios. The power of utopia is such that many of today’s widely accepted urban proposals— such as collective housing, garden cities, or mass public transport — were once dismissed as utopian. Over the past century, utopia became a powerful tool for accelerating change. After the First World War, the historian, philosopher, and urbanist Lewis Mumford, author of the book The Story of Utopias, argued that the most important task of the moment was to ‘build castles in the air,’ advocating for a proactive, creative, and visionary attitude toward a world that could not be accepted as desirable or just.],
+  [As Mumford pointed out, the history of utopias is, in fact, the history of the world. They emerge as a rejection of the social and cultural context of their time, not as a naive refuge, but as a critical gaze that reveals the shortcomings of their present. Utopia is, in itself, a way of understanding reality, a way of seeing the world that allows us to imagine other rules, other connections, and other architectures. And it begins with an impulse that precedes any method: a creative reaction that pushes us to imagine the impossible.],
+  [not all utopias are the same],
+  [Lewis Mumford divided utopias into two main categories: escapist utopias, which flee from reality, and regenerative utopias, which seek to transform it. Furthermore, he warned of the dangerous proximity between dystopia and the realized utopia: when the ideal is realized, it runs the risk of degenerating into its opposite. How can we differentiate these utopias and find the boundary that turns them into dystopia? How can we work with this ambiguity to recover the drive that fosters utopian thinking within a dystopia? Here is a small selection of projects from Eu-topias, Ou-topias , the main exhibition of the Basque International Architecture Biennial, Mugak, which may help explain this complexity.],
+  [Utopias of Escape: Imaginaries Between Critique and Desire],
   [Utopias of escape offer an imaginary refuge from the contradictions of the present and function as cultural safety valves that express the desire for a different possible life and constitute forms of critical escape. From nomadism, voluntary confinement, or adaptive architectures, all of them explore escape as voluntary exclusion—geographical and existential—through the creation of new imaginaries.],
   [New Babylon is the name that Dutch artist Constant Nieuwenhuys gave to a large-scale project developed between 1956 and 1974. Conceived as a global city, free of borders, composed of large, elevated, and transformable structures, New Babylon presents itself as a space in constant metamorphosis, designed to welcome a humanity liberated from productive labor and fully dedicated to play, creation, and experimental living. A territory of freedom and exploration in which architecture ceases to be a fixed framework and becomes a malleable instrument of social experimentation.],
-  [dir="auto"\>],
   [Today, Constant’s proposal remains remarkably relevant. In the face of a globalized urban model marked by the standardization of spaces, the commodification of leisure, and the centrality of productivity, New Babylon challenges the contemporary imagination by positioning play, mobility, and creativity as the axes of spatial organization. The growing dematerialization of work, the nomadic mobility of broad social sectors, and the expansion of global communication networks seem to give substance—albeit in a fragmentary and contradictory manner—to some of Constant’s intuitions. At the same time, the climate and migration crisis, inequality, and the transformation of dwelling practices reopen the interest in thinking of the city as a collective project oriented toward emancipation rather than solely toward economic efficiency.],
+  [Regenerative utopias: Experimental cartographies for the future],
   [In an urban world marked by deep inequalities, architectural imagination can be a political and transformative tool. Regenerative utopias seek to reverse the physical and social deterioration of cities, not only by recovering what has been lost, but by proposing new ways of living and coexisting. Here architecture ceases to be mere construction and becomes a medium that creates bonds, projects futures, and draws new maps of possibilities. Two experiences stand out in this context:],
   [The Available City , conceived by architect and urban planner David Brown, is a proposal for urban intervention based on a striking statistic: the city of Chicago has approximately 13,000 vacant lots, an area equivalent to twice the size of its downtown core. David Brown proposes viewing these vacant sites as an interconnected system rather than isolated lots, to create new public spaces and reconfigure the urban fabric starting from the plot, its smallest unit. In 2021, this concept was chosen as the central theme of the 4th Chicago Architecture Biennial, becoming a laboratory for urban experimentation. The results included play spaces, sports facilities, temporary cultural centers, and community gardens, demonstrating the versatility of the model and its capacity to generate networks of collaboration between architects, residents, collectives, and public administration.],
   [More than 9,000 kilometers away, in Accra, architect, academic, and writer Lesley Lokko founded the African Futures Institute, an educational and critical thinking platform dedicated to envisioning African futures from within the continent itself. From its beginnings, the African Futures Institute has expanded its reach into curatorial practice and the organization of exhibitions, consolidating its international reputation through its participation in the 2023 Venice Architecture Biennale. This institution recognizes that, on the youngest and fastest-urbanizing continent on the planet, it is urgent to rethink how architects and urban planners are trained—not only for Africa’s future, but with the understanding that this future impacts the entire world.],
   [This African educational organization is establishing itself as a platform for imagining African futures from within the continent itself, placing issues such as decolonization, climate change, migration, and social justice at the center. In its vision, architecture is the capacity to imagine and build futures in which regeneration and social justice are interwoven, turning utopia into a living practice, a collective process, and the act of rewriting the present.],
+  [The Threshold: meeting point between utopia and dystopia],
   [Between the promise of a better future and the fear of its oppressive drift, the thin line that separates utopia from dystopia becomes fertile ground for architectural and social imagination. That intermediate space, where the ideal merges with the precarious and the collective with the provisional, reveals the fragility of our ways of living.],
   [Inverted Tents , by architect Aristide Antonas, embodies this ambiguity: beds suspended in abandoned buildings invert domestic logic, freeing up floor space for communal life and the creation of new bonds. But that same gesture that promises community also evokes the precariousness of shelter, the echo of ruin, and contemporary vulnerability. Antonas’s project emerged in Athens between 2010 and 2012, a period marked by economic collapse and the proliferation of functional ruins. Its aim is not to reinforce individual autonomy, but to generate conditions for collective practices and encounters. The project also connects with the idea of the “empty university,” proposing to bring together immigrant and local students in shared environments—not as a substitute for housing for the poor, but as an experiment in coexistence based on contingency and the reuse of existing infrastructures.],
   [In that unresolved tension between utopia and dystopia, a field of reflection opens about how to imagine the common without denying the instability that sustains it. It is at once a critique of the inaccessibility of housing and an exercise that oscillates between utopia—imagining alternative modes of coexistence—and dystopia—through its inevitable evocation of refugee camps and other conflicts, recalling the harshness of forced displacement and contemporary precariousness.],
   [Today, largely overtaken by the surrounding reality, utopias seem to have fallen into disrepute. The prevailing pragmatism limits the space for imagining better futures. An absence that is full of danger, because, as the French philosopher and anthropologist Paul Ricoeur warns, ‘a society without utopia is a society without purpose, a society without direction.’],
-  [dir="auto"\>Maria Arana Zubiate is an architect, researcher, and curator. She is a Founding Partner of Urbanbat, a social initiative cooperative dedicated to research and the production of critical culture on urban transformations. She has curated programmes for Azkuna Zentroa-Alhóndiga Bilbao, the Spanish Ministry of Culture, and has been Co-Director for 14 years of URBANBATfest, Bilbao’s annual festival of architecture, urbanism, and social innovation. Currently, she is the Curator of the Mugak\/ Basque Country International Architecture Biennial.],
-  [dir="auto"\>],
-  [dir="auto"\>],
-  [dir="auto"\> This guest essay is part of designboom’s Utopia: Then and Now chapter, examining utopia’s role in the past, present and future as a way of envisioning a better way of being. Explore more related stories here .],
+  [Maria Arana Zubiate is an architect, researcher, and curator. She is a Founding Partner of Urbanbat, a social initiative cooperative dedicated to research and the production of critical culture on urban transformations. She has curated programmes for Azkuna Zentroa-Alhóndiga Bilbao, the Spanish Ministry of Culture, and has been Co-Director for 14 years of URBANBATfest, Bilbao’s annual festival of architecture, urbanism, and social innovation. Currently, she is the Curator of the Mugak\/ Basque Country International Architecture Biennial.],
+  [This guest essay is part of designboom’s Utopia: Then and Now chapter, examining utopia’s role in the past, present and future as a way of envisioning a better way of being. Explore more related stories here .],
   [The post how the creative impulse of utopia improves the world – maria arana zubiate appeared first on designboom | architecture & design magazine .],
 ),
   insert-map: (:),
   inline-pq: pull-quote([New Babylon is the name that Dutch artist Constant Nieuwenhuys gave to a large-scale project developed between 1956 and 1974.], [Maria Arana Zubiate]),
-  inline-pq-idx: 11,
+  inline-pq-idx: 8,
   word-count: 1584,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Coolest Spring 2026 Jacket Trends For Transitional-Weather Dressing],
   author: [Andrea Bossi],
   source-name: [Refinery29 Fashion],
@@ -237,10 +290,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Baker Bleu: Where Breaking Bread is a Space-Making Ritual],
   author: [Joseph Sgambati III],
   source-name: [Design Milk Architecture],
@@ -263,10 +314,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Spring 2026 Shoe Trends Are Freakier Than Ever: See Our Top 9],
   author: [Andrea Bossi],
   source-name: [Refinery29 Fashion],
@@ -316,11 +365,10 @@
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Nike Celebrates the Paris Olympics With the LeBron 23 "Old Glory" Colorway],
   author: [Hypebeast],
   source-name: [Hypebeast],
@@ -344,7 +392,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [JFK Jr and Carolyn Bessette Kennedy: how the 1990s power couple became today’s biggest style icons],
   author: [Chloe Mac Donnell],
   source-name: [The Guardian Fashion],
@@ -366,7 +414,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Closer Look at Art Basel Hong Kong 2026],
   author: [Hypebeast],
   source-name: [Hypebeast],
@@ -392,7 +440,7 @@ Wan Chai, Hong Kong],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Generalized Language Models],
   author: [Lilian Weng (OpenAI)],
   source-name: [Lilian Weng (OpenAI)],
@@ -418,7 +466,7 @@ Wan Chai, Hong Kong],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [DOJ confirms FBI Director Kash Patel’s personal email was hacked],
   author: [Ashley Belanger],
   source-name: [Ars Technica Policy],
@@ -437,7 +485,7 @@ Wan Chai, Hong Kong],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Jess Cartner-Morley on fashion: there may be 50 shades, but there’s only one Correct Grey],
   author: [Jess Cartner-Morley],
   source-name: [The Guardian Fashion],
@@ -459,7 +507,7 @@ Wan Chai, Hong Kong],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [All of DOGE’s work could be undone as lawsuit against Musk proceeds],
   author: [Ashley Belanger],
   source-name: [Ars Technica Policy],
@@ -478,7 +526,7 @@ Wan Chai, Hong Kong],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [A quick hack for looking A Bit Dressed Up? Just add a dash of shine | Jess Cartner-Morley],
   author: [Jess Cartner-Morley],
   source-name: [The Guardian Fashion],
@@ -498,35 +546,33 @@ Wan Chai, Hong Kong],
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([Lilian Weng (OpenAI)], source-name: [Lilian Weng (OpenAI)], [The full implementation is available in lilianweng/deep-reinforcement-learning-gym 
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([Lilian Weng (OpenAI)], source-name: [Lilian Weng (OpenAI)], [The full implementation is available in lilianweng/deep-reinforcement-learning-gym 
 
 In the previous two posts, I have introduced the algorithms of many deep reinforcement learning models. Now it is the time to get our hands dirty and practice how to implement the models in the wild. The implementation is gonna be built in Tensorflow and OpenAI gym environment. The full version of the code in this tutorial is available in \[lilian/deep-reinforcement-learning-gym\] .])],
-    [#brief-item([Lilian Weng (OpenAI)], source-name: [Lilian Weng (OpenAI)], [Special thanks to John Schulman for a lot of super valuable feedback and direct edits on this post. 
+  [#brief-item([Lilian Weng (OpenAI)], source-name: [Lilian Weng (OpenAI)], [Special thanks to John Schulman for a lot of super valuable feedback and direct edits on this post. 
 
 Test time compute ( Graves et al. 2016 , Ling, et al. 2017 , Cobbe et al. 2021 ) and Chain-of-thought (CoT) ( Wei et al. 2022 , Nye et al. 2021 ), have led to significant improvements in model performance, while raising many research questions. This post aims to review recent developments in how to effectively use test-time compute (i.e. “thinking time”) and why it helps.])],
-    [#brief-item([Lilian Weng (OpenAI)], source-name: [Lilian Weng (OpenAI)], [\[Updated on 2021-02-01: Updated to version 2.0 with several work added and many typos fixed.\] 
+  [#brief-item([Lilian Weng (OpenAI)], source-name: [Lilian Weng (OpenAI)], [\[Updated on 2021-02-01: Updated to version 2.0 with several work added and many typos fixed.\] 
 
  \[Updated on 2021-05-26: Add P-tuning and Prompt Tuning in the “prompt design” section.\] 
 
  \[Updated on 2021-09-19: Add “unlikelihood training” .\]])],
-    [#brief-item([Lilah Ramzi], source-name: [Vogue (runway)], [Here’s what you missed at this year’s Doja Cat-hosted Vogue Vintage Market, where three floors of vintage treasures didn’t stay on the racks for long.])],
-    [#brief-item([Lilian Weng (OpenAI)], source-name: [Lilian Weng (OpenAI)], [So far, I’ve written about two types of generative models, GAN and VAE . Neither of them explicitly learns the probability density function of real data, \$p(\\mathbf{x})\$ (where \$\\mathbf{x} \\in \\mathcal{D}\$) — because it is really hard! Taking the generative model with latent variables as an example, \$p(\\mathbf{x}) = \\int p(\\mathbf{x}\\vert\\mathbf{z})p(\\mathbf{z})d\\mathbf{z}\$ can hardly be calculated as it is intractable to go through all possible values of the latent code \$\\mathbf{z}\$.])],
-    [#brief-item([Anna Cafolla], source-name: [Vogue (runway)], [The fur-lined opera coat style has made a comeback via Conner Ives and vintage dealers, embracing yhr robe and its easy sense of glamour.])],
-    [#brief-item([Ellie Violet Bramley], source-name: [The Guardian Fashion], [Response from British fashion industry has been jubilant and Kane’s first Mulberry collection is reportedly to be unveiled at London fashion week 2027
+  [#brief-item([Lilah Ramzi], source-name: [Vogue (runway)], [Here’s what you missed at this year’s Doja Cat-hosted Vogue Vintage Market, where three floors of vintage treasures didn’t stay on the racks for long.])],
+  [#brief-item([Lilian Weng (OpenAI)], source-name: [Lilian Weng (OpenAI)], [So far, I’ve written about two types of generative models, GAN and VAE . Neither of them explicitly learns the probability density function of real data, \$p(\\mathbf\{x\})\$ (where \$\\mathbf\{x\} \\in \\mathcal\{D\}\$) — because it is really hard! Taking the generative model with latent variables as an example, \$p(\\mathbf\{x\}) = \\int p(\\mathbf\{x\}\\vert\\mathbf\{z\})p(\\mathbf\{z\})d\\mathbf\{z\}\$ can hardly be calculated as it is intractable to go through all possible values of the latent code \$\\mathbf\{z\}\$.])],
+  [#brief-item([Anna Cafolla], source-name: [Vogue (runway)], [The fur-lined opera coat style has made a comeback via Conner Ives and vintage dealers, embracing yhr robe and its easy sense of glamour.])],
+  [#brief-item([Ellie Violet Bramley], source-name: [The Guardian Fashion], [Response from British fashion industry has been jubilant and Kane’s first Mulberry collection is reportedly to be unveiled at London fashion week 2027
 
 The British fashion designer Christopher Kane has been named as the new creative director of Mulberry.
 
 The Glaswegian-born designer will relaunch the English heritage brand’s women’s ready-to-wear collection, with his debut reportedly to be launched in September at London fashion week, before landing in stores and online from January 2027.
 
  Continue reading...])],
-    [#brief-item([Laura Harold], source-name: [Yoga Journal], [Learn how to savor every step along the way.
+  [#brief-item([Laura Harold], source-name: [Yoga Journal], [Learn how to savor every step along the way.
 
 The post Working on the Splits? This Unexpected Advice Will Help. appeared first on Yoga Journal .])],
-    [#brief-item([Lilian Weng (OpenAI)], source-name: [Lilian Weng (OpenAI)], [In my earlier post on meta-learning , the problem is mainly defined in the context of few-shot classification. Here I would like to explore more into cases when we try to “meta-learn” Reinforcement Learning (RL) tasks by developing an agent that can solve unseen tasks fast and efficiently.])],
-  ))
-}
+  [#brief-item([Lilian Weng (OpenAI)], source-name: [Lilian Weng (OpenAI)], [In my earlier post on meta-learning , the problem is mainly defined in the context of few-shot classification. Here I would like to explore more into cases when we try to “meta-learn” Reinforcement Learning (RL) tasks by developing an agent that can solve unseen tasks fast and efficiently.])],
+))
 
 #colophon([Atlantic Standard], [Vol. 1, No. 050], [2026-03-30])

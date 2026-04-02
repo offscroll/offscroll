@@ -21,43 +21,8 @@
 #masthead([Coastal Courier], [Vol. 1, No. 062], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Three ideas about text messages],
-  kicker: [Cover Story],
-  author: [Antirez],
-  source-name: [Antirez],
-  deck: [I’m aboard of a flight bringing me to San Francisco.],
-  lead-pre: [],
-  lead-cap: [E],
-  lead-rest: [ventually I purchased the slowest internet connection of my life (well at least for a good reason), but for several hours I was without internet, as usually when I fly.],
-  body-paragraphs: (
-  [I don’t mind staying disconnected for some time usually. It’s a good time to focus, write some code, or a blog post like this one. However when I’m disconnected, what makes the most difference is not Facebook or Twitter or Github, but the lack of text messages.],
-  [At this point text messages are a fundamental thing in my life. They are also probably the main source of distraction. I use messages to talk with my family, even just to communicate between different floors. I use messages with friends to organize dinners and vacations. I even use messages with the plumber or the doctor.],
-  [Clearly messages are not going to go away. They need to get better, so I usually tend to thing at topics related to messaging applications. The following are three recurrent thoughts I’ve about this topic.],
-  [1. WhatsApp is not used in the US.],
-  [Do you know what’s the social network that is reshaping the most the way we communicate in Europe? Is the WhatsApp application. Since it is the total standard and an incredible amount of the population has it, “WhatsApp Groups” is changing the way people communicate. There is a group for each school class, one for the children and one for the parents. One for families, another for groups of friends. One for the kindergarten of my daughter, where teachers post from time to time pictures of our children doing activities.],
-  [WhatsApp is also one of the main pains of modern life. All this groups continuously beep. However what they are doing for the society is incredible: they are truly making every human being interconnected. This magic is possible because here in Italy, and in most other EU countries, WhatsApp is \*the standard\* so everybody assumes you use it.],
-  [To me it is pretty incredible that this is not happening in the US, the place where most social applications are funded and created. Given that in the US there are both Android and iOS phones I wonder what’s stopping this from happening. My guess is that it’s just a matter of time and a unified messaging platform will happen there too.],
-  [\* Why voice recognition is not used more.],
-  [For people that can write text fast into a real keyboard, the software keyboard of the phone is one of the most annoying things ever. Similarly, teenagers excluded, many other people have issues writing long text messages with a phone keyboard.],
-  [At the same time, the voice recognition software of Android, powered by the Google servers, reached a point where it rarely does errors at all, so why just a few people use it on a daily basis? My theory is that the user interface to activate and use the voice recognition feature is so bad to be the main barrier to make this feature a big hit.],
-  [First you have to find how to activate it, and usually is not a prominent button on the keyboard. Then there is this delay and it emits a beep and starts to listen, and it’s not clear exactly how to stop it, especially if the environment is aloud. The whole thing looks like if you are suffering from the servers latency, but voice is voice. With delays and non clear experience you kill the big advantage of talking to your phone. This should be just a “push the button while you talk” thing. When you push the button, the system starts to record your voice immediately and connects asynchronously to the servers. As text arrives back, it is shown to the user. When the user releases the button the voice thing is done. As simple as that. At the end, the words that were inserted in this way could be shown in some special way (like a different gray) in the text area, so that one can tap individual words and select alternatives if there are errors.],
-  [Please Google freaking do that. I wonder if it’s any better on iOS, I don’t use it for some time at this point.],
-  [\* Auto transcription of text messages.],
-  [Since the phone keyboard is such a mess, people are using more and more voice messages, especially with WhatsApp. It is very convenient for people writing messages, since there is the “push and talk” experience that there is not in the speech to text feature. However it is not always very convenient for the people receiving the message, that may be in an environment where to listen to the conversation is not easy.],
-  [However there is something that could work in that regard, that is, the WhatsApp (or whatever) servers, should automatically translate the message to text, so that the user can both play the message or just look at the text, if it’s clear enough. When there are doubts on given words, the text can be highlighted in some way to show the user that it’s better to listen to the voice message since there are non clear words, however this could easily make 95% of messages promptly available to the user just reading.],
-  [This way the feature would be friction-less both ways, for the users writing (dictating actually) and for the user receiving the messages.],
-  [TLDR: Messaging is everywhere, make it better.
- Comments],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [LAMBDA: The ultimate Excel worksheet function],
   author: [Lambda the Ultimate],
   source-name: [Lambda the Ultimate],
@@ -73,11 +38,9 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [From where I left],
   author: [Antirez],
   source-name: [Antirez],
@@ -145,10 +108,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Stack Overflow: The Architecture - 2016 Edition],
   author: [Nick Craver],
   source-name: [Nick Craver],
@@ -188,9 +149,7 @@ Next post (\#2): Stack Overflow: The Hardware - 2016 Edition],
   [What do we need to run Stack Overflow? That hasn’t changed much since 2013 , but due to the optimizations and new hardware mentioned above, we’re down to needing only 1 web server. We have unintentionally tested this, successfully, a few times. To be clear: I’m saying it works. I’m not saying it’s a good idea. It’s fun though, every time.],
   [Now that we have some baseline numbers for an idea of scale, let’s see how we make those fancy web pages. Since few systems exist in complete isolation (and ours is no exception), architecture decisions often make far less sense without a bigger picture of how those pieces fit into the whole. That’s the goal here, to cover the big picture. Many subsequent posts will do deep dives into specific areas. This will be a logistical overview with hardware highlights only; the next post will have the hardware details.],
   [For those of you here to see what the hardware looks like these days, here are a few pictures I took of rack A (it has a matching sister rack B) during our February 2015 upgrade :],
-  [style="text-align: center;"\>],
   […and if you’re into that kind of thing, here’s the entire 256 image album from that week (you’re damn right that number’s intentional). Now, let’s dig into layout. Here’s a logical overview of the major systems in play:],
-  [id="ground-rules"\>Ground Rules],
   [Here are some rules that apply globally so I don’t have to repeat them with every setup:],
   [Everything is redundant.],
   [All servers and network gear have at least 2x 10Gbps connectivity.],
@@ -198,46 +157,43 @@ Next post (\#2): Stack Overflow: The Hardware - 2016 Edition],
   [All servers have a redundant partner between rack A and B.],
   [All servers and services are doubly redundant via another data center (Colorado), though I’m mostly talking about New York here.],
   [Everything is redundant.],
-  [id="the-internets"\>The Internets],
   [First, you have to find us—that’s DNS . Finding us needs to be fast, so we farm this out to CloudFlare (currently) because they have DNS servers nearer to almost everyone around the world. We update our DNS records via an API and they do the “hosting” of DNS. But since we’re jerks with deeply-rooted trust issues, we still have our own DNS servers as well. Should the apocalypse happen (probably caused by the GPL, Punyon , or caching) and people still want to program to take their mind off of it, we’ll flip them on.],
   [After you find our secret hideout, HTTP traffic comes from one of our four ISPs (Level 3, Zayo, Cogent, and Lightower in New York) and flows through one of our four edge routers. We peer with our ISPs using BGP (fairly standard) in order to control the flow of traffic and provide several avenues for traffic to reach us most efficiently. These ASR-1001 and ASR-1001-X routers are in 2 pairs, each servicing 2 ISPs in active/active fashion—so we’re redundant here. Though they’re all on the same physical 10Gbps network, external traffic is in separate isolated external VLANs which the load balancers are connected to as well. After flowing through the routers, you’re headed for a load balancer.],
   [I suppose this may be a good time to mention we have a 10Gbps MPLS between our 2 data centers, but it is not directly involved in serving the sites. We use this for data replication and quick recovery in the cases where we need a burst. “But Nick, that’s not redundant!” Well, you’re technically correct ( the best kind of correct ), that’s a single point of failure on its face. But wait! We maintain 2 more failover OSPF routes (the MPLS is \#1, these are \#2 and 3 by cost) via our ISPs. Each of the sets mentioned earlier connects to the corresponding set in Colorado, and they load balance traffic between in the failover situation. We could make both sets connect to both sets and have 4 paths but, well, whatever. Moving on.],
-  [id="load-balancers-haproxy"\>Load Balancers (HAProxy)],
+  [Load Balancers (HAProxy)],
   [The load balancers are running HAProxy 1.5.15 on CentOS 7 , our preferred flavor of Linux. TLS (SSL) traffic is also terminated in HAProxy. We’ll be looking hard at HAProxy 1.7 soon for HTTP/2 support.],
   [Unlike all other servers with a dual 10Gbps LACP network link, each load balancer has 2 pairs of 10Gbps: one for the external network and one for the DMZ. These boxes run 64GB or more of memory to more efficiently handle SSL negotiation. When we can cache more TLS sessions in memory for reuse, there’s less to recompute on subsequent connections to the same client. This means we can resume sessions both faster and cheaper. Given that RAM is pretty cheap dollar-wise, it’s an easy choice.],
   [The load balancers themselves are a pretty simple setup. We listen to different sites on various IPs (mostly for certificate concerns and DNS management) and route to various backends based mostly on the host header. The only things of note we do here is rate limiting and some header captures (sent from our web tier) into the HAProxy syslog message so we can record performance metrics for every single request. We’ll cover that later too .],
-  [id="web-tier-iis-85-aspnet-mvc-523-and-net-461"\>Web Tier (IIS 8.5, ASP. Net MVC 5.2.3, and . Net 4.6.1)],
+  [Web Tier (IIS 8.5, ASP. Net MVC 5.2.3, and . Net 4.6.1)],
   [The load balancers feed traffic to 9 servers we refer to as “primary” (01-09) and 2 “dev/meta” (10-11, our staging environment) web servers. The primary servers run things like Stack Overflow, Careers, and all Stack Exchange sites except meta.stackoverflow.com and meta.stackexchange.com , which run on the last 2 servers. The primary Q&A Application itself is multi-tenant. This means that a single application serves the requests for all Q&A sites. Put another way: we can run the entire Q&A network off of a single application pool on a single server. Other applications like Careers, API v2, Mobile API, etc. are separate. Here’s what the primary and dev tiers look like in IIS:],
-  [style="text-align: center;"\>],
   [Here’s what Stack Overflow’s distribution across the web tier looks like in Opserver (our internal monitoring dashboard):],
   […and here’s what those web servers look like from a utilization perspective:],
   [I’ll go into why we’re so overprovisioned in future posts, but the highlight items are: rolling builds, headroom, and redundancy.],
-  [id="service-tier-iis-aspnet-mvc-523-net-461-and-httpsys"\>Service Tier (IIS, ASP. Net MVC 5.2.3, . Net 4.6.1, and HTTP. SYS)],
+  [Service Tier (IIS, ASP. Net MVC 5.2.3, . Net 4.6.1, and HTTP. SYS)],
   [Behind those web servers is the very similar “service tier.” It’s also running IIS 8.5 on Windows 2012R2. This tier runs internal services to support the production web tier and other internal systems. The two big players here are “Stack Server” which runs the tag engine and is based on http.sys (not behind IIS) and the Providence API (IIS-based). Fun fact: I have to set affinity on each of these 2 processes to land on separate sockets because Stack Server just steamrolls the L2 and L3 cache when refreshing question lists on a 2-minute interval.],
   [These service boxes do heavy lifting with the tag engine and backend APIs where we need redundancy, but not 9x redundancy. For example, loading all of the posts and their tags that change every n minutes from the database (currently 2) isn’t that cheap. We don’t want to do that load 9 times on the web tier; 3 times is enough and gives us enough safety. We also configure these boxes differently on the hardware side to be better optimized for the different computational load characteristics of the tag engine and elastic indexing jobs (which also run here). The “tag engine” is a relatively complicated topic in itself and will be a dedicated post . The basics are: when you visit /questions/tagged/java , you’re hitting the tag engine to see which questions match. It does all of our tag matching outside of /search , so the new navigation , etc. are all using this service for data.],
-  [id="cache--pubsub-redis"\>Cache & Pub/Sub (Redis)],
+  [Cache & Pub/Sub (Redis)],
   [We use Redis for a few things here and it’s rock solid. Despite doing about 160 billion ops a month, every instance is below 2% CPU. Usually much lower:],
   [We have an L1/L2 cache system with Redis. “L1” is HTTP Cache on the web servers or whatever application is in play. “L2” is falling back to Redis and fetching the value out. Our values are stored in the Protobuf format , via protobuf-dot-net by Marc Gravell. For a client, we’re using StackExchange. Redis —written in-house and open source. When one web server gets a cache miss in both L1 and L2, it fetches the value from source (a database query, API call, etc.) and puts the result in both local cache and Redis. The next server wanting the value may miss L1, but would find the value in L2/Redis, saving a database query or API call.],
   [We also run many Q&A sites, so each site has its own L1/L2 caching: by key prefix in L1 and by database ID in L2/Redis. We’ll go deeper on this in a future post .],
   [Alongside the 2 main Redis servers (master/slave) that run all the site instances, we also have a machine learning instance slaved across 2 more dedicated servers (due to memory). This is used for recommending questions on the home page, better matching to jobs, etc. It’s a platform called Providence, covered by Kevin Montrose here .],
   [The main Redis servers have 256GB of RAM (about 90GB in use) and the Providence servers have 384GB of RAM (about 125GB in use).],
   [Redis isn’t just for cache though, it also has a publish & subscriber mechanism where one server can publish a message and all other subscribers receive it—including downstream clients on Redis slaves. We use this mechanism to clear L1 caches on other servers when one web server does a removal for consistency, but there’s another great use: websockets.],
-  [id="websockets-httpsgithubcomstackexchangenetgain"\>Websockets (https:\/\/github.com/StackExchange/NetGain)],
+  [Websockets (https:\/\/github.com/StackExchange/NetGain)],
   [We use websockets to push real-time updates to users such as notifications in the top bar, vote counts, new nav counts, new answers and comments, and a few other bits.],
   [The socket servers themselves are using raw sockets running on the web tier. It’s a very thin application on top of our open source library: StackExchange. NetGain . During peak, we have about 500,000 concurrent websocket connections open. That’s a lot of browsers. Fun fact: some of those browsers have been open for over 18 months. We’re not sure why. Someone should go check if those developers are still alive. Here’s what this week’s concurrent websocket pattern looks like:],
   [Why websockets? They’re tremendously more efficient than polling at our scale. We can simply push more data with fewer resources this way, while being more instant to the user. They’re not without issues though—ephemeral port and file handle exhaustion on the load balancer are fun issues we’ll cover later .],
-  [id="search-elasticsearch"\>Search (Elasticsearch)],
+  [Search (Elasticsearch)],
   [Spoiler: there’s not a lot to get excited about here. The web tier is doing pretty vanilla searches against Elasticsearch 1.4, using the very slim high-performance StackExchange. Elastic client. Unlike most things, we have no plans to open source this simply because it only exposes a very slim subset of the API we use. I strongly believe releasing it would do more harm than good with developer confusion. We’re using elastic for /search , calculating related questions, and suggestions when asking a question.],
   [Each Elastic cluster (there’s one in each data center) has 3 nodes, and each site has its own index. Careers has an additional few indexes. What makes our setup a little non-standard in the elastic world: our 3 server clusters are a bit beefier than average with all SSD storage, 192GB of RAM, and dual 10Gbps network each.],
   [The same application domains (yeah, we’re screwed with . Net Core here…) in Stack Server that host the tag engine also continually index items in Elasticsearch. We do some simple tricks here such as ROWVERSION in SQL Server (the data source) compared against a “last position” document in Elastic. Since it behaves like a sequence, we can simply grab and index any items that have changed since the last pass.],
   [The main reason we’re on Elasticsearch instead of something like SQL full-text search is scalability and better allocation of money. SQL CPUs are comparatively very expensive, Elastic is cheap and has far more features these days. Why not Solr ? We want to search across the entire network (many indexes at once), and this wasn’t supported at decision time. The reason we’re not on 2.x yet is a major change to “types” means we need to reindex everything to upgrade. I just don’t have enough time to make the needed changes and migration plan yet.],
-  [id="databases-sql-server"\>Databases (SQL Server)],
+  [Databases (SQL Server)],
   [We’re using SQL Server as our single source of truth . All data in Elastic and Redis comes from SQL Server. We run 2 SQL Server clusters with AlwaysOn Availability Groups . Each of these clusters has 1 master (taking almost all of the load) and 1 replica in New York. Additionally, they have 1 replica in Colorado (our DR data center). All replicas are asynchronous.],
   [The first cluster is a set of Dell R720xd servers, each with 384GB of RAM, 4TB of PCIe SSD space, and 2x 12 cores. It hosts the Stack Overflow, Sites (bad name, I’ll explain later), PRIZM, and Mobile databases.],
   [The second cluster is a set of Dell R730xd servers, each with 768GB of RAM, 6TB of PCIe SSD space, and 2x 8 cores. This cluster runs everything else . That list includes Talent , Open ID , Chat , our Exception log , and every other Q&A site (e.g. Super User , Server Fault , etc.).],
   [CPU utilization on the database tier is something we like to keep very low, but it’s actually a little high at the moment due to some plan cache issues we’re addressing. As of right now, NY-SQL02 and 04 are masters, 01 and 03 are replicas we just restarted today during some SSD upgrades. Here’s what the past 24 hours looks like:],
   [Our usage of SQL is pretty simple. Simple is fast. Though some queries can be crazy, our interaction with SQL itself is fairly vanilla. We have some legacy Linq2Sql , but all new development is using Dapper , our open source Micro-ORM using POCOs . Let me put this another way: Stack Overflow has only 1 stored procedure in the database and I intend to move that last vestige into code.],
-  [id="libraries"\>Libraries],
   [Okay, let’s change gears to something that can more directly help you . I’ve mentioned a few of these up above, but I’ll provide a list here of many open-source . Net libraries we maintain for the world to use. We open sourced them because they have no core business value but can help the world of developers. I hope you find these useful today:],
   [Dapper (. Net Core) - High-performance Micro-ORM for ADO. Net],
   [StackExchange. Redis - High-performance Redis client],
@@ -252,16 +208,14 @@ Next post (\#2): Stack Overflow: The Hardware - 2016 Edition],
 ),
   insert-map: (:),
   inline-pq: pull-quote([The primary Q&A Application itself is multi-tenant.], [Nick Craver]),
-  inline-pq-idx: 37,
+  inline-pq-idx: 35,
   word-count: 2982,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Side projects],
   author: [Antirez],
   source-name: [Antirez],
@@ -295,10 +249,8 @@ Next post (\#2): Stack Overflow: The Hardware - 2016 Edition],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [What is performance?],
   author: [Antirez],
   source-name: [Antirez],
@@ -334,11 +286,10 @@ Next post (\#2): Stack Overflow: The Hardware - 2016 Edition],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Redis as AP system, reloaded],
   author: [Antirez],
   source-name: [Antirez],
@@ -365,7 +316,7 @@ Next post (\#2): Stack Overflow: The Hardware - 2016 Edition],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Getting Started with ES6 Modules],
   author: [Robin Ward (eviltrout)],
   source-name: [Robin Ward (eviltrout)],
@@ -390,7 +341,7 @@ in node.js .],
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([Jeremy Kun (Math ∩ Programming)], source-name: [Jeremy Kun (Math ∩ Programming)], [Recalling our series on Conway’s Game of Life, here is an implementation of Life within Life. Unfortunately, it does not “prove” what I hoped it might, so unless a reader has a suggestion on what this demonstration proves, it doesn’t belong in the proof gallery. But it sure is impressive.])],
       [#brief-item([Jeremy Kun (Math ∩ Programming)], source-name: [Jeremy Kun (Math ∩ Programming)], [I’ve been spending a little less time on my blog recently then I’d like to, but for good reason: I’ve been attending two weeks of research conferences, I’m getting ready for a summer internship in cybersecurity, and I’ve finally chosen an advisor.
 Visions, STOC, and CCC I’ve been taking a break from the Midwest for the last two weeks to attend some of this year’s seminal computer science theory conferences. The first (which is already over) was the Simon’s Institute Symposium on the Visions of the Theory of Computing.])],
@@ -417,7 +368,7 @@ So far on this blog we’ve introduced models for computation, focused on Turing
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Memory lane for Frontier users],
   author: [Scripting News],
   source-name: [Scripting News],
@@ -438,7 +389,7 @@ So far on this blog we’ve introduced models for computation, focused on Turing
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Google announces Logica: organizing your data queries, making them universally reusable and fun],
   author: [Lambda the Ultimate],
   source-name: [Lambda the Ultimate],
@@ -460,7 +411,7 @@ So far on this blog we’ve introduced models for computation, focused on Turing
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [],
   author: [Scripting News],
   source-name: [Scripting News],
@@ -476,7 +427,7 @@ So far on this blog we’ve introduced models for computation, focused on Turing
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Enemy of the State],
   author: [Robin Ward (eviltrout)],
   source-name: [Robin Ward (eviltrout)],
@@ -501,8 +452,7 @@ protect your code from yourself!],
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [],
   author: [Scripting News],
   source-name: [Scripting News],
@@ -516,6 +466,5 @@ protect your code from yourself!],
   debug-mode: false,
 )
 
-}
 
 #colophon([Coastal Courier], [Vol. 1, No. 062], [2026-03-30])

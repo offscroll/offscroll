@@ -21,49 +21,8 @@
 #masthead([Quiet Post], [Vol. 1, No. 061], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [BROCCOLI MUSHROOM ORZO BAKE],
-  kicker: [Cover Story],
-  author: [Sara Forte],
-  source-name: [Sprouted Kitchen],
-  deck: [class=""\>She was sitting on the edge of the pool, waiting for her turn at swim lessons and was completely sausaged into her swimsuit.],
-  lead-pre: [],
-  lead-cap: [H],
-  lead-rest: [er longer body stretching the length of the bathing suit so that the chest of it was too low and the straps looked stressed. Beautiful, tender, winter skin against that mustard yellow daisy print. Cleo waves at me, looking like such a… girl.],
-  body-paragraphs: (
-  [class=""\>She turned six a few weeks ago and while we are dancing in the kitchen to the Encanto soundtrack and mixing up our “b’s” and “d’s” , our conversations are about friendships at school and what happens when you die. She is both little and big to me. Motherhood is a wild whiplash. Each one of those days, while the bathing suit became too small, felt like nothing, but is also the compilation of so many small moments. I’m having a bit of a time with my own insecurities and watching them find their way at school and with people. My kids growth, tangled up and digested through my own. It’s just like the moms before me said, the challenges never go away, they just change. I see this girl of mine growing, still needing me, but also moving towards my role as support, instead of the lead. Yessss, I know she’s young, but I can see it. A small shift, the ones you can miss if you’re not paying attention.],
-  [class=""\>January used to be a month of goals all organized on paper - less sugar and new tennis shoes to get moving but this one felt… observant. Curious. Asking what I want, and what my family needs, as opposed to the more/better mentality that a new year sells you. I want to take a few classes, read books to learn things - parts of history that didn’t stick through school, or Spanish so I can help my kids with homework without so much google translation. We need a vacation that feels different, exciting. I learned from our covid quarantine week that we need more time just playing and hanging, as opposed to schedules and sports and social plans that I naturally tend towards. That includes me, stopping, not wiping down counters when I can afford to sit and compose some legos, or bead for a bit instead. I can feel and see a different season with my kids and while I definitely prefer it to toddlerhood (preach!), it feels like things are moving quickly and I’ll have to stay connected to myself, to see these simple, magical moments with my family.],
-  [class=""\>With that said, let me share this casserole that went over really well with my Sprouted Kitchen Cooking Club folks. It’s two pans and veggies that can be swapped and kid friendly because who doesn’t love orzo? I delivered one to a friend who said it stretched for two meals, so keep this in your back pocket for delivery.],
-  [class=""\>It’s like a mac n cheese-ish pasta bake but with some vegetables in it. My kids like broccoli, but you could get away with whatever your people like in similar volume, and cooked before adding it in. So long as the mushrooms are super small, I can squeeze those by them. Sub in peas or hunks of cooked butternut squash or add in 1/2 lb. of browned Italian sausage if you prefer an animal protein in there.],
-  [class=""\>If you’re making this to deliver or freeze, assemble everything through the panko parm topper, and wrap it in foil. Pass along directions to bring it to room temperature before baking.],
-  [class=""\>2 Tbsp. of extra virgin olive oil or butter
-1 small yellow onion - chopped small
-8 oz. of mushrooms - wiped clean, super well chopped
-3 cloves of garlic - minced
-sea salt
-pepper
-2/3 cup of white wine
-1 pinch of red pepper flakes
-2 tsp. of fresh thyme leaves
-3 cups of vegetable or chicken stock
-1/2 lb. of orzo (about 1 heaping cup)
-10 oz. of broccoli florets - steamed & chopped
-1/2 cup of heavy cream
-1 lemon - zested
-4 oz. of grated fontina or Italian cheese blend],
-  [class=""\>In a large Dutch oven or skillet over medium, heat your oil or butter. Add the onion, and sauté a few minutes until tender. Add the mushrooms, garlic, big pinches of salt and pepper and sauté another 5 minutes, until the liquid is released and you get some browning. Stir in the wine and cook another 5 minutes to cook down. Stir in the pepper flakes, thyme, and turn off the heat.],
-  [class=""\>Transfer the orzo and any residual broth to the pot with the mushrooms. Add the steamed broccoli, cream, lemon zest, cheese and another pinch of salt and pepper. Fold everything to combine. It should be loose.],
-  [class=""\>Transfer the mixture to your prepared pan. Sprinkle the panko and parm on top, and drizzle it with olive oil (it can be refrigerated for a day or frozen at this point. Bring the refrigerated one to room temperature before baking. Cook the frozen one, covered for 25 then uncovered for 20). Bake for 20 minutes, uncovered, until the top is golden brown.],
-  [class=""\>Jovial makes a cassava-based orzo. It can get gummy, but I think it will still work here. It’s possible a long-grain brown rice would work here, too. I would just steam it before assembling, and add two eggs in there if you can to help it hold some shape.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [A celebration of wildness and wonder: the Peak District national park at 75],
   author: [Roly Smith],
   source-name: [The Guardian Travel],
@@ -80,11 +39,9 @@ pepper
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [We Tried Them All: The Best Meal Kit Delivery Services],
   author: [Taste of Home Editorial Team],
   source-name: [Taste of Home],
@@ -93,32 +50,42 @@ pepper
   [Best Overall: Martha Stewart & Marley Spoon],
   [Why We Love It: Marley Spoon stood out for its restaurant-quality flavors, straightforward recipes and hearty portions. Our only criticism was how some ingredients are packaged. Read our Marley Spoon review .],
   [Current Offers: Get 45% your first box with free shipping, then save on your next four orders.],
+  [Sign Up for Marley Spoon],
   [Best for Families: HelloFresh],
   [Why We Love It: HelloFresh impressed us with its flavorful, thoughtfully designed meals. We also loved the easy ordering process and flexible add-ons, though prep times occasionally ran longer than expected. Read our HelloFresh review .],
   [Current Offers: Get 10 free meals and a free NutriBullet Ultra Plus on your third box with code TMB10NUTRIB .],
+  [Sign Up for HelloFresh],
   [Best Budget: EveryPlate],
   [Why We Love It: Our testers found EveryPlate delivers robust, satisfying meals for as little as \$4.99 per serving. Expect fewer recipe filters and the need to supply some basic pantry ingredients, though. Read our EveryPlate review .],
   [Current Offers: Pay just \$2.99 per meal on your first box, plus score 10% off one month with code TMB299MFB.],
+  [Sign Up for Everyplate],
   [Best for Beginners: Gobble],
   [Why We Love It: Gobble stood out for its pre-prepped ingredients and ultra-fast cooking times, making it especially approachable for beginners. However, it wasn’t the most flavorful meal kit we tried. Read our Gobble review .],
   [Current Offers: Take \$100 off your first four boxes and score free shipping.],
+  [Sign Up for Gobble],
   [Best Gluten-Friendly: Green Chef],
   [Why We Love It: We praised Green Chef’s organic ingredients and complex flavor combinations, though the total prep and cook time occasionally exceeded the recipe estimate. Read our Green Chef review .],
   [Current Offers: Get 50% off your first box, then take 20% off for two months.],
+  [Sign Up for Green Chef],
   [Best for Gourmets: Blue Apron],
   [Why We Love It: Blue Apron impressed testers with gourmet, restaurant-style dishes and rich flavors. Like many other kits we tested, the recipes often required more time and effort to prepare than advertised. Read our Blue Apron review .],
   [Current Offers: Take \$25 off your first two orders with code WELCOME25 .],
+  [Sign Up for Blue Apron],
   [Best Semi-Prepared: Sunbasket],
   [Why We Love It: Sunbasket’s semi-prepared kits make cooking fast and convenient. The creative recipes are also a bonus. Just know that the premade meals don’t always match the quality of the kits. Read our Sunbasket review .],
   [Current Offers: Take \$90 off your first four boxes, plus score free shipping.],
+  [Sign Up for Sunbasket],
   [Best Plant-Based: Purple Carrot],
   [Why We Love It: Even meat eaters were impressed by Purple Carrot’s creative plant-based dishes and strong flavors. Pricing transparency and delivery flexibility were the only noted issues. Read our Purple Carrot review .],
   [Current Offers: Get \$100 off your first month.],
+  [Sign Up for Purple Carrot],
   [Why We Love It: Tempo impressed testers with satisfying microwave-ready meals that require zero prep. The weekly menu is relatively small, which could hinder creative cooks. Read our Tempo review .],
   [Current Offers:  Get 60% off your first box.],
+  [Sign Up for Tempo],
   [Best Keto-Friendly: Home Chef],
   [Why We Love It: Home Chef earned high marks for its flavorful meals, easy instructions and strong keto-friendly selection. However, our testers noticed occasional pricing discrepancies. Read our Home Chef review .],
   [Current Offers: Enjoy meals for \$4.99 a serving and get free dessert for life.],
+  [Sign Up for Home Chef],
   [Editor’s Note:  Most offers are available only to new subscribers, while supplies last. Check each merchant’s terms and conditions for full details.],
   [What to Look for When Subscribing to a Meal Kit Delivery Service],
   [With more meal delivery service options than ever, how do you choose the right one? Reviews (like ours!) can help, but it’s also important to consider factors like cost, flexibility, dietary needs, ingredient quality, and how much cooking effort you’re actually up for.],
@@ -160,40 +127,50 @@ pepper
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How Learning Spanish Opens a Window onto the Spanish Civil War],
   author: [George Levrier-Jones],
   source-name: [History in 28 Minutes],
   images: (),
   paragraphs: (
-  [class=""\> There is a particular kind of thrill that comes from reading a historical document in its original language. The words land differently — heavier, more alive, stripped of the buffer that translation provides. For anyone drawn to the Spanish Civil War (1936–1939), one of the twentieth century's most passionate and heartbreaking conflicts, learning Spanish is not merely a practical skill. It is an act of historical immersion. The slogans, the poetry, the propaganda, the letters home from the front — none of them survive translation entirely intact.],
-  [class=""\> The war itself was fought in language as much as in trenches. Republicans rallied around ¡No pasarán! — "They shall not pass!" Nationalists answered with ¡España, una, grande, libre! Both sides understood that words could mobilize, terrify, and outlast bullets. To understand the war, you need to understand the language in which it was waged.],
-  [class=""\>Republican Spain drew on a rich vocabulary of labor and revolution, much of it borrowed from anarchist and socialist traditions. Terms like compañero (comrade), milicia (militia), and frente popular (popular front) were not just descriptors — they were identity markers that signaled allegiance and ideology. George Orwell, who fought with the POUM militia in Catalonia, wrote extensively about how the language of the Republic shaped daily life in Homage to Catalonia . Even the act of addressing strangers with the informal tú rather than the formal usted was, for a time, a political statement.],
-  [class=""\>Dr. Helen Graham, one of Britain's leading historians of modern Spain and author of The Spanish Republic at War , has argued that understanding Republican Spain requires grappling with the fragmented and contested nature of the movement itself. "The Republic was not a single thing," she has noted, "but a coalition of sometimes opposing visions — and that fracturing was visible in the language different factions used to describe the same events." Reading Republican pamphlets and manifestos in Spanish reveals these fault lines with a precision that no secondary source can fully replicate.],
-  [class=""\>The Nationalist side deployed a different lexicon, one rooted in Catholic nationalism, military honor, and the language of "crusade." Franco's regime famously described the coup as a cruzada — a term loaded with centuries of Reconquista mythology. The word patria (homeland) and orden (order) appeared incessantly in Nationalist broadcasts and newspapers, framing the uprising as a defense of timeless Spanish values against a foreign "red" menace.],
-  [class=""\>Paul Preston, the preeminent English-language historian of the Franco era and the author of the exhaustive biography Franco: A Biography , has spent decades analyzing how the regime constructed and weaponized language. Preston emphasizes that Francoist rhetoric was deliberately designed to make the war's violence seem both necessary and righteous — and that this rhetorical architecture is most visible when read in the original Spanish, where the cadence and connotation of the vocabulary carry a weight that translations inevitably flatten.],
-  [class=""\>The effects of this linguistic policy stretched well beyond the war itself. As scholars have documented, Franco's censorship regime — which required every book published in Spain between 1936 and 1966 to pass through a national board of censors — distorted the country's cultural memory for generations. Understanding that distortion requires reading both what was published and what was suppressed, and for that, you need the language.],
-  [class=""\>No discussion of the Spanish Civil War's relationship to language would be complete without acknowledging the extraordinary literary culture it produced. Federico García Lorca, murdered by Nationalist forces in the opening weeks of the conflict, had already established Spanish poetry as a living, politically charged art form. Miguel Hernández, the shepherd-poet from Orihuela who fought for the Republic and died in Franco's prisons, wrote verses whose power rests entirely on the music of Castilian Spanish.],
-  [class=""\>The Republican anthem Ay Carmela , sung by soldiers at the front, draws on folk traditions that make immediate sense to a Spanish speaker but that require lengthy annotation for anyone relying on a translation. The same is true of the labor anthem A las barricadas and of the countless corridos and coplas that circulated through both camps. These texts are primary sources. They record what people believed, feared, and hoped for. Learning Spanish means being able to encounter them on their own terms.],
-  [class=""\>Castellano — standard Spanish — is only part of the picture. The Civil War also played out through Catalan, Basque, and Galician, languages whose suppression under Francoism became a form of cultural erasure. Barcelona, the anarchist heartland, was a Catalan-speaking city. The Basque Country, despite being predominantly Catholic, largely sided with the Republic in defense of its regional autonomy — a political irony that makes little sense without understanding the linguistic and cultural stakes involved.],
-  [class=""\>Dr. Mary Vincent, a historian at the University of Sheffield whose work focuses on religion, gender, and the Spanish Civil War, has written about how Francoist language policy — the brutal suppression of regional languages in favor of a monolithic Castilian identity — was itself a form of violence. The history of this suppression is still being written. Spain's ongoing excavation of mass graves and the parallel effort to recover silenced languages and cultures are, in many ways, the same project. To read Spanish is to begin understanding this landscape; to learn something of Catalan or Basque alongside it is to understand why the war's wounds have never fully healed.],
-  [class=""\>The Spanish Civil War is one of the most extensively documented conflicts in modern European history. The archives in Salamanca, Seville, and Barcelona hold millions of documents — interrogation transcripts, military orders, personal correspondence, newspaper archives — the vast majority of which have never been translated into English. For any serious student of the period, Spanish is not optional. It is the key to the room where the real evidence lives.],
-  [class=""\>Beyond the archives, there is a rich tradition of Spanish-language scholarship on the war. The most nuanced contemporary research, including work on memory, trauma, and the ongoing excavation of mass graves, is being produced by Spanish academics writing in Spanish. Figures like Julián Casanova, whose studies of violence and religion in the Civil War are foundational, write for a Castilian-speaking audience. Reading them in the original is a different experience from reading them in translation — there is a specificity of tone, a precision of vocabulary, that inevitably gets smoothed away.],
-  [class=""\>If the historical case for learning Spanish isn't enough on its own, the cognitive one adds compelling weight. A study published in Nature Aging and covered by National Geographic analyzed data from more than 86,000 adults across 27 European countries and found that people who regularly use more than one language are half as likely to show signs of biological cognitive aging. "It's never too early or too late to start learning another language," Northwestern University professor Viorica Marian told National Geographic.],
-  [class=""\>There are professional returns too. A Forbes analysis of workforce data found that multilingual workers earn an average of 19% more than their monolingual counterparts, with 40% reporting that their language skills directly helped them secure their job. But for the history enthusiast, the personal return is arguably richer than any salary premium: the ability to read a 1937 Republican pamphlet, or a Francoist newspaper editorial, or a letter from a miliciano to his family in Andalusia — in the language in which it was written.],
-  [class=""\>For history enthusiasts who want to deepen their engagement with the Spanish Civil War, getting started in Spanish can feel daunting. A sensible first step is to check your Spanish level — knowing where you stand makes it far easier to build a focused study plan. And purpose-built learning platforms have made that entire process more accessible than ever — for a subject as rich and specific as this one, having the right tool matters.],
-  [class=""\>One platform worth considering is Promova, a Ukrainian-founded language learning app that now serves over 20 million learners in 190 countries. Promova offers structured Spanish courses built around real-life scenarios and designed by professional linguists — making it well-suited for adult learners who want to build vocabulary with purpose rather than memorize phrase lists. The platform includes AI-powered conversation practice, bite-sized lessons, and dedicated programs for professional learners through Promova for Business — useful for organizations or academic departments looking to build language skills across a team.],
-  [class=""\>Promova has also made language learning feel culturally grounded, including a course developed in partnership with Oleksandr Usyk , demonstrating the platform's commitment to connecting language learning to real human stories.],
-  [class=""\>Elly Kim, e-learning lead at Promova and a linguist with extensive experience designing language courses, reflects on the connection between language and historical understanding: "Learning a language is never just about grammar or vocabulary — it's about understanding the people who lived and breathed that language, what they cared about, what they feared. For students of history, that connection is everything." You can explore her work and educational writing at promova.com/author/elly-kim .],
-  [class=""\> Start with the era's vocabulary. Paul Preston has noted in interviews that Civil War Spanish has its own register — terms from military organization, anarchist theory, and Catholic nationalism that won't appear in a standard beginner's course. Building a glossary of period-specific vocabulary early pays dividends when you encounter primary sources.],
-  [class=""\> Read newspapers from the period. The Hemeroteca Digital of the Biblioteca Nacional de España has digitized thousands of newspapers from the 1930s, many of them freely accessible. Even reading headlines is useful for building historical context and period-appropriate vocabulary.],
-  [class=""\> Don't neglect Catalan. Helen Graham has consistently emphasized that Catalonia's role in the conflict is underappreciated by English-language readers. Even a basic familiarity with Catalan helps orient you in Barcelona-centered primary sources and in the broader political landscape of the Republic.],
-  [class=""\> Use literature as a bridge. Julián Casanova has suggested that fiction — particularly novels by contemporary Spanish authors like Almudena Grandes, whose Episodios de una guerra interminable series reimagines the war and its aftermath — is one of the most effective ways to absorb historical vocabulary in context. The stories carry you along; the language does its work quietly.],
-  [class=""\>The Spanish Civil War ended in 1939, but it has never really stopped being fought — in memory, in politics, in the ongoing excavation of unmarked graves across Castile and Andalusia. Spain's 2007 Law of Historical Memory and its 2022 successor have made the recovery of Republican victims an active national project, generating new documents, testimonies, and debates in Spanish every week.],
-  [class=""\>For anyone who cares about this history, learning Spanish is an investment that compounds with every document you open. Each new word is a small key. There are more doors in the archive than any one person could open in a lifetime — but every one of them is worth trying.],
+  [There is a particular kind of thrill that comes from reading a historical document in its original language. The words land differently — heavier, more alive, stripped of the buffer that translation provides. For anyone drawn to the Spanish Civil War (1936–1939), one of the twentieth century's most passionate and heartbreaking conflicts, learning Spanish is not merely a practical skill. It is an act of historical immersion. The slogans, the poetry, the propaganda, the letters home from the front — none of them survive translation entirely intact.],
+  [The war itself was fought in language as much as in trenches. Republicans rallied around ¡No pasarán! — "They shall not pass!" Nationalists answered with ¡España, una, grande, libre! Both sides understood that words could mobilize, terrify, and outlast bullets. To understand the war, you need to understand the language in which it was waged.],
+  [Catherine Hryhorenko explains.],
+  [The Language of the Republic: Solidarity, Struggle, and Soil],
+  [Republican Spain drew on a rich vocabulary of labor and revolution, much of it borrowed from anarchist and socialist traditions. Terms like compañero (comrade), milicia (militia), and frente popular (popular front) were not just descriptors — they were identity markers that signaled allegiance and ideology. George Orwell, who fought with the POUM militia in Catalonia, wrote extensively about how the language of the Republic shaped daily life in Homage to Catalonia . Even the act of addressing strangers with the informal tú rather than the formal usted was, for a time, a political statement.],
+  [Dr. Helen Graham, one of Britain's leading historians of modern Spain and author of The Spanish Republic at War , has argued that understanding Republican Spain requires grappling with the fragmented and contested nature of the movement itself. "The Republic was not a single thing," she has noted, "but a coalition of sometimes opposing visions — and that fracturing was visible in the language different factions used to describe the same events." Reading Republican pamphlets and manifestos in Spanish reveals these fault lines with a precision that no secondary source can fully replicate.],
+  [Franco's Words: The Rhetoric of the Nationalist Uprising],
+  [The Nationalist side deployed a different lexicon, one rooted in Catholic nationalism, military honor, and the language of "crusade." Franco's regime famously described the coup as a cruzada — a term loaded with centuries of Reconquista mythology. The word patria (homeland) and orden (order) appeared incessantly in Nationalist broadcasts and newspapers, framing the uprising as a defense of timeless Spanish values against a foreign "red" menace.],
+  [Paul Preston, the preeminent English-language historian of the Franco era and the author of the exhaustive biography Franco: A Biography , has spent decades analyzing how the regime constructed and weaponized language. Preston emphasizes that Francoist rhetoric was deliberately designed to make the war's violence seem both necessary and righteous — and that this rhetorical architecture is most visible when read in the original Spanish, where the cadence and connotation of the vocabulary carry a weight that translations inevitably flatten.],
+  [The effects of this linguistic policy stretched well beyond the war itself. As scholars have documented, Franco's censorship regime — which required every book published in Spain between 1936 and 1966 to pass through a national board of censors — distorted the country's cultural memory for generations. Understanding that distortion requires reading both what was published and what was suppressed, and for that, you need the language.],
+  [Poetry, Song, and the Cultural Memory of the War],
+  [No discussion of the Spanish Civil War's relationship to language would be complete without acknowledging the extraordinary literary culture it produced. Federico García Lorca, murdered by Nationalist forces in the opening weeks of the conflict, had already established Spanish poetry as a living, politically charged art form. Miguel Hernández, the shepherd-poet from Orihuela who fought for the Republic and died in Franco's prisons, wrote verses whose power rests entirely on the music of Castilian Spanish.],
+  [The Republican anthem Ay Carmela , sung by soldiers at the front, draws on folk traditions that make immediate sense to a Spanish speaker but that require lengthy annotation for anyone relying on a translation. The same is true of the labor anthem A las barricadas and of the countless corridos and coplas that circulated through both camps. These texts are primary sources. They record what people believed, feared, and hoped for. Learning Spanish means being able to encounter them on their own terms.],
+  [Regional Languages: Catalan, Basque, and the Complexity of Spanish Identity],
+  [Castellano — standard Spanish — is only part of the picture. The Civil War also played out through Catalan, Basque, and Galician, languages whose suppression under Francoism became a form of cultural erasure. Barcelona, the anarchist heartland, was a Catalan-speaking city. The Basque Country, despite being predominantly Catholic, largely sided with the Republic in defense of its regional autonomy — a political irony that makes little sense without understanding the linguistic and cultural stakes involved.],
+  [Dr. Mary Vincent, a historian at the University of Sheffield whose work focuses on religion, gender, and the Spanish Civil War, has written about how Francoist language policy — the brutal suppression of regional languages in favor of a monolithic Castilian identity — was itself a form of violence. The history of this suppression is still being written. Spain's ongoing excavation of mass graves and the parallel effort to recover silenced languages and cultures are, in many ways, the same project. To read Spanish is to begin understanding this landscape; to learn something of Catalan or Basque alongside it is to understand why the war's wounds have never fully healed.],
+  [Primary Sources: What You Miss in Translation],
+  [The Spanish Civil War is one of the most extensively documented conflicts in modern European history. The archives in Salamanca, Seville, and Barcelona hold millions of documents — interrogation transcripts, military orders, personal correspondence, newspaper archives — the vast majority of which have never been translated into English. For any serious student of the period, Spanish is not optional. It is the key to the room where the real evidence lives.],
+  [Beyond the archives, there is a rich tradition of Spanish-language scholarship on the war. The most nuanced contemporary research, including work on memory, trauma, and the ongoing excavation of mass graves, is being produced by Spanish academics writing in Spanish. Figures like Julián Casanova, whose studies of violence and religion in the Civil War are foundational, write for a Castilian-speaking audience. Reading them in the original is a different experience from reading them in translation — there is a specificity of tone, a precision of vocabulary, that inevitably gets smoothed away.],
+  [Why Language Learning Is Worth the Effort: The Science Makes It Clear],
+  [If the historical case for learning Spanish isn't enough on its own, the cognitive one adds compelling weight. A study published in Nature Aging and covered by National Geographic analyzed data from more than 86,000 adults across 27 European countries and found that people who regularly use more than one language are half as likely to show signs of biological cognitive aging. "It's never too early or too late to start learning another language," Northwestern University professor Viorica Marian told National Geographic.],
+  [There are professional returns too. A Forbes analysis of workforce data found that multilingual workers earn an average of 19% more than their monolingual counterparts, with 40% reporting that their language skills directly helped them secure their job. But for the history enthusiast, the personal return is arguably richer than any salary premium: the ability to read a 1937 Republican pamphlet, or a Francoist newspaper editorial, or a letter from a miliciano to his family in Andalusia — in the language in which it was written.],
+  [Learning Spanish for History: Where to Start],
+  [For history enthusiasts who want to deepen their engagement with the Spanish Civil War, getting started in Spanish can feel daunting. A sensible first step is to check your Spanish level — knowing where you stand makes it far easier to build a focused study plan. And purpose-built learning platforms have made that entire process more accessible than ever — for a subject as rich and specific as this one, having the right tool matters.],
+  [One platform worth considering is Promova, a Ukrainian-founded language learning app that now serves over 20 million learners in 190 countries. Promova offers structured Spanish courses built around real-life scenarios and designed by professional linguists — making it well-suited for adult learners who want to build vocabulary with purpose rather than memorize phrase lists. The platform includes AI-powered conversation practice, bite-sized lessons, and dedicated programs for professional learners through Promova for Business — useful for organizations or academic departments looking to build language skills across a team.],
+  [Promova has also made language learning feel culturally grounded, including a course developed in partnership with Oleksandr Usyk , demonstrating the platform's commitment to connecting language learning to real human stories.],
+  [Elly Kim, e-learning lead at Promova and a linguist with extensive experience designing language courses, reflects on the connection between language and historical understanding: "Learning a language is never just about grammar or vocabulary — it's about understanding the people who lived and breathed that language, what they cared about, what they feared. For students of history, that connection is everything." You can explore her work and educational writing at promova.com/author/elly-kim .],
+  [Expert Tips: Making Language Learning Work for Historical Research],
+  [Historians and language educators who work at the intersection of these two fields tend to share a few common pieces of practical advice:],
+  [Start with the era's vocabulary. Paul Preston has noted in interviews that Civil War Spanish has its own register — terms from military organization, anarchist theory, and Catholic nationalism that won't appear in a standard beginner's course. Building a glossary of period-specific vocabulary early pays dividends when you encounter primary sources.],
+  [Read newspapers from the period. The Hemeroteca Digital of the Biblioteca Nacional de España has digitized thousands of newspapers from the 1930s, many of them freely accessible. Even reading headlines is useful for building historical context and period-appropriate vocabulary.],
+  [Don't neglect Catalan. Helen Graham has consistently emphasized that Catalonia's role in the conflict is underappreciated by English-language readers. Even a basic familiarity with Catalan helps orient you in Barcelona-centered primary sources and in the broader political landscape of the Republic.],
+  [Use literature as a bridge. Julián Casanova has suggested that fiction — particularly novels by contemporary Spanish authors like Almudena Grandes, whose Episodios de una guerra interminable series reimagines the war and its aftermath — is one of the most effective ways to absorb historical vocabulary in context. The stories carry you along; the language does its work quietly.],
+  [A Living Archive],
+  [The Spanish Civil War ended in 1939, but it has never really stopped being fought — in memory, in politics, in the ongoing excavation of unmarked graves across Castile and Andalusia. Spain's 2007 Law of Historical Memory and its 2022 successor have made the recovery of Republican victims an active national project, generating new documents, testimonies, and debates in Spanish every week.],
+  [For anyone who cares about this history, learning Spanish is an investment that compounds with every document you open. Each new word is a small key. There are more doors in the archive than any one person could open in a lifetime — but every one of them is worth trying.],
+  [Please note that this piece contains sponsored links. These help us with site running costs and are in no way affiliated with the site.],
 ),
   insert-map: (:),
   word-count: 1936,
@@ -201,36 +178,64 @@ pepper
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [History Through the Lens of Children's Literature: What Fairy Tales Reveal About the Past],
   author: [George Levrier-Jones],
   source-name: [History in 28 Minutes],
   images: (),
   paragraphs: (
-  [class=""\> Fairy tales enchant with their fantastical elements, yet they also expose harsh realities of the past. You might wonder how these seemingly simple stories encapsulate complex societal norms and historical contexts. As you explore the origins and evolution of these narratives, you'll uncover the cultural reflections they offer, revealing much about gender roles, moral lessons, and the fears that shaped societies. What hidden truths lie within these tales that continue to resonate today?],
-  [class=""\>Fairy tales have captivated audiences for centuries, with their origins tracing back to oral traditions that predate written language. You can see how these stories evolved as they were passed down through generations, often adapting to the cultural contexts of their tellers. The earliest forms of fairy tales likely emerged as a way to convey moral lessons, entertain, and explain the inexplicable.],
-  [class=""\>As you explore their history, you'll notice that many tales blend the fantastic with the everyday, reflecting the realities of the societies that spawned them. Characters like cunning tricksters or valiant heroes illustrate the values and fears of their time.],
-  [class=""\>While the Brothers Grimm and Charles Perrault are often credited with popularizing fairy tales, countless variations existed long before their collections. These tales serve as a mirror, revealing the hopes, dreams, and struggles of the people who told them. These narratives are also useful educational tools today, especially in an online school K-12 setting, where fairy tales help students explore history, ethics, and cultural change through engaging, age-appropriate storytelling.],
-  [class=""\>How do stories reflect the cultures from which they emerge? When you plunge into fairy tales, you uncover a tapestry of beliefs, values, and social norms that define a society. These narratives often encapsulate the daily lives of their characters, showcasing the customs, traditions, and struggles of the people.],
-  [class=""\>As you explore various fairy tales, you might notice recurring motifs, such as the hero's journey or the triumph of good over evil. These themes aren't just entertaining—they mirror the hopes and fears of the culture that birthed them.],
-  [class=""\>Additionally, fairy tales can highlight regional differences , showcasing local legends and folklore that enrich cultural heritage. By examining these narratives, you gain insight not only into the values of the time but also into the evolution of those values as societies change.],
-  [class=""\>Stories not only reflect cultural identities but also impart morals and lessons that resonate across generations. Fairy tales, in particular, serve as vehicles for these timeless teachings, adapting their messages to fit the evolving social landscape. As you explore these narratives, you'll notice how lessons about virtues like honesty, bravery, and kindness remain relevant, even as the specifics of each tale shift.],
-  [class=""\>Take, for instance, the classic tale of Cinderella. Originally, it emphasized the importance of virtue and patience, highlighting the rewards of good behavior. Over time, adaptations have shifted focus, incorporating themes of empowerment and self-advocacy, which mirror contemporary values. This evolution showcases a society's changing priorities.],
-  [class=""\>Similarly, stories like Little Red Riding Hood caution against naivety, reflecting historical concerns about trust and safety. As you analyze these tales, you'll see how the underlying morals adapt to address the fears and aspirations of their time, providing a rich tapestry of lessons that inform both children and adults.],
-  [class=""\>Ultimately, these narratives endure not just for their entertainment value, but for their ability to convey essential life lessons, ensuring that each generation learns from the past while looking toward the future.],
-  [class=""\>Understanding the historical context of popular tales enriches our appreciation of their narratives and themes. When you investigate these stories, you notice they often mirror the societal values and challenges of their time. For example, tales like "Cinderella" and "Little Red Riding Hood" emerged during periods of significant social change, reflecting anxieties about class mobility and the dangers lurking in the world.],
-  [class=""\>As you explore the origins of these tales, consider how they were shaped by the cultural norms and expectations of their respective eras. The oral tradition of storytelling often meant that these narratives evolved with each retelling, adapting to the audience's needs and the prevailing attitudes.],
-  [class=""\>By analyzing the historical context, you can identify the underlying messages about resilience, morality, and social hierarchy. The way these stories address conflicts—like poverty, betrayal, or love—reveals much about the human experience and societal structures.],
-  [class=""\>Ultimately, understanding the historical backdrop allows you to grasp why these tales have endured through generations, resonating with audiences across cultures and time periods. You'll find that fairy tales offer more than just entertainment; they serve as a compelling lens through which to view history itself.],
-  [class=""\>When you plunge into children's literature, it's crucial to ignore the influence of gender roles and stereotypes woven throughout these narratives. These tales not only entertain but also shape societal perceptions of what it means to be male or female.],
-  [class=""\>Children's literature often embeds fear and cautionary elements that serve as powerful tools for moral and social instruction. When you explore tales like "Little Red Riding Hood" or "Hansel and Gretel," you notice how these narratives evoke fear to teach essential lessons. The lurking dangers in the woods symbolize real-life threats, encouraging you to be cautious and aware of your surroundings.],
-  [class=""\>These cautionary tales often reflect societal anxieties, mirroring the fears of the times they were written in. For instance, the consequences faced by disobedient children highlight the importance of listening to authority figures. By illustrating the potential dangers of ignorance or rebellion, these stories compel you to reflect on the repercussions of your choices.],
-  [class=""\>Moreover, the use of fear isn't merely for shock value; it provides a framework for understanding complex social dynamics. You can see how these elements foster resilience and critical thinking, urging young readers to navigate their world with care.],
-  [class=""\>These stories reflect fundamental truths about our existence, often revealing the complexities of human behavior and emotion. When you investigate these narratives, you'll discover themes that continue to shape our understanding of ourselves and each other.],
-  [class=""\>In delving into fairy tales, you've unraveled a tapestry woven with the threads of history, culture, and human nature. These stories aren't just whimsical tales; they're mirrors reflecting the societal norms and values of their times. As you navigate the enchanting worlds of these narratives, you discover how they shape and challenge our perceptions. Ultimately, fairy tales invite you to reexamine your own beliefs and fears, proving that stories have the power to transform both hearts and minds.],
+  [Fairy tales enchant with their fantastical elements, yet they also expose harsh realities of the past. You might wonder how these seemingly simple stories encapsulate complex societal norms and historical contexts. As you explore the origins and evolution of these narratives, you'll uncover the cultural reflections they offer, revealing much about gender roles, moral lessons, and the fears that shaped societies. What hidden truths lie within these tales that continue to resonate today?],
+  [Adam Ferraresi explains.],
+  [The Origins of Fairy Tales],
+  [Fairy tales have captivated audiences for centuries, with their origins tracing back to oral traditions that predate written language. You can see how these stories evolved as they were passed down through generations, often adapting to the cultural contexts of their tellers. The earliest forms of fairy tales likely emerged as a way to convey moral lessons, entertain, and explain the inexplicable.],
+  [As you explore their history, you'll notice that many tales blend the fantastic with the everyday, reflecting the realities of the societies that spawned them. Characters like cunning tricksters or valiant heroes illustrate the values and fears of their time.],
+  [Over the years, these narratives transformed, influenced by the literary movements, societal changes, and even the emergence of printed texts.],
+  [While the Brothers Grimm and Charles Perrault are often credited with popularizing fairy tales, countless variations existed long before their collections. These tales serve as a mirror, revealing the hopes, dreams, and struggles of the people who told them. These narratives are also useful educational tools today, especially in an online school K-12 setting, where fairy tales help students explore history, ethics, and cultural change through engaging, age-appropriate storytelling.],
+  [Cultural Reflections in Stories],
+  [How do stories reflect the cultures from which they emerge? When you plunge into fairy tales, you uncover a tapestry of beliefs, values, and social norms that define a society. These narratives often encapsulate the daily lives of their characters, showcasing the customs, traditions, and struggles of the people.],
+  [For instance, a story set in a specific historical context might reveal gender roles that were prevalent at the time, allowing you to see how societal expectations shaped individual destinies.],
+  [As you explore various fairy tales, you might notice recurring motifs, such as the hero's journey or the triumph of good over evil. These themes aren't just entertaining—they mirror the hopes and fears of the culture that birthed them.],
+  [You'll find that stories often serve as a lens for understanding cultural identity, illustrating how communities view themselves and their place in the world.],
+  [Additionally, fairy tales can highlight regional differences , showcasing local legends and folklore that enrich cultural heritage. By examining these narratives, you gain insight not only into the values of the time but also into the evolution of those values as societies change.],
+  [Through this exploration, you see how deeply interconnected stories and culture truly are.],
+  [Morals and Lessons Over Time],
+  [Stories not only reflect cultural identities but also impart morals and lessons that resonate across generations. Fairy tales, in particular, serve as vehicles for these timeless teachings, adapting their messages to fit the evolving social landscape. As you explore these narratives, you'll notice how lessons about virtues like honesty, bravery, and kindness remain relevant, even as the specifics of each tale shift.],
+  [Take, for instance, the classic tale of Cinderella. Originally, it emphasized the importance of virtue and patience, highlighting the rewards of good behavior. Over time, adaptations have shifted focus, incorporating themes of empowerment and self-advocacy, which mirror contemporary values. This evolution showcases a society's changing priorities.],
+  [Similarly, stories like Little Red Riding Hood caution against naivety, reflecting historical concerns about trust and safety. As you analyze these tales, you'll see how the underlying morals adapt to address the fears and aspirations of their time, providing a rich tapestry of lessons that inform both children and adults.],
+  [Ultimately, these narratives endure not just for their entertainment value, but for their ability to convey essential life lessons, ensuring that each generation learns from the past while looking toward the future.],
+  [Historical Context of Popular Tales],
+  [Understanding the historical context of popular tales enriches our appreciation of their narratives and themes. When you investigate these stories, you notice they often mirror the societal values and challenges of their time. For example, tales like "Cinderella" and "Little Red Riding Hood" emerged during periods of significant social change, reflecting anxieties about class mobility and the dangers lurking in the world.],
+  [As you explore the origins of these tales, consider how they were shaped by the cultural norms and expectations of their respective eras. The oral tradition of storytelling often meant that these narratives evolved with each retelling, adapting to the audience's needs and the prevailing attitudes.],
+  [By analyzing the historical context, you can identify the underlying messages about resilience, morality, and social hierarchy. The way these stories address conflicts—like poverty, betrayal, or love—reveals much about the human experience and societal structures.],
+  [Ultimately, understanding the historical backdrop allows you to grasp why these tales have endured through generations, resonating with audiences across cultures and time periods. You'll find that fairy tales offer more than just entertainment; they serve as a compelling lens through which to view history itself.],
+  [Gender Roles and Stereotypes],
+  [When you plunge into children's literature, it's crucial to ignore the influence of gender roles and stereotypes woven throughout these narratives. These tales not only entertain but also shape societal perceptions of what it means to be male or female.],
+  [Consider the following common themes:],
+  [Damsels in Distress : Female characters often need rescuing, reinforcing dependency.],
+  [Brave Heroes : Male protagonists typically embody strength and courage, driving the action.],
+  [Domesticity vs. Adventure : Women are frequently portrayed in domestic roles, while men undertake quests.],
+  [Appearance Matters : Female beauty is often emphasized, impacting self-image and expectations.],
+  [Emotional Expression : Boys are usually depicted as stoic, while girls express emotions freely.],
+  [These patterns reflect historical contexts where rigid gender norms prevailed. By examining these narratives, you can uncover the underlying messages that influence young readers.],
+  [While some stories have evolved, many still perpetuate outdated stereotypes. It's crucial to critically engage with these texts, recognizing their role in shaping identities and societal roles.],
+  [As you explore, consider how modern retellings challenge these norms, offering a more balanced representation of gender that empowers all children.],
+  [Fear and Cautionary Elements],
+  [Children's literature often embeds fear and cautionary elements that serve as powerful tools for moral and social instruction. When you explore tales like "Little Red Riding Hood" or "Hansel and Gretel," you notice how these narratives evoke fear to teach essential lessons. The lurking dangers in the woods symbolize real-life threats, encouraging you to be cautious and aware of your surroundings.],
+  [These cautionary tales often reflect societal anxieties, mirroring the fears of the times they were written in. For instance, the consequences faced by disobedient children highlight the importance of listening to authority figures. By illustrating the potential dangers of ignorance or rebellion, these stories compel you to reflect on the repercussions of your choices.],
+  [Moreover, the use of fear isn't merely for shock value; it provides a framework for understanding complex social dynamics. You can see how these elements foster resilience and critical thinking, urging young readers to navigate their world with care.],
+  [Ultimately, the fear embedded in children's literature acts as a guide, steering you toward moral development while echoing the broader historical context from which these tales emerge.],
+  [Timeless Themes and Human Nature],
+  [At the heart of children's literature lies a tapestry of timeless themes that resonate with human nature, transcending generations and cultural boundaries.],
+  [These stories reflect fundamental truths about our existence, often revealing the complexities of human behavior and emotion. When you investigate these narratives, you'll discover themes that continue to shape our understanding of ourselves and each other.],
+  [Consider these enduring themes:],
+  [Good vs. Evil : The classic struggle that defines moral choices.],
+  [Coming of Age : The journey from innocence to experience.],
+  [Friendship and Loyalty : Bonds that withstand trials and tribulations.],
+  [Courage and Resilience : Overcoming obstacles in pursuit of dreams.],
+  [Love and Sacrifice : The lengths to which we go for those we cherish.],
+  [These themes aren't just for children; they're mirrors reflecting your own life experiences. They challenge you to confront fears and hopes, and they provide insight into societal values.],
+  [In delving into fairy tales, you've unraveled a tapestry woven with the threads of history, culture, and human nature. These stories aren't just whimsical tales; they're mirrors reflecting the societal norms and values of their times. As you navigate the enchanting worlds of these narratives, you discover how they shape and challenge our perceptions. Ultimately, fairy tales invite you to reexamine your own beliefs and fears, proving that stories have the power to transform both hearts and minds.],
 ),
   insert-map: (:),
   word-count: 1491,
@@ -238,27 +243,29 @@ pepper
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [MUSHROOM, LEEK + GRUYERE STRATA],
   author: [Sara Forte],
   source-name: [Sprouted Kitchen],
   images: (),
   paragraphs: (
-  [class=""\>While more rich than our everyday fare, this year needs a Christmas breakfast to top all Christmas breakfasts. We will be making the cinnamon rolls from our Sprouted Kitchen Holidays ebook (gifting half because what better door drop is there). We have made cinnamon rolls the tradition, but everyone is ready for something more substantial after presents. So we’re trying this this year - a bread pudding meets frittata and can be tinkered with all sorts of ways to taste.],
-  [class=""\>I’ve now made a mediterranean version with artichokes and sun-dried tomatoes and feta, or a roasted squash and kale take that I made in smaller little ramekins so it felt like a special dinner. If you’re feeding kids? Try getting the vegetables smaller, so they are harder to pick out and the texture sort of blends in.],
-  [class=""\> Emmi Gruyere is a great option here because it has a nutty, assertive flavor and also a melty quality to it. Goes so well with mushrooms and the bread makes this a one-dish wonder. We’ve been adding the cheese to the kids grilled cheese sandwiches and into mashed potatoes. Check the store locator for where to find it near you.],
+  [While more rich than our everyday fare, this year needs a Christmas breakfast to top all Christmas breakfasts. We will be making the cinnamon rolls from our Sprouted Kitchen Holidays ebook (gifting half because what better door drop is there). We have made cinnamon rolls the tradition, but everyone is ready for something more substantial after presents. So we’re trying this this year - a bread pudding meets frittata and can be tinkered with all sorts of ways to taste.],
+  [I’ve now made a mediterranean version with artichokes and sun-dried tomatoes and feta, or a roasted squash and kale take that I made in smaller little ramekins so it felt like a special dinner. If you’re feeding kids? Try getting the vegetables smaller, so they are harder to pick out and the texture sort of blends in.],
+  [Emmi Gruyere is a great option here because it has a nutty, assertive flavor and also a melty quality to it. Goes so well with mushrooms and the bread makes this a one-dish wonder. We’ve been adding the cheese to the kids grilled cheese sandwiches and into mashed potatoes. Check the store locator for where to find it near you.],
+  [Thank you for supporting sponsored work on the blog! This post is in partnership with Emmi Roth Cheese , though all words and opinions are my own.],
   [Mushroom, Leek and Gruyere Strata],
-  [class=""\>This can take so many different combinations! I left it vegetarian, but some browned breakfast sausage or crispy bacon can be stirred in as well with no other changes should you like.],
-  [class=""\>Everything can be assembled the night before and left covered in the fridge overnight. Pull it out first thing in the morning while the oven is preheating and you can enjoy your family instead of working in the kitchen Christmas morning.],
-  [class=""\>1 Tbsp. extra virgin olive oil
+  [Serves 6],
+  [This can take so many different combinations! I left it vegetarian, but some browned breakfast sausage or crispy bacon can be stirred in as well with no other changes should you like.],
+  [Everything can be assembled the night before and left covered in the fridge overnight. Pull it out first thing in the morning while the oven is preheating and you can enjoy your family instead of working in the kitchen Christmas morning.],
+  [Gluten Free? We have made this successfully with gluten-free sandwich bread!],
+  [8 oz. fresh bread, cubed (country loaf, French, ciabatta)],
+  [1 Tbsp. extra virgin olive oil
 1 Tbsp. butter
 8 oz. mixed mushrooms, stemmed and sliced
 2 small/1 large leek, white and light green parts, cleaned and sliced
 4 oz. baby spinach],
-  [class=""\>8 eggs
+  [8 eggs
 1 ½ cup whole milk
 ½ cup cream
 ½ tsp. sea salt
@@ -266,9 +273,12 @@ pepper
 ½ tsp. Dried oregano
 1 Tbsp. hot sauce
 1 heaping cup/6 oz. grated Emmi Gruyere, shredded],
-  [class=""\>Heat the oil and butter in a large, oven-proof skillet or cast iron pan (about 12”). Add the mushrooms and leeks, a big pinch of salt and pepper and sauté to soften. About 8 minutes. Stir in the baby spinach, turn off the heat, and let it just wilt and cool down. Stir in the toasted bread.],
-  [class=""\>While the vegetables cool down, whisk up your egg mixture. In a large mixing bowl, combine the eggs, milk, cream, salt, pepper, dried oregano, hot sauce and whisk really well to combine. We want to get some air in there. Stir in the gruyere. Pour the egg mixture over the vegetables, pressing the bread pieces down a bit so they get the custard on all parts. Leave it to soak at room temperature for an hour, or covered, overnight in the refrigerator.],
-  [class=""\>Turn the oven down to 350’. Bake on the middle rack for 30 minutes, or until you shake the pan and the center is no longer liquid. A little jiggle is ok, it will set as it cools down.],
+  [Fresh parsley, for garnish],
+  [Preheat the oven to 375’. Spread the cubed bread on a baking dish and toast for 10 minutes until golden on the edges and dried out.],
+  [Heat the oil and butter in a large, oven-proof skillet or cast iron pan (about 12”). Add the mushrooms and leeks, a big pinch of salt and pepper and sauté to soften. About 8 minutes. Stir in the baby spinach, turn off the heat, and let it just wilt and cool down. Stir in the toasted bread.],
+  [While the vegetables cool down, whisk up your egg mixture. In a large mixing bowl, combine the eggs, milk, cream, salt, pepper, dried oregano, hot sauce and whisk really well to combine. We want to get some air in there. Stir in the gruyere. Pour the egg mixture over the vegetables, pressing the bread pieces down a bit so they get the custard on all parts. Leave it to soak at room temperature for an hour, or covered, overnight in the refrigerator.],
+  [Turn the oven down to 350’. Bake on the middle rack for 30 minutes, or until you shake the pan and the center is no longer liquid. A little jiggle is ok, it will set as it cools down.],
+  [Garnish the top with fresh parsley and serve warm.],
   [Sara Forte 
  2020-12-22],
   [Mushroom, Leek & Gruyere Strata],
@@ -302,23 +312,25 @@ pepper
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Russian Colonization in Alaska and The Pacific Northwest],
   author: [George Levrier-Jones],
   source-name: [History in 28 Minutes],
   images: (),
   paragraphs: (
-  [class=""\> Peter the Great, one of the most notable Czars in Russian history and famous for opening Russia’s windows to the West, played a pivotal role in extending Russian borders further east into Siberia. Summoning a Danish Naval Officer in the service of Russia by the name of Vitus Bering, Czar Peter, in one of his final acts, ordered Bering to lead an expedition to the eastern extremity of the continent to the Kamchatka Peninsula in 1725. From there, Russia would move over to the American continent.],
-  [class=""\>Back in 1725, it was unclear whether Czar Peter and Bering had prior knowledge that Asia and North America were not in fact connected, but the impetus for the exploration appears to have been a joint explorative/probing mission to determine how far west other European powers, especially Spain, had explored. After sailing into the sea which now bears his name, Bering initially failed to reach the North American mainland. It would be more than a decade before he embarked on a second expedition this time successfully reaching what is now Alaska in July 1741. Despite the impressive intrepidness and endurance made by the officers and men of the expedition the most immediate impact upon return to St. Petersburg was the procurement of rich furs, mainly sea otters. This later launched a gradual wave of highly enterprising traders, entrepreneurs and adventurers backed mostly by private or individual fortunes to tap into the fur rush, much like what the French and British had already been doing on the opposite side of the American continent.],
-  [class=""\>Russian fur traders known as Promyshlenniki began to island hop eastward via Siberia and into the Alaskan mainland and broader Pacific Northwest. A relentless campaign ensued to harvest the highly sought after furs of sea otters, foxes, and various northern seals. Once one island/area was rapaciously depleted of furs the hunters and trappers merely moved on to the next and continued to exploit and slaughter. This had a horrific impact on the local native populace as they watched in horror and confusion as their abundant food and survival sources were destroyed and threatened with extinction.],
-  [class=""\>By the 1780s the chaotic free for all operations of independently operating Promyshlenniki steadily gave way as six competing companies arose much like the Hudson’s Bay Company in British North America. Under such companies which were typically named for their founder(s) such as the Sheilikhov-Golikov Company. Competition would increase but took on a more organized fashion as the first permanent Russian settlements soon began to emerge because of coordinated and sustained trapping operations.],
-  [class=""\>Despite some coordination and cooperation with the native populace, mainly Aleuts and Tlingits, relationships began to falter despite the pleadings and alleged interest in Native wellbeing of the distant and all too preoccupied monarch Catherine the Great. The all-too-common clash of cultures kept increasing in intensity and atrocities with several military encounters ensuing. The Natives never could gain a decisive edge given their lack of gunpowder and firearms and became fewer in number.],
-  [class=""\>In 1808 the Russians relocated their erstwhile capital of Russia America from Kodiak Island to Sitka. There they took advantage of secure and deep harbors as they expanded their shipbuilding operations utilizing the abundance of timber in the surrounding area. Consolidating their regional monopoly the Russians virtually controlled much of the Pacific fur trade from the Aleutians to Northern California, providing lucrative furs and pelts to the markets in Asia and North America, even trading consistently with the newly created United States. Russian ships likewise began to sail further south into the Pacific laying anchor at places such as Easter Island and the Hawaiian Archipelago, all at the behest of the Czar who was determined that Russia remain a major player on the global geopolitical stage.],
-  [class=""\>Russia would hold onto its outposts in Alaska ever so tenuously well into the mid-19th century as it faced consistently mounting pressure from the British and American who similarly coveted Alaska and the Pacific Northwest’s strategic and economic potential. The Russian attention eastward would wane however with the emphasis on southern extension into the Caucasus’s and Central Asia would pit Russia and Great Britain against one another in both hot and cold conflicts such as the Crimean War and the so-called Great Game.],
-  [class=""\>In the 1850s, overhunting and trapping coupled with the bevy of conflicts abroad led to the Russian Empire devoting fewer men, material and resources to its outposts in the Pacific Northwest. Cognizant of Russia’s vulnerability from other European powers and prioritization of other regions the Czar decided to entertain and eventually approve a sale of Alaska to the United States in 1867 for the price of seven million dollars, roughly two cents per acre. Thus, ending the near century and a half legacy of Russian activity in North America. To this day the Orthodox Church is still a prominent institution in the now State of Alaska. A vestige harkening back to an often-overlooked chapter in American and Russian history.],
+  [Peter the Great, one of the most notable Czars in Russian history and famous for opening Russia’s windows to the West, played a pivotal role in extending Russian borders further east into Siberia. Summoning a Danish Naval Officer in the service of Russia by the name of Vitus Bering, Czar Peter, in one of his final acts, ordered Bering to lead an expedition to the eastern extremity of the continent to the Kamchatka Peninsula in 1725. From there, Russia would move over to the American continent.],
+  [Brian Hughes explains.],
+  ["Advancement of the Promyshlenniki to the East" by V. G. Vagner. Promyshlenniki translates approximately to hunter-trapper frontiersmen.],
+  [Back in 1725, it was unclear whether Czar Peter and Bering had prior knowledge that Asia and North America were not in fact connected, but the impetus for the exploration appears to have been a joint explorative/probing mission to determine how far west other European powers, especially Spain, had explored. After sailing into the sea which now bears his name, Bering initially failed to reach the North American mainland. It would be more than a decade before he embarked on a second expedition this time successfully reaching what is now Alaska in July 1741. Despite the impressive intrepidness and endurance made by the officers and men of the expedition the most immediate impact upon return to St. Petersburg was the procurement of rich furs, mainly sea otters. This later launched a gradual wave of highly enterprising traders, entrepreneurs and adventurers backed mostly by private or individual fortunes to tap into the fur rush, much like what the French and British had already been doing on the opposite side of the American continent.],
+  [Russian fur traders known as Promyshlenniki began to island hop eastward via Siberia and into the Alaskan mainland and broader Pacific Northwest. A relentless campaign ensued to harvest the highly sought after furs of sea otters, foxes, and various northern seals. Once one island/area was rapaciously depleted of furs the hunters and trappers merely moved on to the next and continued to exploit and slaughter. This had a horrific impact on the local native populace as they watched in horror and confusion as their abundant food and survival sources were destroyed and threatened with extinction.],
+  [1780s],
+  [By the 1780s the chaotic free for all operations of independently operating Promyshlenniki steadily gave way as six competing companies arose much like the Hudson’s Bay Company in British North America. Under such companies which were typically named for their founder(s) such as the Sheilikhov-Golikov Company. Competition would increase but took on a more organized fashion as the first permanent Russian settlements soon began to emerge because of coordinated and sustained trapping operations.],
+  [Despite some coordination and cooperation with the native populace, mainly Aleuts and Tlingits, relationships began to falter despite the pleadings and alleged interest in Native wellbeing of the distant and all too preoccupied monarch Catherine the Great. The all-too-common clash of cultures kept increasing in intensity and atrocities with several military encounters ensuing. The Natives never could gain a decisive edge given their lack of gunpowder and firearms and became fewer in number.],
+  [In 1808 the Russians relocated their erstwhile capital of Russia America from Kodiak Island to Sitka. There they took advantage of secure and deep harbors as they expanded their shipbuilding operations utilizing the abundance of timber in the surrounding area. Consolidating their regional monopoly the Russians virtually controlled much of the Pacific fur trade from the Aleutians to Northern California, providing lucrative furs and pelts to the markets in Asia and North America, even trading consistently with the newly created United States. Russian ships likewise began to sail further south into the Pacific laying anchor at places such as Easter Island and the Hawaiian Archipelago, all at the behest of the Czar who was determined that Russia remain a major player on the global geopolitical stage.],
+  [Russia would hold onto its outposts in Alaska ever so tenuously well into the mid-19th century as it faced consistently mounting pressure from the British and American who similarly coveted Alaska and the Pacific Northwest’s strategic and economic potential. The Russian attention eastward would wane however with the emphasis on southern extension into the Caucasus’s and Central Asia would pit Russia and Great Britain against one another in both hot and cold conflicts such as the Crimean War and the so-called Great Game.],
+  [In the 1850s, overhunting and trapping coupled with the bevy of conflicts abroad led to the Russian Empire devoting fewer men, material and resources to its outposts in the Pacific Northwest. Cognizant of Russia’s vulnerability from other European powers and prioritization of other regions the Czar decided to entertain and eventually approve a sale of Alaska to the United States in 1867 for the price of seven million dollars, roughly two cents per acre. Thus, ending the near century and a half legacy of Russian activity in North America. To this day the Orthodox Church is still a prominent institution in the now State of Alaska. A vestige harkening back to an often-overlooked chapter in American and Russian history.],
+  [Did you find that piece interesting? If so, join us for free by clicking here .],
 ),
   insert-map: (:),
   word-count: 875,
@@ -326,24 +338,38 @@ pepper
   debug-mode: false,
 )
 
-  #pull-quote([The all-too-common clash of cultures kept increasing in intensity and atrocities with several military encounters ensuing.], [George Levrier-Jones])
+#pull-quote([The all-too-common clash of cultures kept increasing in intensity and atrocities with several military encounters ensuing.], [George Levrier-Jones])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [CHOCOLATE-HAZELNUT TOFFEE],
   author: [Sara Forte],
   source-name: [Sprouted Kitchen],
   images: (),
   paragraphs: (
-  [class=""\>It has been a busy cookbook season! I spent last night reading through the Ottolenghi Test Kitchen Cookbook and am revisiting everything I have bookmarked in Aran’s Cannelle et Vanille Bakes Simple while it is rainy this week and we can work on some baking projects. If you eat gluten free, by need or choice, Aran is your gal. You may know her from her gf sourdough tutorials on instagram.],
-  [class=""\>Aran is one of my favorite food people. Most importantly, she is a lovely and generous person. Just as humble and charming as her photos lead you to believe. Her photos are romantic, the recipes are clear and uncomplicated and she offers subs for all sorts of dietary issues. She is the gluten free baking master, and always where I go for reference. The book does call for some specialty flours, but if you cook gluten free and make a few things from her book, they won’t go to waste. My favorites have been the Lemon Curd, Lemon Pound Cake, Double Chocolate Crinkle Cookies and this toffee! I love how short the list of ingredients is, you may even have everything to make a batch today.],
-  [class=""\>This makes an excellent gift around the holidays. We kept it in the fridge for when you just need a sweet nibble after a meal. If you are nut free, you can sub in some candied pepitas or some crushed candy canes and cocoa nibs on top.],
-  [class=""\>On a second sheet, spread the hazelnuts and roast for 15-20 minutes, until fragrant and golden brown. When they are cool enough to handle, transfer them to a large kitchen towel and rub together to loosen their skins. Once they’re mostly peeled (a bit of skin is ok), transfer them to a food processor and pulse a few times to roughly chop. Set aside.],
-  [class=""\>In a medium saucepan, stir together the butter, both sugar, water and salt. Cook over medium-high heat, undisturbed, until it registers at 300’, about 15 minutes. The mixture will be dark brown and smell caramelized. Remove the pan from the heat and carefully add the vanilla, it will splatter. Stir in the baking soda until it is distributed - do not overmix. You want to preserve some of that gas.],
-  [class=""\>Pour the toffee onto the prepared baking sheet and spread it evenly with a spatula. Sprinkle the top with the chopped chocolate. The heat of the toffee will melt it. Spread it evenly with a spatula. Distribute the chopped hazelnuts across the top and press down so they stick into the chocolate.],
-  [class=""\>Let the toffee cool completely for a few hours, or speed up this process in the fridge. Break the toffee into pieces and store in an airtight container for up to a month.],
+  [It has been a busy cookbook season! I spent last night reading through the Ottolenghi Test Kitchen Cookbook and am revisiting everything I have bookmarked in Aran’s Cannelle et Vanille Bakes Simple while it is rainy this week and we can work on some baking projects. If you eat gluten free, by need or choice, Aran is your gal. You may know her from her gf sourdough tutorials on instagram.],
+  [Aran is one of my favorite food people. Most importantly, she is a lovely and generous person. Just as humble and charming as her photos lead you to believe. Her photos are romantic, the recipes are clear and uncomplicated and she offers subs for all sorts of dietary issues. She is the gluten free baking master, and always where I go for reference. The book does call for some specialty flours, but if you cook gluten free and make a few things from her book, they won’t go to waste. My favorites have been the Lemon Curd, Lemon Pound Cake, Double Chocolate Crinkle Cookies and this toffee! I love how short the list of ingredients is, you may even have everything to make a batch today.],
+  [Congrats, Aran!],
+  [CHOCOLATE-HAZELNUT TOFFEE],
+  [Makes one 9x13 pan],
+  [This makes an excellent gift around the holidays. We kept it in the fridge for when you just need a sweet nibble after a meal. If you are nut free, you can sub in some candied pepitas or some crushed candy canes and cocoa nibs on top.],
+  [Ingredients:],
+  [¾ cup (100 g ) raw hazelnuts],
+  [1 cup unsalted butter (or dairy free butter) cut into cubes],
+  [¾ cup sugar],
+  [½ cup light brown sugar],
+  [¼ cup water, room temperature],
+  [½ tsp. Kosher salt],
+  [2 tsp. Vanilla extract],
+  [¼ tsp baking soda],
+  [4 ounces 70% chocolate, finely chopped],
+  [Instructions:],
+  [Preheat the oven to 325’ and line a large rimmed baking sheet with parchment paper.],
+  [On a second sheet, spread the hazelnuts and roast for 15-20 minutes, until fragrant and golden brown. When they are cool enough to handle, transfer them to a large kitchen towel and rub together to loosen their skins. Once they’re mostly peeled (a bit of skin is ok), transfer them to a food processor and pulse a few times to roughly chop. Set aside.],
+  [In a medium saucepan, stir together the butter, both sugar, water and salt. Cook over medium-high heat, undisturbed, until it registers at 300’, about 15 minutes. The mixture will be dark brown and smell caramelized. Remove the pan from the heat and carefully add the vanilla, it will splatter. Stir in the baking soda until it is distributed - do not overmix. You want to preserve some of that gas.],
+  [Pour the toffee onto the prepared baking sheet and spread it evenly with a spatula. Sprinkle the top with the chopped chocolate. The heat of the toffee will melt it. Spread it evenly with a spatula. Distribute the chopped hazelnuts across the top and press down so they stick into the chocolate.],
+  [Let the toffee cool completely for a few hours, or speed up this process in the fridge. Break the toffee into pieces and store in an airtight container for up to a month.],
+  [©2021 by Aran Goyoaga. Excerpted from Cannelle et Vanille Bakes Simple by permission of Sasquatch Books.],
 ),
   insert-map: (:),
   word-count: 555,
@@ -351,68 +377,112 @@ pepper
   debug-mode: false,
 )
 
-  #pull-quote([If you are nut free, you can sub in some candied pepitas or some crushed candy canes and cocoa nibs on top.], [Sara Forte])
+#pull-quote([If you are nut free, you can sub in some candied pepitas or some crushed candy canes and cocoa nibs on top.], [Sara Forte])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [12 Leftover Rice Recipes],
   author: [Jess Rice],
   source-name: [Budget Bytes],
   images: (),
   paragraphs: (
   [I’m all about using up leftovers and not letting anything go to waste. After all, tossing leftover food is one of the quickest ways to watch your grocery budget disappear! Rice is especially sneaky. Even though it’s one of the cheapest ingredients in my kitchen, it’s also one of the easiest to overestimate, which means a container of cooked rice ends up shoved to the back of the fridge and forgotten until it’s too late. So instead of letting that happen, I started treating leftover rice like a planned ingredient. These 12+ leftover rice recipes are some of our favorite ways to turn extra rice into a real meal, not just something to use up!],
+  [Important to Know When Cooking With Leftover Rice],
   [Before we get into it, a quick rice-storage note (so you can feel good about using it later). When you’re storing cooked rice for later, the main goal is to cool it quickly and get it into the fridge, ideally portioned out in a clean container so it chills faster. Cooling cooked rice as soon as possible and then heating it thoroughly before enjoying it again is the best way to keep it food-safe. Don’t leave cooked rice sitting out at room temp, and try to get it cooled and refrigerated within about two hours.],
   [You can also freeze rice for up to 2-3 months and then pull it from the freezer to use in any of the recipes below!],
+  [Great Ways to Use Leftover Rice],
   [Leftover rice is basically a blank canvas, and it can go way beyond basic reheating. These recipes with leftover rice show off all the best directions it can take, from savory to sweet!],
   [I always use leftover rice for fried rice if I can. My family loves it, and I much prefer the texture compared to freshly cooked rice in dishes like these. Day-old rice is a little firmer, so the grains stay separate instead of turning sticky or gummy once I stir in the sauce and add-ins. It’s the easiest way to get that perfect fried rice texture at home.],
+  [1. Vegetable Fried Rice],
+  [Vegetable Fried Rice is a fast, easy, delicious, and budget-friendly meal that you can whip up with ingredients on hand at any time!],
+  [4.84 from 31 votes],
   [\$4.5 recipe \/ \$1.13 serving 
  Get the Recipe],
   [When I need dinner fast and I’ve got leftover cooked rice in my fridge, I make this vegetable fried rice . It’s garlicky, gingery, and finished with soy sauce and toasted sesame oil, plus eggs and a mix of veggies. The whole thing comes together in less than 30 minutes, and it’s great for using up odds and ends!],
+  [2. Chicken Fried Rice],
+  [Make delicious, ultra-flavorful chicken fried rice that tastes even better than takeout– and costs less too.],
+  [4.15 from 7 votes],
   [\$4.74 recipe \/ \$1.19 serving 
  Get the Recipe],
   [A batch of this chicken fried rice can stretch leftover rice and a single chicken breast into a budget-friendly dinner that tastes even better than takeout (I promise!). This easy recipe feels especially satisfying for how simple the ingredient list really is.],
+  [3. Kimchi Fried Rice],
+  [This Kimchi Fried rice is tangy, spicy, and the perfect way to use up all the leftover ingredients and scraps in your kitchen.],
+  [4.20 from 15 votes],
   [\$5.63 recipe \/ \$1.40 serving 
  Get the Recipe],
   [If you like bold flavors, kimchi fried rice is such a fun way to wake up a container of day-old rice. I love how it uses tangy kimchi, quick-cooking vegetables, and even shredded broccoli stem for extra texture, so it feels resourceful while still being incredibly flavorful. There’s no waste in our budget-conscious kitchen!],
+  [Cozy Bakes and Casseroles],
   [Casseroles are another spot where I love using day-old rice. Since it’s a little firmer, it holds its texture while it bakes instead of turning mushy, and it soaks up flavor easily while making whatever you’re cooking extra hearty. If I know a casserole is on the menu, I’ll even cook extra rice the night before just to make prep faster.],
+  [4. Chicken and Rice Casserole],
   [Chicken and Rice Casserole],
+  [This Chicken and Rice Casserole is a comfort food classic, made from scratch with tons of juicy chicken, cheese, vegetables, and rice!],
+  [4.60 from 76 votes],
   [\$7.60 recipe \/ \$1.27 serving 
  Get the Recipe],
   [For a cozy baked dinner, chicken and rice casserole turns rice, vegetables, chicken, and cheese into a creamy, hearty meal that feels like classic comfort food. It’s the kind of casserole that works especially well for using up cooked chicken, including rotisserie chicken, and leftover rice.],
+  [5. Broccoli Cheese Casserole],
+  [This Broccoli Cheese Casserole recipe is a classic side dish made with a creamy homemade cheese sauce, rice, and broccoli florets.],
+  [4.67 from 89 votes],
   [\$5.78 recipe \/ \$0.96 serving 
  Get the Recipe],
   [I love how our broccoli cheese casserole transforms cooked rice into something creamy, cheesy, and seriously comforting. Broccoli, cheddar, and a simple homemade sauce bake together in about 50 minutes, giving you a side dish that can easily double as the main event.],
+  [6. Beef Burrito Casserole],
+  [This Beef Burrito Casserole is totally customizable and can include all your favorite burrito or nacho toppings. Leftovers reheat great for lunch!],
+  [4.64 from 57 votes],
   [\$8.10 recipe \/ \$1.35 serving 
  Get the Recipe],
   [This beef burrito casserole is layered with seasoned beef, cooked rice, beans, salsa, and cheese, and the little dollops of cream cheese tucked through the middle make it extra creamy and rich. Want to go meatless? I’d skip the ground beef and add in an extra can of black beans or some corn. It’ll still be delicious either way!],
+  [Build-Your-Own Rice Bowls],
   [Bowl meals are my favorite way to make leftover rice feel fresh again. Just add a protein, a few colorful toppings, and a punchy sauce, and suddenly dinner is handled!],
+  [7. Bibimbap],
   [Bibimbap – The Ultimate Bowl Meal],
+  [This colorful and flexible bowl is my simple interpretation of Bibimbap, a delicious Korean rice bowl meal.],
+  [4.69 from 93 votes],
   [\$10.66 recipe \/ \$2.67 serving 
  Get the Recipe],
   [Bibimbap is a Korean mixed rice bowl, and our budget-friendly adaptation turns leftover rice into a seriously satisfying dinner. This version keeps things simple with jasmine rice, spinach, chili garlic beef, fresh vegetables, kimchi, and a fried egg, so you still get plenty of color, texture, and flavor without complicated steps. It’s also great for meal prep! I’d just cook the egg fresh each day, or swap in a hard-boiled egg instead.],
+  [8. Poor Man’s Burrito Bowls],
   [Poor Man’s Burrito Bowls],
+  [These easy no-frills burrito bowls are super fast and affordable. They're the perfect satisfying weeknight meal for times when money is tight!],
+  [4.76 from 75 votes],
   [\$7.07 recipe \/ \$1.18 serving 
  Get the Recipe],
   [I’m always impressed by how much flavor our poor man’s burrito bowls deliver with such a short and affordable ingredient list. Rice, black beans, salsa, and cheese come together into a filling bowl meal that’s simple, budget-friendly, and perfect for putting leftover rice to work without much effort at all.],
+  [9. Spicy Tuna Guacamole Bowls],
+  [These super fresh and Spicy Tuna Guacamole bowls are packed with protein, fiber, and flavor. The perfect no-reheat meal prep lunch for summer!],
+  [4.73 from 37 votes],
   [\$7.80 recipe \/ \$1.95 serving 
  Get the Recipe],
   [These spicy tuna guacamole bowls have a mix of creamy guac, spicy sriracha, and crisp veggies that keeps every bite fresh, and the edamame adds extra protein and fiber. Bonus: it’s designed to be a no-reheat meal prep bowl, so it’s ideal for anyone who doesn’t have access to a microwave at school or work!],
+  [10. Sweet N Spicy Chicken Bowls],
   [Sweet n’ Spicy Chicken Bowls],
+  [These Sweet n’ Spicy Chicken Bowls assemble quickly and provide a lot of flavor, color, and texture. Low sugar, high fiber, and loaded with deliciousness!],
+  [4.94 from 29 votes],
   [\$6.05 recipe \/ \$1.51 serving 
  Get the Recipe],
   [Meal prep gets a lot more exciting with sweet n spicy chicken bowls in the lineup. These bowls combine chicken, rice, and colorful toppings with a sweet-and-spicy flavor profile that keeps each bite interesting!],
+  [Try Making Pancakes!],
   [Leftover rice doesn’t have to live its whole life as a side dish. Once it’s cooked, it can be mixed, crisped, and transformed into something totally different, and this next recipe is proof of that.],
+  [11. Rice Pancakes],
+  [Use your leftover rice from the night before to make these quick and easy Rice Pancakes for breakfast. Reduce food waste and keep your budget in check!],
+  [4.25 from 24 votes],
   [\$0.71 recipe \/ \$0.36 serving 
  Get the Recipe],
   [I’m OBSESSED with these rice pancakes because they turn yesterday’s rice into something totally unexpected. They’re a quick, easy breakfast with a lightly crisp exterior and soft middle, and they’re a fun change from the usual toast or oatmeal routine. My family loveees them with a drizzle of maple syrup, jam, or a little peanut butter.],
+  [Easy and Affordable Dessert],
   [Even dessert is on the table when you’ve got extra rice in the fridge. This easy pudding is one of my family’s favorite recipes for leftover rice! It turns a basic pantry staple into something sweet, cozy, and budget-friendly, without a lot of fuss.],
+  [12. Rice Pudding],
+  [Creamy Rice Pudding is a simple, delicious, and inexpensive dessert full of warm flavors like vanilla, cinnamon, and nutmeg.],
+  [4.84 from 24 votes],
   [\$2.40 recipe \/ \$0.60 serving 
  Get the Recipe],
   [Our homemade rice pudding recipe is written with uncooked rice, but I PROMISE it’s just as easy to swap in leftover rice. Just stir in the cooked rice, reduce the amount of milk (check the recipe tips for the exact amounts!), then let it gently simmer until it turns thick, cozy, and scoopable. This easy pudding is what dreams are made of. 🤤],
+  [+ More Ways to Use Leftover Rice!],
   [Soups and Stews – A scoop of cooked rice can seriously upgrade a pot of soup or stew. It adds extra heft, stretches the servings, and makes the whole bowl feel more filling. I especially love it in recipes like our Mexican red lentil stew . Leftover rice is also perfect for adding to posole or black bean chili ! And if I don’t have a nice loaf of crusty bread to dip into my soup, I love adding a scoop of rice instead. It’s perfect for when I only have a small amount of rice that needs to be used, and I HIGHLY recommend you give it a go.],
   [Meatloaf and Meatballs  – Leftover rice is surprisingly great in meatloaf and meatballs because it soaks up extra moisture a lot like breadcrumbs do. It’s also a handy option if you’re gluten-free, since it can help bind everything together and keep the texture tender without relying on bread (just note the amounts may need adjusting as breadcrumbs and rice aren’t a 1:1 swap). For a tried-and-true example, check out our Thai turkey meatloaf recipe!],
+  [15 Leftover Chicken Recipes],
+  [14 Tuna Recipes],
+  [15 Quesadilla Recipes],
   [The post 12 Leftover Rice Recipes appeared first on Budget Bytes .],
 ),
   insert-map: (:),
@@ -421,10 +491,8 @@ pepper
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Fresh Energy In March (2026 Wallpapers Edition)],
   author: [Cosima Mielke],
   source-name: [Smashing Magazine],
@@ -535,21 +603,21 @@ pepper
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [GLUTEN FREE CRANBERRY TEA CAKE],
   author: [Sara Forte],
   source-name: [Sprouted Kitchen],
   images: (),
   paragraphs: (
-  [class=""\>Fa la la la la! It’s baking season and this cake was a hit. Of course we all love cookies, and I have plenty of those on the list. My people love a breakfast sweet, and this has stood in for a simple dinner dessert on occasion as well. I know you all love to have a spread planned for holiday mornings, so hope this works for those of you gluten free folks. We always have sweet rolls, but I may double up this year since everyone liked this cake so much. I’ll say it again, like we do with the lemon loaf or banana bread, toasted for a few minutes for a bit of a crisp edge is lovely.],
-  [class=""\>I have made many dense gf baked goods, but I’m starting to figure out the ratios. Eggs are important for strength, going all almond flour turns out pretty dense, so I cut it with superfine brown rice flour like I learned from Aran of Canelle et Vanille. Hugh is the gluten free one in the family, but I have found the kids don’t question a thing when it looks like cookies and cake and sugar. I added some swap suggestions in the headnote.],
+  [Fa la la la la! It’s baking season and this cake was a hit. Of course we all love cookies, and I have plenty of those on the list. My people love a breakfast sweet, and this has stood in for a simple dinner dessert on occasion as well. I know you all love to have a spread planned for holiday mornings, so hope this works for those of you gluten free folks. We always have sweet rolls, but I may double up this year since everyone liked this cake so much. I’ll say it again, like we do with the lemon loaf or banana bread, toasted for a few minutes for a bit of a crisp edge is lovely.],
+  [I have made many dense gf baked goods, but I’m starting to figure out the ratios. Eggs are important for strength, going all almond flour turns out pretty dense, so I cut it with superfine brown rice flour like I learned from Aran of Canelle et Vanille. Hugh is the gluten free one in the family, but I have found the kids don’t question a thing when it looks like cookies and cake and sugar. I added some swap suggestions in the headnote.],
   [GLUTEN FREE CRANBERRY TEA CAKE],
-  [class=""\>This could be part of a breakfast spread or a dessert. It is sweet and seasonal but we nibbled at it most in the afternoon with a second (er, third) cup of coffee or tea. It has a good amount of moisture, so it sits well at room temperature for a day or two, then should be kept covered in the fridge. Great served with a dollop of plain yogurt in the morning or sweetened creme fraiche for dessert.],
-  [class=""\> Dairy-free option is to replace the buttermilk with non-dairy milk with a squeeze of lemon juice - oat or almond both great, coconut is a bit heavy. You don’t need it gluten free, replace the almond and rice flours with 1 1/2 cups all purpose flour.],
-  [class=""\>6 Tbsp. unsalted butter (vegan butter works great!), room temperature
+  [Serves 6-8],
+  [This could be part of a breakfast spread or a dessert. It is sweet and seasonal but we nibbled at it most in the afternoon with a second (er, third) cup of coffee or tea. It has a good amount of moisture, so it sits well at room temperature for a day or two, then should be kept covered in the fridge. Great served with a dollop of plain yogurt in the morning or sweetened creme fraiche for dessert.],
+  [Dairy-free option is to replace the buttermilk with non-dairy milk with a squeeze of lemon juice - oat or almond both great, coconut is a bit heavy. You don’t need it gluten free, replace the almond and rice flours with 1 1/2 cups all purpose flour.],
+  [Not cranberry season? try lemon blueberry or almond raspberry (replace the vanilla with almond extract).],
+  [6 Tbsp. unsalted butter (vegan butter works great!), room temperature
 3/4 cup cane sugar
 2 Tbsp. avocado or coconut oil
 2 eggs
@@ -562,8 +630,11 @@ zest of one orange
 2 tsp. baking powder
 1/2 tsp. sea salt
 2 cups (8 oz.) fresh or frozen cranberries, roughly chopped],
-  [class=""\>In a stand mixer or with an electric mixer, beat the butter and sugar together until fluffy. At least 3 minutes. Add the oil, eggs, buttermilk, maple, vanilla, orange zest and beat again to incorporate. Add the almond and rice flours, baking powder, salt and fold it a few times. Add half the cranberries and fold again. Transfer it to your prepared pan, sprinkle the remaining cranberries over top, swipe it down to an even layer, and sprinkle the top generously with turbinado sugar.],
-  [class=""\>Bake on the middle rack for about 50 minutes, until tested in the center and only a few crumbs (no batter!) come out with it. If the top starts to get to brown, cover it with a piece of parchment or foil. Let the cake cool for at least 30 minutes before slicing. Serve with yogurt or sweetened creme fraiche.],
+  [turbinado sugar, for finishing],
+  [sweetened yogurt, for serving],
+  [Preheat the oven to 350’ and parchment line and butter a 8-9” cake pan.],
+  [In a stand mixer or with an electric mixer, beat the butter and sugar together until fluffy. At least 3 minutes. Add the oil, eggs, buttermilk, maple, vanilla, orange zest and beat again to incorporate. Add the almond and rice flours, baking powder, salt and fold it a few times. Add half the cranberries and fold again. Transfer it to your prepared pan, sprinkle the remaining cranberries over top, swipe it down to an even layer, and sprinkle the top generously with turbinado sugar.],
+  [Bake on the middle rack for about 50 minutes, until tested in the center and only a few crumbs (no batter!) come out with it. If the top starts to get to brown, cover it with a piece of parchment or foil. Let the cake cool for at least 30 minutes before slicing. Serve with yogurt or sweetened creme fraiche.],
 ),
   insert-map: (:),
   word-count: 599,
@@ -571,12 +642,10 @@ zest of one orange
   debug-mode: false,
 )
 
-  #pull-quote([unsalted butter (vegan butter works great!), room temperature 3/4 cup cane sugar 2 Tbsp.], [Sara Forte])
+#pull-quote([unsalted butter (vegan butter works great!), room temperature 3/4 cup cane sugar 2 Tbsp.], [Sara Forte])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Beyond The Black Box: Practical XAI For UX Practitioners],
   author: [Victor Yocco],
   source-name: [Smashing Magazine],
@@ -710,10 +779,8 @@ Initial research showed a market gap for sustainable products.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Smashing Animations Part 7: Recreating Toon Text With CSS And SVG],
   author: [Andy Clarke],
   source-name: [Smashing Magazine],
@@ -801,56 +868,56 @@ text-stroke-width: 3px;],
   [With those class attributes applied, I can then style individual characters as I choose.],
   [For example, for “Hum Sweet Hum,” I want to replicate how its letters shift away from the baseline. After using my Toon Text Splitter, I applied four different translate values using several :nth-child selectors to create a semi-random look:],
   [/\* 4th, 8th, 12th... \*/
-.toon-char:nth-child(4n) { translate: 0 -8px; }
+.toon-char:nth-child(4n) \{ translate: 0 -8px; \}
 /\* 1st, 5th, 9th... \*/
-.toon-char:nth-child(4n+1) { translate: 0 -4px; }
+.toon-char:nth-child(4n+1) \{ translate: 0 -4px; \}
 /\* 2nd, 6th, 10th... \*/
-.toon-char:nth-child(4n+2) { translate: 0 4px; }
+.toon-char:nth-child(4n+2) \{ translate: 0 4px; \}
 /\* 3rd, 7th, 11th... \*/
-.toon-char:nth-child(4n+3) { translate: 0 8px; }],
+.toon-char:nth-child(4n+3) \{ translate: 0 8px; \}],
   [But translate is only one property I can use to transform my toon text.],
   [I could also rotate those individual characters for an even more chaotic look:],
   [/\* 4th, 8th, 12th... \*/
-.toon-line .toon-char:nth-child(4n) { rotate: -4deg; }
+.toon-line .toon-char:nth-child(4n) \{ rotate: -4deg; \}
 /\* 1st, 5th, 9th... \*/
-.toon-char:nth-child(4n+1) { rotate: -8deg; }
+.toon-char:nth-child(4n+1) \{ rotate: -8deg; \}
 /\* 2nd, 6th, 10th... \*/
-.toon-char:nth-child(4n+2) { rotate: 4deg; }
+.toon-char:nth-child(4n+2) \{ rotate: 4deg; \}
 /\* 3rd, 7th, 11th... \*/
-.toon-char:nth-child(4n+3) { rotate: 8deg; }],
+.toon-char:nth-child(4n+3) \{ rotate: 8deg; \}],
   [But translate is only one property I can use to transform my toon text. I could also rotate those individual characters for an even more chaotic look:],
   [/\* 4th, 8th, 12th... \*/
-.toon-line .toon-char:nth-child(4n) {
-rotate: -4deg; }],
+.toon-line .toon-char:nth-child(4n) \{
+rotate: -4deg; \}],
   [/\* 1st, 5th, 9th... \*/
-.toon-char:nth-child(4n+1) {
-rotate: -8deg; }],
+.toon-char:nth-child(4n+1) \{
+rotate: -8deg; \}],
   [/\* 2nd, 6th, 10th... \*/
-.toon-char:nth-child(4n+2) {
-rotate: 4deg; }],
+.toon-char:nth-child(4n+2) \{
+rotate: 4deg; \}],
   [/\* 3rd, 7th, 11th... \*/
-.toon-char:nth-child(4n+3) {
-rotate: 8deg; }],
+.toon-char:nth-child(4n+3) \{
+rotate: 8deg; \}],
   [And, of course, I could add animations to jiggle those characters and bring my toon text style titles to life. First, I created a keyframe animation that rotates the characters:],
-  [\@keyframes jiggle {
-0%, 100% { transform: rotate(var(--base-rotate, 0deg)); }
-25% { transform: rotate(calc(var(--base-rotate, 0deg) + 3deg)); }
-50% { transform: rotate(calc(var(--base-rotate, 0deg) - 2deg)); }
-75% { transform: rotate(calc(var(--base-rotate, 0deg) + 1deg)); }
-}],
+  [\@keyframes jiggle \{
+0%, 100% \{ transform: rotate(var(--base-rotate, 0deg)); \}
+25% \{ transform: rotate(calc(var(--base-rotate, 0deg) + 3deg)); \}
+50% \{ transform: rotate(calc(var(--base-rotate, 0deg) - 2deg)); \}
+75% \{ transform: rotate(calc(var(--base-rotate, 0deg) + 1deg)); \}
+\}],
   [Before applying it to the span elements created by my Toon Text Splitter:],
-  [.toon-char {
+  [.toon-char \{
 animation: jiggle 3s infinite ease-in-out;
-transform-origin: center bottom; }],
+transform-origin: center bottom; \}],
   [And finally, setting the rotation amount and a delay before each character begins to jiggle:],
-  [.toon-char:nth-child(4n) { --base-rotate: -2deg; }
-.toon-char:nth-child(4n+1) { --base-rotate: -4deg; }
-.toon-char:nth-child(4n+2) { --base-rotate: 2deg; }
-.toon-char:nth-child(4n+3) { --base-rotate: 4deg; }],
-  [.toon-char:nth-child(4n) { animation-delay: 0.1s; }
-.toon-char:nth-child(4n+1) { animation-delay: 0.3s; }
-.toon-char:nth-child(4n+2) { animation-delay: 0.5s; }
-.toon-char:nth-child(4n+3) { animation-delay: 0.7s; }],
+  [.toon-char:nth-child(4n) \{ --base-rotate: -2deg; \}
+.toon-char:nth-child(4n+1) \{ --base-rotate: -4deg; \}
+.toon-char:nth-child(4n+2) \{ --base-rotate: 2deg; \}
+.toon-char:nth-child(4n+3) \{ --base-rotate: 4deg; \}],
+  [.toon-char:nth-child(4n) \{ animation-delay: 0.1s; \}
+.toon-char:nth-child(4n+1) \{ animation-delay: 0.3s; \}
+.toon-char:nth-child(4n+2) \{ animation-delay: 0.5s; \}
+.toon-char:nth-child(4n+3) \{ animation-delay: 0.7s; \}],
   [One Frame To Make An Impression],
   [Cartoon title artists had one frame to make an impression, and their typography was as important as the artwork they painted. The same is true on the web.],
   [A well-designed header or hero area needs clarity, character, and confidence — not simply a faded full-width background image.],
@@ -862,28 +929,28 @@ transform-origin: center bottom; }],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [World War 2’s Burma Campaign & Gurkha Lachhiman Gurung VC],
   author: [George Levrier-Jones],
   source-name: [History in 28 Minutes],
   images: (),
   paragraphs: (
-  [class=""\> Lachhiman Gurung's story cannot be fully understood without appreciating the wider context of the Burma Campaign, one of the most demanding and least forgiving theatres of the Second World War. Fought across dense jungle, steep mountains, monsoon-soaked valleys, and primitive supply routes, the campaign pitted Allied forces against a Japanese army that had already demonstrated its ability to defeat larger, better-equipped opponents through mobility, surprise, and ferocious determination. Within this brutal environment, Gurung's stand in May 1945 represents not just individual heroism, but the culmination of years of attritional warfare in which endurance was often as decisive as firepower.],
-  [class=""\>Born in 1917 in the village of Chhimba in Nepal's Gorkha district, Lachhiman Gurung grew up in a society where military service was both an economic opportunity and a source of deep cultural pride. Gurkha soldiers had been recruited into the British Indian Army since the early nineteenth century, valued for their toughness, adaptability, and fierce regimental loyalty. Gurung enlisted in the 8th Gurkha Rifles, a regiment that had already seen extensive action in both world wars. By the time Japan entered the conflict in Southeast Asia in 1941, Gurkha units were among the most experienced light infantry forces available to the British Empire, well-suited to jungle warfare and long-range patrolling.],
-  [class=""\>The Japanese invasion of Burma in 1942 had driven British and Indian forces into a humiliating retreat to India, but by 1944 the strategic balance had begun to shift. The failure of the Japanese offensives at Imphal and Kohima marked a turning point, after which Allied forces, reorganized and resupplied, began a relentless advance back into Burma. By 1945, the Japanese 15th Army and associated formations were exhausted, understrength, and increasingly isolated, yet they remained dangerous opponents. Japanese doctrine emphasized aggressive night attacks, infiltration, and the willingness of small units to fight to the death rather than withdraw. Defensive positions were often assaulted repeatedly at close quarters, with grenades, bayonets, and hand-to-hand combat playing a decisive role.],
-  [class=""\>It was against this backdrop that Rifleman Lachhiman Gurung found himself holding a forward position near Taungdaw on the night of 12–13 May 1945. His battalion was engaged in clearing remaining pockets of Japanese resistance as Allied forces pushed southwards. Forward positions such as Gurung's were particularly vulnerable, often lightly manned and deliberately exposed to give early warning of enemy movement. Japanese troops, skilled at moving silently through jungle and darkness, frequently attempted to overwhelm such posts with sudden grenade attacks followed by a close assault.],
-  [class=""\>During the night, a determined Japanese attack fell upon Gurung's trench, which he shared with two fellow Gurkhas. Grenades were hurled into the position in rapid succession. When one grenade landed directly among them, Gurung attempted to throw it clear, a reflexive act that likely saved the wider position even as it cost him dearly. The explosion tore off two of his fingers, shattered his right arm, and inflicted multiple wounds to his face and body. His two comrades were killed instantly. In most circumstances, such injuries would have rendered a soldier helpless, if not unconscious, but Gurung remained upright and aware, driven by a sense of duty that overrode shock and pain.],
-  [class=""\>Alone in the trench and severely wounded, Gurung faced repeated Japanese assaults at extremely close range. The attacking soldiers were likely drawn from veteran infantry units accustomed to night fighting, armed with grenades, rifles, and bayonets, and prepared to press home attacks regardless of casualties. Gurung, unable to properly use his damaged arm, adapted with grim ingenuity. Using his remaining hand and his teeth, he picked up grenades and hurled them back at the attackers, while firing his weapon whenever possible. For several hours, he held his position, repelling one attack after another, despite loss of blood, exhaustion, and the knowledge that no immediate help could reach him.],
-  [class=""\>By dawn, the Japanese attacks had ceased. The ground in front of Gurung's trench was strewn with enemy dead, grim evidence of the effectiveness of his solitary defense. More importantly, the position had not fallen. In the tightly interlinked defensive system of jungle warfare, the loss of a forward post could allow enemy forces to infiltrate behind the main line, threatening encirclement or collapse. Gurung's refusal to yield under such conditions almost certainly prevented further casualties among his unit and contributed directly to the success of the local operation.],
-  [class=""\>The award of the Victoria Cross recognized not only the extraordinary courage displayed but also the broader military significance of Gurung's actions. His citation highlighted his "indomitable spirit" and "complete disregard for his own safety," qualities that epitomized the ideal of the Gurkha soldier. At a time when the Burma Campaign was approaching its conclusion, his story resonated strongly with Allied forces who had endured years of hardship in one of the war's harshest environments.],
-  [class=""\>After surviving his wounds, Lachhiman Gurung was discharged from the army with a disability pension. He returned to Nepal, where, like many Gurkha veterans, he lived a modest life far removed from the battlefields that had defined his youth. Despite being one of the few Nepalese recipients of the Victoria Cross, he remained characteristically humble, rarely speaking about his wartime experiences unless pressed. In later years, he was honored at commemorative events and remembered with deep respect within Gurkha circles and beyond. Lachhiman Gurung died in 2004, leaving behind a legacy that stands as one of the most remarkable individual acts of bravery in the Second World War and a powerful reminder of the human endurance displayed during the long and punishing struggle for Burma.],
-  [class=""\>In conclusion, Lachhiman Gurung's Victoria Cross stands not merely as an isolated testament to individual gallantry, but as a lens through which the wider human experience of the Burma Campaign can be understood. His actions on that night in May 1945 encapsulate the defining features of the conflict: the intimacy of jungle warfare, the relentless pressure exerted by an enemy unwilling to concede defeat, and the extraordinary physical and moral resilience demanded of ordinary soldiers. Gurung's stand was not fought on a grand battlefield before massed formations, but in a muddy trench, in darkness and isolation, where survival depended on instinct, courage, and an unyielding sense of responsibility to comrades and unit.],
-  [class=""\>His story highlights the vital contribution of the Gurkhas to the Allied war effort in Asia. Recruited from remote hill villages and serving far from home, Gurkha soldiers endured conditions that tested the limits of human endurance, often with little public recognition at the time. Gurung's conduct exemplifies the ethos for which they were renowned: quiet professionalism, adaptability under fire, and a willingness to hold the line regardless of personal cost. In this sense, his bravery was both exceptional and representative, reflecting the collective sacrifice of thousands of Gurkha soldiers who fought and died in Burma's jungles.],
-  [class=""\>Finally, Lachhiman Gurung's legacy endures because it speaks to something universal in the history of war. His courage was not rooted in ideology or personal ambition, but in loyalty, duty, and an instinctive refusal to abandon his post while others depended upon him. Decades after the guns fell silent in Burma, his story continues to remind us that the outcomes of vast campaigns are often shaped by moments of individual resolve. In remembering Lachhiman Gurung, we honor not only a single hero, but all those whose endurance and sacrifice underpinned victory in one of the Second World War's most arduous and unforgiving theatres.],
-  [class=""\> The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
+  [Lachhiman Gurung's story cannot be fully understood without appreciating the wider context of the Burma Campaign, one of the most demanding and least forgiving theatres of the Second World War. Fought across dense jungle, steep mountains, monsoon-soaked valleys, and primitive supply routes, the campaign pitted Allied forces against a Japanese army that had already demonstrated its ability to defeat larger, better-equipped opponents through mobility, surprise, and ferocious determination. Within this brutal environment, Gurung's stand in May 1945 represents not just individual heroism, but the culmination of years of attritional warfare in which endurance was often as decisive as firepower.],
+  [Terry Bailey explains.],
+  [An Inscription of Lachhiman Gurung VC's name on the "Memorial Gates", Constitution Hill, London. Source: Gorkha Warrior, available here .],
+  [Born in 1917 in the village of Chhimba in Nepal's Gorkha district, Lachhiman Gurung grew up in a society where military service was both an economic opportunity and a source of deep cultural pride. Gurkha soldiers had been recruited into the British Indian Army since the early nineteenth century, valued for their toughness, adaptability, and fierce regimental loyalty. Gurung enlisted in the 8th Gurkha Rifles, a regiment that had already seen extensive action in both world wars. By the time Japan entered the conflict in Southeast Asia in 1941, Gurkha units were among the most experienced light infantry forces available to the British Empire, well-suited to jungle warfare and long-range patrolling.],
+  [The Japanese invasion of Burma in 1942 had driven British and Indian forces into a humiliating retreat to India, but by 1944 the strategic balance had begun to shift. The failure of the Japanese offensives at Imphal and Kohima marked a turning point, after which Allied forces, reorganized and resupplied, began a relentless advance back into Burma. By 1945, the Japanese 15th Army and associated formations were exhausted, understrength, and increasingly isolated, yet they remained dangerous opponents. Japanese doctrine emphasized aggressive night attacks, infiltration, and the willingness of small units to fight to the death rather than withdraw. Defensive positions were often assaulted repeatedly at close quarters, with grenades, bayonets, and hand-to-hand combat playing a decisive role.],
+  [It was against this backdrop that Rifleman Lachhiman Gurung found himself holding a forward position near Taungdaw on the night of 12–13 May 1945. His battalion was engaged in clearing remaining pockets of Japanese resistance as Allied forces pushed southwards. Forward positions such as Gurung's were particularly vulnerable, often lightly manned and deliberately exposed to give early warning of enemy movement. Japanese troops, skilled at moving silently through jungle and darkness, frequently attempted to overwhelm such posts with sudden grenade attacks followed by a close assault.],
+  [During the night, a determined Japanese attack fell upon Gurung's trench, which he shared with two fellow Gurkhas. Grenades were hurled into the position in rapid succession. When one grenade landed directly among them, Gurung attempted to throw it clear, a reflexive act that likely saved the wider position even as it cost him dearly. The explosion tore off two of his fingers, shattered his right arm, and inflicted multiple wounds to his face and body. His two comrades were killed instantly. In most circumstances, such injuries would have rendered a soldier helpless, if not unconscious, but Gurung remained upright and aware, driven by a sense of duty that overrode shock and pain.],
+  [Alone in the trench and severely wounded, Gurung faced repeated Japanese assaults at extremely close range. The attacking soldiers were likely drawn from veteran infantry units accustomed to night fighting, armed with grenades, rifles, and bayonets, and prepared to press home attacks regardless of casualties. Gurung, unable to properly use his damaged arm, adapted with grim ingenuity. Using his remaining hand and his teeth, he picked up grenades and hurled them back at the attackers, while firing his weapon whenever possible. For several hours, he held his position, repelling one attack after another, despite loss of blood, exhaustion, and the knowledge that no immediate help could reach him.],
+  [By dawn, the Japanese attacks had ceased. The ground in front of Gurung's trench was strewn with enemy dead, grim evidence of the effectiveness of his solitary defense. More importantly, the position had not fallen. In the tightly interlinked defensive system of jungle warfare, the loss of a forward post could allow enemy forces to infiltrate behind the main line, threatening encirclement or collapse. Gurung's refusal to yield under such conditions almost certainly prevented further casualties among his unit and contributed directly to the success of the local operation.],
+  [The award of the Victoria Cross recognized not only the extraordinary courage displayed but also the broader military significance of Gurung's actions. His citation highlighted his "indomitable spirit" and "complete disregard for his own safety," qualities that epitomized the ideal of the Gurkha soldier. At a time when the Burma Campaign was approaching its conclusion, his story resonated strongly with Allied forces who had endured years of hardship in one of the war's harshest environments.],
+  [After surviving his wounds, Lachhiman Gurung was discharged from the army with a disability pension. He returned to Nepal, where, like many Gurkha veterans, he lived a modest life far removed from the battlefields that had defined his youth. Despite being one of the few Nepalese recipients of the Victoria Cross, he remained characteristically humble, rarely speaking about his wartime experiences unless pressed. In later years, he was honored at commemorative events and remembered with deep respect within Gurkha circles and beyond. Lachhiman Gurung died in 2004, leaving behind a legacy that stands as one of the most remarkable individual acts of bravery in the Second World War and a powerful reminder of the human endurance displayed during the long and punishing struggle for Burma.],
+  [In conclusion, Lachhiman Gurung's Victoria Cross stands not merely as an isolated testament to individual gallantry, but as a lens through which the wider human experience of the Burma Campaign can be understood. His actions on that night in May 1945 encapsulate the defining features of the conflict: the intimacy of jungle warfare, the relentless pressure exerted by an enemy unwilling to concede defeat, and the extraordinary physical and moral resilience demanded of ordinary soldiers. Gurung's stand was not fought on a grand battlefield before massed formations, but in a muddy trench, in darkness and isolation, where survival depended on instinct, courage, and an unyielding sense of responsibility to comrades and unit.],
+  [His story highlights the vital contribution of the Gurkhas to the Allied war effort in Asia. Recruited from remote hill villages and serving far from home, Gurkha soldiers endured conditions that tested the limits of human endurance, often with little public recognition at the time. Gurung's conduct exemplifies the ethos for which they were renowned: quiet professionalism, adaptability under fire, and a willingness to hold the line regardless of personal cost. In this sense, his bravery was both exceptional and representative, reflecting the collective sacrifice of thousands of Gurkha soldiers who fought and died in Burma's jungles.],
+  [Finally, Lachhiman Gurung's legacy endures because it speaks to something universal in the history of war. His courage was not rooted in ideology or personal ambition, but in loyalty, duty, and an instinctive refusal to abandon his post while others depended upon him. Decades after the guns fell silent in Burma, his story continues to remind us that the outcomes of vast campaigns are often shaped by moments of individual resolve. In remembering Lachhiman Gurung, we honor not only a single hero, but all those whose endurance and sacrifice underpinned victory in one of the Second World War's most arduous and unforgiving theatres.],
+  [The site has been offering a wide variety of high-quality, free history content since 2012. If you’d like to say ‘thank you’ and help us with site running costs, please consider donating here .],
 ),
   insert-map: (:),
   word-count: 1297,
@@ -891,63 +958,229 @@ transform-origin: center bottom; }],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [40 Summer Cake Recipes You Need to Try],
   author: [Emily Racette Parulski],
   source-name: [Taste of Home],
   images: (),
   paragraphs: (
-  [class="tagline"\> From the Recipe Creator: Showcase the bright flavors of spring with this delightfully refreshing lemon blueberry cake. Lemon juice and zest give a citrusy punch, while sprinkled blueberries give a touch of sweetness. —Sarah Farmer, Waukesha, Wisconsin],
+  [2 Reviews],
+  [Total Time: 55 min],
+  [Servings: 12 slices],
+  [From the Recipe Creator: Showcase the bright flavors of spring with this delightfully refreshing lemon blueberry cake. Lemon juice and zest give a citrusy punch, while sprinkled blueberries give a touch of sweetness. —Sarah Farmer, Waukesha, Wisconsin],
+  [go to recipe],
   [Pineapple Upside-Down Cake],
-  [class="tagline"\> From the Recipe Creator: A classic recipe like this never goes out of style! It’s delicious with the traditional pineapple, but try it with peaches or a combination of cranberries and orange. —Bernardine Melton, Paola, Kansas],
-  [class="tagline"\> From the Recipe Creator: This layered strawberry Bundt cake is a real celebration of strawberries. It has a cheery pink hue and a bright strawberry flavor. —Nancy Mock, Southbridge, Massachusetts],
-  [class="tagline"\> From the Recipe Creator: My mother used to love making this easy pineapple sunshine cake in the summertime. It's so cool and refreshing that it never lasts very long! —Kathleen Worden, North Andover, Massachusetts],
+  [35 Reviews],
+  [Total Time: 50 min],
+  [Servings: 9],
+  [From the Recipe Creator: A classic recipe like this never goes out of style! It’s delicious with the traditional pineapple, but try it with peaches or a combination of cranberries and orange. —Bernardine Melton, Paola, Kansas],
+  [go to recipe],
+  [0 Reviews],
+  [Total Time: 2 hours],
+  [Servings: 12 pieces],
+  [From the Recipe Creator: This layered strawberry Bundt cake is a real celebration of strawberries. It has a cheery pink hue and a bright strawberry flavor. —Nancy Mock, Southbridge, Massachusetts],
+  [go to recipe],
+  [137 Reviews],
+  [Total Time: 40 min],
+  [Servings: 20],
+  [From the Recipe Creator: My mother used to love making this easy pineapple sunshine cake in the summertime. It's so cool and refreshing that it never lasts very long! —Kathleen Worden, North Andover, Massachusetts],
+  [go to recipe],
+  [1 Reviews],
+  [Total Time: 1 hour 15 min],
+  [Servings: 1 loaf (16 pieces)],
+  [From the Recipe Creator:],
   [A pound cake offers a buttery, tender crumb with a soft, golden crust. To make the classic version even better, we added fresh fruit into the mix. This cake starts with a vanilla cake base and is flecked with berries. With its pretty pink glaze, it's special enough for any party or occasion, or you could simply enjoy a slice with afternoon tea. —Molly Allen, Hood River, Oregon],
-  [class="tagline"\> From the Recipe Creator: When my boys were young, they couldn’t drink milk but they could have yogurt. This was a cake they could eat. And it’s one dessert that doesn’t taste overly sweet, which is always a nice change of pace. —Linda Leuer, Hamel, Minnesota],
+  [go to recipe],
+  [6 Reviews],
+  [Total Time: 45 min],
+  [Servings: 12],
+  [From the Recipe Creator: When my boys were young, they couldn’t drink milk but they could have yogurt. This was a cake they could eat. And it’s one dessert that doesn’t taste overly sweet, which is always a nice change of pace. —Linda Leuer, Hamel, Minnesota],
+  [go to recipe],
   [Pineapple RumChata Shortcakes],
+  [1 Reviews],
+  [Total Time: 1 hour 50 min],
+  [Servings: 6],
+  [From the Recipe Creator:],
   [This deliciously different dessert, with a soft inside and a crumbly crust, is made in the slow cooker in jars instead of in the oven. When done, add final touches to the cooled shortcake jars and serve. —Joan Hallford, North Richland Hills, Texas],
-  [class="tagline"\> From the Recipe Creator: As a mother of three sons, I always have sweets in my kitchen! I buy lots of ripe bananas on sale and freeze them with this cake in mind. I’m often asked to bring it to family picnics and dinners.—Bonnie Krause, Irvona, Pennsylvania],
-  [class="tagline"\> From the Recipe Creator: This bright and moist lemon cake is topped with a mascarpone frosting. Garnish it with lemon zest for an extra pop of color. —Taste of Home Test Kitchen],
-  [class="tagline"\> From the Recipe Creator: This tender cake roll with whipped cream has a very light texture and is perfect for spring. The raspberries give the whipped cream filling a pretty pale pink color. Strawberries could also be used instead of raspberries. —Kaori Shinohara, Paramus, New Jersey],
+  [go to recipe],
+  [45 Reviews],
+  [Total Time: 55 min],
+  [Servings: 18],
+  [From the Recipe Creator: As a mother of three sons, I always have sweets in my kitchen! I buy lots of ripe bananas on sale and freeze them with this cake in mind. I’m often asked to bring it to family picnics and dinners.—Bonnie Krause, Irvona, Pennsylvania],
+  [go to recipe],
+  [1 Reviews],
+  [Total Time: 1 hour],
+  [Servings: 12],
+  [From the Recipe Creator: This bright and moist lemon cake is topped with a mascarpone frosting. Garnish it with lemon zest for an extra pop of color. —Taste of Home Test Kitchen],
+  [go to recipe],
+  [1 Reviews],
+  [Total Time: 35 min],
+  [Servings: 8],
+  [From the Recipe Creator: This tender cake roll with whipped cream has a very light texture and is perfect for spring. The raspberries give the whipped cream filling a pretty pale pink color. Strawberries could also be used instead of raspberries. —Kaori Shinohara, Paramus, New Jersey],
+  [go to recipe],
+  [0 Reviews],
+  [Total Time: 1 hour],
+  [Servings: 12],
+  [From the Recipe Creator:],
   [This vanilla and cinnamon cake is mixed in with juicy peaches, so every bite is tender and sweet. Serve warm with vanilla ice cream. —Taste of Home Test Kitchen],
-  [class="tagline"\> From the Recipe Creator: Toasted coconut adds visual appeal to this tall and impressive cake. With an airy texture and heavenly coconut-ginger flavor,it's a lovely end to meals throughout the year.],
-  [class="tagline"\> From the Recipe Creator: Ube cake highlights the sweet, yet earthy flavors of the purple yam with ube extract and ube jam. Coconut macapuno tops the two-tiered cake for a striking, traditional finish to the Filipino dessert. —Margaret Knoebel, Milwaukee, Wisconsin],
+  [go to recipe],
+  [0 Reviews],
+  [Total Time: 1 hour],
+  [Servings: 16],
+  [From the Recipe Creator: Toasted coconut adds visual appeal to this tall and impressive cake. With an airy texture and heavenly coconut-ginger flavor,it's a lovely end to meals throughout the year.],
+  [go to recipe],
+  [0 Reviews],
+  [Total Time: 1 hour 10 min],
+  [Servings: 6],
+  [From the Recipe Creator: Ube cake highlights the sweet, yet earthy flavors of the purple yam with ube extract and ube jam. Coconut macapuno tops the two-tiered cake for a striking, traditional finish to the Filipino dessert. —Margaret Knoebel, Milwaukee, Wisconsin],
+  [go to recipe],
   [Strawberry Pretzel Salad Poke Cake],
+  [1 Reviews],
+  [Total Time: 1 hour 5 min],
+  [Servings: 12 pieces],
+  [From the Recipe Creator:],
   [I once had a friend who was obsessed with strawberry pretzel dip. For her birthday one summer, I created this strawberry pretzel salad poke cake to celebrate. I've been making it every year for her since. —Lauren Habermehl, Pewaukee, Wisconsin],
-  [class="tagline"\> From the Recipe Creator: Lemon pie filling lends a splash of citrus flavor to a convenient cake mix, and a rich cream cheese frosting gives the cake sweetness. My family likes this dessert cold, so I cut it into squares and freeze it before serving. —Alyce Dubisar, North Bend, Oregon],
+  [go to recipe],
+  [40 Reviews],
+  [Total Time: 30 min],
+  [Servings: 24],
+  [From the Recipe Creator: Lemon pie filling lends a splash of citrus flavor to a convenient cake mix, and a rich cream cheese frosting gives the cake sweetness. My family likes this dessert cold, so I cut it into squares and freeze it before serving. —Alyce Dubisar, North Bend, Oregon],
+  [go to recipe],
   [Slow-Cooker Tropical Orange Cake],
+  [0 Reviews],
+  [Total Time: 4 hours 15 min],
+  [Servings: 8],
+  [From the Recipe Creator:],
   [Inspired by the fruity tropical flavors of my all-time favorite yogurt, this makes for a fresh, fun and comforting treat. Try it for a beautiful dessert that is ridiculously easy to prepare! —Lisa Renshaw, Kansas City, Missouri],
+  [go to recipe],
   [Lemon-Blueberry Pound Cake],
-  [class="tagline"\> From the Recipe Creator: Pair a slice of this moist lemon-blueberry cake with a scoop of vanilla ice cream. It's a staple at our family barbecues. —Rebecca Little, Park Ridge, Illinois],
-  [class="tagline"\> From the Recipe Creator: This moist cake with cream cheese frosting is the best I've ever eaten. It's so simple, too, because it uses two jars of baby food instead of fresh carrots that need to be grated. —Jeanette McKenna, Vero Beach, Florida],
+  [58 Reviews],
+  [Total Time: 1 hour 20 min],
+  [Servings: 12],
+  [From the Recipe Creator: Pair a slice of this moist lemon-blueberry cake with a scoop of vanilla ice cream. It's a staple at our family barbecues. —Rebecca Little, Park Ridge, Illinois],
+  [go to recipe],
+  [14 Reviews],
+  [Total Time: 55 min],
+  [Servings: 12],
+  [From the Recipe Creator: This moist cake with cream cheese frosting is the best I've ever eaten. It's so simple, too, because it uses two jars of baby food instead of fresh carrots that need to be grated. —Jeanette McKenna, Vero Beach, Florida],
+  [go to recipe],
+  [0 Reviews],
+  [Total Time: 35 min],
+  [Servings: 12],
+  [From the Recipe Creator:],
   [This cake is inventive and yet familiar. Be sure to use a springform pan so you can easily remove it from the cake. If it breaks while you're transferring it to the serving plate, just push the pieces back together, pressing gently. —Stella Ohanian, Porter Ranch, California],
-  [class="tagline"\> From the Recipe Creator: My take on those boozy treats that weigh down suitcases returning from Jamaica, this moist cake packs a rum punch . You may wish to card your guests before serving. The longer the rum soaks in, the better—overnight is best. —Jenn Hall, Collingswood, New Jersey],
+  [go to recipe],
+  [10 Reviews],
+  [Total Time: 55 min],
+  [Servings: 12],
+  [go to recipe],
+  [4 Reviews],
+  [Total Time: 1 hour 25 min],
+  [Servings: 12],
+  [From the Recipe Creator: My take on those boozy treats that weigh down suitcases returning from Jamaica, this moist cake packs a rum punch . You may wish to card your guests before serving. The longer the rum soaks in, the better—overnight is best. —Jenn Hall, Collingswood, New Jersey],
+  [go to recipe],
   [Mamaw Emily’s Strawberry Cake],
-  [class="tagline"\> From the Recipe Creator: My husband loved his mamaw's strawberry cake recipe. He thought no one could duplicate it. I made it, and it’s just as scrumptious as he remembers. —Jennifer Bruce, Manitou, Kentucky],
+  [125 Reviews],
+  [Total Time: 40 min],
+  [Servings: 12],
+  [From the Recipe Creator: My husband loved his mamaw's strawberry cake recipe. He thought no one could duplicate it. I made it, and it’s just as scrumptious as he remembers. —Jennifer Bruce, Manitou, Kentucky],
+  [go to recipe],
   [Peaches & Cream Jelly Roll],
-  [class="tagline"\> From the Recipe Creator: Cake rolls make a lovely presentation for a party, and they are simple to cut into even slices. My father taught me how to make them, and sometimes we get together and make them for family and friends. —Malena Coleman, Rockville, Indiana],
-  [class="tagline"\> From the Recipe Creator: I've made this cake for my children, grandchildren and great-grandchildren. It is their favorite birthday cake... it's light and tasty and lends itself beautifully to decorating. I often place a small arrangement of fresh flowers in the center. —Grace Scowen, Kelowna, British Columbia],
-  [class="tagline"\> From the Recipe Creator: Inspired by an abundance of zucchini, I found a new way to use it up in this spiced and lightly sweet cake. It even won a blue ribbon at our county fair! —Regina Stock, Topeka, Kansas],
-  [class="tagline"\> From the Recipe Creator: For our daughter's wedding, a friend made this lovely, airy angel food cake from a recipe she's used for decades. It really is one of the best angel food cake recipes I've found. Serve slices plain or dress them up with fresh fruit. —Marilyn Niemeyer, Doon, Iowa],
-  [class="tagline"\> From the Recipe Creator: This banana bread snack cake doesn't need any frosting—just a dusting of powdered sugar. Guests are always amazed that I made this treat from scratch. —Denise Loewenthal, Hinckley, Ohio],
+  [3 Reviews],
+  [Total Time: 30 min],
+  [Servings: 12],
+  [From the Recipe Creator: Cake rolls make a lovely presentation for a party, and they are simple to cut into even slices. My father taught me how to make them, and sometimes we get together and make them for family and friends. —Malena Coleman, Rockville, Indiana],
+  [go to recipe],
+  [3 Reviews],
+  [Total Time: 1 hour 20 min],
+  [Servings: 12],
+  [From the Recipe Creator: I've made this cake for my children, grandchildren and great-grandchildren. It is their favorite birthday cake... it's light and tasty and lends itself beautifully to decorating. I often place a small arrangement of fresh flowers in the center. —Grace Scowen, Kelowna, British Columbia],
+  [go to recipe],
+  [12 Reviews],
+  [Total Time: 1 hour 20 min],
+  [Servings: 14],
+  [From the Recipe Creator: Inspired by an abundance of zucchini, I found a new way to use it up in this spiced and lightly sweet cake. It even won a blue ribbon at our county fair! —Regina Stock, Topeka, Kansas],
+  [go to recipe],
+  [37 Reviews],
+  [Total Time: 50 min],
+  [Servings: 16],
+  [From the Recipe Creator: For our daughter's wedding, a friend made this lovely, airy angel food cake from a recipe she's used for decades. It really is one of the best angel food cake recipes I've found. Serve slices plain or dress them up with fresh fruit. —Marilyn Niemeyer, Doon, Iowa],
+  [go to recipe],
+  [26 Reviews],
+  [Total Time: 40 min],
+  [Servings: 9],
+  [From the Recipe Creator: This banana bread snack cake doesn't need any frosting—just a dusting of powdered sugar. Guests are always amazed that I made this treat from scratch. —Denise Loewenthal, Hinckley, Ohio],
+  [go to recipe],
   [S’mores Cupcakes],
-  [class="tagline"\> From the Recipe Creator: Marshmallow frosting puts these cupcakes over the top. Chocolate bar pieces and graham cracker crumbs on top make them extra indulgent and even more like the real thing—but better! —Erin Rachwal, Hartland, Wisconsin],
-  [class="tagline"\> From the Recipe Creator: This light and fluffy cake uses Greek yogurt instead of milk. Creamy yogurt helps to keep cakes moist and balance out the sweetness. —Cathy Trochelman, Brookfield, Wisconsin],
-  [class="tagline"\> From the Recipe Creator: This cake is a lemon lover's dream. This cake is a lemon lover's dream. It tastes like pure sunshine with its lemon cake base, homemade lemon curd filling and fluffy lemon cream cheese frosting. —Sue Draheim, Waterford, Wisconsin],
-  [class="tagline"\> From the Recipe Creator: This luscious and rich cake is made with ermine frosting and topped with a chocolate ganache. Ermine frosting, also known as boiled milk frosting, is an old-fashioned recipe that is egg-free, light and creamy. —Sue Draheim, Waterford, Wisconsin],
-  [class="tagline"\> From the Recipe Creator: MY FAMILY loves fresh blueberries just about any way, but this loaf cake is a favorite at breakfast, as a delicious snack or quick dessert. We always look forward to summer, when fresh blueberries appear in the market. -Nancy Anderson, Broomall, Pennsylvania],
-  [class="tagline"\> From the Recipe Creator: A cross between a cake and a cobbler, this cherry dessert is awesome. Add it to your list of trusty potluck recipes, because this one is sure to go fast. —Brenda Parker, Kalamazoo, Michigan],
-  [class="tagline"\> From the Recipe Creator: There's always room for dessert—especially when it's this eye-catching angel food cake roll. We like strawberry yogurt in the filling, but other flavors work well, too. —Joan Colbert, Sigourney, Iowa],
-  [class="tagline"\> From the Recipe Creator: One day a friend showed me how to make traditional icebox cakes with just cream and graham crackers. I make it extra special with the fruit. Now everyone at your potluck can have a banana split, no muss, no fuss! —Shelly Flye, Albion, Maine],
+  [2 Reviews],
+  [Total Time: 50 min],
+  [Servings: 2 dozen],
+  [From the Recipe Creator: Marshmallow frosting puts these cupcakes over the top. Chocolate bar pieces and graham cracker crumbs on top make them extra indulgent and even more like the real thing—but better! —Erin Rachwal, Hartland, Wisconsin],
+  [go to recipe],
+  [2 Reviews],
+  [Total Time: 50 min],
+  [Servings: 12],
+  [From the Recipe Creator: This light and fluffy cake uses Greek yogurt instead of milk. Creamy yogurt helps to keep cakes moist and balance out the sweetness. —Cathy Trochelman, Brookfield, Wisconsin],
+  [go to recipe],
+  [0 Reviews],
+  [Total Time: 1 hour 10 min],
+  [Servings: 16],
+  [From the Recipe Creator: This cake is a lemon lover's dream. This cake is a lemon lover's dream. It tastes like pure sunshine with its lemon cake base, homemade lemon curd filling and fluffy lemon cream cheese frosting. —Sue Draheim, Waterford, Wisconsin],
+  [go to recipe],
+  [0 Reviews],
+  [Total Time: 1 hour 30 min],
+  [Servings: 16],
+  [From the Recipe Creator: This luscious and rich cake is made with ermine frosting and topped with a chocolate ganache. Ermine frosting, also known as boiled milk frosting, is an old-fashioned recipe that is egg-free, light and creamy. —Sue Draheim, Waterford, Wisconsin],
+  [go to recipe],
+  [12 Reviews],
+  [Total Time: 1 hour 5 min],
+  [Servings: 1 loaf],
+  [From the Recipe Creator: MY FAMILY loves fresh blueberries just about any way, but this loaf cake is a favorite at breakfast, as a delicious snack or quick dessert. We always look forward to summer, when fresh blueberries appear in the market. -Nancy Anderson, Broomall, Pennsylvania],
+  [go to recipe],
+  [35 Reviews],
+  [Total Time: 50 min],
+  [Servings: 12],
+  [From the Recipe Creator: A cross between a cake and a cobbler, this cherry dessert is awesome. Add it to your list of trusty potluck recipes, because this one is sure to go fast. —Brenda Parker, Kalamazoo, Michigan],
+  [go to recipe],
+  [15 Reviews],
+  [Total Time: 45 min],
+  [Servings: 12],
+  [From the Recipe Creator: There's always room for dessert—especially when it's this eye-catching angel food cake roll. We like strawberry yogurt in the filling, but other flavors work well, too. —Joan Colbert, Sigourney, Iowa],
+  [go to recipe],
+  [28 Reviews],
+  [Total Time: 30 min],
+  [Servings: 10],
+  [From the Recipe Creator: One day a friend showed me how to make traditional icebox cakes with just cream and graham crackers. I make it extra special with the fruit. Now everyone at your potluck can have a banana split, no muss, no fuss! —Shelly Flye, Albion, Maine],
+  [go to recipe],
   [Grandma’s Blackberry Cake],
-  [class="tagline"\> From the Recipe Creator: This cake tastes just like lemon meringue pie! Fresh lemon flavor shines through in the custard filling between the layers, and the light meringue frosting adds a fancy finish. It's not only a deliciously different dessert, but it's also a conversation piece!],
+  [5 Reviews],
+  [Total Time: 1 hour],
+  [Servings: 9],
+  [From the Recipe Creator: A lightly seasoned spice cake lets the wonderful flavor of blackberries shine through in this delectable blackberry cake recipe. —Diana Martin, Moundsville, West Virginia],
+  [go to recipe],
+  [15 Reviews],
+  [Total Time: 1 hour 5 min],
+  [Servings: 14],
+  [From the Recipe Creator: This cake tastes just like lemon meringue pie! Fresh lemon flavor shines through in the custard filling between the layers, and the light meringue frosting adds a fancy finish. It's not only a deliciously different dessert, but it's also a conversation piece!],
+  [go to recipe],
   [Apricot Upside-Down Cake],
-  [class="tagline"\> From the Recipe Creator: My Aunt Anne, who is a great cook, gave me a taste of this golden upside-down cake and I couldn't believe how delicious it was. Apricots give it an elegant twist from traditional pineapple versions. —Ruth Ann Stelfox, Raymond, Alberta],
-  [class="tagline"\> From the Recipe Creator: This Key lime pound cake was inspired from a basic pound cake recipe that I like to play around with. It's now the only cake requested at every gathering. The unfrosted cake freezes well. —Pat Stewart, Canton, Georgia],
+  [6 Reviews],
+  [Total Time: 1 hour 5 min],
+  [Servings: 9],
+  [From the Recipe Creator: My Aunt Anne, who is a great cook, gave me a taste of this golden upside-down cake and I couldn't believe how delicious it was. Apricots give it an elegant twist from traditional pineapple versions. —Ruth Ann Stelfox, Raymond, Alberta],
+  [go to recipe],
+  [12 Reviews],
+  [Total Time: 1 hour 55 min],
+  [Servings: 16],
+  [From the Recipe Creator: This Key lime pound cake was inspired from a basic pound cake recipe that I like to play around with. It's now the only cake requested at every gathering. The unfrosted cake freezes well. —Pat Stewart, Canton, Georgia],
+  [go to recipe],
+  [3 Reviews],
+  [Total Time: 1 hour],
+  [Servings: 12],
+  [From the Recipe Creator:],
   ['This elegant dessert is as beautiful as it is delicious,' says Brenda Bodnar from Euclid, Ohio. 'Not only is it ultra-easy to prepare, but it's a make-ahead recipe, so there's no last-minute fussing when company is coming.'],
+  [go to recipe],
   [The post 40 Summer Cake Recipes You Need to Try appeared first on Taste of Home .],
 ),
   insert-map: (:),
@@ -956,10 +1189,8 @@ transform-origin: center bottom; }],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Taste Test: Reposado Tequila],
   author: [Paul Clarke],
   source-name: [Imbibe Magazine],
@@ -979,12 +1210,10 @@ transform-origin: center bottom; }],
   debug-mode: false,
 )
 
-  #pull-quote([Aged for between nine and 11 months in American ex-bourbon casks, El Tesoro is Exhibit A of what a reposado tequila can be.], [Paul Clarke])
+#pull-quote([Aged for between nine and 11 months in American ex-bourbon casks, El Tesoro is Exhibit A of what a reposado tequila can be.], [Paul Clarke])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Moving From Moment.js To The JS Temporal API],
   author: [Joe Attardi],
   source-name: [Smashing Magazine],
@@ -1036,13 +1265,13 @@ console.log(now.epochNanoseconds);
 console.log(now.toString());
 \/\\/ 2026-02-19T01:55:27.844Z],
   [\/\\/ format for a particular time zone
-console.log(now.toString({ timeZone: 'America/New\_York' }));
+console.log(now.toString(\{ timeZone: 'America/New\_York' \}));
 \/\\/ 2026-02-18T20:56:57.905-05:00],
   [Temporal. Instant objects can also be created for a specific time and date by using the from static method.],
   [const myInstant = Temporal. Instant.from('2026-02-18T21:10:00-05:00');],
   [\/\\/ Format the instant in the local time zone. Note that this only controls
 \/\\/ the formatting - it does not mutate the object like moment.utc does.
-console.log(myInstant.toString({ timeZone: 'America/New\_York' }));
+console.log(myInstant.toString(\{ timeZone: 'America/New\_York' \}));
 \/\\/ 2026-02-18T21:10:00-05:00],
   [You can also create other types of Temporal objects, including:],
   [Temporal. PlainDate : A date with no time information.],
@@ -1050,21 +1279,21 @@ console.log(myInstant.toString({ timeZone: 'America/New\_York' }));
   [Temporal. ZonedDateTime : A date and time in a specific time zone.],
   [Each of these has a from method that can be called with an object specifying the date and/or time, or a date string to parse.],
   [\/\\/ Just a date
-const today = Temporal. PlainDate.from({
+const today = Temporal. PlainDate.from(\{
  year: 2026,
  month: 2, \/\\/ note we're using 2 for February
  day: 18
-});
+\});
 console.log(today.toString());
 \/\\/ 2026-02-18],
   [\/\\/ Just a time
-const lunchTime = Temporal. PlainTime.from({
+const lunchTime = Temporal. PlainTime.from(\{
  hour: 12
-});
+\});
 console.log(lunchTime.toString());
 \/\\/ 12:00:00],
   [\/\\/ A date and time in the US Eastern time zone
-const dueAt = Temporal. ZonedDateTime.from({
+const dueAt = Temporal. ZonedDateTime.from(\{
  timeZone: 'America/New\_York',
  year: 2026,
  month: 3,
@@ -1072,7 +1301,7 @@ const dueAt = Temporal. ZonedDateTime.from({
  hour: 12,
  minute: 0,
  second: 0
-});
+\});
 console.log(dueAt.toString());
 \/\\/ 2026-03-01T12:00:00-05:00\[America/New\_York\]],
   [We’ve covered programmatic creation of date and time information. Now let’s look at parsing. Parsing is one area where Moment is more flexible than the built-in Temporal API.],
@@ -1087,7 +1316,7 @@ const formattedDate = moment('2/21/26 9:00:00', 'M/D/YY h:mm:ss');],
   [Temporal will only parse a specifically formatted date string. The string must be compliant with the ISO 8601 format or its extension, RFC 9557. If a non-compliant date string is passed to a from method, Temporal will throw a RangeError .],
   [\/\\/ Using an RFC 9557 date string
 const myDate = Temporal. Instant.from('2026-02-21T09:00:00-05:00\[America/New\_York\]');
-console.log(myDate.toString({ timeZone: 'America/New\_York' }));
+console.log(myDate.toString(\{ timeZone: 'America/New\_York' \}));
 \/\\/ 2026-02-21T09:00:00-05:00],
   [\/\\/ Using an unknown date string
 const otherDate = Temporal. Instant.from('2/21/26 9:00:00');
@@ -1118,36 +1347,36 @@ Temporal. PlainTime.from('9:00:00 AM');],
 console.log(date.toLocaleString());
 \/\\/ 2/22/2026, 8:23:36 PM (assuming a locale of en-US)],
   [\/\\/ pass formatting options to generate a custom format string
-console.log(date.toLocaleString('en-US', {
+console.log(date.toLocaleString('en-US', \{
  month: 'long',
  day: 'numeric',
  year: 'numeric',
  hour: '2-digit',
  minute: '2-digit'
-}));
+\}));
 \/\\/ February 22, 2026 at 8:23 PM],
   [\/\\/ only pass the fields you want in the format string
-console.log(date.toLocaleString('en-US', {
+console.log(date.toLocaleString('en-US', \{
  month: 'short',
  day: 'numeric'
-}));
+\}));
 \/\\/ Feb 22],
   [Temporal date formatting actually uses the Intl. DateTimeFormat API (which is already readily available in modern browsers) under the hood. That means you can create a reusable DateTimeFormat object with your custom formatting options, then pass Temporal objects to its format method. Because of this, it doesn’t support custom date formats like Moment does. If you need something like 'Q1 2026' or other specialized formatting, you may need some custom date formatting code or reach for a third-party library.],
-  [const formatter = new Intl. DateTimeFormat('en-US', {
+  [const formatter = new Intl. DateTimeFormat('en-US', \{
  month: '2-digit',
  day: '2-digit',
  year: 'numeric'
-});],
+\});],
   [const date = Temporal. Now.instant();
 console.log(formatter.format(date));
 \/\\/ 02/22/2026],
   [Moment’s formatting tokens are simpler to write, but they aren’t locale-friendly. The format strings “hard code” things like month/day order. The advantage of using a configuration object, as Temporal does, is that it will automatically adapt to any given locale and use the correct format.],
   [const date = Temporal. Now.instant();],
-  [const formatOptions = {
+  [const formatOptions = \{
  month: 'numeric',
  day: 'numeric',
  year: 'numeric'
-};],
+\};],
   [console.log(date.toLocaleString('en-US', formatOptions));
 \/\\/ 2/22/2026],
   [console.log(date.toLocaleString('en-GB', formatOptions));
@@ -1174,13 +1403,13 @@ const nextWeek = now.clone().add(7, 'days');],
   [On the other hand, Temporal objects are immutable . Once you’ve created an object like an Instant , PlainDate , and so on, the value of that object will never change. Temporal objects also have add and subtract methods.],
   [Temporal is a little picky about which time units can be added to which object types. For example, you can’t add days to an Instant :],
   [const now = Temporal. Now.instant();
-const nextWeek = now.add({ days: 7 });
+const nextWeek = now.add(\{ days: 7 \});
 \/\\/ RangeError: Temporal error: Largest unit cannot be a date unit],
   [This is because Instant objects represent a specific point in time in UTC and are calendar-agnostic. Because the length of a day can change based on time zone rules such as Daylight Saving Time, this calculation isn’t available on an Instant . You can , however, perform this operation on other types of objects, such as a PlainDateTime :],
   [const now = Temporal. Now.plainDateTimeISO();
 console.log(now.toLocaleString());
 \/\\/ 2/24/2026, 8:23:59 PM],
-  [const nextWeek = now.add({ days: 7 });],
+  [const nextWeek = now.add(\{ days: 7 \});],
   [\/\\/ Note that the original PlainDateTime remains unchanged
 console.log(now.toLocaleString());
 \/\\/ 2/24/2026, 8:23:59 PM],
@@ -1199,7 +1428,7 @@ const date2 = moment('2026-02-22T10:30:00');],
 const date2 = Temporal. PlainDateTime.from('2026-02-22T10:30:00');],
   [\/\\/ largestUnit specifies the largest unit of time to represent
 \/\\/ in the duration calculation
-const diff = date2.since(date1, { largestUnit: 'day' });],
+const diff = date2.since(date1, \{ largestUnit: 'day' \});],
   [console.log(diff.days);
 \/\\/ 1],
   [console.log(diff.hours);
@@ -1216,8 +1445,8 @@ const date2 = moment('2026-02-22T10:30:00');],
   [console.log(date1.isBefore(date2));
 \/\\/ true],
   [Temporal uses a static compare method to perform a comparison between two objects of the same type. It returns -1 if the first date comes before the second, 0 if they are equal, or 1 if the first date comes after the second. The following example shows how to compare two PlainDate objects. Both arguments to Temporal. PlainDate.compare must be PlainDate objects.],
-  [const date1 = Temporal. PlainDate.from({ year: 2026, month: 2, day: 24 });
-const date2 = Temporal. PlainDate.from({ year: 2026, month: 3, day: 24 });],
+  [const date1 = Temporal. PlainDate.from(\{ year: 2026, month: 2, day: 24 \});
+const date2 = Temporal. PlainDate.from(\{ year: 2026, month: 3, day: 24 \});],
   [\/\\/ date1 comes before date2, so -1
 console.log(Temporal. PlainDate.compare(date1, date2));],
   [\/\\/ Error if we try to compare two objects of different types
@@ -1256,7 +1485,7 @@ console.log(now.toLocaleString());
   [If the function is given an input string that’s not a valid time/date string, it will throw an error.],
   [Here’s the original implementation, using Moment (also requiring use of the moment-timezone package).],
   [import moment from 'moment-timezone';],
-  [function getEventTimes(inputString, userTimeZone, targetTimeZone) {
+  [function getEventTimes(inputString, userTimeZone, targetTimeZone) \{
  const timeFormat = 'MMM D, YYYY, h:mm:ss a z';],
   [\/\\/ 1. Create the initial moment in the user's time zone
  const eventTime = moment.tz(
@@ -1266,17 +1495,17 @@ console.log(now.toLocaleString());
  userTimeZone
  );],
   [\/\\/ Throw an error if the inputString did not represent a valid date
- if (!eventTime.isValid()) {
+ if (!eventTime.isValid()) \{
  throw new Error('Invalid date/time input');
- }],
+ \}],
   [\/\\/ 2. Calculate the target time
  \/\\/ CRITICAL: We must clone, or 'eventTime' changes forever!
  const targetTime = eventTime.clone().tz(targetTimeZone);],
-  [return {
+  [return \{
  local: eventTime.format(timeFormat),
  target: targetTime.format(timeFormat),
- };
-}],
+ \};
+\}],
   [const schedule = getEventTimes(
  '2026-03-05T15:00-05:00',
  'America/New\_York',
@@ -1288,7 +1517,7 @@ console.log(now.toLocaleString());
 \/\\/ Mar 5, 2026, 8:00:00 pm GMT],
   [In this example, we’re using an expected date format of ISO 8601, which is helpfully built into Moment. We’re also using strict parsing, which means Moment won’t try to guess with a date string that doesn’t match the format. If a non-ISO date string is passed, it will result in an invalid date object, and we throw an error.],
   [The Temporal implementation looks similar, but has a few key differences.],
-  [function getEventTimes(inputString, userTimeZone, targetTimeZone) {
+  [function getEventTimes(inputString, userTimeZone, targetTimeZone) \{
  \/\\/ 1. Parse the input directly into an Instant, then create
  \/\\/ a ZonedDateTime in the user's zone.
  const instant = Temporal. Instant.from(inputString);
@@ -1297,7 +1526,7 @@ console.log(now.toLocaleString());
  \/\\/ This automatically returns a NEW object; 'eventTime' is safe.
  const targetTime = eventTime.withTimeZone(targetTimeZone);],
   [\/\\/ 3. Format using Intl (built-in)
- const options = {
+ const options = \{
  year: 'numeric',
  month: 'short',
  day: 'numeric',
@@ -1305,12 +1534,12 @@ console.log(now.toLocaleString());
  minute: '2-digit',
  second: '2-digit',
  timeZoneName: 'short'
- };],
-  [return {
+ \};],
+  [return \{
  local: eventTime.toLocaleString(navigator.language, options),
  target: targetTime.toLocaleString(navigator.language, options)
- };
-}],
+ \};
+\}],
   [const schedule = getEventTimes(
  '2026-03-05T15:00-05:00',
  'America/New\_York',
@@ -1347,7 +1576,7 @@ console.log(now.toLocaleString());
  
  Add time 
  .add(7, 'days') (mutates) 
- .add({ days: 7 }) (new object) 
+ .add(\{ days: 7 \}) (new object) 
  
  
  Difference 
@@ -1394,11 +1623,10 @@ console.log(now.toLocaleString());
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [3 Reasons Celsius Stock Can Bounce Back in April],
   author: [Rick Munarriz],
   source-name: [The Motley Fool],
@@ -1417,7 +1645,7 @@ console.log(now.toLocaleString());
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [1 Unstoppable Quantum Computing Stock to Buy Before It Soars 200%, According to 1 Wall Street Analyst],
   author: [Keithen Drury],
   source-name: [The Motley Fool],
@@ -1439,7 +1667,7 @@ console.log(now.toLocaleString());
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [This Two-Minute Trick Turns Brie Into Crispy Chips],
   author: [Lindsay Parrill],
   source-name: [Taste of Home],
@@ -1471,7 +1699,7 @@ console.log(now.toLocaleString());
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Many Falls],
   author: [Stu Davidson],
   source-name: [Stuck in Customs],
@@ -1497,14 +1725,14 @@ console.log(now.toLocaleString());
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Alphabet Just Introduced Its Newest AI Advantage, and It's Another Reason to Buy the Stock],
   author: [Geoffrey Seiler],
   source-name: [The Motley Fool],
   images: (),
   paragraphs: (
   [Alphabet (NASDAQ: GOOGL) (NASDAQ: GOOG) has already proven itself to be one of the most innovative companies in the area of artificial intelligence (AI). The company has developed one of the best AI models with Gemini, and it's a clear leader in AI video generation and image generation with Veo3 and Nano Banana. In fact, OpenAI recently shut down its competing AI video-generating app Sora, essentially ceding the market to Alphabet.],
+  [Image source: The Motley Fool.],
   [Meanwhile, the company is also at the forefront of custom AI chips with its tensor processing units (TPUs). It developed these chips with the help of Broadcom more than a decade ago, and it has built an entire hardware and software ecosystem around them that not only provides optimal performance but gives it a huge structural cost edge. With its TPUs, Alphabet can train Gemini and run inference at a much lower cost than competitors that largely rely on graphics processing units (GPUs) from Nvidia . This is just an enormous advantage that grows over time as more and more computing power is required for AI.],
   [Continue reading],
 ),
@@ -1514,17 +1742,14 @@ console.log(now.toLocaleString());
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([Bob King], source-name: [Sky & Telescope], [As the comet prepares for its perilous perihelion passage, we look at what to expect.
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([Bob King], source-name: [Sky & Telescope], [As the comet prepares for its perilous perihelion passage, we look at what to expect.
 
 The post Latest News on the Kreutz Sungrazing Comet C/2026 A1 MAPS appeared first on Sky & Telescope .])],
-    [#brief-item([Jan Valdez], source-name: [The Kitchn], [Crispy potatoes and a creamy garlic Parmesan sauce are one of my favorite combinations, and this recipe brings both together in the easiest way. I cook the potatoes in a single skillet until they’re golden brown, crisp on the outside, and perfectly tender inside — no oven required. It’s a method I rely on when I want a hearty side dish that also frees up the oven for something bigger, like an Easter baked ham or prime rib roast.
+  [#brief-item([Jan Valdez], source-name: [The Kitchn], [Crispy potatoes and a creamy garlic Parmesan sauce are one of my favorite combinations, and this recipe brings both together in the easiest way. I cook the potatoes in a single skillet until they’re golden brown, crisp on the outside, and perfectly tender inside — no oven required. It’s a method I rely on when I want a hearty side dish that also frees up the oven for something bigger, like an Easter baked ham or prime rib roast.
  READ MORE...])],
-  ))
-}
+))
 
 #colophon([Quiet Post], [Vol. 1, No. 061], [2026-03-30])

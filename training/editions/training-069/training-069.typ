@@ -21,90 +21,15 @@
 #masthead([The Pioneer Record], [Vol. 1, No. 069], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [How To Get A Computer Science Degree in a Warzone],
-  kicker: [Cover Story],
-  author: [Nate Berkopec],
-  source-name: [Nate Berkopec],
-  deck: [Thanks in advance and sorry if I waste your time
-
-Actually, he wasn’t just in Syria.],
-  lead-pre: [],
-  lead-cap: [I],
-  lead-rest: [n June of 2016, I received an email:],
-  body-paragraphs: (
-  [The original email],
-  [Dear sir: I’m from Syria , expected to graduate this semester (Computer Science) , and as you sir my role model in Ruby also Rails , I need some advice about open source projects in Ruby to learn from. Thanks in advance and sorry if I waste your time],
-  [Actually, he wasn’t just in Syria. He was at the University of Aleppo. His name was Mohammed.],
-  [Russian drone footage of Aleppo in February 2016. Mohammed: ‘The damage now is much much bigger than this video.’ Youtube],
-  [At this point, the Syrian Civil War had been raging in Aleppo for almost four years. One tenth of the total deaths of the war so far have happened in Aleppo. When Mohammed wrote this email in 2016, the tide was just starting to turn in favor of Assad’s forces. You would be forgiven if, like me, you thought that life did not go on inside of a warzone, especially in a city where entire city blocks had been leveled to dust. But, it does - although life is hard, life goes on.],
-  [Aftermath of the 2013 Aleppo University bombing. Mohammed: ‘When I saw the photo of the University bombing in the post I saw everything: I saw who did it, how he did it, the bodies, legs, arms, blood, glass, melted metal, I was there. My heart beat is getting faster and the inhales and exhales is disturbing my body better to close this thing.’ NYTimes],
-  [The veil of ignorance had been stripped away. Here was someone my age, on the other side of the world, with the same interests as I do, but living in an actual warzone. He played video games with his friends, like I do, enjoyed programming in Ruby on Rails, like I do, but his university was being bombed .],
-  [Mohammed and I continued corresponding. He never asked for anything except advice, and that was all I gave (or really, could give).],
-  [In January of this year, Mohammed fled Syria and made it to Turkey, where he is officially a Syrian refugee.],
-  [Mohammed with his public key fingerprint. We both signed this post, see the end. Keybase],
-  [I’ll turn it over to Mohammed to let him tell you his story. Mohammed’s English is not bad, but I did heavily edit this section for readability and clarity.],
-  [id="enter-mohammed"\>Enter Mohammed],
-  [My name is Mohammed Elias Al-Hussein. I was born and raised in Qamishli, Syria . Qamishli is in northeastern Syria, right on the border with Turkey. Before the civil war, in 2011, about 200,000 people lived there. Since then, refugees from other cities and Iraq have grown the city to over 500,000 people. All of my family is still there: my Mom, Dad, 2 amazing brothers and 5 beautiful sisters.],
-  [Screenshot of Project I. G. I., released in 2000],
-  [When I was growing up, I got the dream to be a game developer after playing a game called Project I. G. I. As I got older, my passion and curiosity for technology grew stronger, and I read about webpages and HTML in secondary school. I was fascinated by the internet and how it worked. Throughout my studies with my focus on programming, I also grew fond of the Japanese culture.],
-  [When I was in the 11th grade, I remember watching a TV show about Japan. The show talked about Japanese culture, Japan’s technology sector, as well as the anime and manga like Death Note and Detective Conan. This really fed my imagination. After all of this, I made a promise to complete my graduate studies in Japan.],
-  [In September 2010, I was accepted and attended the University of Aleppo for computer science (in Syria, we call it Informatics Engineering). In Syria, we have a high school final exam that’s required to enter a university’s corresponding field of study. At the time, University of Aleppo’s minimum score was 92.8% to get accepted in their computer science program. I studied tediously for the exam, and earned a 94%! I was excited to attend college and study computer science and Japanese. I especially was looking forward to what the future had to bring.],
-  [In Syria, most programmers are trying to learn C\# or ASP.net, with some PHP and Android. The curriculum at school was very old. It was put together in 2000 and had not been changed since. It didn’t include any of the technologies I really wanted to learn, like Unity, iOS, Ruby or Node.js. The faculty tried to change the situation, but with no response from the University.],
-  [Most of the students had very old hardware. Only a handful had brand new laptops, some have older laptops or desktops. The school had some desktops from 2011.],
-  [In the spring of 2011, the Arab Spring spread to Syria. That summer, the civil war began.],
-  [Washington Post, April 2013 : ‘Kidnappings of ordinary Syrians are rising at an alarming rate, a stark sign of the spreading lawlessness in their country after two years of war.’],
-  [On January 15 2013, Aleppo University was bombed. 82 people were killed and 160 were injured. Shortly after, while travelling back to Al-Qamishli to my family, I was kidnapped by thugs. I was in captivity for 32 days, 7 hours and about 21 minutes. I know because I counted, second by second. The gang that kidnapped me released me after forcing my family to pay a ransom of about \$12,000 USD. Well, this was my savings to travel to Japan, and since the Syrian Lira had inflated so much since the war started it was even worse.],
-  [NY Times, February 23 2013 : ‘Antigovernment activists in Syria said the military fired Scud missiles into at least three rebel-held districts of Aleppo on Friday, flattening dozens of houses, killing at least 12 civilians and burying perhaps dozens of others under piles of rubble.’ Youtube video of the attack .],
-  [Aleppo was getting very bad at this time. There was no safe road to exit or enter Aleppo. In addition, if the faculty left or the university shut down, I would immediately be drafted into military service for the Assad regime. I started looking for ways to leave Syria. I emailed every foreign embassy on Earth to complete my undergraduate study. They all refused me because I did not have refugee status with the UNHCR.],
-  [I believe from 2013 to 2015 we had electricity 4 hours a week, except the first days of Eid al-Fitr and Eid al-Adha. There would usually be a cease fire at those times between Al-Assad’s regime and The Free Army or any of the 22 other armies there. Almost every website was blocked. Even before the war, the fastest internet you could get was usally about 1Mbps. If you wanted more, you needed permission from the political security office, which was not a place you wanted to go. We have a saying in Arabic: “the person who enters is missed, and the one who exits that place is born.” If you got involved with the political security office, people should just forget you ever existed. My friend’s father was there for 11 years (1983-1994), and no one has any idea if he is still alive or not. That was before the revolution, now, it is worse.],
-  [Mohammed (center) with some faculty members of the University of Aleppo.],
-  [I started working in a dessert shop for 13 hours a day for 6 days a week for \$70 US a month. I was thinking about trying to build my savings again so I could leave, but I knew it was crazy. I would need to work for 14 years at this rate. It was during this dark time that I understood that no one will care about you if you don’t prove to them who you are and show them your soul as a fighter, dreamer - clever and ambitious. I felt like I was reborn as a programmer and self-learner. I feel like I proved to my teachers and supervisors at the University, too, that despite the circumstances with no fresh water, no food, no electricity and no internet I could be a world-class engineer.],
-  [At this time (2014) I was at the third of five years in my studies. I started learning Japanese in the Japanese Language Center at Aleppo University, which was in a bad state because of the situation in Aleppo. The Syrian Lira had inflated so much by this point that all of the faculty were basically volunteers.],
-  [Playstation with some friends after an exam.],
-  [The situation forced me to study for the university and work as a computer maintainer in Al-Jamelaiah, which is the “IT zone” of Aleppo. I started playing with Unity , a video game engine, but I couldn’t finish a game. We only had 2 hours of electricity a day at this time, and we didn’t even know when those 2 hours would be.],
-  [In the summer I got in touch with a friend in Turkey asking him about making real games. He told me to look at mobile development or web development instead, because my school wouldn’t accept a video game as my final project. I eventually found Ruby and Rails, which I enjoyed very much. After a few months of struggling with little electricity and no internet, I found some online courses, read some books and a partner and I decided to build a social network with Rails.],
-  [Mohammed and friends from university],
-  [We struggled a lot to build the social network. For one three month period there wasn’t any internet access in Aleppo at all. After that I reached my final year of studies. For my final project, we built a face recognition server using Ruby and OpenCV . We built the server with very poor hardware and without any fancy cameras or good processors, but it worked. After we finished the app the accuracy was about 81-84% due to poor processing power.],
-  [By the end of 2016, I finished 5 levels of Japanese, took a preparation course for the IELTS (a standardized test for English proficiency), and finished my Computer Science degree.],
-  [This was taken 5 hours before Mohammed left Aleppo.],
-  [In Syria, military service is compulsory for males over the age of 18 who are not in school . My exemption from service would expire after my graduation in March of 2017. I decided to leave Syria before that happened, before I could get caught by Assad’s regime and turned into a cold-blood killer or to be killed by his mercenaries.],
-  [In December of 2016, I crossed the border to Turkey after a very tough journey. I spent a night on the Syrian-Turkish border, surrounded by rocket fire and bombs falling. The next day, after I had left, 22 died from rocket fire near where I slept. 3 weeks later, I got a job as a junior iOS developer in a small office in Istanbul. I work 50 hours per week for about \$430 per month. After 5 months I moved to Bursa, a smaller and cheaper city than Istanbul, where I got another job in a more reliable office than the previous one for \$500 per month.],
-  [Now, I am trying to immigrate to Canada. It is my dream to live somewhere peacefully with different races, cultures and religions. It is important to me that everyone is treated as a human being.],
-  [In front of the Hagia Sophia, Istanbul.],
-  [My name is Mohammed Elias Al-Hussein - let’s explain it word by word: Mohammed, for Sunni Muslims, stands for the prophet Muhammad (pbuh). Elias is my father’s name and in the Christian Syriac language (Syriac Aramaic) it means Elijah . Al-Hussein is for Husayn ibn Ali , grandson of Muhammad (pbuh), who is very important for Shia Muslims. My name has all the basic materials of Syrian society. I have promised my mom to name my son Sam to add the Jewish component to my name.],
-  [I have been wondering: what’s the purpose of creating me and making me struggle to obtain even the most basic human rights? I believe the answer would be to fight and use my knowledge as engineer on behalf of the poor, the disabled, and the refugees all over the world. From the bottom of my heart, I want to make the world better place. I don’t know where I will be after 5 years, but I’m going to tell you something: I will do my best to be a world-class engineer to help others. I’m taking Google’s CEO position into consideration!],
-  [id="whats-next-and-how-you-can-help"\>What’s Next and How You Can Help],
-  [Trudeau’s government, unlike my own, has been increasingly welcome to refugees from all parts of the world.],
-  [Hi, it’s Nate again.],
-  [Mohammed is out of the frying pan, but he’s not out of the fire yet. If you’ve been following the news, you know that Turkey’s future is highly unstable. After some discussion, Mohammed thinks his best chance at a safe and steady life and career is to immigrate to Canada . Canada has an extensive refugee immigration program, and I know there are a lot of companies there that might want to help.],
-  [For a refugee who cannot return to their country due to civil war, there are a few conditions you have to meet before you can apply to immigrate to Canada:],
-  [In 2016, a temporary policy allowed private sponsors in Canada to refer refugees who did not have official refugee status with the UNCHR or a foreign state. Although this policy has expired, Mohammed still qualifies because he has official refugee status in Turkey.],
-  [“You must be outside your home country.” Mohammed is in Turkey.],
-  [“You have been seriously affected by civil war or armed conflict” Hopefully obvious from the above.],
-  [“You will still need the UNHCR, a referral organization, or a private sponsorship group to refer you.” The UNHCR protects refugees who are fleeing persecution based on their race, ethnicity or other status, which Mohammed is not (he’s in the Member of the Country of Asylum class ). He will need a private sponsor.],
-  [The reason why I’ve written this post is to help Mohammed find a private sponsor. In Canada, you can do that through two ways: by forming a Group of Five , private citizens and permanent residents of Canada who all live in the same city and pledge to help the refugee they sponsor to resettle in Canada. The second way is a Community Sponsor , which can be a corporation or community organization.],
-  [All private sponsorships entail financial and non-financial support, for the period of about a year or until Mohammed becomes self-sufficient. Since Mohammed is a junior computer programmer, hopefully that won’t take very long. For more about what a sponsor has to do, check out Canada’s official explanation of the role of a sponsor.],
-  [If you are a permanent resident of Canada (and, uh, haven’t murdered anybody ) and are interested in helping Mohammed resettle in Canada, please let Mohammed know by contacting him through this form .],
-  [If you are a Canadian corporation and want to help , you can contact Mohammed through this form. Mohammed has experience as a Ruby and iOS developer, and is currently working both at an iOS shop and with me on some Ruby projects. Here’s his resume. I think he would be a great asset to any Canadian employer. However, your organization does not have to hire Mohammed to be his Community Sponsor .],
-  [In addition, if you live in any country whose immigration laws might allow someone like Mohammed immigrate, and you think you could help - please do get in contact .],
-  [Mohammed is active on Twitter and Github .],
-  [This blog post has been cryptographically signed by both myself and Mohammed . You may verify our signatures on Keybase . I also signed the commit on Github ( repository here ) for this blog post.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Making of a Poem: Joyelle McSweeney on “My Fortune”],
   author: [Joyelle McSweeney],
   source-name: [The Paris Review Blog],
   images: (),
   paragraphs: (
-  [style="font-weight: 400;"\> For our series Making of a Poem, we’re asking poets and translators to dissect the poems they’ve contributed to our pages. Joyelle McSweeney’s “ My Fortune ” appears in our new Spring issue, no. 255.],
+  [Fritz Geller-Grimm, CC BY-SA 2.5 , via Wikimedia Commons],
+  [For our series Making of a Poem, we’re asking poets and translators to dissect the poems they’ve contributed to our pages. Joyelle McSweeney’s “ My Fortune ” appears in our new Spring issue, no. 255.],
   [How did this poem start for you?],
   [For about a year I found the news so bleak that I turned away from the present tense and made myself a connoisseur of Fortune—the grave goods packed into the Pharaoh’s tomb—his mask, his cats, his casket. From the window of my phone, from the cold black cell of my wakefulness, I would watch rival Egyptologists make competing cases, revolving algorithmically, in and out of view. I watched Cocktails with a Curator , a series of hypererudite videos recorded by Frick Gallery staff from their apartments in New York at the height of lockdown, replayed now in sequence like a journal of the plague year—this swain, his lover, this horse, his Polish rider, this hat, this collar, this pearl. This vial. This tipsy lethal cup.],
   [One night, prowling among my treasures in the dark like a crone-ghost or crow, I saw a glittering promotion for some past Sotheby’s or Christie’s auction of a priceless silver service from the eighteenth century. It was laid out on a dark dining table, where you would expect to see such things in use, yet the pieces were crammed on all together, at once, as you never would expect to see them—all the tureens, all the platters, all the chargers, all the salts. And they were thickly lit, from every angle, as you would also never see in life. The light rinding the silver was unnatural, strange, dead. Some lord had lost his fortune.],
@@ -121,16 +46,15 @@ Actually, he wasn’t just in Syria.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Inside Jeffrey Dahmer’s Apartment, The Chilling Lair Where The Serial Killer Murdered 12 Of His 17 Victims],
   author: [Rivy Lyon],
   source-name: [All That's Interesting],
   images: (),
   paragraphs: (
-  [class="dropcaps"\>Few crime scenes in American history were as horrifying as Jeffrey Dahmer’s apartment. When two police officers stepped into the serial killer’s Milwaukee residence on July 22, 1991, they were horrified by what they saw.],
+  [Wisconsin Historical Society Oxford Apartments in Milwaukee, where Jeffrey Dahmer killed 12 of his 17 victims.],
+  [Few crime scenes in American history were as horrifying as Jeffrey Dahmer’s apartment. When two police officers stepped into the serial killer’s Milwaukee residence on July 22, 1991, they were horrified by what they saw.],
   [A freshly severed human head stared back at them from the refrigerator. A drawer full of Polaroid photos showed Dahmer’s victims in various stages of dismemberment. And three torsos were disintegrating in a giant vat of acid.],
   [Dahmer killed 17 men and teenage boys between 1978 and 1991, and 12 of those murders took place in Apartment 213 at 924 North 25th Street in Milwaukee. He also kept the corpses of many of his victims, prompting his neighbors to complain about the smell.],
   [But they never imagined what the foul odor emanating from Jeffrey Dahmer’s apartment really was.],
@@ -138,6 +62,7 @@ Actually, he wasn’t just in Syria.],
   [By the time Jeffrey Dahmer moved into Milwaukee’s Oxford Apartments in May 1990, he had already murdered five people. His first victim , 18-year-old Steven Hicks, was a hitchhiker Dahmer picked up three weeks after high school graduation in 1978. He took Hicks back to his childhood home in Bath Township, Ohio, and strangled him because he didn’t want him to leave. Dahmer then masturbated over Hicks’ corpse before disposing of it.],
   [He didn’t kill again for nearly a decade. Indeed, Dahmer claimed that his second murder in November 1987 was an accident. He invited a man named Steven Tuomi to the Ambassador Hotel in Milwaukee, intending to drug and molest him. But when he woke up the next morning, Tuomi had seemingly been beaten to death.],
   [Dahmer’s next three murders were certainly intentional, though. He killed James Doxtator, Richard Guerrero, and Anthony Sears at his grandmother’s house, luring them there for sex before strangling them. Dahmer even preserved Sears’ head and genitals in acetone — and he took these macabre souvenirs with him when he moved into Oxford Apartments a year later.],
+  [Milwaukee Police Department Jeffrey Dahmer’s bedroom, where he tortured, sexually assaulted, and killed many of his victims.],
   [Within a week, Jeffrey Dahmer’s apartment was officially a crime scene . He killed Raymond Smith and took the first of what would become a chilling collection of dozens of Polaroid photos of his victims’ bodies in suggestive positions.],
   [Over the next year, Dahmer would murder six more men and boys in his lair. Then, in May 1991, the serial killer’s reign of terror almost came to an end.],
   [Dahmer had invited 14-year-old Konerak Sinthasomphone to his apartment and offered him money to pose for semi-nude photos. Once the boy was inside, he drugged him with sleeping pills, drilled a hole in his skull, and injected hydrochloric acid into his brain. Dahmer then left the apartment to drink at a nearby bar.],
@@ -146,16 +71,20 @@ Actually, he wasn’t just in Syria.],
   [His name was Tracy Edwards , and he would soon be known as the lone survivor of Jeffrey Dahmer.],
   [The Horrific Scene Inside Jeffrey Dahmer’s Apartment],
   [As soon as Tracy Edwards entered Jeffrey Dahmer’s apartment that July night, he had a feeling that something was amiss. And after his captor handcuffed him, Edwards knew he had to escape by any means necessary. So, he convinced Dahmer to remove one of the cuffs and later took the first chance he got to punch him in the face and run out the door.],
+  [Milwaukee Police Department Jeffrey Dahmer’s final intended victim, Tracy Edwards, escaped from Dahmer’s living room.],
   [Once he was outside, Edwards flagged down two police officers, Robert Rauth and Rolf Mueller. Although they were skeptical, they followed Edwards back to Jeffrey Dahmer’s apartment. They never could have expected what they would find inside.],
   [Mueller first noticed a knife beneath Dahmer’s bed. Investigating further, he opened a drawer and spotted 74 Polaroid photos of nude males and dismembered bodies. Mueller and Rauth quickly handcuffed Dahmer and called for backup. While waiting for their colleagues to arrive, Mueller opened the refrigerator and found the head of Oliver Lacy, a man Dahmer had killed a week earlier.],
   [A subsequent search of Jeffrey Dahmer’s apartment revealed even more horrors: three additional severed heads, seven skulls, two human hearts, bags of organs, severed hands, two preserved penises, a torso in the freezer, and three more torsos in a blue 57-gallon drum full of acid in the corner of Dahmer’s bedroom. “It was more like dismantling someone’s museum than an actual crime scene,” Dr. Jeffrey Jentzen, Milwaukee’s chief medical examiner at the time, later told Medicine at Michigan magazine .],
+  [Milwaukee Police Department Police found 74 Polaroid photos of Jeffrey Dahmer’s victims in his drawer and three torsos disintegrating in acid in a blue barrel.],
   [Dahmer was later sentenced to life behind bars for his crimes, and he was murdered in prison in 1994. But by that time, the lair where he’d taken so many lives himself was long gone.],
   [What Happened To Jeffrey Dahmer’s Apartment?],
   [As the news of Dahmer’s chilling crimes broke, his neighbors at Oxford Apartments were disturbed by what had taken place right next door. Some of them had noticed a bad smell coming from Dahmer’s place and had even confronted him about it, but he always had an explanation.],
+  [Milwaukee Police Department A 1991 mugshot of serial killer Jeffrey Dahmer.],
   [Pamela Bass, who lived across the hall from the serial killer , said she sometimes noticed the odor of garbage or bad meat. “I would go tell him, ‘Jeff, something’s stinking again,'” she told The New York Times two days after Dahmer’s arrest. “He would say it was the rotten meat in his freezer. He even bought a bunch of Pine Sol once like he was really going to get rid of it this time. But it didn’t help.”],
   [“Maybe we should have thought something,” Bass continued. “But how could anybody know he was collecting dead bodies? I didn’t know what a dead body smells like.”],
   [Jeffrey Dahmer’s apartment quickly became a macabre landmark. Curious crowds gathered outside, and the media flocked to Milwaukee. City officials, concerned about safety and the potential for morbid tourism, soon made a plan to erase the site from public view.],
   [In August 1992, the Campus Circle Project, a non-profit organization sponsored by Marquette University, purchased the property for \$325,000, as reported by the United Press International (UPI) at the time. By that November, the apartment building had been demolished.],
+  [Google Maps An empty lot stands at the former location Oxford Apartments today.],
   [Art Murchison, a spokesperson for Career Youth Development, another agency involved in the transformation of the property, told UPI at the time, “The land it is on will be made a grassy area with flowers to represent life rather than death and pain which the building represents.”],
   [Today, the lot where Jeffrey Dahmer’s apartment once stood remains empty. But while the building itself has been erased, the memory of what once happened in that spot haunts the residents of Milwaukee to this day.],
   [After reading about the chilling crimes that took place in Jeffery Dahmer’s apartment, go inside the disturbing story of Gary Heidnik , the “House of Horrors” killer who inspired Buffalo Bill from The Silence of the Lambs . Then, look through 21 haunting photos of Ed Gein’s house .],
@@ -167,36 +96,34 @@ Actually, he wasn’t just in Syria.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Transforming complex research into compelling stories],
   author: [Zoë Wright | Office of Graduate Education],
   source-name: [MIT News Education],
   images: (),
   paragraphs: (
-  [dir="ltr"\>For students, postdocs, and early-career researchers, communicating complex ideas in a clear and compelling manner has become an essential skill. Whether applying for academic positions, pitching research to funders, or collaborating across disciplines, the ability to present work clearly and effectively can be as critical as the work itself.],
-  [dir="ltr"\>Recognizing this need, The MIT Office of Graduate Education (OGE) has partnered with the Writing and Communication Center (WCC) to launch the WCC Communication Studio: a self-service recording and editing space designed to help users sharpen their oral presentation and communication skills. Open to all members of the MIT community as of this fall, the studio offers a first-of-its-kind resource at MIT for developing and refining research presentations, mock interview conversations, elevator pitches, and more.],
-  [dir="ltr"\>Housed in WCC’s Ames Street office, the studio is equipped with high-quality microphones and user-friendly video recording and editing tools, all designed to be used with the PitchVantage software.],
-  [dir="ltr"\>How does it work? Users can access tutorials, example videos, and a reservation system through the WCC’s  website . After completing a short orientation on how to use the technology and space responsibly, users are ready to pitch to simulated audiences, who react in real time to various elements of delivery. Users can also watch their recorded presentations and receive personalized feedback on nine elements of presentation delivery: pitch, pace, volume variability, verbal distractors, pace, eye contact, volume, engagement, and pauses.],
+  [For students, postdocs, and early-career researchers, communicating complex ideas in a clear and compelling manner has become an essential skill. Whether applying for academic positions, pitching research to funders, or collaborating across disciplines, the ability to present work clearly and effectively can be as critical as the work itself.],
+  [Recognizing this need, The MIT Office of Graduate Education (OGE) has partnered with the Writing and Communication Center (WCC) to launch the WCC Communication Studio: a self-service recording and editing space designed to help users sharpen their oral presentation and communication skills. Open to all members of the MIT community as of this fall, the studio offers a first-of-its-kind resource at MIT for developing and refining research presentations, mock interview conversations, elevator pitches, and more.],
+  [Housed in WCC’s Ames Street office, the studio is equipped with high-quality microphones and user-friendly video recording and editing tools, all designed to be used with the PitchVantage software.],
+  [How does it work? Users can access tutorials, example videos, and a reservation system through the WCC’s  website . After completing a short orientation on how to use the technology and space responsibly, users are ready to pitch to simulated audiences, who react in real time to various elements of delivery. Users can also watch their recorded presentations and receive personalized feedback on nine elements of presentation delivery: pitch, pace, volume variability, verbal distractors, pace, eye contact, volume, engagement, and pauses.],
   [Designed with students in mind],
-  [dir="ltr"\>“Through years of individual and group consultations with MIT students and scholars, we realized that developing strong presentation skills requires more than feedback — it requires sustained, embodied practice,” explains Elena Kallestinova, director of the WCC. “The Oral Communication Studio was created to fill that gap.”],
-  [dir="ltr"\>Those who have used the studio during its initial lifespan say that its interactive format helps to provide real-time, actionable feedback on their verbal delivery. Additionally, the program offers notes on overall stage presence, including subtle actions such as hand gestures and eye contact. For students, this can be the key to ensuring that their delivery is both confident and clearly accessible once it comes time to present.],
-  [dir="ltr"\>“I’ve been using the studio to practice for conferences and job interviews,” says Fabio Castro, a PhD student studying civil engineering. His favorite feature? The instant feedback from the virtual figures watching the presentation, which allows him to not only prepare to speak in front of an audience, but to read their nonverbal cues and adjust his delivery accordingly.],
-  [dir="ltr"\>The studio also addresses a practical challenge facing many PhD students and postdocs in their role as emerging researchers: the high stakes of presenting. For many, their first major talk may be in front of a hiring committee, research institute, or funding body — audiences that may heavily influence their next career step. The studio gives them a low-pressure environment in which to rehearse so that they enter these spaces confidently.],
-  [dir="ltr"\>Aditi Ramakrishnan, an MBA student in the MIT Sloan School of Management, acknowledges the importance of this tool for emerging professionals. As a business student, she explains, “a lot of your job involves pitching.” She credits the WCC with helping to take her pitching game “from good to excellent,” identifying small details such as unnecessary “filler” words and understanding the difference between a strong stage presence and a distracting one.],
+  [“Through years of individual and group consultations with MIT students and scholars, we realized that developing strong presentation skills requires more than feedback — it requires sustained, embodied practice,” explains Elena Kallestinova, director of the WCC. “The Oral Communication Studio was created to fill that gap.”],
+  [Those who have used the studio during its initial lifespan say that its interactive format helps to provide real-time, actionable feedback on their verbal delivery. Additionally, the program offers notes on overall stage presence, including subtle actions such as hand gestures and eye contact. For students, this can be the key to ensuring that their delivery is both confident and clearly accessible once it comes time to present.],
+  [“I’ve been using the studio to practice for conferences and job interviews,” says Fabio Castro, a PhD student studying civil engineering. His favorite feature? The instant feedback from the virtual figures watching the presentation, which allows him to not only prepare to speak in front of an audience, but to read their nonverbal cues and adjust his delivery accordingly.],
+  [The studio also addresses a practical challenge facing many PhD students and postdocs in their role as emerging researchers: the high stakes of presenting. For many, their first major talk may be in front of a hiring committee, research institute, or funding body — audiences that may heavily influence their next career step. The studio gives them a low-pressure environment in which to rehearse so that they enter these spaces confidently.],
+  [Aditi Ramakrishnan, an MBA student in the MIT Sloan School of Management, acknowledges the importance of this tool for emerging professionals. As a business student, she explains, “a lot of your job involves pitching.” She credits the WCC with helping to take her pitching game “from good to excellent,” identifying small details such as unnecessary “filler” words and understanding the difference between a strong stage presence and a distracting one.],
   [A new frontier in communication support at MIT],
-  [dir="ltr"\>While MIT has long been recognized for its excellence in technical education, the studio represents a broader focus on arming students and researchers alike with the tools that they need to amplify their work to larger audiences.],
-  [dir="ltr"\>“The WCC Communication Studio  gives students a place to rehearse, get immediate feedback, and iterate until their ideas land clearly and confidently,” explains Denzil Streete, OGE’s senior associate dean and director. “It’s not just about better slides or smoother delivery; it’s about unlocking and scaling access to more modern tools so more graduate students can translate breakthrough research into real-world impact.”],
-  [dir="ltr"\>"The studio is a resource for the entire MIT community,” says Kallestinova, emphasizing that this new resource serves as a support for not only graduate students, but also undergrads, researchers, and even faculty. “Whether used as a supplement to classroom instruction or as a follow-up to coaching sessions, the studio offers a dedicated space for rehearsal, reflection, and growth, helping all users build confidence, clarity, and command in their communication."],
-  [dir="ltr"\>The studio joins an array of existing resources within the WCC, including a Public Speaking Certificate Program, a peer-review group for creative writers, and a number of revolving workshops throughout the year.],
+  [While MIT has long been recognized for its excellence in technical education, the studio represents a broader focus on arming students and researchers alike with the tools that they need to amplify their work to larger audiences.],
+  [“The WCC Communication Studio  gives students a place to rehearse, get immediate feedback, and iterate until their ideas land clearly and confidently,” explains Denzil Streete, OGE’s senior associate dean and director. “It’s not just about better slides or smoother delivery; it’s about unlocking and scaling access to more modern tools so more graduate students can translate breakthrough research into real-world impact.”],
+  ["The studio is a resource for the entire MIT community,” says Kallestinova, emphasizing that this new resource serves as a support for not only graduate students, but also undergrads, researchers, and even faculty. “Whether used as a supplement to classroom instruction or as a follow-up to coaching sessions, the studio offers a dedicated space for rehearsal, reflection, and growth, helping all users build confidence, clarity, and command in their communication."],
+  [The studio joins an array of existing resources within the WCC, including a Public Speaking Certificate Program, a peer-review group for creative writers, and a number of revolving workshops throughout the year.],
   [A culture of communication],
-  [dir="ltr"\>From grant funding and academic collaboration to public outreach and policy impact, effective speaking skills are more important than ever.],
-  [dir="ltr"\>“No matter how brilliant the idea, it has to be clearly communicated by the researcher or scholar in order to have impact,” says Amanda Cornwall, associate director of graduate student professional development at Career Advising and Professional Development (CAPD).],
+  [From grant funding and academic collaboration to public outreach and policy impact, effective speaking skills are more important than ever.],
+  [“No matter how brilliant the idea, it has to be clearly communicated by the researcher or scholar in order to have impact,” says Amanda Cornwall, associate director of graduate student professional development at Career Advising and Professional Development (CAPD).],
   [“Explaining complex concepts to a broader audience takes practice and skill. When a researcher can build confidence in their speaking abilities, they have the power to transport their audience and show the way to new possibilities,” she adds. “This is why communication is one of the professional development competencies that we emphasize at MIT; it matters in every context, from small conversations to teaching to speeches that might change the world.”],
-  [dir="ltr"\>The studio’s launch comes among a broader institutional focus on communication. CAPD, the Teaching and Learning Lab, the OGE, and academic departments have recognized the value of, and provided increasing levels of support for, professional development training alongside technical expertise.],
-  [dir="ltr"\>Workshops already offered by the WCC, CAPD, and other campus partners work to highlight best practices for conference talks, long-form interviews, and more. The WCC Communication Studio provides a practical extension of these efforts. Looking ahead, the studio aims to not only serve as a training space, but also help foster a culture of communication excellence among researchers and educators.],
+  [The studio’s launch comes among a broader institutional focus on communication. CAPD, the Teaching and Learning Lab, the OGE, and academic departments have recognized the value of, and provided increasing levels of support for, professional development training alongside technical expertise.],
+  [Workshops already offered by the WCC, CAPD, and other campus partners work to highlight best practices for conference talks, long-form interviews, and more. The WCC Communication Studio provides a practical extension of these efforts. Looking ahead, the studio aims to not only serve as a training space, but also help foster a culture of communication excellence among researchers and educators.],
 ),
   insert-map: (:),
   word-count: 995,
@@ -204,30 +131,31 @@ Actually, he wasn’t just in Syria.],
   debug-mode: false,
 )
 
-  #pull-quote([dir="ltr"\>Aditi Ramakrishnan, an MBA student in the MIT Sloan School of Management, acknowledges the importance of this tool for emerging professionals.], [Zoë Wright | Office of Graduate Education])
+#pull-quote([Aditi Ramakrishnan, an MBA student in the MIT Sloan School of Management, acknowledges the importance of this tool for emerging professionals.], [Zoë Wright | Office of Graduate Education])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Mychal Judge, The New York City Fire Department Chaplain Who Died On 9/11],
   author: [Genevieve Carlton],
   source-name: [All That's Interesting],
   images: (),
   paragraphs: (
-  [class="dropcaps"\>Father Mychal Judge was not a firefighter. He was the chaplain to the New York City Fire Department. But on Sept. 11, 2001, Judge followed firefighters into the World Trade Center, and sadly lost his life.],
+  [James Nachtwey After the South Tower collapsed, first responders carried Mychal Judge’s body from the North Tower lobby.],
+  [Father Mychal Judge was not a firefighter. He was the chaplain to the New York City Fire Department. But on Sept. 11, 2001, Judge followed firefighters into the World Trade Center, and sadly lost his life.],
   [The first confirmed casualty of the September 11 terrorist attacks, Judge was offering help and prayers inside the North Tower when the South Tower collapsed. A wave of debris came cascading down, and Judge was killed.],
   [First responders carried Judge’s body from the lobby of the North Tower just moments before it collapsed as well — meaning that, in death, Judge had saved all of their lives.],
   [Father Mychal Judge, The Popular FDNY Chaplain],
   [Born in 1933 in Brooklyn, New York, Mychal Judge became a Franciscan friar at a young age. As a boy, he enjoyed visiting the friars of the St. Francis of Assisi Church during his trips to Manhattan to shine shoes and, as a teenager, he soon began the process to become a friar himself. As a young Franciscan priest in East Rutherford, New Jersey, Judge soon showed his willingness to rush into the heart of danger when he responded to a tense situation: an armed man was threatening to shoot his wife and baby.],
   [Without hesitation, Judge climbed a ladder wearing his long brown robe to speak with the man, who had locked himself in the attic of his home.],
   [“We waited five minutes, 10 minutes, 15 minutes. Sweating bullets, waiting for that gunshot,” Judge’s friend Father Michael Duffy, who was also on the scene, recalled to NPR in 2011 . “The next thing you know, 20 minutes later, the front door opens, and out comes the wife holding the baby, the man with the gun, and Mychal Judge with his arm around him.”],
+  [St. Anthony Messenger The funeral for Mychal Judge was the first after 9/11.],
   [In the 1980s, Judge was assigned to Manhattan’s St. Francis of Assisi Church, the same church he had admired as a boy. There, he offered support to people with AIDS during the AIDS crisis , as well as the homeless, the injured, people struggling with addiction, and anyone else who needed a supportive hand. In 1992, Judge then became a chaplain for the New York City Fire Department, where his kindness and warmth made a quick impression.],
   [“He could go into the firehouse, have a cup of coffee, have a meal, listen to all the talk, watch the ballgame, hear your problems, talk about anything you want,” fireman Jimmy Boyle recalled to NPR. “But when he said Mass in the firehouse, I always felt when he got to the Eucharist, he just transformed himself. He became like Christ. He was just so pious.”],
   [As Boyle told NPR, Judge was often the first to lend a hand after a disaster, whether it was a house fire or a plane crash, like the devastating crash of TWA Flight 800 in 1996. And so, when reports of a plane hitting the World Trade Center reached the Engine 1/Ladder 24 fire station, across the street from St. Agassi, Mychal Judge quickly rushed to the scene.],
   [The Tragic Death Of 9/11 ‘Victim 0001’],
   [At 8:46 a.m. on Sept. 11, 2001 , American Airlines Flight 11 hit the North Tower of the World Trade Center. Then, at 9:03 a.m., United Airlines Flight 175 hit the South Tower. Both aircrafts had been hijacked by al-Qaeda terrorists. A third hijacked plane, American Airlines Flight 77, was heading toward the Pentagon, and a fourth hijacked plane, United Airlines Flight 93, would crash in a field in Shanksville, Pennsylvania, after its passengers fought back.],
   [But as the World Trade Center burned, first responders had no idea that the day would end with nearly 3,000 fatalities, including 400 of their own. They were focused on saving lives. And Father Mychal Judge rushed to the World Trade Center with a group of off-duty firemen to help where he could.],
+  [Wikimedia Commons Mychal Judge rushed to the scene of the 9/11 terrorist attack in New York, where he’d become the first confirmed victim.],
   [At Ground Zero, Judge prayed for the dead — including those who were jumping from the high floors of the towers to escape the smoke and flames. A crew of documentary filmmakers , who were making a film about the New York City Fire Department, captured Judge’s final actions that day.],
   [“\[If\] you look closely at that film, you’ll see his lips moving,” Father Duffy told NPR. “Now, for those of us who know him, he wasn’t one that talked to himself. He was praying. And absolving people as they fell to their death.”],
   [Then, at 9:59 a.m., the South Tower collapsed. Crushing debris from the 110-story building smashed downward into the North Tower lobby with the force of an explosion. Judge was hit — and killed. His body was found by NYPD lieutenant Bill Cosgrove, who would later credit Judge with saving his life.],
@@ -236,6 +164,7 @@ Actually, he wasn’t just in Syria.],
   [“\[I\]t’s my firm belief that the only reason I’m here today is because of him,” Cosgrove stated. “…everybody you see in that picture was saved. And I’m sure had he not been there, I would have been trying to look for other people. And when that North Tower fell, I would have been right in the middle of it, just like the rest of the firemen were, and some of my cops.”],
   [The Funeral of Father Mychal Judge],
   [Just days after the 9/11 terrorist attack, as fires continued to smolder at Ground Zero, 3,000 people crowded into St. Francis of Assisi Church for the funeral of Father Mychal Judge],
+  [Wikimedia Commons Mychal Judge’s name is one of the 2,983 names inscribed at the 9/11 Memorial in New York City.],
   [Judge’s friend, Father Duffy gave the homily.],
   [“Mychal Judge’s body was the first one released from Ground Zero. His death certificate has the number ‘1’ on the top,” Duffy told the crowd of mourners. “Of the thousands of people who perished in that terrible holocaust, why was Mychal Judge number one? And I think I know the reason.”],
   [Duffy continued: “\[In\] the next few weeks, we’re going to have names added, name after name of people, who are being brought out of that rubble. And Mychal Judge is going to be on the other side of death… to greet them… And he’s going to greet them with that big Irish smile… he’s going to take them by the arm and the hand and say, ‘Welcome, I want to take you to my Father.’],
@@ -248,10 +177,8 @@ Actually, he wasn’t just in Syria.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Fragments: February 19],
   author: [Martin Fowler],
   source-name: [Martin Fowler],
@@ -320,17 +247,16 @@ Actually, he wasn’t just in Syria.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [7 Iconic Pinup Girls Who Made Jaws Drop All Over America — And Beyond],
   author: [Erin Kelly],
   source-name: [All That's Interesting],
   images: (),
   paragraphs: (
-  [class="dropcaps"\>Before the sexual revolution, there were the pinup girls. From Marilyn Monroe to Betty Grable, the most famous pinup models were known for making eyes pop with their sexy photos during the 1940s and 1950s.],
+  [Before the sexual revolution, there were the pinup girls. From Marilyn Monroe to Betty Grable, the most famous pinup models were known for making eyes pop with their sexy photos during the 1940s and 1950s.],
   [While the history of the pinup didn’t begin or end with World War II, this era is often seen as the golden age of the pinup girls. And considering how many American soldiers clamored to get their hands on these pictures, it’s no wonder why.],
+  [Gerard Van der Leun/Flickr Bettie Page, one of the most iconic pinup girls of the 1950s.],
   [Shortly after the bombing of Pearl Harbor, American troops began to decorate their lockers, walls, and wallets with photos of pinup models in various stages of undress. Meanwhile, the U. S. military unofficially sanctioned the distribution of these photos to raise morale during the war.],
   [As for the pinup girls themselves, posing for these photos was a chance to help with the war effort, to explore their sexuality, and to possibly make it into showbiz. So even after the war was over, many models continued to pose for pinups in the hopes of achieving fame and fortune. And a few of the lucky ones became superstars because of it.],
   [Often called "the queen of pinups," Bettie Page was widely admired for her naughty-yet-nice, simple-yet-exotic look. Known for her blunt black bangs and freely-expressed sexuality, Page inspired countless pinup models to follow in her footsteps.],
@@ -352,28 +278,30 @@ Actually, he wasn’t just in Syria.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Researchers Find The USS Nevada, The Battleship That Survived Pearl Harbor, D-Day, And An Atomic Bomb],
   author: [Marco Margaritoff],
   source-name: [All That's Interesting],
   images: (),
   paragraphs: (
-  [class="dropcaps"\>The wreck of the U. S. Navy warship Nevada has been discovered in the Pacific Ocean after nearly 72 years underwater. According to Fox News , the World War II battleship was found 65 nautical miles southwest of Pearl Harbor at a dizzying depth of 15,400 feet.],
+  [U. S. Navy/Naval History and Heritage Command The USS Nevada off the Atlantic coast of the United States on September 17, 1944.],
+  [The wreck of the U. S. Navy warship Nevada has been discovered in the Pacific Ocean after nearly 72 years underwater. According to Fox News , the World War II battleship was found 65 nautical miles southwest of Pearl Harbor at a dizzying depth of 15,400 feet.],
   [In a joint venture by private archaeological firm SEARCH and marine robotics company Ocean Infinity, autonomous underwater drones were deployed from the Ocean Infinity’s Pacific Constructor vessel in an effort to capture footage of the wreckage and positively identify it.],
   [According to IFL Science , experts have known roughly where the ship sank, but this is the first time that anyone has actually seen it.],
   [The rediscovery of this ship is made all the more remarkable considering its storied past. The Nevada survived the attack on Pearl Harbor , battles in the Pacific Theater, and atomic bomb testing in the Marshall Islands.],
+  [Ocean Infinity/SEARCH An engraving on the bulkhead above the hatch leading to a shell handling compartment confirmed that this was, indeed, the Nevada .],
   [The Naval History and Heritage Command noted that the Nevada was the only battleship to respond to the Dec. 7, 1941, attack on Pearl Harbor and was consequently extensively damaged by aerial bombs and one torpedo, but it managed to get beached and repaired.],
   [Two years later, the ship took part in the May 1943 Attu landings before being relocated to assist troops crossing the Atlantic. Then, the Nevada took part in the June 1944 invasion of Normandy and in Operation Dragoon in southern France that same year.],
   [Indeed, World War II made thorough use of the battleship, taking it to the skirmishes across the Pacific, including to the invasions of Iwo Jima and Okinawa in 1945, before being seriously damaged by a kamikaze pilot on March 27 and artillery on April 5 of that year.],
+  [Wikimedia Commons The Nevada fires during the landings on Utah Beach during the Allied invasions as a part of D-Day.],
   [When the war finally ended, the Navy used the seasoned vessel as a target ship for the infamous atomic bomb tests in the Bikini Atoll on the Marshall Islands in July 1946. The Nevada was not only damaged but was left too radioactive to be put back into use.],
   [The Nevada was officially decommissioned in August 1946 and purposefully sunk by U. S. torpedos in 1948. It wouldn’t be seen for over seven decades — when a team of resourceful experts relocated it.],
   [Ocean Infinity’s Pacific Constructor has been engaged at sea in numerous commercial tasks in the region even before the COVID-19 pandemic put everything on hold. She had surveyed over 100 square miles to find the sunken ship.],
-  [class="wp-caption-text" id="caption-attachment-279268"\> Ocean Infinity/SEARCH The Nevada ‘s 40mm gun has remained in position for 72 years and sits mounted next to a partly fallen Mark 51 “gun director” which crew members used to direct gunfire.],
+  [Ocean Infinity/SEARCH The Nevada ‘s 40mm gun has remained in position for 72 years and sits mounted next to a partly fallen Mark 51 “gun director” which crew members used to direct gunfire.],
   [“ Nevada is an iconic ship that speaks to American resilience and stubbornness,” said Dr. James Delgado, SEARCH’s senior vice president and lead archaeologist on the project. “Rising from its watery grave after being sunk at Pearl Harbor, it survived torpedoes, bombs, shells, and two atomic blasts.”],
   [Delgado added that rediscovering the ship “reminds us not only of past events but of those who took up the challenge of defending the United States in two global wars. This is why we do ocean exploration — to seek out those powerful connections to the past.”],
+  [Ocean Infinity/SEARCH The mast of the Nevada once stood over 100 feet.],
   [For those of us at home, gazing at the geared steam turbines and triple gun turrets collecting marine growth, this discovery is a treat. It transports us back to a time in history where entirely different threats loomed — and were eventually overcome.],
   [After exploring the wreck of the USS Nevada , explore the horrors of the Pacific Theater of World War II . Then, learn about the Nazi’s prized battleship, the Tirpitz , and how it was taken down by tiny submarines.],
   [The post Researchers Find The USS Nevada, The Battleship That Survived Pearl Harbor, D-Day, And An Atomic Bomb appeared first on All That's Interesting .],
@@ -384,12 +312,10 @@ Actually, he wasn’t just in Syria.],
   debug-mode: false,
 )
 
-  #pull-quote([She had surveyed over 100 square miles to find the sunken ship.], [Marco Margaritoff])
+#pull-quote([She had surveyed over 100 square miles to find the sunken ship.], [Marco Margaritoff])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Four from MIT named 2026 Rhodes Scholars],
   author: [Julia Mongo | Distinguished Fellowships],
   source-name: [MIT News Education],
@@ -424,10 +350,8 @@ Actually, he wasn’t just in Syria.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Analyzing S3 and CloudFront Access Logs with AWS RedShift],
   author: [theScore Tech],
   source-name: [theScore Tech],
@@ -487,61 +411,72 @@ the same queries take minutes at the most.],
   [Make sure you have the latest version of the AWS CLI tools .
 You can install this if you already have Python and pip by simply running
  pip install awscli],
+  [~\$ aws redshift create-cluster \\ 
+ --cluster-identifier logdata \\ 
+ --cluster-type single-node \\ 
+ --node-type dw1.xlarge \\ 
+ --master-username luke \\ 
+ --master-user-password password \\ 
+ --cluster-security-groups default],
   [Wait for the cluster to boot - you can check the status at any time using:],
+  [~\$ aws redshift describe-clusters --cluster-identifier logdata],
   [This should output quite a bit of useful data about your cluster:],
+  [\{],
   ["Clusters" : \[],
-  [{],
+  [\{],
   ["PubliclyAccessible" : true ,],
   ["MasterUsername" : "luke" ,],
   ["VpcSecurityGroups" : \[\],],
   ["NumberOfNodes" : 1 ,],
-  ["PendingModifiedValues" : {},],
+  ["PendingModifiedValues" : \{\},],
   ["ClusterVersion" : "1.0" ,],
   ["AutomatedSnapshotRetentionPeriod" : 1 ,],
   ["ClusterParameterGroups" : \[],
-  [{],
+  [\{],
   ["ParameterGroupName" : "default.redshift-1.0" ,],
   ["ParameterApplyStatus" : "in-sync"],
-  [}],
+  [\}],
   [\],],
   ["DBName" : "dev" ,],
   ["PreferredMaintenanceWindow" : "wed:03:00-wed:03:30" ,],
-  ["Endpoint" : {],
+  ["Endpoint" : \{],
   ["Port" : 5439 ,],
   ["Address" : "your-endpoint.us-east-1.redshift.amazonaws.com"],
-  [},],
+  [\},],
   ["AllowVersionUpgrade" : true ,],
   ["ClusterCreateTime" : "2014-05-12T17:13:26.280Z" ,],
   ["ClusterSecurityGroups" : \[],
-  [{],
+  [\{],
   ["Status" : "active" ,],
   ["ClusterSecurityGroupName" : "default"],
-  [}],
+  [\}],
   [\],],
   ["ClusterIdentifier" : "logdata" ,],
   ["ClusterNodes" : \[],
-  [{],
+  [\{],
   ["NodeRole" : "SHARED" ,],
   ["PrivateIPAddress" : "snip" ,],
   ["PublicIPAddress" : "snip"],
-  [}],
+  [\}],
   [\],],
   ["AvailabilityZone" : "us-east-1d" ,],
   ["NodeType" : "dw1.xlarge" ,],
   ["Encrypted" : false ,],
   ["ClusterRevisionNumber" : "786" ,],
   ["ClusterStatus" : "available"],
-  [}],
+  [\}],
   [\]],
-  [}],
+  [\}],
   [You can see that the cluster status is set to "active". Also shown is the
 endpoint that you should use to connect to the RedShift cluster; the standard
 Postgres command line tools should work just fine:],
+  [~\$ psql -h your-endpoint.us-east-1.redshift.amazonaws.com -p 5439 -U luke -W],
   [Creating the initial schema],
   [Note that we will be creating separate tables for S3 and CloudFront logs, simply
 because the format differs in some small ways. Common columns share their names so
 that any queries you end up writing against the data will work in either.],
   [Run the following creation statements through the PostgreSQL client:],
+  [CREATE TABLE s3\_logentries (],
   [creator VARCHAR ( MAX ) ENCODE RUNLENGTH ,],
   [bucket VARCHAR ( 255 ) ENCODE LZO ,],
   [logdate VARCHAR ( MAX ) SORTKEY ENCODE LZO ,],
@@ -622,18 +557,27 @@ bucket named cloudfront-logs .],
 that bucket directly. It's quite flexible and allows you to specify delimiters, error
 thresholds, compression schemas and so on. For our simple example though, we'll just load
 one month of logs from just one of our CloudFront distributions:],
+  [COPY cf\_logentries 
+ FROM 's3:\/\/cloudfront-logs/E1DHT7QI9H0ZOB.2014-04-' 
+ CREDENTIALS 'aws\_access\_key\_id=;aws\_secret\_access\_key=' 
+ DELIMITER '\\t' MAXERROR 200 FILLRECORD IGNOREHEADER 2 gzip ;],
   [We're loading standard, tab-delimited gzip-compressed log files with the headers ignored.
 Additionally we're using the FILLRECORD parameter. This causes the import process to
 pad out missing records at the end of a line with NULL values. This is pretty useful as
 periodically the CloudFront and S3 log formats change, and they add new columns. Finally,
 we're telling the command to abort the copy if 200 errors are found.],
   [This could take some - in my example the full load took just over 3 hours:],
+  [INFO: Load into table 'cf\_logentries' completed, 137647904 record(s) loaded successfully.
+COPY],
   [You can use the same COPY command to load your S3 logs as long as you specify the correct
 table as the first parameter to the command.],
   [That's pretty much it for the setup. Now you can just run arbitrary queries against the log
 tables. Here some fairly trivial examples that have come in handy:],
+  [SELECT uri , count ( \* ) as hits 
+ FROM cf\_logentries 
+ GROUP BY uri ORDER BY hits DESC ;],
   [Dead simple; this takes all the records and just spits out the unique URIs by popularity:],
-  [class="highlight"\> uri | hits
+  [uri | hits
 ----------------------------------------------------------+----------
  /api/v1/news | 17017442
  /api/v1/news.json | 9923266
@@ -656,7 +600,12 @@ tables. Here some fairly trivial examples that have come in handy:],
   [As simple as it is, the query is looking at 135 million rows and executes in
 approximately 10 seconds using the base RedShift instance type. You can modify
 the query a bit and see requests per day like so:],
-  [class="highlight"\> count | day
+  [SELECT COUNT ( \* ), 
+ LEFT ( logdate , 12 ) as day 
+ FROM cf\_logentries 
+ GROUP BY day 
+ ORDER BY day ;],
+  [count | day
 ---------+------------
  4180128 | 2014-04-01
  4874722 | 2014-04-02
@@ -692,7 +641,7 @@ the query a bit and see requests per day like so:],
 obvious, but the load on your origin systems decrease as your content becomes
 easier to cache. This query will look at the most used URLs and give you a cache
 hit ratio:],
-  [class="highlight"\> WITH cache\_hits AS ( 
+  [WITH cache\_hits AS ( 
  SELECT uri , cs\_uri\_query , 
  COUNT ( \* ) AS hits 
  FROM cf\_logentries 
@@ -717,6 +666,7 @@ hit ratio:],
  AND top\_uris . cs\_uri\_query = cache\_hits . cs\_uri\_query 
  ORDER BY top\_uris . total DESC ;],
   [One minute later, I get these results.],
+  [uri | qs | requests | cachehits | hitrate],
   [-------------------------------------+----------------------+----------+-----------+---------],
   [/api/v1/rivers/nhl/news/pinned | limit=20 | 5301492 | 5136042 | 96.87],
   [/api/v1/rivers/nba/news/pinned | limit=20 | 3750216 | 3553899 | 94.76],
@@ -766,33 +716,31 @@ me know!],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Les Perelman, expert in writing assessment and champion of writing education, dies at 77],
   author: [Andrew Whitacre | Comparative Media Studies/Writing],
   source-name: [MIT News Education],
   images: (),
   paragraphs: (
-  [dir="ltr" id="docs-internal-guid-f2e1fe65-7fff-c090-bb97-0c6fc0e64dec"\>Leslie “Les” Perelman, an influential figure in college writing assessment; a champion of writing instruction across all subject matters for over three decades at MIT; and a former MIT associate dean for undergraduate education, died on Nov. 12, 2025, at home in Lexington, Massachusetts. He was 77.],
-  [dir="ltr"\>A Los Angeles native, Perelman attended the University of California at Berkeley, joining in its lively activist years, and in 1980 received his PhD in English from the University of Massachusetts at Amherst. After stints at the University of Southern California and Tulane University, he returned to Massachusetts — to MIT — in 1987, and stayed for the next 35 years.],
-  [dir="ltr"\>Perelman became best known for his dogged critique of autograding systems and writing assessments that didn’t assess actual college writing. The Boston Globe dubbed him  “The man who killed the SAT essay.”  He told NPR that colleges “spend the first year deprogramming \[students\] from the five-paragraph essay.”],
-  [dir="ltr"\>His widow, MIT Professor Emerita Elizabeth Garrels , says that while attending a conference, Perelman — who was practically blind without his glasses — arranged to stand at one end of a room in order to “grade” essays held up for him on the other side. “He would call out the grade that each essay would likely receive on standardized scoring,” Garrels says. “And he was consistently right.” Perelman was doing what automatic scorers were: He was, he said in the NPR interview, “mirroring how automated or formulaic grading systems often reward form over substance.”],
-  [dir="ltr"\>Perelman also “ruffled a lot of feathers” in industry, says Garrels, with his  2020 paper documenting his BABEL (“Basic Automatic B. S. Essay Language”) Generator, which output nonsense that commercial autograders nevertheless gave top marks. He saved some of his most systematic criticism for autograders’ defenders in academia, at one point  calling out peers at the University of Akron for the methodology in their widely-touted paper claiming  autograders performed just as well as human graders .],
-  [dir="ltr"\>At least one service, though, E. T. S., partly welcomed Perelman’s critique by  making its autograder available to him for testing . (Others, like Pearson and Vantage Learning, declined.) He discovered he could ace the tests, even when  his essay included non-factual gibberish and typographical errors:],
-  [dir="ltr"\>Teaching assistants are paid an excessive amount of money. The average teaching assistant makes six times as much money as college presidents. In addition, they often receive a plethora of extra benefits such as private jets, vacations in the south seas, a staring roles in motion pictures. Moreover, in the Dickens novel Great Expectation, Pip makes his fortune by being a teaching assistant. It doesn’t matter what the subject is, since there are three parts to everything you can think of.],
+  [Leslie “Les” Perelman, an influential figure in college writing assessment; a champion of writing instruction across all subject matters for over three decades at MIT; and a former MIT associate dean for undergraduate education, died on Nov. 12, 2025, at home in Lexington, Massachusetts. He was 77.],
+  [A Los Angeles native, Perelman attended the University of California at Berkeley, joining in its lively activist years, and in 1980 received his PhD in English from the University of Massachusetts at Amherst. After stints at the University of Southern California and Tulane University, he returned to Massachusetts — to MIT — in 1987, and stayed for the next 35 years.],
+  [Perelman became best known for his dogged critique of autograding systems and writing assessments that didn’t assess actual college writing. The Boston Globe dubbed him  “The man who killed the SAT essay.”  He told NPR that colleges “spend the first year deprogramming \[students\] from the five-paragraph essay.”],
+  [His widow, MIT Professor Emerita Elizabeth Garrels , says that while attending a conference, Perelman — who was practically blind without his glasses — arranged to stand at one end of a room in order to “grade” essays held up for him on the other side. “He would call out the grade that each essay would likely receive on standardized scoring,” Garrels says. “And he was consistently right.” Perelman was doing what automatic scorers were: He was, he said in the NPR interview, “mirroring how automated or formulaic grading systems often reward form over substance.”],
+  [Perelman also “ruffled a lot of feathers” in industry, says Garrels, with his  2020 paper documenting his BABEL (“Basic Automatic B. S. Essay Language”) Generator, which output nonsense that commercial autograders nevertheless gave top marks. He saved some of his most systematic criticism for autograders’ defenders in academia, at one point  calling out peers at the University of Akron for the methodology in their widely-touted paper claiming  autograders performed just as well as human graders .],
+  [At least one service, though, E. T. S., partly welcomed Perelman’s critique by  making its autograder available to him for testing . (Others, like Pearson and Vantage Learning, declined.) He discovered he could ace the tests, even when  his essay included non-factual gibberish and typographical errors:],
+  [Teaching assistants are paid an excessive amount of money. The average teaching assistant makes six times as much money as college presidents. In addition, they often receive a plethora of extra benefits such as private jets, vacations in the south seas, a staring roles in motion pictures. Moreover, in the Dickens novel Great Expectation, Pip makes his fortune by being a teaching assistant. It doesn’t matter what the subject is, since there are three parts to everything you can think of.],
   [MIT career],
-  [dir="ltr"\>Within MIT, Perelman’s legacy was his push to embed writing instruction into the whole of MIT’s curriculum, not as standalone expository writing subjects, let alone as merely a writing exam that incoming students could use to pass out of writing subjects altogether. Supported by a \$325,000 National Science Foundation grant, he convinced MIT to hire writing instructors who were also subject matter experts, often with STEM PhDs. They were tasked with collaborating with departments to plant writing instruction into both existing curricula and new subjects. That effort eventually became the Writing Across the Curriculum program (today named  Writing, Rhetoric, and Professional Communication ) with a staff of more than 30 instructors.],
-  [dir="ltr"\>Building out the infrastructure wasn’t quick, however. Perelman’s successor, Suzanne Lane ’85, says it took him almost 15 years. It started with proving to others just how uneven writing instruction at MIT actually was. “A whole cohort of students who took a lot of writing classes or got communication instruction in various places would make great progress,” Lane says. “But it was definitely possible to get through all of MIT without doing much writing at all.”],
-  [dir="ltr"\>To bolster his case, Perelman turned to alumni surveys. “The surveys asked how well MIT prepared you for your career,” says Lane. “The technical skills scored really high, but — what is horribly termed, sometimes, as ‘soft skills’ — communication skills, collaboration, etc., these scored really high on importance to career, but really low on how well MIT had prepared them.”],
-  [dir="ltr"\>In other words, MIT alumni knew their stuff but were bad at communicating it, at a cost to their careers.],
-  [dir="ltr"\>This led Perelman and others to push for a new undergraduate  communication requirement . That NSF grant supported a 1997 pilot, designing experiments for courses that would be communication-intensive. It was a huge success. Every department participated. It involved 24 subjects and roughly 300 students. MIT faculty, following “lively” discussion at an April 1999 faculty meeting, approved the proposal of the creation of  a report on the communication requirement’s implementation , followed a year later by its formal passage, effective fall 2001.],
-  [dir="ltr"\>From that initial pilot of 24, there are now nearly 300 subjects that count toward the requirement, from ​​class 1.013 (Senior Civil and Environmental Engineering Design) to 24.918 (Workshop in Linguistic Research).],
+  [Within MIT, Perelman’s legacy was his push to embed writing instruction into the whole of MIT’s curriculum, not as standalone expository writing subjects, let alone as merely a writing exam that incoming students could use to pass out of writing subjects altogether. Supported by a \$325,000 National Science Foundation grant, he convinced MIT to hire writing instructors who were also subject matter experts, often with STEM PhDs. They were tasked with collaborating with departments to plant writing instruction into both existing curricula and new subjects. That effort eventually became the Writing Across the Curriculum program (today named  Writing, Rhetoric, and Professional Communication ) with a staff of more than 30 instructors.],
+  [Building out the infrastructure wasn’t quick, however. Perelman’s successor, Suzanne Lane ’85, says it took him almost 15 years. It started with proving to others just how uneven writing instruction at MIT actually was. “A whole cohort of students who took a lot of writing classes or got communication instruction in various places would make great progress,” Lane says. “But it was definitely possible to get through all of MIT without doing much writing at all.”],
+  [To bolster his case, Perelman turned to alumni surveys. “The surveys asked how well MIT prepared you for your career,” says Lane. “The technical skills scored really high, but — what is horribly termed, sometimes, as ‘soft skills’ — communication skills, collaboration, etc., these scored really high on importance to career, but really low on how well MIT had prepared them.”],
+  [In other words, MIT alumni knew their stuff but were bad at communicating it, at a cost to their careers.],
+  [This led Perelman and others to push for a new undergraduate  communication requirement . That NSF grant supported a 1997 pilot, designing experiments for courses that would be communication-intensive. It was a huge success. Every department participated. It involved 24 subjects and roughly 300 students. MIT faculty, following “lively” discussion at an April 1999 faculty meeting, approved the proposal of the creation of  a report on the communication requirement’s implementation , followed a year later by its formal passage, effective fall 2001.],
+  [From that initial pilot of 24, there are now nearly 300 subjects that count toward the requirement, from ​​class 1.013 (Senior Civil and Environmental Engineering Design) to 24.918 (Workshop in Linguistic Research).],
   [Connections beyond MIT],
-  [dir="ltr"\>Early in his career, Perelman worked with Vincent DiMarco, a literature scholar at the University of Massachusetts at Amherst, to publish “The Middle English Letter of Alexander to Aristotle” (Brill, 1978). With Wang Computers as publisher, he was a technical writer and project leader on the “DOS Release 3.30 User’s Reference Guide.” He edited a book and chapter on writing studies and assessment with New Jersey Institute of Technology professor Norbert Elliot. And in a project he was particularly proud of, he worked with the New South Wales Teachers Federation in 2018  to convince Australia to reject the adoption of an automated essay grading regime .],
-  [dir="ltr"\>“Les was brilliant, with a Talmudic way of asking questions and entering academic debates,” says Nancy Sommers, whose work on undergraduate writing assessment at Harvard University paralleled Perelman’s. “I loved the way his eyes sparkled when he was ready to rip an adversary or a colleague who wasn’t up to his quick mind and vast, encyclopedic knowledge.”],
-  [dir="ltr"\>Openness to rhetorical combat didn’t keep Perelman from being a wonderful friend, Sommers says, saying he once waited for her at the airline gate with a sandwich and a smile after a canceled flight. “That was Les, so gracious, generous, anticipating the needs of friends, always there to offer sustenance and friendship.”],
+  [Early in his career, Perelman worked with Vincent DiMarco, a literature scholar at the University of Massachusetts at Amherst, to publish “The Middle English Letter of Alexander to Aristotle” (Brill, 1978). With Wang Computers as publisher, he was a technical writer and project leader on the “DOS Release 3.30 User’s Reference Guide.” He edited a book and chapter on writing studies and assessment with New Jersey Institute of Technology professor Norbert Elliot. And in a project he was particularly proud of, he worked with the New South Wales Teachers Federation in 2018  to convince Australia to reject the adoption of an automated essay grading regime .],
+  [“Les was brilliant, with a Talmudic way of asking questions and entering academic debates,” says Nancy Sommers, whose work on undergraduate writing assessment at Harvard University paralleled Perelman’s. “I loved the way his eyes sparkled when he was ready to rip an adversary or a colleague who wasn’t up to his quick mind and vast, encyclopedic knowledge.”],
+  [Openness to rhetorical combat didn’t keep Perelman from being a wonderful friend, Sommers says, saying he once waited for her at the airline gate with a sandwich and a smile after a canceled flight. “That was Les, so gracious, generous, anticipating the needs of friends, always there to offer sustenance and friendship.”],
   [Donations in Perelman’s name can be made to  UNICEF’s work supporting children in Ukraine , the  Lexington Refugee Assistance Program ,  Doctors Without Borders , and the  Ash Grove Movie Finishing Fund .],
 ),
   insert-map: (:),
@@ -801,10 +749,8 @@ me know!],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Fragments: February 13],
   author: [Martin Fowler],
   source-name: [Martin Fowler],
@@ -849,15 +795,13 @@ me know!],
   debug-mode: false,
 )
 
-}
 
-{
-  #brief-group((
-    [#brief-item([ScienceDaily], source-name: [ScienceDaily], [A major new U. S. cholesterol guideline is shifting the focus toward earlier, more personalized prevention of heart disease. It urges people to start screening sooner—sometimes even in childhood—and highlights the importance of tracking not just LDL (“bad”) cholesterol but also genetic risk factors like lipoprotein(a). A new, more advanced risk calculator now uses broader health data to better predict heart attack and stroke risk over decades.])],
-    [#brief-item([ScienceDaily], source-name: [ScienceDaily], [Scientists have discovered that the ocean’s “missing” plastic hasn’t vanished—it has broken down into trillions of invisible nanoplastics now spread through water, air, and living organisms. These tiny particles may be everywhere, including inside our bodies, raising serious concerns about their impact.])],
-    [#brief-item([Josh Moody], source-name: [Inside Higher Ed], [ED Names New NACIQI Member 
+#brief-group((
+  [#brief-item([ScienceDaily], source-name: [ScienceDaily], [A major new U. S. cholesterol guideline is shifting the focus toward earlier, more personalized prevention of heart disease. It urges people to start screening sooner—sometimes even in childhood—and highlights the importance of tracking not just LDL (“bad”) cholesterol but also genetic risk factors like lipoprotein(a). A new, more advanced risk calculator now uses broader health data to better predict heart attack and stroke risk over decades.])],
+  [#brief-item([ScienceDaily], source-name: [ScienceDaily], [Scientists have discovered that the ocean’s “missing” plastic hasn’t vanished—it has broken down into trillions of invisible nanoplastics now spread through water, air, and living organisms. These tiny particles may be everywhere, including inside our bodies, raising serious concerns about their impact.])],
+  [#brief-item([Josh Moody], source-name: [Inside Higher Ed], [ED Names New NACIQI Member 
 
-class="field field--name-field-featured-image field--type-entity-reference field--label-hidden field\_\_item"\> 
+
 
  
  Josh Moody 
@@ -865,19 +809,18 @@ class="field field--name-field-featured-image field--type-entity-reference field
  Fri, 03/27/2026 - 03:00 AM 
  
 
-class="field field--name-field-authors field--type-entity-reference field--label-inline clearfix"\>
+
  
 
-class="field\_\_label"\>Byline(s)
+Byline(s)
 
-class="field\_\_items"\>
+
  
 
-class="field\_\_item"\> Josh Moody])],
-    [#brief-item([ScienceDaily], source-name: [ScienceDaily], [By closely monitoring fish throughout their lives, researchers found that simple behaviors in midlife—like movement and sleep—can predict lifespan. Fish that stayed active and slept mostly at night tended to live longer, while those slowing down earlier lived shorter lives. Surprisingly, aging didn’t unfold smoothly but in sudden jumps between stages. The work suggests that tracking daily habits in humans could reveal early clues about how we age.])],
-    [#brief-item([ScienceDaily], source-name: [ScienceDaily], [New fathers appear to have fewer mental health diagnoses during pregnancy and the early months after birth. But that early stability does not last. About a year later, depression and stress-related disorders increase significantly, surprising researchers. The findings suggest that the emotional toll of fatherhood builds over time rather than hitting immediately.])],
-    [#brief-item([ScienceDaily], source-name: [ScienceDaily], [A new study reveals that high doses of antioxidants—often seen as harmless or beneficial—may actually impact future generations. Male mice given common supplements like NAC produced offspring with subtle but significant facial and skull changes. Researchers believe this is tied to altered sperm DNA, even though the fathers showed no outward health issues.])],
-  ))
-}
+Josh Moody])],
+  [#brief-item([ScienceDaily], source-name: [ScienceDaily], [By closely monitoring fish throughout their lives, researchers found that simple behaviors in midlife—like movement and sleep—can predict lifespan. Fish that stayed active and slept mostly at night tended to live longer, while those slowing down earlier lived shorter lives. Surprisingly, aging didn’t unfold smoothly but in sudden jumps between stages. The work suggests that tracking daily habits in humans could reveal early clues about how we age.])],
+  [#brief-item([ScienceDaily], source-name: [ScienceDaily], [New fathers appear to have fewer mental health diagnoses during pregnancy and the early months after birth. But that early stability does not last. About a year later, depression and stress-related disorders increase significantly, surprising researchers. The findings suggest that the emotional toll of fatherhood builds over time rather than hitting immediately.])],
+  [#brief-item([ScienceDaily], source-name: [ScienceDaily], [A new study reveals that high doses of antioxidants—often seen as harmless or beneficial—may actually impact future generations. Male mice given common supplements like NAC produced offspring with subtle but significant facial and skull changes. Researchers believe this is tied to altered sperm DNA, even though the fathers showed no outward health issues.])],
+))
 
 #colophon([The Pioneer Record], [Vol. 1, No. 069], [2026-03-30])

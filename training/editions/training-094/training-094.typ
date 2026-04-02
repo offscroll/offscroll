@@ -21,42 +21,8 @@
 #masthead([Daily Chronicle], [Vol. 1, No. 094], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Kimwolf Botnet Swamps Anonymity Network I2P],
-  kicker: [Cover Story],
-  author: [BrianKrebs],
-  source-name: [Krebs on Security],
-  deck: [I2P users started reporting disruptions in the network around the same time the Kimwolf botmasters began relying on it to evade takedown attempts against the botnet’s control servers.],
-  lead-pre: [],
-  lead-cap: [F],
-  lead-rest: [or the past week, the massive “Internet of Things” (IoT) botnet known as Kimwolf has been disrupting The Invisible Internet Project (I2P), a decentralized, encrypted communications network designed to anonymize and secure online communications. I2P users started reporting disruptions in the network around the same time the Kimwolf botmasters began relying on it to evade takedown attempts against the botnet’s control servers.],
-  body-paragraphs: (
-  [Kimwolf is a botnet that surfaced in late 2025 and quickly infected millions of systems, turning poorly secured IoT devices like TV streaming boxes, digital picture frames and routers into relays for malicious traffic and abnormally large distributed denial-of-service (DDoS) attacks.],
-  [I2P is a decentralized, privacy-focused network that allows people to communicate and share information anonymously.],
-  [“It works by routing data through multiple encrypted layers across volunteer-operated nodes, hiding both the sender’s and receiver’s locations,” the I2P website explains . “The result is a secure, censorship-resistant network designed for private websites, messaging, and data sharing.”],
-  [On February 3, I2P users began complaining on the organization’s GitHub page about tens of thousands of routers suddenly overwhelming the network, preventing existing users from communicating with legitimate nodes. Users reported a rapidly increasing number of new routers joining the network that were unable to transmit data, and that the mass influx of new systems had overwhelmed the network to the point where users could no longer connect.],
-  [When one I2P user asked whether the network was under attack, another user replied, “Looks like it. My physical router freezes when the number of connections exceeds 60,000.”],
-  [class="wp-caption-text" id="caption-attachment-73198"\>A graph shared by I2P developers showing a marked drop in successful connections on the I2P network around the time the Kimwolf botnet started trying to use the network for fallback communications.],
-  [The same day that I2P users began noticing the outages, the individuals in control of Kimwolf posted to their Discord channel that they had accidentally disrupted I2P after attempting to join 700,000 Kimwolf-infected bots as nodes on the network.],
-  [Although Kimwolf is known as a potent weapon for launching DDoS attacks, the outages caused this week by some portion of the botnet attempting to join I2P are what’s known as a “ Sybil attack ,” a threat in peer-to-peer networks where a single entity can disrupt the system by creating, controlling, and operating a large number of fake, pseudonymous identities.],
-  [Indeed, the number of Kimwolf-infected routers that tried to join I2P this past week was many times the network’s normal size. I2P’s Wikipedia page says the network consists of roughly 55,000 computers distributed throughout the world, with each participant acting as both a router (to relay traffic) and a client.],
-  [However, Lance James , founder of the New York City based cybersecurity consultancy Unit 221B and the original founder of I2P, told KrebsOnSecurity the entire I2P network now consists of between 15,000 and 20,000 devices on any given day.],
-  [Benjamin Brundage is founder of Synthient , a startup that tracks proxy services and was the first to document Kimwolf’s unique spreading techniques . Brundage said the Kimwolf operator(s) have been trying to build a command and control network that can’t easily be taken down by security companies and network operators that are working together to combat the spread of the botnet.],
-  [Brundage said the people in control of Kimwolf have been experimenting with using I2P and a similar anonymity network — Tor — as a backup command and control network, although there have been no reports of widespread disruptions in the Tor network recently.],
-  [“I don’t think their goal is to take I2P down,” he said. “It’s more they’re looking for an alternative to keep the botnet stable in the face of takedown attempts.”],
-  [The Kimwolf botnet created challenges for Cloudflare late last year when it began instructing millions of infected devices to use Cloudflare’s domain name system (DNS) settings, causing control domains associated with Kimwolf to repeatedly usurp Amazon , Apple , Google and Microsoft in Cloudflare’s public ranking of the most frequently requested websites.],
-  [James said the I2P network is still operating at about half of its normal capacity, and that a new release is rolling out which should bring some stability improvements over the next week for users.],
-  [Meanwhile, Brundage said the good news is Kimwolf’s overlords appear to have quite recently alienated some of their more competent developers and operators, leading to a rookie mistake this past week that caused the botnet’s overall numbers to drop by more than 600,000 infected systems.],
-  [“It seems like they’re just testing stuff, like running experiments in production,” he said. “But the botnet’s numbers are dropping significantly now, and they don’t seem to know what they’re doing.”],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [NYT Connections Sports Edition today: Hints and answers for March 28, 2026],
   author: [Mashable Tech],
   source-name: [Mashable Tech],
@@ -66,11 +32,19 @@
   [As we've shared in previous hints stories, this is a version of the popular New York Times word game that seeks to test the knowledge of sports fans.],
   [Like the original Connections , the game is all about finding the "common threads between words." And just like Wordle , Connections resets after midnight and each new set of words gets trickier and trickier — so we've served up some hints and tips to get you over the hurdle.],
   [If you just want to be told today's puzzle, you can jump to the end of this article for the latest Connections solution. But if you'd rather solve it yourself, keep reading for some clues, tips, and strategies to assist you.],
+  [SEE ALSO: 
+ 
+ Mahjong, Sudoku, free crossword, and more: Play games on Mashable],
   [What is Connections: Sports Edition ?],
   [The NYT 's latest daily word game has launched in association with The Athletic , the New York Times property that provides the publication's sports coverage. Connections can be played on both web browsers and mobile devices and require players to group four words that share something in common.],
+  [This Tweet is currently unavailable. It might be loading or has been removed.],
   [Each puzzle features 16 words and each grouping of words is split into four categories. These sets could comprise of anything from book titles, software, country names, etc. Even though multiple words will seem like they fit together, there's only one correct answer.],
   [If a player gets all four words in a set correct, those words are removed from the board. Guess wrong and it counts as a mistake — players get up to four mistakes until the game ends.],
+  [This Tweet is currently unavailable. It might be loading or has been removed.],
   [Players can also rearrange and shuffle the board to make spotting connections easier. Additionally, each group is color-coded with yellow being the easiest, followed by green, blue, and purple. Like Wordle, you can share the results with your friends on social media.],
+  [SEE ALSO: 
+ 
+ Wordle-obsessed? These are the best word games to play IRL.],
   [Here's a hint for today's Connections: Sports Edition categories],
   [Want a hint about the categories without being told the categories? Then give these a try:],
   [Yellow: Teams in the mitten],
@@ -103,12 +77,10 @@
   debug-mode: false,
 )
 
-  #pull-quote([Additionally, each group is color-coded with yellow being the easiest, followed by green, blue, and purple.], [Mashable Tech])
+#pull-quote([Additionally, each group is color-coded with yellow being the easiest, followed by green, blue, and purple.], [Mashable Tech])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Government Must Not Force Companies to Participate in AI-powered Surveillance],
   author: [Corynne McSherry],
   source-name: [EFF Deeplinks],
@@ -130,11 +102,10 @@
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Hurdle hints and answers for March 29, 2026],
   author: [Mashable Tech],
   source-name: [Mashable Tech],
@@ -144,16 +115,31 @@
   [There are five rounds to the game. The first round sees you trying to guess the word, with correct, misplaced, and incorrect letters shown in each guess. If you guess the correct answer, it'll take you to the next hurdle, providing the answer to the last hurdle as your first guess. This can give you several clues or none, depending on the words. For the final hurdle, every correct answer from previous hurdles is shown, with correct and misplaced letters clearly shown.],
   [An important note is that the number of times a letter is highlighted from previous guesses does necessarily indicate the number of times that letter appears in the final hurdle.],
   [If you find yourself stuck at any step of today's Hurdle, don't worry! We have you covered.],
+  [SEE ALSO: 
+ 
+ Hurdle: Everything you need to know to find the answers],
   [Hurdle Word 1 hint],
   [Susceptible.],
+  [SEE ALSO: 
+ 
+ Apple’s new M3 MacBook Air is \$300 off at Amazon. And yes, I’m tempted.],
   [Hurdle Word 1 answer],
   [PRONE],
   [Hurdle Word 2 hint],
   [A two-legged stand.],
+  [SEE ALSO: 
+ 
+ Wordle today: Answer, hints for March 29, 2026],
   [Hurdle Word 2 Answer],
   [BIPOD],
   [Hurdle Word 3 hint],
   [A Greek letter.],
+  [SEE ALSO: 
+ 
+ NYT Connections Sports Edition today: Hints and answers for March 29],
+  [SEE ALSO: 
+ 
+ NYT Connections hints today: Clues, answers for March 29, 2026],
   [Hurdle Word 3 answer],
   [KAPPA],
   [Hurdle Word 4 hint],
@@ -162,6 +148,9 @@
   [CYNIC],
   [Final Hurdle hint],
   [To go in.],
+  [SEE ALSO: 
+ 
+ Mahjong, Sudoku, free crossword, and more: Games available on Mashable],
   [Hurdle Word 5 answer],
   [ENTER],
   [If you're looking for more puzzles, Mashable's got games now! Check out our games hub for Mahjong, Sudoku, free crossword, and more.],
@@ -174,7 +163,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Sony headphones and earbuds are majorly marked down during Amazons Big Spring sale],
   author: [Mashable Tech],
   source-name: [Mashable Tech],
@@ -182,7 +171,15 @@
   paragraphs: (
   [The star of headphone deals during Amazon's Big Spring Sale is Sony. All the best models of Sony headphones are on sale, making for major savings. Even Sony's latest flagship headphones, the Sony WH-1000XM6 headphones, are down to their lowest price ever.],
   [If you're after a pair of Sony headphones, we've rounded up all the best deals on the brand's headphones and earbuds.],
+  [SEE ALSO: 
+ 
+ Live updates on Amazon Big Spring Sale 2026: Record-low prices on Apple MacBooks, DJI drones, and Kindles],
   [Best Sony deal],
+  [Opens in a new window],
+  [Credit: Sony],
+  [Sony WH-1000XM6 Headphones],
+  [\$398 
+ at Amazon],
   [\$459.99 
  Save \$61.99],
   [Why we like it],
@@ -207,7 +204,7 @@
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([The New Yorker], source-name: [The New Yorker], [The mega-popular K-pop stars have been on hiatus for nearly four years. Their new album, “Arirang,” tests the group’s staying power in the global cultural marketplace.])],
       [#brief-item([Juan Sebastián Urrego Escobar], source-name: [Serverless Blog], [Part 4 of 5 with our series and its time to start implementing our architecture in code and configuration using some appropriate design patterns and following a Function as a Microservice style.])],
       [#brief-item([Maciej Winnicki], source-name: [Serverless Blog], [How do you design a tool that tows the line between 'exciting new ground' and 'real world practicality'? We asked a lot of those questions with the Event Gateway.])],

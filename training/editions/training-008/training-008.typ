@@ -21,128 +21,8 @@
 #masthead([The Gazette], [Vol. 1, No. 008], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Simple Rust Programming 01 - Checking The Existence of a Directory],
-  kicker: [Cover Story],
-  author: [Scott Johnson (fuzzyblog)],
-  source-name: [Scott Johnson (fuzzyblog)],
-  deck: [class="center"\> 
-
-So I'm at the very early learning stage of Rust, that stage where almost nothing you type in works.],
-  lead-pre: [],
-  lead-cap: [c],
-  lead-rest: [lass="center"\>],
-  body-paragraphs: (
-  [So I'm at the very early learning stage of Rust, that stage where almost nothing you type in works. And this, for me, usually means "make the learning stick by writing it down". So here goes …],
-  [Note: I wrote this code using the Rust playground , a web based repl, which was invaluable.],
-  [id="a-simple-program-for-testing-the-existence-of-a-directory"\>A Simple Program for Testing the Existence of a Directory],
-  [I'm going to start with an assumption that I need to get the location of my input based on the type of the machine: either a Mac or a Linux box. Given that we know that a user's home directory exists in /home on Linux and /Users on Mac, this gives us an easy way to differentiate the two.],
-  [id="pass-1-problems-with-scopes"\>Pass 1: Problems with Scopes],
-  [fn main () { 
- if path\_exists ( "/home" ) { 
- let environment = "unix" ; 
- } 
- else { 
- let environment = "other" ; 
- } 
- println! ( "{}" , environment ); 
- }],
-  [fn path\_exists ( path : & str ) -\> bool { 
- if Path :: new ( path ) .is\_dir () { 
- return true ; 
- } 
- else { 
- return false 
- } 
- }],
-  [This program has a core problem - the environment variable isn't in scope:],
-  [The implication of this is that code within { } braces is a true local block and thus out of scope with what came before. The Ruby work around for something like this is to have an outer variable that "shadows" the name of the variable within the block and thus allows its value to pass out. Unfortunately Rust identifies that technique as a bug since the outer variable is never read. My refactor on this is to write a function which returns this.],
-  [id="pass-2-problems-with-return-types"\>Pass 2: Problems with Return Types],
-  [Here was my first pass at moving environment fetching into a function of its own. I got tired of typing environment so I moved to calling it my\_env.],
-  [fn main () { 
- let my\_env = get\_env (); 
- println! ( "{}" , my\_env ); 
- }],
-  [fn get\_env () { 
- if path\_exists ( "/home" ) { 
- return "unix" ; 
- } 
- else { 
- return "other" ; 
- } 
- }],
-  [fn path\_exists ( path : & str ) -\> bool { 
- if Path :: new ( path ) .is\_dir () { 
- return true ; 
- } 
- else { 
- return false 
- } 
- }],
-  [Here are the errors we have:],
-  [class="highlight"\> Compiling playground v0.0.1 (/playground)
-error\[E0277\]: \`()\` doesn't implement \`std::fmt:: Display\`
- --\> src/main.rs:5:20
- |
-5 | println!("{}", my\_env);
- | ^^^^^^ \`()\` cannot be formatted with the default formatter
- |
- = help: the trait \`std::fmt:: Display\` is not implemented for \`()\`
- = note: in format strings you may be able to use \`{:?}\` (or {:\#?} for pretty-print) instead
- = note: required by \`std::fmt:: Display::fmt\`
- = note: this error originates in a macro (in Nightly builds, run with -Z macro-backtrace for more info)],
-  [error\[E0308\]: mismatched types
- --\> src/main.rs:10:14
- |
-8 | fn get\_env() {
- | - help: try adding a return type: \`-\> &'static str\`
-9 | if path\_exists("/home") { 
-10 | return "unix";
- | ^^^^^^ expected \`()\`, found \`&str\`],
-  [error: aborting due to 2 previous errors],
-  [Some errors have detailed explanations: E0277, E0308.
-For more information about an error, try \`rustc --explain E0277\`.
-error: could not compile \`playground\`.],
-  [To learn more, run the command again with --verbose.],
-  [id="pass-3-working"\>Pass 3: Working],
-  [The solution to the above was to add a return type or this odd bit of syntax:],
-  [Apparently the bit following the () identifies the return value of the function as a statically allocated string. This is syntactically similar to the:],
-  [but the single quote really threw me.],
-  [fn main () { 
- let my\_env = get\_env (); 
- println! ( "{}" , my\_env ); 
- }],
-  [fn get\_env () -\> & 'static str { 
- if path\_exists ( "/home" ) { 
- return "unix" ; 
- } 
- else { 
- return "other" ; 
- } 
- }],
-  [fn path\_exists ( path : & str ) -\> bool { 
- if Path :: new ( path ) .is\_dir () { 
- return true ; 
- } 
- else { 
- return false 
- } 
- }],
-  [id="the-learnings"\>The Learnings],
-  [Here are bullet points for what we learned from writing these 24 lines of code:],
-  [The let keyword defines a variable.],
-  [To insert a variable into string output you use {} inside quotes followed by the name of the variable],
-  [If you are going to return something from a function you need to return its type as well],
-  [Variables set within { } are local to the { }],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Ninety Days of Commits],
   author: [Jake Yesbeck],
   source-name: [Jake Yesbeck],
@@ -151,11 +31,11 @@ error: could not compile \`playground\`.],
   [It has been ninety days since I started the Year of Commits initiative. The criteria behind this challenge was to make a commit to a public Github repository every day. Technically, a commit like the following satisfies that criteria:],
   [However, if I allowed this commit to be my sole contribution for a day, I would be cheating no one except myself. In reality, I have been averaging 3 to 4 decent size commits a day. Spending around an hour or two total per night. Github is an awesome piece of software that tells a visual tale of when I am most productive:],
   [Over this quarter of a year, I have accrued some interesting learnings about developing open source software.],
-  [id="writing-software-every-day-just-feels-good"\>1. Writing software every day just feels good.],
+  [1. Writing software every day just feels good.],
   [Not missing a single day of writing software has made a significant improvement in my confidence and attitude. In the same way exercising daily makes your body feel more sturdy, developing software daily keeps my mind focused and clear. Like warming up a car before a drive, writing software every day makes it very easy for me to jump into a new project or build a new feature. I think most of my fellow software artisans have been in this situation: You go on vacation or maybe just a very relaxing weekend, then the next day at work or when you open that side project again, you end up spending a lot of time getting familiar with the software. Even if you just wrote it a few days ago, the break has made some tiny details less sharp. Writing software every single day helps eliminate this.],
-  [id="immature-software-is-expected"\>2. Immature software is expected],
+  [2. Immature software is expected],
   [While writing software, there are a total of 0 people that look at what they just wrote and say: “This software is already bad and I have only just written it”. However, this statement can be more true than we would like. The potential in a new project is always the best part, right? Developers around the world usually jump at a change to do green field development. After all, with no legacy software around we can make what ever our heart desires. It can be clean, DRY, clever software with all the best design patterns. But, at least in my experience, all software starts off painfully immature. This is just fine. The shape and structure of good software grows over time. This is particularly true for my Year of Commits projects. Since I must write software every single day, I revisit my software extremely frequently. This re-visitation greatly increases the iterations my software goes through and I end up with much more polished work.],
-  [id="software-development-is-not-just-making-it-work"\>3. Software development is not just making it work],
+  [3. Software development is not just making it work],
   [If you take away business requirements, deadlines, conversion rates, etc., you are left with something pure: software development. Year of Commits has enabled me to experience developing software at a slower pace without these extra degrees of “purpose”. Because of this, I have learned the difference between software that just works and carefully architect-ed software. I am not boasting that the software I write is now amazingly designed and executed, I have just noticed that when I invest more time, it makes a difference. We, as Software Aristans need time to stop and smell the ones and zeros. Given a decent amount of time and attention, all software can mature to something really extraordinary.],
   [I am optimistic about completing my goal of a Year of Commits. With 3/4 the distance ahead of me, let’s hope I can keep that graph solid green.],
 ),
@@ -165,10 +45,8 @@ error: could not compile \`playground\`.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A Simple Laravel Hello World],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -182,22 +60,37 @@ error: could not compile \`playground\`.],
   [Define the text "Hello World" as a variable, \$text, in the controller],
   [Display that on the screen via an HTML template],
   [While this doesn't illustrated models and database connectivity, this actually illustrates how to use a surprising amount of an overall MVC framework.],
-  [id="step-1-creating-an-application"\>Step 1: Creating an Application],
+  [Step 1: Creating an Application],
   [The first step is to use composer to generate the overall application with:],
+  [composer create-project laravel/laravel hello\_world],
   [The next step is to change into the directory with:],
+  [cd hello\_world],
   [and then open the code base with:],
+  [mate .],
   [or if you use Sublime:],
-  [id="step-2-generating-a-controller"\>Step 2: Generating a Controller],
+  [subl .],
+  [Step 2: Generating a Controller],
   [Back at your command line, you want to generate a controller with:],
+  [php artisan make:controller HelloController],
   [This will create a file named HelloController in app/http/Controllers:],
+  [ls -l app/Http/Controllers
+total 16
+-rw-r--r-- 1 sjohnson staff 361 May 18 11:37 Controller.php
+-rw-r--r-- 1 sjohnson staff 122 May 27 09:12 HelloController.php],
   [Inside the controller you want to add the following code (some of which will already be there from the generator):],
-  [inside the "class HelloController extends Controller" block of code (it goes inside the {} braces).],
-  [id="step-3-adding-a-route"\>Step 3: Adding a Route],
+  [public function index () 
+ \{ 
+ return view ( 'hello\_index' ); 
+ \}],
+  [inside the "class HelloController extends Controller" block of code (it goes inside the \{\} braces).],
+  [Step 3: Adding a Route],
   [Moving back to the code base, you want to edit the file routes/web.php and add this line:],
+  [Route :: get ( '/hello' , 'App\\Http\\Controllers\\HelloController\@index' );],
   [This adds a single route, /hello, which is then handled by the Hello controller and the hello\_index action.],
   [You can test that this route is available by running:],
+  [php artisan route:list],
   [which should show you something like this:],
-  [class="highlight"\> +--------+----------+----------+------+--------------------------------------------+------------+
+  [+--------+----------+----------+------+--------------------------------------------+------------+
 | Domain | Method | URI | Name | Action | Middleware |
 +--------+----------+----------+------+--------------------------------------------+------------+
 | | GET|HEAD | \/ | | Closure | web |
@@ -206,17 +99,19 @@ error: could not compile \`playground\`.],
 | | GET|HEAD | hello | | App\\Http\\Controllers\\HelloController\@index | web |
 +--------+----------+----------+------+--------------------------------------------+------------+],
   [Note : It is critical that you use the fully name spaced path to the controller (i.e. starting with App ). According to what I've read, you can use a use declaration at the top of the routes file to import controllers so you don't have to have the name spacing everywhere but I was unable to ever make that work.],
-  [id="step-4-adding-a-variable-to-the-controller"\>Step 4: Adding a Variable to the Controller],
+  [Step 4: Adding a Variable to the Controller],
   [Inside the public function index method of the Hello controller, you want to add \/ change the following code:],
   [This defines one variable, \$text, which should then be available in the view. The way that it becomes available to the view is by passing a hash into the return statement which has a key of 'text' which is mapped to the variable \$text.],
-  [id="step-5-creating-a-view-and-displaying-a-variable"\>Step 5: Creating a View and Displaying a Variable],
+  [Step 5: Creating a View and Displaying a Variable],
   [Views, in Laravel, live in the directory resources/views so you can create one with the command:],
+  [touch resources/views/hello\_index.blade.php],
   [And you then want to edit that file and add this code:],
-  [id="step-6-previewing-the-results"\>Step 6: Previewing the Results],
+  [Step 6: Previewing the Results],
   [The key command here is:],
+  [php artisan serve],
   [which starts the application and displays the result on:],
+  [http:\/\/localhost:8000/hello],
   [At which point you should see "Hello World" come onto the screen.],
-  [id="conclusion"\>Conclusion],
   [This gives a fully functional Hello World application implemented in Laravel. I didn't focus on differences from Rails here in order to simplify this post. In my next post, I'll do more of that.],
 ),
   insert-map: (:),
@@ -225,17 +120,15 @@ error: could not compile \`playground\`.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Teaching the Old Dog a New Trick],
   author: [Dainius Jocas],
   source-name: [Vinted Engineering],
   images: (),
   paragraphs: (
   [TL: DR : When required data can be encoded with match-features, Vespa can apply a new optimisation, which can be a lifesaver when data is frequently redistributed.],
-  [id="use-case"\>Use-case],
+  [Use-case],
   [When ranking, Vespa requires additional information that cannot be easily stored within the documents being ranked (e.g. the statistical cross features between the user and the document such as a counter of how many interactions the user has made with the documents of this category can’t be stored within an item itself). Then, you need to pass them as parameters via ranking features . An important question is: where do you store and fetch that information from?],
   [When Redis became a bottleneck for this task, we decided to try Vespa itself. Why?],
   [The data format is already suitable because it is going to be passed into the ranking profile.],
@@ -244,17 +137,15 @@ error: could not compile \`playground\`.],
   [Vespa allows for fetching multiple filtered documents.],
   [Vespa allows for collocating calculations with the data.],
   [And of course, such tasks require single-digit millisecond latency.],
-  [id="problem"\>Problem],
   [Initially, the use e of Vespa for use cases worked well, and looked like a great success. However, the proverbial honeymoon ended when the number of schemas (50+) and the update rate (500M+ per hour) skyrocketed. We noticed that sometimes tail (p99+) latencies bumped to 100ms+, seemingly out of nowhere, but the bump sometimes correlated with the high feeding bursts (meaning right after the feeding burst). Such high latencies are unacceptable when the latency budget is 50 ms.],
-  [id="investigation"\>Investigation],
   [We noticed that the spike in tail latencies always happened after a burst of feeding requests. E.g. features that are recalculated hourly/daily for all Vinted users (i.e. 100+ million records) create such bursts. When latencies started spiking more and more frequently, it was a signal to have a closer look to see what the cause was.],
   [The diagram above shows that a spike in p99 latency occurred after a feeding burst.],
   [After inspecting the logs during such a latency spike, there were multiple records such as the following:],
+  [Docsum fetch failed for 36 hits (64 ok hits), no retry],
   [The log says that some document summaries have failed.],
   [After a guru meditation session at the Vilnius office sauna (which is intended for such type of work), we concluded that the data is moving around the cluster and it causes problems for document summary fetching.],
   [This theory was quickly confirmed by checking the dashboard on data redistribution.],
   [With this evidence, the problem to solve was clear but first, we need to familiarise ourselves with how Vespa executes queries.],
-  [id="query-execution"\>Query Execution],
   [This is the typical query execution flow:],
   [The diagram above shows that a request first comes to the Vespa container node. Then, it is scattered to all content nodes (typically over the network) of an available content group. Responses with local Top-K hits are then gathered in the container node. The Top-K global matching documents a .fill() request is once again sent to the relevant content nodes to fetch the document summary (i.e. document data or calculated values).],
   [When a data redistribution is ongoing during the query handling, it might happen that between the query execution and .fill() (that typically takes a couple of milliseconds), the documents is moved from one content node to another (or the content node is down, or some other unexpected situation that happens in distributed systems). To handle such a situation, Vespa queries all known content nodes for the summary data, potentially doing multiple retries .],
@@ -262,71 +153,73 @@ error: could not compile \`playground\`.],
   [A small nuance to note about the query execution flow is that, with the first response from content nodes, the matchfeatures can be returned.],
   [Match features are rank features, added to each hit into the matchfeatures field. The feature was added to Vespa in 2021 . The values can be either floating point numbers or tensors (but not strings, booleans, etc.). Typically, they are useful to record the feature values used in scoring for further ranking optimisation.],
   [A clever trick to encode non-numeric data, e.g. a string label, is to convert it into a mapped tensor . If you squint a little, the mapped tensor looks like a regular JSON object.],
-  [id="solution"\>Solution],
   [By knowing the problem and being familiar with matchfeatures, we can draft a workaround for summary fetching.],
   [Luckily, we’ve already thought about such an optimisation ! What if everything we needed could be fetched with the select match-features from … ? Summary fetching would then not be required, and .fill() could be eliminated .],
   [The enthusiasm led to a quick proof of concept; however, the benchmarks surprisingly showed no improvement at all. This led to an inspection of the query trace , in which we found that the summary was being fetched! This was confirmed with the metrics on the Vespa side, on docsum operations .],
   [It was high time to roll up our sleeves and do some open source work . The feature was released with Vespa 8.596.7 .],
   [Open source contributions take time (review, accept, release, adopt cycle can take weeks), but we needed the solution quickly Vespa is extremely flexible, and we could alter the platform ourselves with aplugin by adding your bundle JAR file into the components\/ directory , and configuring the search chain .],
   [Let’s explore the Vespa application setup. First, we need to create a rank profile that encodes data into tensors.],
-  [class="highlight"\> schema doc {
- document doc {
- field my\_feature type string {
+  [schema doc \{
+ document doc \{
+ field my\_feature type string \{
  indexing: attribute
- }
- }
- rank-profile fields inherits unranked {
- function my\_feature() {
+ \}
+ \}
+ rank-profile fields inherits unranked \{
+ function my\_feature() \{
  expression: tensorFromLabels(attribute(my\_feature))
- }
- match-features {
+ \}
+ match-features \{
  my\_feature
- }
- }
-}],
+ \}
+ \}
+\}],
   [Then, we need to specify the fields rank profile when querying. As a bonus, we can disable the query cache , because it helps during the summary fetching and asks for the short version of tensors:],
+  [\{ 
+ "yql" : "select matchfeatures from doc where true" , 
+ "ranking" : "fields" , 
+ "ranking.queryCache" : false , 
+ "presentation.format.tensors" : "short-value" 
+ \}],
   [The response looks like:],
-  [class="highlight"\> { 'root': { 
+  [\{ 'root': \{ 
  'id': 'toplevel' , 
  'relevance': 1.0 , 
- 'fields': { 'totalCount': 1 }, 
- 'coverage': { 
+ 'fields': \{ 'totalCount': 1 \}, 
+ 'coverage': \{ 
  'coverage': 100 , 
  'documents': 1 , 
  'full': True , 
  'nodes': 1 , 
  'results': 1 , 
- 'resultsFull': 1 }, 
- 'children': \[{ 
+ 'resultsFull': 1 \}, 
+ 'children': \[\{ 
  'id': 'index:content\/ 0 /c 4 ca 42388 ce 70 a 10 b 392 b 401 ' , 
  'relevance': 0.0 , 
  'source': 'doc , 
- 'fields': { 
- 'matchfeatures': { 
- 'my\_feature': { 
+ 'fields': \{ 
+ 'matchfeatures': \{ 
+ 'my\_feature': \{ 
  'MY\_LABEL\_VALUE': 1.0 
- } 
- } 
- } 
- }\] 
- }],
+ \} 
+ \} 
+ \} 
+ \}\] 
+ \}],
   [Third, the match-features need to be converted into a usable form. That is, either in a custom searcher , or in your application.],
   [Without summary fetching, the query execution is much simpler.],
   [In the diagram above, one network round-trip is eliminated when compared to the typical query execution. Also, this eliminates all the potential summary fetching problems because documents are findable even during data redistributions.],
-  [id="results"\>Results],
   [When the solution was deployed, we immediately noticed a drop in tail latencies. But the most important thing was that there were no more latency spikes during data redistribution!],
   [When the change was deployed, the p99 latencies dropped from ~9 ms to about 3 ms. And the latency spikes are gone.],
   [Currently, the mean query latency with ~7.5k RPS per container node is around 430 microseconds.],
   [The max latencies (pro tip: always monitor max latencies) are typically ~20 ms. Those ~200 ms spikes are due to packet loss in the network layer (not Vespa specifics).],
-  [id="discussion"\>Discussion],
   [Even though the optimisation is nice, the journey is not yet finished. There are other ways to get even more out of Vespa. Here are several ideas:],
   [The current implementation creates tensors from attributes at query time. They could be precalculated during indexing.],
   [The current implementation is usable when querying one schema. For multi-schema support, you either have to encode the datatype name in the document attributes or ask Vespa to add sddocname to the response. However, having sddocname is filled only on receiving the summary .],
   [A custom renderer could be implemented that serialises data based on the schema into a binary format, avoiding JSON serialisation.],
-  [id="summary"\>Summary],
   [This new trick of selecting only the matchfeatures in Vespa 8.596.7 , helps eliminate not only a network round-trip, but also problems and latencies associated with summary fetching. The overhead of converting attributes into tensors and transmitting slightly more data over the network in our setup was negligible. Of course, this optimisation is not a silver-bullet for all use cases, but when summary fetching is problematic, it really helps.],
   [Kudos to the team for this great work! And thanks to everyone who helped!],
-  [id="ps"\>P. S.],
+  [P. S.],
   [A fun fact is that the initial hypothesis for latency spikes was the pauses of the JVM garbage collector. However, after setting up the generational ZGC the latency spikes were still there. Garbage collector is almost never a root cause.],
 ),
   insert-map: (:),
@@ -335,10 +228,8 @@ error: could not compile \`playground\`.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Validates Type 2.0],
   author: [Jake Yesbeck],
   source-name: [Jake Yesbeck],
@@ -347,34 +238,32 @@ error: could not compile \`playground\`.],
   [One of the first projects that I worked on during this Year of Commits was validates\_type . In case that name is too obscure, validates\_type is a gem for validating that a specific value is exactly the type it is expected to be. The validates\_type library is compatible to ActiveModel style validations.],
   [Originally, the validates\_type gem was very strict with what it validated against. It started with basic included Ruby types like Integer , Float , and String . This was a fine first step but proved too restrictive for basically any use case.],
   [In a recent update, the validates\_type gem has been extended to validate against any defined type in a system. With this update, the uses of this gem greatly increased. They increased so much that it is possible more than 2 people will use it, and that would be pretty awesome.],
-  [id="still-valid"\>Still Valid],
   [The validates\_type gem can be useful for a system that cares about exact types at save time. For instance, a model that has an incorrect database column type (because of legacy or other reasons) can still control validation over its data just the same.],
   [If a “junior developer who is now somehow the CTO” created the original system. And if that developer did something like create an is\_published column on the authors table set as a varchar , validates\_type makes that less of an issue.],
-  [class="highlighter-rouge"\> class Author \> author = Author . new 
+  [class Author \> author = Author . new 
  \# =\> \# 
  \> author . is\_published = 'foo' 
  \# =\> "foo" 
  \> author . save! 
  \# =\> ActiveRecord:: RecordInvalid: Validation failed: is\_published is expected to be a Boolean and is not.],
   [This way, there is not a bunch of random data in the authors table because of a bad decision made a while ago. More examples on how this gem can be used are found at the prequel to this post and the project’s README .],
-  [id="the-new-hotness"\>The New Hotness],
   [The 2.0 update brought flexibility to validates\_type . This enables greater control over serialized attributes on ActiveRecord objects.],
   [In a system with an intermediary class inserted between the column assignment and the column serialization, this extension can show its true value.],
   [In an application that deals with Books , each book must store information regarding how it was published:],
-  [class="highlighter-rouge"\> class Book \> book = Book . new 
- \> book . publishing\_information = { foo: :bar } 
+  [class Book \> book = Book . new 
+ \> book . publishing\_information = \{ foo: :bar \} 
  \> book . save! 
- \# =\> UPDATE "books" SET "publishing\_information" = \$1, "updated\_at" = \$2 WHERE "books"."id" = \$3 \[\["publishing\_information", "{}"\], \["updated\_at", "2015-11-30 05:04:09.480707"\], \["id", 3\]\]],
+ \# =\> UPDATE "books" SET "publishing\_information" = \$1, "updated\_at" = \$2 WHERE "books"."id" = \$3 \[\["publishing\_information", "\{\}"\], \["updated\_at", "2015-11-30 05:04:09.480707"\], \["id", 3\]\]],
   [If, like the above example, the PublishingInformation class is forgiving, this will silently fail. The book.publishing\_information will not be set to the correct value.],
   [On the other hand, if the PublishingInformation does fail, it might not do so in an obvious way.],
   [However, with validates\_type , this issue becomes explicit.],
   [Adding the type validation to the book model:],
-  [class="highlighter-rouge"\> class Book \> b = Book . new 
- \> b . publishing\_information = { a: :b } 
+  [class Book \> b = Book . new 
+ \> b . publishing\_information = \{ a: :b \} 
  \> b . save! 
  \# =\> ActiveRecord:: RecordInvalid: Validation failed: publishing\_information is expected to be a PublishingInformation and is not.],
   [Now, a readable error is produced and nothing is left to the imagination.],
-  [id="a-reasonable-start"\>A Reasonable Start],
+  [A Reasonable Start],
   [Was the used example extremely specific? Yes. But, I would wager that at least one application out there has had a problem similar to this and validates\_type can ensure that it never happens again. Hopefully, this example and the problem it did end up solving with at least act as inspiration for this library’s other uses out in the wild.],
   [I have found a use for this type of validation and hope others can as well. If a use case arises that this gem does not support but could easily, I invite everyone to contribute to it .],
 ),
@@ -384,10 +273,8 @@ error: could not compile \`playground\`.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Haskell Researchers Announce Discovery of Industry Programmer Who Gives a Shit],
   author: [Steve Yegge],
   source-name: [Steve Yegge],
@@ -419,101 +306,112 @@ error: could not compile \`playground\`.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The AI boom has plunged a small Pennsylvania town into chaos],
   author: [Rebecca Egan McCarthy],
   source-name: [Grist],
   images: (),
   paragraphs: (
-  [class="has-drop-cap has-default-font-family"\>“I don’t like to see anyone upset,” said Nick Farris of Provident Real Estate Advisors. He was sitting in the front of a crowd of roughly 150 inside Valley View High School’s auditorium in Archbald, a town of about 7,500, huddled between two mountain ranges in Pennsylvania’s Lackawanna Valley. Farris was there to represent the developer for Project Scott, one of many data center campuses coming to town. “However,” he said. “I think that this is the best data center site in this area of the country, by far.” The audience had been fairly quiet, bundled in thick coats against the late January cold. But as Farris spoke about data centers as a boon for communities, they began to laugh, drawing a rebuke from town officials.],
-  [class="has-default-font-family"\>“What about the children?” someone shouted from the crowd. The children were watching from the walls; long banners of Valley View Performing Arts students hanging around the auditorium like championship pennants. Project Scott and four other data facilities will sit just a few thousand feet from the middle and high schools.],
-  [class="has-default-font-family"\>“Isn’t there a missile plant next door?” Farris said, getting aggravated. He was referring to Lockheed Martin’s 350,000-square-foot Missiles and Fire Control facility directly next to the high school, parts of which are highly contaminated .],
-  [class="has-default-font-family"\>“That sucks too!” another attendee yelled back. This was nothing to worry about, Farris tried to convince the audience. This would bring in tax revenue, he said. It was just an office park, albeit one with roughly 450 diesel backup generators.],
-  [class="has-default-font-family"\>“It’s going to be away from everyone,” Farris kept repeating, to rising jeers. He was wearing a knit turtleneck with a large American flag emblazoned across the chest.  “It’s not going to bother anyone.”],
-  [class="has-default-font-family"\>The specifications say something different: Five developers are planning to build six data center campuses in Archbald, which will cover a full 14 percent of the town, evict a trailer park, and border many residential properties. One campus alone, as The Scranton Times-Tribune reporter Frank Lefneskey pointed out, is expected to use more power than the region’s largest power plant is able to produce.],
-  [class="has-default-font-family"\>Pennsylvania has become an epicenter of the data center boom in the United States, with over 50 campuses in development. Eleven of them are slated for Lackawanna County alone. Archbald, with six campuses composed of 51 massive buildings, has the most of any municipality in Pennsylvania.],
-  [class="has-default-font-family"\>Despite the public outcry, it has been surprisingly difficult to learn what Archbald’s elected officials think of the massive industry moving in. None of the town’s seven council members responded to my emails, so I stopped by the borough administration building in person a few weeks before Christmas, and was told to wait in the lobby while they held an informal closed meeting in council chambers. When the door opened, it was clear that anyone who actually had the power to make or break the data center plans had quietly filed out the back, leaving me with Archbald’s unelected borough manager, Dan Markey, who essentially runs the town, but cannot vote for or against development.],
-  [class="has-default-font-family"\>What did he think about artificial general intelligence, or AGI — the idea that eventually these efforts will produce something like a “computer god” capable of solving climate change, ending hunger, revealing the full breadth of science, and performing any number of other miracles? “I believe in one God, and it’s not a computer,” Markey told me evenly. By now, hundreds of towns across the country have been caught up in the rush to build large language models that can parse unfathomable amounts of data to write copy, answer any query, develop new vaccines, and likely render a large number of jobs obsolete. That rush accelerated into an all-out arms race over the past year. What it means in practice is an enormous amount of data centers — enough to approximate a minor deity and enough, as OpenAI co-founder and former chief scientist Ilya Sutskever once speculated, to “cover the Earth.” Markey told me he had ChatGPT on his phone, but didn’t use it much.],
-  [class="has-default-font-family"\>“I don’t think anyone in their right mind wants to see the world covered in data centers,” Markey said. “\[But\], according to Pennsylvania law, we have to have a zone for everything. An adult bookstore, a strip club, a concrete and asphalt plant — anything that wants to come here. We have to have a zone for it. If it’s not zoned, it’s allowed to go anywhere.”],
-  [class="has-default-font-family"\>In most states, towns have the right to exclude businesses that they find disagreeable — a wealthy suburb, for example, would likely reject a landfill or gas plant — but in Pennsylvania, towns must allocate some patch of land to these “undesirable industries.” Some municipalities deal with this by forming what are called zoning collaboratives, which allow them to plan as a region for pollution. One town might get data centers, another gas plants, another a landfill. Markey approached the nearby boroughs of Blakely and Dickson City to discuss the possibility, but the data center development rush has outpaced him.],
-  [class="has-default-font-family"\>Whatever’s attracting data centers to the area, it’s forced Markey to answer for a rush of development, unprecedented since the town was settled in the 1840s in service of an industry that will bring vanishingly few jobs. Residents kept bringing up the threat of collapse — the network of empty mine shafts running underground, the town beneath the town, the structural instability that would accompany these massive buildings. The data centers would drive bears into town, they said, rattlesnakes into yards, and without trees to stabilize them, the mountains themselves would begin to crumble, sending landslides into the valley.],
-  [class="has-default-font-family"\>“I just try to listen, and I try to separate the valid concerns from the things that just sound like the sky is falling,” said Markey. “I was approached at a gas station a couple months ago and was told that I was going to kill everyone who lived in Archbald. I don’t think that’s valid. I don’t think that’s a reasonable argument to have with me.”],
-  [class="has-default-font-family"\>But the anger and suspicion directed towards town officials, incoming tech companies, and a powerful local businessman with reported mafia connections show no signs of abating. The AI rush is often spoken of in terms of grand harms or potential social goods that feel entirely divorced from the way it’s playing out on the ground — as an unmitigated mess, breeding confusion, paranoia, and fury.],
+  [“I don’t like to see anyone upset,” said Nick Farris of Provident Real Estate Advisors. He was sitting in the front of a crowd of roughly 150 inside Valley View High School’s auditorium in Archbald, a town of about 7,500, huddled between two mountain ranges in Pennsylvania’s Lackawanna Valley. Farris was there to represent the developer for Project Scott, one of many data center campuses coming to town. “However,” he said. “I think that this is the best data center site in this area of the country, by far.” The audience had been fairly quiet, bundled in thick coats against the late January cold. But as Farris spoke about data centers as a boon for communities, they began to laugh, drawing a rebuke from town officials.],
+  [“What about the children?” someone shouted from the crowd. The children were watching from the walls; long banners of Valley View Performing Arts students hanging around the auditorium like championship pennants. Project Scott and four other data facilities will sit just a few thousand feet from the middle and high schools.],
+  [“Isn’t there a missile plant next door?” Farris said, getting aggravated. He was referring to Lockheed Martin’s 350,000-square-foot Missiles and Fire Control facility directly next to the high school, parts of which are highly contaminated .],
+  [“That sucks too!” another attendee yelled back. This was nothing to worry about, Farris tried to convince the audience. This would bring in tax revenue, he said. It was just an office park, albeit one with roughly 450 diesel backup generators.],
+  [“It’s going to be away from everyone,” Farris kept repeating, to rising jeers. He was wearing a knit turtleneck with a large American flag emblazoned across the chest.  “It’s not going to bother anyone.”],
+  [The specifications say something different: Five developers are planning to build six data center campuses in Archbald, which will cover a full 14 percent of the town, evict a trailer park, and border many residential properties. One campus alone, as The Scranton Times-Tribune reporter Frank Lefneskey pointed out, is expected to use more power than the region’s largest power plant is able to produce.],
+  [Pennsylvania has become an epicenter of the data center boom in the United States, with over 50 campuses in development. Eleven of them are slated for Lackawanna County alone. Archbald, with six campuses composed of 51 massive buildings, has the most of any municipality in Pennsylvania.],
+  [Despite the public outcry, it has been surprisingly difficult to learn what Archbald’s elected officials think of the massive industry moving in. None of the town’s seven council members responded to my emails, so I stopped by the borough administration building in person a few weeks before Christmas, and was told to wait in the lobby while they held an informal closed meeting in council chambers. When the door opened, it was clear that anyone who actually had the power to make or break the data center plans had quietly filed out the back, leaving me with Archbald’s unelected borough manager, Dan Markey, who essentially runs the town, but cannot vote for or against development.],
+  [What did he think about artificial general intelligence, or AGI — the idea that eventually these efforts will produce something like a “computer god” capable of solving climate change, ending hunger, revealing the full breadth of science, and performing any number of other miracles? “I believe in one God, and it’s not a computer,” Markey told me evenly. By now, hundreds of towns across the country have been caught up in the rush to build large language models that can parse unfathomable amounts of data to write copy, answer any query, develop new vaccines, and likely render a large number of jobs obsolete. That rush accelerated into an all-out arms race over the past year. What it means in practice is an enormous amount of data centers — enough to approximate a minor deity and enough, as OpenAI co-founder and former chief scientist Ilya Sutskever once speculated, to “cover the Earth.” Markey told me he had ChatGPT on his phone, but didn’t use it much.],
+  [“I don’t think anyone in their right mind wants to see the world covered in data centers,” Markey said. “\[But\], according to Pennsylvania law, we have to have a zone for everything. An adult bookstore, a strip club, a concrete and asphalt plant — anything that wants to come here. We have to have a zone for it. If it’s not zoned, it’s allowed to go anywhere.”],
+  [In most states, towns have the right to exclude businesses that they find disagreeable — a wealthy suburb, for example, would likely reject a landfill or gas plant — but in Pennsylvania, towns must allocate some patch of land to these “undesirable industries.” Some municipalities deal with this by forming what are called zoning collaboratives, which allow them to plan as a region for pollution. One town might get data centers, another gas plants, another a landfill. Markey approached the nearby boroughs of Blakely and Dickson City to discuss the possibility, but the data center development rush has outpaced him.],
+  [Whatever’s attracting data centers to the area, it’s forced Markey to answer for a rush of development, unprecedented since the town was settled in the 1840s in service of an industry that will bring vanishingly few jobs. Residents kept bringing up the threat of collapse — the network of empty mine shafts running underground, the town beneath the town, the structural instability that would accompany these massive buildings. The data centers would drive bears into town, they said, rattlesnakes into yards, and without trees to stabilize them, the mountains themselves would begin to crumble, sending landslides into the valley.],
+  [“I just try to listen, and I try to separate the valid concerns from the things that just sound like the sky is falling,” said Markey. “I was approached at a gas station a couple months ago and was told that I was going to kill everyone who lived in Archbald. I don’t think that’s valid. I don’t think that’s a reasonable argument to have with me.”],
+  [But the anger and suspicion directed towards town officials, incoming tech companies, and a powerful local businessman with reported mafia connections show no signs of abating. The AI rush is often spoken of in terms of grand harms or potential social goods that feel entirely divorced from the way it’s playing out on the ground — as an unmitigated mess, breeding confusion, paranoia, and fury.],
   [The small town of Archbald, Pennsylvania, has found itself at the center of an AI boom. Rebecca Egan McCarthy \/ Grist],
-  [class="has-drop-cap has-default-font-family"\>Millions of years ago the Lackawanna Valley was an intertidal zone: swamp land bordering a shallow sea that stretched out to Central Pennsylvania. That sea was forced skyward as the African and North American continents collided, raising the mountains from the earth and crumpling and compressing the valley’s dying plant life in tight laminations, until it finally hardened into what’s considered the gold standard for coal — smokeless, slow-burning anthracite.],
-  [class="has-default-font-family"\>Anthracite is rare: Almost 90 percent of the world’s recoverable deposits lie buried in Northeastern Pennsylvania, and it represents only 1 percent of global coal stocks (the majority being the soft, sooty bituminous coal that you find in the western half of the state and across West Virginia), but it was the most in-demand fuel for household heating for over a century. Its discovery brought a rush of mining companies to the region, transforming the Lackawanna Valley from a mass of overgrown forest into a crucial coal production and transportation hub for New York and Philadelphia’s energy markets.],
-  [class="has-default-font-family"\>Coal patch towns — in which everything,  the stores, the schools, the houses, were owned by coal companies — sprang up across the valley. Scranton became known as the “Electric City,” with the region’s bountiful fuel reserves powering some of the first street lamps and electric trolleys. The economic boom was short-lived though. Oil quickly outpaced coal, and a devastating flood in the 1960s effectively ended the industry, by which time the region was so thoroughly hollowed out that the Pennsylvania secretary of mining warned the city of Scranton “was sitting on toothpicks” and would be more cost-effective to abandon than reclaim.],
-  [class="has-default-font-family"\>The drive into Archbald is especially beautiful in fall — gently rolling hills covered in foliage, rivers winding lazily past clapboard houses — but winter brings a low, fixed gray sky and a perpetual blanket of snow. Without the forgiving cover of leaves, it’s easier for the old industrial history to lurch into view. The ground gives way occasionally, and huge, black mountains of mining waste called culm (pronounced “column”) dot the landscape.],
-  [class="has-default-font-family"\>By now, the culm piles are covered in vegetation and appear almost natural, but you can tell something is off if you look closely — their slope is too abrupt; their backs covered by spindly, young trees, slipping downhill. They’re enormous health hazards, sending fine particulate matter into the surrounding neighborhoods and leeching toxins into the groundwater, but they’ve become familiar enough, a woman named Tiffany told me, that people hike on them and kids play on them. We were at the end of her block, looking up at a massive culm pile. “I’ve never walked back there,” she said. “It’s kind of creepy.”],
-  [class="has-default-font-family"\>The land on the other side of the heap has been sold to Project Gravity, whose developers intend to build seven 138,000-square-foot buildings along Eynon-Jermyn Road. It will be bordered by two more data center campuses, known as Project Scott and Project North; across the road will be yet another campus called Project Boson. Further down Eynon-Jermyn Road is the Wildcat Ridge AI Center. Tiffany lives just over the town line in Jermyn, meaning she won’t benefit from the increased tax income, nor can she voice an opinion at the Archbald town meetings, even though the data centers are effectively in her backyard.],
-  [class="has-default-font-family"\>I’d met Tiffany a few months earlier in a nearby park, along with other members of a fast-growing group of locals fighting the new developments. I’d reached out to them through the Stop Archbald Data Centers Facebook group, which now has over 5,000 members, equal to nearly two-thirds the size of the town. Local opposition to data centers has swept the nation this year, with concerns over rising electricity costs, reliance on fossil fuels, excess water use and noise, pollution, and their placement in or near residential areas. These fights have forged unlikely political alliances and will potentially imperil incumbents come this year’s midterm elections. According to a Financial Times analysis , at least 370 measures to regulate the AI industry were introduced in state legislatures this past year, and roughly 80 percent of Republicans and Democrats believe the industry needs more regulation.],
-  [class="has-default-font-family"\>“We moved from a couple towns over and built a new house, thinking this was a good place to go,” said Archbald resident Ann Beynon, who grew up by a Superfund site in nearby Throop. She’d been looking to settle down somewhere in the area where her kids wouldn’t be at risk of lead poisoning. There was a landfill in Throop and a gas plant in Jessup. “And now this is happening” in Archbald, she said while gathered in the park.],
-  [class="has-default-font-family"\>Tiffany, Ann, and the others had brought maps to our meeting to demonstrate the scale of the problem. They were not, they explained, asking for the data centers to leave entirely — they just wanted them confined to industrial zones. They felt town council members were unprepared and ill-informed on this issue, ready to jump at the prospect of tax money without looking at the long term implications. When the first data centers began to arrive in early 2025, Archbald’s zoning code classified them as roughly on par with commercial office buildings, allowing them to be built in some commercial zones. Residents fought back, demanding new zoning laws that would limit data centers to fully industrial areas away from the center of town, but the updated zoning ordinance passed last November wouldn’t go that far. Instead, they still allow facilities to be built next to residential neighborhoods — such as the Highlands, a condo complex occupied largely by retirees, and a trailer park called Valley View Estates, whose owner has agreed to sell the land to a data center developer. Residents are set to be evicted next month, on April 15.],
-  [class="has-default-font-family"\>Developers moved to purchase land before the ordinance went into effect, leaving Archbald with little recourse to stop them, said Brigitte Meyer, an attorney at PennFuture, a nonprofit environmental advocacy organization. Meyer has been sounding the alarm for a year now, warning municipalities across Pennsylvania that if they don’t get out in front of the data center boom, they could be overrun.],
-  [class="has-default-font-family"\>“The tragic irony is that it’s really hard to get the community activated at this on the front end, when things are more hypothetical,” she said. “People’s interest gets piqued when there’s a specific proposal. But by the time it gets to that point, the period has already passed where the municipality has the most power to actually affect how that’s going to go.”],
-  [class="has-default-font-family"\>Valley View Estates isn’t far from Tiffany’s house, just up Eynon-Jermyn Road. Residents received their eviction notice last July, shortly after Project Gravity was announced. The facilities would cover the surrounding woods; more buildings would replace the junkyard down the street. They were hemmed in, and the park owner wanted out. When reports of the eviction hit local news, “people were so horrible,” said Matthew Bucksbee, a Valley View resident. “One of the kids that commented, he’s like ‘Yeah, just get rid of that place, it’s infested with drugs.’”],
-  [class="has-default-font-family"\>Many residents, Bucksbee’s fiancée, Candace May, explained, are disabled or caretakers for disabled relatives; many don’t even have cars and subsist largely off the one Dollar General within walking distance. They’ve been told they cannot legally challenge the eviction notice until the land is actually sold, and they’ve received little to no information from the owner since — although they were warned, May said, that anyone withholding rent in the interim would be evicted immediately.],
-  [class="has-default-font-family"\>May’s mother, Sharon Williams, works as a home health aid for three disabled men, making \$17.50 an hour. It’s enough for her to live on — she’s paid off her car, she can swing groceries, her internet, her phone, her healthcare costs, and the lot rent for her trailer, but it doesn’t leave her with much left over at the end of every month. She can’t afford a more expensive place, nor does she qualify for Section 8 housing, putting her in an impossible situation as the April eviction deadline looms.],
-  [class="has-default-font-family"\>Despite their name, mobile homes are not really mobile. Most will fall apart if you try to relocate them, and although residents generally own their trailers, they pay nominal rent to a park owner, who owns the land — in this case, a couple who run a beer store outside Philadelphia. As the cost of living skyrockets, it’s the only stable, affordable housing many are able to find.  According to Princeton’s Eviction Lab , the average lot rent nationwide was only \$470 a month in 2023; Williams pays just \$390, but residents are uniquely vulnerable to displacement. When a trailer park closes, many people are forced to abandon their homes or sell them for next to nothing. If they don’t own their trailer outright, they can find themselves homeless and still paying off a mortgage.],
-  [class="has-default-font-family"\>The county’s public housing is roughly 98 percent occupied at the moment, according to a representative from the Lackawanna County Housing Authority. Placements are allocated by a point system, wherein victims of domestic violence, the homeless, and the disabled get first priority, but waitlists for one, two, and three bedrooms are currently closed. Waitlists for studios and four-bedroom apartments remain open, but it can take anywhere between one to five years to get into housing. For now at least, Valley View residents have few good options.],
-  [class="has-drop-cap has-default-font-family"\>Tech companies are clearly coming to Archbald for the Susquehanna-Roseland powerline, a \$1.4 billion high-voltage transmission line, which would give them access to bulk power. But locals also suspect that the area’s cheap land, lax zoning laws, and centralized capital also appealed to developers. This is old coal territory, and when the mines closed down, a lot of land wound up concentrated in just a few hands.],
-  [class="has-default-font-family"\>“Who runs everything with a lot of money? The name DeNaples is on a lot of these buildings,” one Archbald resident told me, after speaking out against the data centers at a utility hearing at the University of Scranton in December. “He’s got his tentacles all over the place.”],
-  [class="has-default-font-family"\>DeNaples is Louis DeNaples, an enormously powerful businessman infamous in the Lackawanna Valley , who has long been plagued by accusations of connections to organized crime — specifically to the late mob boss of Northeastern Pennsylvania, Russell Bufalino, who served as counsel to Jimmy Hoffa and may have had him killed , according to some popular accounts. Bufalino was thrust onto the national stage most recently by Martin Scorsese’s 2019 magnum opus, The Irishman , played by a quietly sinister Joe Pesci, but DeNaples himself has no such Hollywood notoriety. He remains a grim specter across the region though — some residents say they are scared of him and attribute a great deal of power to him. “If your little league team needs jerseys, \[DeNaples\] provides them,” another local explained. “If the local police department needs a new car, he donates.”],
-  [class="has-default-font-family"\>DeNaples was one of nine children and grew up poor, selling Christmas trees with his brother Dominick in a vacant lot and reselling junk cars for parts. He reportedly bought his first car for \$18 and hauled it himself up the steep hill to his family’s house over the course of two days. Countless cars later, he opened the Keystone Sanitary Landfill, swallowing vast amounts of garbage from New York and Philadelphia, and making DeNaples a millionaire. Eventually, he expanded into real estate, then outwards and upwards from there.],
-  [class="has-default-font-family"\>In the late 70s, he pleaded no contest to a conspiracy charge of defrauding the federal government out of over half a million dollars for cleanup work after Hurricane Agnes, but was never convicted. One dissenting juror forced an acquittal, and a Bufalino family underboss was later sent to prison for witness tampering. The charge would come back to haunt him though. In 2006, DeNaples purchased nearby Mount Airy Casino, but was forced to hand control over to his daughter after it was revealed that he’d lied about his relationship to organized crime.],
-  [class="has-default-font-family"\>Decades later, he remains a major power broker in the area: one of the largest landowners, the proprietor of many businesses, and the chairman of First National Bank. His name is not just on buildings, but on billboards all across the metro area. DeNaples hasn’t sold any land directly to the data centers, but in 2023 he sold a 186-acre parcel to another local businessman, Jim Marzolino of Kriger Construction, who then sold it to Project Gravity for over \$12 million, according to public records . The transaction has raised hackles locally, although there is no evidence DeNaples saw any benefit from the heavy markup of his former land. More recently, DeNaples’ nephew sold land to a proposed data center in nearby Olyphant.],
-  [class="has-default-font-family"\>But plenty of other local businessmen, without the alleged mob ties, are more directly involved in the data center boom — Marzolino, for example, or Anthony Domiano Jr., whose family runs a chain of local car dealerships, and who sold a large amount of land to Project South and Project North. Alpesh “Al” Patel, who runs the Al’s Quick Stop convenience store chain in the region, has partnered with Marzolino on development plans for Project Boson.],
-  [class="has-drop-cap has-default-font-family"\>On a freezing night a couple weeks before Christmas, locals gathered at The University of Scranton for a public hearing on their electricity bills. PPL Electric Utilities had announced a rate hike for the fourth time in two years — this one, raising consumer electricity prices by 7 percent.],
-  [class="has-default-font-family"\>“I make about triple the Pennsylvania minimum wage — and I still freeze in my house,” said Jordan Moran, a student in cybersecurity at Lackawanna College, who also works a full-time job. “My thermostat is at 60 degrees, and my PPL bill is still nearly 20 percent of my monthly income.”],
-  [class="has-default-font-family"\>
-PPL serves about 1.5 million ratepayers in Pennsylvania, and its territory has been overrun by data center proposals in recent years, significantly raising electricity prices in certain areas of the country. But under the utility’s proposed plan, data centers would receive a rate cut , which rankled attendees. Although the region needs jobs, “there’s no potential job growth really, for the local people. I’m one of the few people who would actually be qualified to even apply for a job there once they put \[the data centers\] up,” Moran told me after the hearing. “We don’t have a lot of computer science majors out there.”],
-  [class="slide-content"\> Does your community have a data center ordinance in place? 
+  [Millions of years ago the Lackawanna Valley was an intertidal zone: swamp land bordering a shallow sea that stretched out to Central Pennsylvania. That sea was forced skyward as the African and North American continents collided, raising the mountains from the earth and crumpling and compressing the valley’s dying plant life in tight laminations, until it finally hardened into what’s considered the gold standard for coal — smokeless, slow-burning anthracite.],
+  [Anthracite is rare: Almost 90 percent of the world’s recoverable deposits lie buried in Northeastern Pennsylvania, and it represents only 1 percent of global coal stocks (the majority being the soft, sooty bituminous coal that you find in the western half of the state and across West Virginia), but it was the most in-demand fuel for household heating for over a century. Its discovery brought a rush of mining companies to the region, transforming the Lackawanna Valley from a mass of overgrown forest into a crucial coal production and transportation hub for New York and Philadelphia’s energy markets.],
+  [Coal patch towns — in which everything,  the stores, the schools, the houses, were owned by coal companies — sprang up across the valley. Scranton became known as the “Electric City,” with the region’s bountiful fuel reserves powering some of the first street lamps and electric trolleys. The economic boom was short-lived though. Oil quickly outpaced coal, and a devastating flood in the 1960s effectively ended the industry, by which time the region was so thoroughly hollowed out that the Pennsylvania secretary of mining warned the city of Scranton “was sitting on toothpicks” and would be more cost-effective to abandon than reclaim.],
+  [The drive into Archbald is especially beautiful in fall — gently rolling hills covered in foliage, rivers winding lazily past clapboard houses — but winter brings a low, fixed gray sky and a perpetual blanket of snow. Without the forgiving cover of leaves, it’s easier for the old industrial history to lurch into view. The ground gives way occasionally, and huge, black mountains of mining waste called culm (pronounced “column”) dot the landscape.],
+  [By now, the culm piles are covered in vegetation and appear almost natural, but you can tell something is off if you look closely — their slope is too abrupt; their backs covered by spindly, young trees, slipping downhill. They’re enormous health hazards, sending fine particulate matter into the surrounding neighborhoods and leeching toxins into the groundwater, but they’ve become familiar enough, a woman named Tiffany told me, that people hike on them and kids play on them. We were at the end of her block, looking up at a massive culm pile. “I’ve never walked back there,” she said. “It’s kind of creepy.”],
+  [The land on the other side of the heap has been sold to Project Gravity, whose developers intend to build seven 138,000-square-foot buildings along Eynon-Jermyn Road. It will be bordered by two more data center campuses, known as Project Scott and Project North; across the road will be yet another campus called Project Boson. Further down Eynon-Jermyn Road is the Wildcat Ridge AI Center. Tiffany lives just over the town line in Jermyn, meaning she won’t benefit from the increased tax income, nor can she voice an opinion at the Archbald town meetings, even though the data centers are effectively in her backyard.],
+  [I’d met Tiffany a few months earlier in a nearby park, along with other members of a fast-growing group of locals fighting the new developments. I’d reached out to them through the Stop Archbald Data Centers Facebook group, which now has over 5,000 members, equal to nearly two-thirds the size of the town. Local opposition to data centers has swept the nation this year, with concerns over rising electricity costs, reliance on fossil fuels, excess water use and noise, pollution, and their placement in or near residential areas. These fights have forged unlikely political alliances and will potentially imperil incumbents come this year’s midterm elections. According to a Financial Times analysis , at least 370 measures to regulate the AI industry were introduced in state legislatures this past year, and roughly 80 percent of Republicans and Democrats believe the industry needs more regulation.],
+  [“We moved from a couple towns over and built a new house, thinking this was a good place to go,” said Archbald resident Ann Beynon, who grew up by a Superfund site in nearby Throop. She’d been looking to settle down somewhere in the area where her kids wouldn’t be at risk of lead poisoning. There was a landfill in Throop and a gas plant in Jessup. “And now this is happening” in Archbald, she said while gathered in the park.],
+  [Tiffany, Ann, and the others had brought maps to our meeting to demonstrate the scale of the problem. They were not, they explained, asking for the data centers to leave entirely — they just wanted them confined to industrial zones. They felt town council members were unprepared and ill-informed on this issue, ready to jump at the prospect of tax money without looking at the long term implications. When the first data centers began to arrive in early 2025, Archbald’s zoning code classified them as roughly on par with commercial office buildings, allowing them to be built in some commercial zones. Residents fought back, demanding new zoning laws that would limit data centers to fully industrial areas away from the center of town, but the updated zoning ordinance passed last November wouldn’t go that far. Instead, they still allow facilities to be built next to residential neighborhoods — such as the Highlands, a condo complex occupied largely by retirees, and a trailer park called Valley View Estates, whose owner has agreed to sell the land to a data center developer. Residents are set to be evicted next month, on April 15.],
+  [Candace May stands outside her home in the Valley View Estates. May and other residents have been told they will be evicted in April. Rebecca Egan McCarthy \/ Grist],
+  [“These people have no resources,” said Beynon. “They can’t just get up and move — they’re really scared.”],
+  [Developers moved to purchase land before the ordinance went into effect, leaving Archbald with little recourse to stop them, said Brigitte Meyer, an attorney at PennFuture, a nonprofit environmental advocacy organization. Meyer has been sounding the alarm for a year now, warning municipalities across Pennsylvania that if they don’t get out in front of the data center boom, they could be overrun.],
+  [“The tragic irony is that it’s really hard to get the community activated at this on the front end, when things are more hypothetical,” she said. “People’s interest gets piqued when there’s a specific proposal. But by the time it gets to that point, the period has already passed where the municipality has the most power to actually affect how that’s going to go.”],
+  [Valley View Estates isn’t far from Tiffany’s house, just up Eynon-Jermyn Road. Residents received their eviction notice last July, shortly after Project Gravity was announced. The facilities would cover the surrounding woods; more buildings would replace the junkyard down the street. They were hemmed in, and the park owner wanted out. When reports of the eviction hit local news, “people were so horrible,” said Matthew Bucksbee, a Valley View resident. “One of the kids that commented, he’s like ‘Yeah, just get rid of that place, it’s infested with drugs.’”],
+  [Many residents, Bucksbee’s fiancée, Candace May, explained, are disabled or caretakers for disabled relatives; many don’t even have cars and subsist largely off the one Dollar General within walking distance. They’ve been told they cannot legally challenge the eviction notice until the land is actually sold, and they’ve received little to no information from the owner since — although they were warned, May said, that anyone withholding rent in the interim would be evicted immediately.],
+  [May’s mother, Sharon Williams, works as a home health aid for three disabled men, making \$17.50 an hour. It’s enough for her to live on — she’s paid off her car, she can swing groceries, her internet, her phone, her healthcare costs, and the lot rent for her trailer, but it doesn’t leave her with much left over at the end of every month. She can’t afford a more expensive place, nor does she qualify for Section 8 housing, putting her in an impossible situation as the April eviction deadline looms.],
+  [Despite their name, mobile homes are not really mobile. Most will fall apart if you try to relocate them, and although residents generally own their trailers, they pay nominal rent to a park owner, who owns the land — in this case, a couple who run a beer store outside Philadelphia. As the cost of living skyrockets, it’s the only stable, affordable housing many are able to find.  According to Princeton’s Eviction Lab , the average lot rent nationwide was only \$470 a month in 2023; Williams pays just \$390, but residents are uniquely vulnerable to displacement. When a trailer park closes, many people are forced to abandon their homes or sell them for next to nothing. If they don’t own their trailer outright, they can find themselves homeless and still paying off a mortgage.],
+  [The county’s public housing is roughly 98 percent occupied at the moment, according to a representative from the Lackawanna County Housing Authority. Placements are allocated by a point system, wherein victims of domestic violence, the homeless, and the disabled get first priority, but waitlists for one, two, and three bedrooms are currently closed. Waitlists for studios and four-bedroom apartments remain open, but it can take anywhere between one to five years to get into housing. For now at least, Valley View residents have few good options.],
+  [“Everybody’s worried about where they’re going to go,” said Bucksbee.],
+  [A “no data centers” sign sits in front of a home in Valley View Estates, which is set to be surrounded by data centers. Rebecca Egan McCarthy \/ Grist],
+  [Tech companies are clearly coming to Archbald for the Susquehanna-Roseland powerline, a \$1.4 billion high-voltage transmission line, which would give them access to bulk power. But locals also suspect that the area’s cheap land, lax zoning laws, and centralized capital also appealed to developers. This is old coal territory, and when the mines closed down, a lot of land wound up concentrated in just a few hands.],
+  [“Who runs everything with a lot of money? The name DeNaples is on a lot of these buildings,” one Archbald resident told me, after speaking out against the data centers at a utility hearing at the University of Scranton in December. “He’s got his tentacles all over the place.”],
+  [DeNaples is Louis DeNaples, an enormously powerful businessman infamous in the Lackawanna Valley , who has long been plagued by accusations of connections to organized crime — specifically to the late mob boss of Northeastern Pennsylvania, Russell Bufalino, who served as counsel to Jimmy Hoffa and may have had him killed , according to some popular accounts. Bufalino was thrust onto the national stage most recently by Martin Scorsese’s 2019 magnum opus, The Irishman , played by a quietly sinister Joe Pesci, but DeNaples himself has no such Hollywood notoriety. He remains a grim specter across the region though — some residents say they are scared of him and attribute a great deal of power to him. “If your little league team needs jerseys, \[DeNaples\] provides them,” another local explained. “If the local police department needs a new car, he donates.”],
+  [DeNaples was one of nine children and grew up poor, selling Christmas trees with his brother Dominick in a vacant lot and reselling junk cars for parts. He reportedly bought his first car for \$18 and hauled it himself up the steep hill to his family’s house over the course of two days. Countless cars later, he opened the Keystone Sanitary Landfill, swallowing vast amounts of garbage from New York and Philadelphia, and making DeNaples a millionaire. Eventually, he expanded into real estate, then outwards and upwards from there.],
+  [In the late 70s, he pleaded no contest to a conspiracy charge of defrauding the federal government out of over half a million dollars for cleanup work after Hurricane Agnes, but was never convicted. One dissenting juror forced an acquittal, and a Bufalino family underboss was later sent to prison for witness tampering. The charge would come back to haunt him though. In 2006, DeNaples purchased nearby Mount Airy Casino, but was forced to hand control over to his daughter after it was revealed that he’d lied about his relationship to organized crime.],
+  [Louis DeNaples, a regional power broker in the Lackawanna Valley, speaks to a colleague at the Mount Airy Casino Resort. 
+ Steve Klaver \/ AP],
+  [Decades later, he remains a major power broker in the area: one of the largest landowners, the proprietor of many businesses, and the chairman of First National Bank. His name is not just on buildings, but on billboards all across the metro area. DeNaples hasn’t sold any land directly to the data centers, but in 2023 he sold a 186-acre parcel to another local businessman, Jim Marzolino of Kriger Construction, who then sold it to Project Gravity for over \$12 million, according to public records . The transaction has raised hackles locally, although there is no evidence DeNaples saw any benefit from the heavy markup of his former land. More recently, DeNaples’ nephew sold land to a proposed data center in nearby Olyphant.],
+  [But plenty of other local businessmen, without the alleged mob ties, are more directly involved in the data center boom — Marzolino, for example, or Anthony Domiano Jr., whose family runs a chain of local car dealerships, and who sold a large amount of land to Project South and Project North. Alpesh “Al” Patel, who runs the Al’s Quick Stop convenience store chain in the region, has partnered with Marzolino on development plans for Project Boson.],
+  [As for Marzalino, he told The Scranton Times-Tribune his interest in data centers was spurred by a Bitcoin mining hobby.],
+  [Neither DeNaples nor Marzolino responded to repeated requests for comment from Grist.],
+  [On a freezing night a couple weeks before Christmas, locals gathered at The University of Scranton for a public hearing on their electricity bills. PPL Electric Utilities had announced a rate hike for the fourth time in two years — this one, raising consumer electricity prices by 7 percent.],
+  [“I make about triple the Pennsylvania minimum wage — and I still freeze in my house,” said Jordan Moran, a student in cybersecurity at Lackawanna College, who also works a full-time job. “My thermostat is at 60 degrees, and my PPL bill is still nearly 20 percent of my monthly income.”],
+  [PPL serves about 1.5 million ratepayers in Pennsylvania, and its territory has been overrun by data center proposals in recent years, significantly raising electricity prices in certain areas of the country. But under the utility’s proposed plan, data centers would receive a rate cut , which rankled attendees. Although the region needs jobs, “there’s no potential job growth really, for the local people. I’m one of the few people who would actually be qualified to even apply for a job there once they put \[the data centers\] up,” Moran told me after the hearing. “We don’t have a lot of computer science majors out there.”],
+  [Three questions to prepare for data center development in your community],
+  [Does your community have a data center ordinance in place? 
 An ordinance passed by your local elected representatives (your city council, for example) can restrict data centers to industrial areas, without overhauling the entire zoning code. However, an ordinance may not be able to restrict a data center developer that has already submitted an application to begin construction.],
-  [class="slide-content"\> Who is developing the data center, and on what timeline? 
+  [Who is developing the data center, and on what timeline? 
 If developers have applied to build data centers in your community, you can submit a right-to-know request to your local open records office. You can ask for site plans, conditional use applications, noise studies, and “will serve” letters from your local water and electric utility. The application should have contact information for the developers and/or their lawyers.],
-  [class="slide-content"\> How is it being cooled and powered? 
+  [How is it being cooled and powered? 
 Although data centers all have different ways of cooling and powering their campuses, local ordinances can steer a project in a community’s desired direction. The Sierra Club of Virginia, for example, recommends performing a water impact study, requiring any buildings to adhere to the highest heating and cooling standards, and — if possible — prohibiting cooling water discharge into the municipal water supply to minimize pollution.],
-  [class="has-default-font-family"\>As several people at the utility hearing pointed out, Trump was scheduled to speak the following night in the conference room at the DeNaples’ family casino, to begin what the president claimed would be a series of rallies across the country. Concerns of affordability — lost jobs, hiring freezes, inflation, skyrocketing bills, the kind of concerns that had brought people out to that utility meeting the night before — the president called, “a myth.” Something incredible was just over the horizon, he promised, growing closer by the day. “You’re going to see what happens over the next two years. It’s like a miracle is taking place,” he said, as he opened the rally. “All of the companies that are pouring their money into building right now — building plants in Pennsylvania and many other states — auto plants, AI plants, plants of every type.”],
-  [class="has-default-font-family"\>At this point, it appears all six data centers coming to the borough will pull from the grid. According to Archbald’s updated zoning agreement, oil, gas, and nuclear plants will not be allowed to co-locate alongside data centers. But the facilities are likely to fuel a fracking surge across Western Pennsylvania, and new buildings will bring hundreds of diesel backup generators to town. Should unsustainable power demands regularly force data centers off the grid, those generators could be running with relative frequency — emitting pollutants that have been linked to heart disease and cancer and generating noise that can disturb neighborhoods.],
-  [class="has-default-font-family"\>To make matters more complicated, Archbald’s water system is privately owned and operated by American Water, the nation’s largest private water company. Residents are concerned the town’s data center boom will also affect these bills and threaten their drinking supply. Project Gravity alone is expected to pump 360,000 gallons of water a day from Lake Scranton, which serves 134,570 people across Lackawanna County. Developers of  the Wildcat Ridge Data Center are proposing to pump up to 3.3 million gallons per day — some of it potentially from the minor sea of ground and rainwater that now fills the empty coal mines beneath the building site. The developer’s plans include a subsidence contingency, but looking over the scale of the place, it’s not hard to see where the residents are coming from when they talk of colossal buildings collapsing and the ready-made grave the mining industry left beneath the town.],
-  [class="has-default-font-family"\>All of this assumes these facilities actually get built. Experts have speculated that half of data center proposals could be duplicative , meaning developers are applying in multiple places across the country but will ultimately only build a single campus. It’s also unclear who the tenants will be at this point, and according to Markey, developers have been tight-lipped. “They’ll say cryptic things like, ‘You know of this company. You probably use them every day,” he told me. “They all say the same thing — that they’re next in line for power.”],
-  [class="has-default-font-family"\>Battery storage could replace some of those backup generators, closed-loop cooling (in which water is endlessly recycled) could reduce water usage, and harmful chemicals could be swapped out, but there’s really no way to know for sure until the tech company that will be leasing the space is known, making approving these projects a significant gamble.],
-  [class="has-default-font-family"\>There are few guardrails for the industry at the moment. In February, the Trump administration rolled out the Ratepayer Protection Pledge, an initiative that asks tech companies to voluntarily agree to pay the cost of upgrading transmission lines and building power plants — rather than having those costs passed along to the average consumer. It was almost immediately derided as “smoke and mirrors” and “a toothless, empty promise” by Democratic congressman Frank Pallone, the ranking member of the House Energy and Commerce Committee. Governor Shapiro, who has championed AI’s rush into Pennsylvania, recently proposed an initiative that would incentivize responsible data center development. Projects that agreed to bring their own transmission, offer transparent community engagement, and clear community benefits agreements would qualify for the state’s Permit Fast Track Program , which can significantly speed up the building process.],
-  [class="has-default-font-family"\>Critics pointed out that this would still incentivize developers to build gas plants, rather than switch to renewable energy, and that it’s difficult to enforce. “The developer gets all the benefits on the front end and bears none of the risk,” Emma Bast, a lawyer at PennFuture, told Spotlight PA . “And if the developer doesn’t follow through on the voluntary things, there are not a lot of options for the state.”],
-  [class="has-default-font-family"\>Some residents are reluctantly making plans to move. “These data centers have to go somewhere,” said Jim Schaback, who told me he would likely rent out his house in Archbald if the developments go through. “I hate that they’re going here.” Matthew Bucksbee and Candace May recently got word that they may be able to move to a plot of land owned by a friend in Forest City, about 20 minutes north. “We’ll be moving into another trailer for the time being, but once that’s paid off, we could build up there,” said May. She was excited about the prospect of having a bunch of land for their sons to roam around. Tiffany, whose property in Jermyn borders Project Gravity, said that she would consider moving if data center developers began building in Jermyn or neighboring Mayfield to avoid being sandwiched between the buildings.],
-  [class="wp-block-ups-image-inner"\> Candace May holds her daughter, Nova, in their home at Valley View Estates. May and other residents are making plans for where they will live after their eviction in April. 
+  [1 of 3],
+  [As several people at the utility hearing pointed out, Trump was scheduled to speak the following night in the conference room at the DeNaples’ family casino, to begin what the president claimed would be a series of rallies across the country. Concerns of affordability — lost jobs, hiring freezes, inflation, skyrocketing bills, the kind of concerns that had brought people out to that utility meeting the night before — the president called, “a myth.” Something incredible was just over the horizon, he promised, growing closer by the day. “You’re going to see what happens over the next two years. It’s like a miracle is taking place,” he said, as he opened the rally. “All of the companies that are pouring their money into building right now — building plants in Pennsylvania and many other states — auto plants, AI plants, plants of every type.”],
+  [At this point, it appears all six data centers coming to the borough will pull from the grid. According to Archbald’s updated zoning agreement, oil, gas, and nuclear plants will not be allowed to co-locate alongside data centers. But the facilities are likely to fuel a fracking surge across Western Pennsylvania, and new buildings will bring hundreds of diesel backup generators to town. Should unsustainable power demands regularly force data centers off the grid, those generators could be running with relative frequency — emitting pollutants that have been linked to heart disease and cancer and generating noise that can disturb neighborhoods.],
+  [To make matters more complicated, Archbald’s water system is privately owned and operated by American Water, the nation’s largest private water company. Residents are concerned the town’s data center boom will also affect these bills and threaten their drinking supply. Project Gravity alone is expected to pump 360,000 gallons of water a day from Lake Scranton, which serves 134,570 people across Lackawanna County. Developers of  the Wildcat Ridge Data Center are proposing to pump up to 3.3 million gallons per day — some of it potentially from the minor sea of ground and rainwater that now fills the empty coal mines beneath the building site. The developer’s plans include a subsidence contingency, but looking over the scale of the place, it’s not hard to see where the residents are coming from when they talk of colossal buildings collapsing and the ready-made grave the mining industry left beneath the town.],
+  [All of this assumes these facilities actually get built. Experts have speculated that half of data center proposals could be duplicative , meaning developers are applying in multiple places across the country but will ultimately only build a single campus. It’s also unclear who the tenants will be at this point, and according to Markey, developers have been tight-lipped. “They’ll say cryptic things like, ‘You know of this company. You probably use them every day,” he told me. “They all say the same thing — that they’re next in line for power.”],
+  [Battery storage could replace some of those backup generators, closed-loop cooling (in which water is endlessly recycled) could reduce water usage, and harmful chemicals could be swapped out, but there’s really no way to know for sure until the tech company that will be leasing the space is known, making approving these projects a significant gamble.],
+  [There are few guardrails for the industry at the moment. In February, the Trump administration rolled out the Ratepayer Protection Pledge, an initiative that asks tech companies to voluntarily agree to pay the cost of upgrading transmission lines and building power plants — rather than having those costs passed along to the average consumer. It was almost immediately derided as “smoke and mirrors” and “a toothless, empty promise” by Democratic congressman Frank Pallone, the ranking member of the House Energy and Commerce Committee. Governor Shapiro, who has championed AI’s rush into Pennsylvania, recently proposed an initiative that would incentivize responsible data center development. Projects that agreed to bring their own transmission, offer transparent community engagement, and clear community benefits agreements would qualify for the state’s Permit Fast Track Program , which can significantly speed up the building process.],
+  [Critics pointed out that this would still incentivize developers to build gas plants, rather than switch to renewable energy, and that it’s difficult to enforce. “The developer gets all the benefits on the front end and bears none of the risk,” Emma Bast, a lawyer at PennFuture, told Spotlight PA . “And if the developer doesn’t follow through on the voluntary things, there are not a lot of options for the state.”],
+  [Some residents are reluctantly making plans to move. “These data centers have to go somewhere,” said Jim Schaback, who told me he would likely rent out his house in Archbald if the developments go through. “I hate that they’re going here.” Matthew Bucksbee and Candace May recently got word that they may be able to move to a plot of land owned by a friend in Forest City, about 20 minutes north. “We’ll be moving into another trailer for the time being, but once that’s paid off, we could build up there,” said May. She was excited about the prospect of having a bunch of land for their sons to roam around. Tiffany, whose property in Jermyn borders Project Gravity, said that she would consider moving if data center developers began building in Jermyn or neighboring Mayfield to avoid being sandwiched between the buildings.],
+  [“Where would you go though?” she said. “Because everywhere just sucks.”],
+  [Candace May holds her daughter, Nova, in their home at Valley View Estates. May and other residents are making plans for where they will live after their eviction in April. 
  Rebecca Egan McCarthy \/ Grist],
-  [class="has-drop-cap has-default-font-family"\>Before Farris spoke at the Project South hearing in January, community members gathered outside the auditorium, some distributing pamphlets, others gossiping. Among the crowd were Jack and Amy Swingle, who told me they moved to the area to be close to their children. They recently signed on to a lawsuit appealing the updated data center zoning, arguing it does not adequately protect residents. But neither of them had high hopes for the night. At the previous hearing, they explained, developers had tried to soften the blow by promising that the data centers would bring more retail to the area — a Trader Joe’s, for example, which could potentially accompany the construction of the Wildcat Ridge AI center. “That’s one of the things I have \[to say\] in here,” said another woman standing nearby, gesturing to her notes. “Don’t be so condescending.”],
-  [class="has-default-font-family"\>But the revenue that the building boom promises the region is real enough. The data centers would bring roughly \$20 million in property taxes for Archbald, Farris said to the audience gathered, \$50 million for Lackawanna County, and \$100 million for the Valley View School District every year. Many municipalities were throwing tax breaks at developers, hoping to attract their attention. Archbald is not. Its abundant fiber-optic cables, high voltage electrical lines, nearby gas pipelines, and its proximity to Secaucus, New Jersey (a “pairing point” for data centers, where they exchange information) make it attractive regardless. Farris had sought this place out himself, but other nearby towns looked nearly as appealing as Archbald, he explained. Should the opposition continue to grow, developers might take their projects elsewhere — maybe to Berwick, about an hour away.],
-  [class="has-default-font-family"\>“They’re going to get all the benefit, and you guys aren’t going to get anything,” Farris told the crowd. “\[Data centers\] are a necessity in life, and the decision has come down to, ‘Do you want to benefit from that necessity?”],
-  [class="has-default-font-family"\>Archbald resident, Tamara Healy, asked about Community Benefit Agreements — she’d googled them, and it seemed to her that something like that should be in place before things proceeded any further. “Now, it’s ironic that you’re Googling stuff and you’re against data centers,” said Farris. “Just for the record.”],
-  [class="has-default-font-family"\>Still, the town needs tax revenue, and it’s true that no other industry of this size and scale seems interested in the area. “We have just enough money in our checking account to pay payroll and keep the lights on, but every month we have a debate about canceling or suspending music or art,” said a solicitor, speaking on behalf of Valley View School District administrators in November 2025.],
-  [class="has-default-font-family"\>Documents first published last week by DeSmog show that developers played a significant role in determining the terms of the data center overlay ordinance that ultimately passed in November 2025. Council President Dave Moran requested a 1000-yard buffer zone between data centers and adjacent properties. That was whittled down to just 300 yards in the final language.],
-  [class="has-default-font-family"\>The area of the updated data center district that was ultimately passed was determined by the existing industrial zones in the town, and “the rest of the lines drawn were property lines of property owners looking to develop or sell to developers,” according to an email from Markey. “They were pretty much all specific requests.”],
-  [class="has-default-font-family"\>Armed with proof that town officials and wealthy landowners were seemingly working against them, the Stop Archbald Data Centers Facebook group erupted, organizing a petition to immediately relieve Dan Markey, zoning officer Brian Dulay, council president Dave Moran, and Archbald borough solicitor Jay O’Connor of their duties. But, as PennFuture attorney Brigitte Meyer explained, negotiating with the developer is fairly standard in cases such as these, especially given the fact that data centers were technically permitted in certain commercial zones. Had the borough tried to exclude the data centers on the basis of something like height restrictions, developers could have taken them to court over what’s called “de facto exclusionary zoning” — arguing that the restrictions betrayed an antiquated understanding of data centers and were unduly constrictive],
-  [class="has-default-font-family"\>“That is a valid type of legal challenge,” explained Meyer. It wouldn’t be a guaranteed win for developers, but nor would Archbald be assured of victory. The only certainty is that it would be a costly legal fight. “The borough may have looked at it and thought, ‘Well, our chances of winning a challenge like this aren’t so good.’” Other areas that rejected data center proposals, such as nearby Ransom township, have faced lawsuits. Clifton township, which rushed to get a data center overlay in place when they got wind of developer interest last year, is still locked in a lawsuit, filed by the developer mere hours before the ordinance was adopted.],
-  [class="has-default-font-family"\>Whether borough officials made things too easy for developers or felt their hands were tied isn’t totally clear. As of this writing, most of them have refused to speak to me, even though the most damning evidence against them to date is their secrecy. But council member Erin Owen, who has opposed the data centers since the outset, did return my calls last week. She had not been happy with the data center overlay and said she was shut out of private meetings — like the one I stumbled on back in December — to lay out the terms of the ordinance. “They made a big mistake in doing that, because it does not seem transparent at all,” she said. “They only picked the council members that they wanted to know.”],
-  [class="has-default-font-family"\>Council has had little luck helping Valley View Estates residents find alternative housing as of this writing, she told me, and although gas and nuclear plants are not allowed to co-locate alongside data centers, there is industrial land available in town where she believes developers will build their own gas plants.],
-  [class="has-default-font-family"\>“All the impacts will be terrible,” she said. Owen is a fourth-generation resident of Archbald and has served on the borough council for the past ten years. “A lot of trees will be lost. A lot of wildlife will be lost. Homes are going to be last. Pollutants in the air, pollutants in the soil, and then the water, the noise — it’s just going to be very disturbing.”],
-  [class="has-default-font-family"\>The only hope at this point seems to be drastic action on the state level. Legislators on both sides of the aisle have taken notice of the problems facing Pennsylvania as the tech industry moves in. Republican State Representative Jamie Walsh announced he would soon be introducing a suite of bills to better regulate development. Democratic State Senator Katie Muth released a memo announcing that she plans to propose a three-year moratorium on data center development, calling it a “necessary step to protect public health, safety, fiscal stability, and environmental integrity.”],
-  [class="has-default-font-family"\>Even so, it may not be enough to help Archbald, given how eager data centers are to set up shop in the area. It was nearly impossible to find anyone in town who was pro-data center development, although I asked around widely. Some said they weren’t against it, but wouldn’t explain further. Older residents tended to be the least troubled about the data centers, but in a fairly fatalistic way. “I’m going to die tomorrow,” one woman told me at Barrett’s Pub on Main Street. Barrett’s used to be owned by the mayor, and I’d stopped to grab some dinner. The woman told me she used to do nails; now she works for Lockheed Martin. “I don’t know what the data centers want. I don’t know what they do to you. I don’t know what they do to your children,” she said. “Younger people — do they know what’s happening?”],
-  [class="has-default-font-family"\>I wasn’t sure what to tell her, other than that the town was once again being targeted because of an accident of geography and moneyed interests. The longer I spent reporting on this, the more I felt no one had the full picture, not the developers, not the bankers facilitating the baffling circular investments financing the boom, not the chip manufacturers or software engineers, certainly not the tech CEOs. A few weeks earlier, while visiting San Francisco, I’d watched a dog riding in a driverless taxi — paws hanging out the window, tongue waving in the wind, seemingly ferried around by a ghost. This is where those ghosts would come from.],
+  [Before Farris spoke at the Project South hearing in January, community members gathered outside the auditorium, some distributing pamphlets, others gossiping. Among the crowd were Jack and Amy Swingle, who told me they moved to the area to be close to their children. They recently signed on to a lawsuit appealing the updated data center zoning, arguing it does not adequately protect residents. But neither of them had high hopes for the night. At the previous hearing, they explained, developers had tried to soften the blow by promising that the data centers would bring more retail to the area — a Trader Joe’s, for example, which could potentially accompany the construction of the Wildcat Ridge AI center. “That’s one of the things I have \[to say\] in here,” said another woman standing nearby, gesturing to her notes. “Don’t be so condescending.”],
+  [But the revenue that the building boom promises the region is real enough. The data centers would bring roughly \$20 million in property taxes for Archbald, Farris said to the audience gathered, \$50 million for Lackawanna County, and \$100 million for the Valley View School District every year. Many municipalities were throwing tax breaks at developers, hoping to attract their attention. Archbald is not. Its abundant fiber-optic cables, high voltage electrical lines, nearby gas pipelines, and its proximity to Secaucus, New Jersey (a “pairing point” for data centers, where they exchange information) make it attractive regardless. Farris had sought this place out himself, but other nearby towns looked nearly as appealing as Archbald, he explained. Should the opposition continue to grow, developers might take their projects elsewhere — maybe to Berwick, about an hour away.],
+  [“They’re going to get all the benefit, and you guys aren’t going to get anything,” Farris told the crowd. “\[Data centers\] are a necessity in life, and the decision has come down to, ‘Do you want to benefit from that necessity?”],
+  [Archbald resident, Tamara Healy, asked about Community Benefit Agreements — she’d googled them, and it seemed to her that something like that should be in place before things proceeded any further. “Now, it’s ironic that you’re Googling stuff and you’re against data centers,” said Farris. “Just for the record.”],
+  [Tamara Misewicz-Healey speaks at a town hall meeting about proposed data centers in Archbald, Pennsylvania. Rebecca Egan McCarthy \/ Grist],
+  [Still, the town needs tax revenue, and it’s true that no other industry of this size and scale seems interested in the area. “We have just enough money in our checking account to pay payroll and keep the lights on, but every month we have a debate about canceling or suspending music or art,” said a solicitor, speaking on behalf of Valley View School District administrators in November 2025.],
+  [Documents first published last week by DeSmog show that developers played a significant role in determining the terms of the data center overlay ordinance that ultimately passed in November 2025. Council President Dave Moran requested a 1000-yard buffer zone between data centers and adjacent properties. That was whittled down to just 300 yards in the final language.],
+  [The area of the updated data center district that was ultimately passed was determined by the existing industrial zones in the town, and “the rest of the lines drawn were property lines of property owners looking to develop or sell to developers,” according to an email from Markey. “They were pretty much all specific requests.”],
+  [Armed with proof that town officials and wealthy landowners were seemingly working against them, the Stop Archbald Data Centers Facebook group erupted, organizing a petition to immediately relieve Dan Markey, zoning officer Brian Dulay, council president Dave Moran, and Archbald borough solicitor Jay O’Connor of their duties. But, as PennFuture attorney Brigitte Meyer explained, negotiating with the developer is fairly standard in cases such as these, especially given the fact that data centers were technically permitted in certain commercial zones. Had the borough tried to exclude the data centers on the basis of something like height restrictions, developers could have taken them to court over what’s called “de facto exclusionary zoning” — arguing that the restrictions betrayed an antiquated understanding of data centers and were unduly constrictive],
+  [“That is a valid type of legal challenge,” explained Meyer. It wouldn’t be a guaranteed win for developers, but nor would Archbald be assured of victory. The only certainty is that it would be a costly legal fight. “The borough may have looked at it and thought, ‘Well, our chances of winning a challenge like this aren’t so good.’” Other areas that rejected data center proposals, such as nearby Ransom township, have faced lawsuits. Clifton township, which rushed to get a data center overlay in place when they got wind of developer interest last year, is still locked in a lawsuit, filed by the developer mere hours before the ordinance was adopted.],
+  [Whether borough officials made things too easy for developers or felt their hands were tied isn’t totally clear. As of this writing, most of them have refused to speak to me, even though the most damning evidence against them to date is their secrecy. But council member Erin Owen, who has opposed the data centers since the outset, did return my calls last week. She had not been happy with the data center overlay and said she was shut out of private meetings — like the one I stumbled on back in December — to lay out the terms of the ordinance. “They made a big mistake in doing that, because it does not seem transparent at all,” she said. “They only picked the council members that they wanted to know.”],
+  [Council has had little luck helping Valley View Estates residents find alternative housing as of this writing, she told me, and although gas and nuclear plants are not allowed to co-locate alongside data centers, there is industrial land available in town where she believes developers will build their own gas plants.],
+  [“All the impacts will be terrible,” she said. Owen is a fourth-generation resident of Archbald and has served on the borough council for the past ten years. “A lot of trees will be lost. A lot of wildlife will be lost. Homes are going to be last. Pollutants in the air, pollutants in the soil, and then the water, the noise — it’s just going to be very disturbing.”],
+  [What’s behind your eye-popping power bill? We broke it down, region by region.],
+  [Naveena Sadasivam & Clayton Aldern],
+  [The only hope at this point seems to be drastic action on the state level. Legislators on both sides of the aisle have taken notice of the problems facing Pennsylvania as the tech industry moves in. Republican State Representative Jamie Walsh announced he would soon be introducing a suite of bills to better regulate development. Democratic State Senator Katie Muth released a memo announcing that she plans to propose a three-year moratorium on data center development, calling it a “necessary step to protect public health, safety, fiscal stability, and environmental integrity.”],
+  [Even so, it may not be enough to help Archbald, given how eager data centers are to set up shop in the area. It was nearly impossible to find anyone in town who was pro-data center development, although I asked around widely. Some said they weren’t against it, but wouldn’t explain further. Older residents tended to be the least troubled about the data centers, but in a fairly fatalistic way. “I’m going to die tomorrow,” one woman told me at Barrett’s Pub on Main Street. Barrett’s used to be owned by the mayor, and I’d stopped to grab some dinner. The woman told me she used to do nails; now she works for Lockheed Martin. “I don’t know what the data centers want. I don’t know what they do to you. I don’t know what they do to your children,” she said. “Younger people — do they know what’s happening?”],
+  [I wasn’t sure what to tell her, other than that the town was once again being targeted because of an accident of geography and moneyed interests. The longer I spent reporting on this, the more I felt no one had the full picture, not the developers, not the bankers facilitating the baffling circular investments financing the boom, not the chip manufacturers or software engineers, certainly not the tech CEOs. A few weeks earlier, while visiting San Francisco, I’d watched a dog riding in a driverless taxi — paws hanging out the window, tongue waving in the wind, seemingly ferried around by a ghost. This is where those ghosts would come from.],
+  [Editor’s Note: Pennsylvania has cities, boroughs, townships, and a single town. Because this article is intended for a national audience, we sometimes refer to Archbald colloquially as a “town.”],
+  [Correction : An earlier of version of this article misstated the status of the Clifton Township legal dispute.],
 ),
   insert-map: (:),
   inline-pq: pull-quote([As the cost of living skyrockets, it’s the only stable, affordable housing many are able to find.], [Rebecca Egan McCarthy]),
-  inline-pq-idx: 27,
+  inline-pq-idx: 33,
   word-count: 6348,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [When Jupyter Notebooks Won't Import Libraries],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -527,7 +425,7 @@ Although data centers all have different ways of cooling and powering their camp
   [Changing the Kernel],
   [If you're curious about how to use Python Virtual Environments, I wrote a solid tutorial back in September that I used to get a full installation of Tensor Flow up and running. I've referred back to this over and over, each time I needed a Python Virtual Environment, so I know it works.],
   [I'm sure there is a way to mess about with virtual environments and Jupyter Notebooks to make them work but, honestly, I'm skeptical on notebooks and how they obfuscate code and data together anyway so I thought "How do I just make this a Python script". I took this approach because I was absolutely certain that I could make a virtual environment work with just Python. And, thanks to my pairing partner, Grant, there is, indeed, a way.],
-  [id="making-a-jupyter-notebook-into-a-python-script-with-a-virtual-env"\>Making a Jupyter Notebook into a Python Script with a Virtual Env],
+  [Making a Jupyter Notebook into a Python Script with a Virtual Env],
   [Follow the instructions here to setup VENV for a new project in a new directory.],
   [Use File menu, Export as Python to write a single Python script representing the notebook.],
   [Create a requirements.txt file as per the instructions here .],
@@ -541,27 +439,33 @@ Although data centers all have different ways of cooling and powering their camp
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Ask a Climate Therapist: How can I balance my travel itch with guilt about emissions?],
   author: [Leslie Davenport],
   source-name: [Grist],
   images: (),
   paragraphs: (
-  [class="has-default-font-family"\> Almost all of the money I save goes toward travel — meeting friends abroad, visiting relatives, or checking national and international parks off my bucket list. I try to be as sustainable in my personal life as possible, but I love traveling, despite knowing that travel is where some of our greatest carbon emissions come from. Every time I fly now, I feel this guilt and fear, and it’s sometimes hard to balance it with my excitement. How would you recommend proceeding when some of the decisions we make in our personal lives are at odds with our beliefs and goals?],
-  [class="has-default-font-family"\>The tension you’re describing — the pull between loving this world and worrying about harming it — is a sign of a very intact compassion compass. Sometimes, that compassionate awareness stretches us beyond what’s comfortable or easy to resolve.],
-  [class="has-default-font-family"\>Don’t dismiss your discomfort, because it’s inviting you to stay awake to your impacts on the planet — but don’t let it shut down your capacity for joy. If guilt grows so heavy that it diminishes your ability to connect and feel alive, it’s lost any usefulness it once offered. The work now is to metabolize your guilt and fear into something that guides you rather than pulls you apart.],
-  [class="bio-block\_\_text"\> Ask a Climate Therapist tackles your questions about how to navigate the emotional side of climate change, with leading climate-aware therapist Leslie Davenport. Have a question?  Ask it here !],
-  [class="has-default-font-family"\>That opens up more nuanced choices than simply “Go or don’t go?” Maybe you’ll travel less often but stay longer, explore more locally using lower-carbon methods of transport, or prioritize trips that deepen relationships.],
-  [class="has-default-font-family"\>You might also focus on destinations where you can make a positive impact as a tourist. In countries like Costa Rica, Rwanda, Tanzania, and Bhutan, responsible tourism helps keep conservation efforts alive by funding wildlife protection, supporting local communities, and sustaining fragile ecosystems.],
-  [class="has-default-font-family"\>There’s a larger truth in this as well. You’re just one person — and your choices matter, but they were never meant to bear the full weight of a systemic crisis. You didn’t build the fossil fuel-dependent systems that make flying one of the only practical ways to stay connected across long distances or encounter the wider world. Guilt can keep us preoccupied with ourselves rather than on the larger structures driving the harm.],
-  [class="has-default-font-family"\>Continue to balance your personal choices with collective ones. To start, you might want to discuss your dilemma with friends and family — whether they’re your travel companions, or people in your life who may have already made different calculations about travel. (In last month’s column, I shared similar advice with a question asker who could well be on the other side of that conversation .) Having a shared understanding with loved ones might help you process your inner tension, while also letting your care for the planet ripple out in community.],
-  [class="has-default-font-family"\>Take some time to reflect, and then settle into commitments that feel right for you. Return to your decision from time to time and make changes as needed. When you feel a pang of guilt, let it keep you honest but not overwhelmed.],
-  [class="has-default-font-family"\>Remember: The places you visit, the people you love across long distances, and the wonder you feel in national parks aren’t separate from your love for the Earth. They’re expressions of it. Add in a dose of reflection, gratitude, and perhaps even awe, and your journeys will strengthen the passion and resilience that allow you to stay engaged in your work. In this way, the same travel that stirs your guilt can also help protect what you love. It’s not a clean or simple solution, but it’s real.],
-  [class="has-default-font-family"\>The aim is to stay present for the whole of it — to allow your love for our planet to be large enough to hold grief, responsibility, and joy at the same time. Let yourself embrace and enjoy the world wholeheartedly, even as you engage in protecting it.],
-  [class="bio-block\_\_text"\> I’m Leslie Davenport , a licensed therapist, educator, speaker, consultant, and internationally recognized voice on the emotional and psychological dimensions of climate change. If you’ve got a question about climate and mental health, please submit it here for a future column .],
+  [Dear Leslie,],
+  [Almost all of the money I save goes toward travel — meeting friends abroad, visiting relatives, or checking national and international parks off my bucket list. I try to be as sustainable in my personal life as possible, but I love traveling, despite knowing that travel is where some of our greatest carbon emissions come from. Every time I fly now, I feel this guilt and fear, and it’s sometimes hard to balance it with my excitement. How would you recommend proceeding when some of the decisions we make in our personal lives are at odds with our beliefs and goals?],
+  [— Wondering Wanderer],
+  [Dear Wondering Wanderer,],
+  [The tension you’re describing — the pull between loving this world and worrying about harming it — is a sign of a very intact compassion compass. Sometimes, that compassionate awareness stretches us beyond what’s comfortable or easy to resolve.],
+  [Don’t dismiss your discomfort, because it’s inviting you to stay awake to your impacts on the planet — but don’t let it shut down your capacity for joy. If guilt grows so heavy that it diminishes your ability to connect and feel alive, it’s lost any usefulness it once offered. The work now is to metabolize your guilt and fear into something that guides you rather than pulls you apart.],
+  [Ask a Climate Therapist tackles your questions about how to navigate the emotional side of climate change, with leading climate-aware therapist Leslie Davenport. Have a question?  Ask it here !],
+  [You might ask yourself this question: Given what I know, what kind of traveler do I want to be?],
+  [That opens up more nuanced choices than simply “Go or don’t go?” Maybe you’ll travel less often but stay longer, explore more locally using lower-carbon methods of transport, or prioritize trips that deepen relationships.],
+  [You might also focus on destinations where you can make a positive impact as a tourist. In countries like Costa Rica, Rwanda, Tanzania, and Bhutan, responsible tourism helps keep conservation efforts alive by funding wildlife protection, supporting local communities, and sustaining fragile ecosystems.],
+  [There’s a larger truth in this as well. You’re just one person — and your choices matter, but they were never meant to bear the full weight of a systemic crisis. You didn’t build the fossil fuel-dependent systems that make flying one of the only practical ways to stay connected across long distances or encounter the wider world. Guilt can keep us preoccupied with ourselves rather than on the larger structures driving the harm.],
+  [Continue to balance your personal choices with collective ones. To start, you might want to discuss your dilemma with friends and family — whether they’re your travel companions, or people in your life who may have already made different calculations about travel. (In last month’s column, I shared similar advice with a question asker who could well be on the other side of that conversation .) Having a shared understanding with loved ones might help you process your inner tension, while also letting your care for the planet ripple out in community.],
+  [More from Ask a Climate Therapist],
+  [Ask a Climate Therapist: How do I deal with friends and family who won’t stop polluting?],
+  [Take some time to reflect, and then settle into commitments that feel right for you. Return to your decision from time to time and make changes as needed. When you feel a pang of guilt, let it keep you honest but not overwhelmed.],
+  [Remember: The places you visit, the people you love across long distances, and the wonder you feel in national parks aren’t separate from your love for the Earth. They’re expressions of it. Add in a dose of reflection, gratitude, and perhaps even awe, and your journeys will strengthen the passion and resilience that allow you to stay engaged in your work. In this way, the same travel that stirs your guilt can also help protect what you love. It’s not a clean or simple solution, but it’s real.],
+  [The aim is to stay present for the whole of it — to allow your love for our planet to be large enough to hold grief, responsibility, and joy at the same time. Let yourself embrace and enjoy the world wholeheartedly, even as you engage in protecting it.],
+  [Holding this with you,
+Leslie],
+  [I’m Leslie Davenport , a licensed therapist, educator, speaker, consultant, and internationally recognized voice on the emotional and psychological dimensions of climate change. If you’ve got a question about climate and mental health, please submit it here for a future column .],
 ),
   insert-map: (:),
   word-count: 811,
@@ -569,44 +473,42 @@ Although data centers all have different ways of cooling and powering their camp
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The 12 Bugs of Christmas - A Software Developers' Version],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
   images: (),
   paragraphs: (
   [This isn't mine but it was forwarded to me via a group chat and, in it, I found a deep, profound and abiding truth:],
-  [id="1----for-the-first-bug-of-christmas-my-manager-said-to-me"\>1. For the first bug of Christmas, my manager said to me:],
+  [1. For the first bug of Christmas, my manager said to me:],
   [See if they can do it again.],
-  [id="2----for-the-second-bug-of-christmas-my-manager-said-to-me"\>2. For the second bug of Christmas, my manager said to me:],
+  [2. For the second bug of Christmas, my manager said to me:],
   [Ask them how they did it and],
   [See if they can do it again.],
-  [id="3----for-the-third-bug-of-christmas-my-manager-said-to-me"\>3. For the third bug of Christmas, my manager said to me:],
+  [3. For the third bug of Christmas, my manager said to me:],
   [Try to reproduce it],
   [Ask them how they did it and],
   [See if they can do it again.],
-  [id="4----for-the-fourth-bug-of-christmas-my-manager-said-to-me"\>4. For the fourth bug of Christmas, my manager said to me:],
+  [4. For the fourth bug of Christmas, my manager said to me:],
   [Run with the debugger],
   [Try to reproduce it],
   [Ask them how they did it and],
   [See if they can do it again.],
-  [id="5----for-the-fifth-bug-of-christmas-my-manager-said-to-me"\>5. For the fifth bug of Christmas, my manager said to me:],
+  [5. For the fifth bug of Christmas, my manager said to me:],
   [Ask for a dump],
   [Run with the debugger],
   [Try to reproduce it],
   [Ask them how they did it and],
   [See if they can do it again.],
-  [id="6----for-the-sixth-bug-of-christmas-my-manager-said-to-me"\>6. For the sixth bug of Christmas, my manager said to me:],
+  [6. For the sixth bug of Christmas, my manager said to me:],
   [Reinstall the software],
   [Ask for a dump],
   [Run with the debugger],
   [Try to reproduce it],
   [Ask them how they did it and],
   [See if they can do it again.],
-  [id="7----for-the-seventh-bug-of-christmas-my-manager-said-to-me"\>7. For the seventh bug of Christmas, my manager said to me:],
+  [7. For the seventh bug of Christmas, my manager said to me:],
   [Say they need an upgrade],
   [Reinstall the software],
   [Ask for a dump],
@@ -614,7 +516,7 @@ Although data centers all have different ways of cooling and powering their camp
   [Try to reproduce it],
   [Ask them how they did it and],
   [See if they can do it again.],
-  [id="8----for-the-eighth-bug-of-christmas-my-manager-said-to-me"\>8. For the eighth bug of Christmas, my manager said to me:],
+  [8. For the eighth bug of Christmas, my manager said to me:],
   [Find a way around it],
   [Say they need an upgrade],
   [Reinstall the software],
@@ -623,7 +525,7 @@ Although data centers all have different ways of cooling and powering their camp
   [Try to reproduce it],
   [Ask them how they did it and],
   [See if they can do it again.],
-  [id="9----for-the-ninth-bug-of-christmas-my-manager-said-to-me"\>9. For the ninth bug of Christmas, my manager said to me:],
+  [9. For the ninth bug of Christmas, my manager said to me:],
   [Blame it on the hardware],
   [Find a way around it],
   [Say they need an upgrade],
@@ -633,7 +535,7 @@ Although data centers all have different ways of cooling and powering their camp
   [Try to reproduce it],
   [Ask them how they did it and],
   [See if they can do it again.],
-  [id="10--for-the-tenth-bug-of-christmas-my-manager-said-to-me"\>10. For the tenth bug of Christmas, my manager said to me:],
+  [10. For the tenth bug of Christmas, my manager said to me:],
   [Change the documentation],
   [Blame it on the hardware],
   [Find a way around it],
@@ -644,7 +546,7 @@ Although data centers all have different ways of cooling and powering their camp
   [Try to reproduce it],
   [Ask them how they did it and],
   [See if they can do it again.],
-  [id="11--for-the-eleventh-bug-of-christmas-my-manager-said-to-me"\>11. For the eleventh bug of Christmas, my manager said to me:],
+  [11. For the eleventh bug of Christmas, my manager said to me:],
   [Say it's not supported],
   [Change the documentation],
   [Blame it on the hardware],
@@ -656,7 +558,7 @@ Although data centers all have different ways of cooling and powering their camp
   [Try to reproduce it],
   [Ask them how they did it and],
   [See if they can do it again.],
-  [id="12--for-the-twelfth-bug-of-christmas-my-manager-said-to-me"\>12. For the twelfth bug of Christmas, my manager said to me:],
+  [12. For the twelfth bug of Christmas, my manager said to me:],
   [Tell them it's a feature],
   [Say it's not supported],
   [Change the documentation],
@@ -676,25 +578,36 @@ Although data centers all have different ways of cooling and powering their camp
   debug-mode: false,
 )
 
-  #pull-quote([For the fifth bug of Christmas, my manager said to me:  Ask for a dump  Run with the debugger  Try to reproduce it  Ask them how they did it and  See if they can do it again.], [Scott Johnson (fuzzyblog)])
+#pull-quote([For the fifth bug of Christmas, my manager said to me:  Ask for a dump  Run with the debugger  Try to reproduce it  Ask them how they did it and  See if they can do it again.], [Scott Johnson (fuzzyblog)])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Running Multiple Rails Apps Concurrently with Foreman and Procfile.dev],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
   images: (),
   paragraphs: (
+  [Pizza courtesy of Pizza for Ukraine!],
+  [Donate Now to Pizza for Ukraine],
   [As I've said, I build a lot of side projects and I really, really like the model of having:],
   [ALL MY APPS RUNNING CONCURRENTLY],
   [I may be a scattered, distracted developer trying to do too damn much but that's my damn right. And I have 64 gigs of RAM so why shouldn't I be this way.],
   [What I want is to be able to switch from app to app and make changes. This is important because some apps provide APIs which other apps rely on and having to figure out what thing is on what port, etc, is just plain distracting.],
   [Foreman and Procfile.dev is a way around this but there's a major hitch in your getalong (as my Texas wife might say).],
   [Here's a sample Procfile.dev for an app I'm building called Cartazzi which makes a developer's life easier:],
+  [web: bin/rails server -p 5000
+css: yarn build:css --watch
+js: yarn build --reload
+\# docker: docker-compose up],
   [And here's a Profile.dev for another application called Poolwizard which helps you maintain your swimming pool:],
+  [\#web: bin/rails server -p \$PORT
+web: bin/rails server -p 5700
+css: yarn build:css --watch
+js: yarn build --reload
+\# docker: docker-compose up
+worker: bundle exec sidekiq],
   [If you run Cartazzi and Poolwizard together then you're going to get crashes and here's the error:],
+  [❯ foreman start -f Procfile.dev],
   [09:11:53 web.1 | started with pid 72877],
   [09:11:53 css.1 | started with pid 72878],
   [09:11:53 js.1 | started with pid 72879],
@@ -720,13 +633,13 @@ Although data centers all have different ways of cooling and powering their camp
   [09:11:54 js.1 | at Function.executeUserEntryPoint \[as runMain\] (node:internal/modules/run\_main:76:12)],
   [09:11:54 js.1 | Emitted 'error' event on Server instance at:],
   [09:11:54 js.1 | at emitErrorNT (node:net:1333:8)],
-  [09:11:54 js.1 | at processTicksAndRejections (node:internal/process/task\_queues:83:21) {],
+  [09:11:54 js.1 | at processTicksAndRejections (node:internal/process/task\_queues:83:21) \{],
   [09:11:54 js.1 | code: 'EADDRINUSE',],
   [09:11:54 js.1 | errno: -48,],
   [09:11:54 js.1 | syscall: 'listen',],
   [09:11:54 js.1 | address: '::',],
   [09:11:54 js.1 | port: 5200],
-  [09:11:54 js.1 | }],
+  [09:11:54 js.1 | \}],
   [09:11:54 js.1 | error Command failed with exit code 1.],
   [09:11:54 js.1 | info Visit https:\/\/yarnpkg.com/en/docs/cli/run for documentation about this command.],
   [09:11:54 js.1 | exited with code 1],
@@ -736,12 +649,16 @@ Although data centers all have different ways of cooling and powering their camp
   [09:11:54 web.1 | terminated by SIGTERM],
   [The first time I looked at this, I saw the port error and I assumed that the error was the rails server because I knew that was running on a specific port. The actual error though here is node – which ISN'T EVEN IN THE Procfile.dev because it is run behind the scenes by yarn.],
   [Here's the fix:],
+  [\#web: bin/rails server -p \$PORT
+web: bin/rails server -p 5700
+css: yarn build:css --watch
+js: PORT=5701 yarn build --reload
+\# docker: docker-compose up
+worker: bundle exec sidekiq],
   [To understand this we need to put on our Unix underpinning's hat and think about this. You have Yarn executing and running Node as a process. Node inherits the environment variables that Yarn had which means if we set the PORT variable for Yarn then Node will inherit it.],
   [The convention I'm adopting is this:],
   [In all my Procfile.dev's, yarn build will get the port number of the Rails server + 1.],
-  [id="thank-you"\>Thank You],
   [I didn't figure this out on my own, a fellow Rails guy on Twitter, Kyle Keesling told me that this should work. That was enough for me to know that it could be figured out and to force me back into diagnostic mode. Thanks Kyle! Also Kyle is building a course on Stripe and Rails which looks good. Check it out here .],
-  [id="see-also"\>See Also],
   [Running Node on a Port],
 ),
   insert-map: (:),
@@ -750,10 +667,8 @@ Although data centers all have different ways of cooling and powering their camp
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Exporting Node Modules in 2022],
   author: [David Bushong],
   source-name: [Groupon Engineering],
@@ -766,74 +681,74 @@ Although data centers all have different ways of cooling and powering their camp
   [In the beginning, there was CommonJS :],
   [Here are 3 sample files with exports:],
   [\/\\/ export1.js - exporting individual properties w\/ CommonJS 
-'use strict'; function foo() { }
+'use strict'; function foo() \{ \}
 exports.foo = foo;
 exports.bar = 42; \/\\/ export2.js - exporting a single object w\/ CommonJS 
-'use strict'; function baz() { } 
+'use strict'; function baz() \{ \} 
  const garply = 88;
-module.exports = { baz };
+module.exports = \{ baz \};
  \/\\/ dynamically (conditionally!) exported! 
  if ( Math.random() \> 0.5 ) module.exports.garply = garply; \/\\/ export3.js - exporting a bare function w\/ CommonJS 
-'use strict'; function quux() { }
+'use strict'; function quux() \{ \}
 module.exports = quux; \/\\/ sometimes there are extra properties added to the bare function 
 quux.yadda = 42;],
   [Those CommonJS exports can be imported either into other CommonJS files or into ES Module (more on that below) files:],
   [\/\\/ import.js - importing CommonJS modules into a CJS file 
-'use strict'; const { foo, bar } = require('./export1');
- const { baz, garply } = require('./export2');
- if ( Math.random \> 0.9 ) {
+'use strict'; const \{ foo, bar \} = require('./export1');
+ const \{ baz, garply \} = require('./export2');
+ if ( Math.random \> 0.9 ) \{
  \/\\/ can also dynamically decide when to import 
  const quux = require('./export3');
  \/\\/ can poke into properties tacked onto functions 
- const { yadda } = require('./export3');
-} \/\\/ import.mjs - importing CommonJS modules into an ESM file 
+ const \{ yadda \} = require('./export3');
+\} \/\\/ import.mjs - importing CommonJS modules into an ESM file 
  \/\\/ node is willing to turn exported objects into named exports 
- import { foo, bar } from './export1.js';
- import { baz, garply } from './export2.js';
+ import \{ foo, bar \} from './export1.js';
+ import \{ baz, garply \} from './export2.js';
  import quux from './export3.js';
  \/\\/ cannot access added property "yadda" directly; hence: 
-const { yadda } = quux;],
+const \{ yadda \} = quux;],
   [You can read more elsewhere, but the key features are:],
   [The module files are synchronously executed, and at the end of their sync execution, anything present in module.exports is available to files that require() this module. This means exports can be dynamically constructed.],
   [You may either add properties to the existing exports object, which starts the same as module.exports, or reassign all of module.exports to a single thing (which may happen to be an object)],
-  [The reason const { a, b } = require(... works is because it is a convention to export an object - but you can export anything you want (bare function, array, number, etc)],
+  [The reason const \{ a, b \} = require(... works is because it is a convention to export an object - but you can export anything you want (bare function, array, number, etc)],
   [Native ES Modules in Node],
   [This is a large topic , but here are the highlights:],
   [First, three example ES Modules-exporting files:],
   [\/\\/ export1.mjs - named exports w\/ ESM 
- export function foo() { }
+ export function foo() \{ \}
  export const bar = 42; \/\\/ export2.mjs - more named exports w\/ ESM 
- export function baz() { }
+ export function baz() \{ \}
  \/\\/ cannot dynamically choose to not export things 
  \/\\/ i.e. no if (...) export possible 
  export const garply = 88; \/\\/ export3.mjs - default export w\/ ESM 
- export default function quux() { }
+ export default function quux() \{ \}
  \/\\/ can export something \*other\* than default also 
  export const yadda = 99;],
   [ES Module exports can be imported easily in other ES Module files, and can be imported asynchronously (only!) in CommonJS files:],
   [\/\\/ import.mjs - importing ESM w\/ ESM 
- import { foo, bar } from './export1.mjs';
- import { baz, garply } from './export2.mjs';
+ import \{ foo, bar \} from './export1.mjs';
+ import \{ baz, garply \} from './export2.mjs';
  \/\\/ can import default export and others 
- import quux, { yadda } from './export3.mjs'; \/\\/ import.js - importing ESM w\/ CommonJS 
+ import quux, \{ yadda \} from './export3.mjs'; \/\\/ import.js - importing ESM w\/ CommonJS 
 'use strict'; \/\\/ you cannot directly require() ESM files, 
  \/\\/ you must use import() which is an async operator 
- async function someFn() {
- const { foo, bar } = await import ('./export1.mjs');
- const { baz, garply } = await import ('./export2.mjs');
+ async function someFn() \{
+ const \{ foo, bar \} = await import ('./export1.mjs');
+ const \{ baz, garply \} = await import ('./export2.mjs');
  \/\\/ the default export has property "default" 
- const { default: quux, yadda } = await import ('./export3.mjs');
-}],
+ const \{ default: quux, yadda \} = await import ('./export3.mjs');
+\}],
   [BabelScript \/ Webpack \/ TypeScript],
   [When early proposals of ECMAScript Modules were announced, a number of bundlers (and TypeScript) ran with it, and supported various syntaxes which were similar to, but not entire semantically compatible with, ES Modules as ultimately supported natively in NodeJS 14.],
   [Most projects generally compile these files to CommonJS, so we should understand what they actually compile to. export1.mjs and export2.mjs would generally compile to their equivalents from the CommonJS section above. export3.mjs would compile to something like:],
   [\/\\/ dist/export3.js 
-'use strict'; function quux() { }
+'use strict'; function quux() \{ \}
 exports. default = quux;
 exports.yadda = 99;],
   [This is importantly different from the original CommonJS export3.js, because there is no bare function exported, but rather an object with property default. To maintain backward compatibility when required, TypeScript offers a non-standard syntax:],
   [\/\\/ export3.ts 
- function quux() { }
+ function quux() \{ \}
  export = quux; \/\\/ non-standard syntax 
  \/\\/ cannot export anything else, like yadda, though you can:
  quux.yadda = 99;],
@@ -846,24 +761,23 @@ exports.yadda = 99;],
   [Yet.],
   [Currently, here are some tips:],
   [Don’t use default or bare exports in new code],
-  [If you’re building something new, don’t export bare functions/classes (either using export default or with export =) publically. The former makes for an ugly CommonJS experience (const { default: coolFn } = require('./cool-fn');), and the latter makes for an ugly TS experience (import coolFn = require('./cool-fn');). Using named exports gives every environment as similar an experience as possible.],
+  [If you’re building something new, don’t export bare functions/classes (either using export default or with export =) publically. The former makes for an ugly CommonJS experience (const \{ default: coolFn \} = require('./cool-fn');), and the latter makes for an ugly TS experience (import coolFn = require('./cool-fn');). Using named exports gives every environment as similar an experience as possible.],
   [(Note: this tip only applies to your NPM package’s public interface — things you’re exporting between internal source files don’t apply)],
   [\/\\/ bad1.ts 
  \/\\/ don't do this 
- export default someFn() { } \/\\/ bad2.ts 
+ export default someFn() \{ \} \/\\/ bad2.ts 
  \/\\/ don't do this in NEW code 
- function someFn() { }
+ function someFn() \{ \}
  export = someFn; \/\\/ good.ts 
- export function someFn() { }
- \/\\/ in CommonJS this is: const { someFn } = require('./good'); 
- \/\\/ in TS/ESM this is: import { someFn } from './good';],
+ export function someFn() \{ \}
+ \/\\/ in CommonJS this is: const \{ someFn \} = require('./good'); 
+ \/\\/ in TS/ESM this is: import \{ someFn \} from './good';],
   [Write new CommonJS like ES Modules],
   [If you have to write new code as CommonJS, write it in a style that is as compatible with ES Modules as possible. That means no default exports, as above, but also it’s best to use a style that “looks like” named exports, to make future porting clear and unambiguous:],
   [\/\\/ good.js 
-'use strict'; function someFn() { }
-exports.someFn = someFn; function anotherFn() { }
+'use strict'; function someFn() \{ \}
+exports.someFn = someFn; function anotherFn() \{ \}
 exports.anotherFn = anotherFn;],
-  [(another option is to directly use exports.someFn = () =\> { } , which has its own pros and cons outside the scope of this post)],
   [Publish as CommonJS],
   [Don’t publish Native ES Modules (via compile targets or hand-written) in NPM packages yet. CommonJS is much easier to use from ESModules than the reverse, and currently ~90% of our backend code at Groupon is CommonJS on NodeJS. As our teams move to writing new app code using Native ES Modules (or TypeScript), this guidance will gradually change.],
   [Even if you write the code as TypeScript (recommended!) or as NodeJS-compatible ESM exports directly, make sure to compile it (using TypeScript or Babel) into CommonJS\*.js files. Also, ensure that you do not have type in your package.json set to module; that’s not what you’re publishing .],
@@ -874,14 +788,14 @@ exports.anotherFn = anotherFn;],
   [If you are porting a library from JavaScript to TypeScript, e.g., and it has a bare function export, e.g.:],
   [const myFn = require('\@grpn/my-fn');],
   […there’s really no good backward-compatible way to offer this in TypeScript — you have to use the ugly TS backward-compatibility hack:],
-  [function myFn() { }
+  [function myFn() \{ \}
  export = myFn;],
   […which keeps your CommonJS require() statements unchanged… but makes your type declarations and imports ugly:],
   [import myFn = require('\@grpn/my-fn');],
   [Therefore it’s worth considering whether this is a good occasion for a BREAKING CHANGE commit to make it a named export:],
-  [export function myFn() { }],
+  [export function myFn() \{ \}],
   [which is breaking because now the CommonJS usage looks like:],
-  [const { myFn } = require('\@grpn/my-fn');],
+  [const \{ myFn \} = require('\@grpn/my-fn');],
   [The particulars of what your project should export will vary depending on:],
   [TypeScript adoption among your ecosystem’s developers],
   [ES Module adoption among users of your package],
@@ -890,24 +804,24 @@ exports.anotherFn = anotherFn;],
   [Exporting Node Modules in 2022 was originally published in Groupon Product and Engineering on Medium, where people are continuing the conversation by highlighting and responding to this story.],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([The former makes for an ugly CommonJS experience (const { default: coolFn } = require('.], [David Bushong]),
+  inline-pq: pull-quote([The former makes for an ugly CommonJS experience (const \{ default: coolFn \} = require('.], [David Bushong]),
   inline-pq-idx: 24,
   word-count: 1530,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [cPouta - Now with Haka!],
   author: [Kalle Happonen],
   source-name: [CSC Cloud Team Blog],
   images: (),
   paragraphs: (
   [Many times we've been asked],
+  [Can I log in to cPouta using my Haka account?],
   [Finally we can answer yes!],
   ["How do I log in again?"],
   [Not THAT kind of haka.],
@@ -929,13 +843,14 @@ exports.anotherFn = anotherFn;],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Turning Off Ruby Deprecation Warnings When Running Tests],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
   images: (),
   paragraphs: (
   [The combination of Rails 6 and Ruby 2.7, or perhaps just Rails 6, introduced some new deprecation warnings and, lately, I've been seeing this cruft constantly:],
+  [rails test test/models/],
   [Running via Spring preloader in process 34024],
   [/Users/sjohnson/.rvm/gems/ruby-2.7.0/gems/activemodel-6.0.2.1/lib/active\_model/type/integer.rb:13: warning: Using the last argument as keyword parameters is deprecated; maybe \*\* should be added to the call],
   [/Users/sjohnson/.rvm/gems/ruby-2.7.0/gems/activemodel-6.0.2.1/lib/active\_model/type/value.rb:8: warning: The called method \`initialize' is defined here],
@@ -944,7 +859,11 @@ exports.anotherFn = anotherFn;],
   [And, in the immortal words of Twisted Sister , we're not going to take it anymore.],
   [The solution is a bit more byzantine than I have found in the Rails world and a bunch of the options in the Stack Overflow "top of Google" but no longer accurate post no longer work or aren't quite what you expect.],
   [The easy solution is to add:],
+  [\$VERBOSE=nil],
   [to the top of config/environments/test.rb so it looks like this:],
+  [\$VERBOSE = nil 
+ Rails . application . configure do 
+ \# Settings specified here will take precedence over those in config/application.rb.],
   [\# The test environment is used exclusively to run your application's 
  \# test suite. You never need to work with it otherwise. Remember that 
  \# your test database is "scratch space" for the test suite and is wiped 
@@ -952,6 +871,7 @@ exports.anotherFn = anotherFn;],
  config . cache\_classes = false],
   [Obviously the rest of the file has to be there but that \$VERBOSE=nil silences all the cruft.],
   [One other solution, RUBYOPT="-W0", prepended before you run the test doesn't work with the new use of "rails" to run your tests but does work with "rake" to run your tests so:],
+  [RUBYOPT=W0 rake test test/models/],
   [Now, that said, \$VERBOSE=nil is a better option because it goes in at the project level and affects all developers on the project.],
 ),
   insert-map: (:),
@@ -962,12 +882,12 @@ exports.anotherFn = anotherFn;],
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([Scott Johnson (fuzzyblog)], source-name: [Scott Johnson (fuzzyblog)], [This falls into the category of "I'm old and can't remember this so must, must, must write it down" because I keep losing this html page . If you need to change the text on a submit button for a Rails form implemented with simple\_form then use:
 
-class="language-plaintext highlighter-rouge"\>
 
-class="highlight"\>])],
+
+])],
     ))
   ],
 ), ruled-indices: (1, 2,))
@@ -976,7 +896,7 @@ class="highlight"\>])],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Latent Effects for Reusable Language Components],
   author: [Lambda the Ultimate],
   source-name: [Lambda the Ultimate],
@@ -995,7 +915,7 @@ class="highlight"\>])],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Coding with Python Dictionaries the Ruby Way With Respect to Missing Keys],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -1004,14 +924,14 @@ class="highlight"\>])],
   [I recently had an interesting experience with Python dictionaries that made question one of Python's foundational principles i.e. TOOWTDI:],
   [There should be one– and preferably only one –obvious way to do it. Although that way may not be obvious at first unless you're Dutch. More…],
   [The application was a large scale JSON processor and, in Python, JSONs are mapped to Python dictionaries which correspond to Ruby hashes. The issue is how you handle keys that don't exist. Here's the Ruby way:],
-  [class="highlight"\> irb ( main ): 001 : 0 \> hash = {} 
- {} 
+  [irb ( main ): 001 : 0 \> hash = \{\} 
+ \{\} 
  irb ( main ): 002 : 0 \> hash \[ "foo" \] = "bar" 
  "bar" 
  irb ( main ): 003 : 0 \> hash \[ "blah" \] 
  nil],
   [And here's the Python way:],
-  [class="highlight"\> \>\>\> dict = {} 
+  [\>\>\> dict = \{\} 
  \>\>\> dict \[ "foo" \] = "bar" 
  \>\>\> dict \[ "blah" \] 
  Traceback ( most recent call last ): 
@@ -1024,7 +944,7 @@ class="highlight"\>])],
   [While Python says:],
   ["Absolutely a missing key must translate to an exception; we are Dutch after all!"],
   [The interesting thing here is that despite the foundational principle of TOOWTDI, Python offers a way to emulate Ruby's default behavior – the .get() syntax. Here's an example:],
-  [class="highlight"\> \>\>\> dict = {} 
+  [\>\>\> dict = \{\} 
  \>\>\> dict \[ "foo" \] = "bar" 
  \>\>\> dict . get ( "foo" ) 
  'bar' 
@@ -1045,8 +965,7 @@ class="highlight"\>])],
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [A Regular Expression for Validating An Internet Domain],
   author: [Scott Johnson (fuzzyblog)],
   source-name: [Scott Johnson (fuzzyblog)],
@@ -1055,9 +974,11 @@ class="highlight"\>])],
   [Despite the power and truth of Jamie Zawinski's law:],
   [Regular Expressions: Now You Have Two Problems Jeff Atwood's Perspective],
   [Like Jeff, I too really, really love regular expressions or regexes. I use this one a lot and I finally learned to use \\S (Any non-whitespace character) so here's a regex],
+  [^\\S+\\.\\S+\$],
   [that I wrote yesterday to "validate" the permitted characters in an Internet domain. I was all proud of this and wrote this blog post only to realize that pride really does goeth before a fall – this will NOT correctly validate an Internet domain. As I write this post, I realize that the number of allowed characters in an Internet domain are actually NOT any non-whitespace characters and here's the proof that I actually got that wrong yesterday when I put something online using it:],
   [Note : The fact that Rubular allows through an \_ which is NOT a valid character in domains is problematic.],
   [So the right way to do this, DAMN IT, is something like this:],
+  [^\[A-Za-z0-9\\-\]+\\.\[A-Za-z0-9\\-\]+\$],
   [And this actually works:],
   [The \[A-Za-z0-9-\]+ is a "character class" which says "Any uppercase or lowercase letter plus 0-9 plus a -" are allowed (any order, any quantity)".],
   [Regular Expressions – Now you have two problems.],
@@ -1068,6 +989,5 @@ class="highlight"\>])],
   debug-mode: false,
 )
 
-}
 
 #colophon([The Gazette], [Vol. 1, No. 008], [2026-03-30])

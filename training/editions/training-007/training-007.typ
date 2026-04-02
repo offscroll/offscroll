@@ -21,95 +21,8 @@
 #masthead([The Global Digest], [Vol. 1, No. 007], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Smoother sailing: Studying audio imperfections in Steamboat Willie],
-  kicker: [Cover Story],
-  author: [Oona Räisänen],
-  source-name: [Oona Raisanen (windytan)],
-  deck: [class="kuva oikealla"\> 
-
- Steamboat Willie (1928) was one of the earliest cartoons with synchronized sound.],
-  lead-pre: [],
-  lead-cap: [c],
-  lead-rest: [lass="kuva oikealla"\>],
-  body-paragraphs: (
-  [Steamboat Willie (1928) was one of the earliest cartoons with synchronized sound. That is, it had post-production sound effects; this was something new and exciting. Now that the cartoon has recently entered the public domain \[bbc24\] we can safely delve into its famous soundtrack. See, there's something interesting about how it sounds...],
-  [If you listen closely to the soundtrack on Youtube it sounds somehow distorted. You might be tempted to point out that it's 96 years old, yes. But you might also recognize that it is suffering from flutter , i.e. an unstable playback or recording speed.],
-  [In the spirit of this blog let's geek out for a bit and study this flutter distortion further. Can we learn something interesting? Could we perhaps learn enough to be able to reduce it?],
-  [Of course the flutter might be 100% authentic to how it sounded in theatres in the 1920s; we don't know when and why it appeared in the audio (more on that later!). It might have sounded even worse. But we can still hope to enjoy the sound effects in their original recorded form.],
-  [Prior work],
-  [I'm not the first one to notice this clip is 'fluttering' and to try and do something about it. I found videos of people's attempts to un-flutter it using Celemony Capstan, a professional tool made just for this purpose, with varying results. Capstan uses Melodyne's famous note detection engine to detect musical features and then controls a varispeed effect to cancel out any flutter.],
-  [But Capstan is expensive, and it's more fun to come up with a home-made solution anyway. And what about non-musical sounds? Besides, I had some code laying around in a forgotten desk drawer that just might fit the purpose.],
-  [Finding a high quality source],
-  [Why would I need a high-quality digital file of a poor-quality soundtrack from the 1920s? I guess it's the archivist in me hoping that it has been preserved with high level of detail. But also, if you're going to try and dig up some hidden details in the sound, you'd want minimal interference from any lossy psychoacoustic compression, right? These artifacts might become audible after varispeed effects and could also hinder frequency detection.],
-  [The high-quality source I found is in the Internet Archive. It might originally be coming from the 4K Blu-Ray release called Celebrating Mickey. The spectrogram doesn't show almost any compression artifacts that I can see, even in the quietest frequency ranges! Perfect!],
-  [But the Internet Archive delivers something even better. There's a (visually) lossless 4K scan of the movie with the optical soundtrack partially included (above)! The high-quality version is 34 GB, but there's a downscaled 480p MP4 one thousandth of the size.],
-  [I listened to the optical soundtrack from this low-resolution version with a little pixel-reader script. Turns out the flutter is already present on the film! (Edit: Note that we don't know where this particular film print came from. When was it created? Is there an original somewhere, without flutter?)],
-  [Hand-guiding a frequency tracker],
-  [Looking at the above spectrogram, we can see that the frequency of everything is zig-zagging as a function of time – that's flutter all right. But how to quantify these variations? We could zoom in on one of the frequency peaks and follow the course of its frequency in time. I'm using FFT peak interpolation to find more accurate frequency estimates \[gasior04\] .],
-  [Take the sound of Pete's tobacco hitting the ship's bell around the 01'45'' mark. You'd think a bell is supposed to have a constant frequency, yet this one sounds quite unstable. We can follow any one of the harmonics and see how the playback speed (bell frequency) varies over the period of one second:],
-  [To my eye, this oscillation looks periodic and not random at all. We can run another round of FFT on a longer stretch of samples to find the strongest period of these fluctuations: It turns out to be 15 Hz. (Why 15? I so hoped it would have been 24 Hz – it would have made a more interesting story! More on that later...)],
-  [Okay, so can we repeat this process for the whole movie? I don't think we can just automatically follow the frequency of every peak, since some sounds will naturally contain vibration and rises and drops in frequency. Not all of it is due to flutter. Some sort of a vetting process is needed. We could try a tedious manual route...],
-  [I made a little software tool (above) where I could click and drag little boxes onto a spectrogram to search for peaks in. This wobbly line is then simply taken to be the speed variation (red graph in the top picture).],
-  [It became quite a chore to annotate longer sounds as this software didn't come with undo, edit, or save features for the longest time!],
-  [Now let's think about what to do with this speed information...],
-  [Desk drawer deep dive],
-  [Some time ago I had made a tool that could well come in handy now. It was for correcting wobbly wideband radio recordings stored on VHS tapes. These recordings contained some empty carriers that happened to work like seismographs, accurately recording the tape speed variations. The tool then used a Lagrange polynomial to interpolate new samples at a steady interval, so called 'digital varispeed'.],
-  [It was ultimately based on an interesting paper on de-fluttering magnetic tapes using the tape bias signal as reference \[howarth04\] .],
-  [class="remark"\>By the way, I keep mentioning varispeed and never explained it. This was a feature of old studio-grade reel-to-reel tape recorders where the playback speed could be freely varied by the operator; hence vari+speed. Audio people still use this word in the digital world to essentially refer to variable-rate resampling, which has the same effect, so I'm using them interchangeably. (Topmost photo: Ferdinando Traversa, CC BY , cropped to detail)],
-  [style="clear: both;"\>Here's what this digital varispeed sounds like when exaggerated. In the below example I'm doing it in a simpler way. Instead of the Lagrange method I first upsampled some music by 10x in an audio software; hand-drew a speed curve in Audacity; and then used that curve to pick samples out of the oversampled music:],
-  [id="varywave" width="520"\>],
-  [Carefully controlled, this effect can be used to cancel out flutter. Here's how: If we knew exactly how the playback speed was fluctuating we could instantly vary the speed of our resampler in the opposite direction, thus canceling the variations. And with the above research we now have that knowledge!],
-  [Well, almost. I couldn't always see a clear frequency peak to follow, so the graph is patchy. But.. Maybe it could help to band-pass the speed signal at 15 Hz? This would help fill out small gaps and also preserve vibrato and other fluctuations that aren't part of the flutter distortion. We can at least try!],
-  [In the example above, I replaced empty parts with a constant value of 100% and then filtered the whole thing. This sews the disjointed parts together in a smooth way.],
-  [Can we hear some examples already?],
-  [This clip is from when the goat ate Minnie's sheet music and guitar – the apparent catalyst event that sent Mickey Mouse to seek revenge on the entire animal kingdom.],
-  [id="scorehogwave" width="520"\>],
-  [Before 
- 
- 
- 
- After 
- --\>],
-  [You can definitely hear the difference in the bell-like sounds coming from the goats insides. It even sounds like the little flute notes in the beginning are easier to tell apart in the corrected version.],
-  [Here's another musical example, with strings.],
-  [id="jousiawave" width="520"\>],
-  [Before 
- 
- 
- 
- 
- After 
- --\>],
-  [The cow's moo. That's a hard one because it's so rich in harmonics, in the spectrogram it looks almost like a spaghetti bolognese . My algorithm is constrained to a box and can't stay with one harmonic when the 'moo' slides in frequency. You can hear some artifacts because of this, but still the result sounds less sheep-like than the original.],
-  [But Mickey whistling "Steamboat Bill" in the beginning of the film actually doesn't sound better when corrected... I preferred a bit of vibrato!],
-  [Sidetrack 1: Anything else we can find?],
-  [Glad you're still reading! Let's step away from flutter for a while and take the raw audio track itself under the Fourier microscope. Zooming closer, is there anything interesting in the lower end?],
-  [We can faintly see peaks at multiples of both 24 and 60 Hz. No surprises there, really... 24 Hz being the film framerate and 60 Hz the North American mains frequency. Was there a projector running in the recording studio? Or maybe it's an artifact of scanning the soundtrack one frame at a time? In any case, these sounds are pretty weak.],
-  [In some places you can see some sort of modulation that seems to be generating sidebands, just like in radio signals. It's especially visible in Mickey's whistle when it's flutter-corrected, here at the 5-second mark. The sidebands peaks are 107 and 196 Hz away from the 'carrier' if you will. I'm not sure what this could be. Fluctuating amplitude?],
-  [Sidetrack 2: Playing sound-on-film frame by frame?],
-  [This is an experiment I did some time ago. It's just a silly thought - what would happen if the soundtrack was being read in the same way as the picture is – stopped 24 times per second? Would this be the ultimate flutter distortion?],
-  [In the olden days, sound was stored on the film next to the picture frames as analog information. Unlike the picture frames that had to be stopped momentarily for projection, the sound had to be played at a constant speed. There was a complicated mechanism in the projector to make this possible.],
-  [I found some speed curves for old-school movie projectors in \[bickford72\] . They describe the film's deceleration and acceleration during these stops. Let's emulate these speed curves in audio with the oversampling varispeed method.],
-  [The video below is a 3D animation where this same speed curve controls an animation of a moving film in an imaginary machine. The clip is from another 1920s animation, Alice in the Wooly West (1926).],
-  [~~ Now we know ~~],
-  [We found a 15 Hz speed fluctuation that was, to some extent, reversible.],
-  [This flutter signal is already present in the optical soundtrack of a film scan (of unknown origin).],
-  [With enough manual work, much of the soundtrack could probably be 'corrected'.],
-  ['Hmm, that sounds odd' are sometimes the words of a white rabbit.],
-  [id="bbc24"\> "Disney's earliest Mickey and Minnie Mouse enter public domain as US copyright expires" . BBC News. 2024-01-01.],
-  [id="howarth04"\>Howarth, J. & Wolfe, P. J. (2004): Correction of Wow and Flutter Effects in Analog Tape Transfers],
-  [id="gasior04"\>Gasior, M. & Gonzalez, J. L. (2004): Improving FFT Frequency Measurement Resolution by Parabolic and Gaussian Spectrum Interpolation],
-  [id="bickford72"\>Bickford, John H. (1972). "Geneva Mechanisms". Mechanisms for intermittent motion ( PDF ). New York: Industrial Press Inc.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Virtual music box],
   author: [Oona Räisänen],
   source-name: [Oona Raisanen (windytan)],
@@ -135,15 +48,19 @@
  +3 = ( 12 √2) 3 ≈ 1.189207],
   [First test!],
   [Now I could finally write a script to play my melody!],
+  [(HTML5 audio: Music box notes.)],
   [It sounds pretty good already - there's no obvious noise and the samples line up seamlessly even though they were just naively glued together sample by sample. There's a lot of power in the lower harmonics, probably because of the big cardboard box I used, but this can easily be changed by EQ if we want to give the impression of a cute little music box.],
   [Adding errors],
   [The above sound still sounded quite artificial, I think mostly because simultaneous notes start on the same exact millisecond. There seems to be a small timing variance in music boxes that is an important contributor to their overall delicate sound. In the below sample I added a timing error from a normal distribution with a standard deviation of 11 milliseconds. It sounds a lot better already!],
+  [(HTML5 audio: Music box notes.)],
   [Other sounds from the teeth],
   [If you listen to recordings of music boxes you can occasionally hear a high-pitched screech as well. It sounds a bit like stopping a tuning fork or guitar string with a metal object. That's why I thought it must be the sound of the pin stopping a vibrating tooth just before playing another note on the same tooth.],
   [Sure enough, this sound could always be heard by playing the same note twice in quick succession. I recorded this sound for each tooth and added it to my sound generator. The sound will be generated only if the previous note sample is still playing, and its volume will be scaled in proportion to the tooth's envelope amplitude at that moment. Also, it will silence the note. The amount of silence between the screech and the next note will depend on a tempo setting.],
   [Adding this resonance definitely brings about a more organic feel:],
+  [(HTML5 audio: Music box notes.)],
   [The wind-up mechanism],
   [For a final touch I recorded sounds from the wind-up mechanism of another music box, even though this one didn't have one. It's all stitched up from small pieces, so the number of wind-ups in the beginning and the speed of the whirring sound can all be adjusted. I was surprised at the smoothness of the background sound; it's a three-second loop with no cross-fading involved. You can also hear the box lid being closed in the end.],
+  [(HTML5 audio: Music box notes.)],
   [The native notation of a music box is some kind of a perforated tape or drum, so I ended up using a similar format. There's a tempo marking and tuning information in the beginning, followed by notation one eighth per line. Arpeggios are indicated by a pointy bracket \> . I also wrote a script to convert MIDI files into this format; but the number of notes in a music box loop is usually so small that it's not very hard to write manually.],
   [This format could include additional information as well, perhaps controlling the motor sound or box size and shape (properties of the EQ filter).],
   [This format could also potentially be useful when producing or transcribing music from music drums.],
@@ -158,34 +75,35 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Potentially Coming to a Browser :near() You],
   author: [Daniel Schwarz],
   source-name: [CSS-Tricks],
   images: (),
   paragraphs: (
   [Just before we wrapped up 2025, I saw this proposal for :near() , a pseudo-class that would match if the pointer were to go near the element. By how much? Well, that would depend on the value of the argument provided. Thomas Walichiewicz , who proposed :near() , suggests that it works like this:],
-  [button:near(3rem) {
+  [button:near(3rem) \{
  /\* Pointer is within 3rem of the button \*/
-}],
+\}],
   [For those wondering, yes, we can use the Pythagorean theorem to measure the straight-line distance between two elements using JavaScript (“Euclidean distance” is the mathematical term), so I imagine that that’s what would be used behind the scenes here. I have some use cases to share with you, but the demos will only be simulating :near() since it’s obviously not supported in any web browser. Shall we dig in?],
+  [Visual effects],
   [Without question, :near() could be used for a near-infinite (sorry) number of visual effects:],
-  [div {
+  [div \{
  /\* Div is wow \*/],
-  [&:near(3rem) {
+  [&:near(3rem) \{
  /\* Div be wowzer \*/
- }],
-  [&:near(1rem) {
+ \}],
+  [&:near(1rem) \{
  /\* Div be woahhhh \*/
- }
-}],
+ \}
+\}],
+  [Dim elements until :near()],
   [To reduce visual clutter, you might want to dim certain components until users are near them. :near() could be more effective than :hover in this scenario because users could have trouble interacting with the components if they have limited visibility, and so being able to trigger them “earlier” could compensate for that to some degree. However, we have to ensure accessible color contrast, so I’m not sure how useful :near() can be in this situation.],
-  [button:not(:near(3rem)) {
+  [button:not(:near(3rem)) \{
  opacity: 70%; /\* Or...something \*/
-}],
+\}],
+  [Hide elements until :near()],
   [In addition to dimming components, we could also hide components (as long as they’re not important, that is). This, I think, is a better use case for :near() , as we wouldn’t have to worry about color contrast, although it does come with a different accessibility challenge.],
   [So, you know when you hover over an image and a share button appears? Makes sense, right? Because we don’t want the image to be obscured, so it’s hidden initially. It’s not optimal in terms of UX, but it’s nonetheless a pattern that people are familiar with, like on Pinterest for example.],
   [And here’s how :near() can enhance it. People know or suspect that the button’s there, right? Probably in the bottom-right corner? They know roughly where to click, but don’t know exactly where, as they don’t know the size or offset of the button. Well, showing the button when :near() means that they don’t have to hover so accurately to make the button appear. This scenario is pretty similar to the one above, perhaps with different reasons for the reduced visibility.],
@@ -195,85 +113,88 @@
   [opacity: 0 (there’s no way to show it once it’s been found by find-in-page)],
   [That leaves us with content-visibility: hidden , but the problem with hiding content using content-visibility: hidden (or elements with display: none ) is that they literally disappear, and you can’t be near what simply isn’t there. This means that we need to reserve space for it, even if we don’t know how much space.],
   [Now, :near() isn’t supported in any web browser, so in the demo below, I’ve wrapped the button in a container with 3rem of padding , and while that container is being :hover ed, the button is shown. This increases the size of the hoverable region (which I’ve made red, so that you can see it) instead of the actual button. It essentially simulates button:near(3rem) .],
+  [CodePen Embed Fallback],
   [But how do we hide something while reserving the space?],
   [First, we declare contain-intrinsic-size: auto none on the hidden target. This ensures that it remains a specific size even as something changes (in this case, even as its content is hidden). You can specify a for either value, but in this case auto means whatever the rendered size was. none , which is a required fallback value, can also be a , but we don’t need that at all, hence “ none .”],
   [The problem is, the rendered size “was” nothing, because the button is content-visibility: hidden , remember? That means we need to render it if only for a single millisecond, and that’s what this animation does:],
-  [\@keyframes show-content {
- from {
+  [\@keyframes show-content \{
+ from \{
  content-visibility: visible;
- }
-}],
-  [button {
+ \}
+\}],
+  [button \{
  /\* Hide it by default \*/
- &:not(\[hidden="until-found"\]) {
+ &:not(\[hidden="until-found"\]) \{
  content-visibility: hidden;
- }],
+ \}],
   [/\* But make it visible for 1ms \*/
  animation: 1ms show-content;],
   [/\* Save the size while visible \*/
  contain-intrinsic-size: auto none;
-}],
+\}],
   [Note that if the button has the hidden=until-found attribute-value, which is what makes it focusable and find-in-page-able, content-visibility: hidden isn’t declared because hidden=until-found does that automatically. Either way, the animation declares content-visibility: visible for 1ms while contain-intrinsic-size: auto none captures its size and reserves the space, enabling us to hover it even when it’s not visible.],
   [Now that you understand how it works, here’s the full code (again, simulated, because :near() isn’t supported yet):],
-  [\@keyframes show-content {
- from {
+  [\@keyframes show-content \{
+ from \{
  content-visibility: visible;
- }
-}],
-  [\#simulate-near {
+ \}
+\}],
+  [\#simulate-near \{
  /\* Instead of :near(3rem) \*/
  padding: 3rem;],
-  [button {
+  [button \{
  /\* Unset any styles \*/
  border: unset;
  background: unset;],
   [/\* But include size-related styles \*/
  padding: 1rem;],
   [/\* Hide it by default \*/
- &:not(\[hidden="until-found"\]) {
+ &:not(\[hidden="until-found"\]) \{
  content-visibility: hidden;
- }],
+ \}],
   [/\* But make it visible for 1ms \*/
  animation: 1ms show-content;],
   [/\* Save the size while visible \*/
  contain-intrinsic-size: auto none;
- }],
-  [&:where(:hover, :has(:focus-visible)) button {
+ \}],
+  [&:where(:hover, :has(:focus-visible)) button \{
  color: white;
  background: black;
  content-visibility: visible;
- }
-}],
+ \}
+\}],
   [If you’re wondering why we’re unsetting border and background , it’s because content-visibility: hidden only hides the content, not the element itself, but we’ve included padding here because that affects the size that we’re trying to render n’ remember. After that we simply apply those styles as well as content-visibility: visible to the button when the the wrapper is :hover ed or :has(:focus-visible) .],
   [And here’s the same thing but with the unsupported :near() :],
-  [\@keyframes show-content {
- from {
+  [\@keyframes show-content \{
+ from \{
  content-visibility: visible;
- }
-}],
-  [button {
+ \}
+\}],
+  [button \{
  /\* Unset any styles \*/
  border: unset;
  background: unset;],
   [/\* But include size-related styles \*/
  padding: 1rem;],
   [/\* Hide it by default \*/
- &:not(\[hidden="until-found"\]) {
+ &:not(\[hidden="until-found"\]) \{
  content-visibility: hidden;
- }],
+ \}],
   [/\* But make it visible for 1ms \*/
  animation: 1ms show-content;],
   [/\* Save the size while visible \*/
  contain-intrinsic-size: auto none;],
-  [&:where(:near(3rem), :hover, :focus-visible) {
+  [&:where(:near(3rem), :hover, :focus-visible) \{
  color: white;
  background: black;
  content-visibility: visible;
- }
-}],
+ \}
+\}],
   [In short, :near() enables us to do what the simulated technique does but without the extra markup and creative selectors, and if there are any accessibility needs, we have that animation \/ contain-intrinsic-size trick.],
+  [Prefetch/prerender when near],
   [I’m not suggesting that there’s a way to prefetch/prerender using :near() or even that the functionality of :near() should be extended, but rather that the Speculation Rules API could leverage its underlying functionality. The Speculation Rules API already uses mousedown , touchstart , pointer direction and velocity, viewport presence, and scroll pauses as signals to begin prefetching/prerendering the linked resource, so why not when near?],
   [In fact, I think “near” as a concept could be utilized for a lot more than :near() , and should be considering that custom hit-testing using pointermove has a high performance cost and implementation complexity (as Thomas points out). Let’s look at another example.],
+  [Improve interest invoker interactions],
   [When interacting with hover-triggered overlays, there’s risk of accidentally moving the pointer away from the trigger or target. The Interest Invoker API , which facilitates hover-triggered interactions, uses the interest-show-delay and interest-hide-delay CSS properties to prevent accidental activations and deactivations respectively, but from a user experience perspective, anything involving delays and time-sensitivity just isn’t fun.],
   [A couple of examples:],
   [The pointer falling into the gap between the interest trigger (e.g., a link or button) and interest target (e.g., a popover)],
@@ -281,10 +202,13 @@
   [Therefore, instead of (or in addition to) show and hide delays, the Interest Invoker API could leverage the concept of “near” to ensure that overlays don’t disappear due to mis-interaction. This could be configurable with a CSS property (e.g., near-radius: 3rem or just near: 3rem ), which unlike :near() would invoke functionality ( interest and loseinterest JavaScript events, in this case).],
   [Another use-case, suggested by Thomas in his proposal: showing a “drag to reorder” hint while hovering near a draggable element. This is a terrific use-case because showing tooltips even just a few milliseconds earlier would likely reduce task time.],
   [Unfortunately, you’d have a hard time (I think?) simulating these ones with valid HTML, mostly because s and s can only contain certain elements.],
+  [Downsides to :near()],
   [A potential downside is that :near() could lead to a significant increase in developers lazily hiding things to reduce visual clutter in instances where better UI design would’ve been the right call, or increasing visual clutter (with unnecessary icons, for example) because it can be hidden more conditionally.],
   [Other potential abuses include heatmapping, fingerprinting, and aggressive advertising patterns. It could also be used in ways that would negatively impact performance. Thomas’s proposal does a wonderful job of pointing out these abuses and the ways in which :near() could be implemented to thwart them.],
+  [:near() accessibility concerns],
   [:near() shouldn’t imply :hover or :focus \/ :focus-visible . I think that much is obvious when you really think about it, but I can still see the lines getting crossed. A good question to ask before using :near() is: “Are we being preemptive or presumptive?” Preemptive can be good but presumptive would always be bad, as we never want users to think that they’re hovering or focusing on an interactive element when they’re not (or not yet). This is mentioned in various parts of the Web Content Accessibility Guidelines, but most notably in Success Criterion 2.4.7: Focus Visible (Level AA) .],
   [Similarly, Success Criterion 2.5.8: Target Size (Level AA) states that interactive elements smaller than 24ｘ24px must have extra spacing around them, calculated as 24px - target width \/ 24px - target height , but whether or not the value of :near() would factor into that is a bit ambiguous.],
+  [In conclusion],
   [There’s lots to think about here, but ultimately I’d love to see this implemented as Thomas has proposed it. Having said that, the WCAG guidance must be rock-solid before any implementation begins, especially considering that we can already accomplish what :near() would do (albeit with more markup and maybe some CSS trickery).],
   [And again, I think we should entertain the idea of “near” as a concept, where the underlying functionality could be leveraged by the Speculation Rules API and Interest Invoker API (the latter with a CSS property like near-radius ).],
   [Your thoughts, please!],
@@ -296,10 +220,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Software Craftsmanship in the Age of AI],
   author: [Tim O’Reilly],
   source-name: [O'Reilly Radar],
@@ -308,23 +230,30 @@
   [On March 26, Addy Osmani and I are hosting the third O’Reilly AI Codecon , and this time we’re taking on the question of what software craftsmanship looks like when AI agents are writing much of the code.],
   [The subtitle of this event, “Software Craftsmanship in the Age of AI,” was meant to be provocative. Craftsmanship implies care, intention, and deep skill. It implies a maker who touches the material. But we’re entering a world where some people with quite impressive output don’t touch the code. Steve Yegge, in our conversation earlier this week , put it bluntly: “Code is a liquid. You spray it through hoses. You don’t freaking look at it.” Wes McKinney, the creator of pandas and one of our speakers at this event, doesn’t write code by hand any more either . He’s burning north of 10 billion tokens a month across Claude, Codex, and Gemini, writing vast amounts of Go, a language he’s never coded in manually.],
   [If that’s where this is headed, then what exactly are we crafting? That’s the question this lineup is built to answer, and the speakers come at it from very different angles.],
+  [The “dark factory” position],
   [One end of the spectrum is occupied by people who are already operating what are increasingly being called dark factories , after the robot factories where there are no lights because the robots that do all of the work don’t need them. These are software production environments where humans set direction but agents do nearly all the implementation.],
   [Ryan Carson is the clearest example on our stage. Ryan built and sold Treehouse, where he helped over a million people learn to code. Now he’s building Antfarm , an open source tool that lets you install an entire team of agents into OpenClaw with a single command. His talk, “How to Create a Team of Agents in OpenClaw and Ship Code with One Command,” is essentially a tutorial on running a software factory where a planning agent decomposes your feature request into user stories, each story gets implemented and tested in isolation by a separate agent, failures retry automatically, and you get back tested pull requests. This isn’t quite a dark factory, though. Ryan has built a CI pipeline where the agent records itself using a feature and attaches the video to the PR for human review. It’s an assembly line, and the human’s job is to inspect the output, not produce it.],
   [This is Steve Yegge’s Level 7 or 8 , and it’s no longer theoretical. But Ryan’s talk will also reveal what happens at the edges, when agents break, when the feedback loop fails, when automated retries aren’t enough.],
+  [The craftsmanship-means-oversight position],
   [At the other end you have people who are deeply enthusiastic about AI coding but insist that the human role isn’t just “set direction and walk away.” It’s active, continuous, and skilled.],
   [Addy Osmani anchors this position. His talk, “Orchestrating Coding Agents: Patterns for Coordinating Agents in Real-World Software Workflows,” is about the coordination problem. As he and I discussed in our recent conversation , there’s a spectrum from solo founders running hundreds of agents without reviewing the code to enterprise teams with quality gates and long-term maintenance to think about. Most real teams are somewhere in the middle, and they need patterns, not just tools. Addy has been thinking hard about what Andrej Karpathy called “context engineering,” the discipline of structuring all the information an LLM needs to perform reliably. His new book Beyond Vibe Coding is essentially a manual for this new discipline.],
   [Cat Wu from Anthropic brings the platform maker’s perspective. She leads product for Claude Code and Cowork, and her focus on building AI systems that are “reliable, interpretable, and steerable” represents a design philosophy that the tool should make human oversight natural and easy. Where Ryan Carson’s approach pushes toward maximum agent autonomy, Cat’s work at Anthropic is about giving humans the right levers to stay meaningfully in the loop. I’m really looking forward to the conversation between Cat and Addy.],
+  [The costs of getting it wrong],
   [Several speakers are focused squarely on what happens when the dark factory breaks down.],
   [Nicole Koenigstein’s talk, “The Hidden Cost of Agentic Failure and the Next Phase of Agentic AI,” is about the failure modes that don’t show up in demos. Nicole is writing the O’Reilly book AI Agents: The Definitive Guide , and she’s been consulting with companies on the gap between what agents can do in a sandbox and what they do in production. Hila Fox from Qodo brings a complementary perspective with “From Prompt to Multi-Agent System: The Evolution of Our AI Product,” which traces the real path from a simple prompt-based tool to a production multi-agent system, including all the things that go wrong along the way.],
   [The lightning talks share more results of real-world experience. Advait Patel , a site reliability engineer at Broadcom, will talk about what happens when AI agents break production systems, and how his team responded. Abhimanyu Anand from Elastic asks a question that should keep every AI builder up at night: “Is your eval lying to you?” If your evaluation framework is giving you false confidence, you’re building on sand.],
+  [The bottleneck was never hands on keyboards],
   [Wes McKinney’s talk, “The Mythical Agent-Month,” revisits Fred Brooks’s famous argument that adding more people to a late software project makes it later, and asks whether the same dynamics apply to adding more agents. Wes’s answer, as he’s laid it out in his blog post , is so compelling that we immediately invited him to give it as a talk, even though that meant rearranging the existing program. Agents leave the essential complexity, the hard design decisions, the conceptual integrity of the system, completely untouched. Worse, agents introduce new accidental complexity at machine speed. Wes describes hitting a “brownfield barrier” around 100,000 lines of code where agents begin choking on the bloated codebases they themselves have generated.],
   [This connects directly to something that Steve Yegge and Wes (and many others, including me) have converged on: Taste is the scarce resource. Brooks argued 50 years ago that design talent was the real bottleneck. Now that agents have removed the labor constraint, that argument is stronger than ever. The developers who thrive won’t be the ones who run the most parallel sessions. They’ll be the ones who can hold their project’s conceptual model in their head, who know what to build and what to leave out.],
+  [New architectures for the new reality],
   [A cluster of talks addresses the structural question: If agents are doing most of the coding, what does the engineering organization, the platform, and the architecture need to look like?],
   [Juliette van der Laarse ’s talk, “The AI Flower: A Public Capability Architecture for AI-Native Engineering,” lays out a framework for how engineering teams should organize their capabilities in a world of AI-native workflows. Juliette’s work is a start on thinking through the second-order effects of the new technology. How does the organization itself need to change? We came across Juliette’s work recently and think it may be especially compelling for many of our enterprise customers.],
   [Mike Amundsen has spent years thinking about API ecosystems and sustainable architecture, and he’s applying that lens to the question of how AI should relate to human expertise. His talk, “From Automation to Augmentation: Designing AI Coaches That Amplify Expertise,” makes a distinction that will determine the shape of the future human/AI economy. Automation replaces human work. Augmentation amplifies it.],
   [Several other lightning talks fill in important pieces. Tatiana Botskina , a PhD candidate at Oxford and founder of an AI agent registry, talks about agent-to-agent collaboration and provenance, the question of how you know where an agent’s outputs came from. Neethu Elizabeth Simon from Arm addresses MCP server testing, a nuts-and-bolts reliability question that will matter more as MCP becomes the standard connective tissue for agent systems. And Arushee Garg from LinkedIn describes a production multi-agent system for generating outreach messages. These are all exploring issues that matter during real-world deployment.],
+  [The enterprise view],
   [The event closes with my fireside chat with Aaron Levie , cofounder and CEO of Box. Aaron has been one of the most thoughtful enterprise CEOs on the question of what agents mean for SaaS and for knowledge work more broadly. His argument is that agents don’t replace enterprise software; they ride on top of it, and they need content, context, and governance to do anything useful. He’s also made the point that most companies have vast amounts of work they’ve never been able to afford to do, contracts they’ve never analyzed, processes they’ve never optimized. AI doesn’t just automate existing work. It unlocks work that was previously too expensive to attempt.],
   [That connects to a theme I’ve been developing in my own work: the danger that AI creates enormous value but hollows out the economic circulatory system that supports the human expertise it depends on. Aaron is running a public company that has to navigate this in real time, making AI central to Box’s product while making the case that human judgment, context, and governance are more valuable, not less, in an agentic world.],
+  [What I’ll be watching for],
   [There will be not only real excitement but hopefully deeper insight emerging from the tensions between these speakers and the positions they take. Ryan Carson and Cat Wu represent genuinely different philosophies of the human-agent relationship, and both are shipping real products. Wes McKinney and Addy Osmani agree that taste and design judgment matter more than ever, but they’re coming at it from very different vantage points: Wes as an individual developer pushing the limits of parallel agent sessions, Addy as someone thinking about patterns that work for teams of hundreds. Nicole Koenigstein and Hila Fox are asking the question that the enthusiasm sometimes papers over: What happens when it goes wrong?],
   [And underneath all of it is the question that Steve Yegge, who isn’t on this program but whose ideas have certainly shaped my design of the program, would frame as a matter of grief and acceptance. Are we at the end of programming as a craft practice, or at the beginning of a new and different craft? I think the lineup proves that the craft isn’t dying. It’s migrating, from writing code to designing systems, from typing to taste, from individual heroics to orchestration. The people who understand that transition earliest will have an enormous advantage.],
   [Sign up for free here . The event runs March 26, 8:00am to 12:00pm PDT.],
@@ -335,10 +264,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Generative AI in the Real World: Sharon Zhou on Post-Training],
   author: [Ben Lorica and Sharon Zhou],
   source-name: [O'Reilly Radar],
@@ -539,10 +466,8 @@ That’s right. And you know, AMD makes both. . .],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Keep Deterministic Work Deterministic],
   author: [Andrew Stellman],
   source-name: [O'Reilly Radar],
@@ -575,14 +500,17 @@ That’s right. And you know, AMD makes both. . .],
   [I also want to be clear about exactly what a deterministic version of this simulation looks like. Luckily, the AI can help us with that. Go to either run (or your own) and paste one more prompt into the chat:],
   [Prompt 9: Now write a short Python script that does exactly what you just did: start with a score of 10, apply each of the seven rules to the seven sentences, and print the equation at each step.],
   [Run the script. It should print the correct answer for every step, ending at 60. The same AI that just failed the exercise can write code that does it flawlessly, because now it’s generating deterministic logic instead of trying to count characters through its tokenizer.],
+  [Reproducing a cascading failure in a chat],
   [I deliberately engineered the exercise earlier to give you a way to experience the cascading failure problem behind the March of Nines yourself. I took advantage of something current LLMs genuinely suck at: parsing characters inside tokens. Future models might do a much better job with this specific kind of failure, but the cascading failure problem doesn’t go away when the model gets smarter. As long as LLMs are nondeterministic, any step that relies on them has a reliability ceiling below 100%, and those ceilings still multiply. The specific weakness changes; the math doesn’t.],
   [I also specifically asked the model to show only the equation and skip all intermediate reasoning to prevent it from using chain of thought (or CoT) to self-correct. Chain of thought is a technique where you require the model to show its work step by step (for example, listing the words it counted and explaining why each one qualifies), which helps it catch its own mistakes along the way. CoT is a common way to improve LLM accuracy, and it works. As you’ll see later when I talk about the evolution of my blackjack simulation, CoT cut certain errors roughly in half. But “half as many errors” is still not zero. Plus, it’s expensive: It costs more tokens and more time. A Python script that counts double letters gets the right answer on every run, instantly, for zero AI API costs (or, if you’re running the AI locally, for orders of magnitude less CPU usage). That’s the core tension: You can spend engineering effort making the LLM better at deterministic work, or you can just hand it to code.],
   [Every step in this exercise is deterministic work that code handles flawlessly. But most interesting LLM tasks aren’t like that. You can’t write a deterministic script that plays a hand of blackjack using natural-language strategy rules, or decides how a character should respond in dialogue. Real work requires chaining multiple steps together into a pipeline , or a reproducible series of steps (some deterministic, some requiring an LLM) that lead to a single result, where each step’s output feeds the next. If that sounds like what you just saw in the exercise, it is. Except real pipelines are longer, more complex, and much harder to debug when something goes wrong in the middle.],
+  [LLM pipelines are especially susceptible to the March of Nines],
   [I’ve been spending a lot of time thinking about LLM pipelines, and I suspect I’m in the minority. Most people using LLMs are working with single prompts or short conversations. But once you start building multistep workflows where the AI generates structured data that feeds into the next step—whether that’s a content generation pipeline, a data processing chain, or a simulation—you run straight into the March of Nines. Each step has a reliability ceiling, and those ceilings multiply. The exercise you just tried had seven steps. The blackjack pipeline has more, and I’ve been running it hundreds of times per iteration.],
   [The blackjack pipeline in Octobatch , an open source batch orchestrator for multistep LLM workflows that I introduced in “ The Accidental Orchestrator .”],
   [That’s a screenshot of the blackjack pipeline in Octobatch , the tool I built to run these pipelines at scale. That pipeline deals cards deterministically, asks the LLM to play each hand following a strategy described in plain English, then validates the results with deterministic code. Octobatch makes it easy to change the pipeline and rerun hundreds of hands, which is how I iterated through eight versions—and how I really learned the hard way that the March of Nines wasn’t just a theoretical problem but something I could watch happening in real time across hundreds of data points.],
   [Running pipelines at scale made the failures obvious and immediate, which, for me, really underscored an effective approach to minimizing the cascading failure problem: make deterministic work deterministic . That means asking whether every step in the pipeline actually needs to be an LLM call. Checking that a jack, a five, and an eight add up to 23 doesn’t require a language model. Neither does looking up whether standing on 15 against a dealer 10 follows basic strategy. That’s arithmetic and a lookup table—work that ordinary code does perfectly every time. And as I learned over the course of improving the failure rate for the pipeline, every step you pull out of the LLM and make deterministic goes to 100% reliability, which stops it from contributing to the compound failure rate.],
   [Relying on the AI for deterministic work is the computation side of a pattern I wrote about for data in “ AI, MCP, and the Hidden Costs of Data Hoarding .” Teams dump everything into the AI’s context because the AI can handle it—until it can’t. The same thing happens with computation: Teams let the AI do arithmetic, string matching, or rule evaluation because it mostly works. But “mostly works” is expensive and slow, and a short script does it perfectly. Better yet, the AI can write that script for you—which is exactly what Prompt 9 demonstrated.],
+  [Getting cascading failures out of the blackjack pipeline],
   [I pushed the blackjack pipeline through eight iterations, and the results taught me more about earning nines than I expected. That’s why I’m writing this article—the iteration arc turned out to be one of the clearest illustrations I’ve found of how the principle works in practice.],
   [I addressed failures two ways, and the distinction matters.],
   [Some failures called for making work deterministic. Card dealing runs as a local expression step, which doesn’t require an API call, so it’s free, instant, and 100% reproducible. There’s a math verification step that uses code to recalculate totals from the actual cards dealt and compares them against what the LLM reported, and a strategy compliance step checks the player’s first action against a deterministic lookup table. Neither of those steps require any AI to make a judgment call; when I originally ran them as LLM calls, they introduced errors that were hard to detect and expensive to debug.],
@@ -595,6 +523,7 @@ That’s right. And you know, AMD makes both. . .],
   [Rigid output format (79% → 81%). The LLM kept skipping the dealer’s turn entirely, jumping straight to declaring a winner. Requiring a step-by-step dealer output format made it mechanically difficult to skip ahead.],
   [Overriding the model’s priors (81% → 84%). One strategy required hitting on 18 against a high dealer card, which any conventional blackjack wisdom says is terrible. The LLM refused to do it. Restating the rule didn’t help. Explaining why the counterintuitive rule exists did: The prompt had to tell the model that the bad play was intentional.],
   [Switching models (84% → 94%). I switched from Gemini Flash 2.0 to Haiku 4.6, which was easy to do because Octobatch lets you run the same pipeline with any model from Gemini, Anthropic, or OpenAI. I finally earned my first nine.],
+  [Find the best ways to earn your nines],
   [If you’re building anything where LLM output feeds into the next step, the same question applies to every step in your chain: Does this actually require judgment, or is it deterministic work that ended up in the LLM because the LLM can do it? The strategy validator felt like a judgment call until I looked at what it was actually doing, which was checking a hand against a lookup table. That one recognition was worth more than all the prompt engineering combined. And as Prompt 9 showed, the AI is often the best tool for writing its own deterministic replacement.],
   [I learned this lesson through my own work on the blackjack pipeline. It went through eight iterations, and I think the numbers tell a story. The fixes fell into two categories: making work deterministic (pulling it out of the LLM entirely) and adding structural constraints (making the LLM more reliable within a step). Both earn nines, but pulling work out of the LLM entirely earns those nines faster. The biggest single jump in the whole arc—48% to 79%—came from replacing an LLM validator with a 10-line expression.],
   [Here’s the bottom line for me: If you can write a short function that does the job, don’t give it to the LLM . I initially reached for the LLM for strategy validation because it felt like a judgment call, but once I looked at the data I realized it wasn’t at all. There was a right answer for every hand, and a lookup table found it more reliably than a language model.],
@@ -607,10 +536,8 @@ That’s right. And you know, AMD makes both. . .],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Should you adopt Java 12 or stick on Java 11?],
   author: [Stephen Colebourne],
   source-name: [Stephen Colebourne (Joda)],
@@ -790,12 +717,12 @@ So while the middle ground is a possible fallback if you get stuck, it is far fr
   [Some additional links],
   [Spring framework has expressed its policy wrt Java 12 in a video .
 The key sections are:],
-  [class="quote"\>
-Jaba 8 and 11 as the LTS branches officially supported from our end.
+  [Jaba 8 and 11 as the LTS branches officially supported from our end.
 Best efforts support for the releases inbetween.
 ... if you intend to upgrade to 12 ... we are very willing to work with you ... but they are not officially production supported.
 ... The long term support releases are what we are primarily focussed on. Java 12 and higher will be best effort from our side.],
   [As an example of a typical software vendor, Liferay states:],
+  [Liferay has decided we will not certify every single major release of the JDK. We will instead choose to follow Oracle's lead and certify only those marked for LTS.],
   [Liferay blog],
   [Oracle's official "misconceptions" slide about the new release model.],
   [I'm sure some development teams will adopt the Java release train.
@@ -811,10 +738,8 @@ I know we won't be adopting the release train at my day job any time soon, a key
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Java switch - 4 wrongs don't make a right],
   author: [Stephen Colebourne],
   source-name: [Stephen Colebourne (Joda)],
@@ -830,7 +755,7 @@ This means that if you forget to put a break clause in each case , processing wi
 In addition, default clause is not required, which leaves readers of the code unclear as to whether a clause was forgotten or not.],
   [And of course there is also the key limitation - that the type to be switched on can only be an integer, enum or string.],
   [String instruction;
- switch (trafficLight) {
+ switch (trafficLight) \{
  case RED:
  instruction = "Stop";
  case YELLOW:
@@ -839,7 +764,7 @@ In addition, default clause is not required, which leaves readers of the code un
  case GREEN:
  instruction = "Go";
  break;
- }
+ \}
  System.out.println(instruction);],
   [The code above does not compile because there is no default clause, leaving instruction undefined.
 But even if it did compile, it would never print "Stop" due to the missing break .
@@ -858,46 +783,23 @@ An expression form would reduce problems like the undefined variable above, beca
   [Type 3: Statement with new syntax. NEW! No fall-through. Not exhaustive.],
   [Type 4: Expression with new syntax. NEW! No fall-through. Must be exhaustive.],
   [The headline example (type 4) is of course quite nice:],
-  [\/\\/ type 4
- var instruction = switch (trafficLight) {
- case RED -\> "Stop";
- case YELLOW -\> "Prepare";
- case GREEN -\> "Go";
- };
- System.out.println(instruction);],
   [As can be seen, the new syntax of type 3 and 4 uses an arrow instead of a colon.
 And there is no need to use break if the code consists of a single expression.
 There is also no need for a default clause when using an enum, because the compiler can insert it for you provided you've included all the known enum values. So, if you missed out GREEN , you would get a compile error.],
   [The devil of course is in the detail.],
   [Firstly, a clear positive. Instead of falling through by listing multiple labels, they can be comma-separated:],
-  [\/\\/ type 4
- var instruction = switch (trafficLight) {
- case RED, YELLOW -\> "Stop";
- case GREEN -\> "Go";
- };
- System.out.println(instruction);],
   [Straightforward and obvious. And avoids many of the simple fall-through use cases.],
   [What if the code to execute is more complex than an expression?],
-  [\/\\/ type 4
- var instruction = switch (trafficLight) {
- case RED -\> "Stop";
- case YELLOW -\> {
- revYourEngine();
- yield "Prepare";
- }
- case GREEN -\> "Go";
- };
- System.out.println(instruction);],
   [yield ? Shrug.
-For a long time it was going to be break {expression} , but this clashes with labelled break (a syntax feature that is rarely used).],
+For a long time it was going to be break \{expression\} , but this clashes with labelled break (a syntax feature that is rarely used).],
   [So what about type 2?],
   [\/\\/ type 2
- var instruction = switch (trafficLight) {
+ var instruction = switch (trafficLight) \{
  case RED: yield "Stop";
  case YELLOW:
  System.out.println("Prepare");
  case GREEN: yield "Go";
- };
+ \};
  System.out.println(instruction);],
   [Oops! I forgot the yield . So, an input of YELLOW will output "Prepare" and then fall-through to yield "Go".],
   [So, why is it proposed to add a new form of switch that repeats the fall-through-by-default error from 20 years ago?
@@ -905,19 +807,8 @@ The answer is orthogonality - a 2x2 grid with expression vs statement and fall-t
   [A key question is whether being orthogonal justifies adding a almost totally useless form of switch (type 2) to the language.],
   [So, type 3 is fine them?],
   [Well, no. Because of the insistence on orthogonality, and thus an insistence of copying the historic rules relating to type 1 statement switch, there is no requirement to list all the case clauses:],
-  [\/\\/ type 3
- switch (trafficLight) {
- case RED -\> doStop();
- case GO -\> doGo();
- }],
   [So, what happens for YELLOW? The answer is nothing, but as a reader I am left wondering if the code is correct or incomplete.
 It would be much better if the above was a compile error, with developers forced to write a default clause:],
-  [\/\\/ type 3
- switch (trafficLight) {
- case RED -\> doStop();
- case GO -\> doGo();
- default -\> {}
- }],
   [The official argument is that since type 1 statement switch (the current one) does not force exhaustiveness, neither can the new type 3 statement switch.
 My view is that keeping a bad design from 20 years ago is a worse sin.],
   [What else? Well, one thing to bear in mind is that expressions cannot complete early, thus there is no way to return directly from within a switch expression (type 2 or 4). Nor is there a way to continue/break a loop. Trust me when I say there is an endless supply of Java exam questions in the rules that actually apply.],
@@ -960,17 +851,17 @@ Once this is accepted, there is no point in treating the expression form as a sw
   [I would drop type 2 and 3, and allow type 4 switch expressions to become what is known as statement expressions .
 (Another example of a statement expression is a method call, which can be used as an expression or as a statement on a line of its own, ignoring any return value.)],
   [\/\\/ Stephen's expression switch
- var instruction = match (trafficLight) {
+ var instruction = match (trafficLight) \{
  case RED: "Stop";
  case YELLOW: "Prepare";
  case GO: "Go";
- }
+ \}
  \/\\/ Stephen's expression switch used as a statement (technically a statement expression)
- match (instruction) {
+ match (instruction) \{
  case "Stop": doStop();
  case "Go": doGo();
  default: ;
- }],
+ \}],
   [My approach uses a new keyword match , as I believe extending switch is the wrong baseline to use.
 Making it a statement expression means that there is only one set of rules - it is always an expression, it is just that you can use it as though it were a statement.
 What you can't do with my approach is use return in the statement version, because it isn't actually a statement (you can't use return from any expression in Java today, so this would be no different).],
@@ -980,30 +871,30 @@ In my view, the feature needs to go back to the drawing board, but sadly I suspe
 ),
   insert-map: (:),
   inline-pq: pull-quote([This is rather like the ternary operator (eg.], [Stephen Colebourne]),
-  inline-pq-idx: 30,
+  inline-pq-idx: 28,
   word-count: 1580,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [In Praise of –dry-run],
   author: [Henrik Warne],
   source-name: [Henrik Warne],
   images: (),
   paragraphs: (
-  [class="wp-block-paragraph"\>For the last few months, I have been developing a new reporting application. Early on, I decided to add a –dry-run option to the run command. This turned out to be quite useful – I have used it many times a day while developing and testing the application.],
-  [class="wp-block-paragraph"\>The application will generate a set of reports every weekday. It has a loop that checks periodically if it is time to generate new reports. If so, it will read data from a database, apply some logic to create the reports, zip the reports, upload them to an sftp server, check for error responses on the sftp server, parse the error responses, and send out notification mails. The files (the generated reports, and the downloaded feedback files) are moved to different directories depending on the step in the process. A simple and straightforward application.],
-  [class="wp-block-paragraph"\>Early in the development process, when testing the incomplete application, I remembered that Subversion (the version control system after CVS, before Git) had a –dry-run option. Other linux commands have this option too. If a command is run with the argument –dry-run , the output will print what will happen when the command is run, but no changes will be made. This lets the user see what will happen if the command is run without the –dry-run argument.],
-  [class="wp-block-paragraph"\>I remembered how helpful that was, so I decided to add it to my command as well. When I run the command with –dry-run , it prints out the steps that will be taken in each phase: which reports that will be generated (and which will not be), which files will be zipped and moved, which files will be uploaded to the sftp server, and which files will be downloaded from it (it logs on and lists the files).],
-  [class="wp-block-paragraph"\>I am surprised how useful I found it to be. I often used it as a check before getting started. Since I know –dry-run will not change anything, it is safe to run without thinking. I can immediately see that everything is accessible, that the configuration is correct, and that the state is as expected. It is a quick and easy sanity check.],
-  [class="wp-block-paragraph"\>I also used it quite a bit when testing the complete system. For example, if I changed a date in the report state file (the date for the last successful report of a given type), I could immediately see from the output whether it would now be generated or not. Without –dry-run , the actual report would also be generated, which takes some time. So I can test the behavior, and receive very quick feedback.],
-  [class="wp-block-paragraph"\>The downside is that the dryRun -flag pollutes the code a bit. In all the major phases, I need to check if the flag is set, and only print the action that will be taken, but not actually doing it. However, this doesn’t go very deep. For example, none of the code that actually generates the report needs to check it. I only need to check if that code should be invoked in the first place.],
-  [class="wp-block-paragraph"\>The type of application I have been writing is ideal for –dry-run . It is invoked by a command, and it may create some changes, for example generating new reports. More reactive applications (that wait for messages before acting) don’t seem to be a good fit.],
-  [class="wp-block-paragraph"\>I added –dry-run on a whim early on in the project. I was surprised at how useful I found it to be. Adding it early was also good, since I got the benefit of it while developing more functionality.],
+  [For the last few months, I have been developing a new reporting application. Early on, I decided to add a –dry-run option to the run command. This turned out to be quite useful – I have used it many times a day while developing and testing the application.],
+  [The application will generate a set of reports every weekday. It has a loop that checks periodically if it is time to generate new reports. If so, it will read data from a database, apply some logic to create the reports, zip the reports, upload them to an sftp server, check for error responses on the sftp server, parse the error responses, and send out notification mails. The files (the generated reports, and the downloaded feedback files) are moved to different directories depending on the step in the process. A simple and straightforward application.],
+  [Early in the development process, when testing the incomplete application, I remembered that Subversion (the version control system after CVS, before Git) had a –dry-run option. Other linux commands have this option too. If a command is run with the argument –dry-run , the output will print what will happen when the command is run, but no changes will be made. This lets the user see what will happen if the command is run without the –dry-run argument.],
+  [I remembered how helpful that was, so I decided to add it to my command as well. When I run the command with –dry-run , it prints out the steps that will be taken in each phase: which reports that will be generated (and which will not be), which files will be zipped and moved, which files will be uploaded to the sftp server, and which files will be downloaded from it (it logs on and lists the files).],
+  [Looking back at the project, I realized that I ended up using the –dry-run option pretty much every day.],
+  [I am surprised how useful I found it to be. I often used it as a check before getting started. Since I know –dry-run will not change anything, it is safe to run without thinking. I can immediately see that everything is accessible, that the configuration is correct, and that the state is as expected. It is a quick and easy sanity check.],
+  [I also used it quite a bit when testing the complete system. For example, if I changed a date in the report state file (the date for the last successful report of a given type), I could immediately see from the output whether it would now be generated or not. Without –dry-run , the actual report would also be generated, which takes some time. So I can test the behavior, and receive very quick feedback.],
+  [The downside is that the dryRun -flag pollutes the code a bit. In all the major phases, I need to check if the flag is set, and only print the action that will be taken, but not actually doing it. However, this doesn’t go very deep. For example, none of the code that actually generates the report needs to check it. I only need to check if that code should be invoked in the first place.],
+  [The type of application I have been writing is ideal for –dry-run . It is invoked by a command, and it may create some changes, for example generating new reports. More reactive applications (that wait for messages before acting) don’t seem to be a good fit.],
+  [I added –dry-run on a whim early on in the project. I was surprised at how useful I found it to be. Adding it early was also good, since I got the benefit of it while developing more functionality.],
+  [The –dry-run flag is not for every situation, but when it fits, it can be quite useful.],
 ),
   insert-map: (:),
   word-count: 639,
@@ -1011,12 +902,10 @@ In my view, the feature needs to go back to the drawing board, but sadly I suspe
   debug-mode: false,
 )
 
-  #pull-quote([class="wp-block-heading"\>Downside  class="wp-block-paragraph"\>The downside is that the dryRun -flag pollutes the code a bit.], [Henrik Warne])
+#pull-quote([Downside The downside is that the dryRun -flag pollutes the code a bit.], [Henrik Warne])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Solid Relevance],
   author: [Robert C Martin (Clean Coder)],
   source-name: [Robert C Martin (Clean Coder)],
@@ -1060,17 +949,14 @@ In my view, the feature needs to go back to the drawing board, but sadly I suspe
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Passing planes and other whoosh sounds],
   author: [Oona Räisänen],
   source-name: [Oona Raisanen (windytan)],
   images: (),
   paragraphs: (
   [I always assumed that the recognisable 'whoosh' sound a plane or helicopter makes when passing overhead simply comes from the famous Doppler effect . But when you listen closely, this explanation doesn't make complete sense.],
-  [id="planepassingwave" width="520"\>],
   [(Audio clipped from freesound - here and here )],
   [A classic example of the Doppler effect is the sound of a passing ambulance constantly descending in pitch. When a plane flies overhead the roar of the engine sometimes does that as well. But you can also hear a wider, breathier noise that does something different: it's like the pitch goes down at first, but when the plane has passed us, the pitch goes up again. That's not how Doppler works! What's going on there?],
   [Comb filtering.],
@@ -1091,7 +977,6 @@ In my view, the feature needs to go back to the drawing board, but sadly I suspe
   [When the plane is far away the angle is shallower, the two paths are more similar in distance, and the time difference is shorter.],
   [It would follow that a taller person hears the sound differently than a shorter one, or someone in a tenth-floor window! If the ground is very soft, maybe in a mossy grove, you probably wouldn't hear the effect at all; just the Doppler effect. But this prediction needs to be tested out in a real forest.],
   [Here's what a minimal acoustic simulation model renders. We'll just put a flying white noise source in the sky and a reflective surface as the ground. Let's only update the IR at 15 fps to prevent the Doppler phenomenon from emerging.],
-  [id="simulatedwave" width="520"\>],
   [Whoosh!],
   [Some everyday whooshes.],
   [The whoosh isn't only associated with planes. When it occurs naturally it usually needs three things:],
@@ -1113,10 +998,8 @@ In my view, the feature needs to go back to the drawing board, but sadly I suspe
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Big problems at the timezone database],
   author: [Stephen Colebourne],
   source-name: [Stephen Colebourne (Joda)],
@@ -1178,34 +1061,37 @@ quickly as the company involved got the message that their action was a big
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Programming Conference – Jfokus Stockholm 2025],
   author: [Henrik Warne],
   source-name: [Henrik Warne],
   images: (),
   paragraphs: (
-  [class="wp-block-paragraph"\>This week I attended the Jfokus software development conference in Stockholm, Sweden. I first went in 2011, and I have been back many times through the years. The conference has a Java focus (duh!), but many talks cover general topics as well.],
-  [class="wp-block-paragraph"\>The whole development team at NGM got tickets. It is really nice to be able to discuss and compare notes with your colleagues. The big theme this year, apart from Java, was of course AI and LLMs.],
-  [class="wp-block-paragraph"\> The First 80% of Reading One Billion Rows Fast Enough by René Schwietzke . This is a talk on Java optimization, and I really enjoyed it! I had not heard about the challenge before. The input is one billion rows of simple weather csv data, and the idea is to see how fast it can be processed in Java. Of course there are solutions that use incredibly weird and obscure techniques, but this talk goes through some basic optimizations that together add up to a run time of 20% of the original solution.],
-  [class="wp-block-paragraph"\>After setting up the problem, René shows a base-line solution, and gives its run time. Then he goes through a number of optimizations, and shows how much each saves. Examples of optimizations are: replace split() by indexOf(), use int instead of double (we know there is only ever one decimal digit), mutate existing objects instead of creating new ones, only read bytes (not Strings, doubles etc) and delay Unicode processing, simpler Min/Max, create the hash code while traversing the line.],
-  [class="wp-block-paragraph"\>René used a flamegraph from a profiler to guide what areas of the program should be optimized. Some general rules he followed were: replace standard JDK functionality (it may be more general than what is needed), low or no memory allocation, avoid wrappers and immutability, reduce branching (if, loops), exploit what you know about the input data.],
-  [class="wp-block-paragraph"\> The Future of Work by Henrik Kniberg . This was second of two keynote talks that opened the conference. Henrik did a live demo where he used several AI agents to accomplish tasks, such as making code changes, creating a branch in git, and creating a PR with the changes. The AI agents have instructions in the form of short text documents, and these instructions can be updated, even by the agents themselves (subject to human approval).],
-  [class="wp-block-paragraph"\>The agents appear as their own users in Slack. They can also be given recurring tasks, for example to create a report each morning on a given subject, and to mail out the report and post a summary of it in Slack. He also demonstrated how they can trouble shoot if something goes wrong, for example if it can’t create a git branch. The LLM used in the demo was Claude, and Henrik used it in voice-input mode.],
-  [class="wp-block-paragraph"\>He ended the presentation with some reflections on the implications of this way of working. He, like me, has always loved programming. Will this way of working, with agents writing a large chunk of the code, or all code, mean the end of software development for humans? First he noted that this is similar to moving from punch cards, to assembler, and to compiled higher level languages. You move up one abstraction level. He also noted that what he liked about programming was making and creating things, not necessarily writing the actual code.],
-  [class="wp-block-paragraph"\> Ask the Architect with Brian Goetz (Java Language Architect) and Mark Reinhold (Chief Architect), both at Oracle. This was a Q&A session, where the audience had a chance to ask Brian and Mark Java questions. I didn’t really know what to expect from this session, since it will depend a lot on the questions asked. But I was pleasantly surprised. There was quite a variety of questions.],
-  [class="wp-block-paragraph"\>There were questions about serialization, GraalVM vs HotSpot, records, streams, Lombok, different deprecation modes, and more. Quite interesting. Before we started, Brian and Mark cautioned us not to begin questions with “Why don’t you just…”. Modifying a language that has been around for so long, with so many existing programs, is not easy. This became very clear when hearing some of the answers.],
-  [class="wp-block-paragraph"\>Going to a conference is different from watching talks on YouTube, or reading books or blog posts about software development. It is nice to meet and talk to other developers. My standard question when chatting with other attendees is “What is your favorite talk so far, and why?”. At Jfokus, your name and your company are printed on your badge. This gives you another set of good icebreaker questions: “What do you do at Company X? What does the company do? What tech stack do you use?”. Also, when listening to a talk live, you have a chance to ask questions, either during the talk, or afterwards.],
-  [class="wp-block-paragraph"\>It is very convenient to attend a conference in your home city or country. It is cheaper and there is less travel. From the badges I saw at Jfokus, most people were from Sweden, and a few from Germany.],
-  [class="wp-block-paragraph"\>At Jfokus, there are usually six parallel talks, so it can sometimes be hard to pick what to listen to. When attending a conference, and listening to many talks in a row, you notice things that are mentioned more than once. Examples this year were LLMs checking the output of other LLMs, RAG (Retrieval-Augmented Generation), AI-assisted coding (with IDE plugins), GraalVM, and the Quarkus framework. After a conference I always end up with a long list of things to look up: techniques and tools I hadn’t heard about before, and books and articles to look into.],
-  [class="wp-block-paragraph"\>I also like to see which companies have exhibition booths at the conference. Even if I am not interested in their exact service, it gives me a general sense of what is popular right now. All the exhibitors get a little gold star in my book for sponsoring a conference.],
+  [This week I attended the Jfokus software development conference in Stockholm, Sweden. I first went in 2011, and I have been back many times through the years. The conference has a Java focus (duh!), but many talks cover general topics as well.],
+  [The whole development team at NGM got tickets. It is really nice to be able to discuss and compare notes with your colleagues. The big theme this year, apart from Java, was of course AI and LLMs.],
+  [Talks I Liked],
+  [The First 80% of Reading One Billion Rows Fast Enough by René Schwietzke . This is a talk on Java optimization, and I really enjoyed it! I had not heard about the challenge before. The input is one billion rows of simple weather csv data, and the idea is to see how fast it can be processed in Java. Of course there are solutions that use incredibly weird and obscure techniques, but this talk goes through some basic optimizations that together add up to a run time of 20% of the original solution.],
+  [After setting up the problem, René shows a base-line solution, and gives its run time. Then he goes through a number of optimizations, and shows how much each saves. Examples of optimizations are: replace split() by indexOf(), use int instead of double (we know there is only ever one decimal digit), mutate existing objects instead of creating new ones, only read bytes (not Strings, doubles etc) and delay Unicode processing, simpler Min/Max, create the hash code while traversing the line.],
+  [René used a flamegraph from a profiler to guide what areas of the program should be optimized. Some general rules he followed were: replace standard JDK functionality (it may be more general than what is needed), low or no memory allocation, avoid wrappers and immutability, reduce branching (if, loops), exploit what you know about the input data.],
+  [The Future of Work by Henrik Kniberg . This was second of two keynote talks that opened the conference. Henrik did a live demo where he used several AI agents to accomplish tasks, such as making code changes, creating a branch in git, and creating a PR with the changes. The AI agents have instructions in the form of short text documents, and these instructions can be updated, even by the agents themselves (subject to human approval).],
+  [The agents appear as their own users in Slack. They can also be given recurring tasks, for example to create a report each morning on a given subject, and to mail out the report and post a summary of it in Slack. He also demonstrated how they can trouble shoot if something goes wrong, for example if it can’t create a git branch. The LLM used in the demo was Claude, and Henrik used it in voice-input mode.],
+  [He ended the presentation with some reflections on the implications of this way of working. He, like me, has always loved programming. Will this way of working, with agents writing a large chunk of the code, or all code, mean the end of software development for humans? First he noted that this is similar to moving from punch cards, to assembler, and to compiled higher level languages. You move up one abstraction level. He also noted that what he liked about programming was making and creating things, not necessarily writing the actual code.],
+  [A very good and thought-provoking talk. Actually seeing agents in action, instead of merely being told what they can do, really brings the points home.],
+  [Ask the Architect with Brian Goetz (Java Language Architect) and Mark Reinhold (Chief Architect), both at Oracle. This was a Q&A session, where the audience had a chance to ask Brian and Mark Java questions. I didn’t really know what to expect from this session, since it will depend a lot on the questions asked. But I was pleasantly surprised. There was quite a variety of questions.],
+  [There were questions about serialization, GraalVM vs HotSpot, records, streams, Lombok, different deprecation modes, and more. Quite interesting. Before we started, Brian and Mark cautioned us not to begin questions with “Why don’t you just…”. Modifying a language that has been around for so long, with so many existing programs, is not easy. This became very clear when hearing some of the answers.],
+  [The Value of Conferences],
+  [Going to a conference is different from watching talks on YouTube, or reading books or blog posts about software development. It is nice to meet and talk to other developers. My standard question when chatting with other attendees is “What is your favorite talk so far, and why?”. At Jfokus, your name and your company are printed on your badge. This gives you another set of good icebreaker questions: “What do you do at Company X? What does the company do? What tech stack do you use?”. Also, when listening to a talk live, you have a chance to ask questions, either during the talk, or afterwards.],
+  [It is very convenient to attend a conference in your home city or country. It is cheaper and there is less travel. From the badges I saw at Jfokus, most people were from Sweden, and a few from Germany.],
+  [At Jfokus, there are usually six parallel talks, so it can sometimes be hard to pick what to listen to. When attending a conference, and listening to many talks in a row, you notice things that are mentioned more than once. Examples this year were LLMs checking the output of other LLMs, RAG (Retrieval-Augmented Generation), AI-assisted coding (with IDE plugins), GraalVM, and the Quarkus framework. After a conference I always end up with a long list of things to look up: techniques and tools I hadn’t heard about before, and books and articles to look into.],
+  [I also like to see which companies have exhibition booths at the conference. Even if I am not interested in their exact service, it gives me a general sense of what is popular right now. All the exhibitors get a little gold star in my book for sponsoring a conference.],
+  [Finally, it is always inspiring to go to a conference. Meeting people and learning about new ideas is exciting.],
+  [Odds and Ends],
   [Tobias Modig, in his talk The Developer Rhapsody, talked about “the mediocre developer”. Someone competent that stays at the same company for 15 years. The contrast is the brilliant developer, that gets bored after a year and a half and moves on. Who is more valuable for a company?],
   [“We think in generalities, but we live in detail” – Alfred North Whitehead. One of many good quotes Kevlin Henney mentioned in his talk Keeping It Simple.],
   [The venue, Stockholm Waterfront Congress Centre, is great. Everything worked smoothly, the food and the “fika” was great, and it is very easy to get to.],
   [The Jfokus web site could be improved. First of all, it would be good if the back button in the browser worked. Going back after clicking into a talk, you lose where you were in the schedule. Also, the link for rating the talk would be good to have next to the talk description.],
-  [class="wp-block-paragraph"\>Another great conference, with a good variety of talks and speakers. If you haven’t been to a conference in a while, try to find one to attend. It is really inspiring, and a nice way of keeping up with new ideas and technology.],
+  [Another great conference, with a good variety of talks and speakers. If you haven’t been to a conference in a while, try to find one to attend. It is really inspiring, and a nice way of keeping up with new ideas and technology.],
 ),
   insert-map: (:),
   word-count: 1236,
@@ -1213,10 +1099,8 @@ quickly as the company involved got the message that their action was a big
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [User-defined literals in Java?],
   author: [Stephen Colebourne],
   source-name: [Stephen Colebourne (Joda)],
@@ -1253,7 +1137,7 @@ ie. these two would be equivalent:],
  var date = LocalDate\`2019-03-29\`;],
   [The type inference would also work with methods (compile error if ambiguous):],
   [boolean inferior = isShortMonth(\`2019-04-12\`);],
-  [public boolean isShortMonth(LocalDate date) { return date.lengthOfMonth()],
+  [public boolean isShortMonth(LocalDate date) \{ return date.lengthOfMonth()],
   [Raw processing],
   [Processing of the literal should not be limited by Java's escape mechanisms.
 User-defined literals need access to the raw string.
@@ -1287,12 +1171,10 @@ Clearly though, there is going to need to be some form of factory method on the 
   debug-mode: false,
 )
 
-  #pull-quote([Clearly, the problem with parsing raw literals is that there is no mechanism to escape.], [Stephen Colebourne])
+#pull-quote([Clearly, the problem with parsing raw literals is that there is no mechanism to escape.], [Stephen Colebourne])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Java 9 modules - JPMS basics],
   author: [Stephen Colebourne],
   source-name: [Stephen Colebourne (Joda)],
@@ -1303,6 +1185,7 @@ In this article, I will introduce it, leaving most of my opinions to a follow up
 This is based on these slides .],
   [Java Platform Module System (JPMS)],
   [The new module system, developed as Project Jigsaw , is intended to raise the abstraction level of coding in Java as follows:],
+  [The primary goals of this Project are to:],
   [\* Make the Java SE Platform, and the JDK, more easily scalable down to small computing devices;],
   [\* Improve the security and maintainability of Java SE Platform Implementations in general, and the JDK in particular;],
   [\* Enable improved application performance; and],
@@ -1343,30 +1226,30 @@ Fundamentally, the JPMS authors (Oracle) have set out to build a JVM extension t
   [The module-info.java file contains the instructions that define a module (the most important ones are covered here, but there are more).
 This is a .java file, however the syntax is nothing like any .java file you've seen before.],
   [There are two key questions that you have to answer to create the file - what does this module depend on, and what does it export:],
-  [module com.opengamma.util {
+  [module com.opengamma.util \{
  requires org.joda.beans; \/\\/ this is a module name, not a package name
  requires com.google.guava;],
   [exports com.opengamma.util; \/\\/ this is a package name, not a module name
-}],
+\}],
   [(The names to use for modules needed a whole separate article , for this one I'll use package-name style)],
   [This module declaration says that com.opengamma.util depends on (requires) org.joda.beans and com.google.guava .
 It exports one package, com.opengamma.util .
 All other packages are hidden when using the modulepath (enforced by the JVM).],
   [There is an implicit dependency on java.base , the core module of the JDK.
 Note that the JDK itself is also modularized, so if you want to depend on Swing, XML or Logging, that dependency needs to be expressed.],
-  [module org.joda.beans {
+  [module org.joda.beans \{
  requires transitive org.joda.convert;],
   [exports org.joda.beans;
  exports org.joda.beans.ser;
-}],
+\}],
   [This module declaration says that org.joda.beans depends on (requires) org.joda.convert .
 The "requires transitive", as opposed to a simple "requires", means that any module that requires org.joda.beans 
 can also see and use the packages from org.joda.convert . This is used here as Joda-Beans has methods where the
 return type is from Joda-Convert. This is shown by a dashed line.],
-  [module org.joda.convert {
+  [module org.joda.convert \{
  requires static com.google.guava;],
   [exports org.joda.convert;
-}],
+\}],
   [This module declaration says that org.joda.convert depends on (requires) com.google.guava ,
 but only at compile time, "requires static", as opposed to a simple "requires". This is an optional dependency.
 If Guava is on the modulepath, then Joda-Convert will be able to see and use it, and no error will occur if Guava is not present.
@@ -1420,16 +1303,14 @@ If you are thinking of modularizing your library or application, please wait a l
 ),
   insert-map: (:),
   inline-pq: pull-quote([This is used here as Joda-Beans has methods where the return type is from Joda-Convert.], [Stephen Colebourne]),
-  inline-pq-idx: 22,
+  inline-pq-idx: 23,
   word-count: 1960,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Criminals are renting virtual phones to bypass bank security],
   author: [Malwarebytes Labs],
   source-name: [Malwarebytes Labs],
@@ -1451,6 +1332,7 @@ If you are thinking of modularizing your library or application, please wait a l
   [Once the criminals are in, they carry out authorized push payment (APP) transfers (often to money‑mule accounts), that the bank’s systems may treat as low‑risk because nothing about the device seems obviously wrong.],
   [At that point the criminals can start emptying your account or sell the virtual phones to other criminals. According to the researchers:],
   [“Darknet markets actively trade pre-verified dropper accounts created on cloud phones, with Revolut and Wise accounts priced at \$50-200 each, often including continued access to the cloud phone instance.”],
+  [How to stay safe],
   [The Group-IB researchers advise end users to:],
   [Never complete account verification processes under third-party instruction. Keep in mind that banks and government institutions will not ask customers to authenticate accounts through unfamiliar apps or remote environments.],
   [Enable device-based security features. Use official mobile banking apps, biometric authentication, and strong device-level security settings.],
@@ -1469,10 +1351,8 @@ If you are thinking of modularizing your library or application, please wait a l
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [What OpenClaw Reveals About the Next Phase of AI Agents],
   author: [Kesha Williams],
   source-name: [O'Reilly Radar],
@@ -1480,10 +1360,12 @@ If you are thinking of modularizing your library or application, please wait a l
   paragraphs: (
   [In November 2025, Austrian developer Peter Steinberger published a weekend project called Clawdbot. You could text it on Telegram or WhatsApp, and it would do things for you: manage your calendar, triage your email, run scripts, and even browse the web. By late January 2026, it had exploded. It gained 25,000 GitHub stars in a single day and surpassed React’s star count within two months, a milestone that took React over a decade. By mid-February, Steinberger had joined OpenAI, and the project moved to an open source foundation under its final name: OpenClaw .],
   [What was so special about OpenClaw? Why did this one take off when so many agent projects before it didn’t?],
+  [Autonomous AI isn’t new],
   [Where we are today feels similar to April 2023 when AutoGPT hit the scene. It had the same GitHub trajectory with its promise of autonomous AI. Then reality hit. Agents got stuck in loops, hallucinated a lot, and racked up token costs. It didn’t take long for people to walk away.],
   [OpenClaw has one critical advantage: The models have gotten better. Recent LLMs like Claude Opus 4.6 and GPT-5.4 allow models to chain tools together, recover from errors, and plan multistep strategies. Steinberger’s weekend project benefited from timing as much as design.],
   [The architecture is intentionally simple. There are no vector databases and no multi-agent orchestration frameworks. Persistent memory is Markdown files on disk. Let me repeat that: Persistent memory is Markdown files on disk! The agent can read yesterday’s notes and search its own files for additional context. You can view and edit the agent’s files as needed. There’s a useful lesson in that: Not every agent system needs a complex memory strategy. It’s more important that you understand what the agent is doing and that it retains context across runs.],
   [What fascinates me about OpenClaw is that none of the individual pieces are new. Persistent memory across sessions? We’ve been building that for years. Cron jobs to trigger agent actions on a schedule? Decades old infrastructure. Plug-in systems for extensibility? A very standard pattern. Webhooks into WhatsApp and Telegram? There are well-documented APIs for that. What Steinberger did was wire them together at the exact moment the underlying models could execute on multistep plans. The combination created something that felt quite different from anything that had come before.],
+  [Why this time feels different],
   [OpenClaw nailed three things that previous agent projects missed: proximity, creativity, and extensibility.],
   [Proximity—it lives where you already are every day. OpenClaw connects to WhatsApp, Slack, Discord, Telegram, and Signal. That single design decision changed its trajectory. The agent becomes an active participant in your workflow. People use it to manage their sales pipeline, automate emails, and kick off code reviews from their phones.],
   [Next, it’s proactive. OpenClaw doesn’t wait for you to ask; it uses cron jobs to run tasks on a set schedule. It can check your email every day at 6am, draft a reply before you wake up, and even send it for you. And it reaches out when anything needs your attention. Agents become part of everyday life when integrated into familiar channels.],
@@ -1491,9 +1373,11 @@ If you are thinking of modularizing your library or application, please wait a l
   [The community ran with it. A social network exclusively for AI Agents, Moltbook , launched in late January and grew to over 1.5 million agent accounts. One agent created a dating profile for its owner on MoltMatch and started screening matches without being asked.],
   [I’ll admit, I got swept up in it, but that’s not surprising; I’ve always been an early adopter of emerging technology. I bought a Mac mini, installed OpenClaw, and connected it to my Jira, AWS, and GitHub accounts. In no time, I had my agent, Jarvis, writing code and submitting PRs, running my daily standups, and deploying my code to AWS using AWS CloudFormation and the AWS CLI.],
   [I spent a lot of time binding the gateway to localhost, auditing every skill, and restricting filesystem permissions. For me, hardening the setup was not optional. I’m now deploying via AWS Lightsail, which adds network isolation and managed security layers that are hard to replicate on a Mac mini in your home office.],
+  [The security problem no one wants to talk about],
   [OpenClaw requires root-level access to your system by design. It needs your email credentials, API keys, calendar tokens, browser cookies, filesystem access, and terminal permissions. If you’re like me, that would keep you up at night.],
   [Security researchers found 135,000 OpenClaw instances exposed on the open internet, over 15,000 vulnerable to remote code execution. The default configuration binds the gateway to 0.0.0.0 with no authentication. A zero-click exploit disclosed in early March allowed attackers to hijack an instance simply by getting the user to visit a web page.],
   [The skills marketplace got hit too. Researchers discovered over 800 malicious skills distributing malware on ClawHub, including credential stealers targeting macOS. Cisco confirmed that one third-party skill was performing data exfiltration and prompt injection without user awareness. These are not edge cases and point directly to what happens when an agent can act across real systems with real permissions and weak controls.],
+  [What practitioners should take away],
   [OpenClaw matters for the same reason ChatGPT mattered in late 2022. A huge number of people just experienced, for the first time, what it feels like to have an AI agent do real work for them. That changes what they expect from every product going forward.],
   [If you’re building AI systems, pay attention to three signals here.],
   [The killer interface for agents turned out to be the one on everyone’s phone. Your agent strategy shouldn’t require users to learn a new tool; that’s why most products are introducing agentic capabilities.],
@@ -1504,16 +1388,14 @@ If you are thinking of modularizing your library or application, please wait a l
 ),
   insert-map: (:),
   inline-pq: pull-quote([In no time, I had my agent, Jarvis, writing code and submitting PRs, running my daily standups, and deploying my code to AWS using AWS CloudFormation and the AWS CLI.], [Kesha Williams]),
-  inline-pq-idx: 9,
+  inline-pq-idx: 10,
   word-count: 1237,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Bogus Avast website fakes virus scan, installs Venom Stealer instead],
   author: [Malwarebytes Labs],
   source-name: [Malwarebytes Labs],
@@ -1522,23 +1404,30 @@ If you are thinking of modularizing your library or application, please wait a l
   [A fake website impersonating Avast antivirus is tricking people into infecting their own computers.],
   [The site looks legitimate, runs what appears to be a virus scan, and claims your system is full of threats. But the results are fake: when you’re prompted to “fix” the problem, the download you’re given is actually Venom Stealer —a type of malware designed to steal passwords, session cookies, and cryptocurrency wallet data.],
   [This is a classic scare-and-fix scam: create panic, then offer a solution. In this case, the “solution” abuses the trusted Avast brand to deliver the attack.],
+  [A scan that finds exactly what the attacker wants you to see],
   [The phishing page is a recreation of the Avast brand, complete with navigation bar, logo, and reassuring certification badges. Visitors are invited to run what appears to be a comprehensive virus scan. Once they click, the page stages a brief animation before delivering its predetermined verdict: three threats found, three threats removed, system protected. A scrolling console log names a specific detection— Trojan: Win32/Zbot. AA!dll —to lend the performance an air of specificity. The victim is then prompted to download the cure: a file called Avast\_system\_cleaner.exe .],
   [This is the payload. And far from cleaning anything, it immediately begins stealing.],
+  [A Chrome service that is not Chrome],
   [When the victim launches Avast\_system\_cleaner.exe , the binary—a 64-bit Windows PE executable roughly 2 MB in size—copies itself into a location designed to blend in with legitimate software: C:\\Program Files\\Google\\Chrome\\Application\\v20svc.exe . The dropped file is byte-for-byte identical to the parent, sharing the same MD5 hash ( 0a32d6abea15f3bfe2a74763ba6c4ef5 ). It then launches the copy with the command-line flag --v20c , a meaningless argument whose sole purpose is to signal to the malware that it is running in its second-stage role.],
   [The disguise is deliberate. A process named v20svc.exe sitting inside Chrome’s application directory looks, at a glance, like a legitimate browser service component. Anyone scanning their task manager would likely scroll past it without a second thought. This is a textbook example of masquerading: naming a malicious binary to match the conventions of trusted software so it escapes casual inspection.],
   [A debug artifact baked into the binary confirms its lineage: the PDB path reads crypter\_stub.pdb , indicating the executable was packed using a crypter, which is a tool designed to scramble a payload’s code so antivirus engines cannot recognise it from its signature alone. At the time of analysis, only 27% of engines on VirusTotal flagged the sample, meaning roughly three in four commercial antivirus products missed it entirely.],
   [YARA rules matched the sample to the Venom Stealer malware family, a known descendant of the Quasar RAT framework that has been sold on underground forums since at least 2020. Venom Stealer is purpose-built for data theft: browser credentials, session cookies, cryptocurrency wallets, and credit card details stored in browsers.],
+  [Every cookie, every wallet, every saved password],
   [Once running, the malware works through a checklist of high-value targets on the victim’s machine.],
   [It starts with browsers. Behavioral analysis confirms the malware harvests saved credentials and session cookies. In the analysis environment, it was observed directly accessing Firefox’s cookie database at C:\\Users\\ \\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\ \\cookies.sqlite-shm . Process memory also contained fully-formed JSON structures with stolen cookie data from Microsoft Edge and Google Chrome, including active sessions for Netflix, YouTube, Reddit, Facebook, LinkedIn, AliExpress, Outlook, Adobe, and Google. Stolen session cookies give the attacker the ability to hijack authenticated browser sessions without needing the victim’s password, including sessions protected by two-factor authentication.],
   [The malware also targets cryptocurrency wallets. Behavioral signatures confirm it searches for and attempts to steal locally-stored wallet data, and Venom Stealer is documented as targeting desktop wallet applications. For anyone holding crypto assets on a hot wallet, the implications are immediate.],
   [Beyond credentials, the stealer captures a screenshot of the victim’s desktop, saved temporarily as C:\\Users\\ \\AppData\\Local\\Temp\\screenshot\_5sIczFxY95t2IQ5u.jpg , and writes a session tracking file to C:\\Users\\ \\AppData\\Roaming\\Microsoft\\fd1cd7a3\\sess . A small marker file is also dropped at C:\\Users\\Public\\NTUSER.dat —a path chosen to mimic a legitimate Windows registry hive file and avoid suspicion.],
+  [Disguised as analytics, delivered over plain HTTP],
   [All stolen data is exfiltrated to a single command-and-control domain: app-metrics-cdn\[.\]com , which resolved to 104.21.14.89 (a Cloudflare address) during analysis. The domain name is crafted to look like a benign analytics or content delivery service, the kind of traffic that might not raise alarm bells in a corporate proxy log.],
   [The exfiltration follows a structured four-step sequence over unencrypted HTTP. First, a multipart form-data POST to /api/upload transmits the collected file—screenshots, wallet data, cookie databases—totalling around 140 KB. A second POST to \/ api/upload-json sends a structured JSON payload of approximately 29 KB containing parsed credentials and cookies. A confirmation POST to /api/upload-complete signals that the theft is finished. The malware then enters a heartbeat loop, periodically checking in at /api/listener/heartbeat to maintain contact with the operator’s infrastructure.],
   [All of this traffic uses a generic Mozilla/5.0 user-agent string, another attempt to blend in with ordinary web browsing.],
+  [Syscalls, sleep loops, and debugger checks],
   [Venom Stealer does not simply steal and leave. It takes significant steps to avoid being caught. The most notable evasion technique is the use of direct and indirect system calls, a method where the malware invokes Windows kernel functions directly rather than routing through the standard ntdll.dll library. Because most endpoint detection tools work by intercepting calls to that library, this technique effectively blinds them. This behaviour was flagged in both the parent and the dropped child process.],
   [The malware also checks whether it is being debugged, queries CPU vendor and model information, reads the volume serial number of the system drive, creates guard pages in memory that can crash debuggers attempting to step through the code, and enumerates running processes. These are common techniques for detecting virtual machines and analysis environments. To frustrate automated analysis further, it incorporates sleep calls exceeding three minutes.],
+  [This is not a new trick],
   [Impersonating security software to distribute malware is one of the oldest tricks in the book. A user who believes their system is infected is primed to act urgently, and a page that looks like a trusted antivirus vendor is exactly the kind of authority they will defer to. By staging a fake scan that “finds” threats and then offering a cure, the attacker exploits both fear and trust in a single interaction.],
   [This is not an isolated tactic. In May 2025, DomainTools documented a separate campaign in which attackers built a convincing clone of Bitdefender’s website and used it to distribute Venom RAT alongside the StormKitty stealer. The playbook is nearly identical: impersonate a security brand, manufacture urgency, and deliver a Trojan dressed as protection. It suggests this is a repeatable template, not a one-off experiment.],
+  [What to do if you may have been affected],
   [Only download security software from official vendor websites. Avast’s legitimate site is avast.com. Do not trust search engine results, ads, or links in unsolicited emails.],
   [If you interacted with a site like this or downloaded the file, act quickly:],
   [Check if your system is infected . Look for the file v20svc.exe in C:\\Program Files\\Google\\Chrome\\Application\\ . If it exists, your system was likely compromised by this malware.],
@@ -1546,6 +1435,7 @@ If you are thinking of modularizing your library or application, please wait a l
   [Change your password right away. Start with email, banking, and any important accounts. Assume anything saved in your browser has been exposed.],
   [Sign out of all active sessions . Log out of services like Google, Microsoft, Facebook, and Netflix. Stolen session cookies allow an attacker to bypass two-factor authentication entirely.],
   [Protect cryptocurrency funds . If you use a desktop cryptocurrency wallet, transfer your funds to a new wallet generated on a clean device as soon as possible.],
+  [Indicators of Compromise (IOCs)],
   [File hashes],
   [SHA-256: ecbeaa13921dbad8028d29534c3878503f45a82a09cf27857fa4335bd1c9286d],
   [app-metrics-cdn\[.\]com],
@@ -1565,10 +1455,8 @@ If you are thinking of modularizing your library or application, please wait a l
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Oracle's Java 11 trap - Use OpenJDK instead!],
   author: [Stephen Colebourne],
   source-name: [Stephen Colebourne (Joda)],
@@ -1584,6 +1472,7 @@ Type "JDK" into your favourite search engine, and the top link will be to an Ora
 But that search and that link is now a trap.],
   [Oracle JDK, the one all web searches take you to, is now commercial not \$free.],
   [The key part of the terms is as follows:],
+  [You may not: use the Programs for any data processing or any commercial, production, or internal business purposes other than developing, testing, prototyping, and demonstrating your Application;],
   [The trap is as follows:],
   [Download Oracle JDK (because that is what you've always done, and it is what the web-search tells you)],
   [Use it in production (because you didn't realise the license changed)],
@@ -1597,16 +1486,13 @@ Unless you read the text/warnings/legalese very carefully you might not even rea
   [Use an OpenJDK build.],
   [There are many different \$free OpenJDK builds of Java 11, so you need to choose the one that best fits your needs.],
   [The Adoptium (formerly AdoptOpenJDK) build is \$free, GPL licensed (with Classpath exception so safe for commercial use), and a good choice as it is vendor-neutral and is intended to have 4+ years of security patches.],
-  [style="text-align: center;"\>
- Download \$free Java from Adoptium here],
+  [Download \$free Java from Adoptium here],
   [The OpenJDK build from Oracle is \$free, GPL licensed (with Classpath exception so safe for commercial use), and provided alongside their commercial offering. It will only have 6 months of security patches, after that Oracle intends you to upgrade to Java 12 .],
-  [style="text-align: center;"\>
- Download \$free Java from Oracle here],
+  [Download \$free Java from Oracle here],
   [Many more OpenJDK builds are available, including ones available via your package manager.
 See this post for a list covering the wide variety of OpenJDK builds .
 And see my post on zero-cost Java for background info.],
-  [style="text-align: center;"\>
- Download other OpenJDK builds here],
+  [Download other OpenJDK builds here],
   [And for a counterpoint, see Marcus' great summary of why the underlying changes here are actually good news.],
   [Do NOT download or use the Oracle JDK unless you intend to pay for it.],
   [For Java 11, download and use an OpenJDK build, from AdoptOpenJDK , Oracle or elsewhere.],
@@ -1618,10 +1504,8 @@ And see my post on zero-cost Java for background info.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Loading Smarter: SVG vs. Raster Loaders in Modern Web Design],
   author: [Mariana Beldi],
   source-name: [CSS-Tricks],
@@ -1629,6 +1513,7 @@ And see my post on zero-cost Java for background info.],
   paragraphs: (
   [I got this interesting question in an SVG workshop: “What is the performance difference between an SVG loader and simply rotating an image for a loader?”],
   [The choice between Scalable Vector Graphics (SVG) and raster image loaders involves many factors like performance, aesthetics, and user experience. The short answer to that question is: there’s almost no difference at all if you are working on something very small and specific. But let’s get more nuanced in this article and discuss the capabilities of both formats so that you can make informed decisions in your own work.],
+  [Understanding the formats],
   [SVGs are vector -based graphics, popular for their scalability and crispness. But let’s start by defining what raster images and vector graphics actually are.],
   [Raster images are based on physical pixels. They contain explicit color information for every single pixel. What happens is that you send the entire pixel-by-pixel information, and the browser paints each pixel one by one, making the network work harder.],
   [This means:],
@@ -1640,36 +1525,41 @@ And see my post on zero-cost Java for background info.],
   [scale infinitely without losing quality,],
   [can be styled and manipulated with CSS and JavaScript, and],
   [can live directly in the DOM, eliminating that extra HTTP request.],
+  [The power of vectors: Why SVG wins],
   [There are several reasons why it’s generally a good idea to go with SVG over raster images.],
+  [1. Transparency and visual quality],
   [Most modern image formats support transparency, but not all transparency is equal. GIFs, for example, only support binary transparency , which means pixels are either fully transparent or fully opaque.],
   [This often results in jagged edges at larger scales, especially around curves or on opaque or transparent backgrounds. SVGs support true transparency and smooth edges, which makes a noticeable difference for loaders that sit on top of complex UI layers.],
   [JPG GIF PNG SVG Vector ❌ ❌ ❌ ✅ Raster ✅ ✅ ✅ ❌ Transparency ❌ ✅ ✅ ✅ Animation ❌ ✅ ✅ ✅ Compression Lossy Lossless Lossless Lossless],
+  [2. “Zero request” performance],
   [From a raw performance perspective, rotating a small PNG and an SVG in CSS (or JavaScript for that matter) is similar. SVGs, however, win in practice because they are gzip-friendly and can be embedded inline .],
   [By pasting the SVG code directly into your HTML, you eliminate an entire HTTP request. For something like a loader — a thing that’s supposed to show up while other things are loading — the fact that SVG code is already there and renders instantly is a huge win for performance.],
   [More importantly, loaders affect perceived performance . A loader that adapts smoothly to its context and scales correctly can make wait times feel shorter, even if the actual load time is the same.],
   [And even though the SVG code looks like it would be heavier than a single line of HTML, it’s the image’s file size that truly matters. And the fact that we’re measuring SVG in bytes that can be gzipped means it’s a lot less overhead in the end.],
   [All that being said, it is still possible to import an SVG in an just like a raster file (among a few other ways as well):],
   [And, yes, that does count as a network request even though it respects the vector-ness of the file when it comes to crisp edges at any scale. That, and it eliminates other benefits, like the very next one.],
+  [3. Animation, control, and interactivity],
   [Loaders formatted in SVG are DOM-based, not frame-based. That means you can:],
   [change colors via currentColor (like the example above),],
   [react to application state or user interaction,],
   [respect user prefers, like prefers-reduced-motion and prefers-color-scheme , and],
   [modify shapes directly in code without needing to export new assets],
   [You can manipulate your SVGs with CSS, JavaScript, or SMIL , creating a whole world of possibilities when it comes to interactivity that raster images are incapable of matching.],
+  [4. But do I need separate files for an animated SVG?],
   [Again, SVG animations can live inline in the HTML or inside a single .svg file. This means you can ship one animated file, much like a GIF, but with far more control. By using and , you can keep the code clean. Here is an example of an SMIL loader file:],
   [Loading...],
   [For more complex interactions, you can even include CSS and JavaScript inside your SVG file:],
   [Interactive Loading Spinner A blue rotating circle. Clicking it toggles the rotation speed between fast and slow. 
  
  
- .loader {
+ .loader \{
  transform-origin: center;
  animation: spin 1s linear infinite;
  cursor: pointer;
- }
- \@keyframes spin {
- to { transform: rotate(360deg); }
- }
+ \}
+ \@keyframes spin \{
+ to \{ transform: rotate(360deg); \}
+ \}
  
  
  
@@ -1677,19 +1567,23 @@ And see my post on zero-cost Java for background info.],
  
  
  const loader = document.getElementById('loader');
- loader.addEventListener('click', function() {
+ loader.addEventListener('click', function() \{
  this.style.animationDuration = this.style.animationDuration === '0.3s' ? '1s' : '0.3s';
- });],
+ \});],
   [By embedding styles and scripts, you are essentially creating a standalone mini-application inside a single graphic. The primary advantage is encapsulation: the loader is completely portable, requires fewer HTTP requests, and its styles won’t “bleed” into your website. It’s the ultimate “drop-in” asset for different projects.],
   [However, this power comes with a trade-off in functionality and security. Browsers treat SVGs as static images when loaded via tags or CSS backgrounds, which disables all JavaScript for safety. To keep the interactivity alive, you must either inline the code directly or load the file using an tag. Because of these limitations, the inline method (pasting the code directly into your HTML) remains the preferred choice for most modern web applications.],
+  [5. Creativity, brand, and user experience],
   [This is where we move beyond performance and into storytelling .],
   [Imagine a B2B site where a user creates an online store. It takes a few seconds to generate. Instead of a generic spinner, you could show an animation of products “arriving” at the store. You can even make this loader interactive.],
+  [CodePen Embed Fallback],
   [An SVG animation like this can be less than 20kb. To do the same thing with a raster GIF, we would be talking about megabytes. SVG’s efficiency allows you to expand your brand voice and engage users during wait times without killing your performance.],
+  [When raster loaders still make sense],
   [Raster loaders aren’t “wrong” per se; they’re just limited in what they can do, especially when compared to SVG. That said, raster images do still make sense when:],
   [the loader is photographic or uses complex, illustration-heavy textures,],
   [you’re working within legacy systems that don’t allow SVG injection, or],
   [you need a very quick, one-off drop-in asset with zero customization needed.],
   [Feature Raster (GIF/PNG) SVG Visual quality Might be blurry on retina screens Crisp and sharp at any scale File size Typically larger (KB/MB) Very small (bytes) Customization Requires re-exporting Modify directly with CSS/JavaScript Network requests Typically one HTTP request Zero if inlined directly into HTML],
+  [Final thoughts],
   [If you’re displaying a loading indicator that’s as simple as a rotating tiny dot, the performance difference between SVG and raster might be negligible. But once you consider scalability, transparency, accessibility, and the ability to tell a brand story, SVG loaders become about more than just performance ; they’re about building loaders that actually belong to the modern web.],
   [If you want to experiment with this, I invite you to try loaders.holasvg.com . It’s a free open-source generator I built that lets you customize parameters like animation, shape, and color, and then gives you the clean SVG code to use.],
   [Loading Smarter: SVG vs. Raster Loaders in Modern Web Design originally published on CSS-Tricks , which is part of the DigitalOcean family. You should get the newsletter .],
@@ -1700,10 +1594,8 @@ And see my post on zero-cost Java for background info.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The March Madness scam playbook],
   author: [Malwarebytes Labs],
   source-name: [Malwarebytes Labs],
@@ -1713,24 +1605,29 @@ And see my post on zero-cost Java for background info.],
   [But March Madness doesn’t just bring buzzer beaters and busted brackets. It also kicks off a short, intense season for scammers who know fans are distracted, emotional, and often in a hurry. In this post, we’ll walk through the main scam patterns that pop up around the NCAA men’s basketball tournament, so you can recognize them and shut them down before they score.],
   [Large sporting events combine three components that scammers love: money, emotion, and urgency. Fans are hunting for last‑minute tickets, “can’t‑miss” bets, and ways to watch every game. They’re in a hurry, so their guard is down.],
   [From an attacker’s perspective, March Madness is conveniently predictable. Every year in March, millions of people will Google the same terms, click the same types of ads, and respond to the same social media bait. Once you’ve seen the patterns, you’ll start recognizing them around other major events too.],
+  [Fake ticket marketplaces and resale fraud],
   [Ticket scams are a staple of any big concert, playoff series, or tournament, and March Madness is no exception.],
   [The playbook is simple: Scammers set up sites and listings that look like legitimate ticket resellers, then take your money and run.],
   [Things to keep an eye on:],
   [Screenshots or PDFs of barcodes won’t work when entry tickets are dynamic or tied to an app, but scammers still sell them. Victims will only find out at the gate when tickets are rejected.],
   [Too good to be true last‑minute deals. Offers for prime seats at prices well below the official box office, often paired with urgency imposing tactics: “must pay in the next 10 minutes,” “three buyers waiting,” or “I’ll lose my deposit if you don’t decide now.”],
   [Sellers push victims into private channels (text, WhatsApp, DMs) and insist on payment methods that are irreversible, like wire transfers, P2P apps, gift cards, or cryptocurrencies.],
+  [Fake betting sites, “sure thing” tips, and bonus traps],
   [Legal sports betting has gone mainstream in the US, and March Madness is one of its biggest events. The huge number of casual bettors is a scammer’s dream. Their tactics can be divided into two main categories:],
   [Cloned betting platforms. Attackers create sites and apps that mimic real sportsbooks, complete with copied logos, odds feeds, and login pages. Users deposit funds, place bets, and maybe even see “winnings” pile up in the interface—until they try to withdraw and are hit with fees, extra deposits, silent account bans, or witness a disappearing act.],
   [“Guaranteed” bets. Social media fills up with self‑proclaimed experts selling access to VIP betting groups or “guaranteed” locks on tournament games. Victims pay for tips or are funneled into shady offshore sites that conveniently lose their money or demand more deposits to “unlock” withdrawals.],
+  [Streaming scams],
   [Not everyone has a cable subscription or an official streaming package, and scammers know many fans will look for free or cheap alternatives. That creates a fertile ground for malicious streaming offers. There are some common patterns to watch for:],
   [Fake portals promising all the games live. Websites advertise free HD streams of every tournament game but require you to create an account and enter a credit card “for age verification” or a “free trial.” Once you submit details, charges appear or your card data is sold on.],
   [Malicious players and extensions. Some sites will prompt you to download a special player, codec, or browser extension before you can watch. Instead of video, you get adware, browser hijackers, or a foothold for more serious malware.],
   [Shortened URLs and reposted “official stream” links spread quickly around tip‑off time, often redirecting through multiple ad and tracking networks before landing on phishing or scam pages.],
   [Like-farming and other social media clickbait promising free streams only to boost the account’s reputation for a next wave of scams.],
+  [Bracket phishing, office pools, and prize scams],
   [Brackets are part of the culture: friends, families, and workplaces run pools where everyone predicts the tournament results. Scammers piggyback on that habit with phishing campaigns and fake prize draws. These usually show up in a few ways:],
   [Official bracket challenge phishing. Emails or messages invite you to join a tournament bracket hosted by a big brand or media outlet, complete with logos and plausible wording. The link really leads to a credential‑harvesting page masquerading as your email, work SSO, or a well‑known sports site.],
   [Fake “you won the pool” notifications. Messages claim you’ve won a prize in a bracket you never joined, and instruct you to click a link or provide personal and banking details to receive your payout.],
   [All the data they can get for you to join. Some bracket or contest sites ask for far more information than necessary. They want your full address, date of birth, even ID numbers, all under the pretext of age verification or tax reporting. Once you provide them, the phishers will monetize the data.],
+  [How to stay safe],
   [Defending yourself against March Madness scams isn’t about never betting or never buying tickets. But you should treat the entire tournament as a high-risk period and tighten up your usual habits.],
   [While the underlying technical tricks may vary, the social engineering themes are consistent:],
   [Urgency . Time is limited, for some reason. The goal is to stop you thinking.],
@@ -1752,11 +1649,10 @@ And see my post on zero-cost Java for background info.],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Product-market fit methodology for early-stage devtool companies],
   author: [Irina Nazarova],
   source-name: [Evil Martians Chronicles],
@@ -1776,7 +1672,7 @@ And see my post on zero-cost Java for background info.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Pairing Guidelines],
   author: [Robert C Martin (Clean Coder)],
   source-name: [Robert C Martin (Clean Coder)],
@@ -1802,75 +1698,85 @@ And see my post on zero-cost Java for background info.],
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [What’s !important \#6: :heading, border-shape, Truncating Text From the Middle, and More],
   author: [Daniel Schwarz],
   source-name: [CSS-Tricks],
   images: (),
   paragraphs: (
   [Despite what’s been a sleepy couple of weeks for new Web Platform Features, we have an issue of What’s !important that’s prrrretty jam-packed . The web community had a lot to say, it seems, so fasten your seatbelts!],
+  [\@keyframes animations can be strings],
   [Peter Kröner shared an interesting fact about \@keyframes animations — that they can be strings:],
-  [\@keyframes "\@animation" {
+  [\@keyframes "\@animation" \{
  /\* ... \*/
-}],
-  [\#animate-this {
+\}],
+  [\#animate-this \{
  animation: "\@animation";
-}],
-  [lang="en"\>Yo dawg, time for a \#CSS fun fact: keyframe names can be strings. Why? Well, in case you want your keyframes to be named “\@keyframes,” obviously!],
+\}],
+  [Yo dawg, time for a \#CSS fun fact: keyframe names can be strings. Why? Well, in case you want your keyframes to be named “\@keyframes,” obviously!],
   [\#webdev],
   [\[image or embed\]],
   [— Peter Kröner ( \@sirpepe.bsky.social ) Feb 18, 2026 at 10:33],
   [I don’t know why you’d want to do that, but it’s certainly an interesting thing to learn about \@keyframes after 11 years of cross-browser support!],
+  [: vs. = in style queries],
   [Another hidden trick, this one from Temani Afif , has revealed that we can replace the colon in a style query with an equals symbol . Temani does a great job at explaining the difference, but here’s a quick code snippet to sum it up:],
-  [. Jay-Z {
+  [. Jay-Z \{
  --Problems: calc(98 + 1);],
   [/\* Evaluates as calc(98 + 1), color is blueivy \*/
  color: if(style(--Problems: 99): red; else: blueivy);],
   [/\* Evaluates as 99, color is red \*/
  color: if(style(--Problems = 99): red; else: blueivy);
-}],
+\}],
   [In short, = evaluates --Problems differently to : , even though Jay-Z undoubtably has 99 of them (he said so himself).],
+  [Declarative s (and an updated .visually-hidden )],
   [David Bushell demonstrated how to create s declaratively using invoker commands , a useful feature that allows us to skip some J’Script in favor of HTML, and works in all web browsers as of recently.],
   [Also, thanks to an inquisitive question from Ana Tudor, the article spawned a spin-off about the minimum number of styles needed for a visually-hidden utility class . Is it still seven?],
   [Maybe not…],
+  [How to truncate text from the middle],
   [Wes Bos shared a clever trick for truncating text from the middle using only CSS:],
-  [lang="en"\>Someone on reddit posted a demo where CSS truncates text from the middle.],
+  [Someone on reddit posted a demo where CSS truncates text from the middle.],
   [They didn't post the code, so here is my shot at it with Flexbox],
   [\[image or embed\]],
   [— Wes Bos ( \@wesbos.com ) Feb 9, 2026 at 17:31],
   [Donnie D’Amato attempted a more-native solution using ::highlight() , but ::highlight() has some limitations, unfortunately. As Henry Wilkinson mentioned , Hazel Bachrach’s 2019 call for a native solution is still an open ticket, so fingers crossed!],
+  [How to manage color variables with relative color syntax],
   [Theo Soti demonstrated how to manage color variables with relative color syntax . While not a new feature or concept, it’s frankly the best and most comprehensive walkthrough I’ve ever read that addresses these complexities.],
+  [How to customize lists (the modern way)],
   [In a similar article for Piccalilli, Richard Rutter comprehensively showed us how to customize lists , although this one has some nuggets of what I can only assume is modern CSS. What’s symbols() ? What’s \@counter-style and extends ? Richard walks you through everything .],
   [Source: Piccalilli .],
   [Can’t get enough on counters? Juan Diego put together a comprehensive guide right here on CSS-Tricks .],
+  [How to create typescales using :heading],
   [Safari Technology Preview 237 recently began trialing :heading \/ :heading() , as Stuart Robson explains . The follow-up is even better though, as it shows us how pow() can be used to write cleaner typescale logic, although I ultimately settled on the old-school – elements with a simpler implementation of :heading and no sibling-index() :],
-  [:root {
+  [:root \{
  --font-size-base: 16px;
  --font-size-scale: 1.5;
-}],
-  [:heading {
+\}],
+  [:heading \{
  /\* Other heading styles \*/
-}],
+\}],
   [/\* Assuming only base/h3/h2/h1 \*/],
-  [body {
+  [body \{
  font-size: var(--font-size-base);
-}],
-  [h3 {
+\}],
+  [h3 \{
  font-size: calc(var(--font-size-base) \* var(--font-size-scale));
-}],
-  [h2 {
+\}],
+  [h2 \{
  font-size: calc(var(--font-size-base) \* pow(var(--font-size-scale), 2));
-}],
-  [h1 {
+\}],
+  [h1 \{
  font-size: calc(var(--font-size-base) \* pow(var(--font-size-scale), 3));
-}],
+\}],
+  [Una Kravets introduced border-shape],
   [Speaking of new features, border-shape came as a surprise to me considering that we already have — or will have — corner-shape . However, border-shape is different, as Una explains . It addresses the issues with borders (because it is the border), allows for more shapes and even the shape() function , and overall it works differently behind the scenes.],
   [Source: Una Kravets .],
+  [modern.css wants you to stop writing CSS like it’s 2015],
   [It’s time to start using all of that modern CSS, and that’s exactly what modern.css wants to help you do. All of those awesome features that weren’t supported when you first read about them, that you forgot about? Or the ones that you missed or skipped completely? Well, modern.css has 75 code snippets and counting, and all you have to do is copy ‘em.],
+  [Kevin Powell also has some CSS snippets for you],
   [And the commenters? They have some too!],
   [Honestly, Kevin is the only web dev talker that I actually follow on YouTube, and he’s so close to a million followers right now, so make sure to hit ‘ol K-Po’s “Subscribe” button.],
+  [In case you missed it],
   [Actually, you didn’t miss that much! Firefox 148 released the shape() function , which was being held captive by a flag, but is now a baseline feature. Safari Technology Preview 237 became the first to trial :heading . Those are all we’ve seen from our beloved browsers in the last couple of weeks (not counting the usual flurry of smaller updates, of course).],
   [That being said, Chrome , Safari , and Firefox announced their targets for Interop 2026 , revealing which Web Platform Features they intend to make consistent across all web browsers this year, which more than makes up for the lack of shiny features this week.],
   [Also coming up (but testable in Chrome Canary now, just like border-shape ) is the scrolled keyword for scroll-state container queries. Bramus talks about scrolled scroll-state queries here .],
@@ -1884,10 +1790,8 @@ And see my post on zero-cost Java for background info.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Leveraging the Plain Old Python Function],
   author: [Stitch Fix Multithreaded],
   source-name: [Stitch Fix Multithreaded],
@@ -1897,12 +1801,12 @@ And see my post on zero-cost Java for background info.],
   [With the advent of more powerful tooling, new industry standards in MLOps, and greater investment in platforms, the day-to-day of a data scientist has changed significantly at Stitch Fix. The difference, however, is subtle. The structure of their job remains the same – engineers still do not write ETLs and data scientists function as generalists , but they now have to think on a higher level. Their job is constantly getting more and more complex—the business needs are in flux and the infrastructure they use is more powerful than it ever was. The old strategy of cobbling together complex systems will only end in stressed-out data scientists with too much infrastructure on their plate.],
   [To avoid this cycle of complexity, Stitch Fix invests in a platform team to innovate new ways of supporting a data scientist’s engineering needs. Rather than constructing custom model-deployment mechanisms, building microservices from the ground up, and managing highly interdependent chains of data transformations, data scientists at Stitch Fix can leverage powerful infrastructure by constructing plain old Python functions to represent their needs .],
   [In this blog post we’re going to take a different approach than usual. Rather than digging into a specific piece of technology, we’ll present our philosophy of functions for data science APIs and back it up with some motivating examples. We’ll explain the power of functions as a DSL, share some successes we’ve had using functional interfaces to build our MLOps stack, and connect our approach with external, open-source frameworks that the industry is beginning to adopt. Our goal is to convince you that a function-first approach will enable data practitioners to do more while doing less. The functional approach allows them to plug into the business in a scalable manner while avoiding the complexity of managing infrastructure and architectural decisions.],
-  [id="on-functions-and-functionality"\>On Functions and Functionality],
+  [On Functions and Functionality],
   [Since way before many of us were born, the software industry has been battling between functional and procedural programming paradigms. Do you offer imperative commands over the operations of your system? Or do you declare the intent and let some system in the background handle the operations for you? While we won’t opine on this age-old debate, we do bring this up for a reason. At Stitch Fix, data scientists get the best of both worlds:],
   [They can declare infrastructure and plug into the business by writing python functions to fit into platform-provided frameworks],
   [They can specify custom model and business logic by implementing said functions],
   [At the core, we believe data scientists should only have to think about business logic, and all else (infrastructure, etc…) should be given to them on a silver platter. The delineation of responsibilities here is critical in providing high-power tooling to allow data scientists to plug into the business, and Python functions happen to be the perfect way to codify it. The name, type annotations, decorators, and parameters of a function all provide plenty of information to declare the structure of the systems they need. The guts of a function allow a data scientist to iterate on and cleanly represent their business logic.],
-  [class="highlight"\> \@ do\_something\_fancy\_with\_function 
+  [\@ do\_something\_fancy\_with\_function 
  def my\_function ( param\_1 : pd . Series , param\_2 : int ) -\> pd . Series : 
  """Does a thing with some params""" 
  return fancy\_business\_logic ( param\_1 , param\_2 )],
@@ -1940,8 +1844,6 @@ And see my post on zero-cost Java for background info.],
  
  return fancy\_business\_logic(param\_1, param\_2)],
   [How do we actually link this metadata to give data scientists MLOps capabilities? Let’s go through a few examples…],
-  [id="functional-capabilities"\>Functional Capabilities],
-  [id="productionizing-models"\>Productionizing Models],
   [Years ago, releasing a model at Stitch Fix took considerable effort. To execute a model in a production context (batch/online), data scientists had to:],
   [Save the model blob to a blob store],
   [Build a service or a batch job that exposed their model, with Python requirements that exactly matched training],
@@ -1973,7 +1875,6 @@ And see my post on zero-cost Java for background info.],
  
  Enables actual model evaluation!],
   [We use a little more than this to add additional metadata—see the full writeup for more details. That said, the core principle is simple. By reading the code and looking at the function a data scientist writes, we should be able to understand its role in the business and provide the infrastructure it requires.],
-  [id="writing-services"\>Writing Services],
   [At Stitch Fix, our data scientists write and manage services, beyond those that can be represented by writing models (they’re on call, even!). Constructing/managing a service generally requires a lot of architectural decisions. What framework do you use? How do you specify/validate the shape of the input? How do you handle errors? And so on…],
   [At Stitch Fix, the platform team has made it very easy to manage decisions. All a data scientist has to do is write a simple set of functions to specify their service’s endpoints. Built on top of FastAPI + Uvicorn, Stitch Fix’s service toolkit gives a data scientist the power of a full-scale web application.],
   [While we have not yet blogged about this, the API is simple enough for Data Scientists to go from zero to a production service in an hour. What does it look like?],
@@ -2005,10 +1906,9 @@ And see my post on zero-cost Java for background info.],
  
  Does the business logic.],
   [Again, we don’t always use every part of the function (the name, in this case, is supplanted by the endpoint path), but from reading just the snippet of code above, it should be clear (a) where this fits in the business and (b) how this manifests in the infrastructure.],
-  [id="transforming-data"\>Transforming Data],
   [The vast majority of code data scientists write transforms data from one shape to another. Data transformations are a natural way to iteratively present value to the business, but representing them in code can be challenging. Scientists often develop their own methods of organizing and executing these transformations, which range from monolithic scripts to custom-built sophisticated pipelining mechanisms. While these get the job done, as teams switch up, goals change, and initiatives are cast aside or rushed into production, the details of these bespoke methodologies become long-forgotten. To solve this problem and allow our data teams to scale with the complexity of the business, we built and open-sourced a framework called hamilton .],
   [Initially designed for feature engineering, hamilton enables a data scientist to express a complex data pipeline as a series of functions; each function encodes the upstream dependencies, the data type, and the referenceable artifact.],
-  [class="highlight"\> \@ config . when ( region = "US" ) 
+  [\@ config . when ( region = "US" ) 
  def my\_artifact ( dep\_1 : pd . Series , dep\_2 : int ) -\> pd . Series : 
  """does something fancy with dep\_1 and dep\_2""" 
  return \_some\_fancy\_logic ( dep\_1 , dep\_2 )],
@@ -2047,7 +1947,7 @@ And see my post on zero-cost Java for background info.],
  Code to generate, transform the data],
   [Representing generated data as functions enables us to flexibly execute pipelines in whatever framework we want while simultaneously allowing a data scientist to write highly expressive, intuitive pipelines. Better yet, these require little knowledge of framework or infrastructure, only the libraries data scientists love and the Python code they are accustomed to writing. All they have to do is write the function – the rest comes for free.],
   [We’ve written about hamilton before (we’re very proud): read prior posts introducing the framework , talking about scale , and sharing how we enable data validation .],
-  [id="open-source-and-beyond"\>Open Source and Beyond],
+  [Open Source and Beyond],
   [One of Stitch Fix’s greatest assets is our innovative set of data scientists who optimize the customer experience every step of the way. Without the proper tooling, however, they would get bogged down in details of infrastructure and architecture. They need control over the stack they run to operate independently, but cannot afford to be slowed down with its minutiae. Thus, it falls to the platform team to deliver tooling that makes data scientists efficient and productive. At Stitch Fix we iterated on many designs, and found that, as is often the case, the simplest solution was the best. To express business logic, data scientists write plain old Python functions. The associated metadata, structure, and contents of these functions yield enough information for an insightful platform team to plug the data science innovations back into the business.],
   [Python functions are comfortable to write, easy to debug, and straightforward to read and maintain. Add in a little config, and we’ve got a fully-fledged, highly-expressive API!],
   [We believe this API approach has implications far past the frontiers of our own data science efforts. Aside from our own open-source tools, we’ve begun to notice it creep up elsewhere:],
@@ -2063,10 +1963,8 @@ And see my post on zero-cost Java for background info.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [More On Types],
   author: [Robert C Martin (Clean Coder)],
   source-name: [Robert C Martin (Clean Coder)],
@@ -2075,13 +1973,23 @@ And see my post on zero-cost Java for background info.],
   [Recently I wrote a cute little program for doing Turtle Graphics . For those of you who don't know, turtle graphics were originally added to the LOGO language by Seymour Papert in the late 1960s. He built a robot that he called a "turtle" that could hold a pen. The robot had wheels and could move forwards and backwards, and could rotate left and right. It could also raise and lower the pen. When placed on a sheet of paper, the turtle could be commanded to draw interesting designs.],
   [Papert's goal was to teach children about programming. As the years went by the robot got replaced with screens, and the turtle became an icon that could draw lines. Children from the 70s until now have been enthralled by the simple commands for directing the turtle, and the elegant drawings they can make.],
   [For example, this is how you might draw a square:],
+  [forward 100
+right 90
+forward 100
+right 90
+forward 100
+right 90
+forward 100
+right 90.],
   [Recently I had a need to explore some interesting geometrical designs. Turtle graphics would be perfect for my purposes. So I wrote a turtle graphics processor in Clojure. \[code\]],
   [I used the quil framework which is based on the Processing framework in Java. This framework makes it very easy to create simple GUIs in Clojure.],
   [Now consider the problem of the Turtle. What is the type model for this object? What fields does it have, and what constraints must be placed on those fields?],
   [Here was my solution to that problem, written in clojure/spec . As usual, in Clojure, you start at the bottom and read towards the top.],
-  [class="highlight"\> (defn make \[\]
- {:post \[(s/assert ::turtle %)\]}
- {:position \[0.0 0.0\]
+  [(s/def ::position (s/tuple number? number?))
+(s/def ::heading (s/and number? \#(],
+  [(defn make \[\]
+ \{:post \[(s/assert ::turtle %)\]\}
+ \{:position \[0.0 0.0\]
  :heading 0.0
  :velocity 0.0
  :distance 0.0
@@ -2092,21 +2000,21 @@ And see my post on zero-cost Java for background info.],
  :speed 5
  :visible true
  :lines \[\]
- :state :idle})],
+ :state :idle\})],
   [This is the default constructor of the turtle. Notice that it just loads up all the required fields into a map. Notice also that there is a post condition that asserts that the result conforms the the turtle type.],
   [This is nice. If I forget to initialize a field, or if I initialize a field to a value that conflicts with the type, I get an error.],
   [Here's another, more complex example. Don't freak out, you don't have to understand this in detail.],
-  [class="highlight"\> (defn update-turtle \[turtle\]
- {:post \[(s/assert ::turtle %)\]}
+  [(defn update-turtle \[turtle\]
+ \{:post \[(s/assert ::turtle %)\]\}
  (if (= :idle (:state turtle))
  turtle
- (let \[{:keys \[distance
+ (let \[\{:keys \[distance
  state
  angle
  lines
  position
  pen
- pen-start\] :as turtle}
+ pen-start\] :as turtle\}
  (-\> turtle
  (update-position)
  (update-heading))
@@ -2124,7 +2032,7 @@ And see my post on zero-cost Java for background info.],
   [This is the function that updates the turtle for each screen refresh. Again, notice the post condition . If anything is calculated incorrectly by the update-turtle function, I'll get an exception right away.],
   [Now some of you might be worried that by checking types at runtime I could end up with runtime errors in production. You might therefore assert that static typing is better because the compiler checks the types long before the program ever executes.],
   [However, I do not intend to have runtime errors in production, because I have a suite of tests that exercise all the behaviors of the system. Here's just one of those tests:],
-  [class="highlight"\> (describe "Turtle Update"
+  [(describe "Turtle Update"
  (with turtle (-\> (t/make) (t/position \[1.0 1.0\]) (t/heading 1.0)))
  (context "position update"
  (it "holds position when there's no velocity"
@@ -2143,10 +2051,8 @@ And see my post on zero-cost Java for background info.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [REPL Driven Design],
   author: [Robert C Martin (Clean Coder)],
   source-name: [Robert C Martin (Clean Coder)],
@@ -2172,11 +2078,10 @@ And see my post on zero-cost Java for background info.],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [How to Favicon in 2026: Three files that fit most needs],
   author: [Andrey Sitnik],
   source-name: [Evil Martians Chronicles],
@@ -2196,7 +2101,7 @@ And see my post on zero-cost Java for background info.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Life's too short to hand-write API types: OpenAPI-driven React],
   author: [Travis Turner],
   source-name: [Evil Martians Chronicles],
@@ -2217,22 +2122,21 @@ And see my post on zero-cost Java for background info.],
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Algo Hour - Large Scale Data & ML Monitoring with whylogs | Alessya Visnjic],
   author: [Stitch Fix Multithreaded],
   source-name: [Stitch Fix Multithreaded],
   images: (),
   paragraphs: (
-  [id="title"\>Title:],
+  [Title:],
   [Large Scale Data & ML Monitoring with whylogs],
-  [id="talk-abstract"\>Talk Abstract:],
+  [Talk Abstract:],
   [In the era of microservices, decentralized ML architectures and complex data pipelines, data quality has become a bigger challenge than ever. When data is involved in complex business processes and decisions, bad data can, and will, affect the bottom line. As a result, ensuring data quality across the entire ML pipeline is both costly, and cumbersome while data monitoring is often fragmented and performed ad hoc. An open source library called whylogs is built to address these challenges. It is a lightweight data profiling library that enables end-to-end data monitoring across the entire software stack. The library implements a language and platform agnostic approach to data quality and data monitoring. It’s been deployed at massive-scale data environments, on structured and unstructured data modalities, and across a range of points in the ML lifecycle. In this talk, we will provide an overview of the whylogs architecture, including its lightweight statistical data collection approach and we will show how users can apply this library to existing data and ML pipelines.],
-  [id="date-and-time"\>Date and Time:],
+  [Date and Time:],
   [The talk will be held on Tuesday, October 11th at 1:00PM PDT.],
-  [id="recording-info"\>Recording Info:],
+  [Recording Info:],
   [This talk was recorded live and is viewable below:],
-  [id="speaker-info"\>Speaker Info:],
+  [Speaker Info:],
   [Alessya Visnjic is the CEO of WhyLabs, the AI Observability company building tools that power robust and responsible AI deployment. Prior to WhyLabs, Alessya was a CTO-in-residence at the Allen Institute for AI, where she evaluated commercial potential for the latest AI research. Earlier, Alessya spent 9 years at Amazon leading ML initiatives, including forecasting and data science platforms. Alessya is also the founder of Rsqrd AI, a global community of 1,000+ AI practitioners who are committed to making enterprise AI technology responsible.],
 ),
   insert-map: (:),
@@ -2241,22 +2145,20 @@ And see my post on zero-cost Java for background info.],
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([Faouz EL FASSI], source-name: [Drivy \/ Getaround Tech], [In the first of this series of blog posts about Data-Warehousing, I’ve been talking about how we use and manage our Amazon Redshift cluster at Drivy.])],
-    [#brief-item([Thibaud Esnouf], source-name: [Drivy \/ Getaround Tech], [As a JavaScript developer, you surely have encountered some functions that require a lot of arguments to be called.
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([Faouz EL FASSI], source-name: [Drivy \/ Getaround Tech], [In the first of this series of blog posts about Data-Warehousing, I’ve been talking about how we use and manage our Amazon Redshift cluster at Drivy.])],
+  [#brief-item([Thibaud Esnouf], source-name: [Drivy \/ Getaround Tech], [As a JavaScript developer, you surely have encountered some functions that require a lot of arguments to be called.
 Because the argument list is an Array-like object, all the values need to be set and so it may have given you a headache to understand the order and purpose of each argument.])],
-    [#brief-item([Nicolas Zermati], source-name: [Drivy \/ Getaround Tech], [A few months ago we faced a memory issue on some of our background jobs.
+  [#brief-item([Nicolas Zermati], source-name: [Drivy \/ Getaround Tech], [A few months ago we faced a memory issue on some of our background jobs.
 Heroku was killing our dyno because it was exceeding its allowed memory. Thanks
 to our instrumentation of Sidekiq , it was easy to
 spot the culprit. The job was doing a fairly complex SQL request, and
 outputing the query’s result into a CSV file before archiving this file.])],
-    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [The North Korean threat actors behind the Contagious Interview campaign, also tracked as WaterPlum, have been attributed to a malware family tracked as StoatWaffle that's distributed via malicious Microsoft Visual Studio Code (VS Code) projects.
+  [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [The North Korean threat actors behind the Contagious Interview campaign, also tracked as WaterPlum, have been attributed to a malware family tracked as StoatWaffle that's distributed via malicious Microsoft Visual Studio Code (VS Code) projects.
 The use of VS Code "tasks.json" to distribute malware is a relatively new tactic adopted by the threat actor since December 2025, with the attacks])],
-    [#brief-item([Travis Turner], source-name: [Evil Martians Chronicles], [Authors: Victoria Melnikova, Head of New Business, Host of Dev Propulsion Labs, and Travis Turner, Tech Editor
+  [#brief-item([Travis Turner], source-name: [Evil Martians Chronicles], [Authors: Victoria Melnikova, Head of New Business, Host of Dev Propulsion Labs, and Travis Turner, Tech Editor
 
  Topics: Case Study, Developer Community
 
@@ -2265,33 +2167,32 @@ The use of VS Code "tasks.json" to distribute malware is a relatively new tactic
 Established nearly 20 years ago, Evil Martians is a trusted software development consultancy for developer tools startups.
 
  Read more])],
-    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Cybersecurity researchers have discovered a new payment skimmer that uses WebRTC data channels as a means to receive payloads and exfiltrate data, effectively bypassing security controls.
+  [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Cybersecurity researchers have discovered a new payment skimmer that uses WebRTC data channels as a means to receive payloads and exfiltrate data, effectively bypassing security controls.
 "Instead of the usual HTTP requests or image beacons, this malware uses WebRTC data channels to load its payload and exfiltrate stolen payment data," Sansec said in a report published this week.
 The attack,])],
-    [#brief-item([Marc G Gauthier], source-name: [Drivy \/ Getaround Tech], [We’ve always valued releasing quickly, as unreleased code is basically inventory . It slowly gathers dust and becomes outdated or costs time to be kept updated. Almost 3 years ago we published an article “ Drivy, version 500! ” on our main blog, so I feel now is the time to get more into the details of how we accomplish pushing a lot of new versions of the app to production.])],
-    [#brief-item([Chaim Gartenberg], source-name: [The Keyword (Google Blog)], [Get the origin story behind the stunning wallpapers you see on Google TV Streamer, Nest Hub and other Google TV devices.])],
-    [#brief-item([Renaud Boulard], source-name: [Drivy \/ Getaround Tech], [Android Makers is the largest Android event in France, organized by the PAUYG and BeMyApp . This year the event was held in Le Beffroi de Montrouge - what a great place to enjoy a conference. There was much more space than the previous Android Makers event: we were really comfortable, with all we needed to be fully focussed on the conferences.])],
-    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Trivy, a popular open-source vulnerability scanner maintained by Aqua Security, was compromised a second time within the span of a month to deliver malware capable of stealing sensitive CI/CD secrets.
+  [#brief-item([Marc G Gauthier], source-name: [Drivy \/ Getaround Tech], [We’ve always valued releasing quickly, as unreleased code is basically inventory . It slowly gathers dust and becomes outdated or costs time to be kept updated. Almost 3 years ago we published an article “ Drivy, version 500! ” on our main blog, so I feel now is the time to get more into the details of how we accomplish pushing a lot of new versions of the app to production.])],
+  [#brief-item([Chaim Gartenberg], source-name: [The Keyword (Google Blog)], [Get the origin story behind the stunning wallpapers you see on Google TV Streamer, Nest Hub and other Google TV devices.])],
+  [#brief-item([Renaud Boulard], source-name: [Drivy \/ Getaround Tech], [Android Makers is the largest Android event in France, organized by the PAUYG and BeMyApp . This year the event was held in Le Beffroi de Montrouge - what a great place to enjoy a conference. There was much more space than the previous Android Makers event: we were really comfortable, with all we needed to be fully focussed on the conferences.])],
+  [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Trivy, a popular open-source vulnerability scanner maintained by Aqua Security, was compromised a second time within the span of a month to deliver malware capable of stealing sensitive CI/CD secrets.
 The latest incident impacted GitHub Actions "aquasecurity/trivy-action" and "aquasecurity/setup-trivy," which are used to scan Docker container images for vulnerabilities and set up GitHub Actions])],
-    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [TeamPCP, the threat actor behind the recent compromises of Trivy and KICS, has now compromised a popular Python package named litellm, pushing two malicious versions containing a credential harvester, a Kubernetes lateral movement toolkit, and a persistent backdoor.
+  [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [TeamPCP, the threat actor behind the recent compromises of Trivy and KICS, has now compromised a popular Python package named litellm, pushing two malicious versions containing a credential harvester, a Kubernetes lateral movement toolkit, and a persistent backdoor.
 Multiple security vendors, including Endor Labs and JFrog, revealed that litellm versions 1.82.7 and 1.82.8 were published on March])],
-    [#brief-item([Stephan Lensky], source-name: [HubSpot Product Blog], [class="hs-featured-image-wrapper"\> 
+  [#brief-item([Stephan Lensky], source-name: [HubSpot Product Blog], [
  
 
  This post is the second in a series about empowering product, UX, and engineering teams with AI, especially in the context of writing code. Read the first post about scaling AI adoption here !])],
-    [#brief-item([Kartik Vishwanath], source-name: [HubSpot Product Blog], [class="hs-featured-image-wrapper"\> 
+  [#brief-item([Kartik Vishwanath], source-name: [HubSpot Product Blog], [
  
 
 On October 20, 2025, HubSpot experienced a significant service disruption affecting multiple product features due to a severe AWS outage in the us-east-1 region. While our infrastructure remained intact, the widespread nature of the cloud provider failure impacted both our services and critical third-party vendors we rely on. We've completed a thorough analysis of this incident and are implementing comprehensive improvements to strengthen our resilience against future cloud provider disruptions.])],
-    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Rising geopolitical tensions are reflected (or in some cases preceded) by cyber operations, while technology itself has become politicized. Let’s admit it: we are in the middle of it. 
+  [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Rising geopolitical tensions are reflected (or in some cases preceded) by cyber operations, while technology itself has become politicized. Let’s admit it: we are in the middle of it. 
 Introduction: One tech power to rule them all is a thing of the past 
 The relative safety, peace and prosperity that much of the world has enjoyed since 1945 was not accidental. It emerged from the ashes])],
-    [#brief-item([Howard Wilson], source-name: [Drivy \/ Getaround Tech], [As developers, we sometimes find ourselves faced with feature requests that will take weeks of work and touch many areas of the codebase. This comes with increased risk in terms of how we spend our time and whether things break when we come to release.])],
-    [#brief-item([Jordan Jalabert & Emily Fiennes], source-name: [Drivy \/ Getaround Tech], [After working as a teacher and translator for several years, Emily embarked on a new phase in her career by learning a different kind of language: programming.])],
-    [#brief-item([Nicolas Zermati], source-name: [Drivy \/ Getaround Tech], [My job title is officially backend engineer but this is pretty vague. I wanted to explain a bit what I do on a daily basis. First, it is a good reflective exercise for myself. Then, if readers like what I do, maybe some of you will want to join us !])],
-    [#brief-item([Romain Guefveneu], source-name: [Drivy \/ Getaround Tech], [When you need to share a file with other apps, the easiest way could be to use the external storage as a temporary place where to save this file.
+  [#brief-item([Howard Wilson], source-name: [Drivy \/ Getaround Tech], [As developers, we sometimes find ourselves faced with feature requests that will take weeks of work and touch many areas of the codebase. This comes with increased risk in terms of how we spend our time and whether things break when we come to release.])],
+  [#brief-item([Jordan Jalabert & Emily Fiennes], source-name: [Drivy \/ Getaround Tech], [After working as a teacher and translator for several years, Emily embarked on a new phase in her career by learning a different kind of language: programming.])],
+  [#brief-item([Nicolas Zermati], source-name: [Drivy \/ Getaround Tech], [My job title is officially backend engineer but this is pretty vague. I wanted to explain a bit what I do on a daily basis. First, it is a good reflective exercise for myself. Then, if readers like what I do, maybe some of you will want to join us !])],
+  [#brief-item([Romain Guefveneu], source-name: [Drivy \/ Getaround Tech], [When you need to share a file with other apps, the easiest way could be to use the external storage as a temporary place where to save this file.
 For example, if you need to take a picture with a camera app, you need to specify a file where the camera app will save the picture, and using external storage might be tempting.])],
-  ))
-}
+))
 
 #colophon([The Global Digest], [Vol. 1, No. 007], [2026-03-30])

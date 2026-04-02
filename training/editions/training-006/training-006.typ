@@ -21,42 +21,8 @@
 #masthead([Morning Herald], [Vol. 1, No. 006], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Bean Machine Retrospective, part 7],
-  kicker: [Cover Story],
-  author: [ericlippert],
-  source-name: [Fabulous Adventures in Coding (Eric Lippert)],
-  deck: [class="wp-block-paragraph"\>How do we write a compiler in a typical general-purpose line-of-business OO programming language such as Python, C\#, Java, and so on?],
-  lead-pre: [],
-  lead-cap: [C],
-  lead-rest: [ompilers are programs, so we could make the question more general: how do we write programs ?],
-  body-paragraphs: (
-  [Divide the problem into many sub-problems],
-  [Write functions that each solve one or more sub-problems],
-  [Compose a solution by writing functions that call other functions],
-  [class="wp-block-paragraph"\>The details of how those functions are organized varies from language to language of course; functions are stored in other functions, or in classes, or in modules, or whatever. But ultimately, most programs could be viewed as a composition of functions.],
-  [Call foo() if and only if some predicate is true.],
-  [Call foo() repeatedly until some predicate is false.],
-  [Call foo() but branch to this catch block if it fails],
-  [… and so on],
-  [class="wp-block-paragraph"\>We don’t normally think of control flow as a kind of function composition . What if we did? We can use ideas inspired by combinatory logic and functional programming to extract control flow into “combinators” and then use those to concisely build workflows to solve compiler problems.],
-  [class="wp-block-paragraph"\>A “parse tree” or abstract syntax tree (henceforth AST ) is a data structure representing a syntactic analysis of a program. Over the next few episodes of this series we’ll explore the question of how a compiler writer might solve a common sub-problem in compiler design: how do we write an AST→ AST function using an approach inspired by combinatory logic?],
-  [class="wp-block-paragraph"\>Since Bean Machine and its compiler are both written in Python, we’ll use the very convenient parse tree types already provided by the Python ast module. It’s very straightforward. Every node in the tree has a type and zero or more labeled children . A child can be a value such as a string or number, or a node, depending on the label.],
-  [class="wp-block-paragraph"\>For example, if we had a statement “x = 2 + 3” then the AST for the right side of the assignment could be constructed like this (assuming that all members of the ast module are brought into scope.)],
-  [class="wp-block-paragraph"\>The expression’s AST is a binary operator; it has three children, left , right and op . The left and right are literal numbers; their child n is the value of that number. You get the idea I’m sure.],
-  [class="wp-block-paragraph"\>Every Python expression, statement, and so on has an AST node, and there are standard implementations of both parsers and unparsers; you can turn text into ASTs, turn ASTs back into text, and compile and run that program.],
-  [class="wp-block-paragraph"\> Next time on FAIC : I’ll describe the patterns/rules/combinators system briefly, and then give some thoughts on what motivated this approach over a more conventional compiler technique such as visitor patterns for rewrites. Then we’ll start looking at examples of patterns and predicates.],
-),
-  edited-for-length: false,
-)
-
-#pull-quote([class="wp-block-paragraph"\>A “parse tree” or abstract syntax tree (henceforth AST ) is a data structure representing a syntactic analysis of a program.], [ericlippert])
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [Travel without social praise],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -87,11 +53,9 @@ Like the first person to run a marathon without talking about it .],
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [How To Measure The Impact Of Features],
   author: [Vitaly Friedman],
   source-name: [Smashing Magazine],
@@ -171,46 +135,53 @@ Also available as a UX Bundle with 3 video courses.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A year of open source vulnerability trends: CVEs, advisories, and malware],
   author: [Jonathan Evans],
   source-name: [The GitHub Blog],
   images: (),
   paragraphs: (
   [GitHub published 4,101 reviewed advisories in 2025. This is the fewest number of reviewed advisories since 2021 .  Does this mean open source is shipping more secure code? Let’s dig into the data to find out.],
+  [GitHub reviewed advisories],
   [Fewer advisories reviewed doesn’t mean fewer vulnerabilities were reported. The drop is because GitHub reviewed far fewer older vulnerabilities . When you look only at newly reported vulnerabilities from our sources , GitHub actually reviewed 19% more advisories year over year.],
   [So why the change? Quite frankly, we are running out of unreviewed vulnerabilities that are older than the Advisory Database . At the same time, the number of newly reported vulnerabilities hasn’t dropped.],
+  [What is the GitHub Advisory Database?],
   [The  GitHub Advisory Database provides a comprehensive list of known security vulnerabilities and malware affecting open source packages. It was created in 2019, and has since become a vital resource for open source developers.],
-  [Read more in last year’s blog post \>],
   [It’s also worth clarifying that “ unreviewed ” in the database can be misleading: most advisories marked unreviewed have already been looked at by a curator and found not to affect any package in a supported ecosystem , so they may never be fully reviewed.],
   [This means that you should be receiving fewer brand-new Dependabot alerts about old vulnerabilities.],
   [Note : If you find an unreviewed advisory that affects a supported package, please let us know so we can get it reviewed!],
+  [How vulnerabilities were distributed across ecosystems in 2025],
   [The distribution of ecosystems in advisories reviewed in 2025 is similar to the overall distribution in the database, with the exception of Go. Go is overrepresented in 2025 advisories by 6%. This is largely due to dedicated campaigns to re-examine potentially missing advisories found through an internal review for packages where we had inconsistent coverage.],
+  [How the types of vulnerabilities changed in 2025],
   [Rank Common Weakness Enumeration (CWE) Number of 2025 Advisories\* Change in Rank from 2024 Change in Rank from the Overall Database 1 CWE-79 672 +0 +0 2 CWE-22 214 +2 +1 3 CWE-863 169 +9 +8 4 CWE-20 154 +1 +1 5 CWE-200 145 -2 -1 6 CWE-400 144 +4 +0 7 CWE-770 136 +7 +10 8 CWE-502 134 +5 +1 9 CWE-94 119 -3 -1 10 CWE-918 103 +5 +8],
   [\* An advisory may have more than CWE. For example, an advisory might have both CWE-400 and CWE-770. It would then count for both.],
   [As usual, cross-site scripting (CWE-79) is by far the most common vulnerability type. However, there are significant changes in the following areas. Resource exhaustion (CWE-400 and CWE-770), unsafe deserialization (CWE-502), and server-side request forgery (CWE-918) were unusually common in 2025. CWE-863 (“Incorrect Authorization”) saw a significant jump, but that is largely due to reclassification away from CWE-284 (“Improper Access Control”) and CWE-285 (“Improper Authorization”), which are higher level CWEs that the CWE program discourages using.],
   [One of the biggest quality improvements in 2025 was more specific, more consistent CWE tagging. Advisories without any CWE dropped 85% (from 452 in 2024 to 65 in 2025). CWE-20 (“Improper Input Validation”) is still common, but in prior years it was often the only CWE listed on an advisory.],
   [In 2025, advisories far more often list CWE-20 plus one or more additional CWEs that describe the concrete failure mode. This added specificity makes the data more actionable for triage, prioritization, and remediation.],
   [To find out how to filter Dependabot alerts by CWE, see our documentation on auto-triage rules .],
+  [How to prioritize your response],
   [We provide two scoring systems for prioritization:],
   [Common Vulnerability Severity Score (CVSS) : Scores how severe the impact of the vulnerability will be],
   [Exploit Prediction Scoring System (EPSS) : Provides a measure of how likely the vulnerability will be attacked in the next 30 days and],
   [Together, they can give you a head start on your risk assessment process.],
   [As you can see, when considering impact, most vulnerabilities skew moderate to high of the impact range. Low-impact vulnerabilities are likely more common than the CVSS data suggests but are often not considered worth the time and effort for researchers and maintainers to report. The EPSS scores for moderate to high impact vulnerabilities support this decision.],
   [So should you trust the EPSS or CVSS scores? To judge that, let’s look at how they match up to vulnerabilities in CISA’s Known Exploited Vulnerabilities Catalog . The exploited vulnerabilities are at least scored moderate, and most are critical or high. While CVSS has more of the exploited vulnerabilities as critical, it also has far more vulnerabilities in the range in general. Combining the two can help you prioritize which vulnerabilities to address to prevent exploitation.],
+  [npm malware advisories],
   [2025 was a huge year for npm malware advisories. Due to large malware campaigns, such as SHA1-Hulud , GitHub saw a 69% increase in published malware advisories compared to 2024. This is the most malware advisories GitHub has published since our initial release of historical malware when we added support in 2022 .],
   [You can receive Dependabot alerts when your repositories depend on npm packages with known malicious versions. When you enable malware alerting, Dependabot matches your npm dependencies against malware advisories in the GitHub Advisory Database.],
+  [GitHub CVE Numbering Authority (CNA)],
+  [CVE publications],
   [2025 was a big year for the GitHub, Inc. CNA . We saw a 35% increase in published CVE records , outpacing the overall CVE Project’s increase of 21%.],
   [In fact, we saw 10 to 16% growth every quarter. If this trend continues, GitHub will publish over 50% more CVEs in 2026.],
   [You can help make that a reality by requesting a CVE from us the next time you publish a repository security advisory about a vulnerability!],
+  [Organizations using GitHub’s CNA],
   [Every year, GitHub sees more organizations use its CNA services. 2025 is no exception with a 20% increase in new organizations requesting CVE IDs .],
   [Unlike reviewed global advisories, which are always mapped to packages in ecosystems we support, any maintainer on GitHub can request a CVE , even if they don’t publish that package to a supported ecosystem. In fact, 2025 is the first year that GitHub has published more CVEs from organizations that do not use a supported ecosystem than those that do.],
   [We would like to thank all 987 organizations that published CVEs with us in 2025 and highlight the top 10 most prolific organizations.],
   [Top 10 organizations using the GitHub CNA Organization Number of 2025 CVEs LabReDeS (WeGIA)\* 130 XWiki 40 Frappe 28 Discourse 27 Enalean 27 FreeScout\* 27 DataEase 26 Nextcloud 25 GLPI 24 DNN Software\* 23],
   [\* Organizations that published CVEs through GitHub for the first time in 2025],
+  [Onward to 2026],
   [The data from 2025 shows incredible growth:],
   [4,101 reviewed advisories],
   [7,197 malware advisories],
@@ -218,69 +189,79 @@ Also available as a UX Bundle with 3 video courses.],
   [679 new organizations using our CNA services .],
   [These numbers represent real security improvements for millions of developers.],
   [You can be part of this in 2026. Here’s how:],
+  [1. Use our CNA services],
   [Publishing CVEs shouldn’t be complicated. Request a CVE directly from your repository security advisory, and we’ll take care of curating and publishing it for you. It’s free, it’s fast, and it helps the entire ecosystem understand and respond to vulnerabilities.],
+  [2. Improve advisory accuracy],
   [Found an unreviewed advisory affecting a supported package? See incorrect severity scores or missing affected versions? Suggest edits . Your edits will be reviewed by the Advisory Database team and ultimately, will help make the database more accurate for everyone. In 2025, 675 contributions from the community improved the quality of this data for the entire software industry!],
+  [3. Protect your projects],
   [The most direct impact you can have is protecting your own code. Enable Dependabot to automatically receive security updates and explore GitHub Advanced Security for comprehensive protection.],
+  [4. Make reporting a vulnerability easier],
   [Let researchers know how to report to you and what you will and will not accept by creating a security policy for your repository. Enable private vulnerability reporting to make the coordination process smooth and secure.],
   [Let’s make 2026 even better. See you in next year’s review! 🚀],
   [The post A year of open source vulnerability trends: CVEs, advisories, and malware appeared first on The GitHub Blog .],
 ),
   insert-map: (:),
   inline-pq: pull-quote([Combining the two can help you prioritize which vulnerabilities to address to prevent exploitation.], [Jonathan Evans]),
-  inline-pq-idx: 17,
+  inline-pq-idx: 22,
   word-count: 1392,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Bean Machine Retrospective, part 9],
   author: [ericlippert],
   source-name: [Fabulous Adventures in Coding (Eric Lippert)],
   images: (),
   paragraphs: (
-  [class="wp-block-paragraph"\>I wanted to implement concise “pattern matching” in Python, a language which unlike C\#, F\#, Scala, and so on, does not have any pattern matching built in. Logically a pattern is just a predicate: a function which takes a value and returns true if the value “matches” the pattern, false otherwise. The code for this episode is here .],
-  [class="wp-block-paragraph"\>When I embarked on this I realized two things. First, that it might be nice for debugging purposes to have more information in the return value than just “true” or “false”; in particular, when a complex pattern fails to match, but it should match, then I’ve made a mistake. In order to debug that mistake, I actually made patterns return a new type:],
-  [class="wp-block-paragraph"\>A complex pattern might fail because of its component patterns failing to match, and so that information is included in the failure result. I also made subclasses Success and Fail .],
+  [I wanted to implement concise “pattern matching” in Python, a language which unlike C\#, F\#, Scala, and so on, does not have any pattern matching built in. Logically a pattern is just a predicate: a function which takes a value and returns true if the value “matches” the pattern, false otherwise. The code for this episode is here .],
+  [When I embarked on this I realized two things. First, that it might be nice for debugging purposes to have more information in the return value than just “true” or “false”; in particular, when a complex pattern fails to match, but it should match, then I’ve made a mistake. In order to debug that mistake, I actually made patterns return a new type:],
+  [class MatchResult(ABC):
+ test: Any
+ submatches: Dict\[str, "MatchResult"\]
+ \# ... and so on, boilerplate code for the rest of this.],
+  [A complex pattern might fail because of its component patterns failing to match, and so that information is included in the failure result. I also made subclasses Success and Fail .],
+  [You know I just realized this very moment that I’ve used “Fail” as a noun here. It should have been Failure . Oh well.],
+  [Second, I realized that using functions for everything would lack concision. I didn’t want to write code like this throughout:],
+  [is\_binop = lambda x: Success(x) if isinstance(x, ast. BinOp) else Fail(x)],
+  [The notion of “is this thing a binop” is captured entirely by the type BinOp already; could we just use that object where a pattern is required?],
+  [After playing around with different options I eventually landed on this type discipline:],
   [Pattern = Union\[PatternBase, int, str, float, type, list, None\]],
+  [A pattern base object has a match predicate which takes a test value and, moreover, may be treated as a function you can call.],
+  [Anywhere that we need a pattern, the caller may provide:],
   [an instance of pattern base],
   [an None, integer, float or string value; the semantics are “the pattern matches if test is equal to the given value”.],
   [a type; the semantics are “the pattern matches if test is of the given type”],
   [a list of patterns; the semantics are “the pattern matches if test is a list of the same length, and each list element matches the corresponding pattern”],
-  [class="wp-block-syntaxhighlighter-code "\> 
-p = \[ BinOp, 3, None \] 
+  [So far we can express patterns such as],
+  [p = \[ BinOp, 3, None \] 
 \# p matches a list of three items where the first is a binary op AST,
 \# the second is the number 3, and the third is the value None],
-  [class="wp-block-paragraph"\>But how would we express “match instances of Foo whose bar attribute is 3″? We can start by solving the more general problem of how do we match against multiple patterns? Here’s our first combinator:],
-  [class="wp-block-syntaxhighlighter-code "\> 
-def match\_every(\*patterns: Pattern) -\> Pattern:
+  [But how would we express “match instances of Foo whose bar attribute is 3″? We can start by solving the more general problem of how do we match against multiple patterns? Here’s our first combinator:],
+  [def match\_every(\*patterns: Pattern) -\> Pattern:
  \# ... the implementation is tedious to make it efficient,
  \# but you get the idea; we produce a pattern which succeeds if
  \# every given subpattern succeeds, and fails otherwise.],
-  [class="wp-block-syntaxhighlighter-code "\> 
-class AttributeSubpattern(PatternBase):
+  [We can solve the specific problem of matching a subpattern that is an attribute of the tested value:],
+  [class AttributeSubpattern(PatternBase):
  name: str
  subpattern: Pattern
  def match(self, test: Any) -\> MatchResult:
  submatch = match(self.subpattern, getattr(test, self.name, None))
- submatches = {self.name: submatch}
+ submatches = \{self.name: submatch\}
  if submatch.is\_success():
  return Success(test, submatches)
  return Fail(test, submatches)
  \# ...],
-  [class="wp-block-paragraph"\>It’s a little clunky to call AttributeSubpattern so I made a synonym function attribute as well. Notice that this class is a combinator; it takes a pattern and produces a new pattern.],
-  [class="wp-block-paragraph"\>And now we can make a third combinator out of the first two: I want a pattern that checks to see if an object is of a particular type, and whether it has an attribute which matches a pattern:],
+  [It’s a little clunky to call AttributeSubpattern so I made a synonym function attribute as well. Notice that this class is a combinator; it takes a pattern and produces a new pattern.],
+  [And now we can make a third combinator out of the first two: I want a pattern that checks to see if an object is of a particular type, and whether it has an attribute which matches a pattern:],
+  [And now we can say],
+  [is\_addition = type\_and\_attributes(BinOp, \{"op": Add\})],
+  [Or, even better, let’s make a pattern that always matches and yet another combinator:],
   [\_any = AnyPattern()],
-  [def binop(
- op: Pattern = \_any, 
- left: Pattern = \_any, 
- right: Pattern = \_any) -\> Pattern:
- return type\_and\_attributes(
- BinOp, {"op": op, "left": left, "right": right})],
   [is\_addition = binop(Add)],
+  [I also defined patterns or combinators for:],
   [Match at least one of these patterns],
   [Match the first item in a list to one pattern and the tail of the list to another],
   [Match at least one item in a list to a given pattern],
@@ -288,7 +269,9 @@ class AttributeSubpattern(PatternBase):
   [Match the opposite of this pattern],
   [Helper combinators for commonly used AST nodes such as identifiers, operators, and so on.],
   [And so on; you get the idea.],
-  [class="wp-block-paragraph"\>Patterns identify what code needs to be transformed; rules transform them. Next time on FAIC we’ll look at building a set of rules and rule combinators for concisely representing AST transformations.],
+  [With these tools in my toolbox I could then rapidly create patterns such as “is any item in this list not an identifier?”],
+  [any\_non\_id = ListAny(negate(name()))],
+  [Patterns identify what code needs to be transformed; rules transform them. Next time on FAIC we’ll look at building a set of rules and rule combinators for concisely representing AST transformations.],
 ),
   insert-map: (:),
   word-count: 884,
@@ -296,10 +279,8 @@ class AttributeSubpattern(PatternBase):
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Fresh Energy In March (2026 Wallpapers Edition)],
   author: [Cosima Mielke],
   source-name: [Smashing Magazine],
@@ -410,10 +391,8 @@ class AttributeSubpattern(PatternBase):
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [These Weeks in Remacs III],
   author: [Wilfred Hughes],
   source-name: [Wilfred Hughes],
@@ -421,7 +400,6 @@ class AttributeSubpattern(PatternBase):
   paragraphs: (
   [Time for another Remacs update: lots of contributions, a wide range of
 features, and even a logo!],
-  [id="contributing"\>Contributing],
   [Since the last update ,
 we’ve seen contributions from lots of new people. We’ve added
 \@brotzeit and \@shanavas786, bringing us to seven wonderful people who
@@ -431,7 +409,6 @@ last update!],
   [If you’re looking for a good feature for your first contribution,
 \@brotzeit has been regularly adding
  new suggestions under the ‘good first issue’ label .],
-  [id="features"\>Features],
   [Many Emacs features have now been ported to Rust, with new Rust APIs
 for accessing elisp datastructures.],
   [Here’s an overview of the features that have landed.],
@@ -481,7 +458,7 @@ a Rust RNG!), and
  identity .],
   [We’re also periodically pulling GNU Emacs features into Remacs, so all
 the features available GNU Emacs trunk are included in Remacs.],
-  [id="idiomatic-rust-in-remacs"\>Idiomatic Rust in Remacs],
+  [Idiomatic Rust in Remacs],
   [Remacs has gradually developed a set of conventions for elisp data
 types. For each type Foo, we define a LispObject::as\_foo ,
  LispObject::as\_foo\_or\_error and a FooRef when you know your elisp
@@ -490,20 +467,20 @@ datatype is actually a Foo.],
   [DEFUN ( "overlay-start" , Foverlay\_start , Soverlay\_start , 1 , 1 , 0 , 
  doc : /\* Return the position at which OVERLAY starts. \*\/ ) 
  ( Lisp\_Object overlay ) 
- { 
+ \{ 
  CHECK\_OVERLAY ( overlay );],
   [return ( Fmarker\_position ( OVERLAY\_START ( overlay ))); 
- }],
+ \}],
   [The C codebase makes heavy use of macros for checking types
 ( CHECK\_OVERLAY ) and for accessing struct attributes
 ( OVERLAY\_START ).],
   [Here’s the Rust equivalent:],
   [\/\/\/ Return the position at which OVERLAY starts. 
  \#\[lisp\_fn\] 
- fn overlay\_start ( overlay : LispObject ) -\> LispObject { 
+ fn overlay\_start ( overlay : LispObject ) -\> LispObject \{ 
  let marker = overlay .as\_overlay\_or\_error () .start (); 
  marker\_position ( marker ) 
- }],
+ \}],
   [We use procedural macros to simplify defining an elisp primitive
 function, and type checking is much more explicit.],
   [(This example is
@@ -513,14 +490,12 @@ include
  variadic macros to replace call1 , call2 in C with just call! in Rust ,
 and
  the ability to mock extern C functions so we can write unit tests .],
-  [id="hash-maps"\>Hash Maps],
   [We’re not always able to leverage the Rust libraries
 available. \@DavidDeSimone showed some amazing Rust-fu exploring
 using Rust’s FnvHashMap inside Remacs .],
   [Sadly, we weren’t able to use the Rust hash map implementation. The C
 layer assumes that it can mutate hash table keys in place, and
  unexec does not play nicely with mmap . See the PR for the full details.],
-  [id="logo"\>Logo],
   [Finally, we’re discussing a logo for Remacs. We’ve had some great submissions:],
   [You can join the logo discussion at PR \#360 .],
   [As always, if you fancy writing some Rust in support of the world’s
@@ -532,11 +507,10 @@ lispiest text editor, you can join us on GitHub !],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Infinite Scrolling that Works],
   author: [Robin Ward (eviltrout)],
   source-name: [Robin Ward (eviltrout)],
@@ -544,7 +518,7 @@ lispiest text editor, you can join us on GitHub !],
   paragraphs: (
   [Shortly after we began working together on Discourse , Jeff wrote a post about infinite scrolling . At first, I was surprised at how many people claimed to hate sites that used it. However, after reading through many comments
 about it, I realized that most didn’t hate the scrolling itself, they hated how it broke their browser!],
-  [id="infinite-scrolling-done-wrong-twitter"\>Infinite Scrolling done wrong: Twitter],
+  [Infinite Scrolling done wrong: Twitter],
   [When I visit Twitter, I am presented with a list of tweets in reverse chronological order. If I scroll down far enough, Twitter will automatically
 load more tweets so I don’t have to stop reading. Initially, their implementation seems great. I can keep scrolling until I’m done reading.],
 ),
@@ -556,7 +530,7 @@ load more tweets so I don’t have to stop reading. Initially, their implementat
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [How and why to make a /now page on your site],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -613,7 +587,7 @@ That will ensure the URL is /now, and after it’s posted, you can change the ti
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Speech to birdsong conversion],
   author: [Oona Räisänen],
   source-name: [Oona Raisanen (windytan)],
@@ -638,7 +612,7 @@ That will ensure the URL is /now, and after it’s posted, you can change the ti
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [No new instructions for the computer],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -671,7 +645,7 @@ Let yourself execute one plan of action, and see it through to fruition.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Tour -isms],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -699,7 +673,7 @@ Can I tour the “ -ism ”s?],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Fret, Hedge, React],
   author: [Richard Beck],
   source-name: [n+1 Magazine],
@@ -718,7 +692,7 @@ Can I tour the “ -ism ”s?],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [PostgreSQL example of self-contained stored procedures],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -743,7 +717,7 @@ It works.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Your heroes show which way you’re facing],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -781,7 +755,7 @@ Does that help you see which way you’re actually facing?],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Podcast published today],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -808,7 +782,7 @@ Please let me know if you have any suggestions.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Why did I move to New Zealand?],
   author: [Derek Sivers],
   source-name: [Derek Sivers],
@@ -854,7 +828,7 @@ He’s mentally healthy and wise, I think partially due to being raised outside 
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Mapping microwave relay links from video],
   author: [Oona Räisänen],
   source-name: [Oona Raisanen (windytan)],
@@ -877,7 +851,7 @@ He’s mentally healthy and wise, I think partially due to being raised outside 
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Siren Song of Little Languages],
   author: [Wilfred Hughes],
   source-name: [Wilfred Hughes],
@@ -944,27 +918,31 @@ qualities.],
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([Elias Rodriques], source-name: [n+1 Magazine], [Trump was — and is — intent on creating a new future, and to gain a better sense of that vision, I needed to understand what future he was working to prevent. I asked Andil to meet that weekend, and he agreed. I would play amateur journalist and interview Andil again, this time about how he fell into the government’s crosshairs.])],
-    [#brief-item([Maria Marchinkoski], source-name: [n+1 Magazine], [We have no tradition, she said. What could we say to the dead except that we’re sorry for living? No, we confuse people too much already. How much more could they take? They hear “transsexual” and want us to prove it. They want weeping in front of mirrors. They want heartfelt confessions with parents on the couch. They will never take you seriously or consider you normal. They want hand-me-down emotions.])],
-    [#brief-item([Rubin DasguptaChristian SteinmetzgerAncy T. WilsonSatyaki ChatterjeeGunnar W. ReginssonSnorri Th. SigurdssonKatja PetzoldaDepartment of Medical Biochemistry and Microbiology, Science for Life Laboratory, Center of Excellence for the Chemical Mechanisms of Life, Uppsala University, Uppsala 751 23, SwedenbDepartment of Chemistry, Science Institute, University of Iceland, Reykjavik 107, Iceland], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([Elias Rodriques], source-name: [n+1 Magazine], [Trump was — and is — intent on creating a new future, and to gain a better sense of that vision, I needed to understand what future he was working to prevent. I asked Andil to meet that weekend, and he agreed. I would play amateur journalist and interview Andil again, this time about how he fell into the government’s crosshairs.])],
+  [#brief-item([Maria Marchinkoski], source-name: [n+1 Magazine], [We have no tradition, she said. What could we say to the dead except that we’re sorry for living? No, we confuse people too much already. How much more could they take? They hear “transsexual” and want us to prove it. They want weeping in front of mirrors. They want heartfelt confessions with parents on the couch. They will never take you seriously or consider you normal. They want hand-me-down emotions.])],
+  [#brief-item([Rubin DasguptaChristian SteinmetzgerAncy T. WilsonSatyaki ChatterjeeGunnar W. ReginssonSnorri Th. SigurdssonKatja PetzoldaDepartment of Medical Biochemistry and Microbiology, Science for Life Laboratory, Center of Excellence for the Chemical Mechanisms of Life, Uppsala University, Uppsala 751 23, SwedenbDepartment of Chemistry, Science Institute, University of Iceland, Reykjavik 107, Iceland], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 SignificanceUnderstanding RNA structure and dynamics inside cells remains a key challenge in molecular biology. Here, we establish a site-directed spin labeling approach that enables targeted NMR signal enhancement of RNA in complex environments, using ...])],
-    [#brief-item([Sumitabha BrahmachariAntonio B. OliveiraMatheus F. MelloVinícius G. ContessotoJosé N. OnuchicaCenter for Theoretical Biological Physics, Rice University, Houston, TX 77005bPhD Program in Systems, Synthetic, and Physical Biology, Rice University, Houston, TX 77005cDepartment of Physics and Astronomy, Rice University, Houston, TX 77005dDepartment of Chemistry, Rice University, Houston, TX 77005eDepartment of Biosciences, Rice University, Houston, TX 77005], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+  [#brief-item([Sumitabha BrahmachariAntonio B. OliveiraMatheus F. MelloVinícius G. ContessotoJosé N. OnuchicaCenter for Theoretical Biological Physics, Rice University, Houston, TX 77005bPhD Program in Systems, Synthetic, and Physical Biology, Rice University, Houston, TX 77005cDepartment of Physics and Astronomy, Rice University, Houston, TX 77005dDepartment of Chemistry, Rice University, Houston, TX 77005eDepartment of Biosciences, Rice University, Houston, TX 77005], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 SignificanceSegregation of duplicated DNA is essential for cell proliferation. By combining experimental Hi-C contact maps with a energy landscape approach, we uncover how Structural Maintenance of Chromosomes (SMC) complexes reorganize the chromosome ...])],
-    [#brief-item([Liv Veazey], source-name: [n+1 Magazine], [All the Immigration and Customs Enforcement agents I saw in the atrium were white, of medium height and build, and many wore plain baseball caps. They were all men and they stuck out because they displayed an exceeding level of stillness and homogeneity in a room with a flow of people from all over the world, people who were always in motion and who mostly looked different from one another.])],
-    [#brief-item([Pallavi SinghMydhily VasudevanSwagata DeyKavinila SelvarasuSupraja BalakrishnanDikshalee BassiAnindya Ghosh-RoyaDepartment of Cellular and Molecular Neuroscience, National Brain Research Centre, Manesar, Haryana 122052, India], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+  [#brief-item([Liv Veazey], source-name: [n+1 Magazine], [All the Immigration and Customs Enforcement agents I saw in the atrium were white, of medium height and build, and many wore plain baseball caps. They were all men and they stuck out because they displayed an exceeding level of stillness and homogeneity in a room with a flow of people from all over the world, people who were always in motion and who mostly looked different from one another.])],
+  [#brief-item([Pallavi SinghMydhily VasudevanSwagata DeyKavinila SelvarasuSupraja BalakrishnanDikshalee BassiAnindya Ghosh-RoyaDepartment of Cellular and Molecular Neuroscience, National Brain Research Centre, Manesar, Haryana 122052, India], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 SignificancePrevious studies have established that physical injury to dendrites leads to the initiation of dendrite regeneration by a mechanism independent of pathways involved in sensing axonal injury. Therefore, the mechanism of dendrite regeneration is ...])],
-    [#brief-item([Andreas MühlbauerYuanbei F. FanDaniel J. SamborMark Z. JacobsonaDepartment of Civil and Environmental Engineering, Stanford University, Stanford, CA 94305-4020], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+  [#brief-item([Andreas MühlbauerYuanbei F. FanDaniel J. SamborMark Z. JacobsonaDepartment of Civil and Environmental Engineering, Stanford University, Stanford, CA 94305-4020], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 SignificanceThis study reveals the immense, previously unquantified potential of repowering the United States (US) onshore wind turbine fleet. By replacing aging turbines with modern technology at existing sites, the United States could more than double ...])],
-    [#brief-item([Melinda Cooper, Malcolm Harris], source-name: [n+1 Magazine], [These conflicts tend to recur every ten years or so, with a different cast of characters, but always involving the idea that taxpayer money is being spent on a public institution that undermines the private authority of parents—abortion clinics, child care centers, public libraries, public schools.])],
-    [#brief-item([Donald P. McDonnellaDepartment of Pharmacology and Cancer Biology, Duke University School of Medicine, Durham, NC 27710], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+  [#brief-item([Melinda Cooper, Malcolm Harris], source-name: [n+1 Magazine], [These conflicts tend to recur every ten years or so, with a different cast of characters, but always involving the idea that taxpayer money is being spent on a public institution that undermines the private authority of parents—abortion clinics, child care centers, public libraries, public schools.])],
+  [#brief-item([Donald P. McDonnellaDepartment of Pharmacology and Cancer Biology, Duke University School of Medicine, Durham, NC 27710], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 Bert W. O’Malley, the “father/grandfather” of the field of molecular endocrinology passed away on November 11, 2025, at the age of 88. In a distinguished career that spanned over 60 years, he probed fundamental aspects of steroid hormone action, work that ...])],
-    [#brief-item([Eugene MalthouseCharlie PilgrimDaniel SgroiMichela AccerenziAntonio AlfonsoRana Umair AshrafMax BaardSanchayan BanerjeeAlexis BelianinSwagata BhattacharjeeMihir BhattacharyaPablo Brañas-GarzaJuan-Camilo CárdenasMiguel CarriquirySyngjoo ChoiGwen-Jiro ClochardEduardo Ezekiel DenzonBartlomiej Dessoulavy-SliwinskiGiorgio DiniLu DongAntal ErtlFilippos ExadaktylosEmel Filiz-OzbaySarah Lynn FleckeFabio GaleottiTeresa Garcia-MuñozNobuyuki HanakiGuillaume HollardDaniel HornLingbo HuangDoruk İrişHubert Janos KissJuliane KochJaromír KováříkOsbert Kwabena Boadi KwartengAndreas LangeMartin LeitesThomas Ho-Fung LeungWooyoung LimMeike MorrenLaila NockurCharles Yaw OkyereMayada OudahAli I. OzkesLionel PageJunghyun ParkStefan PfattheicherAntonios ProestakisCarlos RamosMapi Ramos-SosaMuhammad Saeed AshrafMuhammad Ryan SanjayaRene SchwaigerOmar SeneFei SongSarah SpycherRostislav StaněkNorman TanchingcoAlessandro TavoniVera te VeldeMaría José Vázquez-De FranciscoMartine VisserJoseph Tao-Yi WangWilly WangWei-Chien WengKatharina WernerAmanda WijayantiRalph WinklerJohn WoodersLi YingWei ZhenThomas HillsaCentre for Decision Research and Experimental Economics, School of Economics, University of Nottingham, Nottingham NR7 2QX, United KingdombSchool of Mathematics, University of Leeds, Leeds LS2 9JT, United KingdomcDepartment of Economics, University of Warwick, Coventry CV4 7AL, United KingdomdFundación ETEA—Development Institute of Universidad Loyola Andalucía, Córdoba 14004, SpaineDepartment of Applied Economics I, University of Seville, Sevilla 41018, SpainfFaculty of Economic Sciences, University of Warsaw, Warsaw 00-241, PolandgEnvironmental Policy Research Unit, University of Cape Town, Cape Town 7700, South AfricahSchool for Government, The Policy Institute, King’s College London, London WC2B 4LL, United KingdomiNational Research University Higher School of Economics, Moscow 101000, RussiajAlmaty Management University, Almaty 050060, KazakhstankJindal School of Government and Public Policy, O.P. Jindal Global University, Haryana 131001, IndialDepartment of Economics, Ashoka University, Haryana 131029, IndiamLoyolaBehLAB, Department of Finance, Universidad Loyola Andalucía, Córdoba 14004, SpainnFacultad de Economía, Universidad de los Andes, Cundinamarca, Bogotá 111711, ColombiaoDepartment of Economics, University of Massachusetts Amherst, Amherst, MA 01003pInstituto de Economía, Universidad de la República de Uruguay, Montevideo 11200, UruguayqDepartment of Economics, Seoul National University, Seoul 08826, Republic of KorearInstitute of Social and Economics Research, University of Osaka, Osaka 567-0047, JapansJoint Initiative for Latin American Experimental Economics, Buenos Aires C1054 AAF, ArgentinatJohn Gokongwei School of Management, Ateneo de Manila University, Metro Manila 1108, PhilippinesuDepartment of Economics, University of Bologna, Bologna 40126, ItalyvSouthern University of Science and Technology, Guangdong Province 518055, ChinawELTE Centre for Economic and Regional Studies, Budapest 1097, HungaryxSchool of Social Sciences, University of Iceland, Reykjavík 102, IcelandyUniversidad de Barcelona, Barcelona 08007, SpainzDepartment of Economics, University of Maryland, College Park, MD 20742aaDepartment of Experimental Psychology, University College London, London WC1H 0AP, United KingdombbCNRS, Université Lumière Lyon 2, Université Jean Monnet Saint-Etienne, Emlyon Business School, GATE, Lyon 69007, FranceccUniversity of Granada, Granada 18012, SpainddUniversity of Limassol, Limassol 3020, CypruseeCenter for Research in Economics and Statistics, École Polytechnique, Institut Polytechnique de Paris, Palaiseau 91120, FranceffCNRS, Paris Cedex 16 75794, FranceggCorvinus University of Budapest, Budapest 1093, HungaryhhShandong University, Jinan, Licheng District 250100, ChinaiiDepartment of Economics, Sogang University, Seoul 08826, Republic of KoreajjEconomics Department at Lund University School of Economics and Management, Lund 223 63, SwedenkkDepartamento de Análisis Económico, University of the Basque Country (UPV/EHU), Bilbao 48015, SpainllFaculty of Economics, University of West Bohemia, Plzeň 306 14, Czech RepublicmmDepartment of Agricultural Economics and Agribusiness, College of Basic and Applied Sciences, University of Ghana, Legon-Accra GA-489-1402, GhanannDepartment of Economics, Faculty of Business, Economics and Social Sciences of the University of Hamburg, Hamburg 20146, GermanyooUniversidad de la República de Uruguay, Montevideo 11200, UruguayppUniversity of Arizona, Tucson, AZ 85721qqThe Hong Kong University of Science and Technology, Kowloon, Hong KongrrDepartment of Marketing, Vrije Universiteit Amsterdam, Amsterdam 1081 HV, NetherlandsssDepartment of Psychology and Behavioural Sciences, Aarhus University, Aarhus 8000, DenmarkttDivision of Social Science, New York University Abu Dhabi, Abu Dhabi PO Box 129188, United Arab EmiratesuuCenter for Behavioral Institutional Design, New York University Abu Dhabi Research Institute, New York University Abu Dhabi, Abu Dhabi PO Box 129188, United Arab EmiratesvvSKEMA Business School, Groupe de Recherche en Droit, Économie et Gestion, Université Côte d’Azur, Lille 59777, FrancewwVienna University of Economics and Business, Vienna 1020, AustriaxxSchool of Economics, University of Queensland, Brisbane QLD 4072, AustraliayySeoul National University, Seoul 04107, Republic of KoreazzDepartment of Nutrition and Dietetics Sciences, Hellenic Mediterranean University, Sitia 72300, GreeceaaaInstituto Tecnológico de Santo Domingo, Santo Domingo 10602, Dominican RepublicbbbDepartment of Applied Economic Analysis, Universidad de Las Palmas de Gran Canaria, Las Palmas 35017, SpaincccSchool of Tourism Management, Hengxing University of Science and Technology, Qingdao, Shandong 266100, ChinadddUniversitas Gadjah Mada, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281, IndonesiaeeeDepartment of Banking and Finance, University of Innsbruck, Innsbruck 6020, AustriafffAlioune Diop University of Bambey, Bambey BP 16617, SenegalgggTed Rogers School of Management, Toronto Metropolitan University, Toronto, ON M5B 2K3, CanadahhhDepartment of Management, Technology, and Economics, ETH Zurich, Zürich 8092, SwitzerlandiiiFaculty of Economics and Administration, Masaryk University, Brno 601 77, CzechiajjjGrantham Research Institute on Climate Change and the Environment, London School of Economics, London WC2A 2AE, United KingdomkkkUniversity of Cape Town, Cape Town 7700, South AfricalllDepartment of Economics, National Taiwan University, Taipei 106, TaiwanmmmTaiwan Social Resilience Research Center, National Taiwan University, Taipei 106, TaiwannnnSchool of Information, University of Michigan, Ann Arbor, MI 48109oooDepartment of Economics, University of Cologne, Cologne D-50937, GermanypppSchool of Business, Economics, and Information Systems, University of Passau, Passau D-94032, GermanyqqqDepartment of Economics and Oeschger Centre for Climate Change Research, University of Bern, Bern CH-3012, SwitzerlandrrrInstitute of Psychology, Chinese Academy of Sciences, Beijing 100101, ChinasssDepartment of Psychology, University of Warwick, Coventry CV4 7AL, United Kingdom], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
+  [#brief-item([Eugene MalthouseCharlie PilgrimDaniel SgroiMichela AccerenziAntonio AlfonsoRana Umair AshrafMax BaardSanchayan BanerjeeAlexis BelianinSwagata BhattacharjeeMihir BhattacharyaPablo Brañas-GarzaJuan-Camilo CárdenasMiguel CarriquirySyngjoo ChoiGwen-Jiro ClochardEduardo Ezekiel DenzonBartlomiej Dessoulavy-SliwinskiGiorgio DiniLu DongAntal ErtlFilippos ExadaktylosEmel Filiz-OzbaySarah Lynn FleckeFabio GaleottiTeresa Garcia-MuñozNobuyuki HanakiGuillaume HollardDaniel HornLingbo HuangDoruk İrişHubert Janos KissJuliane KochJaromír KováříkOsbert Kwabena Boadi KwartengAndreas LangeMartin LeitesThomas Ho-Fung LeungWooyoung LimMeike MorrenLaila NockurCharles Yaw OkyereMayada OudahAli I. OzkesLionel PageJunghyun ParkStefan PfattheicherAntonios ProestakisCarlos RamosMapi Ramos-SosaMuhammad Saeed AshrafMuhammad Ryan SanjayaRene SchwaigerOmar SeneFei SongSarah SpycherRostislav StaněkNorman TanchingcoAlessandro TavoniVera te VeldeMaría José Vázquez-De FranciscoMartine VisserJoseph Tao-Yi WangWilly WangWei-Chien WengKatharina WernerAmanda WijayantiRalph WinklerJohn WoodersLi YingWei ZhenThomas HillsaCentre for Decision Research and Experimental Economics, School of Economics, University of Nottingham, Nottingham NR7 2QX, United KingdombSchool of Mathematics, University of Leeds, Leeds LS2 9JT, United KingdomcDepartment of Economics, University of Warwick, Coventry CV4 7AL, United KingdomdFundación ETEA—Development Institute of Universidad Loyola Andalucía, Córdoba 14004, SpaineDepartment of Applied Economics I, University of Seville, Sevilla 41018, SpainfFaculty of Economic Sciences, University of Warsaw, Warsaw 00-241, PolandgEnvironmental Policy Research Unit, University of Cape Town, Cape Town 7700, South AfricahSchool for Government, The Policy Institute, King’s College London, London WC2B 4LL, United KingdomiNational Research University Higher School of Economics, Moscow 101000, RussiajAlmaty Management University, Almaty 050060, KazakhstankJindal School of Government and Public Policy, O.P. Jindal Global University, Haryana 131001, IndialDepartment of Economics, Ashoka University, Haryana 131029, IndiamLoyolaBehLAB, Department of Finance, Universidad Loyola Andalucía, Córdoba 14004, SpainnFacultad de Economía, Universidad de los Andes, Cundinamarca, Bogotá 111711, ColombiaoDepartment of Economics, University of Massachusetts Amherst, Amherst, MA 01003pInstituto de Economía, Universidad de la República de Uruguay, Montevideo 11200, UruguayqDepartment of Economics, Seoul National University, Seoul 08826, Republic of KorearInstitute of Social and Economics Research, University of Osaka, Osaka 567-0047, JapansJoint Initiative for Latin American Experimental Economics, Buenos Aires C1054 AAF, ArgentinatJohn Gokongwei School of Management, Ateneo de Manila University, Metro Manila 1108, PhilippinesuDepartment of Economics, University of Bologna, Bologna 40126, ItalyvSouthern University of Science and Technology, Guangdong Province 518055, ChinawELTE Centre for Economic and Regional Studies, Budapest 1097, HungaryxSchool of Social Sciences, University of Iceland, Reykjavík 102, IcelandyUniversidad de Barcelona, Barcelona 08007, SpainzDepartment of Economics, University of Maryland, College Park, MD 20742aaDepartment of Experimental Psychology, University College London, London WC1H 0AP, United KingdombbCNRS, Université Lumière Lyon 2, Université Jean Monnet Saint-Etienne, Emlyon Business School, GATE, Lyon 69007, FranceccUniversity of Granada, Granada 18012, SpainddUniversity of Limassol, Limassol 3020, CypruseeCenter for Research in Economics and Statistics, École Polytechnique, Institut Polytechnique de Paris, Palaiseau 91120, FranceffCNRS, Paris Cedex 16 75794, FranceggCorvinus University of Budapest, Budapest 1093, HungaryhhShandong University, Jinan, Licheng District 250100, ChinaiiDepartment of Economics, Sogang University, Seoul 08826, Republic of KoreajjEconomics Department at Lund University School of Economics and Management, Lund 223 63, SwedenkkDepartamento de Análisis Económico, University of the Basque Country (UPV/EHU), Bilbao 48015, SpainllFaculty of Economics, University of West Bohemia, Plzeň 306 14, Czech RepublicmmDepartment of Agricultural Economics and Agribusiness, College of Basic and Applied Sciences, University of Ghana, Legon-Accra GA-489-1402, GhanannDepartment of Economics, Faculty of Business, Economics and Social Sciences of the University of Hamburg, Hamburg 20146, GermanyooUniversidad de la República de Uruguay, Montevideo 11200, UruguayppUniversity of Arizona, Tucson, AZ 85721qqThe Hong Kong University of Science and Technology, Kowloon, Hong KongrrDepartment of Marketing, Vrije Universiteit Amsterdam, Amsterdam 1081 HV, NetherlandsssDepartment of Psychology and Behavioural Sciences, Aarhus University, Aarhus 8000, DenmarkttDivision of Social Science, New York University Abu Dhabi, Abu Dhabi PO Box 129188, United Arab EmiratesuuCenter for Behavioral Institutional Design, New York University Abu Dhabi Research Institute, New York University Abu Dhabi, Abu Dhabi PO Box 129188, United Arab EmiratesvvSKEMA Business School, Groupe de Recherche en Droit, Économie et Gestion, Université Côte d’Azur, Lille 59777, FrancewwVienna University of Economics and Business, Vienna 1020, AustriaxxSchool of Economics, University of Queensland, Brisbane QLD 4072, AustraliayySeoul National University, Seoul 04107, Republic of KoreazzDepartment of Nutrition and Dietetics Sciences, Hellenic Mediterranean University, Sitia 72300, GreeceaaaInstituto Tecnológico de Santo Domingo, Santo Domingo 10602, Dominican RepublicbbbDepartment of Applied Economic Analysis, Universidad de Las Palmas de Gran Canaria, Las Palmas 35017, SpaincccSchool of Tourism Management, Hengxing University of Science and Technology, Qingdao, Shandong 266100, ChinadddUniversitas Gadjah Mada, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281, IndonesiaeeeDepartment of Banking and Finance, University of Innsbruck, Innsbruck 6020, AustriafffAlioune Diop University of Bambey, Bambey BP 16617, SenegalgggTed Rogers School of Management, Toronto Metropolitan University, Toronto, ON M5B 2K3, CanadahhhDepartment of Management, Technology, and Economics, ETH Zurich, Zürich 8092, SwitzerlandiiiFaculty of Economics and Administration, Masaryk University, Brno 601 77, CzechiajjjGrantham Research Institute on Climate Change and the Environment, London School of Economics, London WC2A 2AE, United KingdomkkkUniversity of Cape Town, Cape Town 7700, South AfricalllDepartment of Economics, National Taiwan University, Taipei 106, TaiwanmmmTaiwan Social Resilience Research Center, National Taiwan University, Taipei 106, TaiwannnnSchool of Information, University of Michigan, Ann Arbor, MI 48109oooDepartment of Economics, University of Cologne, Cologne D-50937, GermanypppSchool of Business, Economics, and Information Systems, University of Passau, Passau D-94032, GermanyqqqDepartment of Economics and Oeschger Centre for Climate Change Research, University of Bern, Bern CH-3012, SwitzerlandrrrInstitute of Psychology, Chinese Academy of Sciences, Beijing 100101, ChinasssDepartment of Psychology, University of Warwick, Coventry CV4 7AL, United Kingdom], source-name: [PNAS News], [Proceedings of the National Academy of Sciences, Volume 123, Issue 12, March 2026. 
 SignificanceOne of the main goals of international climate change negotiations is to distribute the economic burden of limiting global warming. A central challenge is that some countries are wealthier than others and may therefore be better able to invest ...])],
-    [#brief-item([Mark Greif], source-name: [n+1 Magazine], [There may well be normalcy again. But it lies on the other side—not in accommodation to this malevolent insanity, run by lackeys and toads. The risk of overreaction is trivial compared to the risks of accommodation.])],
-  ))
-}
+  [#brief-item([Mark Greif], source-name: [n+1 Magazine], [There may well be normalcy again. But it lies on the other side—not in accommodation to this malevolent insanity, run by lackeys and toads. The risk of overreaction is trivial compared to the risks of accommodation.])],
+))
+
+// --- Notable Quotes ---
+#block(above: 0.2in, stroke: (top: 1pt + luma(26)), inset: (top: 0.1in))[
+  #pull-quote([A “parse tree” or abstract syntax tree (henceforth AST ) is a data structure representing a syntactic analysis of a program.], [ericlippert])
+
+]
 
 #colophon([Morning Herald], [Vol. 1, No. 006], [2026-03-30])

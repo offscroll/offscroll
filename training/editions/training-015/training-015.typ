@@ -21,61 +21,8 @@
 #masthead([The Civic Ledger], [Vol. 1, No. 015], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [The 10 Skills I Was Missing as a MongoDB User],
-  kicker: [Cover Story],
-  author: [MongoDB Blog],
-  source-name: [MongoDB Blog],
-  deck: [I spun it up, built my first application, and got a feature working.],
-  lead-pre: [],
-  lead-cap: [W],
-  lead-rest: [hen I first started using MongoDB, I didn’t have a plan beyond “install it and hope for the best.” I had read about how flexible it was, and it felt like all the developers swore by it, so I figured I’d give it a shot. I spun it up, built my first application, and got a feature working.],
-  body-paragraphs: (
-  [But I felt like something was missing.],
-  [It felt clunky. My queries were longer than I expected, and performance wasn’t great; I had the sense that I was fighting with the database instead of working with it. After a few projects like that, I began to wonder if maybe MongoDB wasn’t for me.],
-  [Looking back now, I can say the problem wasn’t MongoDB, but was somewhere between the keyboard and the chair. It was me. I was carrying over habits from years of working with relational databases, expecting the same rules to apply.],
-  [If MongoDB’s Skill Badges had existed when I started, I think my learning curve would have been a lot shorter. I had to learn many lessons the hard way, but these new badges cover the skills I had to piece together slowly. Instead of pretending I nailed it from day one, here’s the honest version of how I learned MongoDB, what tripped me up along the way, and how these Skill Badges would have helped.],
-  [Learning to model the MongoDB way],
-  [The first thing I got wrong was data modeling. I built my schema like I was still working in SQL– every entity in its own collection, always referencing instead of embedding, and absolutely no data duplication. It felt safe because it was familiar.],
-  [Then I hit my first complex query. It required data from various collections, and suddenly, I found myself writing a series of queries and stitching them together in my code. It worked, but it was a messy process.],
-  [When I discovered embedding, it felt like I had found a cheat code. I could put related data together in one single document, query it in one shot, and get better performance.],
-  [That’s when I made my second mistake. I started embedding everything.],
-  [At first, it seemed fine. However, my documents grew huge, updates became slower, and I was duplicating data in ways that created consistency issues. That’s when I learned about patterns like Extended References, and more generally, how to choose between embedding and referencing based on access patterns and update frequency.],
-  [Later, I ran into more specialized needs, such as pre-computing data, embedding a subset of a large dataset into a parent, and tackling schema versioning. Back then, I learned those patterns by trial and error. Now, they’re covered in badges like Relational to Document Model , Schema Design Patterns , and Advanced Schema Patterns .],
-  [Fixing what I thought was “just a slow query”],
-  [Even after I got better at modeling, performance issues kept popping up. One collection in particular started slowing down as it grew, and I thought, “I know what to do! I’ll just add some indexes.”],
-  [I added them everywhere I thought they might help. Nothing improved.],
-  [It turns out indexes only help if they match your query patterns. The order of fields matters, and whether you cover your query shapes will affect performance. Most importantly, just because you can add an index doesn’t mean that you should be adding it in the first place.],
-  [The big shift for me was learning to read an explain() plan and see how MongoDB was actually executing my queries. Once I started matching my indexes to my queries, performance went from “ok” to “blazing fast.”],
-  [Around the same time, I stopped doing all my data transformation in application code. Before, I’d pull in raw data and loop through it to filter, group, and calculate. It was slow, verbose, and easy to break. Learning the aggregation framework completely changed that. I could handle the filtering and grouping right in the database, which made my code cleaner and the queries faster.],
-  [There was a lot of guesswork in how I created my indexes, but the new Indexing Design Fundamentals covers that now. And when it comes to querying and analyzing data, Fundamentals of Data Transformation is there to help you. Had I had those two skills when I first started, I would’ve saved a lot of time wasted on trial and error.],
-  [Moving from “it works” to “it works reliably”],
-  [Early on, my approach to monitoring was simple: wait for something to break, then figure out why. If a performance went down, I’d poke around in logs. If a server stopped responding, I’d turn it off and on again, and hope for the best.],
-  [It was stressful, and it meant I was always reacting instead of preventing problems.],
-  [When I learned to use MongoDB’s monitoring tools properly, that changed. I could track latency, replication lag, and memory usage. I set alerts for unusual query patterns. I started seeing small problems before they turned into outages.],
-  [Performance troubleshooting became more methodical as well. Instead of guessing, I measured. Breaking down queries, checking index use, and looking at server metrics side by side. The fixes were faster and more precise.],
-  [Reliability was the last piece I got serious about. I used to think a working cluster was a reliable cluster. But reliability also means knowing what happens if a node fails, how quickly failover kicks in, and whether your recovery plan actually works in practice.],
-  [Those things you can now learn in the Monitoring Tooling , Performance Tools and Techniques, and Cluster Reliability skill badges. If you are looking at deploying and maintaining MongoDB clusters, these skills will teach you what you need to know to make your deployment more resilient.],
-  [Getting curious about what’s next],
-  [Once my clusters were stable, I stopped firefighting, and my mindset changed. When you trust your data model, your indexes, your aggregations, and your operations, you get to relax. You can then spend that time on what’s coming next instead of fixing what’s already in production.],
-  [For me, that means exploring features I wouldn’t have touched earlier, like Atlas Search , gen AI, and Vector Search . Now that the fundamentals are solid, I can experiment without risking stability and bring in new capabilities when a project actually calls for them.],
-  [What I’d tell my past self],
-  [If I could go back to when I first installed MongoDB, I’d keep it simple:],
-  [Focus on data modeling first. A good foundation will save you from most of the problems I ran into.],
-  [Once you have that, learn indexing and aggregation pipelines. They will make your life much easier when querying.],
-  [Start monitoring from day one. It will save you a lot of trouble in the long run.],
-  [Take a moment to educate yourself. You can only learn so much from trial and error. MongoDB offers a myriad of resources and ways to upskill yourself.],
-  [Once you have established that base, you can explore more advanced topics and uncover the full potential of MongoDB. Features like Vector Search, full-text search with Atlas Search, or advanced schema design patterns are much easier to adopt when you trust your data model and have confidence in your operational setup.],
-  [MongoDB Skill Badges cover all of these areas and more. They are short, practical, and focused on solving real problems you will face as a developer or DBA, and most of them can be taken over your lunch break. You can browse the full catalog at learn.mongodb.com/skills and pick the one that matches the challenge you are facing today. Keep going from there, and you might be surprised how much more you can get out of the database once you have the right skills in place.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Generating mock data using Mimesis: Part I],
   author: [L],
   source-name: [Wemake Services],
@@ -99,22 +46,9 @@
   [Now let’s transition to shell-mode:],
   [(venv) ➜ python3 manage. py shell],
   [And generate data. Beforehand, we need to make sure that the database and the model in question are available.],
-  [\>\>\> db
- \>\>\> Patient
- \>\>\> Patient (). \_bootstrap (count=40000, locale='en') \# generate 40к entries in English.],
   [It is worth noting that we will be showing the basic capabilities of the library and we will be using a few most common class providers, since there are too many of them to cover each one in detail. If the article sparks your interest to the library you can visit the useful links listed in the end of the article and find out more.],
   [The library is pretty simple. All you need to do to start working with the data is to create a class provider. The most common type of data in apps are personal users’ data, such as name, last name, credit card info, etc. There is a special class provider for this type of data — Personal(), which takes the code from the language standard in the form of a line as shown below:],
-  [\>\>\> from mimesis import Personal 
- \>\>\> person = Personal('is') \>\>\> for \_ in range(0, 3):
- ... person.full\_name(gender='male')
- ... 'Karl Brynjúlfsson'
-'Rögnvald Eiðsson'
-'Vésteinn Ríkharðsson'],
   [Almost every web-application requires e-mail for registration. Naturally, the library supports the ability to generate e-mails with the help of email() method Personal() class, as below:],
-  [\>\>\> person.email(gender='female')
-'lvana6108\@gmail.com' 
- \>\>\> person.email(gender='male')
-'john2454\@yandex.com'],
   [There is a little problem with the method above, which may cause the code to be slightly “ dirty ” in case the app uses more than one type of class providers. In such situation you should use object Generic(), which grants access to all providers from one single object:],
   [\>\>\> from mimesis import Generic \>\>\> g = Generic('pl') \# pl – code of Poland (ISO 639-1). \>\>\> g.personal.full\_name()
 'Lonisława Podsiadło' \>\>\> g.datetime.birthday(readable= True )
@@ -125,45 +59,22 @@
 'A = (h \* (a + b)) \/ 2'],
   [Combining data gives you a vast field for experimentation. For example, you can create mock (female) Visa (Maestro, MasterCard) credit card holders:],
   [\>\>\> user = Personal('en') \>\>\> def get\_card (sex='female'):
- ... owner = {
+ ... owner = \{
  ... 'owner': user.full\_name(sex),
  ... 'exp\_date': user.credit\_card\_expiration\_date(maximum=21),
  ... 'number': user.credit\_card\_number(card\_type='visa')
- ... }
+ ... \}
  ... return owner \>\>\> for \_ in range(0, 3):
  ... get\_card()
- ... {'exp\_date': '02/20', 'owner': 'Laverna Morrison', 'card\_number': '4920 3598 2121 3328'} {'exp\_date': '11/19', 'owner': 'Melany Martinez', 'card\_number': '4980 9423 5464 1201'} {'exp\_date': '01/19', 'owner': 'Cleora Mcfarland', 'card\_number': '4085 8037 5801 9703'}],
+ ... \{'exp\_date': '02/20', 'owner': 'Laverna Morrison', 'card\_number': '4920 3598 2121 3328'\} \{'exp\_date': '11/19', 'owner': 'Melany Martinez', 'card\_number': '4980 9423 5464 1201'\} \{'exp\_date': '01/19', 'owner': 'Cleora Mcfarland', 'card\_number': '4085 8037 5801 9703'\}],
   [As mentioned above, the library supports more than 19 class providers with data for all possible situations (if not, your PR with corrections of such an awful injustice are more than welcome). For example, if you are working on an app dedicated to transportation and logistics and you need to generate transportation models, you can easily do this by using Transport()class provider, which contains data related to transportation:],
-  [\>\>\> from mimesis import Transport
- \>\>\> trans = Transport() \>\>\> for \_ in range(0, 5):
- ... trans.truck()
- ... 'Seddon-2537 IM'
-'Karrier-7799 UN'
-'Minerva-5567 YC'
-'Hyundai-2808 XR'
-'LIAZ-7174 RM'],
   [Or you could indicate the transport mask model:],
-  [\>\>\> for \_ in range(0, 5):
- ... \# Here \# (sharp) - placeholder for numbers, \@ - for letters 
-... trans.truck(model\_mask="\#\#\@") 
- ... 'Henschel-16G'
-'Bean-44 D'
- 'Unic-82 S'
- 'Ford-05 Q'
- 'Kalmar-58C'],
   [Quite often when testing web-applications (blog would be an excellent example) you need to generate text data (text, sentences, tags, etc.). Manually inputting the text is long and boring, and Mimesis allows you to avoid this thanks to a class provider Text():],
   [\>\>\> from mimesis import Text
  \>\>\> text = Text('en') \>\>\> text.text(quantity=3) 'Language includes means for creating light parallel processes and their interactions via exchanging asynchronous messages according to the actors’ model. Python supports several programming paradigms, including structural, object-oriented, functional, imperative and aspect-oriented. For instance, some functions that use comparison of examples to choose one calculating option or extracting data points looks similar to an equation.'],
   [You can get a list of random words:],
-  [\>\>\> text = Text('pt-br')
- \>\>\> text.words(quantity=5) \['poder', 'de', 'maior', 'só', 'cima'\]],
   [Generate a street name:],
-  [\>\>\> from mimesis import Address
- \>\>\> address = Address('en') \>\>\> address.address()
-'77 Shephard Trace'],
   [Get a name of a state/area/province, which is related to the chosen language. : In this case it is an state of the USA:],
-  [\>\>\> address.state()
-'Texas'],
   [The library also has means to Romanize Cyrillic languages (for the moment only Russian and Ukrainian are supported):],
   [\>\>\> from mimesis.decorators import romanized \>\>\> \@romanized('ru')
  ... def name\_ru ():
@@ -189,10 +100,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Agile vs. Waterfall QA: A Comparative Guide],
   author: [Pankaj Dusane],
   source-name: [Helpshift Engineering],
@@ -251,10 +160,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Hidden Layer of Analytics: How QA Builds Trust in Data],
   author: [Gayatri Panganti],
   source-name: [Helpshift Engineering],
@@ -319,10 +226,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Using Clojure channels to increase throughput],
   author: [Abhinav Dubey],
   source-name: [Helpshift Engineering],
@@ -340,7 +245,6 @@
   [Values are conveyed on queue-like channels. By default channels require producer and consumer to rendezvous for the transfer of a value through the channel 
  https:\/\/clojuredocs.org/clojure.core.async],
   [To improve throughput, we introduce parallelism using Clojure’s core.async channels. Messages from Kafka are fed into a channel, & multiple worker threads read from this channel to process messages concurrently],
-  [Here, we used \>!! ( blocking put) & \<!! ( blocking take) to communicate via channels & future to execute the business-logic on a separate thread],
   [Who gets blocked & when :],
   [The thread putting message into the channel will get blocked when there is no space in the buffer],
   [The thread consuming message from the channel will get blocked when there is no message in the buffer],
@@ -370,37 +274,37 @@
   [;; logging 
  (let \[end-time (System/currentTimeMillis)
  elapsed-seconds (\/ (- end-time start-time) 1000.0)\]
- (println {:id (:id event)
+ (println \{:id (:id event)
  :thread (.getName (Thread/currentThread))
- :duration elapsed-seconds}))],
+ :duration elapsed-seconds\}))],
   [;; increment metric
  (clj-statsd/increment "event-processing.done")))],
   [Below are the logs when run with :],
   [Single-threaded consumer],
-  [\[INFO\] {:id 1 :thread clojure-agent-send-off-pool-6 :duration 1.001}
-\[INFO\] {:id 2 :thread clojure-agent-send-off-pool-6 :duration 1.000}
-\[INFO\] {:id 3 :thread clojure-agent-send-off-pool-6 :duration 1.002}
-\[INFO\] {:id 4 :thread clojure-agent-send-off-pool-6 :duration 1.000}
-\[INFO\] {:id 5 :thread clojure-agent-send-off-pool-6 :duration 1.001}
+  [\[INFO\] \{:id 1 :thread clojure-agent-send-off-pool-6 :duration 1.001\}
+\[INFO\] \{:id 2 :thread clojure-agent-send-off-pool-6 :duration 1.000\}
+\[INFO\] \{:id 3 :thread clojure-agent-send-off-pool-6 :duration 1.002\}
+\[INFO\] \{:id 4 :thread clojure-agent-send-off-pool-6 :duration 1.000\}
+\[INFO\] \{:id 5 :thread clojure-agent-send-off-pool-6 :duration 1.001\}
 ... and so on],
   [Consumer with 3 worker threads],
-  [\[INFO\] {:id 1 :thread clojure-agent-send-off-pool-9 :duration 1.001}
-\[INFO\] {:id 2 :thread clojure-agent-send-off-pool-7 :duration 1.000}
-\[INFO\] {:id 5 :thread clojure-agent-send-off-pool-8 :duration 1.002}
-\[INFO\] {:id 3 :thread clojure-agent-send-off-pool-9 :duration 1.000}
-\[INFO\] {:id 4 :thread clojure-agent-send-off-pool-7 :duration 1.001}
+  [\[INFO\] \{:id 1 :thread clojure-agent-send-off-pool-9 :duration 1.001\}
+\[INFO\] \{:id 2 :thread clojure-agent-send-off-pool-7 :duration 1.000\}
+\[INFO\] \{:id 5 :thread clojure-agent-send-off-pool-8 :duration 1.002\}
+\[INFO\] \{:id 3 :thread clojure-agent-send-off-pool-9 :duration 1.000\}
+\[INFO\] \{:id 4 :thread clojure-agent-send-off-pool-7 :duration 1.001\}
 ... and so on],
   [Consumer with 10 worker threads],
-  [\[INFO\] {:id 1 :thread clojure-agent-send-off-pool-10 :duration 1.001}
-\[INFO\] {:id 2 :thread clojure-agent-send-off-pool-11 :duration 1.000}
-\[INFO\] {:id 4 :thread clojure-agent-send-off-pool-12 :duration 1.002}
-\[INFO\] {:id 3 :thread clojure-agent-send-off-pool-13 :duration 1.000}
-\[INFO\] {:id 6 :thread clojure-agent-send-off-pool-14 :duration 1.001}
-\[INFO\] {:id 5 :thread clojure-agent-send-off-pool-3 :duration 1.001}
-\[INFO\] {:id 7 :thread clojure-agent-send-off-pool-4 :duration 1.000}
-\[INFO\] {:id 9 :thread clojure-agent-send-off-pool-7 :duration 1.002}
-\[INFO\] {:id 8 :thread clojure-agent-send-off-pool-8 :duration 1.000}
-\[INFO\] {:id 10 :thread clojure-agent-send-off-pool-9 :duration 1.001}
+  [\[INFO\] \{:id 1 :thread clojure-agent-send-off-pool-10 :duration 1.001\}
+\[INFO\] \{:id 2 :thread clojure-agent-send-off-pool-11 :duration 1.000\}
+\[INFO\] \{:id 4 :thread clojure-agent-send-off-pool-12 :duration 1.002\}
+\[INFO\] \{:id 3 :thread clojure-agent-send-off-pool-13 :duration 1.000\}
+\[INFO\] \{:id 6 :thread clojure-agent-send-off-pool-14 :duration 1.001\}
+\[INFO\] \{:id 5 :thread clojure-agent-send-off-pool-3 :duration 1.001\}
+\[INFO\] \{:id 7 :thread clojure-agent-send-off-pool-4 :duration 1.000\}
+\[INFO\] \{:id 9 :thread clojure-agent-send-off-pool-7 :duration 1.002\}
+\[INFO\] \{:id 8 :thread clojure-agent-send-off-pool-8 :duration 1.000\}
+\[INFO\] \{:id 10 :thread clojure-agent-send-off-pool-9 :duration 1.001\}
 ... and so on],
   [We can use VisualVM to check the JVM threads, doing this for the setup with 10 workers is shown below :],
   [Selected only the threads printed in the above logs],
@@ -416,10 +320,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [MongoDB.local NYC 2025: Definindo o Banco de Dados Ideal para a Era da IA],
   author: [MongoDB Blog],
   source-name: [MongoDB Blog],
@@ -450,10 +352,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Dependency Injection, MVP, and the all reliable Android Studio IDE.],
   author: [Aleksei Bingham],
   source-name: [Strava Engineering],
@@ -488,7 +388,7 @@
   [Write a custom class that extends the Android Preference class to inflate the layout file we created in part one.],
   [Get reference to the specific items in the layout file such as the “New” notification and write public methods to modify its visibility outside of the class.],
   [Get reference to the entire custom preference and set an
-onClickListener { … } to open a dialog containing the student plan information when it’s tapped!],
+onClickListener \{ … \} to open a dialog containing the student plan information when it’s tapped!],
   [But before all of that we still need to create another layout file for our new dialog fragment that will appear as a pop-up when the user clicks our new setting preference. The class that will be responsible for displaying the pop-up will be referred to as the StudentPlanDialog for future reference.],
   [The Strava Android code-base is neatly organized across several unique modules. In fact, some of these modules can live on its own as a standalone application serving as a testament to how well organized the project is. However, this comes with its own issues as you will later read.],
   [As I started to work on the StudentPlanDialog class it made the most sense to store its implementation inside the subscriptions module as student plans will make most of its appearance around the checkout section of the app. But of course, student plans also appears in settings so we will need to reference the StudentPlanDialog from the settings module. At this point I was unsure about how the importing would work across multiple modules so instead I did what any intern would do. I pretend everything is going to be fine and continued onward until the compiler inevitably rejects my code.],
@@ -504,9 +404,6 @@ onClickListener { … } to open a dialog containing the student plan information
   [Implicit intents can be thought of as a request often used for cross app communication. Explicit intents on the other-hand explicitly define who is handling the message by providing the specific Activity as a required argument. Hence, explicit intents do not need an intent filter to resolve who is handling what type of intent as it was already made explicit!],
   [Without implicit intents, every app that wants to access the photo gallery would need to write the logic themselves. Of course this sounds ridiculous and instead we should somehow use the already built photo gallery app to do this. Implicit intents provide the path of communication between the two applications much like an API. Best of all, they can also live in a single application and communicate across the application’s modules. In my project, I used implicit intents to communicate across the settings and subscription modules without needing to modify their dependencies.],
   [To further emphasize implicit intents, here’s a code snippet that initiates a phone call from inside any Android application:],
-  [val callIntent: Intent = Uri.parse("tel:5551234").let { number -\>
- Intent(Intent. ACTION\_DIAL, number)
-}],
   [Here callIntent can be started using startActivity(...) and will initiate a phone call to the given number 555-1234 using the default dialer app. If you’re lucky enough Big Bird might just pick up.],
   [However, implicit intents alone will only allow us to open the pop-up dialog. If we wish to also access business logic across the two modules then we will need to use Dagger.],
   [Feature Switches and Dependency Injection],
@@ -558,10 +455,8 @@ onClickListener { … } to open a dialog containing the student plan information
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Form Validation Tips Every Web Developer Should Know!],
   author: [Hritik Jaiswal],
   source-name: [Helpshift Engineering],
@@ -666,10 +561,8 @@ onClickListener { … } to open a dialog containing the student plan information
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Explore, expand, exploit],
   author: [Mary Rose Cook],
   source-name: [Mary Rose Cook],
@@ -703,10 +596,8 @@ onClickListener { … } to open a dialog containing the student plan information
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Headerless train announcements],
   author: [Oona Räisänen],
   source-name: [Oona Raisanen (windytan)],
@@ -722,8 +613,10 @@ onClickListener { … } to open a dialog containing the student plan information
   [The audio files are headerless; there is no explicit information about the format, sample rate or sample size anywhere.],
   [The byte histogram and Poincaré plot of the raw data suggest a 4-bit sample size; this, along with the fact that all files start with 0x80 , is indicative of an adaptive differential PCM encoding scheme.],
   [Unfortunately there are as many variations to ADPCM as there are manufacturers of encoder chips. None of the decoders known by SoX produce clean results. But with the right settings for the OKI-ADPCM decoder we can already hear some garbled speech under heavy Brownian noise.],
+  [\[HTML5 audio: Sound resembling garbled speech buried in noise.\]],
   [For unknown reasons, the output signal from SoX is spectrum-inverted. Luckily it's trivial to fix (see my previous post on frequency inversion ). The pitch sounds roughly natural when a 19,000 Hz sampling rate is assumed. A test tone found in one file comes out as a 1000 Hz sine when the sampling rate is further refined to 18,930 Hz.],
   [This is what we get after frequency inversion, spectral equalization, and low-pass filtering:],
+  [\[HTML5 audio: The Helsinki train announcement voice saying "This is an InterCity2 train to Helsinki."\]],
   [There's still a high noise floor due to the mismatch between OKI-ADPCM and the unknown algorithm used by the announcement device, but it's starting to sound alright!],
   [There seems to be an announcement for every thinkable situation, such as:],
   ["Ladies and Gentlemen, as due to heavy snowfall, we are running slightly late. Please accept our apologies."],
@@ -735,6 +628,7 @@ onClickListener { … } to open a dialog containing the student plan information
   [In an eerily out-of-place sound file, a small child reads out a list of numbers.],
   [Final words],
   [This is something I've wanted to do with this almost melodically intonated announcement about ticket selling compartments.],
+  [\[HTML5 audio: A musical piece made using an announcement in Finnish.\]],
 ),
   insert-map: (:),
   word-count: 623,
@@ -742,12 +636,10 @@ onClickListener { … } to open a dialog containing the student plan information
   debug-mode: false,
 )
 
-  #pull-quote([But with the right settings for the OKI-ADPCM decoder we can already hear some garbled speech under heavy Brownian noise.], [Oona Räisänen])
+#pull-quote([But with the right settings for the OKI-ADPCM decoder we can already hear some garbled speech under heavy Brownian noise.], [Oona Räisänen])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Começando a destacar a excelência: MongoDB GlobalPartner Services 2025],
   author: [MongoDB Blog],
   source-name: [MongoDB Blog],
@@ -797,10 +689,8 @@ onClickListener { … } to open a dialog containing the student plan information
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Carrying Complexity, Delivering Agility],
   author: [MongoDB Blog],
   source-name: [MongoDB Blog],
@@ -864,10 +754,8 @@ onClickListener { … } to open a dialog containing the student plan information
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Building a Movie Recommendation Engine with Hugging Face and Voyage AI],
   author: [MongoDB Blog],
   source-name: [MongoDB Blog],
@@ -936,10 +824,8 @@ EOF],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Load Testing API’s on Redshift & Snowflake — A  Quick POC],
   author: [Sameeksha Bhatia],
   source-name: [Helpshift Engineering],
@@ -973,14 +859,9 @@ Redshift offers Multi-Cluster Concurrency Scaling, but it comes at an additional
   [Let's quickly walk through the setup steps for these tools.],
   [I. Newman],
   [We already had the postman collection of our Analytics API’s. To setup Newman. Ensure npm is installed and upgraded to version 16. Install Neman and check if its working correctly.],
-  [--\> npm install -g newman
---\> newman run Sunbird\\ -\\ Analytics\\ API.postman\_collection.json],
   [This executes the API requests from the collection and provides important metrics, such as total run time, average request time , and other performance stats.],
   [II. k6],
   [Next, to simulate more realistic traffic using k6 , which can handle a higher load and more complex testing scenarios, install k6.],
-  [--\> brew install k6
---\> npm install -g postman-to-k6 ;; a tool to convert Postman collections to k6 scripts
---\> postman-to-k6 Sunbird\\ -\\ Analytics\\ API.postman\_collection.json -o scriptIssue.js],
   [The last command generates a scriptIssue.js file that contains the necessary k6 script to perform load testing on the API.],
   [III. Testing Steps],
   [We tested the Issue entity API, which has a from and to parameter required for date ranges.],
@@ -1003,7 +884,7 @@ Redshift offers Multi-Cluster Concurrency Scaling, but it comes at an additional
   [http\_req\_blocked...............: avg=256.57µs min=2µs med=26.99µs max=1.52ms p(90)=669.4µs p(95)=697.49µs],
   [http\_req\_connecting............: avg=191.59µs min=0s med=0s max=820µs p(90)=534.3µs p(95)=555.85µs],
   [✗ http\_req\_duration..............: avg=3.43s min=271.48ms med=2.11s max=8.08s p(90)=6.49s p(95)=7.11s],
-  [{ expected\_response:true }...: avg=3.56s min=479.34ms med=4.65s max=8.08s p(90)=6.57s p(95)=7.13s],
+  [\{ expected\_response:true \}...: avg=3.56s min=479.34ms med=4.65s max=8.08s p(90)=6.57s p(95)=7.13s],
   [http\_req\_failed................: 4.90% ✓ 5 ✗ 97],
   [http\_req\_receiving.............: avg=82.49ms min=25µs med=14.53ms max=549.84ms p(90)=220.58ms p(95)=292.28ms],
   [http\_req\_sending...............: avg=50.84µs min=10µs med=40.5µs max=161µs p(90)=101.6µs p(95)=117.89µs],
@@ -1040,10 +921,8 @@ ERRO\[0016\] thresholds on metrics 'http\_req\_duration' have been crossed],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Original Attention Crisis],
   author: [Study Hacks],
   source-name: [Study Hacks (Cal Newport)],
@@ -1060,6 +939,7 @@ ERRO\[0016\] thresholds on metrics 'http\_req\_duration' have been crossed],
   [In other words, Steno created a method that combines what we might now call ​slow productivity​ , ​deep work​ , and ​time blocking​ .],
   [The lessons here are clear. The use of our brains to think deeply about meaningful ideas isn’t new. It’s been at the core of the human experience since the early modern period, when access to sophisticated information first became somewhat widespread.],
   [The best practices developed back then remain the best practices today: avoid overload, focus on one thing at a time, and block off specific hours in your day for your most mentally demanding efforts.],
+  [AI Reality Check :],
   [Two weeks ago, a small financial services firm, Citrini Research, published ​an essay​ describing a bleak scenario in which AI agents destroy the white-collar job market in the near future. The piece went viral and was ​cited as a factor​ in a modest decline of the S&P 500 the next day.],
   [The Citrini essay wasn’t the first to float this scenario. In recent weeks, there have been multiple credulous articles and op-eds in major publications proposing similar outcomes (e.g., ​1​ , ​2​ , ​and 3​ ). But the negative impact on the stock market seems to have been the last straw for serious economists who began to push back on these technological ghost stories last week. (I particularly enjoyed a Deutsche Bank analyst who, perhaps borrowing ​some of my​ terminology, ​told the Times ​ that the Citrini article had a “vibes-to-substance ratio” that was “undeniably high.”)],
   [If you’re looking to reduce your blood pressure about this idea that AI is about to unravel the economy, I suggest reading ​a detailed response article​ published by an analyst from the Global Macro Strategies group at Citadel. It begins with a bit of finance geek sarcasm:],
@@ -1074,10 +954,8 @@ ERRO\[0016\] thresholds on metrics 'http\_req\_duration' have been crossed],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Enhance Your In-IDE Data Browsing Experience With MongoDB],
   author: [MongoDB Blog],
   source-name: [MongoDB Blog],
@@ -1109,10 +987,8 @@ Your database tools should adapt to your workflow, not disrupt it. By bringing n
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Innovating with MongoDB | Customer Successes, October 2025],
   author: [MongoDB Blog],
   source-name: [MongoDB Blog],
@@ -1147,10 +1023,8 @@ Your database tools should adapt to your workflow, not disrupt it. By bringing n
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Rain: A key-value store for Strava’s scale],
   author: [Derick Yang],
   source-name: [Strava Engineering],
@@ -1211,11 +1085,10 @@ Your database tools should adapt to your workflow, not disrupt it. By bringing n
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Mapping microwave relay links from video],
   author: [Oona Räisänen],
   source-name: [Oona Raisanen (windytan)],
@@ -1238,7 +1111,7 @@ Your database tools should adapt to your workflow, not disrupt it. By bringing n
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Polygraphs have major flaws. Are there better options?],
   author: [Sarah Scoles, Undark Magazine],
   source-name: [Ars Technica OpenForum],
@@ -1258,23 +1131,22 @@ Your database tools should adapt to your workflow, not disrupt it. By bringing n
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Safely Modifying Your Hosts File with Gas Mask],
   author: [Curalate Engineering],
   source-name: [Curalate Engineering],
   images: (),
   paragraphs: (
   [Sometimes the DNS for a specific domain on your machine needs to point somewhere else – at Curalate, we test changes microservices locally before shipping them, which could require redirecting requests to look at that local instance. One way to do this is by adding an entry like 127.0.0.1 some.service.curalate.com to /etc/hosts .],
-  [id="why-use-a-hosts-file-manager"\>Why use a hosts file manager?],
+  [Why use a hosts file manager?],
   [In most cases, it’s not advised to directly modify /etc/hosts . Because it’s buried deep into the filesystem, it’s easy to forget you’ve modified it, which can lead to numerous problems ranging from annoying to dangerous.
 Also, danger aside, it can begin to get messy and complex if you have a lot of entries to manage. Think of even just fifteen lines you’re constantly commenting/uncommenting to represent the configuration you need at a given moment. This would be insanity.
 Gas Mask, a simple UI-based hosts file manager, allows you to set up different hosts files, while making it plainly obvious which hosts file is currently activated on your system via the OS Menu bar.],
-  [id="installation-instructions"\>Installation instructions],
+  [Installation instructions],
   [Go to https:\/\/github.com/2ndalpha/gasmask and download the latest version.],
   [Unpack and install.],
   [On first-run, the only hosts file listed will be Original File which is the /etc/hosts file you’ll no longer be modifying.],
-  [id="creating-your-first-host-file"\>Creating your first host file],
+  [Creating your first host file],
   [Create a new hosts file and name it something that makes sense.],
   [Add the test entry 127.0.0.1 google.com and save. The format of these entries is .],
   [Activate that hosts file. Gasmask substitutes in this file at /etc/hosts .],
@@ -1282,7 +1154,7 @@ Gas Mask, a simple UI-based hosts file manager, allows you to set up different h
   [To test it out, go to google.com in the browser.],
   [What happens now is, when the browser goes to get the IP for google.com, the OS sees the matching entry in your hosts file, then refers to 127.0.0.1 (your local computer) to make the request – which will fail.],
   [Go ahead and reactivate your Original File, restart the browser, and you should be able to access google.com as expected.],
-  [id="use-the-menubar-icon"\>Use the Menubar icon],
+  [Use the Menubar icon],
   [It’s easy to forget to flip your hosts file back. You’ll end up spending 45 minutes on what you think is a bug, that doesn’t reproduce for anyone else, only to realize your hosts file is sending requests someplace else.],
   [Next time you reach to modify that hosts file, consider integrating Gas Mask into your development workflow to keep it maintained and safe from unintended state.],
 ),
@@ -1292,11 +1164,9 @@ Gas Mask, a simple UI-based hosts file manager, allows you to set up different h
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [Gramophone audio from photograph, revisited],
   author: [Oona Räisänen],
   source-name: [Oona Raisanen (windytan)],
@@ -1329,10 +1199,8 @@ Gas Mask, a simple UI-based hosts file manager, allows you to set up different h
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Avoiding Digital Productivity Traps],
   author: [Study Hacks],
   source-name: [Study Hacks (Cal Newport)],
@@ -1360,10 +1228,8 @@ Gas Mask, a simple UI-based hosts file manager, allows you to set up different h
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Vision RAG: Enabling Search on Any Documents],
   author: [MongoDB Blog],
   source-name: [MongoDB Blog],
@@ -1406,10 +1272,8 @@ First, we need to set up our Python environment. We will install the voyageai cl
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Celebrating Excellence: MongoDB Global Partner Awards 2025],
   author: [MongoDB Blog],
   source-name: [MongoDB Blog],
@@ -1458,10 +1322,8 @@ First, we need to set up our Python environment. We will install the voyageai cl
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Ultrasonic investigations in shopping centres],
   author: [Oona Räisänen],
   source-name: [Oona Raisanen (windytan)],
@@ -1502,10 +1364,8 @@ First, we need to set up our Python environment. We will install the voyageai cl
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Embedding Teamwork Chat],
   author: [Dawid Myslak],
   source-name: [Teamwork Engineering Room],
@@ -1551,10 +1411,8 @@ First, we need to set up our Python environment. We will install the voyageai cl
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Clojure Runs ONNX AI Models Now - Join the AI fun!],
   author: [Dragan Djuric],
   source-name: [Dragan Djuric],
@@ -1567,7 +1425,7 @@ I did a ton of things, but after all this programming, I was kinda tired, and ke
 to telling people about the work done! That's not very smart, but you know how it goes… :) But, then, if we don't
 tell people about awesome software that we have, nobody is going to use it, so finally I had to stop kicking
 this down the road, sit, and write the first post. It's been long overdue, so expect more posts soon!],
-  [id="orge2dbf4b"\>ONNX Runtime in one line of Clojure],
+  [ONNX Runtime in one line of Clojure],
   [The most recent thing I'm currently working on started its life as Clojure ML (again, superthanks to
  Clojurists Together for sponsoring this ). I proposed to create a human-friendly Clojure API for AI/DL/ML
 models, and back it by the first implementation, in this case based on ONNX Runtime . Of course, it should all be integrated
@@ -1582,26 +1440,27 @@ At least some promising demo? Are we on the trail? To access that AI goodness, w
 do a sophisticated dance? Are the steps hard to learn? Do we need to watch carefully for
 slippery floor? Is it accessible to mere mortals?],
   [Here's the gist:],
+  [( onnx "data/mnist-12.onnx" )],
   ["Wait, what?", you'll say. One function? One tini, tiny, function, with one laughingly trivial argument?
 Is that an API? What does such trivial API do? "Now you confused me!", you'll scratch your head.
 It's just a stick.],
   [I hope I've also intrigued you, so please keep reading to see it in action (this post is actually
 generated from a live REPL session, so the example is fully executable, not just interesting bits
 on the table, and a ton of complex boilerplate under a Persian rug).],
-  [id="org2a73fbe"\>Hello World, the MNIST image recognition model],
+  [Hello World, the MNIST image recognition model],
   [For this recipe, you'll need the following ingredients: Deep Diamond tensors (one cup), Deep Diamond 
 network (one slice), one Neanderthal transfer! function for moving data around for demo purposes,
 and that's it! Oh, yes, don't forget the new onnx function. We load the native namespace, and
 the right Deep Diamond engine is set up for our system (yes, even on Mac OS, thanks to Clojurists Together !).],
-  [class="org-src-container"\>
- ( require ' \[ uncomplicate.neanderthal.core :refer \[ transfer! iamax \] \] 
+  [( require ' \[ uncomplicate.neanderthal.core :refer \[ transfer! iamax \] \] 
  ' \[ uncomplicate.diamond
  \[ tensor :refer \[ tensor desc \] \] 
  \[ dnn :refer \[ network \] \] 
  \[ onnxrt :refer \[ onnx \] \] \] 
  ' \[ uncomplicate.diamond.native \] )],
-  [id="orgc0eecd9"\>The ONNX model],
+  [The ONNX model],
   [We evaluate the onnx function, and it loads the model.],
+  [( def mnist-onnx ( onnx "../../data/mnist-12.onnx" ) )],
   [\#'user/mnist-onnx],
   [Sure, that's easy, but how is that useful? Well, the result is a function. This function
 has just been set up with ONNX internals, so now it can create Deep Diamond network layers
@@ -1612,12 +1471,13 @@ to reach these internals, and diamond-onnxrt provides clojurized internals API e
 However, it can sing the main song, and set all the right arguments at the right places for you.
 Even the onnx function supports option map, where you can tell what you like, and it will take
 care to configure ONNX to do the right thing, but this is a story for another article.],
-  [id="org56b31c2"\>The rest is the usual Deep Diamond stuff, which is simple as beans!],
+  [The rest is the usual Deep Diamond stuff, which is simple as beans!],
   [The MNIST dataset specifies images of hand-written digits, in just one grayscale channel, each \\(28\\times28\\) pixels
 a challenging task for 1989's USPO and the tecnology from back then, but a hello world level
 stuff for today's accelerated libraries (still, keep in mind that if you tried to code even this easy
 example without such libraries, you'll be surprised how slow that can be!).],
   [We create a tensor descriptor for such input (this step can be left out, but I'm being pedantic to accommodate beginners):],
+  [( def input-desc ( desc \[ 1 1 28 28 \] :float :nchw ) )],
   [\#'user/input-desc],
   [Next, we create a reusable abstract network blueprint, that can then create concrete networks
 tailored for training, or optimized for inference, that is classifying MNIST images.
@@ -1625,6 +1485,7 @@ Normally, we would have to train these networks, or load the parameters from som
 but in this case it contains only of the onnx model, which had already been trained and
 already knows all the right weights, so no training is needed (nor available with ONNX Runtime yet;
 it's main job is inference in production).],
+  [( def mnist ( network input-desc \[ mnist-onnx \] ) )],
   [\#'user/mnist],
   [Note that all these things so far look and behave just as ordinary Clojure objects. You can
 use them even outside this specific structure. Full flexibility that I hope will spark your creativity.],
@@ -1632,21 +1493,24 @@ use them even outside this specific structure. Full flexibility that I hope will
 that I downloaded from ONNX Runtime examples specifies exactly one image at input, to classify one at a time.
 Typically, if we have many images, it's better to compute them in batches, but it's just a hello-world, after all,
 we won't be too demanding.],
+  [( def input-tz ( tensor input-desc ) )],
   [\#'user/input-tz],
   [A blueprint (mnist in this case) is a function that can create networks optimized for inference
 with concrete tensors, adequate internal tensors, and parameters.
 The following line is the moment when the network is actually created from the abstract descriptors
 contained in its blueprint, to the actual engines, operation primitives, and tensors in memory.],
+  [( def classify! ( mnist input-tz ) )],
   [\#'user/classify!],
   [True to the Clojure philosophy, mnist is a function, which, given the specification for
 desired input, (mnist input-tz) produces classify!, which is a function, too, but for actual inference!
 It might sound cumbersome when it's written out, but the code shows it's elegance. No need for
 complex APIs. Each thing does exactly one thing, and does it in the most simple way, by just
 evaluating with one or two parameters!],
-  [id="org64c65d8"\>Now we got a function that classifies images],
+  [Now we got a function that classifies images],
   [This is how you would typically use this],
   [Step one: classify! is now a typical Clojure function! Evaluate it:],
-  [{:shape \[1 10\], :data-type :float, :layout \[10 1\]} (-0.04485602676868439 0.007791661191731691 0.06810081750154495 0.02999374084174633 -0.1264096349477768 0.14021874964237213 -0.055284902453422546 -0.04938381537795067 0.08432205021381378 -0.05454041436314583)],
+  [( classify! )],
+  [\{:shape \[1 10\], :data-type :float, :layout \[10 1\]\} (-0.04485602676868439 0.007791661191731691 0.06810081750154495 0.02999374084174633 -0.1264096349477768 0.14021874964237213 -0.055284902453422546 -0.04938381537795067 0.08432205021381378 -0.05454041436314583)],
   [The result is a ten-element tensor, each element represents the possibility that the category
 at its index is the right one.
 So we should just find which element contains the highest value, and that'd be our category,
@@ -1661,13 +1525,15 @@ keep it simple, and we'll just transfer it naively from an in-place Clojure sequ
 scaled it to 0-1 range instead of 0-255.],
   [( transfer! ( map \# ( float ( \/ % 255 ) ) \[ 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 84.0 185.0 159.0 151.0 60.0 36.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 222.0 254.0 254.0 254.0 254.0 241.0 198.0 198.0 198.0 198.0 198.0 198.0 198.0 198.0 170.0 52.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 67.0 114.0 72.0 114.0 163.0 227.0 254.0 225.0 254.0 254.0 254.0 250.0 229.0 254.0 254.0 140.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 17.0 66.0 14.0 67.0 67.0 67.0 59.0 21.0 236.0 254.0 106.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 83.0 253.0 209.0 18.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 22.0 233.0 255.0 83.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 129.0 254.0 238.0 44.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 59.0 249.0 254.0 62.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 133.0 254.0 187.0 5.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 9.0 205.0 248.0 58.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 126.0 254.0 182.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 75.0 251.0 240.0 57.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 19.0 221.0 254.0 166.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 3.0 203.0 254.0 219.0 35.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 38.0 254.0 254.0 77.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 31.0 224.0 254.0 115.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 133.0 254.0 254.0 52.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 61.0 242.0 254.0 254.0 52.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 121.0 254.0 254.0 219.0 40.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 121.0 254.0 207.0 18.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 \] )],
   [input-tz )],
-  [{:shape \[1 1 28 28\], :data-type :float, :layout \[784 784 28 1\]} (0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0)],
-  [{:shape \[1 10\], :data-type :float, :layout \[10 1\]} (-1.2567189931869507 0.6275832653045654 8.642718315124512 9.428943634033203 -13.740066528320312 -6.045698642730713 -23.486745834350586 28.3399658203125 -6.7914958000183105 3.941998243331909)],
+  [\{:shape \[1 1 28 28\], :data-type :float, :layout \[784 784 28 1\]\} (0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0)],
+  [( classify! )],
+  [\{:shape \[1 10\], :data-type :float, :layout \[10 1\]\} (-1.2567189931869507 0.6275832653045654 8.642718315124512 9.428943634033203 -13.740066528320312 -6.045698642730713 -23.486745834350586 28.3399658203125 -6.7914958000183105 3.941998243331909)],
   [Now, we see some better looking results, but are we the one who need to look at a bunch of numbers and compare them?],
   [No, the machine should do that. Luckily, Neanderthal has just the right function for this!],
+  [( iamax ( classify! ) )],
   [7],
   [And this is the kind of answer that we can show our clients! What's on this image? Easy, it's 7!],
-  [id="org1776049"\>Can you tell me the main point of this, in one paragraph?],
+  [Can you tell me the main point of this, in one paragraph?],
   [Yes. Clojure programmers typically write functions. Functions are things that take something at the input,],
   [compute stuff internally, and return an output, which is hopefully useful downstream.],
   [The funcion transforms the input into the output according to the logic that we programmers],
@@ -1680,7 +1546,7 @@ scaled it to 0-1 range instead of 0-255.],
   [as a Clojure function. You don't even need to know how it works internally, but it does],
   [the thing that you need, it transforms the input tensors that you have into just the right],
   [output tensors. What you do with these outputs is up to you :)],
-  [id="orgd2386cd"\>Who is this for?],
+  [Who is this for?],
   [Do you need to be an AI researcher to find this useful? Absolutely not! This can appeal to any Clojure engineer.],
   [AI researchers try to find novel AI models, or to push their model by 0.1% on an artificial
 benchmark. Recently, they don't necessarily even do that, some of them found the way to chase funding at crazy evaluations,
@@ -1711,11 +1577,10 @@ find ONNX models that other people already prepared, and join the AI fun, direct
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Long fingernails vs. touchscreens: This nail polish could help],
   author: [Jennifer Ouellette],
   source-name: [Ars Technica OpenForum],
@@ -1734,7 +1599,7 @@ find ONNX models that other people already prepared, and join the AI fun, direct
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Study says roads bring more fires to forests; USDA wants more roads to fight fires],
   author: [Zoë Rom, Inside Climate News],
   source-name: [Ars Technica OpenForum],
@@ -1756,8 +1621,7 @@ find ONNX models that other people already prepared, and join the AI fun, direct
 #pull-quote([A conductive nail polish might do the trick, according to research presented at a meeting of the American Chemical Society in Atlanta, Georgia.], [Jennifer Ouellette])
 
 
-{
-  #standard-article(
+#standard-article(
   title: [One app was tanking my PC performance, and I had no idea until I checked this],
   author: [Kanika Gogia],
   source-name: [MakeUseOf],
@@ -1771,23 +1635,20 @@ find ONNX models that other people already prepared, and join the AI fun, direct
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([Afam Onyimadu], source-name: [MakeUseOf], [Privacy is a main reason people de-Google, but for me, switching from Google Search was about more than privacy. I didn't enjoy getting SEO-heavy results and listicles when I needed a simple debugging fix.])],
-    [#brief-item([Yadullah Abidi], source-name: [MakeUseOf], [Windows' Power Options panel shows you a carefully curated list of power plans you can select to control how your laptop performs. But if you feel your laptop's performance isn't up to the hardware you paid for, there's a good chance Windows might be throttling it. And that's because there is one power plan Windows never shows you.])],
-    [#brief-item([Graham King (Dark Coding)], source-name: [Graham King (Dark Coding)], [A software system is transparent when you can look at it and immediately understand what it is doing and how.])],
-    [#brief-item([Jack Mitchell], source-name: [MakeUseOf], [In the past, I’ve sat down to watch something on Plex, only to be met with endless buffering — and it turns out I’m not alone. A quick check on Reddit revealed scores of posts dating back years seeking help with this very issue. It’s especially annoying, as streaming apps are supposed to “just work” straight out of the box with minimal tweaking, regardless of the device or network conditions (although a few handy setup tips never hurt). However, as I found out, this lies at the root of the problem.])],
-    [#brief-item([Stephen Clark], source-name: [Ars Technica OpenForum], [Jupiter's colossal storms generate lightning flashes at least 100 times more powerful than those on Earth, according to scientists analyzing data from NASA's Juno spacecraft.
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([Afam Onyimadu], source-name: [MakeUseOf], [Privacy is a main reason people de-Google, but for me, switching from Google Search was about more than privacy. I didn't enjoy getting SEO-heavy results and listicles when I needed a simple debugging fix.])],
+  [#brief-item([Yadullah Abidi], source-name: [MakeUseOf], [Windows' Power Options panel shows you a carefully curated list of power plans you can select to control how your laptop performs. But if you feel your laptop's performance isn't up to the hardware you paid for, there's a good chance Windows might be throttling it. And that's because there is one power plan Windows never shows you.])],
+  [#brief-item([Graham King (Dark Coding)], source-name: [Graham King (Dark Coding)], [A software system is transparent when you can look at it and immediately understand what it is doing and how.])],
+  [#brief-item([Jack Mitchell], source-name: [MakeUseOf], [In the past, I’ve sat down to watch something on Plex, only to be met with endless buffering — and it turns out I’m not alone. A quick check on Reddit revealed scores of posts dating back years seeking help with this very issue. It’s especially annoying, as streaming apps are supposed to “just work” straight out of the box with minimal tweaking, regardless of the device or network conditions (although a few handy setup tips never hurt). However, as I found out, this lies at the root of the problem.])],
+  [#brief-item([Stephen Clark], source-name: [Ars Technica OpenForum], [Jupiter's colossal storms generate lightning flashes at least 100 times more powerful than those on Earth, according to scientists analyzing data from NASA's Juno spacecraft.
 
 Questions about the future of Juno and more than a dozen other robotic science missions began swirling nearly a year ago, when the Trump administration asked mission leaders to submit "closeout" plans for how to turn off their spacecraft. Ars first reported the news soon after the White House released a budget request that called for slashing NASA's science budget by nearly half.
 
  Read full article 
 
  Comments])],
-  ))
-}
+))
 
 #colophon([The Civic Ledger], [Vol. 1, No. 015], [2026-03-30])

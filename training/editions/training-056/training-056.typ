@@ -21,47 +21,8 @@
 #masthead([The Civic Digest], [Vol. 1, No. 056], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Apple intelligence and AI maximalism],
-  kicker: [Cover Story],
-  author: [Benedict Evans],
-  source-name: [Benedict Evans],
-  deck: [class=""\>No-one outside Apple has really used any Apple Intelligence features yet.],
-  lead-pre: [],
-  lead-cap: [I],
-  lead-rest: [t won't launch until the autumn, in stages, and even then it won't work on 80 or 90% of the iPhone installed base, since it needs on-device processing that’s only on the iPhone 15 Pro. Nothing is ever as good as the demos (except the original iPhone), Apple might mess up the developer incentives again, and it all might just not be as good as it looks. We’ll find out.],
-  body-paragraphs: (
-  [class=""\>But meanwhile, if you step back from the demos and screenshots and look at the strategy, Apple is pointing to most of the key questions and points of leverage in generative AI, and proposing a thesis for how this is going to work that looks very different to all the hype and evangelism.],
-  [class=""\>The ‘AI Maximalist’ view is that general-purpose chatbots, with multimodal and ‘multi-agentic’ capabilities, will be able to take over broad classes of complex multi-stage tasks and problems that today need lots of different specially-written software, and will also be able to automate whole new class of complex tasks that could never be done in software before, again in one single general-purpose interface. The chatbot might replace all software with a prompt - ‘software is dead’. I’m skeptical about this, as I’ve written here , but Apple is proposing the opposite: that generative AI is a technology, not a product.],
-  [class=""\>Unbundled into individual features (ditto), which are inherently easier to run as small power-efficient models on small power-efficient devices on the edge (paid for by users, not your capex budget) - which is just as well, because…],
-  [class=""\>This stuff will never work for the mass-market if we have marginal cost every time the user presses ‘OK’ and we need a fleet of new nuclear power-stations to run it all.],
-  [class=""\>To begin, then: Apple has built an LLM with no chatbot. Apple has built its own foundation models , which (on the benchmarks it published) are comparable to anything else on the market, but there’s nowhere that you can plug a raw prompt directly into the model and get a raw output back - there are always sets of buttons and options shaping what you ask, and that’s presented to the user in different ways for different features. In most of these features, there’s no visible bot at all. You don’t ask a question and get a response: instead, your emails are prioritised, or you press ‘summarise’ and a summary appears. You can type a request into Siri (and Siri itself is only one of the many features using Apple’s models), but even then you don’t get raw model output back: you get GUI. The LLM is abstracted away as an API call.],
-  [View fullsize],
-  [View fullsize],
-  [View fullsize],
-  [class=""\>This means that Apple’s foundation model won’t suggest putting glue on your pizza, as Gemini famously did , simply because you can’t get it to answer those kinds of open-ended questions at all. Apple is treating this as a technology to enable new classes of features and capabilities, where there is design and product management shaping what the technology does and what the user sees, not as an oracle that you ask for things.],
-  [class=""\>Instead, the 'oracle’ is just one feature, and Apple is drawing a split between a ‘context model’ and a ‘world model’. Apple’s models have access to all the context that your phone has about you, powering those features, and this is all private, both on device and in Apple’s ‘Private Cloud’. But if you ask for ideas for what to make with a photo of your grocery shopping, then this is no longer about your context, and Apple will offer to send that to a third-party world model - today, ChatGPT. A world model does have an open-ended prompt and does give you raw output, and it might tell you to put glue on your pizza, but that’s clearly separated into a different experience where you should have different expectations, and it’s also, of course, OpenAI’s brand risk, not Apple’s. Meanwhile, that world model gets none of your context, only your one-off prompt.],
-  [class=""\>We have yet to see how well Apple’s context model really works, but in principle it does look pretty defensible. Neither OpenAI nor any of the other cloud models from new companies (Anthropic, Mistral etc) have your emails, messages, locations, photos, files and so on. Google does have both a world model, and access to your context if you use Android, but that’s a distinct minority in the USA (while even less of the Android base than the iPhone base would be able to do any of this locally). Microsoft’s AI PCs have some of this context, especially for a work context, but the smartphone is the primary device with all the real context for most people now, not the PC. Does Meta have that context? Some of it, maybe. There will be an interesting anti-trust conversation here, at some point. But the point of leverage is that you need to have your own billion-scale platform already before you can build this: you can’t get to it from zero, with a website.],
-  [class=""\>Last May a leaked Google memo claimed there are no moats in LLMs, because everyone has essentially the same access to training data and there would be good open source models. That’s pretty much what has happened: the only moat is capital, and access to Nvidia chips (for now), and depending on how you count it there are anything from half-a-dozen to a dozen top-tier models, with OpenAI ahead, but not by enough. Apple doesn’t claim its new foundation model is the best for everything, but it does appear to be good enough for the features it wants to provide. This isn’t going to play out like search, or operating systems - there is no sign, yet, of clear winner-takes-all effects. Apple could build its own foundation models - it’s just money.],
-  [class=""\>Hence, OpenAI is being given ( apparently ) ‘free’ distribution to a few hundred million Apple users, for which it bears all the inference costs, in exchange for a chance to upsell to a premium subscription (though looking at all of Apple’s WWDC demos, it’s not clear how it would do that). But it’s also being treated as an interchangeable plug-in. There’s a very obvious parallel here with Google paying Apple \$20bn a year to be the default search engine. Apple's AI chief John Giannandrea made this comparison explicitly after the event this week - “I think of it a bit like the way Safari deals with search engines” - and Craig Federighi said that he thought there might be different ‘world models’ used for different questions. By implication, Apple might send a flights question to one world model and a cooking query to another.],
-  [class=""\>But is web search the right comparison, or should we look at Maps? Apple decided that it makes no sense to try to build a search engine as good as Google, and no-one else has really managed it either. On the other hand, Apple did build Maps, and though it messed up badly at the beginning, Apple Maps are now at least ‘good enough,’ because again, there was no real moat except capital. It’s already clear that OpenAI is not the new Google: there will not be one winner.],
-  [class=""\>And, surely, the foundation model that Apple built itself to run in its private cloud IS a ‘world model’, and you could ask it for pizza recipes- it’s just that so far, Apple has decided not to offer that UI. Apple is letting OpenAI take the brand risk of creating pizza glue recipes, and making error rates and abuse someone else’s problem, while Apple watches from a safe distance. The next step, probably, is to take bids from Bing and Google for the default slot, but meanwhile, more and more use-cases will be quietly shifted from the third party to Apple’s own models. It’s Apple’s own software that decides where the queries go, after all, and which ones need the third party at all.],
-  [class=""\>Of course, none of this is new - it was obvious when Llama 3 came out (if not far earlier) that LLMs would be commodities sold at marginal cost, and the question would be what product you built on top - hence OpenAI hired Kevin Weil as head of product. But Apple is also arguing that a whole category of LLM product will be built in places that the cloud LLMs can’t go, or in places where they’re just an API call.],
-  [class=""\>This takes me to a broader point. There’s an old line that everyone in tech is trying to commoditise someone else, give their product away for free, or both. Meta is giving Llama away for free (both the model and weights and, for now, even embedding free queries in its apps) where the hyper-scalers want to charge for models, because Meta wants this to be cheap commodity infrastructure, and it will differentiate with services and features on top. Apple is doing something very similar. A lot of the compute to run Apple Intelligence is in end-user devices paid for by the users, not Apple’s capex budget, and Apple Intelligence is free. (We have no indication on how much the Apple Private Cloud will cost, nor the likely mix of local versus cloud queries.) Nvidia sold \$25bn of AI chips last quarter, and the hyper-scalers will probably spend \$150bn or so on data centres this year, but the global smartphone market is over \$400bn, and the PC market over \$200bn, and your users pay for that. These numbers are not directly comparable (obviously!), but it’s a relevant comparison. No-one can know for sure what this will look like in a few years - the models will get bigger but also more efficient, and the edge will get faster - but there are some very powerful incentives to get as much as possible onto the device.],
-  [class=""\>Commoditisation is often also integration. There was a time when ‘spell check’ was a separate product that you had to buy, for hundreds of dollars, and there were dozens of competing products on the market, but over time it was integrated first into the word processor and then the OS. The same thing happened with the last wave of machine learning - style transfer or image recognition were products for five minutes and then became features. Today ‘summarise this document’ is AI, and you need a cloud LLM that costs \$20/month, but tomorrow the OS will do that for free. ‘AI is whatever doesn’t work yet.’],
-  [class=""\>I’m also curious what this means for Nvidia. As I often and carefully note, I am not a chips analyst, and actual chips and data centre analysts talk a lot about Nvidia’s moats, both in the silicon itself and in the software for developers that it’s built on top. Apple is big enough to take its own path, just as it did moving the Mac to its own silicon: it controls the software and APIs on top of the silicon that are the basis of those developer network effects, and it has a world class chip team and privileged access to TSMC. Who else compares to that today? Google TPUs? It seems unlikely that many other tech companies, even huge ones, will build their own completely custom silicon-to-GUI AI stack. The place for change is in where the models get run: the full foundation model doesn’t fit on a phone, yet, but the more that the real use cases come from unbuilding that model and the ‘oracle’ into features, the more that the inference could shift to the edge a lot faster. Again, Apple is pointing to the question.],
-  [class=""\>Finally, all of these are still just theses. None of this worked just 18 months ago, and we don’t have product-market fit yet. Anything up to half of the population of many developed world countries has already tried generative AI, but half of those never tried it twice. That’s great awareness for something so new, but it’s not traction. We don’t know what the product will be, nor the market, nor the science, and everything is still changing really fast. There may be new breakthroughs in agents or error rates that change the use cases entirely.],
-  [class=""\>Meanwhile, incumbents always try to make the new thing a feature. Google and Microsoft have spent the last 18 months spraying LLMs all over their products, and so has every enterprise SaaS company: my old colleague Steven Sinofsky says that ‘every text box on the internet is going to get an LLM’. Apple is doing something slightly different - it’s proposing a single context model for everything you do on your phone, and powering features from that, rather than adding disconnected LLM-powered features at disconnected points across the company. But it’s still trying to make the ‘disruptive’ new tech into a feature, and it’s trying to put ChatGPT into a box, limited to a pretty narrow set of use cases, and interchangeable with Anthropic or Gemini.],
-  [class=""\>As I said at the beginning, that’s really the single core question about the future of Generative AI - is this a new general purpose tool, where one product from one company does the work of hundreds of pieces of software from hundreds of companies, or is this a generic technology that will enable features inside products from hundreds or thousands of companies?],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [Here We Go Again],
   author: [Penny Arcade],
   source-name: [Penny Arcade],
@@ -75,11 +36,9 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Bowflex SelectTech Adjustable Dumbbells Are Over 50% Off in the Amazon Spring Sale],
   author: [Eric Song],
   source-name: [IGN],
@@ -109,12 +68,10 @@
   debug-mode: false,
 )
 
-  #pull-quote([The SelectTech dumbbells have been around for a long time.], [Eric Song])
+#pull-quote([The SelectTech dumbbells have been around for a long time.], [Eric Song])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Crimson Desert fans praise the devs for quickly and directly addressing player complaints and requests: ‘This is what game studios should aspire to be’],
   author: [Andrej Barovic],
   source-name: [Destructoid],
@@ -138,20 +95,18 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Top 7 Best Wordpress Plugin Of All Time],
   author: [Unknown],
   source-name: [TechCrunch],
   images: (),
   paragraphs: (
   [If you are looking for the best wordpress plugins, then you are at the right place. Here is the list of best wordpress plugins that you should use in your blog to boost SEO, strong your security and know every aspects of your blog . Although creating a good content is one factor but there are many wordpress plugins that perform different actions and add on to your success. So let's  start],
-  [style="text-align: left;"\> 1. Yoast SEO],
+  [1. Yoast SEO],
   [Those users who are serious about SEO, Yoast SEO will do the work for them to reach their goals. All they need to do is select a keyword, and the plugin will then optimize your page according to the specified keyword],
   [Yoast offers many popular SEO WordPress plugin functions. It gives you real-time page analysis to optimize your content, images, meta descriptions, titles, and kewords. Yoast also checks the length of your sentences and paragraphs, whether you’re using enough transition words or subheadings, how often you use passive voice, and so on. Yoast tells Google whether or not to index a page or a set of pages too.],
-  [style="text-align: left;"\> Let me summarize these points in bullets:],
+  [Let me summarize these points in bullets:],
   [Enhance the readability of your article to reduce bounce rate],
   [Optimize your articles with targetted keywords],
   [Let Google know who you are and what your site is about],
@@ -162,12 +117,11 @@
   [Rate your article informing you of any mistakes you might have made so that you can fix them before publishing.],
   [Stay up-to-date with Google’s latest algorithm changes and adapt your on-page SEO as needed with smartsuggestionss from the Yoast SEO plugin. This plugin is always up-to-date.],
   [Free Version is available],
-  [style="text-align: left;"\> Pricing],
   [Premium version=\$89/year that comes with extra functions, allowing you to optimize your content up to five keywords, among other benefits.],
-  [style="text-align: left;"\> 2. WP Rocket],
+  [2. WP Rocket],
   [A website running WordPress can put a lot of strain on a server, which increases the chances that the website will crash and harm your business. To avoid such an unfortunate situation and ensure that all your pages load quickly, you need a caching plugin like WP Rocket.],
   [WP Rocket plugin designed to increases your website speed. Instead of waiting for pages to be saved to cache, WP Rocket turns on desired caching settings, like page cache and gzip compression. The plugin also activates other features, such as CDN support and llazy image loadding, to enhance your site speed.],
-  [style="text-align: left;"\> Features in bullets:],
+  [Features in bullets:],
   [Preloading the cache of pages],
   [Reducing the number of HTTP requests allows websites to load more quickly.],
   [Decreasing bandwidth usage with GZIP compression],
@@ -187,47 +141,42 @@
   [Sucuri integration],
   [Easy import/export of settings],
   [Easy roll back to a previous version],
-  [style="text-align: left;"\> Pricing],
   [Single License =\$49/year for one website],
   [Plus License =\$99/year for 3 websites],
   [Infinite License =\$249/year for unlimited websites],
-  [style="text-align: left;"\> 3. Wordfence Security],
+  [3. Wordfence Security],
   [Wordfence Security is a WordPress firewall and security scanner that keeps your site safe from malicious hackers, spam, and other online threats. This Plugin comes with a web application firewall (WAF) called tthread Defence  Feed  that helps to prevents brute force attacks by ensuring you set stronger passwords and limiting login attempts. It searches for malware and compares code, theme, and plugin files with the records in the WordPress.org repository to verify their integrity and reports changes to you.],
   [Wordfence security scanner provides you with actionable insights into your website's security status and will alert you to any potential threats, keeping it safe and secure. It also includes login security features that let you activate reCAPTCHA and two-factor authentication for your website.],
-  [style="text-align: left;"\> Features in Bullets.],
+  [Features in Bullets.],
   [Scans your site for vulnerabilities.],
-  [id="atContainer-291a91492f7bcf13f252654de362127b"\>],
   [Alerts you by email when new threats are detected.],
   [Supports advanced login security measures.],
   [IP addresses may be blocked automatically if suspicious activity is detected.],
-  [style="text-align: left;"\> Pricing],
   [Premium Plan= \$99/Year that comes with extra security features like the real time IP backlist and country blocking option and also support from highly qualified experts.],
-  [style="text-align: left;"\> 4. Akismet],
+  [4. Akismet],
   [Akismet can help prevent spam from appearing on your site. Every day, it automatically checks every comment against a global database of spam to block malicious content. With Akismet, you also won’t have to worry about innocent comments being caught by the filter or false positives. You can simply tell Akismet about those and it will get better over time. It also checks your contact form submissions against its global spam database and weed out unnecessary fake information.],
-  [style="text-align: left;"\> Features in Bullets:],
+  [Features in Bullets:],
   [The program automatically checks comments and filters out spam.],
   [Hidden or misleading links are often revealed in the comment body.],
   [Akismet tracks the status of each comment, allowing you to see which ones were caught by Akismet and which ones were cleared by a moderator.],
   [A spam-blocking feature that saves disk space and makes your site run faster.],
   [Moderators can view a list of comments approved by each user.],
-  [style="text-align: left;"\> Pricing],
   [Free to use for personal blog],
-  [style="text-align: left;"\> 5. Contact Form 7],
+  [5. Contact Form 7],
   [Contact Form 7 is a plug-in that allows you to create contact forms that make it easy for your users to send messages to your site. The plug-in was developed by Takayuki Miyoshi and lets you create multiple contact forms on the same site; it also integrates Akismet spam filtering and lets you customize the styling and fields that you want to use in the form. The plug-in provides CAPTCHA and Ajax submitting.],
-  [style="text-align: left;"\> Features in bullets:],
+  [Features in bullets:],
   [Create and manage multiple contact forms],
   [Easily customize form fields],
   [Use simple markup to alter mail content],
   [Add Lots of third-party extensions for additional functionality],
   [Shortcode offers a way to insert content into pages or posts.],
   [Akismet spam filtering, Ajax-powered submitting, and CAPTCHA are all features of this plugin.],
-  [style="text-align: left;"\> Pricing],
   [Free to use],
-  [style="text-align: left;"\> 6. Monster Insights],
+  [6. Monster Insights],
   [When you’re looking for an easy way to manage your Google Analytics-related web tracking services, Monster Insights can help. You can add, customize, and integrate Google Analytics data with ease so you’ll be able to see how every webpage performs, which online campaigns bring in the most traffic, and which content readers engage with the most. It’s same as Google Analytics],
   [It is a powerful tool to keep track of your traffic stats. With it, you can view stats for your active sessions, conversions, and bounce rates. You’ll also be able to see your total revenue, the products you sell, and how your site is performing when it comes to referrals.],
   [MonsterInsights offers a free plan that includes basic Google Analytics integration, data insights, and user activity metrics.],
-  [style="text-align: left;"\> Features in bullets:],
+  [Features in bullets:],
   [Demographics and interest reports:],
   [Anonymize the  IPs of visitor],
   [See the results of how far visitors Scroll down],
@@ -235,13 +184,11 @@
   [See sessions of two related sites as a single session],
   [Google AdSense tracking],
   [Send you weekly analytics report of your blog you can download it as pdf],
-  [style="text-align: left;"\> Pricing],
   [Premium plan= \$99.50/year that comes with extra features like page and post tracking, Adsense tracking,  custom tracking and reports.],
-  [style="text-align: left;"\> 7. Pretty Links],
+  [7. Pretty Links],
   [Pretty Links is a powerful WordPress plugin that enables you to easily cloak affiliate links on your websiteIt even allows you to easily redirect visitors based on a specific request, including permanent 301 and temporary 302/307 redirects.],
   [Pretty links also helps you to automatically shorten your url for your post and pages.],
   [You can also enable auto-linking feature to automatically add affiliate links for certain keywords],
-  [style="text-align: left;"\> Features],
   [Create clean, easy-to-remember URLs on your website (301, 302, and 307 redirects only)],
   [Random-generator or custom URL slugs],
   [Track the number of clicks],
@@ -253,7 +200,6 @@
   [Create nofollow/noindex links],
   [Toggle tracking on \/ off on each link.],
   [Update redirected links easily to new URLs!],
-  [style="text-align: left;"\> Pricing],
   [Beginner Plan=\$79/year that can be used on 1 site],
   [Marketer Plan: \$99/year – that can be used on upto 2 sites],
   [Super Affiliate Plan: \$149/year – that can be use on upto 5 sites],
@@ -265,11 +211,10 @@
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Samsung's Premium 65" S90 4K OLED Smart TV Drops to Just \$1,099 for the Amazon Spring Sale],
   author: [Eric Song],
   source-name: [IGN],
@@ -298,7 +243,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Weekly Update 483],
   author: [Troy Hunt],
   source-name: [Troy Hunt],
@@ -306,11 +251,6 @@
   paragraphs: (
   [Presently sponsored by: Report URI: Guarding you from rogue JavaScript! Don’t get pwned; get real-time alerts & prevent breaches \#SecureYourSite],
   [Building out an IoT environment is a little like the old Maslow's Hierarchy of Needs. All the stuff on the top is only any good if all the stuff on the bottom is good, starting with power. This week, I couldn't even get that right, but thankfully, sparky to rescue and ensuite underfloor heating disconnected, and we now have reliable power again. On top of that is the layer that has increasingly been my nemesis - the network. Two days after recording, I've just spent the better part of the entire day making a much more concerted effort to adjust channel and power settings on APs, lock clients that don't move to the APs that make the most sense, and generally just screw around with it until stuff worked. And then I turned off a circuit, turned it back on again, and all hell broke loose 😭],
-  [style="width: 170px; display: inline-block; margin-right: 3px;"\>],
-  [style="width: 175px; display: inline-block; margin-right: 3px;"\>],
-  [style="width: 118px; display: inline-block; margin-right: 3px;"\>],
-  [style="width: 120px; display: inline-block;"\>],
-  [id="references"\>References],
   [Sponsored by: 1Password Extended Access Management: Secure every sign-in for every app on every device.],
 ),
   insert-map: (:),
@@ -322,8 +262,7 @@
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Fire In The Hole],
   author: [Penny Arcade],
   source-name: [Penny Arcade],
@@ -338,41 +277,46 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [Remaking the app store],
   author: [Benedict Evans],
   source-name: [Benedict Evans],
   images: (),
   paragraphs: (
-  [class=""\>There’s very little we can say about Apple’s App Store policies that we didn’t say when it launched in 2008, in 2011 when it first tightened the rules, or in 2020, when Epic tried to stunt its way out of them. Meanwhile, the world has moved on: generative AI is the centre of tech innovation, excitement and company creation now, not smartphone apps. The Vision Pro might swing the pendulum back to AR/VR and Apple, but not for years. Seen from Silicon Valley, this is an argument from a decade ago.],
-  [class=""\>That time-lag itself is a broader structural problem: the decision-cycle of regulation and due process tends be longer than the life-cycle of technology platform. Everyone in the regulation industry is very conscious of that, but the alternative is to speculate about the future development of markets that don’t exist yet, and that has its own problems, as the FTC found when it tried to stop Meta from buying Within. Pick your trade-off.],
-  [class=""\>And yet, this platform is the primary computing device for over a billion people, and with the DMA we have a big new law from the EU that tells Apple it has to change things. There’s also a court ruling in the USA (rather narrower and focused on Apple’s anti-steering rule), and perhaps more coming from a rumoured DoJ/FTC lawsuit. Apple has responded with a very broad set of proposals and changes to how things work, or might work. These are not at all what people who wanted change hoped to see. However it’s much less clear whether they are what the EU wanted, or indeed whether it’s actually possible to build what the EU wanted… presuming that anyone involved in the DMA actually knows what that is.],
-  [class=""\>The challenge for the EU is that the iPhone proposed a new kind of tradeoff for the software industry. IBM’s mainframes gave giant companies a computer and software as one sealed system that IBM controlled. In contrast, the PC was an open system that no-one really controlled (not even Microsoft), where anyone could do anything with their computer, and so could any developer. This was freedom, but it also meant that it was easy for you to break your computer and easy for a developer to break it (accidentally or on purpose), and easy for them steal your data. When there were millions of PCs, owned mostly owned by pretty technical people, and they were not connected to an open global network, that was one thing, but once billions of people connected to the internet, that was a big problem.],
-  [class=""\>Hence, the iPhone software model proposed a new level of abstraction and a new trade-off. Random third-party developers cannot do whatever they want with your data or break your computer, and indeed you cannot break your computer. The iPhone puts security, privacy and reliability over the freedom to change anything and do anything. This has been a huge success: iOS has the largest mobile app ecosystem, and indeed the largest software ecosystem there has ever been, with millions of apps and billions of downloads, which makes it rather incomplete to call it ‘closed’.],
-  [class=""\>This is the right trade-off for almost everyone. A small number of highly-technical people would like to be able to change anything on their computer even at the cost of opening security holes everywhere: they are free to buy a different device.],
-  [class=""\>Generally, this is a spectrum. Some restrictions are entirely about privacy, security and performance (no, you can’t have root access to the file system), but others are are also about making life harder for competitors, or extracting rent, or both. Why can’t WhatsApp be your default SMS client, say, and why can’t Square make a wallet app that uses NFC? There are serious security and ease-of-use answers to this, but also, serious business answers. Banning streaming games services has no security reasoning: it’s purely a desire to protect Apple’s own ecosystem.],
-  [class=""\>The payment rules are a subset of this, and they have have some of the clearest examples. Apple believes that developers should pay it for using the platform (a well-established model on games consoles, but not on PCs or Macs), and it chose to charge them by letting most developers use it for free (Uber and Tiktok don’t pay anything) but charging a 30% commission for digital content bought inside apps. That sounded simple in 2008, but quickly led to an inverted pyramid of increasingly complex problems, exemptions, carve-outs and edge-cases.],
-  [class=""\>But while you can at least argue whether newspapers should be paying that 30%, Apple again uses this to hurt or block competitors in ways that have no user benefit. The obvious problem right from the beginning was music and ebooks. Neither of these have the gross margin available to pay Apple a 30% commission (meanwhile, Apple’s store model has a cap of 10,000 products per app, so you couldn’t use it for an ebook store even if you were willing to pay), so they have to use their own subscription, but Apple banned them from telling the user how to do that.],
-  [class=""\>In case there was any doubt, Steve Jobs was very clear about this internally in 2011, in the email below: the new rules introduced in 2011 would preclude some competitors. These rules would be good for users in some ways (see Eddy Cue’s comment further down about the app experience) but bad in others.],
-  [class=""\>On one hand, the principle of Apple’s sandboxed, managed, curated system (across both the OS sandbox and the store) is great for almost all developers, and users, and Apple. (Apple may or may not see things in that order.) Something over a billion people have an iPhone, and though we sometimes call it ‘closed’, it has millions of apps and billions of downloads: iOS is the largest open software ecosystem in history. The App Store model is not some kind of aberration incidental to the success of the iPhone: it is a core part of how Apple delivers the promise: a phone that just works and apps that just work.],
-  [class=""\>But, on the other hand, Apple has sometimes also used the control inherent in that system to do things that are actively bad for users and developers and good only for Apple.],
-  [class=""\>There are some theories of competition law that point out that Apple is far from a monopoly (especially outside the USA) and that the only necessary response to Spotify’s complaints is ‘tough’, and other theories that say that this calls for intervention: we can debate those in a bar, but meanwhile, the EU has intervened. So what happens next?],
-  [class=""\>Let’s go back to the regulators’ problem - that ten year time lag. The EU’s attempt to solve this is to write laws of broad general principle that will cover new problems that might occur in the future: some of the DMA’s broad general rules address issues that only apply to Apple, but they’re still broad and general. Instead of banning particular things that Apple does, the EU has tried to redesign the entire system so that Apple doesn’t have that kind of control to abuse.],
-  [class=""\>Hence: Apple uses its control of the app store to block some apps, so the DMA says that Apple must allow third party app stores and side loading. Apple uses its payment commission rules to limit some competitors, doesn’t let apps use a third party payment processor, and charges 30% when the going rate for processing credit cards is 3%, so the DMA says that Apple must allow apps to use third party payment.],
-  [class=""\>Well, the EU has chosen some classic Boris Johnson ‘cake-ism’ - it is trying to have its cake and eat it. Apple must open up a bunch of holes in the security model without weakening the security model. Easy! (Tech regulation is full of this right now: we must have secure encryption that the police can read!)],
-  [class=""\>You want apps to be able to use a third party payment processor? OK - instead of paying us 30% commission, they can use a third party processor and pay us 27%],
-  [class=""\>You want us to allow third party app stores while preserving security, privacy and reliability? OK: all those apps must be reviewed according to our rules, and notarised by us. And those stores can’t be in our app store - you asked for side-loading, so the stores will have to be side-loaded],
-  [class=""\>And (of course), this only applies in the EU (which Apple said this week is only 7% of its app store revenue), so you won’t have access to the global user base.],
-  [class=""\>Spotify, of course, is furious at all of this, and Mark Zuckerberg said on the Meta earnings call this week that on this basis nothing would really change. On the other hand, in legal terms this is just a proposal. the EU will look at what Apple has done and decide whether it likes it (see Steven Sinofsky , formerly of Microsoft, on the time when the EU decided that Windows should not include video playback). This isn’t over: there will be argument, iteration and eye-catching fines that make no sense. Experts on EU law, and US law, and competition theorists who’ve never met an engineer, will argue at great length, as the people who gave us the cookie box try to design app stores.],
-  [class=""\>The misconception, I think, is that while YOU might believe that platform owners should not control what you can do and that everything should be open, the EU absolutely does not. The DMA and the DSA are full of requirements for platforms to control and restrict what happens. So even are the clauses aimed at Apple.],
-  [class=""\>You might want your device to work like an open and unrestricted PC, but the EU doesn’t want that. The DMA, again, is an awful lot of having cake and eating it: this device should remove barriers to competition and innovation, but it should also preserve privacy, security and system reliability. This, again, is the Boris Johnson ‘cake-ism’ approach to product design, and that’s the pain point that Apple is pushing: “you told us you want us to control the platform.. and not to control it. So which is it?” If you look at Apple’s new rules, see Apple using them to maintain control, and call this ‘malicious compliance’, you’re missing the point. The EU told Apple to maintain control.],
-  [class=""\>I think one could argue here that the DMA’s approach to app stores looks rather like the fiasco of its cookie box rules. The EU is looking for the right level of abstraction: if you ban specific behaviour you’ll probably be left behind by events, so instead you look for a general solution. However, both here and for cookies, instead of asking what specific problem it was trying to solve, it tried to to do system design. Here, to repeat, I don’t think the EU is trying to make iOS work like a PC: it’s trying to stop ‘gatekeepers’ from abusing their control over competitors, while also requiring them to use that control for all sorts of other policy objectives (CSAM, harmful content, privacy, etc, etc). I wonder if it might have done better to focus on a principle of ‘self-preferencing’ than on trying to redesign the smartphone software model.],
-  [class=""\>Stepping back, though, how much does this matter? The funny thing about Spotify is that it’s the exception that proves the rule: Spotify, ebooks, audiobooks and a few other use cases are obvious things that Apple’s billing rules in particular rules caused problems for, but it’s really hard to think of any others. The same for streaming: this was one very specific model that Apple wanted to block, Microsoft made it work fine on the web instead, and now Apple has abandoned that rule (for that use-case, Apple has conceded entirely). Conversely, Epic didn’t want to pay, but there was no actual business reason why it couldn’t. How much was this about innovation and how much was it about money?],
-  [class=""\>We don’t, obviously, know the counter-factual, but where are the models that work on Android, and especially the chaos of Chinese Android, that iPhones can’t have? It’s certainly very hard to look at a Chinese Android with three or four different app stores fighting each other and see a benefit to users or developers - that looks more like a tragedy of the commons. Ironically, it’s only now, with generative AI taking off, that the concept of an AI agent that can watch everything on your phone and make suggestions gives us an example of something really significant and potentially useful that Apple wouldn’t allow - and yet even though the DMA is supposed to be a set of general, future-proof rules, it isn’t clear if that’s covered by the DMA at all. Check back in ten years? Regulators, like generals, are always fighting the last war.],
+  [There’s very little we can say about Apple’s App Store policies that we didn’t say when it launched in 2008, in 2011 when it first tightened the rules, or in 2020, when Epic tried to stunt its way out of them. Meanwhile, the world has moved on: generative AI is the centre of tech innovation, excitement and company creation now, not smartphone apps. The Vision Pro might swing the pendulum back to AR/VR and Apple, but not for years. Seen from Silicon Valley, this is an argument from a decade ago.],
+  [That time-lag itself is a broader structural problem: the decision-cycle of regulation and due process tends be longer than the life-cycle of technology platform. Everyone in the regulation industry is very conscious of that, but the alternative is to speculate about the future development of markets that don’t exist yet, and that has its own problems, as the FTC found when it tried to stop Meta from buying Within. Pick your trade-off.],
+  [And yet, this platform is the primary computing device for over a billion people, and with the DMA we have a big new law from the EU that tells Apple it has to change things. There’s also a court ruling in the USA (rather narrower and focused on Apple’s anti-steering rule), and perhaps more coming from a rumoured DoJ/FTC lawsuit. Apple has responded with a very broad set of proposals and changes to how things work, or might work. These are not at all what people who wanted change hoped to see. However it’s much less clear whether they are what the EU wanted, or indeed whether it’s actually possible to build what the EU wanted… presuming that anyone involved in the DMA actually knows what that is.],
+  [The challenge for the EU is that the iPhone proposed a new kind of tradeoff for the software industry. IBM’s mainframes gave giant companies a computer and software as one sealed system that IBM controlled. In contrast, the PC was an open system that no-one really controlled (not even Microsoft), where anyone could do anything with their computer, and so could any developer. This was freedom, but it also meant that it was easy for you to break your computer and easy for a developer to break it (accidentally or on purpose), and easy for them steal your data. When there were millions of PCs, owned mostly owned by pretty technical people, and they were not connected to an open global network, that was one thing, but once billions of people connected to the internet, that was a big problem.],
+  [Hence, the iPhone software model proposed a new level of abstraction and a new trade-off. Random third-party developers cannot do whatever they want with your data or break your computer, and indeed you cannot break your computer. The iPhone puts security, privacy and reliability over the freedom to change anything and do anything. This has been a huge success: iOS has the largest mobile app ecosystem, and indeed the largest software ecosystem there has ever been, with millions of apps and billions of downloads, which makes it rather incomplete to call it ‘closed’.],
+  [This is the right trade-off for almost everyone. A small number of highly-technical people would like to be able to change anything on their computer even at the cost of opening security holes everywhere: they are free to buy a different device.],
+  [However, Apple uses the control inherent in this model in ways that are sometimes mostly or entirely about Apple, and not about that security, privacy and reliability at all.],
+  [Generally, this is a spectrum. Some restrictions are entirely about privacy, security and performance (no, you can’t have root access to the file system), but others are are also about making life harder for competitors, or extracting rent, or both. Why can’t WhatsApp be your default SMS client, say, and why can’t Square make a wallet app that uses NFC? There are serious security and ease-of-use answers to this, but also, serious business answers. Banning streaming games services has no security reasoning: it’s purely a desire to protect Apple’s own ecosystem.],
+  [The payment rules are a subset of this, and they have have some of the clearest examples. Apple believes that developers should pay it for using the platform (a well-established model on games consoles, but not on PCs or Macs), and it chose to charge them by letting most developers use it for free (Uber and Tiktok don’t pay anything) but charging a 30% commission for digital content bought inside apps. That sounded simple in 2008, but quickly led to an inverted pyramid of increasingly complex problems, exemptions, carve-outs and edge-cases.],
+  [But while you can at least argue whether newspapers should be paying that 30%, Apple again uses this to hurt or block competitors in ways that have no user benefit. The obvious problem right from the beginning was music and ebooks. Neither of these have the gross margin available to pay Apple a 30% commission (meanwhile, Apple’s store model has a cap of 10,000 products per app, so you couldn’t use it for an ebook store even if you were willing to pay), so they have to use their own subscription, but Apple banned them from telling the user how to do that.],
+  [In case there was any doubt, Steve Jobs was very clear about this internally in 2011, in the email below: the new rules introduced in 2011 would preclude some competitors. These rules would be good for users in some ways (see Eddy Cue’s comment further down about the app experience) but bad in others.],
+  [All of this is to say that you can believe two things.],
+  [On one hand, the principle of Apple’s sandboxed, managed, curated system (across both the OS sandbox and the store) is great for almost all developers, and users, and Apple. (Apple may or may not see things in that order.) Something over a billion people have an iPhone, and though we sometimes call it ‘closed’, it has millions of apps and billions of downloads: iOS is the largest open software ecosystem in history. The App Store model is not some kind of aberration incidental to the success of the iPhone: it is a core part of how Apple delivers the promise: a phone that just works and apps that just work.],
+  [But, on the other hand, Apple has sometimes also used the control inherent in that system to do things that are actively bad for users and developers and good only for Apple.],
+  [There are some theories of competition law that point out that Apple is far from a monopoly (especially outside the USA) and that the only necessary response to Spotify’s complaints is ‘tough’, and other theories that say that this calls for intervention: we can debate those in a bar, but meanwhile, the EU has intervened. So what happens next?],
+  [Let’s go back to the regulators’ problem - that ten year time lag. The EU’s attempt to solve this is to write laws of broad general principle that will cover new problems that might occur in the future: some of the DMA’s broad general rules address issues that only apply to Apple, but they’re still broad and general. Instead of banning particular things that Apple does, the EU has tried to redesign the entire system so that Apple doesn’t have that kind of control to abuse.],
+  [Hence: Apple uses its control of the app store to block some apps, so the DMA says that Apple must allow third party app stores and side loading. Apple uses its payment commission rules to limit some competitors, doesn’t let apps use a third party payment processor, and charges 30% when the going rate for processing credit cards is 3%, so the DMA says that Apple must allow apps to use third party payment.],
+  [But what does that mean for the other side of the trade-off - for that privacy, security and reliability?],
+  [Well, the EU has chosen some classic Boris Johnson ‘cake-ism’ - it is trying to have its cake and eat it. Apple must open up a bunch of holes in the security model without weakening the security model. Easy! (Tech regulation is full of this right now: we must have secure encryption that the police can read!)],
+  [The problem is that Apple has taken the EU at its word. Imagine the dialogue:],
+  [You want apps to be able to use a third party payment processor? OK - instead of paying us 30% commission, they can use a third party processor and pay us 27%],
+  [You want us to allow third party app stores while preserving security, privacy and reliability? OK: all those apps must be reviewed according to our rules, and notarised by us. And those stores can’t be in our app store - you asked for side-loading, so the stores will have to be side-loaded],
+  [Apps in those stores aren’t subject to our 30% commission rule? OK - they can pay us 50 eurocents per download instead],
+  [You want us to let people leave our safe, secure ecosystem while keeping them safe and secure? OK, we’ll need some giant scare screens to warn them],
+  [And (of course), this only applies in the EU (which Apple said this week is only 7% of its app store revenue), so you won’t have access to the global user base.],
+  [Spotify, of course, is furious at all of this, and Mark Zuckerberg said on the Meta earnings call this week that on this basis nothing would really change. On the other hand, in legal terms this is just a proposal. the EU will look at what Apple has done and decide whether it likes it (see Steven Sinofsky , formerly of Microsoft, on the time when the EU decided that Windows should not include video playback). This isn’t over: there will be argument, iteration and eye-catching fines that make no sense. Experts on EU law, and US law, and competition theorists who’ve never met an engineer, will argue at great length, as the people who gave us the cookie box try to design app stores.],
+  [However, that does not mean that the EU is going to give Apple’s critics what they want. Your enemy’s enemy is not your friend.],
+  [The misconception, I think, is that while YOU might believe that platform owners should not control what you can do and that everything should be open, the EU absolutely does not. The DMA and the DSA are full of requirements for platforms to control and restrict what happens. So even are the clauses aimed at Apple.],
+  [You might want your device to work like an open and unrestricted PC, but the EU doesn’t want that. The DMA, again, is an awful lot of having cake and eating it: this device should remove barriers to competition and innovation, but it should also preserve privacy, security and system reliability. This, again, is the Boris Johnson ‘cake-ism’ approach to product design, and that’s the pain point that Apple is pushing: “you told us you want us to control the platform.. and not to control it. So which is it?” If you look at Apple’s new rules, see Apple using them to maintain control, and call this ‘malicious compliance’, you’re missing the point. The EU told Apple to maintain control.],
+  [I think one could argue here that the DMA’s approach to app stores looks rather like the fiasco of its cookie box rules. The EU is looking for the right level of abstraction: if you ban specific behaviour you’ll probably be left behind by events, so instead you look for a general solution. However, both here and for cookies, instead of asking what specific problem it was trying to solve, it tried to to do system design. Here, to repeat, I don’t think the EU is trying to make iOS work like a PC: it’s trying to stop ‘gatekeepers’ from abusing their control over competitors, while also requiring them to use that control for all sorts of other policy objectives (CSAM, harmful content, privacy, etc, etc). I wonder if it might have done better to focus on a principle of ‘self-preferencing’ than on trying to redesign the smartphone software model.],
+  [Stepping back, though, how much does this matter? The funny thing about Spotify is that it’s the exception that proves the rule: Spotify, ebooks, audiobooks and a few other use cases are obvious things that Apple’s billing rules in particular rules caused problems for, but it’s really hard to think of any others. The same for streaming: this was one very specific model that Apple wanted to block, Microsoft made it work fine on the web instead, and now Apple has abandoned that rule (for that use-case, Apple has conceded entirely). Conversely, Epic didn’t want to pay, but there was no actual business reason why it couldn’t. How much was this about innovation and how much was it about money?],
+  [We don’t, obviously, know the counter-factual, but where are the models that work on Android, and especially the chaos of Chinese Android, that iPhones can’t have? It’s certainly very hard to look at a Chinese Android with three or four different app stores fighting each other and see a benefit to users or developers - that looks more like a tragedy of the commons. Ironically, it’s only now, with generative AI taking off, that the concept of an AI agent that can watch everything on your phone and make suggestions gives us an example of something really significant and potentially useful that Apple wouldn’t allow - and yet even though the DMA is supposed to be a set of general, future-proof rules, it isn’t clear if that’s covered by the DMA at all. Check back in ten years? Regulators, like generals, are always fighting the last war.],
 ),
   insert-map: (:),
   word-count: 2305,
@@ -380,11 +324,10 @@
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Folk Etymologies],
   author: [Penny Arcade],
   source-name: [Penny Arcade],
@@ -400,7 +343,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [All gods and bonuses in Nova Roma],
   author: [Arka Sarkar],
   source-name: [Destructoid],
@@ -411,8 +354,10 @@
   [Table of contents],
   [All god boons in Nova Roma],
   [How to gain Favor from the gods in Nova Roma],
+  [All god boons in Nova Roma],
   [The table below has a list of all the gods and the boons they offer.],
   [God Boons Jupiter +3 happiness in a 5 tile radius. Ceres +1 output to the nearest three farms, vineyards, and orchards in its radius. Neptune +1 fish yields to the nearest five fishing buildings in its radius. Vulcan +1 output to the nearest five fire-based industry Ares +25% damage to the nearest three defense towers in its radius.],
+  [How to gain Favor from the gods in Nova Roma],
   [Image via Hooded Horse],
   [The first step is to build a temple and then dedicate it to a god of your choice. Your decision will be driven by the potential buffs that you want to apply. Once you dedicate a temple to a god, you'll need to complete Divine Tasks. Once you complete them, you'll be rewarded with Favor.],
   [You can then offer Favor to a god in the Small Temple to unlock the benefits (listed above). If you have a Large Temple, you can also throw a festival to gain Favor. Favor is used to unlock new technology spread across several branches. The unlocks will allow you to improve your civilization through time and bring it close to prosperity.],
@@ -429,81 +374,79 @@
 #pull-quote([Your decision will be driven by the potential buffs that you want to apply.], [Arka Sarkar])
 
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Most teams have security tools in place. Alerts are firing, dashboards look clean, threat intel is flowing in. On the surface, everything feels under control.
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Most teams have security tools in place. Alerts are firing, dashboards look clean, threat intel is flowing in. On the surface, everything feels under control.
 But one question usually stays unanswered: Would your defenses actually stop a real attack?
 That’s where things get shaky. A control exists, so it’s assumed to work. A detection rule is active, so it’s expected to catch something. But very])],
-    [#brief-item([Daniel Curtis], source-name: [InfoQ], [Nuxt Test Utils has released version 4.0.0, which primarily integrates Vitest v4. This update changes the test environment setup to beforeAll, resolving issues with module-level mocks. It also improves mockNuxtImport for cleaner partial mocking and enhances state management for registered endpoints. The library remains vital for testing in the Nuxt framework, bridging unit and end-to-end testing.
+  [#brief-item([Daniel Curtis], source-name: [InfoQ], [Nuxt Test Utils has released version 4.0.0, which primarily integrates Vitest v4. This update changes the test environment setup to beforeAll, resolving issues with module-level mocks. It also improves mockNuxtImport for cleaner partial mocking and enhances state management for registered endpoints. The library remains vital for testing in the Nuxt framework, bridging unit and end-to-end testing.
 
  By Daniel Curtis])],
-    [#brief-item([Connor Makar], source-name: [Eurogamer], [Bungie has implemented a substantial matchmaking change which will aid those playing from isolated regions - think Australia or South America - find games faster.
+  [#brief-item([Connor Makar], source-name: [Eurogamer], [Bungie has implemented a substantial matchmaking change which will aid those playing from isolated regions - think Australia or South America - find games faster.
 
  Read more])],
-    [#brief-item([Zack Garvey], source-name: [PlayStation Blog], [class=""\> PlayStation Store’s Spring Sale begins tomorrow, Wednesday, March 25. For a limited time\* you can enjoy deep discounts of up to 75% on a vast range of games that include iconic blockbusters, acclaimed classics, and more.
+  [#brief-item([Zack Garvey], source-name: [PlayStation Blog], [PlayStation Store’s Spring Sale begins tomorrow, Wednesday, March 25. For a limited time\* you can enjoy deep discounts of up to 75% on a vast range of games that include iconic blockbusters, acclaimed classics, and more.
 
-class=""\>
 
-class=""\>
 
-class="has-small-font-size"\> \*PlayStation Store Spring Sale promotion runs from Wednesday, March 25 at 00:00 AM PDT/BST/JST and finishes Wednesday April 22 at 11:59 PM PDT/BST/JST\*\*. Each title may have different sale periods. Please refer to the information in the title details page.  
 
-class="has-small-font-size"\> \*\*The promotion’s start and finish time may differ in certain regions. Game selection may differ by region. 
 
-class=""\>])],
-    [#brief-item([Cerner Engineering], source-name: [Cerner Engineering], [The FHIR standard started as a better way to exchange healthcare data, but it also provides a solid basis for deep analytics and Machine Learning at scale. This post looks at an example from the recent FHIR DevDays conference that does just that. You can also run the interactive FHIR data engineering tutorial used in the conference yourself.
+\*PlayStation Store Spring Sale promotion runs from Wednesday, March 25 at 00:00 AM PDT/BST/JST and finishes Wednesday April 22 at 11:59 PM PDT/BST/JST\*\*. Each title may have different sale periods. Please refer to the information in the title details page.  
+
+\*\*The promotion’s start and finish time may differ in certain regions. Game selection may differ by region. 
+
+])],
+  [#brief-item([Cerner Engineering], source-name: [Cerner Engineering], [The FHIR standard started as a better way to exchange healthcare data, but it also provides a solid basis for deep analytics and Machine Learning at scale. This post looks at an example from the recent FHIR DevDays conference that does just that. You can also run the interactive FHIR data engineering tutorial used in the conference yourself.
 Our first step is to bring FHIR data into a data lake – a computational environment where our analysis can easily and efficiently work through petabytes of data.])],
-    [#brief-item([Victoria Phillips Kennedy], source-name: [Eurogamer], ["I remember being in a really strange time in my life, oddly enough, and a big transition where I felt really uncertain of myself and my place in the world, and this audition came around that was somehow celebrating all the things about myself that I thought were problematic."
+  [#brief-item([Victoria Phillips Kennedy], source-name: [Eurogamer], ["I remember being in a really strange time in my life, oddly enough, and a big transition where I felt really uncertain of myself and my place in the world, and this audition came around that was somehow celebrating all the things about myself that I thought were problematic."
 
  Read more])],
-    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Cybersecurity has changed fast. Roles are more specialized, and tooling is more advanced. On paper, this should make organizations more secure. But in practice, many teams struggle with the same basic problems they faced years ago: unclear risk priorities, misaligned tooling decisions, and difficulty explaining security issues in terms the business understands. 
+  [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Cybersecurity has changed fast. Roles are more specialized, and tooling is more advanced. On paper, this should make organizations more secure. But in practice, many teams struggle with the same basic problems they faced years ago: unclear risk priorities, misaligned tooling decisions, and difficulty explaining security issues in terms the business understands. 
 These challenges do not])],
-    [#brief-item([Cerner Engineering], source-name: [Cerner Engineering], [At Cerner, we use the latest technologies to transform healthcare. We are the engineers and designers that focus on making you, your family, and friends healthy and happy.
+  [#brief-item([Cerner Engineering], source-name: [Cerner Engineering], [At Cerner, we use the latest technologies to transform healthcare. We are the engineers and designers that focus on making you, your family, and friends healthy and happy.
 We love solving the hard problems that no one else wants to tackle. We embrace polyglot programming, distributed systems, and open source.
 We also know that it’s important to allow engineers to take a step back to learn and try new things. That’s why we host periodic hackathons, meetups, tech talks, and an annual internal two-day developers conference.])],
-    [#brief-item([Bruno Couriol], source-name: [InfoQ], [Max Inden recently explored in a talk at FOSDEM 2026 how the upcoming WebTransport protocol and Web API enhance WebSocket capabilities. WebTransport seeks to provide, among other things, lower latency and transparent network switching for key use cases such as high-frequency financial data streaming, cloud gaming, live streaming, and collaborative editing.
+  [#brief-item([Bruno Couriol], source-name: [InfoQ], [Max Inden recently explored in a talk at FOSDEM 2026 how the upcoming WebTransport protocol and Web API enhance WebSocket capabilities. WebTransport seeks to provide, among other things, lower latency and transparent network switching for key use cases such as high-frequency financial data streaming, cloud gaming, live streaming, and collaborative editing.
 
  By Bruno Couriol])],
-    [#brief-item([Robert Purchese], source-name: [Eurogamer], [Hello and welcome back to our regular feature where we write a little about the games we've been playing. This week, Bertie discovers he's not as good at Slay the Spire 2 as he would like to be; Connor continues to fall to the Dark Side and embrace his inner troll; and Marie realises that older games really were more challenging.
+  [#brief-item([Robert Purchese], source-name: [Eurogamer], [Hello and welcome back to our regular feature where we write a little about the games we've been playing. This week, Bertie discovers he's not as good at Slay the Spire 2 as he would like to be; Connor continues to fall to the Dark Side and embrace his inner troll; and Marie realises that older games really were more challenging.
 
  Read more])],
-    [#brief-item([Cerner Engineering], source-name: [Cerner Engineering], [In the dark ages of development, great software meant packing in the functionality. People began doing more and more with their software. Updates meant newer and more exciting functionality. Sounds great, right? Of course it does, but something went horribly wrong. Slowly we became inundated with cluttered screens as software developers struggled to find a place to put their latest innovative functionality. Buttons began adding up and before we knew it, we were inventing user interface controls like ribbons to hold all the buttons.])],
-    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Google on Thursday announced a new "advanced flow" for Android sideloading that requires a mandatory 24-hour wait period to install apps from unverified developers in an attempt to balance openness with safety.
+  [#brief-item([Cerner Engineering], source-name: [Cerner Engineering], [In the dark ages of development, great software meant packing in the functionality. People began doing more and more with their software. Updates meant newer and more exciting functionality. Sounds great, right? Of course it does, but something went horribly wrong. Slowly we became inundated with cluttered screens as software developers struggled to find a place to put their latest innovative functionality. Buttons began adding up and before we knew it, we were inventing user interface controls like ribbons to hold all the buttons.])],
+  [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Google on Thursday announced a new "advanced flow" for Android sideloading that requires a mandatory 24-hour wait period to install apps from unverified developers in an attempt to balance openness with safety.
 The new changes come against the backdrop of a developer verification mandate the tech giant announced last year that requires all Android apps to be registered by verified developers to])],
-    [#brief-item([Victoria Phillips Kennedy], source-name: [Eurogamer], [During last night's Xbox Partner Preview showcase, AdHoc announced that its brilliant superhero workplace comedy Dispatch would be heading over to Microsoft's Series X/S consoles, as well as Xbox on PC and Xbox Cloud.
+  [#brief-item([Victoria Phillips Kennedy], source-name: [Eurogamer], [During last night's Xbox Partner Preview showcase, AdHoc announced that its brilliant superhero workplace comedy Dispatch would be heading over to Microsoft's Series X/S consoles, as well as Xbox on PC and Xbox Cloud.
 
  Read more])],
-    [#brief-item([Cerner Engineering], source-name: [Cerner Engineering], [At Cerner, we manage our own infrastructure and a big part of that is managing F5 load balancers. If you are a Ruby developer or a network engineer and regularly work with F5s, then I have good news! I’ve created a gem that abstracts iControl’s REST API. It makes working with the API easy to understand and eases the effort required to automate changes across many devices.
+  [#brief-item([Cerner Engineering], source-name: [Cerner Engineering], [At Cerner, we manage our own infrastructure and a big part of that is managing F5 load balancers. If you are a Ruby developer or a network engineer and regularly work with F5s, then I have good news! I’ve created a gem that abstracts iControl’s REST API. It makes working with the API easy to understand and eases the effort required to automate changes across many devices.
 1 2 api = IcontrolRest:: Client.])],
-    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Apple is now sending Lock Screen notifications to iPhones and iPads running older versions of iOS and iPadOS to alert users of web-based attacks and urge them to install the update.
+  [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Apple is now sending Lock Screen notifications to iPhones and iPads running older versions of iOS and iPadOS to alert users of web-based attacks and urge them to install the update.
 The development was first reported by MacRumors.
 "Apple is aware of attacks targeting out-of-date iOS software, including the version on your iPhone. Install this critical update to protect your iPhone," the])],
-    [#brief-item([Connor Makar], source-name: [Eurogamer], [John and Brenda Romero - award winning game developers and founders of Romero games - have spoken about the state of the games industry following the radical downsizing of their Galway-based studio.
+  [#brief-item([Connor Makar], source-name: [Eurogamer], [John and Brenda Romero - award winning game developers and founders of Romero games - have spoken about the state of the games industry following the radical downsizing of their Galway-based studio.
 
  Read more])],
-    [#brief-item([Cerner Engineering], source-name: [Cerner Engineering], [Most developers know this pattern well: we design a set of schemas to represent our data, and then work with that data via a query language. This works great in most cases, but becomes a challenge as data sets grow to an arbitrary size and complexity. Data sets can become too large to query and update with conventional means.
+  [#brief-item([Cerner Engineering], source-name: [Cerner Engineering], [Most developers know this pattern well: we design a set of schemas to represent our data, and then work with that data via a query language. This works great in most cases, but becomes a challenge as data sets grow to an arbitrary size and complexity. Data sets can become too large to query and update with conventional means.
 These challenges often arise with Hadoop, simply because Hadoop is a popular tool to tackle such data sets.])],
-    [#brief-item([Matt Saunders], source-name: [InfoQ], [Hannah Foxwell began her QCon London 2026 talk by noting that the long-sought velocity in development has arrived, but the industry is unsure how to use it. She set aside the technical details of agentic coding, focusing instead on its implications for the people working with these systems.
+  [#brief-item([Matt Saunders], source-name: [InfoQ], [Hannah Foxwell began her QCon London 2026 talk by noting that the long-sought velocity in development has arrived, but the industry is unsure how to use it. She set aside the technical details of agentic coding, focusing instead on its implications for the people working with these systems.
 
  By Matt Saunders])],
-    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Some weeks in security feel loud. This one feels sneaky. Less big dramatic fireworks, more of that slow creeping sense that too many people are getting way too comfortable abusing things they probably shouldn’t even be touching.
+  [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Some weeks in security feel loud. This one feels sneaky. Less big dramatic fireworks, more of that slow creeping sense that too many people are getting way too comfortable abusing things they probably shouldn’t even be touching.
 There’s a little bit of everything in this one, too. Weird delivery tricks, old problems coming back in slightly worse forms, shady infrastructure doing])],
-    [#brief-item([Victoria Phillips Kennedy], source-name: [Eurogamer], [The idea of porting Crimson Desert over to Switch 2 is currently being discussed by Pearl Abyss, which while I am no tech expert, sounds pretty ambitious to me.
+  [#brief-item([Victoria Phillips Kennedy], source-name: [Eurogamer], [The idea of porting Crimson Desert over to Switch 2 is currently being discussed by Pearl Abyss, which while I am no tech expert, sounds pretty ambitious to me.
 
  Read more])],
-    [#brief-item([Andy Swift], source-name: [TVLine], [Virgin River has yet to reveal the name of Mel and Jack's new baby, but after speaking with Alexandra Breckenridge, TVLine has a pretty good idea what it'll be.])],
-    [#brief-item([Cerner Engineering], source-name: [Cerner Engineering], [Starting the Big Data Journey When a company first starts to play with Big Data it typically involves a small team of engineers trying to solve a specific problem. The team decides to experiment with scalable technologies either due to outside guidance or research which makes it applicable to their problem. The team begins with the basics of Big Data spending time learning and prototyping. They learn about HDFS, flirt with HBase or other NoSQL, write the required WordCount example, and start to figure out how the technologies can fit their needs.])],
-    [#brief-item([Fran Ruiz], source-name: [Eurogamer], [Ever since it was announced in April 2025, Star Wars Zero Company has quickly become one of those unexpected games to watch out for. XCOM, but Star Wars? Sure, sign us up. Now, after nearly one year in the shadows, Respawn Entertainment and Bit Reactor have shown a bit more of the game off.
+  [#brief-item([Andy Swift], source-name: [TVLine], [Virgin River has yet to reveal the name of Mel and Jack's new baby, but after speaking with Alexandra Breckenridge, TVLine has a pretty good idea what it'll be.])],
+  [#brief-item([Cerner Engineering], source-name: [Cerner Engineering], [Starting the Big Data Journey When a company first starts to play with Big Data it typically involves a small team of engineers trying to solve a specific problem. The team decides to experiment with scalable technologies either due to outside guidance or research which makes it applicable to their problem. The team begins with the basics of Big Data spending time learning and prototyping. They learn about HDFS, flirt with HBase or other NoSQL, write the required WordCount example, and start to figure out how the technologies can fit their needs.])],
+  [#brief-item([Fran Ruiz], source-name: [Eurogamer], [Ever since it was announced in April 2025, Star Wars Zero Company has quickly become one of those unexpected games to watch out for. XCOM, but Star Wars? Sure, sign us up. Now, after nearly one year in the shadows, Respawn Entertainment and Bit Reactor have shown a bit more of the game off.
 
  Read more])],
-    [#brief-item([Robert Purchese], source-name: [Eurogamer], [Slay the Spire 2 is estimated to have made more money than Hollow Knight: Silksong on Steam, and more money than Hades 2 , and after only two weeks on sale. When you consider that Hollow Knight: Silksong crashed Steam (and Xbox and PlayStation and Switch) as people clamoured to buy and download it, that success is all the more incredible.
+  [#brief-item([Robert Purchese], source-name: [Eurogamer], [Slay the Spire 2 is estimated to have made more money than Hollow Knight: Silksong on Steam, and more money than Hades 2 , and after only two weeks on sale. When you consider that Hollow Knight: Silksong crashed Steam (and Xbox and PlayStation and Switch) as people clamoured to buy and download it, that success is all the more incredible.
 
  Read more])],
-    [#brief-item([Connor Makar], source-name: [Eurogamer], [Epic Games is cutting over 1,000 jobs as its flagship battle royale game Fortnite struggles through a "downturn" in engagement.
+  [#brief-item([Connor Makar], source-name: [Eurogamer], [Epic Games is cutting over 1,000 jobs as its flagship battle royale game Fortnite struggles through a "downturn" in engagement.
 
  Read more])],
-  ))
-}
+))
 
 #colophon([The Civic Digest], [Vol. 1, No. 056], [2026-03-30])

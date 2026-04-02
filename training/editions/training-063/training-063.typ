@@ -21,105 +21,8 @@
 #masthead([Southern Bulletin], [Vol. 1, No. 063], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [The End of Type Annotations],
-  kicker: [Cover Story],
-  author: [Yegor Bugayenko],
-  source-name: [Yegor Bugayenko],
-  deck: [Type annotations are what make statically typed object-oriented languages like Java run faster and safer .],
-  lead-pre: [],
-  lead-cap: [W],
-  lead-rest: [ithout annotations, every variable would effectively collapse to Object , forcing runtime casts.
-The code would work, but slower and with more runtime errors.
-Some type annotations may be inferred instead of being explicitly specified by a programmer.
-Not all though.
-In Java, for example, a number of hard-to-resolve challenges prevent us from inferring types of all objects.
-This is not a fundamental limitation of OOP itself.
-It’s a result of design trade-offs in Java and similar languages.],
-  body-paragraphs: (
-  [In a perfect object-oriented language, all variable types would be inferrable.],
-  [Imagine a simple Java method:],
-  [Two reasons justify the usage of Book , City , Price , and Delivery type annotations:
-Compilers and programmers need help.],
-  [id="type-annotations-are-helpful"\>Type Annotations Are Helpful],
-  [First, we help the compiler eliminate some dynamic dispatches in favor of static calls.
-If the Book is a class, not an interface, the book.price() call may be compiled into a jump to an absolute address.
-Without information about the book ’s class, .price() goes to a virtual table first, finds the address, and only then jumps.
-The second scenario is more expensive.
-The type annotation attached to book helps avoid it.],
-  [Second, we help ourselves write safe code, avoiding “Method not found” runtime errors .
-If book is not annotated as Book , we may mistakenly pass Integer , meaning the book’s ID in the database.
-At compile time, that would lead to no errors.
-Later, at runtime, we get an error when .price() is not found in the virtual table of the Integer class.],
-  [However, both compilers and programmers can improve.],
-  [id="compilers-can-do-better"\>Compilers Can Do Better],
-  [Sometimes, a compiler can infer the type of a variable, without an explicit annotation.
-For example, this code compiles in Java, starting from version 10:],
-  [The type annotation used in earlier Java versions is replaced with the var keyword.],
-  [In a small piece of code such as this one, the compiler can infer types.
-However, it may fall short with the book and city parameters.
-In the general case, type inference is not decidable for Java programs.
-Because of generics, method overloading, reflection, and … complexity.],
-  [The complexity is the technical obstacle.
-The compiler can’t infer types for all variables because it would be too expensive to analyze the whole program.
-Instead, it compiles file by file.
-Even if the compiler had the whole program, inference in Java would still hit undecidability in the general case.
-File-by-file compilation makes this even more restrictive.],
-  [All other barriers, such as generics, the compiler can’t overcome:],
-  [No matter how hard the compiler tries, in the general case, this question doesn’t have an answer.],
-  [id="programmers-can-do-better"\>Programmers Can Do Better],
-  [We, programmers, can help the compiler infer types.],
-  [For example, we can stop using generics.
-Instead of List we can have a Library and instead of Map we can have a PhoneBook .
-It’s easier to infer the type of the object taken from a Library versus the object taken from a generic List .],
-  [We can also stop using method overloading.
-Instead of print(String x) and print(Integer x) we can create printString(x) and printInteger(x) .
-Types of parameters are easier to infer in more specialized methods.],
-  [We can also stop using reflection.],
-  [The easier it is to infer the type of a variable for a compiler, the faster the programmer gets the semantics of it too.],
-  [Java programmers may not be ready for such a radical move .
-However, if they were, they would not only help the compiler but themselves too.
-Eliminating type annotations makes code shorter and, because of that, cleaner.
-This is why var syntax was introduced in Java 10.],
-  [In the code above, variable names are nouns.
-In well-written code, nouns as names are sufficient to disambiguate variables.
-No need to call it cityOfDelivery or bookToDeliver .
-Just book and city are enough.],
-  [We also named variables by their types: a book is of type Book , and so on.
-By looking at the name of the variable we can tell its type.
-The Book type annotation looks like a syntactical redundancy.
-It only leads to lower code readability, by making it longer.
-It’s reasonable to expect type inference to free our programs from this redundancy.],
-  [Thus, better type inference means better readability of the code.],
-  [id="languages-can-do-better"\>Languages Can Do Better],
-  [Languages like Haskell and the ML family prove that full type inference is achievable.
-However, they still need annotations for edge cases.
-Rust takes a middle ground.
-It infers local variable types but enforces explicit annotations at public interfaces.
-Go, until recently, avoided generics, operator overloading, and heavy reflection, making inference straightforward.
-However, it forces programmers to annotate all public boundaries—function signatures, struct fields, and interfaces.],
-  [If the type of a variable can’t be inferred, compilation fails.],
-  [I suggest taking one step forward and designing a language that doesn’t have any type annotations.
-Such a language should not have generics, method overloading, reflection, and everything else that prevents 100% type inference.
-Then, we must design a compiler for this language that compiles the entire program, not single files.],
-  [The language may be as strict as this:
-If the type of a variable can’t be inferred, compilation fails.],
-  [This is how the book price snippet would look in such a language:],
-  [To me, this seems to be much more readable than the original code in Java.],
-  [Compilation time remains a limitation though.
-We turn this issue into an opportunity.
-Programmers are forced, by the timing limitations of the compiler, to write smaller modules.
-When they need larger programs, they break them into modules that communicate via IPC instead of staying in a monolithic binary.],
-  [We’re experimenting with this approach in EOLANG , a language designed to maximize inference by eliminating features that make it undecidable.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Turn Dependabot Off],
   author: [Filippo Valsorda],
   source-name: [Filippo Valsorda],
@@ -127,7 +30,7 @@ When they need larger programs, they break them into modules that communicate vi
   paragraphs: (
   [Dependabot is a noise machine. It makes you feel like you’re doing work, but you’re actually discouraging more useful work. This is especially true for security alerts in the Go ecosystem.],
   [I recommend turning it off and replacing it with a pair of scheduled GitHub Actions, one running govulncheck, and the other running your test suite against the latest version of your dependencies.],
-  [id="a-little-case-study"\>A little case study],
+  [A little case study],
   [On Tuesday, I published a security fix for filippo.io/edwards25519 . The (\*Point). MultiScalarMult method would produce invalid results if the receiver was not the identity point.],
   [A lot of the Go ecosystem depends on filippo.io/edwards25519, mostly through github.com/go-sql-driver/mysql (228k dependents only on GitHub). Essentially no one uses (\*Point). MultiScalarMult .],
   [Yesterday, Dependabot opened thousands of PRs against unaffected repositories to update filippo.io/edwards25519. These PRs were accompanied by a security alert with a nonsensical, made up CVSS v4 score and by a worrying 73% compatibility score , allegedly based on the breakage the update is causing in the ecosystem. Note that the diff between v1.1.0 and v1.1.1 is one line in the method no one uses .],
@@ -137,7 +40,7 @@ When they need larger programs, they break them into modules that communicate vi
 github.com/c2sp/wycheproof/tools/twistcheck
 filippo.io/edwards25519/field],
   [We have turned Dependabot off.],
-  [id="use-a-serious-vulnerability-scanner-instead"\>Use a serious vulnerability scanner instead],
+  [Use a serious vulnerability scanner instead],
   [But isn’t this toil unavoidable, to prevent attackers from exploiting old vulnerabilities in your dependencies? Absolutely not!],
   [Computers are perfectly capable of doing the work of filtering out these irrelevant alerts for you. The Go Vulnerability Database has rich version, package, and symbol metadata for all Go vulnerabilities.],
   [Here’s the entry for the filippo.io/edwards25519 vulnerability , also available in standard OSV format .],
@@ -230,7 +133,7 @@ This scan also found 1 vulnerability in packages you import and 2
 vulnerabilities in modules you require, but your code doesn't appear to call
 these vulnerabilities.],
   [It’s easy to integrate govulncheck into your processes or scanners, either using the govulncheck -json CLI or the golang.org/x/vuln/scan Go API.],
-  [id="replace-dependabot-with-a-govulncheck-github-action"\>Replace Dependabot with a govulncheck GitHub Action],
+  [Replace Dependabot with a govulncheck GitHub Action],
   [You can replace Dependabot security alerts with this GitHub Action.],
   [name: govulncheck
 on:
@@ -254,13 +157,13 @@ jobs:
  - run: |
  go run golang.org/x/vuln/cmd/govulncheck\@latest ./...],
   [It will run every day and only notify you if there is an actual vulnerability you should pay attention to.],
-  [id="the-cost-of-alert-fatigue"\>The cost of alert fatigue],
+  [The cost of alert fatigue],
   [False positive alerts are not only a waste of time, they also reduce security by causing alert fatigue and making proper triage impractical.],
   [A security vulnerability should be assessed for its impact: production might need to be updated, secrets rotated, users notified! A business-as-usual dependency bump is a woefully insufficient remediation for an actual vulnerability, but it’s the only practical response to the constant stream of low-value Dependabot alerts.],
   [This is why as Go Security Team lead back in 2020–2021 I insisted the team invest in staffing the Go Vulnerability Database and implement a vulnerability scanner with static analysis filtering.],
   [The govulncheck Action will not automatically open a PR for you, and that’s a good thing! Now that security alerts are not mostly noise, you can afford to actually look at them and take them seriously, including any required remediation.],
   [Noisy vulnerability scanners also impact the open source ecosystem. I often get issues and PRs demanding I update the dependencies of my projects due to vulnerabilities that don’t affect them, because someone’s scanner is failing to filter them. That’s extra toil dropped at the feet of open source maintainers, which is unsustainable. The maintainer’s responsibility is making sure projects are not affected by security vulnerabilities. The responsibility of scanning tools is making sure they don’t disturb their users with false positives.],
-  [id="test-against-latest-instead-of-updating"\>Test against latest instead of updating],
+  [Test against latest instead of updating],
   [The other purpose of Dependabot is to keep dependencies up to date, regardless of security vulnerabilities. Your practices and requirements will vary, but I find this misguided, too.],
   [Dependencies should be updated according to your development cycle, not the cycle of each of your dependencies. For example you might want to update dependencies all at once when you begin a release development cycle, as opposed to when each dependency completes theirs.],
   [There are two benefits to quick updates, though: first, you can notice and report (or fix) breakage more rapidly, instead of being stalled by an incompatibility that could have been addressed a year prior; second, you reduce your patch delta in case you need to update due to a security vulnerability, reducing the risk of having to rush through a refactor or unrelated fixes.],
@@ -283,8 +186,8 @@ jobs:
  fail-fast: false
  matrix:
  go:
- - { go-version: stable }
- - { go-version-file: go.mod }
+ - \{ go-version: stable \}
+ - \{ go-version-file: go.mod \}
  deps:
  - locked
  - latest
@@ -294,23 +197,22 @@ jobs:
  persist-credentials: false
  - uses: actions/setup-go\@v6
  with:
- go-version: \${{ matrix.go.go-version }}
- go-version-file: \${{ matrix.go.go-version-file }}
+ go-version: \$\{\{ matrix.go.go-version \}\}
+ go-version-file: \$\{\{ matrix.go.go-version-file \}\}
  - uses: geomys/sandboxed-step\@v1.2.1
  with:
  run: |
- if \[ "\${{ matrix.deps }}" = "latest" \]; then
+ if \[ "\$\{\{ matrix.deps \}\}" = "latest" \]; then
  go get -u -t ./...
  fi
  go test -v ./...],
   [For more spicy open source opinions, follow me on Bluesky at \@filippo.abyssdomain.expert or on Mastodon at \@filippo\@abyssdomain.expert .],
-  [id="the-picture"\>The picture],
+  [The picture],
   [The Tevere has overflowed its lower banks, so a lot of previously familiar landscapes have changed slightly, almost eerily. This is the first picture I took after being able to somewhat safely descend onto (part of) the river’s banks.],
   [My work is made possible by Geomys , an organization of professional Go maintainers, which is funded by Ava Labs , Teleport , Tailscale , and Sentry . Through our retainer contracts they ensure the sustainability and reliability of our open source maintenance work and get a direct line to my expertise and that of the other Geomys maintainers. (Learn more in the Geomys announcement .)
 Here are a few words from some of them!],
   [Teleport — For the past five years, attacks and compromises have been shifting from traditional malware and security breaches to identifying and compromising valid user accounts and credentials with social engineering, credential theft, or phishing. Teleport Identity is designed to eliminate weak access patterns through access monitoring, minimize attack surface with access requests, and purge unused permissions via mandatory access reviews.],
   [Ava Labs — We at Ava Labs , maintainer of AvalancheGo (the most widely used client for interacting with the Avalanche Network ), believe the sustainable maintenance and development of open source cryptographic protocols is critical to the broad adoption of blockchain technology. We are proud to support this necessary and impactful work through our ongoing sponsorship of Filippo and his team.],
-  [id="fn:pkgdeps"\>],
   [This also makes it possible to prune the tree of dependencies only imported by packages that are not relevant to a specific dependent, which has a large security benefit.  ↩],
 ),
   insert-map: (:),
@@ -319,10 +221,8 @@ Here are a few words from some of them!],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Improving the trustworthiness of Javascript on the Web],
   author: [Michael Rosenberg],
   source-name: [Cloudflare Research],
@@ -340,23 +240,23 @@ Here are a few words from some of them!],
   [This causes the browser to fetch underscore.js from cdnjs.cloudflare.com and verify that its SHA-512 hash matches the given hash in the tag. If they match, the script is loaded. If not, an error is thrown and nothing is executed.],
   [If every external script, stylesheet, etc. on a page comes with an SRI integrity attribute, then the whole page is defined by just its HTML. This is close to what we want, but a web application can consist of many pages, and there is no way for a page to enforce the hash of the pages it links to.],
   [We would like to have a way of enforcing integrity on an entire site, i.e., every asset under a domain. For this, WAICT defines an integrity manifest , a configuration file that websites can provide to clients. One important item in the manifest is the asset hashes dictionary , mapping a hash belonging to an asset that the browser might load from that domain, to the path of that asset. Assets that may occur at any path, e.g., an error page, map to the empty string:],
-  ["hashes": {
+  ["hashes": \{
 "81db308d0df59b74d4a9bd25c546f25ec0fdb15a8d6d530c07a89344ae8eeb02": "/assets/js/main.js",
 "fbd1d07879e672fd4557a2fa1bb2e435d88eac072f8903020a18672d5eddfb7c": "/index.html",
 "5e737a67c38189a01f73040b06b4a0393b7ea71c86cf73744914bbb0cf0062eb": "/vendored/main.css",
 "684ad58287ff2d085927cb1544c7d685ace897b6b25d33e46d2ec46a355b1f0e": "",
 "f802517f1b2406e308599ca6f4c02d2ae28bb53ff2a5dbcddb538391cb6ad56a": ""
-}],
+\}],
   [The other main component of the manifest is the integrity policy , which tells the browser which data types are being enforced and how strictly. For example, the policy in the manifest below will:],
   [Reject any script before running it, if it’s missing an SRI tag and doesn’t appear in the hashes],
   [Reject any WASM possibly after running it, if it’s missing an SRI tag and doesn’t appear in hashes],
   ["integrity-policy": "blocked-destinations=(script), checked-destinations=(wasm)"],
   [Put together, these make up the integrity manifest:],
-  ["manifest": {
+  ["manifest": \{
  "version": 1,
  "integrity-policy": ...,
  "hashes": ...,
-}],
+\}],
   [Thus, when both SRI and integrity manifests are used, the entire site and its interpretation by the browser is uniquely determined by the hash of the integrity manifest. This is exactly what we wanted. We have distilled the problem of endowing authenticity, consistent distribution, etc. to a web application to one of endowing the same properties to a single hash.],
   [Recall, a transparent web application is one whose code is stored in a publicly accessible, append-only log. This is helpful in two ways: 1) if a user is served malicious code and they learn about it, there is a public record of the code they ran, and so they can prove it to external parties, and 2) if a user is served malicious code and they don’t learn about it, there is still a chance that an external auditor may comb through the historical web application code and find the malicious code anyway. Of course, transparency does not help detect malicious code or even prevent its distribution, but it at least makes it publicly auditable .],
   [Now that we have a single hash that commits to an entire website’s contents, we can talk about ensuring that that hash ends up in a public log. We have several important requirements here:],
@@ -447,10 +347,8 @@ Here are a few words from some of them!],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Technically Speaking - Anniversary Mentoring],
   author: [Matt Warren (.NET)],
   source-name: [Matt Warren (.NET)],
@@ -461,18 +359,18 @@ Here are a few words from some of them!],
   [Turning an outline into a good abstract.],
   [Tips for getting a talk accepted via a CFP submission],
   [I’ve previously done some talks and they seemed to be well received, but I wanted to expand the range of topics I talked about and try and speak at some other conferences.],
-  [id="writing-a-good-abstract"\>Writing a Good Abstract],
+  [Writing a Good Abstract],
   [At the start of the session Cate looked through an existing submission and offered some advice, which started with the initial comment of:],
   [Good idea, not well pitched],
   [She then went onto offer some really great tips about what conferences were looking for and how I could develop my abstract. I’ve put the rest of my notes below and left them as I wrote them down, so they are a bit jumbled, but they reflect what happened during the conversation!],
-  [id="tips-for-an-abstract-after-reading-mine"\>Tips for an abstract (after reading mine):],
+  [Tips for an abstract (after reading mine):],
   [Be pragmatic, too much “ one true way ” can put people off. Maybe a bit too opinionated.],
   [Don’t tie your talk to just one library, might alienate people too much.],
-  [id="talk-outlinestructure"\>Talk outline/structure],
+  [Talk outline/structure],
   [Explain - what does it mean to write faster code],
   [Situate - optimisation - what is it? how do you do it? benchmark, etc],
   [Apply - specific examples],
-  [id="other-suggestions"\>Other suggestions],
+  [Other suggestions],
   [If listeners (or conference organisation committee) agree with your assumptions , they might be more likely to choose your pitch],
   [Be careful about being too specific in the abstract],
   [Don’t put too much in the abstract, leave some specifics out],
@@ -483,15 +381,12 @@ Here are a few words from some of them!],
   [Bio is pitch for you],
   [Abstract is pitch for you talk],
   [Finally, as well as offering general advice, Cate also took the time to help me re-write an existing abstract I’d put together. I’ve included the “before” and “after” below, so you can see the difference. Whilst it’s hard to see someone pick apart what you’re written, I do agree that the “after” reads much better and sounds more compelling than the “before”!],
-  [id="before"\>Before],
   [Microbenchmarks and Optimisations],
   [We all want to write faster code right, but how do we know it really is faster, how do we measure it correctly?],
   [During this talk we will look at what mistakes to avoid when benchmarking . NET code and how to do it accurately. Along the way we will also discover some surprising code optimisations and explore why they are happening],
-  [id="after"\>After],
   [Where the Wild Things Are - Finding Performance Problems Before They Bite You],
   [You don’t want to prematurely optimize, but sometimes you want to optimize, the question is - where to start? Benchmarking can help you figure out what your application is doing and where performance problems could arise - allowing you to find (and fix!) them before your customers do.],
   [If you aren’t already benchmarking your code this talk will offer some starting points. We’ll look at how to accurately benchmark in . NET and things to avoid. Along the way we’ll also discover some surprising code optimisations!],
-  [id="the-end-result"\>The End Result],
   [After the mentoring with Cate took place I was accepted to talk at ProgSCon London 2016 , so obviously the tips and re-write of my abstract made a big difference!!],
   [So thanks to Chiu-Ki Chan and Cate for producing Technically Speaking every week, it’s certainly helped me out!],
 ),
@@ -501,11 +396,10 @@ Here are a few words from some of them!],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Nova Hackathon],
   author: [firiaati],
   source-name: [Finn.no Tech],
@@ -527,7 +421,7 @@ Here are a few words from some of them!],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Convert An Uploaded Image To A Base64 String In Node.js],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -550,7 +444,7 @@ Here are a few words from some of them!],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Migrating Your Content Management System (CMS) Assets With MongoDB and Node.js],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -569,7 +463,7 @@ Here are a few words from some of them!],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Backup WordPress Database And Filesystem Data On Linux With Scripts],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -591,7 +485,7 @@ Here are a few words from some of them!],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Implementing U2F Authentication With Hardware Keys Using Node.js and Vue.js],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -609,7 +503,7 @@ Here are a few words from some of them!],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Query A GraphQL API With Vue.js And Axios],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -631,7 +525,7 @@ Here are a few words from some of them!],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Display Toast Notifications In A NativeScript Angular Application],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -649,7 +543,7 @@ Here are a few words from some of them!],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Upcoming Presentation: Couchbase Live NYC 2015],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -672,7 +566,7 @@ Here are a few words from some of them!],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Make Your Own Facebook Mobile App With Ionic Framework],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -691,7 +585,7 @@ Here are a few words from some of them!],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Extract the Version Information of a Game with Unity and C\#],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -712,7 +606,7 @@ Here are a few words from some of them!],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Using Google Admob In Your NativeScript Angular Mobile App],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -731,7 +625,7 @@ Here are a few words from some of them!],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [TPDP Episode \#7: Developing For The Internet Of Things (IoT) And Where To Start],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -750,52 +644,66 @@ Here are a few words from some of them!],
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [When flying from Oslo to London, you don't want to go via Moscow],
   author: [Per Jørgen Walstrøm],
   source-name: [Finn.no Tech],
   images: (),
   paragraphs: (
   [If you want to travel from Oslo to London , you may end up getting results which include layovers in far-away places. Do you really want to spend a night at the airport in Moscow if you only want to go from Oslo to London? Probably not, but nonetheless, some of the results we receive at the FINN Flight Search are those kind of travels. Those travels may be really cheap, ending up at the top of our result list as we sort by price, but they are mostly garbage and we do not want our users to be confused by those outliers. We want them to go away!],
-  [id="the-old-solution"\>The old solution],
+  [The old solution],
   [We have tried to fix this before. With limited success. A solution we used a couple of years back was something like this:],
+  [x = 3 \* Average of the three shortest flights],
   [We removed results with duration \> x. This works fine on short travels, like a two-hour flight from Oslo to London. With the given formula, all trips longer than 6 hours to London will be removed. That’s ok.],
   [However, it doesn’t work too well on longer flights. If you want to go from Oslo to Bangkok, you would probably spend at least 11 hours in the air. In that case, it would be too conservative to just remove the flights that are 33 hours or more.],
-  [id="a-theoretical-solution"\>A theoretical solution],
+  [A theoretical solution],
   [The correct way to remove the outliers is by finding the quartiles . When the quartiles are found, the upper fence is defined by],
+  [Upper fence = Q1 + 1.5 \* IQR],
   [Where IQR is the Interquartile Range; Q3 - Q1.],
   [We are using Solr at FINN, but the stats query in Solr does not give us the quartiles out of the box, so we would need to do a separate query to calculate the quartiles. Should be easy enough.],
-  [id="what-is-too-long"\>What is too long?],
+  [What is too long?],
   [So what is a too long flight? That’s not an easy question to answer. Racking our brains (and doing some guesswork), we came up with the following suggestions on what the upper fence on duration to different destinations should be. The durations are per leg:],
-  [class="highlight"\> OSL - LON 300 mins = 5 hrs. Given the minimum flight time OSL - LON = 115 
+  [OSL - LON 300 mins = 5 hrs. Given the minimum flight time OSL - LON = 115 
 OSL - BKK (Bangkok) 1000 mins = 17 hrs. Minimum = 674 
 OSL - KOA (Kona, Hawaii) 2000 mins = 33 hrs. Minimum = 1335],
   [The minimum flight duration is clearly of interest to us. We store that away in Solr, and using the stats query from Solr on that field, we get the following data on a flight OSL-LON:],
+  ["stats\_fields": \{
+ "minimumLegDuration": \{
+ "min": 115,
+ "max": 815,
+ "count": 3610,
+ "missing": 36,
+ "sum": 615655,
+ "sumOfSquares": 123968775,
+ "mean": 170.5415512465374,
+ "stddev": 72.5080446083144,
+ "facets": \{\}],
   [A lot of good information there! We get the standard deviation, mean and min values. Missing the quartiles, though, but we can fix that!],
-  [id="and-what-is-too-short"\>And what is too short?],
+  [And what is too short?],
   [Sometimes, the supplier sends us incorrect data. That’s bad. But the good thing is that when the data is incorrect it is really incorrect. We sometimes receive flight times of 0 minutes. That is obviously wrong, and we filter out those. However, we have not seen any occurences of, say, 1 minute flight times. That would be wrong as well, but more difficult to handle. So we close our eyes and don’t care about those.],
-  [id="but-hang-on"\>But hang on…],
+  [But hang on…],
   [So, we were ready to go! We wanted to fix this problem once and for all. But before we started coding, we talked to emeritus Harald Goldstein at the University of Oslo. He’s been teaching statistics at the university level for years and had some good feedback on our theoretical solution. First of all, he pointed out that the solution we have outlined is a good solution if we have a symmetrical distribution of the flight durations. The quartiles and the standard deviation works well on a symmetrical distribution like the normal distribution , but what about our data? Is it normal distributed? That was a relevant question, and as one of FINN’s main strategies is “data in our backbones”, we surely needed to have a closer look at this.],
   [So here goes, flights from Oslo to London. Trip duration on the x-axis, number of occurences on the y-axis:],
   [The shortest trip duration OSL - LON is 230 minutes in the graph above (115 min per leg) and there is even an outlier - which is not visible - at 2750 minutes! However, it is quite clear that this is not a normal distribution. It might look more like a gamma distribution for the part where x \> 230.],
   [Darn!],
-  [id="back-to-square-one"\>Back to square one],
+  [Back to square one],
   [All the fancy statistics didn’t provide the solution, but it helped us really understand the problem. Obviously, we needed to re-think.],
-  [id="logarithm"\>Logarithm],
   [A problem with the solution from ages back (described at the beginning), was that it didn’t work very well on long hauls. The relation between the minimum trip duration OSL-BKK and OSL-LON is approx. 6:1. Alas, the upper fence must be relatively lower on longer trips. After some more brain-racking, we came up with the idea that we should look at this logarithmically.],
   [A first suggestion],
+  [log(min BKK)/log(min LON) = log(675)/log(115) = 2,83/2,06],
   [However, the relation is too far away from 6:1 and we are not able to compensate for long hauls.],
-  [id="square-root"\>Square root],
+  [Square root],
   [Finding quartiles doesn’t work, using a logarithmic approach doesn’t work very well. So what about the square root? That looks a bit like a logarithmic function.],
   [Let’s try],
+  [sqrt(min BKK)/sqrt(min LON) = sqrt(675)/sqrt(115) = 26/11],
   [This is much closer to 6:1 than the logarithmic approach. The relation is relatively more correct for both short- and long hauls.],
-  [id="the-final-solution"\>The final solution],
+  [The final solution],
   [After some trial and error, we finally ended up with the simple formula of],
+  [x = min + A \* sqrt(min)],
   [Where x is the upper fence, min is the minimum duration for that leg and A is a tunable constant.],
   [This formula seems to remove most of the unwanted outliers. Some examples (from our first iteration, with the constant A=25)],
-  [class="highlight"\> SVG-BGO. min = 70 =\> x = 279 (4.5 hrs)
+  [SVG-BGO. min = 70 =\> x = 279 (4.5 hrs)
 OSL-LON. min = 230 =\> x = 609 (10 hrs)
 OSL-BKK. min = 1350 =\> x = 2269 (37 hrs)
 OSL-KOA. min = 2671 =\> x = 3963 (66 hrs)
@@ -803,21 +711,18 @@ OSL-NYC. min = 920 =\> x = 1678 (28 hrs)],
   [That seems to work quite well. In the SVG (Stavanger) - BGO (Bergen) case, the formula removes approx. 30% of the offers. Some of them with a layover in Oslo.],
   [No need to hesitate then, this simple formula is now in our production systems. If you want to go from OSL to LON, you will get a slider which is preset with an upper fence of 5hrs 15min.],
   [You still have the possibility to slide it to the max, though. All the way up to 27hrs 30min. The result list will then show you the unfiltered result set. But nobody wants to use 27hrs 30min on a flight from OSL to LON, right?],
-  [id="conclusion"\>Conclusion],
   [The simplest explanation is usually the correct one.],
 ),
   insert-map: (:),
   inline-pq: pull-quote([Minimum = 674  OSL - KOA (Kona, Hawaii) 2000 mins = 33 hrs.], [Per Jørgen Walstrøm]),
-  inline-pq-idx: 16,
+  inline-pq-idx: 18,
   word-count: 1217,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [EOF is not a character],
   author: [Ruslan Spivak],
   source-name: [Ruslan Spivak],
@@ -829,6 +734,10 @@ OSL-NYC. min = 920 =\> x = 1678 (28 hrs)],
   [EOF is not a character],
   [EOF is not a character you find at the end of a file],
   [1. Why would anyone say or think that EOF is a character? I think it may be because in some C programs you can find code that explicitly checks for EOF using getchar() and getc()  routines:],
+  [\#include 
+ ... 
+ while (( c = getchar ()) != EOF ) 
+ putchar ( c );],
   [OR],
   [FILE \* fp ; 
  int c ; 
@@ -838,16 +747,19 @@ OSL-NYC. min = 920 =\> x = 1678 (28 hrs)],
   [And if you check the man page for getchar() or getc() , you’ll read that both routines get the next character from the input stream. So that could be what leads to a confusion about the nature of EOF , but that’s just me speculating. Let’s get back to the point that EOF is not a character.],
   [What is a character anyway? A character is the smallest component of a text. ‘A’, ‘a’, ‘B’, ‘b’ are all different characters. A character has a numeric value that is called a code point in the Unicode standard. For example, the English character ‘A’ has a numeric value of 65 in decimal. You can check this quickly in a Python shell:],
   [Or you could look it up in the ASCII table on your Unix/Linux box:],
+  [\$ man ascii],
   [Let’s check the value of EOF by writing a little C program. In ANSI C, EOF is defined in as part of the standard library. Its value is usually -1. Save the following code in file printeof.c , compile it, and run it:],
+  [\#include],
   [int main ( int argc , char \* argv \[\]) 
- { 
+ \{ 
  printf ( "EOF value on my system: %d \\n " , EOF ); 
  return 0 ; 
- }],
+ \}],
+  [\$ gcc -o printeof printeof.c],
   [\$ ./printeof
 EOF value on my system: -1],
   [Okay, so on my system the value is -1 (I tested it both on Mac OS and Ubuntu Linux). Is there a character with a numerical value of -1? Again, you could check the available numeric values in the ASCII table or check the official Unicode page to find the legitimate range of numeric values for representing characters. But let’s fire up a Python shell and use the built-in chr() function to return a character for -1:],
-  [class="highlight"\> \$ python
+  [\$ python
 \>\>\> chr ( -1 ) 
 Traceback ( most recent call last ) :
  File " " , line 1 , in 
@@ -856,6 +768,8 @@ ValueError: chr () arg not in range ( 0x110000 )],
   [Onto the second point.],
   [2. Is EOF a character that you can find at the end of a file? I think at this point you already know the answer, but let’s double check our assumption.],
   [Let’s take a simple text file helloworld.txt and get a hexdump of the contents of the file. We can use xxd for that:],
+  [\$ cat helloworld.txt
+Hello world!],
   [\$ xxd helloworld.txt
  00000000 : 4865 6c6c 6f20 776f 726c 6421 0a Hello world!.],
   [As you can see, the last character at the end of the file is the hex 0a . You can find in the ASCII table that 0a represents nl, the newline character. Or you can check it in a Python shell:],
@@ -866,98 +780,133 @@ ValueError: chr () arg not in range ( 0x110000 )],
   [JavaScript (node.js)],
   [You can find source code for all of the examples in this article on GitHub . Okay, let’s get started with the venerable C programming language.],
   [ANSI C (a modified cat version from The C Programming Language  book)],
+  [/\* mcat.c \*\/ 
+ \#include],
   [int main ( int argc , char \* argv \[\]) 
- { 
+ \{ 
  FILE \* fp ; 
  int c ;],
-  [if (( fp = fopen ( \*++ argv , "r" )) == NULL ) { 
+  [if (( fp = fopen ( \*++ argv , "r" )) == NULL ) \{ 
  printf ( "mcat: can't open %s \\n " , \* argv ); 
  return 1 ; 
- }],
+ \}],
   [while (( c = getc ( fp )) != EOF ) 
  putc ( c , stdout );],
   [fclose ( fp );],
   [return 0 ; 
- }],
+ \}],
+  [\$ gcc -o mcat mcat.c],
+  [\$ ./mcat helloworld.txt
+Hello world!],
   [Quick explanation of the code above:],
   [The program opens a file passed as a command line argument],
   [The while loop copies data from the file to the standard output one byte at a time until it reaches the end of the file.],
   [On reaching EOF , the program closes the file and terminates],
   [Python 3],
   [Python doesn’t have a mechanism to explicitly check for EOF like in ANSI C, but if you read a text file one character at a time, you can determine the end-of-file condition by checking if the character read is empty:],
+  [\# mcat.py 
+ import sys],
   [with open ( sys . argv \[ 1 \]) as fin : 
  while True : 
  c = fin . read ( 1 ) \# read max 1 char 
  if c == '' : \# EOF 
  break 
  print ( c , end = '' )],
+  [\$ python mcat.py helloworld.txt
+Hello world!],
   [Python 3.8+ (a shorter version of the above using the walrus operator ):],
+  [\# mcat38.py 
+ import sys],
   [with open ( sys . argv \[ 1 \]) as fin : 
  while ( c := fin . read ( 1 )) != '' : \# read max 1 char at a time until EOF 
  print ( c , end = '' )],
+  [\$ python3.8 mcat38.py helloworld.txt
+Hello world!],
+  [\/\\/ mcat . go 
+ package main],
   [import ( 
  "fmt" 
  "os" 
  "io" 
  )],
-  [func main () { 
+  [func main () \{ 
  file , err := os . Open ( os . Args \[ 1 \]) 
- if err != nil { 
+ if err != nil \{ 
  fmt . Fprintf ( os . Stderr , "mcat: %v \\n " , err ) 
  os . Exit ( 1 ) 
- }],
+ \}],
   [buffer := make (\[\] byte , 1 ) \/\\/ 1 - byte buffer 
- for { 
+ for \{ 
  bytesread , err := file . Read ( buffer ) 
- if err == io . EOF { 
+ if err == io . EOF \{ 
  break 
- } 
+ \} 
  fmt . Print ( string ( buffer \[: bytesread \])) 
- } 
+ \} 
  file . Close () 
- }],
+ \}],
+  [\$ go run mcat.go helloworld.txt
+Hello world!],
   [JavaScript (node.js)],
   [There is no explicit check for EOF , but the end event on a stream is fired when the end of a file is reached and a read operation tries to read more data.],
+  [/\* mcat.js \*\/ 
+ const fs = require ( 'fs' ); 
+ const process = require ( 'process' );],
   [const fileName = process . argv \[ 2 \];],
-  [var readable = fs . createReadStream ( fileName , { 
+  [var readable = fs . createReadStream ( fileName , \{ 
  encoding : 'utf8' , 
  fd : null , 
- });],
-  [readable . on ( 'readable' , function () { 
+ \});],
+  [readable . on ( 'readable' , function () \{ 
  var chunk ; 
- while (( chunk = readable . read ( 1 )) !== null ) { 
+ while (( chunk = readable . read ( 1 )) !== null ) \{ 
  process . stdout . write ( chunk ); /\* chunk is one byte \*\/ 
- } 
- });],
-  [readable . on ( 'end' , () =\> { 
- console . log ( '\\nEOF: There will be no more data.' ); 
- });],
+ \} 
+ \});],
+  [\$ node mcat.js helloworld.txt
+Hello world!],
   [EOF: There will be no more data.],
   [How do the high-level I/O routines in the examples above determine the end-of-file condition? On Linux systems the routines either directly or indirectly use the read() system call provided by the kernel. The getc() function (or macro) in C, for example, uses the read() system call and returns EOF if read() indicated the end-of-file condition. The read() system call returns 0 to indicate the EOF  condition.],
   [Let’s write a cat version called syscat using Unix system calls only, both for fun and potentially some profit. Let’s do that in C first:],
+  [/\* syscat.c \*\/ 
+ \#include 
+ \#include 
+ \#include 
+ \#include],
   [int main ( int argc , char \* argv \[\]) 
- { 
+ \{ 
  int fd ; 
  char c ;],
   [fd = open ( argv \[ 1 \], O\_RDONLY , 0 );],
   [while ( read ( fd , & c , 1 ) != 0 ) 
  write ( STDOUT\_FILENO , & c , 1 );],
   [return 0 ; 
- }],
+ \}],
+  [\$ gcc -o syscat syscat.c],
   [\$ ./syscat helloworld.txt
 Hello world!],
   [In the code above, you can see that we use the fact that the read() function returns 0 to indicate EOF .],
   [And the same in Python 3:],
+  [\# syscat.py 
+ import sys 
+ import os],
   [fd = os . open ( sys . argv \[ 1 \], os . O\_RDONLY )],
   [while True : 
  c = os . read ( fd , 1 ) 
  if not c : \# EOF 
  break 
  os . write ( sys . stdout . fileno (), c )],
+  [\$ python syscat.py helloworld.txt
+Hello world!],
   [And in Python3.8+ using the walrus operator :],
+  [\# syscat38.py 
+ import sys 
+ import os],
   [fd = os . open ( sys . argv \[ 1 \], os . O\_RDONLY )],
   [while c := os . read ( fd , 1 ): 
  os . write ( sys . stdout . fileno (), c )],
+  [\$ python3.8 syscat38.py helloworld.txt
+Hello world!],
   [Let’s recap the main points about EOF  again:],
   [EOF is not a character],
   [EOF is not a character that you find at the end of a file],
@@ -984,11 +933,10 @@ Hello world!],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Navigating A Web Application With The Angular Router],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1006,7 +954,7 @@ Hello world!],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Issue \#635],
   author: [Zoran Jambor],
   source-name: [CSS Weekly],
@@ -1066,7 +1014,7 @@ Hello world!],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [TPDP Episode \#17: Going FaaS On Serverless With OpenWhisk],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1084,7 +1032,7 @@ Hello world!],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Frontend News \#18: Self-Destructing CSS, Throttle Specific Requests In Chrome DevTools],
   author: [Zoran Jambor],
   source-name: [CSS Weekly],
@@ -1113,7 +1061,7 @@ Hello world!],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Using An Oauth 2.0 Service With Ionic Framework],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1131,7 +1079,7 @@ Hello world!],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Automate Your Testing Workflows Using BrowserStack’s AI Agents],
   author: [Zoran Jambor],
   source-name: [CSS Weekly],
@@ -1161,8 +1109,7 @@ Hello world!],
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Find The Application Version In Your Ionic Framework App],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1179,27 +1126,25 @@ Hello world!],
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([Robin Ward (eviltrout)], source-name: [Robin Ward (eviltrout)], [I have two 4K TVs at home, one in the bedroom and one in my living room. Both have consoles attached. One has a
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([Robin Ward (eviltrout)], source-name: [Robin Ward (eviltrout)], [I have two 4K TVs at home, one in the bedroom and one in my living room. Both have consoles attached. One has a
  PS4 Pro and one has a Nintendo Switch and both are great.
 
 However, I also have a gaming PC in my office, which is quite powerful compared to any home console
 Mine is equipped with a RTX 2080 TI GPU, and a 9900K processor, so it can play pretty much any new game at 4K with a solid 60 fps on high settings.])],
-    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Cybersecurity researchers have flagged a new evolution of the GlassWorm campaign that delivers a multi-stage framework capable of comprehensive data theft and installing a remote access trojan (RAT), which deploys an information-stealing Google Chrome extension masquerading as an offline version of Google Docs.
+  [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Cybersecurity researchers have flagged a new evolution of the GlassWorm campaign that delivers a multi-stage framework capable of comprehensive data theft and installing a remote access trojan (RAT), which deploys an information-stealing Google Chrome extension masquerading as an offline version of Google Docs.
 "It logs keystrokes, dumps cookies and session tokens, captures screenshots, and])],
-    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Cybersecurity researchers have disclosed a vulnerability in Anthropic's Claude Google Chrome Extension that could have been exploited to trigger malicious prompts simply by visiting a web page.
+  [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Cybersecurity researchers have disclosed a vulnerability in Anthropic's Claude Google Chrome Extension that could have been exploited to trigger malicious prompts simply by visiting a web page.
 The flaw "allowed any website to silently inject prompts into that assistant as if the user wrote them," Koi Security researcher Oren Yomtov said in a report shared with The Hacker News. "No clicks, no])],
-    [#brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [As an Android developer, you’ll often run into the scenario where you need to perform tasks and display notifications for your app in the background.
+  [#brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [As an Android developer, you’ll often run into the scenario where you need to perform tasks and display notifications for your app in the background.
 
 To retain battery power on our users device we are going to run background tasks using a broadcast receiver. This will prevent a thread from constantly running in the background draining the battery quickly over time. Instead, the task will be run on defined intervals of the alarm.
 
 The post Use A Broadcast Receiver For Background Services In Android appeared first on The Polyglot Developer .])],
-    [#brief-item([Parth Pathak,Julie Rudd,Damian Pfister], source-name: [Elastic Blog], [We use AI and RAG to accelerate answers — not replace experts. Every response is reviewed, validated, and refined by engineers to ensure accurate, high-quality, expert-verified solutions, never automated output.])],
-    [#brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [This article was designed to help you apply your knowledge of AngularJS and Ionic Framework and create a functional app rather than learn new concepts.
+  [#brief-item([Parth Pathak,Julie Rudd,Damian Pfister], source-name: [Elastic Blog], [We use AI and RAG to accelerate answers — not replace experts. Every response is reviewed, validated, and refined by engineers to ensure accurate, high-quality, expert-verified solutions, never automated output.])],
+  [#brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [This article was designed to help you apply your knowledge of AngularJS and Ionic Framework and create a functional app rather than learn new concepts.
 
 This tutorial should help you with the following concepts:
 
@@ -1212,16 +1157,15 @@ Create data lists in Ionic Framework
 Open external URLs with the Apache Cordova InAppBrowser plugin
 
 The post Create An RSS Reader Using AngularJS And Ionic Framework appeared first on The Polyglot Developer .])],
-    [#brief-item([Karen Mcdermott], source-name: [Elastic Blog], [Leading financial companies are turning data ubiquity into competitive advantage. See how Elastic powers contextual search, real-time decisioning, and AI agents across fraud, compliance, and customer experience.])],
-    [#brief-item([Karen Mcdermott], source-name: [Elastic Blog], [From AI-powered insight to stablecoin innovation, Money20/20 USA 2025 showed that fintech’s future is built on unified data, real-time intelligence, and the infrastructure of trust.])],
-    [#brief-item([Alf Franklin], source-name: [Elastic Blog], [Data sovereignty is central to defence strategy, allowing organisations to maintain data control, protect sensitive information, act confidently, and ensure mission readiness.])],
-    [#brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [Previously I wrote about using the device camera in your React Native mobile application. However, what if we wanted to go a step further and start scanning barcodes?
+  [#brief-item([Karen Mcdermott], source-name: [Elastic Blog], [Leading financial companies are turning data ubiquity into competitive advantage. See how Elastic powers contextual search, real-time decisioning, and AI agents across fraud, compliance, and customer experience.])],
+  [#brief-item([Karen Mcdermott], source-name: [Elastic Blog], [From AI-powered insight to stablecoin innovation, Money20/20 USA 2025 showed that fintech’s future is built on unified data, real-time intelligence, and the infrastructure of trust.])],
+  [#brief-item([Alf Franklin], source-name: [Elastic Blog], [Data sovereignty is central to defence strategy, allowing organisations to maintain data control, protect sensitive information, act confidently, and ensure mission readiness.])],
+  [#brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [Previously I wrote about using the device camera in your React Native mobile application. However, what if we wanted to go a step further and start scanning barcodes?
 
 This is not a problem because the react-native-camera component we used in the last tutorial also supports barcode scanning.
 
 The post Implement A Barcode Scanner Using React Native appeared first on The Polyglot Developer .])],
-    [#brief-item([Jesse Orrall], source-name: [CNET News], [Quantum computers promise to revolutionize whole industries by outperforming classical computers on complex calculations. They just need to be colder than the coldest natural place in the universe.])],
-  ))
-}
+  [#brief-item([Jesse Orrall], source-name: [CNET News], [Quantum computers promise to revolutionize whole industries by outperforming classical computers on complex calculations. They just need to be colder than the coldest natural place in the universe.])],
+))
 
 #colophon([Southern Bulletin], [Vol. 1, No. 063], [2026-03-30])

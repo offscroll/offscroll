@@ -21,106 +21,8 @@
 #masthead([The Global Examiner], [Vol. 1, No. 078], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Finn.no year in review 2014],
-  kicker: [Cover Story],
-  author: [Andersos],
-  source-name: [Finn.no Tech],
-  deck: [The data in this post was gathered by Hans-Erik Hallheim , Henrik Faller and Lene Kallum .],
-  lead-pre: [],
-  lead-cap: [T],
-  lead-rest: [he three most popular ads in 2014 were Audi A6 ,
- Walkman wanted badly and
- Skis with crap boots, used twice],
-  body-paragraphs: (
-  [We had over 7,4 million sofa related searches in 2014 and around 7000 unique permutations containing sofa.],
-  [id="most-popular-bits-and-pieces-searches"\>Most popular bits and pieces searches],
-  [sofa – 3.511.379 searches],
-  [sykkel – 2.358.170 searches],
-  [kjøkken – 1.639.527 searches],
-  [iPhone5 – 1.637.355 searches],
-  [spisebord – 1.618.430 searches],
-  [hagemøbler – 1.606.647 searches],
-  [kommode – 1.602.206 searches],
-  [seng – 1.479.144 searches],
-  [sovesofa – 1.473.228 searches],
-  [tv – 1.390.684 searches],
-  [Louis Vuitton – 1.333.992 searches],
-  [iPhone – 1.317.897 searches],
-  [iPhone 5s – 1.288.181 searches],
-  [retro – 1.273.710 searches],
-  [bord – 1.266.214 searches],
-  [id="most-popular-bits-and-pieces-ads"\>Most popular bits and pieces ads],
-  [Walkman wanted badly – 136.113 page views],
-  [Can you help us? (family that needs Christmas gifts) Mentioned by VG.no Ad deleted – 128.728 page views],
-  [Skis with crap boots, used twice – 126.538 page views],
-  [Skibus to be given away Ad deleted – 93.295 page views],
-  [40-foot wooden boat for free – 90.941 page views],
-  [Collection ad with known clothing brands (Chanel, Louis Vuitton etc.) – 89.031 page views],
-  [Free horse Ad deleted – 79923 page views.],
-  [Free horse Annonse slettet – 75.787 page views.],
-  [Dogs that need a new home – 53.772 page views],
-  [Eventful bed given away – 45.571 page views],
-  [Cabin rent free – 43.251 page views],
-  [Flaky bathroom scale – 37.927 page views],
-  [Horse for sale – 37.189 page views],
-  [Homemade toy – 36.853 page views],
-  [id="most-popular-real-estate-searches"\>Most popular real estate searches],
-  [småbruk – 2.668.158 searches],
-  [gårdsbruk – 566.808 searches],
-  [drammen – 431.883 searches],
-  [lillestrøm – 326.503 searches],
-  [haugesund – 312.167 searches],
-  [oslo – 307.844 searches],
-  [fredrikstad – 282393 searches],
-  [jessheim – 277.422 searches],
-  [asker – 270.368 searches],
-  [sandnes – 238.302 searches],
-  [id="most-popular-real-estate-ads"\>Most popular real estate ads],
-  [Representation property with 51 rooms, Staubø, 25 million NOK Ad deleted – 364.780 page views],
-  [Real estate, Kvål, 4,990 million NOK – 327.107 page views],
-  [Movable apartment, Gamle Fredrikstad, 350.000 NOK – 214.382 page views],
-  [Beach property, Bygdøy, 70 million NOK – 199.403 page views],
-  [NY-inspired design apartment, Tøyen, 4,2 million NOK – 192.780 page views],
-  [Beach property, Bygdøy, 43,5 million NOK – 141.758 page views],
-  [Architect designed beach property, Snarøya, 38 million NOK – 136.616 page views],
-  [Penthouse, Tjuvholmen, 39,5 million NOK – 123.159 page views],
-  [Nordhaug farm, Bekkestua, 34,77 million NOK (ad deleted) – 119.802 page views],
-  [Beach property, Sandefjord, 45 million NOK – 106.544 page views],
-  [House by the sea, Larvik, 45 million NOK – 105.591 page views],
-  [id="most-popular-car-searches"\>Most popular car searches],
-  [hengerfeste – 867.023 searches],
-  [skinn – 657.920 searches],
-  [innbytte – 604.242 searches],
-  [russebil – 515.618 searches],
-  [amg – 511.311 searches],
-  [turbo – 481.457 searches],
-  [golf – 424.004 searches],
-  [gti – 397.822 searches],
-  [bmw – 386.346 searches],
-  [webasto – 352.581 searches],
-  [id="most-popular-car-ads"\>Most popular car ads],
-  [Audi A6 – 515.192 page views (most seen ad in 2014).],
-  [Koenigsegg – 383.738 page views],
-  [Lamborghini – 222.780 page views],
-  [Land Rover – 176.949 page views],
-  [Aston Martin – 168.105 page views],
-  [Mercedes-Benz – 156.185 page views],
-  [Lamborghini – 130.370 page views],
-  [Volkswagen (1964) – 123.546 page views],
-  [Hummer – 119.714 page views],
-  [Scania motorhome – 114.481 page views],
-  [VG also wrote about this .
-Source: FINN most popular searches and most seen ads in 2014 from selected marketplaces January 1st until December 17th.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [How to get a job at FINN.no],
   author: [espen],
   source-name: [Finn.no Tech],
@@ -151,10 +53,8 @@ And peoples at FINN.no do know how to create a party ;)],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Beyond the Mean],
   author: [GameChanger],
   source-name: [GameChanger Tech],
@@ -167,13 +67,12 @@ And peoples at FINN.no do know how to create a party ;)],
   [Damore selected three particular traits to discuss. He did not include his reasons for selecting those particular traits as his examples of genetic differences between males and females, although he did discuss ways in which, in his opinion , those traits cause problems in the tech industry. In summary, he mentioned that “average” female traits include: 1) “openness directed towards feelings and aesthetics, rather than ideas…\[including\] a stronger interest in people rather than things;” 2) “extraversion expressed as gregariousness rather than assertiveness,” which included “higher agreeableness;” and 3) “neuroticism (higher anxiety, lower stress tolerance).” Each of these terms in the memo also hyperlinks to a Wikipedia definition, rather than scientific treatises, and therefore seem to be a random selection of traits and stereotypes that Damore believed to be detrimental to the workplace. However, not only am I skeptical of the representativeness of the chosen traits and the sources cited, I believe that some of these traits are actually crucial to create a balanced, productive workplace. Imagine software built by a team where all members were more interested in “things” than people and no one wanted to pay attention to aesthetics (assuming the team was able to ship anything if it was comprised of assertive rather than agreeable people).],
   [Additionally, while defining these “average” traits, Damore’s stated that “More men may like coding because it requires systemizing and even within \[software engineers\], comparatively more women work on front end, which deals with both people and aesthetics.” This assertion really got under my skin because, for a split second, it made me self conscious of being a front end leaning developer. I do not only enjoy front end work because of aesthetics, that is one of the last pieces that I consider in my day to day work. Working as an engineer in any capacity requires deep systemizing and writing code. Contrasting front end work with coding in this way undermines the amount of critical thinking that front end engineering requires. This also serves to enforce biases that one gender should work on a particular part of the stack.],
   [I can only share my own experience, but I believe it is important for more individuals to share their stories. To show that generalizing to the “average” actually hurts real people on real journeys.],
-  [id="my-journey"\>My Journey],
   [My entire adult life I have heard things like “you only got into MIT because you’re a woman” or “you’re just a diversity hire.” I went to a job interview where I asked how many women they had on the engineering team and the interviewer freaked out briefly and said “We only have one! But we’re trying to improve that number! That’s why we’re interviewing you!” By citing a diversity statistic as a reason to interview me, I suddenly felt less qualified for the position. Needless to say, I did not accept that job offer. But this constant questioning or suggesting that I am only interesting because I increase diversity numbers leads to feelings of imposter syndrome and wondering if I do belong or if I am actually good enough.],
   [When people ask me what I do for a living and I say “software engineer” they often respond with a surprised “really?” or if I say I work at a tech company they say “oh as a designer?” (while I AM fully qualified to be an engineer, I am in NO WAY qualified to be a designer). I have even had this experience with other attendees at conferences specifically targeted at Software Engineers. As these conversations continue, when we finally do establish that I’m an Engineer, often times when I say I work on front end/UI work that is when the lightbulb goes off and people say “oh that makes sense.” Because I am finally saying SOMETHING that aligns with their preconceived perception of what I should be doing.],
   [I would get those reactions no matter where I worked, but I also work at an amazing company that focuses on youth sports. And I happen to work here because I LOVE sports, especially baseball. Plenty of other engineers at my company don’t care very deeply about sports, I just happen to be one of the ones that does. But even that is something I have to prove whenever I mention it, suddenly being quizzed about minute trivia or the last time my favorite team won the World Series (2013 in case you’re wondering). This not only occurs when I am discussing my job, but also in contexts such as having internet and cable installed in my new apartment. After an 8.5 hour installation process the cable rep finally turned on the TV and asked me what channel he could check to make sure that it was all installed. I responded “ESPN, I got the sports package” and he just turned around and stared at me like I had grown another head and said “You like sports?!”],
   [I shouldn’t have to hesitate when being asked about where I went to school or what I enjoy doing in my free time, but I do. I often answer the simple question “where did you attend college?” by responding simply “in Boston.” Because having to explain more is so often a hassle. In addition to enjoying baseball, I also casually enjoy watching basketball, but you will rarely hear me admit it because I often feel like I do not know enough to answer the series of questions that follows.],
   [While my day to day interactions with friends and coworkers are positive and supportive, constantly having to explain my job or prove my knowledge to others causes me to second guess myself regularly. Yet I know I am qualified. I worked my ass off in high school, crushed the SATs, volunteered with a bunch of organizations and did the typical over-achiever list of extracurricular activities. I was qualified to get into MIT, just as much as anyone else, but that is not what people see when they see me. It is the same with my job. I am fully qualified and capable of being here. I have both Bachelors of Science and Masters of Engineering degrees in Computer Science from MIT. I had technical internships throughout college and did a 1.5 year research project/thesis that involved building software. Often times I am told I shouldn’t experience imposter syndrome because of my qualifications, but because of these perceptions and stereotypes I do continue to feel like I don’t belong.],
-  [id="thoughts--conclusions"\>Thoughts & Conclusions],
+  [Thoughts & Conclusions],
   [If you have never had your career choice or passions questioned or don’t regularly face people assuming you are unqualified for your job, you probably can’t comprehend why the fact that someone presented “scientific” ideas suggesting that you’re unqualified for your job hurts so much. I deal with these reminders of the uphill battle from people outside the tech industry regularly and now the fact that there is a publication within the industry that is causing more women to feel isolated, less qualified, or making them have to prove themselves even more than we already have to is not okay.],
   [Additionally, the mere suggestion that if a woman does want to succeed, she has to exhibit more “male” qualities is (in my opinion) ludicrous. This is the main point of contention that I have with this memo: it put into very public words and thoughts the idea that women may be less genetically qualified to be engineers. While the memo does not say that ALL women cannot be engineers, it emphasizes the opinion that typically “female” traits make someone a bad engineer and that therefore the bad engineers are women and men who display more “female” traits. The memo also suggests that the diversity programs are lowering the bar for hiring, so even if the author truly believes that some or most of his female colleagues are qualified for their jobs, he has now created a document that allows anyone and everyone to question ALL women and whether they belong in their position or not.],
   [I do not stop being a woman when I am doing my job. I don’t know where I fall on the continuum of traits, but based on the female qualities outlined in the memo, I am fairly solidly on the “female” end of the traits spectrum. And I am damn good at my job. What is so concerning is that the memo suggests that the way to succeed in the tech industry is to display traits matching the existing status quo. Women already receive more personality-based feedback and it is worrisome to think that documents like this memo can be used to further encourage women to alter their personalities to succeed. I want women everywhere to know that is unacceptable and untrue.],
@@ -189,53 +88,66 @@ And peoples at FINN.no do know how to create a party ;)],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [When flying from Oslo to London, you don't want to go via Moscow],
   author: [Per Jørgen Walstrøm],
   source-name: [Finn.no Tech],
   images: (),
   paragraphs: (
   [If you want to travel from Oslo to London , you may end up getting results which include layovers in far-away places. Do you really want to spend a night at the airport in Moscow if you only want to go from Oslo to London? Probably not, but nonetheless, some of the results we receive at the FINN Flight Search are those kind of travels. Those travels may be really cheap, ending up at the top of our result list as we sort by price, but they are mostly garbage and we do not want our users to be confused by those outliers. We want them to go away!],
-  [id="the-old-solution"\>The old solution],
+  [The old solution],
   [We have tried to fix this before. With limited success. A solution we used a couple of years back was something like this:],
+  [x = 3 \* Average of the three shortest flights],
   [We removed results with duration \> x. This works fine on short travels, like a two-hour flight from Oslo to London. With the given formula, all trips longer than 6 hours to London will be removed. That’s ok.],
   [However, it doesn’t work too well on longer flights. If you want to go from Oslo to Bangkok, you would probably spend at least 11 hours in the air. In that case, it would be too conservative to just remove the flights that are 33 hours or more.],
-  [id="a-theoretical-solution"\>A theoretical solution],
+  [A theoretical solution],
   [The correct way to remove the outliers is by finding the quartiles . When the quartiles are found, the upper fence is defined by],
+  [Upper fence = Q1 + 1.5 \* IQR],
   [Where IQR is the Interquartile Range; Q3 - Q1.],
   [We are using Solr at FINN, but the stats query in Solr does not give us the quartiles out of the box, so we would need to do a separate query to calculate the quartiles. Should be easy enough.],
-  [id="what-is-too-long"\>What is too long?],
+  [What is too long?],
   [So what is a too long flight? That’s not an easy question to answer. Racking our brains (and doing some guesswork), we came up with the following suggestions on what the upper fence on duration to different destinations should be. The durations are per leg:],
-  [class="highlight"\> OSL - LON 300 mins = 5 hrs. Given the minimum flight time OSL - LON = 115 
+  [OSL - LON 300 mins = 5 hrs. Given the minimum flight time OSL - LON = 115 
 OSL - BKK (Bangkok) 1000 mins = 17 hrs. Minimum = 674 
 OSL - KOA (Kona, Hawaii) 2000 mins = 33 hrs. Minimum = 1335],
   [The minimum flight duration is clearly of interest to us. We store that away in Solr, and using the stats query from Solr on that field, we get the following data on a flight OSL-LON:],
+  ["stats\_fields": \{
+ "minimumLegDuration": \{
+ "min": 115,
+ "max": 815,
+ "count": 3610,
+ "missing": 36,
+ "sum": 615655,
+ "sumOfSquares": 123968775,
+ "mean": 170.5415512465374,
+ "stddev": 72.5080446083144,
+ "facets": \{\}],
   [A lot of good information there! We get the standard deviation, mean and min values. Missing the quartiles, though, but we can fix that!],
-  [id="and-what-is-too-short"\>And what is too short?],
+  [And what is too short?],
   [Sometimes, the supplier sends us incorrect data. That’s bad. But the good thing is that when the data is incorrect it is really incorrect. We sometimes receive flight times of 0 minutes. That is obviously wrong, and we filter out those. However, we have not seen any occurences of, say, 1 minute flight times. That would be wrong as well, but more difficult to handle. So we close our eyes and don’t care about those.],
-  [id="but-hang-on"\>But hang on…],
+  [But hang on…],
   [So, we were ready to go! We wanted to fix this problem once and for all. But before we started coding, we talked to emeritus Harald Goldstein at the University of Oslo. He’s been teaching statistics at the university level for years and had some good feedback on our theoretical solution. First of all, he pointed out that the solution we have outlined is a good solution if we have a symmetrical distribution of the flight durations. The quartiles and the standard deviation works well on a symmetrical distribution like the normal distribution , but what about our data? Is it normal distributed? That was a relevant question, and as one of FINN’s main strategies is “data in our backbones”, we surely needed to have a closer look at this.],
   [So here goes, flights from Oslo to London. Trip duration on the x-axis, number of occurences on the y-axis:],
   [The shortest trip duration OSL - LON is 230 minutes in the graph above (115 min per leg) and there is even an outlier - which is not visible - at 2750 minutes! However, it is quite clear that this is not a normal distribution. It might look more like a gamma distribution for the part where x \> 230.],
   [Darn!],
-  [id="back-to-square-one"\>Back to square one],
+  [Back to square one],
   [All the fancy statistics didn’t provide the solution, but it helped us really understand the problem. Obviously, we needed to re-think.],
-  [id="logarithm"\>Logarithm],
   [A problem with the solution from ages back (described at the beginning), was that it didn’t work very well on long hauls. The relation between the minimum trip duration OSL-BKK and OSL-LON is approx. 6:1. Alas, the upper fence must be relatively lower on longer trips. After some more brain-racking, we came up with the idea that we should look at this logarithmically.],
   [A first suggestion],
+  [log(min BKK)/log(min LON) = log(675)/log(115) = 2,83/2,06],
   [However, the relation is too far away from 6:1 and we are not able to compensate for long hauls.],
-  [id="square-root"\>Square root],
+  [Square root],
   [Finding quartiles doesn’t work, using a logarithmic approach doesn’t work very well. So what about the square root? That looks a bit like a logarithmic function.],
   [Let’s try],
+  [sqrt(min BKK)/sqrt(min LON) = sqrt(675)/sqrt(115) = 26/11],
   [This is much closer to 6:1 than the logarithmic approach. The relation is relatively more correct for both short- and long hauls.],
-  [id="the-final-solution"\>The final solution],
+  [The final solution],
   [After some trial and error, we finally ended up with the simple formula of],
+  [x = min + A \* sqrt(min)],
   [Where x is the upper fence, min is the minimum duration for that leg and A is a tunable constant.],
   [This formula seems to remove most of the unwanted outliers. Some examples (from our first iteration, with the constant A=25)],
-  [class="highlight"\> SVG-BGO. min = 70 =\> x = 279 (4.5 hrs)
+  [SVG-BGO. min = 70 =\> x = 279 (4.5 hrs)
 OSL-LON. min = 230 =\> x = 609 (10 hrs)
 OSL-BKK. min = 1350 =\> x = 2269 (37 hrs)
 OSL-KOA. min = 2671 =\> x = 3963 (66 hrs)
@@ -243,7 +155,6 @@ OSL-NYC. min = 920 =\> x = 1678 (28 hrs)],
   [That seems to work quite well. In the SVG (Stavanger) - BGO (Bergen) case, the formula removes approx. 30% of the offers. Some of them with a layover in Oslo.],
   [No need to hesitate then, this simple formula is now in our production systems. If you want to go from OSL to LON, you will get a slider which is preset with an upper fence of 5hrs 15min.],
   [You still have the possibility to slide it to the max, though. All the way up to 27hrs 30min. The result list will then show you the unfiltered result set. But nobody wants to use 27hrs 30min on a flight from OSL to LON, right?],
-  [id="conclusion"\>Conclusion],
   [The simplest explanation is usually the correct one.],
 ),
   insert-map: (:),
@@ -252,20 +163,18 @@ OSL-NYC. min = 920 =\> x = 1678 (28 hrs)],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Hello world!],
   author: [Per Jørgen Walstrøm],
   source-name: [Finn.no Tech],
   images: (),
   paragraphs: (
   [As some of you may know, FINN is owned by Schibsted . What may not be that familiar, is that Schibsted has online classified solutions in several markets around the world, including Blocket in Sweden, Le Bon Coin in France and Vibbo in Spain. Schibsted has several hundreds of developers distributed around the globe, and there is a strong need and will to coordinate and cooperate across geographical boundaries.],
-  [id="the-need-to-cooperate"\>The need to cooperate],
+  [The need to cooperate],
   [Reinventing the wheel is generally a bad idea. With that in mind, Schibsted has a strong focus on building global components that can be useful for all the companies within Schibsted. However, it is not always easy to understand the needs and challenges across national borders. There are cultural differences and different companies have reached different maturity levels. FINN has been around for years, and is one of the more mature classified sites within Schibsted. In an effort to help building global components, Schibsted has set up an international hub in Barcelona and developers from the local companies are encouraged to come to Barcelona to help out, share knowledge and build a common platform. Several developers from FINN have taken up the challenge and spent some months in beautiful and vibrant Barcelona. Here are Øyvind’s impressions.],
   [Anders, Øyvind and Per Jørgen. Three happy FINN-campers in Barcelona],
-  [id="øyvind-goes-messaging"\>Øyvind goes messaging],
+  [Øyvind goes messaging],
   [Øyvind has worked as a developer for FINN for 9 years, but when he got the opportunity to move to Barcelona for 6 months, the decision was easy.],
   [- The decision was really easy. There was little risk involved and I thought it would be an excellent opportunity to experience Barcelona. I love the city and the international atmosphere at the office. I think we are around 25 nationalities working here.],
   [- Tell us about the work you have been doing in Barcelona],
@@ -276,7 +185,6 @@ OSL-NYC. min = 920 =\> x = 1678 (28 hrs)],
   [- The people! It has been great working here, in this including atmosphere.],
   [- Learned any lessons?],
   [- When working in FINN, it’s easy to forget that you are part of a bigger company. I see that clearly now, the global perspective. It’s inspiring to know that I am a part of a global company.],
-  [id="epilogue"\>Epilogue],
   [Øyvind spent 6 months in Barcelona and came home with lots of new knowledge, new friends and a Messi-shirt. He contributed in building global components and believes FC Barcelona will win Champions League again this season. The migration of the FINN-messaging platform went off without a hitch and we are still looking for great developers !],
 ),
   insert-map: (:),
@@ -285,10 +193,8 @@ OSL-NYC. min = 920 =\> x = 1678 (28 hrs)],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [React in the Real World],
   author: [Tor Arne Kvaløy],
   source-name: [Finn.no Tech],
@@ -297,15 +203,12 @@ OSL-NYC. min = 920 =\> x = 1678 (28 hrs)],
   [At FINN oppdrag , a year ago we came to realize that our front-end code, written in JSP/jQuery, had become so large and complex that it affected our ability to produce features. We spent more time making sure the DOM manipulations were correct and did not break, than actually creating value for our users.],
   [So we agreed that we needed a front-end framework to simplify our development and after looking into Ember and Angular we decided to go for React , recently open sourced by Facebook.],
   [Our attraction to React was based on its promise of providing components with encapsulated state, fast automatic DOM manipulations, and the ability to render on the server.],
-  [id="migration"\>Migration],
   [We started by porting some functionality that already existed, and our first discovery was that the lines of codes needed to make the exact same functionality was almost reduced by half. Secondly, the code became clearer and easier to understand. And thirdly, as a combination of the reduced lines of code, the cleaner code and no manual DOM manipulations, we got less bugs.],
   [Since then all new features have been written with React, and when we are requested to make modifications to functionality written in the old code, we rewrite them to use React.],
   [When migrating large pages to React we start from the inside, the deepest DOM nodes, and let it gradually grow till the whole page is reactified. This often happened through several iterations and deployments, as React and the old JSP/JQuery can quite peacefully coexist.],
-  [id="bundles"\>Bundles],
   [With React, HTML is represented as JavaScripts, so the JavaScript bundles will contain all the HTML, and hence grow as the pages grow. Instead of having a bundle for each page (very small), or having a bundle for the whole site (very big), we found a middle way where we have bundles based on roles, in our use cases contractor and owner. A possible improvement on this is loading JavaScript on demand with technologies like webpack .],
-  [id="flux"\>Flux],
   [So if React is our first great discovery, the Flux pattern is very much in second place. The Flux pattern decouples the logic from the views, in a different way than the traditional MVC-pattern. Logic and state are located in stores, and actions from the views to stores are asynchronous. When state in stores change, they will update React components that listen to changes, providing a single source of truth and unidirectional flow of data.],
-  [id="server-side-rendering"\>Server-side rendering],
+  [Server-side rendering],
   [Our next step, which is yet to be solved, is server-side rendering. Server-side rendering means having the server generate and return the whole HTML page to the browser, instead of having the browser render HTML after downloading the JavaScript. This is especially important for SEO (search engine optimization) and mobile users, as search engines rarely run JavaScript, and mobile users have low bandwidth hence will take longer time before the page shows. However, having the server return a fully rendered HTML to browser is in general good for perceived page load performance.],
   [Server-side rendering requires running JavaScript on the server, and that is straightforward with Node. However it is not that straightforward in our Java/Tomcat/Spring backend stack. We envision three possible solutions for this problem:
 1) Running JavaScript on the JVM with the Nashorn JavaScript engine.
@@ -315,7 +218,6 @@ OSL-NYC. min = 920 =\> x = 1678 (28 hrs)],
   [The first solution, running JavaScript in Java, has the benefits of close integration with the controller layer written in Java, and possibly making deployment easier, as the Java environment already has access to the JavaScript bundles. The downside of this approach seems to be performance, as the Nashorn JavaScript engine compiles and optimizes the JavaScript during the first runs, hence uses a long time to «warm up». So unless we write a mechanism that warms up the code, the first pages will be very slow to load.],
   [The second solution, which involves interacting with an external process running Node, has the benefits that JavaScript runs natively and very fast. The downsides are more complicated deployment process where the Node instance needs access to the JavaScript bundles, and the overhead of interacting with an external process, possible through HTTP or Thrift, can impact performance negatively.],
   [The third solution, where Node is placed in front Tomcat, and works as a smart-proxy , only enhancing certain pages, while simply forwarding the rest, has the benefits of executing JavaScript natively. While the downsides are more complicated deployment, and the possible complex process of executing certain JavaScript code found in HTML, and updating the HTML with the executed JavaScript, before it is served to the browser.],
-  [id="conclusion"\>Conclusion],
   [So, apart from server-side rendering, which we are working on, our transition to React has been smooth and a great success. It has improved our codebase, made developers happy, and most importantly, improved our speed of delivering features, which in the end is the most important thing.],
   [Tor Arne Kvaløy
 Senior developer],
@@ -326,22 +228,21 @@ Senior developer],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Graded browser support at FINN.no],
   author: [espen],
   source-name: [Finn.no Tech],
   images: (),
   paragraphs: (
   [Inspired by the kick-ass developers of Yahoo! and their work on Graded Browser Support (GBS) we at FINN.no decided to adopt graded browser support as a way to communicate what level of support we have for different combinations of browsers and platforms.],
-  [id="creating-the-support-matrix"\>Creating the support matrix],
+  [Creating the support matrix],
   [FINN is the largest site in Norway when it comes to traffic and we have a good framework for statistics. In order to create the support matrix we took the statistics for the most popular browsers and platform combinations and put them in a grid. This gave us a matrix showing us which browser/platform combinations we need to consider from a business perspective. Although this was a good start, we also needed to figure out what level of support we should provide each combination. Numbers and usage alone does not provide a good enough basis upon setting support levels.],
-  [id="the-cost-of-support"\>The cost of support],
+  [The cost of support],
   [Having read the early drafts of the awesome book Secrets of a JavaScript ninja by John Resig we decided to follow his approach on creating a GBS matrix and perform a cost-benefit-analysis. We did was to do a quick survey among our developers in order to figure out what the costs where for supporting different user agents on certain platforms. The results are displayed in the chart below and shows our subjective opinions on how much effort is required to support a certain browser. Note that this chart will not look the same for everyone. It is will vary based on the skills of your developers, what browsers they work in, etc, etc.],
-  [id="support-levels"\>Support levels],
+  [Support levels],
   [Our levels of support are slightly more simple than those of Yahoo! and we only provide three levels:],
   [A-support: no visual or functional errors, all errors are reported and all features should be tested for each release.],
   [B-support: no functional errors, core features should be tested for each release, visual errors are only reported with a low priority],
@@ -357,7 +258,7 @@ Senior developer],
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([Atila Fassina], source-name: [Neon Tech Blog], [It’s no secret that Neon loves TanStack, and we’re proud to support Tanner and the team as they prepare TanStack Start for its much-anticipated 1.0 launch. Vite’s popularity is hard to ignore at this point. It’s everywhere! We believe that part of its success is the amazing developer experience it offers. So we’ve developed a \[…\]])],
       [#brief-item([Felix Desroches], source-name: [Serverless Blog], [As the newest product designer at Serverless, I had to ramp fast. Here's what I learned about keeping developers at the center of my design strategy.])],
       [#brief-item([Nik Graf], source-name: [Serverless Blog], [Serverless lead front-end engineer Nik Graf shows you how to get started writing and deploying functions with the Serverless Framework.])],

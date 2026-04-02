@@ -21,86 +21,8 @@
 #masthead([The Examiner], [Vol. 1, No. 020], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Google's Pixel 9a Is Just \$399 for the Amazon Big Spring Sale],
-  kicker: [Cover Story],
-  author: [Jake Peterson],
-  source-name: [Lifehacker],
-  deck: [It's tempting when choosing a new smartphone to go for the latest and greatest model.],
-  lead-pre: [],
-  lead-cap: [I],
-  lead-rest: [n Google's corner, there's the Pixel 10 series, including the brand-new Pixel 10a . But tech has advanced a lot in recent years, to the point where the value of a last-gen smartphone is often just as good—if not better—than the latest model. Take, for example, the Pixel 9a . You can pick up the predecessor to the Pixel 10a right now for just \$399, \$100 off its MSRP, during Amazon's Big Spring Sale .],
-  body-paragraphs: (
-  [The Pixel 9a is a capable Android device that doesn't reach the \$1,000 premium price we've seen from many flagships in recent years. It comes with a 6.3-inch 1080p OLED display with a variable refresh rate of 60-120Hz; Google's Tensor G3 chip with 8GB of RAM and 128GB of storage; a single 48MP rear camera with a 13MP selfie cam; support for 5G, Wi-Fi 6e, and Bluetooth 5; and an average battery life of just over 12 hours (30 hours of talk time). In her review of the Pixel 9a back in August , former Lifehacker associate tech editor Michelle Ehrhardt said the device was "arguably the best Google phone yet." She praised the lack of a camera bar—a fixture of the Pixel series for years now—its long battery life, its brighter screen, and how lightweight the phone felt.],
-  [The Pixel 9a isn't perfect, of course. This is Google's "affordable" phone, which means there are some compromises here over the main Pixel line. Notably, Michelle found the camera to be "just OK," and expressed concern than Google's battery update would weaken the battery life overtime. She also found fault with the 9a's Tensor chip, thought that's not a unique issue with the phone itself. Google uses its in-house Tensor chip for all its smartphones, and it's simply not as powerful as some others on the market, like the Snapdragon SoCs you'll find in the Samsung Galaxy series.],
-  [You might think things would only go up with the Pixel 10a, but Michelle didn't agree. In her review , she found the 10a to be more of a Pixel 9a rerelease than a sequel, carrying over plenty of the benefits of the phone, without doing much to differentiate itself from its predecessor. If you need a new Android phone, especially one that runs stock Android (this is Google, after all), for a decent price up front, this is a solid deal. That said, while this is a great price for the 9a, it isn't the cheapest it's ever been. According to Keepa, Amazon sold the phone for \$349 for about a week in early February, before raising it back up to \$399. It has been over \$400 for over a month, though, reaching as high as \$470, so this is still a great deal.],
-  [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
- 
- 
- —
- \$199.00 
- 
- (List Price \$249.00)],
-  [Apple iPad 11" 128GB A16 WiFi Tablet (Blue, 2025)
- 
- 
- —
- \$299.00 
- 
- (List Price \$349.00)],
-  [Samsung Galaxy Tab A11+ 128GB Wi-Fi 11" Tablet (Gray)
- 
- 
- —
- \$209.99 
- 
- (List Price \$249.99)],
-  [Sony WH1000XM6- Best Wireless Noise Canceling Headphones
- 
- 
- —
- \$398.00 
- 
- (List Price \$459.99)],
-  [Apple Watch Series 11 (GPS, 42mm, S/M Black Sport Band)
- 
- 
- —
- \$299.00 
- 
- (List Price \$399.00)],
-  [Blink Video Doorbell Wireless (Newest Model) + Sync Module Core
- 
- 
- —
- \$35.99 
- 
- (List Price \$69.99)],
-  [Fire TV Stick 4K Max Streaming Player With Remote
- 
- 
- —
- \$34.99 
- 
- (List Price \$59.99)],
-  [Amazon Kindle Colorsoft 16GB 7" eReader (Black)
- 
- 
- —
- \$169.99 
- 
- (List Price \$249.99)],
-),
-  edited-for-length: false,
-)
-
-#pull-quote([This is Google's "affordable" phone, which means there are some compromises here over the main Pixel line.], [Jake Peterson])
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [It Takes A Village],
   author: [Penny Arcade],
   source-name: [Penny Arcade],
@@ -114,11 +36,9 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [This Cheap Frother Is My Favorite Way to Mix Protein Powder],
   author: [Beth Skwarecki],
   source-name: [Lifehacker],
@@ -126,6 +46,15 @@
   paragraphs: (
   [We may earn a commission from links on this page.],
   [Protein shakes can end up chunky or lumpy if you don’t mix them right. That’s why a shaker bottle does a better job of mixing whey into milk than simply stirring with a spoon. A blender works even better, if you’re up for cleaning a blender when you’re done. But there is a better option: a handheld frother .],
+  [FoodVille MF02 Rechargeable Milk Frother],
+  [\$5.96
+ at Amazon],
+  [\$7.99 
+ Save \$2.03],
+  [\$5.96
+ at Amazon],
+  [\$7.99 
+ Save \$2.03],
   [To be clear, this is for drinks where you are mixing a powder into a liquid. (If you want ice and fruit in your protein shake—a smoothie, rather than a simple drink—you’ll still need a blender. But you knew that.) As far as I can tell, it works with any powder and any liquid. I’ve tested the frother, and found it gives excellent results with:],
   [Collagen powder and coffee (or tea)],
   [Whey powder and water],
@@ -133,7 +62,7 @@
   [Hot cocoa and milk],
   [Various supplement powders in, well, anything],
   [Embarrassingly, I didn’t think of this on my own. Supplement companies like MUD\\WTR and Beam include a handheld frother in their starter packs. In fact, the only reason I own a frother in the first place is that MUD\\WTR sent me one with some samples once in hopes I would review the product. (My review: I don’t like it .)],
-  [id="how-to-use-a-frother-to-mix-your-protein-powder"\>How to use a frother to mix your protein powder],
+  [How to use a frother to mix your protein powder],
   [First, get yourself a frother. These are simple handheld gadgets that are priced about the same as a shaker bottle, about \$7-10 on the low end, and going up to roughly infinity since these are a Fancy Coffee Accessory. The cheap ones will do fine for our purposes. Get one that is powered by AA batteries or that you charge over USB .],
   [Next, get your liquid ready. The first time you do this, make sure to use an oversized container. The liquid will rise as you turn the frother on. But if you use, say, eight ounces of liquid in a 16-ounce container, you'll avoid a surprise mess.],
   [Add the powder to the liquid, insert the frother, and turn it on. (Unless you’re using clear whey , which tends to gum up the frother; better to insert the frother first and then add the powder.) If you hold the frother in the center of the cup, you’ll get a whirlpool effect that sends the liquid up toward (or over) the rim of the container, hence my warning. Once you’ve done this a few times, you’ll figure out how to do it with less mess. Angling the frother and holding it against the side of the cup tends to keep the waves down. You can also pulse the frother a few times instead of having it on continuously, which cuts down on the waves even further.],
@@ -145,10 +74,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Apple's Newest AirPods Pro Are \$50 Off During Amazon's Big Spring Sale],
   author: [Jake Peterson],
   source-name: [Lifehacker],
@@ -156,10 +83,20 @@
   paragraphs: (
   [We may earn a commission from links on this page. Deal pricing and availability subject to change after time of publication.],
   [If you're in the Apple ecosystem, and you're looking for a new pair of earbuds, you'd have trouble doing better than AirPods Pro 3 . Apple's flagship earbuds sound great, come with interchangeable tips, and sport a number of intelligent, useful features. That package doesn't come cheap, though—Apple has the newest AirPods Pro priced at \$249. That's why they're great to buy on sale: Amazon currently has the AirPods Pro 3 for \$50 off their usual price.],
+  [AirPods Pro 3],
+  [\$199.00
+ at Amazon],
+  [\$249.00 
+ Save \$50.00],
+  [\$199.00
+ at Amazon],
+  [\$249.00 
+ Save \$50.00],
   [AirPods Pro 3 are Apple's best earbuds, hands down—if you prefer the design, that is. They offer the highest quality sound, the best noise cancellation, and sizing flexibility with their interchangeable tips. If you find that the "one size fits all" approach of Apple's standard AirPods don't work for you, one of these AirPods Pro sizes might fit better.],
   [AirPods Pro 3 come with a ton of features, too. The buds have Active Noise Cancellation, and Apple says these are up to four times better than its first-generation Pros. There's also Conversation Awareness, which lowers the volume of your music when you're speaking so you can have a chat, then raises the volume back up when you're done. Apple's Live Translation feature can translate conversations on the fly directly in your AirPods, and you can even use the buds as hearing aids. ( They're actually FDA-approved .)],
   [But those features are also in some of Apple's other earbuds. What's exclusive here is the built-in heart rate sensor. If you have an Apple Watch , or another fitness tracker, you might not find that particularly useful, but if you don't, you can rely on your earbuds to keep tabs on your heart rate during exercises, for more accurate fitness measurements. The charging case is also Apple's first to include its second-generation Ultra Wideband chip, which makes finding the case (and your buds) much easier with Find My.],
   [Apple says you can get up to eight hours of listening time on a single charge with Active Noise Cancellation (6.5 hours when using the heart rate sensor), and up to 24 hours when you take the charging case into consideration. These are IP57-rated for resistance against dust, sweat, and water, so while they're not water proof , they should handle workouts just fine.],
+  [Our Best Editor-Vetted Amazon Big Spring Sale Deals Right Now],
   [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
  
  
@@ -216,6 +153,7 @@
  \$169.99 
  
  (List Price \$249.99)],
+  [Deals are selected by our commerce team],
 ),
   insert-map: (:),
   word-count: 702,
@@ -223,10 +161,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [My Favorite Mini Massage Gun Is 21% Off for Amazon's Big Spring Sale],
   author: [Meredith Dietz],
   source-name: [Lifehacker],
@@ -235,7 +171,17 @@
   [We may earn a commission from links on this page. Deal pricing and availability subject to change after time of publication.],
   [When you’re shopping around for a massage gun, you want to focus on features that justify the price. Specifically, I focus on features like speed settings (both intensity and versatility), noise and ease of use, battery life, and size . I've learned the hard way that when you're looking for a travel-sized massage gun, you have to be extra shrewd.],
   [I was once gifted a mini massage gun that, according to the holiday gift exchange rules, must have cost less than \$30. It ran out of battery within one or two minutes of weak “massaging.” All of that is to say, a cheap massage gun isn’t worth it. Even if you're looking for "mini," you still need to invest in one up to the task of hammering away the pain. And do I have the guy for you: Normally \$99.99, this mini massage gun is currently on sale for \$78.82 as part of Amazon's Big Spring Sale .],
+  [Bob and Brad Mini Massage Gun],
+  [\$78.82
+ at Amazon],
+  [\$99.99 
+ Save \$21.17],
+  [\$78.82
+ at Amazon],
+  [\$99.99 
+ Save \$21.17],
   [At barely one pound, the Bob and Brad Q2 Mini certainly lives up to its name. Luckily, this massage gun still packs a lot of punch, in terms of both literal vibrations and my overall user experience. For me, the real selling point of this massage gun—which I review in-depth here —is the effectiveness of its heat therapy. Plus, its compact size makes it perfect for travel or bringing to the gym—something I never considered with my full-sized TheraGun Therabody . Even if you already own a larger massage gun, the Q2 Mini's heat therapy and sweet size could make it a worthwhile addition to your recovery toolkit.],
+  [Our Best Editor-Vetted Amazon Big Spring Sale Deals Right Now],
   [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
  
  
@@ -292,6 +238,7 @@
  \$169.99 
  
  (List Price \$249.99)],
+  [Deals are selected by our commerce team],
 ),
   insert-map: (:),
   word-count: 594,
@@ -299,12 +246,10 @@
   debug-mode: false,
 )
 
-  #pull-quote([99, this mini massage gun is currently on sale for \$78.], [Meredith Dietz])
+#pull-quote([99, this mini massage gun is currently on sale for \$78.], [Meredith Dietz])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Samsung Galaxy Watch 8 Is \$130 Off for Amazon's Big Spring Sale],
   author: [Meredith Dietz],
   source-name: [Lifehacker],
@@ -312,10 +257,20 @@
   paragraphs: (
   [We may earn a commission from links on this page. Deal pricing and availability subject to change after time of publication.],
   [Fitness watches aren't always known for being polite, but I do know of one that is actually thoughtful and effective when it tells you to take a movement break. Normally \$499.99, the Samsung Galaxy Watch 8 is currently on sale for \$369.99 as part of Amazon's Big Spring Sale .],
+  [Samsung Galaxy Watch 8 Classic],
+  [\$369.99
+ at Amazon],
+  [\$499.99 
+ Save \$130.00],
+  [\$369.99
+ at Amazon],
+  [\$499.99 
+ Save \$130.00],
   [As my colleague Beth Skwarecki shares in her in-depth review , this fitness watch's alerts are customizable and gentle in its nudges. This is huge for anyone who has stress dreams over closing their rings .],
   [Overall, the Galaxy 8 Classic is a well-designed watch that not only looks stylish, but also communicates information in a way that actually makes sense. For instance, heart rate zones come with a note about what they’re based on. Similarly, the built-in running coach unlocks two workouts at a time, so that you can do them out of order or skip one guilt-free.],
   [If you're not sure whether to get the regular Galaxy 8 or the Classic, the biggest difference is that the Classic comes with a rotating bezel that helps you navigate the menus. For loyal Samsung users, that rotating bezel makes the Classic a fan favorite.],
   [You can read more about the Galaxy 8 Watch in CNET's review , too.],
+  [Our Best Editor-Vetted Amazon Big Spring Sale Deals Right Now],
   [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
  
  
@@ -372,6 +327,7 @@
  \$169.99 
  
  (List Price \$249.99)],
+  [Deals are selected by our commerce team],
 ),
   insert-map: (:),
   word-count: 535,
@@ -379,10 +335,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [What's New on Netflix in April 2026],
   author: [Emily Long],
   source-name: [Lifehacker],
@@ -390,10 +344,9 @@
   paragraphs: (
   [Netflix's April lineup is packed with something for everyone. There are new installments of reality series Million Dollar Secret (April 15), Netflix's answer to NBC's The Traitors, and Temptation Island (April 10). Comedy series Running Point (April 23) also returns for a second season, with Kate Hudson starring as the president of her family's pro basketball franchise.],
   [Big Mistakes (April 9) is a new crime comedy series created by Dan Levy, who stars alongside Taylor Ortega as one of a pair of siblings who get blackmailed into participating in organized crime. And Kevin Hart has a new comedy competition series: Funny AF with Kevin Hart (April 20) incorporates real-time audience voting to find the next stand-up comedy star.],
-  [id="video-container-01KMY4RPJQ7EKK1PVMN7HXMY92"\>],
   [The new film Apex (April 24) is an action thriller starring Charlize Theron as a grieving woman in the Australian wilderness being hunted down by Taron Egerton. Finally, the April documentary slate is long: there's This is a Gardening Show (April 22), narrated by Zach Galifianakis, and A Gorilla Story: Told by David Attenborough (April 17), as well as the musical docs Noah Kahan: Out of Body (April 13) and Lainey Wilson: Keepin' Country Cool (April 22). Trust Me: The False Prophet (April 8) is a true crime series that looks at Warren Jeffs's FLDS sect in Utah. Netflix is also dropping a handful of episodes of its Untold sports docuseries.],
   [Here's everything else coming to Netflix in April, and everything that's leaving.],
-  [id="whats-coming-to-netflix-in-april-2026"\>What's coming to Netflix in April 2026],
+  [What's coming to Netflix in April 2026],
   [Available soon],
   [If Wishes Could Kill —Netflix Series],
   [Available April 1],
@@ -501,7 +454,7 @@
   [Should I Marry A Murderer? —Netflix Documentary],
   [Available April 30],
   [Man on Fire —Netflix Series],
-  [id="whats-leaving-netflix-in-april-2026"\>What's leaving Netflix in April 2026],
+  [What's leaving Netflix in April 2026],
   [Leaving April 1],
   [Best in Show],
   [Best in Show],
@@ -545,10 +498,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Apple Watch Ultra 2 Is Nearly \$200 Off for the Amazon Big Spring Sale],
   author: [Jake Peterson],
   source-name: [Lifehacker],
@@ -557,11 +508,21 @@
   [We may earn a commission from links on this page. Deal pricing and availability subject to change after time of publication.],
   [If you're looking for an Apple Watch for extreme sports, or you just want the one with the biggest display and battery life, you should focus your sights on the Ultra. Apple packs as many features and perks into this watch as it can, and, as such, it's the best option for people who need to push their wearables to the max. But those advantages come at a cost: The latest Apple Watch Ultra 3 costs \$799, making it one of the most expensive watch options the company sells.],
   [But you don't need to spend as much on an Apple Watch Ultra as an iPhone 17 in order to get many of these perks. If you're willing to move one generation early, and lose a few new features, you can save some serious money, especially during discounts and sales. As it happens, this "Premium Renewed" Apple Watch Ultra 2 is currently \$399.49 on Amazon during its Big Spring Sale . That's its cheapest price on the site in at least the past three months, according to Keepa.],
+  [Apple Watch Ultra 2],
+  [\$399.49
+ at Amazon],
+  [\$589.00 
+ Save \$189.51],
+  [\$399.49
+ at Amazon],
+  [\$589.00 
+ Save \$189.51],
   [The features list of the Apple Watch Ultra 2 are quite long. Off the bat, you get a 49mm display that can reach a whopping 3,000 nits of brightness. The heart rate monitor can look out for signs of hypertension, alert you when your heart rate is too high or too low, and let you know when you have an irregular heart rhythm. You can also use the Blood Oxygen app to monitor your SpO2 levels.],
   [Like all Apple Watches, the Ultra 2 can track your sleep, including giving you a sleep score each night, but it can also let you know if you show signs of sleep apnea. It'll track your vitals, body temperature, cycles (if applicable), and can connect to cellular if you pay for a plan. This watch comes with Apple's S9 chip, the same as you'll find in the Series 9 line, and supports Apple's double-tap gesture, as well as Precision Finding, in case your watch goes missing.],
   [But since this is the Ultra 2, there are some nontraditional features here, like water resistance up to 100 meters, and support for snorkeling, scubaing, and high-speed water sports. There's a depth gauge up to 40m if you do any diving, and the watch even comes with a siren in case you need others to know where you are. This isn't an exhaustive list of features, so check out the listing for the full rundown.],
   [The caveat for this particular sale, however, is that this is a "Premium Renewed" product. According to Amazon, all "Renewed" products are fully functional, and come with original or generic accessories. To be "Premium," the renewed product must not have any cosmetic damage visible from 12 inches away, no scratches on the screen, and a battery capacity 90% or higher. I wouldn't be surprised if these Apple Watch Ultra 2 models were simply open box, rather than previously used, but before you invest, know that there is a chance someone else used this watch.],
   [If you're curious about the latest model, the Ultra 3 , here's what you get if you spring for the extra cost: a slightly larger, higher-quality OLED display with LTPO3 (versus LTPO2 on the Ultra 2); Emergency SOS via satellite; 5G connectivity (if you spring for the cellular plan); the S10 chip; battery life that lasts 42 hours, versus 36 hours on the Ultra 2; and 12 hours of use with 15 minutes of charging. Both the Ultra 2 and Ultra 3 support fast charging up to 80%, but the Ultra 3 can do it in 45 minutes, while the Ultra 2 takes about an hour. Those advantages might be worth the added cost, depending on your needs.],
+  [Our Best Editor-Vetted Amazon Big Spring Sale Deals Right Now],
   [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
  
  
@@ -618,6 +579,7 @@
  \$169.99 
  
  (List Price \$249.99)],
+  [Deals are selected by our commerce team],
 ),
   insert-map: (:),
   word-count: 952,
@@ -625,12 +587,10 @@
   debug-mode: false,
 )
 
-  #pull-quote([But since this is the Ultra 2, there are some nontraditional features here, like water resistance up to 100 meters, and support for snorkeling, scubaing, and high-speed water sports.], [Jake Peterson])
+#pull-quote([But since this is the Ultra 2, there are some nontraditional features here, like water resistance up to 100 meters, and support for snorkeling, scubaing, and high-speed water sports.], [Jake Peterson])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Best Tech Deals Under \$25 During Amazon's Big Spring Sale],
   author: [Daniel Oropeza],
   source-name: [Lifehacker],
@@ -638,19 +598,62 @@
   paragraphs: (
   [We may earn a commission from links on this page. Deal pricing and availability subject to change after time of publication.],
   [Amazon's Big Spring Sale is on its third day, and there are tons of big-ticket items still on sale. But if you're looking to score a bargain on a budget, I've used all my resources to find the best tech deals under \$25.],
-  [class="block w-fit cursor-pointer font-akshar text-lg font-medium leading-5 text-brand-green duration-200 ease-in-out hover:text-brand-green-700 md:text-xl md:leading-6"\>
- Soundcore by Anker P20i True Wireless Earbuds, 10mm Drivers with Big Bass, Bluetooth 5.3, 30H Long Playtime, Water-Resistant, 2 Mics for AI Clear Calls, 22 Preset EQs, Customization (White)],
+  [Roku Streaming Stick HD],
+  [\$17.99
+ at Amazon],
+  [\$29.99 
+ Save \$12.00],
+  [\$17.99
+ at Amazon],
+  [\$29.99 
+ Save \$12.00],
+  [Fire TV Stick 4K Plus Streaming Player With Remote (2025 Model)],
+  [\$24.99
+ at Amazon],
+  [\$49.99 
+ Save \$25.00],
+  [\$24.99
+ at Amazon],
+  [\$49.99 
+ Save \$25.00],
+  [\$19.98
+ at Amazon],
+  [\$39.99 
+ Save \$20.01],
+  [\$19.98
+ at Amazon],
+  [\$39.99 
+ Save \$20.01],
+  [INIU 10000mAh 45W Power Bank with USB-C Cable],
+  [\$11.21
+ at Amazon],
+  [\$29.99 
+ Save \$18.78],
+  [\$11.21
+ at Amazon],
+  [\$29.99 
+ Save \$18.78],
+  [CooSpo Fitness Tracker Ant+ Heart Rate Monitor],
+  [\$26.99
+ at Amazon],
+  [\$29.99 
+ Save \$3.00],
+  [\$26.99
+ at Amazon],
+  [\$29.99 
+ Save \$3.00],
   [SEE 2 MORE],
-  [id="the-roku-streaming-stick-hd-is-18"\>The Roku Streaming Stick HD is \$18],
+  [The Roku Streaming Stick HD is \$18],
   [The Roku Streaming Stick HD is the most basic Roku Stick you can buy, and it's 40% off right now, making it a great time to upgrade your TV's OS to my favorite one. You can get it for \$17.99 (originally \$29.99).],
-  [id="fire-tv-sticks-are-now-25"\>Fire TV Sticks are now \$25],
+  [Fire TV Sticks are now \$25],
   [Amazon's Fire TV Stick 4K Plus is one of Amazon's most popular Fire TV Stick options. It's powerful enough for 4K entertainment, and it's just \$25 for the Amazon Big Spring Sale (down from \$49.99) after a 50% discount. The Fire TV Stick Plus sits above the base Fire TV Stick HD ( also discounted right now), and offers a quad-core 1.7 GHz processor coupled with 2GB RAM for fast app launches and smooth navigation.],
-  [id="anker-wired-earbuds-are-20"\>Anker wired earbuds are \$20],
+  [Anker wired earbuds are \$20],
   [If you are looking for earbuds but don't want to pay too much for something you might end up losing, the Soundcore by Anker P20i are a solid pair with some impressive features for their \$19.99 price (marked down from \$39.99). You get Bluetooth 5.3, 30 hours of battery, water resistance, and a full EQ with its companion app.],
-  [id="this-iniu-portable-phone-charger-is-21"\>This Iniu portable phone charger is \$21],
+  [This Iniu portable phone charger is \$21],
   [I recently lost my Iniu portable charger on a weekend road trip. Fortunately, it was at the end of my trip, and it had served its purpose well, saving my phone's battery (and therefore my life) multiple times. You can get one now for \$20.99 (originally \$29.99).],
-  [id="a-heart-rate-monitor-you-can-trust-for-just-a-little-over-25"\>A heart rate monitor you can trust for just a little over \$25],
+  [A heart rate monitor you can trust for just a little over \$25],
   [Okay, yes, I cheated a bit. This one is \$27, but trust me when I say those extra \$2 will be well spent. The CooSpo chest strap is a specialist. It has one job, which is to measure your heart rate, and it does it so well, Lifehacker's Senior Health Editor Beth Skwarecki uses it to get a baseline when she tests other fitness gadgets. If monitoring your heart is a priority, don't sleep on this chest strap.],
+  [Our Best Editor-Vetted Amazon Big Spring Sale Deals Right Now],
   [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
  
  
@@ -707,6 +710,7 @@
  \$169.99 
  
  (List Price \$249.99)],
+  [Deals are selected by our commerce team],
 ),
   insert-map: (:),
   word-count: 1142,
@@ -714,10 +718,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [10 Shows Like 'The Comeback' You Should Watch Next],
   author: [Ross Johnson],
   source-name: [Lifehacker],
@@ -726,36 +728,50 @@
   [We may earn a commission from links on this page.],
   [Valerie Cherish is back, and not a moment too soon. Twenty years after a modestly rated but absolutely brilliant first season, mega-cringe Hollywood satire The Comeback has returned to HBO for one more painfully embarrassing season (complimentary) Co-created by and starring Lisa Kudrow, it's the hilarious, dark, and occasionally moving story of a C-list celebrity determined to stay in the limelight at whatever cost.],
   [Valerie Cherish—clueless, egotistical, and all-too-human—is one of TV's indelible characters, simultaneously a victim of ageism, misogyny, and celebrity culture, and also a woman who doesn't care about any of that provided she can find a way to scrabble to the top. Likewise, these 10 shows spotlight women (mostly) of a certain age navigating career challenges with...mixed results.],
-  [id="hacks-2021"\> Hacks (2021 – )],
-  [id="video-container-01KMY4RNT43RJH0K7NJJ40R2CW"\>],
+  [Hacks (2021 – )],
   [On the surface, Valerie Cherish and Deborah Vance don't have all that much in common, but they often feel like two sides of a coin in the ways in which they battle, and concede to, the pressures of being a woman in modern show business. Hacks finds 25-year-old writer Ava (Hannah Einbinder) struggling to get her career back one track after getting cancelled over a tweet. She reluctantly takes a job with Deborah Vance (Jean Smart), a comedy trailblazer who remains popular with an older Vegas crown, but whose career is largely on autopilot. They're an entirely mismatched pair, but their chemistry is ultimately explosive, with Jean Smart doing some of the best work of her incredible career as the often deeply unlikeable Vance, and Einbinder more than holding her own in return. It's funny, bitchy, and surprisingly moving when it wants to be. Stream Hacks on HBO Max .],
-  [id="girls5eva-2021-2024"\> Girls5eva (2021 – 2024)],
-  [id="video-container-01KMY4RNT67T6W92K7W12JCXA0"\>],
+  [Hacks (2021 – )],
+  [Girls5eva (2021 – 2024)],
   [The premise is very much about a comeback: A very ‘90s group (Sara Bareilles, Busy Philipps, Paula Pell, and Renée Elise Goldsberry) who made it big very briefly with exactly one hit song gets its own shot at a career resurgence (they’re Girls5eva because they expected to be in the game “longer than 4 ever”—turned out, not so much; also there used to be a fifth member, but she died in a tragic infinity pool accident). After an up-and-coming rapper samples one of their old hits, the band reunites to try to find new relevancy in the 2020s. It doesn't go great! Tina Fey is one of the executive producers, and the (very fun) '90s-inspired original music was composed and written for the show by the creators. Stream Girls5Eva on Peacock and Netflix .],
-  [id="veep-2012-2019"\> Veep (2012 – 2019)],
-  [id="video-container-01KMY4RNT7K9Q7Q50V1019TVQ9"\>],
+  [Girls5eva (2021 – 2024)],
+  [at Peacock],
+  [at Peacock],
+  [Veep (2012 – 2019)],
   [There's a sweet vulnerability to Valerie Cherish absent from pretty much anyone in Veep , but the air of cringeworthy desperation hangs heavy over both shows. Veep asks: What if the very worst people imaginable had control of all the levers of power in America? What would that be like? In the highly satirical and in no way politically relevant series, Julia Louis-Dreyfus brilliantly plays Vice President Selina Meyer: part icon, part worst-case-scenario for the feminist dream. The supporting cast consists almost entirely of entitled rich people climbing over each other for infinitesimal extra bits of power while trying to appear as folk heroes to the rubes (us voters). It’s one of the funniest shows ever on TV, with the nastiest put-downs...if you can handle the fact that history has overtaken it in favor of a reality that's even more absurd. Stream Veep on HBO Max.],
-  [id="the-studio-2025"\> The Studio (2025 – )],
-  [id="video-container-01KMY4RNT819TY5SC4JA0R35H7"\>],
+  [Veep (2012 – 2019)],
+  [at HBO Max],
+  [at HBO Max],
+  [The Studio (2025 – )],
   [Industry exec Matt Remick ( Comeback vet Seth Rogen) loves movies, and when he signs on for a high-profile role at the fictional Continental Studios, he feels like his time has come. He aims to make a real difference in returning an increasingly IP-driven movie industry to its creative roots.—until about a minute into his new job, when the CEO (Bryan Cranston) reveals his first order of business will be marketing the Kool-Aid Man Movie . Hollywood satires of yore have focused on the industry as one that eats people up and spits them out, but the spin here is that Remick yearns for those good old days, much as Valerie can never quite seem to move forward. The late Catherine O'Hara, Ike Barinholtz, Chase Sui Wonders ( Bodies Bodies Bodies ), and Kathryn Hahn also star, and like The Comeback , the show boasts a long list of celebrity cameos. Stream The Studio on Apple TV+ .],
-  [id="enlightened-2011-2013"\> Enlightened (2011 – 2013)],
-  [id="video-container-01KMY4RNTAVYTE13NT24A6539C"\>],
+  [The Studio (2025 – )],
+  [at Apple TV+],
+  [at Apple TV+],
+  [Enlightened (2011 – 2013)],
   [Before The White Lotus , Mike White co-created (with star Laura Dern) this beloved, if short-lived, comedy-drama about a middle-aged woman who has a complete mental breakdown following a demotion at the job to which she's devoted her life. Following a two-month stay in an holistic treatment facility, Dern's Amy Jellicoe becomes determined to approach life with a new perspective, focusing on meditation and positive change at work and at home. The results are mixed, but there's also a rather beautiful sense that change is absurd and difficult, but also entirely possible. Stream Enlightened on HBO Max.],
-  [id="no-good-deed-2024"\> No Good Deed (2024)],
-  [id="video-container-01KMY4RNTBNDMZCNDK0YWS3EGR"\>],
+  [Enlightened (2011 – 2013)],
+  [No Good Deed (2024)],
   [I'm adding this one largely for the Lisa Kudrow of it all, but there's a similar vein of dark comedy here—plus, No Good Deed is a pretty great show that a lot of people missed. The setup sounds like a juicy crime thrillers: Kudrow is retired pianist Lydia; Ray Romano is her husband, Paul. The two are in rather tricky financial straits and need to sell their home without wanting to seem too desperate to prospective buyers—and also hide a secret involving a death a few years prior. For all that, it's very much a comedy, with a great supporting cast that includes Linda Cardellini, Luke Wilson, O-T Fagbenle, and Teyonah Parris. Stream No Good Deed on Netflix .],
-  [id="younger-2015-2021"\> Younger (2015 – 2021)],
-  [id="video-container-01KMY4RNTC7KT35D6JECWSYX16"\>],
+  [No Good Deed (2024)],
+  [Younger (2015 – 2021)],
   [Rather than a young woman seeking to make a name for herself, Younger follows Liza Miller (Sutton Foster), a recently divorced woman in her 40s who finds that age is a barrier to reentering the publishing industry she left years earlier. After a compliment convinces her that she could pass for a younger woman, she lies that she's just 26 (must be nice) in order to land an entry-level job. Misadventures ensue. Think of it as a story of coming-of-age, again. Stream Younger on Netflix .],
-  [id="hot-in-cleveland-2010-2015"\> Hot in Cleveland (2010 – 2015)],
-  [id="video-container-01KMY4RNTEKPRJEQKB82RQFB0K"\>],
+  [Younger (2015 – 2021)],
+  [at Netflix],
+  [at Netflix],
+  [Hot in Cleveland (2010 – 2015)],
   [In contrast to The Comeback' s reality TV style and structure, this is very much a traditional three-camera sitcom, albeit one with a stacked cast of legends, though it approaches the challenges of being a middle-aged woman in entertainment in many of the same ways. Writer Melanie (Valerie Bertinelli), beautician Joy (Jane Leeves), and soap diva Victoria (Wendie Malick) wind up spending a wild night in Cleveland after a plane to Paris is diverted, discovering in the process that, while they're seen as over-the-hill back in Los Angeles, they're all Ohio 10s—though the sassy caretaker of their house, Elka (Betty White), might not agree. Stream Hot in Cleveland on Paramount+ .],
-  [id="grace-and-frankie-2015-2022"\> Grace and Frankie (2015 – 2022)],
-  [id="video-container-01KMY4RNTFMNTQ2V0MERFNDEGZ"\>],
+  [Hot in Cleveland],
+  [at Paramount+],
+  [at Paramount+],
+  [Grace and Frankie (2015 – 2022)],
   [Close female friendships are hard to come by for the driven, slightly clueless Valerie, a woman focused on staying on top. Jane Fonda's Grace, a cosmetics mogul, isn't much different at the start, but she finds a different path when she makes a truce with her arch-nemesis Frankie (Lily Tomlin), a quirky artist with whom she has nothing in common—other than the fact that their husbands left them for one another. (Valerie might take some notes.) Stream Grace and Frankie on Netflix.],
-  [id="call-my-agent-2015-2020"\> Call My Agent! (2015 – 2020)],
-  [id="video-container-01KMY4RNTG61KVYX8QBQST17BG"\>],
+  [Grace and Frankie],
+  [at Netflix],
+  [at Netflix],
+  [Call My Agent! (2015 – 2020)],
   [International sensation Call My Agent! shifts its focus between four talent agents at a prestigious firm who are forced to take the reins following the sudden death of the agency founder, all of them getting a second chance in mid-career—or beyond. The cast is lead by Camille Cottin as Andréa Martel, while Liliane Rovère's Arlette Azéma is in her '80s. They navigate their messy personal lives while catering to the needs of their real celebrity clients (Juliette Binoche, Monica Bellucci, Isabelle Huppert, and Sigourney Weaver are just some of the name guest stars playing faintly exaggerated versions of themselves). It's soapy, addictive showbiz fun, a dishy delight even if you know not a lick of French. Stream Call My Agent! on Netflix .],
+  [Call My Agent! (2015 – 2020)],
+  [at Netflix],
+  [at Netflix],
 ),
   insert-map: (:),
   word-count: 2627,
@@ -763,10 +779,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Everything You're Entitled to When Your Flight Gets Delayed or Canceled],
   author: [Meredith Dietz],
   source-name: [Lifehacker],
@@ -774,7 +788,7 @@
   paragraphs: (
   [In recent days, travelers have faced the highest wait times in TSA history , "with some wait times greater than 4.5 hours," said the agency's acting chief, Ha Nguyen McNeill, in a testimony before the House Committee on Homeland Security on March 25.],
   [Unlike weather delays that clear up on their own, this madness could continue as long as the partial government shutdown does. Airlines are bracing themselves for more record-breaking security lines, which means more chaos and more uncertainty. You want to be prepared to fight for what you’re entitled to when an airline, for lack of a better phrase, utterly screws you over. Here’s how to always get the most money possible from a canceled or delayed flight.],
-  [id="know-your-airline-passenger-rights"\>Know your airline passenger rights],
+  [Know your airline passenger rights],
   [Federal law still does not require airlines to provide passengers with money or other compensation when flights are delayed. This means that in most cases, compensation is at the discretion of the airline.],
   [Canceled flights],
   [If an airline cancels your flight less than 14 days before departure and you choose to cancel your trip entirely, you’re entitled to a refund of both your plane ticket and any pre-paid baggage fees. This typically applies even if you have non-refundable tickets.],
@@ -794,11 +808,11 @@
   [Flights on small aircrafts (less than 30 passengers) are overbooked, delayed, or canceled],
   [International flights are overbooked, delayed, or canceled],
   [To qualify for involuntary denied boarding compensation, you must have a confirmed flight reservation, you must have checked in and arrived at your gate on time, and you must be unable to reach your destination within one hour of your original flight’s arrival time. The compensation amount will depend on how long of a delay you face, which is outlined on the DOT website .],
-  [id="what-exactly-are-you-entitled-to-if-your-flight-is-delayed"\>What exactly are you entitled to if your flight is delayed?],
+  [What exactly are you entitled to if your flight is delayed?],
   [According to DOT , you are entitled to a refund if the airline cancels a flight, regardless of the reason, and you choose not to travel or accept travel credits, vouchers, or other forms of compensation offered by the airline.],
   [But while airlines are required to give passengers refunds if their flights are outright canceled, the rules around delays are less clear. For instance, "significant delay" is not officially defined anywhere by the DOT. The most useful, up-to-date resource for what you’re entitled to is the DOT's Airline Customer Service Dashboard. Follow this link to check out a grid of the major U. S. airlines and which services they’ve promised to provide should there be a “controllable” flight cancelation or delay. What counts as controllable includes maintenance or crew problems, cabin cleaning, baggage loading, fueling, and other delays caused by the airline itself.],
   [However, the DOT encourages travelers to reach out to the airlines before filing a complaint . Customer service representatives may be able to resolve your issue on the spot. You can also visit FlightRights.gov for a listing of the benefits and rights they are entitled too.],
-  [id="finally-dont-automatically-accept-that-voucher"\>Finally: Don’t automatically accept that voucher],
+  [Finally: Don’t automatically accept that voucher],
   [While some airlines may offer tickets or vouchers for those involuntarily bumped, you have the right to request a check for cash instead. The likelihood you’ll receive one depends on the circumstances around your reason for cancelation as well as the airline’s policies. Still, double-checking with a customer service representative could reap cash rewards. On that note, if you do need to connect with a real human, here’s our guide to navigating an airline’s phone lines .],
   [The bottom line for today's news: Check your flight status frequently, contact your airline proactively to understand your options, and consider having backup plans. Airlines will typically rebook you if your flight is cancelled, but with so many disruptions happening, alternative flights may fill up quickly.],
   [And hey, as a last resort, you can take to social media to publicly complain in the hopes that a representative will finally respond to you.],
@@ -809,10 +823,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [This Best-Pick 65-Inch Hisense QLED TV Is Over 50% Off Right Now],
   author: [Pradershika Sharma],
   source-name: [Lifehacker],
@@ -821,8 +833,19 @@
   [Deal pricing and availability subject to change after time of publication.],
   [Hisense’s mid-range TVs tend to land in that sweet spot of good features at a not-astronomical price. That certainly describes the 2025 U7 Series right now, as the 65-inch model is discounted by \$800 at Best Buy , dropping to just \$699 . It's one of Lifehacker's picks for the best 65-inch TVs in 2026, especially at this price.],
   [The sale price is good through April 19, and Best Buy is sweetening the deal with a discount on mounting and free haul-away for members, making upgrading your older TV a bit less of a chore.],
+  [65-inch Hisense 65U75QG TV],
+  [MiniLED Smart 4K TV (2025)],
+  [\$699.00
+ at Best Buy],
+  [\$1,499.00 
+ Save \$800.00],
+  [\$699.00
+ at Best Buy],
+  [\$1,499.00 
+ Save \$800.00],
   [The Mini-LED backlighting and QLED panel of the 65U75QG deliver deep blacks with minimal blooming, and displays punchy HDR content with support for Dolby Vision and HDR10+, so watching movies or sports feels lively. It gets bright enough to handle sunlit rooms without looking washed out, though if your room has a lot of light, reflections can show up during darker scenes. There’s a built-in speaker setup with a subwoofer and upward-firing speakers, which adds some height to the soundstage, though it won’t replace a dedicated soundbar. As Google TV runs the interface, apps, casting, and voice control are all baked in.],
   [On the downside, this TV doesn’t track brightness levels as precisely as higher-end models, so scenes can look slightly off without calibration. Also, the viewing angle is narrow enough that colors and contrast shift if you’re sitting too far to the side. While gaming works well overall, with smooth performance and plenty of support for high refresh rates, fast-moving scenes may blur more than expected. None of these factors will be a dealbreaker for casual use, but they matter if you’re picky about image accuracy or plan to use this in a wide seating setup. For most people, though, this is a bright, capable TV that covers a lot of ground, especially for this price.],
+  [Our Best Editor-Vetted Amazon Big Spring Sale Deals Right Now],
   [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
  
  
@@ -879,6 +902,7 @@
  \$169.99 
  
  (List Price \$249.99)],
+  [Deals are selected by our commerce team],
 ),
   insert-map: (:),
   word-count: 643,
@@ -886,43 +910,51 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [10 Hacks Every ChatGPT User Should Know],
   author: [David Nield],
   source-name: [Lifehacker],
   images: (),
   paragraphs: (
   [If you're a regular ChatGPT user , then you're one of a crowd that's now around 900 million people strong. It seems that plenty of us are spending significant amounts of time with the AI chatbot, whether that's to get more done, search the web, work on creative or coding projects, or just have something to talk to. Are you making the most out of ChatGPT though? The web, mobile, and desktop apps come with a selection of settings and some prompt adjustment possibilities that you may not have fully explored yet. Here's how to level up.],
-  [id="use-branch-conversations-to-explore-tangents-off-your-chats"\>Use 'branch conversations' to explore tangents off your chats],
+  [Use 'branch conversations' to explore tangents off your chats],
   [OpenAI often rolls out minor but useful upgrades to ChatGPT that can get missed, and one of those is branch conversations . They quite literally let you branch off from one conversation and start another, while leaving the original chat preserved so you can go back to it if you need to (and maybe start another branch). It's a simple way to go off on a tangent with a discussion. Click or tap the three dots at the end of any ChatGPT response and you'll see the Branch in new chat option. A new chat is then created, based on the first.],
-  [id="trick-chatgpt-into-returning-shorter-more-effective-results"\>Trick ChatGPT into returning shorter, more effective results],
+  [Trick ChatGPT into returning shorter, more effective results],
+  [You can specify what kind of target audience you are to ChatGPT. 
+ Credit: Lifehacker],
   [The internet is awash with ChatGPT prompt "hacks" of varying quality and effectiveness, and they all really boil down to the specificity of the instructions you're giving the AI. From the length of the responses to the data format they're outputted in, tell ChatGPT what you want in precise terms, and it will oblige.],
   [One of the best of these prompt hacks I've seen lately is from u/AdCold1610 on Reddit , and all you have to do is put "extremely lazy person here" somewhere in the prompt. It often has quite a profound effect on the response: Answers get shorter and to the point, and if there are instructions involved they become simpler and more straightforward. You get less fluff and more action in general, though obviously how much impact the lazy prompt has will vary on what you're asking of the AI.],
-  [id="use-voice-mode-to-record-memos-or-thoughts"\>Use Voice Mode to record memos or thoughts],
+  [Use Voice Mode to record memos or thoughts],
   [You may well have seen the little sound wave icon down in the bottom right corner of the ChatGPT prompt box and given Voice Mode a try, without really knowing how to make use of it or why it works better than typing in your prompts. One potentially helpful idea, though, is to use it as a voice memo recorder for stuff you need to get done; another is to use it as an audio-based personal journal for thoughts and reflections. You can keep them all together in one chat, or spread them out.],
   [There's no shortage of mobile apps that will record audio clips for you, but they don't come with ChatGPT's AI analysis brain attached. Once you've built up a library of recordings, you can get it to prioritize your to do list, remind you about something you've forgotten, summarize the main themes of your reflections, sum up your mood changes over the week, or whatever else you can think of.],
-  [id="use-personalization-to-tailor-chatgpts-answers-towards-your-interests"\>Use "Personalization" to tailor ChatGPT's answers towards your interests],
+  [Use "Personalization" to tailor ChatGPT's answers towards your interests],
+  [Delve into the Personalization settings. 
+ Credit: Lifehacker],
   [You can tailor the answers ChatGPT gives you by telling it more about yourself: what you know about a certain topic, how you best absorb information, how verbose or succinct you'd like the AI's responses to be, and so on. But entering these details for each and every prompt can get tiresome quickly.],
   [There's actually a place to put details like this in ChatGPT's settings, as long as you open the panel on the web or desktop: Click your account profile avatar (bottom left), then choose Personalization . The next screen not only lets you set some guidelines for the personality ChatGPT should use by default, it also lets you tell the AI a bit about yourself—which it will keep permanently in its memory. You can add details including your occupation, your ethical values, your preferred learning style, and your main interests.],
-  [id="use-photoshop-to-edit-photos-within-chatgpt-for-free"\>Use Photoshop to edit photos within ChatGPT for free],
+  [Use Photoshop to edit photos within ChatGPT for free],
   [ChatGPT comes with mini-apps you can connect to via the prompt box, and one of those apps happens to be Photoshop —meaning you can carry out some pretty advanced edits using Adobe's software technology, free of charge.],
   [The plug-in is currently available in all the ChatGPT apps except Android and Windows. Pick Apps from the navigation pane, then search for "Photoshop" and click Connect to add it to your ChatGPT tools. You can then call it into action via the + (plus) button in the prompt box, or by typing "\@" in your prompt followed by the app name.],
   [With Photoshop enabled, you can perform all kinds of edits : blur backgrounds, remove objects, and tweak brightness and contrast, for example. Just use the same natural language as you would in any ChatGPT conversation. You do need to upload an image to edit, or provide a public web link to one. If you don't do this before you submit your prompt, you'll be asked to do it after.],
-  [id="use-your-phone-camera-for-live-help"\>Use your phone camera for live help],
+  [Use your phone camera for live help],
+  [Don't neglect the Camera option on mobile. 
+ Credit: Lifehacker],
   [ChatGPT for Android and iOS comes with a superpower: access to your phone's camera, so you can feed it photos in real time as you explore the world and go about the business of daily life. Just tap the + (plus) button by the prompt box, then Camera .],
   [Even if you've realized the feature is there, you might not have realized how much you can do with it. It'll translate signs in a foreign language for you, identify movies and TV shows from images posted to social media, pick out the route you need to take from a picture of a timetable or transit map, and explain what's in a particular dish on a menu.],
-  [id="ask-chatgpt-for-questions-rather-than-answers"\>Ask ChatGPT for questions rather than answers],
+  [Ask ChatGPT for questions rather than answers],
   [Back to a bit of prompt hacking: Another trick that I've used a lot recently was taken from Reviewracoon on Medium . It's a debugging prompt, which means you don't ask for answers; instead, you ask ChatGPT for questions that are going to help you get to the answers yourself.],
   [This works best when reviewing your own writing, code, or ideas. For a draft of a short story, for example, you might say: "Don't tell me what's wrong and how to fix it. Instead, act like a detective, asking questions that will help me figure out how to improve it." What you'll get back will encourage you to review the thinking around your own process, what you're trying to achieve, and why you've taken the approaches you have.],
-  [id="use-temporary-chats-to-run-chatgpt-in-incognito-mode"\>Use temporary chats to run ChatGPT in incognito mode],
+  [Use temporary chats to run ChatGPT in incognito mode],
+  [Launch temporary chats on mobile or desktop. 
+ Credit: Lifehacker],
   [Another feature you might not have come across is the very handy temporary chat tool, which works like an incognito mode for ChatGPT. Nothing in this chat will be saved—it'll be instantly forgotten as soon as you close it. To start a temporary chat, open up a new chat and then click or tap the dashed speech bubble up in the top right corner.],
-  [id="reduce-your-messaging-limits-to-block-ads-in-chatgpt-free"\>Reduce your messaging limits to block ads in ChatGPT Free],
+  [Reduce your messaging limits to block ads in ChatGPT Free],
   [If you're on the Free or Go tiers of ChatGPT, you're going to see ads by default to help pay OpenAI's data center bills, but there is a way to remove them : You just have to put up with lower usage limits in return.],
   [Get to your profile page by clicking or tapping on your username, then select Ads controls \> Change plan to go ad-free \> Reduce message limits to make the change. (You can reverse it any time you like.) OpenAI doesn't actually specify how restrictive this will be in terms of a daily message allowance, but it's an option you can try out. The other ways to remove ads are to switch to a Plus, Pro, Business, or Enterprise account (starting from \$20 per month), or to register for an Education account. These subscriptions come with other benefits too, including access to smarter models.],
-  [id="use-study-and-learn-mode-to-pick-up-new-skills-and-concepts"\>Use 'Study and learn' mode to pick up new skills and concepts],
+  [Use 'Study and learn' mode to pick up new skills and concepts],
+  [Study and learn mode will feed you knowledge and then test you on it. 
+ Credit: Lifehacker],
   [You can employ ChatGPT as a learning tool in all kinds of ways, but there is a specific Study and learn mode built right in . OpenAI describes it as "a learning experience that helps you work through problems step by step instead of just getting an answer".],
   [To enable it, tap or click the + (plus) button on the prompt box, then choose Study and learn (it might be behind a More menu). Specify the topic you want to learn, and submit the prompt to get started with your tutoring session. ChatGPT may ask you some clarification questions so the bot can narrow down its teaching material.],
   [What you'll get next is a blend of information and questions to test your knowledge: ChatGPT will mark your answers as you go, then adapt the learning experience to meet you where you currently are.],
@@ -933,16 +965,15 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Please Don’t Feed the Scattered Lapsus ShinyHunters],
   author: [BrianKrebs],
   source-name: [Krebs on Security],
   images: (),
   paragraphs: (
   [A prolific data ransom gang that calls itself Scattered Lapsus ShinyHunters (SLSH) has a distinctive playbook when it seeks to extort payment from victim firms: Harassing, threatening and even swatting executives and their families, all while notifying journalists and regulators about the extent of the intrusion. Some victims reportedly are paying — perhaps as much to contain the stolen data as to stop the escalating personal attacks. But a top SLSH expert warns that engaging at all beyond a “We’re not paying” response only encourages further harassment, noting that the group’s fractious and unreliable history means the only winning move is not to pay.],
+  [Image: Shutterstock.com, \@Mungujakisa],
   [Unlike traditional, highly regimented Russia-based ransomware affiliate groups, SLSH is an unruly and somewhat fluid English-language extortion gang that appears uninterested in building a reputation of consistent behavior whereby victims might have some measure of confidence that the criminals will keep their word if paid.],
   [That’s according to Allison Nixon , director of research at the New York City based security consultancy Unit 221B . Nixon has been closely tracking the criminal group and individual members as they bounce between various Telegram channels used to extort and harass victims, and she said SLSH differs from traditional data ransom groups in other important ways that argue against trusting them to do anything they say they’ll do — such as destroying stolen data.],
   [Like SLSH, many traditional Russian ransomware groups have employed high-pressure tactics to force payment in exchange for a decryption key and/or a promise to delete stolen data, such as publishing a dark web shaming blog with samples of stolen data next to a countdown clock, or notifying journalists and board members of the victim company. But Nixon said the extortion from SLSH quickly escalates way beyond that — to threats of physical violence against executives and their families, DDoS attacks on the victim’s website, and repeated email-flooding campaigns.],
@@ -957,6 +988,7 @@
   [Intrusions from established ransomware groups typically center around encryption/decryption malware that mostly stays on the affected machine. In contrast, Nixon said, ransom from a Com group is often structured the same as violent sextortion schemes against minors, wherein members of The Com will steal damaging information, threaten to release it, and “promise” to delete it if the victim complies without any guarantee or technical proof point that they will keep their word. She writes:],
   [A key component of SLSH’s efforts to convince victims to pay, Nixon said, involves manipulating the media into hyping the threat posed by this group. This approach also borrows a page from the playbook of sextortion attacks, she said, which encourages predators to keep targets continuously engaged and worrying about the consequences of non-compliance.],
   [“On days where SLSH had no substantial criminal ‘win’ to announce, they focused on announcing death threats and harassment to keep law enforcement, journalists, and cybercrime industry professionals focused on this group,” she said.],
+  [An excerpt from a sextortion tutorial from a Com-based Telegram channel. Image: Unit 221B.],
   [Nixon knows a thing or two about being threatened by SLSH: For the past several months, the group’s Telegram channels have been replete with threats of physical violence against her, against Yours Truly, and against other security researchers. These threats, she said, are just another way the group seeks to generate media attention and achieve a veneer of credibility, but they are useful as indicators of compromise because SLSH members tend to name drop and malign security researchers even in their communications with victims.],
   [“Watch for the following behaviors in their communications to you or their public statements,” Unit 221B’s advisory reads. “Repeated abusive mentions of Allison Nixon (or “A. N”), Unit 221B, or cybersecurity journalists—especially Brian Krebs—or any other cybersecurity employee, or cybersecurity company. Any threats to kill, or commit terrorism, or violence against internal employees, cybersecurity employees, investigators, and journalists.”],
   [Unit 221B says that while the pressure campaign during an extortion attempt may be traumatizing to employees, executives, and their family members, entering into drawn-out negotiations with SLSH incentivizes the group to increase the level of harm and risk, which could include the physical safety of employees and their families.],
@@ -968,10 +1000,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Best Ways to Make Use of Those Spare USB Ports on Your TV or Monitor],
   author: [David Nield],
   source-name: [Lifehacker],
@@ -980,23 +1010,25 @@
   [We may earn a commission from links on this page.],
   [If you've taken a look at the back of your computer monitor or TV lately, you may have noticed there's a USB port or two alongside the more familiar HDMI—and that in turn might have left you wondering what exactly a USB port is doing on the back of a big screen. Well, these USB ports have more uses than you might think.],
   [Their precise function is going to depend on the make and model of your TV and monitor—and the primary uses tend to differ between the two. However, we can talk generally about how to make use of these ports and some of the options available to you, so you can check on your own specific device to see what's supported.],
-  [id="the-extra-ports-can-charge-your-devices"\>The extra ports can charge your devices],
+  [The extra ports can charge your devices],
   [This is a big one, because it applies to just about every USB port on every TV and monitor: You can plug in small gadgets like phones and charge them up, though charging rates and supported devices may vary, especially on televisions. It saves you having to hunt around for a spare wall outlet, at least.],
   [On higher-end monitors with support for USB Power Delivery (USB-PD), you can sometimes charge up larger devices like laptops, while also providing a video connection through the same USB-C cable. It's something to look out for if you're shopping around, as it helps reduce desk clutter and adds convenience— the \$620 4K Dell U2725QE is one example of a monitor that will do this for you.],
   [With Android smartphones and monitors, you might get the added bonus of support for a desktop environment on the big screen as well as device charging. Both Samsung DeX and the recently launched Pixel Desktop Mode can be used like this, so you might be able to attach a desktop or laptop via HDMI, and a phone via USB-C.],
-  [id="set-up-a-usb-hub-for-cleaner-cable-maintenance"\>Set up a USB hub for cleaner cable maintenance],
+  [Set up a USB hub for cleaner cable maintenance],
   [As well as device charging, some monitors also add USB hub functionality, especially at the higher end of the market—if you've got several USB-A ports on the back of your monitor, this is likely what they're for.],
   [Rather than plugging all your peripherals into your laptop or desktop computer, you can add them to your monitor instead. It's a solution that's often neater and removes the need for a separate USB hub on your desk — with a separate upstream USB cable handling the connection to your computer, if it's not attached via a single data and video cable.],
   [You might even see an Ethernet port on some models, giving you a high-speed wired connection to the internet for your laptop. The \$260 1080p ViewSonic VG2456 is one such model, and they often offer great value for office use.],
-  [id="connect-external-storage-to-display-photos-and-videos"\>Connect external storage to display photos and videos],
+  [Connect external storage to display photos and videos],
   [This is a primary one for TVs, including certain Samsung models : You can plug an external USB drive into the back of your television, and access the photos, videos, or audio on it, provided the drive and file formats are supported. You can also do this via the USB ports on monitors, via the USB hub functionality mentioned above.],
   [If you've got a large local media library saved somewhere, then this is a simple and quick way of getting those media files up on the big screen (rather than using something like Plex ). You're most likely not going to get the most advanced user interface you've ever seen, but it'll work.],
   [With the rise of streaming and faster wifi connections, the functionality is now becoming less common, but it's still around—consult your TV documentation for details ( Sony's instructions are here ). A portable drive such as the \$90 WD Elements should be suitable, but be careful to check the requirements listed by your TV manufacturer.],
-  [id="set-up-a-kvm-switch-for-multiple-devices"\>Set up a KVM switch for multiple devices],
+  [Set up a KVM switch for multiple devices],
   [A variation on the USB hub idea is a KVM (Keyboard, Video, Mouse) switch, which can be incredibly useful if you have more than one computer connected up to your monitor (maybe a laptop and a desktop). You can plug your keyboard and mouse into the USB ports on the display, and then use them to control each computer in turn.],
   [You can buy these KVM switches separately, but having one built into your monitor cuts down on the number of trailing cables you have to deal with. Once your peripherals are connected, you can typically switch via the monitor's on-screen menu, or through a dedicated hardware button.],
   [Perhaps you've had this functionality on your monitor and never realized. A good example of this type of display is the \$800 4K Gigabyte M32U aimed at gamers, which does have an integrated button specifically for switching between computers (plus a load of other high-end features, as you would expect at that price).],
-  [id="those-extra-ports-support-a-bunch-of-other-devices-too"\>Those extra ports support a bunch of other devices, too],
+  [The Gigabyte M32U has an integrated KVM switch. 
+ Credit: Gigabyte],
+  [Those extra ports support a bunch of other devices, too],
   [Just about anything that can be powered by USB can be plugged into one of the spare ports on your TV or monitor (if the power demands and supply match). Maybe you could add a desk fan for keeping you cool through the summer months, or maybe you want to get creative with a smart light setup .],
   [For monitors with USB hub functionality, you can think about options like microphones, webcams, and gaming controllers—which can all be easier to plug into a big display rather than a laptop (if your laptop even has any spare USB ports left).],
   [It's well worth having a look around the back of your TVs and monitors to see what's available—you might not be using these devices to their full potential. It's also something to look out for the next time you're upgrading.],
@@ -1007,12 +1039,10 @@
   debug-mode: false,
 )
 
-  #pull-quote([Rather than plugging all your peripherals into your laptop or desktop computer, you can add them to your monitor instead.], [David Nield])
+#pull-quote([Rather than plugging all your peripherals into your laptop or desktop computer, you can add them to your monitor instead.], [David Nield])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [This Kindle Colorsoft (With Case) Is 40% Off During Amazon's Big Spring Sale],
   author: [Daniel Oropeza],
   source-name: [Lifehacker],
@@ -1021,9 +1051,28 @@
   [We may earn a commission from links on this page. Deal pricing and availability subject to change after time of publication.],
   [I've loved Kindle e-readers since the first Kindle Paperwhite came out in 2012, but until recently, my dream of reading color comics on a Kindle was just that. But then, the Kindle Colorsoft finally came out last summer, and it's now on sale for \$169.99 (originally \$249.99) during Amazon's Big Spring Sale . And if you can spare just another \$2, you can get the bundle with the clear case , currently going for \$171.98 (originally \$286.98). This is the biggest discount this device has received since its release, according to price-tracking tools .],
   [You can also get it with three months of free Kindle Unlimited (it'll auto-renew unless you cancel it), and if you're a Prime Member, you can fill it up with some free e-books . And here are all the best deals on Kindles during the sale .],
+  [Kindle Colorsoft 16GB eReader (2025 Release, No Ads, Metallic Black)],
+  [\$169.99
+ at Amazon],
+  [\$249.99 
+ Save \$80.00],
+  [\$169.99
+ at Amazon],
+  [\$249.99 
+ Save \$80.00],
+  [Amazon Kindle Colorsoft 16GB eReader + Black & Clear Case Bundle],
+  [\$171.98
+ at Amazon],
+  [\$286.98 
+ Save \$115.00],
+  [\$171.98
+ at Amazon],
+  [\$286.98 
+ Save \$115.00],
   [SEE -1 MORE],
   [The Kindle Colorsoft Signature Edition is exactly what it sounds like: It's a Kindle e-reader with color. It's essentially the same hardware and design as the Kindle Paperwhite, with the same dimensions, weight, and 16GB of storage. It also has the same features, like the adjustable warm light, the IPX8 waterproof rating, and the ad-free lock screen that either shows the cover for the book you're reading, or a generic wallpaper. The battery life is shorter than the Paperwhite's, with Amazon suggesting it can last up to eight weeks compared to 12 for the Paperwhite, but that's still plenty for most people. That said, the tech that enables its color display may cause black and white content (like regular books) to look worse, according to our review . Therefore, unless you're a dedicated comics reader, the Colorsoft may not be the best option for you.],
   [The seven-inch Kaleido 3 display offers the industry standard 300 pixels per inch (ppi) for black-and-white content and 150ppi for color, but it employs a unique, Amazon-developed stack that improves the color quality. If you love reading comics, this is where the Colorsoft Signature Edition shines: Colors look like a printed newspaper, and there's a feature that provides a close-up of each comic panel so you can enjoy the art without having to manually zoom into each panel.],
+  [Our Best Editor-Vetted Amazon Big Spring Sale Deals Right Now],
   [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
  
  
@@ -1080,6 +1129,7 @@
  \$169.99 
  
  (List Price \$249.99)],
+  [Deals are selected by our commerce team],
 ),
   insert-map: (:),
   word-count: 786,
@@ -1087,10 +1137,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How AI Assistants are Moving the Security Goalposts],
   author: [BrianKrebs],
   source-name: [Krebs on Security],
@@ -1098,11 +1146,13 @@
   paragraphs: (
   [AI-based assistants or “agents” — autonomous programs that have access to the user’s computer, files, online services and can automate virtually any task — are growing in popularity with developers and IT workers. But as so many eyebrow-raising headlines over the past few weeks have shown, these powerful and assertive new tools are rapidly shifting the security priorities for organizations, while blurring the lines between data and code, trusted co-worker and insider threat, ninja hacker and novice code jockey.],
   [The new hotness in AI-based assistants — OpenClaw (formerly known as ClawdBot and Moltbot ) — has seen rapid adoption since its release in November 2025. OpenClaw is an open-source autonomous AI agent designed to run locally on your computer and proactively take actions on your behalf without needing to be prompted.],
+  [The OpenClaw logo.],
   [If that sounds like a risky proposition or a dare, consider that OpenClaw is most useful when it has complete access to your digital life, where it can then manage your inbox and calendar, execute programs and tools, browse the Internet for information, and integrate with chat apps like Discord, Signal, Teams or WhatsApp.],
   [Other more established AI assistants like Anthropic’s Claude and Microsoft’s Copilot also can do these things, but OpenClaw isn’t just a passive digital butler waiting for commands. Rather, it’s designed to take the initiative on your behalf based on what it knows about your life and its understanding of what you want done.],
   [“The testimonials are remarkable,” the AI security firm Snyk observed . “Developers building websites from their phones while putting babies to sleep; users running entire companies through a lobster-themed AI; engineers who’ve set up autonomous code loops that fix tests, capture errors through webhooks, and open pull requests, all while they’re away from their desks.”],
   [You can probably already see how this experimental technology could go sideways in a hurry. In late February, Summer Yue , the director of safety and alignment at Meta’s “superintelligence” lab, recounted on Twitter/X how she was fiddling with OpenClaw when the AI assistant suddenly began mass-deleting messages in her email inbox. The thread included screenshots of Yue frantically pleading with the preoccupied bot via instant message and ordering it to stop.],
   [“Nothing humbles you like telling your OpenClaw ‘confirm before acting’ and watching it speedrun deleting your inbox,” Yue said. “I couldn’t stop it from my phone. I had to RUN to my Mac mini like I was defusing a bomb.”],
+  [Meta’s director of AI safety, recounting on Twitter/X how her OpenClaw installation suddenly began mass-deleting her inbox.],
   [There’s nothing wrong with feeling a little schadenfreude at Yue’s encounter with OpenClaw, which fits Meta’s “move fast and break things” model but hardly inspires confidence in the road ahead. However, the risk that poorly-secured AI assistants pose to organizations is no laughing matter, as recent research shows many users are exposing to the Internet the web-based administrative interface for their OpenClaw installations.],
   [Jamieson O’Reilly is a professional penetration tester and founder of the security firm DVULN . In a recent story posted to Twitter/X, O’Reilly warned that exposing a misconfigured OpenClaw web interface to the Internet allows external parties to read the bot’s complete configuration file, including every credential the agent uses — from API keys and bot tokens to OAuth secrets and signing keys.],
   [With that access, O’Reilly said, an attacker could impersonate the operator to their contacts, inject messages into ongoing conversations, and exfiltrate data through the agent’s existing integrations in a way that looks like normal traffic.],
@@ -1116,6 +1166,7 @@
   [“This is the supply chain equivalent of confused deputy ,” the blog continued. “The developer authorises Cline to act on their behalf, and Cline (via compromise) delegates that authority to an entirely separate agent the developer never evaluated, never configured, and never consented to.”],
   [VIBE CODING],
   [AI assistants like OpenClaw have gained a large following because they make it simple for users to “vibe code,” or build fairly complex applications and code projects just by telling it what they want to construct. Probably the best known (and most bizarre) example is Moltbook , where a developer told an AI agent running on OpenClaw to build him a Reddit-like platform for AI agents.],
+  [The Moltbook homepage.],
   [Less than a week later, Moltbook had more than 1.5 million registered agents that posted more than 100,000 messages to each other. AI agents on the platform soon built their own porn site for robots, and launched a new religion called Crustafarian with a figurehead modeled after a giant lobster. One bot on the forum reportedly found a bug in Moltbook’s code and posted it to an AI agent discussion forum, while other agents came up with and implemented a patch to fix the flaw.],
   [Moltbook’s creator Matt Schlicht said on social media that he didn’t write a single line of code for the project.],
   [“I just had a vision for the technical architecture and AI made it a reality,” Schlicht said. “We’re in the golden ages. How can we not give AI a place to hang out.”],
@@ -1130,6 +1181,7 @@
   [This gradual dissolution of the traditional boundaries between data and code is one of the more troubling aspects of the AI era, said James Wilson , enterprise technology editor for the security news show Risky Business . Wilson said far too many OpenClaw users are installing the assistant on their personal devices without first placing any security or isolation boundaries around it, such as running it inside of a virtual machine, on an isolated network, with strict firewall rules dictating what kinds of traffic can go in and out.],
   [“I’m a relatively highly skilled practitioner in the software and network engineering and computery space,” Wilson said . “I know I’m not comfortable using these agents unless I’ve done these things, but I think a lot of people are just spinning this up on their laptop and off it runs.”],
   [One important model for managing risk with AI agents involves a concept dubbed the “lethal trifecta” by Simon Willison , co-creator of the Django Web framework . The lethal trifecta holds that if your system has access to private data, exposure to untrusted content, and a way to communicate externally, then it’s vulnerable to private data being stolen.],
+  [Image: simonwillison.net.],
   [“If your agent combines these three features, an attacker can easily trick it into accessing your private data and sending it to the attacker,” Willison warned in a frequently cited blog post from June 2025.],
   [As more companies and their employees begin using AI to vibe code software and applications, the volume of machine-generated code is likely to soon overwhelm any manual security reviews. In recognition of this reality, Anthropic recently debuted Claude Code Security , a beta feature that scans codebases for vulnerabilities and suggests targeted software patches for human review.],
   [The U. S. stock market, which is currently heavily weighted toward seven tech giants that are all-in on AI, reacted swiftly to Anthropic’s announcement, wiping roughly \$15 billion in market value from major cybersecurity companies in a single day. Laura Ellis , vice president of data and AI at the security firm Rapid7 , said the market’s response reflects the growing role of AI in accelerating software development and improving developer productivity.],
@@ -1143,10 +1195,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [These Bose Quiet Comfort Ultra Earbuds Are 40% Off During Amazon's Big Spring Sale],
   author: [Daniel Oropeza],
   source-name: [Lifehacker],
@@ -1155,10 +1205,21 @@
   [We may earn a commission from links on this page. Deal pricing and availability subject to change after time of publication.],
   [Tech brands love to tout their active noise canceling (ANC) earbuds, but none have reached the standard set by the Bose QuietComfort series. For my money, Bose makes the best ANC gear, and the Bose QuietComfort Ultra (2nd Gen) are the best ANC earbuds you can buy right now.],
   [The downside of Bose buds is that they're pretty pricey, but you no longer need to spend \$300 to get great ANC—not during Amazon's Big Spring Sale . The fantastic first-generation Bose QuietComfort Ultra earbuds in the Moonstone Blue color are going for \$179.99 (originally \$299) on Amazon, the lowest price they've ever reached, according to price-tracking tools .],
+  [Brand: Bose, Color: Moonstone Blue, Ear Placement: In Ear, Noise Control: Active Noise Cancellation],
+  [Bose QuietComfort Ultra Wireless Earbuds],
+  [\$179.00
+ at Amazon],
+  [\$299.00 
+ Save \$120.00],
+  [\$179.00
+ at Amazon],
+  [\$299.00 
+ Save \$120.00],
   [SEE -2 MORE],
   [Though they're an older model, the first-gen Bose QuietComfort Ultra Bluetooth earbuds are still an excellent choice. They received an "outstanding" review from PCMag, not just for their best-in-class ANC, but for their great audio quality in general, Spatial audio support, and diverse codec Bluetooth support with AAC and AptX, which makes them great for Android and Apple users alike. However, they're not perfect: They lack multipoint connectivity, which other high-end earbuds at this price point offer, and there is no wireless charging for the case (if you care about that).],
   [The features are what really set these earbuds apart. They have a CustomTune feature that measures your ear canal's shape to tune the sound and establish your best ANC profile. (You can make your own tweaks in the companion app as well.) Bose's "Immersive Audio" feature allows you to hear your surroundings similarly to how you would when wearing open-ear headphones . You can also mess around with the settings to mix and match outside noise and ANC within the Immersive Audio setting on the app.],
   [You'll get about four to six hours of battery life from the buds and another 12 to 18 with the charging case. The earbuds aren't waterproof, but they are water resistant with an IPX4 rating , so you can wear them to the gym without worrying about how much you'll sweat.],
+  [Our Best Editor-Vetted Amazon Big Spring Sale Deals Right Now],
   [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
  
  
@@ -1215,6 +1276,7 @@
  \$169.99 
  
  (List Price \$249.99)],
+  [Deals are selected by our commerce team],
 ),
   insert-map: (:),
   word-count: 663,
@@ -1222,10 +1284,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Some of My Favorite Milwaukee Tools Come With a Free Battery Right Now],
   author: [Becca Lewis],
   source-name: [Lifehacker],
@@ -1233,12 +1293,29 @@
   paragraphs: (
   [We may earn a commission from links on this page. Deal pricing and availability subject to change after time of publication.],
   [One of the most expensive parts of a personal tool kit is the batteries, especially if you want to use multiple tools simultaneously without having to swap the battery each time you change tools. Moving seamlessly between drilling pilot holes and driving screws can save you time on your DIY projects, but the cost of extra batteries can add up. These deals from Home Depot are a good way to save more than 50% on a battery and tool combo if you want to expand your Milwaukee set.],
-  [id="battery-combo"\>Battery combo],
+  [Battery combo],
+  [18-volt Milwaukee six-amp-hour battery two-pack],
+  [Free extra battery with purchase],
+  [\$299.00
+ at Home Depot],
+  [\$439.00 
+ Save \$140.00],
+  [\$299.00
+ at Home Depot],
+  [\$439.00 
+ Save \$140.00],
   [If you use bigger Milwaukee 18-volt tools like a circular saw, or use a Milwaukee inverter in your emergency kit for temporary emergency power, a few extra six-amp-hour batteries are helpful to have around, but the higher capacity batteries can be expensive. The two-pack of 18-volt Milwaukee six-amp-hour batteries is on sale for \$299, 32% off its regular price. When you open the link to the two-pack, you'll see a "free gift with purchase" menu to the right, and you can select a third six-amp-hour battery from this menu. Once you add the battery, the discount is applied in your cart for a total savings of 53% off.],
-  [id="tool-combos"\>Tool combos],
+  [Tool combos],
   [I use my Milwaukee 18-volt random orbital sander daily when I’m working on furniture and other projects. Having a cordless sander is more convenient because you don’t have to drag the cord around when you’re working on delicate projects and you can bring it with you wherever you want to work, making it perfect for outdoor woodworking as well. The Milwaukee 18-volt random orbital sander is on sale for \$229 and it comes with a free six-amp-hour 18-volt battery when you select it in the "free gift with purchase" menu, saving you about 46% on the bundle. On this bundle, as with the other two tool bundles, you’ll need an 18-volt Milwaukee charger to use the battery.],
   [My Milwaukee oscillating multitool has saved many of my household projects because of its versatility. I used mine when I needed to replace the drain in my 115-year-old Craftsman’s bathroom sink to cut through the plaster and lathe, to cut some PVC components, to trim the drain pipe where it came out from the wall, to trim a patch I installed, and to sand over some places after I patched the wall. The 1 8-volt Milwaukee oscillating multitool is \$249 , and right now, it comes with a free 18-volt, six-amp-hour battery when you select it in the "free gift with purchase" menu, saving you around 44% on the set.],
+  [18-volt Milwaukee oscillating multitool],
+  [Free battery with purchase],
+  [\$249.00
+ at Home Depot],
+  [\$249.00
+ at Home Depot],
   [I use my 6 ½” Milwaukee circular saw frequently to make quick rip cuts or in places I can’t use a table saw. Battery technology has come a long way since I first started using a cordless circular saw and I had to change out my battery every 20 minutes or so. With larger capacity batteries, you can use your cordless circular saw for several hours before needing to replace the battery, depending on the thickness and density of the material you’re cutting. The Milwaukee 18-volt, 6 ½” cordless circular saw is \$229, and it comes with a free six-amp-hour battery when you select it in the "free gift with purchase" menu, saving you about 46% on the combo.],
+  [Our Best Editor-Vetted Amazon Big Spring Sale Deals Right Now],
   [Apple AirPods Pro 3 Noise Cancelling Heart Rate Wireless Earbuds
  
  
@@ -1295,6 +1372,7 @@
  \$169.99 
  
  (List Price \$249.99)],
+  [Deals are selected by our commerce team],
 ),
   insert-map: (:),
   word-count: 1022,
@@ -1302,11 +1380,10 @@
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Barbarella Finds MATERIALISTS Pointless],
   author: [Barbarella],
   source-name: [Ain't It Cool News],
@@ -1328,7 +1405,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Barbarella Adores THE LIFE OF CHUCK],
   author: [Barbarella],
   source-name: [Ain't It Cool News],
@@ -1354,7 +1431,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Damon and Baby review: hellishly fun new Metroidvania shooter],
   author: [Austin Manchester],
   source-name: [Polygon],
@@ -1370,7 +1447,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Amazon Big Spring Sale 2026 Live Blog: All the Best Deals From Apple, Kindle, Garmin, and More],
   author: [Daniel Oropeza],
   source-name: [Lifehacker],
@@ -1391,7 +1468,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [NYCC 2025 Exclusive! David Dastmalchian Talks Mental Wellness and Pushing 'Through'],
   author: [McEric],
   source-name: [Ain't It Cool News],
@@ -1412,7 +1489,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [A Conversation with RENTAL FAMILY Writer/Director HIKARI],
   author: [McEric],
   source-name: [Ain't It Cool News],
@@ -1436,7 +1513,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [TRAUMATIKA Interview with filmmakers Pierre Tsigaridis and Maxime Rancon],
   author: [McEric],
   source-name: [Ain't It Cool News],
@@ -1459,7 +1536,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [GOOD LUCK, HAVE FUN, DON'T DIE Proves Bonkers!],
   author: [Barbarella],
   source-name: [Ain't It Cool News],
@@ -1482,7 +1559,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Sucker Punch is peak Zack Snyder, for better or worse],
   author: [Jesse Hassenger],
   source-name: [Polygon],
@@ -1498,7 +1575,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Barbarella Chats With Cool Peeps from EDIE ARNOLD IS A LOSER],
   author: [Barbarella],
   source-name: [Ain't It Cool News],
@@ -1523,7 +1600,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [THE DAILY SHOW writer Daniel Radosh and editor Lauren Beckett Jackson Interview],
   author: [McEric],
   source-name: [Ain't It Cool News],
@@ -1544,7 +1621,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Scott Adkins Talks DIABLO],
   author: [McEric],
   source-name: [Ain't It Cool News],
@@ -1568,29 +1645,33 @@
 #pull-quote([“The Daily Show” is not unique in its position as a satirical news program, however it remains the definitive iteration of the format.], [McEric])
 
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([Laura Harold], source-name: [Yoga Journal], [Yoga slowly revealed my true nature, which has nothing to do with how much I accomplish.
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([Laura Harold], source-name: [Yoga Journal], [Yoga slowly revealed my true nature, which has nothing to do with how much I accomplish.
 
 The post As an Overachiever, I Didn’t Think I’d Like Yoga. I Was Wrong. appeared first on Yoga Journal .])],
-    [#brief-item([Bruno Couriol], source-name: [InfoQ], [Max Inden recently explored in a talk at FOSDEM 2026 how the upcoming WebTransport protocol and Web API enhance WebSocket capabilities. WebTransport seeks to provide, among other things, lower latency and transparent network switching for key use cases such as high-frequency financial data streaming, cloud gaming, live streaming, and collaborative editing.
+  [#brief-item([Bruno Couriol], source-name: [InfoQ], [Max Inden recently explored in a talk at FOSDEM 2026 how the upcoming WebTransport protocol and Web API enhance WebSocket capabilities. WebTransport seeks to provide, among other things, lower latency and transparent network switching for key use cases such as high-frequency financial data streaming, cloud gaming, live streaming, and collaborative editing.
 
  By Bruno Couriol])],
-    [#brief-item([ZDNet], source-name: [ZDNet], [Spring has sprung, and an Amazon Big Spring Sale is officially here. Here are the best headphone deals to shop.])],
-    [#brief-item([Tomas Franzese], source-name: [Polygon], [Crimson Desert Patch 1.01 rolled out on PC, PS5, and Xbox Series X|S on Saturday and is the most substantial update the vast action-adventure game has seen yet. In addition to adding five brand-new mounts for players to summon and ride around Pywel, it makes control and quality-of-life tweaks to Crimson Desert and begins the process of removing the game's AI-generated art.])],
-    [#brief-item([Samantha Nelson], source-name: [Polygon], [Drew Goddard wrote the screenplays for Ridley Scott’s 2015 film The Martian and Phil Lord and Christopher Miller’s Project Hail Mary , both based on Andy Weir novels about astronauts using all their ingenuity to survive in space. Goddard captures Weir’s mix of complex science and goofy humor in highly faithful and captivating adaptations, but he also cuts one of Weir’s weirdest recurring gags from both books: cannibalism humor .])],
-    [#brief-item([Calin Van Paris], source-name: [Yoga Journal], [Only you can know what your body needs. 
+  [#brief-item([ZDNet], source-name: [ZDNet], [Spring has sprung, and an Amazon Big Spring Sale is officially here. Here are the best headphone deals to shop.])],
+  [#brief-item([Tomas Franzese], source-name: [Polygon], [Crimson Desert Patch 1.01 rolled out on PC, PS5, and Xbox Series X|S on Saturday and is the most substantial update the vast action-adventure game has seen yet. In addition to adding five brand-new mounts for players to summon and ride around Pywel, it makes control and quality-of-life tweaks to Crimson Desert and begins the process of removing the game's AI-generated art.])],
+  [#brief-item([Samantha Nelson], source-name: [Polygon], [Drew Goddard wrote the screenplays for Ridley Scott’s 2015 film The Martian and Phil Lord and Christopher Miller’s Project Hail Mary , both based on Andy Weir novels about astronauts using all their ingenuity to survive in space. Goddard captures Weir’s mix of complex science and goofy humor in highly faithful and captivating adaptations, but he also cuts one of Weir’s weirdest recurring gags from both books: cannibalism humor .])],
+  [#brief-item([Calin Van Paris], source-name: [Yoga Journal], [Only you can know what your body needs. 
 
 The post This Is My Favorite Cue in All of Yoga. Here’s How It Can Support Your Practice. appeared first on Yoga Journal .])],
-    [#brief-item([Yun Liu], source-name: [The Keyword (Google Blog)], [The winners of the MedGemma Impact Challenge demonstrated the potential of Google’s open medical models for solving diverse healthcare challenges.])],
-    [#brief-item([ZDNet], source-name: [ZDNet], [Google Maps can help plan your entire trip for you and beyond if you're hip to all these time-saving shortcuts.])],
-    [#brief-item([ZDNet], source-name: [ZDNet], [The Samsung Galaxy Buds 4 Pro are a solid upgrade over the Buds 3 Pro. But you should still know what you're getting before picking the newer pair.])],
-    [#brief-item([Steef-Jan Wiggers], source-name: [InfoQ], [Discord engineering detailed how they added distributed tracing to Elixir's actor model. Their custom Transport library wraps messages with trace context and uses dynamic sampling to handle million-user fanouts. CPU optimizations included skipping unsampled traces and filtering context before deserialization, recovering 10+ percentage points of overhead.
+  [#brief-item([Yun Liu], source-name: [The Keyword (Google Blog)], [The winners of the MedGemma Impact Challenge demonstrated the potential of Google’s open medical models for solving diverse healthcare challenges.])],
+  [#brief-item([ZDNet], source-name: [ZDNet], [Google Maps can help plan your entire trip for you and beyond if you're hip to all these time-saving shortcuts.])],
+  [#brief-item([ZDNet], source-name: [ZDNet], [The Samsung Galaxy Buds 4 Pro are a solid upgrade over the Buds 3 Pro. But you should still know what you're getting before picking the newer pair.])],
+  [#brief-item([Steef-Jan Wiggers], source-name: [InfoQ], [Discord engineering detailed how they added distributed tracing to Elixir's actor model. Their custom Transport library wraps messages with trace context and uses dynamic sampling to handle million-user fanouts. CPU optimizations included skipping unsampled traces and filtering context before deserialization, recovering 10+ percentage points of overhead.
 
  By Steef-Jan Wiggers])],
-    [#brief-item([ZDNet], source-name: [ZDNet], [We found deals on tablets up to \$150 off from brands like Apple, Samsung, and more, for Amazon's Big Spring Sale this week. Sales are live now through March 31.])],
-  ))
-}
+  [#brief-item([ZDNet], source-name: [ZDNet], [We found deals on tablets up to \$150 off from brands like Apple, Samsung, and more, for Amazon's Big Spring Sale this week. Sales are live now through March 31.])],
+))
+
+// --- Notable Quotes ---
+#block(above: 0.2in, stroke: (top: 1pt + luma(26)), inset: (top: 0.1in))[
+  #pull-quote([This is Google's "affordable" phone, which means there are some compromises here over the main Pixel line.], [Jake Peterson])
+
+]
 
 #colophon([The Examiner], [Vol. 1, No. 020], [2026-03-30])

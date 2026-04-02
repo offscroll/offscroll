@@ -21,40 +21,8 @@
 #masthead([The Metropolitan Digest], [Vol. 1, No. 022], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [The Perfect Ha Long (Bai Tu Long) Cruise with Indochina Junk],
-  kicker: [Cover Story],
-  author: [Kristin Addis],
-  source-name: [Be My Travel Muse],
-  deck: [After experiencing both, I can confidently say this is the secret spot you’ll want to choose, especially if you’re traveling as a family.],
-  lead-pre: [],
-  lead-cap: [W],
-  lead-rest: [hen people picture Vietnam, they often imagine the soaring limestone karsts of Ha Long Bay, but few realize there’s a quieter, equally stunning neighbor just next door: Bai Tu Long Bay. After experiencing both, I can confidently say this is the secret spot you’ll want to choose, especially if you’re traveling as a family.],
-  body-paragraphs: (
-  [After backpacking through Vietnam 12 years prior and experiencing a very cold and foggy Ha Long Bay (t had been February, after all) I was AMAZED to see what I’d missed last time. We spent three days and two nights aboard the Dragon Legend, one of Indochina Junk’s luxury vessels, and it was easily one of the most unforgettable travel experiences we’ve ever had.],
-  [Bai Tu Long Bay looks identical to Ha Long in northern Vietnam , with jade-green water and dramatic cliffs rising straight from the sea, but it’s blissfully uncrowded. Most boats stick to Ha Long’s main routes, leaving Bai Tu Long quiet and pristine. That sense of stillness was what made it feel so special. It was the perfect way to wrap up our 5-day trip to the north of Vietnam with our toddler.],
-  [As our boat glided through the misty morning light, with nothing but the sound of the waves and birds overhead, I couldn’t believe how few other ships we saw. It truly felt like we had the bay all to ourselves.],
-  [The Dragon Legend is beautiful, traditional in design with warm wood interiors and modern comforts. Our cabin was surprisingly spacious, complete with a king bed, a large window overlooking the water, and a soaking tub that framed the limestone cliffs perfectly.],
-  [The boat even has a shallow pool on deck, which turned out to be a huge hit with our son. Between dips in the pool and gazing out at the passing islands, he was completely content.],
-  [The staff went above and beyond to make us feel welcome, anticipating our needs before we even voiced them. They were especially wonderful with kids, patient and kind, and always finding ways to make the experience fun and memorable.],
-  [Each day brought new adventures, from kayaking through hidden lagoons to swimming in calm coves and visiting a local floating fishing village. But the moment that will forever stay in my heart was our private beach barbecue on a secluded island.],
-  [As the sun dipped behind the limestone cliffs, the crew set up a long table in the sand with flickering lanterns, grilled seafood, and cold drinks. Our son ran barefoot along the water’s edge while we ate under the stars. It felt cinematic, simple yet extraordinary.],
-  [Meals on board were just as memorable. The chefs managed to turn every meal into a multi-course event with Vietnamese specialties and fresh seafood that rivaled anything we’ve had on land.],
-  [Cruising Bai Tu Long Bay on the Dragon Legend offered the perfect mix of relaxation and exploration. The pace was easy, with plenty of downtime between excursions, and the small group size made it feel intimate.],
-  [Our son loved the freedom to explore the boat, splash in the pool, and join us on short, easy kayaking trips. We loved the comfort, the quiet, and the care that went into every detail.],
-  [If you’ve ever dreamed of seeing Ha Long Bay, choose Bai Tu Long instead. The views are just as magical, but the experience is infinitely more peaceful.],
-  [After three days of drifting through this dreamlike landscape, we left feeling completely renewed and already planning to return one day.],
-  [If you’d like to add Bai Tu Long Bay to your Vietnam itinerary, Muse Bespoke Escapes can seamlessly weave it in, pairing your cruise with a stay at Capella Hanoi for the perfect blend of culture, comfort, and quiet adventure.],
-  [\*Big thank you to Indochina Junk for hosting us on this cruise. All thoughts of the amazing experience are my own.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [‘A kaleidoscope of colour and life’: readers’ favourite UK spring days out],
   author: [Guardian readers],
   source-name: [The Guardian Travel],
@@ -72,49 +40,71 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [The Amex Platinum Card: Why It’s Worth it],
   author: [Kristin Addis],
   source-name: [Be My Travel Muse],
   images: (),
   paragraphs: (
+  [Right now, they’re offering a targeted welcome offer of up to 175,000 miles when you follow a referral link, which you can access here!],
   [The American Express Platinum Card, often heralded as the epitome of luxury in the credit card world, comes with a hefty annual fee of \$895. This fee may seem huge, but for those who can leverage the card’s extensive benefits, it more than pays for itself. There’s a reason why I’ve held onto mine for five years and will continue to hold onto it for the future.],
   [In this review, I’ll dive deep into the perks that make the Amex Platinum Card a mainstay in my wallet, despite its cost. We’ll also touch on the downsides, including the increasing crowding in airport lounges and the recent limitations on guest access.],
   [(Some users report opening in different apps helps if at first you don’t receive the offer).],
   [BTW: This site is part of an affiliate sales network and receives compensation for sending traffic to partner sites. This compensation may impact how and where links appear on this site. This site does not include all financial companies or all available financial offers. Terms apply to American Express benefits and offers. Enrollment may be required for select American Express benefits and offers. Visit americanexpress.com to learn more],
+  [Benefits That Offset the Annual Fee],
+  [Using my resort credit at the 5-star Prince Gallery Kioicho in Tokyo],
   [Currently the welcome offer is up to 175k through this referral link , which can go a long, long way. These points can be worth up to \$800 or more, depending on how they’re redeemed.],
   [For example, I flew in Singapore Airlines business class (how I find deals ) all the way from San Francisco to Bali for 107,000 miles, so the welcome offer got me much of the way there. Here’s how to make the card perks make sense.],
+  [🏖️ Travel Credits & Travel-Related Perks],
+  [\$200 Airline Fee Credit],
   [Select one airline each calendar year and receive up to \$200 in statement credits for eligible incidental charges (e.g., baggage fees, seat assignments, in-flight food/drinks).],
+  [\$600 Hotel Credit],
   [Get up to \$300 in statement credits semi-annually (total \$600/year ) on prepaid Fine Hotels + Resorts or The Hotel Collection bookings through Amex Travel when you pay with your Platinum Card.],
   [You still get access to the Global Lounge Collection — including Centurion Lounges, Priority Pass (enrollment required), and select partner lounges — plus Delta Sky Club access when flying Delta .],
+  [CLEAR® Plus Credit],
   [Receive up to \$209/year in CLEAR Plus credits (to help speed through airport security) when you pay with your Platinum Card — enrollment required.],
+  [Global Entry/TSA PreCheck Credit],
   [A statement credit for Global Entry (\$100) or TSA PreCheck (\$85) application fees (every 4–4.5 years).],
+  [🚗 Mobility Credits],
+  [\$200 Uber Cash],
   [Receive \$15/month in Uber Cash and a \$20 bonus in December to use on Uber rides or Uber Eats in the U. S. (must add your Platinum Card to your Uber account).],
+  [\$120 Uber One Credit],
   [Up to \$120/year in statement credits if you pay for an auto-renewing Uber One membership with your Platinum Card.],
+  [🛏️ Hotel & Status Perks],
   [Fine Hotels + Resorts benefits (room upgrades when available, daily breakfast for two, early check-in/late check-out, unique property amenity) via Amex Travel bookings.],
   [The Hotel Collection perks: \$100 hotel credit + room upgrade (when available) on 2-night minimum stays.],
   [You can also apply for Marriott and Hilton status when you’re a card holder, as well as Avis and Hertz.],
   [These stack with the \$600 hotel credit above.],
+  [🛍️ Lifestyle & Shopping Credits],
   [(Enrollment often required; must activate credits each year or quarter where applicable.)],
+  [\$100 Saks Fifth Avenue Credit],
   [Up to \$100/year (split \$50 Jan–June and \$50 July–Dec) for purchases at Saks Fifth Avenue or Saks.com — no minimum purchase.],
+  [\$400 Resy Dining Credit],
   [Up to \$100/quarter (total \$400/year) on eligible dining purchases through Resy.],
+  [\$300 Digital Entertainment Credit],
   [Up to \$25/month (total \$300/year) for eligible digital entertainment services — now including Paramount+, YouTube Premium, and YouTube TV among others.],
+  [\$300 lululemon Credit],
   [Up to \$75/quarter (total \$300/year) for eligible purchases at lululemon retail stores and lululemon.com.],
+  [\$200 Ōura Ring Credit],
   [Up to \$200/year in statement credits for purchases via Ōura Ring’s official site.],
+  [\$155 Walmart+ Credit],
   [Statement credits to cover one Walmart+ membership (up to \$12.95/month + tax) — must pay with Platinum Card. This also comes with a Peacock or Paramount+ subscription.],
   [Up to \$300/year for Equinox club memberships or digital subscriptions.],
+  [✈️ Points & Transfer Partners],
   [Membership Rewards points transfer to many airline and hotel partners, often at a 1:1 rate — powerful for premium travel redemptions.],
+  [🧾 Insurance & Protection],
   [Trip cancellation/interruption insurance],
   [Baggage insurance],
   [Car rental loss/damage insurance],
   [Purchase protections (varies by item and category)
  (These still apply but may have updated terms — always check Amex’s Benefit Terms.)],
+  [🔑 Notes & Real-World Value],
   [Many credits (e.g., Resy, digital entertainment, lululemon, Ōura, Uber One) require enrollment and sometimes quarterly activation to receive statement credits.],
   [Lounge access remains strong but can be crowded — especially family-friendly ones — and guest limits still apply (you’ll pay \$50 per adult and \$30 per child over 2 who joins you).],
+  [Sign up here!],
+  [How I use Amex Points to Maximize Value],
   [Look at the extra point categories offered by Amex and see what you can maximize. I love that flights booked directly with the airline are worth 5x points, so I exclusively use our Amex to book flights (which are then insured under the card’s travel insurance).],
   [While you can use your points to offset a travel purchase, your points could be worth more if you transfer them to an Amex partner. For example, those 107,000 points I used for the Singapore Airlines flight would be worth \$1070 toward my flight if booked through Amex’s booking portal, but by transferring to Singapore Airlines, I got more than a \$5000 value (the ticket’s list price).],
   [American Express Membership Rewards points can be transferred to several airline loyalty programs, often at a 1:1 ratio. Here are some of the key airline transfer partners and how you can use them to your advantage:],
@@ -130,6 +120,7 @@
   [Emirates offers luxurious travel experiences, especially in first and business class. By transferring points to Skywards, you can book award flights on Emirates’ renowned A380 first-class suites or business class, making for a memorable journey.],
   [ANA Mileage Club :],
   [ANA offers some of the best value redemptions for international flights, particularly from North America to Asia. Their round-trip awards are often more economical in terms of points than one-way tickets, making it a great option for those planning longer trips.],
+  [Sign up here!],
   [The Grand Wailea in Maui, a Waldorf Astoria Hotel],
   [Hotel Transfer Partners In addition to airline partners, American Express Membership Rewards points can also be transferred to hotel loyalty programs. Here are the primary hotel transfer partners and how you can leverage them for high-value stays:],
   [Marriott Bonvoy :],
@@ -147,13 +138,15 @@
   [Many airline loyalty programs allow you to book flights on partner airlines within their alliances. For example, transferring points to Air Canada Aeroplan can be used to book flights on Star Alliance partners, increasing your options and potentially finding better award availability.],
   [Use for High-End Hotels :],
   [Transferring points to Marriott Bonvoy or Hilton Honors can allow you to book stays at luxury properties that might otherwise be prohibitively expensive. For instance, using points for a stay at the St. Regis Bora Bora or the Waldorf Astoria Beverly Hills can provide a memorable and lavish experience.],
+  [The Downsides: Crowded Lounges and Limited Guest Access],
   [While the Amex Platinum Card offers a plethora of benefits, it’s not without its drawbacks. One of the main issues is the overcrowding in airport lounges. The popularity of the card and its lounge benefits has led to packed Centurion Lounges, often making it difficult to find a seat or enjoy the amenities. This can be particularly frustrating during peak travel times.],
   [Additionally, American Express has recently implemented stricter guest policies for lounge access. Previously, cardholders could bring in two guests for free, making it convenient for families and couples. However, the new policy limits complimentary guest access, requiring cardholders to pay a fee for each guest. This change significantly reduces the lounge benefit’s value for those traveling with others, making it less family-friendly.],
+  [Conclusion: Why I Keep the Amex Platinum Card],
   [Despite the high annual fee and the downsides of crowded lounges and limited guest access, I find the Amex Platinum Card to be an indispensable tool in my wallet. The sheer number of benefits and credits available easily offsets the fee, and the flexibility of Membership Rewards points provides immense value. The biggest key for me is the 5x points per dollar spent on flights booked directly with the airline. Since it’s one of our biggest expenses, those add up quickly.],
   [The card’s elite status with major hotel chains, and the ability to transfer points to a wide range of airline and hotel partners further enhance its value. Even with the lounge access limitations, the convenience and comfort offered by the Centurion Lounges, Delta Sky Clubs, and Priority Pass lounges add a significant advantage to my travel experiences.],
+  [Sign up here!],
   [In essence, the Amex Platinum Card is much more than just a status symbol; it’s a powerful tool that, when used wisely, offers tremendous value and convenience. For frequent travelers and those who can take full advantage of its benefits, the card’s annual fee is a small price to pay for the luxury, convenience, and savings it provides.],
   [Opinions expressed here are author’s alone, not those of any bank, credit card issuer, hotel, airline, or other entity. This content has not been reviewed, approved, or otherwise endorsed by any of the entities included on this website.],
-  [id="mediavine-settings"\>],
 ),
   insert-map: (:),
   word-count: 2124,
@@ -161,10 +154,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Spring 2026 Shoe Trends Are Freakier Than Ever: See Our Top 9],
   author: [Andrea Bossi],
   source-name: [Refinery29 Fashion],
@@ -214,11 +205,10 @@
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [‘In Switzerland, it’s possible to sledge between two railway stations’: readers’ favourite family adventures in Europe],
   author: [Guardian readers],
   source-name: [The Guardian Travel],
@@ -237,7 +227,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [miso chicken and rice],
   author: [deb],
   source-name: [Smitten Kitchen],
@@ -259,7 +249,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [‘No cars, unspoilt beaches and seabirds rule’: readers’ favourite European island escapes],
   author: [Guardian readers],
   source-name: [The Guardian Travel],
@@ -279,7 +269,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Walking with the weavers 200 years after the Lancashire uprising],
   author: [Chris Moss],
   source-name: [The Guardian Travel],
@@ -301,7 +291,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Holy parades and earthly pleasures in Spain: Easter in Granada],
   author: [Kitty Corrigan],
   source-name: [The Guardian Travel],
@@ -320,7 +310,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [‘Children see magic in the smallest adventures’: exploring Scotland with my four-year-old],
   author: [Phoebe Smith],
   source-name: [The Guardian Travel],
@@ -342,7 +332,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [‘The intimate and the epic’: the best way to understand India is to travel by train],
   author: [Rahul Bhattacharya],
   source-name: [The Guardian Travel],
@@ -361,7 +351,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Vanity Fair Oscars Party Served Up The Best Red Carpet Looks],
   author: [Victoria Montalti],
   source-name: [Refinery29 Fashion],
@@ -424,7 +414,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [New sleeper service will run from Paris to Berlin next year],
   author: [Monisha Rajesh],
   source-name: [The Guardian Travel],
@@ -443,7 +433,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [banana chocolate chip cake],
   author: [deb],
   source-name: [Smitten Kitchen],
@@ -461,18 +451,17 @@
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([Jules Yap], source-name: [IKEA Hackers], [A new IKEA study has confirmed what many of us have suspected while staring into cluttered cabinets: our kitchens just aren’t working for us. The good news? You don’t need a full renovation to turn things around. According to the IKEA Cooking & Eating Report 2026, one of the largest studies of its kind, surveying over 31,000 people across 31 countries, fewer than one in three of us are actually happy with our kitchens. And the number one culprit? Space. \[…\]])],
-    [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [This Miso Lemon Salmon is quick, easy, and comes together in under 20 minutes. It’s the perfect weeknight meal that…
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([Jules Yap], source-name: [IKEA Hackers], [A new IKEA study has confirmed what many of us have suspected while staring into cluttered cabinets: our kitchens just aren’t working for us. The good news? You don’t need a full renovation to turn things around. According to the IKEA Cooking & Eating Report 2026, one of the largest studies of its kind, surveying over 31,000 people across 31 countries, fewer than one in three of us are actually happy with our kitchens. And the number one culprit? Space. \[…\]])],
+  [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [This Miso Lemon Salmon is quick, easy, and comes together in under 20 minutes. It’s the perfect weeknight meal that…
 
  ( Read more... ) 
 
 Tags: 30 Minute Meal Dinner Healthy lunch Quick and Easy 
 
 The post Easy Miso Lemon Salmon appeared first on A Cozy Kitchen .])],
-    [#brief-item([Nicole Samoroukova], source-name: [The Reformed Broker (Josh Brown)], [On episode 118 of The Compound and Friends, Michael Batnick and Downtown Josh Brown are joined by Kevin Simpson to discuss: covered call strategies, the Fed, Warren Buffett’s latest moves, and much more!
+  [#brief-item([Nicole Samoroukova], source-name: [The Reformed Broker (Josh Brown)], [On episode 118 of The Compound and Friends, Michael Batnick and Downtown Josh Brown are joined by Kevin Simpson to discuss: covered call strategies, the Fed, Warren Buffett’s latest moves, and much more!
 You can listen to the whole thing below, or find it wherever you like to listen to your favorite pods!
 
 Listen here:
@@ -483,84 +472,83 @@ Everywhere else!
 Follow Michael’s blog at�...
 
 The post The Fed’s Gonna Cut appeared first on The Reformed Broker .])],
-    [#brief-item([Jules Yap], source-name: [IKEA Hackers], [The GREJIG wire shoe rack was always just … there. Doing its job quietly. Now IKEA has built a whole system around it. The IKEA GREJIG shoe rack has never been a headline product. It’s a single-tier wire rack that holds your shoes and costs \$4.99. It works. It doesn’t ask for much. Most people who own one barely remember buying it. Which makes what IKEA has just done with the range all the more interesting. GREJIG is now a \[…\]])],
-    [#brief-item([Nicole Samoroukova], source-name: [The Reformed Broker (Josh Brown)], [OK, we’re trying something new next week for registered financial advisors only. It’s a brand new show we’ve created and you can be there virtually to watch the pilot episode live. As an advisor, you’re going to spend time, money and energy implementing new technology and asset management solutions into your practice. You may as well get good at it.
+  [#brief-item([Jules Yap], source-name: [IKEA Hackers], [The GREJIG wire shoe rack was always just … there. Doing its job quietly. Now IKEA has built a whole system around it. The IKEA GREJIG shoe rack has never been a headline product. It’s a single-tier wire rack that holds your shoes and costs \$4.99. It works. It doesn’t ask for much. Most people who own one barely remember buying it. Which makes what IKEA has just done with the range all the more interesting. GREJIG is now a \[…\]])],
+  [#brief-item([Nicole Samoroukova], source-name: [The Reformed Broker (Josh Brown)], [OK, we’re trying something new next week for registered financial advisors only. It’s a brand new show we’ve created and you can be there virtually to watch the pilot episode live. As an advisor, you’re going to spend time, money and energy implementing new technology and asset management solutions into your practice. You may as well get good at it.
 register for The Smoke Show live pilot episode h...
 
 The post The Smoke Show appeared first on The Reformed Broker .])],
-    [#brief-item([Gina Homolka], source-name: [Skinnytaste], [My homemade Greek salad dressing recipe is simple, fresh, and brightly tangy, but I add an optional secret ingredient that makes it next-level delicious. Scale it up for a party, or scale it down to make a salad for one! Homemade Greek Dressing Recipe There’s absolutely no reason to buy Greek salad dressing at the \[…\]])],
-    [#brief-item([Lale Arikoglu], source-name: [Condé Nast Traveler], [For her latest season with CNN, actor Eva Longoria pursues a passion for French cooking. Lale Arikoglu joins her on set in Burgundy.])],
-    [#brief-item([Joshua M Brown], source-name: [The Reformed Broker (Josh Brown)], [Ladies and gentlemen, this is the final post I will be publishing at The Reformed Broker.
+  [#brief-item([Gina Homolka], source-name: [Skinnytaste], [My homemade Greek salad dressing recipe is simple, fresh, and brightly tangy, but I add an optional secret ingredient that makes it next-level delicious. Scale it up for a party, or scale it down to make a salad for one! Homemade Greek Dressing Recipe There’s absolutely no reason to buy Greek salad dressing at the \[…\]])],
+  [#brief-item([Lale Arikoglu], source-name: [Condé Nast Traveler], [For her latest season with CNN, actor Eva Longoria pursues a passion for French cooking. Lale Arikoglu joins her on set in Burgundy.])],
+  [#brief-item([Joshua M Brown], source-name: [The Reformed Broker (Josh Brown)], [Ladies and gentlemen, this is the final post I will be publishing at The Reformed Broker.
 After today the site will be inactive, forever. I began this blog in November 2008 without any idea where it would take me. I had a negative net worth, was working at a dead-end brokerage firm job and absolutely no career prospects whatsoever – a washed up stock broker at 31 years old in the middle of a global financial crisis....
 
 The post This is the end appeared first on The Reformed Broker .])],
-    [#brief-item([Gina Homolka], source-name: [Skinnytaste], [Bell Pepper and Potato Frittata. Egg frittatas are my answer to an easy, inexpensive meal solution whether I’m having it for breakfast, lunch or dinner. I served these with a side of berries or fruit. For dinner, I serve with a salad on the side and call it a meal! Four-Leaf Clover Frittata This Bell \[…\]])],
-    [#brief-item([deb], source-name: [Smitten Kitchen], [class="smittenkitchen-print-hide"\>
+  [#brief-item([Gina Homolka], source-name: [Skinnytaste], [Bell Pepper and Potato Frittata. Egg frittatas are my answer to an easy, inexpensive meal solution whether I’m having it for breakfast, lunch or dinner. I served these with a side of berries or fruit. For dinner, I serve with a salad on the side and call it a meal! Four-Leaf Clover Frittata This Bell \[…\]])],
+  [#brief-item([deb], source-name: [Smitten Kitchen], [
  
 
  Although spinach gnudi — soft, pillowy cheese dumplings fried in browned butter and sage — are traditionally more of a spring or summer food, I’m here to make the argument we should eat them right now, in prime soup-and-sweater weather. Because did you hear the part about warm cheese? the puddle of brown butter? the earthy sage? It’s a symphony of delicious fall things and if you tell me you don’t want to curl up on the plate and take a nap in it, fine, I’ll believe you but I do think you’re in denial.
 
  Read more »])],
-    [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [This Steak Salad with Creamy Chimichurri Dressing is crisp, herby, and satisfying without feeling heavy. Quick-seared steak, tender greens, and…
+  [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [This Steak Salad with Creamy Chimichurri Dressing is crisp, herby, and satisfying without feeling heavy. Quick-seared steak, tender greens, and…
 
  ( Read more... ) 
 
 Tags: Chimichurri Dinner Dinner for Two Healthy lunch no-toc Salad Steak 
 
 The post Steak Salad with Creamy Chimichurri Dressing appeared first on A Cozy Kitchen .])],
-    [#brief-item([Gina Homolka], source-name: [Skinnytaste], [This lighter, make-ahead overnight baked French toast casserole with Bananas Foster is guaranteed to impress—perfect for Easter morning or any special brunch! Bananas Foster French Toast The challah bread in this French toast casserole absorbs the eggy custard, flavored with vanilla and cinnamon, overnight. The next morning, while it bakes in the oven, you’ll whip \[…\]])],
-    [#brief-item([Gina Homolka], source-name: [Skinnytaste], [Roasted Carrot Hummus is a creamy dip made with sweet roasted carrots, chickpeas, tahini, garlic, and lemon. It’s a bright, flavorful appetizer perfect for spring gatherings and Easter. Roasted Carrot Hummus My friend made this Roasted Carrot Hummus and was so excited for me to try it that I had to recreate it at home. \[…\]])],
-    [#brief-item([Tamara Hinson], source-name: [Condé Nast Traveler], [From the neon-drenched skyline of Hồ Chí Minh City to the rural splendour of mountainous Northern Vietnam, here’s how to spend two glorious weeks in this South East Asian paradise])],
-    [#brief-item([Hannah Chubb], source-name: [Condé Nast Traveler], [Refresh your wardrobe with six rental styles a month for less using these Nuuly promo codes, including \$15 off and exclusive student savings.])],
-    [#brief-item([Joshua M Brown], source-name: [The Reformed Broker (Josh Brown)], [“Armed to the teeth.” This is the phrase that came to mind as I was watching Josh Smith walk us through the demo of VRGL last week. I thought to myself it would be impossible for a mediocre financial advisor to hold onto a client relationship if something like this were in use by a rival advisor.
+  [#brief-item([Gina Homolka], source-name: [Skinnytaste], [This lighter, make-ahead overnight baked French toast casserole with Bananas Foster is guaranteed to impress—perfect for Easter morning or any special brunch! Bananas Foster French Toast The challah bread in this French toast casserole absorbs the eggy custard, flavored with vanilla and cinnamon, overnight. The next morning, while it bakes in the oven, you’ll whip \[…\]])],
+  [#brief-item([Gina Homolka], source-name: [Skinnytaste], [Roasted Carrot Hummus is a creamy dip made with sweet roasted carrots, chickpeas, tahini, garlic, and lemon. It’s a bright, flavorful appetizer perfect for spring gatherings and Easter. Roasted Carrot Hummus My friend made this Roasted Carrot Hummus and was so excited for me to try it that I had to recreate it at home. \[…\]])],
+  [#brief-item([Tamara Hinson], source-name: [Condé Nast Traveler], [From the neon-drenched skyline of Hồ Chí Minh City to the rural splendour of mountainous Northern Vietnam, here’s how to spend two glorious weeks in this South East Asian paradise])],
+  [#brief-item([Hannah Chubb], source-name: [Condé Nast Traveler], [Refresh your wardrobe with six rental styles a month for less using these Nuuly promo codes, including \$15 off and exclusive student savings.])],
+  [#brief-item([Joshua M Brown], source-name: [The Reformed Broker (Josh Brown)], [“Armed to the teeth.” This is the phrase that came to mind as I was watching Josh Smith walk us through the demo of VRGL last week. I thought to myself it would be impossible for a mediocre financial advisor to hold onto a client relationship if something like this were in use by a rival advisor.
 The ability to show a prospective client this level of transparency on taxes, fees, allocation decision-making, etc...
 
 The post Armed to the Teeth appeared first on The Reformed Broker .])],
-    [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [These Animal Style Fries are crispy, cheesy, and topped with sweet caramelized onions and tangy burger sauce. This recipe is…
+  [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [These Animal Style Fries are crispy, cheesy, and topped with sweet caramelized onions and tangy burger sauce. This recipe is…
 
  ( Read more... ) 
 
 Tags: Comfort Food game day Side Vegetarian 
 
 The post Animal Style Fries (In-N-Out Copycat) appeared first on A Cozy Kitchen .])],
-    [#brief-item([Hana Al-Khodairi], source-name: [Condé Nast Traveler], [As flight schedules and daily life slowly resume in Dubai, here's what travelers need to know about safety and visiting the city right now])],
-    [#brief-item([Jessica Sulima], source-name: [Condé Nast Traveler], [Whether you're planning a weekend getaway or a cross-country trip, save on your next vehicle with these Hertz discount codes and member-exclusive offers.])],
-    [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [This Calabrian Chili Shrimp Pasta is creamy, spicy, and comes together in under 30 minutes. It’s an easy weeknight dinner…
+  [#brief-item([Hana Al-Khodairi], source-name: [Condé Nast Traveler], [As flight schedules and daily life slowly resume in Dubai, here's what travelers need to know about safety and visiting the city right now])],
+  [#brief-item([Jessica Sulima], source-name: [Condé Nast Traveler], [Whether you're planning a weekend getaway or a cross-country trip, save on your next vehicle with these Hertz discount codes and member-exclusive offers.])],
+  [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [This Calabrian Chili Shrimp Pasta is creamy, spicy, and comes together in under 30 minutes. It’s an easy weeknight dinner…
 
  ( Read more... ) 
 
 Tags: Pasta Quick and Easy Seafood 
 
 The post Calabrian Chili Shrimp Pasta appeared first on A Cozy Kitchen .])],
-    [#brief-item([Gina Homolka], source-name: [Skinnytaste], [Creamy Lemon Chicken with Asparagus is an easy one-skillet spring dinner with juicy chicken, tender asparagus, and a bright lemon cream sauce. Creamy Lemon Chicken I don’t know about you, but I’m always excited when spring produce starts showing up. This Creamy Lemon Chicken with Asparagus is an easy, high-protein dinner that feels elegant yet \[…\]])],
-    [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [The IKEA EKET collection offers versatile storage options that can inspire your next DIY project, empowering you to customize your space. But if you can’t find exactly what you want, don’t worry, there’s a hack for that. Actually, there’s a bunch. These ideas can help you personalize the EKET series and make your space truly yours. Here are 13 interesting ways to reimagine the EKET in your home. Which one will you try first? 13 IKEA EKET Hacks To Inspire \[…\]])],
-    [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [You never know when or where inspiration will strike. And if you’ve got a creative spirit, the odds are good that you can find a project pretty much anywhere.  Self-taught sewing artist Bolly took one look at IKEA’s popular FRAKTA and just had to turn it into a funky handbag. I mean, why not? This wouldn’t be the first time we’ve seen the FRAKTA reimagined into a quirky accessory. Clever hackers have turned the big blue bag into everything from \[…\]])],
-    [#brief-item([Editors of Bon Appétit], source-name: [Bon Appétit (magazine)], [Make the first warm days of the year feel effortlessly delicious with a spring vegetable galette, an herby green frittata, and more.])],
-    [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [Just when you think IKEA’s PAX series has everything you need to create a stellar wardrobe, they come out with a new addition to prove you wrong. Last year, they introduced the brilliant end-unit addition, and now there’s a slim mid-unit add-on designed to fit between two PAX frames, giving you extra storage and display space. Bringing a Brand-New Look to the Reliable PAX System More storage is always a plus, but I have to say, this add-on elevates the \[…\]])],
-    [#brief-item([Keyla Vasconcellos], source-name: [Condé Nast Traveler], [In 2026, the City of Trees has fantastic farm-to-table dining, more sports than you'll have time to watch, and major airport upgrades.])],
-    [#brief-item([Kate Kassin], source-name: [Bon Appétit (magazine)], [A dynamic Chicago restaurant's next chapter, Northern Thai cooking in DC, and more reasons to dine out this season around the country.])],
-    [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [Cluttered countertops are the Achilles’ heel of kitchens. Think about it. It doesn’t matter how amazing your kitchen is; if the counters are packed, any desire you had to meal prep or cook disappears. I mean, who wants to pull out a bunch of stuff to cook when they’re already short on counter space? On top of that, it’s harder to clean, and you just feel overwhelmed. The next thing you know, you’re ordering take-out…again! Franziska found a way to \[…\]])],
-    [#brief-item([Nicole Samoroukova], source-name: [The Reformed Broker (Josh Brown)], [Join Downtown Josh Brown and Michael Batnick for another round of What Are Your Thoughts? On this week’s episode, Josh and Michael discuss the biggest topics in investing and finance, including:
+  [#brief-item([Gina Homolka], source-name: [Skinnytaste], [Creamy Lemon Chicken with Asparagus is an easy one-skillet spring dinner with juicy chicken, tender asparagus, and a bright lemon cream sauce. Creamy Lemon Chicken I don’t know about you, but I’m always excited when spring produce starts showing up. This Creamy Lemon Chicken with Asparagus is an easy, high-protein dinner that feels elegant yet \[…\]])],
+  [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [The IKEA EKET collection offers versatile storage options that can inspire your next DIY project, empowering you to customize your space. But if you can’t find exactly what you want, don’t worry, there’s a hack for that. Actually, there’s a bunch. These ideas can help you personalize the EKET series and make your space truly yours. Here are 13 interesting ways to reimagine the EKET in your home. Which one will you try first? 13 IKEA EKET Hacks To Inspire \[…\]])],
+  [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [You never know when or where inspiration will strike. And if you’ve got a creative spirit, the odds are good that you can find a project pretty much anywhere.  Self-taught sewing artist Bolly took one look at IKEA’s popular FRAKTA and just had to turn it into a funky handbag. I mean, why not? This wouldn’t be the first time we’ve seen the FRAKTA reimagined into a quirky accessory. Clever hackers have turned the big blue bag into everything from \[…\]])],
+  [#brief-item([Editors of Bon Appétit], source-name: [Bon Appétit (magazine)], [Make the first warm days of the year feel effortlessly delicious with a spring vegetable galette, an herby green frittata, and more.])],
+  [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [Just when you think IKEA’s PAX series has everything you need to create a stellar wardrobe, they come out with a new addition to prove you wrong. Last year, they introduced the brilliant end-unit addition, and now there’s a slim mid-unit add-on designed to fit between two PAX frames, giving you extra storage and display space. Bringing a Brand-New Look to the Reliable PAX System More storage is always a plus, but I have to say, this add-on elevates the \[…\]])],
+  [#brief-item([Keyla Vasconcellos], source-name: [Condé Nast Traveler], [In 2026, the City of Trees has fantastic farm-to-table dining, more sports than you'll have time to watch, and major airport upgrades.])],
+  [#brief-item([Kate Kassin], source-name: [Bon Appétit (magazine)], [A dynamic Chicago restaurant's next chapter, Northern Thai cooking in DC, and more reasons to dine out this season around the country.])],
+  [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [Cluttered countertops are the Achilles’ heel of kitchens. Think about it. It doesn’t matter how amazing your kitchen is; if the counters are packed, any desire you had to meal prep or cook disappears. I mean, who wants to pull out a bunch of stuff to cook when they’re already short on counter space? On top of that, it’s harder to clean, and you just feel overwhelmed. The next thing you know, you’re ordering take-out…again! Franziska found a way to \[…\]])],
+  [#brief-item([Nicole Samoroukova], source-name: [The Reformed Broker (Josh Brown)], [Join Downtown Josh Brown and Michael Batnick for another round of What Are Your Thoughts? On this week’s episode, Josh and Michael discuss the biggest topics in investing and finance, including:
 ►October CPI – “Positive vs. negative earnings growth has been far more predictive than the political party of the president.”
 ►Robots Are Coming – “Here’s what we know about generati...
 
 The post Why Americans Hate Joe Biden’s Economy appeared first on The Reformed Broker .])],
-    [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [Hot Honey Buffalo Chicken Tenders are oven-baked, crispy, and coated in a sweet-spicy glaze that hits every note. They’re simple…
+  [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [Hot Honey Buffalo Chicken Tenders are oven-baked, crispy, and coated in a sweet-spicy glaze that hits every note. They’re simple…
 
  ( Read more... ) 
 
 Tags: Appetizer game day lunch Snack 
 
 The post Hot Honey Buffalo Chicken Tenders appeared first on A Cozy Kitchen .])],
-    [#brief-item([Jessica Puckett], source-name: [Condé Nast Traveler], [A basic guide to trip insurance, including a breakdown of “cancel for any reason” (CFAR) upgrades and what's already included in your credit card.])],
-    [#brief-item([Joshua M Brown], source-name: [The Reformed Broker (Josh Brown)], [The new online home of Ritholtz Wealth Management has (finally) arrived!
+  [#brief-item([Jessica Puckett], source-name: [Condé Nast Traveler], [A basic guide to trip insurance, including a breakdown of “cancel for any reason” (CFAR) upgrades and what's already included in your credit card.])],
+  [#brief-item([Joshua M Brown], source-name: [The Reformed Broker (Josh Brown)], [The new online home of Ritholtz Wealth Management has (finally) arrived!
 It’s ironic that we’re a firm with ten content creators and all these big blogs but we’ve never really paid much attention to what our corporate site looks like or how it works. It was just always an afterthought. Until today.
 Our old site was fine. It just didn’t do anything for anyone. A place for clients to log in or to put...
 
 The post Welcome to the all new ritholtzwealth.com appeared first on The Reformed Broker .])],
-    [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [Whoa, whoa, whoa, back up a second, those are BILLY bookcases?! (That’s what you’re thinking right now, isn’t it?) I get it; I did a double-take, too. This built-in bookcase hack from Reddit user Floyd (u/DisastrousPipe8192) is next-level. I mean, it doesn’t even look like the same room when you see the finished product. Granted, he also changed the flooring, furniture, and wall color, but the built-ins undoubtedly steal the show. Floyd shared that he’s learned most of his home \[…\]])],
-    [#brief-item([Gina Homolka], source-name: [Skinnytaste], [Easy honey butter glazed carrots made on the stovetop—tender, lightly sweet, and perfect for Easter dinner, Thanksgiving, or any holiday meal. Honey Glazed Carrots My cousin makes these Honey-Butter Glazed Carrots every holiday, and they’re great for when you don’t want to use your oven. The carrots simmer gently on the stovetop with butter, honey, \[…\]])],
-  ))
-}
+  [#brief-item([Stacy Randall], source-name: [IKEA Hackers], [Whoa, whoa, whoa, back up a second, those are BILLY bookcases?! (That’s what you’re thinking right now, isn’t it?) I get it; I did a double-take, too. This built-in bookcase hack from Reddit user Floyd (u/DisastrousPipe8192) is next-level. I mean, it doesn’t even look like the same room when you see the finished product. Granted, he also changed the flooring, furniture, and wall color, but the built-ins undoubtedly steal the show. Floyd shared that he’s learned most of his home \[…\]])],
+  [#brief-item([Gina Homolka], source-name: [Skinnytaste], [Easy honey butter glazed carrots made on the stovetop—tender, lightly sweet, and perfect for Easter dinner, Thanksgiving, or any holiday meal. Honey Glazed Carrots My cousin makes these Honey-Butter Glazed Carrots every holiday, and they’re great for when you don’t want to use your oven. The carrots simmer gently on the stovetop with butter, honey, \[…\]])],
+))
 
 #colophon([The Metropolitan Digest], [Vol. 1, No. 022], [2026-03-30])

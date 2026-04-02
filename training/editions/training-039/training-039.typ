@@ -21,33 +21,8 @@
 #masthead([Bright Register], [Vol. 1, No. 039], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [I am definitely missing the pre-AI writing era],
-  kicker: [Cover Story],
-  author: [N. Cailie],
-  source-name: [LessWrong],
-  deck: [I am not complaining, well, it was kinda my fault after all cause the instructions did specify the no-use of LLM, when sending first post.],
-  lead-pre: [],
-  lead-cap: [Y],
-  lead-rest: [esterday, I wrote my first technical draft on what I was working on with the goal to share it publicly on here (well using an account dedicated to technical post), and did not realize how wanting to sound perfect actually steal the ''my voice" in the paper. Although 80 % of the content was my own writing, the fact that it was run in a LLM enginee for grammar and vocabulary cross-check, made it failed the "probable written by AI " metric; and it was rejected.],
-  body-paragraphs: (
-  [I am not complaining, well, it was kinda my fault after all cause the instructions did specify the no-use of LLM, when sending first post. And the rejection made me think: why did I even need the AI to validate what I worked on?],
-  [The scary part, is I love writing, I have been writing blogs and all sort of things since I can't even remember. Have some think pieces on popular sites, and other personal blog that I used to share. And you know, before 2023, my writing was so good that I rarely had to have a second read or correction to make sure the flow stays consistent, since english is my 4th language. I always sought external review or check with tools like : Grammarly or Quilbot, for mistakes or grammars misphrasing. But now, this "superskill" has faded away, like seriously. I can't even write a 1000 words think piece, without needing or wanting to know what AI thinks or how it could have phrase it better, even for my emails. I can't write poems as before, without sounding generic, and this is mainly because I have now trained my brain to rely on these automated tools that It can not be creative anymore or think of itself. My writing has deterioted, I attempted to write a slam-poem, recently for a competition I wanted to partake in, and upon the completion when I read it, my reaction was : Who is this? Who wrote this? This is bad !],
-  [Before, I would sit and write a piece and I kid you not, the first draft was always perfect that I rarely had to write, and my best poem that got me to some "art"ies festival, was just written while I was sitting outside my hostel, with a piece of paper and a pen, and a thought that was bothering me. But now, I am slowly realizing, it has been changing in negative way.],
-  [Sorry that this sounds like a rant, well, it is one ! But like, my point was to share it out loud, and kinda know if I am the only person experiencing this or if there are others? And for people who successfully taken back their creative writing skills, how did you do it?],
-  [This post, is written without any tools assistance I just wrote what my brain is instructing to type (might not reread it before posting). Obviously, you would see some mistakes, some paraphrasing issue, some article misuse; I personally do not see them but, hey, I am not expert in literature. So bear with me, also, I think that is the beauty of writing, the raw , unedited emotions of the person behind every words either for entertainment or educational purposes, is what makes it special.],
-  [So, thank you ''LessWrong" moderators, for rejecting my first draft, it is kinda a wake up call that made me realize, maybe I just need to be focusing on my own voice, and there is nothing wrong into sounding "more or less wrong". Yeah, I know, people advocate into embracing AI as it would be/is in every aspect of our life, but maybe it is good that most of us do not let this technology rephrase our own thought. Cause those words, that the AI told you: sound wrong or aggressive or less formal, are the ones that carry the ''emotions", you ought to share.],
-  [Have a productive week, dear reader !],
-  [P. S: If you see this! I am celebrating. It means, I passed the text. Yay!],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [Used Car Of The Day: 2012 BMW X5 35d],
   author: [Tim Healey],
   source-name: [The Truth About Cars],
@@ -67,11 +42,9 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Emil Nygård: 500px Photographer Spotlight],
   author: [500px Blog],
   source-name: [500px ISO],
@@ -161,10 +134,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Resolving Incidents With The Remote Incident Console],
   author: [Alistair Forrester Burrowes],
   source-name: [Zendesk Engineering],
@@ -202,7 +173,6 @@ team: "wishers"],
   [Perform mitigations or fixes.],
   [We often need engineers to assess what is happening and perform fixes in the database directly. How can we support engineers to directly access the database in the Self-Service ecosystem?],
   [Remote Incident Console (RIC)],
-  [\> RIC has entered the chat],
   [We need some way for developers to easily get a console that has access to their Self-Service Datastores. This needs to be be quick and easy and for that we developed the Remote Incident Console (RIC). How does it work?],
   [\$ ric --partition pod73 --service wishmaker --incident inc-2025-02-18-a],
   [Woah! Slow down!],
@@ -268,10 +238,8 @@ owners.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Volkswagen Might Be Making Arms For Israel],
   author: [Matt Posky],
   source-name: [The Truth About Cars],
@@ -303,10 +271,8 @@ owners.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Power of Assumption],
   author: [ysamuels],
   source-name: [LessWrong],
@@ -329,10 +295,8 @@ owners.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Less is More: Improving job execution by ditching the job executor],
   author: [Tim Cuthbertson],
   source-name: [Zendesk Engineering],
@@ -359,8 +323,6 @@ owners.],
   [Typical job system API],
   [If we have jobs, we’ll probably need a system for running jobs. For these jobs our orchestrator is the client which asks for jobs to run, and each data mover is the server which implements those jobs.],
   [Most systems for long-running jobs (including our initial implementation) have an API that looks a bit like this:],
-  [StartJob(config) -\> jobId],
-  [GetStatus(jobId) -\> status],
   [StopJob(jobId)],
   [Example sequence for this job API],
   [The API is simple, but it must support a number of requirements to be a suitable executor for data movement jobs.],
@@ -431,16 +393,14 @@ owners.],
 ),
   insert-map: (:),
   inline-pq: pull-quote([client ❤️ server   A brutally simple interface  Earlier, I said that if a job is short, it could just be a request.], [Tim Cuthbertson]),
-  inline-pq-idx: 36,
+  inline-pq-idx: 35,
   word-count: 2643,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Destinations in Focus: Cities Through a Cinematic Lens],
   author: [500px Blog],
   source-name: [500px ISO],
@@ -475,11 +435,9 @@ owners.],
   [Madrid is a city of movement and warmth, from late-night streets glowing under golden light to bustling markets layered with texture and life. The visual language here is dynamic. Think scale, motion, and energy that feels lived-in rather than staged.],
   [We’re looking for images that capture the vibrancy of the city through immersive angles and thoughtful composition.],
   [Featured locations include:],
-  [style="font-weight: 400;"\> Faunia Zoo],
-  [style="font-weight: 400;"\> Mercado de San Miguel],
-  [style="font-weight: 400;"\> Parque de Atracciones de Madrid],
-  [style="font-weight: 400;"\> Casa de Campo],
-  [style="font-weight: 400;"\> Madrid Zoo Aquarium],
+  [Mercado de San Miguel],
+  [Parque de Atracciones de Madrid],
+  [Casa de Campo],
   [Consider using long exposures to capture motion, golden-hour light to add atmosphere, or layered compositions that place the viewer directly inside the scene.],
   [Get inspired],
   [Submit your photos],
@@ -487,10 +445,8 @@ owners.],
   [Amsterdam offers a quieter, more atmospheric visual experience. Its canals, layered bridges, and architectural symmetry create natural opportunities for depth and reflection. Subtlety works here, framing, mist, and careful balance can transform familiar landmarks into compelling imagery.],
   [We’re looking for compositions that feel intentional and immersive, where perspective and light guide the viewer through the frame.],
   [Featured locations include:],
-  [style="font-weight: 400;"\> Anne Frank House],
-  [style="font-weight: 400;"\> A’DAM Lookout],
-  [style="font-weight: 400;"\> ARTIS Royal Zoo],
-  [style="font-weight: 400;"\> Amsterdam Botanical Garden],
+  [A’DAM Lookout],
+  [ARTIS Royal Zoo],
   [Use foreground elements, reflections, or elevated viewpoints to create depth. Focus on clean composition and strong landmark clarity.],
   [Get inspired],
   [Submit your photos],
@@ -498,10 +454,6 @@ owners.],
   [Edinburgh brings contrast and drama. Historic architecture meets shifting skies, and weather often becomes part of the story. The city’s layered skyline and strong silhouettes lend themselves to powerful, cinematic compositions.],
   [We’re looking for images that use scale, light, and environment to create impact, photographs that feel grounded yet atmospheric.],
   [Featured locations include:],
-  [style="font-weight: 400;"\> Dynamic Earth],
-  [style="font-weight: 400;"\> Scotch Whisky Experience],
-  [style="font-weight: 400;"\> Omni Centre],
-  [style="font-weight: 400;"\> Edinburgh Zoo],
   [Low angles, dramatic clouds, twilight transitions, and architectural contrast can all elevate a familiar location into something distinctive.],
   [Get inspired],
   [Submit your photos],
@@ -509,18 +461,18 @@ owners.],
   [Selected images will be featured editorially on Trip.com, where they will help illustrate destinations and attractions to a global travel audience.],
   [Because these images may be used in an editorial context, professional standards matter.],
   [To strengthen your chances of selection:],
-  [style="font-weight: 400;"\> Ensure the landmark or attraction is clearly recognizable],
-  [style="font-weight: 400;"\> Avoid visible watermarks, date stamps, or added graphics],
-  [style="font-weight: 400;"\> Minimize strong commercial branding or logos within the frame],
-  [style="font-weight: 400;"\> When including people, consider side or back angles to maintain editorial suitability],
-  [style="font-weight: 400;"\> Keep editing clean and natural; avoid heavy filters or artificial effects],
+  [Ensure the landmark or attraction is clearly recognizable],
+  [Avoid visible watermarks, date stamps, or added graphics],
+  [Minimize strong commercial branding or logos within the frame],
+  [When including people, consider side or back angles to maintain editorial suitability],
+  [Keep editing clean and natural; avoid heavy filters or artificial effects],
   [Strong metadata is equally important. Accurate titles and keywords improve discoverability and editorial usability.],
   [Please review the following carefully before submitting:],
-  [style="font-weight: 400;"\> Minimum photo resolution: 2K (2048×1080 landscape or 1080×2048 portrait), 4K preferred.],
-  [style="font-weight: 400;"\> Titling: The title must include country, city, and attraction name.],
-  [style="font-weight: 400;"\> Ex. Fountain in Central Park, New York City, USA],
-  [style="font-weight: 400;"\> Keywording: The attached keywords must include country, city, and attraction name.],
-  [style="font-weight: 400;"\> Ex. USA, New York City, Central Park],
+  [Minimum photo resolution: 2K (2048×1080 landscape or 1080×2048 portrait), 4K preferred.],
+  [Titling: The title must include country, city, and attraction name.],
+  [Ex. Fountain in Central Park, New York City, USA],
+  [Keywording: The attached keywords must include country, city, and attraction name.],
+  [Ex. USA, New York City, Central Park],
   [No watermarks, date stamps, or other added visual elements within the photo.],
   [Take Your Travel Photography Further],
   [Some travel images stay on social media.],
@@ -533,16 +485,14 @@ owners.],
 ),
   insert-map: (:),
   inline-pq: pull-quote([Whether it’s a golden sun flare over a park or a night scene illuminated by city lights, capture the character of Madrid at its most cinematic.], [500px Blog]),
-  inline-pq-idx: 33,
+  inline-pq-idx: 30,
   word-count: 1033,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [2026 Aston Martin DBX S Review -- Variation On A Theme],
   author: [Bradley Iger],
   source-name: [The Truth About Cars],
@@ -558,6 +508,8 @@ owners.],
   [Speaking of which, the cabin is another aspect of the DBX S’s design where Aston Martin’s reluctance to embrace the latest automotive trends has worked out in its favor. As part of the 2025 refresh, the automaker finally ditched its woefully dated Mercedes infotainment tech in favor of a system designed completely in-house. Not only is the 10.25-inch touchscreen sharp and quick to respond to inputs, it also supports Apple CarPlay Ultra, which allows for more control over the vehicle’s various features and ushers in additional personalization options for both the infotainment display and the 12.3-inch digital gauge cluster. Aston Martin also admirably resisted the urge to move all of the audio and HVAC controls to the touchscreen, instead opting for a handsome layout of buttons for often-used features like the auto stop/start system and damper stiffness, while the knurled metal dials used for functions like temperature and fan speed feel substantial and high-quality.],
   [Despite its performance focus, around town the DBX S feels just as accommodating as the DBX707, if not more so. While the optional 23-inch magnesium wheels outfitted here command an eye-watering \$21,600 premium over the standard rollers, they reduce rotating unsprung mass by a 42 pounds, a substantial improvement that benefits acceleration and braking as well as handling and ride comfort. Left in its default GT drive mode, the DBX S glides over freeway expansion joints and pockmarked pavement with zero drama. Paired with sport seats that strike a great balance between comfort and support (but conspicuously lacked ventilation, a feature that should be obligatory in an SUV of this caliber), the DBX S delivers the kind of everyday civility that you’d expect from an ultra-luxury sport utility vehicle.],
   [A trek out to some technical canyon roads reveals the other side of the DBX S’s personality. Twisting the dial that surrounds the ignition button allows you to quickly switch between drive modes (GT, Sport, Sport+, Individual, and Terrain), with Sport+ delivering admirably flat cornering thanks to the 48-volt “eARC” system, the DBX S’s active anti-roll control system. Combined with the quicker steering and lightweight wheels, the S feels noticeably more eager to turn in and change direction. But Aston Martin also wants the suspension in its road cars to “breathe,” as they put it, so the impressive stopping power delivered by the massive carbon ceramic brakes is accompanied by a notable amount of dive when you’re caning it.],
+  [See More Photos Of The 2026 Aston Martin DBX S],
+  [21 photos],
   [That’s not necessarily a bad thing, but the end result is that body control doesn’t feel quite as buttoned down as it could be, and that matters when you’re contending with the kind of pace that this powertrain can readily deliver. Aston Martin says the DBX S will hit 60 mph from rest in 3.1 seconds, but behind the wheel it feels even quicker than that. And this isn’t just all-wheel drive launch control trickery – I regularly found myself shocked when I glanced down at the speedometer after dropping the hammer at speed on a fast section of road. This four-liter might have a German accent, but its character and capability suit the DBX S perfectly.],
   [Of course, all of this poshness and performance comes at a cost, and when you’ve got several line items on the options sheet that are in excess of \$20,000, you know we’re firmly in “if you have to ask, you can’t afford it” territory here. Still, if you want to put one in your driveway, be prepared to spend at least \$262,500 to make that happen. The example you see here – loaded to the gills with a raft of carbon fiber as well as the aforementioned mag wheels, Podium Green paint, and an absolutely killer 1,600-watt Bowers & Wilkins audio system – brings the total up to \$409,400 with destination and a \$23,900 import tax.],
   [Yeah, that’s kind of excessive. But then again, Aston Martins have a way of making excess feel like a virtue.],
@@ -570,10 +522,8 @@ owners.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Heartbeats],
   author: [Luke Stephenson],
   source-name: [Zendesk Engineering],
@@ -594,8 +544,8 @@ owners.],
   [Monitoring for the pipeline halting is an interesting case. The application itself can’t be responsible for emitting a metric \/ triggering an alert that there is a problem with the pipeline being down. The root cause might be that the application is not even running!],
   [Given the application can only emit that it is alive, we can alert when those metrics stop being emitted.],
   [We use datadog for monitoring, and can use a query like the following to trigger an alert:],
-  [sum(last\_5m):sum:escape.success{} by {cluster}.as\_count() \< 1.0],
-  [This query will alert if over the last 5 minutes there have been no events handled by Escape successfully. Note that the by {cluster} means that if any database cluster is not seeing events handled, the alert will tell us which cluster is experiencing issues.],
+  [sum(last\_5m):sum:escape.success\{\} by \{cluster\}.as\_count() \< 1.0],
+  [This query will alert if over the last 5 minutes there have been no events handled by Escape successfully. Note that the by \{cluster\} means that if any database cluster is not seeing events handled, the alert will tell us which cluster is experiencing issues.],
   [So far, so good. What is the limitation of this approach? What if the customers on that cluster aren’t performing any updates? What if it is a staging database cluster that doesn’t have updates over the weekend when the devs are off skiing and surfing? That would trigger false alarms when everything is healthy.],
   [To work around this, we generate heartbeats. For each cluster we are processing, we periodically insert a request to publish to Kafka. We send the messages to a heartbeats Kafka topic which nothing consumes, but doing so gives us full end to end confidence in the pipeline. Now we have solved our false alarms.],
   [Not only have we solved our initial monitoring concern, we have also built an always-on smoke test for our functionality. If we deploy a version of our code that breaks the flow of data, we will receive an alert for it pretty quickly.],
@@ -620,10 +570,8 @@ owners.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Skill of Using AI Agents Well],
   author: [becausecurious],
   source-name: [LessWrong],
@@ -648,8 +596,8 @@ owners.],
   [I don't know the reason, but once in a while I get a couple days when AI just seems incapable of doing anything. Previously after one message it would correctly implement a bunch of stuff and now it keeps misunderstanding what I want and I need 30 iterations and it still does not get it and the process never converges. In this case I switch to the competitor (basically Opus 4.6 \<\> GPT5.4). The key is to detect this early and switch early. This is very sad, because migrating all the skills and setups between Claude Code and Codex sucks and I don't have an efficient way to do this.],
   [Memory across sessions (WIP)],
   [I haven't found a solution to this myself, but I strongly believe that this would have huge impact. I want the current AI session to seamlessly have access to all past information I provided to it. Both Claude and ChatGPT have this implemented in their web interfaces, but not in Claude Code \/ Codex CLI. I am currently experimenting with github.com/doobidoo/mcp-memory-service . Issues discovered:],
-  [value="1"\> It is developer oriented (e.g. mostly technical facts and choices), but I want generic memory system (e.g. for personal background too).],
-  [value="2"\> Autosaving of memories does not work - Claude ignores CLAUDE.md and the session end approach seems to be regexp based.],
+  [It is developer oriented (e.g. mostly technical facts and choices), but I want generic memory system (e.g. for personal background too).],
+  [Autosaving of memories does not work - Claude ignores CLAUDE.md and the session end approach seems to be regexp based.],
   [The memory retrieval seems to be fine. I am experimenting with using a separate Claude session in the background to extract memories from every message.],
   [If you found a good solution you are happy with, please tell.],
   [Ask to review in a new session (useful)],
@@ -659,8 +607,8 @@ owners.],
   [Auto resolve permission requests (no brainer)],
   [The first way I bottleneck AI is by reviewing its requests for permissions to do stuff. Many people resolve this by YOLO mode, where AI can do everything it wants. I like my photos and production databases, so I don't feel comfortable doing this. I am also worried about prompt injections from the web.],
   [I see 2 ways to partially resolve this issue:],
-  [value="1"\> Allowlist obviously safe commands as much as you can. Basically after every approval you gave, ask yourself whether this command is safe for AI to run on its own. This does not get you far, because the allowlist is pattern-based, so often the safety of the command depends on the context and its parameters.],
-  [value="2"\> Let another AI review permission requests. In Claude Code this is done via Auto Mode . Before Auto Mode existed I wrote my own solution via hooks (Claude Code exposes permission requests via hooks, Codex does not, but it has App Server and you can implement such reviewer that way). By using my own solution, I control the prompt and model used, the reviewer agent can use tools and multiple steps as well. E.g. to avoid prompt injection I allow all internet requests that do not expose any private data. I haven't tried Auto Mode.],
+  [Allowlist obviously safe commands as much as you can. Basically after every approval you gave, ask yourself whether this command is safe for AI to run on its own. This does not get you far, because the allowlist is pattern-based, so often the safety of the command depends on the context and its parameters.],
+  [Let another AI review permission requests. In Claude Code this is done via Auto Mode . Before Auto Mode existed I wrote my own solution via hooks (Claude Code exposes permission requests via hooks, Codex does not, but it has App Server and you can implement such reviewer that way). By using my own solution, I control the prompt and model used, the reviewer agent can use tools and multiple steps as well. E.g. to avoid prompt injection I allow all internet requests that do not expose any private data. I haven't tried Auto Mode.],
   [Some people run AI in YOLO mode on a server, basically reducing the worst case scenario of a failure. I still don't like this, because it can still leak your git API key and your repo.],
   [Many people I know just YOLO and never had any issue.],
   [The main message here is reviewing every permission request kills your efficiency. Find some way to solve this.],
@@ -685,10 +633,8 @@ owners.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Infiniti Taps NFL Star Power to Reveal 2027 QX65 in New York],
   author: [Michael Strong],
   source-name: [The Truth About Cars],
@@ -712,10 +658,8 @@ owners.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Original Attention Crisis],
   author: [Study Hacks],
   source-name: [Study Hacks (Cal Newport)],
@@ -732,6 +676,7 @@ owners.],
   [In other words, Steno created a method that combines what we might now call ​slow productivity​ , ​deep work​ , and ​time blocking​ .],
   [The lessons here are clear. The use of our brains to think deeply about meaningful ideas isn’t new. It’s been at the core of the human experience since the early modern period, when access to sophisticated information first became somewhat widespread.],
   [The best practices developed back then remain the best practices today: avoid overload, focus on one thing at a time, and block off specific hours in your day for your most mentally demanding efforts.],
+  [AI Reality Check :],
   [Two weeks ago, a small financial services firm, Citrini Research, published ​an essay​ describing a bleak scenario in which AI agents destroy the white-collar job market in the near future. The piece went viral and was ​cited as a factor​ in a modest decline of the S&P 500 the next day.],
   [The Citrini essay wasn’t the first to float this scenario. In recent weeks, there have been multiple credulous articles and op-eds in major publications proposing similar outcomes (e.g., ​1​ , ​2​ , ​and 3​ ). But the negative impact on the stock market seems to have been the last straw for serious economists who began to push back on these technological ghost stories last week. (I particularly enjoyed a Deutsche Bank analyst who, perhaps borrowing ​some of my​ terminology, ​told the Times ​ that the Citrini article had a “vibes-to-substance ratio” that was “undeniably high.”)],
   [If you’re looking to reduce your blood pressure about this idea that AI is about to unravel the economy, I suggest reading ​a detailed response article​ published by an analyst from the Global Macro Strategies group at Citadel. It begins with a bit of finance geek sarcasm:],
@@ -746,11 +691,10 @@ owners.],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Photographing Spring Flowers with Artistic Intent],
   author: [500px Blog],
   source-name: [500px ISO],
@@ -784,7 +728,7 @@ owners.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Sounds Of Spring Start-up -- 1969 BMW 2002],
   author: [Michigan Automotive Relic Society | TTAC Creator],
   source-name: [The Truth About Cars],
@@ -809,7 +753,7 @@ owners.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Zoox Expanding Operations for Second Time in March],
   author: [Michael Strong],
   source-name: [The Truth About Cars],
@@ -834,7 +778,7 @@ owners.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [24-Years-Owned 1997 Dodge Viper GTS],
   author: [bringatrailer],
   source-name: [Bring a Trailer],
@@ -865,7 +809,7 @@ owners.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Honda Breaks Up with Sony, Ending Afeela EV Before It Arrives],
   author: [Michael Strong],
   source-name: [The Truth About Cars],
@@ -890,7 +834,7 @@ owners.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Recall Alert: 2026 Hyundai Palisade],
   author: [TTAC Staff],
   source-name: [The Truth About Cars],
@@ -918,7 +862,7 @@ owners.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Capturing Early Signs of Spring in Nature Photography],
   author: [500px Blog],
   source-name: [500px ISO],
@@ -950,7 +894,7 @@ owners.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [2009 Toyota Vellfire at No Reserve],
   author: [bringatrailer],
   source-name: [Bring a Trailer],
@@ -974,8 +918,7 @@ owners.],
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Parkinson's Law of Worry],
   author: [Jakub Halmeš],
   source-name: [LessWrong],
@@ -1000,120 +943,117 @@ owners.],
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([Calin Van Paris], source-name: [Yoga Journal], [A little movement can make a major difference. 
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([Calin Van Paris], source-name: [Yoga Journal], [A little movement can make a major difference. 
 
 The post Got 5 Minutes? These YouTube Yoga Practices Will Fit in Your Morning Routine. appeared first on Yoga Journal .])],
-    [#brief-item([Ahmad Ibsais], source-name: [The Nation], [Ahmad Ibsais
+  [#brief-item([Ahmad Ibsais], source-name: [The Nation], [Ahmad Ibsais
 
-class="wp-block-the-nation-dek article-title\_\_dek"\>
+
 
 It’s not just Gaza—Israel wants to exterminate all Palestinians, everywhere. We are one people being destroyed as one people.
 
 The post Israel Is Also Committing Genocide In the West Bank appeared first on The Nation .])],
-    [#brief-item([Hoyt Patrick Taylor IV], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10219-x 
+  [#brief-item([Hoyt Patrick Taylor IV], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10219-x 
 
 fMRI data from individuals of a wide range of ages (from a few days to 100 years old) are used to map the key organizational axes of functional connectivity in the human cortex throughout the lifespan.])],
-    [#brief-item([Calin Van Paris], source-name: [Yoga Journal], [Right place, best practice. 
+  [#brief-item([Calin Van Paris], source-name: [Yoga Journal], [Right place, best practice. 
 
 The post I Hated Yoga Until I Found the Right Studio. Here’s How to Find the Perfect Place to Practice. appeared first on Yoga Journal .])],
-    [#brief-item([Elizabeth Gibney], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/d41586-026-00893-2 
+  [#brief-item([Elizabeth Gibney], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/d41586-026-00893-2 
 
 The papers’ watermarks allowed organizers to detect use of large language models in peer review.])],
-    [#brief-item([Kouki K. Touhara], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10281-5 
+  [#brief-item([Kouki K. Touhara], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10281-5 
 
 Paracrine signalling between tuft cells and enterochromaffin cells is a key mode of immune–sensory and gut–brain communication, and accounts for the pattern of gastrointestinal symptoms that occurs during parasite infections.])],
-    [#brief-item([ESPN Top Stories], source-name: [ESPN Top Stories], [Gary Woodland won the Houston Open by five shots Sunday, his first PGA Tour victory since undergoing brain surgery in 2023.])],
-    [#brief-item([Laura Flanders], source-name: [The Nation], [Laura Flanders
+  [#brief-item([ESPN Top Stories], source-name: [ESPN Top Stories], [Gary Woodland won the Houston Open by five shots Sunday, his first PGA Tour victory since undergoing brain surgery in 2023.])],
+  [#brief-item([Laura Flanders], source-name: [The Nation], [Laura Flanders
 
-class="wp-block-the-nation-dek article-title\_\_dek"\>
+
 
 Laura Flanders speaks with Faiz Shakir and John Cassidy on the grassroots fight against the AI oligarchs.
 
 The post The Data Center Revolt appeared first on The Nation .])],
-    [#brief-item([Tjeerd Royaards], source-name: [The Nation], [Tjeerd Royaards
+  [#brief-item([Tjeerd Royaards], source-name: [The Nation], [Tjeerd Royaards
 
 Scraping our creativity and our jobs.
 
 The post AI Makes Life Easier… for AI appeared first on The Nation .])],
-    [#brief-item([Xinwei Wei], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10221-3 
+  [#brief-item([Xinwei Wei], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10221-3 
 
 Intelligent and miniaturized drug delivery devices leveraging advances in biotechnology, artificial intelligence, electronics and materials science enable treatments with increased precision and responsiveness, with applications in cancer, diabetes, cardiovascular disease and other diseases.])],
-    [#brief-item([Marshall Burke], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10272-6 
+  [#brief-item([Marshall Burke], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10272-6 
 
 A new framework links specific emissions to monetized, location-specific climate damages, showing that future harms from past CO2 emissions far exceed historical damages and that delayed carbon removal cannot fully offset these losses.])],
-    [#brief-item([Elie Mystal], source-name: [The Nation], [Elie Mystal
+  [#brief-item([Elie Mystal], source-name: [The Nation], [Elie Mystal
 
-class="wp-block-the-nation-dek article-title\_\_dek"\>
+
 
 In this week’s Elie v. U. S. , our justice correspondent explores Trump’s stunning incompetence. Plus: Baseball is back—for now. 
 
 The post Nothing Works in Trump’s America—Except Racism appeared first on The Nation .])],
-    [#brief-item([Eric H. Oelkers], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10130-5 
+  [#brief-item([Eric H. Oelkers], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10130-5 
 
 An industrial-scale pilot project using co-injection of recirculated water for subsurface CO2 mineralization shows promise as a pathway for carbon sequestration in regions with limited access to water resources.])],
-    [#brief-item([Sasha Abramsky], source-name: [The Nation], [Sasha Abramsky
+  [#brief-item([Sasha Abramsky], source-name: [The Nation], [Sasha Abramsky
 
-class="wp-block-the-nation-dek article-title\_\_dek"\>
+
 
 The V-Dem Institute, the world’s chronicler of democracy and autocracy, has determined that the United States is no longer “a liberal democracy.”
 
 The post The Rapid and “Unprecedented” Collapse of American Democracy appeared first on The Nation .])],
-    [#brief-item([Florence Sylvestre], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10336-7 
+  [#brief-item([Florence Sylvestre], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10336-7 
 
 Sedimentary time-series data of Lake Yoa in Chad covering the past 10.25 thousand years (kyr) show that the mid-Holocene African Humid Period experienced several decadal-scale droughts, caused by sudden inputs of freshwater into the North Atlantic.])],
-    [#brief-item([Juliane Weber], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/d41586-026-00635-4 
+  [#brief-item([Juliane Weber], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/d41586-026-00635-4 
 
 Carbon dioxide has been turned into minerals in Earth’s subsurface using recirculating water flow — a viable way to sequester this greenhouse gas in water-scarce areas.])],
-    [#brief-item([David Morales], source-name: [The Nation], [David Morales
+  [#brief-item([David Morales], source-name: [The Nation], [David Morales
 
-class="wp-block-the-nation-dek article-title\_\_dek"\>
+
 
 A mayoral candidate in Providence argues that unique challenges—and unique responses—must be explored.
 
 The post The Affordability Crisis in Midsize Cities Is Not Inevitable appeared first on The Nation .])],
-    [#brief-item([Victoria Baena], source-name: [The Nation], [Victoria Baena
+  [#brief-item([Victoria Baena], source-name: [The Nation], [Victoria Baena
 
-class="wp-block-the-nation-dek article-title\_\_dek"\>
+
 
 Why adaptations of Emily Brontë’s novel, across generations, have misunderstood the work and its world. 
 
 The post The Trouble With Adapting “Wuthering Heights” appeared first on The Nation .])],
-    [#brief-item([Marc Audard], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10231-1 
+  [#brief-item([Marc Audard], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/s41586-026-10231-1 
 
 Starburst galaxies are seen to host galaxy-scale winds, which are super-fast and could be powered entirely by the thermal pressure of gas heated by supernovae.])],
-    [#brief-item([Stanley Reed], source-name: [The Nation], [Stanley Reed
+  [#brief-item([Stanley Reed], source-name: [The Nation], [Stanley Reed
 
-class="wp-block-the-nation-dek article-title\_\_dek"\>
+
 
 Unless a resolution is found, the impact is likely to grow.
 
 The post How the War Has Led to the Largest Disruption of Energy Supplies in Decades appeared first on The Nation .])],
-    [#brief-item([Anthony Conwright], source-name: [The Nation], [Anthony Conwright
+  [#brief-item([Anthony Conwright], source-name: [The Nation], [Anthony Conwright
 
-class="wp-block-the-nation-dek article-title\_\_dek"\>
+
 
 After you strip away the lies about rampant voter fraud, the GOP bill is a frontal assault on hard-won protections of the franchise.
 
 The post How the SAVE Act Seeks to Undermine the Right to Vote appeared first on The Nation .])],
-    [#brief-item([Laurence Edmondson], source-name: [ESPN Top Stories], [Yes, the timing of a safety car helped Kimi Antonelli to Sunday's win at the Japanese GP, but he was still the fastest car on track when it happened.])],
-    [#brief-item([Michelle Boorstein], source-name: [The Washington Post (national)], [The defense secretary is upending decades-old norms, current and former leaders say, with some cautioning that his proselytizing violates the Constitution and undermines troop cohesion.])],
-    [#brief-item([Tyrell Fortune], source-name: [ESPN Top Stories], [Bellator heavyweight Tyrell Fortune recalls the weight cut that nearly took his life and left him with a new outlook.])],
-    [#brief-item([Futao Huang], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/d41586-026-00426-x 
+  [#brief-item([Laurence Edmondson], source-name: [ESPN Top Stories], [Yes, the timing of a safety car helped Kimi Antonelli to Sunday's win at the Japanese GP, but he was still the fastest car on track when it happened.])],
+  [#brief-item([Michelle Boorstein], source-name: [The Washington Post (national)], [The defense secretary is upending decades-old norms, current and former leaders say, with some cautioning that his proselytizing violates the Constitution and undermines troop cohesion.])],
+  [#brief-item([Tyrell Fortune], source-name: [ESPN Top Stories], [Bellator heavyweight Tyrell Fortune recalls the weight cut that nearly took his life and left him with a new outlook.])],
+  [#brief-item([Futao Huang], source-name: [Nature News], [Nature, Published online: 25 March 2026; doi:10.1038/d41586-026-00426-x 
 
 A shift to regional partnerships and use of tightly controlled platforms suggests openness is being designed and managed.])],
-    [#brief-item([Ting Lin], source-name: [The Nation], [Ting Lin
+  [#brief-item([Ting Lin], source-name: [The Nation], [Ting Lin
 
-class="wp-block-the-nation-dek article-title\_\_dek"\>
+
 
 Zhang Yueran’s novel Women, Seated —a take on the upstairs, downstairs drama—examines class conflict among the Chinese upper crust and the people who wait on them. 
 
 The post What Its Like to Serve the Chinese Elite appeared first on The Nation .])],
-  ))
-}
+))
 
 #colophon([Bright Register], [Vol. 1, No. 039], [2026-03-30])

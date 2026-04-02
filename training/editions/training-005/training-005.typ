@@ -21,125 +21,37 @@
 #masthead([The Silicon Wire], [Vol. 1, No. 005], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Getting Towards Real Sandbox Containers],
-  kicker: [Cover Story],
-  author: [Jessie Frazelle],
-  source-name: [Jessie Frazelle],
-  deck: [Containers are all the rage right now. At the very core of containers are the same Linux primitives that are also used to create application sandboxes.],
-  lead-pre: [],
-  lead-cap: [C],
-  lead-rest: [ontainers are all the rage right now.],
-  body-paragraphs: (
-  [At the very core of containers are the same Linux primitives that are also used to create application sandboxes.
-The most common sandbox you may be familiar with is the Chrome sandbox. You can read in detail about the Chrome sandbox
-here: chromium.googlesource.com/chromium/src/+/master/docs/linux\_sandboxing.md .
-The relevant aspect for this article is the fact it uses user namespaces and seccomp. Other deprecated features include AppArmor
-and SELinux. Sound familiar? That’s because containers, as you’ve come to know them today, share the same features.],
-  [id="why-are-containers-not-currently-being-considered-a-sandbox"\>Why are containers not currently being considered a “sandbox”?],
-  [One of the key differences between how you run Chrome
-and how you run a container are the privileges used. Chrome runs as your own unprivileged user. Most containers (be it docker, runc, or rkt) run as
-root.],
-  [Yes, we all know that containers run unprivileged processes; but creating and running the containers themselves requires root privileges at some point.],
-  [id="how-can-we-run-containers-as-an-unprivileged-user"\>How can we run containers as an unprivileged user?],
-  [Easy! With user namespaces, you might say. But it’s not exactly that simple. One of the main differences between the Chrome
-sandbox and containers is cgroups. Cgroups control what a process can use. Whereas namespaces
-control what a process can see. Containers have cgroup resource management built in. Creating cgroups from an unprivileged
-user is a bit difficult, especially device control groups.],
-  [If we ignore, for the time being, this huge tire fire that is creating cgroups as an unprivileged user, then
-unprivileged containers are easy. User namespaces allow us to create all the namespaces without any further privileges.
-The one key caveat being that the {uid,gid}\_map must have the current host user mapped to the container uid that the process
-will be run as. The size of the {uid,gid}\_map can also only be 1. For example if you are running as uid 1000 to spawn the container, your
- {uid,gid}\_map for the process would be 0 1000 1 for uid 0 in the container. The 1 there refers to the size.],
-  [id="how-is-this-different-than-the-user-namespace-support-currently-in-docker"\>How is this different than the user namespace support currently in Docker?],
-  [This is quite different, but for very good reason. In Docker, by default, when the remapped user is created,
-the /etc/subuid and /etc/subgid files are populated with a contiguous 65536 length range of subordinate user and group
-IDs, starting at an offset based on prior entries in those files. Docker’s implementation has a larger range of users that can
-exist in the container as well as having a more “anonymous” mapped host user.
-If you want to read more about the user namespace implementation
-in Docker I would checkout \@estesp’s blog or the
-the docker docs .],
-  [id="poc-or-gtfo"\>POC or GTFO],
-  [As a proof of concept of unprivileged containers without cgroups I made binctr . Which
-spawned a
- mailing list thread for implementing this in runc/libcontainer .
- Aleksa Sarai has started on a few patches and this might actually be a reality pretty soon!],
-  [Update: it took almost a year, but this was added to runc in Mar 2017.],
-  [id="where-does-this-put-us-in-the-sandbox-landscape"\>Where does this put us in the “sandbox” landscape?],
-  [With this implementation we get:],
-  [namespaces],
-  [apparmor],
-  [selinux],
-  [seccomp],
-  [capabilities limiting],
-  [all created by an unprivileged user!],
-  [Sandboxes should be very application-specific, using custom
-AppArmor profiles, Seccomp profiles and the like. A generic container will
-never be equivalent to a sandbox because it’s too universal to really lock down
-the application.],
-  [Containers are not going to be the answer to preventing your application from
-being compromised, but they can limit the damage from a compromise. The world
-an attacker might see from inside a very strict container with custom
-AppArmor/Seccomp profiles greatly differs than that without the use of
-containers. With namespaces we limit the application from seeing various things
-such as network, mounts, processes, etc. And with cgroups we can further limit
-what the attacker can use, be it a large amount of memory, cpu, or even a fork
-bomb.],
-  [id="but-what-about-cgroups"\>But what about cgroups?],
-  [We can set up cgroups for memory, blkio, cpu, and
-pids with an unprivileged user as long as the cgroup subsystem has been chowned to the
-correct user. Devices are a different story though. Considering the fact you
-cannot mknod in a user namespace it is not the worst thing in the world.],
-  [Let’s not completely rule out the devices cgroup. In the future this might be entirely possible. In kernels 4.6+, there is a new
-cgroup namespace. For now all this does is mask the cgroups path inside the container so it is not entirely useful
-for unprivileged containers at all. But in the future maybe it could be (if we ask nice enough?).],
-  [id="what-is-the-awesome-sauce-we-all-gain-from-this"\>What is the awesome sauce we all gain from this?],
-  [Well judging by the original GitHub issue about unprivileged runc containers, the largest group of commenters is from
-the scientific community who are restricted to not run certain programs as root.],
-  [But there is so much more that this can be used for. One of my most anticipated use cases is the work being done by
- Alex Larsson on xdg-app to run applications in sandboxes.
-Definitely checkout bubblewrap if you are interested in this.],
-  [Also subgraph , the container based OS which specializes in security and privacy, have this same idea in mind.],
-  [I am a huge fan of running desktop applications in containers as well as solving multi-tenancy for running containers.
-I definitely hope to help evolve containers into real sandboxes in the future.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [10 Hacks Every Ring User Should Know],
   author: [Emily Long],
   source-name: [Lifehacker],
   images: (),
   paragraphs: (
   [When setting up any new internet-connected device, don't stick with the default settings. Doing so introduces security risks, and it's also a less-than-optimal way to use the features available to you. If you have a Ring camera or doorbell, there are a whole host of changes you can make to minimize annoyance and maximize privacy.],
-  [id="snooze-motion-alerts-when-youre-outside"\>Snooze Motion Alerts when you're outside],
+  [Snooze Motion Alerts when you're outside],
   [Motion alerts are among the most useful features of any security camera, but you don't need a notification to your phone when you are the one moving around your property. You can snooze alerts in certain situations, such as when you're outside doing yard work or hosting a party. Global Snooze pauses alerts for all cameras and doorbells for a set duration, while Alerts Snooze allows you to pause notifications from a specific device. When Snooze is enabled, you'll still get Doorbell Rings and Priority Alerts.],
   [In the Ring app, tap the motion icon, choose the snooze duration, and tap Start Snooze . For a single device, tap the More icon on the camera you want to snooze and tap the bell icon to turn Alerts Snooze on or off.],
   [If you have monitoring via Virtual Security Guard, you can turn on Motion Snooze for enrolled devices to temporarily pause that service.],
-  [id="optimize-motion-zones-to-exclude-certain-areas"\>Optimize Motion Zones to exclude certain areas],
+  [Optimize Motion Zones to exclude certain areas],
   [Another way to curate motion alerts is to customize your Ring camera's Motion Zones—for example, to exclude busy streets with lots of cars driving by as well as private, low-traffic areas you don't need to monitor. You can add up to three motion zones per device under your camera's Settings \> Motion Settings \> Camera Motion Zones . Tap Add Zone , drag the edges of the zone boundaries within your camera's view, and hit Save .],
-  [id="set-up-smart-alerts-to-reduce-unnecessary-notifications"\>Set up Smart Alerts to reduce unnecessary notifications],
+  [Set up Smart Alerts to reduce unnecessary notifications],
   [In addition to narrowing motion zones, you can choose whether you receive motion alerts and/or recordings specifically for people, vehicles, and packages while minimizing notifications from other sources of movement. ( Not all Ring devices are compatible with all three Smart Alert categories, and you'll need a Ring subscription to use these features.) To enable Smart Alerts, go to your device's Settings \> Motion Settings \> Smart Alerts , then tap Enable Feature \> Continue and choose your preferred alerts.],
-  [id="customize-your-neighborhood-area-for-relevant-alerts"\>Customize your Neighborhood Area for relevant alerts],
+  [Customize your Neighborhood Area for relevant alerts],
   [Neighbors is an online community through which Ring users can share footage and receive updates for their area. It is the broad umbrella for controversial features like Community Requests and Search Party (which I'll get into below), but it could be useful for keeping abreast of issues in your neighborhood—like fire or other safety alerts—even if you don't make your camera's content public. You can customize your area so you're only getting relevant alerts, especially if your neighborhood is more active on the app. Go to Menu \> Neighbors \> Settings \> Customize Neighborhood to adjust the boundaries of your area.],
-  [id="turn-off-community-requests-from-law-enforcement"\>Turn off Community Requests from law enforcement],
+  [Turn off Community Requests from law enforcement],
   [Community Requests is a Neighbors feature through which law enforcement can ask users to share video from their Ring devices. While Ring says that footage isn't shared automatically, and law enforcement doesn't have access to live feeds, many users still have privacy concerns related to this type of collaboration. (Note that Ring also had a short-lived partnership with Flock Safety , which would have made it easier for law enforcement agencies to request Ring camera footage using Flock's software.)],
   [You can simply ignore Community Requests in your Neighbors feed, or you can turn these requests off entirely under Neighborhood Settings \> Feed Settings . Deselect Community Requests and hit Apply .],
-  [id="opt-out-of-search-partys-surveillance"\>Opt out of Search Party's surveillance],
+  [Opt out of Search Party's surveillance],
   [Ring launched its Search Party feature in a Super Bowl ad earlier this year, ostensibly to help users find lost dogs in their neighborhood. Search Party uses AI to identify pets in your Ring's field of vision and pools the footage with other cameras. Obviously, this functionality comes with significant privacy concerns , not least of which is whether and how your footage could be shared with law enforcement to surveil people rather than pets. You can disable Search Party entirely under Control Center \> Search Party . Choose the blue Pet icon next to each camera.],
-  [id="disconnect-from-amazon-sidewalks-wireless-network"\>Disconnect from Amazon Sidewalk's wireless network],
+  [Disconnect from Amazon Sidewalk's wireless network],
   [Amazon Sidewalk uses your Ring device—and others in your neighborhood—to create a mesh network so said devices stay connected to the internet even if your wifi is weak or goes down. Amazon says that this feature provides security (because you'll still get important alerts) and extends the range for other devices like smart lights, smart locks, and pet locators. But you may not want to use your bandwidth for this purpose nor introduce potential privacy concerns to your home network. You can disable Amazon Sidewalk in the Control Center on your Ring app.],
-  [id="disable-third-party-provider-sharing"\>Disable third-party provider sharing],
+  [Disable third-party provider sharing],
   [Like many apps and services, Ring shares certain information with third parties for purposes like personalized ads. While the company says it does not sell users' personal data, in 2020, researchers at the Electronic Frontier Foundation found that the Ring app was packed with third-party trackers that were sending personally identifiable information to analytics and marketing firms.],
   [In response , Ring added an opt-out feature, so you can adjust your settings to keep this information private from third-party providers. In the Ring app, go to Menu \> Control Center \> Cookies and Third Party Service Providers and turn off Third-Party Web and App Analytics Cookies and Personalized Advertising .],
-  [id="enable-end-to-end-encryption-to-protect-your-ring-footage"\>Enable end-to-end encryption to protect your Ring footage],
+  [Enable end-to-end encryption to protect your Ring footage],
   [If you want maximum privacy for your Ring footage, consider enabling end-to-end encryption (E2EE), which prevents anyone except you from accessing your recordings. This adds an extra layer of protection against hackers as well as Ring itself (including compliance with law enforcement requests), as videos are hidden behind a passphrase and can be viewed only on your enrolled mobile device. You'll also need a (paid) Ring Protect subscription. The major downside is that you lose access to a pretty sizeable list of features , including 24/7 video recording and Person Detection. To set up E2EE, go to your Control Center \> Video Encryption \> End-to-End Encryption .],
-  [id="set-up-local-storage-for-more-space-and-better-privacy"\>Set up local storage for more space and better privacy],
+  [Set up local storage for more space and better privacy],
   [With a Ring Protect subscription, Ring will store your videos in the cloud for 180 days, which you can shorten to as little as one day if you are concerned about someone gaining access to your footage (and E2EE isn't enabled). Unfortunately, without a Ring Protect subscription, there's no easy option to store videos from your camera, and you will probably want to save recordings for at least some period of time. You can set up local storage to a MicroSD card through Ring Edge, though you'll need to invest in a Ring Alarm Pro Base Station. This gives you more control, more space, and more privacy. Of course, another alternative is to look for a camera that offers local storage to begin with.],
 ),
   insert-map: (:),
@@ -148,10 +60,8 @@ I definitely hope to help evolve containers into real sandboxes in the future.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [€9 Ticket],
   author: [Dennis Felsing],
   source-name: [Dennis Felsing],
@@ -160,12 +70,10 @@ I definitely hope to help evolve containers into real sandboxes in the future.],
   [As a relief for rising energy costs and inflation Germany is offering nearly-free public transportation for the months of June, July and August. For just €9 per month you can take any kind of regional public transportation in all of Germany. That’s basically everything except the IC/ICE for long distance. This means that a monthly ticket is now as cheap as what I would normally pay for a single route. In this post I want to talk about my experiences with this €9 ticket .],
   [Update 2022-09-01: The €9 ticket ended yesterday without a similar replacement system in place. So many people are again back to paying about €100 per month for much smaller regional tickets instead (see for example this German Reddit thread . Financially it makes more sense for me personally to go back to driving. (I hope the gasoline in the car is still good after three months.) My hope is that these three months will stay in people’s minds in Germany and shape the future of public transportation to be cheaper and simpler:],
   [Image via Reddit],
-  [id="train-stations"\>Train Stations],
   [In the above graphic you can see the train stations in our area. Since we are situated in the Rhine-Neckar metropolitan region the railway network is pretty good here.],
   [(map made with umap , routes made with GraphHopper )],
   [The closest train stop from us is St. Ilgen-Sandhausen at 2 km distance. It offers direct connections to the cities of Heidelberg (160k inhabitants), Mannheim (309k), Karlsruhe (313k), Darmstadt (159k) and Frankfurt (753k). For other directions I prefer going to a different train station since switching times are either too long or there is too much risk of missing the connecting train. Only 89% of regional trains are on time in Germany, with some routes and stations having much worse rates. This is a far cry from Switzerland’s 95% punctuality with an even stricter definition of 3 minutes versus 5 minutes delay in Germany.],
   [Another closeby train station we commonly use is HD-Weststadt/Südstadt at 6 km distance, which is good to cycle and can also be reached via Tram. Occasionally I used Heidelberg Hauptbahnhof as well as Wiesloch-Walldorf, both at slightly under 10 km distance, which are a bit larger and thus are used as stops for Regional-Express trains. These go faster than the Regionalbahn and S-Bahn trains and thus also have fewer stops.],
-  [id="cycling-trips"\>Cycling Trips],
   [The above map contains some of the cycling trips I took by combining them with the €9 ticket. (map made with umap , routes made with GraphHopper )],
   [Last time I posted about cycling and work was about commuting by bicycle for a year . I kept this up and was super happy with this way of getting to SAP ’s headquarter in Walldorf and the included exercise. After a while I moved together with my wife and my bike commute lengthened to 10 km each direction, which was still perfectly fine. Then Covid forced me in March of 2020 to work from home I switched to regular cycling trips in the afternoon since I started working early in the morning, in order to have meetings with colleagues in Korea and China. Two 50 km cycling trips per week got me to the same level as the daily commute used to do, and I have a nice route I regularly take, which covers a lot of forest and lake.],
   [In January I switched to a new job at Yugabyte . As the database we develop is distributed, so are the people I work with. Since most meetings fall into US times, I am now working more during the afternoon and evening. This means my cycling trips moved to the morning instead.],
@@ -175,26 +83,20 @@ I definitely hope to help evolve containers into real sandboxes in the future.],
   [The image above shows an almost empty train during a working day.],
   [Even with a single train connection things can go wrong though. One time the train in front of ours started burning and so we got delayed for an unknown time. But since I had my bicycle with me, that meant I could just cycle back the rest of the way and get some extra exercise for free. If I was really out of energy I could have waited in the train, but often busses are used as a replacement, and bicycles on busses don’t fit well.],
   [The weather was unusually dry the last months, the last few days had the first few drops of rain I remember since the beginning of June. This is of course bad for nature here, as I saw at the Rhine river, which is much lower than usual. For cycling it’s quite good though, only got wet once.],
-  [id="jogging"\>Jogging],
   [This amount of cycling of course meant that my bicycle had to get some repairs done. While I had it at the repair shop, I tried out jogging from Heidelberg back to my home town Leimen. The route goes through the “Kleiner Odenwald” forest for nearly the entire way, and the rest are some fields. It goes through Heidelberg’s highest mountain, the Königstuhl, with a nice view of the city and surrounding area.],
   [The “Ladder to Heaven” in the beginning with its 1300 steps accounts for most of the elevation and is still too tough for me to do at faster than walking speed. After I got my bicycle back I still kept doing this jogging route a few times per week.],
-  [id="nearby-excursions"\>Nearby Excursions],
   [There are lots of cities and nice nature nearby. So we used public transportation for excursions on every weekend. It was noticable that the trains were crowded, and at times people couldn’t even enter the train anymore. When going to the cinema we noticed that we should really catch the last train at 22:30, since the next connection would take all night.],
   [One time the train back from Frankfurt was late, then got cancelled. The next train was also delayed, and now overcrowded because it had twice the passengers. Unfortunately it took me too long to realize that with more than 20 minutes delay, we should be able to take high speed ICE trains as a replacement and get the cost reimbursed by Deutsche Bahn.],
   [You still need to wear masks as a Covid prevention on public transportation in Germany. This is basically the only remaining occasion, other than at the Doctor’s office, where you have to wear masks. Even with all the travel using public transportation and basically no distancing we haven’t caught Covid as far as we are aware based on symptoms and some rapid tests.],
-  [id="eating-out"\>Eating Out],
   [My wife picked out many great restaurants in nearby cities for us to try out. By car it would not make sense to just drive to another city for a dinner, but using public transportation we had no problem spending an hour on a train, where you can comfortable talk or surf the web, to reach our destinations. This probably has a really good economic effect on restaurants and cafes, many were so fully packed that we got the last seats or had to reserve beforehand.],
-  [id="family-visits"\>Family Visits],
   [For trips to cities and cycling trips we mostly take direct train connections. That usually works quite well. To visit family however the destinations are smaller villages, so the connections are worse and there is no direct connection at all. So a 40 minute drive turns into a 2 hour train ride with 3 different trains instead. Coincidentally this is the same time I need for the route by bicycle.],
   [There is a relatively high chance of missing a connecting train, or of getting stuck in the middle of the route. One time a truck crashed into the train bridge, so our train couldn’t continue. Instead of waiting around for an hour or two we took the train back home and, for the only time during these three months so far, had to switch to the car to keep our timeline. At least the highway was quite empty, there seems to be some conflicting data on whether the €9 ticket actually has an effect on reducing car traffic though.],
-  [id="getting-visits"\>Getting Visits],
   [While my wife and I didn’t do any long distance travel using the €9 ticket, others did. I had a co-developer of DDraceNetwork visit all the way from Berlin using the €9 ticket. For people who have time it has been much easier to visit others with the €9 ticket, without having to worry about cost.],
-  [id="while-on-vacation"\>While on Vacation],
+  [While on Vacation],
   [While we didn’t use the €9 ticket to go to a vacation, it was still useful during a car-based vacation. While driving to Berchtesgadener Land we saw a train line that seemed to lead to Berchtesgaden. So we stopped at the closeby train station and spontaneously took the train instead, which lead us through beautiful sceneries.],
   [On the way back from the same vacation we had a stop in Munich. Instead of driving the car all the way into the city center I checked for the closest free Park and Ride garage from the highway. After parking the car there, the train was unfortunately cancelled, so we had to take a bus and metro, but still reached the city center quickly.],
   [After having used public transportation a lot back at home, we also felt more comfortable using it on vacation in other countries, even if it costs a bit more there. So on Mallorca we explored the entire island using the extensive bus network instead of renting a car. The photo above shows the most distant bus stop we reached, at a lighthouse at the end of a long curvy road. Next week we are taking the TGV to Paris, which tops out at 320 km/h and manages the 550 km route in just 2:36, an average of 212 km/h. The image below is luckily not the TGV:],
   [Going to the airport by train worked fine, but we had to get there a few hours earlier in case was some train delay causing us to miss the connecting train. On the way back there indeed was a huge delay, with a train line being closed down for hours. After a slow trickle of information from the train operator, we had to figure out an alternative route on our own, since the DB app was still showing routes that could not be operated for the next few hours because of the train line closure.],
-  [id="conclusion"\>Conclusion],
   [There are still two weeks left for the €9 ticket and I’m planning to make the best use of them. So far I’ve been taking a trip on most days, so it’s definitely been worth it and will be missed.],
   [Unfortunately the €9 ticket won’t be prolonged. The high public interest has lead to some plans for a relatively cheap follow-up ticket, but again with some regional limitations for the cheap ticket. Other countries are even implementing entirely free public transport meanwhile, so there is some hope for the future.],
 ),
@@ -204,10 +106,8 @@ I definitely hope to help evolve containers into real sandboxes in the future.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A Rant on Usable Security],
   author: [Jessie Frazelle],
   source-name: [Jessie Frazelle],
@@ -219,7 +119,6 @@ and it had a pretty great response. I’m still pretty care-mad about the topics
 it covered so I figured I would turn some key points from it into a blog post.],
   [The overall outline of the talk covered the past, present, and future of
 usable security. Let’s start with the past.],
-  [id="the-past"\>The Past],
   [A lot of the security tooling of the past (that we still use today)
 require users to jump through a lot of hoops or learn a hard to grok interface.
 One of the examples I used was GPG. Contrary to popular opinion, I actually
@@ -232,7 +131,7 @@ This needs to stop happening. Stop compromising convenience for security.
 Instead find the right balance between the two. Doing this takes collaboration
 from both security engineers and software engineers.],
   [Dave Cheney recently had a great tweet.],
-  [dir="ltr" lang="en"\>Why is all software shit? Today I discovered the \@duosec API returns 200 even if someone denies the 2fa request.],
+  [Why is all software shit? Today I discovered the \@duosec API returns 200 even if someone denies the 2fa request.],
   [— Dαve Cheney (\@davecheney) July 25, 2017],
   [I love this tweet because it reeks of the stench that only security engineers
 built this API. Most software engineers I know would decide to use an HTTP
@@ -242,7 +141,6 @@ not rocket science. However egos tend to get in the way as well as biases
 towards people who know and like the same things you do. I assure you,
 though, when security and software engineers work together
 truly usable security will be the outcome.],
-  [id="the-present"\>The Present],
   [A lot of the content for this portion of the talk focused on how containers make
 securing your infrastructure easier. I will touch on some of that but if you
 wish to know more you should checkout the
@@ -257,7 +155,7 @@ It has its own meta language, so to speak, and I actually have a repo that chang
 the docs for it to more a readable format via a cron job:
  github.com/jessfraz/apparmor-docs .
 The default profile for AppArmor does super sane things like preventing writing to
- /proc/{num} , /proc/sys , /sys and preventing mount to name a few.],
+ /proc/\{num\} , /proc/sys , /sys and preventing mount to name a few.],
   [Syscall filters allow an application to define
 what syscalls it allows or denies. The default in Docker is a whitelist that I
 initially wrote. Some of the key things it blocks are:],
@@ -288,7 +186,6 @@ that outlines what we block and why.],
 users without them even realizing it’s happening. This leads perfectly into
 my ideas for the future and continuing this motion of making security
 on by default and invisible to users.],
-  [id="the-future"\>The Future],
   [I tend to have pretty weird brain child ideas and this is one of them.
 I started thinking about where else a kernel feature like seccomp could easily
 be integrated and used by a large number of people. The answer is…
@@ -296,7 +193,7 @@ programming languages. I do work with the Go team and as a full content warning
 none of this crazy that follows is in any way endorsed by them. ;)],
   [The idea I had is to do build-time generated seccomp filters that will be
  applied on run .],
-  [id="why-generate-seccomp-filters-at-build-time"\>Why generate seccomp filters at build-time ?],
+  [Why generate seccomp filters at build-time ?],
   [Generating security filters/profiles at runtime has been done in the past
 & failed… over and over and over again. Something is always missed while
 profiling the application. You cannot guarantee that everything that your
@@ -316,45 +213,45 @@ is going to use so we are back at square one.],
  "log"
  "os/exec"
 )],
-  [func main() {
+  [func main() \{
  cmd := exec. Command("myprogram")
  out, err := cmd. CombinedOutput()
- if err != nil {
+ if err != nil \{
  log. Fatal(err)
- }
+ \}
  fmt. Printf("%s\\n", out)
-}],
+\}],
   [Plugins. This problem is solvable in that if this feature was to exist
 we could export at the plugin build time the seccomp filters to a
 field in the ELF binary or something similar.],
-  [func main() {
+  [func main() \{
  p, err := plugin. Open("plugin\_name.so")
- if err != nil {
+ if err != nil \{
  log. Fatal(err)
- }
+ \}
  v, err := p. Lookup("V")
- if err != nil {
+ if err != nil \{
  log. Fatal(err)
- }
+ \}
  fmt. Printf("%\#v\\n", v)
-}],
+\}],
   [Sending arbitrary arguments to syscall. RawSyscall and similar.],
-  [func main() {
- if len(os. Args) \<= 3 {
+  [func main() \{
+ if len(os. Args) \<= 3 \{
  log. Fatal("must pass 4 arguments to syscall. RawSyscall")
- }
+ \}
  r1, r2, errno := syscall. RawSyscall(strToUintptr(os. Args\[0\]),
  strToUintptr(os. Args\[1\]),
  strToUintptr(os. Args\[2\]),
  strToUintptr(os. Args\[3\]))
- if errno != 0 {
+ if errno != 0 \{
  log. Fatalf("errno: %\#v", errno)
- }
+ \}
  fmt. Printf("r1: %\#v\\nr2: %\#v\\n", r1, r2)
-}
-func strToUintptr(s string) uintptr {
+\}
+func strToUintptr(s string) uintptr \{
  return \*(\*uintptr)(unsafe. Pointer(&s))
-}],
+\}],
   [While this is not perfect by any stretch of the imagination I believe it should
 open your mind to what could be possible in the future. Hopefully my dream
 of making binaries sandbox themselves will eventually get there. I know I won’t
@@ -368,142 +265,131 @@ engineering and software engineering working together!],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Closing Iterables is a Leaky Abstraction],
   author: [Reginald Braithwaite],
   source-name: [Reginald Braithwaite (raganwald)],
   images: (),
   paragraphs: (
-  [id="iterators-and-iterables-a-quick-recapitulation"\>iterators and iterables, a quick recapitulation],
+  [iterators and iterables, a quick recapitulation],
   [In JavaScript, iterators and iterables provide an abstract interface for sequentially accessing values, such as we might find in collections like arrays or priority queues. 1],
   [An iterator is an object with a .next() method. When you call it, you get a Plain Old JavaScript Object (or “POJO”) that has a done property. If the value of done is false , you are also given a value property that represents, well, a value. If the value of done is true , you may or may not be given a value property.],
   [Iterators are stateful by design: Repeatedly invoking the .next() method usually results in a series of values until done (although some iterators continue indefinitely).],
   [Here’s an iterator that counts down:],
-  [class="highlight"\> const iCountdown = { 
+  [const iCountdown = \{ 
  value : 10 , 
  done : false , 
- next () { 
- this . done = this . done || this . value { done: false, value: 10 }],
-  [iCountdown . next () 
- \/\/=\> { done: false, value: 9 }],
-  [iCountdown . next () 
- \/\/=\> { done: false, value: 8 }],
+ next () \{ 
+ this . done = this . done || this . value \{ done: false, value: 10 \}],
   [\/\\/ ...],
-  [iCountdown . next () 
- \/\/=\> { done: false, value: 1 }],
-  [iCountdown . next () 
- \/\/=\> { done: true }],
   [An iterable is an object with a \[Symbol.iterator\] method. When invoked, \[Symbol.iterator\]() returns an iterator. Semantically, the iterator returned by \[Symbol.iterator\]() represents an iteration over the values associated with the iterable collection.],
   [For example:],
-  [class="highlight"\> const countdown = { 
- \[ Symbol . iterator \]() { 
- const iterator = { 
+  [const countdown = \{ 
+ \[ Symbol . iterator \]() \{ 
+ const iterator = \{ 
  value : 10 , 
  done : false , 
- next () { 
+ next () \{ 
  this . done = this . done || this . value],
   [Or destructure them:],
-  [ten 
- \/\/=\> 10 
- nine 
- \/\/=\> 9 
- eight 
- \/\/=\> 8 
- rest 
- \/\/=\> \[7, 6, 5, 4, 3, 2, 1\]],
+  [const \[ ten , nine , eight , ... rest \] = countdown ;],
   [And now, let’s get started. We’ll begin with a simple problem: How do we iterate over the lines of a text file?],
-  [id="reading-lines-from-a-file"\>reading lines from a file],
+  [reading lines from a file],
   [We wish to create an iterable that successively yields the lines from a text file. Presuming we have some kind of library for opening, reading from, and closing files, we might write something a little like this:],
-  [class="highlight"\> function lines ( path ) { 
- return { 
- \[ Symbol . iterator \]() { 
- return { 
+  [function lines ( path ) \{ 
+ return \{ 
+ \[ Symbol . iterator \]() \{ 
+ return \{ 
  done : false , 
  fileDescriptor : File . open ( path ), 
- next () { 
- if ( this . done ) return { done : true }; 
+ next () \{ 
+ if ( this . done ) return \{ done : true \}; 
  const line = this . fileDescriptor . readLine ();],
   [this . done = line == null ;],
-  [if ( this . done ) { 
+  [if ( this . done ) \{ 
  fileDescriptor . close (); 
- return { done : true }; 
- } else { 
- return { done : false , value : line }; 
- } 
- } 
- }; 
- } 
- }; 
- }],
+ return \{ done : true \}; 
+ \} else \{ 
+ return \{ done : false , value : line \}; 
+ \} 
+ \} 
+ \}; 
+ \} 
+ \}; 
+ \}],
   [Whenever we want to iterate over all the lines of a file, we call our function, e.g. lines('./README.md') , and we get an iterable for the lines in the file.],
   [When we invoke \[Symbol.iterator\]() on our iterable, we get an iterator that opens the file, reads the file line by line when we call .next() , and then closes the file when there are no more lines to be read.],
   [So we could output all the lines containing a particular word like this:],
+  [for ( const line of lines ( ' ./README.md ' )) \{ 
+ if ( line . match ( /raganwald\/ )) \{ 
+ console . log ( line ); 
+ \} 
+ \}],
   [The expression lines(‘./README.md’)\` would create a new iterator with an open file, we’d iterate over each line, and eventually we’d run out of lines, close the file, and exit the loop.],
   [What if we only want to find the first line with a particular word in it?],
-  [class="highlight"\> for ( const line of lines ( ' ./README.md ' )) { 
- if ( line . match ( /raganwald\/ )) { 
+  [for ( const line of lines ( ' ./README.md ' )) \{ 
+ if ( line . match ( /raganwald\/ )) \{ 
  console . log ( line ); 
  break ; 
- } 
- }],
+ \} 
+ \}],
   [Now we have a problem. How are we going to close the file? The only way it will exhaust the iterations and invoke this.fileDescriptor.close() is if the file doesn’t contain raganwald . If the file does contain raganwald , our program will happily carry on while leaving the file open.],
   [This is not good. And it’s not the only case. We might write iterators that act as coroutines, communicating with other processes over ports. Once again, we’d want to explicitly close the port when we are done with the iterator. We don’t want to just garbage-collect the memory we’re using.],
   [What we need is some way to explicitly “close” iterators, and then each iterator could dispose of any resources it is holding. Then we could exercise a little caution, and explicitly close every iterator when we were done with them. We wouldn’t need to know whether the iterator was holding on to an open file or socket or whatever, the iterator would deal with that.],
   [Fortunately, there is a mechanism for closing iterators, and it was designed for the express purpose of dealing with iterators that must hold onto some kind of resource like a file descriptor, an open port, a tremendous amount of memory, anything at all, really.],
   [Iterables that need to dispose of resources introduce a problem. To solve it, the language introduced a mechanism for closing iterators, but we will still need to work out patterns and protocols of our own.],
   [Let’s take a look at the mechanism.],
-  [id="return-to-forever"\>return to forever],
+  [return to forever],
   [We’ve seen that the interface for iterators includes a mandatory .next() method. It also includes an optional .return() method. The contract for .return(optionalReturnValue) is that when invoked:],
-  [it should return { done: true } if no optional return value is provided, or { done: true, value: optionalReturnValue } if an optional return value is provided.],
-  [thereafter, the iterator should permanently return { done: true } should .next() be called.],
+  [it should return \{ done: true \} if no optional return value is provided, or \{ done: true, value: optionalReturnValue \} if an optional return value is provided.],
+  [thereafter, the iterator should permanently return \{ done: true \} should .next() be called.],
   [as a consequence of the above, the iterator can and should dispose of any resources it is holding.],
   [Looking back at our countdown iterable, we can implement .return() for it:],
-  [class="highlight"\> const countdown = { 
- \[ Symbol . iterator \]() { 
- const iterator = { 
+  [const countdown = \{ 
+ \[ Symbol . iterator \]() \{ 
+ const iterator = \{ 
  value : 10 , 
  done : false , 
- next () { 
+ next () \{ 
  this . done = this . done || this . value],
-  [class="highlight"\> const countdown = { 
- \[ Symbol . iterator \]() { 
- const iterator = { 
+  [const countdown = \{ 
+ \[ Symbol . iterator \]() \{ 
+ const iterator = \{ 
  value : 10 , 
  done : false , 
- next () { 
- if ( this . done ) { 
- return { done : true }; 
- } else if ( this . value],
-  [while ( true ) { 
- const { done , value : count } = iCountdown . next ();],
+ next () \{ 
+ if ( this . done ) \{ 
+ return \{ done : true \}; 
+ \} else if ( this . value],
+  [count iCountdown = countdown \[ Symbol . iterator \]();],
+  [while ( true ) \{ 
+ const \{ done , value : count \} = iCountdown . next ();],
   [if ( done ) break ;],
   [console . log ( count );],
-  [if ( count === 6 ) { 
+  [if ( count === 6 ) \{ 
  iCountdown . return (); 
  break ; 
- } 
- }],
+ \} 
+ \}],
   [Calling .return() ensures that iCountdown disposes of any resources it has or otherwise cleans itself up. Of course, this is a PITA if we have to work directly with iterators and give up the convenience of things like for... of loops and destructuring.],
   [It would be really nice if they followed the same pattern. Do they? Let’s find out. We can use a breakpoint in the .return() method, or insert an old-school console.log statement:],
-  [class="highlight"\> return ( value ) { 
- if ( ! this . done ) { 
+  [return ( value ) \{ 
+ if ( ! this . done ) \{ 
  console . log ( ' Return to Forever ' ); 
  this . done = true ; 
- } 
- if ( arguments . length === 1 ) { 
- return { done : true , value }; 
- } else { 
- return { done : true }; 
- } 
- }],
+ \} 
+ if ( arguments . length === 1 ) \{ 
+ return \{ done : true , value \}; 
+ \} else \{ 
+ return \{ done : true \}; 
+ \} 
+ \}],
   [And now let’s try:],
-  [class="highlight"\> for ( const count of countdown ) { 
+  [for ( const count of countdown ) \{ 
  console . log ( count ); 
  if ( count === 6 ) break ; 
- } 
+ \} 
  \/\/=\> 
  10 
  9 
@@ -514,163 +400,171 @@ engineering and software engineering working together!],
   [And also:],
   [JavaScript’s built-in constructs for consuming iterators from iterables invoke .return() if we don’t consume the entire iteration.],
   [Also, we can see that the .return() method is optional: JavaScript’s built-in constructs will not call .return() on an iterator that doesn’t implement .return() .],
-  [id="invoking-return-isnt-always-simple"\>invoking return isn’t always simple],
+  [invoking return isn’t always simple],
   [So, now we see that we should write our iterators to have a .return() method when they have resources that need to be disposed of, and that we can use this method ourselves or rely on JavaScript’s built-in constructs to call it for us.],
   [This can be tricky. Here’s a function that returns the first value (if any) of an iterable:],
+  [function first ( iterable ) \{ 
+ const \[ value \] = iterable ;],
   [return value ; 
- }],
+ \}],
   [Because destructuring always closes the iterator extracted from the iterable it is given, this flavour of first can be counted on to close its parameter. If we get fancy and try to do everything by hand:],
+  [function first ( iterable ) \{ 
+ const iterator = iterable \[ Symbol . iterator \](); 
+ const \{ done , value \} = iterator . next ();],
   [if ( ! done ) return value ; 
- }],
+ \}],
   [We might neglect closing the iterator we extracted. We have to do everything ourselves:],
-  [if ( typeof iterator . return === ' function ' ) { 
+  [function first ( iterable ) \{ 
+ const iterator = iterable \[ Symbol . iterator \](); 
+ const \{ done , value \} = iterator . next ();],
+  [if ( typeof iterator . return === ' function ' ) \{ 
  iterator . return (); 
- }],
+ \}],
   [if ( ! done ) return value ; 
- }],
+ \}],
   [A good heuristic is, If we can use JavaScript’s built-in constructs to close a the iterator extracted from an iterable, we should.],
   [As we can see, destructuring handles closing an iterator for us. We’ve already seen that breaking a for... of loop also closes an iterator for us, whether we exhaust the iterator or break from inside the loop.],
   [This is also true if we yield from inside a for... of loop within a generator. For example, we have previously seen functions like mapWith :],
+  [function \* mapWith ( mapFn , iterable ) \{ 
+ for ( const value of iterable ) \{ 
+ yield mapFn ( value ); 
+ \} 
+ \}],
   [This is a generator that takes an iterable as an argument and returns an iterable. We can see that if we exhaust the iterable it returns, it will exhaust the iterable it is passed. But what happens if we terminate the iteration prematurely? For example, what if we break from inside a for... of loop?],
   [We can test this directly:],
-  [for ( const word of countdownInWords ) { 
- break ; 
- } 
- \/\/=\> Return to Forever],
   [Invoking break inside this for... of loop is also invoking break inside of mapWith ’s for... of loop, because that is where execution pauses when it invokes yield . So this will close the iterator that mapWith ’s for... of loop extracts.],
   [Unfortunately, we cannot always arrange for JavaScript’s built-in constructs to close our iterators for us.],
-  [id="more-about-closing-iterators-explicitly"\>more about closing iterators explicitly],
+  [more about closing iterators explicitly],
   [The zipWith function takes two or more iterables, and “zips” them together with a function. If we write this as a generator, there is no easy way to rely on JavaScript’s built-in constructs to close all of the iterators we extract from its parameters.],
-  [while ( true ) { 
+  [while ( true ) \{ 
  const pairs = iterators . map ( j =\> j . next ()), 
  dones = pairs . map ( p =\> p . done ), 
  values = pairs . map ( p =\> p . value );],
-  [if ( dones . indexOf ( true ) \>= 0 ) { 
- for ( const iterator of iterators ) { 
- if ( typeof iterator . return === ' function ' ) { 
+  [if ( dones . indexOf ( true ) \>= 0 ) \{ 
+ for ( const iterator of iterators ) \{ 
+ if ( typeof iterator . return === ' function ' ) \{ 
  iterator . return (); 
- } 
- } 
+ \} 
+ \} 
  return ; 
- }],
+ \}],
   [yield zipper (... values ); 
- } 
- } 
+ \} 
+ \} 
  const fewWords = \[ ' alper ' , ' bethe ' , ' gamow ' \];],
-  [for ( const pair of zipWith (( l , r ) =\> \[ l , r \], countdown , fewWords )) { 
- \/\/... diddley 
- } 
- \/\/=\> Return to Forever],
   [This code will explicitly close every iterator if and when any one of them is exhausted. However, if we prematurely terminate the iteration, such as using incomplete destructuring or invoking break from inside a loop, it will not close any of the iterators:],
   [This snippet does not log Return to Forever . Although JavaScript’s built-in behaviour attempts to close the iterator created by our generator function, it never invokes the code we wrote to close all the iterators.],
   [As suggested by jaffathecake , we can make sure the iterables are closed within a generator using a try... finally construct:],
-  [try { 
- while ( true ) { 
+  [try \{ 
+ while ( true ) \{ 
  const pairs = iterators . map ( j =\> j . next ()), 
  dones = pairs . map ( p =\> p . done ), 
  values = pairs . map ( p =\> p . value );],
-  [if ( dones . indexOf ( true ) \>= 0 ) { 
- for ( const iterator of iterators ) { 
- if ( typeof iterator . return === ' function ' ) { 
+  [if ( dones . indexOf ( true ) \>= 0 ) \{ 
+ for ( const iterator of iterators ) \{ 
+ if ( typeof iterator . return === ' function ' ) \{ 
  iterator . return (); 
- } 
- } 
+ \} 
+ \} 
  return ; 
- }],
+ \}],
   [yield zipper (... values ); 
- } 
- } 
- finally { 
- for ( const iterator of iterators ) { 
- if ( typeof iterator . return === ' function ' ) { 
+ \} 
+ \} 
+ finally \{ 
+ for ( const iterator of iterators ) \{ 
+ if ( typeof iterator . return === ' function ' ) \{ 
  iterator . return (); 
- } 
- } 
- } 
- }],
+ \} 
+ \} 
+ \} 
+ \}],
   [Now, when we close the iterable returned by zipWith , we are going to explicitly close each and every one of the iterables we pass into it, provided that they implement .return() . Let’s try it:],
   [Another sure way to close all the iterators is to take 100% control of zipWith . Instead of writing it as a generator function, we can write it as a function that returns an iterable object:],
-  [class="highlight"\> function zipWith ( zipper , ... iterables ) { 
- return { 
- \[ Symbol . iterator \]() { 
- return { 
+  [function zipWith ( zipper , ... iterables ) \{ 
+ return \{ 
+ \[ Symbol . iterator \]() \{ 
+ return \{ 
  done : false , 
  iterators : iterables . map ( i =\> i \[ Symbol . iterator \]()), 
  zipper , 
- next () { 
+ next () \{ 
  const pairs = this . iterators . map ( j =\> j . next ()), 
  dones = pairs . map ( p =\> p . done ), 
  values = pairs . map ( p =\> p . value );],
-  [if ( dones . indexOf ( true ) \>= 0 ) { 
+  [if ( dones . indexOf ( true ) \>= 0 ) \{ 
  return this . return (); 
- } else { 
- return { done : false , value : this . zipper (... values ) }; 
- } 
- }, 
- return ( optionalValue ) { 
- if ( ! this . done ) { 
+ \} else \{ 
+ return \{ done : false , value : this . zipper (... values ) \}; 
+ \} 
+ \}, 
+ return ( optionalValue ) \{ 
+ if ( ! this . done ) \{ 
  this . done = true ;],
-  [for ( const iterable of this . iterators ) { 
- if ( typeof iterable . return === ' function ' ) { 
+  [for ( const iterable of this . iterators ) \{ 
+ if ( typeof iterable . return === ' function ' ) \{ 
  iterable . return (); 
- } 
- } 
- }],
-  [if ( arguments . length === 1 ) { 
- return { done : true , value : optionalValue }; 
- } else { 
- return { done : true }; 
- } 
- } 
- }; 
- } 
- }; 
- }],
+ \} 
+ \} 
+ \}],
+  [if ( arguments . length === 1 ) \{ 
+ return \{ done : true , value : optionalValue \}; 
+ \} else \{ 
+ return \{ done : true \}; 
+ \} 
+ \} 
+ \}; 
+ \} 
+ \}; 
+ \}],
   [And that also works: 2],
   [Either way, we must explicitly arrange things such that zipWith closes its iterators when its own iterator is closed.],
-  [id="hidden-affordances"\>hidden affordances],
+  [hidden affordances],
   [We’ve seen that iterators need to be closed. We’ve also seen that the affordance for closing an iterator is invisible. There’s a .return() method we may need to invoke. We also may need to implement it. But it’s usually invisible, and the most convenient way to work with iterables–writing generators and using constructs like for... of loops or destructuring–hides .return() from us.],
   [This conscious design choice does make learning about iterables particularly easy. It’s easy to write generators, and when we encounter code like this in a blog post :],
+  [function \* take ( numberToTake , iterable ) \{ 
+ const iterator = iterable \[ Symbol . iterator \]();],
   [for ( let i = 0 ; i],
-  [for ( const value of iterable ) { 
- if ( i ++ === numberToTake ) { 
+  [function \* take ( numberToTake , iterable ) \{ 
+ let i = 0 ;],
+  [for ( const value of iterable ) \{ 
+ if ( i ++ === numberToTake ) \{ 
  return ; 
- } else { 
+ \} else \{ 
  yield value ; 
- } 
- } 
- }],
+ \} 
+ \} 
+ \}],
   [And then there is the eternal debate of explicit versus implicit:],
-  [try { 
+  [function \* take ( numberToTake , iterable ) \{ 
+ const iterator = iterable \[ Symbol . iterator \]();],
+  [try \{ 
  for ( let i = 0 ; i chesterton’s fence and leaky abstractions],
   [In the matter of reforming things, as distinct from deforming them, there is one plain and simple principle; a principle which will probably be called a paradox. There exists in such a case a certain institution or law; let us say, for the sake of simplicity, a fence or gate erected across a road. The more modern type of reformer goes gaily up to it and says, “I don’t see the use of this; let us clear it away.” To which the more intelligent type of reformer will do well to answer: “If you don’t see the use of it, I certainly won’t let you clear it away. Go away and think. Then, when you can come back and tell me that you do see the use of it, I may allow you to destroy it.” –G. K. Chesterton],
   [Imagine that some code included the “implicit” implementation of take . An engineer sees it, decides it could be faster, and optimizes it, therein removing its ability to correctly close an iterable it is handed. Is this wrong? How would anybody know, if there is no mechanism to discover why it was written that way to begin with?],
   [Many patterns are like this. They include code for solving problems that are not evident on the first read: We have to have encountered the problem in the past in order to appreciate why the code we’re looking at solves it. And to be fair, the problem being solved may not apply to us today.],
   [The implementation of take given in the blog post is fine for the code in the blog post, and for most code. But when it isn’t fine, it’s broken.],
   [This is the state of affairs with all code, whether functional, OO, whatever. We have “leaky abstractions” like iterables. They are fine as long as we are well within the most common case, but when we stray near the edges, we need to understand what is going on “under the hood.” If we can’t see beneath the abstraction, we won’t appreciate interactions such as whether a for... of loop inside a generator closes its iterator if the enclosing iterator is closed while it yields.],
-  [id="in-closing"\>in closing],
+  [in closing],
   [We have found that closing iterables introduces an aspect of how to write correct iterables code that is not always visibly evident. Sometimes we must choose one construct, sometimes another. Sometimes we are safe to use generators, sometimes we must write functions that return iterable objects.],
   [In the end, the safest way to proceed is to understand our tools really, really well. Abstractions are useful for writing code that eliminates accidental complexity, but that does not mean that we as programmers do not need to understand what is happening beneath the abstractions. It is just that we don’t always need to clutter our code up with what is happening beneath the abstractions.],
   [(discuss on reddit )],
-  [id="notes"\>notes],
-  [id="fn:collections"\>],
+  [notes],
   [For a more thorough discussion of iterators and iterables, have a look at the Collections chapter of JavaScript Allongé ↩],
-  [id="fn:except"\>],
   [There’s another case not discussed in this post, handling exceptions. That is deliberate, as the point of this post is illustrating how Iiterators are a leaky abstraction, not dictating patterns for robustly handling all of its leaks. ↩],
 ),
   insert-map: (:),
   inline-pq: pull-quote([of loop is also invoking break inside of mapWith ’s for.], [Reginald Braithwaite]),
-  inline-pq-idx: 44,
+  inline-pq-idx: 45,
   word-count: 3517,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Reflecting on What Matters After a Terminal Cancer Diagnosis],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -686,7 +580,7 @@ engineering and software engineering working together!],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Day I Leave the Tech Industry],
   author: [Jessie Frazelle],
   source-name: [Jessie Frazelle],
@@ -723,7 +617,7 @@ human being with feelings, a limit, and a future outside of tech.],
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Deborah Ancona and Kate Isaacs, researchers at MIT Sloan School of Management, say many companies struggle to be nimble with a command-and-control leadership culture. They studied Xerox’s R&D outfit PARC and the materials science company W. L. Gore & Associates and found these highly innovative organizations have three kinds of leaders: entrepreneurial, enabling, and architecting ones. These roles work together to give direction and avoid creative chaos. Ancona and Isaacs are coauthors of the HBR article "Nimble Leadership."])],
       [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Pankaj Ghemawat, professor at NYU Stern and IESE business schools, debunks common misconceptions about the current state and extent of globalization. (Hint: the world is not nearly as globalized as people think.) He also discusses how popular reactions in Europe and the U. S. against globalization recently could affect the global economy, and how companies will need to adapt to the new reality. Ghemawat is the author of several books on globalization, including “World 3.0” and most recently “The Laws of Globalization and Business Applications.”])],
       [#brief-item([Supabase Blog], source-name: [Supabase Blog], [This documents our journey from SOC2 Type 1 to SOC2 Type2 and HIPAA compliance. You can start building healthcare apps on Supabase today.])],
@@ -739,7 +633,7 @@ human being with feelings, a limit, and a future outside of tech.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [An analysis of memory bloat in Active Record 5.2],
   author: [\@sam Sam Saffron],
   source-name: [Sam Saffron],
@@ -766,13 +660,11 @@ class ActiveRecord:: Relation
  \# end
  \#],
   [This file has been truncated. show original],
-  [style="clear: both;"\>],
   [I wish we did not have to, but I am not sure how to land this in Rails.],
   [Another change that has happened since is that we released:],
   [GitHub],
   [GitHub - discourse/mini\_sql: a minimal, fast, safe sql executor],
   [a minimal, fast, safe sql executor. Contribute to discourse/mini\_sql development by creating an account on GitHub.],
-  [style="clear: both;"\>],
   [Which is the piece we use for any performance sensitive work and totally outperforms almost anything you can throw at it.],
   [Maybe run the bench on some earlier versions 7/6/5 and see what happens?],
 ),
@@ -784,7 +676,7 @@ class ActiveRecord:: Relation
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Red Flags You Won’t See on a CEO’s Resume],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],

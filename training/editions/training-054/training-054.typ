@@ -21,58 +21,8 @@
 #masthead([The Connected Observer], [Vol. 1, No. 054], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [A global health response to gender justice requires continued engagement],
-  kicker: [Cover Story],
-  author: [julietwalker],
-  source-name: [The BMJ Blog],
-  deck: [The 2021 Global Peace Index reports a significant deterioration in global peace over the last fifteen years.],
-  lead-pre: [\[1\] ],
-  lead-cap: [T],
-  lead-rest: [he Global Humanitarian Overview 2021 reports an increase in the number of people in need of humanitarian assistance from one in 45 to one in 33 over the last year. \[2\] Both reports document the additional impacts of the covid-19 pandemic and climate change. Both reports predate recent events in Afghanistan, Tigray, Northern Nigeria, Yemen, Syria.],
-  body-paragraphs: (
-  [The immediate and obvious harms to health and wellbeing are evident, as are the devastating reversals in hard-won progress on gender equality, health equity, and human rights. Current events in Afghanistan provide a stark illustration, and while no longer front page news, other current examples from Myanmar , Tigray, and Nigeria —to mention a few—point to how the erosion of rights and health for the world’s most vulnerable is increasingly becoming not only of concern, but the status quo. \[3-8\] These challenges are not confined to countries in a state of crisis, conflict, or instability. Globally we are witnessing regressive politics and democratic deficits that endanger the realisation of fundamental principles of equality and universal rights across a range of settings. It is increasingly evident that democracy, freedom, and the protection of human rights are not guaranteed even with “free and fair” elections. Those who suffer most will always be those who are most marginalised.],
-  [Beyond the immediacy of the humanitarian response, we, collectively, as a global community of global health experts, have an obligation not only to continue to promote, but to strengthen the underlying values of social justice, equity, and human rights—not just in rhetoric, but also in our practice. This must be done, recognising the risk of harm to communities with whom we engage in these settings, particularly where political or religious ideologies drive inequity. \[ 9,10\] For example, the immediate response to the situation in Afghanistan has been to pull out all aid and humanitarian staff and actively encourage all qualified people with links to agencies to leave. The consequence is often mass emigration of those who can leave from local communities and international aid agencies. This may represent brain drain that leaves many sectors and essential services bereft of much needed technical expertise.],
-  [The humanitarian sector has a range of guidance available for delivering health interventions during crises and conflict. \[ 11\] Humanitarian work is governed by core principles that may provide a useful approach and valuable lessons for global health practice. The principles include the overarching principle of humanity and neutrality, impartiality, independence, and collaboration/partnership. \[ 12\] Humanity highlights the need to address human suffering, protect life and health, and ensure respect and dignity. Neutrality prevents humanitarian actors from taking sides in hostilities relating to political, racial, religious, or ideological controversies. Impartiality ensures a focus on prioritising actions based on the urgency of need. Independence guides action that is autonomous from political, economic, or military influence. Local collaborations and partnerships are critical to ensuring the appropriateness and sustainability of solutions in the local context.],
-  [Despite some contestation in the interpretation of neutrality and impartiality, the protection and promotion of gender equality, or the rights of discriminated individuals, do not violate these principles. \[ 13\] Secondly, when the humanitarian response begins to evolve into longer term development and reconstruction, the principles of neutrality and impartiality can still be employed in negotiating new ways of working through questioning discrimination and inequality. The humanitarian principles are intertwined and inseparable, allowing for action to challenge and change inequities as core to the overarching principle of protecting humanity. Neutrality and impartiality in this context should be interpreted to mean that irrespective of the philosophy of any governing regime—rights to health and wellbeing, equality, and non-discrimination are universal. Humanitarian and aid personnel on the ground for the long term are progressively amassing experience and expertise, grounded in the realities of the local context. Their presence has proved critical to local populations, support, and building trust and credibility over the longer term, providing critical lessons on the core components for dialogue and progress. Approaches like these are important for achieving health goals because justice and gender equality can promote virtuous cycles of peace and stability. \[ 14\]],
-  [The global health community justifiably expresses shock and concern over unfolding crises from Afghanistan to Ukraine. Beyond condemnation, we recommend that the global health community consider the following:],
-  [style="font-weight: 400;"\> Achieving global health goals necessitates addressing the underlying inequalities and injustices of peoples’ lives. This is not a short term activity. This requires trust, relationship-building, nuance, pragmatism, and understanding the politics of a situation. It also requires engagement with the systems and processes that shape the environment where people live.],
-  [style="font-weight: 400;"\> Context is king (queen!). The gut response to injustice is an important galvaniser for action, but we need to learn how to engage better with the social, cultural, economic, and political context through genuine collaboration with those who live and work in the various contexts.],
-  [style="font-weight: 400;"\> Health equity and gender equality are powerful and underutilised tools towards peace and prosperity . \[14\] Concerted efforts to enhance our practice will yield multiple benefits.],
-  [The world is at a critical juncture; the threat of authoritarian regimes undermining human rights and equality are very real. The global health response in humanitarian or development settings can no longer claim to be doing its job by just providing health services and focusing on health outcomes alone. More than ever before, our global health practice needs to adhere fully to the principle of humanity by promoting health equity, gender equality, and human rights as a part of our core responsibility, recognising the nuanced understanding of the economic, social, cultural, and political contexts in which we work.],
-  [Pascale Allotey , Director; United Nations University International Institute for Global Health.],
-  [Elhadj As Sy , Board Chair, Kofi Annan Foundation.],
-  [Zulfiqar A Bhutta , Co-Director, Centre for Global Child Health; Founding Director, Institute for Global Health and Development. Centre for Global Child Health, The Hospital for Sick Children, Canada; Institute for Global Health and Development, The Aga Khan University, South Central Asia, East Africa & United Kingdom.],
-  [Peter Friberg , professor and director, Sahlgrenska Academy at Gothenburg university, Gothenburg, Sweden, and Swedish Institute for Global Health Transformation, SIGHT, at the Royal Swedish Academy of Sciences, Stockholm, Sweden.],
-  [Sofia Gruskin , professor and director, Institute on Inequalities in Global Health, University of Southern California.],
-  [Geeta Rao Gupta , senior fellow, United Nations Foundation.],
-  [Sarah Hawkes , professor and director, Centre for Gender and Global Health, Institute for Global Health, UCL.],
-  [Competing interests : none declared.],
-  [References :],
-  [1 Institute for Economics and Peace. Global Peace Index 2021: Measuring Peace in a Complex World. 2021; published online June. https:\/\/reliefweb.int/sites/reliefweb.int/files/resources/GPI-2021-web.pdf (accessed Aug 30, 2021).],
-  [2 United Nations Office for the Coordination of Humanitarian Affairs (OCHA). Global Humanitarian Overview 2021. https:\/\/reliefweb.int/sites/reliefweb.int/files/resources/GHO2021\_EN.pdf (accessed Aug 30, 2021).],
-  [3 Bhutta ZA, Akseer N, Dalil S, Akbari A, Saeedzai A. Afghanistan is at a crossroads again—preventing a descent into chaos. The BMJ 2021; published online Aug 19. https:\/\/blogs.bmj.com/bmj/2021/08/19/afghanistan-is-at-a-crossroads-again-preventing-a-descent-into-chaos\/ (accessed Aug 30, 2021).],
-  [4 Cousins S. Afghan health at risk as foreign troops withdraw. The Lancet 2021; 398 : 197–8.],
-  [5 Ahmad A, Rassa N, Orcutt M, Blanchet K, Haqmal M. Urgent health and humanitarian needs of the Afghan population under the Taliban. The Lancet 2021; 0 . DOI:10.1016/S0140-6736(21)01963-2.],
-  [6 Lancet T. Myanmar’s democracy and health on life support. The Lancet 2021; 397 : 1035.],
-  [7 Devi S. Tigray atrocities compounded by lack of health care. The Lancet 2021; 397 : 1336.],
-  [8 Nesamoney SN, Darmstadt GL, Wise PH. Gendered effects of COVID-19 on young girls in regions of conflict. The Lancet 2021; 397 : 1880–1.],
-  [9 Bowyer JJ, Broster SC, Halbert J, Oo SS, Rubin SP. The crisis of health care in Myanmar. The Lancet 2021; 397 : 1182.],
-  [10 Aung MN, Shiu C, Chen W-T. Amid political and civil unrest in Myanmar, health services are inaccessible. The Lancet 2021; 397 : 1446.],
-  [11 Gaffey MF, Waldman RJ, Blanchet K, et al. Delivering health and nutrition interventions for women and children in different conflict contexts: a framework for decision making on what, when, and how. The Lancet 2021; 397 : 543–54.],
-  [12 Lie JHS. The humanitarian-development nexus: humanitarian principles, practice, and pragmatics. Journal of International Humanitarian Action 2020; 5 : 18.],
-  [13 Foran S. Challenging patriarchy: gender equality and humanitarian principles. Humanitarian Law & Policy 2019; published online July 18. https:\/\/blogs.icrc.org/law-and-policy/2019/07/18/gender-equality-humanitarian-principles\/ (accessed Aug 30, 2021).],
-  [14 Lancet SIGHT Commission. COVID-19: A Critical Moment to Embrace the Power of Health and Gender for Peace in Conflict-Affected Settings. Sight.nu. 2020; published online Dec 22. https:\/\/sight.nu/a-critical-moment\/ (accessed Sept 3, 2021).],
-  [The post A global health response to gender justice requires continued engagement appeared first on The BMJ .],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Racial profiling for induction of labour: improving safety or perpetuating racism?],
   author: [julietwalker],
   source-name: [The BMJ Blog],
@@ -128,40 +78,38 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Joining Stripe],
   author: [James Long (jlongster)],
   source-name: [James Long (jlongster)],
   images: (),
   paragraphs: (
-  [id="p1"\>I made a big change recently: I joined Stripe as a developer on a team that works on the dashboard. Today is my first day!],
-  [id="p2"\>First, let me say that I'm really excited. I talked to Alex Sexton 5 years ago about joining Stripe, but the timing wasn't quite right. It's always been on my list of companies (which is quite small) that I would work for if I was to make a change. The problem is interesting, lots of great people work there, and they are remote friendly.],
-  [id="p3"\>This comes with a tinge of sadness, though. Over 3 years ago I quit my job to explore contracting and focus more on building a product. That product eventually become Actual , and I focused hard on it for the last year and a half. "Getting a job" feels like quitting.],
-  [id="p4"\>I've struggled to identify my goals. Am I a startup? Should I get funding? Do I need to find a cofounder? What happens in 5 years?],
-  [id="p5"\>The truth is: I love building products. I love talking with customers and solving their needs. I love figuring out how to market it. But when it comes down to it, building a business is not something I want to do. There's so much work involved and it's just too stressful for my family.],
-  [id="p6"\>I had a goal of reaching 1000 users which would start to be financially sustainable. It seems like a modest goal, but I've learned how hard it is to actually sell software. I've only reached 155 users, and there's tons of reasons why I haven't grown faster. The biggest problem is trying to do this alone — besides amplyifying my weaknesses, there's simply too much work to do.],
-  [id="p7"\>I didn't want to do it alone, but I failed at finding a cofounder or somebody who would be significantly involved without funding. I thought about getting funded, and even talked to a few investors, but it exposed my feelings deep down that I didn't really want to be in the business of building a business.],
-  [id="p8"\>I just want to make a great product that users love. And I'm going to keep doing that.],
-  [id="What-does-this-mean"\>What does this mean for Actual?],
-  [id="p9"\>In short: Actual is still very much alive, but I won't have as much time to work on it. Let me try to explain why that might be a good thing.],
-  [id="p10"\>Actual is a personal finance tool focusing on providing the most power and flexibility in the simplest tool possible. The simplicitly is expressed in a fast and streamlined UX, and the goal is to provide powerful tools for managing your finances how you like (choose your budgeting method, write custom reports, and more).],
-  [id="p11"\>Actual is the hardest thing I've ever done. I like to rethink things from the bottom up, and Actual is no exception. Inside of Actual is a syncing engine that keeps all of your data local and uses smart techniques for robustly syncing changes across devices. There's so much cool stuff in there, like end-to-end encrypting the changes so you have full privacy.],
-  [id="p12"\>The entire app is what's called "local-first": literally everything is happening against local data, and syncing to the cloud is just a background service that happens when it can. This changes everything.],
-  [id="p13"\>One of the biggest advantages is the app is super fast . Since everything is local, reading and writing data is stupidly fast. You can try the app for yourself here .],
-  [id="p14"\>It's all custom built because nothing out there met all my requirements. And I don't regret building it at all. I'm confident that I wouldn't be able to do everything I've done with anything else.],
-  [id="p15"\>Just a sampling: full undo/redo (like, the real thing, not some cheap version), running the app in the background that multiple tabs/windows connect to, using the app with literally nothing going over the network , and lots more.],
-  [id="p16"\>Note how all of these benefits are user-facing . I wouldn't invest so much in this if I didn't think it made a huge impact on the capabilities of the product itself. A driving motivation for this architecture is the ability to write custom reports in a simple language, and it'll be easy since it has access to all your data right there.],
-  [id="p17"\>The thing I'm most proud of is that the syncing engine has reached almost 100% stability. Any problems are now caused by external factors, like a bug in the code that initially downloads your data when logging in. The layer that actually commits changes and syncs them across devices is nearly 100% reliable: if you make a change, sync to the cloud, and sync other devices, you are guaranteed to see the same data. And it's all totally seamless.],
-  [id="p18"\>Unfortunately, it's costly to build things up from scratch. Here's what surprised me: writing the code itself didn't take too long. However, when you've done something different, it takes a lot of work to explain it to users and build up a coherent UX.],
-  [id="p19"\>For example, now that everything is local, what does the login process look like? Do I authenticate a user, and then get them to manually copy over data from another device to get started? Well… of course not. I built a system for tracking which files are available to download, but what happens once you're all set up if you use "reset sync" on one device? "Reset sync" deletes all syncing info and starts fresh, but now other devices won't sync and need to be re-setup.],
-  [id="p20"\>It sure would be nice if I didn't have to worry about all this, but moving fully to the cloud just gets rid of too many nice features. I had to rebuild the whole user experience for managing data, write documentation, and explain all of this to users, which took far too long.],
-  [id="p21"\>I want to focus more on the features of Actual itself. And here's where my new role might help: now that I'm not betting my family's income on Actual, I don't need to worry about a lot of things. I can focus more on the product itself.],
-  [id="p22"\>It impacts all decisions around Actual. For example, I was going to raise the prices to somewhere around \$7/month for annual plans when bank syncing launches. I still plan on raising prices, but not as much.],
-  [id="p23"\>Bank syncing is still going to launch. Custom reports is still going to launch. I have a lot of improvements already done and coming soon. I'm still working on scheduled transactions. Actual isn't going anywhere.],
-  [id="p24"\>There's no getting around the fact that I won't have as much time for Actual. To my existing and future customers: it's up to me to prove that I am still going to work on it and make it worth your subscription. I fully intend to do so. There's no way I'm going to let a multi-year investment into such an awesome product die.],
+  [I made a big change recently: I joined Stripe as a developer on a team that works on the dashboard. Today is my first day!],
+  [First, let me say that I'm really excited. I talked to Alex Sexton 5 years ago about joining Stripe, but the timing wasn't quite right. It's always been on my list of companies (which is quite small) that I would work for if I was to make a change. The problem is interesting, lots of great people work there, and they are remote friendly.],
+  [This comes with a tinge of sadness, though. Over 3 years ago I quit my job to explore contracting and focus more on building a product. That product eventually become Actual , and I focused hard on it for the last year and a half. "Getting a job" feels like quitting.],
+  [I've struggled to identify my goals. Am I a startup? Should I get funding? Do I need to find a cofounder? What happens in 5 years?],
+  [The truth is: I love building products. I love talking with customers and solving their needs. I love figuring out how to market it. But when it comes down to it, building a business is not something I want to do. There's so much work involved and it's just too stressful for my family.],
+  [I had a goal of reaching 1000 users which would start to be financially sustainable. It seems like a modest goal, but I've learned how hard it is to actually sell software. I've only reached 155 users, and there's tons of reasons why I haven't grown faster. The biggest problem is trying to do this alone — besides amplyifying my weaknesses, there's simply too much work to do.],
+  [I didn't want to do it alone, but I failed at finding a cofounder or somebody who would be significantly involved without funding. I thought about getting funded, and even talked to a few investors, but it exposed my feelings deep down that I didn't really want to be in the business of building a business.],
+  [I just want to make a great product that users love. And I'm going to keep doing that.],
+  [What does this mean for Actual?],
+  [In short: Actual is still very much alive, but I won't have as much time to work on it. Let me try to explain why that might be a good thing.],
+  [Actual is a personal finance tool focusing on providing the most power and flexibility in the simplest tool possible. The simplicitly is expressed in a fast and streamlined UX, and the goal is to provide powerful tools for managing your finances how you like (choose your budgeting method, write custom reports, and more).],
+  [Actual is the hardest thing I've ever done. I like to rethink things from the bottom up, and Actual is no exception. Inside of Actual is a syncing engine that keeps all of your data local and uses smart techniques for robustly syncing changes across devices. There's so much cool stuff in there, like end-to-end encrypting the changes so you have full privacy.],
+  [The entire app is what's called "local-first": literally everything is happening against local data, and syncing to the cloud is just a background service that happens when it can. This changes everything.],
+  [One of the biggest advantages is the app is super fast . Since everything is local, reading and writing data is stupidly fast. You can try the app for yourself here .],
+  [It's all custom built because nothing out there met all my requirements. And I don't regret building it at all. I'm confident that I wouldn't be able to do everything I've done with anything else.],
+  [Just a sampling: full undo/redo (like, the real thing, not some cheap version), running the app in the background that multiple tabs/windows connect to, using the app with literally nothing going over the network , and lots more.],
+  [Note how all of these benefits are user-facing . I wouldn't invest so much in this if I didn't think it made a huge impact on the capabilities of the product itself. A driving motivation for this architecture is the ability to write custom reports in a simple language, and it'll be easy since it has access to all your data right there.],
+  [The thing I'm most proud of is that the syncing engine has reached almost 100% stability. Any problems are now caused by external factors, like a bug in the code that initially downloads your data when logging in. The layer that actually commits changes and syncs them across devices is nearly 100% reliable: if you make a change, sync to the cloud, and sync other devices, you are guaranteed to see the same data. And it's all totally seamless.],
+  [Unfortunately, it's costly to build things up from scratch. Here's what surprised me: writing the code itself didn't take too long. However, when you've done something different, it takes a lot of work to explain it to users and build up a coherent UX.],
+  [For example, now that everything is local, what does the login process look like? Do I authenticate a user, and then get them to manually copy over data from another device to get started? Well… of course not. I built a system for tracking which files are available to download, but what happens once you're all set up if you use "reset sync" on one device? "Reset sync" deletes all syncing info and starts fresh, but now other devices won't sync and need to be re-setup.],
+  [It sure would be nice if I didn't have to worry about all this, but moving fully to the cloud just gets rid of too many nice features. I had to rebuild the whole user experience for managing data, write documentation, and explain all of this to users, which took far too long.],
+  [I want to focus more on the features of Actual itself. And here's where my new role might help: now that I'm not betting my family's income on Actual, I don't need to worry about a lot of things. I can focus more on the product itself.],
+  [It impacts all decisions around Actual. For example, I was going to raise the prices to somewhere around \$7/month for annual plans when bank syncing launches. I still plan on raising prices, but not as much.],
+  [Bank syncing is still going to launch. Custom reports is still going to launch. I have a lot of improvements already done and coming soon. I'm still working on scheduled transactions. Actual isn't going anywhere.],
+  [There's no getting around the fact that I won't have as much time for Actual. To my existing and future customers: it's up to me to prove that I am still going to work on it and make it worth your subscription. I fully intend to do so. There's no way I'm going to let a multi-year investment into such an awesome product die.],
 ),
   insert-map: (:),
   word-count: 1159,
@@ -169,10 +117,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Skill of Using AI Agents Well],
   author: [becausecurious],
   source-name: [LessWrong],
@@ -197,8 +143,8 @@
   [I don't know the reason, but once in a while I get a couple days when AI just seems incapable of doing anything. Previously after one message it would correctly implement a bunch of stuff and now it keeps misunderstanding what I want and I need 30 iterations and it still does not get it and the process never converges. In this case I switch to the competitor (basically Opus 4.6 \<\> GPT5.4). The key is to detect this early and switch early. This is very sad, because migrating all the skills and setups between Claude Code and Codex sucks and I don't have an efficient way to do this.],
   [Memory across sessions (WIP)],
   [I haven't found a solution to this myself, but I strongly believe that this would have huge impact. I want the current AI session to seamlessly have access to all past information I provided to it. Both Claude and ChatGPT have this implemented in their web interfaces, but not in Claude Code \/ Codex CLI. I am currently experimenting with github.com/doobidoo/mcp-memory-service . Issues discovered:],
-  [value="1"\> It is developer oriented (e.g. mostly technical facts and choices), but I want generic memory system (e.g. for personal background too).],
-  [value="2"\> Autosaving of memories does not work - Claude ignores CLAUDE.md and the session end approach seems to be regexp based.],
+  [It is developer oriented (e.g. mostly technical facts and choices), but I want generic memory system (e.g. for personal background too).],
+  [Autosaving of memories does not work - Claude ignores CLAUDE.md and the session end approach seems to be regexp based.],
   [The memory retrieval seems to be fine. I am experimenting with using a separate Claude session in the background to extract memories from every message.],
   [If you found a good solution you are happy with, please tell.],
   [Ask to review in a new session (useful)],
@@ -208,8 +154,8 @@
   [Auto resolve permission requests (no brainer)],
   [The first way I bottleneck AI is by reviewing its requests for permissions to do stuff. Many people resolve this by YOLO mode, where AI can do everything it wants. I like my photos and production databases, so I don't feel comfortable doing this. I am also worried about prompt injections from the web.],
   [I see 2 ways to partially resolve this issue:],
-  [value="1"\> Allowlist obviously safe commands as much as you can. Basically after every approval you gave, ask yourself whether this command is safe for AI to run on its own. This does not get you far, because the allowlist is pattern-based, so often the safety of the command depends on the context and its parameters.],
-  [value="2"\> Let another AI review permission requests. In Claude Code this is done via Auto Mode . Before Auto Mode existed I wrote my own solution via hooks (Claude Code exposes permission requests via hooks, Codex does not, but it has App Server and you can implement such reviewer that way). By using my own solution, I control the prompt and model used, the reviewer agent can use tools and multiple steps as well. E.g. to avoid prompt injection I allow all internet requests that do not expose any private data. I haven't tried Auto Mode.],
+  [Allowlist obviously safe commands as much as you can. Basically after every approval you gave, ask yourself whether this command is safe for AI to run on its own. This does not get you far, because the allowlist is pattern-based, so often the safety of the command depends on the context and its parameters.],
+  [Let another AI review permission requests. In Claude Code this is done via Auto Mode . Before Auto Mode existed I wrote my own solution via hooks (Claude Code exposes permission requests via hooks, Codex does not, but it has App Server and you can implement such reviewer that way). By using my own solution, I control the prompt and model used, the reviewer agent can use tools and multiple steps as well. E.g. to avoid prompt injection I allow all internet requests that do not expose any private data. I haven't tried Auto Mode.],
   [Some people run AI in YOLO mode on a server, basically reducing the worst case scenario of a failure. I still don't like this, because it can still leak your git API key and your repo.],
   [Many people I know just YOLO and never had any issue.],
   [The main message here is reviewing every permission request kills your efficiency. Find some way to solve this.],
@@ -236,15 +182,14 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Government indecision is still costing lives in the UK],
   author: [kellybrendel],
   source-name: [The BMJ Blog],
   images: (),
   paragraphs: (
+  [The government must act now, or be faced with much tougher decisions and less popular choices as the winter kicks in, says John Middleton],
   [One person in 55 is now infected with coronavirus in the UK . The odds are that every time you step onto a crowded bus or train carriage you meet someone who is infected with covid-19. Every time you are sitting in a restaurant maybe, or walking down a supermarket aisle, you will likely meet someone who is infected too. In early October one in 12 children were estimated to have had covid, and on 22 October there were 180 deaths in the UK. Every four hours, as many deaths are occurring in the UK as New Zealand has had for the whole pandemic.],
   [We are still in groundhog day , with a few new repeating scenes. The secretary of state for health and social care, Sajid Javid, has repeated what he said when first taking up the role: that “ there could be 100 000 cases a day ,” yet he doesn’t see this as a need to act, either then or now. English directors of public healt h have again broken from national guidance that they know is inadequate for their areas. NHS leaders and the BMA have called for urgent action “to protect the NHS.”],
   [Plan A of the government’s winter plan has only ever been the “do as little as possible” option. The government’s eggs are all in the vaccination basket: offer flu vaccination and a third dose of the covid vaccine as a booster ( or not ) then let everything else run loose and it’s the people’s fault if they get ill or infect others.],
@@ -265,10 +210,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Academic medicine and publishing from developing countries],
   author: [kellybrendel],
   source-name: [The BMJ Blog],
@@ -306,10 +249,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Achieving long-term retention of GPs will require funding, support, and a reduction in workload demands],
   author: [julietwalker],
   source-name: [The BMJ Blog],
@@ -337,53 +278,51 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How one word in PostgreSQL unlocked a 9x performance improvement],
   author: [James Long (jlongster)],
   source-name: [James Long (jlongster)],
   images: (),
   paragraphs: (
-  [id="p6"\>At the very heart of Actual is a custom syncing engine. Recently I implemented full end-to-end encryption (not released yet) and it inspired me to audit the performance of the whole process. In the future I'll blog more about using CRDTs for syncing, but for now I'd like to talk about a PostgreSQL feature that enabled a 9-10x performance improvement.],
-  [id="p7"\>Actual is completely a local app and syncing happens in the background (using CRDTs ). This means the server is very simple and all it has to do is store and fetch "messages" for clients. The entire code for handling syncing is only ~200 lines of JavaScript.],
-  [id="p8"\>We need to handle a lot of messages to keep syncing fast. In fact, while working on this something strange happened: a new user generated 169,000 messages on one day. This is an outlier by a huge margin. For example, importing 1000 transactions into the system would generate about 6000 messages and, while reasonable, is still more than the average number of message per day per user. I believe they did this by using the API trying to bulk import a lot of data and we have different APIs for that. Still, I thought, what if I made 169,000 my benchmark?],
-  [id="p9"\>I tried pumping 169,000 messages through the system and broke the server. The request timed out and the server was still crunching through messages making everything else slow. I knew what the problem was instantly.],
-  [id="p10"\>Messages are stored in PostgreSQL and the table looks like this:],
+  [At the very heart of Actual is a custom syncing engine. Recently I implemented full end-to-end encryption (not released yet) and it inspired me to audit the performance of the whole process. In the future I'll blog more about using CRDTs for syncing, but for now I'd like to talk about a PostgreSQL feature that enabled a 9-10x performance improvement.],
+  [Actual is completely a local app and syncing happens in the background (using CRDTs ). This means the server is very simple and all it has to do is store and fetch "messages" for clients. The entire code for handling syncing is only ~200 lines of JavaScript.],
+  [We need to handle a lot of messages to keep syncing fast. In fact, while working on this something strange happened: a new user generated 169,000 messages on one day. This is an outlier by a huge margin. For example, importing 1000 transactions into the system would generate about 6000 messages and, while reasonable, is still more than the average number of message per day per user. I believe they did this by using the API trying to bulk import a lot of data and we have different APIs for that. Still, I thought, what if I made 169,000 my benchmark?],
+  [I tried pumping 169,000 messages through the system and broke the server. The request timed out and the server was still crunching through messages making everything else slow. I knew what the problem was instantly.],
+  [Messages are stored in PostgreSQL and the table looks like this:],
   [CREATE TABLE messages\_binary
  (timestamp TEXT,
  group\_id TEXT,
  is\_encrypted BOOLEAN,
  content bytea,
  PRIMARY KEY(timestamp, group\_id));],
-  [id="p11"\>It stores small binary blobs marked with a timestamp and a "sync group" they belong to.],
-  [id="p12"\>The server was choking trying to insert so many rows. Unfortunately, we can't simply execute one query with a bunch of INSERT statements when adding messages. Our CRDTs have a few constraints:],
-  [id="li1"\>Message can't ever be duplicated (identified by timestamp )],
-  [id="li2"\>We need to update a merkle trie depending on whether or not the message was added],
-  [id="p13"\>Solving \#1 is easy. Because we made timestamp the primary key, we can do INSERT INTO messages\_binary (...) VALUES (...) ON CONFLICT DO NOTHING . The ON CONFLICT clause tells it to do nothing when there's a conflict, and duplicates conflict on primary key.],
-  [id="p14"\>A much bigger problem is \#2 . We need the result of the insert to know if a row was inserted or not. If it was inserted, we need to also update our merkle trie like this:],
-  [if (inserted) {
+  [It stores small binary blobs marked with a timestamp and a "sync group" they belong to.],
+  [The server was choking trying to insert so many rows. Unfortunately, we can't simply execute one query with a bunch of INSERT statements when adding messages. Our CRDTs have a few constraints:],
+  [Message can't ever be duplicated (identified by timestamp )],
+  [We need to update a merkle trie depending on whether or not the message was added],
+  [Solving \#1 is easy. Because we made timestamp the primary key, we can do INSERT INTO messages\_binary (...) VALUES (...) ON CONFLICT DO NOTHING . The ON CONFLICT clause tells it to do nothing when there's a conflict, and duplicates conflict on primary key.],
+  [A much bigger problem is \#2 . We need the result of the insert to know if a row was inserted or not. If it was inserted, we need to also update our merkle trie like this:],
+  [if (inserted) \{
  trie = merkle.insert(trie, Timestamp.parse(msg.timestamp));
-}],
-  [id="p15"\>It's extremely important that each timestamp in the system only ever get inserted to the merkle trie once. The trie is responsible for guaranteeing consistency in the system and maintains hashes for the content. If you haven't added each timestamp once and only once, the hashes (and thus verification) are wrong.],
-  [id="p16"\>The whole code for updating the database looks like this (using some abstractions over node-postgres ):],
+\}],
+  [It's extremely important that each timestamp in the system only ever get inserted to the merkle trie once. The trie is responsible for guaranteeing consistency in the system and maintains hashes for the content. If you haven't added each timestamp once and only once, the hashes (and thus verification) are wrong.],
+  [The whole code for updating the database looks like this (using some abstractions over node-postgres ):],
   [await runQuery( 'BEGIN' );
  let trie = await getMerkle(runQuery, groupId);],
-  [for ( let message of messages) {
+  [for ( let message of messages) \{
  let timestamp = message.getTimestamp();
  let isEncrypted = message.getIsencrypted();
  let content = message.getContent();],
-  [let { changes } = await runQuery(
+  [let \{ changes \} = await runQuery(
  \`INSERT INTO messages\_binary (timestamp, group\_id, is\_encrypted, content)
  VALUES (\$1, \$2, \$3, \$4) ON CONFLICT DO NOTHING\` ,
  \[timestamp, groupId, isEncrypted, content\]
  );],
-  [if (changes === 1 ) {
+  [if (changes === 1 ) \{
  \/\\/ Update the merkle trie 
  trie = merkle.insert(trie, Timestamp.parse(timestamp));
- }
-}],
+ \}
+\}],
   [await runQuery(
  \`INSERT INTO messages\_merkles (group\_id, merkle)
  VALUES (\$1, \$2)
@@ -391,76 +330,73 @@
  \[groupId, JSON .stringify(trie)\]
 );],
   [await runQuery( 'COMMIT' );],
-  [id="p17"\>This is mostly the real code, the only difference is we also rollback the transaction on failure. It's extremely important that this happens in a transaction and both the messages and merkle trie are updated atomically . Again, the merkle trie verifies the messages content and they must always be in sync. The user will see sync errors if they are not.],
-  [id="p18"\>The problem is immediately clear: we are executing an INSERT query for each message individually. In our extreme case we are trying to execute 169,000 statements. PostgreSQL lives on a different server (but close) and making that many network calls alone is going to kill performance, not to mention PG overhead.],
-  [id="p19"\>I knew this was slow, but I didn't realize how slow. Let's test a more reasonable number of messages that actually finishes. 4000 messages takes 6.9s to complete . This is just profiling the above code, and not taking into account network transfer.],
-  [id="p20"\>This is a huge UX issue. While this is processing the user is sitting there watching the "sync" icon spin and spin and spin…],
-  [id="p21"\>Back to the drawing board. What we need:],
-  [id="li3"\>To execute as few queries as possible],
-  [id="li4"\>To know which messages were added],
-  [id="li5"\>To commit the messages and merkle trie updates atomically],
-  [id="p22"\>We could check which messages already exist and filter them out, but that would require an expensive SELECT query (that would probably need to be broken up because you wouldn't want to pass 169,000 parameters). Another idea I had was to insert messages with a unique number, and then afterwards I can query which messages have that unique number since only the new ones would have it.],
-  [id="p23"\>The beauty of relational databases (compared to key-value) is they tend to have robust solutions for these kinds of problems. There had to be a way to do this because this pattern is not esoteric. The first thing I learned was how to insert multiple rows with a single INSERT statement:],
+  [This is mostly the real code, the only difference is we also rollback the transaction on failure. It's extremely important that this happens in a transaction and both the messages and merkle trie are updated atomically . Again, the merkle trie verifies the messages content and they must always be in sync. The user will see sync errors if they are not.],
+  [The problem is immediately clear: we are executing an INSERT query for each message individually. In our extreme case we are trying to execute 169,000 statements. PostgreSQL lives on a different server (but close) and making that many network calls alone is going to kill performance, not to mention PG overhead.],
+  [I knew this was slow, but I didn't realize how slow. Let's test a more reasonable number of messages that actually finishes. 4000 messages takes 6.9s to complete . This is just profiling the above code, and not taking into account network transfer.],
+  [This is a huge UX issue. While this is processing the user is sitting there watching the "sync" icon spin and spin and spin…],
+  [Back to the drawing board. What we need:],
+  [To execute as few queries as possible],
+  [To know which messages were added],
+  [To commit the messages and merkle trie updates atomically],
+  [We could check which messages already exist and filter them out, but that would require an expensive SELECT query (that would probably need to be broken up because you wouldn't want to pass 169,000 parameters). Another idea I had was to insert messages with a unique number, and then afterwards I can query which messages have that unique number since only the new ones would have it.],
+  [The beauty of relational databases (compared to key-value) is they tend to have robust solutions for these kinds of problems. There had to be a way to do this because this pattern is not esoteric. The first thing I learned was how to insert multiple rows with a single INSERT statement:],
   [-- At least in PostgreSQL, you can pass multiple items to a single insert
 INSERT INTO messages\_binary (timestamp, group\_id, content) VALUES
  ("1", "group1", "binary-blob1"),
  ("3", "group1", "binary-blobb6"),
  ("2", "group1", "binary-blobbbb");],
-  [id="p24"\>This is better than concatenating multiple INSERT statements into one query because it's probably faster, and most importantly we have hope of getting back information about what happened.],
-  [id="p25"\>Scouring the docs I discovered the RETURNING clause of an INSERT statement. By default PostgreSQL doesn't return anything when doing INSERT except the number of rows that changed. But if you do INSERT INTO table (value) VALUES (1) RETURNING id it will return the id of the new row.],
-  [id="p26"\>The big question was if this did what I wanted: when using an INSERT statement with multiple items and ON CONFLICT DO NOTHING , will it return an array of ids of only the items that were actually inserted ? I was suspicious it might return the ids of all the items even if they conflicted (and weren't inserted).],
-  [id="p27"\>I wrote a quick script to test the behavior and: bingo . RETURNING does exactly what I want. Here's a test:],
+  [This is better than concatenating multiple INSERT statements into one query because it's probably faster, and most importantly we have hope of getting back information about what happened.],
+  [Scouring the docs I discovered the RETURNING clause of an INSERT statement. By default PostgreSQL doesn't return anything when doing INSERT except the number of rows that changed. But if you do INSERT INTO table (value) VALUES (1) RETURNING id it will return the id of the new row.],
+  [The big question was if this did what I wanted: when using an INSERT statement with multiple items and ON CONFLICT DO NOTHING , will it return an array of ids of only the items that were actually inserted ? I was suspicious it might return the ids of all the items even if they conflicted (and weren't inserted).],
+  [I wrote a quick script to test the behavior and: bingo . RETURNING does exactly what I want. Here's a test:],
   [INSERT INTO messages\_binary (timestamp, group\_id, content) VALUES
  ('1', 'group5', '...'),
  ('2', 'group6', '...'),
  ('3', 'group7', '...')
 ON CONFLICT DO NOTHING RETURNING timestamp;],
-  [id="p28"\>When executing this query, if a message with timestamp of 1 already exists, this will only insert 2 and 3 and return an array \[{ id: '2' }, { id: '3' }\] . Bingo bango bongo.],
-  [id="p29"\> RETURNING allows me to reduce all of this work down into a single query . I can use the results to know exactly which messages were added and update the merkle trie appropriately.],
-  [id="p30"\>The new code looks something like this. I'm still auditing the safety of the pg-promise helper:],
+  [When executing this query, if a message with timestamp of 1 already exists, this will only insert 2 and 3 and return an array \[\{ id: '2' \}, \{ id: '3' \}\] . Bingo bango bongo.],
+  [RETURNING allows me to reduce all of this work down into a single query . I can use the results to know exactly which messages were added and update the merkle trie appropriately.],
+  [The new code looks something like this. I'm still auditing the safety of the pg-promise helper:],
   [\/\\/ We use a helper from a library \`pg-promise\` to generate 
  \/\\/ the multi-value INSERT statement. This will escape values. 
  \/\\/ http:\/\/vitaly-t.github.io/pg-promise/helpers.html\#.insert 
  let stmt = pgp.helpers.insert(
- messages.map(msg =\> ({
+ messages.map(msg =\> (\{
  timestamp: msg.getTimestamp(),
  group\_id: groupId,
  is\_encrypted: msg.getIsencrypted(),
  content: msg.getContent()
- })),
+ \})),
  \[ 'timestamp' , 'group\_id' , 'is\_encrypted' , 'content' \],
  'messages\_binary' 
 );],
-  [let { changes, rows } = await runQuery(
+  [let \{ changes, rows \} = await runQuery(
  stmt + ' ON CONFLICT DO NOTHING RETURNING timestamp' 
 );],
-  [rows.forEach(row =\> {
- trie = merkle.insert(trie, Timestamp.parse(row.timestamp));
-});],
   [\/\\/ Write back the merkle trie…],
-  [id="p31"\>Let's check out the results!],
+  [Let's check out the results!],
   [4000 messages
 Before: 6.9s
 After: .75s],
   [40000 messages
 Before: 59s
 After: 7.1s],
-  [id="p32"\>You read that right: previously it took 59 seconds to process 40000 messages and now it only takes 7.2 seconds. We're able to process 10 times the amount of messages!],
-  [id="p33"\> Update: There was an error in the SQL generation causing each piece of data to be larger than needed (the binary blob encoding was wrong) so the generated INSERT statement is about 25% smaller, and 40000 messages is now processed in ~5 seconds.],
-  [id="What-about-169,000"\>What about 169,000?],
-  [id="p34"\>You might be wondering what happened to 169,000, our benchmark? Well, turns out there's still an upper limit. This time we're hitting a PostgreSQL limit and there isn't a quick fix.],
-  [id="p35"\>When processing 169,000, the first problem is that, well, node crashes. The pgp.helpers.insert helper from pg-promise causes the crash when passed that number of items. Not exactly sure why, but it's not worth investigating because there are other problems.],
-  [id="p36"\>First, 169,000 items requires an upload payload of 21MB. That's unacceptable because the chances of that failing is too large.],
-  [id="p37"\>If we scale the benchmark down to 100,000, we get something that gets further. The multi-value INSERT statement that is generated is a 72MB string. Trying to execute this massive query string simply… hangs the whole server. I'm not sure where the problem is, or if PostgreSQL settings could be tuned to handle it, but again we simply can't handle something of this size.],
-  [id="p38"\>The better solution is to page message syncing and have an upper limit per request. A good limit seems to be 40,000 messages. At the size, the upload payload is 5MB and it takes 7 seconds to process (it still generates a 30MB query string which PostgreSQL happily processes!). To process 169,000 messages, we'd send 5 requests each which 40,000 messages (or whatever is leftover). The total time to process all of them would be 169000 \/ 40000 \* 7 or 29.6 seconds. As long as we display the progress to the user, not bad for such a gigantic changeset.],
-  [id="p39"\> This is the worst case scenario . We're not normally dealing with timeframes in seconds. The most common syncing operations deal with 10-200 messages which syncs within 20ms. This is absolutely the worst case, like somebody is hitting the API with thousands of changes per second and trying to sync later, which almost never happens. But we should be able to handle it if a user abuses the API.],
-  [id="One-last-improvement"\>One last improvement],
-  [id="p40"\>Unrelated to the above problem, there is one last improvement I'd like to make. Since the merkle trie is stored in the database, the server needs to fetch it, change it, then store it back. That means no other connections can concurrently change the trie while we're working on it.],
-  [id="p41"\>The current solution uses a blunt hammer to solve it: a mutex. The mutex locks per user around the syncing logic, so users can concurrently sync, but if the same user syncs on multiple devices, they will be serialized. This is necessary to avoid race conditions while updating the merkle trie (remember, it's extremely important that it stays in tact).],
-  [id="p42"\>It looks like the Serializable Isolation Level for transactions might solve this. You start the transaction with BEGIN TRANSACTION ISOLATION LEVEL SERIALIZABLE , and PostgreSQL will abort a transaction if it detects that race conditions might occur between them. I'm not 100% sure if it will work with my use case where I read something and write it back later in the same transaction, but if it does, if a transaction fails I'd just restart it. So each syncing process would get serialized. I'd love to hear from you if you know anything about this.],
-  [id="Up-next…"\>Up next…],
-  [id="p43"\>I haven't thrown the 169,000 benchmark at the client part of syncing yet. The client does more work when syncing because a lot of other things like undo hooks into the system, so there is still a lot to optimize there. I doubt it would handle a case of 169,000 messages right now anyway, but I'm sure it could handle 40,000 messages. I think the idea of paging the syncing into 40,000 blocks would work well though, and would be easy to show feedback to the user of how many messages have been processed so far.],
-  [id="p44"\>No matter what, it's great to optimize for the extreme cases. The 9-10x improvement here trickles down to the far smaller cases that make up 95% of the requests. Now a request that took 100ms before will take ~10ms. Snappy!],
+  [You read that right: previously it took 59 seconds to process 40000 messages and now it only takes 7.2 seconds. We're able to process 10 times the amount of messages!],
+  [Update: There was an error in the SQL generation causing each piece of data to be larger than needed (the binary blob encoding was wrong) so the generated INSERT statement is about 25% smaller, and 40000 messages is now processed in ~5 seconds.],
+  [What about 169,000?],
+  [You might be wondering what happened to 169,000, our benchmark? Well, turns out there's still an upper limit. This time we're hitting a PostgreSQL limit and there isn't a quick fix.],
+  [When processing 169,000, the first problem is that, well, node crashes. The pgp.helpers.insert helper from pg-promise causes the crash when passed that number of items. Not exactly sure why, but it's not worth investigating because there are other problems.],
+  [First, 169,000 items requires an upload payload of 21MB. That's unacceptable because the chances of that failing is too large.],
+  [If we scale the benchmark down to 100,000, we get something that gets further. The multi-value INSERT statement that is generated is a 72MB string. Trying to execute this massive query string simply… hangs the whole server. I'm not sure where the problem is, or if PostgreSQL settings could be tuned to handle it, but again we simply can't handle something of this size.],
+  [The better solution is to page message syncing and have an upper limit per request. A good limit seems to be 40,000 messages. At the size, the upload payload is 5MB and it takes 7 seconds to process (it still generates a 30MB query string which PostgreSQL happily processes!). To process 169,000 messages, we'd send 5 requests each which 40,000 messages (or whatever is leftover). The total time to process all of them would be 169000 \/ 40000 \* 7 or 29.6 seconds. As long as we display the progress to the user, not bad for such a gigantic changeset.],
+  [This is the worst case scenario . We're not normally dealing with timeframes in seconds. The most common syncing operations deal with 10-200 messages which syncs within 20ms. This is absolutely the worst case, like somebody is hitting the API with thousands of changes per second and trying to sync later, which almost never happens. But we should be able to handle it if a user abuses the API.],
+  [One last improvement],
+  [Unrelated to the above problem, there is one last improvement I'd like to make. Since the merkle trie is stored in the database, the server needs to fetch it, change it, then store it back. That means no other connections can concurrently change the trie while we're working on it.],
+  [The current solution uses a blunt hammer to solve it: a mutex. The mutex locks per user around the syncing logic, so users can concurrently sync, but if the same user syncs on multiple devices, they will be serialized. This is necessary to avoid race conditions while updating the merkle trie (remember, it's extremely important that it stays in tact).],
+  [It looks like the Serializable Isolation Level for transactions might solve this. You start the transaction with BEGIN TRANSACTION ISOLATION LEVEL SERIALIZABLE , and PostgreSQL will abort a transaction if it detects that race conditions might occur between them. I'm not 100% sure if it will work with my use case where I read something and write it back later in the same transaction, but if it does, if a transaction fails I'd just restart it. So each syncing process would get serialized. I'd love to hear from you if you know anything about this.],
+  [Up next…],
+  [I haven't thrown the 169,000 benchmark at the client part of syncing yet. The client does more work when syncing because a lot of other things like undo hooks into the system, so there is still a lot to optimize there. I doubt it would handle a case of 169,000 messages right now anyway, but I'm sure it could handle 40,000 messages. I think the idea of paging the syncing into 40,000 blocks would work well though, and would be easy to show feedback to the user of how many messages have been processed so far.],
+  [No matter what, it's great to optimize for the extreme cases. The 9-10x improvement here trickles down to the far smaller cases that make up 95% of the requests. Now a request that took 100ms before will take ~10ms. Snappy!],
 ),
   insert-map: (:),
   word-count: 2068,
@@ -468,10 +404,8 @@ After: 7.1s],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A lifting week],
   author: [Petr Mitrichev],
   source-name: [Petr Mitrichev (competitive programming)],
@@ -493,102 +427,95 @@ After: 7.1s],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Thinking about growth and profit],
   author: [James Long (jlongster)],
   source-name: [James Long (jlongster)],
   images: (),
   paragraphs: (
-  [id="p9"\> I posted a follow-up twitter thread with a final spreadsheet and learnings.],
-  [id="p10"\>In my last post I showed my process for forecasting costs and profits for Actual based on various metrics. This helps me find much-needed answers to questions like "how much cost for acquiring users can I afford?"],
-  [id="p11"\>I'm new to this and I learned a lot from my first attempt. There's still a lot to improve on though. This post goes into a few more things I've learned based on feedback and more research.],
-  [id="p12"\>Some context: I launched Actual a year ago, but really only started focusing on growth since last September (4 months ago). It's a very early product and I'm a solo founder.],
-  [id="p13"\>First, a couple takeaways from responses to my previous post:],
-  [id="li1"\>Let's be more pessimistic about churn and say 10%.],
-  [id="li2"\>Costs are simple in this model, but you want to all costs. I focus on Plaid costs because that will be the majority of my costs, but in a real forecast make sure to include everything like Stripe's fees. Marketing should be part of acquisition costs, but I'm doing any marketing right now.],
-  [id="li6"\>],
-  [id="p3"\>A reader asked an interesting question: how many people signed up for a trial without ever running the app (and never costing anything)? I can't find the original response, but they said to expect almost half of trials to never do anything. I ran the numbers and so far on my 3 months of data, and:],
-  [id="p4"\> Holy crap . Out of 1025 total trials, only 508 actually ran the app and logged in which is 49%. This is a little skewed because I'm transitioning away from a free plan which doesn't track users, so some of those earlier trial conversions aren't tracked. But it's probably not far off.],
-  [id="p5"\>For simplicity, I'll assume all trial signups cost the same.],
-  [id="The-cost-of-growth"\>The cost of growth],
-  [id="p14"\>Near the end of my last post, I asked the question "What does it take to hit \$10k/month?" Cranking up growth surprised me because I found myself spending more and more money each month, spending \$11,714 after 16 months with a 40% growth rate ( link to spreadsheet ):],
-  [id="p15"\>],
-  [id="p16"\>It shouldn't have surprised me though. Growth costs money, and simply put: in this scenario, I'm spending more than I'm making. The problem is I'm assuming a 40% growth for all time and given the cost per trial, conversion rate, and pricing I can't sustain that.],
-  [id="p17"\>All this money spent is really an investment . I may have spent a total of \$42,746.16, but now I have 7834 subscribers. Let's guess at a customer lifetime of 12 months, at \$7/months I will eventually make 7834 \* 7 \* 12 or \$658,056. That's a 1539% return on investment.],
-  [id="p18"\>In reality, constant 40% growth is not going to happen. Eventually growth will slow and I will start making a return. If it doesn't slow, that's amazing and you're onto something big. Here's what happens if I had 40% growth for 6 months, and then it slows down to 5%:],
-  [id="p19"\>],
-  [id="p20"\>As growth slows, the costs I pay for trial users goes down and profits go up. If you wanted to, you could model growth as a curve over time and see how that effects cash flow. That would reflect reality since growth isn't constant.],
-  [id="p21"\>If you wanted to focus on growth for a long time, you'd either need to take a loan/investment or tweak other parameters (like pricing, conversion, etc) to support it.],
-  [id="Annual-plans-are-kil"\>Annual plans are killer],
-  [id="p22"\>I briefly looked at annual plans at the end of the last post. With an annual plan, the user pays for an entire year upfront. Obviously, this provides a lot more cash flow.],
-  [id="p23"\>It's pretty incredible what this extra cash allows. Check out the (extremely hypothetical) 40% growth for 16 months ( link to spreadsheet ):],
-  [id="p24"\>],
-  [id="p25"\>I never even lose money — I make \$1012 the first month subscribers are charged. Sure, some of this money needs to be reserved to cover the operational costs of the user for a year, but it's most likely a small fraction of that.],
-  [id="p26"\>In a reply to my previous post, one person mentioned that if you offer monthly and annual plans, it's common for 1/3 of your users to be on the annual plan. I'll leave the modeling of this mixture up to you, but it's not hard to guess that even with only a 1/3 you'd have a lot more freedom with cash flow.],
-  [id="p27"\>Annual plans are killer.],
-  [id="Just-how-is-growth-a"\>Just how is growth and profit related?],
-  [id="p28"\>Even with the annual plan, if you crank up growth you'll still end up in the negative after 16 months. It may take a growth rate of 398%, but it still happens!],
-  [id="p29"\>The math nerd in me had to figure out just how growth and profits are related. Obviously there is an inflection point where growth overtakes costs, but how do we solve for that? You don't really need to understand all this , but at least try to understand why I had to redefine growth in the next section and then skip to the simpler math .],
-  [id="p30"\>It would be nice to know, given acquisition cost, conversion rate, and pricing, just how much growth can I afford? A better way to put it: how much growth will I get if I reinvest all profits?],
-  [id="p31"\>It took me a while to work through it. The first thing I did was add the ratio of total subscribers \/ new subscribers , and play with similar relationships, but none of those help much. It seemed clear that is is a relationship, i.e. I should be able to find a value based on growth.],
-  [id="p32"\>Think about what we need: the cost needs to have a direct relationship with revenue . We need a formula that involves growth, and then we can solve for growth. Given all the other metrics, for what growth value X does revenue = cost ?],
-  [id="p33"\>Let's define revenue = cost in terms of growth. Right now, our growth variable defines growth in terms of new trials. First, let's figure out cost based on the number of trials. It's a compounding rate of growth, so we need to learn the equation for compounding interest. It's not that hard:],
+  [I posted a follow-up twitter thread with a final spreadsheet and learnings.],
+  [In my last post I showed my process for forecasting costs and profits for Actual based on various metrics. This helps me find much-needed answers to questions like "how much cost for acquiring users can I afford?"],
+  [I'm new to this and I learned a lot from my first attempt. There's still a lot to improve on though. This post goes into a few more things I've learned based on feedback and more research.],
+  [Some context: I launched Actual a year ago, but really only started focusing on growth since last September (4 months ago). It's a very early product and I'm a solo founder.],
+  [First, a couple takeaways from responses to my previous post:],
+  [Let's be more pessimistic about churn and say 10%.],
+  [Costs are simple in this model, but you want to all costs. I focus on Plaid costs because that will be the majority of my costs, but in a real forecast make sure to include everything like Stripe's fees. Marketing should be part of acquisition costs, but I'm doing any marketing right now.],
+  [A reader asked an interesting question: how many people signed up for a trial without ever running the app (and never costing anything)? I can't find the original response, but they said to expect almost half of trials to never do anything. I ran the numbers and so far on my 3 months of data, and:],
+  [Holy crap . Out of 1025 total trials, only 508 actually ran the app and logged in which is 49%. This is a little skewed because I'm transitioning away from a free plan which doesn't track users, so some of those earlier trial conversions aren't tracked. But it's probably not far off.],
+  [For simplicity, I'll assume all trial signups cost the same.],
+  [The cost of growth],
+  [Near the end of my last post, I asked the question "What does it take to hit \$10k/month?" Cranking up growth surprised me because I found myself spending more and more money each month, spending \$11,714 after 16 months with a 40% growth rate ( link to spreadsheet ):],
+  [It shouldn't have surprised me though. Growth costs money, and simply put: in this scenario, I'm spending more than I'm making. The problem is I'm assuming a 40% growth for all time and given the cost per trial, conversion rate, and pricing I can't sustain that.],
+  [All this money spent is really an investment . I may have spent a total of \$42,746.16, but now I have 7834 subscribers. Let's guess at a customer lifetime of 12 months, at \$7/months I will eventually make 7834 \* 7 \* 12 or \$658,056. That's a 1539% return on investment.],
+  [In reality, constant 40% growth is not going to happen. Eventually growth will slow and I will start making a return. If it doesn't slow, that's amazing and you're onto something big. Here's what happens if I had 40% growth for 6 months, and then it slows down to 5%:],
+  [As growth slows, the costs I pay for trial users goes down and profits go up. If you wanted to, you could model growth as a curve over time and see how that effects cash flow. That would reflect reality since growth isn't constant.],
+  [If you wanted to focus on growth for a long time, you'd either need to take a loan/investment or tweak other parameters (like pricing, conversion, etc) to support it.],
+  [Annual plans are killer],
+  [I briefly looked at annual plans at the end of the last post. With an annual plan, the user pays for an entire year upfront. Obviously, this provides a lot more cash flow.],
+  [It's pretty incredible what this extra cash allows. Check out the (extremely hypothetical) 40% growth for 16 months ( link to spreadsheet ):],
+  [I never even lose money — I make \$1012 the first month subscribers are charged. Sure, some of this money needs to be reserved to cover the operational costs of the user for a year, but it's most likely a small fraction of that.],
+  [In a reply to my previous post, one person mentioned that if you offer monthly and annual plans, it's common for 1/3 of your users to be on the annual plan. I'll leave the modeling of this mixture up to you, but it's not hard to guess that even with only a 1/3 you'd have a lot more freedom with cash flow.],
+  [Annual plans are killer.],
+  [Just how is growth and profit related?],
+  [Even with the annual plan, if you crank up growth you'll still end up in the negative after 16 months. It may take a growth rate of 398%, but it still happens!],
+  [The math nerd in me had to figure out just how growth and profits are related. Obviously there is an inflection point where growth overtakes costs, but how do we solve for that? You don't really need to understand all this , but at least try to understand why I had to redefine growth in the next section and then skip to the simpler math .],
+  [It would be nice to know, given acquisition cost, conversion rate, and pricing, just how much growth can I afford? A better way to put it: how much growth will I get if I reinvest all profits?],
+  [It took me a while to work through it. The first thing I did was add the ratio of total subscribers \/ new subscribers , and play with similar relationships, but none of those help much. It seemed clear that is is a relationship, i.e. I should be able to find a value based on growth.],
+  [Think about what we need: the cost needs to have a direct relationship with revenue . We need a formula that involves growth, and then we can solve for growth. Given all the other metrics, for what growth value X does revenue = cost ?],
+  [Let's define revenue = cost in terms of growth. Right now, our growth variable defines growth in terms of new trials. First, let's figure out cost based on the number of trials. It's a compounding rate of growth, so we need to learn the equation for compounding interest. It's not that hard:],
   [\\(trials = 300 \* growth^x\\)],
-  [id="p34"\>where x is the month. We start with 300 trials and it increases with growth (for 7% growth = 1.07 ). Now we can determine the amount of trials at any point in time given growth, which means we know the cost at any point in time. Just multiply it by conversion and trial cost. Given a \$1/trial and a 6% conversion rate:],
+  [where x is the month. We start with 300 trials and it increases with growth (for 7% growth = 1.07 ). Now we can determine the amount of trials at any point in time given growth, which means we know the cost at any point in time. Just multiply it by conversion and trial cost. Given a \$1/trial and a 6% conversion rate:],
   [\\(cost = 300 \* growth^x \* 1 \* .06\\)],
-  [id="p35"\>This will give you the cost of trials at month x . Note: to keep things simple we're ignoring the "total cost" and using the cost of trials only. It wouldn't hard to also account for the cost of existing subscribers (which is much smaller) and I'll do that at the end.],
-  [id="p36"\>Let's look at revenue. Revenue should be number of subscribers at the beginning of the month multiplied by the plan price. Seems simple, right? The problem is that the subscribers count currently is generated with the formula last\_month\_subscribers + new\_subscribers , with new subscribers coming from the converted number of trials. There's no way to calculcate last\_month\_subscribers numerically: we can get the number of new subscribers last month, but not the total subscribers.],
-  [id="p37"\>To get the total subscribers we have to sum the generated subscribers from each month. From there, we can finally generate revenue but multiplying the subscriber count by the prive (using \$7 here):],
-  [\\({'revenue = \\\\sum\\\\limits\_{i=1}^x 300 \* growth^x \* .06 \* 7 '}\\)],
-  [id="p38"\>This says "for month 3, revenue = f(1) + f(2) + f(3) " where f is the formula above that generated the revenue.],
-  [id="p39"\>But that doesn't take into subscriber churn. Churn is based on the previous month's subscribers… this is getting complicated fast. Even if I figure out the right revenue formula, I still have to solve for growth .],
-  [id="Redefining-growth"\>Redefining growth],
-  [id="p40"\>It's way too complicated to measure growth by number of trials and calculate everything else from there. And there's no reason to do that! It's much better if we redefine growth .],
-  [id="p41"\>Instead, define growth as current subscribers \/ previous subscribers , or the growth of subscribers over time. This makes the math far simpler.],
-  [id="p42"\>We can easily calculate everything else from there. First, use the compounding formula again to determine the total number of subscribers (assuming we start with 15 subscribers):],
-  [\\({'subscribers = 15 \* growth^{x-1}'}\\)],
-  [id="p43"\>The reason we use x - 1 is because we want to know the number of subscribers at the beginning of the month, so ignore the new subscribers of the current month. Revenue is easy (with \$7/month price):],
-  [\\({'revenue = 15 \* growth^{x-1} \* 7'}\\)],
-  [id="p44"\>For cost, we need to know the number of new subscribers. We just subtract the difference between previous and current month:],
-  [\\({'new\\\\\_subscribers = 15 \* growth^x - 15 \* growth^{x-1}'}\\)],
-  [id="p45"\>Given the amount of new subscribers, we can generate the amount of trials that occurred by dividing the conversation rate.],
-  [\\({'trials = (15 \* growth^x - 15 \* growth^{x-1}) \/ .05'}\\)],
-  [id="p46"\>Now it's easy to calculate cost by multiplying trials by cost per trial (\$1):],
-  [\\({'cost = (15 \* growth^x - 15 \* growth^{x-1}) \/ .05 \* 1'}\\)],
-  [id="p47"\>We have both sides, now we need to solve the equation!],
-  [\\({'15 \* growth^{x-1} \* 7 = (15 \* growth^x - 15 \* growth^{x-1}) \/ .05 \* 1'}\\)],
-  [id="p48"\>Solving for growth will give us a number that represents if we reinvested all revenue into growth. It's easier than it looks to solve: divide both sides by growth^x-1 and you reduce it into the far simpler:],
+  [This will give you the cost of trials at month x . Note: to keep things simple we're ignoring the "total cost" and using the cost of trials only. It wouldn't hard to also account for the cost of existing subscribers (which is much smaller) and I'll do that at the end.],
+  [Let's look at revenue. Revenue should be number of subscribers at the beginning of the month multiplied by the plan price. Seems simple, right? The problem is that the subscribers count currently is generated with the formula last\_month\_subscribers + new\_subscribers , with new subscribers coming from the converted number of trials. There's no way to calculcate last\_month\_subscribers numerically: we can get the number of new subscribers last month, but not the total subscribers.],
+  [To get the total subscribers we have to sum the generated subscribers from each month. From there, we can finally generate revenue but multiplying the subscriber count by the prive (using \$7 here):],
+  [\\(\{'revenue = \\\\sum\\\\limits\_\{i=1\}^x 300 \* growth^x \* .06 \* 7 '\}\\)],
+  [This says "for month 3, revenue = f(1) + f(2) + f(3) " where f is the formula above that generated the revenue.],
+  [But that doesn't take into subscriber churn. Churn is based on the previous month's subscribers… this is getting complicated fast. Even if I figure out the right revenue formula, I still have to solve for growth .],
+  [Redefining growth],
+  [It's way too complicated to measure growth by number of trials and calculate everything else from there. And there's no reason to do that! It's much better if we redefine growth .],
+  [Instead, define growth as current subscribers \/ previous subscribers , or the growth of subscribers over time. This makes the math far simpler.],
+  [We can easily calculate everything else from there. First, use the compounding formula again to determine the total number of subscribers (assuming we start with 15 subscribers):],
+  [\\(\{'subscribers = 15 \* growth^\{x-1\}'\}\\)],
+  [The reason we use x - 1 is because we want to know the number of subscribers at the beginning of the month, so ignore the new subscribers of the current month. Revenue is easy (with \$7/month price):],
+  [\\(\{'revenue = 15 \* growth^\{x-1\} \* 7'\}\\)],
+  [For cost, we need to know the number of new subscribers. We just subtract the difference between previous and current month:],
+  [\\(\{'new\\\\\_subscribers = 15 \* growth^x - 15 \* growth^\{x-1\}'\}\\)],
+  [Given the amount of new subscribers, we can generate the amount of trials that occurred by dividing the conversation rate.],
+  [\\(\{'trials = (15 \* growth^x - 15 \* growth^\{x-1\}) \/ .05'\}\\)],
+  [Now it's easy to calculate cost by multiplying trials by cost per trial (\$1):],
+  [\\(\{'cost = (15 \* growth^x - 15 \* growth^\{x-1\}) \/ .05 \* 1'\}\\)],
+  [We have both sides, now we need to solve the equation!],
+  [\\(\{'15 \* growth^\{x-1\} \* 7 = (15 \* growth^x - 15 \* growth^\{x-1\}) \/ .05 \* 1'\}\\)],
+  [Solving for growth will give us a number that represents if we reinvested all revenue into growth. It's easier than it looks to solve: divide both sides by growth^x-1 and you reduce it into the far simpler:],
   [\\( 15 \* 7 = (15 \* x - 15) \/ 0.05 \\)],
-  [id="p49"\>Which gives us:],
+  [Which gives us:],
   [\\( x = 1.35 \\)],
-  [id="p50"\>Bam! If I use a growth rate of 35%, cost equals revenue and profit is 0 each month. I'm reinvesting all revenue into growth. If growth were higher, I need money outside profit to cover it. This is confirmed by updating the spreadsheet to use subscriber growth, plugging in 35% growth and plotting it ( link to spreadsheet ):],
-  [id="p51"\>],
-  [id="p52"\>You can't see the blue line which is costs because it's exactly equal to revenue. Notice how profit is flat the entire time. If you look at the spreadsheet , profits are all 0.],
-  [id="Bedtime-epiphany"\>Bedtime epiphany],
-  [id="p53"\>After I did all of this I couldn't shake the feeling that I over-complicated it. All I needed was the growth, which is the rate of the current month's subscribers to the previous month's. When I went to bed I pulled out my calculator and did a few more tests.],
-  [id="p54"\>If I wanted growth, I need to solve something like this:],
-  [\\({' growth = \\\\frac{subscribers + new\\\\\_subscribers}{subscribers} '}\\)],
-  [id="p55"\>If I know customer acquisition costs (CAC), can't I just plug that in and calculate the amount of new subscribers? I can figure out CAC based on conversion rate (5%) and the cost of each trial (\$1):],
-  [\\({' CAC = 1 \/ .05 \* 1 '}\\)],
-  [id="p56"\> 1 \/ .05 gives us the amount of trials needed to convert one customer, and we multiply that by the trial cost. In this case the CAC is \$20. Well… can't we just use that to figure out exactly how many new subscribers we will get be reinvesting all revenue?],
-  [\\({' new\\\\\_subscribers = \\\\frac{revenue}{CAC} '}\\)],
-  [id="p57"\>Revenue is easy: just subscribers \* 7 (since it's \$7/month). Plugging it all in:],
-  [\\({' growth = \\\\frac{subscribers + \\\\frac{subscribers \* 7}{1 \/ .05 \* 1}}{subscribers} '}\\)],
-  [id="p58"\>And look, subscribers divides itself out! Leaving:],
-  [\\({' growth = 1 + \\\\frac{7}{1 \/ .05 \* 1} = 1.35 '}\\)],
-  [id="p59"\>Wow, that was a lot simpler! I'm sure you could transform both of my final equations into each other. This was a much more straight-forward approach though, and it took me a while to get there.],
-  [id="p60"\>It would be really easy to include other costs as well. So far I've left out an estimated \$0.75/month in Plaid costs per subscriber, but use subscribers \* (7 - .75) in the equation for revenue and it'll account for that. If we account for total costs, the growth rate is 31.25%.],
-  [id="p61"\>This leaves us with the final equation:],
-  [\\({' growth = 1 + \\\\frac{price - subscriber\\\\\_cost}{1 \/ conversion\\\\\_rate \* CAC } '}\\)],
-  [id="Run-the-numbers"\>Run the numbers],
-  [id="p62"\>I didn't need to understand all that math; I could have just tweaked values in excel. But it's nice to know how it's all related, and to know the upper bound of growth given the other numbers. Here are some other scenarios:],
-  [id="li7"\>If I only allow trials to connect a single account, trial costs become \$0.50 instead of \$1. Max growth rate: 62%],
-  [id="li8"\>If conversion goes up to 8%, max growth rate is 50%],
-  [id="p63"\>I could go on. You probably don't need to focus on this, it's just a good thing to understand. Note how churn rate isn't part of this because growth measures the amount of subscribers growth after churn. You would need some different equations to play with churn rate. (Edit: or just make a "real growth" variable that is growth - churn )],
-  [id="p64"\>Or just throw some formulas into a spreadsheet and play with them until they look right.],
+  [Bam! If I use a growth rate of 35%, cost equals revenue and profit is 0 each month. I'm reinvesting all revenue into growth. If growth were higher, I need money outside profit to cover it. This is confirmed by updating the spreadsheet to use subscriber growth, plugging in 35% growth and plotting it ( link to spreadsheet ):],
+  [You can't see the blue line which is costs because it's exactly equal to revenue. Notice how profit is flat the entire time. If you look at the spreadsheet , profits are all 0.],
+  [Bedtime epiphany],
+  [After I did all of this I couldn't shake the feeling that I over-complicated it. All I needed was the growth, which is the rate of the current month's subscribers to the previous month's. When I went to bed I pulled out my calculator and did a few more tests.],
+  [If I wanted growth, I need to solve something like this:],
+  [\\(\{' growth = \\\\frac\{subscribers + new\\\\\_subscribers\}\{subscribers\} '\}\\)],
+  [If I know customer acquisition costs (CAC), can't I just plug that in and calculate the amount of new subscribers? I can figure out CAC based on conversion rate (5%) and the cost of each trial (\$1):],
+  [\\(\{' CAC = 1 \/ .05 \* 1 '\}\\)],
+  [1 \/ .05 gives us the amount of trials needed to convert one customer, and we multiply that by the trial cost. In this case the CAC is \$20. Well… can't we just use that to figure out exactly how many new subscribers we will get be reinvesting all revenue?],
+  [\\(\{' new\\\\\_subscribers = \\\\frac\{revenue\}\{CAC\} '\}\\)],
+  [Revenue is easy: just subscribers \* 7 (since it's \$7/month). Plugging it all in:],
+  [\\(\{' growth = \\\\frac\{subscribers + \\\\frac\{subscribers \* 7\}\{1 \/ .05 \* 1\}\}\{subscribers\} '\}\\)],
+  [And look, subscribers divides itself out! Leaving:],
+  [\\(\{' growth = 1 + \\\\frac\{7\}\{1 \/ .05 \* 1\} = 1.35 '\}\\)],
+  [Wow, that was a lot simpler! I'm sure you could transform both of my final equations into each other. This was a much more straight-forward approach though, and it took me a while to get there.],
+  [It would be really easy to include other costs as well. So far I've left out an estimated \$0.75/month in Plaid costs per subscriber, but use subscribers \* (7 - .75) in the equation for revenue and it'll account for that. If we account for total costs, the growth rate is 31.25%.],
+  [This leaves us with the final equation:],
+  [\\(\{' growth = 1 + \\\\frac\{price - subscriber\\\\\_cost\}\{1 \/ conversion\\\\\_rate \* CAC \} '\}\\)],
+  [Run the numbers],
+  [I didn't need to understand all that math; I could have just tweaked values in excel. But it's nice to know how it's all related, and to know the upper bound of growth given the other numbers. Here are some other scenarios:],
+  [If I only allow trials to connect a single account, trial costs become \$0.50 instead of \$1. Max growth rate: 62%],
+  [If conversion goes up to 8%, max growth rate is 50%],
+  [I could go on. You probably don't need to focus on this, it's just a good thing to understand. Note how churn rate isn't part of this because growth measures the amount of subscribers growth after churn. You would need some different equations to play with churn rate. (Edit: or just make a "real growth" variable that is growth - churn )],
+  [Or just throw some formulas into a spreadsheet and play with them until they look right.],
 ),
   insert-map: (:),
   word-count: 2242,
@@ -596,10 +523,8 @@ After: 7.1s],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Sam Shuster: Predatory pirate journals and what we can do about them],
   author: [julietwalker],
   source-name: [The BMJ Blog],
@@ -624,10 +549,8 @@ After: 7.1s],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Folie à Machine: LLMs and Epistemic Capture],
   author: [DaystarEld],
   source-name: [LessWrong],
@@ -749,10 +672,8 @@ After: 7.1s],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A polar week],
   author: [Petr Mitrichev],
   source-name: [Petr Mitrichev (competitive programming)],
@@ -772,10 +693,8 @@ After: 7.1s],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Readable Unit Tests: make tests you actually want to write (and read)],
   author: [Criteo Tech],
   source-name: [Criteo Engineering],
@@ -818,11 +737,11 @@ After: 7.1s],
   [arrange \/ act \/ assert is another common naming convention. The goal is to use comments or blank lines to make structure obvious.],
   [\[Test\]
 public void Check\_ShouldRejectSku\_WhenIsNotInStock()
-{
+\{
  \/\\/ given
  var context = GenContext();
  var now = DateTime. UtcNow;
- var outOfStockSku = GenSku(context) with { Quantity = 0 };
+ var outOfStockSku = GenSku(context) with \{ Quantity = 0 \};
  var skuChecker = new SkuChecker(
  CreateConfiguration(context),
  CreateLineItemCache(now, outOfStockSku));],
@@ -830,7 +749,7 @@ public void Check\_ShouldRejectSku\_WhenIsNotInStock()
  var response = skuChecker. Check(context, now, outOfStockSku);],
   [\/\\/ then
  Assert. That(response, Is. EqualTo(RejectReason. OutOfStock));
-}],
+\}],
   [Why?],
   [The structure makes the test easy to comprehend.],
   [The structure keeps developers from combining multiple tests into a single test.],
@@ -849,23 +768,18 @@ public void Check\_ShouldRejectSku\_WhenIsNotInStock()
   [Class level setup methods often contain setup details that don’t apply to the current test and understanding which details are important can be difficult to decipher.],
   [4) Generate test data for non‑significant values],
   [Use a small helper so non‑important values don’t distract.],
-  [using Ploeh. AutoFixture;
-public static class TestHelpers
-{
- private static readonly Fixture Fixture = new();
- public static T Gen () =\> Fixture. Create ();],
   [public static CandidateSkusContext GenContext(
  int minMatchLevels = 0,
  string? placementTaxKey = null) =\>
  Gen () with
- {
+ \{
  KeywordTags = KeywordTags. Empty,
  MinMatchLevels = minMatchLevels,
  NormalizedQuery = null,
  NormalizedBrandName = null,
  PlacementTaxKey = placementTaxKey ?? Gen (),
- };
-}],
+ \};
+\}],
   [The prefix Gen is a convention that indicates that the value is (mostly) generated.],
   [The Gen () function is just a wrapper around Fixture. Create () that’s easier to read.],
   [Why?],
@@ -877,45 +791,40 @@ public static class TestHelpers
  CandidateSkusContext context,
  bool isOpenAuctionDayPartingEnabled = false,
  int startDateDelayMinutes = 0)
-{
+\{
  var mockConfig = new Mock ();
  mockConfig. Setup(o =\> o. IsOpenAuctionDayPartingEnabled(context. RetailerId))
  . Returns(isOpenAuctionDayPartingEnabled);
  mockConfig. Setup(o =\> o. GetStartDateDelayMinutes(context. RetailerId, "sp"))
  . Returns(startDateDelayMinutes);
  return mockConfig. Object;
-}],
+\}],
   [Why?],
   [Knowing that a type of object is created is often all a developer needs to know.],
   [Encourages sharing of the methods to create objects.],
   [6) Use test data classes when parameters explode],
   [When inputs become a combinatorial beast, structure them.],
-  [public class TestRevenueModelData
-{
- private readonly string \_name;
- public TestRevenueModelData(string name) { \_name = name; }
- public override string ToString() =\> \_name;],
-  [public bool DisableFblByScoreTypeAndDataId { get; init; }
- public bool UseFeedbackLoopFactor { get; init; }
+  [public bool DisableFblByScoreTypeAndDataId \{ get; init; \}
+ public bool UseFeedbackLoopFactor \{ get; init; \}
  public bool EnableTargetCpcFblFactor =\> UseFeedbackLoopFactor;
- public double? ExpectedRevenueScoreRawPredictedValue { get; init; }
- public bool IsWhitelisted { get; init; } = true;
+ public double? ExpectedRevenueScoreRawPredictedValue \{ get; init; \}
+ public bool IsWhitelisted \{ get; init; \} = true;
  public ExtractedScores? RealtimeRevenueScoreRaw =\>
  RealtimeRevenueScoreRawPredictedValue == null
  ? null
  : new ExtractedScores(RealtimeRevenueScoreRawPredictedValue. Value);
-}],
+\}],
   [Giving a human-readable name to the test data is important!],
   [Then feed cases via a source:],
   [private static IEnumerable TestCases()
-{
+\{
  yield return new TestRevenueModelData("1. isSalesOptimizationStrategy")
- {
+ \{
  UseFeedbackLookFactor = true,
  RealtimeRevenueScoreRawPredictedValue = 1.5,
  ExpectedRevenueScoreRawPredictedValue = 1.5,
- };
-}],
+ \};
+\}],
   [Why?],
   [A TestCase() with lots of parameters become very difficult to know which value corresponds with which test method parameter. This style allows names to be clearly associated with their values.],
   [Allows more complex objects to be parameters to the test. TestCase() only supports simple types.],
@@ -924,7 +833,7 @@ public static class TestHelpers
   [For complex flows, a fluent scenario keeps intent obvious.],
   [\[Test\]
 public async Task GetPlacementsAsync\_ShouldReturnAllPlacements()
-{
+\{
  \/\\/ given
  var s = new PlacementScenario()
  . RequestSkuId()
@@ -945,7 +854,7 @@ public async Task GetPlacementsAsync\_ShouldReturnAllPlacements()
   [\/\\/ then
  Assert. That(result, Is. EqualTo(s. ExpectedResult));
  s. VerifyPlacementMetrics(comps: 6, sims: 6, taxs: 2, bests: 2, keywords: 2);
-}],
+\}],
   [Why?],
   [When graphs of objects become complex it can be hard to see what is important and what is not. This allows those details to remain hidden.],
   [Method names can better describe what the graph of objects looks like.],
@@ -987,10 +896,8 @@ public async Task GetPlacementsAsync\_ShouldReturnAllPlacements()
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A thesis week],
   author: [Petr Mitrichev],
   source-name: [Petr Mitrichev (competitive programming)],
@@ -1011,10 +918,8 @@ public async Task GetPlacementsAsync\_ShouldReturnAllPlacements()
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Jeffrey Aronson: When I Use a Word . . . Snowflakes],
   author: [jross],
   source-name: [The BMJ Blog],
@@ -1043,11 +948,10 @@ public async Task GetPlacementsAsync\_ShouldReturnAllPlacements()
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [EUC 2026 first day],
   author: [Petr Mitrichev],
   source-name: [Petr Mitrichev (competitive programming)],
@@ -1065,7 +969,7 @@ public async Task GetPlacementsAsync\_ShouldReturnAllPlacements()
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [],
   author: [Scripting News],
   source-name: [Scripting News],
@@ -1084,7 +988,7 @@ public async Task GetPlacementsAsync\_ShouldReturnAllPlacements()
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Today's RSS cleanup],
   author: [Scripting News],
   source-name: [Scripting News],
@@ -1105,7 +1009,7 @@ public async Task GetPlacementsAsync\_ShouldReturnAllPlacements()
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [],
   author: [Scripting News],
   source-name: [Scripting News],
@@ -1126,7 +1030,7 @@ public async Task GetPlacementsAsync\_ShouldReturnAllPlacements()
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [],
   author: [Scripting News],
   source-name: [Scripting News],
@@ -1142,7 +1046,7 @@ public async Task GetPlacementsAsync\_ShouldReturnAllPlacements()
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [A byte week],
   author: [Petr Mitrichev],
   source-name: [Petr Mitrichev (competitive programming)],
@@ -1160,12 +1064,12 @@ public async Task GetPlacementsAsync\_ShouldReturnAllPlacements()
 
   ],
 ), ruled-indices: (1,))
-#pull-quote([class="separator" style="clear: both; text-align: center;"\>   There was no contest that I wanted to mention last week.], [Petr Mitrichev])
+#pull-quote([There was no contest that I wanted to mention last week.], [Petr Mitrichev])
 
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Parkinson's Law of Worry],
   author: [Jakub Halmeš],
   source-name: [LessWrong],
@@ -1192,7 +1096,7 @@ public async Task GetPlacementsAsync\_ShouldReturnAllPlacements()
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [],
   author: [Scripting News],
   source-name: [Scripting News],
@@ -1210,8 +1114,7 @@ public async Task GetPlacementsAsync\_ShouldReturnAllPlacements()
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Memory lane for Frontier users],
   author: [Scripting News],
   source-name: [Scripting News],
@@ -1230,39 +1133,36 @@ public async Task GetPlacementsAsync\_ShouldReturnAllPlacements()
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([Scripting News], source-name: [Scripting News], [When I heard about Matt's product Beeper I thought wow what if that were on the RSS network . 
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([Scripting News], source-name: [Scripting News], [When I heard about Matt's product Beeper I thought wow what if that were on the RSS network . 
 
 I think RSS should be here. Makes sense doesn't it? 
 
 Why not an open independent format from nowhere that no one objects to you using and will not do anything ever to turn you off. It seems it would be fairly easy to add two-way support. :-)])],
-    [#brief-item([Scripting News], source-name: [Scripting News], [I asked Claude : "What is OpenClaw useful for? Do you think I could use it in my programming work, based on what you know about what I do?" Basically it's for non-programmers. Then I asked: "I wonder if I could make software that would be useful to people who love OpenClaw?" That was more interesting and included in the response I linked to, above.])],
-    [#brief-item([Jill Lepore], source-name: [The New Yorker], [Jill Lepore writes about “The AI Doc: Or How I Became an Apocaloptimist” and A. I. constitutions, like that of Anthropic’s chatbot Claude.])],
-    [#brief-item([Scientific American], source-name: [Scientific American], [Decades of data have suggested the universe is flat, much like an infinite plane. But a new analysis reveals deep flaws in that simple conclusion])],
-    [#brief-item([Scripting News], source-name: [Scripting News], [If I knew how AI would work with software, I would've done things differently to prepare for this. I find myself wanting to ask questions about my code that I don't have proper tools to answer. I have to get all my code managed with the new system, but not sure that's even the right way to go. Once I started using it to build full bits of deployed code, not to just answer questions about the work I'm doing one day at a time, I've become confused about planning my own work.])],
-    [#brief-item([Scripting News], source-name: [Scripting News], [WordPress can now connect via MCP for both reading and writing. This sounds like a possible alternative for the wpcom api that we're building on in WordLand . Sometimes it feels like everything is being reinvented. If the world would just stand still for a moment we might be able to do some building. I wonder how the advent of AI is affecting how WordPress is being developed. I know it's changing everything here.])],
-    [#brief-item([Scientific American], source-name: [Scientific American], [A Los Angeles trial jury found that Meta and YouTube are offering products that are addictive and harmful to young users’ mental health])],
-    [#brief-item([Hilton Als], source-name: [The New Yorker], [How the artists in this year’s survey do or, more often, don’t acknowledge those who paved the way for them.])],
-    [#brief-item([Scripting News], source-name: [Scripting News], [The thing that we all missed is that WordPress is the best candidate for a standard for what an individual social network message is.])],
-    [#brief-item([Scientific American], source-name: [Scientific American], [Atmospheric scientist Perry Samson was doing fieldwork when he was unexpectedly caught inside a tornado—making him one of the few such people who have lived to tell the tale])],
-    [#brief-item([Scripting News], source-name: [Scripting News], [Podcast : A one-line comment on Brent Simmons' blog got me started on a 10-minute ramble about suspension of disbelief, in software. Also a story about meeting Ted Nelson at the West Coast Computer Faire in SF in 1979. Skiing. And other miscellanea. BTW, I didn't even remember the quote correctly and I might have misinterpreted it. It's still a good story imho. ;-)])],
-    [#brief-item([Scripting News], source-name: [Scripting News], [If you're using FeedLand and running a WordPress blog, you can install a blogroll just like the one I have at scripting.com or blogroll.social .])],
-    [#brief-item([Chris Wiley], source-name: [The New Yorker], [In a new exhibit, the Norwegian photographer finds divergent ways to break through and touch an audience numbed by visual glut.])],
-    [#brief-item([Scientific American], source-name: [Scientific American], [Security feeds and traffic cameras have helped guide some of the most audacious targeted killings in modern history. Security researchers say the underlying vulnerabilities cover the planet and are easy to exploit])],
-    [#brief-item([Scientific American], source-name: [Scientific American], [Skin conditions such as psoriasis often flare up in the same spots throughout one’s life. Now scientists think they know why])],
-    [#brief-item([Scientific American], source-name: [Scientific American], [Climate scientist Kate Marvel talked to Scientific American about her decision to leave NASA amid federal government turmoil and funding challenges])],
-    [#brief-item([Scientific American], source-name: [Scientific American], [The science-fiction film Project Hail Mary sees Ryan Gosling go to space in a state of suspended animation. But does the science suggest that’s possible?])],
-    [#brief-item([Scientific American], source-name: [Scientific American], [In 2017 NASA’s Hubble Space Telescope zoomed in on a comet as it passed around the sun. And then things took a more unusual turn])],
-    [#brief-item([Patrick McKenzie (patio11)], source-name: [patio11 (Patrick McKenzie)], [I joined Stripe to work on building financial infrastructure for the Internet. Time flies. Here is what I've learned in the first four years.])],
-    [#brief-item([The New Yorker], source-name: [The New Yorker], [The mega-popular K-pop stars have been on hiatus for nearly four years. Their new album, “Arirang,” tests the group’s staying power in the global cultural marketplace.])],
-    [#brief-item([Scripting News], source-name: [Scripting News], [They've been having intelligent and clear-thinking guests on CNN and MSNOW on the coverage of the Iran War, unusually good discourse. But the best coverage I've heard has been from Frontiline podcasts. There's a new one out , haven't listened to it yet, but the one I heard yesterday was very informative and probably a better briefing than our president has been getting (or paying attention to).])],
-    [#brief-item([Scientific American], source-name: [Scientific American], [A start-up has surprised the scientific community with a breakthrough: translating a modern proof into a programming language for verification using AI. But not everyone is celebrating])],
-    [#brief-item([The Browser], source-name: [The Browser], [This feed is only for paid subscribers to the Browser. If you are a paid subscriber please get the new feed address at https:\/\/thebrowser.com/integrations\/ or by emailing uri\@thebrowser.com. If you are not a paid subscriber, please visit https:\/\/thebrowser.com/join\/ to subscribe.])],
-  ))
-}
+  [#brief-item([Scripting News], source-name: [Scripting News], [I asked Claude : "What is OpenClaw useful for? Do you think I could use it in my programming work, based on what you know about what I do?" Basically it's for non-programmers. Then I asked: "I wonder if I could make software that would be useful to people who love OpenClaw?" That was more interesting and included in the response I linked to, above.])],
+  [#brief-item([Jill Lepore], source-name: [The New Yorker], [Jill Lepore writes about “The AI Doc: Or How I Became an Apocaloptimist” and A. I. constitutions, like that of Anthropic’s chatbot Claude.])],
+  [#brief-item([Scientific American], source-name: [Scientific American], [Decades of data have suggested the universe is flat, much like an infinite plane. But a new analysis reveals deep flaws in that simple conclusion])],
+  [#brief-item([Scripting News], source-name: [Scripting News], [If I knew how AI would work with software, I would've done things differently to prepare for this. I find myself wanting to ask questions about my code that I don't have proper tools to answer. I have to get all my code managed with the new system, but not sure that's even the right way to go. Once I started using it to build full bits of deployed code, not to just answer questions about the work I'm doing one day at a time, I've become confused about planning my own work.])],
+  [#brief-item([Scripting News], source-name: [Scripting News], [WordPress can now connect via MCP for both reading and writing. This sounds like a possible alternative for the wpcom api that we're building on in WordLand . Sometimes it feels like everything is being reinvented. If the world would just stand still for a moment we might be able to do some building. I wonder how the advent of AI is affecting how WordPress is being developed. I know it's changing everything here.])],
+  [#brief-item([Scientific American], source-name: [Scientific American], [A Los Angeles trial jury found that Meta and YouTube are offering products that are addictive and harmful to young users’ mental health])],
+  [#brief-item([Hilton Als], source-name: [The New Yorker], [How the artists in this year’s survey do or, more often, don’t acknowledge those who paved the way for them.])],
+  [#brief-item([Scripting News], source-name: [Scripting News], [The thing that we all missed is that WordPress is the best candidate for a standard for what an individual social network message is.])],
+  [#brief-item([Scientific American], source-name: [Scientific American], [Atmospheric scientist Perry Samson was doing fieldwork when he was unexpectedly caught inside a tornado—making him one of the few such people who have lived to tell the tale])],
+  [#brief-item([Scripting News], source-name: [Scripting News], [Podcast : A one-line comment on Brent Simmons' blog got me started on a 10-minute ramble about suspension of disbelief, in software. Also a story about meeting Ted Nelson at the West Coast Computer Faire in SF in 1979. Skiing. And other miscellanea. BTW, I didn't even remember the quote correctly and I might have misinterpreted it. It's still a good story imho. ;-)])],
+  [#brief-item([Scripting News], source-name: [Scripting News], [If you're using FeedLand and running a WordPress blog, you can install a blogroll just like the one I have at scripting.com or blogroll.social .])],
+  [#brief-item([Chris Wiley], source-name: [The New Yorker], [In a new exhibit, the Norwegian photographer finds divergent ways to break through and touch an audience numbed by visual glut.])],
+  [#brief-item([Scientific American], source-name: [Scientific American], [Security feeds and traffic cameras have helped guide some of the most audacious targeted killings in modern history. Security researchers say the underlying vulnerabilities cover the planet and are easy to exploit])],
+  [#brief-item([Scientific American], source-name: [Scientific American], [Skin conditions such as psoriasis often flare up in the same spots throughout one’s life. Now scientists think they know why])],
+  [#brief-item([Scientific American], source-name: [Scientific American], [Climate scientist Kate Marvel talked to Scientific American about her decision to leave NASA amid federal government turmoil and funding challenges])],
+  [#brief-item([Scientific American], source-name: [Scientific American], [The science-fiction film Project Hail Mary sees Ryan Gosling go to space in a state of suspended animation. But does the science suggest that’s possible?])],
+  [#brief-item([Scientific American], source-name: [Scientific American], [In 2017 NASA’s Hubble Space Telescope zoomed in on a comet as it passed around the sun. And then things took a more unusual turn])],
+  [#brief-item([Patrick McKenzie (patio11)], source-name: [patio11 (Patrick McKenzie)], [I joined Stripe to work on building financial infrastructure for the Internet. Time flies. Here is what I've learned in the first four years.])],
+  [#brief-item([The New Yorker], source-name: [The New Yorker], [The mega-popular K-pop stars have been on hiatus for nearly four years. Their new album, “Arirang,” tests the group’s staying power in the global cultural marketplace.])],
+  [#brief-item([Scripting News], source-name: [Scripting News], [They've been having intelligent and clear-thinking guests on CNN and MSNOW on the coverage of the Iran War, unusually good discourse. But the best coverage I've heard has been from Frontiline podcasts. There's a new one out , haven't listened to it yet, but the one I heard yesterday was very informative and probably a better briefing than our president has been getting (or paying attention to).])],
+  [#brief-item([Scientific American], source-name: [Scientific American], [A start-up has surprised the scientific community with a breakthrough: translating a modern proof into a programming language for verification using AI. But not everyone is celebrating])],
+  [#brief-item([The Browser], source-name: [The Browser], [This feed is only for paid subscribers to the Browser. If you are a paid subscriber please get the new feed address at https:\/\/thebrowser.com/integrations\/ or by emailing uri\@thebrowser.com. If you are not a paid subscriber, please visit https:\/\/thebrowser.com/join\/ to subscribe.])],
+))
 
 #colophon([The Connected Observer], [Vol. 1, No. 054], [2026-03-30])

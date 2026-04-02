@@ -21,28 +21,10 @@
 #masthead([The Modern Standard], [Vol. 1, No. 023], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Money Origami, Flower Edition: 10 Different Ways to Fold a Dollar Bill into a Blossoming Bloom],
-  kicker: [Cover Story],
-  author: [Osas Obaiza],
-  source-name: [WonderHowTo],
-  deck: [The very first banknotes were used by the Chinese in the 7th century, during the Tang Dynasty.],
-  lead-pre: [],
-  lead-cap: [B],
-  lead-rest: [efore it was used as an actual currency, paper money was part of a deposit system in which merchants would leave large amounts of coins with a trusted associate and receive a paper receipt for the transaction. The reason was simple — the copper coins used as currency then were heavy. Fast forward about 300 years, and Jiaozi became the first official paper currency in the Sichuan capital of Chengdu. These notes were stamped with official seals to ensure no one made false copies. Even in the tenth century, counterfeiting was a concern.],
-  body-paragraphs: (
-  [Wikimedia CommonsToday, the word jiaozi is more likely to be associated with delicious Chinese dumplings, but paper money is still used in many countries.],
-  [Even so, with the widespread use of debit cards and the rising popularity of digital wallets, it may not be long before the dollar bill has had its day. So, what will we do with all that worthless paper when ...more],
-),
-  edited-for-length: false,
-)
-
-
 #article-row((
   [
-    section-label([Features])
-    standard-article(
+    #section-label([Features])
+    #standard-article(
   title: [No, Tech Start-ups Aren’t Taking Over the World],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -58,7 +40,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Why We Should Pay More Attention to Departing CEOs],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -74,7 +56,7 @@
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Anne Wojcicki, CEO of 23andMe, spent a decade in healthcare and biotechnology before launching the DNA testing and analysis company in 2006. Her goal was twofold: to help individuals learn more about their own genetics, enabling them to pursue more personalized medical care, and to create a database of genetic information for commercial and academic researchers to promote broader improvements to the healthcare system. She speaks with HBR's Editor-in-Chief Adi Ignatius about tackling challenges in an emerging industry.])],
       [#brief-item([Daniel Jonas Roche], source-name: [The Architect's Newspaper], [A new distinction folded into Cooper Hewitt’s annual Smithsonian National Design Awards Gala recognizes individual designers, living and deceased, as well as large corporations “for their lasting contributions to the field
 
@@ -143,7 +125,7 @@ The post Cooper Hewitt to honor Maya Lin, MillerKnoll, Candace Wheeler, and othe
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Dysfunctional Leadership Teams — and How to Fix Them],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -159,7 +141,7 @@ The post Cooper Hewitt to honor Maya Lin, MillerKnoll, Candace Wheeler, and othe
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Stop Initiative Overload],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -178,7 +160,7 @@ The post Cooper Hewitt to honor Maya Lin, MillerKnoll, Candace Wheeler, and othe
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Comedian Sarah Cooper On Bringing Humor to Any Career],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -194,7 +176,7 @@ The post Cooper Hewitt to honor Maya Lin, MillerKnoll, Candace Wheeler, and othe
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Dematerialization and What It Means for the Economy — and Climate Change],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -213,7 +195,7 @@ The post Cooper Hewitt to honor Maya Lin, MillerKnoll, Candace Wheeler, and othe
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [5 Weird & Easy Ways to Water Your Christmas Tree],
   author: [Heather Fishel],
   source-name: [WonderHowTo],
@@ -230,7 +212,7 @@ The post Cooper Hewitt to honor Maya Lin, MillerKnoll, Candace Wheeler, and othe
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Why Burnout Happens — and How Bosses Can Help],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -249,7 +231,7 @@ The post Cooper Hewitt to honor Maya Lin, MillerKnoll, Candace Wheeler, and othe
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Sad, Mad, Anxious? How to Work Through Your ‘Big Feelings’],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -265,7 +247,7 @@ The post Cooper Hewitt to honor Maya Lin, MillerKnoll, Candace Wheeler, and othe
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [A Debate Champion on How to Have More Productive Disagreements at Work],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -284,7 +266,7 @@ The post Cooper Hewitt to honor Maya Lin, MillerKnoll, Candace Wheeler, and othe
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Inside Companies that Get the Purpose-Profit Balance Right],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -300,7 +282,7 @@ The post Cooper Hewitt to honor Maya Lin, MillerKnoll, Candace Wheeler, and othe
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Applying Porter’s Five Forces to Fix U.S. Politics],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -318,8 +300,7 @@ The post Cooper Hewitt to honor Maya Lin, MillerKnoll, Candace Wheeler, and othe
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [The Rise of Corporate Inequality],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -333,6 +314,5 @@ The post Cooper Hewitt to honor Maya Lin, MillerKnoll, Candace Wheeler, and othe
   debug-mode: false,
 )
 
-}
 
 #colophon([The Modern Standard], [Vol. 1, No. 023], [2026-03-30])

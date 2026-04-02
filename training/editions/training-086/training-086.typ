@@ -21,170 +21,8 @@
 #masthead([The Record], [Vol. 1, No. 086], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Kara Swisher interview of Jack Dorsey],
-  kicker: [Cover Story],
-  author: [Dan Luu],
-  source-name: [Dan Luu],
-  deck: [This is a transcript of the Kara Swisher \/ Jack Dorsey interview from 2/12/2019, made by parsing the original Tweets because I wanted to be able to read this linearly.],
-  lead-pre: [],
-  lead-cap: [T],
-  lead-rest: [here's a "moment" that tries to track this, but since it doesn't distinguish between sub-threads in any way, you can't tell the difference between end of a thread and a normal reply. This linearization of the interview marks each thread break with a page break and provides some context from upthread where relevant (in grey text ).],
-  body-paragraphs: (
-  [Kara : Here in my sweatiest \@soulcycle outfit for my Twitterview with \@jack with \@Laur\_Katz at the ready \@voxmediainc HQ. Also \@cheezit acquired. \#karajack],
-  [Kara : Oh hai \@jack. Let’s set me set the table. First, I am uninterested in beard amulets or weird food Mark Zuckerberg served you (though WTF with both for my personal self). Second, I would appreciate really specific answers.],
-  [Jack : Got you. Here’s my setup. I work from home Tuesdays. In my kitchen. Tweetdeck. No one here with me, and no one connected to my tweetdeck. Just me focused on your questions!],
-  [Kara : Great, let's go],
-  [Jack : Ready],
-  [Kara : As \@ashleyfeinberg wrote: “press him for a clear, unambiguous example of nearly anything, and Dorsey shuts down.” That is not unfair characterization IMHO. Third, I will thread in questions from audience, but to keep this non chaotic, let’s stay in one reply thread.],
-  [Jack : Deal],
-  [Kara : To be clear with audience, there is not a new event product, a glass house, if you will, where people can see us but not comment. I will ask questions and then respond to \@jack answers. So it could be CHAOS.],
-  [Jack : To be clear, we’re interested in an experience like this. Nothing built yet. This gives us a sense of what it would be like, and what we’d need to focus on. If there’s something here at all!],
-  [Kara : Well an event product WOULD BE NICE. See my why aren't you moving faster trope.],
-  [Kara : Overall here is my mood and I think a lot of people when it comes to fixing what is broke about social media and tech: Why aren’t you moving faster? Why aren’t you moving faster? Why aren’t you moving faster?],
-  [Jack : A question we ask ourselves all the time. In the past I think we were trying to do too much. We’re better at prioritizing by impact now. Believe the \#1 thing we should focus on is someone’s physical safety first. That one statement leads to a lot of ramifications.],
-  [Kara : It seems twitter has been stuck in a stagnant phase of considering/thinking about the health of the conversation, which plays into safety, for about 18-24 months. How have you made actual progress? Can you point me to it SPECIFICALLY?],
-  [Kara : You know my jam these days is tech responsibility. What grade do you gave Silicon Valley? Yourself?],
-  [Jack : Myself? C. We’ve made progress, but it has been scattered and not felt enough. Changing the experience hasn’t been meaningful enough. And we’ve put most of the burden on the victims of abuse (that’s a huge fail).],
-  [Kara : Well that is like telling me I am sick and am responsible for fixing it. YOU made the product, YOU run the platform. Saying it is a huge fail is a cop out to many. It is to me],
-  [Jack : Putting the burden on victims? Yes. It’s recognizing that we have to be proactive in enforcement and promotion of healthy conversation. This is our first priority in \#health. We have to change a lot of the fundamentals of product to fix.],
-  [Kara : please be specific. I see a lot of beard-stroking on this (no insult to your Lincoln jam, but it works). WHAT are you changing? SPECIFICALLY.],
-  [Jack : First and foremost we’re looking at ways to proactively enforce and promote health. So that reporting/blocking is a last resort. Problem we’re trying to solve is taking that work away.],
-  [Kara : Ok name three initiatives.],
-  [style="color: \#808080;"\>Jack: Myself? C. We’ve made progress, but it has been scattered and not felt enough. Changing the experience hasn’t been meaningful enough. And we’ve put most of the burden on the victims of abuse (that’s a huge fail).],
-  [Kara : Also my son gets a C in coding and that is NO tragedy. You getting one matters a lot.],
-  [Jack : Agree it matters a lot. And it’s the most important thing we need to address and fix. I’m stating that it’s a fail of ours to put the majority of burden on victims. That’s how the service works today.],
-  [Kara : Ok but I really want to drill down on HOW. How much downside are you willing to tolerate to balance the good that Twitter can provide? Be specific],
-  [Jack : This is exactly the balance we have to think deeply about. But in doing so, we have to look at how the product works. And where abuse happens the most: replies, mentions, search, and trends. Those are the shared spaces people take advantage of],
-  [Kara : Well, WHERE does abuse happen most],
-  [Jack : Within the service? Likely within replies. That’s why we’ve been more aggressive about proactively downranking behind interstitials, for example.],
-  [Kara : Why not just be more stringent on kicking off offenders? It seems like you tolerate a lot. If Twitter ran my house, my kids would be eating ramen, playing Red Dead Redemption 2 and wearing filthy socks],
-  [Jack :
-We action all we can against our policies. Most of our system today works reactively to someone reporting it. If they don’t report, we don’t see it. Doesn’t scale. Hence the need to focus on proactive],
-  [Kara : But why did you NOT see it? It seems pretty basic to run your platform with some semblance of paying mind to what people are doing on it? Can you give me some insight into why that was not done?],
-  [Jack : I think we tried to do too much in the past, and that leads to diluted answers and nothing impactful. There’s a lot we need to address globally. We have to prioritize our resources according to impact. Otherwise we won’t make much progress.],
-  [Kara : Got it. But do you think the fact that you all could not conceive of what it is to feel unsafe (women, POC, LGBTQ, other marginalized people) could be one of the issues? (new topic soon)],
-  [Jack : I think it’s fair and real. No question. Our org has to be reflective of the people we’re trying to serve. One of the reason we established the Trust and Safety council years ago, to get feedback and check ourselves.],
-  [Kara : Yes but i want THREE concrete examples.],
-  [style="color: \#808080;"\>Jack: First and foremost we’re looking at ways to proactively enforce and promote health. So that reporting/blocking is a last resort. Problem we’re trying to solve is taking that work away.],
-  [Kara : Or maybe, tell me what you think the illness is you are treating? I think you cannot solve a disease without knowing that. Or did you create the virus?],
-  [Jack : Good question. This is why we’re focused on understanding what conversational health means. We see a ton of threats to health in digital conversation. We’re focuse first on off-platform ramifications (physical safety). That clarifies priorities of policy and enforcement.],
-  [Kara : I am still confused. What the heck is "off-platform ramifications"? You are not going to have a police force, right? Are you 911?],
-  [Jack : No, not a police force. I mean we have to consider first and foremost what online activity does to impact physical safety, as a way to prioritize our efforts. I don’t think companies like ours have admitted or focused on that enough.],
-  [Kara : So you do see the link between what you do and real life danger to people? Can you say that explicitly? I could not be \@finkd to even address the fact that he made something that resulted in real tragedy.],
-  [Jack : I see the link, and that’s why we need to put physical safety above all else. That’s what we’re figuring out how to do now. We don’t have all the answers just yet. But that’s the focus. I think it clarifies a lot of the work we need to do. Not all of it of course.],
-  [Kara : I grade you all an F on this and that's being kind. I'm not trying to be a jackass, but it's been a very slow roll by all of you in tech to pay attention to this. Why do you think that is? I think it is because many of the people who made Twitter never ever felt unsafe.],
-  [Jack : Likely a reason. I’m certain lack of diversity didn’t help with empathy of what people experience on Twitter every day, especially women.],
-  [Kara : And so to end this topic, I will try again. Please give me three concrete things you have done to fix this. SPECIFIC.],
-  [Jack : 1. We have evolved our polices.
-2. We have prioritized proactive enforcement to remove burden from victims
-3. We have given more control in product (like mute of accounts without profile pics or associated phone/emails)
-4. Much more aggressive on coordinated behavior/gaming],
-  [Kara : 1. WHICH?
-2. HOW?
-3. OK, MUTE BUT THAT WAS A WHILE AGO
-4. WHAT MORE?
-I think people are dying for specifics.],
-  [Jack : 1. Misgendering policy as example.
-2. Using ML to downrank bad actors behind interstitials
-3. Not too long ago, but most of our work going forward will have to be product features.
-4. Not sure the question. We put an entire model in place to minimize gaming of system.],
-  [Kara : thx. I meant even more specifics on 4. But see the Twitter purge one.],
-  [Jack : Just resonded to that. Don’t see the twitter purge one],
-  [Kara : I wanted to get off thread with Mark added! Like he needs more of me.],
-  [Jack : Does he check this much?],
-  [Kara : No, he is busy fixing Facebook. NOT! (he makes you look good)],
-  [Kara : I am going to start a NEW thread to make it easy for people to follow (\@waltmossberg just texted me that it is a "chaotic hellpit"). Stay in that one. OK?],
-  [Jack : Ok. Definitely not easy to follow the conversation. Exactly why we are doing this. Fixing stuff like this will help I believe.],
-  [Kara : Yeah, it's Chinatown, Jake.],
-  [style="color: \#808080;"\>Jack: First and foremost we’re looking at ways to proactively enforce and promote health. So that reporting/blocking is a last resort. Problem we’re trying to solve is taking that work away.],
-  [Jack : Second, we’re constantly evolving our policies to address the issues we see today. We’re rooting them in fundamental human rights (UN) and putting physical safety as our top priority. Privacy next.],
-  [Kara : When you say physical safety, I am confused. What do you mean specifically? You are not a police force. In fact, social media companies have built cities without police, fire departments, garbage pickup or street signs. IMHO What do you think of that metaphor?],
-  [Jack : I mean off platform, offline ramifications. What people do offline with what they see online. Doxxing is a good example which threatens physical safety. So does coordinate harassment campaigns.],
-  [Kara : So how do you stop THAT? I mean regular police forces cannot stop that. It seems your job is not to let it get that far in the first place.],
-  [Jack : Exactly. What can we do within the product and policy to lower probability. Again, don’t think we or others have worked against that enough.],
-  [Kara : Ok, new one \@jack],
-  [What do you think about twitter breaks and purges. Why do you think that is? I can’t say I’ve heard many people say they feel “good” after not being on twitter for a while: https:\/\/twitter.com/TaylorLorenz/status/1095039347596898305],
-  [Jack : Feels terrible. I want people to walk away from Twitter feeling like they learned something and feeling empowered to some degree. It depresses me when that’s not the general vibe, and inspires me to figure it out. That’s my desire],
-  [Kara : But why do they feel that way? You made it.],
-  [Jack : We made something with one intent. The world showed us how it wanted to use it. A lot has been great. A lot has been unexpected. A lot has been negative. We weren’t fast enough to observe, learn, and improve],
-  [style="color: \#808080;"\> Kara : Ok, new one \@jack],
-  [Kara : In that vein, how does it affect YOU?],
-  [Jack : I also don’t feel good about how Twitter tends to incentivize outrage, fast takes, short term thinking, echo chambers, and fragmented conversation and consideration. Are they fixable? I believe we can do a lot to address. And likely have to change more fundamentals to do so.],
-  [Kara : But you invented it. You can control it. Slowness is not really a good excuse.],
-  [Jack : It’s the reality. We tried to do too much at once and were not focused on what matters most. That contributes to slowness. As does our technology stack and how quickly we can ship things. That’s improved a lot recently],
-  [Kara : Ok trying AGAIN \@jack in another new thread! This one about \@realDonaldTrump:],
-  [We know a lot more about what Donald Trump thinks because of Twitter, and we all have mixed feelings about that.],
-  [Kara : Have you ever considered suspending Donald Trump? His tweets are somewhat protected because he’s a public figure, but would he have been suspended in the past if he were a “regular” user?],
-  [Jack : We hold all accounts to the same terms of service. The most controversial aspect of our TOS is the newsworthy/public interest clause, the “protection” you mention. That doesn’t extend to all public figures by default, but does speak to global leaders and seeing how they think.],
-  [Kara : That seems questionable to a lot of people. Let me try it a different way: What historic newsworthy figure would you ban? Is someone bad enough to ban. Be specific. A name.],
-  [Jack : We have to enforce based on our policy and what people do on our service. And evolve it with the current times. No way I can answer that based on people. Has to be focused on patterns of how people use the technology.],
-  [Kara : Not one name? Ok, but it is a copout imho. I have a long list.],
-  [Jack : I think it’s more durable to focus on use cases because that allows us to act broader. Likely that these aren’t isolated cases but things that spread],
-  [Kara : it would be really great to get specific examples as a lot of what you are doing appears incomprehensible to many.],
-  [style="color: \#808080;"\> Kara : Ok trying AGAIN \@jack in another new thread! This one about \@realDonaldTrump:],
-  [Kara : And will Twitter’s business/engagement suffer when \@realDonaldTrump is no longer President?],
-  [Jack : I don’t believe our service or business is dependent on any one account or person. I will say the number of politics conversations has significantly increased because of it, but that’s just one experience on Twitter. There are multiple Twitters, all based on who you follow.],
-  [Kara : Ok new question (answer the newsworthy historical figure you MIGHT ban pls): Single biggest improvement at Twitter since 2016 that signals you’re ready for the 2020 elections?],
-  [Jack : Our work against automations and coordinated campaigns. Partnering with government agencies to improve communication around threats],
-  [Kara : Can you give a more detailed example of that that worked?],
-  [Jack : We shared a retro on 2018 within this country, and tested a lot with the Mexican elections too. Indian elections coming up. In mid-terms we were able to monitor efforts to disrupt both online and offline and able to stop those actions on Twitter.],
-  [style="color: \#808080;"\> Kara : Ok new question (answer the newsworthy historical figure you MIGHT ban pls): Single biggest improvement at Twitter since 2016 that signals you’re ready for the 2020 elections?],
-  [Kara : What confidence should we have that Russia or other state-sponsored actors won’t be able to wreak havoc on next year’s elections?],
-  [Jack : We should expect a lot more coordination between governments and platforms to address. That would give me confidence. And have some skepticism too. That’s healthy. The more we can do this work in public and share what we find, the better],
-  [Kara :
-I still am dying for specifics here. \[meme image: Give me some specifics. I love specifics, the specifics were the best part!\]],
-  [style="color: \#808080;"\>Jack: I think it’s more durable to focus on use cases because that allows us to act broader. Likely that these aren’t isolated cases but things that spread],
-  [Kara : going to shift to biz questions since it is not a lot of time and this system is CHAOTIC (as I thought it would be): What about the move to DAU instead of MAU. Why the move? And how are we to interpret the much smaller numbers?],
-  [Jack : We want to be valuable to people daily. Not monthly. It’s a higher bar for ourselves. Sure, it looks like a smaller absolute number, but the folks we have using Twitter are some of the most influential in the world. They drive conversation. We belevie we can best grow this.],
-  [Kara : Ok, then WHO is the most exciting influential on Twitter right now? BE SPECIFIC],
-  [Jack : To me personally? I like how \@elonmusk uses Twitter. He’s focused on solving existential problems and sharing his thinking openly. I respect that a lot, and all the ups and downs that come with it],
-  [Kara : What about \@AOC],
-  [Jack : Totally. She’s mastering the medium],
-  [Kara : She is well beyond mastering it. She speaks fluent Twitter.],
-  [Jack : True],
-  [Kara : Also are you ever going to hire someone to effectively be your number 2?],
-  [Jack : I think it’s better to spread that responsibility across multiple people. It creates less dependencies and the company gets more options around future leadership],
-  [style="color: \#808080;"\> Kara : going to shift to biz questions since it is not a lot of time and this system is CHAOTIC (as I thought it would be): What about the move to DAU instead of MAU. Why the move? And how are we to interpret the much smaller numbers?],
-  [Kara : Also: How close were you to selling Twitter in 2016? What happened?],
-  [What about giving the company to a public trust per your NYT discussion.],
-  [Jack : We ultimately decided we were better off independent. And I’m happy we did. We’ve made a lot of progress since that point. And we got a lot more focused. Definitely love the idea of opening more to 3rd parties. Not sure what that looks like yet. Twitter is close to a protocol.],
-  [Kara : Chop chop on the other answers! I have more questions! If you want to use this method, quicker!],
-  [Jack : I’m moving as fast as I can Kara],
-  [Kara : Clip clop!],
-  [style="color: \#808080;"\> Kara : going to shift to biz questions since it is not a lot of time and this system is CHAOTIC (as I thought it would be): What about the move to DAU instead of MAU. Why the move? And how are we to interpret the much smaller numbers?],
-  [Kara : also: Is twitter still considering a subscription service? Like “Twitter Premium” or something?],
-  [Jack : Always going to experiment with new models. Periscope has super hearts, which allows us to learn about direct contribution. We’d need to figure out the value exchange on subscription. Has to be really high for us to charge directly],
-  [style="color: \#808080;"\>Jack: Totally. She’s mastering the medium],
-  [Kara : Ok, last ones are about you and we need to go long because your system here it confusing says the people of Twitter:],
-  [What has been Twitter’s biggest missed opportunity since you came back as CEO?],
-  [Jack : Focus on conversation earlier. We took too long to get there. Too distracted.],
-  [Kara : By what? What is the \#1 thing that distracted you and others and made this obvious mess via social media?],
-  [Jack : Tried to do too much at once. Wasn’t focused on what our one core strength was: conversation. That lead to really diluted strategy and approach. And a ton of reactiveness.],
-  [Kara : Speaking of that (CONVERSATION), let's do one with sounds soon, like this],
-  [https:\/\/www.youtube.com/watch?v=oiJkANps0Qw],
-  [style="color: \#808080;"\> Kara : She is well beyond mastering it. She speaks fluent Twitter.],
-  [style="color: \#808080;"\>Jack: True],
-  [Kara : Why are you still saying you’re the CEO of two publicly traded companies? What’s the point in insisting you can do two jobs that both require maximum effort at the same time?],
-  [Jack : I’m focused on building leadership in both. Not my desire or ambition to be CEO of multiple companies just for the sake of that. I’m doing everything I can to help both. Effort doesn’t come down to one person. It’s a team],
-  [Kara : LAST Q: For the love of God, please do Recode Decode podcast with me soon, because analog talking seems to be a better way of asking questions and giving answers. I think Twitter agrees and this has shown how hard this thread is to do. That said, thx for trying. Really.],
-  [Jack : This thread was hard. But we got to learn a ton to fix it. Need to make this feel a lot more cohesive and easier to follow. Was extremely challenging. Thank you for trying it with me. Know it wasn’t easy. Will consider different formats!],
-  [Kara : Make a glass house for events and people can watch and not throw stones. Pro tip: Twitter convos are wack],
-  [Jack : Yep. And they don’t have to be wack. Need to figure this out. This whole experience is a problem statement for what we need to fix],
-  [style="color: \#808080;"\>Jack: This thread was hard. But we got to learn a ton to fix it. Need to make this feel a lot more cohesive and easier to follow. Was extremely challenging. Thank you for trying it with me. Know it wasn’t easy. Will consider different formats!],
-  [Kara : My kid is hungry and says that you should do a real interview with me even if I am mean. Just saying.],
-  [Jack : I don’t think you’re mean. Always good to experiment.],
-  [Kara : Neither does my kid. He just wants to go get dinner],
-  [Jack : Go eat! Thanks, Kara],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [We only hire the trendiest],
   author: [Dan Luu],
   source-name: [Dan Luu],
@@ -215,57 +53,50 @@ I still am dying for specifics here. \[meme image: Give me some specifics. I lov
   [Not only are these decisions non-optimal for companies, they create a path dependence in employment outcomes that causes individual good (or bad) events to follow people around for decades. You can see similar effects in the literature on career earnings in a variety of fields 4 .],
   [Thomas Ptacek has this great line about how “we interview people whose only prior work experience is "Line of Business . NET Developer", and they end up showing us how to write exploits for elliptic curve partial nonce bias attacks that involve Fourier transforms and BKZ lattice reduction steps that take 6 hours to run.” If you work at a company that doesn't reject people out of hand for not being trendy, you'll hear lots of stories like this. Some of the best people I've worked with went to schools you've never heard of and worked at companies you've never heard of until they ended up at Google. Some are still at companies you've never heard of.],
   [If you read Zach Holman , you may recall that when he said that he was fired, someone responded with “If an employer has decided to fire you, then you've not only failed at your job, you've failed as a human being.” A lot of people treat employment status and credentials as measures of the inherent worth of individuals. But a large component of these markers of success, not to mention success itself, is luck.],
-  [id="solutions"\>Solutions?],
+  [Solutions?],
   [I can understand why this happens. At an individual level, we're prone to the fundamental attribution error . At an organizational level, fast growing organizations burn a large fraction of their time on interviews, and the obvious way to cut down on time spent interviewing is to only interview people with "good" qualifications. Unfortunately, that's counterproductive when you're chasing after the same tiny pool of people as everyone else.],
   [Here are the beginnings of some ideas. I'm open to better suggestions!],
-  [id="moneyball"\>Moneyball],
   [Billy Beane and Paul Depodesta took the Oakland A's, a baseball franchise with nowhere near the budget of top teams, and created what was arguably the best team in baseball by finding and “hiring” players who were statistically underrated for their price. The thing I find really amazing about this is that they publicly talked about doing this, and then Michael Lewis wrote a book, titled Moneyball , about them doing this. Despite the publicity, it took years for enough competitors to catch on enough that the A's strategy stopped giving them a very large edge.],
   [You can see the exact same thing in software hiring. Thomas Ptacek has been talking about how they hired unusually effective people at Matasano for at least half a decade, maybe more. Google bigwigs regularly talk about the hiring data they have and what hasn't worked. I believe they talked about how focusing on top schools wasn't effective and didn't turn up employees that have better performance years ago, but that doesn't stop TrendCo from focusing hiring efforts on top schools.],
-  [id="training-mentorship"\>Training \/ mentorship],
+  [Training \/ mentorship],
   [You see a lot of talk about moneyball, but for some reason people are less excited about… trainingball? Practiceball? Whatever you want to call taking people who aren't “the best” and teaching them how to be “the best”.],
   [This is another one where it's easy to see the impact through the lens of sports, because there is so much good performance data. Since it's basketball season, if we look at college basketball, for example, we can identify a handful of programs that regularly take unremarkable inputs and produce good outputs. And that's against a field of competitors where every team is expected to coach and train their players.],
   [When it comes to tech companies, most of the competition isn't even trying. At the median large company, you get a couple days of “orientation”, which is mostly legal mumbo jumbo and paperwork, and the occasional “training”, which is usually a set of videos and a set of multiple-choice questions that are offered up for compliance reasons, not to teach anyone anything. And you'll be assigned a mentor who, more likely than not, won't provide any actual mentorship. Startups tend to be even worse! It's not hard to do better than that.],
   [Considering how much money companies spend on hiring and retaining "the best", you'd expect them to spend at least a (non-zero) fraction on training. It's also quite strange that companies don't focus more or training and mentorship when trying to recruit. Specific things I've learned in specific roles have been tremendously valuable to me, but it's almost always either been a happy accident, or something I went out of my way to do. Most companies don't focus on this stuff. Sure, recruiters will tell you that "you'll learn so much more here than at Google, which will make you more valuable", implying that it's worth the \$150k/yr pay cut, but if you ask them what, specifically, they do to make a better learning environment than Google, they never have a good answer.],
-  [id="process-tools-culture"\>Process \/ tools \/ culture],
+  [Process \/ tools \/ culture],
   [I've worked at two companies that both have effectively infinite resources to spend on tooling. One of them, let's call them ToolCo, is really serious about tooling and invests heavily in tools. People describe tooling there with phrases like “magical”, “the best I've ever seen”, and “I can't believe this is even possible”. And I can see why. For example, if you want to build a project that's millions of lines of code, their build system will make that take somewhere between 5s and 20s (assuming you don't enable LTO or anything else that can't be parallelized) 5 . In the course of a regular day at work you'll use multiple tools that seem magical because they're so far ahead of what's available in the outside world.],
   [The other company, let's call them ProdCo pays lip service to tooling, but doesn't really value it . People describing ProdCo tools use phrases like “world class bad software” and “I am 2x less productive than I've ever been anywhere else”, and “I can't believe this is even possible”. ProdCo has a paper on a new build system; their claimed numbers for speedup from parallelization/caching, onboarding time, and reliability, are at least two orders of magnitude worse than the equivalent at ToolCo. And, in my experience, the actual numbers are worse than the claims in the paper. In the course of a day of work at ProdCo, you'll use multiple tools that are multiple orders of magnitude worse than the equivalent at ToolCo in multiple dimensions. These kinds of things add up and can easily make a larger difference than “hiring only the best”.],
   [Processes and culture also matter. I once worked on a team that didn't use version control or have a bug tracker. For every no-brainer item on the Joel test , there are teams out there that make the wrong choice.],
   [Although I've only worked on one team that completely failed the Joel test (they scored a 1 out of 12), every team I've worked on has had glaring deficiencies that are technically trivial (but sometimes culturally difficult) to fix. When I was at Google, we had really bad communication problems between the two halves of our team that were in different locations. My fix was brain-dead simple: I started typing up meeting notes for all of our local meetings and discussions and taking questions from the remote team about things that surprised them in our notes. That's something anyone could have done, and it was a huge productivity improvement for the entire team. I've literally never found an environment where you can't massively improve productivity with something that trivial. Sometimes people don't agree (e.g., it took months to get the non-version-control-using-team to use version control), but that's a topic for another post.],
   [Programmers are woefully underutilized at most companies. What's the point of hiring "the best" and then crippling them ? You can get better results by hiring undistinguished folks and setting them up for success, and it's a lot cheaper .],
-  [id="conclusion"\>Conclusion],
   [When I started programming, I heard a lot about how programmers are down to earth, not like those elitist folks who have uniforms involving suits and ties. You can even wear t-shirts to work! But if you think programmers aren't elitist, try wearing a suit and tie to an interview sometime. You'll have to go above and beyond to prove that you're not a bad cultural fit. We like to think that we're different from all those industries that judge people based on appearance, but we do the same thing, only instead of saying that people are a bad fit because they don't wear ties, we say they're a bad fit because they do, and instead of saying people aren't smart enough because they don't have the right pedigree… wait, that's exactly the same.],
   [See also: developer hiring and the market for lemons],
   [Thanks to Kelley Eskridge, Laura Lindzey, John Hergenroeder, Kamal Marhubi, Julia Evans, Steven McCarthy, Lindsey Kuper, Leah Hanson, Darius Bacon, Pierre-Yves Baccou, Kyle Littler, Jorge Montero, Sierra Rotimi-Williams, and Mark Dominus for discussion/comments/corrections.],
-  [id="fn: T"\>],
   [This estimate is conservative. The math only works out to 78 hours if you assume that you never incorrectly reject a trendy candidate and that you don't have to interview candidates that you “correctly” fail to find good candidates. If you add in the extra time for those, the number becomes a lot larger. And if you're TrendCo, and you won't give senior ICs \$200k/yr, let alone new grads, you probably need to multiply that number by at least a factor of 10 to account for the reduced probability that someone who's in high demand is going to take a huge pay cut to work for you.],
   [By the way, if you do some similar math you can see that the “no false positives” thing people talk about is bogus. The only way to reduce the risk of a false positive to zero is to not hire anyone. If you hire anyone, you're trading off the cost of firing a bad hire vs. the cost of spending engineering hours interviewing.],
   [\[return\]],
-  [id="fn: P"\>I consider this to generally be a good practice, at least for folks like me who are relatively early in their careers. It's good to know what your options are, even if you don't exercise them. When I was at Centaur , I did a round of interviews about once a year and those interviews made it very clear that I was lucky to be at Centaur. I got a lot more responsibility and a wider variety of work than I could have gotten elsewhere, I didn't have to deal with as much nonsense, and I was pretty well paid. I still did the occasional interview, though, and you should too! If you're worried about wasting the time of the hiring company, when I was interviewing speculatively, I always made it very clear that I was happy in my job and unlikely to change jobs, and most companies are fine with that and still wanted to go through with interviewing.],
+  [I consider this to generally be a good practice, at least for folks like me who are relatively early in their careers. It's good to know what your options are, even if you don't exercise them. When I was at Centaur , I did a round of interviews about once a year and those interviews made it very clear that I was lucky to be at Centaur. I got a lot more responsibility and a wider variety of work than I could have gotten elsewhere, I didn't have to deal with as much nonsense, and I was pretty well paid. I still did the occasional interview, though, and you should too! If you're worried about wasting the time of the hiring company, when I was interviewing speculatively, I always made it very clear that I was happy in my job and unlikely to change jobs, and most companies are fine with that and still wanted to go through with interviewing.],
   [\[return\]],
-  [id="fn: M"\>],
   [It's really not about me in particular. At the same time I couldn't get any company to talk to me, a friend of mine who's a much better programmer than me spent six months looking for work full time. He eventually got a job at Cloudflare, was half of the team that wrote their DNS, and is now one of the world's experts on DDoS mitigation for companies that don't have infinite resources. That guy wasn't even a networking person before he joined Cloudflare. He's a brilliant generalist who's created everything from a widely used JavaScript library to one of the coolest toy systems projects I've ever seen. He probably could have picked up whatever problem domain you're struggling with and knocked it out of the park. Oh, and between the blog posts he writes and the talks he gives, he's one of Cloudflare's most effective recruiters.],
   [Or Aphyr, one of the world's most respected distributed systems verification engineers, who failed to get responses to any of his job applications when he graduated from college less than a decade ago .],
   [\[return\]],
-  [id="fn: C"\>],
   [I'm not going to do a literature review because there are just so many studies that link career earnings to external shocks, but I'll cite a result that I found to be interesting, Lisa Kahn's 2010 Labour Economics paper .],
   [There have been a lot of studies that show, for some particular negative shock (like a recession), graduating into the negative shock reduces lifetime earnings. But most of those studies show that, over time, the effect gets smaller. When Kahn looked at national unemployment as a proxy for the state of the economy, she found the same thing. But when Kahn looked at state level unemployment , she found that the effect actually compounded over time.],
   [The overall evidence on what happens in the long run is equivocal. If you dig around, you'll find studies where earnings normalizes after “only” 15 years, causing a large but effectively one-off loss in earnings, and studies where the effect gets worse over time. The results are mostly technically not contradictory because they look at different causes of economic distress when people get their first job, and it's possible that the differences in results are because the different circumstances don't generalize. But the “good” result is that it takes 15 years for earnings to normalize after a single bad setback. Even a very optimistic reading of the literature reveals that external events can and do have very large effects on people's careers. And if you want an estimate of the bound on the "bad" case, check out, for example, the Guiso, Sapienza, and Zingales paper that claims to link the productivity of a city today to whether or not that city had a bishop in the year 1000 .],
   [\[return\]],
-  [id="fn: B"\>During orientation, the back end of the build system was down so I tried building one of the starter tutorials on my local machine. I gave up after an hour when the build was 2% complete. I know someone who tried to build a real, large scale, production codebase on their local machine over a long weekend, and it was nowhere near done when they got back.
+  [During orientation, the back end of the build system was down so I tried building one of the starter tutorials on my local machine. I gave up after an hour when the build was 2% complete. I know someone who tried to build a real, large scale, production codebase on their local machine over a long weekend, and it was nowhere near done when they got back.
  \[return\]],
 ),
   insert-map: (:),
   inline-pq: pull-quote([Considering how much money companies spend on hiring and retaining "the best", you'd expect them to spend at least a (non-zero) fraction on training.], [Dan Luu]),
-  inline-pq-idx: 24,
+  inline-pq-idx: 22,
   word-count: 4087,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [€9 Ticket],
   author: [Dennis Felsing],
   source-name: [Dennis Felsing],
@@ -274,12 +105,10 @@ I still am dying for specifics here. \[meme image: Give me some specifics. I lov
   [As a relief for rising energy costs and inflation Germany is offering nearly-free public transportation for the months of June, July and August. For just €9 per month you can take any kind of regional public transportation in all of Germany. That’s basically everything except the IC/ICE for long distance. This means that a monthly ticket is now as cheap as what I would normally pay for a single route. In this post I want to talk about my experiences with this €9 ticket .],
   [Update 2022-09-01: The €9 ticket ended yesterday without a similar replacement system in place. So many people are again back to paying about €100 per month for much smaller regional tickets instead (see for example this German Reddit thread . Financially it makes more sense for me personally to go back to driving. (I hope the gasoline in the car is still good after three months.) My hope is that these three months will stay in people’s minds in Germany and shape the future of public transportation to be cheaper and simpler:],
   [Image via Reddit],
-  [id="train-stations"\>Train Stations],
   [In the above graphic you can see the train stations in our area. Since we are situated in the Rhine-Neckar metropolitan region the railway network is pretty good here.],
   [(map made with umap , routes made with GraphHopper )],
   [The closest train stop from us is St. Ilgen-Sandhausen at 2 km distance. It offers direct connections to the cities of Heidelberg (160k inhabitants), Mannheim (309k), Karlsruhe (313k), Darmstadt (159k) and Frankfurt (753k). For other directions I prefer going to a different train station since switching times are either too long or there is too much risk of missing the connecting train. Only 89% of regional trains are on time in Germany, with some routes and stations having much worse rates. This is a far cry from Switzerland’s 95% punctuality with an even stricter definition of 3 minutes versus 5 minutes delay in Germany.],
   [Another closeby train station we commonly use is HD-Weststadt/Südstadt at 6 km distance, which is good to cycle and can also be reached via Tram. Occasionally I used Heidelberg Hauptbahnhof as well as Wiesloch-Walldorf, both at slightly under 10 km distance, which are a bit larger and thus are used as stops for Regional-Express trains. These go faster than the Regionalbahn and S-Bahn trains and thus also have fewer stops.],
-  [id="cycling-trips"\>Cycling Trips],
   [The above map contains some of the cycling trips I took by combining them with the €9 ticket. (map made with umap , routes made with GraphHopper )],
   [Last time I posted about cycling and work was about commuting by bicycle for a year . I kept this up and was super happy with this way of getting to SAP ’s headquarter in Walldorf and the included exercise. After a while I moved together with my wife and my bike commute lengthened to 10 km each direction, which was still perfectly fine. Then Covid forced me in March of 2020 to work from home I switched to regular cycling trips in the afternoon since I started working early in the morning, in order to have meetings with colleagues in Korea and China. Two 50 km cycling trips per week got me to the same level as the daily commute used to do, and I have a nice route I regularly take, which covers a lot of forest and lake.],
   [In January I switched to a new job at Yugabyte . As the database we develop is distributed, so are the people I work with. Since most meetings fall into US times, I am now working more during the afternoon and evening. This means my cycling trips moved to the morning instead.],
@@ -289,26 +118,20 @@ I still am dying for specifics here. \[meme image: Give me some specifics. I lov
   [The image above shows an almost empty train during a working day.],
   [Even with a single train connection things can go wrong though. One time the train in front of ours started burning and so we got delayed for an unknown time. But since I had my bicycle with me, that meant I could just cycle back the rest of the way and get some extra exercise for free. If I was really out of energy I could have waited in the train, but often busses are used as a replacement, and bicycles on busses don’t fit well.],
   [The weather was unusually dry the last months, the last few days had the first few drops of rain I remember since the beginning of June. This is of course bad for nature here, as I saw at the Rhine river, which is much lower than usual. For cycling it’s quite good though, only got wet once.],
-  [id="jogging"\>Jogging],
   [This amount of cycling of course meant that my bicycle had to get some repairs done. While I had it at the repair shop, I tried out jogging from Heidelberg back to my home town Leimen. The route goes through the “Kleiner Odenwald” forest for nearly the entire way, and the rest are some fields. It goes through Heidelberg’s highest mountain, the Königstuhl, with a nice view of the city and surrounding area.],
   [The “Ladder to Heaven” in the beginning with its 1300 steps accounts for most of the elevation and is still too tough for me to do at faster than walking speed. After I got my bicycle back I still kept doing this jogging route a few times per week.],
-  [id="nearby-excursions"\>Nearby Excursions],
   [There are lots of cities and nice nature nearby. So we used public transportation for excursions on every weekend. It was noticable that the trains were crowded, and at times people couldn’t even enter the train anymore. When going to the cinema we noticed that we should really catch the last train at 22:30, since the next connection would take all night.],
   [One time the train back from Frankfurt was late, then got cancelled. The next train was also delayed, and now overcrowded because it had twice the passengers. Unfortunately it took me too long to realize that with more than 20 minutes delay, we should be able to take high speed ICE trains as a replacement and get the cost reimbursed by Deutsche Bahn.],
   [You still need to wear masks as a Covid prevention on public transportation in Germany. This is basically the only remaining occasion, other than at the Doctor’s office, where you have to wear masks. Even with all the travel using public transportation and basically no distancing we haven’t caught Covid as far as we are aware based on symptoms and some rapid tests.],
-  [id="eating-out"\>Eating Out],
   [My wife picked out many great restaurants in nearby cities for us to try out. By car it would not make sense to just drive to another city for a dinner, but using public transportation we had no problem spending an hour on a train, where you can comfortable talk or surf the web, to reach our destinations. This probably has a really good economic effect on restaurants and cafes, many were so fully packed that we got the last seats or had to reserve beforehand.],
-  [id="family-visits"\>Family Visits],
   [For trips to cities and cycling trips we mostly take direct train connections. That usually works quite well. To visit family however the destinations are smaller villages, so the connections are worse and there is no direct connection at all. So a 40 minute drive turns into a 2 hour train ride with 3 different trains instead. Coincidentally this is the same time I need for the route by bicycle.],
   [There is a relatively high chance of missing a connecting train, or of getting stuck in the middle of the route. One time a truck crashed into the train bridge, so our train couldn’t continue. Instead of waiting around for an hour or two we took the train back home and, for the only time during these three months so far, had to switch to the car to keep our timeline. At least the highway was quite empty, there seems to be some conflicting data on whether the €9 ticket actually has an effect on reducing car traffic though.],
-  [id="getting-visits"\>Getting Visits],
   [While my wife and I didn’t do any long distance travel using the €9 ticket, others did. I had a co-developer of DDraceNetwork visit all the way from Berlin using the €9 ticket. For people who have time it has been much easier to visit others with the €9 ticket, without having to worry about cost.],
-  [id="while-on-vacation"\>While on Vacation],
+  [While on Vacation],
   [While we didn’t use the €9 ticket to go to a vacation, it was still useful during a car-based vacation. While driving to Berchtesgadener Land we saw a train line that seemed to lead to Berchtesgaden. So we stopped at the closeby train station and spontaneously took the train instead, which lead us through beautiful sceneries.],
   [On the way back from the same vacation we had a stop in Munich. Instead of driving the car all the way into the city center I checked for the closest free Park and Ride garage from the highway. After parking the car there, the train was unfortunately cancelled, so we had to take a bus and metro, but still reached the city center quickly.],
   [After having used public transportation a lot back at home, we also felt more comfortable using it on vacation in other countries, even if it costs a bit more there. So on Mallorca we explored the entire island using the extensive bus network instead of renting a car. The photo above shows the most distant bus stop we reached, at a lighthouse at the end of a long curvy road. Next week we are taking the TGV to Paris, which tops out at 320 km/h and manages the 550 km route in just 2:36, an average of 212 km/h. The image below is luckily not the TGV:],
   [Going to the airport by train worked fine, but we had to get there a few hours earlier in case was some train delay causing us to miss the connecting train. On the way back there indeed was a huge delay, with a train line being closed down for hours. After a slow trickle of information from the train operator, we had to figure out an alternative route on our own, since the DB app was still showing routes that could not be operated for the next few hours because of the train line closure.],
-  [id="conclusion"\>Conclusion],
   [There are still two weeks left for the €9 ticket and I’m planning to make the best use of them. So far I’ve been taking a trip on most days, so it’s definitely been worth it and will be missed.],
   [Unfortunately the €9 ticket won’t be prolonged. The high public interest has lead to some plans for a relatively cheap follow-up ticket, but again with some regional limitations for the cheap ticket. Other countries are even implementing entirely free public transport meanwhile, so there is some hope for the future.],
 ),
@@ -318,10 +141,8 @@ I still am dying for specifics here. \[meme image: Give me some specifics. I lov
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Are closed social networks inevitable?],
   author: [Dan Luu],
   source-name: [Dan Luu],
@@ -475,10 +296,8 @@ I still am dying for specifics here. \[meme image: Give me some specifics. I lov
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How to Type Hint a Decorator in Python],
   author: [Mike],
   source-name: [Mike Driscoll (Mouse vs Python)],
@@ -488,6 +307,7 @@ I still am dying for specifics here. \[meme image: Give me some specifics. I lov
   [Functions can be used just like any other data type in Python. A function can be passed to a function or returned from a function, just like a string or integer.],
   [If you have jumped on the type-hinting bandwagon, you will probably want to add type hints to your decorators. That has been difficult until fairly recently.],
   [Let’s see how to type hint a decorator!],
+  [Type Hinting a Decorator the Wrong Way],
   [You might think that you can use a TypeVar to type hint a decorator. You will try that first.],
   [Here’s an example:],
   [from functools import wraps
@@ -501,10 +321,6 @@ from typing import Any, Callable, TypeVar],
  result = func(\*args, \*\*kwargs)
  return result
  return wrapper],
-  [\@info
-def doubler(number: int) -\> int:
- """Doubles the number passed to it"""
- return number \* 2],
   [print(doubler(4))],
   [If you run mypy —strict info\_decorator.py you will get the following output:],
   [info\_decorator.py:14: error: Incompatible return value type (got "\_Wrapped\[\[VarArg(Any), KwArg(Any)\], Any, \[VarArg(Any), KwArg(Any)\], Any\]", expected "Generic\_function") \[return-value\]
@@ -512,6 +328,8 @@ Found 1 error in 1 file (checked 1 source file)],
   [That’s a confusing error! Feel free to search for an answer.],
   [The answers that you find will probably vary from just ignoring the function (i.e. not type hinting it at all) to using something called a ParamSpec .],
   [Let’s try that next!],
+  [Using a ParamSpec for Type Hinting],
+  [The ParamSpec is a class in Python’s typing module. Here’s what the docstring says about ParamSpec:],
   [class ParamSpec(object):],
   [""" Parameter specification variable.],
   [The preferred way to construct a parameter specification is via the],
@@ -529,19 +347,14 @@ Found 1 error in 1 file (checked 1 source file)],
   [parameters for user-defined Generics. See class Generic for more],
   [information on generic types.],
   [An example for annotating a decorator::],
-  [def add\_logging\[\*\*P, T\](f: Callable\[P, T\]) -\> Callable\[P, T\]:],
   ['''A type-safe decorator to add logging to a function.'''],
-  [def inner(\*args: P.args, \*\*kwargs: P.kwargs) -\> T:],
-  [logging.info(f'{f.\_\_name\_\_} was called')],
+  [logging.info(f'\{f.\_\_name\_\_\} was called')],
   [return f(\*args, \*\*kwargs)],
   [return inner],
   [\@add\_logging],
-  [def add\_two(x: float, y: float) -\> float:],
   ['''Add two numbers together.'''],
   [return x + y],
   [Parameter specification variables can be introspected. e.g.::],
-  [\>\>\> P = ParamSpec("P")],
-  [\>\>\> P.\_\_name\_\_],
   ['P'],
   [Note that only parameter specification variables defined in the global],
   [scope can be pickled.],
@@ -552,17 +365,6 @@ Found 1 error in 1 file (checked 1 source file)],
 from typing import Callable, ParamSpec, TypeVar],
   [P = ParamSpec("P")
 R = TypeVar("R")],
-  [def info(func: Callable\[P, R\]) -\> Callable\[P, R\]:
- \@wraps(func)
- def wrapper(\*args: P.args, \*\*kwargs: P.kwargs) -\> R:
- print('Function name: ' + func.\_\_name\_\_)
- print('Function docstring: ' + str(func.\_\_doc\_\_))
- return func(\*args, \*\*kwargs)
- return wrapper],
-  [\@info
-def doubler(number: int) -\> int:
- """Doubles the number passed to it"""
- return number \* 2],
   [print(doubler(4))],
   [Here, you create a ParamSpec and a TypeVar. You tell the decorator that it takes in a Callable with a generic set of parameters (P), and you use TypeVar (R) to specify a generic return type.],
   [If you run mypy on this updated code, it will pass! Good job!],
@@ -580,10 +382,6 @@ from typing import Callable],
  print('Function docstring: ' + str(func.\_\_doc\_\_))
  return func(\*args, \*\*kwargs)
  return wrapper],
-  [\@info
-def doubler(number: int) -\> int:
- """Doubles the number passed to it"""
- return number \* 2],
   [print(doubler(4))],
   [Notice that at the beginning of the function you have square brackets. That is basically declaring your ParamSpec implicitly. The “R” is again the return type. The rest of the code is the same as before.],
   [When you run mypy against this version of the type hinted decorator, you will see that it passes happily.],
@@ -598,10 +396,8 @@ def doubler(number: int) -\> int:
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How to use std::span from C++20],
   author: [Bartlomiej Filipek (C++ Stories)],
   source-name: [Bartlomiej Filipek (C++ Stories)],
@@ -609,134 +405,126 @@ def doubler(number: int) -\> int:
   paragraphs: (
   [In this article, we’ll look at std::span , which has been available since C++20. This “view” type is more generic than string\_view and can help work with arbitrary contiguous collections.],
   [Updated in Feb 2025: added section about returning spans and C++26 improvements ( .at() and creatoion from initializer list).],
-  [id="a-motivating-example"\>
-A Motivating Example],
+  [A Motivating Example],
   [Here’s an example that illustrates the primary use case for std::span :],
   [In traditional C (or low-level C++), you’d pass an array to a function using a pointer and a size like this:],
-  [class="highlight"\> void process\_array ( int \* arr , std :: size\_t size ) { 
- for ( std :: size\_t i = 0 ; i void process\_array ( std :: span arr\_span ) { 
- for ( auto & elem : arr\_span ) { 
+  [void process\_array ( int \* arr , std :: size\_t size ) \{ 
+ for ( std :: size\_t i = 0 ; i void process\_array ( std :: span arr\_span ) \{ 
+ for ( auto & elem : arr\_span ) \{ 
  \/\\/ do something with elem
- } 
- }],
+ \} 
+ \}],
   [The need to pass a separate size variable is eliminated, making your code less error-prone and more expressive.],
   [And in essence: std::span is:],
   [a lightweight abstraction of a contiguous sequence of values of type T,],
-  [more or less implemented as struct { T \* ptr; std::size\_t length; } ,],
+  [more or less implemented as struct \{ T \* ptr; std::size\_t length; \} ,],
   [a non-owning type (i.e. a “reference type” rather than a “value type”).],
-  [id="construction-of-stdspan"\>
-Construction of std::span],
+  [Construction of std::span],
   [std::span lives in its own new header . It’s defined as follows:],
+  [template 
+ class span ;],
   [To create this object, you have two basic options: static extent and dynamic:],
-  [id="static-extent"\>
-Static Extent],
   [When you know the size at compile-time:],
-  [class="highlight"\> int arr \[\] = { 1 , 2 , 3 , 4 , 5 }; 
- std :: span arr\_span { arr }; 
- \/\/std::span arr\_span2 {arr}; \/\\/ error size doesn't match],
+  [int arr \[\] = \{ 1 , 2 , 3 , 4 , 5 \}; 
+ std :: span arr\_span \{ arr \}; 
+ \/\/std::span arr\_span2 \{arr\}; \/\\/ error size doesn't match],
   [Run \@Compiler Explorer],
   [Here, the 5 is an integral part of the type. You’ll get a compiler error if you try to initialize this span with an array of different sizes.],
-  [id="dynamic-extent"\>
-Dynamic Extent],
   [When you only know the size at runtime, like when working with vectors:],
-  [class="highlight"\> int arr \[\] = { 1 , 2 , 3 , 4 , 5 }; 
- std :: vector v { 1 , 2 , 3 , 4 , 5 }; 
- std :: span arr\_span { arr }; \/\\/ dynamic extent
- std :: span vec\_span { v }; \/\\/ also!],
+  [int arr \[\] = \{ 1 , 2 , 3 , 4 , 5 \}; 
+ std :: vector v \{ 1 , 2 , 3 , 4 , 5 \}; 
+ std :: span arr\_span \{ arr \}; \/\\/ dynamic extent
+ std :: span vec\_span \{ v \}; \/\\/ also!],
   [See \@Compiler Explorer],
   [Notice the absence of size in the type? That’s the dynamic extent in action.],
-  [id="sizeof-span"\>
-Sizeof span],
+  [Sizeof span],
   [The interesting part about span is that when the size is static, then the type is smaller as there’s no need to store the size of the sequence:],
-  [class="highlight"\> int arr \[\] = { 1 , 2 , 3 , 4 , 5 }; 
- std :: vector vec = { 1 , 2 , 3 , 4 , 5 }; 
- std :: span arr\_span { arr }; 
- std :: span other\_span { arr }; 
- std :: span vec\_span { vec }; 
+  [int arr \[\] = \{ 1 , 2 , 3 , 4 , 5 \}; 
+ std :: vector vec = \{ 1 , 2 , 3 , 4 , 5 \}; 
+ std :: span arr\_span \{ arr \}; 
+ std :: span other\_span \{ arr \}; 
+ std :: span vec\_span \{ vec \}; 
  
  std :: cout sizeof arr\_span: 8
  sizeof other\_span: 16
  sizeof vec\_span: 16],
-  [id="more-construction-options"\>
-More construction options],
+  [More construction options],
   [For completeness, let’s now revise other construction options following the list of available constructors:],
-  [style="text-align: justify; margin: 0.5em;"\>
-This article started as a preview for Patrons, sometimes even months before the publication.
+  [This article started as a preview for Patrons, sometimes even months before the publication.
 If you want to get extra content, previews, free ebooks and access to our Discord server, join the C++ Stories Premium membership or see more information.],
-  [id="default-constructor"\>
-Default Constructor],
   [This constructs an empty span.],
+  [std :: span empty\_span ;],
   [.data() returns nullptr and the size() returns 0 in this case.],
-  [id="from-iterators-and-size"\>
-From Iterators and Size],
+  [From Iterators and Size],
   [Creates a span from a starting iterator and a size.],
-  [class="highlight"\> std :: vector vec = { 1 , 2 , 3 }; 
+  [std :: vector vec = \{ 1 , 2 , 3 \}; 
  std :: span from\_iterator\_and\_size ( vec . begin (), /\*count\*\/ 2 ); \/\\/ 1, 2
  
  std :: span from\_iterator\_and\_size2 ( vec . begin (), /\*count\*\/ 3 ); \/\\/ 1, 2, 3],
   [And also in CTAD version:],
-  [class="highlight"\> std :: vector vec = { 1 , 2 , 3 }; 
+  [std :: vector vec = \{ 1 , 2 , 3 \}; 
  std :: span from\_iterator\_and\_size ( vec . begin (), /\*count\*\/ 2 ); \/\\/ 1, 2
  
  std :: span from\_iterator\_and\_size2 ( vec . begin (), /\*count\*\/ 3 ); \/\\/ 1, 2, 3],
   [See \@Compiler Explorer],
-  [id="from-two-iterators"\>
-From Two Iterators],
   [Constructs a span from a range specified by two iterators.],
+  [std :: span from\_two\_iterators ( vec . begin (), vec . end ());],
   [And using CTAD:],
+  [std :: span from\_iterator\_and\_end ( vec . begin (), vec . end ());],
   [See \@Compiler Explorer],
-  [id="from-c-style-array"\>
-From C-style Array],
+  [From C-style Array],
   [For C-style arrays.],
+  [int arr \[\] = \{ 1 , 2 , 3 \}; 
+ std :: span from\_array ( arr ); 
+ std :: span from\_array2 ( arr );],
   [.data() returns std::data(arr)],
   [See \@Compiler Explorer],
-  [id="from-stdarray"\>
-From std::array],
+  [From std::array],
   [Can construct both from non-const and const std::array .],
-  [class="highlight"\> std :: array std\_arr = { 1 , 2 , 3 }; 
+  [std :: array std\_arr = \{ 1 , 2 , 3 \}; 
  std :: span from\_std\_array ( std\_arr ); 
  \/\\/ CTAD:
  std :: span from\_std\_array2 ( std\_arr ); 
  
- const std :: array const\_std\_arr = { 1 , 2 , 3 }; 
+ const std :: array const\_std\_arr = \{ 1 , 2 , 3 \}; 
  std :: span from\_const\_std\_array ( const\_std\_arr );],
   [See \@Compiler Explorer],
-  [id="from-contiguous-range"\>
-From Contiguous Range],
   [Using this constructor, you can pass in any contiguous range like std::vector .],
-  [class="highlight"\> std :: vector vec { 1 , 2 , 3 , 4 , 5 }; 
+  [std :: vector vec \{ 1 , 2 , 3 , 4 , 5 \}; 
  std :: span from\_range ( vec ); \/\\/ covers entire vec
  \/\\/ CTAD:
  std :: span from\_range2 ( vec ); ec],
   [See \@Compiler Explorer],
-  [id="conversion-from-another-span"\>
-Conversion from Another Span],
+  [Conversion from Another Span],
   [Can be used for type conversions if the types are compatible.],
-  [id="passing-spans"\>
-Passing spans],
+  [std :: span int\_span ( vec ); 
+ std :: span const\_span = int\_span ; \/\\/ conversion],
+  [Passing spans],
   [Spans are lightweight objects intended to pass by value. But we have two options to preserve the constness of its elements:],
+  [void print ( span outbuf ); 
+ void transform ( span inbuf );],
   [In other words, you can pass span to indicate constant elements, and “read only” access, or pass span to allow read/write access.],
   [For example:],
-  [class="highlight"\> void transform ( std :: span outbuf ) { 
- for ( auto & elem : outbuf ) { 
+  [void transform ( std :: span outbuf ) \{ 
+ for ( auto & elem : outbuf ) \{ 
  elem += 1 ; 
- } 
- } 
+ \} 
+ \} 
  
- void output ( std :: span outbuf ) { 
+ void output ( std :: span outbuf ) \{ 
  std :: cout buf\_span ( str ); 
  
  output ( str ); 
  transform ( buf\_span ); 
  output ( buf\_span ); 
- }],
+ \}],
   [Run \@Compiler Explorer],
   [The output:],
+  [contents: H, e, l, l, o, , W, o, r, l, d, 
+ contents: I, f, m, m, p, !, X, p, s, m, e,],
   [The example above shows that str nicely converts into a span and is passed to the output function. And later, the buf\_span is also converted ( char to const char ) when passing to output .],
-  [id="subspans"\>
-Subspans],
   [You can easily create subviews/subspans of existing spans:],
-  [class="highlight"\> void printSpan ( std :: span sp ) { 
+  [void printSpan ( std :: span sp ) \{ 
  for ( auto && elem : sp ) 
  std :: cout sp ( arr , 6 ); 
  
@@ -751,21 +539,23 @@ Subspans],
  \/\\/ last(count):
  std :: span subLast4 = sp . last ( 4 ); 
  printSpan ( subLast4 ); 
- }],
+ \}],
   [Play \@Compiler Explorer],
   [The output:],
-  [id="showing-basic-properties"\>
-Showing basic properties],
+  [3 4 
+ 1 2 3 
+ 3 4 5 6],
+  [Showing basic properties],
   [Here’s another example that prints basic information about spans:],
-  [class="highlight"\> int main () { 
- int arr \[\] = { 1 , 2 , 3 , 4 , 5 }; 
- std :: vector vec = { 1 , 2 , 3 , 4 , 5 }; 
- std :: array sarr { 1 , 2 , 3 , 4 , 5 }; 
- std :: span arr\_span { arr }; 
- std :: span sarr\_span { arr }; 
- std :: span vec\_span { vec }; 
+  [int main () \{ 
+ int arr \[\] = \{ 1 , 2 , 3 , 4 , 5 \}; 
+ std :: vector vec = \{ 1 , 2 , 3 , 4 , 5 \}; 
+ std :: array sarr \{ 1 , 2 , 3 , 4 , 5 \}; 
+ std :: span arr\_span \{ arr \}; 
+ std :: span sarr\_span \{ arr \}; 
+ std :: span vec\_span \{ vec \}; 
  
- auto span\_info = \[\]( std :: string\_view str , auto sp ) { 
+ auto span\_info = \[\]( std :: string\_view str , auto sp ) \{ 
  std :: cout arr\_span
  sizeof 8
  extent static
@@ -778,88 +568,85 @@ Showing basic properties],
  sizeof 16
  extent dynamic
  size in bytes: 20],
-  [id="c26-spanat"\>
-C++26 span::at()],
+  [C++26 span::at()],
   [With C++26, std::span gains the at() method, which provides bounds-checked access to elements, similar to std::vector::at() . This ensures safer indexing by throwing std::out\_of\_range if an invalid index is accessed.],
   [Have a look:],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  \#include 
  \#include 
  
- int main () { 
- std :: vector data = { 1 , 2 , 3 , 4 , 5 }; 
+ int main () \{ 
+ std :: vector data = \{ 1 , 2 , 3 , 4 , 5 \}; 
  std :: span span = data ; 
  
- try { 
+ try \{ 
  std :: cout 
 C++26 span over an initializer list],
   [With C++26, std::span can now be constructed from an std::initializer\_list , closing a gap that previously existed between std::vector and std::span as function parameters. The change comes from the following proposal: P2447],
-  [While std::string\_view can be constructed directly from a string literal, std::span couldn’t be constructed from a braced initializer list {1, 2, 3} . This led to inconsistencies when using spans in function parameters.],
+  [While std::string\_view can be constructed directly from a string literal, std::span couldn’t be constructed from a braced initializer list \{1, 2, 3\} . This led to inconsistencies when using spans in function parameters.],
   [Consider this example before C++26:],
-  [class="highlight"\> void process ( std :: span sp ); 
+  [void process ( std :: span sp ); 
  
- process ({ 1 , 2 , 3 }); \/\\/ Error: No viable conversion
- process ( std :: vector { 1 , 2 , 3 }); \/\\/ OK but unnecessary allocation
- process ( std :: span ( std :: initializer\_list { 1 , 2 , 3 })); \/\\/ Works but verbose],
-  [id="the-c26-solution"\>
-The C++26 Solution],
+ process (\{ 1 , 2 , 3 \}); \/\\/ Error: No viable conversion
+ process ( std :: vector \{ 1 , 2 , 3 \}); \/\\/ OK but unnecessary allocation
+ process ( std :: span ( std :: initializer\_list \{ 1 , 2 , 3 \})); \/\\/ Works but verbose],
+  [The C++26 Solution],
   [With C++26, std::span now has a constructor accepting std::initializer\_list , allowing direct usage of braced initializer lists:],
-  [class="highlight"\> void process ( std :: span sp ); 
+  [void process ( std :: span sp ); 
  
- process ({ 1 , 2 , 3 }); \/\\/ Now works in C++26!
- process ({}); \/\\/ Also works, creating an empty span],
+ process (\{ 1 , 2 , 3 \}); \/\\/ Now works in C++26!
+ process (\{\}); \/\\/ Also works, creating an empty span],
   [This makes std::span a better drop-in replacement for const std::vector & in function parameters, improving usability and reducing unnecessary copies.],
   [See the full example:],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  \#include 
  
- void process ( std :: span sp ) { 
- std :: println ( "sp size is {}" , sp . size ()); 
- } 
+ void process ( std :: span sp ) \{ 
+ std :: println ( "sp size is \{\}" , sp . size ()); 
+ \} 
  
- int main () { 
- std :: vector data = { 1 , 2 , 3 , 4 , 5 }; 
+ int main () \{ 
+ std :: vector data = \{ 1 , 2 , 3 , 4 , 5 \}; 
  process ( data ); 
- process ({ 1 , 2 , 3 }); \/\\/ Now works in C++26!
- process ({}); \/\\/ Also works, creating an empty span
- }],
+ process (\{ 1 , 2 , 3 \}); \/\\/ Now works in C++26!
+ process (\{\}); \/\\/ Also works, creating an empty span
+ \}],
   [Check at Compiler Explorer],
-  [id="important-notes-on-dangling"\>
-Important Notes on Dangling],
+  [Important Notes on Dangling],
   [Just like std::string\_view , std::span does not extend the lifetime of temporary data. If used incorrectly, it can lead to dangling references:],
+  [std :: span sp = \{ 1 , 2 , 3 \}; \/\\/ Dangles! The initializer list is a temporary.],
   [This means std::span over an initializer list is best used for function parameters, where the span is only needed within the function’s scope.],
-  [id="returning-stdspan"\>
-Returning std::span],
+  [Returning std::span],
   [While spans are great as input parameters, they can also show their strength as a return type. This can be a middle ground between references and copies, with additional flexibility for handling missing values.],
   [Consider the following example, where there’s a config manager, and we return a Config using getConfig member function:],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  \#include 
  \#include 
  
- class ConfigManager { 
+ class ConfigManager \{ 
  private : 
  std :: map \> configs ; 
  
  public : 
- ConfigManager () { 
- configs \[ "database" \] = { 
+ ConfigManager () \{ 
+ configs \[ "database" \] = \{ 
  'h' , 'o' , 's' , 't' , '=' , 'l' , 'o' , 'c' , 'a' , 'l' , 'h' , 'o' , 's' , 't' , ';' , 
  'p' , 'o' , 'r' , 't' , '=' , '5' , '4' , '3' , '2' 
- }; 
- } 
+ \}; 
+ \} 
  
- std :: span getConfig ( const std :: string & name ) const { 
+ std :: span getConfig ( const std :: string & name ) const \{ 
  auto it = configs . find ( name ); 
  if ( it != configs . end ()) 
  return it -\> second ; 
- return {}; 
- } 
- }; 
+ return \{\}; 
+ \} 
+ \}; 
  
- int main () { 
+ int main () \{ 
  ConfigManager manager ; 
  auto dbConfig = manager . getConfig ( "database" ); 
  for ( auto byte : dbConfig ) 
@@ -868,33 +655,26 @@ Returning std::span],
  auto errCfg = manager . getConfig ( "error" ); 
  for ( auto byte : errCfg ) 
  std :: cout ( byte ); 
- }],
+ \}],
   [See \@Compiler Explorer],
   [By using span we can clearly indicate a “view” type. Additionally, spans support many containers, so even if we change the internal representation of the config entry, we can still return a span object (assuming it’s still contiguous…).],
   [Without spans, I’d had to return a reference to a vector, which might be tricky when there’s no entry found. See my other article about this issue: Improving Code Safety in C++26: Managers and Dangling References - C++ Stories .],
-  [id="advantages-of-using-stdspan"\>
-Advantages of Using std::span],
+  [Advantages of Using std::span],
   [Performance : Like references, spans avoid unnecessary copies.],
   [Safety : Being non-owning, spans make it clear that the caller doesn’t own the data.],
   [Interoperability : Works seamlessly with other container types like std::array or raw arrays.],
-  [Simpler handling of missing data : Unlike returning a const std::vector& , where you must return a valid reference, std::span can simply return an empty span ( {} ).],
-  [id="comparing-with-stdstring\_view"\>
-Comparing with std::string\_view],
+  [Simpler handling of missing data : Unlike returning a const std::vector& , where you must return a valid reference, std::span can simply return an empty span ( \{\} ).],
+  [Comparing with std::string\_view],
   [Generality : std::span can be used with any type, not just character types.],
   [Mutability : Unlike std::string\_view , a std::span can modify the data it views (unless you define it as a span of const).],
   [Extent : std::span can have either static or dynamic extent, string\_view is always “dynamic”.],
-  [id="guidelines"\>
-Guidelines],
   [Some of the guidelines related to spans:],
   [I.13: Do not pass an array as a single pointer],
   [F.24: Use a span or a span\_p to designate a half-open sequence],
   [R.14: Avoid \[\] parameters, prefer span],
   [ES.42: Keep use of pointers simple and straightforward],
-  [id="summary"\>
-Summary],
   [In this article we looked at std::span introduced in C++20. This type offers a handy way to work with contiguous sequences like arrays or containers. We can say that it’s a more generic approach than std::string\_view as it allows read/write access (if needed).],
-  [id="back-to-you"\>
-Back to you],
+  [Back to you],
   [Have you tried std::span ?],
   [Do you use other “Reference”/view types from the Standard Library?],
   [Share your comments below.],
@@ -905,10 +685,8 @@ Back to you],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [What Will It Take to Build the World’s Largest Data Center?],
   author: [Matthew S. Smith],
   source-name: [IEEE Spectrum],
@@ -990,10 +768,8 @@ Back to you],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [What to learn],
   author: [Dan Luu],
   source-name: [Dan Luu],
@@ -1030,12 +806,12 @@ One UW interviewee just told me about Ford Motor Company's mentoring program, wh
   [One thing to perhaps note is that the environment, how you spend your day-to-day, is inherently local. My current employer is probably the least data driven of the three large tech companies I've worked for, but my vicinity is a great place to get better at looking at data because I spend a relatively large fraction of my time working with people who are great with data, like Rebecca Isaacs, and a relatively small fraction of the time working with people who don't take data seriously.],
   [This post has discussed some strategies with an eye towards why they can be valuable, but I have to admit that my motivation for learning from experts wasn’t to create value. It's more that I find learning to be fun and there are some areas where I'm motivated enough to apply the skills regardless of the environment, and learning from experts is such a great opportunity to have fun that it's hard to resist. Doing this for a couple of decades has turned out to be useful, but that's not something I knew would happen for quite a while (and I had no idea that this would effectively transfer to a new industry until I changed from hardware to software).],
   [A lot of career advice I see is oriented towards career or success or growth. That kind of advice often tells people to have a long-term goal or strategy in mind. It will often have some argument that's along the lines of "a random walk will only move you sqrt(n) in some direction whereas a directed walk will move you n in some direction". I don't think that's wrong, but I think that, for many people, that advice implicitly underestimates the difficulty of finding an area that's suited to you 4 , which I've basically done by trial and error .],
-  [id="appendix-parts-of-the-problem-this-post-doesn-t-discuss-in-detail"\>Appendix: parts of the problem this post doesn't discuss in detail],
+  [Appendix: parts of the problem this post doesn't discuss in detail],
   [One major topic not discussed is how to balance what "level" of skill to work on, which could be something high level, like "looking at data", to something lower level, like "Bayesian multilevel models", to something even lower level, like "typing speed". That's a large enough topic that it deserves its own post that I'd expect to be longer than this one but, for now, here's a comment from Gary Bernhardt about something related that I believe also applies to this topic .],
   [Another major topic that's not discussed here is picking skills that are relatively likely to be applicable. It's a little too naive to just say that someone should think about learning skills they have an aptitude for without thinking about applicability.],
   [But while it's pretty easy to pick out skills where it's very difficult to either have an impact on the world or make a decent amount of money or achieve whatever goal you might want to achieve, like "basketball" or "boxing", it's harder to pick between plausible skills, like computer architecture vs. PL.],
   [But I think semi-reasonable sounding skills are likely enough to be high return if they're a good fit for someone that trial and error among semi-reasonable sounding skills is fine, although it probably helps to be able to try things out quickly],
-  [id="appendix-related-posts"\>Appendix: related posts],
+  [Appendix: related posts],
   [Ben Kuhn on, in some sense, what it's like to really learn something],
   [Holden Karnofsky on having an aptitude-first approach to careers instead of a career-path-first approach , which is sort of analogous to thinking about cross cutting skills like "looking at data" or "having an adversarial mindset" and not just thinking about skills like "compilers" or "queuing theory"],
   [Peter Drucker on how to understand one's strengths and weaknesses and do work that compatible with ones own inclinations],
@@ -1043,17 +819,16 @@ One UW interviewee just told me about Ford Motor Company's mentoring program, wh
   [Edward Kmett with another perspective on how to think about learning],
   [Patrick Collison on how to maximize useful learning and find what you'll enjoy],
   [Thanks to Ben Kuhn, Alexey Guzey, Marek Majkowski, Nick Bergson-Shilcock, \@bekindtopeople2, Aaron Levin, Milosz Danczak, Anja Boskovic, John Doty, Justin Blank, Mark Hansen, "wl", and Jamie Brandon for comments/corrections/discussion.],
-  [id="fn: J"\>This is an old analysis. If you were to do one today, you'd see a different mix of throws, but it's still the case that you see specialists having a lot of success, e.g., Riner with osoto gari
+  [This is an old analysis. If you were to do one today, you'd see a different mix of throws, but it's still the case that you see specialists having a lot of success, e.g., Riner with osoto gari
  \[return\]],
-  [id="fn: F"\>To be fair to blanket, context free, advice, to learn a particular topic, functional programming really clicked for me and I could imagine that, if that style of thinking wasn't already natural for me (as a result of coming from a hardware background), the advice that one should learn functional programming because it will change how you think about problems might've been useful for me, but on the other hand, that means that the advice could've just as easily been to learn hardware engineering.
+  [To be fair to blanket, context free, advice, to learn a particular topic, functional programming really clicked for me and I could imagine that, if that style of thinking wasn't already natural for me (as a result of coming from a hardware background), the advice that one should learn functional programming because it will change how you think about problems might've been useful for me, but on the other hand, that means that the advice could've just as easily been to learn hardware engineering.
  \[return\]],
-  [id="fn: M"\>],
   [I don't have a large enough sample nor have I polled enough people to have high confidence that this works as a general algorithm but, for finding groups of world-class experts, what's worked for me is finding excellent managers. The two teams I worked on with the highest density of world-class experts have been teams under really great management. I have a higher bar for excellent management than most people and, from having talked to many people about this, almost no one I've talked to has worked for or even knows a manager as good as one I would consider to be excellent (and, general, both the person I'm talking to agrees with me on this, indicating that it's not the case that they have a manager who's excellent in dimensions I don't care about and vice versa); from discussions about this, I would guess that a manager I think of as excellent is at least 99.9%-ile. How to find such a manager is a long discussion that I might turn into another post.],
   [Anyway, despite having a pretty small sample on this, I think the mechanism for this is plausible, in that the excellent managers I know have very high retention as well as a huge queue of people who want to work for them, making it relatively easy for them to hire and retain people with world-class expertise since the rest of the landscape is so bleak .],
   [A more typical strategy, one that I don't think generally works and also didn't work great for me when I tried it is to work on the most interesting sounding and/or hardest problems around. While I did work with some really great people while trying to work on interesting \/ hard problems , including one of the best engineers I've ever worked with, I don't think that worked nearly as well as looking for good management w.r.t. working with people I really want to learn from. I believe the general problem with this algorithm is the same problem with going to work in video games because video games are cool and/or interesting. The fact that so many people want to work on exciting sounding problems leads to dysfunctional environments that can persist indefinitely.],
   [In one case, I was on a team that had 100% turnover in nine months and it would've been six if it hadn't taken so long for one person to find a team to transfer to. In the median case, my cohort (people who joined around when I joined, ish) had about 50% YoY turnover and I think that people had pretty good reasons for leaving. Not only is this kind of turnover a sign that the environment is often a pretty unhappy one, these kinds of environments often differentially cause people who I'd want to work with and/or learn from to leave. For example, on the team I was on where the TL didn't believe in using version control, automated testing, or pipelined designs, I worked with Ikhwan Lee, who was great. Of course, Ikhwan left pretty quickly while the TL stayed and is still there six years later.],
   [\[return\]],
-  [id="fn: S"\>Something I've seen many times among my acquaintances is that people will pick a direction before they have any idea whether or not it's suitable for them. Often, after quite some time (more than a decade in some cases), they'll realize that they're actually deeply unhappy with the direction they've gone, sometimes because it doesn't match their temperament, and sometimes because it's something they're actually bad at. In any case, wandering around randomly and finding yourself sqrt(n) down a path you're happy with doesn't seem so bad compared to having made it n down a path you're unhappy with.
+  [Something I've seen many times among my acquaintances is that people will pick a direction before they have any idea whether or not it's suitable for them. Often, after quite some time (more than a decade in some cases), they'll realize that they're actually deeply unhappy with the direction they've gone, sometimes because it doesn't match their temperament, and sometimes because it's something they're actually bad at. In any case, wandering around randomly and finding yourself sqrt(n) down a path you're happy with doesn't seem so bad compared to having made it n down a path you're unhappy with.
  \[return\]],
 ),
   insert-map: (:),
@@ -1062,10 +837,8 @@ One UW interviewee just told me about Ford Motor Company's mentoring program, wh
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A review of the Julia language],
   author: [Dan Luu],
   source-name: [Dan Luu],
@@ -1094,7 +867,7 @@ One UW interviewee just told me about Ford Motor Company's mentoring program, wh
   [I don't mind spending my spare time working for free to fix other people's bugs. In fact, I do quite a bit of that and it turns out I often enjoy it. But I'm too old and crotchety to spend my leisure time deciphering code that even the core developers can't figure out because it's too obscure.],
   [None of this is to say that Julia is bad, but the concerns of the core team are pretty different from my concerns. This is the point in a complain-y blog post where you're supposed to suggest an alternative or make a call to action, but I don't know that either makes sense here. The purely technical problems, like slow load times or the package manager, are being fixed or will be fixed, so there's not much to say there. As for process problems, like not writing tests, not writing internal documentation, and checking unreviewed and sometimes breaking changes directly into master, well, that's “easy” 4 to fix by adding a code review process that forces people to write tests and documentation for code, but that's not free.],
   [A small team of highly talented developers who can basically hold all of the code in their collective heads can make great progress while eschewing anything that isn't just straight coding at the cost of making it more difficult for other people to contribute. Is that worth it? It's hard to say. If you have to slow down Jeff , Keno , and the other super productive core contributors and all you get out of it is a couple of bums like me, that's probably not worth it. If you get a thousand people like me, that's probably worth it. The reality is in the ambiguous region in the middle, where it might or might not be worth it. The calculation is complicated by the fact that most of the benefit comes in the long run, whereas the costs are disproportionately paid in the short run. I once had an engineering professor who claimed that the answer to every engineering question is "it depends". What should Julia do? It depends.],
-  [id="2022-update"\>2022 Update],
+  [2022 Update],
   [This post originally mentioned how friendly the Julia community is, but I removed that since it didn't seem accurate in light of the responses. Many people were highly supportive, such as this Julia core developer:],
   [However, a number of people had some pretty nasty responses and I don't think it's accurate to say that a community is friendly when the response is mostly positive, but with a significant fraction of nasty responses, since it doesn't really take a lot of nastiness to make a group seem unfriendly. Also, sentiment about this post has gotten more negative over time as communities tend to take their direction from the top and a couple of the Julia co-creators have consistently been quite negative about this post.],
   [Now, onto the extent to which these issues have been fixed. The initial response from the co-founders was that the issues aren't really real and the post is badly mistaken. Over time, as some of the issues had some work done on them, the response changed to being that this post is out of date and the issues were all fixed, e.g., here's a response from one of the co-creators of Julia in 2016 :],
@@ -1137,7 +910,7 @@ testing the bejeezus out of everything. I literally don't know any other open so
   [Of course, there's a response saying this will be fixed soon , as is generally the case. And yet, you can still find people complaining about the documentation.],
   [If you go back and read discussions on Julia correctness issues, three more common defenses are that everything has bugs, bugs are quickly fixed, and testing is actually great because X is well tested. You can see examples of "everything has bugs" here in 2014 as well as here in 2022 (and in between as well, of course), as if all non-zero bug rates are the same, even though a number of developers have noted that they stopped using Julia for work and switched to other ecosystems because, while everything has bugs, all non-zero numbers are, of course, not the same. Bugs getting fixed quickly is sometimes not true (e.g., many of the bugs linked in this post have been open for quite a while and are still open) and is also a classic defense that's used to distract from the issue of practices that directly lead to the creation of an unusually large number of new bugs . As noted in a number of links, above, it can take weeks or months to debug correctness issues since many of the correctness issues are of the form "silently return incorrect results" and, as noted above, I ran into a bug where exceptions were non-deterministically incorrectly not caught. It may be true that, in some cases, these sorts of bugs are quickly fixed when found, but those issues still cost users a lot of time to track down. We saw an example of "testing is actually great because X is well tested" above . If you'd like a more recent example, here's one from 2022 where, in response to someone saying that ran into more correctness bugs in Julia than than in any other ecosystem they've used in their decades of programming, a core Julia dev responds by saying that a number of things are very well tested in Julia, such as libuv, as if testing some components well is a talisman that can be wielded against bugs in other components. This is obviously absurd, in that it's like saying that a building with an open door can't be insecure because it also has very sturdy walls, but it's a common defense used by core Julia developers. And, of course, there's also just straight-up FUD about writing about Julia. For example, in 2022, on Yuri Vishnevsky's post on Julia bugs, a co-creator of Julia said "Yuri's criticism was not that Julia has correctness bugs as a language, but that certain libraries when composed with common operations had bugs (many of which are now addressed)." . This is, of course, completely untrue. In conversations with Yuri, he noted to me that he specifically included examples of core language and core library bugs because those happened so frequently, and it was frustrating that core Julia people pretended those didn't exist and that their FUD seemed to work since people would often respond as if their comments weren't untrue. As mentioned above, this kind of flat denial of simple matters of fact is highly effective, so it's understandable that people employ it but, personally, it's not to my taste.],
   [To be clear, I don't inherently have a problem with software being buggy. As I've mentioned, I think move fast and break things can be a good value because it clearly states that velocity is more valued than correctness. Comments from the creators of Julia as well as core developers broadcast that Julia is not just highly reliable and correct, but actually world class ("the amount of time and energy we spend on testing the bejeezus out of everything. I literally don't know any other open source project as thoroughly end-to-end tested.", etc.). But, by revealed preference, we can see that Julia's values are "move fast and break things".],
-  [id="appendix-blog-posts-on-julia"\>Appendix: blog posts on Julia],
+  [Appendix: blog posts on Julia],
   [2014: this post],
   [2016: Victor Zverovich],
   [Julia brags about high performance in unrepresentative microbenchmarks but often has poor performance in practice],
@@ -1157,13 +930,13 @@ testing the bejeezus out of everything. I literally don't know any other open so
   [Stream of serious bugs is in stark contrast to comments from core Julia developers and Julia co-creators saying that Julia is very solid and has great correctness properties],
   [Thanks (or anti-thanks) to Leah Hanson for pestering me to write this for the past few months. It's not the kind of thing I'd normally write, but the concerns here got repeatedly brushed off when I brought them up in private. For example, when I brought up testing, I was told that Julia is better tested than most projects. While that's true in some technical sense (the median project on GitHub probably has zero tests, so any non-zero number of tests is above average), I didn't find that to be a meaningful rebuttal (as opposed to a reply that Julia is still expected to be mostly untested because it's in an alpha state). After getting a similar response on a wide array of topics I stopped using Julia. Normally that would be that, but Leah really wanted these concerns to stop getting ignored, so I wrote this up.],
   [Also, thanks to Leah Hanson, Julia Evans, Joe Wilder, Eddie V, David Andrzejewski, \@sasuke\_\_\_420\@mastodon.social, and Yuri Vishnevsky for comments/corrections/discussion.],
-  [id="fn: L"\>What I mean here is that you can have lots of bugs pop up despite having 100% line coverage. It's not that line coverage is bad, but that it's not sufficient, not even close. And because it's not sufficient, it's a pretty bad sign when you not only don't have 100% line coverage, you don't even have 100% function coverage.
+  [What I mean here is that you can have lots of bugs pop up despite having 100% line coverage. It's not that line coverage is bad, but that it's not sufficient, not even close. And because it's not sufficient, it's a pretty bad sign when you not only don't have 100% line coverage, you don't even have 100% function coverage.
  \[return\]],
-  [id="fn: R"\>I'm going to use the word care a few times, and when I do I mean something specific. When I say care, I mean that in the colloquial revealed preference sense of the word. There's another sense of the word, in which everyone cares about testing and error handling, the same way every politician cares about family values. But that kind of caring isn't linked to what I care about, which involves concrete actions.
+  [I'm going to use the word care a few times, and when I do I mean something specific. When I say care, I mean that in the colloquial revealed preference sense of the word. There's another sense of the word, in which everyone cares about testing and error handling, the same way every politician cares about family values. But that kind of caring isn't linked to what I care about, which involves concrete actions.
  \[return\]],
-  [id="fn: T"\>It's technically possible to have multiple versions installed, but the process is a total hack.
+  [It's technically possible to have multiple versions installed, but the process is a total hack.
  \[return\]],
-  [id="fn: E"\>By "easy", I mean extremely hard. Technical fixes can be easy, but process and cultural fixes are almost always hard.
+  [By "easy", I mean extremely hard. Technical fixes can be easy, but process and cultural fixes are almost always hard.
  \[return\]],
 ),
   insert-map: (:),
@@ -1172,10 +945,8 @@ testing the bejeezus out of everything. I literally don't know any other open so
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A discussion of discussions on AI bias],
   author: [Dan Luu],
   source-name: [Dan Luu],
@@ -1216,7 +987,7 @@ testing the bejeezus out of everything. I literally don't know any other open so
   [Since a lot of people have these reflexive responses when talking about race or ethnicity, let's look at a less charged AI hypothetical. Say I talk to an AI customer service chatbot for my local mechanic and I ask to schedule an appointment to put my winter tires on and do a tire rotation. Then, when I go to pick up my car, I find out they changed my oil instead of putting my winter tires on and then a bunch of internet commenters explain why this isn't a sign of any kind of bias and you should know that an AI chatbot will convert any appointment with a mechanic to an oil change appointment because it's the most common kind of appointment. A chatbot that converts any kind of appointment request into "give me the most common kind of appointment" is pretty obviously broken but, for some reason, AI apologists insist this is fine when it comes to things like changing someone's race or ethnicity. Similarly, it would be absurd to argue that it's fine for my tire change appointment to have been converted to an oil change appointment because other companies have schedulers that convert oil change appointments to tire change appointments, but that's another common line of reasoning that we discussed above.],
   [And say I used some standard non-AI scheduling software like Mindbody or JaneApp to schedule an appointment with my mechanic and asked for an appointment to have my tires changed and rotated. If I ended up having my oil changed because the software simply schedules the most common kind of appointment, this would be a clear sign that the software is buggy and no reasonable person would argue that zero effort should go into fixing this bug. And yet, this is a common argument that people are making with respect to AI (it's probably the most common defense in comments on this topic). The argument goes a bit further, in that there's this explanation of why the bug occurs that's used to justify why the bug should exist and people shouldn't even attempt to fix it. Such an explanation would read as obviously ridiculous for a "classical" software bug and is no less ridiculous when it comes to ML. Perhaps one can argue that the bug is much more difficult to fix in ML and that it's not practical to fix the bug, but that's different from the common argument that it isn't a bug and that this is the correct way for software to behave.],
   [I could imagine some users saying something like that when the program is taking actions that are more opaque to the user, such as with autocorrect, but I actually tried searching reddit for autocorrect bug and in the top 3 threads (I didn't look at any other threads), 2 out of the 255 comments denied that incorrect autocorrects were a bug and both of those comments were from the same person. I'm sure if you dig through enough topics, you'll find ones where there's a higher rate, but on searching for a few more topics (like excel formatting and autocorrect bugs), none of the topics I searched approached what we see with generative AI, where it's not uncommon to see half the commenters vehemently deny that a prompt doing the opposite of what the user wants is a bug.],
-  [Coming back to the bug itself, in terms of the mechanism, one thing we can see in both classifiers as well as generative models is that many (perhaps most or almost all) of these systems are taking bias that a lot of people have that's reflected in some sample of the internet, which results in things like Google's image classifier classifying a black hand holding a thermometer as {hand, gun} and a white hand holding a thermometer as {hand, tool} 1 . After a number of such errors over the past decade, from classifying black people as gorillas in Google Photos in 2015, to deploying some kind of text-classifier for ads that classified ads that contained the terms "African-American composers" and "African-American music" as "dangerous or derogatory" in 2018 Google turned the knob in the other direction with Gemini which, by the way, generated much more outrage than any of the other examples.],
+  [Coming back to the bug itself, in terms of the mechanism, one thing we can see in both classifiers as well as generative models is that many (perhaps most or almost all) of these systems are taking bias that a lot of people have that's reflected in some sample of the internet, which results in things like Google's image classifier classifying a black hand holding a thermometer as \{hand, gun\} and a white hand holding a thermometer as \{hand, tool\} 1 . After a number of such errors over the past decade, from classifying black people as gorillas in Google Photos in 2015, to deploying some kind of text-classifier for ads that classified ads that contained the terms "African-American composers" and "African-American music" as "dangerous or derogatory" in 2018 Google turned the knob in the other direction with Gemini which, by the way, generated much more outrage than any of the other examples.],
   [There's nothing new about bias making it into automated systems. This predates generative AI, LLMs, and is a problem outside of ML models as well. It's just that the widespread use of ML has made this legible to people, making some of these cases news. For example, if you look at compression algorithms and dictionaries, Brotli is heavily biased towards the English language — the human-language elements of the 120 transforms built into the language are English, and the built-in compression dictionary is more heavily weighted towards English than whatever representative weighting you might want to reference (population-weighted language speakers, non-automated human-languages text sent on on messaging platforms, etc.). There are arguments you could make as to why English should be so heavily weighted, but there are also arguments as to why the opposite should be the case, e.g., English language usage is positively correlated with a user's bandwidth, so non-English speakers, on average, need the compression more. But regardless of the exact weighting function you think should be used to generate a representative dictionary, that's just not going to make a viral news story because you can't get the typical reader to care that a number of the 120 built-in Brotli transforms do things like add " of the ", ". The", or ". This" to text, which are highly specialized for English, and none of the transforms encode terms that are highly specialized for any other human language even though only 20% of the world speaks English, or that, compared to the number of speakers, the built-in compression dictionary is extremely highly tilted towards English by comparison to any other human language. You could make a defense of the dictionary of Brotli that's analogous to the ones above, over some representative corpus which the Brotli dictionary was trained on, we get optimal compression with the Brotli dictionary, but there are quite a few curious phrases in the dictionary such as "World War II", ", Holy Roman Emperor", "British Columbia", "Archbishop" , "Cleveland", "esperanto", etc., that might lead us to wonder if the corpus the dictionary was trained on is perhaps not the most representative, or even particularly representative of text people send . Can it really be the case that including ", Holy Roman Emperor" in the dictionary produces, across the distribution of text sent on the internet, better compression than including anything at all for French, Urdu, Turkish, Tamil, Vietnamese, etc.?],
   [Another example which doesn't make a good viral news story is my not being able to put my Vietnamese name in the title of my blog and have my blog indexed by Google outside of Vietnamese-language Google — I tried that when I started my blog and it caused my blog to immediately stop showing up in Google searches unless you were in Vietnam. It's just assumed that the default is that people want English language search results and, presumably, someone created a heuristic that would trigger if you have two characters with Vietnamese diacritics on a page that would effectively mark the page as too Asian and therefore not of interest to anyone in the world except in one country. "Being visibly Vietnamese " seems like a fairly common cause of bugs. For example, Vietnamese names are a problem even without diacritics. I often have forms that ask for my mother's maiden name. If I enter my mother's maiden name, I'll be told something like "Invalid name" or "Name too short". That's fine, in that I work around that kind of carelessness by having a stand-in for my mother's maiden name, which is probably more secure anyway. Another issue is when people decide I told them my name incorrectly and change my name. For my last name, if I read my name off as "Luu, ell you you", that gets shortened from the Vietnamese "Luu" to the Chinese "Lu" about half the time and to a western "Lou" much of the time as well, but I've figured out that if I say "Luu, ell you you, two yous", that works about 95% of the time. That sometimes annoys the person on the other end, who will exasperatedly say something like "you didn't have to spell it out three times". Maybe so for that particular person , but most people won't get it. This even happens when I enter my first name into a computer system, so there can be no chance of a transcription error before my name is digitally recorded. My legal first name, with no diacritics, is Dan. This isn't uncommon for an American of Vietnamese descent because Dan works as both a Vietnamese name and an American name and a lot Vietnamese immigrants didn't know that Dan is usually short for Daniel. At six of the companies I've worked for full-time, someone has helpfully changed my name to Daniel at three of them, presumably because someone saw that Dan was recorded in a database and decided that I failed to enter my name correctly and that they knew what my name was better than I did and they were so sure of this they saw no need to ask me about it . In one case, this only impacted my email display name. Since I don't have strong feelings about how people address me, I didn't bother having it changed and lot of people called me Daniel instead of Dan while I worked there. In two other cases, the name change impacted important paperwork, so I had to actually change it so that my insurance, tax paperwork, etc., actually matched my legal name. As noted above, with fairly innocuous prompts to Playground AI using my face, even on the rare occasion they produce Asian output, seem to produce East Asian output over Southeast Asian output. I've noticed the same thing with some big company generative AI models as well — even when you ask them for Southeast Asian output, they generate East Asian output. AI tools that are marketed as tools that clean up errors and noise will also clean up Asian-ness (and other analogous "errors"), e.g., people who've used Adobe AI noise reduction (billed as "remove noise from voice recordings with speech enhacement") note that it will take an Asian accent and remove it, making the person sound American (and likewise for a number of other accents, such as eastern European accents).],
   [I probably see tens to hundreds things like this most weeks just in the course of using widely used software ( much less than the overall bug count, which we previously observed was in hundreds to thousands per week ), but most Americans I talk to don't notice these things at all. Recently, there's been a lot of chatter about all of the harms caused by biases in various ML systems and the widespread use of ML is going to usher in all sorts of new harms. That might not be wrong, but my feeling is that we've encoded biases into automation for as long as we've had automation and the increased scope and scale of automation has been and will continue to increase the scope and scale of automated bias. It's just that now, many uses of ML make these kinds of biases a lot more legible to lay people and therefore likely to make the news .],
@@ -1231,7 +1002,7 @@ testing the bejeezus out of everything. I literally don't know any other open so
   [One issue we're running up against here is that, when it comes to consumer software, companies have overwhelmingly chosen velocity over quality. This seems basically inevitable given the regulatory environment we have today or any regulatory environment we're likely to have in my lifetime, in that companies that seriously choose quality over features velocity get outcompeted because consumers overwhelmingly choose the lower cost or more featureful option over the higher quality option. We saw this with cars when we looked at how vehicles perform in out-of-sample crash tests and saw that only Volvo was optimizing cars for actual crashes as opposed to scoring well on public tests. Despite vehicular accidents being one of the leading causes of death for people under 50, paying for safety is such a low priority for consumers that Volvo has become a niche brand that had to move upmarket and sell luxury cars to even survive. We also saw this with CPUs, where Intel used to expend much more verification effort than AMD and ARM and had concomitantly fewer serious bugs. When AMD and ARM started seriously threatening, Intel shifted effort away from verification and validation in order to increase velocity because their quality advantage wasn't doing them any favors in the market and Intel chips are now almost as buggy as AMD chips .],
   [We can observe something similar in almost every consumer market and many B2B markets as well , and that's when we're talking about issues that have known solutions. If we look at problem that, from a technical standpoint, we don't know how to solve well, like subtle or even not-so-subtle bias in ML models, it stands to reason that we should expect to see more and worse bugs than we'd expect out of "classical" software systems, which is what we're seeing. Any solution to this problem that's going to hold up in the market is going to have to be robust against the issue that consumers will overwhelmingly choose the buggier product if it has more features they want or ships features they want sooner, which puts any solution that requires taking care in a way that significantly slows down shipping in a very difficult position, absent a single dominant player, like Intel in its heyday .],
   [Thanks to Laurence Tratt, Yossi Kreinin, Anonymous, Heath Borders, Benjamin Reeseman, Andreas Thienemann, and Misha Yagudin for comments/corrections/discussion],
-  [id="appendix-technically-how-hard-is-it-to-improve-the-situation"\>Appendix: technically, how hard is it to improve the situation?],
+  [Appendix: technically, how hard is it to improve the situation?],
   [This is a genuine question and not a rhetorical question. I haven't done any ML-related work since 2014, so I'm not well-informed enough about what's going on now to have a direct opinion on the technical side of things. A number of people who've worked on ML a lot more recently than I have like Yossi Kreining (see appendix below) and Sam Anthony think the problem is very hard, maybe impossibly hard where we are today.],
   [Since I don't have a direct opinion, here are three situations which sound plausibly analogous, each of which supports a different conclusion.],
   [Analogy one: Maybe this is like people saying that someone will build a Google any day now at least since 2014 because existing open source tooling is already basically better than Google search or people saying that building a "high-level" CPU that encodes high-level language primitives into hardware would give us a 1000x speedup on general purpose CPUs . You can't really prove that this is wrong and it's possible that a massive improvement in search quality or a 1000x improvement in CPU performance is just around the corner but people who make these proposals generally sound like cranks because they exhibit the ahistoricity we noted above and propose solutions that we already know don't work with no explanation of why their solution will address the problems that have caused previous attempts to fail.],
@@ -1245,9 +1016,9 @@ testing the bejeezus out of everything. I literally don't know any other open so
   [As an outsider, it would take a very high degree of overconfidence to decide that everyone is wrong, so I'd have to either incorrectly conclude that "everyone" is right or have no opinion.],
   [Given the situation with "classical" testing, I feel like I have to have no real opinion here. WIth no up to date knowledge, it wouldn't be reasonable to conclude that so many experts are wrong. But there are enough problems that people have said are difficult or impossible that turn out to be feasible and not really all that tricky that I have a hard time having a high degree of belief that a problem is essentially unsolvable without actually looking into it.],
   [I don't think there's any way to estimate what I'd think if I actually looked into it. Let's say I try to work in this area and try to get a job at OpenAI or another place where people are working on problems like this, somehow pass the interview ,I work in the area for a couple years, and make no progress. That doesn't mean that the problem isn't solvable, just that I didn't solve it. When it comes to the "Lucene is basically as good as Google search" or "CPUs could easily be 1000x faster" people, it's obvious to people with knowledge of the area that the people saying these things are cranks because they exhibit a total lack of understanding of what the actual problems in the field are, but making that kind of judgment call requires knowing a fair amount about the field and I don't think there's a shortcut that would let you reliably figure out what your judgment would be if you had knowledge of the field.],
-  [id="appendix-the-story-of-this-post"\>Appendix: the story of this post],
+  [Appendix: the story of this post],
   [I wrote a draft of this post when the Playground AI story went viral in mid-2023, and then I sat on it for a year to see if it seemed to hold up when the story was no longer breaking news. Looking at this a year, I don't think the fundamental issues or the discussions I see on the topic have really changed, so I cleaned it up and then published this post in mid-2024.],
-  [id="appendix-comments-from-other-folks"\>Appendix: comments from other folks],
+  [Appendix: comments from other folks],
   [\[Click to expand \/ collapse comments from Yossi Kreinin\]],
   [I'm not sure how much this is something you'd agree with but I think a further point related to generative AI bias being a lot like other-software-bias is exactly what this bias is. "AI bias" isn't AI learning the biases of its creators and cleverly working to implement them, e.g. working against a minority that its creators don't like. Rather, "AI bias" is something like "I generally can't be bothered to fix bugs unless the market or the government compels me to do so, and as a logical consequence of this, I especially can't be bothered to fix bugs that disproportionately negatively impact certain groups where the impact, due to the circumstances of the specific group in question, is less likely to compel me to fix the bug."],
   [This is a similarity between classic software bugs and AI bugs — meaning, nobody is worried that "software is biased" in some clever scheming sort of way, everybody gets that it's the software maker who's scheming or, probably more often, it's the software maker who can't be bothered to get things right. With generative AI I think "scheming" is actually even less likely than with traditional software and "not fixing bugs" is more likely, because people don't understand AI systems they're making and can make them do their bidding, evil or not, to a much lesser extent than with traditional software; OTOH bugs are more likely for the same reason \[we don't know what we're doing.\] I think a lot of people across the political spectrum \[including for example Elon Musk and not just journalists and such\] say things along the lines of "it's terrible that we're training AI to think incorrectly about the world" in the context of racial/political/other charged examples of bias; I think in reality this is a product bug affecting users to various degrees and there's bias in how the fixes are prioritized but the thing isn't capable of thinking at all.],
@@ -1272,15 +1043,15 @@ testing the bejeezus out of everything. I literally don't know any other open so
   [I did a brief stint consulting for biotech folks affiliated with Nobel shortlist types in an area called proteomics. Like any consultant I surrender any credit to the people paying handsomely by the hour.],
   [But it really is a Shannon problem now: CRISPR Cas-9 can do arbitrary edits to not only a person’s genome but (in an ethical and legal grey area) to the germ line as well.],
   [We just have no idea what to change and there’s enough integrity in the field that we won’t risk just arbitrary children on finding out.],
-  [id="appendix-reproducing-rob-ricci-s-results"\>Appendix: reproducing Rob Ricci's results],
+  [Appendix: reproducing Rob Ricci's results],
   [I tried prompts with default settings, except for reducing image quality to 10 to generate images more quickly. This means we had 512/512, 7 prompt guidance, 10 quality, random seed. After 2 tries, increased image quality to 40 because the images were too low quality to tell the ethnicity sometimes. Other than increasing the image quality, there was no attempt to re-run prompts or otherwise due any kind of selection from the output. The prompts were "Generate a very professional looking linkedin profile photo for a X", where X was Doctor, Lawyer, Engineer, Scientist, Journalist, and Banker.],
   [This produced the following images:],
   [Roughly speaking, I think Rob's results reproduced, which should be no surprise at this point given how many images we've seen.],
   [And then, to see if we could reproduce the standard rebuttal that generative AI isn't biased because requests for smutty images often have Asian women, I tried the prompt "Generate a trashy instagram profile photo for a porn star". There's an NSFW filter that was tripped in some cases, so we don't get groups of four images and instead got:],
   [\[Click to expand \/ collapse very mildly NSFW images\]],
   [And, indeed, the generated images are much more Asian than we got for any of our professional photos, save Rob Ricci's set of photos for asking for a "linkedin profile picture of Chinese Studies professor".],
-  [id="appendix-comments-from-benjamin-reeseman"\>Appendix: comments from Benjamin Reeseman],
-  [id="fn: S"\>Naturally, when I mentioned this, a "smart contrarian" responded with "what are base rates", but spending 30 seconds googling reveals that the base rate of U. S. gun ownership is much higher among whites than in any other demographic. The base rate argument is even more absurd if you think about the base rate of a hand holding an object — what fraction of the time is that object a gun? Regardless of race, it's going to be very low. Of course, you could find a biased sample that doesn't resemble the underlying base rate at all, which appears to be what Google did, but it's not clear why this justifies having this bug.
+  [Appendix: comments from Benjamin Reeseman],
+  [Naturally, when I mentioned this, a "smart contrarian" responded with "what are base rates", but spending 30 seconds googling reveals that the base rate of U. S. gun ownership is much higher among whites than in any other demographic. The base rate argument is even more absurd if you think about the base rate of a hand holding an object — what fraction of the time is that object a gun? Regardless of race, it's going to be very low. Of course, you could find a biased sample that doesn't resemble the underlying base rate at all, which appears to be what Google did, but it's not clear why this justifies having this bug.
  \[return\]],
 ),
   insert-map: (:),
@@ -1289,19 +1060,17 @@ testing the bejeezus out of everything. I literally don't know any other open so
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [De-ICE Disco at the Googleplex],
   author: [Pete Warden],
   source-name: [Pete Warden's Blog],
   images: (),
   paragraphs: (
-  [class="wp-block-paragraph"\>When Renee Good and Alex Pretti were murdered, and I saw the incredible courage of people in Minneapolis in the face of state brutality, I had to find some way to show that tech workers stand with Minnesota, even if our leaders don’t. I signed the ICEout petition , and I’d encourage you to do the same. I’ve also been talking to the press about why I signed it, and on the Wired Uncanny Valley podcast Kate Drummond asked what the next steps were for me. Off the cuff I said I wanted an in-person event, but at that point I had no idea what that might be.],
-  [class="wp-block-paragraph"\>As some of you know, I’ve been going to protests at the SF Tesla dealership since March 2025 . The energy and solidarity I’ve experienced there has been a big part of what’s kept me going during all the dark times. Once I saw the incredible footage of Seth Todd facing off against federal agents in an inflatable frog costume in October I knew that was a way I could use my natural goofiness to fight what’s happening. I immediately bought the same costume (yes, I know, Amazon) and started attending the Tesla Takedowns in it. It seems to have had an impact, I encourage cars to honk in return for more dancing, and I often have other protestors, kids, and even passing tourists take selfies with me. For me personally, I enjoy finally getting to cosplay as someone 6′ 6”, and as an introvert who enjoys performing, being hidden inside a suit while drawing attention to the cause is perfect.],
-  [class="wp-block-paragraph"\>After the podcast, I realized I wanted to bring some of the energy from the Tesla protests to a tech event. I thought about setting up a meetup, but that felt too boring. Then I remembered how many of my former colleagues at Google have talked to me about wanting to show their support, but are struggling to find ways to have their voice heard without being targeted. Instead of a traditional protest with speeches, slogans, and signups, maybe we could find another way to be visible. I decided to get a few friends together in Charleston Park, a public park next to the Googleplex in Mountain View, and hold a popup dance party. De-ICE Disco sounded good to me, and so after TGIF, between 5pm and 5:30pm on Thursday (February 5th) we’ll be bopping around in inflatable costumes to disco classics. Join us, costume or not, to show ICE we won’t be intimidated, that we’ll protect our neighbors and colleagues when they come, and that we stand with Minneapolis.],
-  [class="wp-block-paragraph"\>I’ve never done anything like this before, but it’s the best way I can think of to show the world that there are Googlers and Xooglers who care, and to recognize the courage of those in Minnesota who are standing up to ICE at great personal risk. De-ICE Disco isn’t an organization, just an idea, and it’s not affiliated with ICEout.tech, but I’m hoping it will be another way to push back against what’s happening to our country. I’d love to see any of you who can make it on Thursday, and please do share with anyone else who might be interested. Let’s fight facism and have fun!],
+  [When Renee Good and Alex Pretti were murdered, and I saw the incredible courage of people in Minneapolis in the face of state brutality, I had to find some way to show that tech workers stand with Minnesota, even if our leaders don’t. I signed the ICEout petition , and I’d encourage you to do the same. I’ve also been talking to the press about why I signed it, and on the Wired Uncanny Valley podcast Kate Drummond asked what the next steps were for me. Off the cuff I said I wanted an in-person event, but at that point I had no idea what that might be.],
+  [As some of you know, I’ve been going to protests at the SF Tesla dealership since March 2025 . The energy and solidarity I’ve experienced there has been a big part of what’s kept me going during all the dark times. Once I saw the incredible footage of Seth Todd facing off against federal agents in an inflatable frog costume in October I knew that was a way I could use my natural goofiness to fight what’s happening. I immediately bought the same costume (yes, I know, Amazon) and started attending the Tesla Takedowns in it. It seems to have had an impact, I encourage cars to honk in return for more dancing, and I often have other protestors, kids, and even passing tourists take selfies with me. For me personally, I enjoy finally getting to cosplay as someone 6′ 6”, and as an introvert who enjoys performing, being hidden inside a suit while drawing attention to the cause is perfect.],
+  [After the podcast, I realized I wanted to bring some of the energy from the Tesla protests to a tech event. I thought about setting up a meetup, but that felt too boring. Then I remembered how many of my former colleagues at Google have talked to me about wanting to show their support, but are struggling to find ways to have their voice heard without being targeted. Instead of a traditional protest with speeches, slogans, and signups, maybe we could find another way to be visible. I decided to get a few friends together in Charleston Park, a public park next to the Googleplex in Mountain View, and hold a popup dance party. De-ICE Disco sounded good to me, and so after TGIF, between 5pm and 5:30pm on Thursday (February 5th) we’ll be bopping around in inflatable costumes to disco classics. Join us, costume or not, to show ICE we won’t be intimidated, that we’ll protect our neighbors and colleagues when they come, and that we stand with Minneapolis.],
+  [I’ve never done anything like this before, but it’s the best way I can think of to show the world that there are Googlers and Xooglers who care, and to recognize the courage of those in Minnesota who are standing up to ICE at great personal risk. De-ICE Disco isn’t an organization, just an idea, and it’s not affiliated with ICEout.tech, but I’m hoping it will be another way to push back against what’s happening to our country. I’d love to see any of you who can make it on Thursday, and please do share with anyone else who might be interested. Let’s fight facism and have fun!],
 ),
   insert-map: (:),
   word-count: 549,
@@ -1309,10 +1078,8 @@ testing the bejeezus out of everything. I literally don't know any other open so
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Senators want US energy information agency to monitor data center electricity usage],
   author: [Molly Taft, wired.com],
   source-name: [Ars Technica],
@@ -1329,11 +1096,9 @@ testing the bejeezus out of everything. I literally don't know any other open so
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [Data alignment and caches],
   author: [Dan Luu],
   source-name: [Dan Luu],
@@ -1342,7 +1107,7 @@ testing the bejeezus out of everything. I literally don't know any other open so
   [Here's the graph of a toy benchmark 1 of page-aligned vs. mis-aligned accesses; it shows a ratio of performance between the two at different working set sizes. If this benchmark seems contrived, it actually comes from a real world example of the disastrous performance implications of using nice power of 2 alignment, or page alignment in an actual system 2 .],
   [Except for very small working sets (1-8), the unaligned version is noticeably faster than the page-aligned version, and there's a large region up to a working set size of 512 where the ratio in performance is somewhat stable, but more so on our Sandy Bridge chip than our Westmere chip.],
   [To understand what's going on here, we have to look at how caches organize data. By way of analogy, consider a 1,000 car parking garage that has 10,000 permits. With a direct mapped scheme (which you could call 1-way associative 3 ), each of the ten permits that has the same 3 least significant digits would be assigned the same spot, i.e., permits 0618, 1618, 2618, and so on, are only allowed to park in spot 618. If you show up at your spot and someone else is in it, you kick them out and they have to drive back home. The next time they get called in to work, they have to drive all the way back to the parking garage.],
-  [Instead, if each car's permit allows it to park in a set that has ten possible spaces, we'll call that a 10-way set associative scheme, which gives us 100 sets of ten spots. Each set is now defined by the last 2 significant digits instead of the last 3. For example, with permit 2618, you can park in any spot from the set {018, 118, 218, …, 918}. If all of them are full, you kick out one unlucky occupant and take their spot, as before.],
+  [Instead, if each car's permit allows it to park in a set that has ten possible spaces, we'll call that a 10-way set associative scheme, which gives us 100 sets of ten spots. Each set is now defined by the last 2 significant digits instead of the last 3. For example, with permit 2618, you can park in any spot from the set \{018, 118, 218, …, 918\}. If all of them are full, you kick out one unlucky occupant and take their spot, as before.],
   [Let's move out of analogy land and back to our benchmark. The main differences are that there isn't just one garage-cache, but a hierarchy of them, from the L1 4 , which is the smallest (and hence, fastest) to the L2 and L3. Each seat in a car corresponds to an address. On x86, each addresses points to a particular byte. In the Sandy Bridge chip we're running on, we've got a 32kB L1 cache with 64-byte line size and, 64 sets, with 8-way set associativity. In our analogy, a line size of 64 would correspond to a car with 64 seats. We always transfer things in 64-byte chunks and the bottom log₂(64) = 6 bits of an address refer to a particular byte offset in a cache line. The next log₂(64) = 6 bits determine which set an address falls into 5 . Each of those sets can contain 8 different things, so we have 64 sets \* 8 lines/set \* 64 bytes/line = 32kB. If we use the cache optimally, we can store 32,768 items. But, since we're accessing things that are page (4k) aligned, we effectively lose the bottom log₂(4k) = 12 bits, which means that every access falls into the same set, and we can only loop through 8 things before our working set is too large to fit in the L1! But if we'd misaligned our data to different cache lines, we'd be able to use 8 \* 64 = 512 locations effectively.],
   [Similarly, our chip has a 512 set L2 cache, of which 8 sets are useful for our page aligned accesses, and a 12288 set L3 cache, of which 192 sets are useful for page aligned accesses, giving us 8 sets \* 8 lines \/ set = 64 and 192 sets \* 8 lines \/ set = 1536 useful cache lines, respectively. For data that's misaligned by a cache line, we have an extra 6 bits of useful address, which means that our L2 cache now has 32,768 useful locations.],
   [In the Sandy Bridge graph above, there's a region of stable relative performance between 64 and 512, as the page-aligned version version is running out of the L3 cache and the unaligned version is running out of the L1. When we pass a working set of 512, the relative ratio gets better for the aligned version because it's now an L2 access vs. an L3 access. Our graph for Westmere looks a bit different because its L3 is only 3072 sets, which means that the aligned version can only stay in the L3 up to a working set size of 384. After that, we can see the terrible performance we get from spilling into main memory, which explains why the two graphs differ in shape above 384.],
@@ -1353,19 +1118,18 @@ testing the bejeezus out of everything. I literally don't know any other open so
   [???? ???? ???? ???? ???? 0000 0000 0000],
   [was just done for convenience in our benchmark. Not only will aligning to any large power of 2 cause a problem, generating addresses with a power of 2 offset from each other will cause the same problem.],
   [Nowadays, the importance of caches is well understood enough that, when I'm asked to look at a cache related performance bug, it's usually due to the kind of thing we just talked about: conflict misses that prevent us from using our full cache effectively 6 . This isn't the only way for that to happen -- bank conflicts and and false dependencies are also common problems, but I'll leave those for another blog post.],
-  [id="resources"\>Resources],
   [For more on caches on memory, see What Every Programmer Should Know About Memory . For something with more breadth, see this blog post for something "short" , or Modern Processor Design for something book length. For even more breadth (those two links above focus on CPUs and memory), see Computer Architecture: A Quantitative Approach , which talks about the whole system up to the datacenter level.],
-  [id="fn: A"\>The Sandy Bridge is an i7 3930K and the Westmere is a mobile i3 330M
+  [The Sandy Bridge is an i7 3930K and the Westmere is a mobile i3 330M
  \[return\]],
-  [id="fn: M"\>Or anyone who aligned their data too nicely on a calculation with two source arrays and one destination when running on a chip with a 2-way associative or direct mapped cache. This is surprisingly common when you set up your arrays in some nice way in order to do cache blocking, if you're not careful.
+  [Or anyone who aligned their data too nicely on a calculation with two source arrays and one destination when running on a chip with a 2-way associative or direct mapped cache. This is surprisingly common when you set up your arrays in some nice way in order to do cache blocking, if you're not careful.
  \[return\]],
-  [id="fn:1"\>Don't call it that. People will you look at you funny the same way they would if you pronounced SQL as squeal or squll.
+  [Don't call it that. People will you look at you funny the same way they would if you pronounced SQL as squeal or squll.
  \[return\]],
-  [id="fn: B"\>In this post, L1 refers to the l1d. Since we're only concerned with data, the l1i isn't relevant. Apologies for the sloppy use of terminology.
+  [In this post, L1 refers to the l1d. Since we're only concerned with data, the l1i isn't relevant. Apologies for the sloppy use of terminology.
  \[return\]],
-  [id="fn: L"\>If it seems odd that the least significant available address bits are used for the set index, that's because of the cardinal rule of computer architecture, make the common case fast -- Google Instant completes “make the common” to “make the common case fast”, “make the common case fast mips”, and “make the common case fast computer architecture”. The vast majority of accesses are close together, so moving the set index bits upwards would cause more conflict misses. You might be able to get away with a hash function that isn't simply the least significant bits, but most proposed schemes hurt about as much as they help while adding extra complexity.
+  [If it seems odd that the least significant available address bits are used for the set index, that's because of the cardinal rule of computer architecture, make the common case fast -- Google Instant completes “make the common” to “make the common case fast”, “make the common case fast mips”, and “make the common case fast computer architecture”. The vast majority of accesses are close together, so moving the set index bits upwards would cause more conflict misses. You might be able to get away with a hash function that isn't simply the least significant bits, but most proposed schemes hurt about as much as they help while adding extra complexity.
  \[return\]],
-  [id="fn:4"\>Cache misses are often described using the 3C model: conflict misses, which are caused by the type of aliasing we just talked about; compulsory misses, which are caused by the first access to a memory location; and capacity misses, which are caused by having a working set that's too large for a cache, even without conflict misses. Page-aligned accesses like these also make compulsory misses worse, because prefetchers won't prefetch beyond a page boundary. But if you have enough data that you're aligning things to page boundaries, you probably can't do much about that anyway.
+  [Cache misses are often described using the 3C model: conflict misses, which are caused by the type of aliasing we just talked about; compulsory misses, which are caused by the first access to a memory location; and capacity misses, which are caused by having a working set that's too large for a cache, even without conflict misses. Page-aligned accesses like these also make compulsory misses worse, because prefetchers won't prefetch beyond a page boundary. But if you have enough data that you're aligning things to page boundaries, you probably can't do much about that anyway.
  \[return\]],
 ),
   insert-map: (:),
@@ -1374,10 +1138,8 @@ testing the bejeezus out of everything. I literally don't know any other open so
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Filesystem error handling],
   author: [Dan Luu],
   source-name: [Dan Luu],
@@ -1386,7 +1148,7 @@ testing the bejeezus out of everything. I literally don't know any other open so
   [We’re going to reproduce some results from papers on filesystem robustness that were written up roughly a decade ago : Prabhakaran et al. SOSP 05 paper , which injected errors below the filesystem and Gunawi et al. FAST 08 , which looked at how often filesystems failed to check return codes of functions that can return errors.],
   [Prabhakaran et al. injected errors at the block device level (just underneath the filesystem) and found that ext3 , resierfs , ntfs , and jfs mostly handled read errors reasonbly but ext3 , ntfs , and jfs mostly ignored write errors. While the paper is interesting, someone installing Linux on a system today is much more likely to use ext4 than any of the now-dated filesystems tested by Prahbhakaran et al. We’ll try to reproduce some of the basic results from the paper on more modern filesystems like ext4 and btrfs , some legacy filesystems like exfat , ext3 , and jfs , as well as on overlayfs .],
   [Gunawi et al. found that errors weren’t checked most of the time. After we look at error injection on modern filesystems, we’ll look at how much (or little) filesystems have improved their error handling code.],
-  [id="error-injection"\>Error injection],
+  [Error injection],
   [A cartoon view of a file read might be: pread syscall -\> OS generic filesystem code -\> filesystem specific code -\> block device code -\> device driver -\> device controller -\> disk . Once the disk gets the request, it sends the data back up: disk -\> device controller -\> device driver -\> block device code -\> filesystem specific code -\> OS generic filesystem code -\> pread . We’re going to look at error injection at the block device level, right below the file system.],
   [Let’s look at what happened when we injected errors in 2017 vs. what Prabhakaran et al. found in 2005.],
   [2005 2017 
@@ -1435,17 +1197,16 @@ testing the bejeezus out of everything. I literally don't know any other open so
  
  xfs prop prop ignore prop prop ignore],
   [In the small file test table, all the results are the same, except for btrfs , which returns correct data in every case tested. What’s happening here is that the filesystem was created on a rotational disk and, by default, btrfs duplicates filesystem metadata on rotational disks (it can be configured to do so on SSDs, but that’s not the default). Since the file was tiny, btrfs packed the file into the metadata and the file was duplicated along with the metadata, allowing the filesystem to fix the error when one block either returned bad data or reported a failure.],
-  [id="overlay"\>Overlay],
   [Overlayfs allows one file system to be “overlaid” on another. As explained in the initial commit , one use case might be to put an (upper) read-write directory tree on top of a (lower) read-only directory tree, where all modifications go to the upper, writable layer.],
   [Although not listed on the tables, we also tested every filesystem other than fat as the lower filesystem with overlay fs (ext4 was the upper filesystem for all tests). Every filessytem tested showed the same results when used as the bottom layer in overlay as when used alone. fat wasn’t tested because mounting fat resulted in a filesystem not supported error.],
-  [id="error-correction"\>Error correction],
+  [Error correction],
   [btrfs doesn’t, by default, duplicate metadata on SSDs because the developers believe that redundancy wouldn’t provide protection against errors on SSD (which is the same reason apfs doesn’t have redundancy). SSDs do a kind of write coalescing, which is likely to cause writes which happen consecutively to fall into the same block. If that block has a total failure, the redundant copies would all be lost, so redundancy doesn’t provide as much protection against failure as it would on a rotational drive.],
   [I’m not sure that this means that redundancy wouldn’t help -- Individual flash cells degrade with operation and lose charge as they age. SSDs have built-in wear-leveling and error-correction that’s designed to reduce the probability that a block returns bad data, but over time, some blocks will develop so many errors that the error-correction won’t be able to fix the error and the block will return bad data. In that case, a read should return some bad bits along with mostly good bits. AFAICT, the publicly available data on SSD error rates seems to line up with this view.],
-  [id="error-detection"\>Error detection],
+  [Error detection],
   [Relatedly, it appears that apfs doesn’t checksum data because “\[apfs\] engineers contend that Apple devices basically don’t return bogus data” . Publicly available studies on SSD reliability have not found that there’s a model that doesn’t sometimes return bad data. It’s a common conception that SSDs are less likely to return bad data than rotational disks, but when Google studied this across their drives, they found:],
   [The annual replacement rates of hard disk drives have previously been reported to be 2-9% \[19,20\], which is high compared to the 4-10% of flash drives we see being replaced in a 4 year period. However, flash drives are less attractive when it comes to their error rates. More than 20% of flash drives develop uncorrectable errors in a four year period, 30-80% develop bad blocks and 2-7% of them develop bad chips. In comparison, previous work \[1\] on HDDs reports that only 3.5% of disks in a large population developed bad sectors in a 32 months period – a low number when taking into account that the number of sectors on a hard disk is orders of magnitudes larger than the number of either blocks or chips on a solid state drive, and that sectors are smaller than blocks, so a failure is less severe.],
   [While there is one sense in which SSDs are more reliable than rotational disks, there’s also a sense in which they appear to be less reliable. It’s not impossible that Apple uses some kind of custom firmware on its drive that devotes more bits to error correction than you can get in publicly available disks, but even if that’s the case, you might plug a non-apple drive into your apple computer and want some kind of protection against data corruption.],
-  [id="internal-error-handling"\>Internal error handling],
+  [Internal error handling],
   [Now that we’ve reproduced some tests from Prabhakaran et al., we’re going to move on to Gunawi et al. . Since the paper is fairly involved, we’re just going to look at one small part of the paper, the part where they examined three function calls, filemap\_fdatawait , filemap\_fdatawrite , and sync\_blockdev to see how often errors weren’t checked for these functions.],
   [Their justification for looking at these function is given as:],
   [As discussed in Section 3.1, a function could return more than one error code at the same time, and checking only one of them suffices. However, if we know that a certain function only returns a single error code and yet the caller does not save the return value properly, then we would know that such call is really a flaw. To find real flaws in the file system code, we examined three important functions that we know only return single error codes: sync\_blockdev, filemap\_fdatawrite, and filemap\_fdatawait. A file system that does not check the returned error codes from these functions would obviously let failures go unnoticed in the upper layers.],
@@ -1480,19 +1241,18 @@ Since the error status of the address space is cleared by this function, callers
  30],
   [This table is for all code in linux under fs . Each row shows data for calls of one function. For each year, the leftmost cell shows the number of calls that do something with the return value over the total number of calls. The cell to the right shows the percentage of calls that do something with the return value. “Do something” is used very loosely here -- branching on the return value and then failing to handle the error in either branch, returning the return value and having the caller fail to handle the return value, as well as saving the return value and then ignoring it are all considered doing something for the purposes of this table.],
   [For example Gunawi et al. noted that cifs/transport.c had],
-  [int SendReceive () { 
+  [int SendReceive () \{ 
  int rc;
  rc = cifs\_sign\_smb(); \/\\/ 
  ... 
  rc = smb\_send();
-}],
+\}],
   [Although cifs\_sign\_smb returned an error code, it was never checked before being overwritten by smb\_send , which counted as being used for our purposes even though the error wasn’t handled.],
   [Overall, the table appears to show that many more errors are handled now than were handled in 2008 when Gunawi et al. did their analysis, but it’s hard to say what this means from looking at the raw numbers because it might be ok for some errors not to be handled and different lines of code are executed with different probabilities.],
-  [id="conclusion"\>Conclusion],
   [Filesystem error handling seems to have improved. Reporting an error on a pwrite if the block device reports an error is perhaps the most basic error propagation a robust filesystem should do; few filesystems reported that error correctly in 2005. Today, most filesystems will correctly report an error when the simplest possible error condition that doesn’t involve the entire drive being dead occurs if there are no complicating factors.],
   [Most filesystems don’t have checksums for data and leave error detection and correction up to userspace software. When I talk to server-side devs at big companies, their answer is usually something like “who cares? All of our file accesses go through a library that checksums things anyway and redundancy across machines and datacenters takes care of failures, so we only need error detection and not correction”. While that’s true for developers at certain big companies, there’s a lot of software out there that isn’t written robustly and just assumes that filesystems and disks don’t have errors.],
   [This was a joint project with Wesley Aptekar-Cassels; the vast majority of the work for the project was done while pair programming at RC . We also got a lot of help from Kate Murphy. Both Wesley (w.aptekar\@gmail.com) and Kate (hello\@kate.io) are looking for work. They’re great and I highly recommend talking to them if you’re hiring!],
-  [id="appendix-error-handling-in-c"\>Appendix: error handling in C],
+  [Appendix: error handling in C],
   [A fair amount of effort has been applied to get error handling right. But C makes it very easy to get things wrong, even when you apply a fair amount effort and even apply extra tooling. One example of this in the code is the submit\_one\_bio function. If you look at the definition, you can see that it’s annotated with \_\_must\_check , which will cause a compiler warning when the result is ignored. But if you look at calls of submit\_one\_bio , you’ll see that its callers aren’t annotated and can ignore errors. If you dig around enough you’ll find one path of error propagation that looks like:],
   [submit\_one\_bio
 submit\_extent\_page
@@ -1517,7 +1277,7 @@ filemap\_fdatawrite],
   [If you watch the talk, Rich uses "simplicity" the way Uncle Bob uses "discipline". They way these statements are used, they're roughly equivalent to Ken Thompson saying " Bugs are bugs. You write code with bugs because you do ". The UB school throws tools and processes under the bus, saying that it's unsafe to rely solely on tools or processes.],
   [Rich's rhetorical trick is brilliant -- I've heard that line quoted tens of times since the talk to argue against tests or tools or types. But, like guardrails, most tools and processes aren't about eliminating all bugs, they're about reducing the severity or probability of bugs. If we look at this particular function call, we can see that a static analysis tool failed to find this bug. Does that mean that we should give up on static analysis tools? A static analysis tool could look for all calls of submit\_one\_bio and show you the cases where the error is propagated up N levels only to be dropped. Gunawi et al. did exactly that and found a lot of bugs. A person basically can't do the same thing without tooling. They could try, but people are lucky if they get 95% accuracy when manually digging through things like this. The sheer volume of code guarantees that a human doing this by hand would make mistakes.],
   [Even better than a static analysis tool would be a language that makes it harder to accidentally forget about checking for an error. One of the issues here is that it's sometimes valid to drop an error. There are a number of places where there's no interace that allows an error to get propagated out of the filesystem, making it correct to drop the error, modulo changing the interface. In the current situation, as an outsider reading the code, if you look at a bunch of calls that drop errors, it's very hard to say, for all of them, which of those is a bug and which of those is correct. If the default is that we have a kind of guardrail that says "this error must be checked", people can still incorrectly ignore errors, but you at least get an annotation that the omission was on purpose. For example, if you're forced to specifically write code that indicates that you're ignoring an error, and in code that's inteded to be robust, like filesystem code, code that drops an error on purpose is relatively likely to be accompanied by a comment explaining why the error was dropped.],
-  [id="appendix-why-wasn-t-this-done-earlier"\>Appendix: why wasn't this done earlier?],
+  [Appendix: why wasn't this done earlier?],
   [After all, it would be nice if we knew if modern filesystems could do basic tasks correctly. Filesystem developers probably know this stuff, but since I don't follow LKML , I had no idea whether or not things had improved since 2005 until we ran the experiment.],
   [The papers we looked at here came out of Andrea and Remzi Arpaci-Dusseau's research lab. Remzi has a talk where he mentioned that grad students don't want to reproduce and update old work. That's entirely reasonable, given the incentives they face. And I don't mean to pick on academia here -- this work came out of academia, not industry. It's possible this kind of work simply wouldn't have happened if not for the academic incentive system.],
   [In general, it seems to be quite difficult to fund work on correctness. There are a fair number of papers on new ways to find bugs, but that's relatively little work on applying existing techniques to existing code. In academia, that seems to be hard to get a good publication out of, in the open source world, that seems to be less interesting to people than writing new code. That's also entirely reasonable -- people should work on what they want, and even if they enjoy working on correctness, that's probably not a great career decision in general. I was at the RC career fair the other night and my badge said I was interested in testing. The first person who chatted me up opened with "do you work in QA?". Back when I worked in hardware, that wouldn't have been a red flag, but in software, "QA" is code for a low-skill, tedious, and poorly paid job. Much of industry considers testing and QA to be an afterthought. As a result, open source projects that companies rely on are often woefully underfunded . Google funds some great work (like afl-fuzz), but that's the exception and not the rule, even within Google, and most companies don't fund any open source work. The work in this post was done by a few people who are intentionally temporarily unemployed, which isn't really a scalable model.],
@@ -1525,7 +1285,7 @@ filemap\_fdatawrite],
   [If I knew how to fund more work on correctness, I'd try to convince you that we should switch to this new model, but I don't know of a funding model that works. I've set up a patreon (donation account) , but it would be quite extraordinary if that was sufficient to actually fund a signifcant amount of work. If you look at how much programmers make off of donations, if I made two order of magnitude less than I could if I took a job in industry, that would already put me in the top 1% of programmers on patreon. If I made one order of magnitude less than I'd make in industry, that would be extraordinary. Off the top of my head, the only programmers who make more than that off of patreon either make something with much broader appeal (like games) or are Evan You, who makes one of the most widely use front-end libraries in existence. And if I actually made as much as I can make in industry, I suspect that would make me the highest grossing programmer on patreon, even though, by industry standards, my compensation hasn't been anything special.],
   [If I had to guess, I'd say that part of the reason it's hard to fund this kind of work is that consumers don't incentivize companies to fund this sort of work. If you look at "big" tech companies, two of them are substantially more serious about correctness than their competitors. This results in many fewer horror stories about lost emails and documents as well as lost entire accounts. If you look at the impact on consumers, it might be something like the difference between 1% of people seeing lost/corrupt emails vs. 0.001%. I think that's pretty significant if you multiply that cost across all consumers, but the vast majority of consumers aren't going to make decisions based on that kind of difference. If you look at an area where correctness problems are much more apparent, like databases or backups, you'll find that even the worst solutions have defenders who will pop into any dicussions and say "works for me". A backup solution that works 90% of the time is quite bad, but if you have one that works 90% of the time, it will still have staunch defenders who drop into discussions to say things like "I've restored from backup three times and it's never failed! You must be making stuff up!". I don't blame companies for rationally responding to consumers, but I do think that the result is unfortunate for consumers.],
   [Just as an aside, one of the great wonders of doing open work for free is that the more free work you do, the more people complain that you didn't do enough free work. As David MacIver has said, doing open source work is like doing normal paid work, except that you get paid in complaints instead of cash . It's basically guaranteed that the most common comment on this post, for all time, will be that didn't test someone's pet filesystem because we're btrfs shills or just plain lazy, even though we include a link to a repo that lets anyone add tests as they please. Pretty much every time I've done any kind of free experimental work, people who obvously haven't read the experimental setup or the source code complain that the experiment couldn't possibly be right because of \[thing that isn't true that anyone could see by looking at the setup\] and that it's absolutely inexcusable that I didn't run the experiment on the exact pet thing they wanted to see. Having played video games competitively in the distant past, I'm used to much more intense internet trash talk, but in general, this incentive system seems to be backwards.],
-  [id="appendix-experimental-setup"\>Appendix: experimental setup],
+  [Appendix: experimental setup],
   [For the error injection setup, a high-level view of the experimental setup is that dmsetup was used to simulate bad blocks on the disk.],
   [A list of the commands run looks something like:],
   [cp images/btrfs.img.gz /tmp/tmpeas9efr6.gz
@@ -1559,10 +1319,8 @@ rm /tmp/tmpeas9efr6],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Nim binary size from 160 KB to 150 Bytes],
   author: [Dennis Felsing],
   source-name: [Dennis Felsing],
@@ -1574,7 +1332,7 @@ rm /tmp/tmpeas9efr6],
   [Use a custom linker script and ELF header to build a 150 byte binary 
 ( 1 byte smaller than in Rust )],
   [The full source code of this post can be found in its repository . All measurements are done on Linux x86-64 with GCC 5.1 and Clang 3.6.0.],
-  [id="using-the-c-standard-library"\>Using the C Standard Library],
+  [Using the C Standard Library],
   [echo "Hello!"],
   [By default Nim uses GCC as the backend C compiler on most platforms, and we dynamically link against glibc. We can try optimizing for speed and size, as well as strip unnecessary symbols after the compilation:],
   [Command (GCC backend) 
@@ -1599,6 +1357,11 @@ rm /tmp/tmpeas9efr6],
  19 KB],
   [That’s pretty nice and can be done with any Nim program to reduce binary size.],
   [Now let’s try to get rid of glibc, at least temporarily (we will come back to a more permanent solution later). Instead of glibc we’re now statically linking against musl libc:],
+  [\$ nim --gcc.exe:/usr/local/musl/bin/musl-gcc \\
+ --gcc.linkerexe:/usr/local/musl/bin/musl-gcc \\
+ -d:release --opt:size --passL:-static c hello
+\$ strip -s hello
+30 KB],
   [Update: The order of arguments to nim matters, --passL:-static has to be passed after setting the gcc exe so that it isn’t overwritten.],
   [So that’s a statically linked binary in 30 KB, which can be deployed without depending on any glibc version (or any other libraries)!],
   [What about using Clang instead of GCC by setting --cc:clang :],
@@ -1625,43 +1388,77 @@ rm /tmp/tmpeas9efr6],
   [The speed optimized binary is much smaller, but the one optimized for size isn’t. The exact behaviour of Clang and GCC of course depends on their version, so expect to see (at least) slightly different numbers on your system.],
   [Looks like the GCC backend is a better choice currently, so let’s try stripping down the binary further with it:],
   [As a first step we disable the garbage collector, not like we need it for this program anyway:],
+  [\$ nim --gc:none -d:release --opt:size c hello
+\$ strip -s hello
+11 KB],
   [Next we remove all the nice dynamic memory, error handling and other OS dependent goodies with --os:standalone (this implies --gc:none ). We have to provide a panicoverride.nim that contains these two procs, about which we don’t care anyway. Who needs error handling when you can have a 6 KB binary instead:],
   [proc rawoutput ( s : string ) = discard 
  proc panic ( s : string ) = discard],
-  [id="disregarding-the-c-standard-library"\>Disregarding the C standard library],
+  [\$ nim --os:standalone -d:release c hello
+\$ strip -s hello
+6.1 KB],
+  [Disregarding the C standard library],
   [Now we have to start thinking more out of the box: If we want a program that really does nothing, not even print Hello! , we can just use an empty file. Now we don’t rely on the C standard library anymore and can try to exclude it totally by using -passL:-nostdlib (passL simply passes that argument to GCC at the linking step):],
+  [\$ nim --os:standalone -d:release --passL:-nostdlib c hello
+CC: hello
+CC: stdlib\_system
+\[Linking\]
+ld: warning: cannot find entry symbol \_start; defaulting to 0000000000400160
+\$ strip -s hello
+1.4 KB],
   [Wow, that’s small! Let’s run our program, that does nothing, and enjoy:],
+  [\$ ./hello
+Segmentation fault (core dumped)],
   [Ouch. That didn’t go so well. Take another look at the linker output and notice what the problem is: We can’t just expect our code to be run, the binary starts its execution at some random, wrong, position. Instead we have to take over the work of the C standard library now and supply our own \_start function:],
   [import syscall],
-  [proc main {. exportc : "\_start" .} = 
+  [proc main \{. exportc : "\_start" .\} = 
  discard syscall ( EXIT , 0 )],
   [We also have to explicitly exit the program, for which we use my syscall library , that provides raw system calls into the Linux kernel in Nim. Let’s wrap the syscalls we need and use them to write proper Nim code with them:],
   [import syscall],
   [const STDOUT = 1],
   [proc write ( fd : cint , buf : cstring , len : csize ): clong 
- {. inline , discardable .} = 
+ \{. inline , discardable .\} = 
  syscall ( WRITE , fd , buf , len )],
-  [proc exit ( n : clong ): clong {. inline , discardable .} = 
+  [proc exit ( n : clong ): clong \{. inline , discardable .\} = 
  syscall ( EXIT , n )],
-  [proc main {. exportc : "\_start" .} = 
+  [proc main \{. exportc : "\_start" .\} = 
  write STDOUT , "Hello! \\n " , 7 
  exit 0],
   [Now we can successfully compile like this:],
+  [\$ nim --os:standalone -d:release --passL:-nostdlib --noMain c hello
+\$ strip -s hello
+1.5 KB
+\$ ./hello
+Hello!],
   [The final trick of this section is to tell GCC to optimize away unused functions. These functions are the initializations of Nim modules, like our hello module or the system module from the standard library, but they just end up empty here anyway. Maybe the Nim compiler could leave them out on its own, but usually you don’t care about saving a few bytes and have something more important to do. Today we care, so first we tell GCC to put function and data items into separate sections ( -ffunction-sections & -fdata-sections ) at the compile step. At the linking step we tell Nim to tell GCC to pass --gc-sections to ld , our linker, which then removes sections that are not referenced anywhere:],
+  [\$ nim --os:standalone -d:release --passL:-nostdlib --noMain \\
+ --passC:-ffunction-sections --passC:-fdata-sections \\
+ --passL:-Wl,--gc-sections c hello
+\$ strip -s hello
+952 B],
   [Great! We’re down from an initial binary size of 160 KB to just 952 bytes. Can we get even smaller? Yes, indeed, but not with the default tooling.],
-  [id="custom-linking-to-achieve-150-bytes"\>Custom Linking to achieve 150 Bytes],
+  [Custom Linking to achieve 150 Bytes],
   [This uses the exact method from the 151-byte static Linux binary in Rust blog post, except that Nim with GCC manage to get down 1 byte more. Meanwhile Clang needs 1 byte more than the Rust version.],
   [We continue with the exact same program that we just got down to 952 bytes. But instead of letting Nim do all the work (with quite a lot of options by now) we simply create an object file from Nim ( --app:staticlib ), and go manually from there. A custom linker script and a custom ELF header do the main work. But the actual code that’s executed is still fully provided by our Nim code:],
-  [class="highlight"\> \$ nim --app:staticlib --os:standalone -d:release --noMain \\
+  [\$ nim --app:staticlib --os:standalone -d:release --noMain \\
  --passC:-ffunction-sections --passC:-fdata-sections \\
  --passL:-Wl,--gc-sections c hello
 \$ ld --gc-sections -e \_start -T script.ld -o payload hello.o
 \$ objcopy -j combined -O binary payload payload.bin
-\$ ENTRY=\$(nm -f posix payload | grep '^\_start ' | awk '{print \$3}')
+\$ ENTRY=\$(nm -f posix payload | grep '^\_start ' | awk '\{print \$3\}')
 \$ nasm -f bin -o hello -D entry=0x\$ENTRY elf.s
 \$ chmod +x hello
 \$ wc -c],
+  [\$ wc -c Summary],
   [Nim is fine for writing small binaries. Now you also know how to write Nim without the C standard library. It might be fun to write your own runtime in Nim from scratch. You can check out the repository to get your own results:],
+  [\$ ./run.sh
+== Using the C Standard Library ==
+hello\_unoptimized 163827
+hello\_release 62131
+hello\_optsize 25248
+hello\_optsize\_strip 18552
+hello\_gcnone 10344
+hello\_standalone 6208],
   [== Disregarding the C Standard Library ==
 hello2 1776
 hello3 952],
@@ -1682,9 +1479,8 @@ hello4\_custom 150],
 1d: c3 retq 
 ...],
   [Discussions on Hacker News and Reddit .],
-  [id="addendum"\>Addendum],
   [I did this for 32bit x86 now as well, which results in a 119 byte binary with GCC and 118 byte with Clang, more information in the repository .],
-  [With a simple patch to the Nim compiler the {.noReturn.} pragma now actually removes the final retq call that is useless after the EXIT syscall. So the final binary size now is 149 bytes with x86-64, 116 bytes with x86.],
+  [With a simple patch to the Nim compiler the \{.noReturn.\} pragma now actually removes the final retq call that is useless after the EXIT syscall. So the final binary size now is 149 bytes with x86-64, 116 bytes with x86.],
 ),
   insert-map: (:),
   word-count: 1467,
@@ -1692,10 +1488,8 @@ hello4\_custom 150],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Suspicious discontinuities],
   author: [Dan Luu],
   source-name: [Dan Luu],
@@ -1708,21 +1502,21 @@ hello4\_custom 150],
   [If you agree with the famous Learned Hand quote then losing money in order to reduce effective tax rate, increasing disposable income, is completely legitimate behavior at the individual level. However, a tax system that encourages people to lose money, perhaps by funneling it to (on average) much wealthier options traders by buying put options, seems sub-optimal.],
   [A simple fix for the problems mentioned above would be to have slow phase-outs instead of sharp thresholds. Slow phase-outs are actually done for some subsidies and, while that can also have problems, they are typically less problematic than introducing a sharp discontinuity in tax/subsidy policy.],
   [In this post, we'll look at a variety of discontinuities.],
-  [id="hardware-or-software-queues"\>Hardware or software queues],
+  [Hardware or software queues],
   [A naive queue has discontinuous behavior. If the queue is full, new entries are dropped. If the queue isn't full, new entries are not dropped. Depending on your goals, this can often have impacts that are non-ideal. For example, in networking, a naive queue might be considered "unfair" to bursty workloads that have low overall bandwidth utilization because workloads that have low bandwidth utilization "shouldn't" suffer more drops than workloads that are less bursty but use more bandwidth (this is also arguably not unfair, depending on what your goals are).],
   [A class of solutions to this problem are random early drop and its variants, which gives incoming items a probability of being dropped which can be determined by queue fullness (and possibly other factors), smoothing out the discontinuity and mitigating issues caused by having a discontinuous probability of queue drops.],
   [This post on voting in link aggregators is fundamentally the same idea although, in some sense, the polarity is reversed. There's a very sharp discontinuity in how much traffic something gets based on whether or not it's on the front page. You could view this as a link getting dropped from a queue if it only receives N-1 votes and not getting dropped if it receives N votes.],
-  [id="college-admissions-and-pell-grant-recipients-https-www-insidehighered-com-admissions-article-2019-01-28-study-pressure-enroll-more-pell-eligible-students-has-skewed-colleges"\> College admissions and Pell Grant recipients],
+  [College admissions and Pell Grant recipients],
   [Pell Grants started getting used as a proxy for how serious schools are about helping/admitting low-income students. The first order impact is that students above the Pell Grant threshold had a significantly reduced probability of being admitted while students below the Pell Grant threshold had a significantly higher chance of being admitted. Phrased that way, it sounds like things are working as intended.],
   [However, when we look at what happens within each group, we see outcomes that are the opposite of what we'd want if the goal is to benefit students from low income families. Among people who don't qualify for a Pell Grant, it's those with the lowest income who are the most severely impacted and have the most severely reduced probability of admission. Among people who do qualify, it's those with the highest income who are mostly likely to benefit, again the opposite of what you'd probably want if your goal is to benefit students from low income families.],
   [We can see these in the graphs below, which are histograms of parental income among students at two universities in 2008 (first graph) and 2016 (second graph), where the red line indicates the Pell Grant threshold.],
   [A second order effect of universities optimizing for Pell Grant recipients is that savvy parents can do the same thing that some people do to cut their taxable income at the last minute. Someone might put money into a traditional IRA instead of a Roth IRA and, if they're at their IRA contribution limit, they can try to lose money on options, effectively transferring money to options traders who are likely to be wealthier than them, in order to bring their income below the Pell Grant threshold, increasing the probability that their children will be admitted to a selective school.],
-  [id="election-statistics-https-arxiv-org-pdf-1410-6059-pdf"\> Election statistics],
+  [Election statistics],
   [The following histograms of Russian elections across polling stations shows curious spikes in turnout and results at nice, round, numbers (e.g., 95%) starting around 2004. This appears to indicate that there's election fraud via fabricated results and that at least some of the people fabricating results don't bother with fabricating results that have a smooth distribution.],
   [For finding fraudulent numbers, also see, Benford's law .],
-  [id="used-car-sale-prices-https-www-ftc-gov-sites-default-files-documents-public-events-3rd-annual-microeconomics-conference-lacetera-slide-pdf"\> Used car sale prices],
+  [Used car sale prices],
   [Mark Ainsworth points out that there are discontinuities at \$10k boundaries in U. S. auto auction sales prices as well as volume of vehicles offered at auction. The price graph below adjusts for a number of factors such as model year, but we can see the same discontinuities in the raw unadjusted data.],
-  [id="p-values-https-en-wikipedia-org-wiki-p-value"\> p-values],
+  [p-values],
   [Authors of psychology papers are incentivized to produce papers with p values below some threshold, usually 0.05, but sometimes 0.1 or 0.01. Masicampo et al. plotted p values from papers published in three psychology journals and found a curiously high number of papers with p values just below 0.05.],
   [The spike at p = 0.05 consistent with a number of hypothesis that aren't great, such as:],
   [Authors are fudging results to get p = 0.05],
@@ -1730,17 +1524,17 @@ hello4\_custom 150],
   [Authors are much less likely to submit results if p = 0.055 than if p = 0.05],
   [Head et al. (2015) surveys the evidence across a number of fields.],
   [Andrew Gelman and others have been campaigning to get rid of the idea of statistical significance and p-value thresholds for years, see this paper for a short summary of why . Not only would this reduce the incentive for authors to cheat on p values, there are other reasons to not want a bright-line rule to determine if something is "significant" or not.],
-  [id="drug-charges-http-econweb-umd-edu-tuttle-files-tuttle-mandatory-minimums-pdf"\> Drug charges],
+  [Drug charges],
   [The top two graphs in this set of four show histograms of the amount of cocaine people were charged with possessing before and after the passing of the Fair Sentencing Act in 2010, which raised the amount of cocaine necessary to trigger the 10-year mandatory minimum prison sentence for possession from 50g to 280g. There's a relatively smooth distribution before 2010 and a sharp discontinuity after 2010.],
   [The bottom-left graph shows the sharp spike in prosecutions at 280 grams followed by what might be a drop in 2013 after evidentiary standards were changed 1 .],
-  [id="high-school-exit-exam-scores-danluu-com-matura-2013-pdf"\> High school exit exam scores],
+  [High school exit exam scores],
   [This is a histogram of high school exit exam scores from the Polish language exam. We can see that a curiously high number of students score 30 or just above thirty while curiously low number of students score from 23-29. This is from 2013; other years I've looked at (2010-2012) show a similar discontinuity.],
   [Math exit exam scores don't exhibit any unusual discontinuities in the years I've examined (2010-2013).],
   [An anonymous reddit commenter explains this :],
   [When a teacher is grading matura (final HS exam), he/she doesn't know whose test it is. The only things that are known are: the number (code) of the student and the district which matura comes from (it is usually from completely different part of Poland). The system is made to prevent any kind of manipulation, for example from time to time teachers supervisor will come to check if test are graded correctly. I don't wanna talk much about system flaws (and advantages), it is well known in every education system in the world where final tests are made, but you have to keep in mind that there is a key, which teachers follow very strictly when grading.],
   [So, when a score of the test is below 30%, exam is failed. However, before making final statement in protocol, a commision of 3 (I don't remember exact number) is checking test again. This is the moment, where difference between humanities and math is shown: teachers often try to find a one (or a few) missing points, so the test won't be failed, because it's a tragedy to this person, his school and somewhat fuss for the grading team. Finding a "missing" point is not that hard when you are grading writing or open questions, which is a case in polish language, but nearly impossible in math. So that's the reason why distribution of scores is so different.],
   [As with p values, having a bright-line threshold, causes curious behavior. In this case, scoring below 30 on any subject (a 30 or above is required in every subject) and failing the exam has arbitrary negative effects for people, so teachers usually try to prevent people from failing if there's an easy way to do it, but a deeper root of the problem is the idea that it's necessary to produce a certification that's the discretization of a continuous score.],
-  [id="birth-month-and-sports"\>Birth month and sports],
+  [Birth month and sports],
   [These are scatterplots of football (soccer) players in the UEFA Youth League . The x-axis on both of these plots is how old players are modulo the year, i.e., their birth month normalized from 0 to 1.],
   [The graph on the left is a histogram, which shows that there is a very strong relationship between where a person's birth falls within the year and their odds of making a club at the UEFA Youth League (U19) level. The graph on the right purports to show that birth time is only weakly correlated with actual value provided on the field. The authors use playing time as a proxy for value, presumably because it's easy to measure. That's not a great measure, but the result they find (younger-within-the-year players have higher value, conditional on making the U19 league) is consistent with other studies on sports and discrimination, which ind (for example) that black baseball players were significantly better than white baseball players for decades after desegregation in baseball, French-Canadian defensemen are also better than average (French-Canadians are stereotypically afraid to fight, don't work hard enough, and are too focused on offense) .],
   [The discontinuity isn't directly shown in the graphs above because the graphs only show birth date for one year. If we were to plot birth date by cohort across multiple years, we'd expect to see a sawtooth pattern in the probability that a player makes it into the UEFA youth league with a 10x difference between someone born one day before vs. after the threshold.],
@@ -1750,7 +1544,7 @@ hello4\_custom 150],
   [Within a given year, older kids are stronger, faster, etc., and perform better],
   [This causes older-within-year kids to outcompete younger kids, which later results in older-within-year kids having higher levels of participation for a variety of reasons],
   [This is arguably a "bug" in how youth sports works. But as we've seen in baseball as well as a survey of multiple sports , obviously bad decision making that costs individual teams tens or even hundreds of millions of dollars can persist for decades in the face of people pubicly discussing how bad the decisions are. In this case, the youth sports teams aren't feeder teams to pro teams, so they don't have a financial incentive to select players who are skilled for their age (as opposed to just taller and faster because they're slightly older) so this system-wide non-optimal even more difficult to fix than pro sports teams making locally non-optimal decisions that are completely under their control.],
-  [id="procurement-auctions-http-www-keikawai-com-full-0804-pdf"\> Procurement auctions],
+  [Procurement auctions],
   [Kawai et al. looked at Japanese government procurement, in order to find suspicious pattern of bids like the ones described in Porter et al. (1993) , which looked at collusion in procurement auctions on Long Island (in New York in the United States). One example that's given is:],
   [In February 1983, the New York State Department of Transportation (DoT) held a pro- curement auction for resurfacing 0.8 miles of road. The lowest bid in the auction was \$4 million, and the DoT decided not to award the contract because the bid was deemed too high relative to its own cost estimates. The project was put up for a reauction in May 1983 in which all the bidders from the initial auction participated. The lowest bid in the reauction was 20% higher than in the initial auction, submitted by the previous low bidder. Again, the contract was not awarded. The DoT held a third auction in February 1984, with the same set of bidders as in the initial auction. The lowest bid in the third auction was 10% higher than the second time, again submitted by the same bidder. The DoT apparently thought this was suspicious: “It is notable that the same firm submitted the low bid in each of the auctions. Because of the unusual bidding patterns, the contract was not awarded through 1987.”],
   [It could be argued that this is expected because different firms have different cost structures, so the lowest bidder in an auction for one particular project should be expected to be the lowest bidder in subsequent auctions for the same project. In order to distinguish between collusion and real structural cost differences between firms, Kawai et al. (2015) looked at auctions where the difference in bid between the first and second place firms was very small, making the winner effectively random.],
@@ -1758,26 +1552,24 @@ hello4\_custom 150],
   [Below, is a histogram of the difference in first and second round bids between the first-lowest and second-lowest bidders (left column) and the second-lowest and third-lowest bidders (right column). Each row has a different filtering criteria for how close the auction has to be in order to be included. In the top row, all auctions that reached the third round were included; in second, and third rows, the normalized delta between the first and second biders was less than 0.05 and 0.01, respectively; in the last row, the normalized delta between the first and the third bidder was less than 0.03. All numbers are normalized because the absolute size of auctions can vary.],
   [We can see that the distributions of deltas between the first and second round are roughly symmetrical when comparing second and third lowest bidders. But when comparing first and second lowest bidders, there's a sharp discontinuity at zero, indicating that second-lowest bidder almost never lowers their bid by more than the first-lower bidder did. If you read the paper, you can see that the same structure persists into auctions that go into a third round.],
   [I don't mean to pick on Japanese procurement auctions in particular. There's an extensive literature on procurement auctions that's found collusion in many cases, often much more blatant than the case presented above (e.g., there are a few firms and they round-robin who wins across auctions, or there are a handful of firms and every firm except for the winner puts in the same losing bid).],
-  [id="restaurant-inspection-https-iquantny-tumblr-com-post-76928412519-think-nyc-restaurant-grading-is-flawed-heres-scores-http-datafra-me-blog-calling-out-nyc-restaurant-violations"\> Restaurant inspection scores],
+  [Restaurant inspection scores],
   [The histograms below show a sharp discontinuity between 13 and 14, which is the difference between an A grade and a B grade. It appears that some regions also have a discontinuity between 27 and 28, which is the difference between a B and a C and this older analysis from 2014 found what appears to be a similar discontinuity between B and C grades.],
   [Inspectors have discretion in what violations are tallied and it appears that there are cases where restaurant are nudged up to the next higher grade.],
-  [id="marathon-finishing-times-https-faculty-chicagobooth-edu-devin-pope-research-pdf-website-marathons-pdf"\> Marathon finishing times],
+  [Marathon finishing times],
   [A histogram of marathon finishing times (finish times on the x-axis, count on the y-axis) across 9,789,093 finishes shows noticeable discontinuities at every half hour, as well as at "round" times like :10, :15, and :20.],
   [An analysis of times within each race ( see section 4.4, figures 7-9 ) indicates that this is at least partially because people speed up (or slow down less than usual) towards the end of races if they're close to a "round" time 2 .],
-  [id="notes"\>Notes],
   [This post doesn't really have a goal or a point, it's just a collection of discontinuities that I find fun.],
   [One thing that's maybe worth noting is that I've gotten a lot of mileage out in my career both out of being suspicious of discontinuities and figuring out where they come from and also out of applying standard techniques to smooth out discontinuities.],
   [For finding discontinuities, basic tools like "drawing a scatterplot", " drawing a histogram ", "drawing the CDF " often come in handy. Other kinds of visualizations that add temporality, like flamescope , can also come in handy.],
   [We noted above that queues create a kind of discontinuity that, in some circumstances, should be smoothed out . We also noted that we see similar behavior for other kinds of thresholds and that randomization can be a useful tool to smooth out discontinuities in thresholds as well. Randomization can also be used to allow for reducing quantization error when reducing precision with ML and in other applications.],
   [Thanks to Leah Hanson, Omar Rizwan, Dmitry Belenko, Kamal Marhubi, Danny Vilea, Nick Roberts, Lifan Zeng, Mark Ainsworth, Wesley Aptekar-Cassels, Thomas Hauk, \@BaudDev, and Michael Sullivan for comments/corrections/discussion.],
   [Also, please feel free to send me other interesting discontinuities !],
-  [id="fn: R"\>],
   [Most online commentary I've seen about this paper is incorrect. I've seen this paper used as evidence of police malfeasance because the amount of cocaine seized jumped to 280g. This is the opposite of what's described in the paper, where the author notes that, based on drug seizure records, amounts seized do not appear to be the cause of this change. After noting that drug seizures are not the cause, the author notes that prosecutors can charge people for amounts that are not the same as the amount seized and then notes:],
   [I do find bunching at 280g after 2010 in case management data from the Executive Office of the US Attorney (EOUSA). I also find that approximately 30% of prosecutors are responsible for the rise in cases with 280g after 2010, and that there is variation in prosecutor-level bunching both within and between districts. Prosecutors who bunch cases at 280g also have a high share of cases right above 28g after 2010 (the 5-year threshold post-2010) and a high share of cases above 50g prior to 2010 (the 10-year threshold pre-2010). Also, bunching above a mandatory minimum threshold persists across districts for prosecutors who switch districts. Moreover, when a “bunching” prosecutor switches into a new district, all other attorneys in that district increase their own bunching at mandatory minimums. These results suggest that the observed bunching at sentencing is specifically due to prosecutorial discretion],
   [This is mentioned in the abstract and then expounded on in the introduction (the quoted passage is from the introduction), so I think that most people commenting on this paper can't have read it. I've done a few surveys of comments on papers on blog posts and I generally find that, in cases where it's possible to identify this (e.g., when the post is mistitled), the vast majority of commenters can't have read the paper or post they're commenting on, but that's a topic for another post.],
   [There is some evidence that something fishy may be going on in seizures (e.g., see Fig. A8.(c)), but if the analysis in the paper is correct, that impact of that is much smaller than the impact of prosecutorial discretion.],
   [\[return\]],
-  [id="fn: M"\>One of the most common comments I've seen online about this graph and/or this paper is that this is due to pace runners provided by the marathon. Section 4.4 of the paper gives multiple explanations for why this cannot be the case, once again indicating that people tend to comment without reading the paper.
+  [One of the most common comments I've seen online about this graph and/or this paper is that this is due to pace runners provided by the marathon. Section 4.4 of the paper gives multiple explanations for why this cannot be the case, once again indicating that people tend to comment without reading the paper.
  \[return\]],
 ),
   insert-map: (:),
@@ -1786,10 +1578,8 @@ hello4\_custom 150],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Boost File Scanning Speed: Query File Attributes on Windows 50x Faster],
   author: [Bartlomiej Filipek (C++ Stories)],
   source-name: [Bartlomiej Filipek (C++ Stories)],
@@ -1797,96 +1587,94 @@ hello4\_custom 150],
   paragraphs: (
   [Imagine you’re developing a tool that needs to scan for file changes across thousands of project files. Retrieving file attributes efficiently becomes critical for such scenarios. In this article, I’ll demonstrate a technique to get file attributes that can achieve a surprising speedup of over 50+ times compared to standard Windows methods.],
   [Let’s dive in and explore how we can achieve this.],
-  [id="inspiration--disclaimer"\>
-Inspiration & Disclaimer],
+  [Inspiration & Disclaimer],
   [The inspiration for this article came from a recent update for Visual Assist - a tool that heavily improves Visual Studio experience and productivity for C\# and C++ developers.],
   [In one of their blog post, they shared:],
   [The initial parse is 10..15x faster!],
   [What’s New in Visual Assist 2024—Featuring lightning fast parser performance \[Webinar\] - Tomato Soup],
   [After watching the webinar, I noticed some details about efficiently getting file attributes and I decided to give it a try on my machine. In other words I tried to recreate their results.],
   [Disclaimer : This post was written with the support and sponsorship of Idera, the company behind Visual Assist.],
-  [id="understanding-file-attribute-retrieval-methods-on-windows"\>
-Understanding File Attribute Retrieval Methods on Windows],
+  [Understanding File Attribute Retrieval Methods on Windows],
   [On Windows, there are at least a few options to check for a file change:],
   [FindFirstFile\[EX\]],
   [GetFileAttributesEx],
   [std::filesystem],
   [Below, you can see some primary usage of each approach:],
-  [id="findfirstfileex"\>
- FindFirstFileEx],
+  [FindFirstFileEx],
   [FindFirstFileEx is a Windows API function that allows for efficient searching of directories. It retrieves information about files that match a specified file name pattern. The function can be used with different information levels, such as FindExInfoBasic and FindExInfoStandard , to control the amount of file information fetched.],
-  [class="highlight"\> WIN32\_FIND\_DATA findFileData ; 
+  [WIN32\_FIND\_DATA findFileData ; 
  HANDLE hFind = FindFirstFileEx (( directory + " \\\\ \*" ). c\_str (), FindExInfoBasic , & findFileData , FindExSearchNameMatch , NULL , 0 ); 
  
- if ( hFind != INVALID\_HANDLE\_VALUE ) { 
- do { 
+ if ( hFind != INVALID\_HANDLE\_VALUE ) \{ 
+ do \{ 
  \/\\/ Process file information
- } while ( FindNextFile ( hFind , & findFileData ) != 0 ); 
+ \} while ( FindNextFile ( hFind , & findFileData ) != 0 ); 
  FindClose ( hFind ); 
- }],
-  [id="getfileattributesex"\>
- GetFileAttributesEx],
+ \}],
+  [GetFileAttributesEx],
   [GetFileAttributesEx is another Windows API function that retrieves file attributes for a specified file or directory. Unlike FindFirstFileEx , which is used for searching and listing files, GetFileAttributesEx is typically used for retrieving attributes of a single file or directory.],
-  [id="stdfilesystem"\>
- std::filesystem],
+  [WIN32\_FILE\_ATTRIBUTE\_DATA fileAttributeData ; 
+ if ( GetFileAttributesEx (( directory + " \\\\ " + fileName ). c\_str (), GetFileExInfoStandard , & fileAttributeData )) \{ 
+ \/\\/ Process file attributes
+ \}],
+  [std::filesystem],
   [Introduced in C++17, the std::filesystem library provides a modern and portable way to interact with the file system. It includes functions for file attribute retrieval, directory iteration, and other common file system operations.],
-  [class="highlight"\> for ( const auto & entry : fs :: directory\_iterator ( directory )) { 
- if ( entry . is\_regular\_file ()) { 
+  [for ( const auto & entry : fs :: directory\_iterator ( directory )) \{ 
+ if ( entry . is\_regular\_file ()) \{ 
  \/\\/ Process file attributes
  auto ftime = fs : last\_write\_time ( entry ); 
  ... 
- } 
- }],
-  [id="the-benchmark"\>
-The Benchmark],
+ \} 
+ \}],
   [To evaluate the performance of different file attribute retrieval methods, I developed a small benchmark. This application measures the time taken by each method to retrieve file attributes for N number of files in a specified directory.],
   [Here’s a rough overview of the code:],
   [The FileInfo struct stores the file name and last write time.],
+  [struct FileInfo \{ 
+ std :: string fileName ; 
+ FILETIME lastWriteTime ; 
+ \};],
   [Each retrieval technique will have to go over a directory and build a vector of FileInfo objects.],
-  [id="benchmarkfindfirstfileex"\>
- BenchmarkFindFirstFileEx],
-  [class="highlight"\> void BenchmarkFindFirstFileEx ( const std :: string & directory , 
+  [BenchmarkFindFirstFileEx],
+  [void BenchmarkFindFirstFileEx ( const std :: string & directory , 
  std :: vector & files , 
  FINDEX\_INFO\_LEVELS infoLevel ) 
- { 
+ \{ 
  WIN32\_FIND\_DATA findFileData ; 
  HANDLE hFind = FindFirstFileEx (( directory + " \\\\ \*" ). c\_str (), 
  infoLevel , 
  & findFileData , 
  FindExSearchNameMatch , NULL , 0 ); 
  
- if ( hFind == INVALID\_HANDLE\_VALUE ) { 
+ if ( hFind == INVALID\_HANDLE\_VALUE ) \{ 
  std :: cerr 
  BenchmarkGetFileAttributesEx],
-  [class="highlight"\> void BenchmarkGetFileAttributesEx ( const std :: string & directory , 
+  [void BenchmarkGetFileAttributesEx ( const std :: string & directory , 
  std :: vector & files ) 
- { 
+ \{ 
  WIN32\_FIND\_DATA findFileData ; 
  HANDLE hFind = FindFirstFile (( directory + " \\\\ \*" ). c\_str (), 
  & findFileData ); 
  
- if ( hFind == INVALID\_HANDLE\_VALUE ) { 
+ if ( hFind == INVALID\_HANDLE\_VALUE ) \{ 
  std :: cerr 
  BenchmarkStdFilesystem],
   [And the last one, the most portable technique:],
-  [class="highlight"\> void BenchmarkStdFilesystem ( const std :: string & directory , 
+  [void BenchmarkStdFilesystem ( const std :: string & directory , 
  std :: vector & files ) 
- { 
- for ( const auto & entry : std :: filesystem :: directory\_iterator ( directory )) { 
- if ( entry . is\_regular\_file ()) { 
+ \{ 
+ for ( const auto & entry : std :: filesystem :: directory\_iterator ( directory )) \{ 
+ if ( entry . is\_regular\_file ()) \{ 
  FileInfo fileInfo ; 
  fileInfo . fileName = entry . path (). filename (). string (); 
  auto ftime = std :: filesystem :: last\_write\_time ( entry ); 
  memcpy ( & fileInfo . lastWriteTime , & ftime , sizeof ( FILETIME )); 
  files . push\_back ( fileInfo ); 
- } 
- } 
- }],
+ \} 
+ \} 
+ \}],
   [In the code, we use the assumption that file\_time\_type values maps to FILETIME on Windows. Read more in this explanation std::filesystem::file\_time\_type does not allow easy conversion to time\_t - Developer Community],
-  [id="the-main-function"\>
-The Main Function],
   [The main function sets up the benchmarking environment, runs the benchmarks, and prints the results.],
-  [class="highlight"\> \/\\/ Benchmark FindFirstFileEx (Basic)
+  [\/\\/ Benchmark FindFirstFileEx (Basic)
  auto start = std :: chrono :: high\_resolution\_clock :: now (); 
  BenchmarkFindFirstFileEx ( directory , 
  filesFindFirstFileExBasic , 
@@ -1904,13 +1692,11 @@ The Main Function],
  
  \/\\/ ...],
   [This benchmark code measures the performance of FindFirstFileEx with both FindExInfoBasic and FindExInfoStandard , GetFileAttributesEx , and std::filesystem . The results are then formatted and displayed in a table.],
-  [id="performance-results"\>
-Performance Results],
   [To measure the performance of each file attribute retrieval method, I executed benchmarks on a directory containing 1000, 2000 or 5000 random text files. The tests were performed on a laptop equipped with an Intel i7 4720HQ CPU and an SSD. I measured the time taken by each method and compared the results to determine the fastest approach.],
   [Each test run consisted of two executions: the first with uncached file attributes and the second likely benefiting from system-level caching.],
   [The speedup factor is the factor of the current result compared to the slowest technique in a given run.],
   [1000 files:],
-  [class="highlight"\> Method Time (seconds) Speedup Factor
+  [Method Time (seconds) Speedup Factor
  FindFirstFileEx (Basic) 0.0131572000 17.876
  FindFirstFileEx (Standard) 0.0018139000 129.665
  GetFileAttributesEx 0.2351992000 1.000
@@ -1922,7 +1708,7 @@ Performance Results],
  GetFileAttributesEx 0.0602633000 1.001
  std::filesystem 0.0603455000 1.000],
   [Directory with 2000 files:],
-  [class="highlight"\> Method Time (seconds) Speedup Factor
+  [Method Time (seconds) Speedup Factor
  FindFirstFileEx (Basic) 0.0023182000 54.402
  FindFirstFileEx (Standard) 0.0044334000 28.446
  GetFileAttributesEx 0.1261137000 1.000
@@ -1934,7 +1720,7 @@ Performance Results],
  GetFileAttributesEx 0.1235858000 1.000
  std::filesystem 0.1220140000 1.013],
   [Directory with 5000 random, small text files:],
-  [class="highlight"\> Method Time (seconds) Speedup Factor
+  [Method Time (seconds) Speedup Factor
  FindFirstFileEx (Basic) 0.0059723000 113.144
  FindFirstFileEx (Standard) 0.0125500000 53.843
  GetFileAttributesEx 0.6757297000 1.000
@@ -1947,34 +1733,27 @@ Performance Results],
  std::filesystem 0.3075732000 1.026],
   [The results consistently showed that FindFirstFileEx with the Standard flag was the fastest method in uncached scenarios, offering speedups up to 129x compared to GetFileAttributesEx . However, in cached scenarios, FindFirstFileEx (Basic and Standard) achieved over 50x speedup improvements.],
   [For the directory with 2000 files, FindFirstFileEx (Basic) demonstrated a speedup factor of over 54x in the first run and maintained similar performance in the second run. In the directory with 5000 files, the Basic version achieved an impressive 113x speedup initially and 52x in the subsequent run, reflecting the impact of caching. Notably, std::filesystem performed on par with GetFileAttributesEx .],
-  [id="further-techniques"\>
-Further Techniques],
   [Getting file attributes is only part of the story, and while important, they may contribute to only a small portion of the overall performance for the whole project. The Visual Assist team, who contributed to this article, improved their initial parse time performance by avoiding GetFileAttributes\[Ex\] using the same techniques as this article. But Visual Assist also improved performance through further techniques. My simple benchmark showed 50x speedups, but we cannot directly compare it with the final Visual Assist, as the tool does many more things with files.],
   [The main item being optimised was the initial parse, where VA builds a symbol database when a project is opened for the first time. This involves parsing all code and all headers. They decided that it’s a reasonable assumption that headers won’t change while a project is being loaded, and so the file access is cached during the initial parse, avoiding the filesystem entirely. (Changes after a project has been parsed the first time are, of course, still caught.) The combination of switching to a much faster method for checking filetimes and then avoiding file IO completely contributed to the up-to-15-times-faster performance improvement they saw in version 2024.1 at the beginning of this year.],
   [Read further details on their blog Visual Assist 2024.1 release post - January 2024 and Catching up with VA: Our most recent performance updates - Tomato Soup .],
-  [id="summary"\>
-Summary],
   [In the text, we went through a benchmark that compares several techniques for fetching file attributes. In short, it’s best to gather attributes at the same time as you iterate through the directory - using FindFirstFileEx . So if you want to do this operation hundreds of times, it’s best to measure time and choose the best technique.],
   [The benchmark also showed one feature: while C++17 and its filesystem library offer a robust and standardized way to work with files and directories, it can be limited in terms of performance. In many cases, if you need super optimal performance, you need to open the hood and work with the specific operating system API.],
   [The code can be found in my Github Respository: FileAttribsTest.cpp],
-  [id="back-to-you"\>
-Back to you],
+  [Back to you],
   [Do you use std::filesystem for tasks involving hundreds of files?],
   [Do you know other techniques that offer greater performance when working with files?],
   [Share your comments below.],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([push\_back ( fileInfo );   }   }   }     In the code, we use the assumption that file\_time\_type values maps to FILETIME on Windows.], [Bartlomiej Filipek (C++ Stories)]),
-  inline-pq-idx: 24,
+  inline-pq: pull-quote([push\_back ( fileInfo );   \}   \}   \}     In the code, we use the assumption that file\_time\_type values maps to FILETIME on Windows.], [Bartlomiej Filipek (C++ Stories)]),
+  inline-pq-idx: 23,
   word-count: 1648,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How to Switch to ty from Mypy],
   author: [Mike],
   source-name: [Mike Driscoll (Mouse vs Python)],
@@ -1989,16 +1768,24 @@ Back to you],
   [uv tool install ty\@latest],
   [If you do not want to use uv, you can use the standalone installer. Instructions vary depending on your platform, so it is best to refer to the documentation for the latest information.],
   [Note: Technically, you can use pip or pipx to install ty as well.],
+  [Running ty Locally],
+  [Once you have ty installed, you can run it using any of the following:],
+  [Running with uv],
+  [uv run ty],
   [Running without Installation],
+  [uvx ty],
   [Running ty Directly],
+  [ty check],
   [Configuring ty],
+  [You can configure ty using either of the following:],
   [pyproject.toml],
   [ty.toml],
   [There are many rules that you can change. Check out the documentation for full details.],
   [In general, if you run mypy in strict mode, then running ty without changing any of its settings is very similar. However, ty currently does not highlight missing type hints. If you need to enforce adding type hints, you can use Ruff’s flake8-annotations .],
   [Here is how to enable the flak8-annotations in your pyproject.toml file:],
   [If you have other rules already selected, you can add “ANN” to the end of the list to enable it.],
-  [class="pencraft pc-display-contents pc-reset pubTheme-yiXxQA"\> Running ty in GitHub Actions is a great, free way to type-check your PRs. To add ty to GitHub Actions, create a new file named ty.yml in your GitHub repo in the following location:],
+  [Running ty in GitHub Actions],
+  [Running ty in GitHub Actions is a great, free way to type-check your PRs. To add ty to GitHub Actions, create a new file named ty.yml in your GitHub repo in the following location:],
   [.github/workflows/ty.yml],
   [Make sure you include the leading period!],
   [Next, inside your yaml file, you will add the following code:],
@@ -2025,7 +1812,8 @@ jobs:
  run: ty check
  continue-on-error: false],
   [Now, when your team opens a new PR in your project, it will automatically run ty against it. Feel free to update the Python version to the one you are using. Also note that this GitHub Action sets the ty version to 0.0.7, which you may need to update as newer releases become available.],
-  [class="pencraft pc-display-contents pc-reset pubTheme-yiXxQA"\> The ty project does not have official support for pre-commit yet. However, there is a ticket to add this functionality. In the meantime, several other people have provided their own workarounds to allow you to use ty with pre-commit:],
+  [Using ty with pre-commit],
+  [The ty project does not have official support for pre-commit yet. However, there is a ticket to add this functionality. In the meantime, several other people have provided their own workarounds to allow you to use ty with pre-commit:],
   [https:\/\/github.com/NSPC911/ty-pre-commit],
   [https:\/\/github.com/JacobCoffee/ty-pre-commit],
   [https:\/\/github.com/hoxbro/ty-pre-commit],
@@ -2044,10 +1832,8 @@ jobs:
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [R&D Community Awards 2025],
   author: [Criteo Tech],
   source-name: [Criteo Engineering],
@@ -2117,36 +1903,33 @@ jobs:
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([Supabase Blog], source-name: [Supabase Blog], [Turns out the question of which identifier to use as a Primary Key is complicated -- we're going to dive into some of the complexity and inherent trade-offs, and figure things out])],
-    [#brief-item([Supabase Blog], source-name: [Supabase Blog], [Supacharging Supabase Auth with Sign in with Apple on iOS, Single-Sign-On support with SAML 2.0, and PKCE for server-side rendering and mobile auth.])],
-    [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Google on Thursday announced a new "advanced flow" for Android sideloading that requires a mandatory 24-hour wait period to install apps from unverified developers in an attempt to balance openness with safety.
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([Supabase Blog], source-name: [Supabase Blog], [Turns out the question of which identifier to use as a Primary Key is complicated -- we're going to dive into some of the complexity and inherent trade-offs, and figure things out])],
+  [#brief-item([Supabase Blog], source-name: [Supabase Blog], [Supacharging Supabase Auth with Sign in with Apple on iOS, Single-Sign-On support with SAML 2.0, and PKCE for server-side rendering and mobile auth.])],
+  [#brief-item([The Hacker News], source-name: [The Hacker News (cybersecurity)], [Google on Thursday announced a new "advanced flow" for Android sideloading that requires a mandatory 24-hour wait period to install apps from unverified developers in an attempt to balance openness with safety.
 The new changes come against the backdrop of a developer verification mandate the tech giant announced last year that requires all Android apps to be registered by verified developers to])],
-    [#brief-item([Supabase Blog], source-name: [Supabase Blog], [Supabase recently contributed to the OpenAI Retrieval Plugin repo with a Postgres and a Supabase implementation to help developers build ChatGPT plugins using pgvector.])],
-    [#brief-item([Axel Rauschmayer (2ality)], source-name: [Axel Rauschmayer (2ality)], [In this chapter we develop a small web app in the same way that large professional web apps are developed:
+  [#brief-item([Supabase Blog], source-name: [Supabase Blog], [Supabase recently contributed to the OpenAI Retrieval Plugin repo with a Postgres and a Supabase implementation to help developers build ChatGPT plugins using pgvector.])],
+  [#brief-item([Axel Rauschmayer (2ality)], source-name: [Axel Rauschmayer (2ality)], [In this chapter we develop a small web app in the same way that large professional web apps are developed:
 
 We use libraries that we install via npm.
 
 We write tests for some of the functionality.
 
 We combine all JavaScript code into a single file before we serve the web app. That is called bundling . (Why we do that it explained later.)])],
-    [#brief-item([Hayden James], source-name: [Hayden James], [nftables has replaced iptables as the default firewall framework on most modern Linux systems. This practical guide covers the core structure, real rule examples, sets, NAT, rate limiting, and how to migrate from iptables to nftables cleanly.
+  [#brief-item([Hayden James], source-name: [Hayden James], [nftables has replaced iptables as the default firewall framework on most modern Linux systems. This practical guide covers the core structure, real rule examples, sets, NAT, rate limiting, and how to migrate from iptables to nftables cleanly.
 
  Continue reading...])],
-    [#brief-item([Chad Pytel, Will Larry &amp; Sami Birnbaum], source-name: [Thoughtbot Blog], [Chad, Sami and Will bring a growing issue to the forefront as they discuss whether AI really is to blame for recent industry layoffs.])],
-    [#brief-item([Dennis Felsing], source-name: [Dennis Felsing], [I joined Materialize’s Quality Assurance (QA) development team over a year ago. Since our team is small, we have to be conscious about focusing our time on the most impactful testing and test tooling.
+  [#brief-item([Chad Pytel, Will Larry &amp; Sami Birnbaum], source-name: [Thoughtbot Blog], [Chad, Sami and Will bring a growing issue to the forefront as they discuss whether AI really is to blame for recent industry layoffs.])],
+  [#brief-item([Dennis Felsing], source-name: [Dennis Felsing], [I joined Materialize’s Quality Assurance (QA) development team over a year ago. Since our team is small, we have to be conscious about focusing our time on the most impactful testing and test tooling.
 
 Our goal is to find issues in Materialize as early and as efficiently as possible, ideally before a pull request even lands. Despite our small team, Materialize has a huge surface area.
 
 Read the rest of the blog post over on the Materialize blog .])],
-    [#brief-item([Supabase Blog], source-name: [Supabase Blog], [Brick is an all-in-one data manager for Flutter that handles querying and uploading between Supabase and local caches like SQLite. Using Brick, developers can focus on implementing the application without worrying about translating or storing their data.])],
-    [#brief-item([Supabase Blog], source-name: [Supabase Blog], [Open table formats like Apache Iceberg, Delta Lake, and Apache Hudi are transforming how developers manage large-scale data on object storage systems.])],
-    [#brief-item([Supabase Blog], source-name: [Supabase Blog], [Supavisor is now used across all projects, providing a scalable and cloud-native Postgres connection pooler that can handle millions of connections])],
-  ))
-}
+  [#brief-item([Supabase Blog], source-name: [Supabase Blog], [Brick is an all-in-one data manager for Flutter that handles querying and uploading between Supabase and local caches like SQLite. Using Brick, developers can focus on implementing the application without worrying about translating or storing their data.])],
+  [#brief-item([Supabase Blog], source-name: [Supabase Blog], [Open table formats like Apache Iceberg, Delta Lake, and Apache Hudi are transforming how developers manage large-scale data on object storage systems.])],
+  [#brief-item([Supabase Blog], source-name: [Supabase Blog], [Supavisor is now used across all projects, providing a scalable and cloud-native Postgres connection pooler that can handle millions of connections])],
+))
 
 #colophon([The Record], [Vol. 1, No. 086], [2026-03-30])

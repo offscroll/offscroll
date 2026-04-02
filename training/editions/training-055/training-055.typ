@@ -21,70 +21,8 @@
 #masthead([The Bold Chronicle], [Vol. 1, No. 055], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [The Big and the Small],
-  kicker: [Cover Story],
-  author: [Tim Urban],
-  source-name: [Wait But Why],
-  deck: [I have a surprise for you. I’ll tell you about it in a minute.],
-  lead-pre: [],
-  lead-cap: [I],
-  lead-rest: [ have a surprise for you.],
-  body-paragraphs: (
-  [I’ll tell you about it in a minute. First, let’s have a little fun. Come with me.],
-  [I haven’t told anyone this before, but I actually live in the fun room. I just gave you a tour of my house, where I spend a large portion of my life thinking about the size of things.],
-  [I have visitors in the fun room from time to time, but after a few minutes, they’re usually pretty funned out and leave me to my crises. But one day, something unexpected happened.],
-  [It was 2013. Wait But Why was a few months old. And I got an email from someone named Philipp Dettmer. I was slightly unsettled by the pp and tt, but I decided to read what he had to say.],
-  [He explained that he lives in Germany where he makes animated educational videos about a lot of different things, kind of like Wait But Why but a different medium. I took a look at his YouTube page. It was named a random string of letters:],
-  [kurzgesagt],
-  [Apparently it means “In a Nutshell” in German, but I didn’t know that at the time and was very close to being done with Philipp Dettmer for good when I decided to watch one of the videos.],
-  [It was delightful .],
-  [I watched another. And another. And then it hit me.],
-  [Philipp—this random man in Germany— also lives in the fun room.],
-  [The next day, we were on the phone. There was a lot to talk about. We decided we had to do something together, and we settled on adapting one of my early posts into a kurzgesagt video . 1],
-  [In the seven years since then, Philipp and I have become great friends, and I have not missed a kurzgesagt video since. Whenever Philipp and I get dinner, we head straight to the fun room to talk about the universe. And a few months ago, we decided to collaborate again. It was time to go public with the fun room.],
-  [At some point in our pasts, we had both become enamored with two fun room icons, Cary and Michael Huang, known on the internet as the Huang Twins. The twins do a lot of cool things , but it was their Scale of the Universe toy that we loved most.],
-  [Inspired by their work, we decided to go for it. We wanted to make the best size explorer we could imagine. We called it Universe in a Nutshell.],
-  [Of course, it took roughly 18 times longer than we thought it would. We brainstormed the interface for quite some time, and then Philipp, along with the incredible kurzgesagt team, dug into working on illustrations and animations, while I worked with the team on the written explainers.],
-  [Thousands of human hours later, the app is done. 250 objects, 30,000+ words of explanations and fun facts, just the right mood music, and what we think is a pretty great interface.],
-  [Here’s how it works:],
-  [The app is a giant wall. The wall is impossibly large—large enough to fit full-sized galaxies on it. The wall is also impossibly high-resolution—hi-res enough to contain sharp images of subatomic particles.],
-  [I know it seems weird that I’m talking about it as if it’s a real object, but I have a good reason: to get the full mind-blow effect, you have to realize what you’re looking at. You’re not moving forward and backward through a tunnel of objects—it just seems that way because your brain will refuse to accept the insanity of the actual sizes you’re seeing. By reminding yourself again and again that all of these objects are “painted” on the same 2D wall, you’ll hopefully experience some fun mind-bending moments.],
-  [The app looks like this:],
-  [And this:],
-  [And this:],
-  [And there are three ways to zoom:],
-  [You can tap any object for an explainer and fun facts. All of the facts you just read in the fun room are also in the app, along with a million other things. (The surprisingly-good-for-Wait-But-Why-illustrations from the fun room are the work of Kurzgesagt. Don’t think this is some new normal.)],
-  [Three more things:],
-  [1) The app is \$3 in the US store, which, considering the fact that a magical infinite wall should really go for like \$2.5 million, is a huge steal.],
-  [2) If you like the app, please give it a rating or review. For example, here’s my review:],
-  [3) This is V1 of the app. As we made the app, we had a constant side conversation going on about possibilities for V2, V3, and beyond. We’re launching today, but this is just the beginning. We want this app to be a brain playground that just keeps getting better and better. And here’s where you come in.],
-  [As you use the app, whenever you have an “I wish the app did X” or “It would be so cool if the app could do Y” thought, we want to hear it. As this is V1, we of course also want to know whenever you have a “This isn’t working right” or an “I think this fact is off” thought. In the app’s menu, you’ll see a “feedback” tab, where you can tap the feedback email address and let us know what you’re thinking.],
-  [Okay, here you go. Click the left app for iPhone/iPad, the right one for Android.],
-  [id="image-map-pro-3124"\>],
-  [id="appStores"\>],
-  [id="image-map-pro-5888"\>],
-  [style="text-align: center;"\>\_\_\_\_\_\_\_\_\_\_\_],
-  [Also: To commemorate the app launch, Kurzgesagt did their own fun room creation today— a delightful video about the sizes of stars .],
-  [style="text-align: center;"\>\_\_\_\_\_\_\_\_\_\_\_],
-  [End things:],
-  [If you like Wait But Why, sign up for our unannoying-I-promise email list  and we’ll send you new posts when they come out.],
-  [To support Wait But Why,  visit our Patreon page .],
-  [style="text-align: center;"\>\_\_\_\_\_\_\_\_\_\_\_],
-  [The SpaceX Post],
-  [The Quadrillion Sour Patch Kids Post],
-  [And a trip to the not-so-fun room],
-  [Kurzgesagt did an updated version of the video in 2018. ↩],
-  [The post The Big and the Small appeared first on Wait But Why .],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Tracking (Expert/Influential) Predictions about AI],
   author: [Noah Birnbaum],
   source-name: [LessWrong],
@@ -106,10 +44,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: ["Path to Victory"],
   author: [Chris\_Leong],
   source-name: [LessWrong],
@@ -125,12 +61,12 @@
   [In any case, this is where we are: we have a small number of people who can take heroic responsibility for the whole problem and a much larger number of people who can't \[7\] . The people who can't take heroic responsibility should primarily focus, focus, focus and pick one thing they can do well. I resonate strongly with how EA thinks about prioritisation, but I differ in that I think more in terms of systems \[8\] and less in terms of direct, measurable impact. To be specific, I tend to think more in terms of interventions as building blocks (such as gathering resources or discovering information) that others can attempt to build on top of \[9\] —be it incrementalists laying one more brick or Heroes™ shaping it into a working plan \[10\] .],
   [I feel that there's a broad understanding that many of EA's old mental models of how to think about impact don't really carry over from EA's global health beginnings to the AI safety context, but we never really developed proper replacements \[11\] . I think it's important to understand that there are different kinds of domains. Universal tools or mental models would be ideal, but this is extremely hard, perhaps even impossible. Producing tools to solve the problem in front of you feels much more viable. What I've described above fills in some of the blanks, but it needs to be developed in more detail.],
   [I think it's worth stepping back and asking what would need to happen for this plan to succeed:],
-  [value="1"\> Firstly, we need more people to ask themselves whether they'd be willing to step up to take heroic responsibility . I suspect very few people have deeply grappled with this question. For most people, grappling with it would mean confronting the possibility that things could be quite dire. Why else would you choose to suffer that much? Confronting catastrophic—let alone existential—risk is hard. Sure, we talk about it all the time, but mostly just on an intellectual level. Confronting this emotionally is truly something else. Secondly, if you're hitting home runs with what you're doing already and everyone is praising you for it, it would be exceptionally hard to throw that away and pursue something you could fail at.],
-  [value="2"\> Second, we need people to be honest with themselves about whether they are truly capable of taking on that much responsibility. I unfortunately am not. At times I've told myself that I was, but I was just fooling myself. The vibes of heroic responsibility are immaculate, but vibes can be so dazzling that they prevent us from seeing reality. Countless people want to be a rockstar or a famous athlete or a billionaire, but only in the abstract. If they knew how much work and sacrifice were involved, they'd probably realise that they don't actually want that at all. Trying to take on too much responsibility will simply crush you, and you may take others down alongside you.],
-  [value="3"\> Third, we need more training programs that hope for at least some proportion of their graduates to take up heroic responsibility. Maybe there should be some programs that only focus on this, but this risks pushing people to pick up a boulder heavier than they can carry, so I'd honestly think very carefully before pursuing something like this.],
-  [value="4"\> Fourth, we need people to be strategic. It's very easy to fall into the trap of going "well, it's not much but it's something. Anyway, I just have limited capacity, I'm just building a block" when they probably had options that would have been higher-impact without requiring them to take on more than they're willing to bear. Deciding not to pursue heroic responsibility doesn't mean you should allow yourself to be lazy in a way that you'll regret later. John Wentworth has an excellent article on how to think about problem selection. He argues: "if you do not choose robustly generalizable subproblems and find robustly generalizable solutions to them, then most likely, your contribution will not be small; it will be completely worthless." Similarly, we aren't going to be able to plug all the gaps, so the Heroes need an extremely well developed strategic understanding to figure out which gaps most need to be filled—we don't have enough Heroes to fill them all!],
-  [value="5"\> Fifth, we need people to review their plan every so often and to be honest with themselves about whether it still makes sense. Not constantly—that'll only distract you—but at sensible intervals. That said, the situation is extremely fluid; the more recently you pivoted, the less likely you should be to pivot again. I know about sunk-cost fallacy and all, but constantly pivoting is like being a first responder at best and a form of insecurity at worst. This is a trap I've fallen into myself. We also need people to occasionally consider whether it would be in line with their values to take on more heroic responsibility. Similarly, we need people to be really honest with themselves about whether they're attempting to bite off more heroic responsibility than they can chew.],
-  [value="6"\> Sixth, we need people to be honest about how things are progressing and what they have actually covered. One way we lose is if there's no hero to plug a vital gap. But another way we lose is if we think a gap is covered by someone and it isn't. Unfortunately, effectively communicating your limitations is extremely hard. It is hard to see your blind spots, let alone admit them. In fact, probably the only way this is going to happen is if you don't just admit blind spots, but also potential blind spots. For example, "there's a chance that our selection process is too credentialist, but we've chosen the balance that we have because credentialled people are easier to evaluate, bring more credibility to the field, help improve methodological rigour and tend to have a shorter time to impact". That's the kind of openness that we probably need so that Heroes are not misled about where the gaps are.],
+  [Firstly, we need more people to ask themselves whether they'd be willing to step up to take heroic responsibility . I suspect very few people have deeply grappled with this question. For most people, grappling with it would mean confronting the possibility that things could be quite dire. Why else would you choose to suffer that much? Confronting catastrophic—let alone existential—risk is hard. Sure, we talk about it all the time, but mostly just on an intellectual level. Confronting this emotionally is truly something else. Secondly, if you're hitting home runs with what you're doing already and everyone is praising you for it, it would be exceptionally hard to throw that away and pursue something you could fail at.],
+  [Second, we need people to be honest with themselves about whether they are truly capable of taking on that much responsibility. I unfortunately am not. At times I've told myself that I was, but I was just fooling myself. The vibes of heroic responsibility are immaculate, but vibes can be so dazzling that they prevent us from seeing reality. Countless people want to be a rockstar or a famous athlete or a billionaire, but only in the abstract. If they knew how much work and sacrifice were involved, they'd probably realise that they don't actually want that at all. Trying to take on too much responsibility will simply crush you, and you may take others down alongside you.],
+  [Third, we need more training programs that hope for at least some proportion of their graduates to take up heroic responsibility. Maybe there should be some programs that only focus on this, but this risks pushing people to pick up a boulder heavier than they can carry, so I'd honestly think very carefully before pursuing something like this.],
+  [Fourth, we need people to be strategic. It's very easy to fall into the trap of going "well, it's not much but it's something. Anyway, I just have limited capacity, I'm just building a block" when they probably had options that would have been higher-impact without requiring them to take on more than they're willing to bear. Deciding not to pursue heroic responsibility doesn't mean you should allow yourself to be lazy in a way that you'll regret later. John Wentworth has an excellent article on how to think about problem selection. He argues: "if you do not choose robustly generalizable subproblems and find robustly generalizable solutions to them, then most likely, your contribution will not be small; it will be completely worthless." Similarly, we aren't going to be able to plug all the gaps, so the Heroes need an extremely well developed strategic understanding to figure out which gaps most need to be filled—we don't have enough Heroes to fill them all!],
+  [Fifth, we need people to review their plan every so often and to be honest with themselves about whether it still makes sense. Not constantly—that'll only distract you—but at sensible intervals. That said, the situation is extremely fluid; the more recently you pivoted, the less likely you should be to pivot again. I know about sunk-cost fallacy and all, but constantly pivoting is like being a first responder at best and a form of insecurity at worst. This is a trap I've fallen into myself. We also need people to occasionally consider whether it would be in line with their values to take on more heroic responsibility. Similarly, we need people to be really honest with themselves about whether they're attempting to bite off more heroic responsibility than they can chew.],
+  [Sixth, we need people to be honest about how things are progressing and what they have actually covered. One way we lose is if there's no hero to plug a vital gap. But another way we lose is if we think a gap is covered by someone and it isn't. Unfortunately, effectively communicating your limitations is extremely hard. It is hard to see your blind spots, let alone admit them. In fact, probably the only way this is going to happen is if you don't just admit blind spots, but also potential blind spots. For example, "there's a chance that our selection process is too credentialist, but we've chosen the balance that we have because credentialled people are easier to evaluate, bring more credibility to the field, help improve methodological rigour and tend to have a shorter time to impact". That's the kind of openness that we probably need so that Heroes are not misled about where the gaps are.],
   [There is no such thing as a perfect plan—all plans have flaws or limitations. If you haven't thought through of the potential flaws of this strategy, then you should strongly consider not updating based on this proposal. I've left a few breadcrumbs in the spoiler block directly underneath and I've pasted some selected LLM critiques below that.],
   [It's often hard to analyse the pros and cons of a plan in the abstract, so a good place to begin would be: what are the alternatives? A few possibilities: BlueDot's Defense-in-Depth , a plan crafted specifically for short timelines, a plan more narrowly focused on a specific strategy (like a pause), an all-hands-on-deck plan.],
   [Another direction: what would the Least Convenient Possible World for this plan look like? For example, what if a significant proportion of AI safety work is actually net-negative?],
@@ -157,20 +93,32 @@
   [The piece is strongest as advice about temperament and role-selection within a decentralized community, but weakest where it implicitly treats those norms as close to a field strategy.],
   [Thank you to the 2026 Sydney AI Safety Fellows, my primary co-organiser Jack Payne and all the others who assisted with various parts of the organisation (Michael, Hunter, Luke, e tc .). Thank you also to the Sydney AI Safety Space/Sydney Knowledge Hub who hosted us as well as all the mentors, speakers and guests.],
   [The name of this strategy is "Path to Victory" with the quotation marks included. It may seem like a minor detail, but I believe this to be important.],
+  [^],
   [Last year, I was at a retreat (on a different but related topic) where we spent a bunch of time trying to define the problem, but we didn't succeed because different people had different conceptions.],
+  [^],
   [That said, there are some big disadvantages as well.],
+  [^],
   [I haven't read Hayek, but apparently these arguments are his wheelhouse.],
+  [^],
   [In his 2025 review , Alexander Berger referenced Nan Ransohoff's concept of General Managers as something they were keen to explore. I take the concept of a 'general manager' as essentially just meaning someone taking heroic responsibility with a lot of resources.],
+  [^],
   [I may very well be the first person in history to call a Tweet an "X".],
+  [^],
   ["If your prediction is right (a wider range of people can work on short timelines if they're only biting off a small chunk), this has significant practical implications for community strategy. This could be a standalone claim worth developing, rather than a brief aside." — I'll keep that in mind for the future (insofar as there is one).],
+  [^],
   [This model is a significant simplification in that it is possible to take heroic responsibility for a sub-problem even if you can't take heroic responsibility for the whole problem. When writing the rest of this post, I tried to keep this more complicated model in mind in the hope that my analysis would still apply.],
+  [^],
   [There is a discipline called systems thinking, but I haven't yet found the time to engage with it substantively, so I think about systems in a more ad hoc way.],
+  [^],
   [Obviously, you need to take into account the probability that someone actually builds on your work.],
+  [^],
   [Jay Bailey describes the difference between bridges and walls —walls benefit from each additional block, but bridges only work if the whole structure is complete.],
+  [^],
   [The tools that people use are very ad hoc.],
+  [^],
   [He provides two strategies for dealing with this:],
-  [value="1"\> The Very General Helper Strategy: trying to find something that is useful no matter how the big central problems are solved.],
-  [value="2"\> The One Who Actually Thought This Through A Bit: thinking through whether there are any subproblems of the big central problem that must predictably be solved in any solution of the general problem and attempting to find solutions to this subproblem that will be likely be useful regardless of how we solve the rest of the problem.],
+  [The Very General Helper Strategy: trying to find something that is useful no matter how the big central problems are solved.],
+  [The One Who Actually Thought This Through A Bit: thinking through whether there are any subproblems of the big central problem that must predictably be solved in any solution of the general problem and attempting to find solutions to this subproblem that will be likely be useful regardless of how we solve the rest of the problem.],
 ),
   insert-map: (:),
   word-count: 3160,
@@ -178,10 +126,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How the relative size modifier interacts with stack views],
   author: [Ole Begemann],
   source-name: [Ole Begemann],
@@ -189,40 +135,58 @@
   paragraphs: (
   [And what it can teach us about SwiftUI’s stack layout algorithm],
   [I have one more thing to say on the relative sizing view modifier from my previous post, Working with percentages in SwiftUI layout . I’m assuming you’ve read that article. The following is good to know if you want to use the modifier in your own code, but I hope you’ll also learn some general tidbits about SwiftUI’s layout algorithm for HStacks and VStacks.],
-  [id="using-relative-sizing-inside-a-stack-view"\>Using relative sizing inside a stack view],
+  [Using relative sizing inside a stack view],
   [Let’s apply the relativeProposed modifier to one of the subviews of an HStack :],
-  [class="highlight"\> HStack ( spacing : 10 ) { 
+  [HStack ( spacing : 10 ) \{ 
  Color . blue 
  . relativeProposed ( width : 0.5 ) 
  Color . green 
  Color . yellow 
- } 
+ \} 
  . border ( . primary ) 
  . frame ( height : 80 )],
   [What do you expect to happen here? Will the blue view take up 50 % of the available width? The answer is no. In fact, the blue rectangle becomes narrower than the others:],
   [This is because the HStack only proposes a proportion of its available width to each of its children. Here, the stack proposes one third of the available space to its first child, the relative sizing modifier. The modifier then halves this value, resulting in one sixth of the total width (minus spacing) for the blue color. The other two rectangles then become wider than one third because the first child view didn’t use up its full proposed width.],
   [Update May 1, 2024: SwiftUI’s built-in containerRelativeFrame modifier (introduced after I wrote my modifier) doesn’t exhibit this behavior because it uses the size of the nearest container view as its reference, and stack views don’t count as containers in this context (which I find somewhat unintuitive, but that’s the way it is).],
-  [id="order-matters"\>Order matters],
+  [Order matters],
   [Now let’s move the modifier to the green color in the middle:],
+  [HStack ( spacing : 10 ) \{ 
+ Color . blue 
+ Color . green 
+ . relativeProposed ( width : 0.5 ) 
+ Color . yellow 
+ \}],
   [Naively, I’d expect an equivalent result: the green rectangle should become 100 pt wide, and blue and yellow should be 250 pt each. But that’s not what happens — the yellow view ends up being wider than the blue one:],
   [I found this unintuitive at first, but it makes sense if you understand that the HStack processes its children in sequence:],
   [The HStack proposes one third of its available space to the blue view: (620 – 20) \/ 3 = 200 . The blue view accepts the proposal and becomes 200 pt wide.],
   [Next up is the relativeProposed modifier. The HStack divides the remaining space by the number of remaining subviews and proposes that: 400 \/ 2 = 200 . Our modifier halves this proposal and proposes 100 pt to the green view, which accepts it. The modifier in turn adopts the size of its child and returns 100 pt to the HStack.],
   [Since the second subview used less space than proposed, the HStack now has 300 pt left over to propose to its final child, the yellow color.],
   [Important: the order in which the stack lays out its subviews happens to be from left to right in this example, but that’s not always the case. In general, HStacks and VStacks first group their subviews by layout priority (more on that below), and then order the views inside each group by flexibility such that the least flexible views are laid out first. For more on this, see How an HStack Lays out Its Children by Chris Eidhof. The views in our example are all equally flexible (they all can become any width between 0 and infinity), so the stack processes them in their “natural” order.],
-  [id="leftover-space-isnt-redistributed"\>Leftover space isn’t redistributed],
+  [Leftover space isn’t redistributed],
   [By now you may be able guess how the layout turns out when we move our view modifier to the last child view:],
+  [HStack ( spacing : 10 ) \{ 
+ Color . blue 
+ Color . green 
+ Color . yellow 
+ . relativeProposed ( width : 0.5 ) 
+ \}],
   [Blue and green each receive one third of the available width and become 200 pt wide. No surprises there.],
   [When the HStack reaches the relativeProposed modifier, it has 200 pt left to distribute. Again, the modifier and the yellow rectangle only use half of this amount.],
   [The end result is that the HStack ends up with 100 pt left over. The process stops here — the HStack does not start over in an attempt to find a “better” solution. The stack makes itself just big enough to contain its subviews (= 520 pt incl. spacing) and reports that size to its parent.],
-  [id="layout-priority"\>Layout priority],
+  [Layout priority],
   [We can use the layoutPriority view modifier to influence how stacks and other containers lay out their children. Let’s give the subview with the relative sizing modifier a higher layout priority (the default priority is 0):],
+  [HStack ( spacing : 10 ) \{ 
+ Color . blue 
+ Color . green 
+ Color . yellow 
+ . relativeProposed ( width : 0.5 ) 
+ . layoutPriority ( 1 ) 
+ \}],
   [This results in a layout where the yellow rectangle actually takes up 50 % of the available space:],
   [Explanation:],
   [The HStack groups its children by layout priority and then processes each group in sequence, from highest to lowest priority. Each group is proposed the entire remaining space.],
   [The first layout group only contains a single view, our relative sizing modifier with the yellow color. The HStack proposes the entire available space (minus spacing) = 600 pt. Our modifier halves the proposal, resulting in 300 pt for the yellow view.],
   [There are 300 pt left over for the second layout group. These are distributed equally among the two children because each subview accepts the proposed size.],
-  [id="conclusion"\>Conclusion],
   [The code I used to generate the images in this article is available on GitHub . I only looked at HStacks here, but VStacks work in exactly the same way for the vertical dimension.],
   [SwiftUI’s layout algorithm always follows this basic pattern of proposed sizes and responses. Each of the built-in “primitive” views (e.g. fixed and flexible frames , stacks , Text , Image , Spacer , shapes , padding , background , overlay ) has a well-defined (if not always well-documented) layout behavior that can be expressed as a function (ProposedViewSize) -\> CGSize . You’ll need to learn the behavior for view to work effectively with SwiftUI.],
   [A concrete lesson I’m taking away from this analysis: HStack and VStack don’t treat layout as an optimization problem that tries to find the optimal solution for a set of constraints (autolayout style). Rather, they sort their children in a particular way and then do a single proposal-and-response pass over them. If there’s space leftover at the end, or if the available space isn’t enough, then so be it.],
@@ -233,10 +197,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Experimenting with Live Activities],
   author: [Ole Begemann],
   source-name: [Ole Begemann],
@@ -244,63 +206,64 @@
   paragraphs: (
   [iOS 16 beta 4 is the first SDK release that supports Live Activities . A Live Activity is a widget-like view an app can place on your lock screen and update in real time. Examples where this can be useful include live sports scores or train departure times.],
   [These are my notes on playing with the API and implementing my first Live Activity.],
-  [id="a-bike-computer-on-your-lock-screen"\>A bike computer on your lock screen],
+  [A bike computer on your lock screen],
   [My Live Activity is a display for a bike computer that I’ve been developing with a group a friends. Here’s a video of it in action:],
+  [Download video],
   [And here with simulated data:],
+  [Download video],
   [I haven’t talked much about our bike computer project publicly yet; that will hopefully change someday. In short, a group of friends and I designed a little box that connects to your bike’s hub dynamo , measures speed and distance, and sends the data via Bluetooth to an iOS app. The app records all your rides and can also act as a live speedometer when mounted on your bike’s handlebar. It’s this last feature that I wanted to replicate in the Live Activity.],
-  [id="follow-apples-guide"\>Follow Apple’s guide],
+  [Follow Apple’s guide],
   [Adding a Live Activity to the app wasn’t hard. I found Apple’s guide Displaying live data on the Lock Screen with Live Activities easy to follow and quite comprehensive.],
-  [id="no-explicit-user-approval"\>No explicit user approval],
+  [No explicit user approval],
   [iOS doesn’t ask the user for approval when an app wants to show a Live Activity. I found this odd since it seems to invite developers to abuse the feature, but maybe it’s OK because of the foreground requirement (see below). Plus, users can disallow Live Activities on a per-app basis in Settings.],
   [Users can dismiss an active Live Activity from the lock screen by swiping (like a notification).],
   [Most apps will probably need to ask the user for notification permissions to update their Live Activities.],
-  [id="the-app-must-be-in-the-foreground-to-start-an-activity"\>The app must be in the foreground to start an activity],
+  [The app must be in the foreground to start an activity],
   [To start a Live Activity, an app must be open in the foreground. This isn’t ideal for the bike computer because the speedometer can’t appear magically on the lock screen when the user starts riding (even though iOS wakes up the app in the background at this point to deliver the Bluetooth events from the bike). The user has to open the app manually at least once.],
   [On the other hand, this limitation may not be an issue for most use cases and will probably cut down on spamming/abuse significantly.],
-  [id="the-app-must-keep-running-in-the-background-to-update-the-activity-or-use-push-notifications"\>The app must keep running in the background to update the activity (or use push notifications)],
+  [The app must keep running in the background to update the activity (or use push notifications)],
   [As long as the app keeps running (in the foreground or background), it can update the Live Activity as often as it wants (I think). This is ideal for the bike computer as the app keeps running in the background processing Bluetooth events while the bike is in motion. I assume the same applies to other apps that can remain alive in the background, such as audio players or navigation apps doing continuous location monitoring.],
   [Updating the Live Activity once per second was no problem in my testing, and I didn’t experience any rate limiting.],
   [Most apps get suspended in the background, however. They must use push notifications to update their Live Activity (or background tasks or some other mechanism to have the system wake you up). Apple introduced a new kind of push notification that is delivered directly to the Live Activity, bypassing the app altogether. I haven’t played with push notification updates, so I don’t know the benefits of using this method over sending a silent push notification to wake the app and updating the Live Activity from there. Probably less aggressive rate limiting?],
-  [id="lock-screen-color-matching"\>Lock screen color matching],
+  [Lock screen color matching],
   [I haven’t found a good way to match my Live Activity’s colors to the current system colors on the lock screen. By default, text in a Live Activity is black in light mode, whereas the built-in lock screen themes seem to favor white or other light text colors. If there is an API or environment value that allows apps to match the color style of the current lock screen, I haven’t found it. I experimented with various foreground styles, such as materials, without success.],
   [I ended up hardcoding the foreground color, but I’m not satisfied with the result. Depending on the user’s lock screen theme, the Live Activity can look out of place.],
-  [id="animations-cant-be-disabled"\>Animations can’t be disabled],
+  [The default text color of a Live Activity in light mode is black. This doesn’t match most lock screen themes.],
+  [Animations can’t be disabled],
   [Apple’s guide clearly states that developers have little control over animations in a Live Activity:],
   [Animate content updates],
   [When you define the user interface of your Live Activity, the system ignores any animation modifiers — for example, withAnimation(\_:\_:) and animation(\_:value:) — and uses the system’s animation timing instead. However, the system performs some animation when the dynamic content of the Live Activity changes. Text views animate content changes with blurred content transitions, and the system animates content transitions for images and SF Symbols. If you add or remove views from the user interface based on content or state changes, views fade in and out. Use the following view transitions to configure these built-in transitions: opacity , move(edge:) , slide , push(from:) , or combinations of them. Additionally, request animations for timer text with numericText(countsDown:) .],
   [It makes total sense to me that Apple doesn’t want developers to go crazy with animations on the lock screen, and perhaps having full control over animations also makes it easier for Apple to integrate Live Activities into the always-on display that’s probably coming on the next iPhone.],
   [What surprised me is that I couldn’t find a way to disable the text change animations altogether. I find the blurred text transitions for the large speed value quite distracting and I think this label would look better without any animations. But no combination of .animation(nil) , .contentTransition(.identity) , and .transition(.identity) would do this.],
-  [id="sharing-code-between-app-and-widget"\>Sharing code between app and widget],
+  [Sharing code between app and widget],
   [A Live Activity is very much like a widget: the UI must live in your app’s widget extension. You start the Live Activity with code that runs in your app, though. Both targets (the app and the widget extension) need access to a common data type that represents the data the widget displays. You should have a third target (a framework or SwiftPM package) that contains such shared types and APIs and that the downstream targets import.],
-  [id="availability-annotations"\>Availability annotations],
+  [Availability annotations],
   [Update September 22, 2022: This limitation no longer applies. The iOS 16.1 SDK added the ability to have availability conditions in WidgetBundle . Source: Tweet from Luca Bernardi (2022-09-20) .],
   [WidgetBundle apparently doesn’t support widgets with different minimum deployment targets. If your widget extension has a deployment target of iOS 14 or 15 for an existing widget and you now want to add a Live Activity, I’d expect your widget bundle to look like this:],
-  [class="highlight"\> \@main 
- struct MyWidgets : WidgetBundle { 
- var body : some Widget { 
+  [\@main 
+ struct MyWidgets : WidgetBundle \{ 
+ var body : some Widget \{ 
  MyNormalWidget () 
  \/\\/ Error: Closure containing control flow statement cannot 
  \/\\/ be used with result builder 'WidgetBundleBuilder' 
- if \#available ( iOSApplicationExtension 16.0 , \* ) { 
+ if \#available ( iOSApplicationExtension 16.0 , \* ) \{ 
  MyLiveActivityWidget () 
- } 
- } 
- }],
+ \} 
+ \} 
+ \}],
   [This wasn’t a problem for me because our app didn’t have any widgets until now, so I just set the deployment target of the widget extension to iOS 16.0. If you have existing widgets and can’t require iOS 16 yet, a workaround is to add a second widget extension target just for the Live Activity. I haven’t tried this, but WidgetKit explicitly supports having multiple widget extensions , so it should work:],
   [Typically, you include all your widgets in a single widget extension, although your app can contain multiple extensions.],
 ),
   insert-map: (:),
   inline-pq: pull-quote([However, the system performs some animation when the dynamic content of the Live Activity changes.], [Ole Begemann]),
-  inline-pq-idx: 14,
+  inline-pq-idx: 15,
   word-count: 1311,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The One Thousand Blobcows Born Each Year],
   author: [Morgan Day],
   source-name: [The Paris Review Blog],
@@ -312,17 +275,18 @@
   [Georges Bataille wrote that we call a thing formless in order to undermine it. Those given the designation, he claims, will get squashed, “like a spider or an earthworm.” But formless is a misnomer on arrival, and a formless sphere is an oxymoron. I think amorphous globosus is an ideal form: animate yet inanimate, parasitic yet harmless, geological yet doughy, static yet reactive.],
   [Even when all its qualities have been listed, the formless sphere stokes confusion in people. They reach for comparisons: a meatball, an egg, lab-harvested meat, a very large cow nugget. Like me, they prefer looking at images online of the creature as hairy and whole, without the attached umbilicus, without the remnants of the cow. They give it a better name: blobcow .],
   [Can it feel pain? they ask. Can we put it on life support? If we kick it, how far will it roll? And if we squish it, will it squeak? Blobcow retains all the presence of a being with all the use and uselessness of an aesthetic object. At times, blobcow exudes the joy of these objects. Carried through tall grass, it jiggles.],
-  [style="text-align: center;"\> \*\*\*],
+  [\*\*\*],
   [Samuel Beckett’s Murphy ( Murphy , 1938) straps himself naked to a rocking chair and stares at an iridescent beam of light. Murphy’s mind is a hollow sphere, “hermetically closed to the universe without.” Murphy is clairaudient. For him, thought forms are as dominant as physical forms. Like a dog, he endures sensory experiences beyond human perception.],
   [As a remedy, Murphy lies supine in a park. He claims to pause his heart. Fed up with breathing, he seeks a respiratory machine. In his rocking chair, Murphy rocks himself into a stupor. His pineal gland shrinks to nothing as he seesaws the chair to its limit. His body quiets; he frees his mind. This blobcow state is a needed break from the experience of his anatomy, a soft round escape. Not death but not life, an in-between. The cause of his pain—his keen awareness of the world—becomes the origin point for his ascension.],
   [Repetitive actions multiply across Beckett’s novels. A man alternates sitting on every stool at a bar. Another carries a handful of stones that he takes turns sucking on. Murphy walks “round and round” the prison, the cathedral, the cross, the wreck. Loops help to cope with the cycle of humanity: “a well with two buckets … one going down to be filled, the other coming up to be emptied.”],
   [Following a tiff with his lover Celia, Murphy heads for the front door. She asks if he is leaving for good. If he were leaving for good, Murphy explains, he would take to his chair and not the door. After he leaves, Celia undresses and rocks in the chair. She is in her mind with Murphy, her parents, herself as a girl, as an infant, until “it was finished, the days and places and things and people … she was lying down, she had no history.” Celia, too, accesses the fundamental and original , rocking at the center of an infinite formless sphere.],
   [Murphy asks, “What was the etymology of gas?” and gives no answer. Historically, the etymology of gas dates back to the seventeenth-century belief that an occult principle exists in all matter. Within Murphy’s rocking chair lives a spirit. It is characterized by “superfine chaos,” secret knowledge, a void.],
-  [style="text-align: center;"\> \*\*\*],
+  [\*\*\*],
   [In Ambera Wellmann’s painting UnGodly (2021), an indefinable creature births a trinity of humanlike figures from its mouth. Or maybe it’s consuming them. There are few beginnings and no endings, or many beginnings mistaken for many endings, taking place in the erotic rupture in its face. Gazing nowhere yet everywhere, the seeming mammal, with an invertebrate tail, advances and recedes on a black (fore)(back)ground.],
   [Ungodly means “irreligious” or “immoral .” Also, “ inconvenient .” I think it’s the almost quality of the painting that’s inconvenient. Almost: abstract or realistic, born or dying, a creature, a person, sex, a story. Almost is uncomfortable, like this AI-generated image that mimics the visual experience of having a stroke. Its challenge to the spectator went viral: “ Name One Thing .” Looking at it is nauseating. Everything in the image looks like something—cellophane, a fur scarf, a cow or pig head, a steel kitchen appliance, an earring organizer, a glass cake stand—until closely observed. Then, the only thing we see is: wall, wall, wall, wall .],
   [Like the smudges of color in the Name One Thing meme, the uncertainty of what we see in UnGodly stokes unease. I tend to fixate on the third humanlike figure, levitating on the fingertips of the other two. One end of this unfinished figure fuses to the creature’s nose. It’s nearly shapeless, an ovoid with limbs, but recognizable, as though caught in the process of becoming. All subjects are loosely positioned on a platform suspended in a void. They are all “coming to life through undoing,” as Wellmann has said of another of her paintings. Each painting is a “living thing” in a space that reflects “navigation” and not “resolution.”],
   [“Affirming that the universe resembles nothing and is only formless amounts to saying the universe is something like a spider or spit,” Bataille writes in “L’informe.” If form doesn’t assign meaning to the universe, then what does? Its defining quality might be akin to what one interviewer calls the “phantasmagorical plain” in which Wellmann’s work resides, one populated by bodies that are “full of potential.” A space that is constantly shifting and chimerical, hallucinatory, like a fever dream: a resemblance of all that is here and not here .],
+  [Ambera Wellmann, Ungodly , 2021. © Ambera Wellmann, courtesy the artist, Company Gallery, and Hauser & Wirth.],
   [Morgan Day is a fiction and architecture writer. Her short fiction has appeared in Ecotone , Gulf Coast, The Southampton Review, Worms Magazine , and elsewhere. Her first novel, The Oldest Bitch Alive, is out this month from Astra House.],
 ),
   insert-map: (:),
@@ -333,10 +297,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [All My Thoughts After 40 Hours in the Vision Pro],
   author: [Tim Urban],
   source-name: [Wait But Why],
@@ -368,6 +330,7 @@
   [But it was a holy shit moment with an asterisk. I had experienced full holy shit moments both in 1990 and in 2016 with VR, and these were the notable exceptions to the “holy shit moments are a surefire omen of an industry about to blow up” rule. Was this time different or would history repeat itself?],
   [What I did know was that it was finally time to write a VR post. I wanted to post this week while everyone was hyped up about the Vision Pro. But I didn’t want to write about it before I had used it a lot , so I could experience not only the honeymoon phase but also what it was like to get thoroughly sick of it.],
   [The plan was clear. I went home, told my wife that I would be deeply ignoring her and our baby for the week, and spent twelve hours a day in the headset for four straight days. I’m writing this on Thursday afternoon, having already logged over forty hours. Here are my thoughts.],
+  [Vision Pro, V1],
   [There are three elements of any VR system: hardware, operating system, and applications. Let’s talk about each.],
   [Apple Vision Pro (AVP) 1 is heavy—a decent amount heavier (650 grams) than Meta’s Quest 3 (515 grams). It comes with a fancy band that goes on easily and you tighten with a little knob. It’s awesome. For 12 minutes. Then it started killing my face. With 3,500 regrets, I switched to the other band it comes with, which includes a loop that goes over the top of your head, and thank god for that because it was way better—so good that I am shocked to say that even at the end of a full day wearing it, I didn’t feel a euphoric “ahhh” relief taking it off. At least right now, it seems only a little more uncomfortable than wearing over-ear headphones for long periods of time. This might not apply to everyone, but I have not felt nauseous once while wearing it.],
   [That doesn’t mean there’s nothing that sucks about wearing it. The “field of view” isn’t great, meaning there are thick black walls where your peripheral vision is supposed to be, which is a bummer. I can’t imagine it’s great for your eyes. And there’s no way around the fact that you feel like an asshole when other people are in the room.],
@@ -401,6 +364,7 @@
   [It’s very crude right now, but it’s a primitive version of something we’ll probably all be doing constantly in the 2030s. It’s the next step in a centuries-long human mission to conquer long-distance. First there were letters, then phone calls, then mobile phones 3 and video calls. The next step is VR hangouts.],
   [By far the thing I spent the most time doing in the Vision Pro was exactly what I normally do, but the AVP version. When you’re sitting down in front of your computer while wearing the headset, you can open your computer screen as a giant virtual window (which you still control with your normal keyboard and trackpad). Whatever screen you’re used to working on is now much, much bigger. It’s also much more mobile. I don’t usually work on the couch because I prefer my big monitor over my laptop screen. This week, I spent a lot of time working on my couch on a 100-inch monitor. I don’t normally work lying flat in bed because the laptop screen isn’t directly above me. This week I did, putting the screen up on the ceiling. I did some work outside on the porch and some more under a tree. Sometimes I saw the room around me, only with a big screen floating in it. Other times, I went fully immersive, writing on a mountain top, a sand dune, or the moon. And as I mentioned at the beginning of the post, I’m currently using the AVP in a coffee shop, which is officially embarrassing .],
   [For some odd reason, you can’t open multiple desktops (yet), but you can open some of the things on your desktop as their own apps in separate windows. There’s an AVP iMessage app, so I closed iMessage on my desktop and opened it in an adjacent window. I often remotely cowork with Alicia (WBW’s Manager of Lots of Things), putting her in a little window in the corner of my screen. Now, she’s in her own window. If I’m willing to bite the bullet and switch from Chrome to Safari, I can pull my research and web browsing off the desktop too. The end result is that a single small, immobile computer screen has been replaced with a giant mosaic of screens, for the small price of having a snorkeling mask on my face all day. It kind of feels like you stepped into your computer screen, into the beautiful wallpaper landscape, amongst the windows. Very surreal. I wrote this entire post in the headset and have found myself enjoying writing more—and being more focused—than normal.],
+  [My overall feelings],
   [The best way I can describe how I feel about the Vision Pro is a strange combination of utterly thunderstruck and mildly underwhelmed.],
   [The magical interface, the giant screens, the immersive experiences—they’re just unfathomably cool and awe-inspiring. It feels like a sneak peek at the 2030s.],
   [But after a couple of days, I found myself thinking, “Is that…it?” I had done the small handful of immersive experiences, played some of the small selection of games, looked at a bunch of my panoramic photos, and tried avatar FaceTime—and at the moment, there’s just not that much else to do in the Vision Pro.],
@@ -412,6 +376,7 @@
   [Then, the keynotes got boring. The changes were incremental. Apple stopped innovating and started refining. This coincided with Tim Cook taking over, but it isn’t his fault. The steep part of the S-curve doesn’t go on forever, and companies often reap the biggest rewards in the boring, top part of the S once the industry matures.],
   [Maybe the reason VR has been slow to take off isn’t because there’s something fundamentally wrong with VR. Maybe it’s because, for the last decade, we’ve been working our way through the very early part of the VR S-curve—the slow part where foundational technology is researched and built. My Vision Pro is highly imperfect—overpriced, heavy, slightly glitchy, very limited, creepy-avatared—because that’s exactly what products are like at the bottom of the S. Consumer products aren’t ready for mass adoption during this stage. But it’s the breakthroughs made during these years that set the stage for the explosive exponential phase of the curve.],
   [The lesson from past VR hype cycles is to temper expectations. The VR S-Curve explosion may be many years away or never come at all. But the lesson from past Apple launches is don’t bet against Apple, and Apple’s bet is that the Vision Pro could be a seed like the first iPhone—a platform for innovation that kicks a new S-curve into high gear. 4],
+  [Vision Pro, V2 – V10],
   [For someone to regularly use a piece of technology, the benefits have to outweigh the costs. Right now, the Vision Pro benefits are probably less than the costs.],
   [I’ve already paid for mine, which removes one of the costs, and it’s still a question to what extent I’ll choose it over my computer in the long run. In that regard, the AVP might currently be more like those first cell phones you had to carry around with a briefcase than the first iPhone. Would you get a cell phone if the only way they came was attached a briefcase? Maybe, but it’s a close call.],
   [For VR to achieve mass adoption, the good needs to be better and the bad needs to be less bad. It’s easy to imagine a pathway to both.],
@@ -422,10 +387,12 @@
   [Over time, the price will come down, with some companies making headsets dirt cheap the way they have for smartphones today. As the value proposition gets better and better, more people will have them, enhancing the social component and eradicating any stigma. Mass adoption seems like a very real future possibility.],
   [I know what many of you are thinking: A world where everyone is in VR headsets (or visors, or glasses, or contact lenses) sounds dystopian and awful . And granted, this is coming from a guy who thought that world of glazed over people in moving chairs in Wall-E looked like a great place to live—but I’m excited.],
   [K can I take this thing off my face now?],
+  [\_\_\_\_\_\_\_],
   [What to read next:],
   [A post about a technology even more intense than VR],
   [A post about a different technology that’s also even more intense than VR],
   [A post about a third technology that’s even more intense than VR],
+  [\_\_\_\_\_\_\_],
   [If you like Wait But Why, sign up for our email list and we’ll send you new posts when they come out.],
   [To support Wait But Why, visit our Patreon page .],
   [When you use the Quest 2 in a new setting, you have to manually show the headset the boundaries of the open space you’re going to be using. This isn’t needed in the more recent Quest 3, which automatically maps out the space. ↩],
@@ -443,10 +410,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Sagrado Corazón],
   author: [Lina Ferreira Cabeza-Vanegas],
   source-name: [The Paris Review Blog],
@@ -455,14 +420,14 @@
   [I was fifteen in the year 2000. Turn of the millennium, turn of tables and tides. Every morning there were reports on the radio, and every night the news showed footage of the peace talks between the Colombian government and the FARC forces. Folding tables and plastic chairs in a room with no walls, and I don’t think anyone really thought anything would come of it.],
   [Still, we watched. The future of our country on the screen and on a precipice. History about to reassert itself or buckle under the demands of men in linen shirts and bootlegged fatigues. At 9 P. M. every night between 1999 and 2002, the cameras settled on sweat-stained shirts and stern faces to capture the exact moment when we would all be remade with the stroke of a pen and a handshake like fishermen in a Bible verse. Microphones, dress shoes, and rifles. What’ll happen next? we asked. Stay tuned, they said.],
   [On Sunday night, May 14, it was the same. What will happen next? We’ll have to see. I washed my shoelaces in the bathroom sink for Monday school-uniform inspection before morning Mass, while three hours north of Bogotá, a man carefully packed explosives into a PVC pipe frame, like a hermit crab slides a soft body into a borrowed shell.],
-  [style="text-align: center;"\> \*\*\*],
+  [\*\*\*],
   [My mother went to school with nuns; my father went to school with priests. So, when it came time to enroll their daughters, they searched high and low for the furthest thing from a Catholic education that Bogotá had to offer.],
   [Not an easy task.],
   [In 1902, the poet-president, José Manuel Marroquín, in an effort to heal the wounds left by the War of a Thousand Days, consecrated Colombia to the Sacred Heart of Jesus . And though the solemn consecration was effectively voided by the revised constitution in 1991—to prevent religious discrimination—no one seemed to notice, or care. In 2008, the Catholic Church renewed the consecration, and once more made Colombia officially “ el país del Sagrado Corazón de Jesús .”],
   [The options were few and strange, but eventually my parents settled for a Montessori-style school founded by a former nun, located far out in the countryside beside a small eucalyptus forest and a canal flowing slowly with sewage and green rot.],
   [So, at the age of five, every morning, along with my elder sister, in our uniforms and wool ruanas, we stepped into thick Andean mist. We navigated by memory through the walled-in collection of houses where we lived, as if walking through clouds of milk steam, as if through the blurry corners of end-of-the-world maps. Most days the fog had cleared by the time we joined the huddle of bloodshot-eyed children, yawning and gripping lunch boxes, though sometimes it never seemed to lift at all. Nearby, a guard with a loaded shotgun sipped coffee from his thermos while waiting for cars and vans to take us to schools scattered across the city.],
   [I remember brown birds bathing in the gutter, stray dogs barking in the distance, and the voice of morning radio hosts rising from the guard’s portable AM radio. Fútbol scores, daily bombings, chatter about that Sofía Vergara—“Did you see her? Barely seventeen and nearly naked in that Pepsi commercial, all of Latin America is gonna see it too? They’ll know soon how beautiful Colombian women are”—and the latest news about Lucho Herrera’s race. “La Vuelta a España, il Giro d’Italia, le Tour de France. ¡Ahí va nuestro Lucho! Our Lucho. Go, Lucho, go!” Until finally, a sheet-metal Renault 4 that rumbled like stagehand thunder cut through the fog with blinding high beams, and we were told, “Hurry up, get in, let’s go!”],
-  [style="text-align: center;"\>\*\*\*],
+  [\*\*\*],
   [We don’t know much about this man and this night. A few facts only:],
   [Around four in the morning he, along with at least two others, walked through the front door of a home called Hope, in an area known as Sanctuary, on a street named Palestine. La Esperanza, El Santuario, La Palestina. One that Ana Elvia Cortés Gil shared with her husband, Salomón Pachón.],
   [The men wore ski masks and military fatigues, and they wanted money.],
@@ -471,7 +436,7 @@
   [Was there a knock, a whistle? A hand sliding back the curtains, and then sliding back locks so the rest could slither into the house like mustard fog and black mist, so they could place their hands on sleeping bodies like orderlies, like exorcists, like rubber-gloved men on slabs of live-wire eels?],
   [Was the bomb zipped into an old-school backpack? A hit man’s duffel bag? Wrapped in newspaper and bubble wrap, tied up with old shoelaces and string? Placed carefullyinto a plastic grocery-store bag and held carefully in both arms like a sleeping baby, like an egg on a spoon, like a bowl of water filled to the brim? Like a ticking bomb?],
   [Perhaps they put the bomb down gently beside a potted plant, and they kicked down a flimsy wood-panel door that went flying in splinters, wood chips, and loose hinges. The sole of a boot, the crack of a door, and the sound of men yelling, “ Malparidos, hijueputas, ahora sí que sí! ” Wake up, motherfuckers, now you’ll see what’s what!],
-  [style="text-align: center;"\>\*\*\*],
+  [\*\*\*],
   [We started running bomb drills in school after a rumor got around that Pablo Escobar—or maybe Rodriguez Gacha, or the Ochoa brothers, or who knows who and who cares now—were planning to bomb a school in Bogotá.],
   [On November 27, 1989, the FARC took down a plane from a commercial airline, and 107 people with it. Avianca Flight 203 from Bogotá to Palmira, which a man who would later become president was scheduled to board but was miraculously spared by a last-minute change to his schedule. He later said, “Thank Jesus, thank the angels! Divine intervention is what it is.”],
   [At 7:11 A. M. the plane lifted off; at 7:12 the wheels retracted and ears began to pop; at 7:13 nervous passengers were gripping the crosses around their necks and whispering prayers; at 7:14 they had likely reached six thousand feet and the earth seemed like nothing from afar. At 7:15 it began to feel normal again—we can become accustomed to anything at all, even this: air, and speed, and planes like potbellied birds puttering across a lake-blue sky; at 7:16 it was over. A roaring fire at ten thousand feet, spinning shrapnel like a halo of teeth, and a spinning crown of metal thorns.],
@@ -479,22 +444,22 @@
   [So we ran the drills, because in the nineties, everything seemed possible. It is unclear now if school bombings were ever on the table, or on anyone’s mind, back then. But, see, that’s the point of terrorism. Oh, the places you will bomb!],
   [Teachers arranged us in groups down the main building’s hallway. They paired and unpaired us, told us to stand up straight, to sit in circles, to cross our legs and then to kneel, to keep our eyes wide open, then to keep them shut, and pray. “ Ángel de mi guarda, mi dulce compañía, no me desampares ni de noche ni de día.” To never, ever run until we were told to. “Oh, my guardian angel, my sweet company, never, ever leave me, night or day, whatever may be.” And we watched them wave their arms like flight attendants, raise their voices, and pace up and down that hallway as if trying to correct the course of a river with nothing but a paper cup, while we traded snacks and marbles and hoped for rain so they would have to keep us inside. Maybe, I remember thinking, they’ll let us watch One Hundred and One Dalmatians again, or maybe it’ll rain so hard and so long I’ll have to climb a tree and live up there until the rain washes every bad thing away. Maybe it’ll never stop.],
   [Because, though no one said it aloud, we weren’t scared. We were too odd, and too small a school, to matter, and our insignificance kept us safe. So we traded marbles; we hoped for rain.],
-  [style="text-align: center;"\>\*\*\*],
+  [\*\*\*],
   [The most likely scenario is that the men neither slid in nor slithered out. Men who dream up bombs you can strap around women’s necks are not creatures of nuance and subtlety.],
   [Instead, they probably kept it simple: Cut the lights, poison the dogs. Take four explosive-filled sections of PVC pipe that fit around Doña Elvia’s neck, strap them on, tape them up, leave prerecorded instructions behind.],
   [In an article in El Tiempo , a journalist who had been allowed to listen to the tape described the voice as “nasally,” and “cavernous, but with excellent pronunciation.”],
   [“Pay close attention,” it said, “Mr. Pachón and Mrs. Cortés. This collar is a bomb. And you have ten hours.”],
-  [style="text-align: center;"\>\*\*\*],
+  [\*\*\*],
   [The doors rattled like a mouthful of loose teeth. The small car masquerading as a school bus groaned like the bending of metal beams. Backpacks, and knees, and elbows, and jaws. Faces smooshed against the glass as parents made the sign of the cross from their front doors, again and again, like blowing kisses, like throwing darts.],
   [A yellow Renault wedged inside Bogotá traffic and kids wedged inside it.],
   [But not me.],
   [I was five; I was small. I sat in the front seat on the eldest girl’s lap until we reached the right intersection at the right time. A red light and a bus or truck by the passenger window. Then she would gently push me off her lap and very, very slowly begin inching up her skirt.],
   [Andean mist and a Jehovah’s Witness named Marlén at the wheel. Condensation settled on the windshield, and Marlén wiped it away furiously, one hand on the window, one hand on the gear shift, one foot on the clutch as she barked to the eldest girl, “Andrea! Turn signal’s broken again. Lower your window. Signal with your hand.”],
   [At first no one but me and the man in the truck would notice how she placed her hands on her lap and began tugging on the fabric. Then only Andrea and I noticed how the man began to lean out his window, how he stared at her skirt like a plaid curtain on a pale stage. At fingers like inchworms measuring the length of a teen girl’s thighs, and even now, I’m in awe of how perfectly she timed it. Slowly, methodically, the hem of her skirt moved like a minute hand ticking back, back, closer, closer, higher and higher under the red glow of a stoplight. While a truck driver’s eyes grew wider and wider, and he leaned farther and farther out. A stop-motion race toward a finish line she never reached, because then the light turned green, then Marlén finally noticed, stepping on the gas and yelling, “Andrea! Not again!”],
-  [style="text-align: center;"\>\*\*\*],
+  [\*\*\*],
   [White walls, clay tiles, and red flowers out front. This was the home where she raised her sons and planted her corn. Where she raised her chickens and fed her dogs. Where she fell asleep to the sound of her husband’s breathing, or to the croaking sounds of an Andean night. A wool sweater, a brown jacket, her breath rising like steam as she rubbed her hands together and began to milk her cows. Maybe she hummed to herself, maybe she loved quiet mornings. Nothing but the ticking of her wristwatch counting down the minutes left of darkness. “She was a hardworking woman,” they said, “ muy trabajadora .” “Started up around four,” waking and working and milking and dragging that metal milk container down a gravel path to the edge of a dirt road so she wouldn’t miss the truck that came to collect it, that went off to sell milk in the nearby town.],
   [I lived in a small town when I was five, not far from roads like those of La Palestina. A milkman came to our doorstep with his own metal container. So this is how I picture her. A sweater, an apron. Milk foam, calloused hands. Strong coffee and persistent mist while she pours in perfectly measured motions.],
-  [style="text-align: center;"\>\*\*\*],
+  [\*\*\*],
   [Some reports are vaguer than others.],
   [Spanish lends itself to fogginess and ambiguity. Se rompió , se quemó , se mató , se voló , se escapó , se cayó , se suicidó . Reflexive, blameless verbs with tacit, free-radical pronouns. “It felt,” “it flew,” “it fled,” “it fell.” “It burned itself down,” “it blew itself up,” “it cut itself to pieces.”],
   [War was started.],
@@ -505,12 +470,12 @@
   [“There were these men, this morning … Three, maybe four of them? At three, maybe four in the morning? Do you see? They wore ski masks and fatigues, not the official kind, you know … You know who. Yes, like that. They had a backpack, or a grocery bag, or a rain-soaked cardboard box, then they pulled this thing out of it and strapped it around a woman’s neck.”],
   [By 5:20 A. M. , the police were on their way.],
   [Nine hours left.],
-  [style="text-align: center;"\>\*\*\*],
+  [\*\*\*],
   [The police were called in, and then they called a man by the name of Jairo Hernando López. A man who had been, at that very moment, sitting down for breakfast in a home he shared with his siblings, his mother, his wife, and his five-day-old son.],
   [According to an article written by the journalist David Leonardo Carranza Muñoz in May 2016, Jairo’s mother was already making lunch plans while he, home for the day, asked her not to be too stingy with the chicken. “Put a whole lot in it,” he said. “Not all rice, lots of chicken too.” And I imagine her lifting the lid, puffs of white-rice steam and white-meat smoke, while white mountain mist taps on the window and the radio announcer recites soccer scores, peace talk reports, casualty numbers, and news of Juan Pablo Montoya in the Indy 500. “Formula 1! First Colombian, bet they didn’t see that coming. Won’t see him coming either. Go, Juan Pablo. Our Juan Pablo. Go!” Then the phone rang.],
   [Hushed tones and clipped sentences. “I’m going to Chiquinquirá,” Jairo López tells his family, hanging up the phone, “because there’s a hell of a mess over there.”],
   [Eight hours left.],
-  [style="text-align: center;"\>\*\*\*],
+  [\*\*\*],
   [The men wanted fifteen million pesos delivered by that afternoon.],
   [Simple.],
   [About ten hours. About seventy-five hundred dollars.],
@@ -522,7 +487,7 @@
   [In many ways, however, this also seems a paltry sum. Insignificant, really.],
   [Not by inflation or adjustment, but by sheer cosmic contrast.],
   [A seven-pound head, almost one grand a pound, all things remembered and forgotten, all things learned, all things ignored, the private nicknames for her sons, the songs she sang to them, the trouble they caused, the stories they told, the way her own mother would hold herself during Mass, how she remembered this, how she forgot that, the sound of her husband asleep beside her, the one thing she thought about once a month but never told a soul. Every single thought she’d ever had, every word she would ever speak, every prayer she had ever prayed.],
-  [style="text-align: center;"\>\*\*\*],
+  [\*\*\*],
   [“We switched from normal skirts to jumper dresses,” a former priest turned disciplinary director explained as he gave me a tour of my new all-girls Catholic school, “to reduce the temptation for girls to roll up their skirts and parade around like common streetwalkers.”],
   [I am not Catholic, not really. Except I am Colombian, which is close to the same. And I wanted to get out. I wanted Colombia in a rearview mirror. “Please,” I told my parents at the age of fourteen, “put me in a real school.”],
   [So, until graduation, I wore a uniform designed to thwart temptation. I waited for a bus at six in the morning and stood in line at seven thirty for uniform inspection. Straight spine, plaid jumper knee-high socks, and cold knees. A blue veil of mist around us and a painted-blue veil around the statue of the Virgin before us, while we begged in unison for our guardian angels to protect us, to never leave us, never, never . Not in the day, not in the night. Not until we were at peace with all the saints—Jesus, Joseph, and Mary.],
@@ -532,15 +497,15 @@
   [One, two, three. Cross.],
   [One, two, three. Cross.],
   [And when the last bell rang, we were loaded into buses and vans, where we stared out our windows at a stray cow in a field, at parents blowing smoke through open windows, at our own doors rattling and shaking, and watched in silence when one girl’s mother once came to pick her up in a full blast-suit, and we averted our eyes when a man in a red car drove around our school, wearing nothing but a polo shirt, as he tugged on his penis.],
-  [style="text-align: center;"\>\*\*\*],
+  [\*\*\*],
   [Doña Elvia was not allowed to remain in the home called Hope. By 7:30 A. M. , antiexplosive teams had arrived on the small farm, and it was decided that she would have to be moved to a remote part of a rural highway that they had wrapped in caution tape.],
   [Regardless of the warnings, people gathered at a distance, watching, while officers called the bomb specialist, and Doña Elvia sat on the curve, waiting. Among those gathered and gathering, I imagine, must have been Doña Elvia’s neighbors, people she knew from the market and from Mass. People from surrounding farms and the nearby town, who had maybe gone without their milk that morning.],
   [Seven hours left.],
-  [style="text-align: center;"\>\*\*\*],
+  [\*\*\*],
   [“Sandra?” I called out to my grandmother’s nurse, back in Colombia, almost a decade after the peace talks had fizzled and failed. “Sandra?” Sitting in the dark, listening to my grandmother’s shallow breathing. “¿Sigue despierta ?” You still awake?],
   [“Hm?” Sandra replied, her face illuminated by the light of her phone.],
   [“You should talk to Sandra,” someone had told me, “if you really want to understand how it all got this way. She knows something about it.” So, “Sandra,” I said one day, as Jesus watched from the nightstand, as he clutched his own heart, wrapped in thorns and wreathed in flames, “what was it like?” “You know? Being in las FARC .”],
-  [style="text-align: center;"\>\*\*\*],
+  [\*\*\*],
   [The bomb itself was not a sophisticated device, according to a Caracol Radio report . “Just black powder inside galvanized PVC tubes,” which one of the improvised-explosive-device (IED) experts later described as “four sections and a syringe with liquid that upon contact would make the whole thing explode.” Another expert, however, pointed out that “it must have taken the terrorist a long time” to make it. “Time to design it, time to think it up. Time to make it so hard for authorities to deactivate.”],
   [Time, and time, and black powder, and time.],
   [Simple.],
@@ -550,24 +515,24 @@
   [A man screwing hacksaw fangs into a starving lion’s mouth while he sleeps.],
   [Not simple at all.],
   [Because it is a thousand-hours-of-staring bomb . It is made of living room pacing and beer-round discussions. “Should we stay and explain it? Should we leave a note? If not a note, then what?”],
-  [style="text-align: center;"\>\*\*\*],
+  [\*\*\*],
   [Sandra had had trouble at home since she was a little girl. “ Uy, uy, sí ,” she told me. “Desde chiquita.” Even before her mother fell in love with one of Sandra’s classmates and decided that all that mattered in life was being loved by this adolescent boy. “She went crazy for him, cried all day, all night. If he didn’t come by, if he didn’t say this, say that. Didn’t kiss her, didn’t love her. You know?” Sandra’s mother would stop crying, then she would start up again, for days, for weeks. “My mother.” Sandra looked away and shook her head. “She said a woman without a man was not a woman at all, and barely anything at that. So she begged him to stay, promised him the heavens and the earth and everything between, if only he would stay.” For days, for weeks, until he finally moved in, and Sandra moved out.],
   [It’s hard to picture. Sandra’s mother in a black shawl. Maybe an apron, or a brown jacket. Sandra’s mother under thick wool blankets with her hands reaching out for this boy. “No, the black shawl was right. But mostly a sweater. It’s a little cold out there.” A farmer with callouses on her hands, a few cows and chickens out back. “You know, a garden. Little of this, little of that.” The same, I imagine, as Sandra might have been, had things turned out a little different. “Oh yeah, I mean, maybe not. But, yeah. Things are easier out there, much harder in this city.”],
   [“Easier how?” At twenty-seven, I had lived in six different countries, ten different cities, and sixteen cheap apartments, but had never wanted to feel “at home” anywhere but in Bogotá.],
   [“Oh, you know.” She leaned back. “There’s always something to eat out there, you know?” I don’t. “Out there, you never starve.”],
   [I tried to guess her age, wondered what bombing or which peace process was happening when she ran away from home. “And here you do?”],
   [“Here?”—she raised both eyebrows—“oh yeah. Every day.” She put down her phone and looked out the window at the whirling rush of a hungry city. “Out there … it’s something else that gets you.”],
-  [style="text-align: center;"\>\*\*\*],
+  [\*\*\*],
   [Doña Elvia’s eyes are cast downward as she waits for the specialist, holding up the PVC pipe collar with her left hand. The tighter that black powder is packed, the heavier the bomb becomes, and I wonder if the edge of the plastic pipe cut into her skin. If it felt like the bomb itself is trying to make her kneel before the god of dynamite. It is likely that there is another god beneath the PVC collar bomb, Jesus hanging from a little gold crucifix like the one around most Colombians’ necks. Same as the one the bomb maker was likely wearing too.],
   [It is hard to tell much from the images of that moment. A woman in a thick brown coat, white earrings, and short, curly hair dyed a reddish brown. Though one thing is clear: she looks tired and afraid. Every article will mention it. Pipe wrapped around her neck, tape wrapped around the pipe, and a look that says, before she actually said it, Why? To Officer López, when he finally arrived at the scene, “Why did they do this to me? I haven’t done a thing to anyone.”],
   [It doesn’t take me too long to realize how much she reminds me of my mother.],
   [Six hours left.],
-  [style="text-align: center;"\>\*\*\*],
+  [\*\*\*],
   [In 2003, about three months before I graduated from Catholic high school, at eight thirty-five one evening a FARC -made bomb went off in a private club in Bogotá and thirty-five people were killed. It was loud enough that I heard it from blocks away in my bedroom, and we spent the rest of the night watching the television as neighbors dragged mattresses onto adjacent rooftops and urged the people left inside the club to jump: “Jump! Jump!” From a burning building. “Come on, you can do it! Let’s go!” A year prior, 119 civilian men, women, and children had been burned alive inside a church where they were hiding while the paramilitary forces faced off against the FARC for this strategically located town. In 2010, in a town called El Charco, a boy of only eleven was approached by a man in uniform. “Take this to the police station over there,” he told the boy, and gave him a thousand pesos, roughly fifty cents, to make the delivery. The boy used to do this all the time: he was poor, and for a fee, he would place whatever you liked, light or heavy, on his back or atop his head, and carry it wherever you asked. As soon as the boy set foot inside the police station, however, the package that was not a package but a bomb, exploded. Nine civilians and three officers were injured, and all that was left of the boy were two severed legs beneath the rubble, and, according to an article in El Tiempo , when a neighbor found them in a pile of broken tile and shattered brick, he looked up and yelled, “They blew up a kid!”],
   [“This is not a war,” my mother once said while we watched the news. “It’s a suicide.”],
-  [style="text-align: center;"\>\*\*\*],
+  [\*\*\*],
   [All the accounts mention how nervous and agitated Doña Elvia appeared. In fact, an article that I can no longer find but distinctly remember mentioned that amid instructions and threats, the cavernous, nasal voice on the tape suggested giving her “some tranquilizers” because “this sort of thing is hard on the nerves.”],
-  [style="text-align: center;"\>\*\*\*],
+  [\*\*\*],
   [Running away takes practice too, and Sandra practiced. She stayed with aunts, cousins, friends. For a night, for a weekend, for a month. “But I always did go back. Check in on mi mamá . Make sure she was all right.”],
   [Sandra has an open face, she’s quick on her feet, and once, when a man tried to beat her, she took a kitchen knife and swung it so hard she sliced through his leather jacket. “Didn’t cut him bad, but that was the last time he tried it.” There is both an edge and a bluntness to her—sickle, hammer, and nerve—and “she is very smart,” my mother told me once. “ Es muy obvio .” And I knew by the tone of her voice that what she meant was, Be careful.],
   [“You kept on running away, then?”],
@@ -583,13 +548,13 @@
   [We sat quietly in the dark for a moment. Silence can be anything, mean anything, mean nothing too. After she left the FARC , she laid brick at construction sites and put herself through school, traded fatigues for hospital scrubs. I like her: she is smart and funny, good in a crisis, and good to her patients. She never put up with the men who tried to take a swing at her, and after all that happened, she still went back home and still cares for her elderly mother. And yet, and yet.],
   [“And that was it?”],
   [Sandra nodded. “One day I’d had enough. I didn’t say goodbye. I just left.”],
-  [style="text-align: center;"\>\*\*\*],
+  [\*\*\*],
   [Jairo López had planned to stay home that day, to take care of his wife and five-day-old son, according an El Espectador article written by David Leonardo Carranza Muñoz. The twenty-eight-year-old Jairo Hernando López, who, by eight thirty that morning, was already carefully sliding his saw across the PVC casing around Doña Elvia’s neck.],
   [In the distance, officers held back her husband as he, according to a May 19, 2000, El Tiempo article, “\[attempted\] to go up to her, and embrace her.”],
   [He was sixty-seven years old, and it was probably very easy to hold him back. One hand on his chest and a few stern words. “Please wait here. Please let us work. We are doing all we can. Not long now.” Still, I wonder. Sixty-seven years old, a two-and-a-quarter-hectare farm, six cows, a dozen chickens, two children, a whole lifetime married to this woman who was trembling now on the side of the road. Their whole life together, and hers, running out the clock.],
   [Perhaps it was hard to hold him back after all.],
   [Five hours left.],
-  [style="text-align: center;"\>\*\*\*],
+  [\*\*\*],
   [“Oh, no, no, Lina. It’s not like that at all.” Sandra shook her head and scoffed when I mentioned rape . “Not at all.”],
   [She didn’t use the word, didn’t say anything else about it, except “If you could see.” She tilted her head and placed a hand over her heart, like, Oh my! And, You wouldn’t believe. “They gave us the nicest underwear,” she said.],
   [And it took me a minute to really hear it. “I’m sorry, what?”],
@@ -607,14 +572,14 @@
   [I tried to picture it. A dozen women under improvised showerheads, rifles, clothes, and boots in neat piles beside a tree, while the jungle grows and groans around them. A handful of their peers patrolling the area while someone in a tent tries to tune an AM radio to find out if Falcao will be able to play for the World Cup qualifiers: Please, God, let him be all right, let him play, make us proud, give them hell. The women shiver under cold water as they slip soap under fake-silk frills like grease between gears, pulling on the fronts of their guerilla-issued lingerie and trying to catch water between their breasts. “Still,” Sandra insisted, “it was the nice kind. You’d be surprised.”],
   [“But … why?”],
   [Then she drew two squares in the darkness. “The men, see? They were over here”—she motioned to her left—“and the women, over here”—then to her right. And I understood this too. Andrea’s skirt, shower curtains, closed doors, and flak jackets. “It wasn’t like that at all, Lina.” She repeated this until she saw me nod. “And besides, that sort of relationship, it was forbidden.”],
-  [style="text-align: center;"\>\*\*\*],
+  [\*\*\*],
   [Within an hour of his arrival, as he stared into the ticking heart of an IED, Officer Jairo López decided that the mechanism was not too complicated after all, and he begun to disassemble it himself.],
   [“Don’t you worry, mi señora ,” he told Doña Elvia as he maneuvered through wires and needles and pockets of chemicals longing to burst, and spill, and suck in all the air in a roaring gust of noise and fire. “Stay very calm.” In his shirtsleeves—“ muy tranquila ” — because, he explained to the other officers, he thought the blast-suit would only make her more nervous. And isn’t this hard enough? “Almost there.” Wearing nothing but cotton and skin in the court of the god of dynamite and death. “Won’t be long now.” Snipping patiently, wire after wire, like the tiny roots of tiny trees growing from black-powder dirt. Like he was trying to keep a miniature forest of untamed fire from sprouting around Doña Elvia’s neck. “Stay very calm,” he repeated. “Because in a few minutes I’ll be done, and we’ll go get some lunch together. In fact, I’m buying.”],
   [But Doña Elvia was having trouble remaining calm. Too much time had passed, and she may have found herself staring up as the sun slid and slithered across the open sky, and she repeated herself to Officer López, “They said they had a remote control. They said it was on a timer. They said …” Only a few strings were left holding up the sky, only a few wires holding her hostage. “They said they would know, if we called … They said …” Did she then glance out beyond the road, did she turn her neck as much as the PVC and Officer López would allow— Please, stay very still —did she see one of them in the crowd?],
   [Animal memory bucking in her blood, begging her to stop waiting, to take it off herself, to shake it off like mud. To hiss, to howl, to sprint into the woods. Get it off, get it off, get it off! Too much time had elapsed, and this may have been all she could do to keep herself from thrashing and howling and chewing her way out of that PVC trap. Did she regret refusing to pay such a paltry sum? Did she lock eyes with the man who may or may not have been in her home that morning, who may or may not have built a bomb on his kitchen table the night before?],
   [She looks at Officer López as he snips another cable, and says, “You won’t let me die here, will you?”],
   [Four hours left.],
-  [style="text-align: center;"\>\*\*\*],
+  [\*\*\*],
   [Sandra promised me she’d never seen combat, though I never asked.],
   [“I swear it,” she said, unprompted. “We were so lucky.” Interrupting herself, “I thank God and the holy Virgin Mary every day for it,” interrupting her interruption, “I don’t know how I could live with myself if I had.”],
   [Again and again until finally I asked, “Why did you leave?”],
@@ -645,12 +610,12 @@
   [“Just like that.”],
   [“And then you left.”],
   [“Didn’t say goodbye.”],
-  [style="text-align: center;"\>\*\*\*],
+  [\*\*\*],
   [“Not a chance,” Officer Jairo López told Doña Elvia, while taking the bomb apart piece by piece. “From this one, you and me both are getting out scot-free.” He was breathing very carefully and digging expertly through cables and plastic.],
   [Did he think of his newborn son back home?],
   [Perhaps not; this was his job.],
   [Three hours left.],
-  [style="text-align: center;"\>\*\*\*],
+  [\*\*\*],
   [In 2013, I moved to China, the farthest point from Bogotá according to the inflatable map in my childhood bedroom.],
   [“First one in our family,” my mother said proudly, “to cross the Pacific.”],
   [Twenty-four hours from home in either direction and two hours south of Shanghai. Into a city in the throes of mandatory urbanization, into a fourteenth-floor apartment with walls made spongy by the humidity, and into a room with a balcony where I could look out at a metropolis made up of gleaming buildings and half-demolished houses.],
@@ -658,7 +623,7 @@
   [In the summer, I watched pixelated fútbol games, yelling, “Go, James! Go! Go!” While a red alarm clock flashed 2 A. M. , “You show ’em, go get ’em!” Until my neighbors started leaving notes on my door that I could not read but understood perfectly. In the winter, I tuned in to Colombian radio stations through a virtual-private-network connection, and half listened to talk of the latest peace negotiations: “This time, maybe. Who knows?” And “Come on, be serious. Nothing’ll come of it.” I used to get up very early and sit on my balcony watching the smoke of burning crops drift in from the fields, into the city, through my open window and into my lungs like flock of crows settling on loose powerlines.],
   [I read a lot and very little. The same three books, the same five emails—again and again and again. One, in particular, from my mother in which she told me she was so proud of me, and so tired too. Of the gods of cancer and cruelty. Of how far away she’d sent her children, and how close she’d kept herself. And then, This miserable city, this miserable-miserable city. “It would be nice,” she wrote, “if you were at least in the same hemisphere, close to the same continent. At least. We don’t want you to be quite so alone.”],
   [Black smoke and a pale Chinese moon. I climb atop a wobbly plastic chair and carefully stepped over the railing. Bare heels on the edge, hanging above a fourteen-floor drop, over a new miserable city I already loved, trying to decide what to keep and what to cut.],
-  [style="text-align: center;"\>\*\*\*],
+  [\*\*\*],
   [Doña Elvia Cortés Gil de Pachón is famous now. Not as famous as Lucho Herrera, Juan Pablo Montoya, Sofía Vergara, or Shakira. But famous nonetheless, in Colombia and in some human rights circles too. There are a movie and a whole episode in a CSI -type show with fast graphics, whooshing sounds, and reenactments.],
   [Though I can’t really get myself to watch either one.],
   [By Monday at one o’clock in the afternoon, two hours before the set deadline, the bomb exploded. Doña Elvia was dead, a first-time father was bleeding out, and Colonel Santiago Roa Millán had declared that this was the FARC ’s doing.],
@@ -681,69 +646,71 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Where View.task gets its main-actor isolation from],
   author: [Ole Begemann],
   source-name: [Ole Begemann],
   images: (),
   paragraphs: (
   [SwiftUI’s .task modifier inherits its actor context from the surrounding function. If you call .task inside a view’s body property, the async operation will run on the main actor because View.body is (semi-secretly) annotated with \@MainActor . However, if you call .task from a helper property or function that isn’t \@MainActor -annotated, the async operation will run in the cooperative thread pool.],
-  [id="example"\>Example],
   [Here’s an example. Notice the two .task modifiers in body and helperView . The code is identical in both, yet only one of them compiles — in helperView , the call to a main-actor-isolated function fails because we’re not on the main actor in that context:],
-  [\@MainActor func onMainActor () { 
+  [We can call a main-actor-isolated function from inside body , but not from a helper property.],
+  [import SwiftUI],
+  [\@MainActor func onMainActor () \{ 
  print ( "on MainActor" ) 
- }],
-  [struct ContentView : View { 
- var body : some View { 
- VStack { 
+ \}],
+  [struct ContentView : View \{ 
+ var body : some View \{ 
+ VStack \{ 
  helperView 
  Text ( "in body" ) 
- . task { 
+ . task \{ 
  \/\\/ We can call a \@MainActor func without await 
  onMainActor () 
- } 
- } 
- }],
-  [var helperView : some View { 
+ \} 
+ \} 
+ \}],
+  [var helperView : some View \{ 
  Text ( "in helperView" ) 
- . task { 
+ . task \{ 
  \/\\/ ❗️ Error: Expression is 'async' but is not marked with 'await' 
  onMainActor () 
- } 
- } 
- }],
-  [id="why-does-it-work-like-this"\>Why does it work like this?],
+ \} 
+ \} 
+ \}],
+  [Why does it work like this?],
   [This behavior is caused by two (semi-)hidden annotations in the SwiftUI framework:],
   [The View protocol annotates its body property with \@MainActor . This transfers to all conforming types.],
   [View.task annotates its action parameter with \@\_inheritActorContext , causing it to adopt the actor context from its use site.],
   [Sadly, none of these annotations are visible in the SwiftUI documentation, making it very difficult to understand what’s going on. The \@MainActor annotation on View.body is present in Xcode’s generated Swift interface for SwiftUI (Jump to Definition of View ), but that feature doesn’t work reliably for me, and as we’ll see, it doesn’t show the whole truth, either.],
-  [id="swiftuis-module-interface"\>SwiftUI’s module interface],
+  [View.body is annotated with \@MainActor in Xcode’s generated interface for SwiftUI.],
+  [SwiftUI’s module interface],
   [To really see the declarations the compiler sees, we need to look at SwiftUI’s module interface file. A module interface is like a header file for Swift modules. It lists the module’s public declarations and even the implementations of inlinable functions. Module interfaces use normal Swift syntax and have the .swiftinterface file extension.],
   [SwiftUI’s module interface is located at:],
+  [\[Path to Xcode.app\]/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SwiftUI.framework/Modules/SwiftUI.swiftmodule/arm64e-apple-ios.swiftinterface],
   [(There can be multiple .swiftinterface files in that directory, one per CPU architecture. Pick any one of them. Pro tip for viewing the file in Xcode: Editor \> Syntax Coloring \> Swift enables syntax highlighting.)],
   [Inside, you’ll find that View.body has the \@MainActor(unsafe) attribute:],
-  [class="highlight"\> \@available ( iOS 13.0 , macOS 10.15 , tvOS 13.0 , watchOS 6.0 , \* ) 
- \@\_typeEraser ( AnyView ) public protocol View { 
+  [\@available ( iOS 13.0 , macOS 10.15 , tvOS 13.0 , watchOS 6.0 , \* ) 
+ \@\_typeEraser ( AnyView ) public protocol View \{ 
  \/\\/ … 
- \@SwiftUI . ViewBuilder \@\_Concurrency . MainActor ( unsafe ) var body : Self . Body { get } 
- }],
+ \@SwiftUI . ViewBuilder \@\_Concurrency . MainActor ( unsafe ) var body : Self . Body \{ get \} 
+ \}],
   [And you’ll find this declaration for .task , including the \@\_inheritActorContext attribute:],
-  [class="highlight"\> \@available ( iOS 15.0 , macOS 12.0 , tvOS 15.0 , watchOS 8.0 , \* ) 
- extension SwiftUI . View { 
+  [\@available ( iOS 15.0 , macOS 12.0 , tvOS 15.0 , watchOS 8.0 , \* ) 
+ extension SwiftUI . View \{ 
  \#if compiler(\>=5.3) && \$AsyncAwait && \$Sendable && \$InheritActorContext 
  \@inlinable public func task ( 
  priority : \_Concurrency . TaskPriority = . userInitiated , 
  \@\_inheritActorContext \_ action : \@escaping \@Sendable () async -\> Swift . Void 
- ) -\> some SwiftUI . View { 
+ ) -\> some SwiftUI . View \{ 
  modifier ( \_TaskModifier ( priority : priority , action : action )) 
- } 
+ \} 
  \#endif 
  \/\\/ … 
- }],
-  [id="putting-it-all-together"\>Putting it all together],
+ \}],
+  [SwiftUI’s module interface file shows the \@\_inheritActorContext annotatation on View.task .],
+  [Putting it all together],
   [Armed with this knowledge, everything makes more sense:],
   [When used inside body , task inherits the \@MainActor context from body .],
   [When used outside of body , there is no implicit \@MainActor annotation, so task will run its operation on the cooperative thread pool by default.],
@@ -752,7 +719,7 @@
   [Update May 1, 2024: SE-0401: Remove Actor Isolation Inference caused by Property Wrappers removes the above rule when compiling in Swift 6 language mode. This is a good change because it makes reasoning about actor isolation simpler. In the Swift 5 language mode, you can opt into the better behavior with the -enable-upcoming-feature DisableOutwardActorInference compiler flags. I recommend you do.],
   [The lesson: if you use helper properties or functions in your view, consider annotating them with \@MainActor to get the same semantics as body .],
   [By the way, note that the actor context only applies to code that is placed directly inside the async closure, as well as to synchronous functions the closure calls. Async functions choose their own execution context, so any call to an async function can switch to a different executor. For example, if you call URLSession.data(from:) inside a main-actor-annotated function, the runtime will hop to the global cooperative executor to execute that method. See SE-0338: Clarify the Execution of Non-Actor-Isolated Async Functions for the precise rules.],
-  [id="on-apples-policy-to-hide-annotations-in-documentation"\>On Apple’s policy to hide annotations in documentation],
+  [On Apple’s policy to hide annotations in documentation],
   [I understand Apple’s impetus not to show unofficial API or language features in the documentation lest developers get the preposterous idea to use these features in their own code!],
   [But it makes understanding so much harder. Before I saw the annotations in the .swiftinterface file, the behavior of the code at the beginning of this article never made sense to me. Hiding the details makes things seem like magic when they actually aren’t. And that’s not good, either.],
 ),
@@ -762,11 +729,10 @@
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Jason Biggs Directorial Debut UNTITLED HOME INVASION ROMANCE Now Available!],
   author: [McEric],
   source-name: [Ain't It Cool News],
@@ -787,7 +753,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Advanced Swift, fifth edition],
   author: [Ole Begemann],
   source-name: [Ole Begemann],
@@ -800,10 +766,10 @@
   [New content on property wrappers, result builders, protocols, and generics],
   [The print edition is now a hardcover (for the same price)],
   [Free update for owners of the ebook],
-  [id="a-growing-book-for-a-growing-language"\>A growing book for a growing language],
+  [A growing book for a growing language],
   [Updating the book always turns out to be more work than I expect. Swift has grown substantially since our last release (for Swift 5.0), and the size of the book reflects this. The fifth edition is 76 % longer than the first edition from 2016. This time, we barely stayed under 1 million characters:],
+  [Character counts of Advanced Swift editions from 2016–2022.],
   [Many thanks to our editor, Natalye , for reading all this and improving our Dutch/German dialect of English.],
-  [id="hardcover"\>Hardcover],
   [For the first time, the print edition comes in hardcover (for the same price). Being able to offer this makes me very happy. The hardcover book looks much better and is more likely to stay open when laid flat on a table.],
   [We also increased the page size from 15×23 cm (6×9 in) to 18×25 cm (7×10 in) to keep the page count manageable (Amazon’s print on demand service limits hardcover books to 550 pages).],
   [I hope you enjoy the new edition. If you decide to buy the book or if you bought it in the past, thank you very much! And if you’re willing to write a review on Amazon , we’d appreciate it.],
@@ -819,7 +785,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Harry loves FANTASTIC FOUR FIRST STEPS, but has notes...],
   author: [headgeek],
   source-name: [Ain't It Cool News],
@@ -841,7 +807,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Ina Garten Brings In Intimacy Coordinator For Shot With Fresh Lemon Tart],
   author: [The Onion Staff],
   source-name: [The Onion],
@@ -863,15 +829,18 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [NASA To Build \$20 Billion Moon Base],
   author: [The Onion Staff],
   source-name: [The Onion],
   images: (),
   paragraphs: (
   [NASA will repurpose components from a scrapped space station to construct a \$20 billion ‌base on the moon’s surface over the next seven years, opting to focus on infrastructure that supports sustained operations on the lunar surface. What do you think?],
+  [“That \$20 billion could be better spent building moon bases in disadvantaged communities.”],
   [Irena McGrath, Resource Funneler],
+  [“I support anything that makes a good Popular Mechanics illustration.”],
   [Tristan Winslet, Wiring Expert],
+  [“No way the moon’s zoned for that.”],
   [Owen Blair, Microwave Optimizer],
   [The post NASA To Build \$20 Billion Moon Base appeared first on The Onion .],
 ),
@@ -883,21 +852,20 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Episode 916: The Council of Trent? Hello?],
   author: [Matthew Wrather],
   source-name: [Overthinking It],
   images: (),
   paragraphs: (
-  [style="text-align: center;"\> Support Overthinking It by becoming a member for \$5/month!],
+  [Support Overthinking It by becoming a member for \$5/month!],
   [Pete Fenzel, Mark Lee, and Matt Wrather overthink Wake Up Dead Man: A Knives Out Mystery , the latest installment in the Benoit Blanc Cinematic Murder Universe. The panelists appreciated the rich, cinematic presentation of the movie, especially compared to most made-for-Netflix movies, but they also took issue with how the film treats Catholicism more as symbolic wallpaper than as a lived, institutional reality. Where are the baptisms? The first communions? The immigrants? Most importantly, why is everyone so concerned about finding a lost diamond when it would’ve been a lot easier to embezzle the Sunday collection money?],
   [Those critiques aside, everyone appreciated the portrayal of Father Jud as an authentic moral center for the story and as a thematic counterbalance to Benoit Blanc’s cold rationalism. It makes for a very different Knives Out movie compared to its predecessors; whether it’s better or worse than those is largely a matter of taste and perspective. But it’s beyond argument that Daniel Craig’s accent remains sublime through them all.],
   [Download (MP3)],
   [Watch Wake Up Dead Man: A Knives Out Mystery on Netflix],
   [The Sacred Heart of Jesus],
   [The Council of Trent],
-  [style="margin: 5px 0; padding: 10px; background: \#eee;"\>],
-  [style="margin: 0; padding: 0;"\> Episode 916: The Council of Trent? Hello? originally appeared on Overthinking It , the site subjecting the popular culture to a level of scrutiny it probably doesn't deserve. \[ Latest Posts | Podcast ( iTunes Link )\]],
+  [Episode 916: The Council of Trent? Hello? originally appeared on Overthinking It , the site subjecting the popular culture to a level of scrutiny it probably doesn't deserve. \[ Latest Posts | Podcast ( iTunes Link )\]],
 ),
   insert-map: (:),
   word-count: 260,
@@ -912,7 +880,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [We Interview Josh Duhamel and Michael Socha for PRESCHOOL],
   author: [McEric],
   source-name: [Ain't It Cool News],
@@ -934,7 +902,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Ancient Scroll Reveals Lost Miracle Of Christ Correctly Guessing People’s Weights],
   author: [The Onion Staff],
   source-name: [The Onion],
@@ -954,20 +922,19 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Episode 915: This is MY House. MY HOUSE.],
   author: [Matthew Wrather],
   source-name: [Overthinking It],
   images: (),
   paragraphs: (
-  [style="text-align: center;"\> Support Overthinking It by becoming a member for \$5/month!],
+  [Support Overthinking It by becoming a member for \$5/month!],
   [Peter Fenzel and Matthew Wrather return to Downton Abbey (thrumming music and all), for what may be the last time. This show has been an exceptionally deep well for us over the years and this film is not no exception. It’s a little thin, honestly, but it knows the assignment and it has its charms, including the spectacle of Lady Mary cast out from polite society, Robert visibly flustered when he sees a showgirl, Edith finally bringing some main character energy, and Mrs. Patmore asking Mrs. Hughes-Carson about boning.],
   [This is a film about what becomes of the children (do they get a prize at the fair?), and how we hand off our patrimony from one generation to the next; it’s only fitting that it has not one but three Fenzelian Downton Abbey Moments®. Matt and Pete go into them in detail, even though Matt is a little disappointed that the packed plot doesn’t leave enough room for each event to breathe.],
   [If you’ve ever had a fight with a family member at a real estate viewing, you’ll be delighted by the supremely relatable Crawley family and their (now multi-generational!) foibles.],
   [Download (MP3)],
   [The long history of Downton Abbey on Overthinking It],
-  [style="margin: 5px 0; padding: 10px; background: \#eee;"\>],
-  [style="margin: 0; padding: 0;"\> Episode 915: This is MY House. MY HOUSE. originally appeared on Overthinking It , the site subjecting the popular culture to a level of scrutiny it probably doesn't deserve. \[ Latest Posts | Podcast ( iTunes Link )\]],
+  [Episode 915: This is MY House. MY HOUSE. originally appeared on Overthinking It , the site subjecting the popular culture to a level of scrutiny it probably doesn't deserve. \[ Latest Posts | Podcast ( iTunes Link )\]],
 ),
   insert-map: (:),
   word-count: 264,
@@ -977,7 +944,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Troy Duffy Talks THE BOONDOCK SAINTS - Past, Present, and Future],
   author: [McEric],
   source-name: [Ain't It Cool News],
@@ -1002,7 +969,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Swift Evolution proposals in Alfred],
   author: [Ole Begemann],
   source-name: [Ole Begemann],
@@ -1024,7 +991,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [A Conversation with RENTAL FAMILY Writer/Director HIKARI],
   author: [McEric],
   source-name: [Ain't It Cool News],
@@ -1050,7 +1017,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Pattern matching on error codes],
   author: [Ole Begemann],
   source-name: [Ole Begemann],
@@ -1058,26 +1025,30 @@
   paragraphs: (
   [Foundation overloads the pattern matching operator ~= to enable matching against error codes in catch clauses.],
   [catch clauses in Swift support pattern matching, using the same patterns you’d use in a case clause inside a switch or in an if case … statement. For example, to handle a file-not-found error you might write:],
-  [do { 
+  [import Foundation],
+  [do \{ 
  let fileURL = URL ( filePath : "/abc" ) \/\\/ non-existent file 
  let data = try Data ( contentsOf : fileURL ) 
- } catch let error as CocoaError where error . code == . fileReadNoSuchFile { 
+ \} catch let error as CocoaError where error . code == . fileReadNoSuchFile \{ 
  print ( "File doesn't exist" ) 
- } catch { 
+ \} catch \{ 
  print ( "Other error: \\( error ) " ) 
- }],
+ \}],
   [This binds a value of type CocoaError to the variable error and then uses a where clause to check the specific error code.],
   [However, if you don’t need access to the complete error instance, there’s a shorter way to write this, matching directly against the error code:],
-  [id="foundation-overloads-"\>Foundation overloads ~=],
+  [let data = try Data(contentsOf: fileURL)
+ - \} catch let error as CocoaError where error.code == .fileReadNoSuchFile \{
+ + \} catch CocoaError.fileReadNoSuchFile \{
+ print("File doesn't exist")],
+  [Foundation overloads ~=],
   [I was wondering why this shorter syntax works. Is there some special compiler magic for pattern matching against error codes of NSError instances? Turns out: no, the answer is much simpler. Foundation includes an overload for the pattern matching operator ~= that matches error values against error codes. 1],
   [The implementation looks something like this:],
-  [class="highlight"\> public func ~= ( code : CocoaError . Code , error : any Error ) -\> Bool { 
- guard let error = error as? CocoaError else { return false } 
+  [public func ~= ( code : CocoaError . Code , error : any Error ) -\> Bool \{ 
+ guard let error = error as? CocoaError else \{ return false \} 
  return error . code == code 
- }],
+ \}],
   [The actual code in Foundation is a little more complex because it goes through a hidden protocol named \_ErrorCodeProtocol , but that’s not important. You can check out the code in the Foundation repository: Darwin version , swift-corelibs-foundation version .],
   [This matching on error codes is available for CocoaError , URLError , POSIXError , and MachError (and possibly more types in other Apple frameworks, I haven’t checked).],
-  [id="fn:1"\>],
   [I wrote about the ~= operator before, way back in 2015(!): Pattern matching in Swift and More pattern matching examples . ↩︎],
 ),
   insert-map: (:),
@@ -1088,7 +1059,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [LONDON CALLING Interviews - Josh Duhamel & Jeremy Ray Taylor],
   author: [McEric],
   source-name: [Ain't It Cool News],
@@ -1112,7 +1083,7 @@
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Kris Collins, Celina Myers, and Jason-Christopher Mayer Talk HOUSE ON EDEN],
   author: [McEric],
   source-name: [Ain't It Cool News],
@@ -1134,7 +1105,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [PILLION Beautifully Blends Humor, Poignancy, and Biker Butts],
   author: [Barbarella],
   source-name: [Ain't It Cool News],
@@ -1155,21 +1126,19 @@
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([Owen Gleiberman], source-name: [Variety], [In "The Last Critic," we meet Christgau as an elder stateman of rock-crit (he’s now 83), a downtown stalwart knocking around the streets of the East Village. He’s a bit more bent than he was, with white hair and a touch of arthritis, but he’s still a wry specimen, lean and mean, with a machine-gun mind, ageless in his vigor (and in his hunger for new music).])],
-    [#brief-item([Marcus Jones], source-name: [IndieWire], [The 2026 Emmys is coming with a handful of rule changes, one of which makes it hard to feel great about the state of late night TV.])],
-    [#brief-item([The Onion Staff], source-name: [The Onion], [The post New Epstein Estate Photo Shows Trump Waterskiing In Pyramid Formation With Underage Girls appeared first on The Onion .])],
-    [#brief-item([Rafael Motamayor], source-name: [/Film], [Rebecca Ferguson is the star of Apple TV's sci-fi show Silo, but her involvement as an executive producer means her love runs even deeper.])],
-    [#brief-item([Debopriyaa Dutta], source-name: [/Film], [The Guyver, featuring Mark Hamill, evokes a slightly grown-up version of Power Rangers, which is enjoyable in itself if you completely ignore its manga roots.])],
-    [#brief-item([Afam Onyimadu], source-name: [MakeUseOf], [Privacy is a main reason people de-Google, but for me, switching from Google Search was about more than privacy. I didn't enjoy getting SEO-heavy results and listicles when I needed a simple debugging fix.])],
-    [#brief-item([Witney Seibold], source-name: [/Film], [Most of the Star Trek: The Next Generation cast didn't get to keep their uniform costumes. Jonathan Frakes, however, simply stole his.])],
-    [#brief-item([Devin Meenan], source-name: [/Film], [Two of the darkest episodes of Battlestar Galactica were clearly influenced by another sci-fi story's all timer of an ending.])],
-    [#brief-item([Bryan M. Wolfe], source-name: [MakeUseOf], [We treat SD cards like digital vaults. They live in our cameras, Nintendo Switches, and Raspberry Pis for years, and we just assume that as long as the plastic casing isn't cracked, our data is safe.])],
-    [#brief-item([Jim Hemphill], source-name: [IndieWire], [William Friedkin built on giallo conventions when he made his 1980 thriller; 13 years later, Italian director Pierfrancesco Campanella returned the compliment with the film, now headed for physical media.])],
-    [#brief-item([Joe Roberts], source-name: [/Film], [Smallville creators Alfred Gough and Miles Millar were once hired to write an Iron Man movie for Marvel, but it's good that it never came to pass.])],
-  ))
-}
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([Owen Gleiberman], source-name: [Variety], [In "The Last Critic," we meet Christgau as an elder stateman of rock-crit (he’s now 83), a downtown stalwart knocking around the streets of the East Village. He’s a bit more bent than he was, with white hair and a touch of arthritis, but he’s still a wry specimen, lean and mean, with a machine-gun mind, ageless in his vigor (and in his hunger for new music).])],
+  [#brief-item([Marcus Jones], source-name: [IndieWire], [The 2026 Emmys is coming with a handful of rule changes, one of which makes it hard to feel great about the state of late night TV.])],
+  [#brief-item([The Onion Staff], source-name: [The Onion], [The post New Epstein Estate Photo Shows Trump Waterskiing In Pyramid Formation With Underage Girls appeared first on The Onion .])],
+  [#brief-item([Rafael Motamayor], source-name: [/Film], [Rebecca Ferguson is the star of Apple TV's sci-fi show Silo, but her involvement as an executive producer means her love runs even deeper.])],
+  [#brief-item([Debopriyaa Dutta], source-name: [/Film], [The Guyver, featuring Mark Hamill, evokes a slightly grown-up version of Power Rangers, which is enjoyable in itself if you completely ignore its manga roots.])],
+  [#brief-item([Afam Onyimadu], source-name: [MakeUseOf], [Privacy is a main reason people de-Google, but for me, switching from Google Search was about more than privacy. I didn't enjoy getting SEO-heavy results and listicles when I needed a simple debugging fix.])],
+  [#brief-item([Witney Seibold], source-name: [/Film], [Most of the Star Trek: The Next Generation cast didn't get to keep their uniform costumes. Jonathan Frakes, however, simply stole his.])],
+  [#brief-item([Devin Meenan], source-name: [/Film], [Two of the darkest episodes of Battlestar Galactica were clearly influenced by another sci-fi story's all timer of an ending.])],
+  [#brief-item([Bryan M. Wolfe], source-name: [MakeUseOf], [We treat SD cards like digital vaults. They live in our cameras, Nintendo Switches, and Raspberry Pis for years, and we just assume that as long as the plastic casing isn't cracked, our data is safe.])],
+  [#brief-item([Jim Hemphill], source-name: [IndieWire], [William Friedkin built on giallo conventions when he made his 1980 thriller; 13 years later, Italian director Pierfrancesco Campanella returned the compliment with the film, now headed for physical media.])],
+  [#brief-item([Joe Roberts], source-name: [/Film], [Smallville creators Alfred Gough and Miles Millar were once hired to write an Iron Man movie for Marvel, but it's good that it never came to pass.])],
+))
 
 #colophon([The Bold Chronicle], [Vol. 1, No. 055], [2026-03-30])

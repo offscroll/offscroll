@@ -21,42 +21,8 @@
 #masthead([The Clear Courier], [Vol. 1, No. 041], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Nevada pushes appeals court to reject Polymarket bid pause request],
-  kicker: [Cover Story],
-  author: [Suswati Basu],
-  source-name: [ReadWrite],
-  deck: [The legal fight dates back to January 2026, when Nevada first took action against the prediction market platform.],
-  lead-pre: [],
-  lead-cap: [N],
-  lead-rest: [evada regulators are urging a federal appeals court to keep a fast-moving gambling case on track, arguing Polymarket has no solid basis to press pause while it challenges where the case should be heard.],
-  body-paragraphs: (
-  [In a new filing to the US Court of Appeals for the Ninth Circuit, lawyers for the Nevada Gaming Control Board say the dispute is a state compliance issue tied to alleged unlicensed betting activity. They want judges to reject Polymarket’s emergency request to halt proceedings after a lower court sent the case back to state court.],
-  [dir="ltr" lang="en"\>Nevada fights \#Polymarket in court, says platform’s unlicensed betting harms public, seeks to block operations amid legal battle. \@RWW pic.twitter.com/N4k2leyX92],
-  [— Suswati Basu (\@suswatibasu) March 24, 2026],
-  [“This is a state enforcement action,” the filing states, describing how regulators sued Polymarket for offering sports and event-based betting in Nevada without complying with licensing rules.],
-  [The legal fight dates back to January 2026, when Nevada first took action against the prediction market platform. Regulators accused the company of running event-based wagering products without approval and sought to shut those offerings down.],
-  [A state judge initially granted a temporary restraining order , siding with regulators who argued the platform’s contracts likely violated Nevada gambling law. The court also pointed to risks tied to underage access and missing consumer safeguards.],
-  [Polymarket quickly shifted the fight into federal court, claiming its operations fall under federal oversight and that national law overrides Nevada’s rules.],
-  [However, a federal district judge rejected the company’s position and ordered the case sent back to Nevada courts. Now Polymarket is appealing that decision and asking the Ninth Circuit to freeze everything while the appeal plays out.],
-  [Nevada’s response was that the request doesn’t meet the legal standard for a pause.],
-  [On jurisdiction, the state says Polymarket is stretching its federal argument too far. Being regulated at the federal level, regulators argue, doesn’t mean the company is “acting under the direction of a federal officer simply because it is regulated” by a federal agency.],
-  [They also push back on the idea that federal law transforms the case into a federal dispute. “The Board’s complaint asserts only state-law claims,” the state wrote, adding that a federal preemption argument “does not create federal-question jurisdiction.”],
-  [The filing also leans on earlier rulings to argue Polymarket won’t suffer meaningful harm by continuing in state court. As it puts it, “a party is not irreparably injured by having to litigate in state court as opposed to federal court.”],
-  [Regulators say the real risk runs in the opposite direction. The state court previously warned that Polymarket’s operations could expose minors to gambling and bypass required protections, harms it said “cannot be mitigated” after they occur.],
-  [The concern is said to build with time. As the state court put it: “A day means more consumers. More consumers mean more transactions. More transactions means more potential harm.”],
-  [Nevada argues that imbalance should decide the outcome, urging the appeals court to deny the request and let the enforcement case continue without delay.],
-  [Featured image: Polymarket \/ Canva],
-  [The post Nevada pushes appeals court to reject Polymarket bid pause request appeared first on ReadWrite .],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Safeguarding dynamic configuration changes at scale],
   author: [Cosmo W. Q],
   source-name: [Airbnb Engineering],
@@ -116,22 +82,21 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Mac Pro died so Apple silicon could live],
   author: [Macworld],
   source-name: [Macworld],
   images: (),
   paragraphs: (
-  [id="link\_wrapped\_content"\>],
   [The Mac Pro, one of Apple’s most iconic computers, seemed to have its days numbered. Earlier this month, the company had already dropped another hint with the discontinuation of the Pro Display XDR, which was replaced by the new Studio Display XDR. But the news is now official.],
   [On Thursday, Apple officially confirmed to Macworld that the Mac Pro has been discontinued . The company has also removed the product from its online store, putting an end to the last remaining desktop Mac in Apple’s lineup that still carried the “Pro” name in its most traditional sense.],
   [While the move may seem abrupt, especially with Apple’s 50th anniversary just days away, the reality is that the Mac Pro’s fate had been sealed for quite some time.],
+  [A long goodbye for Apple’s most ambitious Mac],
   [The Mac Pro has always represented Apple’s most powerful and flexible computer. From the aluminum towers of the 2000s to the controversial cylindrical design in 2013 and the return to modularity in 2019, the Mac Pro was built for professionals who needed uncompromising performance. Read our Towers of Power (now) complete history of Apple’s sometimes inglorious forays into the professional workstation market.],
   [When Apple reintroduced the Mac Pro in 2019 alongside the Pro Display XDR, it was a statement. After years of neglecting high-end users, the company was ready to win them back with a truly modular system designed for demanding workflows like film production, 3D rendering, and audio engineering.],
   [But that strategy was short-lived.],
+  [The Mac Studio changed everything],
   [Just a year after introducing the redesigned Mac Pro, Apple revealed its plans to shift from Intel processors to its own Apple Silicon chips. In November 2020, the company announced the first Macs with the M1 chip.],
   [The M1 was never a chip designed for high-end users, but the leap in performance was so significant that many professionals realized they could do photo and video editing, coding, and other demanding tasks on these Macs without needing a super expensive computer.],
   [Apple Silicon has made the Mac Studio as powerful as the Mac Pro.],
@@ -139,6 +104,7 @@
   [Apple’s silicon roadmap has made the Mac Studio powerful enough to replace the Mac Pro for most people. For less than half the price and a fraction of the footprint, customers could finally buy a Mac that was even faster than the Mac Pro.],
   [Eventually, Apple put its own chip inside the Mac Pro, but Apple silicon didn’t have the same impact. It ran the same M2 Ultra chip as the Mac Studio, and the main difference between the Mac Pro and the Mac Studio was the ability to add internal storage and PCIe expansion cards. And it still cost thousands more than the Mac Studio.],
   [The dreams of a workstation chip or standalone graphics didn’t come to pass. For the vast majority of users, that wasn’t enough to justify the higher price tag.],
+  [The signs were always there],
   [While the Mac Pro hasn’t seen an update since 2023, Apple continued to refresh the rest of the desktop Mac lineup with newer and more efficient chips.],
   [By the time Apple refreshed the Mac Studio with M3 Ultra and M4 Max, it became obvious that the company no longer saw a future for the Mac Pro. The Mac Studio powered by the M3 Ultra chip outperformed the Apple Silicon Mac Pro in pretty much every benchmark, but at a fraction of the price.],
   [The Mac Pro has been on the way out of Apple’s lineup for a while.],
@@ -149,6 +115,7 @@
   [For professionals, the Mac Studio is now the logical choice. And for Apple, simplifying the lineup likely makes more sense than maintaining a niche product with limited appeal.],
   [Still, for those who relied on the Mac Pro’s expandability, this change may feel like an ignominious end.],
   [The MacBook Pro is the last remaining “Pro” model in Apple’s Mac lineup.],
+  [What’s next for pro users?],
   [Apple hasn’t announced a direct replacement for the Mac Pro, and it probably won’t.],
   [Instead, the company is betting that the combination of Mac Studio, Studio Display XDR, and MacBook Pro will cover nearly all professional workflows. For the few remaining edge cases that depend on PCIe expansion, users may need to rely on external solutions or rethink their setups entirely.],
   [The Mac Pro is gone. But in many ways, its legacy lives on in the performance gains that Apple Silicon has brought to every Mac. And for Apple, that seems to be enough.],
@@ -159,10 +126,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Kalshi moves to tighten rules, says politicians and athletes will be barred from trading on related markets],
   author: [Suswati Basu],
   source-name: [ReadWrite],
@@ -172,11 +137,12 @@
   [In a blog post published Monday (March 23), the company said it is “launching new technological guardrails that preemptively block politicians, athletes, and other relevant people from trading in certain politics and sports markets.”],
   [The changes target political candidates and people involved in college and professional sports. Kalshi said it has “launched tools that will aim to preemptively block political candidates if they try to trade on their own campaigns.”],
   [The company added that it already blocks elected officials such as members of Congress, and said the new system is designed to extend those checks to candidates as well.],
-  [dir="ltr" lang="en"\>Today, we’re announcing an expansion of our efforts to prevent insider trading on Kalshi – new guardrails and policies to preemptively block politicians and athletes from trading in certain politics and sports markets.],
+  [Today, we’re announcing an expansion of our efforts to prevent insider trading on Kalshi – new guardrails and policies to preemptively block politicians and athletes from trading in certain politics and sports markets.],
   [These efforts, which have been in the works for months,…],
   [— robertjdenault (\@robertjdenault) March 23, 2026],
   [Kalshi also described a new sports policy. It said “individuals involved in college and professional sports (including athletes, personnel, and referees) will be preemptively blocked from trading markets associated with sports in affiliated leagues they are involved in.” According to the post, the trades were already banned under existing rules, but enforcement previously came after trades were placed.],
   [The company said the updated system follows “months of collecting and developing screening lists for both collegiate and professional sports leagues.” Working with integrity-monitoring firm IC360, Kalshi said “known athletes, officials, and employees will be blocked from trading in associated markets.”],
+  [New rules from Kalshi target political and sports contracts],
   [Kalshi described the update as part of a wider compliance push tied to growing regulatory attention. The company said the effort was developed over months and “proactively address\[es\] the CFTC’s guidance and Congressional bill proposals to prevent insider trading. ”],
   [Kalshi said it “recently brought an enforcement action against a candidate who traded on his own election in violation of Kalshi’s exchange rules.” It added: “Today’s update means that our systems will now aim to preemptively block these kinds of trades.”],
   [Alongside trade restrictions, the company is adding reporting tools. It said it is introducing “a whistleblower functionality straight in our market page,” so users can flag suspicious activity using public trading data.],
@@ -193,17 +159,15 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [iOS compatibility: What iOS version can your iPhone run – and is it still secure?],
   author: [Macworld],
   source-name: [Macworld],
   images: (),
   paragraphs: (
-  [id="link\_wrapped\_content"\>],
   [Unsure which version of iOS your iPhone can run? Here’s a quick guide so you can find out if your iPhone is compatible with the most recent iterations of the iPhone operating system, and, if it isn’t, which version you can install on your iPhone.],
+  [iPhone iOS Compatibility: At a Glance],
   [Find your iPhone in our iPhone iOS support table and see which version of iOS you can run.],
   [Which iPhone do you have? Which version of iOS can you run? iPhone 17e 2026 iOS 26 iPhone 17 Pro (Max) 2025 iOS 26 iPhone Air 2025 iOS 26 iPhone 17 2025 iOS 26 iPhone 16e 2025 iOS 26 iPhone 16 Pro (Max) 2024 iOS 26 iPhone 16 (Plus) 2024 iOS 26 iPhone 15 Pro (Max) 2023 iOS 26 iPhone 15 (Plus) 2023 iOS 26 iPhone 14 Pro (Max) 2022 iOS 26 iPhone 14 (Plus) 2022 iOS 26 iPhone SE (3rd gen) 2022 iOS 26 iPhone 13 Pro (Max) 2021 iOS 26 iPhone 13 (mini) 2021 iOS 26 iPhone 12 Pro (Max) 2020 iOS 26 iPhone 12 (mini) 2020 iOS 26 iPhone SE (2nd gen) 2020 iOS 26 iPhone 11 Pro (Max) 2019 iOS 26 iPhone 11 2019 iOS 26 iPhone XR 2018 iOS 18 iPhone XS (Max) 2018 iOS 18 iPhone X 2017 iOS 16 iPhone 8 (Plus) 2017 iOS 16 iPhone 7 (Plus) 2016 iOS 15 iPhone SE (1st gen) 2016 iOS 15 iPhone 6s (Plus) 2015 iOS 15],
   [If your iPhone runs iOS 15 or newer, it is still receiving security updates and is safe to use],
@@ -224,6 +188,8 @@
   [iPhone SE (1st generation)],
   [iPhone 6s – the oldest supported iPhone],
   [We don’t know how much longer Apple will continue to support iOS 15 and iOS 16 — and these iPhones. As we explain in How long Apple supports iPhones for , the company has already classified the iPhone SE (1st generation) as obsolete, while the iPhone 6s, iPhone 7, iPhone 8 and iPhone X are on Apple’s vintage list. These classifications mean it may no longer be possible to get these devices repaired through Apple.],
+  [Should I upgrade my iPhone?],
+  [IDG],
   [If your iPhone can’t run the newest version of iOS, that doesn’t necessarily mean you need to upgrade. While you won’t get the latest features, Apple continues to issue software updates to address security vulnerabilities in recent versions of iOS. Even with the arrival of iOS 26, Apple has continued to support iOS 18, iOS 16 and iOS 15 with security updates – and, with those versions of iOS, 2015’s iPhone 6s through to 2018’s iPhone XR and iPhone XS.],
   [However, if you’re using an older iPhone, security is the key concern. Apple is still providing security patches for older devices via iOS 15 and iOS 16, but this support is unlikely to last much longer.],
   [By contrast, iOS 18 support is expected to continue for several more years, extending the usable life of the iPhone XS and XR.],
@@ -242,65 +208,93 @@
   [iPhone SE (2nd generation, 2020)],
   [iPhone 11 Pro & 11 Pro Max (2019)],
   [iPhone 11 (2019)],
+  [Every iOS version supported by each iPhone],
   [To show you which versions of iOS your iPhone can run, we’ve broken down each iPhone generation in the chart below, so you can see which version it originally shipped with (as that will be the earliest it can run) and the latest iteration it currently supports – including whether that iPhone supports iOS 26. Take a look at our guide to Every version of iOS released so far for more information about the different versions of iOS.],
   [Every version of iOS and the phones it supports.],
+  [iPhone Air],
   [Original iOS version: iOS 26],
   [Does it run iOS 26: Yes],
+  [iPhone 17, 17e, 17 Pro, 17 Pro Max],
   [Original iOS version: iOS 26],
   [Does it run iOS 26: Yes],
+  [iPhone 16, 16e, 16 Plus, 16 Pro, 16 Pro Max],
   [Original iOS version: iOS 18],
   [Does it run iOS 26: Yes],
+  [iPhone 15, 15 Plus, 15 Pro, 15 Pro Max],
   [Original iOS version: iOS 17],
   [Does it run iOS 26: Yes],
+  [iPhone 14, 14 Plus, 14 Pro, 14 Pro Max],
   [Original iOS version: iOS 16],
   [Does it run iOS 26: Yes],
+  [iPhone 13, 13 mini, 13 Pro, 13 Pro Max],
   [Original iOS version: iOS 15],
   [Does it run iOS 26: Yes],
+  [iPhone SE (3rd generation)],
   [Original iOS version: iOS 15],
   [Does it run iOS 26: Yes],
+  [iPhone 12, 12 mini, 12 Pro, 12 Pro Max],
   [Original iOS version: iOS 14],
   [Does it run iOS 18: Yes],
+  [iPhone 11, 11 Pro, 11 Pro Max],
   [Original iOS version: iOS 13],
   [Does it run iOS 26: Yes],
+  [iPhone SE (2nd generation)],
   [Original iOS version: iOS 13],
   [Does it run iOS 26: Yes],
+  [iPhone XR, XS, XS Max],
   [Original iOS version: iOS 12],
   [Does it run iOS 26: No],
   [Last compatible version: iOS 18],
+  [iPhone X],
   [Original iOS version: iOS 11],
   [Last compatible version: iOS 16],
+  [iPhone 8, 8 Plus],
   [Original iOS version: iOS 11],
   [Last compatible version: iOS 16],
+  [iPhone 7, 7 Plus],
   [Original iOS version: iOS 10],
   [Last compatible version: iOS 15],
+  [iPhone 6S, 6S Plus],
   [Original iOS version: iOS 9],
   [Last compatible version: iOS 15],
+  [iPhone SE (1st generation)],
   [Original iOS version: iOS 9],
   [Last compatible version: iOS 15],
+  [iPhone 6, 6 Plus],
   [Original iOS version: iOS 8],
   [Last compatible version: iOS 12],
+  [iPhone 5S],
   [Original iOS version: iOS 7],
   [Last compatible version: iOS 12],
+  [iPhone 5C],
   [Original iOS version: iOS 7],
   [Last compatible version: iOS 10],
+  [iPhone 5],
   [Original iOS version: iOS 6],
   [Last compatible version: iOS 10],
+  [iPhone 4s],
   [Original iOS version: iOS 5],
   [Last compatible version: iOS 9],
+  [iPhone 4],
   [Original iOS version: iOS 4],
   [Last compatible version: iOS 7],
+  [iPhone 3GS],
   [Original iOS version: iOS 3],
   [Last compatible version: iOS 6],
+  [iPhone 3G],
   [Original iOS version: iOS 2],
   [Last compatible version: iOS 4],
+  [iPhone],
   [Original iOS version: iOS 1],
   [Last compatible version: iOS 3],
   [If your iPhone isn’t supported by iOS 24 or 18 then you might want to consider upgrading to a newer device. Take a look at our best iPhone deals round-up where we share the most recent money-saving deals. Read our best iPhone guide for advice.],
+  [How to see which version of iOS you’re running],
   [If you’re not sure which version of iOS you’re currently running, it’s very easy to find out.],
   [Open Settings.],
   [Tap on General.],
   [Tap About and look for the iOS Version number.],
   [How to see which version of iOS is installed],
+  [How to upgrade iOS],
   [Now that you know the latest version of iOS that your iPhone supports, it’s a good idea to make sure you’re running on that platform.],
   [Updating iOS on an iPhone is simple, follow these steps:],
   [Open Settings.],
@@ -318,10 +312,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Bluesky's Newest Product: an AI Tool That Gives You Custom Feeds],
   author: [EditorDavid],
   source-name: [Slashdot],
@@ -347,10 +339,8 @@ The blog post warns that "Right now, AI is undermining human agency at the same 
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [2026.12: Please Listen to My Podcast],
   author: [Ben Thompson],
   source-name: [Stratechery],
@@ -369,17 +359,23 @@ The blog post warns that "Right now, AI is undermining human agency at the same 
 — Ben Thompson],
   [What Jensen Huang Has In Common with Steve Jobs. I really enjoyed this week’s Dithering covering Nvidia’s announcements at GTC Monday , including a near-perfect inversion of what Jensen Huang was telling the world about Nvidia’s approach to inference workloads just one year ago. In their trademark 15-minute format, Ben explains how and why Nvidia’s inference messaging is now different ( see also : this week’s Stratechery Interview ), while Gruber draws on decades of Apple experience to note the similarities between Huang and Steve Jobs. It’s a great listen that renders legible an easily missed strategic inflection point at the most valuable company in the world .  — Andrew Sharp],
   [Trump’s Trip to Beijing, Delayed Indefinitely. As the war in Iran continues, this week’s Sharp China covered the news that President Trump will delay a trip to Beijing that had been scheduled to begin March 31st . Come to hear why both sides are likely relieved by the delay, and stay to hear about a softened Taiwan threat assessments from the U. S. intelligence community and a succession of PLA military scientists who are being purged for reasons that aren’t entirely clear. — AS],
+  [Stratechery Articles and Updates],
   [Agents Over Bubbles — Agents are fundamentally changing the shape of demand for compute, both in terms of how they work and in terms of who will use them. They’re so compelling that I no longer believe we’re in a bubble.],
   [An Interview with Nvidia CEO Jensen Huang About Accelerated Computing — An interview with Nvidia CEO Jensen Huang about his GTC 2026 keynote, navigating China and DC, and remembering Nvidia’s true nature.],
   [Jensen Huang and Andy Grove, Groq LPUs and Vera CPUs, Hotel California — GTC 2026 marked an important inflection point for Nvidia, as the company is selling multiple architectures, instead of focusing on just one GPU. The motivation is serve all needs and keep all customers.],
   [What the NBA Could Be Getting from College Basketball — College basketball is fantastic, and the NBA should take advantage of its success by raising the age limit for the NBA Draft.],
+  [Dithering with Ben Thompson and Daring Fireball’s John Gruber],
   [LLM Paradigm Changes],
   [Jensen Huang’s Jobsian Keynote],
+  [Asianometry with Jon Yu],
   [From Fiber to AI: A Laser Giant’s Rebirth],
   [Mexico City’s Sinking Lands],
+  [Sharp China with Andrew Sharp and Sinocism’s Bill Bishop],
   [The War in Iran and the Visit to Beijing; New DNI Assessments on Taiwan; Military Scientists Disappearing From Public View],
+  [Greatest of All Talk with Andrew Sharp and Ben Golliver],
   [How to Miss a Free Throw, The Biggest Top 100 Disappointments, Expansion is Afoot (Again)],
   [How NOT to Miss a Free Throw, Generic Houston Rockets Slander, The Top 100 Pleasant Surprises],
+  [Sharp Tech with Andrew Sharp and Ben Thompson],
   [OpenAI’s Enterprise Pivot, The Rise of Agents and Bubble Counterpoints, Nvidia Changes Its Inference Story],
   [This week’s Sharp Tech video is on Questions about Anthropic vs. the U. S. Government.],
 ),
@@ -389,12 +385,10 @@ The blog post warns that "Right now, AI is undermining human agency at the same 
   debug-mode: false,
 )
 
-  #pull-quote([— Andrew Sharp    Trump’s Trip to Beijing, Delayed Indefinitely.], [Ben Thompson])
+#pull-quote([— Andrew Sharp    Trump’s Trip to Beijing, Delayed Indefinitely.], [Ben Thompson])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Prediction markets forum set to debut at SBC Summit Americas],
   author: [Paul McNally],
   source-name: [ReadWrite],
@@ -403,14 +397,17 @@ The blog post warns that "Right now, AI is undermining human agency at the same 
   [Prediction markets will take center stage at this summer’s SBC Summit Americas, as the fast-growing industry continues to spark debate across the U. S. gambling and financial industries.],
   [The Prediction Markets Forum is scheduled for June 11 and will run as part of the conference’s Breakout Stage lineup. The forum will bring together sportsbook executives, legal experts, analysts, and academics to unpack how these markets are evolving and what their rise could mean for traditional sports betting.],
   [Patrick Everson, a longtime sports betting analyst and contributor to FOX Sports, will chair the four-session program. The agenda centers on discussions of how sportsbooks are experimenting with event contracts, as well as the mounting regulatory and integrity concerns that have followed the sector’s rapid expansion.],
+  [Prediction markets surge into public view],
   [Prediction markets entered the mainstream spotlight during the 2024 U. S. presidential election cycle, when trading on political event contracts took off in popularity. The surge in activity during that period drew attention from major betting operators and regulators alike, pushing the products into broader public and political conversations.],
   [Since then, operators such as DraftKings, FanDuel, and Fanatics have all explored ways to gain a foothold in the space. At the same time, dedicated platforms like Kalshi and Polymarket have increased their visibility through athlete endorsements and partnerships with sports leagues. Their growth has also attracted legal scrutiny, including a recent Nevada court decision that blocked certain Kalshi event contracts, and ongoing questions about whether these products should be treated as financial instruments or gambling offerings.],
   [SBC CEO and Founder Rasmus Sojmark said the uncertainty is becoming a defining issue for the U. S. market.],
   [“Prediction markets will define the American market in 2026. But navigating the grey area between financial trading and traditional betting is creating real uncertainty for the sector,” said Sojmark. “This forum will bring together the people who are shaping this space to help the industry understand what comes next.”],
+  [Four sessions set to explore key industry questions],
   [The opening session, “Prediction Markets 101,” is designed as a historical and technical primer. Dan Zucker, president of Zucker Media Group, is expected to trace how event contracts evolved from 19th-century hedging tools into what many now see as a fast-emerging, potentially billion-dollar segment of the broader wagering ecosystem.],
   [One session will focus on how traditional sportsbooks are testing strategies to step into this new territory. Scheduled speakers include Dr. Laila Mintas of Dr. Mintas Consulting, Sporttrade COO David Huffman, and analyst Dustin Gouker, who are set to discuss whether partnerships with state-affiliated entities or exchanges could help sportsbooks navigate complex compliance requirements.],
   [Another panel will examine the regulatory landscape. Attorney Dan Wallach will outline the current legal landscape, including recent enforcement actions by state regulators and evolving guidance from the Commodity Futures Trading Commission. A recent CFTC advisory signaled a more pragmatic approach to sports-related prediction markets, while cooperation between the CFTC and SEC on crypto-linked event contracts has added another layer of oversight.],
   [The final session, “What’s the Future of Futures?,” will focus on long-term implications. Academic and industry speakers, including Ilya Beylin of Seton Hall University School of Law and economist Robin D. Hanson of George Mason University, are expected to debate how continued litigation and the possibility of U. S. Supreme Court involvement could reshape both the betting and financial trading landscapes.],
+  [Prediction markets also featured across the wider summit],
   [Beyond the dedicated forum, prediction markets will also be discussed on the summit’s Leaders Stage in a separate panel examining how the products are developing across North America. With regulators, sportsbooks, and financial platforms all testing the boundaries of the model, prediction markets are likely to remain a central topic of discussion throughout the summit.],
   [Featured image: Headway/Unsplash],
   [The post Prediction markets forum set to debut at SBC Summit Americas appeared first on ReadWrite .],
@@ -421,32 +418,45 @@ The blog post warns that "Right now, AI is undermining human agency at the same 
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How Super Meat Boy 3D captures the series’ identity, out March 31],
   author: [Dominik Plaßmann],
   source-name: [PlayStation Blog],
   images: (),
   paragraphs: (
-  [class=""\>When Super Meat Boy first released, it quickly became a landmark for indie games. It wasn’t just a great platformer, but a figurehead for indie gaming, defined by lightning-fast gameplay and brutal difficulty.],
-  [class=""\>So, when we began working on Super Meat Boy 3D , our biggest goal was simple: it had to feel like Meat Boy. We worked on the prototype for a few months to test out our main ingredients, and what was firstly more of a feeling we wished to translate, became much more concrete when we started working with Tommy of Team Meat.],
-  [class=""\>We tested three different camera systems during prototyping. While a traditional third-person camera that players could freely control technically worked, it never quite felt right. Eventually we landed on a controlled camera angle that stays consistent relative to the level. It’s not completely static but designed to prioritize clarity and readability.],
-  [class=""\>That decision shaped the entire design process. Instead of placing a camera into finished levels, we built levels around the camera angle so players can always clearly see the character’s movement and the path ahead, to ensure the gameplay remains readable at a high speed.],
-  [class=""\>After we tried recreating the feel of the original purely from our experience of playing Super Meat Boy, our collaboration with Tommy Refenes from Team Meat gave us a deeper understanding of exactly how a lot of the original systems worked. In some cases, we even used similar values from the original game, like wall-jump distances or how jumping behaves when touching a wall versus standing on the ground. Having those reference points helped us capture the familiar feel of Meat Boy’s movement.],
-  [class=""\>Of course, with the added difficulty of depth perception, the 2D game cannot just be moved into 3D one to one. Players need to feel completely in control of their movement even with an extra dimension.],
-  [class=""\>To help maintain clarity, we introduced several structural decisions, such as eight-directional stick movement to keep movement predictable, 45-degree angles in level design to help players anticipate their trajectory, and visual helpers, like a ground circle indicator and a line connecting the character to the ground to help judge distance.],
-  [class=""\>Even with these systems, movement tuning took a long time. We spent roughly a year refining the feel, and small tweaks continued almost until release, especially given the valuable input we received from players of our demo.],
-  [class=""\>Some mechanics translated easily. The vertical wall slide, for example, already existed in the original game, so we could closely replicate it. Wall running on the other hand had to be designed from scratch. Making it feel smooth requires a lot of value-tweaking and subtle assists so that it feels fast and satisfying rather than too frustrating.],
-  [class=""\>The essential core loop of Super Meat Boy – fail, learn, retry – is only possible to get right by balancing player freedom with systems that help them maintain control, but in 3D, movement can naturally feel slightly floatier because of the added spatial depth.],
+  [When Super Meat Boy first released, it quickly became a landmark for indie games. It wasn’t just a great platformer, but a figurehead for indie gaming, defined by lightning-fast gameplay and brutal difficulty.],
+  [So, when we began working on Super Meat Boy 3D , our biggest goal was simple: it had to feel like Meat Boy. We worked on the prototype for a few months to test out our main ingredients, and what was firstly more of a feeling we wished to translate, became much more concrete when we started working with Tommy of Team Meat.],
+  [Translating such a precise 2D platformer into a fully navigable 3D space meant rethinking many parts of the game while protecting the core identity of the series.],
+  [Finding the right camera],
+  [One of the main challenges was that Meat Boy moves so quickly that a dynamic camera just couldn’t keep up.],
+  [We tested three different camera systems during prototyping. While a traditional third-person camera that players could freely control technically worked, it never quite felt right. Eventually we landed on a controlled camera angle that stays consistent relative to the level. It’s not completely static but designed to prioritize clarity and readability.],
+  [That decision shaped the entire design process. Instead of placing a camera into finished levels, we built levels around the camera angle so players can always clearly see the character’s movement and the path ahead, to ensure the gameplay remains readable at a high speed.],
+  [Translating 2D precision into 3D],
+  [After we tried recreating the feel of the original purely from our experience of playing Super Meat Boy, our collaboration with Tommy Refenes from Team Meat gave us a deeper understanding of exactly how a lot of the original systems worked. In some cases, we even used similar values from the original game, like wall-jump distances or how jumping behaves when touching a wall versus standing on the ground. Having those reference points helped us capture the familiar feel of Meat Boy’s movement.],
+  [Of course, with the added difficulty of depth perception, the 2D game cannot just be moved into 3D one to one. Players need to feel completely in control of their movement even with an extra dimension.],
+  [To help maintain clarity, we introduced several structural decisions, such as eight-directional stick movement to keep movement predictable, 45-degree angles in level design to help players anticipate their trajectory, and visual helpers, like a ground circle indicator and a line connecting the character to the ground to help judge distance.],
+  [Even with these systems, movement tuning took a long time. We spent roughly a year refining the feel, and small tweaks continued almost until release, especially given the valuable input we received from players of our demo.],
+  [Designing new mechanics],
+  [Some mechanics translated easily. The vertical wall slide, for example, already existed in the original game, so we could closely replicate it. Wall running on the other hand had to be designed from scratch. Making it feel smooth requires a lot of value-tweaking and subtle assists so that it feels fast and satisfying rather than too frustrating.],
+  [Many of those adjustments are invisible to players, but they help ensure the mechanic feels fair even at high speed.],
+  [Balancing freedom and precision],
+  [The essential core loop of Super Meat Boy – fail, learn, retry – is only possible to get right by balancing player freedom with systems that help them maintain control, but in 3D, movement can naturally feel slightly floatier because of the added spatial depth.],
+  [Movement and level design evolved together throughout development. The layout of each level directly affects how the character feels to control, so we constantly iterated between the two.],
   [​​],
-  [class=""\>In the end, we found that the core ideas of Meat Boy’s movement translate surprisingly well into 3D if the focus remains on the fundamentals: jumping, walls, and speed. The key was in the camera angles and the subsequent level design. We usually started by choosing the camera angle first, then building the level to support it. The most important rule was that the character must always remain visible and readable.],
-  [class=""\>One classic feature is the blood trail that Meat Boy leaves behind. It doesn’t only add the trademark gore-factor, but it also helps players see where they’ve already been and which routes they’ve tried.],
-  [class=""\>In 3D, that feature became even more important, but implementing it was technically challenging. Spawning huge numbers of decals wasn’t practical, so we developed a vertex painting system that lets blood dynamically stain the environment, letting players paint the entire level red if they try often enough.],
-  [class=""\>The move to 3D also gave us more room for hidden jokes and visual gags. With extra space in the world, we could tuck funny details or secrets into the background, some of which players might never even notice.],
-  [class=""\>Our previous projects taught us many important lessons about development, but what stuck with us the most was that focus matters. Very early on in development, we nailed down what really mattered for Super Meat Boy 3D: the core movement, the camera direction, and keeping the scope controlled.],
-  [class=""\>Our mission from the start was: Take everything players love about Meat Boy and prove it can work in three instead of just two dimensions. We hope you’ll be able to feel this the moment you make your first jump!],
+  [In the end, we found that the core ideas of Meat Boy’s movement translate surprisingly well into 3D if the focus remains on the fundamentals: jumping, walls, and speed. The key was in the camera angles and the subsequent level design. We usually started by choosing the camera angle first, then building the level to support it. The most important rule was that the character must always remain visible and readable.],
+  [Preserving the series’ personality],
+  [The series is not only known for its tight platformer gameplay, but also its dark humor, exaggerated violence, and chaotic energy.],
+  [One classic feature is the blood trail that Meat Boy leaves behind. It doesn’t only add the trademark gore-factor, but it also helps players see where they’ve already been and which routes they’ve tried.],
+  [In 3D, that feature became even more important, but implementing it was technically challenging. Spawning huge numbers of decals wasn’t practical, so we developed a vertex painting system that lets blood dynamically stain the environment, letting players paint the entire level red if they try often enough.],
+  [The move to 3D also gave us more room for hidden jokes and visual gags. With extra space in the world, we could tuck funny details or secrets into the background, some of which players might never even notice.],
+  [Lessons from our previous games],
+  [As with Hell Pie and the Ben and Ed series, we’ve always loved creating games with tight mechanics, weird humor, and a strong indie spirit.],
+  [Our previous projects taught us many important lessons about development, but what stuck with us the most was that focus matters. Very early on in development, we nailed down what really mattered for Super Meat Boy 3D: the core movement, the camera direction, and keeping the scope controlled.],
+  [Honoring an indie icon],
+  [Working on Super Meat Boy 3D alongside Tommy Refenes has been both an honor and an exciting challenge.],
+  [Our mission from the start was: Take everything players love about Meat Boy and prove it can work in three instead of just two dimensions. We hope you’ll be able to feel this the moment you make your first jump!],
+  [Super Meat Boy 3D launches on PlayStation 5 on March 31.],
 ),
   insert-map: (:),
   word-count: 988,
@@ -454,17 +464,15 @@ The blog post warns that "Right now, AI is undermining human agency at the same 
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [This MacBook Air can be your digital buddy for just \$200],
   author: [Macworld],
   source-name: [Macworld],
   images: (),
   paragraphs: (
-  [id="link\_wrapped\_content"\>],
   [TL;DR: A refurbished MacBook Air for \$199.97 delivers reliable everyday performance, long battery life, and serious value.],
   [Not every laptop needs to be a powerhouse. Sometimes you just need something that works —reliably, quickly, and without costing a small fortune. That’s exactly what this refurbished MacBook Air does.],
   [At just \$199.97 (MSRP \$999), it’s positioned less like a primary workstation and more like your go-to digital bestie. Think streaming shows on the couch, answering emails, online shopping, paying bills, or tossing it in your bag for a weekend trip.],
@@ -484,7 +492,7 @@ The blog post warns that "Right now, AI is undermining human agency at the same 
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Folk Etymologies],
   author: [Penny Arcade],
   source-name: [Penny Arcade],
@@ -505,7 +513,7 @@ The blog post warns that "Right now, AI is undermining human agency at the same 
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Is It Time For Open Source to Start Charging For Access?],
   author: [EditorDavid],
   source-name: [Slashdot],
@@ -527,15 +535,15 @@ The blog post warns that "Right now, AI is undermining human agency at the same 
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Get the latest Microsoft Office for your Mac for under \$100 – No Subscription],
   author: [Macworld],
   source-name: [Macworld],
   images: (),
   paragraphs: (
-  [id="link\_wrapped\_content"\>],
   [TL;DR: Microsoft Office 2024 Home & Business for Mac is available for under \$100 as a one-time purchase, giving you the latest Office apps without paying for Microsoft 365 every year.],
   [Mac users often assume that Microsoft Office means signing up for Microsoft 365 and paying a yearly fee just to use Word, Excel, and PowerPoint. That subscription can run \$70 to \$100 per year, which adds up. Bypass that yearly fee, and instead get Microsoft Office 2024 Home & Business for Mac (or PC) for under \$100. You’ll save money in the long term while still getting the latest version of the apps you use every day.],
+  [Office 2024 includes the core apps:],
   [PowerPoint],
   [OneNote],
   [This version also includes performance improvements and newer tools compared to older Office versions. Excel handles larger datasets more smoothly, PowerPoint now supports recording presentations with voice and video, and Word includes AI-assisted writing suggestions and focus mode for distraction-free writing.],
@@ -557,9 +565,8 @@ The blog post warns that "Right now, AI is undermining human agency at the same 
 #pull-quote([Its mission is to pay maintainers of critical, often end-of-life open source components so they can keep shipping patches without burning out.], [EditorDavid])
 
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [Boyd Gaming opens Cadence Crossing Casino in fast-growing Henderson],
   author: [Paul McNally],
   source-name: [ReadWrite],
@@ -570,11 +577,13 @@ The blog post warns that "Right now, AI is undermining human agency at the same 
   [At roughly 10,000 square feet, Cadence Crossing is designed with local customers in mind rather than tourists. The casino floor is anchored by more than 450 slot machines and video poker terminals, along with electronic table games arranged across an open layout that keeps sightlines clear from the entrance to the back of the room.],
   [We are excited to introduce Cadence Crossing Casino, our newest entertainment experience for southern Nevada locals,” said Steve Schutte, Boyd Gaming’s executive vice president of operations. “Cadence Crossing is a modern and stylish gaming entertainment experience worthy of the Cadence community.”],
   [A 22-seat circular bar sits at the center of the floor, serving as a social hub where guests can watch the action from every angle while ordering from a menu of signature cocktails. Just beyond it, a quieter lounge area with softer lighting and more relaxed seating offers a break from the noise of the machines.],
+  [Dining and live music aimed at repeat visits],
   [Boyd has leaned heavily on food and entertainment to position the property as more than a place to gamble. The casino’s main restaurant, Tin Lizard Bar & Grill, features a gastropub-style menu, craft beer, and wall-to-wall sports screens. The venue is also scheduled to host live music from Thursday through Sunday, with local performers rotating through the lineup.],
   [For guests who want a quick meal without leaving the gaming floor, a nearby fast-casual option offers grab-and-go options, in another nod to the convenience-focused design aimed at neighborhood customers.],
+  [Part of a broader portfolio shift],
   [The opening comes as Boyd continues to reshape its national portfolio while doubling down on markets where it already has a strong customer base. The company recently agreed to sell its Sam’s Town Shreveport property in Louisiana to Bally’s, a move executives described as part of a broader effort to streamline operations and focus on core regions.],
   [That strategy is especially visible in southern Nevada, where rapid population growth in communities such as Cadence has created demand for smaller, locally oriented gaming venues rather than large Strip-style resorts. This local-first strategy also takes into account a significant decrease in room visits.],
-  [dir="ltr" lang="en"\>Boyd Gaming 2024 to 20025 year-over-year revenue changes:],
+  [Boyd Gaming 2024 to 20025 year-over-year revenue changes:],
   [Gaming: 2.1% increase
 Food & Beverage: 2.2% increase
 Room: (6.5)% decline \$BYD officials said they were seeing significant room visit declines in not just their Nevada segments but also other regional properties],
@@ -589,24 +598,23 @@ Room: (6.5)% decline \$BYD officials said they were seeing significant room visi
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Indian Gaming Association backs bipartisan Senate bill targeting sports prediction markets],
   author: [Suswati Basu],
   source-name: [ReadWrite],
   images: (),
   paragraphs: (
   [The Indian Gaming Association (IGA) has stepped into the growing fight over sports-based prediction markets, throwing its support behind a bipartisan Senate bill that would shut them down. The move adds fresh pressure on federal regulators and companies offering the products as scrutiny spreads well beyond the initial rollout phase.],
-  [dir="ltr" lang="en"\>Prediction markets are offering sports bets — just with a different name.],
+  [Prediction markets are offering sports bets — just with a different name.],
   [They are being offered in states where sports betting is illegal, like California, while federal regulators are greenlighting them rather than enforcing the law.],
   [My bipartisan legislation with… pic.twitter.com/oNvI2vw9IP],
   [— Adam Schiff (\@SenAdamSchiff) March 23, 2026],
   [Lawmakers Adam Schiff and John Curtis introduced the measure, called the “ Prediction Markets Are Gambling Act .” It would stop federally regulated exchanges from listing contracts tied to sports wagering or casino-style activity. The proposal would update the Commodity Exchange Act to block entities overseen by the Commodity Futures Trading Commission from offering those contracts. The Senate Agriculture Committee is expected to take it up.],
+  [IGA tribal leaders frame Senate bill as restoring authority against sports prediction markets],
   [Leaders within the association say the legislation is about restoring balance between federal oversight and long-standing state and tribal control of gambling. IGA Chairman David Bean described the bill as a necessary correction to what he views as a regulatory gap that has allowed prediction markets to expand unchecked.],
   [“It will reaffirm existing tribal and state government authority to regulate sports betting, limit online gambling, or in some cases – continue to prohibit all forms of gambling,” Bean told ReadWrite.],
-  [dir="ltr" lang="en"\>IGA statement: The Indian Gaming Association welcomes the introduction of the “Prediction Markets Are Gambling Act” \@RWW pic.twitter.com/IBKM0rHYiI],
+  [IGA statement: The Indian Gaming Association welcomes the introduction of the “Prediction Markets Are Gambling Act” \@RWW pic.twitter.com/IBKM0rHYiI],
   [— Suswati Basu (\@suswatibasu) March 23, 2026],
   [Bean also took aim at how regulators have handled the issue so far. “The bill will also quiet the chaos and federal overreach that the CFTC is fostering. Other than the growing number of court decisions siding with tribes and states, prediction market platforms have seen no accountability and no oversight, as they disregard clearly established regulations while exposing consumers to unchecked gambling. We look forward to working with leaders in Congress to hold these platforms accountable to protect consumers, sports integrity, and tribal and state sovereignty.”],
   [That places the IGA squarely in the middle of a widening policy clash. Much of the tension is said to center on the CFTC’s handling of event-based contracts. Rules adopted in 2011 bar registered entities from listing contracts tied to activities like terrorism, war, or gaming that may be unlawful under federal or state law. The IGA argues that enforcement shifted in January 2025, when the agency dropped key court appeals, effectively stepping back from its own restrictions.],
@@ -621,10 +629,8 @@ Room: (6.5)% decline \$BYD officials said they were seeing significant room visi
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [What COVID did to our forecasting models (and what we built to handle the next shock)],
   author: [Harrison Katz],
   source-name: [Airbnb Engineering],
@@ -698,10 +704,8 @@ Room: (6.5)% decline \$BYD officials said they were seeing significant room visi
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Detroit moves toward opposing prediction markets in Coinbase federal lawsuit],
   author: [Jacob Woodward],
   source-name: [ReadWrite],
@@ -709,19 +713,24 @@ Room: (6.5)% decline \$BYD officials said they were seeing significant room visi
   paragraphs: (
   [A federal judge has approved a procedural agreement in the ongoing dispute between Coinbase and Michigan regulators. This clears the way for Detroit to become the first U. S. city to formally challenge sports-related prediction markets in court.],
   [In a March 26 order, Shalina D. Kumar of the United States District Court for the Eastern District of Michigan signed off on a stipulation jointly submitted by Coinbase Financial Markets Inc. and state officials. The agreement resolves a dispute over recent filings tied to Coinbase’s request for a preliminary injunction and sets a revised schedule for additional briefs.],
+  [Detroit looks to file an amicus curiae brief],
   [Potentially the biggest development in the latest order is Detroit’s planned involvement in the case. City officials approached both parties seeking permission to file an amicus curiae brief, a filing that allows a non-party to offer the court additional context, expertise, or legal arguments.],
   [Both sides agreed to the request, and the court’s order allows Detroit to submit its brief by April 3.],
   [If the city ultimately argues against prediction markets, it would be the first time a U. S. municipality has taken a direct legal stance opposing the products. That could provide courts and regulators with a new perspective, particularly on how emerging wagering-style platforms affect communities at the local level.],
-  [dir="ltr" lang="en"\>The City of Detroit is poised to become the first municipality to come out against prediction markets. The Motor City has been granted permission by a federal judge to file an amicus curiae brief in support of Michigan's opposition to Coinbase's motion for preliminary injunction. pic.twitter.com/6tMW3YcaBU],
+  [The City of Detroit is poised to become the first municipality to come out against prediction markets. The Motor City has been granted permission by a federal judge to file an amicus curiae brief in support of Michigan's opposition to Coinbase's motion for preliminary injunction. pic.twitter.com/6tMW3YcaBU],
   [— Daniel Wallach (\@WALLACHLEGAL) March 27, 2026],
+  [Coinbase challenges state enforcement],
   [The underlying lawsuit pits Coinbase against Dana Nessel and members of the Michigan Gaming Control Board, who are being sued in their official capacities.],
   [Coinbase is seeking a preliminary injunction, which is a temporary court order that, if granted, would prevent Michigan from taking enforcement action while the judge considers the broader legal questions in the case. Such injunctions are typically sought when a company argues that immediate regulatory action could cause irreparable harm before the courts have fully resolved the dispute.],
+  [Filing dispute leads to revised briefing schedule],
   [The procedural disagreement that prompted the latest order began in February, when Coinbase filed additional materials with the court, including a notice of supplemental authority and a motion requesting permission to respond to a proposed sur-reply from the defendants. The company also attached a lengthy exhibit outlining its planned response.],
   [State officials objected to those filings on March 2, arguing they were improper. After further discussions, however, the parties reached a compromise: the state withdrew its objection and instead agreed to submit a formal response addressing the materials.],
   [Under the court-approved stipulation, that response was due March 27. Judge Kumar’s order formally adopts the agreed terms, putting the revised briefing schedule into effect.],
+  [Prediction markets face growing legal scrutiny],
   [The dispute is unfolding against a backdrop of increasing national scrutiny of prediction markets, particularly contracts tied to sports outcomes. In Washington, D. C., bipartisan lawmakers have introduced legislation that would ban sports-related prediction markets, citing concerns that the products function too similarly to unregulated sports betting.],
   [Courts across the country have also begun to issue diverging rulings. Examples of this include a judge in Nevada recently blocking certain event contracts offered by Kalshi, while a federal judge in Arizona declined to grant emergency relief that would have protected similar contracts from potential criminal enforcement.],
   [Together, those decisions have contributed to a patchwork of legal outcomes that leaves the status of prediction markets unsettled across jurisdictions.],
+  [Municipal perspective could influence broader debate],
   [Detroit’s anticipated filing could carry weight beyond the immediate dispute between Coinbase and Michigan regulators. Cities are often the first to deal with the social and economic consequences of gambling activity, from problem gambling services to local enforcement concerns.],
   [Detroit could help the court assess the potential community-level impacts of prediction markets as it decides whether Coinbase should receive the temporary protections it is seeking, and, more broadly, how these emerging financial products should be treated under existing gambling and commodities laws.],
   [The post Detroit moves toward opposing prediction markets in Coinbase federal lawsuit appeared first on ReadWrite .],
@@ -732,10 +741,8 @@ Room: (6.5)% decline \$BYD officials said they were seeing significant room visi
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [America’s gambling machine runs on tech even as router ban looms],
   author: [Suswati Basu],
   source-name: [ReadWrite],
@@ -745,26 +752,30 @@ Room: (6.5)% decline \$BYD officials said they were seeing significant room visi
   [This update to the Covered List does not prohibit the import, sale, or use of any existing device models the FCC previously authorized.],
   [This follows a national security determination that such routers “pose unacceptable risks to the national security of the United States or the safety and security of United States persons.”],
   [The change comes as gambling in the US has grown to an enormous scale . Legal gaming now functions almost like essential infrastructure, spread across nearly every state.],
+  [The US gambling market is measured in tens of billions],
   [Start with the money. Commercial gaming alone brought in \$78.7 billion in 2025, a record according to the American Gaming Association. Tribal gaming added another \$43.9 billion in its 2025 fiscal year . The figures come from different reporting calendars, so they are not meant to be stacked as a precise combined total. Together, the figures point to a system generating well over \$100 billion a year . This doesn’t even take into account the full ecosystem, such as state lotteries and other forms of gaming.],
-  [dir="ltr" lang="en"\>Record year for tribal gaming: \$43.9B in revenue and growth across all regions, according to the latest FY25 report from the \@NIGCgov . \@RWW pic.twitter.com/Dx0q9rzDy9],
+  [Record year for tribal gaming: \$43.9B in revenue and growth across all regions, according to the latest FY25 report from the \@NIGCgov . \@RWW pic.twitter.com/Dx0q9rzDy9],
   [— Suswati Basu (\@suswatibasu) March 3, 2026],
   [The revenue sits on top of a sprawling physical network. By the end of 2024, there were 492 commercial casinos spread across 27 states. Tribal operations added 500-plus more sites across 29 states, depending on how properties are counted. Round it out, and the country supports roughly 1,000 land-based gambling locations before factoring in sportsbooks inside arenas, racetracks, lottery retailers, and online-only platforms.],
   [The workforce is just as substantial. Federal labor data shows about 252,900 people employed in casino hotels and another 128,700 in other gambling-related industries. Together, that puts the sector at roughly 381,600 payroll jobs across those categories. A narrower occupational slice still counts more than 150,000 gambling services workers , including tens of thousands of dealers and supervisors. Even in a digital era, the system depends heavily on human operators.],
-  [dir="ltr" lang="en"\> 2025 was the sixth straight year of record growth. 2025 commercial gaming revenue rose 9.2% to \$78.72B, marking another all-time high for our industry.],
+  [2025 was the sixth straight year of record growth. 2025 commercial gaming revenue rose 9.2% to \$78.72B, marking another all-time high for our industry.],
   [Read the full report https:\/\/t.co/x6Ays0jCkC pic.twitter.com/7d7jU8Zfv9],
   [— American Gaming Association (\@AmericanGaming) March 2, 2026],
   [The online side has also surged into national-scale territory. Americans wagered \$166.94 billion on sports in 2025, producing \$16.96 billion in revenue. Early 2026 figures from the American Gaming Association show the pace continuing, with \$14.81 billion in handle in January alone and more than \$1.6 billion in monthly sportsbook revenue. With another \$1 billion from iGaming that month, it starts to resemble a constant financial system rather than a seasonal business.],
+  [Machines, endpoints, and surveillance everywhere],
   [All of that activity requires a dense layer of hardware. There are likely between 600,000 and 1,000,000 electronic gaming devices in the country. The figure isn’t official, but it’s based on revenue data and typical slot machine performance. Slots alone generated billions per month at the start of 2026, which implies hundreds of thousands of active machines nationwide.],
   [But slot cabinets are only the beginning. Modern casinos run on a mesh of systems: sportsbook kiosks, cashier terminals, loyalty card readers, player-tracking systems, hotel management terminals, and redemption machines. Behind the scenes, there are compliance servers, storage arrays, and networking gear tying everything together.],
-  [dir="ltr" lang="en"\>Today, the FCC took additional action to safeguard Americans and the communications networks we rely on.],
+  [Today, the FCC took additional action to safeguard Americans and the communications networks we rely on.],
   [The FCC added consumer routers produced in foreign countries to the agency’s Covered List.],
   [This action follows a national security determination provided by Executive Branch… pic.twitter.com/s3OoEo5NOV],
   [— Brendan Carr (\@BrendanCarrFCC) March 23, 2026],
   [Taken together, that likely adds up to a few million connected or monitored devices. In total, somewhere between one and three million devices are tied to regulated gambling operations. The figure reflects the size of the property base and the density of technology inside each location rather than a single published dataset.],
   [Then there is surveillance, one of the least visible but most critical components. Casinos are among the most camera-heavy environments in the country, driven by fraud prevention, dispute resolution, cash handling, and regulatory compliance. Altogether, there are about 1,000 land-based gambling locations, not even counting sportsbooks, racetracks, lottery retailers, or online platforms. Either way, it’s far larger than what you’d see in typical retail or hospitality environments.],
+  [The software layer that keeps everything running],
   [The hardware footprint is huge, and the software behind it is even bigger. Every legal wager flows through multiple systems at once. Operators rely on gaming management platforms to track slot and table activity, sportsbook engines to set and adjust odds, and wallet systems to move money in and out.],
   [Surrounding that are layers of compliance and risk tools. Identity verification systems confirm who users are. Geolocation software ensures bets are placed within legal jurisdictions. Anti-money-laundering systems monitor transactions. Fraud detection tools flag suspicious behavior. On top of that, operators run loyalty programs, customer databases, and marketing systems designed to keep players engaged.],
   [None of this can suddenly stop. The platforms must continuously process deposits, wagers, odds updates, event settlements, tax calculations, and payouts. The fact that iGaming revenue reached \$10.74 billion in 2025 from just seven active states shows how central this software layer has become. It’s a full industry running in real time.],
+  [What the router ban does and does not change in terms of US gambling],
   [In that context, the FCC’s move looks less like a direct impact on casinos and more like a warning about how sensitive the system has become. Because the rule applies to new device models that require FCC equipment authorization, any near-term effect would more likely show up at the edge, for home bettors, smaller operators, or peripheral deployments, than inside core casino networks.],
   [Core casino networks, which use enterprise-grade systems and tight controls, seem less directly affected. But the general message is harder to ignore. US gambling now depends on a vast, interconnected technology base that spans from living-room Wi-Fi to highly regulated surveillance networks and real-time financial systems.],
   [In simple terms, keeping gambling running in the US means supporting about 1,000 properties, hundreds of thousands of workers, and up to a million machines, millions of connected endpoints, and software capable of handling well over \$150 billion a year in betting activity, alongside tens of billions more in other gaming revenue.],
@@ -778,17 +789,18 @@ Room: (6.5)% decline \$BYD officials said they were seeing significant room visi
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Official PlayStation Podcast Episode 537: Speaking Saros],
   author: [O’Dell Harmon Jr. (he/him)],
   source-name: [PlayStation Blog],
   images: (),
   paragraphs: (
-  [class=""\>Hey, everybody! Sid, Brett, Kristen, and I are back this week to talk about our latest platinum trophy runs, hands-on with Saros, and more. This week also features an interview with two Housemarque devs working on Saros — Creative Director Gregory Louden and Art Director Simone Silvestri.],
+  [Email us at PSPodcast\@sony.com !],
+  [Subscribe via Apple Podcasts , Spotify , or download here],
+  [Hey, everybody! Sid, Brett, Kristen, and I are back this week to talk about our latest platinum trophy runs, hands-on with Saros, and more. This week also features an interview with two Housemarque devs working on Saros — Creative Director Gregory Louden and Art Director Simone Silvestri.],
   [Next week’s release highlights:],
   [South of Midnight | PS5],
   [Legacy of Kain: Ascendance | PS5],
@@ -799,14 +811,32 @@ Room: (6.5)% decline \$BYD officials said they were seeing significant room visi
   [Virtual Hunter VR launches on PS VR2 on May 27 — explore a vast open world sim, hunt diverse prey, experience dynamic weather, and decorate your lodge.],
   [Directive 8020 PS5 Pro Features — Supermassive devs detail PS5 Pro’s ray tracing, PSSR, and performance features for a haunting sci-fi narrative when the game launches on May 12.],
   [Super Meat Boy 3D launches on PS5 on March 31 — See how the tough-as-nails side-scrolling series transitions into 3D, introducing new abilities like wall running and more.],
+  [View and download image],
+  [Download the image],
   [close 
  Close],
+  [Download this image],
+  [Sid Shuman – Senior Director of Content Communications, SIE],
+  [View and download image],
+  [Download the image],
   [close 
  Close],
+  [Download this image],
+  [Kristen Zitani – Senior Content Communications Specialist, SIE],
+  [View and download image],
+  [Download the image],
   [close 
  Close],
+  [Download this image],
+  [Brett Elston  – Manager, Content Communications, SIE],
+  [View and download image],
+  [Download the image],
   [close 
  Close],
+  [Download this image],
+  [O’Dell Harmon Jr.  – Content Communications Specialist, SIE],
+  [Thanks to Dormilón for our rad theme song and show music.],
+  [\[Editor’s note: PSN game release dates are subject to change without notice. Game details are gathered from press releases from their individual publishers and/or ESRB rating descriptions.\]],
 ),
   insert-map: (:),
   word-count: 415,
@@ -816,16 +846,19 @@ Room: (6.5)% decline \$BYD officials said they were seeing significant room visi
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [(For Southeast Asia) New Price Changes for PS5, PS5 Pro, and PlayStation Portal remote player],
   author: [Isabelle Tomatis],
   source-name: [PlayStation Blog],
   images: (),
   paragraphs: (
-  [class=""\>With continued pressures in the global economic landscape, we’ve made the decision to increase the prices of PS5, PS5 Pro, and PlayStation Portal remote player globally. We know that price changes impact our community, and after careful evaluation, we found this was a necessary step to ensure we can continue delivering innovative, high-quality gaming experiences to players worldwide.],
+  [With continued pressures in the global economic landscape, we’ve made the decision to increase the prices of PS5, PS5 Pro, and PlayStation Portal remote player globally. We know that price changes impact our community, and after careful evaluation, we found this was a necessary step to ensure we can continue delivering innovative, high-quality gaming experiences to players worldwide.],
+  [The updated recommended retail prices for PS5 consoles are effective starting April 2, 2026 in the following markets.],
+  [U. S.],
   [PS5 – \$649.99],
   [PS5 Digital Edition – \$599.99],
   [PS5 Pro – \$899.99],
+  [U. K.],
   [PS5 – £569.99],
   [PS5 Digital Edition – £519.99],
   [PS5 Pro – £789.99],
@@ -835,6 +868,7 @@ Room: (6.5)% decline \$BYD officials said they were seeing significant room visi
   [PS5 – ¥97,980],
   [PS5 Digital Edition – ¥89,980],
   [PS5 Pro – ¥137,980],
+  [The updated recommended retail price for PlayStation Portal remote player is effective starting April 2 in the following markets.],
   [U. S. – \$249.99],
   [U. K. – £219.99],
   [Europe – €249.99],
@@ -853,7 +887,7 @@ Room: (6.5)% decline \$BYD officials said they were seeing significant room visi
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [World's Smallest QR Code - Smaller Than Bacteria - Could Store Data for Centuries],
   author: [EditorDavid],
   source-name: [Slashdot],
@@ -876,7 +910,7 @@ Room: (6.5)% decline \$BYD officials said they were seeing significant room visi
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [It Takes A Village],
   author: [Penny Arcade],
   source-name: [Penny Arcade],
@@ -893,8 +927,7 @@ Room: (6.5)% decline \$BYD officials said they were seeing significant room visi
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Jupiter's Lightning May Have the Force of Nuclear Weapons],
   author: [EditorDavid],
   source-name: [Slashdot],
@@ -914,57 +947,54 @@ The researchers used the Hubble Space Telescope (and photographs from Juno's cam
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([Runner's World], source-name: [Runner's World], [This planner offers goal-setting advice, as well as pages for tracking workouts, shoes, and all the books on your nightstand.])],
-    [#brief-item([Jeremy Smith], source-name: [/Film], [Denzel Washington's time travel sci-fi movie Déjà Vu was overshadowed by Casino Royale when it first released, but it's well worth revisiting.])],
-    [#brief-item([Bruno Couriol], source-name: [InfoQ], [Max Inden recently explored in a talk at FOSDEM 2026 how the upcoming WebTransport protocol and Web API enhance WebSocket capabilities. WebTransport seeks to provide, among other things, lower latency and transparent network switching for key use cases such as high-frequency financial data streaming, cloud gaming, live streaming, and collaborative editing.
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([Runner's World], source-name: [Runner's World], [This planner offers goal-setting advice, as well as pages for tracking workouts, shoes, and all the books on your nightstand.])],
+  [#brief-item([Jeremy Smith], source-name: [/Film], [Denzel Washington's time travel sci-fi movie Déjà Vu was overshadowed by Casino Royale when it first released, but it's well worth revisiting.])],
+  [#brief-item([Bruno Couriol], source-name: [InfoQ], [Max Inden recently explored in a talk at FOSDEM 2026 how the upcoming WebTransport protocol and Web API enhance WebSocket capabilities. WebTransport seeks to provide, among other things, lower latency and transparent network switching for key use cases such as high-frequency financial data streaming, cloud gaming, live streaming, and collaborative editing.
 
  By Bruno Couriol])],
-    [#brief-item([Andy Swift], source-name: [TVLine], [Who's going to prison? And can we trust Mallory and Kimmie's alliance? Taylor Polidore Williams takes TVLine inside the finale of Beauty in Black Season 2.])],
-    [#brief-item([Devin Meenan], source-name: [/Film], [Two of the darkest episodes of Battlestar Galactica were clearly influenced by another sci-fi story's all timer of an ending.])],
-    [#brief-item([Kyle Barr], source-name: [Gizmodo], [It's the cheapest way to access Intel's exciting new CPUs. You'll just have to deal with a few pain points.])],
-    [#brief-item([Penny Arcade], source-name: [Penny Arcade], [There's no way to contextualize how ready Gabriel was to pawn something. That was just his bank, kinda. Anytime E3 rolled around he started foraging for anything made of silver colored plastic. He would have sold me if he could! I would have sold me too, I guess. Rented, at least. But panel three of this strip is a documentary.])],
-    [#brief-item([Andy Swift], source-name: [TVLine], [Tyler Perry previously filmed the entire second season of Netflix's Beauty in Black in just 12 days. He beat his record with Season 3.])],
-    [#brief-item([Zack Zwiezen], source-name: [Kotaku], [The posts were part of his administration celebrating plans to bail farmers out of a situation created by Trump's own actions])],
-    [#brief-item([Penny Arcade], source-name: [Penny Arcade], [If you like what you see, you can play it pretty much anywhere .  Next Friday I'm gonna teach Dabe how to play on some sponsored stuff - now he's wrapping up all the video walls for PAX East , so he's gonna have to watch the stream if he's gonna bone up.  Join me right here if you want to see what I am typically doing between miodnight and one in the morning.
+  [#brief-item([Andy Swift], source-name: [TVLine], [Who's going to prison? And can we trust Mallory and Kimmie's alliance? Taylor Polidore Williams takes TVLine inside the finale of Beauty in Black Season 2.])],
+  [#brief-item([Devin Meenan], source-name: [/Film], [Two of the darkest episodes of Battlestar Galactica were clearly influenced by another sci-fi story's all timer of an ending.])],
+  [#brief-item([Kyle Barr], source-name: [Gizmodo], [It's the cheapest way to access Intel's exciting new CPUs. You'll just have to deal with a few pain points.])],
+  [#brief-item([Penny Arcade], source-name: [Penny Arcade], [There's no way to contextualize how ready Gabriel was to pawn something. That was just his bank, kinda. Anytime E3 rolled around he started foraging for anything made of silver colored plastic. He would have sold me if he could! I would have sold me too, I guess. Rented, at least. But panel three of this strip is a documentary.])],
+  [#brief-item([Andy Swift], source-name: [TVLine], [Tyler Perry previously filmed the entire second season of Netflix's Beauty in Black in just 12 days. He beat his record with Season 3.])],
+  [#brief-item([Zack Zwiezen], source-name: [Kotaku], [The posts were part of his administration celebrating plans to bail farmers out of a situation created by Trump's own actions])],
+  [#brief-item([Penny Arcade], source-name: [Penny Arcade], [If you like what you see, you can play it pretty much anywhere .  Next Friday I'm gonna teach Dabe how to play on some sponsored stuff - now he's wrapping up all the video walls for PAX East , so he's gonna have to watch the stream if he's gonna bone up.  Join me right here if you want to see what I am typically doing between miodnight and one in the morning.
 
 (CW)TB])],
-    [#brief-item([Jupiter Hadley], source-name: [Indie Games Plus], [A Week in the Life of Asocial Giraffe is a point and click puzzle adventure game about a tall-necked giraffe that wants to stay unseen. I got the chance to play a...
+  [#brief-item([Jupiter Hadley], source-name: [Indie Games Plus], [A Week in the Life of Asocial Giraffe is a point and click puzzle adventure game about a tall-necked giraffe that wants to stay unseen. I got the chance to play a...
 
 The post ‘Asocial Giraffe’ Needs You to Avoid Being Noticed appeared first on Indie Games Plus .])],
-    [#brief-item([Ben Thompson], source-name: [Stratechery], [Arm is selling its own chips, not just licensing IP. It's a big change compared to Arm's history, but not surprising given how computing is evolving.])],
-    [#brief-item([Sam Stone], source-name: [/Film], [A great miniseries knows how to tell an engaging story on television but also knows when to wrap it up rather than overstay its welcome, and these are the best.])],
-    [#brief-item([Nick Caruso], source-name: [TVLine], [On TV this Sunday: Kayce tracks down a missing girl on Marshals, Chee confronts his past on Dark Winds, and Crossroad Springs wraps its freshman run.])],
-    [#brief-item([Ben Thompson], source-name: [Stratechery], [GTC 2026 marked an important inflection point for Nvidia, as the company is selling multiple architectures, instead of focusing on just one GPU. The motivation is serve all needs and keep all customers.])],
-    [#brief-item([Renato Losio], source-name: [InfoQ], [ProxySQL 3.0.6 was recently released, along with a new multi-tier release strategy. The Stable Tier focuses on reliability and production use, the Innovative Tier introduces newer features earlier, and the AI/MCP Tier explores future capabilities, including AI integrations.
+  [#brief-item([Ben Thompson], source-name: [Stratechery], [Arm is selling its own chips, not just licensing IP. It's a big change compared to Arm's history, but not surprising given how computing is evolving.])],
+  [#brief-item([Sam Stone], source-name: [/Film], [A great miniseries knows how to tell an engaging story on television but also knows when to wrap it up rather than overstay its welcome, and these are the best.])],
+  [#brief-item([Nick Caruso], source-name: [TVLine], [On TV this Sunday: Kayce tracks down a missing girl on Marshals, Chee confronts his past on Dark Winds, and Crossroad Springs wraps its freshman run.])],
+  [#brief-item([Ben Thompson], source-name: [Stratechery], [GTC 2026 marked an important inflection point for Nvidia, as the company is selling multiple architectures, instead of focusing on just one GPU. The motivation is serve all needs and keep all customers.])],
+  [#brief-item([Renato Losio], source-name: [InfoQ], [ProxySQL 3.0.6 was recently released, along with a new multi-tier release strategy. The Stable Tier focuses on reliability and production use, the Innovative Tier introduces newer features earlier, and the AI/MCP Tier explores future capabilities, including AI integrations.
 
  By Renato Losio])],
-    [#brief-item([Jupiter Hadley], source-name: [Indie Games Plus], [Broken Race is a roguelike racing game where you watch the world glitch, change, and distort as your sanity falls apart. Often racing games have you racing against other people, trying to...
+  [#brief-item([Jupiter Hadley], source-name: [Indie Games Plus], [Broken Race is a roguelike racing game where you watch the world glitch, change, and distort as your sanity falls apart. Often racing games have you racing against other people, trying to...
 
 The post ‘Broken Race’ Continually Changes the Rules of the Road appeared first on Indie Games Plus .])],
-    [#brief-item([Leela Kumili], source-name: [InfoQ], [Agoda engineers developed Storefront, a Rust-based S3-compatible reverse proxy that improves load balancing, request routing, and observability across large-scale object storage systems. The proxy addresses DNS-based distribution limitations, implements latency-aware routing, cross-data-center optimizations, IO safeguards, credential-less authentication, and exposes telemetry via OpenTelemetry.
+  [#brief-item([Leela Kumili], source-name: [InfoQ], [Agoda engineers developed Storefront, a Rust-based S3-compatible reverse proxy that improves load balancing, request routing, and observability across large-scale object storage systems. The proxy addresses DNS-based distribution limitations, implements latency-aware routing, cross-data-center optimizations, IO safeguards, credential-less authentication, and exposes telemetry via OpenTelemetry.
 
  By Leela Kumili])],
-    [#brief-item([Jupiter Hadley], source-name: [Indie Games Plus], [Dark Tides is an adventure game where you play as a boardwalk psychic unravelling the demonic mysteries of a seaside Victorian town. Playing as Theodora Green, you are tasked with figuring out...
+  [#brief-item([Jupiter Hadley], source-name: [Indie Games Plus], [Dark Tides is an adventure game where you play as a boardwalk psychic unravelling the demonic mysteries of a seaside Victorian town. Playing as Theodora Green, you are tasked with figuring out...
 
 The post ‘Dark Tides’ Reads Minds to Discover an Old Town’s True Fate appeared first on Indie Games Plus .])],
-    [#brief-item([Jupiter Hadley], source-name: [Indie Games Plus], [Ghost Haunting is an adventure game about a young girl whose grandmother has been trapped in the realm of the dead. You are a young 8-year old child currently visiting your grandfather....
+  [#brief-item([Jupiter Hadley], source-name: [Indie Games Plus], [Ghost Haunting is an adventure game about a young girl whose grandmother has been trapped in the realm of the dead. You are a young 8-year old child currently visiting your grandfather....
 
 The post ‘Ghost Haunting’ Follows Unruly Children Attempting Resurrections appeared first on Indie Games Plus .])],
-    [#brief-item([Justin Carter], source-name: [Gizmodo], [Live in New York and excited for 'Disclosure Day'? There's a month-long screening of Spielberg sci-fi films to get you in the mood.])],
-    [#brief-item([Mike Sorrentino], source-name: [CNET News], [Commentary: Apple's \$599 iPhone 17E has a lot of value, but you might be better off with an older iPhone at a similar price.])],
-    [#brief-item([Jupiter Hadley], source-name: [Indie Games Plus], [Chance’s Lucky Escape is an adventure game about the luckiest dog in the world having some decidedly unlucky things happen to them. Ever play a narrative game that is so unpredictable, it’s...
+  [#brief-item([Justin Carter], source-name: [Gizmodo], [Live in New York and excited for 'Disclosure Day'? There's a month-long screening of Spielberg sci-fi films to get you in the mood.])],
+  [#brief-item([Mike Sorrentino], source-name: [CNET News], [Commentary: Apple's \$599 iPhone 17E has a lot of value, but you might be better off with an older iPhone at a similar price.])],
+  [#brief-item([Jupiter Hadley], source-name: [Indie Games Plus], [Chance’s Lucky Escape is an adventure game about the luckiest dog in the world having some decidedly unlucky things happen to them. Ever play a narrative game that is so unpredictable, it’s...
 
 The post ‘Chance’s Lucky Escape’ Solves Progressively Stranger Problems appeared first on Indie Games Plus .])],
-    [#brief-item([Zack Zwiezen], source-name: [Kotaku], [Mad Ellie and the Vault of the Damned includes a new playable character and region to explore, but is that enough to bring back lapsed players?])],
-    [#brief-item([Matt Saunders], source-name: [InfoQ], [Enterprises that grant excessive access permissions to AI systems experience 4.5 times as many security incidents as those that do not, according to The 2026 State of AI in Enterprise Infrastructure Security, a report published by infrastructure identity company Teleport. The study found that identity management hasn't kept up with AI adoption in production systems.
+  [#brief-item([Zack Zwiezen], source-name: [Kotaku], [Mad Ellie and the Vault of the Damned includes a new playable character and region to explore, but is that enough to bring back lapsed players?])],
+  [#brief-item([Matt Saunders], source-name: [InfoQ], [Enterprises that grant excessive access permissions to AI systems experience 4.5 times as many security incidents as those that do not, according to The 2026 State of AI in Enterprise Infrastructure Security, a report published by infrastructure identity company Teleport. The study found that identity management hasn't kept up with AI adoption in production systems.
 
  By Matt Saunders])],
-  ))
-}
+))
 
 #colophon([The Clear Courier], [Vol. 1, No. 041], [2026-03-30])

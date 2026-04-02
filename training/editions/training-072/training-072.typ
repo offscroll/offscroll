@@ -21,39 +21,8 @@
 #masthead([The Courier], [Vol. 1, No. 072], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [This is all it takes to stop a train (Lock and Code S07E06)],
-  kicker: [Cover Story],
-  author: [Malwarebytes Labs],
-  source-name: [Malwarebytes Labs],
-  deck: [At the El Cerrito Plaza station, BART staff and police informed visitors that the system was down.],
-  lead-pre: [],
-  lead-cap: [T],
-  lead-rest: [his week on the Lock and Code podcast…],
-  body-paragraphs: (
-  [Forget the runaway train thrillingly shot in Buster Keaton’s 1926 film “The General,” and never mind the charging locomotive rescued by actors Denzel Washington and Chris Pine in the 2010 film “Unstoppable,” as there’s a far more frequent (and far less heart-pounding) railcar drama happening across California’s Bay Area: The repeated breakdown of the Bay Area Rapid Transit (BART) system, all because of a few networking errors.],
-  [Opened in 1972, BART today carries about 175,000 people every weekday on five separate lines to 50 different stations placed across dozens of cities in the Bay Area, including San Francisco, Oakland, Berkeley, Daly City, Fremont, Richmond, and more. Its tracks and railcars travel both above ground and below, and it is one of the only public transit systems in the US that goes underwater—traveling through what is called the TransBay tube. It is likely the region’s largest public project, spanning 131 miles of track, with a fleet of more than 700 cars, proving vital to workers and residents everywhere, and on May 9, 2025, it all came grinding to a halt, due to what BART officials called a “computer networking problem.”],
-  [At the Glen Park station in San Francisco, would-be travelers found yellow caution tape at the entry gates. At the El Cerrito Plaza station, BART staff and police informed visitors that the system was down. And at the Rockridge station in Oakland, a reporter for The San Francisco Chronicle witnessed a small group of people sprinting up the stairs to try and catch a train that never came.],
-  [It was the kind of meltdown for public infrastructure that puts an entire system in peril.],
-  [And it happened again just months later.],
-  [In September, a network crash brought BART to a halt, repeating almost the exact same frustrations and delays for travelers left without transportation to work.],
-  [That’s the end of it, right? Wrong. In February 2026, another computer failure caused another outage.],
-  [So, in one of the wealthiest regions in America, the subway doesn’t always run, its network is prone to crash, and any money for technology often goes elsewhere.],
-  [Today, on the Lock and Code podcast with host David Ruiz, we speak with San Francisco Chronicle transportation reporter Rachel Swan about what the BART outages revealed about the state of the system’s aging technology, why public infrastructure so often struggles to modernize, and what exactly went wrong in the three prior outages.],
-  [“One piece of equipment—and again, this is old equipment—one piece breaks down and they completely lose visibility, so they don’t know where any of the trains are.”],
-  [Tune in today to listen to the full conversation.],
-  [Show notes and credits:],
-  [Listen up—Malwarebytes doesn’t just talk cybersecurity, we provide it.],
-  [Protect yourself from online attacks that threaten your identity, your files, your system, and your financial well-being with our  exclusive offer for Malwarebytes Premium Security for Lock and Code listeners .],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Developer priorities throughout their career],
   author: [Lea Verou],
   source-name: [Lea Verou],
@@ -66,7 +35,7 @@
   [When somebody starts coding, getting the code to work is already difficult enough, so there is no space for other priorities. Learning to formalize one’s thought to the degree a computer demands, and then serialize this thinking with an unforgiving syntax, is hard . Writing code that works is THE priority, and whether it’s good code is not even a consideration.],
   [For more experienced programmers, whether it works is ephemeral: today it works, tomorrow a commit causes a regression, the day after another commit fixes it (yes, even with TDD. No testsuite gets close to 100% coverage). Whereas readability & maintainability do not fluctuate much. If they are not prioritized from the beginning, they are much harder to accomplish when you already have a large codebase full of technical debt.],
   [Code written by experienced programmers that doesn’t work, can often be fixed with hours or days of debugging. A nontrivial codebase that is not readable can take months or years to rewrite. So one tends to gravitate towards prioritizing what is easier to fix.],
-  [id="the-%E2%80%9Cpeak-of-drought%E2%80%9D-and-other-over-abstractions" tabindex="-1"\> The “peak of drought” and other over-abstractions],
+  [The “peak of drought” and other over-abstractions],
   [Many developers identified with the “peak of drought” . Indeed, like other aspects of maintainability, DRY is not even a concern at first. At some point, a programmer learns about the importance of DRY and gradually begins abstracting away duplication. However, you can have too much of a good thing: soon the need to abstract away any duplication becomes all consuming and leads to absurd, awkward abstractions which actually get in the way and produce needless couplings, often to avoid duplicating very little code, once. In my own “peak of drought” (which lasted far longer than the graph above suggests), I’ve written many useless functions, with parameters that make no sense, just to avoid duplicating a few lines of code once.],
   [Many articles have been written about this phenomenon, so I’m not going to repeat their arguments here. As a programmer accumulates even more experience, they start seeing the downsides of over-abstraction and over-normalization and start favoring a more moderate approach which prioritizes readability over DRY when they are at odds.],
   [A similar thing happens with design patterns too. At some point, a few years in, a developer reads a book or takes a course about design patterns. Soon thereafter, their code becomes so littered with design patterns that it is practically incomprehensible. “When all you have is a hammer, everything looks like a nail” . I have a feeling that Java and Java-like languages are particularly accommodating to this ailment, so this phenomenon tends to proliferate in their codebases. At some point, the developer has to go back to their past code, and they realize themselves that it is unreadable. Eventually, they learn to use design patterns when they are actually useful, and favor readability over design patterns when the two are at odds.],
@@ -78,12 +47,10 @@
   debug-mode: false,
 )
 
-  #pull-quote([A nontrivial codebase that is not readable can take months or years to rewrite.], [Lea Verou])
+#pull-quote([A nontrivial codebase that is not readable can take months or years to rewrite.], [Lea Verou])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [What makes speakers happy],
   author: [Lea Verou],
   source-name: [Lea Verou],
@@ -92,7 +59,7 @@
   [I wish I could speak at CSSConf.eu , but unfortunately I had to decline the invitation, as it collided with a prior speaking engagement I had agreed on. I recently got another email from the organizers with an interesting question:],
   [We want to make this event as stress-free for our speakers as possible. Since you spoke at a bunch of events, can you share a tip or two about what will make a speakers’ life easier, and their stay more pleasant? Any typical mistakes we can avoid?],
   [I thought it was lovely that they care about their speakers enough to ask this, this already places them above average. I started writing a reply, but I soon realized this is information that could be useful for other conference organizers as well, so I decided to post it here instead. So, what makes speakers happy?],
-  [id="the-baseline" tabindex="-1"\> The baseline],
+  [The baseline],
   [These are things every good conference is doing for their speakers, although they often miss one or two. They keep speakers happy, but they 're not out of the ordinary.],
   [Cover their flights, accommodation for the entire conference and ground transportation from/to the airport (with a car, not public transport!).],
   [Do not expect them to go through the hassle of booking all those themselves and then sending you receipts. Offer it as an option, but book them yourself by default.],
@@ -102,7 +69,7 @@
   [Have a speakers dinner before the event, where they can meet and socialize with the other speakers. This is also good for the conference, as they get the chance to catch up with their speaker friends (there aren’t that many people on the conference circuit, so we often know each other and want to catch up) so they will talk more to the attendees during the conference. Make sure the speakers dinner does not overlap with the pre-party, if you have one.],
   [Do a tech check before their talk to make sure everything is smooth. Have dongles for Mac laptops. Have clickers they could use. Use wireless lapel microphones. Have a reliable private wifi network for speakers to use if they need an internet connection for their talk.],
   [Have breaks between talks so they have some margin of going overtime without impacting the schedule. If they are too stressed about going through their talk fast, it won’t be a very good talk.],
-  [id="going-the-extra-mile" tabindex="-1"\> Going the extra mile],
+  [Going the extra mile],
   [These are all things one or more conferences have done for me, but they are not generally common so they are a positive surprise when they happen, not something expected.],
   [Book Business class flights, especially for longer flights where passengers are expected to sleep. It’s so much more comfortable to sleep in a seat that fully reclines! I was incredibly grateful to the one conference that did this.],
   [Cover incidentals in the hotel. Yes, it’s a bit risky but come on, we’re not rockstars. We won’t screw you over. In most cases it will be a pretty small extra cost and it looks really good, it tells speakers you trust them and want them to have a good time.],
@@ -116,24 +83,22 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [When Things Go Wrong],
   author: [Tony Wieczorek],
   source-name: [Localytics Engineering],
   images: (),
   paragraphs: (
   [We believe the highest performing engineering teams have a process to identify, triage, fix and learn from service degradations and downtime. At Localytics, we build highly available and scalable systems, and part of the key to our success is learning from failures. One way we foster a learning culture is through how we respond to pages we get about our services. We wanted to share our process for constantly improving.],
-  [id="1notifycoordinateandfixinslackprodissue"\>1. Notify, Coordinate and Fix in Slack: \#prod-issue],
+  [1. Notify, Coordinate and Fix in Slack: \#prod-issue],
   [At Localytics, we're big believers in the power of chatops to scale our team. We use integrations with Slack to deploy code, run database migrations, and monitor dozens of services.],
   [Pingdom, New Relic, AWS Cloudwatch, and coded circuit breaker patterns post to a \#prod-issue channel in Slack. All of those systems separately notify the team through PagerDuty integration. An engineer's first response to receiving a PagerDuty is to open Slack and check \#prod-issue for more details, rapidly speeding up triaging the issue. While you might get a page about a particular service being down, checking \#prod-issue lets you see if there are, for example, larger service problems before digging any further.],
   [Since it's a standard Slack chat room, engineers can coordinate the response and debug the issue in realtime, no matter where they are physically located. The chat history is a convenient record of what happened during the event and serves as the official record of the incident.],
-  [id="2debugandstartpostmorteminslackpostmorterm"\>2. Debug and Start Postmortem in Slack: \#postmorterm],
+  [2. Debug and Start Postmortem in Slack: \#postmorterm],
   [After the initial crisis is over, our engineers move into the \#postmortem Slack channel.],
   [This is a place to hypothesize about what happened, challenge assumptions, and volunteer an Incident Leader to follow through. If the issue was a known risk that has now come to fruition, there's a good chance this conversation turns into a laundry list of ideas to fix the underlying issue. We often use the ideas generated here when we have the formal, blameless postmortem in Step 4.],
-  [id="3communicatetocompanycustomers"\>3. Communicate to Company & Customers],
+  [3. Communicate to Company & Customers],
   [A self-volunteered Incident Leader, usually the first person notified or "on the case", sends out an email to let the rest of the company know what happened. That distribution list goes to our Executive Team, Product leaders and Marketing department. It lets them decide whether to notify our customers proactively, or generate content to send to customers.],
   [Here's the email template we use:],
   [Subject: Issue Name, Date and Time],
@@ -153,7 +118,7 @@
   [If the issue is resolved, state the fix and when it was deployed. If the issue is unresolved, give an approximate timeline for the fix.],
   [Next steps],
   [Product Marketing will follow up on this email thread with customer-facing messaging.],
-  [id="anameblamelesspostmortem4holdablamelesspostmortema"\> 4. Hold a Blameless Postmortem],
+  [4. Hold a Blameless Postmortem],
   [Within 24 business hours, the Incident Leader schedules and leads a Blameless Postmortem. This meeting can be anywhere from 30 minutes to several hours long. The point is to identify the processes, technologies and monitoring gaps that might have contributed to the issue.],
   [The blameless concept is an important one. Postmortems should not be an exercise in identifying and disciplining specific engineers. Issues with services are rarely the fault of a single person. More likely, our internal processes and tools lead to the downtime, and the postmortem should focus on resolving those. This requires a belief that in a well-functioning team, people make rational decisions with the information they have, the resources available to them and the team support they receive. The only time spent identifying individual engineers is to bring them to the postmortem discussion.],
   [Here are some examples of the different kinds of questions you ask in a blaming postmortem and a blameless one:],
@@ -200,17 +165,15 @@
   [Photo Credit: Storm by javier ruiz77],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([id="anameblamelesspostmortem4holdablamelesspostmortema"\> 4.], [Tony Wieczorek]),
+  inline-pq: pull-quote([4.], [Tony Wieczorek]),
   inline-pq-idx: 21,
   word-count: 1029,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Accessibility and Developers],
   author: [Paul Irish],
   source-name: [Paul Irish],
@@ -251,10 +214,8 @@ left my thoughts.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Refactoring optional chaining into a large codebase: lessons learned],
   author: [Lea Verou],
   source-name: [Lea Verou],
@@ -263,34 +224,30 @@ left my thoughts.],
   [Now that optional chaining is supported across the board , I decided to finally refactor Mavo to use it (yes, yes, we do provide a transpiled version as well for older browsers, settle down). This is a moment I have been waiting for a long time, as I think optional chaining is the single most substantial JS syntax improvement since arrow functions and template strings. Yes, I think it’s more significant than async/await, just because of the mere frequency of code it improves. Property access is literally everywhere .],
   [First off, what is optional chaining , in case you haven’t heard of it before?],
   [You know how you can’t just do foo.bar.baz() without checking if foo exists, and then if foo.bar exists, and then if foo.bar.baz exists because you’ll get an error? So you have to do something awkward like:],
-  [if (foo && foo.bar && foo.bar.baz) {
+  [if (foo && foo.bar && foo.bar.baz) \{
  foo.bar.baz();
-}],
+\}],
   [Or even:],
   [foo && foo.bar && foo.bar.baz && foo.bar.baz();],
   [Some even contort object destructuring to help with this . With optional chaining, you can just do this:],
   [foo?.bar?.baz?.()],
   [It supports normal property access, brackets ( foo?.\[bar\] ), and even function invocation ( foo?.() ). Sweet, right??],
   [Yes, mostly. Indeed, there is SO MUCH code that can be simplified with it, it’s incredible. But there are a few caveats.],
-  [id="patterns-to-search-for" tabindex="-1"\> Patterns to search for],
+  [Patterns to search for],
   [Suppose you decided to go ahead and refactor your code as well. What to look for?],
   [There is of course the obvious foo && foo.bar that becomes foo?.bar .],
   [There is also the conditional version of it, that we described in the beginning of this article, which uses if() for some or all of the checks in the chain.],
   [There are also a few more patterns.],
-  [id="ternary" tabindex="-1"\> Ternary],
   [foo? foo.bar : defaultValue],
   [Which can now be written as:],
   [foo?.bar || defaultValue],
   [or, using the other awesome new operator, the nullish coalescing operator :],
   [foo?.bar ?? defaultValue],
-  [id="array-checking" tabindex="-1"\> Array checking],
-  [if (foo.length \> 3) {
- foo\[2\]
-}],
+  [Array checking],
   [which now becomes:],
   [foo?.\[2\]],
   [Note that this is no substitute for a real array check, like the one done by Array.isArray(foo) . Do not go about replacing proper array checking with duck typing because it’s shorter. We stopped doing that over a decade ago .],
-  [id="regex-match" tabindex="-1"\> Regex match],
+  [Regex match],
   [Forget about things like this:],
   [let match = "\#C0FFEE".match(/\#(\[A-Z\]+)/i);
 let hex = match && match\[1\];],
@@ -299,43 +256,42 @@ let hex = match && match\[1\];],
   [Now it’s just:],
   [let hex = "\#C0FFEE".match(/\#(\[A-Z\]+)/i)?.\[1\];],
   [In our case, I was able to even remove two utility functions and replace their invocations with this.],
-  [id="feature-detection" tabindex="-1"\> Feature detection],
+  [Feature detection],
   [In simple cases, feature detection can be replaced by ?. . For example:],
   [if (element.prepend) element.prepend(otherElement);],
   [becomes:],
   [element.prepend?.(otherElement);],
-  [id="don%E2%80%99t-overdo-it" tabindex="-1"\> Don’t overdo it],
+  [Don’t overdo it],
   [While it may be tempting to convert code like this:],
-  [if (foo) {
+  [if (foo) \{
  something(foo.bar);
  somethingElse(foo.baz);
  andOneLastThing(foo.yolo);
-}],
+\}],
   [to this:],
   [something(foo?.bar);
 somethingElse(foo?.baz);
 andOneLastThing(foo?.yolo);],
   [Don’t . You’re essentially having the JS runtime check foo three times instead of one. You may argue these things don’t matter much anymore performance-wise, but it’s the same repetition for the human reading your code: they have to mentally process the check for foo three times instead of one. And if they need to add another statement using property access on foo , they need to add yet another check, instead of just using the conditional that’s already there.],
-  [id="caveats" tabindex="-1"\> Caveats],
-  [id="you-still-need-to-check-before-assignment" tabindex="-1"\> You still need to check before assignment],
+  [You still need to check before assignment],
   [You may be tempted to convert things like:],
-  [if (foo && foo.bar) {
+  [if (foo && foo.bar) \{
  foo.bar.baz = someValue;
-}],
+\}],
   [to:],
   [foo?.bar?.baz = someValue;],
   [Unfortunately, that’s not possible and will error. This was an actual snippet from our codebase:],
-  [if (this.bar && this.bar.edit) {
+  [if (this.bar && this.bar.edit) \{
  this.bar.edit.textContent = this.\_("edit");
-}],
+\}],
   [Which I happily refactored to:],
-  [if (this.bar?.edit) {
+  [if (this.bar?.edit) \{
  this.bar.edit.textContent = this.\_("edit");
-}],
+\}],
   [All good so far, this works nicely. But then I thought, wait a second… do I need the conditional at all? Maybe I can just do this:],
   [this.bar?.edit?.textContent = this.\_("edit");],
   [Nope. Uncaught SyntaxError: Invalid left-hand side in assignment . Can’t do that. You still need the conditional. I literally kept doing this, and I’m glad I had ESLint in my editor to warn me about it without having to actually run the code.],
-  [id="it%E2%80%99s-very-easy-to-put-the-%3F.-in-the-wrong-place-or-forget-some-%3F." tabindex="-1"\> It’s very easy to put the ?. in the wrong place or forget some ?.],
+  [It’s very easy to put the ?. in the wrong place or forget some ?.],
   [Note that if you’re refactoring a long chain with optional chaining, you often need to insert multiple ?. after the first one, for every member access that may or may not exist, otherwise you will get errors once the optional chaining returns undefined.],
   [Or, sometimes you may think you do, because you put the ?. in the wrong place.],
   [Take the following real example. I originally refactored this:],
@@ -347,59 +303,53 @@ andOneLastThing(foo?.yolo);],
   [This works, but is superfluous, as pointed out in the comments. I just needed to move the ?. :],
   [this.children.\[index\]?.element ?? this.marker],
   [Note that as pointed out in the comments be careful about replacing array length checks with optional access to the index. This might be bad for performance, because out-of-bounds access on an array is de-optimizing the code in V8 (as it has to check the prototype chain for such a property too, not only decide that there is no such index in the array).],
-  [id="it-can-introduce-bugs-if-you%E2%80%99re-not-careful" tabindex="-1"\> It can introduce bugs if you’re not careful],
+  [It can introduce bugs if you’re not careful],
   [If, like me, you go on a refactoring spree, it’s easy after a certain point to just introduce optional chaining in places where it actually ends up changing what your code does and introducing subtle bugs.],
-  [id="null-vs-undefined" tabindex="-1"\> null vs undefined],
+  [null vs undefined],
   [Possibly the most common pattern is replacing foo && foo.bar with foo?.bar . While in most cases these work equivalently, this is not true for every case. When foo is null , the former returns null , whereas the latter returns undefined . This can cause bugs to creep up in cases where the distinction matters and is probably the most common way to introduce bugs with this type of refactoring.],
-  [id="equality-checks" tabindex="-1"\> Equality checks],
+  [Equality checks],
   [Be careful about converting code like this:],
-  [if (foo && bar && foo.prop1 === bar.prop2) { /\* ... \*\/ }],
+  [if (foo && bar && foo.prop1 === bar.prop2) \{ /\* ... \*\/ \}],
   [to code like this:],
-  [if (foo?.prop1 === bar?.prop2) { /\* ... \*\/ }],
+  [if (foo?.prop1 === bar?.prop2) \{ /\* ... \*\/ \}],
   [In the first case, the condition will not be true, unless both foo and bar are truthy. However, in the second case, if both foo and bar are nullish, the conditional will be true, because both operands will return undefined !],
   [The same bug can creep in even if the second operand doesn’t include any optional chaining, as long as it could be undefined you can get unintended matches.],
-  [id="operator-precedence-slips" tabindex="-1"\> Operator precedence slips],
+  [Operator precedence slips],
   [One thing to look out for is that optional chaining has higher precedence than && . This becomes particularly significant when you replace an expression using && that also involves equality checks, since the (in)equality operators are sandwiched between ?. and && , having lower precedence than the former and higher than the latter.],
-  [if (foo && foo.bar === baz) { /\* ... \*\/ }],
+  [if (foo && foo.bar === baz) \{ /\* ... \*\/ \}],
   [What is compared with baz here? foo.bar or foo && foo.bar ? Since && has lower precedence than === , it’s as if we had written:],
-  [if (foo && (foo.bar === baz)) { /\* ... \*\/ }],
+  [if (foo && (foo.bar === baz)) \{ /\* ... \*\/ \}],
   [Note that the conditional cannot ever be executed if foo is falsy. However, once we refactor it to use optional chaining, it is now as if we were comparing ( foo && foo.bar ) to baz :],
-  [if (foo?.bar === baz) { /\* ... \*\/ }],
+  [if (foo?.bar === baz) \{ /\* ... \*\/ \}],
   [An obvious case where the different semantics affect execution is when baz is undefined . In that case, we can enter the conditional when foo is nullish, since then optional chaining will return undefined , which is basically the case we described above. In most other cases this doesn’t make a big difference. It can however be pretty bad when instead of an equality operator, you have an inequality operator, which still has the same precedence. Compare this:],
-  [if (foo && foo.bar !== baz) { /\* ... \*\/ }],
+  [if (foo && foo.bar !== baz) \{ /\* ... \*\/ \}],
   [with this:],
-  [if (foo?.bar !== baz) { /\* ... \*\/ }],
+  [if (foo?.bar !== baz) \{ /\* ... \*\/ \}],
   [Now, we are going to enter the conditional every time foo is nullish, as long as baz is not undefined ! The difference is not noticeable in an edge case anymore, but in the average case! 😱],
-  [id="return-statements" tabindex="-1"\> Return statements],
+  [Return statements],
   [Rather obvious after you think about it, but it’s easy to forget return statements in the heat of the moment. You cannot replace things like this:],
-  [if (foo && foo.bar) {
+  [if (foo && foo.bar) \{
  return foo.bar();
-}],
+\}],
   [with:],
   [return foo?.bar?.();],
   [In the first case, you return conditionally, whereas in the second case you return always. This will not introduce any issues if the conditional is the last statement in your function, but it will change the control flow if it’s not.],
-  [id="sometimes%2C-it-can-fix-bugs-too!" tabindex="-1"\> Sometimes, it can fix bugs too!],
+  [Sometimes, it can fix bugs too!],
   [Take a look at this code I encountered during my refactoring:],
-  [/\*\*
- \* Get the current value of a CSS property on an element
- \*/
-getStyle: (element, property) =\> {
- if (element) {
- var value = getComputedStyle(element).getPropertyValue(property);],
-  [if (value) {
+  [if (value) \{
  return value.trim();
- }
- }
-},],
+ \}
+ \}
+\},],
   [Can you spot the bug? If value is an empty string (and given the context, it could very well be), the function will return undefined , because an empty string is falsy! Rewriting it to use optional chaining fixes this:],
-  [if (element) {
+  [if (element) \{
  var value = getComputedStyle(element).getPropertyValue(property);],
   [return value?.trim();
-}],
+\}],
   [Now, if value is the empty string, it will still return an empty string and it will only return undefined when value is nullish.],
-  [id="finding-usages-becomes-trickier" tabindex="-1"\> Finding usages becomes trickier],
+  [Finding usages becomes trickier],
   [https:\/\/twitter.com/razvancaliman/status/1273638529399230464],
-  [id="bottom-line" tabindex="-1"\> Bottom line],
+  [Bottom line],
   [In the end, this refactor made Mavo about 2KB lighter and saved 37 lines of code. It did however make the transpiled version 79 lines and 9KB (!) heavier.],
   [Here is the relevant commit , for your perusal. I tried my best to exercise restraint and not introduce any unrelated refactoring in this commit, so that the diff is chock-full of optional chaining examples. It has 104 additions and 141 deletions, so I’d wager it has about 100 examples of optional chaining in practice. Hope it’s helpful!],
 ),
@@ -409,10 +359,8 @@ getStyle: (element, property) =\> {
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [First 6 Months at Blinkit: Drishti Makhija],
   author: [Jacob],
   source-name: [Grofers \/ Blinkit Lambda],
@@ -442,12 +390,10 @@ getStyle: (element, property) =\> {
   debug-mode: false,
 )
 
-  #pull-quote([We approached these initiatives with an experimental perspective, so if we fail, we fail soon–as opposed to waiting months for the complete feature to roll out.], [Jacob])
+#pull-quote([We approached these initiatives with an experimental perspective, so if we fail, we fail soon–as opposed to waiting months for the complete feature to roll out.], [Jacob])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Guide to Strings in Python],
   author: [Dimitrije Stamenic],
   source-name: [Stack Abuse],
@@ -463,9 +409,7 @@ getStyle: (element, property) =\> {
   [As you dive deeper into Python, you'll encounter more advanced string techniques. These include formatting strings for output, working with substrings , and handling special characters. Python's string formatting capabilities, especially with the introduction of f-Strings in Python 3.6, allow for cleaner and more readable code. Substring operations, including slicing and finding, are essential for text analysis and manipulation.],
   [Moreover, strings play nicely with other data types in Python, such as lists. You can convert a string into a list of characters, split a string based on a specific delimiter, or join a collection of strings into a single string. These operations are particularly useful when dealing with data input and output or when parsing text files.],
   [In this article, we'll explore these aspects of strings in Python, providing practical examples to illustrate how to effectively work with strings. By the end, you'll have a solid foundation in string manipulation, setting you up for more advanced Python programming tasks.],
-  [id="basicstringoperators"\>Basic String Operators],
   [Strings are one of the most commonly used data types in Python, employed in diverse scenarios from user input processing to data manipulation. This section will explore the fundamental operations you can perform with strings in Python.],
-  [id="creatingstrings"\>Creating Strings],
   [In Python, you can create strings by enclosing a sequence of characters within single, double, or even triple quotes (for multiline strings). For example, simple\_string = 'Hello' and another\_string = "World" are both valid string declarations. Triple quotes, using ''' or """ , allow strings to span multiple lines, which is particularly useful for complex strings or documentation.],
   [The simplest way to create a string in Python is by enclosing characters in single ( ' ) or double ( " ) quotes .],
   [Note: Python treats single and double quotes identically],
@@ -485,11 +429,10 @@ escaped\_string = "He said, \\"Python is amazing!\\"\\nAnd I couldn't agree more
   [Printing the escaped\_string will give you:],
   [He said, "Python is amazing!"
 And I couldn't agree more.],
-  [id="accessingandindexingstrings"\>Accessing and Indexing Strings],
+  [Accessing and Indexing Strings],
   [Once a string is created, Python allows you to access its individual characters using indexing. Each character in a string has an index, starting from 0 for the first character.],
   [For instance, in the string s = "Python" , the character at index 0 is 'P'. Python also supports negative indexing, where -1 refers to the last character, -2 to the second-last, and so on. This feature makes it easy to access the string from the end.],
   [Note: Python does not have a character data type. Instead, a single character is simply a string with a length of one.],
-  [id="accessingcharactersusingindexing"\>Accessing Characters Using Indexing],
   [As we stated above, the indexing starts at 0 for the first character. You can access individual characters in a string by using square brackets \[\] along with the index:],
   [\# Example string 
 string = "Stack Abuse"],
@@ -497,13 +440,12 @@ string = "Stack Abuse"],
 first\_char = string\[ 0 \] \# 'S'],
   [\# Accessing the third character 
 third\_char = string\[ 2 \] \# 't'],
-  [id="negativeindexing"\>Negative Indexing],
   [Python also supports negative indexing. In this scheme, -1 refers to the last character, -2 to the second last, and so on. This is useful for accessing characters from the end of the string:],
   [\# Accessing the last character 
 last\_char = string\[- 1 \] \# 'e'],
   [\# Accessing the second last character 
 second\_last\_char = string\[- 2 \] \# 's'],
-  [id="stringconcatenationandreplication"\>String Concatenation and Replication],
+  [String Concatenation and Replication],
   [Concatenation is the process of joining two or more strings together . In Python, this is most commonly done using the + operator. When you use + between strings, Python returns a new string that is a combination of the operands:],
   [\# Example of string concatenation 
 first\_name = "John" 
@@ -516,7 +458,7 @@ words = \[ "Hello" , "world" \]
 sentence = " " .join(words) \# 'Hello world'],
   [\# Using an f-string 
 age = 30 
-greeting = f"I am {age} years old." \# 'I am 30 years old.'],
+greeting = f"I am \{age\} years old." \# 'I am 30 years old.'],
   [Note: We'll discuss these methods in more details later in this article.],
   [Replication , on the other hand, is another useful operation in Python. It allows you to repeat a string a specified number of times . This is achieved using the \* operator. The operand on the left is the string to be repeated, and the operand on the right is the number of times it should be repeated:],
   [\# Replicating a string 
@@ -525,7 +467,6 @@ repeated\_laugh = laugh \* 3 \# 'hahaha'],
   [String replication is particularly useful when you need to create a string with a repeating pattern. It’s a concise way to produce long strings without having to type them out manually.],
   [Note: While concatenating or replicating strings with operators like + and \* is convenient for small-scale operations, it’s important to be aware of performance implications .],
   [For concatenating a large number of strings , using join() is generally more efficient as it allocates memory for the new string only once.],
-  [id="slicingstrings"\>Slicing Strings],
   [Slicing is a powerful feature in Python that allows you to extract a part of a string, enabling you to obtain substrings. This section will guide you through the basics of slicing strings in Python, including its syntax and some practical examples.],
   [The slicing syntax in Python can be summarized as \[start:stop:step\] , where:],
   [start is the index where the slice begins (inclusive).],
@@ -550,20 +491,19 @@ slice\_from\_end = text\[- 6 :\] \# 'Abuse!'],
 every\_second = text\[:: 2 \] \# 'Hlo tc bs!'],
   [\# Reversing a string using slicing 
 reversed\_text = text\[::- 1 \] \# '!esubA kcatS ,olleH'],
-  [id="stringimmutability"\>String Immutability],
   [String immutability is a fundamental concept in Python, one that has significant implications for how strings are handled and manipulated within the language.],
-  [id="whatisstringimmutability"\>What is String Immutability?],
+  [What is String Immutability?],
   [In Python, strings are immutable, meaning once a string is created, it cannot be altered. This might seem counterintuitive, especially for those coming from languages where string modification is common. In Python, when we think we are modifying a string, what we are actually doing is creating a new string.],
   [For example, consider the following scenario:],
   [s = "Hello" 
 s\[ 0 \] = "Y"],
   [Attempting to execute this code will result in a TypeError because it tries to change an element of the string, which is not allowed due to immutability.],
-  [id="whyarestringsimmutable"\>Why are Strings Immutable?],
+  [Why are Strings Immutable?],
   [The immutability of strings in Python offers several advantages:],
   [Security: Since strings cannot be changed, they are safe from being altered through unintended side-effects , which is crucial when strings are used to handle things like database queries or system commands.],
   [Performance: Immutability allows Python to make optimizations under-the-hood . Since a string cannot change, Python can allocate memory more efficiently and perform optimizations related to memory management.],
   [Hashing: Strings are often used as keys in dictionaries. Immutability makes strings hashable, maintaining the integrity of the hash value. If strings were mutable, their hash value could change, leading to incorrect behavior in data structures that rely on hashing, like dictionaries and sets.],
-  [id="howtomodifyastringinpython"\>How to "Modify" a String in Python?],
+  [How to "Modify" a String in Python?],
   [Since strings cannot be altered in place, "modifying" a string usually involves creating a new string that reflects the desired changes . Here are common ways to achieve this:],
   [Concatenation: Using + to create a new string with additional characters.],
   [Slicing and Rebuilding: Extract parts of the original string and combine them with other strings.],
@@ -572,9 +512,8 @@ s\[ 0 \] = "Y"],
   [s = "Hello" 
 new\_s = s\[ 1 :\] \# new\_s is now 'ello'],
   [Here, the new\_s is a new string created from a substring of s , whilst he original string s remains unchanged.],
-  [id="commonstringmethods"\>Common String Methods],
   [Python's string type is equipped with a multitude of useful methods that make string manipulation effortless and intuitive. Being familiar with these methods is essential for efficient and elegant string handling. Let's take a look at a comprehensive overview of common string methods in Python:],
-  [id="upperandlowermethods"\> upper() and lower() Methods],
+  [upper() and lower() Methods],
   [These methods are used to convert all lowercase characters in a string to uppercase or lowercase, respectively.],
   [Note: These method are particularly useful in scenarios where case uniformity is required, such as in case-insensitive user inputs or data normalization processes or for comparison purposes, such as in search functionalities where the case of the input should not affect the outcome.],
   [For example, say you need to convert the user's input to upper case:],
@@ -587,7 +526,7 @@ uppercase\_input = user\_input.upper()
 lowercase\_input = text.lower()
  print (lowercase\_input) \# Output: hello!],
   [Here, lower() converts all uppercase letters in text to lowercase, resulting in hello! .],
-  [id="capitalizeandtitlemethods"\> capitalize() and title() Methods],
+  [capitalize() and title() Methods],
   [The capitalize() method is used to convert the first character of a string to uppercase while making all other characters in the string lowercase. This method is particularly useful in standardizing the format of user-generated input, such as names or titles, ensuring that they follow a consistent capitalization pattern:],
   [text = "python programming" 
 capitalized\_text = text.capitalize()
@@ -600,7 +539,7 @@ title\_text = text.title()
   [Here, title() is used to convert the first character of each word in text to uppercase, resulting in Python Programming Basics .],
   [Note: The title() method capitalizes the first letter of all words in a sentence. Trying to capitalize the sentence "he's the best programmer" will result in "He'S The Best Programmer", which is probably not what you'd want.],
   [To properly convert a sentence to some standardized title case, you'd need to create a custom function!],
-  [id="striprstripandlstripmethods"\> strip() , rstrip() , and lstrip() Methods],
+  [strip() , rstrip() , and lstrip() Methods],
   [The strip() method is used to remove leading and trailing whitespaces from a string. This includes spaces, tabs, newlines, or any combination thereof:],
   [text = " Hello World! " 
 stripped\_text = text.strip()
@@ -615,7 +554,7 @@ rstrip\_text = text.rstrip()
 lstrip\_text = text.lstrip()
  print (lstrip\_text) \# Output: Hello World!],
   [All-in-all, strip() , rstrip() , and lstrip() are powerful methods for whitespace management in Python strings. Their ability to clean and format strings by removing unwanted spaces makes them indispensable in a wide range of applications, from data cleaning to user interface design.],
-  [id="thesplitmethod"\>The split() Method],
+  [The split() Method],
   [The split() method breaks up a string at each occurrence of a specified separator and returns a list of the substrings . The separator can be any string, and if it's not specified, the method defaults to splitting at whitespace.],
   [First of all, let's take a look at its syntax:],
   [string.split(separator= None , maxsplit=- 1 )],
@@ -629,13 +568,13 @@ split\_text = text.split()
 split\_text = text.split( ',' )
  print (split\_text) \# Output: \['Python', 'Java', 'C++'\]],
   [Here, split() uses a comma , as the separator to split the string into different programming languages.],
-  [id="controllingthenumberofsplits"\>Controlling the Number of Splits],
+  [Controlling the Number of Splits],
   [The maxsplit parameter allows you to control the number of splits performed on the string. This can be useful when you only need to split a part of the string and want to keep the rest intact:],
   [text = "one two three four" 
 split\_text = text.split( ' ' , maxsplit= 2 )
  print (split\_text) \# Output: \['one', 'two', 'three four'\]],
   [In this case, split() only performs two splits at the first two spaces, resulting in a list with three elements.],
-  [id="thejoinmethod"\>The join() Method],
+  [The join() Method],
   [So far, we've seen a lot of Python's extensive string manipulation capabilities. Among these, the join() method stands out as a particularly powerful tool for constructing strings from iterables like lists or tuples .],
   [The join() method is the inverse of the split() method , enabling the concatenation of a sequence of strings into a single string, with a specified separator.],
   [The join() method takes an iterable (like a list or tuple) as a parameter and concatenates its elements into a single string, separated by the string on which join() is called. It has a fairly simple syntax:],
@@ -651,9 +590,9 @@ text = ' ' .join(words)
 csv\_line = ',' .join(languages)
  print (csv\_line) \# Output: Python,Java,C++],
   [Here, join() is used with a comma , to create a string that resembles a line in a CSV file.],
-  [id="efficiencyofthejoin"\>Efficiency of the join()],
+  [Efficiency of the join()],
   [One of the key advantages of join() is its efficiency, especially when compared to string concatenation using the + operator. When dealing with large numbers of strings, join() is significantly more performant and is the preferred method in Python for concatenating multiple strings.],
-  [id="thereplacemethod"\>The replace() Method],
+  [The replace() Method],
   [The replace() method replaces occurrences of a specified substring ( old ) with another substring ( new ). It can be used to replace all occurrences or a specified number of occurrences, making it highly adaptable for various text manipulation needs.],
   [Take a look at its syntax:],
   [string.replace(old, new\[, count\])],
@@ -669,11 +608,11 @@ replaced\_text = text.replace( "World" , "Stack Abuse" )
 replaced\_text = text.replace( "and" , "&" , 2 )
  print (replaced\_text) \# Output: cats & dogs & birds and fish],
   [Here, replace() is used to replace the first two occurrences of "and" with "&" , leaving the third occurrence unchanged.],
-  [id="findandrfindmethods"\> find() and rfind() Methods],
+  [find() and rfind() Methods],
   [These methods return the lowest index in the string where the substring sub is found. rfind() searches for the substring from the end of the string.],
   [Note: These methods are particularly useful when the presence of the substring is uncertain, and you wish to avoid handling exceptions . Also, the return value of -1 can be used in conditional statements to execute different code paths based on the presence or absence of a substring.],
   [Python's string manipulation suite includes the find() and rfind() methods, which are crucial for locating substrings within a string. Similar to index() and rindex() , these methods search for a substring but differ in their response when the substring is not found. Understanding these methods is essential for tasks like text analysis, data extraction, and general string processing.],
-  [id="thefindmethod"\>The find() Method],
+  [The find() Method],
   [The find() method returns the lowest index of the substring if it is found in the string . Unlike index() , it returns -1 if the substring is not found, making it a safer option for situations where the substring might not be present.],
   [It follows a simple syntax with one mandatory and two optional parameters:],
   [string.find(sub\[, start\[, end\]\])],
@@ -690,7 +629,7 @@ replaced\_text = text.replace( "and" , "&" , 2 )
 rfind\_position = text.rfind( "is" )
  print (rfind\_position) \# Output: 34],
   [Here, rfind() locates the last occurrence of "is" in text and returns its starting index, which is 34 .],
-  [id="indexandrindexmethods"\> index() and rindex() Methods],
+  [index() and rindex() Methods],
   [The index() method is used to find the first occurrence of a specified value within a string. It's a straightforward way to locate a substring in a larger string. It has pretty much the same syntax as the find() method we discussed earlier:],
   [string.index(sub\[, start\[, end\]\])],
   [The sub ids the substring to search for in the string. The start is an optional parameter that represents the starting index within the string where the search begins and the end is another optional parameter representing the ending index within the string where the search ends.],
@@ -707,7 +646,7 @@ result = text.index( "is" )
  print ( "Last occurrence of 'is' is at index:" , result)],
   [This will give you:],
   [Last occurrence of 'is' is at index: 34],
-  [id="startswithandendswithmethods"\> startswith() and endswith() Methods],
+  [startswith() and endswith() Methods],
   [Return True if the string starts or ends with the specified prefix or suffix, respectively.],
   [The startswith() method is used to check if a string starts with a specified substring. It's a straightforward and efficient way to perform this check. As usual, let's first check out the syntax before we illustrate the usage of the method in a practical example:],
   [str .startswith(prefix\[, start\[, end\]\])],
@@ -728,7 +667,7 @@ result = text.index( "is" )
   [The file is a PDF document.],
   [Note: Here, it's important to note that both methods are case-sensitive . For case-insensitive checks, the string should first be converted to a common case (either lower or upper) using lower() or upper() methods.],
   [As you saw in the previous examples, both startswith() and endswith() are commonly used in conditional statements to guide the flow of a program based on the presence or absence of specific prefixes or suffixes in strings.],
-  [id="thecountmethod"\>The count() Method],
+  [The count() Method],
   [The count() method is used to count the number of occurrences of a substring in a given string. The syntax of the count() method is:],
   [str.count(sub\[, start\[, end\]\])],
   [Where:],
@@ -749,7 +688,7 @@ count = text.count( "Python" )
 count = quote.count( "be" , 10 , 30 )
  print ( "'be' appears" , count, "times between index 10 and 30" )],
   [Note: The method counts non-overlapping occurrences. This means that in the string "ababa", the count for the substring "aba" will be 1, not 2.],
-  [id="isalphaisdigitisnumericandisalnummethods"\> isalpha() , isdigit() , isnumeric() , and isalnum() Methods],
+  [isalpha() , isdigit() , isnumeric() , and isalnum() Methods],
   [Python string methods offer a variety of ways to inspect and categorize string content. Among these, the isalpha() , isdigit() , isnumeric() , and isalnum() methods are commonly used for checking the character composition of strings.],
   [First of all, let's discuss the isalpha() method . You can use it to check whether all characters in a string are alphabetic (i.e., letters of the alphabet):],
   [word = "Python" 
@@ -769,7 +708,7 @@ count = quote.count( "be" , 10 , 30 )
  if string.isalnum():
  print ( "The string is alphanumeric." )],
   [Note: The isalnum() method does not consider special characters or whitespaces.],
-  [id="theisspacemethod"\>The isspace() Method],
+  [The isspace() Method],
   [The isspace() method is designed to check whether a string consists only of whitespace characters. It returns True if all characters in the string are whitespace characters and there is at least one character. If the string is empty or contains any non-whitespace characters, it returns False .],
   [Note: Whitespace characters include spaces ( ), tabs ( \\t ), newlines ( \\n ), and similar space-like characters that are often used to format text.],
   [The syntax of the isspace() method is pretty straightforward:],
@@ -780,20 +719,20 @@ count = quote.count( "be" , 10 , 30 )
  print ( "The string contains only whitespace characters." )],
   [When validating user inputs in forms or command-line interfaces, checking for strings that contain only whitespace helps in ensuring meaningful input is provided.],
   [Remember: The isspace() returns False for empty strings. If your application requires checking for both empty strings and strings with only whitespace, you'll need to combine checks.],
-  [id="theformatmethod"\>The format() Method],
+  [The format() Method],
   [The \_format() method, introduced in Python 3, provides a versatile approach to string formatting. It allows for the insertion of variables into string placeholders, offering more readability and flexibility compared to the older % formatting. In this section, we'll take a brief overview of the method, and we'll discuss it in more details in later sections.],
-  [The format() method works by replacing curly-brace {} placeholders within the string with parameters provided to the method:],
-  ["string with {} placeholders" . format (values)],
+  [The format() method works by replacing curly-brace \{\} placeholders within the string with parameters provided to the method:],
+  ["string with \{\} placeholders" . format (values)],
   [For example, assume you need to insert username and age into a preformatted string. The format() method comes in handy:],
   [name = "Alice" 
 age = 30 
-greeting = "Hello, my name is {} and I am {} years old." . format (name, age)
+greeting = "Hello, my name is \{\} and I am \{\} years old." . format (name, age)
  print (greeting)],
   [This will give you:],
   [Hello, my name is Alice and I am 30 years old.],
   [The format() method supports a variety of advanced features, such as named parameters, formatting numbers, aligning text, and so on, but we'll discuss them later in the "" section.],
   [The format() method is ideal for creating strings with dynamic content, such as user input, results from computations, or data from databases. It can also help you internationalize your application since it separates the template from the data.],
-  [id="centerljustandrjustmethods"\> center() , ljust() , and rjust() Methods],
+  [center() , ljust() , and rjust() Methods],
   [Python's string methods include various functions for aligning text. The center() , ljust() , and rjust() methods are particularly useful for formatting strings in a fixed width field. These methods are commonly used in creating text-based user interfaces, reports, and for ensuring uniformity in the visual presentation of strings.],
   [The center() method centers a string in a field of a specified width:],
   [str .center(width\[, fillchar\])],
@@ -822,7 +761,7 @@ right\_aligned = amount.rjust( 10 , '0' )
   [0000000100],
   [For the rjust() .],
   [Using these methods can help you align text in columns when displaying data in tabular format. Also, it is pretty useful in text-based user interfaces, these methods help maintain a structured and visually appealing layout.],
-  [id="thezfillmethod"\>The zfill() Method],
+  [The zfill() Method],
   [The zfill() method adds zeros ( 0 ) at the beginning of the string, until it reaches the specified length. If the original string is already equal to or longer than the specified length, zfill() returns the original string.],
   [The basic syntax of the \_zfill() method is:],
   [str .zfill(width)],
@@ -835,7 +774,7 @@ formatted\_number = number.zfill( 5 )
   [This will output 00050 , padding the original string "50" with three zeros to achieve a length of 5.],
   [The method can also be used on non-numeric strings, though its primary use case is with numbers. In that case, convert them to strings before applying \_zfill() . For example, use str(42).zfill(5) .],
   [Note: If the string starts with a sign prefix ( + or - ), the zeros are added after the sign. For example, "-42".zfill(5) results in "-0042" .],
-  [id="theswapcasemethod"\>The swapcase() Method],
+  [The swapcase() Method],
   [The swapcase() method iterates through each character in the string, changing each uppercase character to lowercase and each lowercase character to uppercase .],
   [It leaves characters that are neither (like digits or symbols) unchanged.],
   [Take a quick look at an example to demonstrate the swapcase() method:],
@@ -844,7 +783,7 @@ swapped\_text = text.swapcase()
  print (swapped\_text)],
   [This will output "pYTHON IS fun!" , with all uppercase letters converted to lowercase and vice versa.],
   [Warning: In some languages, the concept of case may not apply as it does in English, or the rules might be different. Be cautious when using \_swapcase() with internationalized text.],
-  [id="thepartitionandrpartitionmethods"\>The partition() and rpartition() Methods],
+  [The partition() and rpartition() Methods],
   [The partition() and rpartition() methods split a string into three parts: the part before the separator, the separator itself, and the part after the separator. The partition() searches a string from the beginning, and the rpartition() starts searching from the end of the string:],
   [\# Syntax of the partition() and rpartition() methods 
  str .partition(separator)
@@ -862,7 +801,7 @@ swapped\_text = text.swapcase()
  print (r\_part)],
   [This will output ('Python: Programming', ':', 'Language') .],
   [No Separator Found : If the separator is not found, partition() returns the original string as the first part of the tuple, while rpartition() returns it as the last part.],
-  [id="theencodemethod"\>The encode() Method],
+  [The encode() Method],
   [Dealing with different character encodings is a common requirement, especially when working with text data from various sources or interacting with external systems. The encode() method is designed to help you out in these scenarios. It converts a string into a bytes object using a specified encoding, such as UTF-8, which is essential for data storage, transmission, and processing in different formats.],
   [The encode() method encodes the string using the specified encoding scheme. The most common encoding is UTF-8, but Python supports many others, like ASCII, Latin-1, and so on.],
   [The encode() simply accepts two parameters, encoding and errors :],
@@ -875,13 +814,12 @@ encoded\_text = text.encode() \# Default is UTF-8
  print (encoded\_text)],
   [This will output something like b'Python Programming' , representing the byte representation of the string.],
   [Note: In Python, byte strings (b-strings) are sequences of bytes. Unlike regular strings, which are used to represent text and consist of characters, byte strings are raw data represented in bytes.],
-  [id="errorhandling"\>Error Handling],
   [The errors parameter defines how to handle errors during encoding:],
   ['strict' : Raises a UnicodeEncodeError on failure (default behavior).],
   ['ignore' : Ignores characters that cannot be encoded.],
   ['replace' : Replaces unencodable characters with a replacement marker, such as ? .],
   [Choose an error handling strategy that suits your application. In most cases, 'strict' is preferable to avoid data loss or corruption.],
-  [id="theexpandtabsmethod"\>The expandtabs() Method],
+  [The expandtabs() Method],
   [This method is often overlooked but can be incredibly useful when dealing with strings containing tab characters ( \\t ).],
   [The expandtabs() method is used to replace tab characters ( \\t ) in a string with the appropriate number of spaces. This is especially useful in formatting output in a readable way, particularly when dealing with strings that come from or are intended for output in a console or a text file.],
   [Let's take a quick look at it's syntaxt:],
@@ -891,7 +829,7 @@ encoded\_text = text.encode() \# Default is UTF-8
   [text = "Name\\tAge\\tCity" 
  print (text.expandtabs( 4 ))],
   [This will give you:],
-  [id="islowerisupperandistitlemethods"\> islower() , isupper() , and istitle() Methods],
+  [islower() , isupper() , and istitle() Methods],
   [These methods check if the string is in lowercase, uppercase, or title case, respectively.],
   [islower() is a string method used to check if all characters in the string are lowercase. It returns True if all characters are lowercase and there is at least one cased character, otherwise, it returns False :],
   [a = "hello world" 
@@ -914,7 +852,7 @@ c = "HELLO WORLD"],
   [print (a.istitle()) \# Output: True 
  print (b.istitle()) \# Output: False 
  print (c.istitle()) \# Output: False],
-  [id="thecasefoldmethod"\>The casefold() Method],
+  [The casefold() Method],
   [The casefold() method is used for case-insensitive string matching. It is similar to the lower() method but more aggressive. The casefold() method removes all case distinctions present in a string. It is used for caseless matching, meaning it effectively ignores cases when comparing two strings.],
   [A classic example where casefold() matches two strings while lower() doesn't involves characters from languages that have more complex case rules than English. One such scenario is with the German letter "ß", which is a lowercase letter. Its uppercase equivalent is "SS".],
   [To illustrate this, consider two strings, one containing "ß" and the other containing "SS":],
@@ -928,15 +866,14 @@ str2 = "STRASSE"],
   [\# Using \`casefold()\`: 
  print (str1.casefold() == str2.casefold()) \# Output: True],
   [Here, casefold() converts "ß" in str1 to "ss", making it "strasse" . This matches with str2 after casefold() , which also results in "strasse" . Therefore, the comparison yields True .],
-  [id="formattingstringsinpython"\>Formatting Strings in Python],
+  [Formatting Strings in Python],
   [String formatting is an essential aspect of programming in Python, offering a powerful way to create and manipulate strings dynamically. It's a technique used to construct strings by dynamically inserting variables or expressions into placeholders within a string template.],
   [String formatting in Python has evolved significantly over time, providing developers with more intuitive and efficient ways to handle strings. The oldest method of string formatting in Python, borrowed from C is the % Operator (printf-style String Formatting). It uses the % operator to replace placeholders with values. While this method is still in use, it is less preferred due to its verbosity and complexity in handling complex formats.],
-  [The first advancement was introduced in Python 2.6 in the form of str.format() method . This method offered a more powerful and flexible way of formatting strings. It uses curly braces {} as placeholders which can include detailed formatting instructions. It also introduced the support for positional and keyword arguments , making the string formatting more readable and maintainable.],
+  [The first advancement was introduced in Python 2.6 in the form of str.format() method . This method offered a more powerful and flexible way of formatting strings. It uses curly braces \{\} as placeholders which can include detailed formatting instructions. It also introduced the support for positional and keyword arguments , making the string formatting more readable and maintainable.],
   [Finally, Python 3.6 introduced a more concise and readable way to format strings in the form of formatted string literals , or f-strings in short. They allow for inline expressions , which are evaluated at runtime.],
   [With f-strings, the syntax is more straightforward, and the code is generally faster than the other methods.],
-  [id="basicstringformattingtechniques"\>Basic String Formatting Techniques],
   [Now that you understand the evolution of the string formatting techniques in Python, let's dive deeper into each of them. In this section, we'll quickly go over the % operator and the str.format() method, and, in the end, we'll dive into the f-strings.],
-  [id="theoperator"\>The % Operator],
+  [The % Operator],
   [The % operator, often referred to as the printf-style string formatting , is one of the oldest string formatting techniques in Python. It's inspired by the C programming language:],
   [name = "John" 
 age = 36 
@@ -945,79 +882,72 @@ age = 36
   [Name: John, Age: 36],
   [As in C, %s is used for strings, %d or %i for integers, and %f for floating-point numbers.],
   [This string formatting method can be less intuitive and harder to read, it's also less flexible compared to newer methods.],
-  [id="thestrformatmethod"\>The str.format() Method],
-  [As we said in the previous sections, at its core, str.format() is designed to inject values into string placeholders, defined by curly braces {} . The method takes any number of parameters and positions them into the placeholders in the order they are given. Here's a basic example:],
+  [The str.format() Method],
+  [As we said in the previous sections, at its core, str.format() is designed to inject values into string placeholders, defined by curly braces \{\} . The method takes any number of parameters and positions them into the placeholders in the order they are given. Here's a basic example:],
   [name = "Bob" 
 age = 25 
- print ( "Name: {}, Age: {}" . format (name, age))],
+ print ( "Name: \{\}, Age: \{\}" . format (name, age))],
   [This code will output: Name: Bob, Age: 25],
   [str.format() becomes more powerful with positional and keyword arguments . Positional arguments are placed in order according to their position (starting from 0, sure thing):],
-  [template = "{1} is a {0}." 
+  [template = "\{1\} is a \{0\}." 
  print (template. format ( "programming language" , "Python" ))],
-  [Since the "Python" is the second argument of the format() method, it replaces the {1} and the first argument replaces the {0} :],
+  [Since the "Python" is the second argument of the format() method, it replaces the \{1\} and the first argument replaces the \{0\} :],
   [Python is a programming language.],
   [Keyword arguments , on the other hand, add a layer of readability by allowing you to assign values to named placeholders:],
-  [template = "{language} is a {description}." 
+  [template = "\{language\} is a \{description\}." 
  print (template. format (language= "Python" , description= "programming language" ))],
   [This will also output: Python is a programming language.],
   [One of the most compelling features of str.format() is its formatting capabilities . You can control number formatting , alignment , width , and more. First, let's format a decimal number so it has only two decimal points:],
   [\# Formatting numbers 
 num = 123.456793 
- print ( "Formatted number: {:.2f}" . format (num))],
+ print ( "Formatted number: \{:.2f\}" . format (num))],
   [Here, the format() formats the number with six decimal places down to two:],
   [\`Formatted number: 123.46],
   [Now, let's take a look at how to align text using the fomrat() method:],
   [\# Aligning text 
 text = "Align me" 
- print ( "Left: {: 10} | Center: {:^10}" . format (text, text, text))],
+ print ( "Left: \{: 10\} | Center: \{:^10\}" . format (text, text, text))],
   [Using the curly braces syntax of the format() method, we aligned text in fields of length 10 . We used : to align right, and :^ to center text:],
   [Left: Align me | Right: Align me | Center: Align me],
   [For more complex formatting needs , str.format() can handle nested fields , object attributes , and even dictionary keys :],
-  [\# Nested fields 
-point = ( 2 , 8 )
- print ( "X: {0\[0\]} | Y: {0\[1\]}" . format (point))
- \# \> Output: 'X: 2 | Y: 8'],
   [\# Object attributes 
  class Dog : 
  breed = "Beagle" 
  name = "Buddy"],
-  [dog = Dog()
- print ( "Meet {0.name}, the {0.breed}." . format (dog))
- \# \> Output: 'Meet Buddy, the Beagle.'],
   [\# Dictionary keys 
-info = { 'name' : 'Alice' , 'age' : 30 }
- print ( "Name: {name} | Age: {age}" . format (\*\*info))
+info = \{ 'name' : 'Alice' , 'age' : 30 \}
+ print ( "Name: \{name\} | Age: \{age\}" . format (\*\*info))
  \# \> Output: 'Name: Alice | Age: 30'],
-  [id="introductiontofstrings"\>Introduction to f-strings],
-  [To create an f-string, prefix your string literal with f or F before the opening quote. This signals Python to parse any {} curly braces and the expressions they contain:],
+  [Introduction to f-strings],
+  [To create an f-string, prefix your string literal with f or F before the opening quote. This signals Python to parse any \{\} curly braces and the expressions they contain:],
   [name = "Charlie" 
-greeting = f"Hello, {name} !" 
+greeting = f"Hello, \{name\} !" 
  print (greeting)],
   [Output: Hello, Charlie!],
   [One of the key strengths of f-strings is their ability to evaluate expressions inline . This can include arithmetic operations, method calls, and more:],
   [age = 25 
-age\_message = f"In 5 years, you will be {age + 5 } years old." 
+age\_message = f"In 5 years, you will be \{age + 5 \} years old." 
  print (age\_message)],
   [Output: In 5 years, you will be 30 years old.],
   [Like str.format() , f-strings provide powerful formatting options . You can format numbers , align text , and control precision all within the curly braces:],
   [price = 49.99 
- print ( f"Price: {price: .2 f} USD" )],
+ print ( f"Price: \{price: .2 f\} USD" )],
   [score = 85.333 
- print ( f"Score: {score: .1 f} %" )],
+ print ( f"Score: \{score: .1 f\} %" )],
   [Output:],
   [Price: 49.99 USD
 Score: 85.3%],
-  [id="advancedstringformattingwithfstrings"\>Advanced String Formatting with f-strings],
+  [Advanced String Formatting with f-strings],
   [In the previous section, we touched on some of these concepts, but, here, we'll dive deeper and explain them in more details.],
-  [id="multilinefstrings"\>Multi-line f-strings],
+  [Multi-line f-strings],
   [A less commonly discussed, but incredibly useful feature of f-strings is their ability to span multiple lines . This capability makes them ideal for constructing longer and more complex strings. Let's dive into how multi-line f-strings work and explore their practical applications.],
   [A multi-line f-string allows you to spread a string over several lines, maintaining readability and organization in your code. Here’s how you can create a multi-line f-string:],
   [name = "Brian" 
 profession = "Developer" 
 location = "New York"],
-  [bio = ( f"Name: {name} \\n" 
- f"Profession: {profession} \\n" 
- f"Location: {location} " )],
+  [bio = ( f"Name: \{name\} \\n" 
+ f"Profession: \{profession\} \\n" 
+ f"Location: \{location\} " )],
   [print (bio)],
   [Running this will result in:],
   [Name: Brian
@@ -1025,10 +955,10 @@ Profession: Developer
 Location: New York],
   [Why Use Multi-line f-strings? Multi-line f-strings are particularly useful in scenarios where you need to format long strings or when dealing with strings that naturally span multiple lines, like addresses, detailed reports, or complex messages. They help in keeping your code clean and readable .],
   [Alternatively, you could use string concatenation to create multiline strings , but the advantage of multi-line f-strings is that they are more efficient and readable . Each line in a multi-line f-string is a part of the same string literal, whereas concatenation involves creating multiple string objects.],
-  [id="indentationandwhitespace"\>Indentation and Whitespace],
+  [Indentation and Whitespace],
   [In multi-line f-strings, you need to be mindful of indentation and whitespace as they are preserved in the output:],
   [message = (
- f"Dear {name} ,\\n" 
+ f"Dear \{name\} ,\\n" 
  f" Thank you for your interest in our product. " 
  f"We look forward to serving you.\\n" 
  f"Best Regards,\\n" 
@@ -1040,87 +970,67 @@ Location: New York],
  Thank you for your interest in our product. We look forward to serving you.
 Best Regards,
  The Team],
-  [id="complexexpressionsinsidefstrings"\>Complex Expressions Inside f-strings],
+  [Complex Expressions Inside f-strings],
   [Python's f-strings not only simplify the task of string formatting but also introduce an elegant way to embed complex expressions directly within string literals. This powerful feature enhances code readability and efficiency, particularly when dealing with intricate operations.],
-  [id="embeddingexpressions"\>Embedding Expressions],
   [An f-string can incorporate any valid Python expression within its curly braces . This includes arithmetic operations, method calls, and more:],
   [import math],
   [radius = 7 
-area = f"The area of the circle is: {math.pi \* radius \*\* 2 : .2 f} " 
+area = f"The area of the circle is: \{math.pi \* radius \*\* 2 : .2 f\} " 
  print (area)],
   [This will calculate you the area of the circle of radius 7:],
   [The area of the circle is: 153.94],
-  [id="callingfunctionsandmethods"\>Calling Functions and Methods],
+  [Calling Functions and Methods],
   [F-strings become particularly powerful when you embed function calls directly into them. This can streamline your code and enhance readability:],
   [def get\_temperature (): 
  return 22.5],
-  [weather\_report = f"The current temperature is {get\_temperature()} °C." 
+  [weather\_report = f"The current temperature is \{get\_temperature()\} °C." 
  print (weather\_report)],
   [This will give you:],
   [The current temperature is 22.5°C.],
-  [id="inlineconditionallogic"\>Inline Conditional Logic],
   [You can even use conditional expressions within f-strings , allowing for dynamic string content based on certain conditions:],
-  [score = 85 
-grade = f"You { 'passed' if score \>= 60 else 'failed' } the exam." 
- print (grade)],
   [Since the score is greater than 60 , this will output: You passed the exam.],
-  [id="listcomprehensions"\>List Comprehensions],
   [F-strings can also incorporate list comprehensions, making it possible to generate dynamic lists and include them in your strings:],
   [numbers = \[ 1 , 2 , 3 , 4 , 5 \]
-squared = f"Squared numbers: {\[x\*\* 2 for x in numbers\]} " 
+squared = f"Squared numbers: \{\[x\*\* 2 for x in numbers\]\} " 
  print (squared)],
   [This will yield:],
   [Squared numbers: \[1, 4, 9, 16, 25\]],
-  [id="nestedfstrings"\>Nested f-strings],
+  [Nested f-strings],
   [For more advanced formatting needs, you can nest f-strings within each other . This is particularly useful when you need to format a part of the string differently:],
   [name = "Bob" 
 age = 30 
-profile = f"Name: {name} , Age: { f' {age} years old' if age else 'Age not provided' } " 
+profile = f"Name: \{name\} , Age: \{ f' \{age\} years old' if age else 'Age not provided' \} " 
  print (profile)],
   [Here. we independently formatted how the Age section will be displayed: Name: Bob, Age: 30 years old],
-  [id="handlingexceptions"\>Handling Exceptions],
   [You can even use f-strings to handle exceptions in a concise manner , though it should be done cautiously to maintain code clarity:],
   [x = 5 
 y = 0 
-result = f"Division result: {x \/ y if y != 0 else 'Error: Division by zero' } " 
+result = f"Division result: \{x \/ y if y != 0 else 'Error: Division by zero' \} " 
  print (result)
  \# Output: 'Division result: Error: Division by zero'],
-  [id="conditionallogicandternaryoperationsinpythonfstrings"\>Conditional Logic and Ternary Operations in Python f-strings],
+  [Conditional Logic and Ternary Operations in Python f-strings],
   [We briefly touched on this topic in the previous section, but, here, we'll get into more details. This functionality is particularly useful when you need to dynamically change the content of a string based on certain conditions.],
   [As we previously discussed, the ternary operator in Python, which follows the format x if condition else y , can be seamlessly integrated into f-strings. This allows for inline conditional checks and dynamic string content:],
-  [age = 20 
-age\_group = f" { 'Adult' if age \>= 18 else 'Minor' } " 
- print ( f"Age Group: {age\_group} " )
- \# Output: 'Age Group: Adult'],
   [You can also use ternary operations within f-strings for conditional formatting. This is particularly useful for changing the format of the string based on certain conditions:],
-  [score = 75 
-result = f"Score: {score} ( { 'Pass' if score \>= 50 else 'Fail' } )" 
- print (result)
- \# Output: 'Score: 75 (Pass)'],
   [Besides handling basic conditions, ternary operations inside f-strings can also handle more complex conditions , allowing for intricate logical operations:],
   [hours\_worked = 41 
 pay\_rate = 20 
 overtime\_rate = 1.5 
-total\_pay = f"Total Pay: \$ {(hours\_worked \* pay\_rate) + ((hours\_worked - 40 ) \* pay\_rate \* overtime\_rate) if hours\_worked \> 40 else hours\_worked \* pay\_rate} " 
+total\_pay = f"Total Pay: \$ \{(hours\_worked \* pay\_rate) + ((hours\_worked - 40 ) \* pay\_rate \* overtime\_rate) if hours\_worked \> 40 else hours\_worked \* pay\_rate\} " 
  print (total\_pay)],
   [Here, we calculated the total pay by using inline ternary operator: Total Pay: \$830.0],
   [Combining multiple conditions within f-strings is something that can be easily achieved:],
-  [temperature = 75 
-weather = "sunny" 
-activity = f"Activity: { 'Swimming' if weather == 'sunny' and temperature \> 70 else 'Reading indoors' } " 
- print (activity)
- \# Output: 'Activity: Swimming'],
   [Ternary operations in f-strings can also be used for dynamic formatting , such as changing text color based on a condition:],
   [profit = - 20 
-profit\_message = f"Profit: { '+' if profit \>= 0 else '' } {profit} { '(green)' if profit \>= 0 else '(red)' } " 
+profit\_message = f"Profit: \{ '+' if profit \>= 0 else '' \} \{profit\} \{ '(green)' if profit \>= 0 else '(red)' \} " 
  print (profit\_message)
  \# Output: 'Profit: -20 (red)'],
-  [id="formattingdatesandtimeswithpythonfstrings"\>Formatting Dates and Times with Python f-strings],
+  [Formatting Dates and Times with Python f-strings],
   [One of the many strengths of Python's f-strings is their ability to elegantly handle date and time formatting. In this section, we'll explore how to use f-strings to format dates and times, showcasing various formatting options to suit different requirements.],
   [To format a datetime object using an f-string, you can simply include the desired format specifiers inside the curly braces:],
   [from datetime import datetime],
   [current\_time = datetime.now()
-formatted\_time = f"Current time: {current\_time:%Y-%m-%d %H:%M:%S} " 
+formatted\_time = f"Current time: \{current\_time:%Y-%m-%d %H:%M:%S\} " 
  print (formatted\_time)],
   [This will give you the current time in the format you specified:],
   [Current time: \[current date and time in YYYY-MM-DD HH: MM: SS format\]],
@@ -1128,12 +1038,12 @@ formatted\_time = f"Current time: {current\_time:%Y-%m-%d %H:%M:%S} "
   [If you're working with timezone-aware datetime objects , f-strings can provide you with the time zone information using the %z specifier:],
   [from datetime import timezone, timedelta],
   [timestamp = datetime.now(timezone.utc)
-formatted\_timestamp = f"UTC Time: {timestamp:%Y-%m-%d %H:%M:%S %Z} " 
+formatted\_timestamp = f"UTC Time: \{timestamp:%Y-%m-%d %H:%M:%S %Z\} " 
  print (formatted\_timestamp)],
   [This will give you: UTC Time: \[current UTC date and time\] UTC],
   [F-strings can be particularly handy for creating custom date and time formats , tailored for display in user interfaces or reports:],
   [event\_date = datetime( 2023 , 12 , 31 )
-event\_time = f"Event Date: {event\_date:%d-%m-%Y | %I:%M%p} " 
+event\_time = f"Event Date: \{event\_date:%d-%m-%Y | %I:%M%p\} " 
  print (event\_time)],
   [Output: Event Date: 31-12-2023 | 12:00AM],
   [You can also combine f-strings with timedelta objects to display relative times :],
@@ -1141,7 +1051,7 @@ event\_time = f"Event Date: {event\_date:%d-%m-%Y | %I:%M%p} "
   [current\_time = datetime.now()
 hours\_passed = timedelta(hours= 6 )
 future\_time = current\_time + hours\_passed
-relative\_time = f"Time after 6 hours: {future\_time:%H:%M} " 
+relative\_time = f"Time after 6 hours: \{future\_time:%H:%M\} " 
  print (relative\_time)],
   [\# Output: 'Time after 6 hours: \[time 6 hours from now in HH: MM format\]'],
   [All-in-all, you can create whichever datetime format using a combination of the available specifiers within a f-string:],
@@ -1187,34 +1097,34 @@ relative\_time = f"Time after 6 hours: {future\_time:%H:%M} "
   [Year with century, as decimal number. If the \# flag (\`%\#Y\`) precedes the specifier, the leading zeros are removed from the number.],
   [%z, %Z],
   [Either the time-zone name or time zone abbreviation, depending on registry settings; no characters if time zone is unknown.],
-  [id="advancednumberformattingwithpythonfstrings"\>Advanced Number Formatting with Python f-strings],
+  [Advanced Number Formatting with Python f-strings],
   [Python's f-strings are not only useful for embedding expressions and creating dynamic strings, but they also excel in formatting numbers for various contexts. They can be helpful when dealing with financial data, scientific calculations, or statistical information,since they offer a wealth of options for presenting numbers in a clear, precise, and readable format. In this section, we'll dive into the advanced aspects of number formatting using f-strings in Python.],
   [Before exploring advanced techniques, let's start with basic number formatting:],
   [number = 123456.789 
-formatted\_number = f"Basic formatting: {number:,} " 
+formatted\_number = f"Basic formatting: \{number:,\} " 
  print (formatted\_number)
  \# Output: 'Basic formatting: 123,456.789'],
   [Here, we simply changed the way we print the number so it uses commas as thousands separator and full stops as a decimal separator.],
   [F-strings allow you to control the precision of floating-point numbers , which is crucial in fields like finance and engineering:],
   [pi = 3.141592653589793 
-formatted\_pi = f"Pi rounded to 3 decimal places: {pi: .3 f} " 
+formatted\_pi = f"Pi rounded to 3 decimal places: \{pi: .3 f\} " 
  print (formatted\_pi)],
   [Here, we rounded Pi to 3 decimal places: Pi rounded to 3 decimal places: 3.142],
   [For displaying percentages , f-strings can convert decimal numbers to percentage format:],
   [completion\_ratio = 0.756 
-formatted\_percentage = f"Completion: {completion\_ratio: .2 %} " 
+formatted\_percentage = f"Completion: \{completion\_ratio: .2 %\} " 
  print (formatted\_percentage)],
   [This will give you: Completion: 75.60%],
   [Another useful feature is that f-strings support exponential notation :],
   [avogadro\_number = 6.02214076e23 
-formatted\_avogadro = f"Avogadro's number: {avogadro\_number: .2 e} " 
+formatted\_avogadro = f"Avogadro's number: \{avogadro\_number: .2 e\} " 
  print (formatted\_avogadro)],
   [This will convert Avogadro's number from the usual decimal notation to the exponential notation: Avogadro's number: 6.02e+23],
   [Besides this, f-strings can also format numbers in hexadecimal, binary, or octal representation :],
   [number = 255 
-hex\_format = f"Hexadecimal: {number:\#x} " 
-binary\_format = f"Binary: {number:\#b} " 
-octal\_format = f"Octal: {number:\#o} "],
+hex\_format = f"Hexadecimal: \{number:\#x\} " 
+binary\_format = f"Binary: \{number:\#b\} " 
+octal\_format = f"Octal: \{number:\#o\} "],
   [print (hex\_format)
  print (binary\_format)
  print (octal\_format)],
@@ -1222,55 +1132,55 @@ octal\_format = f"Octal: {number:\#o} "],
   [Hexadecimal: 0xff
 Binary: 0b11111111
 Octal: 0o377],
-  [id="lambdasandinlinefunctionsinpythonfstrings"\>Lambdas and Inline Functions in Python f-strings],
+  [Lambdas and Inline Functions in Python f-strings],
   [Python's f-strings are not only efficient for embedding expressions and formatting strings but also offer the flexibility to include lambda functions and other inline functions.],
   [This feature opens up a plenty of possibilities for on-the-fly computations and dynamic string generation.],
   [Lambda functions , also known as anonymous functions in Python, can be used within f-strings for inline calculations:],
   [area = lambda r: 3.14 \* r \*\* 2 
 radius = 5 
-formatted\_area = f"The area of the circle with radius {radius} is: {area(radius)} " 
+formatted\_area = f"The area of the circle with radius \{radius\} is: \{area(radius)\} " 
  print (formatted\_area)],
   [\# Output: 'The area of the circle with radius 5 is: 78.5'],
   [As we briefly discussed before, you can also call functions directly within an f-string, making your code more concise and readable:],
   [def square ( n ): 
  return n \* n],
   [num = 4 
-formatted\_square = f"The square of {num} is: {square(num)} " 
+formatted\_square = f"The square of \{num\} is: \{square(num)\} " 
  print (formatted\_square)],
   [\# Output: 'The square of 4 is: 16'],
   [Lambdas in f-strings can help you implement more complex expressions within f-strings, enabling sophisticated inline computations:],
   [import math],
   [hypotenuse = lambda a, b: math.sqrt(a\*\* 2 + b\*\* 2 )
 side1, side2 = 3 , 4 
-formatted\_hypotenuse = f"The hypotenuse of a triangle with sides {side1} and {side2} is: {hypotenuse(side1, side2)} " 
+formatted\_hypotenuse = f"The hypotenuse of a triangle with sides \{side1\} and \{side2\} is: \{hypotenuse(side1, side2)\} " 
  print (formatted\_hypotenuse)],
   [\# Output: 'The hypotenuse of a triangle with sides 3 and 4 is: 5.0'],
   [You can also combine multiple functions within a single f-string for complex formatting needs:],
   [def double ( n ): 
  return n \* 2],
   [def format\_as\_percentage ( n ): 
- return f" {n: .2 %} "],
+ return f" \{n: .2 %\} "],
   [num = 0.25 
-formatted\_result = f"Double of {num} as percentage: {format\_as\_percentage(double(num))} " 
+formatted\_result = f"Double of \{num\} as percentage: \{format\_as\_percentage(double(num))\} " 
  print (formatted\_result)],
   [This will give you:],
   [Double of 0.25 as percentage: 50.00%],
-  [id="debuggingwithfstringsinpython38"\>Debugging with f-strings in Python 3.8+],
+  [Debugging with f-strings in Python 3.8+],
   [Python 3.8 introduced a subtle yet impactful feature in f-strings: the ability to self-document expressions. This feature, often heralded as a boon for debugging, enhances f-strings beyond simple formatting tasks, making them a powerful tool for diagnosing and understanding code.],
   [The key addition in Python 3.8 is the = specifier in f-strings. It allows you to print both the expression and its value , which is particularly useful for debugging:],
   [x = 14 
 y = 3 
- print ( f" {x=} , {y=} " )],
+ print ( f" \{x=\} , \{y=\} " )],
   [\# Output: 'x=14, y=3'],
   [This feature shines when used with more complex expressions, providing insight into the values of variables at specific points in your code:],
   [name = "Alice" 
 age = 30 
- print ( f" {name.upper()=} , {age \* 2 =} " )],
+ print ( f" \{name.upper()=\} , \{age \* 2 =\} " )],
   [This will print out both the variables you're looking at and its value:],
   [name.upper()='ALICE', age \* 2=60],
   [The = specifier is also handy for debugging within loops , where you can track the change of variables in each iteration:],
   [for i in range ( 3 ):
- print ( f"Loop {i=} " )],
+ print ( f"Loop \{i=\} " )],
   [Output:],
   [Loop i=0
 Loop i=1
@@ -1279,24 +1189,24 @@ Loop i=2],
   [def square ( n ): 
  return n \* n],
   [num = 4 
- print ( f" {square(num)=} " )],
+ print ( f" \{square(num)=\} " )],
   [\# Output: 'square(num)=16'],
   [Note: While this feature is incredibly useful for debugging, it's important to use it judiciously. The output can become cluttered in complex expressions, so it's best suited for quick and simple debugging scenarios.],
   [Remember to remove these debugging statements from production code for clarity and performance.],
-  [id="performanceoffstrings"\>Performance of F-strings],
+  [Performance of F-strings],
   [F-strings are often lauded for their readability and ease of use, but how do they stack up in terms of performance ? Here, we'll dive into the performance aspects of f-strings, comparing them with traditional string formatting methods, and provide insights on optimizing string formatting in Python:],
   [f-strings vs. Concatenation : f-strings generally offer better performance than string concatenation , especially in cases with multiple dynamic values. Concatenation can lead to the creation of numerous intermediate string objects, whereas an f-string is compiled into an efficient format.],
   [f-strings vs. % Formatting : The old % formatting method in Python is less efficient compared to f-strings. f-strings, being a more modern implementation, are optimized for speed and lower memory usage .],
   [f-strings vs. str.format() : f-strings are typically faster than the str.format() method. This is because f-strings are processed at compile time , not at runtime, which reduces the overhead associated with parsing and interpreting the format string.],
-  [id="considerationsforoptimizingstringformatting"\>Considerations for Optimizing String Formatting],
+  [Considerations for Optimizing String Formatting],
   [Use f-strings for Simplicity and Speed : Given their performance benefits, use f-strings for most string formatting needs, unless working with a Python version earlier than 3.6.],
   [Complex Expressions : For complex expressions within f-strings, be aware that they are evaluated at runtime. If the expression is particularly heavy, it can offset the performance benefits of f-strings.],
   [Memory Usage : In scenarios with extremely large strings or in memory-constrained environments, consider other approaches like string builders or generators.],
   [Readability vs. Performance : While f-strings provide a performance advantage, always balance this with code readability and maintainability.],
   [In summary, f-strings not only enhance the readability of string formatting in Python but also offer performance benefits over traditional methods like concatenation, % formatting, and str.format() . They are a robust choice for efficient string handling in Python, provided they are used judiciously, keeping in mind the complexity of embedded expressions and overall code clarity.],
-  [id="formattingandinternationalization"\>Formatting and Internationalization],
+  [Formatting and Internationalization],
   [When your app is targeting a global audience, it's crucial to consider internationalization and localization. Python provides robust tools and methods to handle formatting that respects different cultural norms, such as date formats, currency, and number representations. Let's explore how Python deals with these challenges.],
-  [id="dealingwithlocalespecificformatting"\>Dealing with Locale-Specific Formatting],
+  [Dealing with Locale-Specific Formatting],
   [When developing applications for an international audience, you need to format data in a way that is familiar to each user's locale. This includes differences in numeric formats, currencies, date and time conventions, and more.],
   [The locale Module:],
   [Python's locale module allows you to set and get the locale information and provides functionality for locale-sensitive formatting.],
@@ -1311,7 +1221,7 @@ formatted\_number = locale.format\_string( "%d" , 1234567 , grouping= True )
   [The locale module also provides a way to format currency values.],
   [formatted\_currency = locale.currency( 1234.56 )
  print (formatted\_currency) \# \$1,234.56 in US locale],
-  [id="dateandtimeformattingforinternationalization"\>Date and Time Formatting for Internationalization],
+  [Date and Time Formatting for Internationalization],
   [Date and time representations vary significantly across cultures. Python's datetime module, combined with the locale module, can be used to display date and time in a locale-appropriate format.],
   [Example:],
   [import locale
@@ -1319,7 +1229,7 @@ formatted\_number = locale.format\_string( "%d" , 1234567 , grouping= True )
   [locale.setlocale(locale. LC\_ALL, 'de\_DE' )
 now = datetime.now()
  print (now.strftime( '%c' )) \# Locale-specific full date and time representation],
-  [id="bestpracticesforinternationalization"\>Best Practices for Internationalization:],
+  [Best Practices for Internationalization:],
   [Consistent Use of Locale Settings:],
   [Always set the locale at the start of your application and use it consistently throughout.],
   [Remember to handle cases where the locale setting might not be available or supported.],
@@ -1329,9 +1239,8 @@ now = datetime.now()
   [Ensure to test your application with different locale settings to verify that formats are displayed correctly.],
   [Handling Different Character Sets and Encodings:],
   [Be aware of the encoding issues that might arise with different languages, especially when dealing with non-Latin character sets.],
-  [id="workingwithsubstrings"\>Working with Substrings],
+  [Working with Substrings],
   [Working with substrings is a common task in Python programming, involving extracting, searching, and manipulating parts of strings. Python offers several methods to handle substrings efficiently and intuitively. Understanding these methods is crucial for text processing, data manipulation, and various other applications.],
-  [id="extractingsubstrings"\>Extracting Substrings],
   [Slicing is one of the primary ways to extract a substring from a string . It involves specifying a start and end index, and optionally a step, to slice out a portion of the string.],
   [Note: We discussed the notion of slicing in more details in the "Basic String Operations" section.],
   [For example, say you'd like to extract the word "World" from the sentence "Hello, world!"],
@@ -1339,7 +1248,6 @@ now = datetime.now()
  \# Extract 'World' from text 
 substring = text\[ 7 : 12 \]],
   [Here, the value of substring would be "World" . Python also supports negative indexing (counting from the end), and omitting start or end indices to slice from the beginning or to the end of the string, respectively.],
-  [id="findingsubstrings"\>Finding Substrings],
   [As we discussed in the "Common String Methods" section, Python provides methods like find() , index() , rfind() , and rindex() to search for the position of a substring within a string.],
   [find() and rfind() return the lowest and the highest index where the substring is found, respectively. They return -1 if the substring is not found.],
   [index() and rindex() are similar to find() and rfind() , but raise a ValueError if the substring is not found.],
@@ -1348,30 +1256,26 @@ substring = text\[ 7 : 12 \]],
 position = text.find( "World" )],
   [print (position)
  \# Output: 7],
-  [id="replacingsubstrings"\>Replacing Substrings],
   [The replace() method is used to replace occurrences of a specified substring with another substring:],
   [text = "Hello, World!" 
 new\_text = text.replace( "World" , "Python" )],
   [The word "World" will be replaced with the word "Python", therefore, new\_text would be "Hello, Python!" .],
-  [id="checkingforsubstrings"\>Checking for Substrings],
+  [Checking for Substrings],
   [Methods like startswith() and endswith() are used to check if a string starts or ends with a specified substring, respectively:],
   [text = "Hello, World!" 
  if text.startswith( "Hello" ):
  print ( "The string starts with 'Hello'" )],
-  [id="splittingstrings"\>Splitting Strings],
   [The split() method breaks a string into a list of substrings based on a specified delimiter:],
   [text = "one,two,three" 
 items = text.split( "," )],
   [Here, items would be \['one', 'two', 'three'\] .],
-  [id="joiningstrings"\>Joining Strings],
   [The join() method is used to concatenate a list of strings into a single string, with a specified separator:],
   [words = \[ 'Python' , 'is' , 'fun' \]
 sentence = ' ' .join(words)],
   [In this example, sentence would be "Python is fun" .],
-  [id="advancedstringtechniques"\>Advanced String Techniques],
   [Besides simple string manipulation techniques, Python involves more sophisticated methods of manipulating and handling strings, which are essential for complex text processing, encoding, and pattern matching.],
   [In this section, we'll take a look at an overview of some advanced string techniques in Python.],
-  [id="unicodeandbytestrings"\>Unicode and Byte Strings],
+  [Unicode and Byte Strings],
   [Understanding the distinction between Unicode strings and byte strings in Python is quite important when you're dealing with text and binary data. This differentiation is a core aspect of Python's design and plays a significant role in how the language handles string and binary data.],
   [Since the introduction of Python 3, the default string type is Unicode . This means whenever you create a string using str , like when you write s = "hello" , you are actually working with a Unicode string.],
   [Unicode strings are designed to store text data . One of their key strengths is the ability to represent characters from a wide range of languages, including various symbols and special characters. Internally, Python uses Unicode to represent these strings, making them extremely versatile for text processing and manipulation. Whether you're simply working with plain English text or dealing with multiple languages and complex symbols, Unicode coding helps you make sure that your text data is consistently represented and manipulated within Python.],
@@ -1391,7 +1295,6 @@ sentence = ' ' .join(words)],
   [decoded\_message = encoded\_message.decode( 'utf-8' )],
   [With decoded\_message , we're back to a readable Unicode string, "Hello, World!".],
   [This process of encoding and decoding is essential when dealing with data transmission or storage in Python, where the distinction between text (Unicode strings) and binary data (byte strings) is crucial. By converting our text data to bytes before transmission, and then back to text after receiving it, we ensure that our data remains consistent and uncorrupted across different systems and processing stages.],
-  [id="rawstrings"\>Raw Strings],
   [Raw strings are a unique form of string representation that can be particularly useful when dealing with strings that contain many backslashes, like file paths or regular expressions. Unlike normal strings, raw strings treat backslashes ( \\ ) as literal characters, not as escape characters. This makes them incredibly handy when you don't want Python to handle backslashes in any special way.],
   [Raw strings are useful when dealing with regular expressions or any string that may contain backslashes ( \\ ), as they treat backslashes as literal characters.],
   [In a standard Python string, a backslash signals the start of an escape sequence, which Python interprets in a specific way. For example, \\n is interpreted as a newline, and \\t as a tab. This is useful in many contexts but can become problematic when your string contains many backslashes and you want them to remain as literal backslashes.],
@@ -1405,7 +1308,6 @@ text = "HELLO, how ARE you?"
 matches = re.findall(pattern, text)],
   [print (matches) \# Output: \['HELLO', 'ARE'\]],
   [The raw string r"\\b\[A-Z\]+\\b" represents a regular expression that looks for whole words composed of uppercase letters . Without the raw string notation, you would have to escape each backslash with another backslash ( \\\\b\[A-Z\]+\\\\b ), which is less readable.],
-  [id="multilinestrings"\>Multiline Strings],
   [Multiline strings in Python are a convenient way to handle text data that spans several lines . These strings are enclosed within triple quotes, either triple single quotes ( ''' ) or triple double quotes ( """ ).],
   [This approach is often used for creating long strings, docstrings, or even for formatting purposes within the code.],
   [Unlike single or double-quoted strings, which end at the first line break, multiline strings allow the text to continue over several lines, preserving the line breaks and white spaces within the quotes.],
@@ -1428,7 +1330,6 @@ like this one!
  """ 
  pass],
   [When you use the built-in help() function on my\_function , Python will display the text in the docstring as the documentation for that function.],
-  [id="regularexpressions"\>Regular Expressions],
   [Regular expressions in Python, facilitated by the re module, are a powerful tool for pattern matching and manipulation of strings. They provide a concise and flexible means for matching strings of text, such as particular characters, words, or patterns of characters.],
   [Regular expressions are used for a wide range of tasks including validation, parsing, and string manipulation.],
   [At the core of regular expressions are patterns that are matched against strings. These patterns are expressed in a specialized syntax that allows you to define what you're looking for in a string. Python's re module supports a set of functions and syntax that adhere to regular expression rules.],
@@ -1458,46 +1359,45 @@ found\_words = re.findall(pattern, text, re. IGNORECASE)],
   [re.findall() searches the string text for all occurrences that match the pattern.],
   [Regular expressions are extremely versatile but can be complex for intricate patterns. It's important to carefully craft your regular expression for accuracy and efficiency, especially for complex string processing tasks.],
   [Advice: One of the interesting use cases for regular expressions is matching phone numbers. You can read more about that in our "Python Regular Expressions - Validate Phone Numbers" article.],
-  [id="stringsandcollections"\>Strings and Collections],
+  [Strings and Collections],
   [In Python, strings and collections (like lists, tuples, and dictionaries) often interact , either through conversion of one type to another or by manipulating strings using methods influenced by collection operations. Understanding how to efficiently work with strings and collections is crucial for tasks like data parsing, text processing, and more.],
-  [id="splittingstringsintolists"\>Splitting Strings into Lists],
+  [Splitting Strings into Lists],
   [The split() method is used to divide a string into a list of substrings. It's particularly useful for parsing CSV files or user input:],
   [text = "apple,banana,cherry" 
 fruits = text.split( ',' )
  \# fruits is now \['apple', 'banana', 'cherry'\]],
-  [id="joininglistelementsintoastring"\>Joining List Elements into a String],
+  [Joining List Elements into a String],
   [Conversely, the join() method combines a list of strings into a single string, with a specified separator:],
   [fruits = \[ 'apple' , 'banana' , 'cherry' \]
 text = ', ' .join(fruits)
  \# text is now 'apple, banana, cherry'],
-  [id="stringanddictionaryinteractions"\>String and Dictionary Interactions],
+  [String and Dictionary Interactions],
   [Strings can be used to create dynamic dictionary keys, and format strings using dictionary values:],
-  [info = { "name" : "Alice" , "age" : 30 }
-text = "Name: {name}, Age: {age}" . format (\*\*info)
+  [info = \{ "name" : "Alice" , "age" : 30 \}
+text = "Name: \{name\}, Age: \{age\}" . format (\*\*info)
  \# text is now 'Name: Alice, Age: 30'],
-  [id="listcomprehensionswithstrings"\>List Comprehensions with Strings],
+  [List Comprehensions with Strings],
   [List comprehensions can include string operations, allowing for concise manipulation of strings within collections:],
   [words = \[ "Hello" , "world" , "python" \]
 upper\_words = \[word.upper() for word in words\]
  \# upper\_words is now \['HELLO', 'WORLD', 'PYTHON'\]],
-  [id="mappingandfilteringstringsincollections"\>Mapping and Filtering Strings in Collections],
+  [Mapping and Filtering Strings in Collections],
   [Using functions like map() and filter() , you can apply string methods or custom functions to collections:],
   [words = \[ "Hello" , "world" , "python" \]
 lengths = map ( len , words)
  \# lengths is now an iterator of \[5, 5, 6\]],
-  [id="slicingandindexingstringsincollections"\>Slicing and Indexing Strings in Collections],
+  [Slicing and Indexing Strings in Collections],
   [You can slice and index strings in collections in a similar way to how you do with individual strings:],
   [word\_list = \[ "apple" , "banana" , "cherry" \]
 first\_letters = \[word\[ 0 \] for word in word\_list\]
  \# first\_letters is now \['a', 'b', 'c'\]],
-  [id="usingtuplesasstringformatspecifiers"\>Using Tuples as String Format Specifiers],
+  [Using Tuples as String Format Specifiers],
   [Tuples can be used to specify format specifiers dynamically in string formatting:],
   [format\_spec = ( "Alice" , 30 )
 text = "Name: %s, Age: %d" % format\_spec
  \# text is now 'Name: Alice, Age: 30'],
-  [id="stringperformanceconsiderations"\>String Performance Considerations],
   [When working with strings in Python, it's important to consider their performance implications, especially in large-scale applications, data processing tasks, or situations where efficiency is critical. In this section, we'll take a look at some key performance considerations and best practices for handling strings in Python.],
-  [id="immutabilityofstrings"\>Immutability of Strings],
+  [Immutability of Strings],
   [Since strings are immutable in Python, each time you modify a string, a new string is created . This can lead to significant memory usage and reduced performance in scenarios involving extensive string manipulation.],
   [To mitigate this, when dealing with large amounts of string concatenations, it's often more efficient to use list comprehension or the join() method instead of repeatedly using + or += .],
   [For example, it would be more efficient to join a large list of strings instead of concatenating it using the += operator:],
@@ -1508,15 +1408,13 @@ result = ""
   [\# More efficient 
 result = "" .join(large\_list\_of\_strings)],
   [Generally speaking, concatenating strings using the + operator in a loop is inefficient, especially for large datasets. Each concatenation creates a new string and thus, requires more memory and time.],
-  [id="usefstringsforformatting"\>Use f-Strings for Formatting],
+  [Use f-Strings for Formatting],
   [Python 3.6 introduced f-Strings, which are not only more readable but also faster at runtime compared to other string formatting methods like % formatting or str.format() .],
-  [id="avoidunnecessarystringoperations"\>Avoid Unnecessary String Operations],
   [Operations like strip() , replace() , or upper() \/ lower() create new string objects. It's advisable to avoid these operations in critical performance paths unless necessary.],
   [When processing large text data, consider whether you can operate on larger chunks of data at once, rather than processing the string one character or line at a time.],
-  [id="stringinterning"\>String Interning],
   [Python automatically interns small strings (usually those that look like identifiers) to save memory and improve performance. This means that identical strings may be stored in memory only once.],
   [Explicit interning of strings ( sys.intern() ) can sometimes be beneficial in memory-sensitive applications where many identical string instances are used.],
-  [id="usebuiltinfunctionsandlibraries"\>Use Built-in Functions and Libraries],
+  [Use Built-in Functions and Libraries],
   [Leverage Python’s built-in functions and libraries for string processing, as they are generally optimized for performance.],
   [For complex string operations, especially those involving pattern matching, consider using the re module (regular expressions) which is faster for matching operations compared to manual string manipulation.],
 ),
@@ -1526,29 +1424,27 @@ result = "" .join(large\_list\_of\_strings)],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Subverting .NET Type Safety with 'System.Runtime.CompilerServices.Unsafe'],
   author: [Matt Warren (.NET)],
   source-name: [Matt Warren (.NET)],
   images: (),
   paragraphs: (
-  [id="in-which-we-use-systemruntimecompilerservicesunsafe-a-generic-api-type-safe-but-still-unsafe-and-mess-with-the-c-type-system"\> In which we use System. Runtime. CompilerServices. Unsafe a generic API (“type-safe” but still “unsafe”) and mess with the C\# Type System!],
+  [In which we use System. Runtime. CompilerServices. Unsafe a generic API (“type-safe” but still “unsafe”) and mess with the C\# Type System!],
   [The post covers the following topics:],
   [What it is and why it’s useful],
   [How it works],
   [Code samples],
   [Tricks you can do with it],
   [Using it safely],
-  [id="what-it-is-and-why-its-useful"\>What it is and why it’s useful],
+  [What it is and why it’s useful],
   [The XML documentation comments for System. Runtime. CompilerServices. Unsafe state that it:],
   [Contains generic, low-level functionality for manipulating pointers.],
   [But we can get a better understanding of what it is by looking at the actual API definition from the current NuGet package (4.0.0) :],
-  [class="highlight"\> \/\\/ Contains generic, low-level functionality for manipulating pointers. 
+  [\/\\/ Contains generic, low-level functionality for manipulating pointers. 
  public static class Unsafe 
- { 
+ \{ 
  \/\\/ Casts the given object to the specified type. 
  public static T As ( object o ) where T : class],
   [\/\\/ Returns a pointer to the given by-ref parameter. 
@@ -1568,7 +1464,7 @@ result = "" .join(large\_list\_of\_strings)],
  public static int SizeOf ();],
   [\/\\/ Writes a value of type T to the given location. 
  public static void Write ( void \* destination , T value ); 
- }],
+ \}],
   [Note: I edited the the XML doc-comments for brevity, the full versions are available in the source . There are also some additional methods that have been added to the API , but to make use of them you have to use a version of the C\# compiler with support for ref returns and locals .],
   [However this doesn’t really tell us why it’s useful , to get some background on that we can look at the GitHub issue “Provide a generic API to read from and write to a pointer” :],
   [So at a high-level the goals of the System. Runtime. CompilerServices. Unsafe library are to:],
@@ -1580,17 +1476,18 @@ result = "" .join(large\_list\_of\_strings)],
   [There are already code-bases making use of it , including the Kestrel the high-performance web server, based on libuv.],
   [It’s also worth pointing out that the library is primarily for use with a Value Type (int, float, etc) rather than a class or Reference type. You can use it with classes, however you have to pin them first , so they don’t move about in memory whilst you are working with the pointer.],
   [Update: It was pointed out to me that Niels wrote an initial implementation of this library in a separate project , before Microsoft made their own version.],
-  [id="how-it-works"\>How it works],
+  [How it works],
   [Because the library allows access to functionality that can’t be expressed in C\#, it has to be written in raw IL , which is then compiled by a custom build-step. As an example we will look at the AsPointer method, which has the following signature:],
+  [public static void \* AsPointer ( ref T value )],
   [The IL for this is shown below, note how the ref keyword becomes & in IL and is expressed as !! T :],
-  [class="highlight"\> .method public hidebysig static void\* AsPointer (!! T& 'value') cil managed aggressiveinlining
-{
+  [.method public hidebysig static void\* AsPointer (!! T& 'value') cil managed aggressiveinlining
+\{
  .custom instance void System. Runtime. Versioning. NonVersionableAttribute::.ctor() = ( 01 00 00 00 )
  .maxstack 1
  ldarg.0
  conv.u
  ret
-} \/\\/ end of method Unsafe:: AsPointer],
+\} \/\\/ end of method Unsafe:: AsPointer],
   [Here we can see that it’s making use of the conv.u IL instruction. For reference the explanation of this, along with some of the other op codes used by the library are shown below:],
   [Conv\_U - Converts the value on top of the evaluation stack to unsigned native int , and extends it to native int .],
   [Ldobj - Copies the value type object pointed to by an address to the top of the evaluation stack.],
@@ -1599,11 +1496,11 @@ result = "" .join(large\_list\_of\_strings)],
   [System. Slices/System/Span.cs],
   [PtrUtils in CoreFX Labs],
   [Joe Duffy’s slice.net - PtrUtils.il],
-  [id="code-samples"\>Code samples],
+  [Code samples],
   [There’s a nice set of unit tests that show the main use-cases for the library, for instance here is how to use Unsafe. Write(..) to directly change the value of an int via a pointer.],
-  [class="highlight"\> \[ Fact \] 
+  [\[ Fact \] 
  public static unsafe void WriteInt32 () 
- { 
+ \{ 
  int value = 10 ; 
  int \* address = ( int \*) Unsafe . AsPointer ( ref value ); 
  int expected = 20 ; 
@@ -1611,45 +1508,53 @@ result = "" .join(large\_list\_of\_strings)],
   [Assert . Equal ( expected , value ); 
  Assert . Equal ( expected , \* address ); 
  Assert . Equal ( expected , Unsafe . Read ( address )); 
- }],
+ \}],
   [You can write something similar by manipulating pointers directly, but it’s not as straightforward (unless you are familiar with C or C++)],
+  [int value = 10;
+int\* ptr = &value;
+\*ptr = 30;
+Console. WriteLine(value); \/\\/ prints "30"],
   [For a more real-world use case, the code below shows how you can access a KeyValuePair directly as a byte \[\] (taken from a GitHub discussion ):],
-  [class="highlight"\> var dt = new KeyValuePair \[ 2 \]; 
+  [var dt = new KeyValuePair \[ 2 \]; 
  ref byte asRefByte = ref Unsafe . As , byte \>( ref dt \[ 0 \]); 
  fixed ( byte \* ptr = & asRefByte ) 
- { 
+ \{ 
  \/\\/ Treat the KeyValuePair as if it were a byte \[\] 
  ... 
- }],
+ \}],
   [(this example is based on the StackOverflow question: “Get unsafe pointer to array of KeyValuePair in C\#” )],
-  [id="tricks-you-can-do-with-it"\>Tricks you can do with it],
+  [Tricks you can do with it],
   [Despite providing you with a nice strongly-typed API, you still have to mark your code as unsafe , which it’s a bit of a give-away that you can use it to do things that normal C\# can’t!],
-  [id="breaking-immutability"\> Breaking immutability],
+  [Breaking immutability],
   [Strings in C\# are immutable and the runtime goes to great lengths to ensure you can’t bypass this behaviour. However under-the-hood the String data is just bytes which can be manipulated, indeed the runtime does this manipulation itself inside the StringBuilder class.],
   [So using Unsafe. Write(..) we can modify the contents of a String - yay !! However it needs to be pointed out that this code will potentially break the behaviour of the String class in many subtle ways, so don’t ever use it in a real application!!],
-  [Console . WriteLine ( "String Length {0}" , text . Length ); \/\\/ prints 26 
- Console . WriteLine ( "Text: \\"{0}\\"" , text ); \/\\/ "ABCDEFGHIJKLMNOPQRSTUVWXKZ"],
+  [var text = "ABCDEFGHIJKLMNOPQRSTUVWXKZ" ;],
+  [Console . WriteLine ( "String Length \{0\}" , text . Length ); \/\\/ prints 26 
+ Console . WriteLine ( "Text: \\"\{0\}\\"" , text ); \/\\/ "ABCDEFGHIJKLMNOPQRSTUVWXKZ"],
   [var pinnedText = GCHandle . Alloc ( text , GCHandleType . Pinned ); 
  char \* textAddress = ( char \*) pinnedText . AddrOfPinnedObject (). ToPointer ();],
   [\/\\/ Make an immutable string think that it is shorter than it actually is!!! 
  Unsafe . Write ( textAddress - 2 , 5 );],
-  [Console . WriteLine ( "String Length {0}" , text . Length ); \/\\/ prints 5 
- Console . WriteLine ( "Text: \\"{0}\\"" , text ); \/\\/ prints "ABCDE],
+  [Console . WriteLine ( "String Length \{0\}" , text . Length ); \/\\/ prints 5 
+ Console . WriteLine ( "Text: \\"\{0\}\\"" , text ); \/\\/ prints "ABCDE],
   [\/\\/ change the 2nd character 'B' to '\@' 
  Unsafe . Write ( textAddress + 1 , '\@' );],
-  [Console . WriteLine ( "Text: \\"{0}\\"" , text ); \/\\/ prints "A\@CDE],
+  [Console . WriteLine ( "Text: \\"\{0\}\\"" , text ); \/\\/ prints "A\@CDE],
   [pinnedText . Free ();],
-  [id="messing-with-the-clr-type-system"\> Messing with the CLR type-system],
+  [Messing with the CLR type-system],
   [But we can go even further than that and do a really nasty trick to completely defeat the CLR type-system. This code is horrible and could potentially break the CLR in several ways, so as before don’t ever use it in a real application!!],
+  [int intValue = 5 ; 
+ float floatValue = 5.0f ; 
+ object boxedInt = ( object ) intValue , boxedFloat = ( object ) floatValue ;],
   [var pinnedFloat = GCHandle . Alloc ( boxedFloat , GCHandleType . Pinned ); 
  var pinnedInt = GCHandle . Alloc ( boxedInt , GCHandleType . Pinned );],
   [int \* floatAddress = ( int \*) pinnedFloat . AddrOfPinnedObject (). ToPointer (); 
  int \* intAddress = ( int \*) pinnedInt . AddrOfPinnedObject (). ToPointer ();],
-  [Console . WriteLine ( "Type: {0}, Value: {1}" , boxedInt . GetType (). FullName , boxedInt );],
+  [Console . WriteLine ( "Type: \{0\}, Value: \{1\}" , boxedInt . GetType (). FullName , boxedInt );],
   [\/\\/ Make an int think it's a float!!! 
  int floatType = Unsafe . Read ( floatAddress - 1 ); 
  Unsafe . Write ( intAddress - 1 , floatType );],
-  [Console . WriteLine ( "Type: {0}, Value: {1}" , boxedInt . GetType (). FullName , boxedInt );],
+  [Console . WriteLine ( "Type: \{0\}, Value: \{1\}" , boxedInt . GetType (). FullName , boxedInt );],
   [pinnedFloat . Free (); 
  pinnedInt . Free ();],
   [Which prints out:],
@@ -1657,7 +1562,7 @@ result = "" .join(large\_list\_of\_strings)],
   [Type: System. Single, Value: 7.006492E-45],
   [Yep, we’ve managed to convince a int (Int32) type that it’s actually a float (Single) and behave like one instead!!],
   [This works by overwriting the Method Table pointer for the int , with the same value as the float one. So when it looks up it’s type or prints out it’s value, it uses the float methods instead! Thanks to \@Porges for the example that motivated this , his code does the same thing using fixed instead.],
-  [id="using-it-safely"\>Using it safely],
+  [Using it safely],
   [Despite the library requiring you to annotate your code with unsafe , there are still some safe or maybe more accurately safer ways to use it!],
   [Fortunately one of the main . NET runtime developers provided a nice list of what you can and can’t do :],
   [But as with all unsafe code, you’re asking the runtime to let you do things that you are normally prevented from doing, things that it normally saves you from, so you have to be careful!],
@@ -1670,10 +1575,8 @@ result = "" .join(large\_list\_of\_strings)],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Skinny on IE's Update Policy],
   author: [Paul Irish],
   source-name: [Paul Irish],
@@ -1688,7 +1591,6 @@ result = "" .join(large\_list\_of\_strings)],
   [IE10 only works on Win7+, and while no policy has been published for Win7 users, it’s likely any IE8/IE9 users will be moved up to IE10.],
   [A very smart policy call was that this update policy also includes all of China, which is important because most of their Windows installs are not genuine. Microsoft decided they should get the IE bump anyway, which is great because China has been dominated by IE6 and IE8 for ages.],
   [This update procedure was scheduled to start in Australia and Brazil in January 2012. If we look at what happened in Brazil, we have a good shift of users but it’s flattened out with a nontrivial amount of left behind users: (see the two blue lines in the chart below)],
-  [height="400" id="browser\_version\_partially\_combined-BR-weekly-201141-201224" style="width: 600px; height: 400px;" width="600"\>],
   [(Source: StatCounter Global Stats - Browser Version (Partially Combined) Market Share)],
   [Australia has a similar swap of users from IE8 to IE9 but IE8 still remains steady above 10% overall share there.],
   [Microsoft is in a tough spot in that they have enterprise customers who have developed their intranet applications in an extremely poor manner and they break outside of old browsers. But we’re going to need some more pushes from them and us, the developer community, to get in a better state. We want to develop for the web platform of now, not the platform of four years ago.],
@@ -1696,9 +1598,8 @@ result = "" .join(large\_list\_of\_strings)],
   [Hopefully this clarifies a bit about the mechanics of the update procedure. Please do correct me if anything is wrong and I’ll update the post.],
   [2012.08.07: Added TLDR.],
   [2012.07.02: To see this update policy in better context it’s probably useful to Read this Developer’s Guide to browser adoption rates and check the charts from Ars Technica below.],
-  [id="20120921"\>2012.09.21: Months later, the net effect of the update campaign is complete. It pushed a whole bunch of users up to IE9 but IE8 usage remains solid. :( WinXP is a big problem here, obviously. We have to explore other ways to move these users off a zombie browser…],
+  [2012.09.21: Months later, the net effect of the update campaign is complete. It pushed a whole bunch of users up to IE9 but IE8 usage remains solid. :( WinXP is a big problem here, obviously. We have to explore other ways to move these users off a zombie browser…],
   [(Consider the two blue lines)],
-  [height="400" id="browser\_version\_partially\_combined-ww-weekly-201149-201238" style="width: 600px; height: 400px;" width="600"\>],
   [Source: StatCounter Global Stats - Browser Version (Partially Combined) Market Share],
 ),
   insert-map: (:),
@@ -1707,17 +1608,14 @@ result = "" .join(large\_list\_of\_strings)],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Research based on the .NET Runtime],
   author: [Matt Warren (.NET)],
   source-name: [Matt Warren (.NET)],
   images: (),
   paragraphs: (
   [Over the last few years, I’ve come across more and more research papers based, in some way, on the ‘Common Language Runtime’ (CLR).],
-  [Note: I put the papers into the following categories to make them easier to navigate (papers in each category are sorted by date, newest -\> oldest):],
   [Using the . NET Runtime as a case-study],
   [to prove its correctness , study how it works or analyse its behaviour],
   [“ It was formed in 1991, with the intent to advance state-of-the-art computing and solve difficult world problems through technological innovation in collaboration with academic, government, and industry researchers ” ( according to Wikipedia )],
@@ -1772,113 +1670,109 @@ result = "" .join(large\_list\_of\_strings)],
   [An Optimizing Just-InTime Compiler for Rotor (Trindade & Silva, 2005)],
   [Software Interactions into the SSCLI platform (Charfi & Emsellem, 2004)],
   [Experience Integrating a New Compiler and a New Garbage Collector Into Rotor (Anderson, Eng, Glew, Lewis, Menon & Stichnoth, 2004)],
-  [id="net-runtime-as-a-case-study"\> . NET Runtime as a Case-Study],
-  [id="pitfalls-of-c-generics-and-their-solution-using-concepts-belyakova--mikhalkovich-2015"\> Pitfalls of C\# Generics and Their Solution Using Concepts (Belyakova & Mikhalkovich, 2015)],
+  [. NET Runtime as a Case-Study],
+  [Pitfalls of C\# Generics and Their Solution Using Concepts (Belyakova & Mikhalkovich, 2015)],
   [In comparison with Haskell type classes and C ++ concepts, such object-oriented languages as C\# and Java provide much limited mechanisms of generic programming based on F-bounded polymorphism. Main pitfalls of C\# generics are considered in this paper. Extending C\# language with concepts which can be simultaneously used with interfaces is proposed to solve the problems of generics; a design and translation of concepts are outlined.],
-  [id="efficient-compilation-of-net-programs-for-embedded-systems-sallenaveab--ducournaub-2011"\> Efficient Compilation of . NET Programs for Embedded Systems (Sallenaveab & Ducournaub, 2011)],
+  [Efficient Compilation of . NET Programs for Embedded Systems (Sallenaveab & Ducournaub, 2011)],
   [Compiling under the closed-world assumption (CWA) has been shown to be an appropriate way for implementing object-oriented languages such as Java on low-end embedded systems. In this paper, we explore the implications of using whole program optimizations such as Rapid Type Analysis (RTA) and coloring on programs targeting the . NET infrastructure. We extended RTA so that it takes into account . NET specific features such as (i) array covariance, a language feature also supported in Java, (ii) generics, whose specifications in . Net impacts type analysis and (iii) delegates, which encapsulate methods within objects. We also use an intraprocedural control flow analysis in addition to RTA . We eval-uated the optimizations that we implemented on programs written in C\#. Preliminary results show a noticeable reduction of the code size, class hierarchy and polymorphism of the programs we optimize. Array covariance is safe in almost all cases, and some delegate calls can be implemented as direct calls.],
-  [id="type-safety-of-c-and-net-clr-fruja-2007"\> Type safety of C\# and . Net CLR (Fruja, 2007)],
+  [Type safety of C\# and . Net CLR (Fruja, 2007)],
   [Type safety plays a crucial role in the security enforcement of any typed programming language. This thesis presents a formal proof of C\#’s type safety. For this purpose, we develop an abstract
 framework for C\#, comprising formal specifications of the language’s grammar, of the statically correct programs, and of the static and operational semantics. Using this framework, we prove that C\# is type-safe, by showing that the execution of statically correct C\# programs does not lead to type errors.],
-  [id="modeling-the-net-clr-exception-handling-mechanism-for-a-mathematical-analysis-fruja--börger-2006"\> Modeling the . NET CLR Exception Handling Mechanism for a Mathematical Analysis (Fruja & Börger, 2006)],
+  [Modeling the . NET CLR Exception Handling Mechanism for a Mathematical Analysis (Fruja & Börger, 2006)],
   [This work is part of a larger project which aims at establishing some important properties of C\# and CLR by mathematical proofs. Examples are the correctness of the bytecode verifier of CLR, the type safety (along the lines of the first author’s correctness proof for the definite assignment rules) of C\#, the correctness of a general compilation scheme.],
-  [id="analysis-of-the-net-clr-exception-handling-mechanism-fruja--börger-2005"\> Analysis of the . NET CLR Exception Handling Mechanism (Fruja & Börger, 2005)],
+  [Analysis of the . NET CLR Exception Handling Mechanism (Fruja & Börger, 2005)],
   [We provide a complete mathematical model for the exception handling mechanism of the Common Language Runtime (CLR), the virtual machine underlying the interpretation of . NET programs. The goal is to use this rigorous model in the corresponding part of the still-to-be-developed soundness proof for the CLR bytecode verifier.],
-  [id="a-modular-design-for-the-common-language-runtime-clr-architecture-fruja-2005"\> A Modular Design for the Common Language Runtime (CLR) Architecture (Fruja, 2005)],
+  [A Modular Design for the Common Language Runtime (CLR) Architecture (Fruja, 2005)],
   [This paper provides a modular high-level design of the Common Language Runtime (CLR) architecture. Our design is given in terms of Abstract State Machines (ASMs) and takes the form of an interpreter. We describe the CLR as a hierarchy of eight submachines, which correspond to eight submodules into which the Common Intermediate Language (CIL) instruction set can be decomposed.],
-  [id="cross-language-program-slicing-in-the-net-framework-pócza-biczó--porkoláb-2005"\> Cross-language Program Slicing in the . NET Framework (Pócza, Biczó & Porkoláb, 2005)],
+  [Cross-language Program Slicing in the . NET Framework (Pócza, Biczó & Porkoláb, 2005)],
   [Dynamic program slicing methods are very attractive for debugging because many statements can be ignored in the process of localizing a bug. Although language interoperability is a key concept in modern development platforms, current slicing techniques are still restricted to a single language. In this paper a cross-language dynamic program slicing technique is introduced for the . NET environment. The method is utilizing the CLR Debugging Services API, hence it can be applied to large multi-language applications.],
-  [id="design-and-implementation-of-a-high-level-multi-language--net-debugger-strein-2005"\> Design and Implementation of a high-level multi-language . NET Debugger (Strein, 2005)],
+  [Design and Implementation of a high-level multi-language . NET Debugger (Strein, 2005)],
   [The Microsoft . NET Common Language Runtime (CLR) provides a low-level debugging application programmers interface (API), which can be used to implement traditional source code debuggers but can also be useful to implement other dynamic program introspection tools. This paper describes our experience in using this API for the implementation of a high-level debugger. The API is difficult to use from a technical point of view because it is implemented as a set of Component Object Model (COM) interfaces instead of a managed . NET API. Nevertheless, it is possible to implement a debugger in managed C\# code using COM-interop. We describe our experience in taking this approach. We define a high-level debugging API and implement it in the C\# language using COM-interop to access the low-level debugging API. Furthermore, we describe the integration of this high-level API in the multi-language development environment X-develop to enable source code debugging of . NET languages. This paper can be useful for anybody who wants to take the same approach to implement debuggers or other tools for dynamic program introspection.],
-  [id="a-high-level-modular-definition-of-the-semantics-of-c-börger-fruja-gervasi--stärk-2004"\> A High-Level Modular Definition of the Semantics of C\# (Börger, Fruja, Gervasi & Stärk, 2004)],
+  [A High-Level Modular Definition of the Semantics of C\# (Börger, Fruja, Gervasi & Stärk, 2004)],
   [We propose a structured mathematical definition of the semantics of programs to provide a platform-independent interpreter view of the language for the programmer, which can also be used for a precise analysis of the ECMA standard of the language and as a reference model for teaching. The definition takes care to reflect directly and faithfully—as much as possible without becoming inconsistent or incomplete—the descriptions in the standard to become comparable with the corresponding models for Java in Stärk et al. (Java and Java Virtual Machine—Definition, Verification, Validation, Springer, Berlin, 2001) and to provide for implementors the possibility to check their basic design decisions against an accurate high-level model. The model sheds light on some of the dark corners of and on some critical differences between the ECMA standard and the implementations of the language.],
-  [id="an-asm-specification-of-c-threads-and-the-net-memory-model-stärk-and-börger-2004"\> An ASM Specification of C\# Threads and the . NET Memory Model (Stärk and Börger, 2004)],
+  [An ASM Specification of C\# Threads and the . NET Memory Model (Stärk and Börger, 2004)],
   [We present a high-level ASM model of C\# threads and the . NET memory model. We focus on purely managed, fully portable threading features of C\#. The sequential model interleaves the computation steps of the currently running threads and is suitable for uniprocessors. The parallel model addresses problems of true concurrency on multiprocessor systems. The models provide a sound basis for the development of multi-threaded applications in C\#. The thread and memory models complete the abstract operational semantics of C\# in.],
-  [id="common-language-runtime--a-new-virtual-machine-ferreira-2004"\> Common Language Runtime : a new virtual machine (Ferreira, 2004)],
+  [Common Language Runtime : a new virtual machine (Ferreira, 2004)],
   [Virtual Machines provide a runtime execution platform combining bytecode portability with a performance close to native code. An overview of current approaches precedes an insight into Microsoft CLR (Common Language Runtime), comparing it to Sun JVM (Java Virtual Machine) and to a native execution environment (IA 32). A reference is also made to CLR in a Unix platform and to techniques on how CLR improves code execution.],
-  [id="jvm-versus-clr-a-comparative-study-singer-2003"\> JVM versus CLR: a comparative study (Singer, 2003)],
+  [JVM versus CLR: a comparative study (Singer, 2003)],
   [We present empirical evidence to demonstrate that there is little or no difference between the Java Virtual Machine and the . NET Common Language Runtime, as regards the compilation and execution of object-oriented programs. Then we give details of a case study that proves the superiority of the Common Language Runtime as a target for imperative programming language compilers (in particular GCC).],
-  [id="runtime-code-generation-with-jvm-and-clr-sestoft-2002"\> Runtime Code Generation with JVM And CLR (Sestoft, 2002)],
+  [Runtime Code Generation with JVM And CLR (Sestoft, 2002)],
   [Modern bytecode execution environments with optimizing just-in-time compilers, such as Sun’s Hotspot Java Virtual Machine, IBM’s Java Virtual Machine, and Microsoft’s Common Language Runtime, provide an infrastructure for generating fast code at runtime. Such runtime code generation can be used for efficient implementation of parametrized algorithms. More generally, with runtime code generation one can introduce an additional binding-time without performance loss. This permits improved performance and improved static correctness guarantees.],
-  [id="microsoft-research"\> Microsoft Research],
-  [id="project-snowflake-non-blocking-safe-manual-memory-management-in-net-parkinson--vaswani-costa-deligiannis-blankstein-mcdermott-balkind--vytiniotis-2017"\> Project Snowflake: Non-blocking safe manual memory management in . NET (Parkinson, Vaswani, Costa, Deligiannis, Blankstein, McDermott, Balkind & Vytiniotis, 2017)],
+  [Project Snowflake: Non-blocking safe manual memory management in . NET (Parkinson, Vaswani, Costa, Deligiannis, Blankstein, McDermott, Balkind & Vytiniotis, 2017)],
   [Garbage collection greatly improves programmer productivity and ensures memory safety. Manual memory management on the other hand often delivers better performance but is typically unsafe and can lead to system crashes or security vulnerabilities. We propose integrating safe manual memory management with garbage collection in the . NET runtime to get the best of both worlds. In our design, programmers can choose between allocating objects in the garbage collected heap or the manual heap. All existing applications run unmodified, and without any performance degradation, using the garbage collected heap. Our programming model for manual memory management is flexible: although objects in the manual heap can have a single owning pointer, we allow deallocation at any program point and concurrent sharing of these objects amongst all the threads in the program. Experimental results from our . NET CoreCLR implementation on real-world applications show substantial performance gains especially in multithreaded scenarios: up to 3x savings in peak working sets and 2x improvements in runtime.],
-  [id="simple-fast-and-safe-manual-memory-management-kedia-costa-vytiniotis-parkinson-vaswani--blankstein-2017"\> Simple, Fast and Safe Manual Memory Management (Kedia, Costa, Vytiniotis, Parkinson, Vaswani & Blankstein, 2017)],
+  [Simple, Fast and Safe Manual Memory Management (Kedia, Costa, Vytiniotis, Parkinson, Vaswani & Blankstein, 2017)],
   [Safe programming languages are readily available, but many applications continue to be written in unsafe languages, because the latter are more efficient. As a consequence, many applications continue to have exploitable memory safety bugs. Since garbage collection is a major source of inefficiency in the implementation of safe languages, replacing it with safe manual memory management would be an important step towards solving this problem.],
   [Previous approaches to safe manual memory management use programming models based on regions, unique pointers, borrowing of references, and ownership types. We propose a much simpler programming model that does not require any of these concepts. Starting from the design of an imperative type safe language (like Java or C\#), we just add a delete operator to free memory explicitly and an exception which is thrown if the program dereferences a pointer to freed memory. We propose an efficient implementation of this programming model that guarantees type safety. Experimental results from our implementation based on the C\# native compiler show that this design achieves up to 3x reduction in peak working set and run time.],
-  [id="uniqueness-and-reference-immutability-for-safe-parallelism-gordon--parkinson-parsons-bromfield--duffy-2012"\> Uniqueness and Reference Immutability for Safe Parallelism (Gordon, Parkinson, Parsons, Bromfield & Duffy, 2012)],
+  [Uniqueness and Reference Immutability for Safe Parallelism (Gordon, Parkinson, Parsons, Bromfield & Duffy, 2012)],
   [A key challenge for concurrent programming is that side-effects (memory operations) in one thread can affect the behavior of another thread. In this paper, we present a type system to restrict the updates to memory to prevent these unintended side-effects. We provide a novel combination of immutable and unique (isolated) types that ensures safe parallelism (race freedom and deterministic execution). The type system includes support for polymorphism over type qualifiers, and can easily create cycles of immutable objects. Key to the system’s flexibility is the ability to recover immutable or externally unique references after violating uniqueness without any explicit alias tracking. Our type system models a prototype extension to C\# that is in active use by a Microsoft team. We describe their experiences building large systems with this extension. We prove the soundness of the type system by an embedding into a program logic.],
-  [id="a-study-of-concurrent-real-time-garbage-collectors-pizlo-petrank--steensgaard-2008"\> A study of concurrent real-time garbage collectors (Pizlo, Petrank & Steensgaard, 2008)],
+  [A study of concurrent real-time garbage collectors (Pizlo, Petrank & Steensgaard, 2008)],
   [Concurrent garbage collection is highly attractive for real-time systems, because offloading the collection effort from the executing threads allows faster response, allowing for extremely short deadlines at the microseconds level. Concurrent collectors also offer much better scalability over incremental collectors. The main problem with concurrent real-time collectors is their complexity. The first concurrent real-time garbage collector that can support fine synchronization, STOPLESS, has recently been presented by Pizlo et al. In this paper, we propose two additional (and different) algorithms for concurrent real-time garbage collection: CLOVER and CHICKEN. Both collectors obtain reduced complexity over the first collector STOPLESS, but need to trade a benefit for it. We study the algorithmic strengths and weaknesses of CLOVER and CHICKEN and compare them to STOPLESS. Finally, we have implemented all three collectors on the Bartok compiler and runtime for C\# and we present measurements to compare their efficiency and responsiveness.],
-  [id="optimizing-concurrency-levels-in-the-net-threadpool-a-case-study-of-controller-design-and-implementation-hellerstein-morrison--eilebrecht-2008"\> Optimizing concurrency levels in the. net threadpool: A case study of controller design and implementation (Hellerstein, Morrison & Eilebrecht, 2008)],
+  [Optimizing concurrency levels in the. net threadpool: A case study of controller design and implementation (Hellerstein, Morrison & Eilebrecht, 2008)],
   [This paper presents a case study of developing a hill climb-ing concurrency controller (HC 3) for the . NET ThreadPool. The intent of the case study is to provide insight into soft-ware considerations for controller design, testing, and imple-mentation. The case study is structured as a series of issues encountered and approaches taken to their resolution. Ex-amples of issues and approaches include: (a) addressing the need to combine a hill climbing control law with rule-based techniques by the use of hybrid control; (b) increasing the ef-ficiency and reducing the variability of the test environment by using resource emulation; and (c) effectively assessing design choices by using test scenarios for which the optimal concurrency level can be computed analytically and hence desired test results are known a priori. We believe that these issues and approaches have broad application to controllers for resource management of software systems.],
-  [id="stopless-a-real-time-garbage-collector-for-multiprocessors-pizlo-frampton-petrank--steensgaard-2007"\> Stopless: a real-time garbage collector for multiprocessors. (Pizlo, Frampton, Petrank & Steensgaard, 2007)],
+  [Stopless: a real-time garbage collector for multiprocessors. (Pizlo, Frampton, Petrank & Steensgaard, 2007)],
   [We present STOPLESS: a concurrent real-time garbage collector suitable for modern multiprocessors running parallel multithreaded applications. Creating a garbage-collected environment that sup- ports real-time on modern platforms is notoriously hard, especially if real-time implies lock-freedom. Known real-time collectors ei- ther restrict the real-time guarantees to uniprocessors only, rely on special hardware, or just give up supporting atomic operations (which are crucial for lock-free software). STOPLESS is the first collector that provides real-time responsiveness while preserving lock-freedom, supporting atomic operations, controlling fragmen- tation by compaction, and supporting modern parallel platforms. STOPLESS is adequate for modern languages such as C\# or Java. It was implemented on top of the Bartok compiler and runtime for C\# and measurements demonstrate high responsiveness (a factor of a 100 better than previously published systems), virtually no pause times, good mutator utilization, and acceptable overheads.],
-  [id="securing-the-net-programming-model-kennedy-2006"\> Securing the . NET Programming Model (Kennedy, 2006)],
+  [Securing the . NET Programming Model (Kennedy, 2006)],
   [The security of the . NET programming model is studied from the standpoint of fully abstract compilation of C\#. A number of failures of full abstraction are identified, and fixes described. The most serious problems have recently been fixed for version 2.0 of the . NET Common Language Runtime.],
-  [id="combining-generics-pre-compilation-and-sharing-between-software-based-processes-syme--kennedy-2004"\> Combining Generics, Pre-compilation and Sharing Between Software-Based Processes (Syme & Kennedy, 2004)],
+  [Combining Generics, Pre-compilation and Sharing Between Software-Based Processes (Syme & Kennedy, 2004)],
   [We describe problems that have arisen when combining the proposed design for generics for the Microsoft . NET Common Language Runtime (CLR) with two resource-related features supported by the Microsoft CLR implementation: application domains and pre-compilation. Application domains are “software based processes” and the interaction between application domains and generics stems from the fact that code and descriptors are generated on a pergeneric-instantiation basis, and thus instantiations consume resources which are preferably both shareable and recoverable. Pre-compilation runs at install-time to reduce startup overheads. This interacts with application domain unloading: compilation units may contain shareable generated instantiations. The paper describes these interactions and the diﬀerent approaches that can be used to avoid or ameliorate the problems.],
-  [id="formalization-of-generics-for-the-net-common-language-runtime-yu-kennedy--syme-2004"\> Formalization of Generics for the . NET Common Language Runtime (Yu, Kennedy & Syme, 2004)],
+  [Formalization of Generics for the . NET Common Language Runtime (Yu, Kennedy & Syme, 2004)],
   [We present a formalization of the implementation of generics in the . NET Common Language Runtime (CLR), focusing on two novel aspects of the implementation: mixed specialization and sharing, and efficient support for run-time types. Some crucial constructs used in the implementation are dictionaries and run-time type representations. We formalize these aspects type-theoretically in a way that corresponds in spirit to the implementation techniques used in practice. Both the techniques and the formalization also help us understand the range of possible implementation techniques for other languages, e.g., ML, especially when additional source language constructs such as run-time types are supported. A useful by-product of this study is a type system for a subset of the polymorphic IL proposed for the . NET CLR.],
-  [id="runtime-verification-of-net-contracts-barnett--schulte-2003"\> Runtime Verification of . NET Contracts (Barnett & Schulte, 2003)],
+  [Runtime Verification of . NET Contracts (Barnett & Schulte, 2003)],
   [We propose a method for implementing behavioral interface specifications on the . NET platform. Our interface specifications are expressed as executable model programs. Model programs can be run either as stand-alone simulations or used as contracts to check the conformance of an implementation class to its specification. We focus on the latter, which we call runtime verification. In our framework, model programs are expressed in the new specification language AsmL. We describe how AsmL can be used to describe contracts independently from any implementation language, how AsmL allows properties of component interaction to be specified using mandatory calls, and how AsmL is used to check the behavior of a component written in any of the . NET languages, such as VB, C\#, or C++.],
-  [id="design-and-implementation-of-generics-for-the-net-common-language-runtime-kennedy--syme-2001"\> Design and Implementation of Generics for the . NET Common Language Runtime (Kennedy & Syme, 2001)],
+  [Design and Implementation of Generics for the . NET Common Language Runtime (Kennedy & Syme, 2001)],
   [The Microsoft . NET Common Language Runtime provides a shared type system, intermediate language and dynamic execution environment for the implementation and inter-operation of multiple source languages. In this paper we extend it with direct support for parametric polymorphism (also known as generics), describing the design through examples written in an extended version of the C\# programming language, and explaining aspects of implementation by reference to a prototype extension to the runtime. Our design is very expressive, supporting parameterized types, polymorphic static, instance and virtual methods, “F-bounded” type parameters, instantiation at pointer and value types, polymorphic recursion, and exact run-time types. The implementation takes advantage of the dynamic nature of the runtime, performing justin-time type specialization, representation-based code sharing and novel techniques for efﬁcient creation and use of run-time types. Early performance results are encouraging and suggest that programmers will not need to pay an overhead for using generics, achieving performance almost matching hand-specialized code.],
-  [id="typing-a-multi-language-intermediate-code-gordon--syme-2001"\> Typing a Multi-Language Intermediate Code (Gordon & Syme, 2001)],
+  [Typing a Multi-Language Intermediate Code (Gordon & Syme, 2001)],
   [The Microsoft . NET Framework is a new computing architecture designed to support a variety of distributed applications and web-based services. . NET software components are typically distributed in an object-oriented intermediate language, Microsoft IL, executed by the Microsoft Common Language Runtime. To allow convenient multi-language working, IL supports a wide variety of high-level language constructs, including class-based objects, inheritance, garbage collection, and a security mechanism based on type safe execution. This paper precisely describes the type system for a substantial fragment of IL that includes several novel features: certain objects may be allocated either on the heap or on the stack; those on the stack may be boxed onto the heap, and those on the heap may be unboxed onto the stack; methods may receive arguments and return results via typed pointers, which can reference both the stack and the heap, including the interiors of objects on the heap. We present a formal semantics for the fragment. Our typing rules determine well-typed IL instruction sequences that can be assembled and executed. Of particular interest are rules to ensure no pointer into the stack outlives its target. Our main theorem asserts type safety, that well-typed programs in our IL fragment do not lead to untrapped execution errors. Our main theorem does not directly apply to the product. Still, the formal system of this paper is an abstraction of informal and executable specifications we wrote for the full product during its development. Our informal specification became the basis of the product team’s working specification of type-checking. The process of writing this specification, deploying the executable specification as a test oracle, and applying theorem proving techniques, helped us identify several security critical bugs during development.],
-  [id="mono-runtime"\> Mono Runtime],
-  [id="static-and-dynamic-analysis-of-android-malware-and-goodware-written-with-unity-framework-shim-lim-cho-han--park-2018"\> Static and Dynamic Analysis of Android Malware and Goodware Written with Unity Framework (Shim, Lim, Cho, Han & Park, 2018)],
+  [Static and Dynamic Analysis of Android Malware and Goodware Written with Unity Framework (Shim, Lim, Cho, Han & Park, 2018)],
   [Unity is the most popular cross-platform development framework to develop games for multiple platforms such as Android, iOS, and Windows Mobile. While Unity developers can easily develop mobile apps for multiple platforms, adversaries can also easily build malicious apps based on the “write once, run anywhere” (WORA) feature. Even thoughmalicious apps were discovered among Android apps written with Unity framework (Unity apps), little research has been done on analysing the malicious apps. We propose static and dynamic reverse engineering techniques for malicious Unity apps. We first inspect the executable file format of a Unity app and present an effective static analysis technique of the Unity app. Then, we also propose a systematic technique to analyse dynamically the Unity app. Using the proposed techniques, the malware analyst can statically and dynamically analyse Java code, native code in C or C ++, and the Mono runtime layer where the C\# code is running.],
-  [id="reducing-startup-time-of-a-deterministic-virtualizing-runtime-environment-däumler--werner-2013"\> Reducing startup time of a deterministic virtualizing runtime environment (Däumler & Werner, 2013)],
+  [Reducing startup time of a deterministic virtualizing runtime environment (Däumler & Werner, 2013)],
   [Virtualized runtime environments like Java Virtual Machine (JVM) or Microsoft . NET’s Common Language Runtime (CLR) introduce additional challenges to real-time software development. Since applications for such environments are usually deployed in platform independent intermediate code, one issue is the timing of code transformation from intermediate code into native code. We have developed a solution for this problem, so that code transformation is suitable for real-time systems. It combines pre-compilation of intermediate code with the elimination of indirect references in native code. The gain of determinism comes with an increased application startup time. In this paper we present an optimization that utilizes an Ahead-of-Time compiler to reduce the startup time while keeping the real-time suitable timing behaviour. In an experiment we compare our approach with existing ones and demonstrate its benefits for certain application cases.],
-  [id="detecting-clones-across-microsoft-net-programming-languages-al-omari--keivanloo-roy--rilling-2012"\> Detecting Clones Across Microsoft . NET Programming Languages (Al-Omari, Keivanloo, Roy & Rilling, 2012)],
+  [Detecting Clones Across Microsoft . NET Programming Languages (Al-Omari, Keivanloo, Roy & Rilling, 2012)],
   [The Microsoft . NET framework and its language family focus on multi-language development to support interoperability across several programming languages. The framework allows for the development of similar applications in different languages through the reuse of core libraries. As a result of such a multi-language development, the identification and trace ability of similar code fragments (clones) becomes a key challenge. In this paper, we present a clone detection approach for the . NET language family. The approach is based on the Common Intermediate Language, which is generated by the . NET compiler for the different languages within the . NET framework. In order to achieve an acceptable recall while maintaining the precision of our detection approach, we define a set of filtering processes to reduce noise in the raw data. We show that these filters are essential for Intermediate Language-based clone detection, without significantly affecting the precision of the detection approach. Finally, we study the quantitative and qualitative performance aspects of our clone detection approach. We evaluate the number of reported candidate clone-pairs, as well as the precision and recall (using manual validation) for several open source cross-language systems, to show the effectiveness of our proposed approach.],
-  [id="language-independent-sandboxing-of-just-in-time-compilation-and-self-modifying-code-ansel--marchenko-2012"\> Language-independent sandboxing of just-in-time compilation and self-modifying code (Ansel & Marchenko, 2012)],
+  [Language-independent sandboxing of just-in-time compilation and self-modifying code (Ansel & Marchenko, 2012)],
   [When dealing with dynamic, untrusted content, such as on the Web, software behavior must be sandboxed, typically through use of a language like JavaScript. However, even for such specially-designed languages, it is difficult to ensure the safety of highly-optimized, dynamic language runtimes which, for efficiency, rely on advanced techniques such as Just-In-Time (JIT) compilation, large libraries of native-code support routines, and intricate mechanisms for multi-threading and garbage collection. Each new runtime provides a new potential attack surface and this security risk raises a barrier to the adoption of new languages for creating untrusted content. Removing this limitation, this paper introduces general mechanisms for safely and efficiently sandboxing software, such as dynamic language runtimes, that make use of advanced, low-level techniques like runtime code modification. Our language-independent sandboxing builds on Software-based Fault Isolation (SFI), a traditionally static technique. We provide a more flexible form of SFI by adding new constraints and mechanisms that allow safety to be guaranteed despite runtime code modifications. We have added our extensions to both the x86-32 and x86-64 variants of a production-quality, SFI-based sandboxing platform; on those two architectures SFI mechanisms face different challenges. We have also ported two representative language platforms to our extended sandbox: the Mono common language runtime and the V8 JavaScript engine. In detailed evaluations, we find that sandboxing slowdown varies between different benchmarks, languages, and hardware platforms. Overheads are generally moderate and they are close to zero for some important benchmark/platform combinations.],
-  [id="vmkit-a-substrate-for-managed-runtime-environments-geoffray-thomas-lawall-muller--folliot-2010"\> VMKit: a Substrate for Managed Runtime Environments (Geoffray, Thomas, Lawall, Muller & Folliot, 2010)],
+  [VMKit: a Substrate for Managed Runtime Environments (Geoffray, Thomas, Lawall, Muller & Folliot, 2010)],
   [Managed Runtime Environments (MREs), such as the JVM and the CLI, form an attractive environment for program execution, by providing portability and safety, via the use of a bytecode language and automatic memory management, as well as good performance, via just-in-time (JIT) compilation. Nevertheless, developing a fully featured MRE, including e.g. a garbage collector and JIT compiler, is a herculean task. As a result, new languages cannot easily take advantage of the benefits of MREs, and it is difficult to experiment with extensions of existing MRE based languages. This paper describes and evaluates VMKit, a first attempt to build a common substrate that eases the development of high-level MREs. We have successfully used VMKit to build two MREs: a Java Virtual Machine and a Common Language Runtime. We provide an extensive study of the lessons learned in developing this infrastructure, and assess the ease of implementing new MREs or MRE extensions and the resulting performance. In particular, it took one of the authors only one month to develop a Common Language Runtime using VMKit. VMKit furthermore has performance comparableto the well established open source MREs Cacao, Apache Harmony and Mono, and is 1.2 to 3 times slower than JikesRVM on most of the Dacapo benchmarks.],
-  [id="mmc-the-mono-model-checker-ruys--aan-de-brugh-2007"\> MMC: the Mono Model Checker (Ruys & Aan de Brugh, 2007)],
+  [MMC: the Mono Model Checker (Ruys & Aan de Brugh, 2007)],
   [The Mono Model Checker (mmc) is a software model checker for cil bytecode programs. mmc has been developed on the Mono platform. mmc is able to detect deadlocks and assertion violations in cil programs. The design of mmc is inspired by the Java PathFinder (jpf), a model checker for Java programs. The performance of mmc is comparable to jpf. This paper introduces mmc and presents its main architectural characteristics.],
-  [id="numeric-performance-in-c-c-and-java-sestoft-2007"\> Numeric performance in C, C\# and Java (Sestoft, 2007)],
+  [Numeric performance in C, C\# and Java (Sestoft, 2007)],
   [We compare the numeric performance of C, C\# and Java on three small cases.],
-  [id="mono-versus-net-a-comparative-study-of-performance-for-distributed-processing-blajian-eggen-eggen--pitts-2006"\> Mono versus . Net: A Comparative Study of Performance for Distributed Processing. (Blajian, Eggen, Eggen & Pitts, 2006)],
+  [Mono versus . Net: A Comparative Study of Performance for Distributed Processing. (Blajian, Eggen, Eggen & Pitts, 2006)],
   [Microsoft has released . NET, a platform dependent standard for the C\#,programming language. Sponsored by Ximian/Novell, Mono, the open source development platform based on the . NET framework, has been developed to be a platform independent version of the C\#,programming environment. While . NET is platform dependent, Mono allows developers to build Linux and crossplatform applications. Mono’s . NET implementation is based on the ECMA standards for C\#. This paper examines both of these programming environments with the goal of evaluating the performance characteristics of each. Testing is done with various algorithms. We also assess the trade-offs associated with using a cross-platform versus a platform.],
-  [id="automated-detection-of-performance-regressions-the-mono-experience-kalibera-bulej--tuma-2005"\> Automated detection of performance regressions: the mono experience (Kalibera, Bulej & Tuma, 2005)],
+  [Automated detection of performance regressions: the mono experience (Kalibera, Bulej & Tuma, 2005)],
   [Engineering a large software project involves tracking the impact of development and maintenance changes on the software performance. An approach for tracking the impact is regression benchmarking, which involves automated benchmarking and evaluation of performance at regular intervals. Regression benchmarking must tackle the nondeterminism inherent to contemporary computer systems and execution environments and the impact of the nondeterminism on the results. On the example of a fully automated regression benchmarking environment for the mono open-source project, we show how the problems associated with nondeterminism can be tackled using statistical methods.],
-  [id="shared-source-common-language-infrastructure-sscli---aka-rotor"\> Shared Source Common Language Infrastructure (SSCLI) - a.k.a ‘ Rotor ’],
-  [id="efficient-virtual-machine-support-of-runtime-structural-reflection-ortina-redondoa--perez-schofield-2009"\> Efficient virtual machine support of runtime structural reflection (Ortina, Redondoa & Perez-Schofield, 2009)],
+  [Shared Source Common Language Infrastructure (SSCLI) - a.k.a ‘ Rotor ’],
+  [Efficient virtual machine support of runtime structural reflection (Ortina, Redondoa & Perez-Schofield, 2009)],
   [Increasing trends towards adaptive, distributed, generative and pervasive software have made object-oriented dynamically typed languages become increasingly popular. These languages offer dynamic software evolution by means of reflection, facilitating the development of dynamic systems. Unfortunately, this dynamism commonly imposes a runtime performance penalty. In this paper, we describe how to extend a production JIT-compiler virtual machine to support runtime object-oriented structural reflection offered by many dynamic languages. Our approach improves runtime performance of dynamic languages running on statically typed virtual machines. At the same time, existing statically typed languages are still supported by the virtual machine.],
   [We have extended the . Net platform with runtime structural reflection adding prototype-based object-oriented semantics to the statically typed class-based model of . Net, supporting both kinds of programming languages. The assessment of runtime performance and memory consumption has revealed that a direct support of structural reflection in a production JIT-based virtual machine designed for statically typed languages provides a significant performance improvement for dynamically typed languages.],
-  [id="extending-the-sscli-to-support-dynamic-inheritance-redondo-ortin--perez-schofield-2008"\> Extending the SSCLI to Support Dynamic Inheritance (Redondo, Ortin & Perez-Schofield, 2008)],
+  [Extending the SSCLI to Support Dynamic Inheritance (Redondo, Ortin & Perez-Schofield, 2008)],
   [This paper presents a step forward on a research trend focused on increasing runtime adaptability of commercial JIT-based virtual machines, describing how to include dynamic inheritance into this kind of platforms. A considerable amount of research aimed at improving runtime performance of virtual machines has converted them into the ideal support for developing different types of software products. Current virtual machines do not only provide benefits such as application interoperability, distribution and code portability, but they also offer a competitive runtime performance.],
   [Since JIT compilation has played a very important role in improving runtime performance of virtual machines, we first extended a production JIT-based virtual machine to support efficient language-neutral structural reflective primitives of dynamically typed programming languages. This article presents the next step in our research work: supporting language-neutral dynamic inheritance for both statically and dynamically typed programming languages. Executing both kinds of programming languages over the same platform provides a direct interoperation between them.],
-  [id="sampling-profiler-for-rotor-as-part-of-optimizing-compilation-system-chilingarova--safonov-2006"\> Sampling profiler for Rotor as part of optimizing compilation system (Chilingarova & Safonov, 2006)],
+  [Sampling profiler for Rotor as part of optimizing compilation system (Chilingarova & Safonov, 2006)],
   [This paper describes a low-overhead self-tuning sampling-based runtime profiler integrated into SSCLI virtual machine. Our profiler estimates how “hot” a method is and builds a call context graph based on managed stack samples analysis. The frequency of sampling is tuned dynamically at runtime, based on the information of how often the same activation record appears on top of the stack. The call graph is presented as a novel Call Context Map (CC-Map) structure that combines compact representation and accurate information about the context. It enables fast extraction of data helpful in making compilation decisions, as well as fast placing data into the map. Sampling mechanism is integrated with intrinsic Rotor mechanisms of thread preemption and stack walk. A separate system thread is responsible for organizing data in the CC-Map. This thread gathers and stores samples quickly queued by managed threads, thus decreasing the time they must hold up their user-scheduled job],
-  [id="to-jit-or-not-to-jit-the-effect-of-code-pitching-on-the-performance-of-net-framework-anthony-leung--srisa-an-2005"\> To JIT or not to JIT: The effect of code-pitching on the performance of . NET framework (Anthony, Leung & Srisa-an, 2005)],
+  [To JIT or not to JIT: The effect of code-pitching on the performance of . NET framework (Anthony, Leung & Srisa-an, 2005)],
   [The. NET Compact Framework is designed to be a highperformance virtual machine for mobile and embedded devices that operate on Windows CE (version 4.1 and later). It achieves fast execution time by compiling methods dynamically instead of using interpretation. Once compiled, these methods are stored in a portion of the heap called code-cache and can be reused quickly to satisfy future method calls. While code-cache provides a high-level of reusability, it can also use a large amount of memory. As a result, the Compact Framework provides a “code pitching ” mechanism that can be used to discard the previously compiled methods as needed. In this paper, we study the effect of code pitching on the overall performance and memory utilization of. NET applications. We conduct our experiments using Microsoft’s Shared-Source Common Language Infrastructure (SSCLI). We profile the access behavior of the compiled methods. We also experiment with various code-cache configurations to perform pitching. We find that programs can operate efficiently with a small code-cache without incurring substantial recompilation and execution overheads.],
-  [id="adding-structural-reflection-to-the-sscli-ortin-redondo-vinuesa--lovelle-2005"\> Adding structural reflection to the SSCLI (Ortin, Redondo, Vinuesa & Lovelle, 2005)],
+  [Adding structural reflection to the SSCLI (Ortin, Redondo, Vinuesa & Lovelle, 2005)],
   [Although dynamic languages are becoming widely used due to the flexibility needs of specific software prod- ucts, their major drawback is their runtime performance. Compiling the source program to an abstract machine’s intermediate language is the current technique used to obtain the best performance results. This intermediate code is then executed by a virtual machine developed as an interpreter. Although JIT adaptive optimizing com- pilation is currently used to speed up Java and .net intermediate code execution, this practice has not been em- ployed successfully in the implementation of dynamically adaptive platforms yet. We present an approach to improve the runtime performance of a specific set of structural reflective primitives, extensively used in adaptive software development. Looking for a better performance, as well as interaction with other languages, we have employed the Microsoft Shared Source CLI platform, making use of its JIT compiler. The SSCLI computational model has been enhanced with semantics of the prototype-based object-oriented com- putational model. This model is much more suitable for reflective environments. The initial assessment of per- formance results reveals that augmenting the semantics of the SSCLI model, together with JIT generation of native code, produces better runtime performance than the existing implementations.],
-  [id="static-analysis-for-identifying-and-allocating-clusters-of-immortal-objects-ravindar--srikant-2005"\> Static Analysis for Identifying and Allocating Clusters of Immortal Objects (Ravindar & Srikant, 2005)],
+  [Static Analysis for Identifying and Allocating Clusters of Immortal Objects (Ravindar & Srikant, 2005)],
   [Long living objects lengthen the trace time which is a critical phase of the garbage collection process. However, it is possible to recognize object clusters i.e. groups of long living objects having approximately the same lifetime and treat them separately to reduce the load on the garbage collector and hence improve overall performance. Segregating objects this way leaves the heap for objects with shorter lifetimes and now a typical collection can nd more garbage than before. In this paper, we describe a compile time analysis strategy to identify object clusters in programs. The result of the compile time analysis is the set of allocation sites that contribute towards allocating objects belonging to such clusters. All such allocation sites are replaced by a new allocation method that allocates objects into the cluster area rather than the heap. This study was carried out for a concurrent collector which we developed for Rotor, Microsoft’s Shared Source Implementation of . NET. We analyze the performance of the program with combina- tions of the cluster and stack allocation optimizations. Our results show that the clustering optimization reduces the number of collections by 66.5% on average, even eliminating the need for collection in some programs. As a result, the total pause time reduces by 62.8% on average. Using both stack allocation and the cluster optimizations brings down the number of collections by 91.5% thereby improving the total pause time by 79.33%.],
-  [id="an-optimizing-just-intime-compiler-for-rotor-trindade--silva-2005"\> An Optimizing Just-InTime Compiler for Rotor (Trindade & Silva, 2005)],
+  [An Optimizing Just-InTime Compiler for Rotor (Trindade & Silva, 2005)],
   [The Shared Source CLI (SSCLI), also known as Rotor, is an implementation of the CLI released by Microsoft in source code. Rotor includes a single pass just-in-time compiler that generates non-optimized code for Intel IA-32 and IBM PowerPC processors. We extend Rotor with an optimizing justin-time compiler for IA-32. This compiler has three passes: control flow graph generation, data dependence graph generation and final code generation. Dominance relations in the control flow graph are used to detect natural loops. A number of optimizations are performed during the generation of the data dependence graph. During native code generation, the rich address modes of IA32 are used for instruction folding, reducing code size and usage of register names. Despite the overhead of three passes and optimizations, this compiler is only 1.4 to 1.9 times slower than the original SSCLI compiler and generates code that runs 6.4 to 10 times faster.],
-  [id="software-interactions-into-the-sscli-platform-charfi--emsellem-2004"\> Software Interactions into the SSCLI platform (Charfi & Emsellem, 2004)],
+  [Software Interactions into the SSCLI platform (Charfi & Emsellem, 2004)],
   [By using an Interaction Specification Language (ISL), interactions between components can be expressed in a language independent way. At class level, interaction pattern specified in ISLrepresent model s of future interactions when applied on some component instances. The Interaction Server is in charge of managing the life cycle of interactions (interaction pattern registration and instantiation, destruction of interactions, merging). It acts as a central repository that keeps the global coherency of the adaptations realized on the component instances. The Interaction service allows creati ng interactions between heterogeneous components. Noah is an implementation of this Interaction Service. It can be thought as a dynamic aspect repository with a weaver that uses an aspect composition mechanism that insures commutable and associative adaptations. In this paper, we propose the implementation of the Interaction Service in the SSCLI. In contrast to other implementations such as Java where interaction management represents an additional layer, SSCLI enables us to integrate Interaction Management as in intrinsic part of the CLI runtime.],
-  [id="experience-integrating-a-new-compiler-and-a-new-garbage-collector-into-rotor-anderson-eng-glew-lewis-menon--stichnoth-2004"\> Experience Integrating a New Compiler and a New Garbage Collector Into Rotor (Anderson, Eng, Glew, Lewis, Menon & Stichnoth, 2004)],
+  [Experience Integrating a New Compiler and a New Garbage Collector Into Rotor (Anderson, Eng, Glew, Lewis, Menon & Stichnoth, 2004)],
   [Microsoft’s Rotor is a shared-source CLI implementation intended for use as a research platform. It is particularly attractive for research because of its complete implementation and extensive libraries, and because its modular design allows dierent implementations of certain components such as just-in-time compilers (JITs). Our group has independently developed our own high-performance JIT and garbage collector (GC) and wanted to take advantage of Rotor to experiment with these components in a CLI environment. In this paper, we describe our experience integrating these components into Rotor and evaluate the flexibility of Rotor’s design toward this goal. We found it easier to integrate our JIT than our GC because Rotor has a well-defined interface for the former but not the latter. However, our JIT integration still required significant changes to both Rotor and our JIT. For example, we modified Rotor to support multiple JITs. We also added support for a second JIT manager in Rotor, and implemented a new code manager compatible with our JIT. We had to change our JIT compiler to support Rotor’s calling conventions, helper functions, and exception model. Our GC integration was complicated by the many places in Rotor where components make assumptions about how its garbage collector is implemented, as well as Rotor’s lack of a well-defined GC interface. We also had to reconcile the dierent assumptions made by Rotor and our garbage collector about the layout of objects, virtual-method tables, and thread structures.],
 ),
   insert-map: (:),
   inline-pq: pull-quote([The gain of determinism comes with an increased application startup time.], [Matt Warren (.NET)]),
-  inline-pq-idx: 59,
+  inline-pq-idx: 58,
   word-count: 7155,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How the dotnet CLI tooling runs your code],
   author: [Matt Warren (.NET)],
   source-name: [Matt Warren (.NET)],
@@ -1888,20 +1782,24 @@ framework for C\#, comprising formal specifications of the language’s grammar,
   [the . NET Core runtime, libraries and tools and the ASP. NET Core libraries.],
   [However alongside a completely new, revamped, xplat version of the . NET runtime, the development experience has been changed, with the dotnet based tooling now available ( Note : the tooling itself is currently still in preview and it’s expected to be RTM later this year)],
   [So you can now write:],
+  [dotnet new
+dotnet restore
+dotnet run],
   [and at the end you’ll get the following output:],
+  [Hello World!],
   [It’s the dotnet CLI (Command Line Interface) tooling that is the focus of this post and more specifically how it actually runs your code , although if you want a tl;dr version see this tweet from \@citizenmatt :],
-  [id="traditional-way-of-running-net-executables"\>Traditional way of running . NET executables],
+  [Traditional way of running . NET executables],
   [As a brief reminder, . NET executables can’t be run directly (they’re just IL , not machine code), therefore the Windows OS has always needed to do a few tricks to execute them, from CLR via C\# :],
   [After Windows has examined the EXE file’s header to determine whether to create a 32-bit process, a 64-bit process, or a WoW64 process, Windows loads the x86, x64, or IA64 version of MSCorEE.dll into the process’s address space.
 …
 Then, the process’ primary thread calls a method defined inside MSCorEE.dll. This method initializes the CLR, loads the EXE assembly, and then calls its entry point method (Main). At this point, the managed application is up and running.],
-  [id="new-way-of-running-net-executables"\>New way of running . NET executables],
-  [id="dotnet-run"\> dotnet run],
+  [New way of running . NET executables],
+  [dotnet run],
   [So how do things work now that we have the new CoreCLR and the CLI tooling? Firstly to understand what is going on under-the-hood, we need to set a few environment variables ( COREHOST\_TRACE and DOTNET\_CLI\_CAPTURE\_TIMING ) so that we get a more verbose output:],
   [Here, amongst all the pretty ASCII-art, we can see that dotnet run actually executes the following cmd:],
   [dotnet exec --additionalprobingpath C:\\Users\\matt\\.nuget\\packages c:\\dotnet\\bin\\Debug\\netcoreapp1.0\\myapp.dll],
   [Note : this is what happens when running a Console Application. The CLI tooling supports other scenarios , such as self-hosted web sites, which work differently.],
-  [id="dotnet-exec-and-corehost"\> dotnet exec and corehost],
+  [dotnet exec and corehost],
   [Up-to this point everything was happening within managed code, however once dotnet exec is called we jump over to unmanaged code within the corehost application . In addition several other .dlls are loaded, the last of which is the CoreCLR runtime itself (click to go to the main source file for each module):],
   [hostpolicy.dll],
   [hostfxr.dll],
@@ -1935,11 +1833,8 @@ Then, the process’ primary thread calls a method defined inside MSCorEE.dll. T
   [C:\\Program Files\\dotnet\\shared\\Microsoft. NETCore. App\\1.0.0-rc2-3002702\\Microsoft. NETCore. App.deps.json],
   [Note : You can also run your app by invoking corehost.exe directly with the following command:],
   [corehost.exe C:\\dotnet\\bin\\Debug\\netcoreapp1.0\\myapp.dll],
-  [id="executing-a-net-assembly"\>Executing a . NET Assembly],
+  [Executing a . NET Assembly],
   [At last we get to the point at which the . NET dll/assembly is loaded and executed, via the code shown below, taken from unixinterface.cpp :],
-  [hr = host -\> Start (); 
- IfFailRet ( hr );],
-  [hr = host -\> CreateAppDomainWithManager (],
   [appDomainFriendlyNameW ,],
   [\/\\/ Flags:],
   [\/\\/ APPDOMAIN\_ENABLE\_PLATFORM\_SPECIFIC\_APPS],
@@ -1970,7 +1865,7 @@ Then, the process’ primary thread calls a method defined inside MSCorEE.dll. T
   [Expose Unix hosting API on Windows],
   [Unix Hosting API],
   [And that’s it, your . NET code is now running, simple really!!],
-  [id="additional-information"\>Additional information:],
+  [Additional information:],
   [Official dotnet cli tooling documentation],
   [corehost runtime assembly resolution],
   [Runtime Configuration File specification],
@@ -1983,10 +1878,8 @@ Then, the process’ primary thread calls a method defined inside MSCorEE.dll. T
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Simplify Regular Expressions with RegExpBuilderJS],
   author: [Scott Robinson],
   source-name: [Stack Abuse],
@@ -1996,10 +1889,8 @@ Then, the process’ primary thread calls a method defined inside MSCorEE.dll. T
   [In its traditional form, regex defines powerful string patterns in a very compact statement. One trade-off we can make is to use a more verbose syntax that is easier to read and write. This is the purpose of a package like regexpbuilderjs .],
   [The regexpbuilderjs package is actually a port of the popular PHP package, regexpbuilderphp . The regexpbuilderphp package itself is a port of an old JS package, regexpbuilder , which now seems to be gone. This new package is meant to continue the work of the original regexpbuilder package.],
   [All credit goes to Andrew Jones for creating the original JS version and Max Girkens for the PHP port.],
-  [id="installation"\>Installation],
   [To install the package, you can use npm:],
   [\$ npm install regexpbuilderjs],
-  [id="usage"\>Usage],
   [Here's a simple example of how you can use the package:],
   [const RegExpBuilder = require ( 'regexpbuilderjs' );],
   [const builder = new RegExpBuilder();
@@ -2010,7 +1901,7 @@ Then, the process’ primary thread calls a method defined inside MSCorEE.dll. T
  .getRegExp();],
   [Now let's break this down a bit. The RegExpBuilder class is the main class that you'll be using to build your regular expressions. You can start by creating a new instance of this class and chain methods together to create your regex:],
   [startOfLine() : This method adds the ^ character to the regex, which matches the start of a line.],
-  [exactly(1) : This method adds the {1} quantifier to the regex, which matches exactly one occurrence of a given character or group.],
+  [exactly(1) : This method adds the \{1\} quantifier to the regex, which matches exactly one occurrence of a given character or group.],
   [of('S') : This method adds the S character to the regex.],
   [getRegExp() : This method returns the final RegExp object that you can use to match strings.],
   [With this, you can match strings like "Scott", "Soccer", or "S418401".],
@@ -2034,7 +1925,6 @@ Then, the process’ primary thread calls a method defined inside MSCorEE.dll. T
   [Some interesting parts of this regex is that we can specify type of strings (i.e. digits() ), min and max occurrences of a character or group (i.e. min(3).max(10) ), and a list of possible values (i.e. anyOf(\['png', 'jpg', 'gif'\]) ).],
   [For a full list of methods you can use to build your regex, you can check out the documentation .],
   [This is just a small taste of what you can do with regexpbuilderjs . The package is very powerful and can help you build complex regular expressions in a more readable and maintainable way.],
-  [id="conclusion"\>Conclusion],
   [Comments, questions, and suggestions are always welcome! If you have any feedback on how this could work better, feel free to reach out on X . In the meantime, you can check out the repo on GitHub and give it a star while you're at it.],
 ),
   insert-map: (:),
@@ -2043,10 +1933,8 @@ Then, the process’ primary thread calls a method defined inside MSCorEE.dll. T
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Agent Psychosis: Are We Going Insane?],
   author: [Armin Ronacher],
   source-name: [Armin Ronacher (Lucumr)],
@@ -2238,11 +2126,10 @@ brain and let go completely.],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [CSS3 colors, today (MediaCampAthens session)],
   author: [Lea Verou],
   source-name: [Lea Verou],
@@ -2268,7 +2155,7 @@ brain and let go completely.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [I’m going to MIT!!],
   author: [Lea Verou],
   source-name: [Lea Verou],
@@ -2298,15 +2185,15 @@ brain and let go completely.],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Scaling HAProxy on AKS for Billions of Transactions with Dynamic Autoscaling and Token Management],
   author: [Shoeb Khan],
   source-name: [Haptik Tech],
   images: (),
   paragraphs: (
-  [style="font-weight: normal;"\>At our scale, we needed to handle billions of transactions efficiently - routing across multiple environments and internal data centers - while maintaining reliability, security, and dynamic control. To achieve this, we chose HAProxy, a proven, high-performance load balancer known for its lightweight footprint, flexibility, and ability to handle massive concurrency with minimal overhead.],
-  [style="font-weight: normal;"\>This blog walks you through how we deployed HAProxy in high-availability (HA) mode on Azure Kubernetes Service (AKS) -complete with autoscaling powered by KEDA, seamless integration with Azure Application Gateway, and dynamic token managementusing Azure File Share , all designed to deliver scalable, self-hosted traffic routing at enterprise scale.],
-  [style="font-weight: normal; text-align: center;"\>ALSO READ: How We Took Our Kubernetes Autoscaling from Basic to Advanced Mode with Istio Metrics],
+  [At our scale, we needed to handle billions of transactions efficiently - routing across multiple environments and internal data centers - while maintaining reliability, security, and dynamic control. To achieve this, we chose HAProxy, a proven, high-performance load balancer known for its lightweight footprint, flexibility, and ability to handle massive concurrency with minimal overhead.],
+  [This blog walks you through how we deployed HAProxy in high-availability (HA) mode on Azure Kubernetes Service (AKS) -complete with autoscaling powered by KEDA, seamless integration with Azure Application Gateway, and dynamic token managementusing Azure File Share , all designed to deliver scalable, self-hosted traffic routing at enterprise scale.],
+  [ALSO READ: How We Took Our Kubernetes Autoscaling from Basic to Advanced Mode with Istio Metrics],
 ),
   insert-map: (:),
   word-count: 125,
@@ -2316,7 +2203,7 @@ brain and let go completely.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Advanced Performance Audits with DevTools],
   author: [Paul Irish],
   source-name: [Paul Irish],
@@ -2346,9 +2233,8 @@ brain and let go completely.],
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [StronglyTyped: A library for strongly typed properties & constants in JavaScript],
   author: [Lea Verou],
   source-name: [Lea Verou],
@@ -2356,17 +2242,17 @@ brain and let go completely.],
   paragraphs: (
   [I’ll start by saying I love the loosely typed nature of JavaScript. When I had to work with strongly typed languages like Java, it always seemed like an unnecessary hassle. On the contrary, my boyfriend even though very proficient with HTML, CSS and SVG, comes from a strong Java background and hates loosely typed scripting languages. So, to tempt him into JS and keep him away from heavy abstractions like Objective-J, I wrote a little library that allows you to specify strongly typed properties (and since global variables are also properties of the window object, those as well) of various types (real JS types like Boolean , Number , String etc or even made up ones like Integer ) and constants (final properties in Java). It uses ES5 getters and setters to do that and falls back to regular, loosely typed properties in non-supporting browsers.],
   [Also, as a bonus, you get cross-browser Function.prototype.bind and Array.prototype.forEach and a robust type checking function: StronglyTyped.is(type, value) .],
-  [id="example%3A-strongly-typed-properties" tabindex="-1"\> Example: Strongly typed properties],
+  [Example: Strongly typed properties],
   [You define strongly typed properties by using the corresponding methods of the StronglyTyped object. For example, the following snippet defines a boolean property called “foo” on an object literal:],
-  [var o = {};],
+  [var o = \{\};],
   [StronglyTyped.boolean(o, ‘foo’, true);],
   [console.log(o.foo); \/\\/ prints true],
   [o.foo = false;
 console.log(o.foo); \/\\/ prints false],
   [o.foo = ‘bar’; \/\\/ TypeError: foo must be of type Boolean. bar is not.],
-  [id="example%3A-constants" tabindex="-1"\> Example: Constants],
+  [Example: Constants],
   [You define constants by using the constant method of the StronglyTyped object. For example, the following snippet defines a global MAGIC\_NUMBER constant:],
-  [var o = {};],
+  [var o = \{\};],
   [StronglyTyped.constant(window, ‘MAGIC\_NUMBER’, 3.1415926535);],
   [console.log(MAGIC\_NUMBER); \/\\/ prints 3.1415926535],
   [MAGIC\_NUMBER = 4;
@@ -2380,17 +2266,17 @@ console.log(MAGIC\_NUMBER); \/\\/ prints 3.1415926535],
 console.log(MAGIC\_NUMBER); \/\\/ prints 3.1415926535],
   [MAGIC\_NUMBER = 4;
 console.log(MAGIC\_NUMBER); \/\\/ prints 3.1415926535],
-  [id="supported-types" tabindex="-1"\> Supported types],
+  [Supported types],
   [RegExp],
   [null and undefined are valid in every type. NaN and Infinity values are accepted in both the Number and the Integer types.],
   [If you want to use a type that’s not among the above but either is native to the browser (for example Element ) or a global object, you can use the generic method StronglyTyped.property(type, object, property \[, initialValue\]) :],
-  [var o = {};],
+  [var o = \{\};],
   [StronglyTyped.property(‘Element’, o, ‘foo’, document.body);],
   [console.log(o.foo); \/\\/ prints a representation of the element],
   [o.foo = document.head;
 console.log(o.foo); \/\\/ prints a representation of the element],
   [o.foo = 5; \/\\/ TypeError: foo must be of type Element. 5 is not.],
-  [id="browser-support" tabindex="-1"\> Browser support],
+  [Browser support],
   [It should work on every browser that supports Object.defineProperty or \_\_defineGetter\_\_ and \_\_defineSetter\_\_ . As you can see from kangax’s awesome compatibility tables for Object.defineProperty and \_\_define(G|S)etter\_\_ , those are:],
   [Firefox 3.5+],
   [IE8 (only on DOM elements)],
@@ -2406,9 +2292,8 @@ console.log(o.foo); \/\\/ prints a representation of the element],
   [Chrome (Win and OSX)],
   [Safari 5 (Win and OSX)],
   [This doesn’t mean it won’t work in the rest , just that it hasn’t been tested there (yet). You can load the unit tests (sort of…) in a browser you want to test and let me know about the results. :)],
-  [id="naice!-can-i-haz%3F" tabindex="-1"\> Naice! Can I haz?],
+  [Naice! Can I haz?],
   [As usual, you can get it from Github: Github repo],
-  [id="credits" tabindex="-1"\> Credits],
   [Thanks a lot to Max ( \@suprMax ) for Windows testing!],
 ),
   insert-map: (:),
@@ -2417,12 +2302,10 @@ console.log(o.foo); \/\\/ prints a representation of the element],
   debug-mode: false,
 )
 
-  #pull-quote([foo); \/\\/ prints a representation of the element  o.], [Lea Verou])
+#pull-quote([foo); \/\\/ prints a representation of the element  o.], [Lea Verou])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [State of HTML 2025 now open!],
   author: [Lea Verou],
   source-name: [Lea Verou],
@@ -2447,13 +2330,13 @@ and get a personalized, sharable score at the end to see how you compare to othe
   [While the survey will be open for about a month,
 responses entered within the first two weeks (until end of July) will have a much higher impact on the Web,
 as preliminary data will be directly used to inform Interop 2026.],
-  [id="acknowledgements" tabindex="-1"\> Acknowledgements],
   [I would like to thank the following people for their help in fleshing out the survey:],
   [Sacha Greif for actually implementing the survey and tirelessly discussing my ideas],
   [My apprentice Dmitry Sharabin for various fixes and improvements],
   [My Google contacts, Philip Jägenstedt and Kadir Topal for making my involvement possible],
   [And everyone who responded to my earlier call for suggestions — these were invaluable in shaping the survey, and I wish I could include them all!],
-  [id="faq" tabindex="-1"\> FAQ],
+  [FAQ],
+  [What’s new this year?],
   [We spent a lot of time thinking about which features we are asking about and why.
 As a result, we added 35 new features, and removed 18 existing ones to make room.
 This is probably one of the hardest parts of the process, as we had to make some tough decisions.],
@@ -2463,11 +2346,13 @@ followed by the usual free form text list:],
   [While this increases the number of questions,
 we are hoping it will reduce survey fatigue by allowing participants to skip the freeform question more frequently (or spend less time on it) if most of their pain points have already been covered by the multiple choice question.],
   [Last but not least, we introduced browser support icons for each feature, per popular request:],
+  [Can I edit my responses?],
   [Absolutely! Do not worry about filling it out perfectly in one go.
 If you create an account, you can edit your responses for the whole period the survey is open, and even fill it out across multiple devices,
 e.g. start on your phone, then fill out some on your desktop, etc.
 Even if you’re filling it out anonymously, you can still edit responses on your device for some time,
 so you can have it open in a browser tab and revisit it periodically.],
+  [Why are there JS questions in an HTML survey?],
   [This question comes up a lot every year.],
   [For the same reason there are JS APIs in the HTML standard :
 many JS APIs are intrinsically related to HTML.
@@ -2482,17 +2367,20 @@ In fact, I would encourage you even more strongly to fill out the survey,
 as people who don’t write JS are very underrepresented in these surveys.
  All questions are optional , so you can just skip any JS-related questions.],
   [There is also a question at the end, where you can select that you only write HTML/CSS:],
+  [Why are some features included that are early stage proposals with no browser support?],
   [While proposals with no browser support are not good candidates for immediate prioritization by browsers,
 their context chips give browser vendors and standards groups invaluable insight into what matters to developers,
 which also drives prioritization decisions.],
   [However, we heard you loud and clear: when mature and early stage features are mixed together, you felt bait-and-switched.
 So this year, we are including icons to summarize browser support of each feature we ask about:],
   [We are hoping this will also help prevent cases where participants confuse a new feature they have never heard of, with a more established feature they are familiar with.],
+  [Is the survey only available in English?],
   [Absolutely not! Localization has been an integral part of these surveys since the beginning.
 Fun fact: None of the people working on these surveys is a native English speaker.],
   [State of HTML 2024 had translations for 31 languages.],
   [However, since translations are a community effort, they are not necessarily complete, especially in the beginning.
 If you are a native speaker of a language that is not yet complete, please consider helping out !],
+  [I found a bug, what should I do?],
   [Please file an issue so we can fix it!],
   [File content issue],
   [File technical issue],
@@ -2503,10 +2391,8 @@ If you are a native speaker of a language that is not yet complete, please consi
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Call for Testing: Build Dir Layout v2],
   author: [Ed Page],
   source-name: [Rust Blog],
@@ -2520,8 +2406,7 @@ many projects need to rely on the unspecified details due to missing features wi
 While we've performed a crater run ,
 that won't cover everything and we need help identifying tools and process that rely on the details,
 reporting issues to these projects so they can update to the new layout or support them both.],
-  [id="how-to-test-this"\> 
-How to test this?],
+  [How to test this?],
   [With at least nightly 2026-03-10,
 run your tests, release processes, and anything else that may touch build-dir/target-dir
 with the -Zbuild-dir-new-layout flag.],
@@ -2553,12 +2438,10 @@ We are evaluating changing the default for build-dir in \#16147 .],
   [term-transcript : Issue \#269],
   [test\_bin : Issue \#13],
   [trycmd : fixed],
-  [id="what-is-not-changing"\> 
-What is not changing?],
+  [What is not changing?],
   [The layout of final artifacts within target dir .],
   [Nesting of build artifacts under the profile and the target tuple, if specified.],
-  [id="what-is-changing"\> 
-What is changing?],
+  [What is changing?],
   [We are switching from organizing by content type to scoping the content by the package name and a hash of the build unit and its inputs.],
   [Here is an example of the current layout, assuming you have a package named lib and a package named bin , and both have a build script:],
   [build-dir/],
@@ -2615,8 +2498,7 @@ What is changing?],
   [│ └── out/\* \# library and debug information],
   [└── incremental/... \# managed by rustc],
   [For more information on these Cargo internals, see the mod layout documentation .],
-  [id="why-is-this-being-done"\> 
-Why is this being done?],
+  [Why is this being done?],
   [ranger-ross has worked tirelessly on this as a stepping stone to cross-workspace caching 
 which will be easier when we can track each cacheable unit in a self-contained directory.],
   [This also unblocks work on:],
@@ -2628,8 +2510,7 @@ which will be easier when we can track each cacheable unit in a self-contained d
   [Avoiding file collisions among intermediate artifacts],
   [While the Cargo team does not officially endorse sharing a build-dir across workspaces,
 that last item should reduce the chance of encountering problems for those who choose to.],
-  [id="future-work"\> 
-Future work],
+  [Future work],
   [We will use the experience of this layout change to help guide how and when to perform any future layout changes, including:],
   [Efforts to reduce path lengths to reduce risks for errors for developers on Windows],
   [Experimenting with moving artifacts out of the --profile and --target directories, allowing sharing of more artifacts where possible],
@@ -2643,10 +2524,8 @@ we did not do all of the layout changes now because some are blocked on the lock
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Copying object properties, the robust way],
   author: [Lea Verou],
   source-name: [Lea Verou],
@@ -2656,35 +2535,35 @@ we did not do all of the layout changes now because some are blocked on the lock
   [These days, most of my time is spent working on my research project at MIT , which I will hopefully reveal later this year. In that, I’m using a lightweight homegrown helper library, which I might release separately at some point as I think it has potential in its own right, for a number of reasons.],
   [Of course, it needed to have a simple extend() method as well, to copy properties from one object to another. Let’s assume for the purposes of this article that we’re talking about shallow copying, that overwrites are allowed, and let’s omit hasOwnProperty() checks to make code easier to read.],
   [It’s a simple task, right? Our first attempt might look like this:],
-  [\$.extend = function (to, from) {
- for (var property in from) {
+  [\$.extend = function (to, from) \{
+ for (var property in from) \{
  to\[property\] = from\[property\];
- }],
+ \}],
   [return to;
-}],
+\}],
   [This works fine, until you try it on objects with accessors or other types of properties defined via Object.defineProperty() or get \/ set keywords. What do you do then? Our next iteration could look like this:],
-  [\$.extend = function (to, from) {
- for (var property in from) {
+  [\$.extend = function (to, from) \{
+ for (var property in from) \{
  Object.defineProperty(to, property, Object.getOwnPropertyDescriptor(from, property));
- }],
+ \}],
   [return to;
-}],
+\}],
   [This works much better, until it fails, and it can fail pretty epically. Try this:],
-  [\$.extend(document.body.style, {
+  [\$.extend(document.body.style, \{
  backgroundColor: "red"
-});],
+\});],
   [Both in Chrome and Firefox, the results are super weird. Even though reading document.body.style.backgroundColor will return "red" , no style will have actually been applied. In Firefox it even destroyed the native setter entirely and any future attempts to set document.body.style.backgroundColor in the console did absolutely nothing.],
   [In contrast, the previous naïve approach worked fine for this. It’s clear that we need to somehow combine the two approaches, using Object.defineProperty() only when actually needed. But when is it actually not needed?],
-  [One obvious case is if the descriptor is undefined (such as with some native properties). Also, in simple properties, such as those in our object literal, the descriptor will be of the form {value: somevalue, writable: true, enumerable: true, configurable: true} . So, the next obvious step would be:],
-  [\$.extend = function (to, from) {
+  [One obvious case is if the descriptor is undefined (such as with some native properties). Also, in simple properties, such as those in our object literal, the descriptor will be of the form \{value: somevalue, writable: true, enumerable: true, configurable: true\} . So, the next obvious step would be:],
+  [\$.extend = function (to, from) \{
  var descriptor = Object.getOwnPropertyDescriptor(from, property);],
-  [if (descriptor && (!descriptor.writable || !descriptor.configurable || !descriptor.enumerable || descriptor.get || descriptor.set)) {
+  [if (descriptor && (!descriptor.writable || !descriptor.configurable || !descriptor.enumerable || descriptor.get || descriptor.set)) \{
  Object.defineProperty(to, property, descriptor);
- }
- else {
+ \}
+ else \{
  to\[property\] = from\[property\];
- }
-}],
+ \}
+\}],
   [This works perfectly, but is a little clumsy. I’ve currently left it at that, but any suggestions for making it more elegant are welcome :)],
   [FWIW, I looked at jQuery’s implementation of jQuery.extend() after this, and it seems it doesn’t even handle accessors at all, unless I missed something. Time for a pull request, perhaps…],
   [Edit: As MaxArt pointed out in the comments, there is a similar native method in ES6, Object.assign() . However, it does not deal with copying accessors, so does not deal with this problem either.],
@@ -2695,10 +2574,8 @@ we did not do all of the layout changes now because some are blocked on the lock
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Cicada Principle, revisited with CSS variables],
   author: [Lea Verou],
   source-name: [Lea Verou],
@@ -2710,30 +2587,30 @@ we did not do all of the layout changes now because some are blocked on the lock
   [This made me think: hey, maybe I should actually write a blog post about the technique. After all, the technique itself is useful for way more than angles on code snippets.],
   [The main idea is simple: You write your main rule using CSS variables, and then use :nth-of-\*() rules to set these variables to something different every N items. If you use enough variables, and choose your Ns for them to be prime numbers, you reach a good appearance of pseudo-randomness with relatively small Ns.],
   [In the case of code samples, I only have two different top cuts (going up or going down) and two different bottom cuts (same), which produce 2\*2 = 4 different shapes. Since I only had four shapes, I wanted to maximize the pseudo-randomness of their order. A first attempt looks like this:],
-  [pre {
+  [pre \{
  clip-path: polygon(var(--clip-top), var(--clip-bottom));
  --clip-top: 0 0, 100% 2em;
  --clip-bottom: 100% calc(100% - 1.5em), 0 100%;
-}],
-  [pre:nth-of-type(odd) {
+\}],
+  [pre:nth-of-type(odd) \{
  --clip-top: 0 2em, 100% 0;
-}],
-  [pre:nth-of-type(3n + 1) {
+\}],
+  [pre:nth-of-type(3n + 1) \{
  --clip-bottom: 100% 100%, 0 calc(100% - 1.5em);
-}],
+\}],
   [This way, the exact sequence of shapes repeats every 2 \* 3 = 6 code snippets. Also, the alternative --clip-bottom doesn’t really get the same visibility as the others, being present only 33.333% of the time. However, if we just add one more selector:],
-  [pre {
+  [pre \{
  clip-path: polygon(var(--clip-top), var(--clip-bottom));
  --clip-top: 0 0, 100% 2em;
  --clip-bottom: 100% calc(100% - 1.5em), 0 100%;
-}],
-  [pre:nth-of-type(odd) {
+\}],
+  [pre:nth-of-type(odd) \{
  --clip-top: 0 2em, 100% 0;
-}],
+\}],
   [pre:nth-of-type(3n + 1),
-pre:nth-of-type(5n + 1) {
+pre:nth-of-type(5n + 1) \{
  --clip-bottom: 100% 100%, 0 calc(100% - 1.5em);
-}],
+\}],
   [Now the exact same sequence of shapes repeats every 2 \* 3 \* 5 = 30 code snippets, probably way more than I will have in any article. And it’s more fair to the alternate --clip-bottom , which now gets 1/3 + 1/5 - 1/15 = 46.67%, which is almost as much as the alternate --clip-top gets!],
   [You can explore this effect in this codepen :],
   [https:\/\/codepen.io/leaverou/pen/8541bfd3a42551f8845d668f29596ef9?editors=1100],
@@ -2742,51 +2619,50 @@ pre:nth-of-type(5n + 1) {
   [Of course, the illusion of randomness is much better with more shapes, e.g. if we introduce a third type of edge we get 3 \* 3 = 9 possible shapes:],
   [https:\/\/codepen.io/leaverou/pen/dyGmbJJ?editors=1100],
   [I also used primes 7 and 11, so that the sequence repeats every 77 items. In general, the larger primes you use, the better the illusion of randomness, but you need to include more selectors, which can get tedious.],
-  [id="other-examples" tabindex="-1"\> Other examples],
+  [Other examples],
   [So this got me thinking: What else would this technique be cool on? Especially if we include more values as well, we can pseudo-randomize the result itself better, and not just the order of only 4 different results.],
   [So I did a few experiments.],
-  [id="pseudo-randomized-color-swatches" tabindex="-1"\> Pseudo-randomized color swatches],
+  [Pseudo-randomized color swatches],
   [https:\/\/codepen.io/leaverou/pen/NWxXQKX],
   [Pseudo-randomized color swatches, with variables for hue, saturation, and lightness.],
   [And an alternative version :],
   [https:\/\/codepen.io/leaverou/pen/RwrLPer],
   [Which one looks more random? Why do you think that is?],
-  [id="pseudo-randomized-border-radius" tabindex="-1"\> Pseudo-randomized border-radius],
+  [Pseudo-randomized border-radius],
   [Admittedly, this one can be done with just longhands, but since I realized this after I had already made it, I figured eh, I may as well include it 🤷🏽‍♀️],
   [https:\/\/codepen.io/leaverou/pen/ZEQXOrd],
   [It is also really cool when combined with pseudo-random colors (just hue this time):],
   [https:\/\/codepen.io/leaverou/pen/oNbGzeE],
-  [id="pseudo-randomized-snowfall" tabindex="-1"\> Pseudo-randomized snowfall],
+  [Pseudo-randomized snowfall],
   [Lots of things here:],
   [Using translate and transform together to animate them separately without resorting to CSS.registerPropery()],
   [Pseudo-randomized horizontal offset, animation-delay, font-size],
   [Technically we don’t need CSS variables to pseudo-randomize font-size , we can just set the property itself. However, variables enable us to pseudo-randomize it via a multiplier, in order to decouple the base font size from the pseudo-randomness, so we can edit them independently. And then we can use the same multiplier in animation-duration to make smaller snowflakes fall slower!],
   [https:\/\/codepen.io/leaverou/pen/YzwrWvV?editors=1100],
-  [id="conclusions" tabindex="-1"\> Conclusions],
   [In general, the larger the primes you use, the better the illusion of randomness. With smaller primes, you will get more variation, but less appearance of randomness.],
   [There are two main ways to use primes to create the illusion of randomness with :nth-child() selectors:],
   [The first way is to set each trait on :nth-child(pn + b) where p is a prime that increases with each value and b is constant for each trait, like so:],
-  [:nth-child(3n + 1) { property1: value11; }
-:nth-child(5n + 1) { property1: value12; }
-:nth-child(7n + 1) { property1: value13; }
-:nth-child(11n + 1) { property1: value14; }
+  [:nth-child(3n + 1) \{ property1: value11; \}
+:nth-child(5n + 1) \{ property1: value12; \}
+:nth-child(7n + 1) \{ property1: value13; \}
+:nth-child(11n + 1) \{ property1: value14; \}
 ...
-:nth-child(3n + 2) { property2: value21; }
-:nth-child(5n + 2) { property2: value22; }
-:nth-child(7n + 2) { property2: value23; }
-:nth-child(11n + 2) { property2: value24; }
+:nth-child(3n + 2) \{ property2: value21; \}
+:nth-child(5n + 2) \{ property2: value22; \}
+:nth-child(7n + 2) \{ property2: value23; \}
+:nth-child(11n + 2) \{ property2: value24; \}
 ...],
   [The benefit of this approach is that you can have as few or as many values as you like. The drawback is that because primes are sparse, and become sparser as we go, you will have a lot of “holes” where your base value is applied.],
   [The second way (which is more on par with the original Cicada principle) is to set each trait on :nth-child(pn + b) where p is constant per trait, and b increases with each value:],
-  [:nth-child(5n + 1) { property1: value11; }
-:nth-child(5n + 2) { property1: value12; }
-:nth-child(5n + 3) { property1: value13; }
-:nth-child(5n + 4) { property1: value14; }
+  [:nth-child(5n + 1) \{ property1: value11; \}
+:nth-child(5n + 2) \{ property1: value12; \}
+:nth-child(5n + 3) \{ property1: value13; \}
+:nth-child(5n + 4) \{ property1: value14; \}
 ...
-:nth-child(7n + 1) { property2: value21; }
-:nth-child(7n + 2) { property2: value22; }
-:nth-child(7n + 3) { property2: value23; }
-:nth-child(7n + 4) { property2: value24; }
+:nth-child(7n + 1) \{ property2: value21; \}
+:nth-child(7n + 2) \{ property2: value22; \}
+:nth-child(7n + 3) \{ property2: value23; \}
+:nth-child(7n + 4) \{ property2: value24; \}
 ...],
   [This creates a better overall impression of randomness (especially if you order the values in a pseudo-random way too) without “holes”, but is more tedious, as you need as many values as the prime you’re using.],
   [What other cool examples can you think of?],
@@ -2797,26 +2673,24 @@ pre:nth-of-type(5n + 1) {
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [CSS3 for developers: My Fronteers 2011 workshop],
   author: [Lea Verou],
   source-name: [Lea Verou],
   images: (),
   paragraphs: (
   [In case you haven’t noticed, in addition to my talk at Fronteers 2011 , I’ll also be holding a full day workshop the day before the conference. The title of that workshop is “ CSS3 for developers ” and I wanted to explain a bit what it’s going to be about and why I chose to target web developers only.],
-  [id="why-%E2%80%9Cfor-developers%E2%80%9D%3F" tabindex="-1"\> Why “for developers”?],
+  [Why “for developers”?],
   [First of all, even though I do design websites and I really love design (not only web design), I consider myself primarily a developer. So, I think I can communicate better with other devs, rather than designers, since we “speak the same language”. Secondly, most CSS3 talks and workshops are presented by and targeted to, designers. Developers end up feeling left out and in return they tend to consider CSS an inferior technology which isn’t for them. CSS might not be a programming language, but it is code, and to fully master, it requires a very similar skillset to programming. It’s no wonder that most people that actually do research on CSS and/or write the specifications are not designers.],
   [Besides, CSS3, in essence, is about creating web applications that download faster and are easier to develop, maintain and edit. There are very few things that can’t be done at all with CSS2.1. CSS3 just allows us to do them better: Less HTTP requests, less kilobytes to download, less presentational JavaScript, more flexibility. CSS3 is mostly about coding speed, flexibility, performance, maintainability. None of these are artistic pursuits, they’re all purely developer goals!],
-  [id="what-will-it-be-about%3F" tabindex="-1"\> What will it be about?],
+  [What will it be about?],
   [It will be about many well-implemented and popular CSS3 features, like border-radius, shadows, gradients, new background properties, selectors, media queries, transforms, transitions etc. The key difference from most CSS3 talks & workshops will be the depth these will be covered in and the different perspective (practical information rather than artistic or “inspirational”). I usually opt in for depth rather than breadth for my talks, and expect the same from this workshop. The feedback I get most frequently for my talks is “I thought I knew everything about topic X, but yet I learned so much!”. I’ll do my best to maintain this reputation for this workshop as well. ;)],
   [In addition to learning how CSS3 stuff can be used, information about browser support, fallbacks and performance will be provided.],
-  [id="watch-a-single-person-talk-for-a-whole-day%3F-boooooring!" tabindex="-1"\> Watch a single person talk for a whole day? Boooooring!],
+  [Watch a single person talk for a whole day? Boooooring!],
   [Hey, I agree. And it’s not just that: Listening to someone talk about a given topic and trying it out yourself are two very different things. I believe that you only really learn something when you actually use it. That’s why it won’t be done like that. ;) It will be very hands on and there is going to be at least one small exercise per almost everything explained. The exercises are going to be performed in a little web app designed exclusively for this workshop, so that you won’t need to bother with prefixes or write HTML and irrelevant CSS code just to try out a new property. And what’s best, you can take that app at home with you and practice what you learned as much as you want!],
   [Of course that means that every attendee will have to bring their own laptop (or borrow one from a friend).],
-  [id="kewl%2C-can-i-haz-ticket%3F" tabindex="-1"\> Kewl, can I haz ticket?],
+  [Kewl, can I haz ticket?],
   [Workshop attendance is priced at €350 (€275 for Fronteers members) and you can get your ticket here: http:\/\/fronteers.paydro.net/],
   [To make the experience better and more educational, we limited the number of attendees to 30. That might mean you need to rush: there are currently tickets available, but in a few days there might not be any left!],
   [Looking forward to seeing you in Amsterdam! :)],
@@ -2827,10 +2701,8 @@ pre:nth-of-type(5n + 1) {
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [That “job brief” on Google Forms could infect your device],
   author: [Malwarebytes Labs],
   source-name: [Malwarebytes Labs],
@@ -2839,6 +2711,7 @@ pre:nth-of-type(5n + 1) {
   [We’ve identified a campaign using business-related lures, such as job interviews, project briefs, and financial document, to distribute malware, including the PureHVNC Remote Access Trojan (RAT).],
   [It’s not the malware that’s new, but how the attack starts.],
   [Instead of the usual phishing email or fake download page, attackers are using Google Forms to kick off the infection chain. The attack typically begins when a victim downloads a business-themed ZIP file linked from a Google Form. Inside is a malicious file that sets off a multi-stage infection process, eventually installing malware on the system.],
+  [What is PureHVNC?],
   [PureHVNC is a modular . NET   RAT from the “Pure” malware family. In simple terms, it gives attackers remote control over an infected device and lets them steal sensitive information.],
   [Once installed, it can:],
   [Take control of the system and run commands remotely.],
@@ -2847,21 +2720,29 @@ pre:nth-of-type(5n + 1) {
   [Extract data from apps like Telegram and Foxmail.],
   [Install additional plugins.],
   [Achieve persistence in several ways (for example, via scheduled tasks).],
+  [Different lures, same goal: compromise your device],
   [In our research, we found multiple Google Forms hosting links to malicious ZIP files that start the infection chain. These forms are convincing, impersonating real company names, logos and links. LinkedIn is one of the platforms used to send links to these malicious forms.],
+  [Fake Google Forms that distribute malicious ZIPs.],
+  [The attackers impersonate real companies],
+  [Well-known brands are impersonated to lend credibility],
   [The forms typically ask for professional information (experience, background, etc.), making them feel like part of a real recruitment or business process.],
+  [Information requested from the user to make the form appear legitimate.],
+  [More information.],
   [The forms link to ZIP files hosted on:],
   [File-sharing services such as Dropbox, filedn.com, and fshare.vn],
   [URL shorteners such as tr.ee and goo.su],
   [Google redirect links that obscure the final destination],
   [The ZIP archives use various names and are tied to different business-related themes (marketing, interviews, projects, job offers, budgets, partnerships, benefits) to avoid suspicion, for example:],
-  [{CompanyName}\_GlobalLogistics\_Ad\_Strategy.zip],
+  [\{CompanyName\}\_GlobalLogistics\_Ad\_Strategy.zip],
   [Project\_Information\_Summary\_2026.zip],
-  [{CompanyName} Project 2026 Interview Materials.zip],
-  [{CompanyName}\_Company\_and\_Job\_Overview.pdf.rar],
-  [Collaboration Project with {CompanyName} Company 2026.zip],
+  [\{CompanyName\} Project 2026 Interview Materials.zip],
+  [\{CompanyName\}\_Company\_and\_Job\_Overview.pdf.rar],
+  [Collaboration Project with \{CompanyName\} Company 2026.zip],
   [The lures use the names of well-known companies, particularly in the financial, logistic, technology, sustainability and energy sectors. Impersonating legitimate organizations add credibility to their campaign.],
+  [What happens after you download the file],
   [The ZIP archives usually contain legitimate files (such as PDFs of job descriptions) and an executable file along with a DLL, typically named msimg32.dll . The DLL is executed via DLL hijacking (tricking a legitimate program into loading malicious code), although the technique has undergone multiple modifications and upgrades over time.],
   [Legitimate PDFs are present in some ZIP files, like this one masquerading as a real job description.],
+  [Analysis of the malicious campaign],
   [We identified multiple variants of this campaign, each using different methods to extract the archive, distinct Python code, and varying folder structures. Across these variants, the campaign typically includes an executable file along with a DLL hidden in a separate folder. In some cases, attackers also include legitimate files related to the lure’s theme, enhancing the overall credibility of the attack.],
   [Example of files present in one of the archives analyzed.],
   [The malicious code is present in the DLL, and carries out various operations, including:],
@@ -2874,11 +2755,10 @@ pre:nth-of-type(5n + 1) {
   [cmd.exe /c start "" "C:\\Users\\user\\Desktop\\Marketing Director Assessment Project\\Marketing\_Director\_Assessment\_Project.pdf"],
   [The PDF opened during the infection chain.],
   [The archive final.zip is unzipped using different commands across the analyzed campaigns into a random folder under ProgramData . In this example, the tar command is used:],
-  [cmd.exe /c tar -xf "C:\\ProgramData\\{random folder}\\{random folder \\final.zip" -C "C:\\ProgramData\\{random folder \\{random folder} " \>nul 2\>&1],
   [The zip contains several files associated with Python and the next stage.],
   [Python files compressed into a random folder in ProgramData.],
   [Next, an obfuscated Python script called config.log is executed. It ultimately decodes and runs a Donut shellcode. This script appears under different names (e.g., image.mp3 ) and formats in the different chains analyzed.],
-  ["C:\\ProgramData\\{random folder}\\{random folder}\\pythonw.exe" "C:\\ProgramData\\{random folder}\\{random folder}\\config.log"],
+  ["C:\\ProgramData\\\{random folder\}\\\{random folder\}\\pythonw.exe" "C:\\ProgramData\\\{random folder\}\\\{random folder\}\\config.log"],
   [Obfuscated Python script that ultimately loads the Donut shellcode.],
   [At the end of the infection chain, PureHVNC was injected into SearchUI.exe . The injected process may vary across the analyzed samples.],
   [PureHVNC executes the following WMI queries to gather information about the compromised device:],
@@ -2897,11 +2777,13 @@ pre:nth-of-type(5n + 1) {
   [Sleeping Flag : 0],
   [Persistence Path : APPDATA],
   [Mutex Name : Rluukgz],
+  [How to stay safe],
   [Using Google Forms is a highly effective method for distributing malware. Attackers are relying on trust in familiar tools like Google Forms, Dropbox, and LinkedIn, and impersonating legitimate companies to get past your guard.],
   [If you deal with job offers, partnerships, or project work online, this is worth paying attention to:],
   [Always check the origin of Google Forms, don’t enter sensitive information, and don’t download files unless you fully trust the source.],
   [Verify requests through official company channels before engaging.],
   [Be wary of links hidden behind URL shorteners or redirects.],
+  [Indicators of Compromise (IOCs)],
   [IP],
   [207.148.66.14],
   [URL],
@@ -2940,11 +2822,10 @@ pre:nth-of-type(5n + 1) {
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Refresh CSS Bookmarklet v2],
   author: [Lea Verou],
   source-name: [Lea Verou],
@@ -2953,36 +2834,27 @@ pre:nth-of-type(5n + 1) {
   [Almost 11 years ago, Paul Irish posted this brilliant bookmarklet to refresh all stylesheets on the current page. Despite the amount of tools, plugins, servers to live reload that have been released over the years, I’ve always kept coming back to it. It’s incredibly elegant in its simplicity. It works everywhere: locally or remotely, on any domain and protocol. No need to set up anything, no need to alter my process in any way, no need to use a specific local server or tool. It quietly just accepts your preferences and workflow instead of trying to change them. Sure, it doesn’t automatically detect changes and reload, but in most cases, I don’t want it to.],
   [I’ve been using this almost daily for a decade and there’s always been one thing that bothered me: It doesn’t work with iframes. If the stylesheet you’re editing is inside an iframe, tough luck. If you can open the frame in a new tab, that works, but often that’s nontrivial (e.g. the frame is dynamically generated). After dealing with this issue today once more, I thought “this is just a few lines of JS, why not fix it?”.],
   [The first step was to get Paul’s code in a readable format, since the bookmarklet is heavily minified:],
-  [(function() {
+  [(function() \{
  var links = document.getElementsByTagName('link');
- for (var i = 0; i {
- for (let link of Array.from(document.querySelectorAll("link\[rel=stylesheet\]\[href\]"))) {
+ for (var i = 0; i \{
+ for (let link of Array.from(document.querySelectorAll("link\[rel=stylesheet\]\[href\]"))) \{
  var href = new URL(link.href, location);
  href.searchParams.set("forceReload", Date.now());
  link.href = href;
- }
-})()],
+ \}
+\})()],
   [Sure, this reduces browser support a bit (most notably it excludes IE11), but since this is a local development tool, that’s not such a big problem.],
   [Now, let’s extend this to support iframes as well:],
-  [{
- let \$\$ = (selector, root = document) =\> Array.from(root.querySelectorAll(selector));],
-  [let refresh = (document) =\> {
- for (let link of \$\$("link\[rel=stylesheet\]\[href\]", document)) {
- let href = new URL(link.href);
- href.searchParams.set("forceReload", Date.now());
- link.href = href;
- }],
-  [for (let iframe of \$\$("iframe", document)) {
+  [for (let iframe of \$\$("iframe", document)) \{
  iframe.contentDocument && refresh(iframe.contentDocument);
- }
- }],
+ \}
+ \}],
   [refresh();
-}],
+\}],
   [That’s it! Do keep in mind that this will not work with cross-origin iframes, but then again, you probably don’t expect it to in that case.],
   [Now all we need to do to turn it into a bookmarklet is to prepend it with javascript: and minify the code. Here you go:],
   [🔄 CSS v2],
   [Hope this is useful to someone else as well :) Any improvements are always welcome!],
-  [id="credits" tabindex="-1"\> Credits],
   [Paul Irish, for the original bookmarklet],
   [Maurício Kishi, for making the iframe traversal recursive ( comment )],
 ),
@@ -2994,7 +2866,7 @@ pre:nth-of-type(5n + 1) {
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Security advisory for Cargo],
   author: [The Rust Security Response Team],
   source-name: [Rust Blog],
@@ -3033,38 +2905,36 @@ coordinating the response; and Emily Albini for writing this advisory.],
 #pull-quote([For users of alternate registries, please contact the vendor of your registry to verify whether you are affected by this.], [The Rust Security Response Team])
 
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([Axel Rauschmayer (2ality)], source-name: [Axel Rauschmayer (2ality)], [Now that Node.js has built-in support for TypeScript , we can use it as the foundation of simple playgrounds that let us interactively explore TypeScript code.])],
-    [#brief-item([Axel Rauschmayer (2ality)], source-name: [Axel Rauschmayer (2ality)], [In the last chapter, we worked with numbers. In this chapter, we’ll work with text and write our first applications.])],
-    [#brief-item([Lea Verou], source-name: [Lea Verou], [Today I needed to quickly find the Gravatars that corresponded to a bunch of email addresses for some reason (don’t ask). After a bit of googling and wandering around in Gravatar’s official site and others, I firgured out it’s probably much quicker to write a short PHP script for that myself, than keep looking.
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([Axel Rauschmayer (2ality)], source-name: [Axel Rauschmayer (2ality)], [Now that Node.js has built-in support for TypeScript , we can use it as the foundation of simple playgrounds that let us interactively explore TypeScript code.])],
+  [#brief-item([Axel Rauschmayer (2ality)], source-name: [Axel Rauschmayer (2ality)], [In the last chapter, we worked with numbers. In this chapter, we’ll work with text and write our first applications.])],
+  [#brief-item([Lea Verou], source-name: [Lea Verou], [Today I needed to quickly find the Gravatars that corresponded to a bunch of email addresses for some reason (don’t ask). After a bit of googling and wandering around in Gravatar’s official site and others, I firgured out it’s probably much quicker to write a short PHP script for that myself, than keep looking.
 
 Here it is, in case someone ever needs to do something similar: (click on the screenshot)
 
 (has anyone noticed my latest love affair with Helvetica/Arial? : P )])],
-    [#brief-item([Axel Rauschmayer (2ality)], source-name: [Axel Rauschmayer (2ality)], [In JavaScript, code has color : It is either synchronous or asynchronous. In this blog post, we explore:
+  [#brief-item([Axel Rauschmayer (2ality)], source-name: [Axel Rauschmayer (2ality)], [In JavaScript, code has color : It is either synchronous or asynchronous. In this blog post, we explore:
 
 The problems caused by that
 
 How to fix them via synchronous await 
 
 The two downsides that prevent synchronous await from being practical])],
-    [#brief-item([Axel Rauschmayer (2ality)], source-name: [Axel Rauschmayer (2ality)], [JavaScript’s Arrays are so flexible that TypeScript provides two different kinds of types for handling them:
+  [#brief-item([Axel Rauschmayer (2ality)], source-name: [Axel Rauschmayer (2ality)], [JavaScript’s Arrays are so flexible that TypeScript provides two different kinds of types for handling them:
 
 Array types for arbitrary-length sequences of values that all have the same type – e.g.: Array 
 
 Tuple types for fixed-length sequences of values where each one may have a different type – e.g.: \[number, string, boolean\] 
 
 In this blog post, we look at the latter – especially how to compute with tuples at the type level.])],
-    [#brief-item([Axel Rauschmayer (2ality)], source-name: [Axel Rauschmayer (2ality)], [TypeScript’s satisfies operator lets us check the type of a value (mostly) without influencing it. In this blog post, we examine how exactly it works and where it’s useful.])],
-    [#brief-item([PortSwigger Web Security Blog], source-name: [PortSwigger Web Security Blog], [1000s of pentesters are currently using Burp AI features to hack smarter by eliminating tedious tasks and delivering instant insights, right inside Burp Suite. Security Researcher John Hammond took Bu])],
-    [#brief-item([Axel Rauschmayer (2ality)], source-name: [Axel Rauschmayer (2ality)], [Node.js is a program that lets us run JavaScript code outside browsers – which we can use for a variety of things.])],
-    [#brief-item([Aaron Nyzil D'souza], source-name: [Haptik Tech], [class="hs-featured-image-wrapper"\> 
+  [#brief-item([Axel Rauschmayer (2ality)], source-name: [Axel Rauschmayer (2ality)], [TypeScript’s satisfies operator lets us check the type of a value (mostly) without influencing it. In this blog post, we examine how exactly it works and where it’s useful.])],
+  [#brief-item([PortSwigger Web Security Blog], source-name: [PortSwigger Web Security Blog], [1000s of pentesters are currently using Burp AI features to hack smarter by eliminating tedious tasks and delivering instant insights, right inside Burp Suite. Security Researcher John Hammond took Bu])],
+  [#brief-item([Axel Rauschmayer (2ality)], source-name: [Axel Rauschmayer (2ality)], [Node.js is a program that lets us run JavaScript code outside browsers – which we can use for a variety of things.])],
+  [#brief-item([Aaron Nyzil D'souza], source-name: [Haptik Tech], [
  
 
 We live in a world where communicating or talking to machines has become super normal. You ask your phone for the weather forecast, chat with a bot to know your food delivery status or even command Alexa to play one of your favorite songs — and boom, it just works.])],
-  ))
-}
+))
 
 #colophon([The Courier], [Vol. 1, No. 072], [2026-03-30])

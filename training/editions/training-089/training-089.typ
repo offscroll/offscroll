@@ -21,195 +21,8 @@
 #masthead([The Urban Digest], [Vol. 1, No. 089], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Challenge Accepted: Transposit],
-  kicker: [Cover Story],
-  author: [Jessie Frazelle],
-  source-name: [Jessie Frazelle],
-  deck: [Last week, I had the pleasure of meeting with the Transposit 
-team in San Francisco.],
-  lead-pre: [],
-  lead-cap: [T],
-  lead-rest: [ech is a super small world and it turns out the two
-founders and I are separated by one-degree through several different people
-we know. In meeting them I closed many loops without even realizing it, but
-I digress…],
-  body-paragraphs: (
-  [Their product is really cool, it exposes a SQL interface for interacting with
-numerous APIs at once. For someone like myself who deploys a lot of bots, this
-is great. Usually when I have a complex bot I end up writing a lot of
-“glue code” to combine a few different APIs and get the information I want.
-Most of my bots have some sort of pagination logic and all have the N+1 problem where
-I don’t really optimize my queries or use anything fancy like graphQL. Many
-APIs don’t even have graphQL interfaces but also I am old school and I don’t
-really want to learn something new. This is why I was super intrigued by
-Transposit’s SQL interface, because hey, I know SQL!],
-  [Adam, the CEO, challenged me to try it out, give them feedback, and see if
-I could break it with something complex. I am not one to back down from
-a challenge and I have some super weird ass bots, so I decided to start with
-the weirdest.],
-  [id="gitable"\>Gitable],
-  [Gitable is a bot I made for sending all
-my open issues and PRs on GitHub to a table in Airtable .
-I fucking love Airtable. It’s design just feels right and works the way my
-brain works.],
-  [I set out to make this bot work in Transposit because I know it has some
-super weird loops and has the N+1 problem where I loop over all my repos,
-then make another API call after.],
-  [To reiterate, the goal of the bot is to iterate through all my repos on GitHub
-and sync the list of issue and PRs with a table in Airtable.],
-  [id="query-all-the-user-s-repos"\>Query all the user’s repos],
-  [First, I need to get all my repos that are not forks. So I need
-a SQL query for this, in Transposit it looks like this:],
-  [SELECT name, full\_name FROM github.list\_repos\_for\_user
-WHERE username=\@owner
-AND type='owner'
-AND fork=false],
-  [The github.list\_repos\_for\_user table is a built in to Transposit and they
-handle all your API keys and authorizations when you choose “Github” as a data
-connection in the UI. It also caches the response which is a huge win because
-I am the queen of being rate limited.],
-  [I named that query: list\_repos\_for\_user so when I want to use it elsewhere in
-another query, I can call it by this.list\_repos\_for\_user .],
-  [id="query-all-the-issues-in-all-the-user-s-repos"\>Query all the issues in all the user’s repos],
-  [To get all the issues in all my repos I can use a join on that table I just
-created. It ends up looking like this:],
-  [SELECT 
- A.created\_at AS created, 
- A.updated\_at AS updated, 
- B.full\_name, A.number, 
- A.html\_url AS url, 
- A.state, A.title, 
- A.user.login AS author, 
- A.labels, B.name,
- A.closed\_at AS completed, 
- A.comments
-FROM github.list\_issues\_for\_repo
-AS A 
-JOIN this.list\_repos\_for\_user 
-AS B 
-ON A.repo = B.name
-WHERE A.owner=\@owner
-AND B.owner=\@owner],
-  [Okay so I didn’t break anything yet and I just joined my table with all my
-repos, this.list\_repos\_for\_user , with the built-in table in Trasnposit
- github.list\_issues\_for\_repo . This has now replaced my N+1 code with just this
-one SQL query and Transposit does all the optimizations on their end.],
-  [I called this table list\_issues\_for\_user and \@owner is a parameter, so
-anyone else can fork this app and change it to their own username.],
-  [id="query-all-the-records-in-an-airtable-table"\>Query all the records in an Airtable table],
-  [Now I need to get all the existing airtable records in my table so I can know
-later on down the road if I need to create a row or update a row with the new
-information from the GitHub API.],
-  [In my Airtable table I have a column called “reference” which stores information
-about the issue or PR as owner/repo\#num so for example it looks like
- jessfraz/.vim\#1 . This is a column defined by me, but I also know it to be
-unique. So I want to get the reference of every column and it’s airtable record
-ID so I can use that to update the record.],
-  [SELECT id, fields. Reference as reference FROM airtable.get\_records
-WHERE baseId=\@baseID
-AND table=\@table],
-  [That winds up looking like the query above. \@baseID and \@table are
-parameters so anyone can replace those with their own for their table in
-Airtable.],
-  [I named this query get\_airtable\_records so when I call it later I can do so
-with this.get\_airtable\_records .],
-  [id="update-and-create-rows-in-airtable-for-each-of-the-issues-in-user-s-repos"\>Update and create rows in Airtable for each of the issues in user’s repos],
-  [Okay so now’s the part where I am thinking… I’m going to break this thing.
-(Narrator: I didn’t.)],
-  [Transposit has both SQL and Javascript operations and since the next part was
-where a lot of the logic was I used Javascript. I haven’t written Javascript in
-a long time so mind my shitty code. Honestly, SQL is turing complete so
-I considered using SQL but I wanted to get this done in an hour. (I will leave
-it as an exercise for the reader to fork my app and make it all in SQL.)],
-  [What I needed to do was take our earlier table to list\_issues\_for\_user ,
-iterate over them, and update or create an Airtable record for each of them.
-This ends up looking like the following:],
-  [function run(params) {
- var results = api.run("this.list\_issues\_for\_user", {owner: params.owner});],
-  [for (var i = 0; i 0) {
- results\[i\].airtable\_id = id\[0\].id;
- obj.recordID = id\[0\].id;],
-  [\/\\/ Update the result in the table.
- var r = api.run("this.update\_record", obj);
- api.log(r);
- } else {
- \/\\/ Create record in the table.
- results\[i\].airtable\_id = 0;
- var r = api.run("this.create\_record", obj);
- api.log(r);
- }
- 
- results\[i\].reference = reference;
- }
- return {
- results
- };
-}],
-  [You might be wondering what this.create\_record and this.update\_record look
-like. These are just helper operations so I can use all the fields for the
-records as parameters.],
-  [id="create-an-airtable-record"\>Create an Airtable record],
-  [create\_record calls the built-in airtable.create\_record which looks like
-the following:],
-  [SELECT \* FROM airtable.create\_record
-AND baseId=\@baseID
-AND table=\@table
-AND \$body=(SELECT {
- 'fields' : { 
- 'Reference': \@reference,
- 'Title': \@title,
- 'State': \@state,
- 'Author': \@author,
- 'Type': \@type,
- 'Comments': \@comments,
- 'URL': \@url,
- 'Updated': \@updated,
- 'Created': \@created,
- 'Completed': \@completed,
- 'Repository': \@repo, 
- }
-})],
-  [Everything starting with an \@ is a parameter we can change on the fly in our
-Javascript function like you saw above.],
-  [id="update-an-airtable-record"\>Update an Airtable record],
-  [update\_record is very similar, it calls the Transposit built-in
- airtable.update\_record :],
-  [SELECT \* FROM airtable.update\_record
-WHERE recordId=\@recordID
-AND baseId=\@baseID
-AND table=\@table
-AND \$body=(SELECT {
- 'fields' : { 
- 'Reference': \@reference,
- 'Title': \@title,
- 'State': \@state,
- 'Author': \@author,
- 'Type': \@type,
- 'Comments': \@comments,
- 'URL': \@url,
- 'Updated': \@updated,
- 'Created': \@created,
- 'Completed': \@completed,
- 'Repository': \@repo, 
- }
-})],
-  [Doing the above with pull requests rather than issues is the exact same code
-but you swap out the query for issues with pull requests.
-You can schedule your operations to run at certain times like cron or when you call an API endpoint.],
-  [Sadly, I failed at breaking the thing with one of my most complex bots. But
-maybe you will have better luck trying ;) You can fork my app or look at the
-queries here:
- console.transposit.com/t/jessfraz/gitable .],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [Leave no trace rafting through the Grand Canyon this year],
   author: [Teresa Bergen],
   source-name: [Inhabitat],
@@ -223,11 +36,9 @@ queries here:
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [DUM-E and U],
   author: [Jessie Frazelle],
   source-name: [Jessie Frazelle],
@@ -236,11 +47,10 @@ queries here:
   [DUM-E (“dummy”) and U (“you”) are the names of the robot arms in the Iron Man movies. After watching this movie for the n-teenth time, I have a strong urge to also have robotic arms in a workshop like Tony Stark. You can see the value of the robots clearly throughout the movie. The robots allow Tony to produce suits more quickly, help test the suits, and provide periodic comedic relief. At one point, DUM-E even saves Tony’s life. As a bit of a thought experiment, I considered what it would take to get the same functionality in reality. What this ends up leading to is a configuration management system for manufacturing, much like a build system. This post is going to outline that a bit!],
   [The most popular open-source framework for building robots is ROS (Robotics Operating System) . You can add different components like cameras or sensors and program all the functionality you need for your specific use case. The underlying infrastructure works by passing messages, through a pub/subsystem. Elementary Robotics created their own OS called atom . It’s pretty cool, it uses Redis for the messaging layer and docker for packaging and defining the individual components. Need a camera on your robot? Include the camera container in your atom OS config file. You can then pipe the messages from the camera into machine learning in another container. It’s important to know the basics of these frameworks to continue into how we would build DUM-E and U.],
   [Let’s dive in. The end goal here is to be as productive as Tony Stark at building things.],
-  [id="fire-extinguisher-robot"\>Fire extinguisher robot],
+  [Fire extinguisher robot],
   [One of my favorite scenes with DUM-E is when Tony is testing the suits and it’s DUM-E’s job to blast him with a fire extinguisher when he is on fire. For comic relief in the movie, DUM-E messes this up a bunch and blasts Tony when he’s not on fire.],
   [Let’s break this down, starting with a robot that will shoot a fire extinguisher on any fire. First, what you would need is the robotic arm base, maybe you build your own, maybe it’s ABB, Kuka, FANUC, or any other robot arm maker. Let’s assume you have some sort of robotic arm with an SDK/API you can program. You also need a fire extinguisher. Since we are hackers we will just duct tape this to the robot arm and have a trigger on the switch to fire it programmatically. Next, we need a camera. Let’s also duct tape this and all the wires to the robot. We need to know if something in our proximity is on fire and where it is. We will need some code to determine if something is on fire. You could likely train a machine learning model to do this. So when the ML model identifies something as on fire, we need to calculate where it is in relation to the distance from the camera identifying it to the fire extinguisher we duct-taped to the robot. This is all doable and pretty much depends on how well we trained our model.],
   [In the movie, DUM-E is quite bad at identifying fire. It is just a movie but we should consider it might be hard for the model to differentiate fire from the color of the suit when it’s not on fire. If you recall, Iron Man’s suit is crimson and gold which could be misidentified as fire if it’s moving in the same pattern a fire might move. Tony does fly and move around at very fast speeds. This really comes down to how well Tony trains the model. As long as DUM-E continually learns, which he should, by the time Iron Man has been blasted by mistake a few times, the model should know the difference between the two (on fire and suit that looks like fire moving in a weird way). We also get to witness this learning in the movie.],
-  [id="lifesaver"\>Lifesaver],
   [DUM-E, despite his namesake, is very intelligent. A major scene in the movie is when he saves Tony’s life by passing him the reactor to power the magnet in his chest. The reactor is just out of Tony’s reach as he is dying and DUM-E realizes this and passes it to him. This could be programmed in a few different ways.],
   [One way would be the equivalent of hard coding this behavior. Maybe Tony trained DUM-E to pass him the reactor. That’s a bit lame and wouldn’t be very useful outside this context. Let’s assume DUM-E was programmed a different way.],
   [What would be more useful overall is if DUM-E had some programming that when Tony is reaching for an object just outside his reach, DUM-E should know to pass it to him. Again this relies on a camera and a very precise machine learning model. Instead of the fire extinguisher though, we would need a claw to pick up the object and pass it. The machine learning model for this behavior would have to:],
@@ -249,11 +59,11 @@ queries here:
   [Identify the object the human is reaching for, scan for objects a certain distance from the end of the hand],
   [We’d also want some code to know when the object is out of reach and the robot should help or if the human is fine on their own, don’t want the robot arm getting in my way when I actually want to grab something. So maybe watch the rate of the reach and calculate if it’s possible for the arm to extend to any objects around where it is headed.],
   [This should all be possible. For bonus points let’s make it even more useful. Tony uses his robots to help him build things in his workshop and at times he asks them to pass him tools. Let’s add a microphone component to the robot and a model to identify when I am asking for an object. Now the robot needs to correctly identify objects based on a name, and let’s hope it parses what I said correctly in the first place. We could also help the robot identify objects, by using the camera to identify if I pointed to a specific object when I asked for it. This would be super helpful and like having another set of arms around.],
-  [id="assembling-the-suits"\>Assembling the suits],
+  [Assembling the suits],
   [Both DUM-E and U help Stark assemble the Iron Man suits. To do this, the robots need to know the final configuration of the suits when put together. They also need to know where on Tony’s body they need to attach the suit. So we need:],
   [A camera to identify Tony and where to put the parts of the suit, we need to identify the parts of the suit as well],
   [We need a claw with the tools to do the final welding and putting together of the suit],
-  [id="hardware-mode"\>Hardware mode],
+  [Hardware mode],
   [After building a few suits, Tony’s workshop is viewed in less of an “I am actively building things” configuration. You can see the floor is more clear and there are fewer tools and materials strewn about. It’s basically like someone cleaned up and things have been at rest for a while. When Tony needs to build the reactor to create the element to power the suit, he tells the robots “We are going back into hardware mode.” This had me thinking, wouldn’t it be cool if there were different configurations of factory floor layouts that could be named and switched to on a whim? How would we do this?],
   [Up til now, we’ve programmed all the robots to do what we wanted with code. Assuming we used ROS or Atom, we would have some configuration files and code laying around in a repo somewhere. Let’s assume a repo per robot or a repo per behavior of the robot, either way, we have a single place where code is defined that determines the behavior of the robots. What we need on top of this is a few things:],
   [A programmatic map of the factory floor with coordinates so we can assign robots to specific coordinates, we could use geocoding or something else for this, imagine a whatever powers your Roomba],
@@ -268,7 +78,7 @@ queries here:
   [The next robot in the pipeline might be a robotic arm, assigned to coordinates between the printer and the assembly line. This next configuration in the file would know it needs to take that artifact (since we would define it) and pass it to the assembly line],
   [Then the rest of the configuration file could define the assembly line],
   [So now we can have configuration files for several different assembly processes. If we want to start building something different we just load the new file and the robots would update their code. So when Tony says, “we are going back to hardware mode” we can think of this as him telling the system to load the new file.],
-  [id="sample-file"\>Sample file],
+  [Sample file],
   [name: “hardware-mode”
 steps:
 machine: desktop-metal-1
@@ -288,10 +98,8 @@ machine: dum-e
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [L-Tyrosine Supplements: Benefits for Your Brain and Body],
   author: [Greatist],
   source-name: [Greatist],
@@ -301,6 +109,7 @@ machine: dum-e
   [L-tyrosine is an amino acid (AKA protein building block) that supports your body, from your muscles to your noggin.],
   [It’s a non-essential amino acid, which means your body can make it on its own, so you don’t have to get it from food],
   [That being said, consuming foods high in L-tyrosine or taking supplements could have extra cognitive and physical benefits – here’s what to know.],
+  [What is L-tyrosine?],
   [L-tyrosine is an amino acid that the body produces naturally. Though your bod can prob create enough of the stuff on its own, some research suggests that supplementing with it can boost your mood and help regulate your stress response.],
   [L-tyrosine helps make many vital chemical messengers , such as:],
   [dopamine, the “feel good” chemical associated with pleasure, motivation, and reward],
@@ -322,16 +131,20 @@ machine: dum-e
   [dairy],
   [beans],
   [whole grains],
+  [Boost brainpower],
   [L-tyrosine may improve your memory and mental alertness . Since L-tyrosine increases dopamine availability in your body, experts think it may boost your cognitive performance. In addition to reward centers, dopamine is linked to working memory processes and plays a key role in the brain’s aging process.],
   [In a 2019 review of several studies, researchers found that a higher intake of L-tyrosine was linked to improved cognition. It also improved executive functions like brain flexibility, convergent thinking, and reasoning.],
   [However, researchers noted that L-tyrosine is most effective when dopamine and norepinephrine levels are reduced (which basically means when you feel stressed AF).],
+  [Improve your mood],
   [Some L-tyrosine supplement companies claim that their products are both mood boosters and antidepressants, but the results are mixed.],
   [L-tyrosine increases dopamine, the feel-good hormone that’s linked to reward processing and also addiction. In general, it’s been shown to be a vital regulator of mood, behavior, and brainpower – so it makes sense that getting enough of it could benefit your mood, too.],
   [However, the research on supplementation of tyrosine for depression is super dated , so it’s challenging to draw any definitive conclusions RN. (Plus, depression is also a super complex condition that involves more than just dopamine depletion.)],
   [And though there are some people dubbing L-tyrosine “natural Adderall” for its purported beneficial effect on ADHD, so far, there’s no research to support these claims yet, either. (Though it \*is\* true that there seems to be a link between ADHD and altered dopamine levels.)],
+  [Amino acid link],
   [Phenylketonuria is a rare genetic disorder in which the body can’t properly process another essential amino acid, phenylalanine.],
   [Since those with the disorder may also be deficient in L-tyrosine, some experts think that supplementing with it could help relieve some symptoms like seizures or skin rashes.],
   [However, according to a 2021 review of several studies, there is not enough evidence to say for sure.],
+  [Risks of L-tyrosine],
   [The Food and Drug Administration (FDA) considers taking L-tyrosine supplements generally safe.],
   [That being said, it’s not recommended to mix with the following medications:],
   [Monoamine Oxidase Inhibitors (MAOIs)],
@@ -347,10 +160,8 @@ machine: dum-e
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [GRT test noom med epm],
   author: [Greatist],
   source-name: [Greatist],
@@ -362,6 +173,7 @@ machine: dum-e
   [Microdose GLP-1 program available],
   [Medications shipped in 7 days],
   [FSA & HSA eligible],
+  [Weight Loss Medication the Right Way],
   [Combines behavioral changes with prescription GLP-1 medications],
   [Get started from as low as \$69],
   [Branded Ozempic, Wegovy, Zepbound, and Mounjaro],
@@ -376,6 +188,7 @@ machine: dum-e
   [97% of doctors recommend combining GLP-1s with lifestyle changes. ^ That’s why the Noom app provides a GLP-1 companion to support reliable and long-lasting healthy habits .],
   [Users benefit from 100% online access to Noom’s expert clinical team and coaches . No in-person appointments means fast and convenient weight management.],
   [You can access Noom’s proven and trusted weight loss program via the companion app, designed to enhance the benefits of GLP-1 medications with specialized workouts, recipes, and tracking features .],
+  [Andrea’s Success With Noom Med],
   [Andrea G, 36, lost 65 Ibs in 93 weeks.],
   [“Noom truly changed my life. It taught me how to make small, sustainable changes that add up to lasting success. I’ve tried everything-other apps, macro counting, paid trainers, fad diets—but nothing has given me the long-term results and balance that Noom has.” ✝],
   [Effective Weight Loss in Five Simple Steps],
@@ -385,6 +198,7 @@ machine: dum-e
   [Noom’s insurance concierge helps determine the costs, saving you the hassle of navigating insurance on your own. The Noom Med program is also FSA & HSA eligible .],
   [Receive your prescribed medication within 7 days .],
   [Receive ongoing care from trained coaches alongside unlimited medication refills and contact with your clinician , where appropriate.],
+  [Cam’s Success With Noom Med],
   [Cam K, 29. lost 35 Ibs in 35 weeks.],
   [“My experience working with Noom has been nothing short of fantastic. Since starting Noom, I’ve noticed a significant reduction in food noise and cravings and, thanks to the lessons and coaching support, I feel confident that I have built up health habits that will help me maintain my weight loss for years to come.” ✝],
   [Choose Noom Med for Safe and Long Lasting Results],
@@ -410,10 +224,8 @@ machine: dum-e
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [When .animation animates more (or less) than it’s supposed to],
   author: [Ole Begemann],
   source-name: [Ole Begemann],
@@ -423,12 +235,14 @@ machine: dum-e
   [The documentation for SwiftUI’s animation modifier says:],
   [Applies the given animation to this view when the specified value changes.],
   [This sounds unambiguous to me: it sets the animation for “this view”, i.e. the part of the view tree that .animation is being applied to. This should give us complete control over which modifiers we want to animate, right? Unfortunately, it’s not that simple: it’s easy to run into situations where a view change inside an animated subtree doesn’t get animated, or vice versa.],
-  [id="unsurprising-examples"\>Unsurprising examples],
+  [Unsurprising examples],
   [Let me give you some examples, starting with those that do work as documented. I tested all examples on iOS 16.1 and macOS 13.0.],
-  [id="sibling-views-can-have-different-animations"\>1. Sibling views can have different animations],
+  [1. Sibling views can have different animations],
   [Independent subtrees of the view tree can be animated independently. In this example we have three sibling views, two of which are animated with different durations, and one that isn’t animated at all:],
-  [var body : some View { 
- HStack ( spacing : 40 ) { 
+  [struct Example1 : View \{ 
+ var flag : Bool],
+  [var body : some View \{ 
+ HStack ( spacing : 40 ) \{ 
  Rectangle () 
  . frame ( width : 80 , height : 80 ) 
  . foregroundColor ( . green ) 
@@ -442,17 +256,18 @@ machine: dum-e
   [Rectangle () 
  . frame ( width : 80 , height : 80 ) 
  . foregroundColor ( flag ? . pink : . mint ) 
- } 
- } 
- }],
+ \} 
+ \} 
+ \}],
   [The two animation modifiers each apply to their own subtree. They don’t interfere with each other and have no effect on the rest of the view hierarchy:],
-  [id="nested-animation-modifiers"\>2. Nested animation modifiers],
+  [Download video],
+  [2. Nested animation modifiers],
   [When two animation modifiers are nested in a single view tree such that one is an indirect parent of the other, the inner modifier can override the outer animation for its subviews. The outer animation applies to view modifiers that are placed between the two animation modifiers.],
   [In this example we have one rectangle view with animated scale and rotation effects. The outer animation applies to the entire subtree, including both effects. The inner animation modifier overrides the outer animation only for what’s nested below it in the view tree, i.e. the scale effect:],
-  [class="highlight"\> struct Example2 : View { 
+  [struct Example2 : View \{ 
  var flag : Bool 
  
- var body : some View { 
+ var body : some View \{ 
  Rectangle () 
  . frame ( width : 80 , height : 80 ) 
  . foregroundColor ( . green ) 
@@ -460,13 +275,16 @@ machine: dum-e
  . animation ( . default , value : flag ) \/\\/ inner 
  . rotationEffect ( flag ? . zero : . degrees ( 45 )) 
  . animation ( . default . speed ( 0.3 ), value : flag ) \/\\/ outer 
- } 
- }],
+ \} 
+ \}],
   [As a result, the scale and rotation changes animate at different speeds:],
+  [Download video],
   [Note that we can also pass .animation(nil, value: flag) to selectively disable animations for a subtree, overriding a non- nil animation further up the view tree.],
-  [id="animation-only-animates-its-children-with-exceptions"\>3. animation only animates its children (with exceptions)],
+  [3. animation only animates its children (with exceptions)],
   [As a general rule, the animation modifier only applies to its subviews. In other words, views and modifiers that are direct or indirect parents of an animation modifier should not be animated. As we’ll see below, it doesn’t always work like that, but here’s an example where it does. This is a slight variation of the previous code snippet where I removed the outer animation modifier (and changed the color for good measure):],
-  [var body : some View { 
+  [struct Example3 : View \{ 
+ var flag : Bool],
+  [var body : some View \{ 
  Rectangle () 
  . frame ( width : 80 , height : 80 ) 
  . foregroundColor ( . orange ) 
@@ -474,39 +292,48 @@ machine: dum-e
  . animation ( . default , value : flag ) 
  \/\\/ Don't animate the rotation 
  . rotationEffect ( flag ? . zero : . degrees ( 45 )) 
- } 
- }],
+ \} 
+ \}],
   [Recall that the order in which view modifiers are written in code is inverted with respect to the actual view tree hierarchy. Each view modifier is a new view that wraps the view it’s being applied to. So in our example, the scale effect is the child of the animation modifier, whereas the rotation effect is its parent. Accordingly, only the scale change gets animated:],
-  [id="surprising-examples"\>Surprising examples],
+  [Download video],
+  [Surprising examples],
   [Now it’s time for the “fun” part. It turns out not all view modifiers behave as intuitively as scaleEffect and rotationEffect when combined with the animation modifier.],
-  [id="some-modifiers-dont-respect-the-rules"\>4. Some modifiers don’t respect the rules],
+  [4. Some modifiers don’t respect the rules],
   [In this example we’re changing the color, size, and alignment of the rectangle. Only the size change should be animated, which is why we’ve placed the alignment and color mutations outside the animation modifier:],
-  [var body : some View { 
+  [struct Example4 : View \{ 
+ var flag : Bool],
+  [var body : some View \{ 
  let size : CGFloat = flag ? 80 : 120 
  Rectangle () 
  . frame ( width : size , height : size ) 
  . animation ( . default , value : flag ) 
  . frame ( maxWidth : . infinity , alignment : flag ? . leading : . trailing ) 
  . foregroundColor ( flag ? . pink : . indigo ) 
- } 
- }],
+ \} 
+ \}],
   [Unfortunately, this doesn’t work as intended, as all three changes are animated:],
+  [Download video],
   [It behaves as if the animation modifier were the outermost element of this view subtree.],
-  [id="padding-and-border"\>5. padding and border],
+  [5. padding and border],
   [This one’s sort of the inverse of the previous example because a change we want to animate doesn’t get animated. The padding is a child of the animation modifier, so I’d expect changes to it to be animated, i.e. the border should grow and shrink smoothly:],
-  [var body : some View { 
+  [struct Example5 : View \{ 
+ var flag : Bool],
+  [var body : some View \{ 
  Rectangle () 
  . frame ( width : 80 , height : 80 ) 
  . padding ( flag ? 20 : 40 ) 
  . animation ( . default , value : flag ) 
  . border ( . primary ) 
  . foregroundColor ( . cyan ) 
- } 
- }],
+ \} 
+ \}],
   [But that’s not what happens:],
-  [id="font-modifiers"\>6. Font modifiers],
+  [Download video],
+  [6. Font modifiers],
   [Font modifiers also behave seemingly erratic with respect to the animation modifier. In this example, we want to animate the font width, but not the size or weight (smooth text animation is a new feature in iOS 16):],
-  [var body : some View { 
+  [struct Example6 : View \{ 
+ var flag : Bool],
+  [var body : some View \{ 
  Text ( "Hello!" ) 
  . fontWidth ( flag ? . condensed : . expanded ) 
  . animation ( . default , value : flag ) 
@@ -514,13 +341,14 @@ machine: dum-e
  size : flag ? 40 : 60 , 
  weight : flag ? . regular : . heavy ) 
  ) 
- } 
- }],
+ \} 
+ \}],
   [You guessed it, this doesn’t work as intended. Instead, all text properties animate smoothly:],
-  [id="why-does-it-work-like-this"\>Why does it work like this?],
+  [Download video],
+  [Why does it work like this?],
   [In summary, the placement of the animation modifier in the view tree allows some control over which changes get animated, but it isn’t perfect. Some modifiers, such as scaleEffect and rotationEffect , behave as expected, whereas others ( frame , padding , foregroundColor , font ) are less controllable.],
   [I don’t fully understand the rules, but the important factor seems to be if a view modifier actually “renders” something or not. For instance, foregroundColor just writes a color into the environment; the modifier itself doesn’t draw anything. I suppose this is why its position with respect to animation is irrelevant:],
-  [class="highlight"\> RoundedRectangle ( cornerRadius : flag ? 0 : 40 ) 
+  [RoundedRectangle ( cornerRadius : flag ? 0 : 40 ) 
  . animation ( . default , value : flag ) 
  \/\\/ Color change still animates, even though we’re outside .animation 
  . foregroundColor ( flag ? . pink : . indigo )],
@@ -529,7 +357,6 @@ machine: dum-e
   [Similarly, padding and frame (including the frame’s alignment) are “non-rendering” modifiers too. They don’t use the environment, but they influence the layout algorithm, which ultimately affects the size and position of one or more “rendering” views, such as the rectangle in example 4 . That rectangle sees a combined change in its geometry, but it can’t tell where the change came from, so it’ll animate the full geometry change.],
   [In example 5 , the “rendering” view that’s affected by the padding change is the border (which is implemented as a stroked rectangle in an overlay ). Since the border is a parent of the animation modifier, its geometry change is not animated.],
   [In contrast to frame and padding , scaleEffect and rotationEffect are “rendering” modifiers. They apparently perform the animations themselves.],
-  [id="conclusion"\>Conclusion],
   [SwiftUI views and view modifiers can be divided into “rendering“ and “non-rendering” groups (I wish I had better terms for these). In iOS 16/macOS 13, the placement of the animation modifier with respect to non-rendering modifiers is irrelevant for deciding if a change gets animated or not.],
   [Non-rendering modifiers include (non-exhaustive list):],
   [Layout modifiers ( frame , padding , position , offset )],
@@ -541,17 +368,15 @@ machine: dum-e
   [Graphical effects, e.g. blur , brightness , hueRotation , opacity , saturation , shadow],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([the border should grow and shrink smoothly:  class="highlight"\> struct Example5 : View {   var flag : Bool    var body : some View {   Rectangle ().], [Ole Begemann]),
-  inline-pq-idx: 22,
+  inline-pq: pull-quote([the border should grow and shrink smoothly:  struct Example5 : View \{   var flag : Bool    var body : some View \{   Rectangle ().], [Ole Begemann]),
+  inline-pq-idx: 26,
   word-count: 1711,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Digging into RISC-V and how I learn new things],
   author: [Jessie Frazelle],
   source-name: [Jessie Frazelle],
@@ -562,22 +387,22 @@ machine: dum-e
   [I’ve said it before and I will say it again, I think anyone is capable of doing or learning anything, they just need the right motivation and to believe in themselves. I also made a point of including the book Super Brain on my list of recommended books , because it confirms with science that if you set your sights high you can accomplish great things, but if you set your expectations low it becomes a self-fulfilling prophecy. To put it more bluntly, believe in yourself!],
   [I became fascinated by what is happening in the RISC-V space just by seeing it pop up every now and then in my Twitter feed. Since I am currently unemployed I have a lot of time and autonomy to dig into whatever I wish.],
   [RISC-V is a new instruction set architecture. To understand RISC-V, we must first dig into what an instruction set architecture is. This is my learning technique. I bounce from one thing to another, recursively digging deeper as I learn more.],
-  [id="what-is-an-instruction-set-architecture-isa"\>What is an instruction set architecture (ISA)?],
+  [What is an instruction set architecture (ISA)?],
   [An instruction set architecture is the interface between the hardware and the software.],
   [Models of processors can implement the same instruction set but have different internal designs for implementing the interface. This leads to various processors having the same instruction set but differing in performance, physical size, and monetary cost. For example, Intel and AMD have processors that both implement the same x86 instruction set but have very different internal designs.],
   [In order to dig deeper, we should look into what some of the various types of instruction set architectures are.],
-  [id="what-are-the-types-of-instruction-set-architectures"\>What are the types of instruction set architectures?],
+  [What are the types of instruction set architectures?],
   [Most commonly these are described and classified by their complexity.],
-  [id="reduced-instruction-set-computer-risc"\>Reduced Instruction Set Computer (RISC)],
+  [Reduced Instruction Set Computer (RISC)],
   [This only implements frequently used instructions, less common operations are implemented as subroutines. By using subroutines, there is a trade-off of performance, however it’s only applied to the least common operations.],
   [RISC uses a load/store architecture; meaning it divides instructions into ones that access memory and ones that perform arithmetic logic unit (ALU) operations.],
   [RISC, the name, came out of Berkeley in the 1980s (from a project led by David Patterson) around the same time MIPS (a project led by John L. Hennessy) was going on at Stanford. RISC became commercialized as SPARC by Sun Microsystems and MIPS became commercialized by MIPS Computer Systems. Both are RISC architectures. You might also be familiar with more modern implementations like ARM or PowerPC which are commercialized as well. There are many RISC implementations other than just these, I implore you all to dig further if you so choose.],
   [RISC architectures can also be traced back to before the name existed as well. Examples include Alan Turing’s Automatic Computing Engine (ACE) from 1946 and the CDC 6600 designed by Seymour Cray in 1964.],
-  [id="complex-instruction-set-computer-cisc"\>Complex Instruction Set Computer (CISC)],
+  [Complex Instruction Set Computer (CISC)],
   [This has many very specific, specialized instructions, some may never be used in most programs. In CISC, one instruction can denote an execution of several low-level operations or one instruction is capable of multi-step operations and/or addressing modes.],
   [The term was coined after RISC, so everything that is not RISC tends to get lumped here. It’s become somewhat of a contentious point since some modern CISC designs are in fact less complex than some RISC designs. The main difference is that CISC architectures have arithmetic/computation instructions also perform memory accesses.],
   [Most architectures were classified after the fact since the term wasn’t around at the time of their birth. Some examples include IBM’s System/360 and System Z, the PDP-11, the VAX architecture, and Data General’s Nova.],
-  [id="very-long-instruction-word-vliw-and-explicitly-parallel-instruction-computing-epic"\>Very Long Instruction Word (VLIW) and Explicitly Parallel Instruction Computing (EPIC)],
+  [Very Long Instruction Word (VLIW) and Explicitly Parallel Instruction Computing (EPIC)],
   [These were designed to exploit instruction level parallelism, executing multiple instructions in parallel. This requires less hardware than CISC or RISC and leaves the complexity for the compiler.],
   [Traditionally, processors use a few different ways to improve performance, let’s dig into these.],
   [Pipelining divides instructions into substeps so the instructions can be executed partly at the same time.],
@@ -587,21 +412,21 @@ machine: dum-e
   [VLIW is most commonly found in embedded media processors and graphics processing units (GPU). However, Nvidia and AMD have moved to RISC architectures to improve performance for non-graphics workloads. You can also find VLIW in system-on-a-chip (SoC) designs where customizing a processor for an application is popular.],
   [EPIC architecture was based on VLIW but made a few changes. One of which allows for groups of instructions, called bundles, to be executed in parallel if they do not depend on any subsequent group of instructions. You can often distinguish EPIC from VLIW because of EPICs focus on full instruction predication. This is used to decrease the occurrence of branches and to increase the speculative execution of instructions. Speculative execution loads data before we know whether or not it will be used.],
   [You might be familiar with speculative execution from the Spectre and Meltdown attacks. The Spectre and Meltdown attacks are a whole different rabbit hole I won’t go down in this post, but I hope you can understand how your own learning is almost like a choose your own adventure game. You can choose to go further down any path at any time.],
-  [id="minimal-instruction-set-computer-misc"\>Minimal Instruction Set Computer (MISC)],
+  [Minimal Instruction Set Computer (MISC)],
   [This is more minimal than RISC. It includes a very small number of basic operations and corresponding opcodes. Commonly these are categorized as MISC if they are stack based rather than register based, but can also be defined by the number of instructions (fewer than 32 but greater than one).],
   [Quite a few of the first computers can be classified as MISC. These include (but are not limited to) the ORDVAC (1951) and the ILLIAC (1952) from the University of Illinois and the EDSAC (1949) from the University of Cambridge.],
-  [id="one-instruction-set-computer-oisc"\>One Instruction Set Computer (OISC)],
+  [One Instruction Set Computer (OISC)],
   [This describes an abstract machine that uses only one instruction. It removes the necessity for a machine language opcode. For example, “mov” is turing complete which means it’s capable of being an OISC, as well as other instructions using subtract.],
   [This has not been commercialized, as far as I know, but it is very popular for teaching computer science.],
   [This leads down a few paths, some can get into all the nitty gritty details of each instruction set and their differences. For the sake of learning more about RISC-V, let’s dig more into that specific design.],
-  [id="risc-v-design"\>RISC-V Design],
+  [RISC-V Design],
   [There is a great paper on the RISC-V design from Berkeley . Chapter 2, “Why Develop a New Instruction Set?”, is my favorite. It goes over the pros and cons of a lot of prior instruction sets, why the authors decided to create a new instruction set, and what lessons they learned and brought over from their knowledge of the past. I will summarize what I thought was interesting but I urge you to dig in for yourself and read the entire paper.],
   [For one, the authors state the importance of the fact that RISC-V is a completely free and open instruction set architecture. In contrast, all the most widely adopted instruction set architectures are proprietary. They are all also immensely complex. For example, you cannot get a hard copy of the x86 manual anymore and even in PDF form it’s ~5,000 pages and that doesn’t include the extensions. Who has time to read all of that? Although there is no exact number, it’s estimated there are around 2,500 instructions in x86 , which is just unwieldy.],
   [Props to Sun Microsystems for the fact that SPARC V8 is an open standard, but the design decisions are highly reflective of the other instruction sets from that time, leaving it unsuitable as a modern instruction set. “It was designed to be implemented in a single-issue, in-order, five-stage pipeline, and the ISA reflects this assumption.”],
   [Alpha came out of Digital Equipment Corporation (DEC) in the 1990s so it got to be built with some learning from the earlier eras. However it seems like they over-engineered it. Most interestingly, they also did not think to create any room for extra opcode space for extensions. The authors also point out that ISAs can die and Alpha is a great example of an ISA being pretty obsolete outside of owning an old DEC computer, other than the last implementation by HP in 2004 when the IP changed hands again.],
   [ARMv7 is widely used and the authors seriously considered it due to the fact of its popularity and ubiquity. However ARMv7 is a closed standard and cannot be extended making it unsuitable for the authors. They also found some technical problems as well, but the biggest determent to me was the fact it has over 600 instructions making it quite complex.],
   [The authors go over a few more instruction sets but I think you get the point that none of them were suitable for their needs. Of course you are more than welcome to dig in further yourself, I am just not going to take the time to reiterate their work here.],
-  [id="recapping-how-i-learn"\>Recapping how I learn],
+  [Recapping how I learn],
   [The paper continues into the details of the design of the RISC-V architecture. Some of this I will cover in my DotGo EU talk. For the sake of showing how I learn things I urge you to read the paper yourself and when you hit a term or concept you don’t know: research that concept. Continue this until you get a general understanding then jump back up into the paper where you left off. This cycle is how I dive into new things.],
   [At the beginning of this post I said I would take you down the path of how I dug into RISC-V, yet I have not even begun to describe the actual design or features of RISC-V. I did this to make a point (and because I was tired, maybe mostly because I was tired). Look how much I dug into the fundamentals of instruction sets before even digging into the thing I set out to learn. This is commonly what I find happens and I wanted to show an example of my process. Now you can go and continue the rest of the process yourself by continuing to read the RISC-V design paper , watching other RISC-V talks , getting some RISC-V books , or finding other RISC-V papers and learning from those.],
   [Then, buy a board and start playing with it. I got the HiFive Unleashed and it’s awesome!],
@@ -613,16 +438,15 @@ machine: dum-e
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [GRT noom med epm test template],
   author: [Greatist],
   source-name: [Greatist],
   images: (),
   paragraphs: (
   [HERO IMAGE],
+  [Cornbread Hemp at a glance:],
   [products work quickly, according to our testers],
   [highly rated by our testers and over 1,000 Cornbread Hemp customers],
   [only the most potent part of the hemp plant is used in the extraction process],
@@ -642,6 +466,7 @@ machine: dum-e
   [Six months and beyond, your hair loss should have stopped or slowed, and you may see signs of regrowth. But don’t stop there — you’ll have to continue using these products indefinitely to continue seeing results. It can get expensive over time.],
   [What happens if I stop hair loss treatment?],
   [It depends on the treatment you’re using. If you’re taking an OTC or prescription medication, you’ll have to keep taking it long term to maintain results.],
+  [Cam’s Success With Noom Med],
   [Cam K, 29. lost 35 Ibs in 35 weeks.],
   [“My experience working with Noom has been nothing short of fantastic. Since starting Noom, I’ve noticed a significant reduction in food noise and cravings and, thanks to the lessons and coaching support, I feel confident that I have built up health habits that will help me maintain my weight loss for years to come.” ✝],
   [Weight Loss Designed For You, Trusted By Us],
@@ -673,13 +498,12 @@ machine: dum-e
   debug-mode: false,
 )
 
-  #pull-quote([With Noom Med and GLP-1 medication, users experience 48% more weight loss in 6 months than those using medications alone.], [Greatist])
+#pull-quote([With Noom Med and GLP-1 medication, users experience 48% more weight loss in 6 months than those using medications alone.], [Greatist])
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [‘How Apple Became Apple: The Definitive Oral History of the Company’s Earliest Days’],
   author: [John Gruber],
   source-name: [Daring Fireball],
@@ -699,7 +523,7 @@ machine: dum-e
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Weekly Update 485],
   author: [Troy Hunt],
   source-name: [Troy Hunt],
@@ -712,10 +536,6 @@ machine: dum-e
   [I did something that seems unrelate,d and now it works],
   [I still don't know why],
   [Anyway, I've cleaned up the audio-only version for the podcast, but I can't change the YouTube version once it's streamed, so apologies, just pump your volume up for the first quarter hour. And Happy New Year!],
-  [style="width: 170px; display: inline-block; margin-right: 3px;"\>],
-  [style="width: 175px; display: inline-block; margin-right: 3px;"\>],
-  [style="width: 118px; display: inline-block; margin-right: 3px;"\>],
-  [style="width: 120px; display: inline-block;"\>],
 ),
   insert-map: (:),
   word-count: 165,
@@ -725,7 +545,7 @@ machine: dum-e
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([Bonface Landi], source-name: [Inhabitat], [As the world becomes increasingly conscious of energy consumption and sustainability, the push toward renewable energy alternatives continues to gain momentum. Among these alternatives, solar power has become one of the most accessible and popular options, especially in portable energy solutions. From emergency preparedness to off-grid adventures, portable solar kits redefine how people access electricity when traditional power sources are unavailable or unreliable.
 
 This April, OptiSolex, has...])],

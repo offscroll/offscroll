@@ -21,70 +21,8 @@
 #masthead([Global Chronicle], [Vol. 1, No. 047], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Implementing a clear room Z80 \/ ZX Spectrum emulator with Claude Code],
-  kicker: [Cover Story],
-  author: [Antirez],
-  source-name: [Antirez],
-  deck: [The experiment methodology left me dubious about the kind of point they wanted to make.],
-  lead-pre: [],
-  lead-cap: [A],
-  lead-rest: [nthropic recently released a blog post with the description of an experiment in which the last version of Opus, the 4.6, was instructed to write a C compiler in Rust, in a “clean room” setup.],
-  body-paragraphs: (
-  [The experiment methodology left me dubious about the kind of point they wanted to make. Why not provide the agent with the ISA documentation? Why Rust? Writing a C compiler is exactly a giant graph manipulation exercise: the kind of program that is harder to write in Rust. Also, in a clean room experiment, the agent should have access to all the information about well established computer science progresses related to optimizing compilers: there are a number of papers that could be easily synthesized in a number of markdown files. SSA, register allocation, instructions selection and scheduling. Those things needed to be researched \*first\*, as a prerequisite, and the implementation would still be “clean room”.],
-  [Not allowing the agent to access the Internet, nor any other compiler source code, was certainly the right call. Less understandable is the almost-zero steering principle, but this is coherent with a certain kind of experiment, if the goal was showcasing the completely autonomous writing of a large project. Yet, we all know how this is not how coding agents are used in practice, most of the time. Who uses coding agents extensively knows very well how, even never touching the code, a few hits here and there completely changes the quality of the result.],
-  [\# The Z80 experiment],
-  [I thought it was time to try a similar experiment myself, one that would take one or two hours at max, and that was compatible with my Claude Code Max plan: I decided to write a Z80 emulator, and then a ZX Spectrum emulator (and even more, a CP/M emulator, see later) in a condition that I believe makes a more sense as “clean room” setup. The result can be found here: https:\/\/github.com/antirez/ZOT.],
-  [\# The process I used],
-  [1. I wrote a markdown file with the specification of what I wanted to do. Just English, high level ideas about the scope of the Z80 emulator to implement. I said things like: it should execute a whole instruction at a time, not a single clock step, since this emulator must be runnable on things like an RP2350 or similarly limited hardware. The emulator should correctly track the clock cycles elapsed (and I specified we could use this feature later in order to implement the ZX Spectrum contention with ULA during memory accesses), provide memory access callbacks, and should emulate all the known official and unofficial instructions of the Z80.],
-  [For the Spectrum implementation, performed as a successive step, I provided much more information in the markdown file, like, the kind of rendering I wanted in the RGB buffer, and how it needed to be optional so that embedded devices could render the scanlines directly as they transferred them to the ST77xx display (or similar), how it should be possible to interact with the I/O port to set the EAR bit to simulate cassette loading in a very authentic way, and many other desiderata I had about the emulator.],
-  [This file also included the rules that the agent needed to follow, like:],
-  [\* Accessing the internet is prohibited, but you can use the specification and test vectors files I added inside ./z80-specs.],
-  [\* Code should be simple and clean, never over-complicate things.],
-  [\* Each solid progress should be committed in the git repository.],
-  [\* Before committing, you should test that what you produced is high quality and that it works.],
-  [\* Write a detailed test suite as you add more features. The test must be re-executed at every major change.],
-  [\* Code should be very well commented: things must be explained in terms that even people not well versed with certain Z80 or Spectrum internals details should understand.],
-  [\* Never stop for prompting, the user is away from the keyboard.],
-  [\* At the end of this file, create a work in progress log, where you note what you already did, what is missing. Always update this log.],
-  [\* Read this file again after each context compaction.],
-  [2. Then, I started a Claude Code session, and asked it to fetch all the useful documentation on the internet about the Z80 (later I did this for the Spectrum as well), and to extract only the useful factual information into markdown files. I also provided the binary files for the most ambitious test vectors for the Z80, the ZX Spectrum ROM, and a few other binaries that could be used to test if the emulator actually executed the code correctly. Once all this information was collected (it is part of the repository, so you can inspect what was produced) I completely removed the Claude Code session in order to make sure that no contamination with source code seen during the search was possible.],
-  [3. I started a new session, and asked it to check the specification markdown file, and to check all the documentation available, and start implementing the Z80 emulator. The rules were to never access the Internet for any reason (I supervised the agent while it was implementing the code, to make sure this didn’t happen), to never search the disk for similar source code, as this was a “clean room” implementation.],
-  [4. For the Z80 implementation, I did zero steering. For the Spectrum implementation I used extensive steering for implementing the TAP loading. More about my feedback to the agent later in this post.],
-  [5. As a final step, I copied the repository in /tmp, removed the “.git” repository files completely, started a new Claude Code (and Codex) session and claimed that the implementation was likely stolen or too strongly inspired from somebody else's work. The task was to check with all the major Z80 implementations if there was evidence of theft. The agents (both Codex and Claude Code), after extensive search, were not able to find any evidence of copyright issues. The only similar parts were about well established emulation patterns and things that are Z80 specific and can’t be made differently, the implementation looked distinct from all the other implementations in a significant way.],
-  [\# Results],
-  [Claude Code worked for 20 or 30 minutes in total, and produced a Z80 emulator that was able to pass ZEXDOC and ZEXALL, in 1200 lines of very readable and well commented C code (1800 lines with comments and blank spaces). The agent was prompted zero times during the implementation, it acted absolutely alone. It never accessed the internet, and the process it used to implement the emulator was of continuous testing, interacting with the CP/M binaries implementing the ZEXDOC and ZEXALL, writing just the CP/M syscalls needed to produce the output on the screen. Multiple times it also used the Spectrum ROM and other binaries that were available, or binaries it created from scratch to see if the emulator was working correctly. In short: the implementation was performed in a very similar way to how a human programmer would do it, and not outputting a complete implementation from scratch “uncompressing” it from the weights. Instead, different classes of instructions were implemented incrementally, and there were bugs that were fixed via integration tests, debugging sessions, dumps, printf calls, and so forth.],
-  [\# Next step: the ZX Spectrum],
-  [I repeated the process again. I instructed the documentation gathering session very accurately about the kind of details I wanted it to search on the internet, especially the ULA interactions with RAM access, the keyboard mapping, the I/O port, how the cassette tape worked and the kind of PWM encoding used, and how it was encoded into TAP or TZX files.],
-  [As I said, this time the design notes were extensive since I wanted this emulator to be specifically designed for embedded systems, so only 48k emulation, optional framebuffer rendering, very little additional memory used (no big lookup tables for ULA/Z80 access contention), ROM not copied in the RAM to avoid using additional 16k of memory, but just referenced during the initialization (so we have just a copy in the executable), and so forth.],
-  [The agent was able to create a very detailed documentation about the ZX Spectrum internals. I provided a few .z80 images of games, so that it could test the emulator in a real setup with real software. Again, I removed the session and started fresh. The agent started working and ended 10 minutes later, following a process that really fascinates me, and that probably you know very well: the fact is, you see the agent working using a number of diverse skills. It is expert in everything programming related, so as it was implementing the emulator, it could immediately write a detailed instrumentation code to “look” at what the Z80 was doing step by step, and how this changed the Spectrum emulation state. In this respect, I believe automatic programming to be already super-human, not in the sense it is currently capable of producing code that humans can’t produce, but in the concurrent usage of different programming languages, system programming techniques, DSP stuff, operating system tricks, math, and everything needed to reach the result in the most immediate way.],
-  [When it was done, I asked it to write a simple SDL based integration example. The emulator was immediately able to run the Jetpac game without issues, with working sound, and very little CPU usage even on my slow Dell Linux machine (8% usage of a single core, including SDL rendering).],
-  [Once the basic stuff was working, I wanted to load TAP files directly, simulating cassette loading. This was the first time the agent missed a few things, specifically about the timing the Spectrum loading routines expected, and here we are in the territory where LLMs start to perform less efficiently: they can’t easily run the SDL emulator and see the border changing as data is received and so forth. I asked Claude Code to do a refactoring so that zx\_tick() could be called directly and was not part of zx\_frame(), and to make zx\_frame() a trivial wrapper. This way it was much simpler to sync EAR with what it expected, without callbacks or the wrong abstractions that it had implemented. After such change, a few minutes later the emulator could load a TAP file emulating the cassette without problems.],
-  [This is how it works now:],
-  [do {],
-  [zx\_set\_ear(zx, tzx\_update(&tape, zx-\>cpu.clocks));],
-  [} while (!zx\_tick(zx, 0));],
-  [I continued prompting Claude Code in order to make the key bindings more useful and a few things more.],
-  [\# CP/M],
-  [One thing that I found really interesting was the ability of the LLM to inspect the COM files for ZEXALL \/ ZEXCOM tests for the Z80, easily spot the CP/M syscalls that were used (a total of three), and implement them for the extended z80 test (executed by make fulltest). So, at this point, why not implement a full CP/M environment? Same process again, same good result in a matter of minutes. This time I interacted with it a bit more for the VT100 \/ ADM3 terminal escapes conversions, reported things not working in WordStar initially, and in a few minutes everything I tested was working well enough (but, there are fixes to do, like simulating a 2Mhz clock, right now it runs at full speed making CP/M games impossible to use).],
-  [\# What is the lesson here?],
-  [The obvious lesson is: always provide your agents with design hints and extensive documentation about what they are going to do. Such documentation can be obtained by the agent itself. And, also, make sure the agent has a markdown file with the rules of how to perform the coding tasks, and a trace of what it is doing, that is updated and read again quite often.],
-  [But those tricks, I believe, are quite clear to everybody that has worked extensively with automatic programming in the latest months. To think in terms of “what a human would need” is often the best bet, plus a few LLMs specific things, like the forgetting issue after context compaction, the continuous ability to verify it is on the right track, and so forth.],
-  [Returning back to the Anthropic compiler attempt: one of the steps that the agent failed was the one that was more strongly related to the idea of memorization of what is in the pretraining set: the assembler. With extensive documentation, I can’t see any way Claude Code (and, even more, GPT5.3-codex, which is in my experience, for complex stuff, more capable) could fail at producing a working assembler, since it is quite a mechanical process. This is, I think, in contradiction with the idea that LLMs are memorizing the whole training set and uncompress what they have seen. LLMs can memorize certain over-represented documents and code, but while they can extract such verbatim parts of the code if prompted to do so, they don’t have a copy of everything they saw during the training set, nor they spontaneously emit copies of already seen code, in their normal operation. We mostly ask LLMs to create work that requires assembling different knowledge they possess, and the result is normally something that uses known techniques and patterns, but that is new code, not constituting a copy of some pre-existing code.],
-  [It is worth noting, too, that humans often follow a less rigorous process compared to the clean room rules detailed in this blog post, that is: humans often download the code of different implementations related to what they are trying to accomplish, read them carefully, then try to avoid copying stuff verbatim but often times they take strong inspiration. This is a process that I find perfectly acceptable, but it is important to take in mind what happens in the reality of code written by humans. After all, information technology evolved so fast even thanks to this massive cross pollination effect.],
-  [For all the above reasons, when I implement code using automatic programming, I don’t have problems releasing it MIT licensed, like I did with this Z80 project. In turn, this code base will constitute quality input for the next LLMs training, including open weights ones.],
-  [\# Next steps],
-  [To make my experiment more compelling, one should try to implement a Z80 and ZX Spectrum emulator without providing any documentation to the agent, and then compare the result of the implementation. I didn’t find the time to do it, but it could be quite informative.
- Comments],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Year in Review: 2020 into 2021],
   author: [hello\@taniarascia.com],
   source-name: [Tania Rascia],
@@ -110,9 +48,9 @@
   [Here's my first finished scarf, that I just made last week.],
   [Here's the desk and PC I built.],
   [Aside from my thoughts, here are some of the stats I usually keep track of.],
-  [id="i-finished-takenote"\> I finished TakeNote],
+  [I finished TakeNote],
   [TakeNote is my biggest project yet, and I wrote all about it here . It's a web-based note-taking app for developers that looks like an IDE and syncs to GitHub. It uses TypeScript, Node, Express, React, Redux, Codemirror, and several other awesome open-source projects. I ultimately decided not to ship it, but I did finish it, and I'm proud of it.],
-  [id="i-wrote-21-articles"\> I wrote 21 articles],
+  [I wrote 21 articles],
   [I did two project write-ups - TakeNote and Chip8.js, several articles on JavaScript for DigitalOcean's fundamentals series, and covered few big concepts like Redux, Docker, and webpack. Honestly, I got a lot more done than I remembered, which is one of those reasons I like to make these posts. It's easy to forget all that you've done over an entire year.],
   [Docker Tutorial: Create a CI/CD Pipeline],
   [Understanding Map and Set in JavaScript],
@@ -134,24 +72,20 @@
   [Everyday Systems That Help Me],
   [Building My First PC],
   [Building TakeNote, a Notes App for Developers With GitHub Sync],
-  [id="newsletter"\> Newsletter],
   [The newsletter is up to 11,283 subscribers. I don't post very often, but it is really the only way I'm communicating with the world since I'm not active on Twitter or Reddit. I'm glad you all are interested in what I'm creating and I still hope to create interesting things in 2021.],
-  [id="learning"\> Learning],
   [I didn't learn most of the things I wanted to this year. Data structures and algorithms have been on the back burner for a few years now, and I never seem to be able to focus on it. I think the best article I wrote this year is Understanding the Event Loop, Callbacks, Promises, and Async/Await in JavaScript , which is a deep dive on how JavaScript and the event loop work under the hood. This article was something I wanted to write and understand for a long time, so I'm glad I finally did. I still want to learn computer science fundamentals, so next time I decide to sit down and try to learn something coding related that's probably what I'll do.],
   [So, thank you for reading and I hope this answers your questions if you were wondering why I haven't been around or active much. I appreciate all of your support and I'm looking forward to seeing what 2021 brings.],
 ),
   insert-map: (:),
   inline-pq: pull-quote([I just don't want to be part of this and affected by it as much as I can, I want to reject it all and go against the grain and live a slower, simpler life.], [hello\@taniarascia.com]),
-  inline-pq-idx: 19,
+  inline-pq-idx: 18,
   word-count: 1715,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Using OAuth with PKCE Authorization Flow (Proof Key for Code Exchange)],
   author: [hello\@taniarascia.com],
   source-name: [Tania Rascia],
@@ -161,7 +95,6 @@
   [For example, if I make an application ( Client ) that allows a user ( Resource Owner ) to make notes and save them as a repo in their GitHub account ( Resource Server ), then my application will need to access their GitHub data. It's not secure for the user to directly supply their GitHub username and password to my application and grant full access to the entire account. Instead, using OAuth 2.0, they can go through an authorization flow that will grant limited access to some resources based on a scope, and I will never have access to any other data or their password.],
   [Using OAuth, a flow will ultimately request a token from the Authorization Server , and that token can be used to make all future requests in the agreed upon scope.],
   [Note : OAuth 2.0 is used for authorization , (authZ) which gives users permission to access a resource. OpenID Connect, or OIDC, is often used for authentication , (authN) which verifies the identity of the end user.],
-  [id="grant-types"\> Grant Types],
   [The type of application you have will determine the grant type that will apply.],
   [Grant Type 
  Application type 
@@ -187,7 +120,7 @@
   [For a server-side web app, like a Python Django app, Ruby on Rails app, PHP Laravel, or Node/Express serving React, the Authorization Code flow is used, which still uses a client id and client secret on the server side, but the user needs to authorize via the third-party first. This is performed using both an /authorize and /token endpoints.],
   [However, for a client-side only web app or a mobile app, the Authorization Code flow is not acceptable because the client secret cannot be exposed, and there's no way to protect it. For this purpose, the Proof Key for Code Exchange (PKCE) version of the authorization code flow is used. In this version, the client creates a secret from scratch and supplies it after the authorization request to retrieve the token.],
   [Since PKCE is a relatively new addition to OAuth, a lot of authentication servers do not support it yet, in which case either a less secure legacy flow like Implicit Grant is used, where the token would return in the callback of the request, but using Implicit Grant flow is discouraged. AWS Cognito is one popular authorization server that supports PKCE.],
-  [id="pkce-flow"\> PKCE Flow],
+  [PKCE Flow],
   [The flow for a PKCE authentication system involves a user , a client-side app , and an authorization server , and will look something like this:],
   [The user arrives at the app 's entry page],
   [The app generates a PKCE code challenge and redirects to the authorization server login page via /authorize],
@@ -195,7 +128,7 @@
   [The app requests the token from the authorization server using the code verifier/challenge via /token],
   [The authorization server responds with the token, which can be used by the app to access resources on behalf of the user],
   [So all we need to know is what our /authorize and /token endpoints should look like. I'll go through an example of setting up PKCE for a front end web app.],
-  [id="get-authorize-endpoint"\> GET /authorize endpoint],
+  [GET /authorize endpoint],
   [The flow begins by making a GET request to the /authorize endpoint. We need to pass some parameters along in the URL, which includes generating a code challenge and code verifier .],
   [Parameter 
  Description 
@@ -230,32 +163,37 @@
  state 
  Your state (optional)],
   [We'll be building the URL and redirecting the user to it, but first we need to make the verifier and challenge.],
-  [id="verifier"\> Verifier],
   [The first step is generating a code verifier, which the PKCE spec defines as:],
   [Verifier - A high-entropy cryptographic random STRING using the unreserved characters \[A-Z\] \/ \[a-z\] \/ \[0-9\] \/ "-" \/ "." \/ "\*" \/ "~" from Section 2.3 of \[RFC3986\], with a minimum length of 43 characters and a maximum length of 128 characters.],
   [I'm using a random string generator that Aaron Parecki of oauth.net wrote:],
-  [return Array . from ( array , ( item ) =\> \` 0 \${ item . toString ( 16 ) } \` . substr ( - 2 ) ) . join ( 
+  [function generateVerifier ( ) \{ 
+ const array = new Uint32Array ( 28 ) 
+ window . crypto . getRandomValues ( array )],
+  [return Array . from ( array , ( item ) =\> \` 0 \$\{ item . toString ( 16 ) \} \` . substr ( - 2 ) ) . join ( 
  '' 
  ) 
- }],
-  [id="challenge"\> Challenge],
+ \}],
   [The code challenge performs the following transformation on the code verifier:],
   [Challenge - BASE64URL-ENCODE(SHA256(ASCII(code\_verifier)))],
   [So the verifier gets passed into the challenge function as an argument and transformed. This is the function that will hash and encode the random verifier string:],
+  [async function generateChallenge ( verifier ) \{ 
+ function sha256 ( plain ) \{ 
+ const encoder = new TextEncoder ( ) 
+ const data = encoder . encode ( plain )],
   [return window . crypto . subtle . digest ( 'SHA-256' , data ) 
- }],
-  [function base64URLEncode ( string ) { 
+ \}],
+  [function base64URLEncode ( string ) \{ 
  return btoa ( String . fromCharCode . apply ( null , new Uint8Array ( string ) ) ) 
  . replace ( \/ \\+ \/ g , '-' ) 
  . replace ( \/ \\\/ \/ g , '\_' ) 
  . replace ( \/ =+\\\$ \/ , '' ) 
- }],
+ \}],
   [const hashed = await sha256 ( verifier )],
   [return base64URLEncode ( hashed ) 
- }],
-  [id="build-endpoint"\> Build endpoint],
+ \}],
+  [Build endpoint],
   [Now you can take all the needed parameters, generate the verifier and challenge, set the verifier to local storage, and redirect the user to the authentication server's login page.],
-  [class="gatsby-highlight"\> async function buildAuthorizeEndpointAndRedirect ( ) { 
+  [async function buildAuthorizeEndpointAndRedirect ( ) \{ 
  const host = 'https:\/\/auth-server.example.com/oauth/authorize' 
  const clientId = 'abc123' 
  const redirectUri = 'https:\/\/my-app-host.example.com/callback' 
@@ -263,21 +201,21 @@
  const verifier = generateVerifier ( ) 
  const challenge = await generateChallenge ( verifier )],
   [\/\\/ Build endpoint 
- const endpoint = \` \${ host } ?
+ const endpoint = \` \$\{ host \} ?
  response\_type=code&
- client\_id= \${ clientId } &
- scope= \${ scope } &
- redirect\_uri= \${ redirectUri } &
- code\_challenge= \${ challenge } &
+ client\_id= \$\{ clientId \} &
+ scope= \$\{ scope \} &
+ redirect\_uri= \$\{ redirectUri \} &
+ code\_challenge= \$\{ challenge \} &
  code\_challenge\_method=S256 \`],
   [\/\\/ Set verifier to local storage 
  localStorage . setItem ( 'verifier' , verifier )],
   [\/\\/ Redirect to authentication server's login page 
  window . location = endpoint
- }],
+ \}],
   [At what point you call this function is up to you - it might happen at the click of a button, or automatically if a user is deemed to not be authenticated when they land on the app. In a React app it would probably be in the useEffect() .],
   [Now the user will be on the authentication server's login page, and after successful login via username and password they'll be redirected to the redirect\_uri from step one.],
-  [id="post-token-endpoint"\> POST /token endpoint],
+  [POST /token endpoint],
   [The second step is retrieving the token. This is the part that is usually accomplished server side in a traditional Authorization Code flow, but for PKCE it's also through the front end. When the authorization server redirects back to your callback URI, it will come along with a code in the query string, which you can exchange along with the verifier string for the final token .],
   [The POST request for a token must be made as a x-www-form-urlencoded request.],
   [Header 
@@ -318,34 +256,39 @@
  
  code 
  Code query parameter],
+  [async function getToken ( verifier ) \{ 
+ const host = 'https:\/\/auth-server.example.com/oauth/token' 
+ const clientId = 'abc123' 
+ const redirectUri = \` https:\/\/my-app-server.example.com/callback \`],
   [\/\\/ Get code from query params 
  const urlParams = new URLSearchParams ( window . location . search ) 
  const code = urlParams . get ( 'code' )],
   [\/\\/ Build params to send to token endpoint 
- const params = \` client\_id= \${ clientId } &
- grant\_type= \${ grantType } &
- code\_verifier= \${ verifier } &
- redirect\_uri= \${ redirectUri } &
- code= \${ code } \`],
+ const params = \` client\_id= \$\{ clientId \} &
+ grant\_type= \$\{ grantType \} &
+ code\_verifier= \$\{ verifier \} &
+ redirect\_uri= \$\{ redirectUri \} &
+ code= \$\{ code \} \`],
   [\/\\/ Make a POST request 
- try { 
- const response = await fetch ( host , { 
+ try \{ 
+ const response = await fetch ( host , \{ 
  method : 'POST' , 
- headers : { 
+ headers : \{ 
  'Content-Type' : 'application/x-www-form-urlencoded' , 
- } , 
+ \} , 
  body : params , 
- } ) 
+ \} ) 
  const data = await response . json ( )],
   [\/\\/ Token 
  console . log ( data ) 
- } catch ( e ) { 
+ \} catch ( e ) \{ 
  console . log ( e ) 
- } 
- }],
+ \} 
+ \}],
   [Once you obtain the token, you should immediately delete the verifier from localStorage .],
+  [const response = await getToken ( localStorage . getItem ( 'verifier' ) ) 
+localStorage . removeItem ( 'verifier' )],
   [When it comes to storing the token, if your app is truly front end only, the option is to use localStorage . If the option of having a server is available, you can use a Backend for Frontend (BFF) to handle authentication. I recommend reading A Critical Analysis of Refresh Token Rotation in Single-page Applications .],
-  [id="conclusion"\> Conclusion],
   [And there you have it - the two steps to authenticate using PKCE. First, build a URL for /authorize on the authorization server and redirect the user to it, then POST to the /token endpoint on the redirect. PKCE is currently the most secure authentication system that I know of for a front-end only web or mobile app. Hopefully this helps you understand and implement PKCE in your app!],
 ),
   insert-map: (:),
@@ -354,10 +297,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Automatically Detecting Text Encodings in C++],
   author: [Jeff Preshing],
   source-name: [Jeff Preshing],
@@ -366,7 +307,7 @@
   [Consider the lowly text file.],
   [This text file can take on a surprising number of different formats. The text could be encoded as ASCII , UTF-8 , UTF-16 (little or big-endian), Windows-1252 , Shift JIS , or any of dozens of other encodings. The file may or may not begin with a byte order mark (BOM) . Lines of text could be terminated with a linefeed character \\n (typical on UNIX), a CRLF sequence \\r\\n (typical on Windows) or, if the file was created on an older system, some other character sequence .],
   [Sometimes it’s impossible to determine the encoding used by a particular text file. For example, suppose a file contains the following bytes:],
-  [style="text-align: center; font-size: 1.4em;"\> A2 C2 A2 C2 A2 C2],
+  [A2 C2 A2 C2 A2 C2],
   [This could be:],
   [a UTF-8 file containing “¢¢¢”],
   [a little-endian UTF-16 (or UCS-2 ) file containing “ꋂꋂꋂ”],
@@ -375,12 +316,11 @@
   [That’s obviously an artificial example, but the point is that text files are inherently ambiguous. This poses a challenge to software that loads text.],
   [It’s a problem that has been around for a while . Fortunately, the text file landscape has gotten simpler over time, with UTF-8 winning out over other character encodings. More than 95% of the Internet is now delivered using UTF-8. It’s impressive how quickly that number has changed; it was less than 10% as recently as 2006 .],
   [UTF-8 hasn’t taken over the world just yet, though. The Windows Registry editor, for example, still saves text files as UTF-16. When writing a text file from Python, the default encoding is platform-dependent; on my Windows PC, it’s Windows-1252. In other words, the ambiguity problem still exists today. And even if a text file is encoded in UTF-8, there are still variations in format, since the file may or may not start with a BOM and could use either UNIX-style or Windows-style line endings.],
-  [id="how-the-plywood-c-framework-loads-text"\>How the Plywood C++ Framework Loads Text],
+  [How the Plywood C++ Framework Loads Text],
   [Plywood is a cross-platform open-source C++ framework I released two months ago . When opening a text file using Plywood, you have a couple of options:],
   [If you know the exact format of the text file ahead of time, you can call FileSystem::openTextForRead() , passing the expected format in a TextFormat structure.],
   [If you don’t know the exact format, you can call FileSystem::openTextForReadAutodetect() , which will attempt to detect the format automatically and return it to you.],
   [The input stream returned from these functions never starts with a BOM, is always encoded in UTF-8, and always terminates each line of input with a single carriage return \\n , regardless of the input file’s original format. Conversion is performed on the fly if needed. This allows Plywood applications to work with a single encoding internally.],
-  [id="automatic-format-detection"\>Automatic Format Detection],
   [Here’s how Plywood’s automatic text format detection currently works:],
   [Does the file start with a BOM? 
  Use BOM encoding 
@@ -409,7 +349,6 @@
  no],
   [Plywood analyzes up to the first 4KB of the input file in order to guess its format. The first two checks handle the vast majority of text files I’ve encountered. There are lots of invalid byte sequences in UTF-8, so if a text file can be decoded as UTF-8 and doesn’t contain any control codes, then it’s almost certainly a UTF-8 file. (A control code is considered to be any code point less than 32 except for tab, linefeed and carriage return.)],
   [It’s only when we enter the bottom half of the flowchart that some guesswork begins to happen. First, Plywood decides whether it’s better to interpret the file as UTF-8 or as plain bytes. This is meant to catch, for example, text encoded in Windows-1252 that uses accented characters. In Windows-1252, the French word détail is encoded as 64 E9 74 61 69 6C , which triggers a UTF-8 decoding error since UTF-8 expects E9 to be followed be a byte in the range 80 - BF . After a certain number of such errors, Plywood will favor plain bytes over UTF-8.],
-  [id="scoring-system"\>Scoring System],
   [After that, Plywood attempts to decode the same data using the 8-bit format, little-endian UTF-16 and big-endian UTF-16. It calculates a score for each encoding as follows:],
   [Each whitespace character decoded is worth +2.5 points. Whitespace is very helpful to identify encodings, since UTF-8 whitespace can’t be recognized in UTF-16, and UTF-16 whitespace contains control codes when interpreted in an 8-bit encoding.],
   [ASCII characters are worth +1 point each, except for control codes.],
@@ -418,7 +357,6 @@
   [Code points greater than U+FFFF are worth +5 points, since the odds of encountering such characters in random data is low no matter what the encoding. This includes emojis .],
   [Scores are divided by the total number of characters decoded, and the best score is chosen. If you’re wondering where these point values came from, I made them up! They’re probably not optimal yet.],
   [The algorithm has other weaknesses. Plywood doesn’t yet know how to decode arbitrary 8-bit decodings. Currently, it interprets every 8-bit text file that isn’t UTF-8 as Windows-1252. It also doesn’t support Shift JIS at this time. The good news is that Plywood is an open source project on GitHub, which means that improvements can published as soon as they’re developed.],
-  [id="the-test-suite"\>The Test Suite],
   [In Plywood’s GitHub repository, you’ll find a folder that contains 50 different text files using a variety of formats. All of these files are identified and loaded correctly using FileSystem::openTextForReadAutodetect() .],
   [A lot of modern text editors perform automatic format detection, just like Plywood. Out of curiosity, I tried opening this set of text files in a few editors:],
   [Notepad++ correctly detected the format of 38 out of 50 files. It fails on all UTF-16 files that are missing a BOM except for little-endian files that mostly consist of ASCII characters.],
@@ -435,10 +373,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Building an JavaScript Keyboard Accordion (the Musical Kind)],
   author: [hello\@taniarascia.com],
   source-name: [Tania Rascia],
@@ -449,27 +385,27 @@
   [That web app is KeyboardAccordion.com , which like everything else I create in my free time is open source . I noticed that there are just enough keys on a computer keyboard to correspond to the accordion layout, and they're arranged in a similar pattern. With this, I can keep track of the notes, scales, and chords and start figuring out how to put it all together.],
   [Here's what one of the accordions looks like:],
   [I decided to make this app in Svelte, because I've used React and Vue professionally but have no experience with Svelte whatsoever and wanted to know what everyone loves about it.],
-  [id="web-audio-api"\> Web Audio API],
+  [Web Audio API],
   [KeyboardAccordion.com only has one dependency, and that's Svelte. Everything else is done using plain JavaScript and the built-in browser Web Audio API . I'd never really used the Web Audio API before, so I figured out what I needed to to get this working.],
   [The first thing I did was create an AudioContext and attach a GainNode , which controls the volume.],
-  [class="gatsby-highlight"\> const audio = new ( window . AudioContext || window . webkitAudioContext ) ( ) 
+  [const audio = new ( window . AudioContext || window . webkitAudioContext ) ( ) 
  const gainNode = audio . createGain ( ) 
 gainNode . gain . value = 0.1 
 gainNode . connect ( audio . destination )],
   [As I was figuring everything out, I was experimenting with making new AudioContext for every note because I was trying to fade out the sound, but then I kept realizing that after 50 notes, the app would stop working. Fifty is apparently the limit for the browser, so it's better to just make one AudioContext for the entire app.],
   [I'm using waves with the Audio API and not using any sort of audio sample, and I used the OscillatorNode to make each note. There are various types of waves you can use - square , triangle , sine , or sawtooth , which all have a different type of sound. I went with the sawtooth for this app because it worked out the best. Square makes an extremely loud, chiptune-esque sound like an NES which is kind of nice in its own way. Sine and triangle were a bit more subdued but if you don't fade the sound out properly, it makes a really unpleasant kind of cutting sound due to how your ear reacts when a wave gets cut off.],
-  [id="waveforms"\> Waveforms],
   [So for each note, I'd make an oscillator, set the wave type, set the frequency, and start it. Here's an example using 440 , which is a standard tuning for "A".],
-  [class="gatsby-highlight"\> const oscillator = audio . createOscillator ( ) 
+  [const oscillator = audio . createOscillator ( ) 
 oscillator . type = 'sawtooth' 
 oscillator . connect ( gainNode ) 
 oscillator . frequency . value = 440 
 oscillator . start ( )],
   [If you do that, the note will just play until infinity, so you have to make sure you stop the oscillator when you want the note to end.],
+  [oscillator . stop ( )],
   [For me, this meant event listeners on the DOM that would listen for a keypress event to see if any button was pressed, and a keyup event to determine when any button was no longer being pressed. In Svelte, that's handled by putting event listeners on svelte:body .],
   [So that's really everything there is to the Web Audio API itself when it comes to setting up the app - creating an AudioContext , adding a Gain , and starting/stopping an Oscillator for each note.],
   [You could paste this into the console and it'll play a note. You'll have to either refresh or type oscillator.stop() to make it stop.],
-  [class="gatsby-highlight"\> const audio = new ( window . AudioContext || window . webkitAudioContext ) ( ) 
+  [const audio = new ( window . AudioContext || window . webkitAudioContext ) ( ) 
  const gainNode = audio . createGain ( ) 
 gainNode . gain . value = 0.1 
 gainNode . connect ( audio . destination )],
@@ -478,10 +414,10 @@ oscillator . type = 'sawtooth'
 oscillator . connect ( gainNode ) 
 oscillator . frequency . value = 440 
 oscillator . start ( )],
-  [id="data-structure"\> Data Structure],
   [I had to figure out how I wanted to lay out the data structure for this application. First of all, if I'm going to be using the Web Audio API with frequencies directly, I had to collect all of them.],
-  [id="frequencies"\> Frequencies],
   [Here's a nice map of notes to frequencies with all 12 notes and 8-9 octaves for each note, so I can use A\[4\] to get the 440 frequency.],
+  [tone],
+  [export const tone = \{],
   [C : \[ 16.35 , 32.7 , 65.41 , 130.81 , 261.63 , 523.25 , 1046.5 , 2093.0 , 4186.01 \] ,],
   [Db : \[ 17.32 , 34.65 , 69.3 , 138.59 , 277.18 , 554.37 , 1108.73 , 2217.46 , 4434.92 \] ,],
   [D : \[ 18.35 , 36.71 , 73.42 , 146.83 , 293.66 , 587.33 , 1174.66 , 2349.32 , 4698.64 \] ,],
@@ -494,8 +430,8 @@ oscillator . start ( )],
   [A : \[ 27.5 , 55.0 , 110.0 , 220.0 , 440.0 , 880.0 , 1760.0 , 3520.0 \] ,],
   [Bb : \[ 29.14 , 58.27 , 116.54 , 233.08 , 466.16 , 932.33 , 1864.66 , 3729.31 \] ,],
   [B : \[ 30.87 , 61.74 , 123.47 , 246.94 , 493.88 , 987.77 , 1975.53 , 3951.07 \] ,],
-  [}],
-  [id="button-layout"\> Button layout],
+  [\}],
+  [Button layout],
   [Figuring out exactly how to arrange all the buttons into a data stucture took a couple of tries for me. The data that had to be captured was:],
   [The row on the accordion],
   [The column on the accordion],
@@ -504,112 +440,122 @@ oscillator . start ( )],
   [This means that there are different combinations for all three sets of these things. I decided to make an id that corresponds to each possible combination, such as 1-1-pull being row 1 , column 1 , direction pull .],
   [This way, I could create an array that holds the data for any note that is currently being played. If you press the button to reverse the bellows, it would take all the currently playing notes and reverse them, thus changing 1-1-pull and 1-2-pull to 1-1-push and 1-2-push .],
   [So ultimately I had an object that contained the data for all three treble rows like so:],
+  [layout],
+  [const layout = \{ 
+ one : \[ \] , 
+ two : \[ \] , 
+ three : \[ \] , 
+ \}],
   [My particular accordion is tuned to FB♭Eb, meaning the first row is tuned to F, the second row is tuned to B♭, and the third row is tuned to E♭. The example for the first row looks like this:],
+  [layout],
+  [const layout = \{],
   [one : \[],
   [\/\\/ Pull],
-  [{ id : '1-1-pull' , name : 'D♭' , frequency : tone . Db \[ 4 \] } ,],
-  [{ id : '1-2-pull' , name : 'G' , frequency : tone . G \[ 3 \] } ,],
-  [{ id : '1-3-pull' , name : 'B♭' , frequency : tone . Bb \[ 3 \] } ,],
-  [{ id : '1-4-pull' , name : 'D' , frequency : tone . D \[ 4 \] } ,],
-  [{ id : '1-5-pull' , name : 'E' , frequency : tone . E \[ 4 \] } ,],
-  [{ id : '1-6-pull' , name : 'G' , frequency : tone . G \[ 4 \] } ,],
-  [{ id : '1-7-pull' , name : 'B♭' , frequency : tone . Bb \[ 4 \] } ,],
-  [{ id : '1-8-pull' , name : 'D' , frequency : tone . D \[ 5 \] } ,],
-  [{ id : '1-9-pull' , name : 'E' , frequency : tone . E \[ 5 \] } ,],
-  [{ id : '1-10-pull' , name : 'G' , frequency : tone . G \[ 5 \] } ,],
+  [\{ id : '1-1-pull' , name : 'D♭' , frequency : tone . Db \[ 4 \] \} ,],
+  [\{ id : '1-2-pull' , name : 'G' , frequency : tone . G \[ 3 \] \} ,],
+  [\{ id : '1-3-pull' , name : 'B♭' , frequency : tone . Bb \[ 3 \] \} ,],
+  [\{ id : '1-4-pull' , name : 'D' , frequency : tone . D \[ 4 \] \} ,],
+  [\{ id : '1-5-pull' , name : 'E' , frequency : tone . E \[ 4 \] \} ,],
+  [\{ id : '1-6-pull' , name : 'G' , frequency : tone . G \[ 4 \] \} ,],
+  [\{ id : '1-7-pull' , name : 'B♭' , frequency : tone . Bb \[ 4 \] \} ,],
+  [\{ id : '1-8-pull' , name : 'D' , frequency : tone . D \[ 5 \] \} ,],
+  [\{ id : '1-9-pull' , name : 'E' , frequency : tone . E \[ 5 \] \} ,],
+  [\{ id : '1-10-pull' , name : 'G' , frequency : tone . G \[ 5 \] \} ,],
   [\/\\/ Push],
-  [{ id : '1-1-push' , name : 'B' , frequency : tone . B \[ 3 \] } ,],
-  [{ id : '1-2-push' , name : 'F' , frequency : tone . F \[ 3 \] } ,],
-  [{ id : '1-3-push' , name : 'A' , frequency : tone . A \[ 3 \] } ,],
-  [{ id : '1-4-push' , name : 'C' , frequency : tone . C \[ 4 \] } ,],
-  [{ id : '1-5-push' , name : 'F' , frequency : tone . F \[ 4 \] } ,],
-  [{ id : '1-6-push' , name : 'A' , frequency : tone . A \[ 4 \] } ,],
-  [{ id : '1-7-push' , name : 'C' , frequency : tone . C \[ 5 \] } ,],
-  [{ id : '1-8-push' , name : 'F' , frequency : tone . F \[ 5 \] } ,],
-  [{ id : '1-9-push' , name : 'A' , frequency : tone . A \[ 5 \] } ,],
-  [{ id : '1-10-push' , name : 'C' , frequency : tone . C \[ 6 \] } ,],
+  [\{ id : '1-1-push' , name : 'B' , frequency : tone . B \[ 3 \] \} ,],
+  [\{ id : '1-2-push' , name : 'F' , frequency : tone . F \[ 3 \] \} ,],
+  [\{ id : '1-3-push' , name : 'A' , frequency : tone . A \[ 3 \] \} ,],
+  [\{ id : '1-4-push' , name : 'C' , frequency : tone . C \[ 4 \] \} ,],
+  [\{ id : '1-5-push' , name : 'F' , frequency : tone . F \[ 4 \] \} ,],
+  [\{ id : '1-6-push' , name : 'A' , frequency : tone . A \[ 4 \] \} ,],
+  [\{ id : '1-7-push' , name : 'C' , frequency : tone . C \[ 5 \] \} ,],
+  [\{ id : '1-8-push' , name : 'F' , frequency : tone . F \[ 5 \] \} ,],
+  [\{ id : '1-9-push' , name : 'A' , frequency : tone . A \[ 5 \] \} ,],
+  [\{ id : '1-10-push' , name : 'C' , frequency : tone . C \[ 6 \] \} ,],
   [\] ,],
   [two : \[],
   [\/\\/ ...etc],
   [\] ,],
-  [}],
+  [\}],
   [There are notes 1 through 10 in row one, and each one has a name and frequency associated with it. Repeating this for two and three, I now have all 68 notes on the treble side.],
-  [id="keyboard-layout"\> Keyboard layout],
+  [Keyboard layout],
   [Now I had to map each key on the keyboard to a row and column of the accordion. Direction doesn't matter here, since z will correspond to both 01-01-push and 01-01-pull .],
-  [class="gatsby-highlight"\> export const keyMap = { 
- z : { row : 1 , column : 1 } , 
- x : { row : 1 , column : 2 } , 
- c : { row : 1 , column : 3 } , 
- v : { row : 1 , column : 4 } , 
- b : { row : 1 , column : 5 } , 
- n : { row : 1 , column : 6 } , 
- m : { row : 1 , column : 7 } , 
- ',' : { row : 1 , column : 8 } , 
- '.' : { row : 1 , column : 9 } , 
- '/' : { row : 1 , column : 10 } , 
- a : { row : 2 , column : 1 } , 
- s : { row : 2 , column : 2 } , 
- d : { row : 2 , column : 3 } , 
- f : { row : 2 , column : 4 } , 
- g : { row : 2 , column : 5 } , 
+  [keyMap],
+  [export const keyMap = \{ 
+ z : \{ row : 1 , column : 1 \} , 
+ x : \{ row : 1 , column : 2 \} , 
+ c : \{ row : 1 , column : 3 \} , 
+ v : \{ row : 1 , column : 4 \} , 
+ b : \{ row : 1 , column : 5 \} , 
+ n : \{ row : 1 , column : 6 \} , 
+ m : \{ row : 1 , column : 7 \} , 
+ ',' : \{ row : 1 , column : 8 \} , 
+ '.' : \{ row : 1 , column : 9 \} , 
+ '/' : \{ row : 1 , column : 10 \} , 
+ a : \{ row : 2 , column : 1 \} , 
+ s : \{ row : 2 , column : 2 \} , 
+ d : \{ row : 2 , column : 3 \} , 
+ f : \{ row : 2 , column : 4 \} , 
+ g : \{ row : 2 , column : 5 \} , 
  \/\\/ ...etc 
- }],
+ \}],
   [Now I have all the keys from z to \/ , a to ' , and w to \[ mapped out. Very auspicious that the computer keyboard and accordion keyboard are so similar.],
-  [id="pressing-keys-playing-notes"\> Pressing keys, playing notes],
+  [Pressing keys, playing notes],
   [As you might recall, I have an event listener on the entire page listening for the key press event. Any key press event that happens will go through this function.],
   [First, it has to check both lowercase and uppercase keys in case shift or caps lock are pressed, otherwise the keys won't work at all. Then, if you're pressing the button to toggle the bellows (which I made q ), it has to handle that separately. Otherwise, it will check the keyMap, and if one exists, it will find the corresponding id by checking the current direction and getting the row and column from the keymap.],
-  [function handleKeyPressNote ( e ) { 
- const key = \` \${ e . key } \` . toLowerCase ( ) || e . key \/\\/ handle caps lock],
-  [if ( key === toggleBellows ) { 
+  [handleKeyPressNote],
+  [let activeButtonIdMap = \{ \}],
+  [function handleKeyPressNote ( e ) \{ 
+ const key = \` \$\{ e . key \} \` . toLowerCase ( ) || e . key \/\\/ handle caps lock],
+  [if ( key === toggleBellows ) \{ 
  handleToggleBellows ( 'push' ) 
  return 
- }],
+ \}],
   [const buttonMapData = keyMap \[ key \]],
-  [if ( buttonMapData ) { 
- const { row , column } = buttonMapData
- const id = \` \${ row } - \${ column } - \${ direction } \`],
-  [if ( ! activeButtonIdMap \[ id \] ) { 
- const { oscillator } = playTone ( id )],
-  [activeButtonIdMap \[ id \] = { oscillator , ... buttonIdMap \[ id \] } 
- } 
- } 
- }],
+  [if ( buttonMapData ) \{ 
+ const \{ row , column \} = buttonMapData
+ const id = \` \$\{ row \} - \$\{ column \} - \$\{ direction \} \`],
+  [if ( ! activeButtonIdMap \[ id \] ) \{ 
+ const \{ oscillator \} = playTone ( id )],
+  [activeButtonIdMap \[ id \] = \{ oscillator , ... buttonIdMap \[ id \] \} 
+ \} 
+ \} 
+ \}],
   [The way I'm tracking each currently playing note is putting them in the activeButtonIdMap object. In Svelte, in order to update a variable you just reassign it, so instead of what you might do in React with useState :],
-  [const App = ( ) =\> { 
- function handleKeyPressNote ( ) { 
- setActiveButtonIdMap ( newButtonIdMap ) 
- } 
- }],
+  [const \[ activeButtonIdMap , setActiveButtonIdMap \] = useState ( \{ \} )],
   [You have to declare it as a let and reassign it:],
-  [function handleKeyPressNote ( ) { 
+  [let activeButtonIdMap = \{ \}],
+  [function handleKeyPressNote ( ) \{ 
  activeButtonIdMap = newButtonIdMap
- }],
+ \}],
   [This was mostly easier, except when all I wanted to do was delete a key from the object. As far as I could tell, Svelte only rerenders when a variable is reassigned, so just mutating some value within wasn't enough and I had to clone it, mutate it, the reassign it. This is what I did in the handleKeyUpNote function.],
-  [if ( key === toggleBellows ) { 
+  [handleKeyUpNote],
+  [function handleKeyUpNote ( e ) \{ 
+ const key = \` \$\{ e . key \} \` . toLowerCase ( ) || e . key],
+  [if ( key === toggleBellows ) \{ 
  handleToggleBellows ( 'pull' ) 
  return 
- }],
+ \}],
   [const buttonMapData = keyMap \[ key \]],
-  [if ( buttonMapData ) { 
- const { row , column } = buttonMapData
- const id = \` \${ row } - \${ column } - \${ direction } \`],
-  [if ( activeButtonIdMap \[ id \] ) { 
- const { oscillator } = activeButtonIdMap \[ id \] 
+  [if ( buttonMapData ) \{ 
+ const \{ row , column \} = buttonMapData
+ const id = \` \$\{ row \} - \$\{ column \} - \$\{ direction \} \`],
+  [if ( activeButtonIdMap \[ id \] ) \{ 
+ const \{ oscillator \} = activeButtonIdMap \[ id \] 
  oscillator . stop ( ) 
  \/\\/ Must be reassigned in Svelte 
- const newActiveButtonIdMap = { ... activeButtonIdMap } 
+ const newActiveButtonIdMap = \{ ... activeButtonIdMap \} 
  delete newActiveButtonIdMap \[ id \] 
  activeButtonIdMap = newActiveButtonIdMap
- } 
- } 
- }],
+ \} 
+ \} 
+ \}],
   [Maybe someone knows a better way to delete an item from an object in Svelte, but this is the best I could come up with.],
   [I also made a few functions that will play through the scales, starting with F , B♭ and E♭ being the main diatonic keys of the accordion, but there are more options. To play the scales, I simply looped through all the ids that correspond to the notes in the scale and used a JavaScript "sleep" command of 600ms between each note.],
-  [id="rendering"\> Rendering],
   [Now that I have all the data structures set up and the JavaScript, I just need to render all the buttons. Svelte has \#each blocks for looping logic, so I just looped through the three rows of buttons and rendered a circle for each button.],
   [Each circle has its own mousedown event so you can click on them in addition to using the keyboard, but I didn't put the mouseup event on the circle itself. This is because if you move your mouse somewhere else before lifting it up, it won't correctly determine the mouseup and the note will play forever.],
   [And of course, I just used plain CSS because I don't usually feel like anything fancier is necessary for small projects.],
-  [class="gatsby-highlight"\> .circle { 
+  [.circle \{ 
  display : flex ; 
  align-items : center ; 
  justify-content : center ; 
@@ -622,24 +568,23 @@ oscillator . start ( )],
  color : \#222 ; 
  font-weight : 600 ; 
  cursor : pointer ; 
- }],
-  [.circle:hover { 
+ \}],
+  [.circle:hover \{ 
  background : white ; 
  box-shadow : 0px 6px rgba ( 255 , 255 , 255 , 0.3 ) ; 
  cursor : pointer ; 
- }],
+ \}],
   [.circle.pull:active,
-.circle.pull.active { 
+.circle.pull.active \{ 
  background : linear-gradient ( to bottom , var ( --green ) , \#56ea7b ) ; 
  box-shadow : 0px 6px rgba ( 255 , 255 , 255 , 0.2 ) ; 
- }],
+ \}],
   [.circle.push:active,
-.circle.push.active { 
+.circle.push.active \{ 
  background : linear-gradient ( to bottom , var ( --red ) , \#f15050 ) ; 
  box-shadow : 0px 6px rgba ( 255 , 255 , 255 , 0.2 ) ; 
  color : white ; 
- }],
-  [id="conclusion"\> Conclusion],
+ \}],
   [I hope you liked my write-up for the Keyboard Accordion app! Of course, the full code is available on GitHub .],
   [There are a few little bugs here and there, such as if you use keyboard shortcuts while also pressing other keys, it will get stuck on a note forever. I'm sure if you try to find more bugs you'll be able to.],
   [This app was fun to make, I learned how to use both Svelte and the Web Audio API, and it's helping me and hopefully some other afficionados to understand the squeezebox a little better. Maybe it'll inspire you to build your own little online instrument, or make an app for one of your hobbies. The best part about coding is that you can make anything you want!],
@@ -650,16 +595,14 @@ oscillator . start ( )],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [From Hadoop and Cassandra to Kafka Streams],
   author: [Nicolas Yann Couturier],
   source-name: [Finn.no Tech],
   images: (),
   paragraphs: (
-  [id="some-context"\>Some context],
+  [Some context],
   [People who publish their classified ads on FINN.no get access to various statistics to see how their ads are performing. For a user it can look something like this:],
   [Statistics the owner of a realestate ad gets to see],
   [The top left bar chart shows the repartition of the incoming traffic by day and the legend to the right of it shows the total numbers for each type of incoming traffic.
@@ -669,11 +612,11 @@ The lower section is divided in 3 parts:],
   [the right part shows how many viewers out of the total come from a specific type of traffic.],
   [This gives the user basic insight into the reach of their ad, such as how many views it has and how many unique users have viewed it.],
   [Around November 2016 there was a request to show more detailed information about the viewers, such as the age, gender and location distribution of the viewers (demographic information) so the owner could potentially change an ad to better fit the audience they wanted.],
-  [id="existing-solution"\>Existing solution],
+  [Existing solution],
   [As users view ads, do actions (such as send a message to an ad’s owner or scroll down and read the whole page, for example), these actions are gathered and published internally on Apache Kafka . These streams of data then become the basis for computing the statistics above. The plan was then to also publish demographic data about the viewers (such as location, age and gender) on Kafka and join the user actions with this demographic data to provide enhanced statistics.],
   [At the time, the action events published on Kafka were saved to Cassandra Apache Cassandra clusters, and statistics were being computed as batches on an aging Apache Hadoop cluster reading from Cassandra. Both our Hadoop and Cassandra clusters had not receive much love recently and were all on end-of-life versions. The old system also had an increasing tendency to fail, so we were also in the process to decide to either spend our time to refresh/renew the old system or replace it.],
   [A simplified overview of the previous architecture],
-  [id="replacement-solution"\>Replacement solution],
+  [Replacement solution],
   [We first tried to find a good way of joinining the latest demographic data being received through Kafka as part of the existing statistics computation done with Hadoop. We quickly learned that efficient communication with Kafka from a Hadoop job was not easy to get right. After some experimentation we had a solution that sort of worked, but it was complicated and far from elegant.],
   [After doing some research we started to look at the possibility of using Kafka Streams . Reading the introductory blog post - especially the “Simple is Beautiful” paragraph - it felt like Streams was just what we needed.],
   [The most interesting aspects were:],
@@ -688,20 +631,18 @@ The lower section is divided in 3 parts:],
   [Apache Spark micro-batches on top of an Apache Parquet storage filled from Kafka;],
   [hybrid solutions with hyperloglog and other similar cardinality tricks to estimate the unique users visiting an ad.],
   [We were already using Kafka (and it is seen as a central part of our future architecture), so Streams was deemed to be the most attractive and straight-forward solution.],
-  [id="streams-in-use"\>Streams in use],
+  [Streams in use],
   [The first prototype took less than a week to get up and running, and from there it took 6 months to develop a fully operational, properly sized version running in production on our Kubernetes container cluster.],
   [As part of development we also wrote tools for monitoring, error handling/diagnostics, reprocessing and for migration of the existing statistics out of the old Cassandra storage and into our new storage. During this development, the original plan to join in demographics data was put on hold (for non-technical reasons) and the project turned into a more technical one: move the statistics system out of the aging Hadoop and Cassandra clusters and migrate to something that incurs less maintenance and fits better with our overall technology strategy.],
-  [id="requirements"\>Requirements],
   [The amount of data is is reasonably large, about 100 million messages a day, and the main requirements were:],
   [keep the near-realtime computing of the statistics we had in the previous solution;],
   [be able to reprocess data up to 3 months back in time (in case of failure or bugs);],
   [be able to integrate late arrivals to some extent.],
-  [id="architecture"\>Architecture],
   [We went through multiple versions and the components evolved both in size and responsibility during development, and below is how it looks now.],
   [A simplified overview of the replacement architecture],
   [The replicator copies a subset of short lived topics (3 days retention) into our own long lived topics (90 days retention) to support reprocessing of the last 3 months. It is a simple read-write (Kafka consumer and producer) that computes the hash of the message as the key for deduplication downstream.],
   [The aggregator is the interesting bit that actually computes the base data for our statistics: the counts. A simplified versions of the Streams code to achieve this would look something like this:],
-  [class="highlight"\> \/\\/ grouping by unique key which consists
+  [\/\\/ grouping by unique key which consists
 \/\\/ of the id of the ad, the day the action
 \/\\/ happened and the type of the action
 \/\\/ and then counting],
@@ -714,9 +655,10 @@ The lower section is divided in 3 parts:],
   [The production code does more than that with Apache Avro serialization \/ deserialization, filtering of bad data, deduplicating, reporting metrics etc., but the above code shows the main logic the component consists of.],
   [Finally, the sink is just an instance of Kafka Connect configured to use the JDBC sink - with no custom code. It reads from the output topic from the aggregator and writes into a PostgreSQL database.],
   [All of these components are webapps running in Kubernetes and can be scaled up or down easily. And while the replicator and the aggregator are Spring Boot based webapps, the sink is just an off-the-shelf Kafka-REST webapp.],
-  [id="data-quality"\>Data quality],
-  [id="avro-and-schema-registry"\>Avro and Schema Registry],
+  [Data quality],
+  [Avro and Schema Registry],
   [We use Avro and the Schema Registry to enforce schemas on the Kafka messages so that changes to the message structure maintain compatibility over time. This proves to be quite robust any incompatible change to the schema gets immediately rejected.],
+  [\/\\/ build the serialization/deserialization object],
   [GenericAvroSerde avroSerde = 
  new GenericAvroSerde(registryClient, registryProps);],
   [\/\\/ build the KStream with Avro],
@@ -724,52 +666,47 @@ The lower section is divided in 3 parts:],
  .stream(Serdes. String(), avroSerde, topics);],
   [A note about developing with Avro and the schema registry: 
 While in the early stages of development, using the schema registry proved cumbersome: breaking changes happens quite often during development and maintaining compatibility or overriding it takes time to get used to. This was however very good training for applying actual real changes to the schema that will inevitably be required later on when running in production. Special care is required with the internal Streams topics that also contain Avro messages.],
-  [id="streams-filtering"\>Streams filtering],
+  [Streams filtering],
   [We filter out bad messages (missing or corrupted pieces of information) with the filtering method of the Streams and plain old Java.],
-  [kstream.filter((key, action) -\> 
- action.isNotFromOwner() 
- && action.hasRequiredData());],
-  [id="dealing-with-duplicates"\>Dealing with duplicates],
+  [\/\\/ filter out actions for the owner of the ad
+\/\\/ and actions that are missing some data],
+  [Dealing with duplicates],
   [There is no built-in support in Streams to deal with duplicates, so non-idempotent processing of the messages then becomes an issue. The strategy we adopted is to calculate a hash of each message value and set it as its key so that consumers downstream can deduplicate based on an in-memory LRU cache of these hashes (because all the identical keys are guaranteed to be in the same partition, and thus end up in the same consumer on the same thread).],
   [In the replicator:],
-  [String key = DigestUtils.sha1Hex(message);
-producer.send(new ProducerRecord\<\>(topic, key, message);],
+  [\/\\/ compute a hash of the message and
+\/\\/ set it as the key],
   [In the aggregator:],
+  [\/\\/ cache processed key for 10 minutes],
   [KEYS = CacheBuilder.newBuilder()
  .maximumSize(100000L)
  .expireAfterWrite(10L, TimeUnit. MINUTES)
  .build();],
   [\/\\/ keep only messages whose key has not been processed],
-  [kstream.filterNot((key, action) -\> {
- boolean duplicate = KEYS.getIfPresent(key) != null;
- KEYS.put(key);
- return duplicate;
-});],
   [This is a best effort strategy since if the Streams app dies, so does its cache, and the new app instance won’t be able to deduplicate the very first duplicate (but this should happen so rarely that it is acceptable).],
-  [id="limiting-the-disk-usage"\>Limiting the disk usage],
+  [Limiting the disk usage],
   [Streams and Kafka rely on offsets when reading messages which guarantees that when things start again they pick up where they stopped. On top of that, when using aggregations, Streams stores a changelog of the operations in Kafka itself, meaning that also stateful operations (grouping, reducing, counting, etc.) will recover gracefully and efficiently from a stop or crash by starting from where they had stopped. This is really nice fault-tolerance feature.],
   [The changelog topic is used on every start to build a “local state” for stateful operations on the machine where Streams is running. RocksDB manipulates that state internally. This local state resides partly in memory and partly on disk, all depending on the amount of data in question. Instances running on our Kubernetes cluster are stateless, so they do not keep data on disk between restarts. This means we lose the local state each time the app is shutdown. However, when the streams application starts up again it will rebuild this local state from the Streams internal changelog topic, so no data is lost. As a consequence, there are two things to consider:],
   [rebuilding of the local state on (re)start can take several minutes depending on the volume of data and how it is partitioned],
   [if the app runs for a long time the disk usage will keep on increasing, so we need to use TimeWindows to avoid the issue of never-ending growing local state],
   [Below is an example of how to limit data on disk by using TimeWindows .],
+  [\/\\/ count by buckets of 1 day
+\/\\/ and keep these buckets for 1 day in the local state],
   [.groupByKey()
 .count(TimeWindows.of(TimeUnit. DAYS.toMillis(1))
  .until(TimeUnit. DAYS.toMillis(1)),
  "count-store");],
-  [id="migrating-existing-data"\>Migrating existing data],
+  [Migrating existing data],
   [The Cassandra table storing our data was not structured in a way that made it easy and fast to export the existing data. Since we were running on an older version of Cassandra, we used the Astyanax library to migrate the existing data over to PostgreSQL. It allowed partitioning of the ring buffer and reading in parallel from each of these partitions for higher throughput. The included checkpointing mechaninsm helped us start where it left off each time the migration would fail. Astyanax did a good job reading and writeíng the billions of rows of data needed within an acceptable migration time window without overloading the running Cassandra clusters.],
   [The above proved to be quite tricky due to tombstone and compaction issues. Tombstones would often lead to queries timing out, so we first had to fix that. These problems were not, for the most part, visible in day to day use, so it was a surprise challenge when migrating data (which took quite a lot of time to do).],
-  [id="integration-testing"\>Integration testing],
+  [Integration testing],
   [We use JUnit and spin up an embedded Kafka and Apache Zookeeper . Then we use producers and consumers to send and receive messages for the input and output topics that the Streams expects. Extra care should be taken to clear the state of the Streams between each test.
 Integration testing has proven to be quite challenging because there are a lot of details to take into account.],
   [For manual testing when quickly prototyping something new, we both make use of our Kubernetes development environment, or a local Docker Compose configuration, and a bunch of scripts using the Kafka tools.],
-  [id="reprocessing"\>Reprocessing],
   [When rolling out bug fixes or improvements, it may be necessary to reprocess the existing data. Reprocessing with Streams is sort of an artform - especially if you have non-idempotent processing. Sometimes it is possible to reset the app (with kafka-streams-application-reset ) and just restart with auto.offset.reset to earliest to reprocess everything. This clears all of the app’s state, and depending on the case this can be acceptable or not.
 Our aggregator can start in a special reprocessing mode that spools all the messages of our 90-days long lived topic and only processes a given time interval.],
-  [id="error-diagnostic"\>Error diagnostic],
+  [Error diagnostic],
   [Figuring out when the Streams output data is wrong is not always as easy as seeing a sudden spike on a monitoring graph or incoherent numbers. Figuring out why the numbers do not add up can be even more challenging in that there is no way to query the input Kafka topic to investigate. The same could be said of our Cassandra “input table” to Hadoop which was not structured after a diagnostic query need either. Putting a Kafka Connect Source from our input topic to a form of storage that allows easy querying might enable easier diagnostics.],
   [However, we’re happy to say that we never experienced any bugs in Streams itself and the Kafka cluster have proven to be very reliable. The problems we have encountered have mostly been due to corrupted or duplicated input data.],
-  [id="summary"\>Summary],
   [The previous solution required a lot of knowledge on top of knowing Kafka, mainly Cassandra (dealing with tombstone problems, compaction strategies, cluster management, old composite columns vs CQL etc.) and Hadoop (maintaining HDFS, operations, batch-writing etc.). Using Streams instead, there is no extra required knowledge. The only thing to know about is Kafka (and the Streams framework).],
   [We also end up with a less heterogeneous infrastructure to run with fewer clusters and fewer products. It ends up being just one Kafka cluster and a bunch of webapps. Which we have quite a lot of experience of maintaining over time.],
   [With Kafka being more and more widely used at FINN (as well as Streams) the knowledge can also be shared between all and promotes cooperation across the organization.],
@@ -780,10 +717,8 @@ Our aggregator can start in a special reprocessing mode that spools all the mess
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [QA role is dead but development and testing together provides quality for FINN.no],
   author: [vivek],
   source-name: [Finn.no Tech],
@@ -807,12 +742,10 @@ Our aggregator can start in a special reprocessing mode that spools all the mess
   debug-mode: false,
 )
 
-  #pull-quote([The QA role today is often a safety net for many developers and teams.], [vivek])
+#pull-quote([The QA role today is often a safety net for many developers and teams.], [vivek])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Litestream Writable VFS],
   author: [Fly.io Blog],
   source-name: [Fly.io Blog],
@@ -833,8 +766,14 @@ Our aggregator can start in a special reprocessing mode that spools all the mess
   [If the Fly Machine underneath a Sprite bounces, we might need to reconstitute the block map from object storage. Block maps aren’t huge, but they’re not tiny; maybe low tens of megabytes worst case.],
   [The thing is, this is happening while the Sprite boots back up. To put that in perspective, that’s something that can happen in response to an incoming web request; that is, we have to finish fast enough to generate a timely response to that request. The time budget is small.],
   [To make this even faster, we are integrating Litestream VFS to improve start times. The VFS is a dynamic library you load into your app. Once you do, you can do stuff like this:],
-  [class="highlight relative group"\>
- sqlite\> .open file:\/\//my.db?vfs = litestream
+  [Wrap text
+ 
+ 
+ 
+ 
+ 
+ Copy to clipboard],
+  [sqlite\> .open file:\/\//my.db?vfs = litestream
 sqlite\> PRAGMA litestream\_time = '5 minutes ago' ; 
 sqlite\> SELECT \* FROM sandwich\_ratings ORDER BY RANDOM () LIMIT 3 ; 
 22|Veggie Delight|New York|4
@@ -845,6 +784,7 @@ sqlite\> SELECT \* FROM sandwich\_ratings ORDER BY RANDOM () LIMIT 3 ;
   [We could only read, not write. People write to Sprite disks. The storage stack needs to write, right away.],
   [Running a query off object storage is a godsend in a cold start where we have no other alternative besides downloading the whole database, but it’s not fast enough for steady state.],
   [These are fun problems. Here’s our first cut at solving them.],
+  [Writable VFS],
   [The first thing we’ve done is made the VFS optionally read-write. This feature is pretty subtle; it’s interesting, but it’s not as general-purpose as it might look. Let me explain how it works, and then explain why it works this way.],
   [Keep in mind as you read this that this is about the VFS in particular. Obviously, normal SQLite databases using Litestream the normal way are writeable.],
   [The VFS works by keeping an index of (file,offset, size) for every page of the database in object storage; the data comprising the index is stored, in LTX files , so that it’s efficient for us to reconstitute it quickly when the VFS starts, and lookups are heavily cached. When we queried sandwich\_ratings earlier, our VFS library intercepted the SQLite read method, looked up the requested page in the index, fetched it, and cached it.],
@@ -865,17 +805,15 @@ sqlite\> SELECT \* FROM sandwich\_ratings ORDER BY RANDOM () LIMIT 3 ;
   [But this whole thing is, to me, a valuable case study in how Litestream can get used in a relatively complicated and demanding problem domain. Sprites are very cool, and it’s satisfying to know that every disk write that happens on a Sprite is running through Litestream.],
 ),
   insert-map: (:),
-  inline-pq: pull-quote([class="right-sidenote"\>  Most storage block maps are much smaller than this, but still.], [Fly.io Blog]),
-  inline-pq-idx: 15,
+  inline-pq: pull-quote([Most storage block maps are much smaller than this, but still.], [Fly.io Blog]),
+  inline-pq-idx: 16,
   word-count: 1522,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Log4j2 in production – making it fly],
   author: [mick],
   source-name: [Finn.no Tech],
@@ -933,22 +871,19 @@ introducing Log4j2 came with some concerns and hurdles.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Create impeccable MIME email from markdown],
   author: [Joe Nelson (begriffs)],
   source-name: [Joe Nelson (begriffs)],
   images: (),
   paragraphs: (
-  [id="the-goal"\>The goal],
+  [The goal],
   [I want to create emails that look their best in all mail clients, whether
 graphical or text based. Ideally I’d write a message in a simple format like
 Markdown, and generate the final email from the input file. Additionally, I’d
 like to be able to include fenced code snippets in the message, and make them
 available as attachments.],
-  [id="demo"\>Demo],
   [I created a utility called mimedown 
 that reads markdown through stdin and prints multipart MIME to stdout.],
   [Let’s see it in action. Here’s an example message:],
@@ -957,14 +892,14 @@ that reads markdown through stdin and prints multipart MIME to stdout.],
   [\`\`\`crash.c
 \#include],
   [int main(void)
-{
+\{
  char a\[\] = "string literal";
  char \*p = "string literal";],
   [/\* capitalize first letter \*/
  p\[0\] = a\[0\] = 'S';
  printf("a: %s\\np: %s\\n", a, p);
  return 0;
-}
+\}
 \`\`\`],
   [It blows up when I compile it and run it:],
   [\`\`\`compile.txt
@@ -1011,7 +946,7 @@ another Mutt screenshot of the end of the message, with red circles added.],
 multipart/mixed. Within the multipart/mixed part is a succession of message
 text and code snippets, all with inline disposition. The final mixed item is
 the list of referenced urls (if necessary).],
-  [id="other-niceties"\>Other niceties],
+  [Other niceties],
   [Lines of the message body are re-flowed to at most 72 characters, to conform to
 historical length constraints. Additionally, to accommodate narrow terminal
 windows, mimedown uses a technique called
@@ -1025,7 +960,7 @@ be mangled.],
   [Finally, the HTML version of the message is tasteful and conservative. It
 should display properly on any HTML client, since it validates with ISO HTML
 (ISO/IEC 15445:2000, based on HTML 4.01 Strict).],
-  [id="try-it-yourself"\>Try it yourself],
+  [Try it yourself],
   [Clone it here:
  github.com/begriffs/mimedown . It’s
 written in portable C99. The only build dependency is the
@@ -1037,10 +972,8 @@ written in portable C99. The only build dependency is the
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Clarifications about Redis and Memcached],
   author: [Antirez],
   source-name: [Antirez],
@@ -1087,10 +1020,8 @@ written in portable C99. The only build dependency is the
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Programming and Writing],
   author: [Antirez],
   source-name: [Antirez],
@@ -1112,11 +1043,10 @@ written in portable C99. The only build dependency is the
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Using Hapi.js, Mongoose, And MongoDB To Build A REST API],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1134,24 +1064,24 @@ written in portable C99. The only build dependency is the
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Browser statistics December 2017],
   author: [Henning Spjelkavik],
   source-name: [Finn.no Tech],
   images: (),
   paragraphs: (
-  [id="browser-statistics-december-2017-at-finnno"\>Browser statistics, December 2017 at FINN.no\#],
+  [Browser statistics, December 2017 at FINN.no\#],
   [Yuletide is coming real soon now, and we haven’t published browser statistics for 2017 yet! The 2016 edition is here if you want to compare.],
-  [id="how-many-visitors-use-a-desktop-or-laptop"\>How many visitors use a desktop or laptop?],
+  [How many visitors use a desktop or laptop?],
   [The trend continues, a higher percentage of the traffic is coming from a mobile terminal this year than in 2016, but the trend is that the growth of the curve seems to flatten.],
   [Our first graph shows the share of our users using a mobile phone, tablet or a desktop computer to access FINN.no, regardless of whether they use our responsive web app (m.finn.no), or a native Android or iPhone app. 72% of our visits are now from a smartphone or a tablet. The traditional desktop/laptop has a market share of 28%.],
   [Which offering/”app” of FINN are people using, regardless of whether the device is a desktop/laptop, mobile or tablet?],
   [Given that a user is on a mobile or a tablet - are they using the web-version or the app? For the first time the majority of those accessing FINN from a mobile device use our native app - the www.finn.no share of the visits is down to 48%.],
   [These graphs also shows that we changed the domain name again this spring, so that all web traffic is served from www.finn.no , and not m.finn.no any more.],
-  [id="browsers-and-devices"\>Browsers and devices],
+  [Browsers and devices],
   [The browser war is now only a memory of the veterans, but we still have to debug bugs in specific browsers from time to time, and it’s useful to have an idea of which browsers could or should be ignored.],
   [Let’s also look at the which devices are the most popular:],
-  [id="operating-systems"\>Operating systems],
+  [Operating systems],
   [We’re not using our mobiles all the time, so lte’s take a look at the operating system versions. The changes here go quite slowly, but the longer trend is that Windows 10 is still increasing over Windows 7 and 8.],
   [Distribution of iOS versions - it’s interesting to see how quickly a new version is rolled out and dominating. (Note that iOS 11 did not fit into this graph, but the last week, iOS 11.1.2 was the biggest.)],
   […especially compared to Android:],
@@ -1166,7 +1096,7 @@ written in portable C99. The only build dependency is the
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([Axel Rauschmayer (2ality)], source-name: [Axel Rauschmayer (2ality)], [In this chapter we develop a small web app in the same way that large professional web apps are developed:
 
 We use libraries that we install via npm.
@@ -1196,7 +1126,7 @@ The post Simple User Login in a Vue.js Web Application appeared first on The Pol
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Manage Passwords With GPG, The Command Line, And Pass],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1215,7 +1145,7 @@ The post Simple User Login in a Vue.js Web Application appeared first on The Pol
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Apache Cordova And Ionic Framework Apps Are Not Native Mobile Apps],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1236,7 +1166,7 @@ The post Simple User Login in a Vue.js Web Application appeared first on The Pol
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Use Node.js And A Raspberry Pi Zero W To Scan For BLE iBeacon Devices],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1255,7 +1185,7 @@ The post Simple User Login in a Vue.js Web Application appeared first on The Pol
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [My Activity Report For 2019],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1277,7 +1207,7 @@ The post Simple User Login in a Vue.js Web Application appeared first on The Pol
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Create And Sign Bitcoin Transactions With Golang],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1296,7 +1226,7 @@ The post Simple User Login in a Vue.js Web Application appeared first on The Pol
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Implement Social Media Sharing With Ionic Framework],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1318,7 +1248,7 @@ The post Simple User Login in a Vue.js Web Application appeared first on The Pol
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Create A Simple Todo List App Using Ionic 2 For Android And iOS],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1336,7 +1266,7 @@ The post Simple User Login in a Vue.js Web Application appeared first on The Pol
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Building Amazon Alexa Skills With Node.js, Revisited],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1357,7 +1287,7 @@ The post Simple User Login in a Vue.js Web Application appeared first on The Pol
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Spreading love and good vibrations on GitHub],
   author: [espen],
   source-name: [Finn.no Tech],
@@ -1367,10 +1297,9 @@ The post Simple User Login in a Vue.js Web Application appeared first on The Pol
   [Currently there are a few repositories out there:],
   [eventHub],
   [Awesome Board\[Gone\]],
-  [id="eventhub"\>eventHub],
+  [eventHub],
   [This is just a tiny piece of code which enables you to build loosely coupled components or applications by utilizing the publish-subscribe pattern . The eventHub is just an object which publishes event to those to registered event listeners functions.],
   [We have written one-page JS applications using only the hub besides jQuery for DOM manipulation. It scales pretty well and it is pretty much what you’d need to create an application. Once your application grows to be quite large you might want to add some other architectural components, but for small to medium sized projects it is brilliant. It is used for the dashboard part for the Awesome Board\[Gone\].],
-  [id="awesome-board"\>Awesome Board],
   [The Awesome Board\[Gone\] is the application which has featured in two articles about visualizing quality. We have shown it a few times to different audiences and due to request for making it available we decided it was a good thing to share it on GitHub. There are some pieces missing from the version we run internally, but have patience the rest might still make it to a repo near you.],
 ),
   insert-map: (:),
@@ -1381,7 +1310,7 @@ The post Simple User Login in a Vue.js Web Application appeared first on The Pol
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Make HTTP Requests In An Ionic Android And iOS App],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1402,7 +1331,7 @@ The post Simple User Login in a Vue.js Web Application appeared first on The Pol
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [TPDP Episode \#22: NoSQL Databases And The Flexibility Of A Non-Relational Model],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1420,7 +1349,7 @@ The post Simple User Login in a Vue.js Web Application appeared first on The Pol
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Using Network Sockets With The Go Programming Language],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1441,31 +1370,30 @@ The post Simple User Login in a Vue.js Web Application appeared first on The Pol
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Browser statistics October 2016],
   author: [Henning Spjelkavik],
   source-name: [Finn.no Tech],
   images: (),
   paragraphs: (
   [Last year, we presented the browser statistics of FINN.no as of June 2015 . It’s time for an update!],
-  [id="how-many-visitors-use-a-desktop-or-laptop"\>How many visitors use a desktop or laptop?],
+  [How many visitors use a desktop or laptop?],
   [Our first graph shows the share of our users using a mobile phone, tablet or a desktop computer to access FINN.no, regardless of whether they use our responsive web app (m.finn.no), or a native Android or iPhone app. 66% of our visits are now from a smartphone or a tablet. The traditional desktop/laptop has a market share of 34%.],
   [If we exclude the native app users, which are obviously on either Android or iOS, what is the distribution between table, mobile and “other” (desktop) on our web site?],
-  [id="which-finnno-application-do-people-use"\>Which FINN.no application do people use?],
+  [Which FINN.no application do people use?],
   [We have two major offerings of FINN.no - the responsive web (served from the domains m.finn.no and www.finn.no), and native apps for mobile devices. 24% of our visits are from our native apps, and 76% from our responsive web.],
   [Since we’re in the middle of a migration, some of our internal details leaks out in this graph; some parts of the finn.no traffic is served from the domain www.finn.no and the majority from the domain m.finn.no. They are supposed to be merged “real soon now”.],
-  [id="browsers"\>Browsers],
   [First of all, let’s take a look at the numbers of the browser vendors . The ranking is clear, Apple is the biggest, ahead of Google, Microsoft, Samsung and Mozilla. Opera is no longer in the top 5.],
   [In case you wondered which browser is the biggest on the “desktop” here’s the trend. (Ignore the orange and blue triangle markers)],
   [The complete browser statistics , across all applications and devices are as follows:],
   [It still seems like a good idea to make sure your website works well with Safari! The old giant Microsoft now has only the 5th spot with IE 11 (6.8%) and the 12th with Edge 13 (1.7%).],
-  [id="mobile-details"\>Mobile details],
+  [Mobile details],
   [We got a request to give some more details about the mobile devices that uses FINN.no. Apple still has a strong position in Norway!],
   [The most popular browsers on mobile devices:],
   [Then the question is - what is the “Android Browser”? This is the break down of devices that has delivered traffic from the “Android Browser”.],
   [Similarily for the Samsung Browser:.],
   [And finally the trend on mobile browsers, by vendor:],
-  [id="which-version-of-android-or-ios"\>Which version of Android or iOS?],
+  [Which version of Android or iOS?],
   [Our apps need to work well on several versions of Android and iOS. How fast are our users upgrading? This shows the distribution of operating systems among our apps users.],
   [Given that the user have an iPhone, which models are in use? Unfortunately, the data are quite spotty, but this graph might still be an indication of the truth.],
 ),
@@ -1477,7 +1405,7 @@ The post Simple User Login in a Vue.js Web Application appeared first on The Pol
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [I wish I knew my consumers - Maven Reverse Dependency],
   author: [roar],
   source-name: [Finn.no Tech],
@@ -1489,8 +1417,9 @@ The post Simple User Login in a Vue.js Web Application appeared first on The Pol
   [The idea was to have every project report its dependencies to a graph database, building the tree of dependencies on each commit. This constitutes one half of the plugin. Over time, all projects will have reported their dependencies, and from there on part two of the plugin comes into use. It will examine the reverse dependencies to the current maven project, and report all incoming dependencies to it in the maven log. Hey, presto! We now know who out there uses us! And even which version they are using, thanks to two different keys into the built-in lucene index engine.],
   [The plugin is published on github \@ Finn Technology’s account . Feel free!
  \@gardleopard and \@roarjoh],
-  [id="usage-examples"\>Usage examples],
+  [Usage examples],
   [Dependencies to current maven project:],
+  [mvn no.finntech:dependency-mapper-maven-plugin:read],
   [\[INFO\] Scanning for projects...],
   [\[INFO\]],
   [\[INFO\] ------------------------------------------------------------------------],
@@ -1499,13 +1428,6 @@ The post Simple User Login in a Vue.js Web Application appeared first on The Pol
   [\[INFO\]],
   [\[INFO\] --- dependency-mapper-maven-plugin:1.0-SNAPSHOT:read (default-cli) \@ commons-thrift-client ---],
   [\[INFO\] Resolving reverse dependencies],
-  [\[INFO\] no.finntech.travel.supplier:supplier-client:1.2-SNAPSHOT -\> no.finntech:commons-thrift-client:3.1.1],
-  [\[INFO\] no.finntech.cop:client:1.1-SNAPSHOT -\> no.finntech:commons-thrift-client:3.1.1],
-  [\[INFO\] no.finntech.oppdrag-services:iad-model:2013.2-SNAPSHOT -\> no.finntech:commons-thrift-client:3.4.3],
-  [\[INFO\] no.finntech:minfinn:2013.2-SNAPSHOT -\> no.finntech:commons-thrift-client:3.4.3],
-  [\[INFO\] no.finntech:service-user:2013.2-SNAPSHOT -\> no.finntech:commons-thrift-client:3.4.3],
-  [\[INFO\] no.finntech:service-oppdrag:2013.2-SNAPSHOT -\> no.finntech:commons-thrift-client:3.4.3],
-  [\[INFO\] no.finntech:kernel:2013.2-SNAPSHOT -\> no.finntech:commons-thrift-client:3.4.3],
   [\`],
   [(umpteen lines skipped...)],
   [\`],
@@ -1531,7 +1453,7 @@ The post Simple User Login in a Vue.js Web Application appeared first on The Pol
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [TPDP Episode \#8: Asynchronous and Event-Based Programming with RxJS],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1549,7 +1471,7 @@ The post Simple User Login in a Vue.js Web Application appeared first on The Pol
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Accept Text Input from Users in a Phaser Game],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1570,8 +1492,7 @@ The post Simple User Login in a Vue.js Web Application appeared first on The Pol
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Object Pooling Sprites in a Phaser Game for Performance Gains],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1588,6 +1509,5 @@ The post Simple User Login in a Vue.js Web Application appeared first on The Pol
   debug-mode: false,
 )
 
-}
 
 #colophon([Global Chronicle], [Vol. 1, No. 047], [2026-03-30])

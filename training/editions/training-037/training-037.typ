@@ -21,63 +21,8 @@
 #masthead([The Mirror], [Vol. 1, No. 037], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [An Exercise Program for the Fat Web],
-  kicker: [Cover Story],
-  author: [Jeff Atwood],
-  source-name: [Coding Horror (Jeff Atwood)],
-  deck: [When I wrote about  App-pocalypse Now  in 2014, I implied the future still belonged to the web.],
-  lead-pre: [],
-  lead-cap: [A],
-  lead-rest: [nd it does. But it’s also true that the web has changed a lot in the last 10 years, much less the last 20 or 30.],
-  body-paragraphs: (
-  [Websites have gotten a lot…  fatter .],
-  [While I think it’s irrational to pine for the bad old days of  HTML 1.0 websites , there are some legitimate concerns here. The best summary is Maciej Cegłowski’s,  The Website Obesity Crisis :],
-  [To channel a famous motivational speaker, I could go out there tonight, with the materials you’ve got, and rewrite the sites I showed you at the start of this talk to make them load in under a second. In two hours.],
-  [Can you? Can you?],
-  [Of course you can! It’s not hard! We knew how to make small websites in 2002. It’s not like the secret has been lost to history, like Greek fire or Damascus steel.],
-  [But we face pressure to make these sites bloated.],
-  [I bet if you went to a client and presented a 200 kilobyte site template, you’d be fired. Even if it looked great and somehow included all the tracking and ads and social media crap they insisted on putting in. It’s just so far out of the realm of the imaginable at this point.],
-  [The whole article is essential; you should stop what you’re doing and read it now if you haven’t already. But if you don’t have time, here’s the key point:],
-  [This is a screenshot from an NPR article discussing the rising use of ad blockers. The page is 12 megabytes in size in a stock web browser.  The same article with basic ad blocking turned on is 1 megabyte.],
-  [That’s right, through the simple act of running an ad blocker, you’ve reduced that website’s payload by twelve times. Twelve! That’s like the most effective exercise program  ever!],
-  [Even the traditional advice to keep websites lean and mean for mobile no longer applies because new mobile devices, at least on the Apple side, are  faster than most existing desktops and laptops.],
-  [Despite  claims to the contrary , the bad guy isn’t web bloat, per se.  The bad guy is  advertising . Unlimited, unfettered ad “tech” has creeped into everything and subsumed the web.],
-  [Personally I don’t even want to run ad blockers, and I didn’t for a long time – but it’s increasingly difficult to avoid running an ad blocker unless you want a clunky, substandard web experience. There’s a  reason  the most popular browser plugins are inevitably ad blockers, isn’t there? Just ask Google:],
-  [So it’s all the more surprising to learn that Google is suddenly clamping down hard on adblockers in Chrome. Here’s what the author of uBlock Origin, an ad blocking plugin for Chrome,  has to say  about today’s announcement:],
-  [In order for Google Chrome to reach its current user base, it had to support content blockers – these are the top most popular extensions for any browser. Google strategy has been to find the optimal point between the two goals of growing the user base of Google Chrome and preventing content blockers from harming its business.],
-  [The blocking ability of the webRequest API caused Google to yield control of content blocking to content blockers. Now that Google Chrome is the dominant browser, it is in a better position to shift the optimal point between the two goals which benefits Google’s primary business.],
-  [The deprecation of the blocking ability of the webRequest API is to gain back this control, and to further instrument and report how web pages are filtered, since the exact filters which are applied to web pages are useful information which will be collectable by Google Chrome.],
-  [The ad blockers themselves are arguably just as complicit. Eye/o GmbH owns  AdBlock  and  uBlock , employs 150 people, and in 2016 they had 50 million euros in revenue, of which about 50% was profit. Google’s  paid “Acceptable Ads” program  is a way to funnel money into adblockers to, uh,  encourage  them to display certain ads. With money. Lots… and lots… of money. 🤑],
-  [We simultaneously have a very real web obesity crisis, and a looming crackdown on ad blockers, seemingly the only viable weight loss program for websites. What’s a poor web citizen to do? Well, there is one thing you can do to escape the need for browser-based adblockers, at least on your home network. Install and configure  Pi-Hole .],
-  [I’ve talked about the amazing Raspberry Pi before in the context of classic game emulation , but this is another brilliant use for a Pi.],
-  [Here’s why it’s so cool. If you disable the DHCP server on your router, and let the Pi-Hole become your primary DHCP server,  you get automatic DNS based blocking of ads for every single device on your network . It’s kind of scary how powerful DNS can be, isn’t it?],
-  [My Pi-Hole took me about 1 hour to set up, start to finish. All you need is],
-  [a  Raspberry Pi 3b+ kit  \$59],
-  [a quality  32GB SD card  \$9],
-  [an ethernet cable],
-  [I do recommend the 3b+ because it has  native gigabit ethernet  and a bit more muscle. But  literally any Raspberry Pi  you can find laying around will work, though I’d  strongly  advise you to pick one with a wired ethernet port since it’ll be your DNS server.],
-  [I’m not going to write a whole Pi-Hole installation guide , because there are lots of great ones out there already. It’s not difficult, and there’s a slick web GUI waiting for you once you complete initial setup. For your initial testing, pick any IP address you like on your network that won’t conflict with anything active. Once you’re happy with the basic setup and web interface:],
-  [Turn OFF your router’s DHCP server – existing leases will continue to work, so nothing will be immediately broken.],
-  [Turn ON the pi-hole DHCP server, in the web GUI.],
-  [Once you do this, all your network devices will start to grab their DHCP leases from your Pi-Hole, which will  also  tell them to route all their DNS requests through the Pi-Hole, and that’s when the ✨ magic ✨ happens!],
-  [All those DNS requests from all the devices on your network will be checked against the ad blacklists; anything matching is quickly and silently discarded  before it ever reaches your browser.],
-  [(The Pi-Hole also acts as a  caching DNS server , so repeated DNS requests will be serviced rapidly from your local network, too.)],
-  [If you’re worried about stability or reliability, you can easily add a cheap battery backed USB plug, or even a second backup Pi-Hole as your secondary DNS provider if you prefer belt and suspenders protection. Switching back to plain boring old vanilla DNS is as easy as unplugging the Pi and flicking the DHCP server setting in your router back on.],
-  [At this point if you’re interested (and you should be!), just give it a try. If you’re looking for more information, the project has an  excellent forum  full of FAQs and roadmaps.],
-  [You can even  vote for your favorite upcoming features !],
-  [I avoided the Pi-Hole project for a while because I didn’t need it, and I’d honestly rather jump in later when things are more mature.],
-  [With the latest Chrome crackdown on ad blockers, now is the time, and I’m impressed how simple and easy Pi-Hole is to run. Just find a quiet place to plug it in, spend an hour configuring it, and promptly proceed to forget about it forever as you enjoy a lifetime subscription to  a glorious web ad instant weight loss program across every single device on your network with (almost) zero effort!],
-  [Finally, an exercise program I can believe in.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [Is the craft dead?],
   author: [Scott Hanselman],
   source-name: [Scott Hanselman],
@@ -89,7 +34,6 @@
   [Don’t let them gaslight you with one shot Minecraft clones and one shot C compilers. Software is still hard, it’s just that you’re no longer I/O bound with the speed of your fingertips.],
   [I think that there will be lots of work for us cleaning up after the slop, but if you know what you’re doing AI augmented development is going to get you some amazing results and I am enjoying learning a ton during this momentous era shift - but the craft still exists.],
   [© 2025 Scott Hanselman. All rights reserved.],
-  [style="clear: both; padding-top: 0.2em;"\>],
 ),
   insert-map: (:),
   word-count: 234,
@@ -97,11 +41,9 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [The Gumbel‑Max Trick Made Intuitive],
   author: [Criteo Tech],
   source-name: [Criteo Engineering],
@@ -200,18 +142,14 @@ We can sample directly the arrival times Ta , Tb and Tc of each vehicle types],
   [3. Law of first arrival time],
   [Property (law of first arrival time). 
 Let Ta be the time of the first Autobus when the rate is λa = 10 per hour.],
-  [Then: Ta is an exponential variable of Exp(λ = 10).
-That is: P(Ta \> t) = exp(−10 t), for t ≥ 0.],
   [Sketch of proof (optional calculus):],
   [In the per-second model, the probability of a bus in a given second is p = 10 \/ 3600.],
   [The probability of seeing no bus in the first n seconds is: (1 − p)^n.],
   [Time t in hours corresponds to n = 3600 · t seconds, so:],
-  [P(Ta \> t) ≈ (1 − p)^n = (1 − 10 \/ 3600)^(3600 t).],
   [If instead of discretizing per second, we make the time step (here 1/3600) go to 0, this expression converges to: exp(−10 t).],
   [This is exactly the survival function of an exponential variable with rate ’10 per hour’.],
   [Of course, the same holds for Bikes and Cars, with their respective rates.],
   [Let us also note that Exp(λ = 10) = Exp(λ = 1)/10 .],
-  [Indeed, let X ~ Exp(1). Then P(X \/ 10 \> t) = P(X \> 10 t) = exp(−10 t).],
   [We can thus sample the arrival time of the first bus like this:],
   [Draw Xa ~ Exp(1)],
   [Return: Xa \/ 10],
@@ -259,10 +197,8 @@ Can you do it without the Gumbel‑Max trick (or the equivalent Exp‑Min trick)
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Ending the "silent drop": how Dynamic Path MTU Discovery makes the Cloudflare One Client more resilient],
   author: [Koko Uko],
   source-name: [Cloudflare Blog],
@@ -293,10 +229,8 @@ Can you do it without the Gumbel‑Max trick (or the equivalent Exp‑Min trick)
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Launching The Rural Guaranteed Minimum Income Initiative],
   author: [Jeff Atwood],
   source-name: [Coding Horror (Jeff Atwood)],
@@ -307,64 +241,66 @@ Can you do it without the Gumbel‑Max trick (or the equivalent Exp‑Min trick)
   [2. Within the next five years, also contribute  public dedications of time or funds towards longer term efforts  to keep the American Dream fair and attainable for all our children.],
   [Stay gold, America. 💛],
   [Personally, I’ve become a big believer in one particular quote, especially considering the specific context in which it was delivered:],
+  [“From those to whom much is given, much is expected.” — Mary Gates],
   [Those 10 words had a profound effect on the world. Indeed, we were given much, so we, as a family, will choose to give much . On a recent podcast , my partner Betsy said it better than I could have:],
   [“Well, we have everything we need!” That’s how I’ve always phrased it to \[our children\]. That, I think, extends \[to our philanthropy\]. We have everything we need;  how do we make sure everybody has what they need?  Because that’s the basic thing — Do you have a comfortable place to live? Do you have enough to eat? Do you have healthcare? If you have the basics, you’re in a good place in life, and everybody should have that opportunity.],
   [It’s a question I’ve asked myself a lot since 2021 . When, exactly, is enough?],
   [We do have everything we need. Why can’t everyone else have the basic things they need, too?],
   [Beyond the \$1M to eight nonprofit charities we listed in January 2025, we saw immediate needs becoming so urgent that we quickly added an additional \$13M in donations within a few months, for a total of \$21M.],
-  [value="1"\> Team Rubicon — \$1M],
-  [value="2"\> Children’s Hunger Fund — \$1M],
-  [value="3"\> PEN America — \$1M],
-  [value="4"\> The Trevor Project — \$1M],
-  [value="5"\> NAACP Legal Defense and Educational Fund — \$1M + \$100k],
-  [value="6"\> First Generation Investors — \$1M],
-  [value="7"\> Global Refuge — \$1M],
-  [value="8"\> Planned Parenthood — \$1M],
-  [value="9"\> VoteVets — \$2M],
-  [value="10"\> Mastodon — \$1.5M],
-  [value="11"\> 404 Media — \$1.1M],
-  [value="12"\> Ryan Broderick \/ Garbage Day — \$1M],
-  [value="13"\> Internet Archive — \$1M],
-  [value="14"\> Common Crawl Foundation — \$1M],
-  [value="15"\> Wikipedia \/ Wikimedia foundation — \$1M],
-  [value="16"\> Internet Security Research Group — \$1M],
-  [value="17"\> DNA Lounge — \$1M],
-  [value="18"\> Murena — \$500k],
-  [value="19"\> Sharewell — \$300k],
-  [value="20"\> Precious Plastic — \$100k],
-  [value="21"\> Economic Security Project — \$100k],
-  [value="22"\> Rural Democracy Initiative — \$100k],
-  [value="23"\> Civic Nation — \$100k],
-  [value="24"\> Sojourn Project — \$750k],
-  [value="25"\> Alameda Food Bank — \$150k],
-  [value="26"\> Urban Compassion Project — \$75k],
+  [Immediate Share The American Dream Donations (~\$21M)],
+  [Team Rubicon — \$1M],
+  [Children’s Hunger Fund — \$1M],
+  [PEN America — \$1M],
+  [The Trevor Project — \$1M],
+  [NAACP Legal Defense and Educational Fund — \$1M + \$100k],
+  [First Generation Investors — \$1M],
+  [Global Refuge — \$1M],
+  [Planned Parenthood — \$1M],
+  [VoteVets — \$2M],
+  [Mastodon — \$1.5M],
+  [404 Media — \$1.1M],
+  [Ryan Broderick \/ Garbage Day — \$1M],
+  [Internet Archive — \$1M],
+  [Common Crawl Foundation — \$1M],
+  [Wikipedia \/ Wikimedia foundation — \$1M],
+  [Internet Security Research Group — \$1M],
+  [DNA Lounge — \$1M],
+  [Murena — \$500k],
+  [Sharewell — \$300k],
+  [Precious Plastic — \$100k],
+  [Economic Security Project — \$100k],
+  [Rural Democracy Initiative — \$100k],
+  [Civic Nation — \$100k],
+  [Sojourn Project — \$750k],
+  [Alameda Food Bank — \$150k],
+  [Urban Compassion Project — \$75k],
   [But you can’t take a completely short term view and fight each individual fire reactively, as it comes. You'll never stop firefighting. We also have to do fire abatement and deal with the root causes, improving conditions in this country such that there aren’t so many fires . Thus for the second half, much longer term part, in addition to the \$21M already donated, we pledged \$50M — half of our remaining wealth — to address the underlying, systemic issues.],
   [I proposed some speculative ideas in “Stay Gold,” and this one ended up being the closest:],
   [We could found a new organization loosely based on the original  RAND Corporation , but modernized like  Lever for Change . We can empower the best and brightest to determine a realistic, achievable path toward preserving the American Dream for  everyone,  working within the current system or outside it.],
   [By March, 2025 we had consensus — The Road Not Taken is Guaranteed Minimum Income .],
+  [The Road Not Taken is Guaranteed Minimum Income],
+  [The dream is incomplete until we share it with our fellow Americans.],
   [Guaranteed Minimum Income (GMI) is an improved version of the older concept of Universal Basic Income (UBI) — rather than indiscriminately giving money to “everyone,” GMI directs the money towards those who most need it , particularly families experiencing generational poverty.],
   [📢 Please note that after this post, Coding Horror will revert to normal nerdy blog posts, and all future GMI content will be at a dedicated site linked below.],
-  [id="why-did-we-decide-on-gmi"\>Why did we decide on GMI?],
+  [Why did we decide on GMI?],
   [Almost every existing UBI/GMI study result data we could find indicates cash generally works . For example, OpenResearch data showed the greatest increase in spending among study participants was in meeting basic needs, with the greatest percent increase in support to others (26%), along with huge decreases in reported alcohol use (20% less) and days using non-prescribed painkillers (53% fewer). Why wouldn’t we continue to build something that has generally been shown to work, study after study, time and time again?],
   [This is survival money , cash for folks so they can put food on the table, get a roof over their heads, have a functioning vehicle to go to work, and decide how to meet their most basic, critical needs. It pains me to say this, but we live in a world where many people simply do not often experience open generosity, or regular income. When you show someone what it feels like to just not be hungry for a little while, their view of the world changes. They feel trusted. They see possibility .],
-  [style="border: none !important;"\>],
+  [RISE Recipient Stacy D. | WV],
   [I moved here with my family. And I have no family up here other than who I brought with me. So, how most people can be like, “Hey, I’m having a hard time. Got \$20 or a pack of diapers.” I have nobody up here to do that. So, if me and my husband don't figure it out, it don't get figured out.],
   [So, I’ve got five kids that live with me... I was working full-time until I got pregnant. I prayed for this baby for 10 years. So, as soon as I got pregnant, I stopped working. I was high risk.],
   [The day I got cleared to go back to work, my vehicle broke down. It was the only vehicle that we had that carried all the kids. So, I’ve been four months without my car. So this is also going to get my vehicle back on the road.],
   [You don’t know how hard it is to ask people, hey, can I get a ride to the grocery store? Or, hey, my baby has two month shots. I had to borrow a vehicle. This is gonna... it’s going to do a lot!],
   [Unlike many other social programs, GMI studies require initiative . These are opt-in studies that you have to sign up for, demonstrate that you meet the income criteria and are a resident of the county — and because spots are limited, be randomly selected from eligible applicants. We emphasize that this is not passive, it is active teamwork to improve the GMI program with your family, your community, and everyone else we can reach together over the next few decades.],
-  [id="building-on-what-works"\>Building On What Works],
   [The massive OpenResearch UBI study , the largest and most detailed guaranteed income study ever conducted in the USA, was designed to be a template for future, more refined studies, and that’s exactly what we’re doing. We will also use what we learn in this group of three counties — as in software, the rule of three — to iterate, adapt, and improve our GMI study playbook with every new group of three counties , generating a playbook anyone can use.],
   [We strive to do repeatable, replicable science in every study, and all our data will be open and freely shared with the world . We’re contributing to — and partially funding — a global, open data repository for basic income pilots all around the world, UBIdata . It’s the same reason we made Stack Overflow content part of the creative commons, and Discourse fully open source.],
   [GMI is seed funding for families, investing in our fellow Americans, those who need it the most. A large body of research shows that dollars targeted to lower-income families are more likely to be spent quickly and reduce hardship, and can improve outcomes for children. “ Trickle up” economics works, whereas "trickle down" tax cuts for the rich increase income inequality and provide no significant effect on growth or jobs.],
   [This is the newer trust based model of philanthropy , much closer to venture capital funding. We primarily empower, fund, and build up existing organizations like GiveDirectly and OpenResearch, forming a collaborative team to leverage all their existing work and grow their organizations in whatever way they see fit, because they have the most experience in the GMI space.],
-  [id="the-rural-guaranteed-minimum-income-initiative"\>The Rural Guaranteed Minimum Income Initiative],
+  [The Rural Guaranteed Minimum Income Initiative],
   [I like to go that way, really fast , so we are already well underway with the Rural Guaranteed Minimum Income Initiative .],
   [We focus on rural counties , where dollars go a lot further, poverty is more prevalent, and populations are smaller for tighter studies. Rural counties are also greatly overlooked in this country, in my opinion, yet they have so much incredible untapped talent. I know because that’s exactly where my parents and I are from.],
   [We’ve funded three county level programs (Mercer, WV; Beaufort, NC; Warren, MS) that are already underway, where we will help lift thousands of people out of poverty for a period of 16 months, while sharing data and results with the world. That’s a good start.],
   [But I think we can do considerably more. With your help, we hope to reach all 50 states over time.],
   [In “Stay Gold,” I noted that all of American history contains the path of love, and the path of hate. But the path of love is the only survivable path. It’s so much harder, and it’s going to be a lifetime of work. But what else could I possibly buy with our money that would be worth anything close to this, for all of us?],
-  [id="what-you-can-do"\>What You Can Do],
   [Everyone is invited to help . Share results , learn the history of GMI (it’s actually fascinating, I swear), talk to your representatives and generally spread the word. A surprising number of people have never even heard the terms UBI or GMI, and sometimes have misconceptions about what they are and how they work.],
   [If you, or someone you know, is “those to whom much is given,” and in a position to sponsor county-scale work, please join us in bringing a GMI study to a new rural county and reach all 50 states. Let’s continue to do science and help lift thousands of people out of poverty while generating open data for the world.],
   [This is my third and final startup . Rather than an “Atwood Foundation,” all we want to do is advance the concept of direct cash transfer. Simply giving money to those most in need is perhaps the most radical act of love we can take on... and all the data I can find shows us that it works — helping people afford basic needs, keep stable housing, and handle unexpected expenses.],
@@ -377,10 +313,8 @@ Can you do it without the Gumbel‑Max trick (or the equivalent Exp‑Min trick)
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [What does Stack Overflow want to be when it grows up?],
   author: [Jeff Atwood],
   source-name: [Coding Horror (Jeff Atwood)],
@@ -404,7 +338,7 @@ Can you do it without the Gumbel‑Max trick (or the equivalent Exp‑Min trick)
   [The people working at Stack are amazing and most of them (including much of the Stack Overflow community, while I’m at it) could articulate the mission better — and perhaps a tad less crankily — than I could by the time I left. Would I trust them with my life? No. But I’d trust them with Joel’s life!],
   [The whole point of the Stack Overflow exercise is that it’s not beholden to me, or Joel, or  any other Great Person . Stack Overflow works because it empowers regular everyday programmers all over the world, just like you, just like me. I guess in my mind it’s akin to being a parent. The goal is for your children to eventually grow up to be sane, practicing adults who don’t need (or, really,  want ) you to hang around any more.],
   [Understand that you’re reading  the weak opinions strongly held  the strong opinions weakly held  of a co-founder who spent prodigious amounts of time working with the community in the first four years of Stack Overflow’s life to shape the rules and norms of the site to fit their needs. These are merely my opinions. I like to think they are  informed  opinions, but that doesn’t necessarily mean I can predict the future, or that I am even qualified to try. But I’ve never let being “qualified” stop me from doing anything, and I ain’t about to start tonight.],
-  [id="stack-overflow-is-a-wiki-first"\>Stack Overflow is a wiki first],
+  [Stack Overflow is a wiki first],
   [Stack Overflow ultimately has  much  more in common with Wikipedia than a discussion forum. By this I mean questions and answers on Stack Overflow are not primarily judged by their usefulness to a specific individual, but by  how many other  programmers that question or answer can potentially help over time . I tried as hard as I could to emphasize this relationship from launch day in 2008. Note who has top billing in this Venn diagram.],
   [Stack Overflow later added a super neat feature to highlight this core value in user profiles, where it shows how many other people you have potentially helped with your contributed questions and answers so far.],
   [The most common complaints I see about Stack Overflow are usually the result of this fundamental misunderstanding about who the questions and answers on the site are ultimately  for , and why there’s so much strictness involved in the whole process.],
@@ -416,7 +350,7 @@ Can you do it without the Gumbel‑Max trick (or the equivalent Exp‑Min trick)
   [(There’s technically a fourth tier here, for people who want to selflessly contribute creative commons questions and answers to move the entire field of software development forward for the next generation of software developers. But who has time for saints 😇, y’all make the rest of us look bad, so knock it off already, Skeet.)],
   [It wouldn’t shock me at all if people spent  years  happily at tier 1 and then got a big unpleasant surprise when reaching tier 2. The primary place to deal with this, in my opinion, is a  massively revamped and improved ask page . It’s also fair to note that maybe people don’t understand that they’re signing up for a sizable chunk of work by implicitly committing to the wiki standard of “try to make sure it’s useful to more people than just yourself” when asking a question on Stack Overflow, and are then put off by the negative reaction to what others view as an insufficiently researched question.],
   [Stack Overflow absorbs so much tension from its adoption of wiki standards for content. Even if you know about that requirement up front, it is not always clear what “useful” means, in the same way it’s not always clear what topics, people, and places are deserving of a Wikipedia page.  Henrietta Lacks , absolutely, but what about your cousin Dave in Omaha with his weirdo PHP 5.6 issue?],
-  [id="over-time-duplicates-become-vast-landmine-fields"\>Over time, duplicates become vast landmine fields],
+  [Over time, duplicates become vast landmine fields],
   [Here’s one thing I really, really saw coming and to be honest with you I was kinda glad I left in 2012 before I had to deal with it because of the incredible technical difficulty involved:  duplicates . Of all the complaints I hear about Stack Overflow, this is the one I am most sympathetic to by far.],
   [If you accept that Stack Overflow is a wiki type system, then for the same reasons that you obviously can’t have five different articles about Italy on Wikipedia,  Stack Overflow can’t allow duplicate questions on the exact same programming problem . While there is a fair amount of code to do pre-emptive searches as people type in questions, plus  many  exhortations to search before you ask, with an inviting search field and button right there on the mandatory page you see before asking your first question...],
   [...locating and identifying duplicate content is an insanely difficult problem even for a company like Google that’s done nothing but specialize in this exact problem for, what, 20 years now, with a veritable army of the world’s most talented engineers.],
@@ -425,7 +359,7 @@ Can you do it without the Gumbel‑Max trick (or the equivalent Exp‑Min trick)
   [Some variance in similar-ish questions is OK, because 10 different people will ask a nearly identical question using 10 different sets of completely unrelated words with no overlap. I know, it sounds crazy, but trust me: humans are amazing at this. We want all those duplicates to exist so they can  point to  the primary question they are a duplicate of, while still being valid search targets for people who ask questions with unusual or rare word choices.],
   [It can be legitimately difficult to determine if your question is a true duplicate. How much overlap is enough before one programming question is a duplicate of another? And by whose definition? Opinions vary. This is subject to human interpretation, and humans are.. unreliable. Nobody will ever be completely happy with this system, pretty much by design. That tension is baked in permanently and forever.],
   [I don’t have any real answers on the duplicate problem, which only gets worse over time. But I will point out that there is plenty of precedent on the Stack Exchange network  for splitting sites into “expert” and “beginner” areas with slightly different rulesets. We’ve seen this for Math vs. MathOverflow, English vs. English Learners, Unix vs. Ubuntu...  perhaps it’s time for a more beginner focused Stack Overflow  where duplicates are less frowned upon, and conversational rules are a bit more lenient?],
-  [id="stack-overflow-is-a-competitive-system-of-peer-review"\>Stack Overflow is a competitive system of peer review],
+  [Stack Overflow is a competitive system of peer review],
   [Stack Overflow was indeed built to be a fairly explicitly competitive system, with the caveat that “there’s always more than one way  to do it.” This design choice was based on my perennial observation that the best way to motivate any programmer... is to subtly insinuate that  another  programmer could have maybe done it better.],
   [This is manifested in the public reputation system on Stack Overflow, the incredible power of a number printed next to someone’s name, writ large. All reputation in Stack Overflow comes from the recognition of your peers, never the “system.”],
   [Once your question is asked, or your answer is posted, it can then be poked, prodded, edited, flagged, closed, opened, upvoted, downvoted,  folded and spindled  by your peers. The  intent  is for Stack Overflow to be a system of peer review and friendly competition, like a code review from a coworker you’ve never met at a different division of the company. It’s also completely fair for a fellow programmer to question the premise of your question, as long as it’s done in a nice way. For example, do you really want to use that regular expression to match HTML ?],
@@ -437,7 +371,7 @@ Can you do it without the Gumbel‑Max trick (or the equivalent Exp‑Min trick)
   [the anxiety of attending your first day at school with other students at your level],
   [I imagine systems where there is zero anxiety involved and I can only think of jobs where I had long since stopped caring about the work and thus had no anxiety about whether I even showed for work on any given day. How can that be good? Let’s just say I’m not a fan of zero-anxiety systems.],
   [Maybe competition just isn’t your jam. Could there be a less competitive Q&A system, a system without downvotes, a system without close votes, where there was never any anxiety about posting anything, just a network of super supportive folks who believe in you and want you to succeed no matter what? Absolutely! I think many alternative sites  should  exist on the internet so people can choose an experience that matches their personal preferences and goals. Should Stack build that alternative? Has it already been built? It’s an open question; feel free to point out examples in the comments.],
-  [id="stack-overflow-is-designed-for-practicing-programmers"\>Stack Overflow is designed for practicing programmers],
+  [Stack Overflow is designed for practicing programmers],
   [Another point of confusion that comes up a fair bit is who the intended audience for Stack Overflow actually is. That one is straightforward, and it’s been the same from day one:],
   [Q&A for  professional and enthusiast programmers . By that we mean:],
   [People who either already have a job as a programmer, or could potentially be hired as a programmer today if they wanted to be.],
@@ -467,10 +401,8 @@ Can you do it without the Gumbel‑Max trick (or the equivalent Exp‑Min trick)
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Nontraditional Red Teams],
   author: [Zach Holman],
   source-name: [Zach Holman],
@@ -485,7 +417,7 @@ annoying plotline in
 (Someone should have really red team’d Sorkin himself on that one.)],
   [There’s a few other concepts of a red team I think that every development team
 should have some exposure to outside of the traditional cybersecurity angle.],
-  [id="someone-to-look-for-dicks"\>Someone to look for dicks],
+  [Someone to look for dicks],
   [Once upon a time, GitHub was very excitedly looking forward to shipping our
 FIRST BILLBOARD! It’s an odd experience, turning into one of those startups who
 advertise on 101. Some sort of weird fucked-up sign of maturity and/or
@@ -512,7 +444,7 @@ months and users end up ignoring all their hard work because the new logo
 antagonistic mindset to make sure you’re not shipping something awkward,
 insulting, or inappropriate through your visuals.],
   [Finally, internet shitposters have a valid business use case.],
-  [id="someone-with-an-ad-blocker"\>Someone with an ad blocker],
+  [Someone with an ad blocker],
   [Ad blockers can be somewhat contentious: on one hand it’s good to support
 websites whose access might be free-of-charge; on the other hand, so many of
 these websites are fucking terrible, with ads and popups and unclosable
@@ -524,7 +456,7 @@ aspects here — who blocks the blockers? — but every time a site inexplicably
  doesn’t work because someone made it so a file include or piece of HTML wrecks
 your entire site is one of the most rage-inducing aspects of modern sites out
 there, particularly if there aren’t any ads on the site in the first place.],
-  [id="someone-with-a-password-manager"\>Someone with a password manager],
+  [Someone with a password manager],
   [Look: I have a lot to say about
  sessions and signing in to a product ,
 but suffice to say: there will be password managers for the foreseeable future
@@ -555,12 +487,10 @@ know if you’re interested in grabbing one.],
   debug-mode: false,
 )
 
-  #pull-quote([It sounds totally goofy, but it’s not a bad idea to have someone in an antagonistic mindset to make sure you’re not shipping something awkward, insulting, or inappropriate through your visuals.], [Zach Holman])
+#pull-quote([It sounds totally goofy, but it’s not a bad idea to have someone in an antagonistic mindset to make sure you’re not shipping something awkward, insulting, or inappropriate through your visuals.], [Zach Holman])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A one-line Kubernetes fix that saved 600 hours a year],
   author: [Braxton Schafer],
   source-name: [Cloudflare Blog],
@@ -618,10 +548,8 @@ LAST SEEN TYPE REASON OBJECT MESSAGE
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [You Are the Low-Hanging Fruit],
   author: [Yegor Bugayenko],
   source-name: [Yegor Bugayenko],
@@ -699,10 +627,8 @@ As a founder, your job is to eliminate the temptation for your team to sell you
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Electric Geek Transportation Systems],
   author: [Jeff Atwood],
   source-name: [Coding Horror (Jeff Atwood)],
@@ -744,10 +670,8 @@ As a founder, your job is to eliminate the temptation for your team to sell you
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [GTX 1080 Ti for Local LLM],
   author: [Ariya Hidayat],
   source-name: [Ariya Hidayat],
@@ -803,12 +727,10 @@ cmake --build build --config Release],
   debug-mode: false,
 )
 
-  #pull-quote([For consistent comparisons, Llama-2 7B Q4\_0 quantization is a popular choice, being small enough to run comfortably and widely benchmarked.], [Ariya Hidayat])
+#pull-quote([For consistent comparisons, Llama-2 7B Q4\_0 quantization is a popular choice, being small enough to run comfortably and widely benchmarked.], [Ariya Hidayat])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Stay Gold, America],
   author: [Jeff Atwood],
   source-name: [Coding Horror (Jeff Atwood)],
@@ -862,10 +784,9 @@ cmake --build build --config Release],
   [November 5th raised the stakes . It is now time to allocate half the wealth I was so fortunate to be dealt within the next five years , not just for my own family, but for all my fellow Americans.],
   [Our government seems to be slower and slower at delivering change due to the increased polarization of our two party system . The last meaningful constitutional amendment we’ve managed to pass in the last 60 years was the 26th amendment in 1971, lowering the voting age to 18 and giving more people a voice in our democracy.],
   [Political polarization is at historically high levels and rising. In a two party system, this level of polarization is counterproductive and even dangerous. Do we all still believe in the same American Dream?],
-  [id="which-dream"\>],
   [I’ve always loved the ideals behind the American Dream, though we continually struggle to live up to them. They are worth fighting for, even if it means making “good trouble” . We must come together and believe in our shared American Dream so deeply that we can improve our democracy... but which dream?],
   [The American Dream contains the path of hate , and the path of love . Throughout our history, one hand is always fighting the other. Which path are we choosing?],
-  [id="long-term-efforts"\>],
+  [Our family pledges half our remaining wealth toward an American Dream founded on love .],
   [Here are some starting points for longer term efforts:],
   [We can support organizations making it easier for Americans to vote for a new Congress in two years and a new president in four years. My concern is damage to our democratic institutions may happen so quickly that our votes could matter even less within the coming years.],
   [We could fund nonprofits that have a proven track record of protecting democratic institutions.],
@@ -886,10 +807,8 @@ cmake --build build --config Release],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Some Things Just Take Time],
   author: [Armin Ronacher],
   source-name: [Armin Ronacher (Lucumr)],
@@ -997,10 +916,8 @@ rush.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Agent Psychosis: Are We Going Insane?],
   author: [Armin Ronacher],
   source-name: [Armin Ronacher (Lucumr)],
@@ -1192,10 +1109,8 @@ brain and let go completely.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [There is no longer any such thing as Computer Security],
   author: [Jeff Atwood],
   source-name: [Coding Horror (Jeff Atwood)],
@@ -1221,6 +1136,8 @@ brain and let go completely.],
   [instead of],
   [https:\/\/myaccount.google.com/security],
   [Note that the phishing URL is carefully constructed so the most “correct” part is at the front, and weirdness is sandwiched in the middle. Unless you’re paying very close attention and your address bar is long enough to expose the full URL, it’s… tricky. See this 10 second video for a dramatic example.],
+  [0:00],
+  [\/ 0:10],
   [1×],
   [( And if you think that one’s good, check out this one. Don’t forget all the Unicode look-alike trickery you can pull, too.)],
   [I originally wrote this post as a presentation for the Berkeley Computer Science Club back in March, and at that time I gathered a list of public phishing pages I found on the web.],
@@ -1245,6 +1162,8 @@ security-facabook.com],
   [Nobody is doing better work in this space right now than Maciej Ceglowski and Tech Solidarity. Their list of  basic security precautions  for non-profits and journalists is pure gold and has been vetted by many industry professionals with security credentials that are actually impressive, unlike mine. Everyone should read this list very closely, point by point.],
   [Everyone?],
   [Computers, courtesy of smartphones, are now such a pervasive part of average life  for average people that  there is no longer any such thing as “computer security.” There is only  security .  In other words, these are normal security practices  everyone  should be familiar with. Not just computer geeks. Not just political activists and politicians. Not just journalists and nonprofits.],
+  [0:00],
+  [\/ 0:02],
   [1×],
   [Everyone.],
   [It is a fair bit of reading, so because I know you are just as lazy as I am, and I am  epically  lazy, let me summarize what I view as the three important takeaways from the hard work Tech Solidarity put into  these resources . These three short sentences are the 60 second summary of what you want to do, and what you want to share with others so  they  do, too.],
@@ -1267,11 +1186,10 @@ security-facabook.com],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Appending text to Obsidan via Shortcuts],
   author: [Rob],
   source-name: [Rob Allen (akrabat)],
@@ -1282,7 +1200,7 @@ security-facabook.com],
   [This is the Shortcut:],
   [There's a number of steps in the Shortcut. Firstly we Ask For some text which will display a dialog box for us to type in. Then we Replace any trailing whitespace, add then use a Text action to prepend the current time as a third level heading. This is the text to be added, so we URL Encode it and use another Text action to create the full obsidian:\/\\/ URI to be Open ed.],
   [The URI is:],
-  [obsidian:\/\/daily?vault=General&append=1&content={URL Encoded Text}],
+  [obsidian:\/\/daily?vault=General&append=1&content=\{URL Encoded Text\}],
   [The daily endpoint only works if the Daily notes core plugin is enabled. We then need to specify which vault we're using. The content is the URL encoded text to be appended and the append parameter tells obsidian to place the text at the end of the note.],
   [I've assigned it to ⌃⌥⌘= and pressing that key combination runs it for me.],
   [Now I have a simple way to add some text to the current note without interrupting my context.],
@@ -1296,7 +1214,7 @@ security-facabook.com],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [github.com/garyburd/redigo has been deleted],
   author: [kevin],
   source-name: [Kevin Burke],
@@ -1324,9 +1242,8 @@ problem.],
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [The Fall of JavaScript],
   author: [Yegor Bugayenko],
   source-name: [Yegor Bugayenko],
@@ -1355,11 +1272,14 @@ Instead, it only has objects.
 To create a new object in Self we make a copy of an existing object, known as prototype, and then modify some of its slots (attributes).],
   [In Self, objects don’t have types: all method calls are dispatched in runtime.
 For example, we ask a book to rename itself:],
+  [book rename: "Object Thinking".],
   [The rename is the method of the book that we call with a single string argument.
 The computer doesn’t know anything about the book until it’s time to call the rename method.
 Obviously, such a duck typing has its performance drawback.
 Every rename leads to a search in a virtual table of book .
 To the contrary, C++, where types are known in compile time, can dispatch rename() instantly:],
+  [Book b;
+b.rename("Object Thinking");],
   [Types (classes in C++ and interfaces in Java) and type annotations are helpful—to the compiler.
 To us humans they are a burden.
 They require us to do the work of the compiler.
@@ -1408,7 +1328,7 @@ When I write in JavaScript, I don’t use them.
 Look at the code in the yegor256/jo repository.
 It illustrates the Junior Objects book of mine.
 I’m proud of this code.],
-  [dir="ltr" lang="en"\>“People using classes in JavaScript will go to their graves never knowing how miserable they were” - Douglas Crockford https:\/\/t.co/D2Hpegn0vY],
+  [“People using classes in JavaScript will go to their graves never knowing how miserable they were” - Douglas Crockford https:\/\/t.co/D2Hpegn0vY],
   [— Yegor Bugayenko (\@yegor256) January 11, 2026],
 ),
   insert-map: (:),
@@ -1417,12 +1337,10 @@ I’m proud of this code.],
   debug-mode: false,
 )
 
-  #pull-quote([ES4 was abandoned , and classes were dropped.], [Yegor Bugayenko])
+#pull-quote([ES4 was abandoned , and classes were dropped.], [Yegor Bugayenko])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [AI Security for Apps is now generally available],
   author: [Liam Reese],
   source-name: [Cloudflare Blog],
@@ -1469,10 +1387,8 @@ I’m proud of this code.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Investigating multi-vector attacks in Log Explorer],
   author: [Jen Sells],
   source-name: [Cloudflare Blog],
@@ -1614,10 +1530,8 @@ WHERE date = '2026-02-22'
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Leveraging Commerce Data for Outcome-Based Relevancy in Agentic Recommendation Systems],
   author: [Criteo Tech],
   source-name: [Criteo Engineering],
@@ -1671,10 +1585,8 @@ WHERE date = '2026-02-22'
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Comments Considered Harmful in the Age of LLMs],
   author: [Yegor Bugayenko],
   source-name: [Yegor Bugayenko],
@@ -1703,15 +1615,15 @@ They just lacked the tools to enforce it.],
   [Why do we write comments at all?
 A Java method of a hundred lines may take hours to understand.
 A tiny Javadoc block saves this time:],
-  [class="highlight"\> /\*\*
+  [/\*\*
  \* Recursively finds the shortest
  \* path between two nodes in the graph.
  \*\/ 
- int \[\] shortest ( int \[\]\[\] g , int a , int b ) { 
+ int \[\] shortest ( int \[\]\[\] g , int a , int b ) \{ 
  \/\\/ A hundred lines of code go 
  \/\\/ here, which we have no desire 
  \/\\/ to read and understand. 
- }],
+ \}],
   [Comments promise to help us but fail in two distinct ways.],
   [First, they are unclear .
  David Parnas once said that
@@ -1752,10 +1664,8 @@ If the LLM can’t explain the code, we blame the programmer and stop the build.
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Programmers, Don’t Use Windows!],
   author: [Yegor Bugayenko],
   source-name: [Yegor Bugayenko],
@@ -1796,7 +1706,7 @@ You even make the same salary they make.
 But you are not one of them.
 Yet.
 Now, read on.],
-  [id="what-is-unix"\>What Is Unix?],
+  [What Is Unix?],
   [Programmers are the masters of computers.
 They tell machines what to do.
 To simplify the task of managing a complex hardware, programmers invented a few layers of abstractions.
@@ -1808,7 +1718,7 @@ Unix was the first OS to say that everything is a file , including devices, dire
 They also invented pipelines and the philosophy: “Write programs that do one thing well, and work together.”
 They also invented processes and their forking mechanism.],
   [Their names were Ken Thompson and Dennis Ritchie .],
-  [id="what-is-windows"\>What Is Windows?],
+  [What Is Windows?],
   [Five years later, another operating system was created, with different abstractions.
 Not everything was a file anymore, processes were not parallel, and there were no pipelines.
 The name of the system was CP/M and the name of the inventor was Gary Kildall .
@@ -1832,7 +1742,7 @@ Latest Windows versions are descendants of NT, not MS-DOS.
 Under the hood it’s conceptually closer to Unix than to CP/M.
 There are features like protected memory, kernel/user separation, and file handles.
 However, still it’s not Unix.],
-  [id="what-is-macos"\>What Is macOS?],
+  [What Is macOS?],
   [In 1984, Apple shipped their first Macintosh with the “System 1” operating system.
 It was no better than MS-DOS: no multitasking, no memory protection, and primitive file system.
 No surprise, it didn’t fly.],
@@ -1843,7 +1753,6 @@ Five years later I threw away my ThinkPad with Windows and bought my first MacBo
   [Modern macOS (Catalina, Ventura, Sequoia, etc.) is still built on that NeXT foundation.
 It is POSIX-compliant and, of course, it has processes and pipelines.
 In other words, it is Unix with a pretty GUI.],
-  [id="abstractions"\>Abstractions],
   [Both Windows and macOS, in their current versions, are solid operating systems.
 The difference is in the abstractions inside them: files, sockets, processes, memory blocks, users, permissions, and so on.
 In Unix (macOS), everything is a file , while in Windows, everything is an object .
@@ -1853,7 +1762,6 @@ In Windows objects are not unified in practice, they have different interfaces.]
 The uniformity of “everything is a file” made composition natural.
 You can build complex workflows from simple programs.],
   [Windows, on the other hand, evolved around GUI apps and message loops, not shell pipelines.],
-  [id="pipelines"\>Pipelines],
   [Unix was built around pipelines.
 In Unix, everything is a small tool reading stdin, writing stdout.
 At the same time, everything is a file, including sockets, devices, and processes.
@@ -1861,6 +1769,12 @@ Programmers, in Unix, see every process as a composition of smaller processes, g
 This mindset, since 1970s, has proven to be effective, amongst a few generations of software engineering elite.],
   [Say, you want to know which parts of your codebase change the most—maybe for refactoring, testing focus, or bug-hotspot analysis.
 This is how you do it Unix-style:],
+  [git log --pretty = format: --name-only | \\ 
+ grep '\\.java\$' | \\ 
+ sort | \\ 
+ uniq -c | \\ 
+ sort -nr | \\ 
+ head -20],
   [Does this syntax make sense to you?
 If it does, I bet you use WSL .
 Most serious Windows developers end up doing exactly that.],
@@ -1869,7 +1783,7 @@ The heart of the command line is pipelines.
 Thanks to pipelines, command-line tools are inherently composable.
 You can chain them and automate tasks in seconds that would take hours by hand.
 No IDE plugin can replace this power.],
-  [id="what-are-you"\>What Are You?],
+  [What Are You?],
   [Now, you know what the difference is between Windows and macOS.
 In both of them you can code, browse Internet, and watch movies.
 However, in macOS you interact with the computer through Unix abstractions in a shell .
@@ -1890,11 +1804,10 @@ Maybe you shouldn’t, since you are a programmer?],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Search Box and Cloud Function],
   author: [Ariya Hidayat],
   source-name: [Ariya Hidayat],
@@ -1904,21 +1817,16 @@ Maybe you shouldn’t, since you are a programmer?],
   [As with the current trend nowadays, this blog is a static site prepared with Hugo and deployed to Firebase (see my previous blog: Static Site with Hugo and Firebase ). Some time ago, I realized that since I am using Firebase anyway, might as well take advantage of its Cloud Functions to add a little search functionality to the blog, particularly for its 404 page .],
   [Of course, I am cheating a little bit. Using the above search box actually just redirects the search to my favorite search engine, DuckDuckGo , resulting in the following:],
   [Implementing it is almost trivial. First, we need index.js inside the functions subdirectory with the content as short as this (obviously, for your blog, replace site accordingly):],
-  [const functions = require('firebase-functions');
-exports.search = functions.https.onRequest((request, response) =\> {
- const q = request.query.q || '';
- response.redirect(\`https:\/\/duckduckgo.com/?q=site:ariya.io+\${q}\`);
-});],
   [Once it is properly deployed, the trigger URL will be in the form of us-central1-YOURFIREBASEPROJECT.cloudfunctions.net/search . This is rather ugly. To overcome that, set up a rewrite inside firebase.json so that it looks something like:],
-  [{
- "hosting": {
- "rewrites": \[{
+  [\{
+ "hosting": \{
+ "rewrites": \[\{
  "source" : "/search",
  "function": "search"
- }
+ \}
  \]
- }
- }],
+ \}
+ \}],
   [and thus, the function is available as the top-level /search of your Firebase Hosting URL, including if it is a custom domain.],
   [After this, inserting the search box is also equally fun:],
   [When a visitor uses the search, they will get redirected to DuckDuckGo and be presented with the search result. Fast and easy!],
@@ -1931,7 +1839,7 @@ exports.search = functions.https.onRequest((request, response) =\> {
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [I got tired],
   author: [Scott Hanselman],
   source-name: [Scott Hanselman],
@@ -1946,7 +1854,6 @@ exports.search = functions.https.onRequest((request, response) =\> {
   [Do they deserve the gift of your keystrokes?],
   [Do you have a digital or social media will?],
   [© 2025 Scott Hanselman. All rights reserved.],
-  [style="clear: both; padding-top: 0.2em;"\>],
 ),
   insert-map: (:),
   word-count: 299,
@@ -1956,11 +1863,10 @@ exports.search = functions.https.onRequest((request, response) =\> {
 
   ],
 ), ruled-indices: (1,))
-#pull-quote([onRequest((request, response) =\> {  const q = request.], [Ariya Hidayat])
+#pull-quote([onRequest((request, response) =\> \{  const q = request.], [Ariya Hidayat])
 
 
-{
-  #standard-article(
+#standard-article(
   title: [Not Everything is an Agent],
   author: [Ariya Hidayat],
   source-name: [Ariya Hidayat],
@@ -1978,18 +1884,15 @@ exports.search = functions.https.onRequest((request, response) =\> {
   debug-mode: false,
 )
 
-  #pull-quote([The internet, as always, is flooded with “groundbreaking” tutorials on building these so-called agents.], [Ariya Hidayat])
+#pull-quote([The internet, as always, is flooded with “groundbreaking” tutorials on building these so-called agents.], [Ariya Hidayat])
 
-}
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([Patrick McKenzie (patio11)], source-name: [patio11 (Patrick McKenzie)], [A history of an anomaly in the 2020 Coronavirus Pandemic, an independent research project about it, and what we need to learn about our next steps.])],
-    [#brief-item([Patrick McKenzie (patio11)], source-name: [patio11 (Patrick McKenzie)], [Apple's App Store is reforming their guidelines about taking out-of-band payments. This will be very interesting for developers, especially in the games industry.])],
-    [#brief-item([Patrick McKenzie (patio11)], source-name: [patio11 (Patrick McKenzie)], [VaccinateCA, the non-profit I have been running, expanded nationally to Vaccinate The States . Here's what we've learned in the last 100 days.])],
-    [#brief-item([ZDNet], source-name: [ZDNet], [Amazon's Big Spring Sale has plenty of cheap deals on useful tech gadgets this weekend. Save up to \$25 on devices from Blink, Logitech, and more right now.])],
-  ))
-}
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([Patrick McKenzie (patio11)], source-name: [patio11 (Patrick McKenzie)], [A history of an anomaly in the 2020 Coronavirus Pandemic, an independent research project about it, and what we need to learn about our next steps.])],
+  [#brief-item([Patrick McKenzie (patio11)], source-name: [patio11 (Patrick McKenzie)], [Apple's App Store is reforming their guidelines about taking out-of-band payments. This will be very interesting for developers, especially in the games industry.])],
+  [#brief-item([Patrick McKenzie (patio11)], source-name: [patio11 (Patrick McKenzie)], [VaccinateCA, the non-profit I have been running, expanded nationally to Vaccinate The States . Here's what we've learned in the last 100 days.])],
+  [#brief-item([ZDNet], source-name: [ZDNet], [Amazon's Big Spring Sale has plenty of cheap deals on useful tech gadgets this weekend. Save up to \$25 on devices from Blink, Logitech, and more right now.])],
+))
 
 #colophon([The Mirror], [Vol. 1, No. 037], [2026-03-30])

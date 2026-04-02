@@ -21,53 +21,8 @@
 #masthead([Curious Standard], [Vol. 1, No. 093], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Roots and the Meaning of Life],
-  kicker: [Cover Story],
-  author: [Maria Popova],
-  source-name: [The Marginalian (Brain Pickings)],
-  deck: [They are so far out of sight for us, creatures of the upper world, that we don’t readily think of them.],
-  lead-pre: [],
-  lead-cap: [B],
-  lead-rest: [ut as soon as we do, as soon as we plunge the mind into the cold dark humus to which the body will one day return, they become a spell against despair and a consecration of all that is alive.],
-  body-paragraphs: (
-  [Beneath our feet, roots spread fractal and pulmonary, veining the biosphere with the bloodstream of life. The word itself shares its root with “radical” and “race” in the Latin radix — the origin point from which all things centripetally grow.],
-  [Just as I was contemplating the logical language of roots — the exposed fragments of them across the trail like a message in Morse code, a poem in Braille, a code language of fractals and Fibonacci sequences and mathematics we are yet to discover — I came upon botanist and prairie ecologist John Weaver’s marvelously illustrated century-old book The Ecological Relations of Roots .],
-  [Schematic bisect showing the root stem relations of important prairie plants: hu, Heuchera glabella; a, Astragalus arrectus; s, Sidalcea oregana; h, Helianthella douglasii; ag, Agropirum spicatum . (Available as a print and a field notebook , benefitting The Nature Conservancy.)],
-  [In the first year of the First World War, Weaver set out to understand how life anchors itself to the substrate of living. He spent four years studying 1,150 individual root systems of about 140 different species of shrubs, grasses, and herbs across Nebraska, Washington, and Colorado’s Rocky Mountains.],
-  [Belonging to the last generation of scientists who were not yet schooled out of art and its power to magnify thought, he illustrated the book himself, drawing the root systems as he excavated them, always to exact measurements, and later retracing them in India ink.],
-  [Schematic bisect: h, Hieracium scouleri; k, Keleria cristata; b, Balsamorhiza sagittata; f, Festuca ovina ingrata; g, Geranium oviscosissimum; p, Poa sandbergit; ho, Hoorebekia racemosa; po, Potentilla blaschheana . (Available as a print and a field notebook , benefitting The Nature Conservancy.) 
- Schematic bisect: s, Sieversia ciliata; w, Wyethia amoplezicaulis; ll, Lupinus leucophyllus; lo, Lupinus ornatus; p, Poa sandbergii; e, Leptotenia multifida; a, Agropyrum spicatum . (Available as a print and a field notebook , benefitting The Nature Conservancy.)],
-  [Looking back on the discoveries, he observes:],
-  [The general characters of the root systems of a species are often as marked and distinctive as the above-ground vegetative characters. But the root systems of different species of the same genus, while often somewhat similar, may be of entirely different types.],
-  [It is not hard to see ourselves in them — how much of our essential character dwells beneath the surface of the self, how seemingly similar people may differ profoundly in their subterranean essence. It helps to remember that the visible self is fed by an invisible counterpart at least as intricate and extensive; that the two are so tightly stemmed together that we are always interacting with both the visible person and their invisible root system.],
-  [As it happens, my friend Hannah Fries has just the right poem to reverence this existential dimension of roots and their relations, found in her altogether wonderful collection Little Terrarium ( public library ):],
-  [EPITHALAMION],
-  [by Hannah Fries],
-  [The elm weaves the field’s late light, this hill],
-  [hanging from the tree’s roots like the moon],
-  [from its shadow and the whole],
-  [world beneath suspended.],
-  [Roots knead the earth’s thick sorrow.],
-  [Still, leaves from this.],
-  [From this unshackling, birdsong.],
-  [I am a blade of corn where you kneel,],
-  [wind and quaking stalk.],
-  [The elm’s body a vase of poured sky.],
-  [The tree will die.],
-  [Someday, the tree will die.],
-  [For now, this axis —],
-  [what we choose to compass by.],
-  [Couple with Hannah’s poem “Let the Last Thing Be Song,” then revisit a kindred meditation on lichens and the meaning of life .],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [The Four Desires Driving All Human Behavior: Bertrand Russell’s Magnificent Nobel Prize Acceptance Speech],
   author: [Maria Popova],
   source-name: [The Marginalian (Brain Pickings)],
@@ -112,10 +67,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How to Stop Doing and Start Living],
   author: [Maria Popova],
   source-name: [The Marginalian (Brain Pickings)],
@@ -147,10 +100,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Invention of Zero: How Ancient Mesopotamia Created the Mathematical Concept of Nought and Ancient India Gave It Symbolic Form],
   author: [Maria Popova],
   source-name: [The Marginalian (Brain Pickings)],
@@ -202,10 +153,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Mailbag \#2],
   author: [Tim Urban],
   source-name: [Wait But Why],
@@ -213,7 +162,7 @@
   paragraphs: (
   [Last month, I emailed readers announcing an upcoming mailbag post—the WBW post version of an AMA. 1,500 questions poured in—remarkably interesting, creative questions on a wide range of topics. I picked some for this round, and we’re keeping the rest in a database that I’ll go back to for future mailbags ( mailbag\@waitbutwhy.com is always open, so send questions anytime and we’ll add them to the list).],
   [There’s a lot to cover, so let’s get going.],
-  [style="font-size: 18px;"\> Question from my 7-year-old: How many germs would you have to put together to actually be able to see them? What would it look like? – Kirsten, Zachary’s mum (Sydney, Australia)],
+  [Question from my 7-year-old: How many germs would you have to put together to actually be able to see them? What would it look like? – Kirsten, Zachary’s mum (Sydney, Australia)],
   [You’re my kind of guy, Zachary. Let’s discuss.],
   [There are a lot of germs out there. A smaller germ, like the virus that causes covid, is 120nm across. The smallest object we can see is about 0.1mm—about the width of a human hair. You’d have to line up about 800 coronaviruses to get to 0.1mm—but that would be a one-dimensional line way too thin to see. To actually see something, you’d have to give it some area and turn the 800-virus line into an 800 x 800 square. That clump of 640,000 viruses would be just big enough to see as a tiny speck. 1 As for what it would look like, your guess is as good as mine Zachary.],
   [I’m never   good   at   stopping once I start on an exploration of size, and doing this answer got me googling all kinds of things.],
@@ -226,38 +175,38 @@
   [This massive cube of bacteria covers a large part of Los Angeles and rises higher than the cruising altitude of commercial airplanes. If you were on the ground, it would take a full day to walk around the cube, and it would be a bad experience because the whole day you’d be right next to a vile bacteria cube.],
   [If we took a huge butter knife and smeared the cube out evenly on the Earth’s surface, it would cover the entire Earth with a layer of pure bacteria 7mm (1/4 inch) thick, and everything would be gross.],
   [K let’s move on.],
-  [style="font-size: 18px;"\> What do you think of scientists putting mini human brains in mice? Where do you think this kind of science could lead in the future? –  Leah N. (Quincy, IL)],
+  [What do you think of scientists putting mini human brains in mice? Where do you think this kind of science could lead in the future? –  Leah N. (Quincy, IL)],
   [I have no idea what’s going on with this question but it’s now all I care about. I’m picturing a world with tiny field mice with human intelligence. They’d form tiny societies run by tiny iron-fisted mouse tyrants. They could have little academies and do research on mice-related things. They might organize a mouse Olympics that we could televise and bet on. Some people would befriend mice and some might even choose to get married to mice. I hope this is what you’re talking about Leah, and I refuse to look it up because I’m sure whatever you’re actually talking about will be a huge letdown.],
-  [style="font-size: 18px;"\> Drugs: do you do them? What do you think of them? –  Tom C. (Nottingham, UK)],
+  [Drugs: do you do them? What do you think of them? –  Tom C. (Nottingham, UK)],
   [Kind of what I think of cars. Cars can be incredibly useful, fun, and life-changing if you understand how cars work and know how to drive safely. If you don’t know anything about driving or you tend to drive recklessly, you’re probably not ready to use cars.],
-  [style="font-size: 18px;"\> Why do we prefer to watch a film we haven’t watched before but we want to listen to songs that we have heard hundreds of times? – Anastasia S. (Athens, Greece)],
+  [Why do we prefer to watch a film we haven’t watched before but we want to listen to songs that we have heard hundreds of times? – Anastasia S. (Athens, Greece)],
   [Many films are the most fun the first time because a part of our brains loses itself in the plot and actually experiences what the characters are experiencing, to an extent. Part of why that’s so fun is the uncertainty, which makes it like a real-life adventure. Once we know what’s going to happen, the experience is less exciting for the same reason an adventure would be less exciting if you already knew how everything was gonna play out.],
   [A song works the opposite way. Not knowing where the song is going can be intellectually interesting, but what our brain really wants to do is mentally dance with the song, and it can’t do that if it doesn’t know the “steps.” That’s why a catchy song is only okay the first time but it can quickly become orgasmic after we hear it a few times and our brains get the hang of it. Once our brain memorizes a song, the song has a special pathway carved in our heads and it feels great to light that pathway up by hearing the song (and if we don’t give our brain the chance, it might just start lighting up the pathway itself, and the song gets “stuck in your head”). 4],
   [Back to films, the thing is, a film isn’t just a plot. It can also be a piece of art, which is why in some cases, we do like to watch films (or TV shows) repeatedly (I’ve seen The Shawshank Redemption , Back to the Future , Shutter Island , and The  Office (UK) like 9 times each).],
-  [style="font-size: 18px;"\> What age range do you currently think you’re most likely to die (disregarding cryonics)?],
+  [What age range do you currently think you’re most likely to die (disregarding cryonics)?],
   [Multiple choice:],
   [70–100],
   [100–125],
   [125–150],
   [150–250],
   [250+],
-  [style="font-size: 18px;"\>–  Sean M. (New Orleans, LA)],
+  [–  Sean M. (New Orleans, LA)],
   [The pessimistic part of my brain says: A) 70–100. My grandparents lived to 84, 87, 91, and good old Nana is still going strong at 95. 5 My lifestyle is not a big enough step above theirs, healthwise, to imagine that I’ll beat them out by very much. And sure, medicine is improving dramatically, but then I look at charts like this one (click for bigger view): 1],
   [As promising as that data is, we don’t seem to be getting too far with the 100+ thing. Even the most freak outliers don’t crack 120. The human body seems programmed to shut itself down somewhere around the century mark, if it hasn’t already. Clearly something other than the current type of healthcare advances will be needed to crack through the natural human lifespan ceiling—it’ll take some deeper recoding of the human genome.],
   [But then the optimistic part of my brain imagines what it would be like to show George Washington around 2021 and watch him die of shock at how magical everything was, and it thinks about how the accelerating returns on progress mean that the world of 70- to 100-year-old me might be equally shocking to people today, and so it answers D) 150–250.],
   [The pessimistic part of my brain, looking at reality, makes a sad face and pats the optimistic part of my brain on the head.],
   [The optimistic part of my brain, remembering how bad humans are at intuitively understanding exponential growth, pats the pessimistic part of my brain on the head.],
-  [style="font-size: 18px;"\> How do you fall asleep? – Anastasia S. (Athens, Greece)],
+  [How do you fall asleep? – Anastasia S. (Athens, Greece)],
   [When I can’t fall asleep, it’s either because my mind is caught in an anxious loop of some kind or my phone is keeping me up. The surefire fix to the anxious loop issue is to distract my mind with something else.],
   [But what that something else is is important. If I start texting or scrolling around social media or brainstorming \/ researching for work or playing an addictive iPhone game, that’ll just make me even less likely to sleep. Other activities, for whatever reason, seem to have the opposite effect and put me right to sleep. For me, what’s effective is reading in the dark on a Kindle on dark mode, listening to a podcast or audiobook, 6 doing a crossword puzzle on my phone, or as a last resort, YouTube videos, which work for the same reason it’s so easy to fall asleep in front of the TV.],
   [The problem with this is that most of these involve my phone, which also has all of those things that are great at keeping me up. Worse, when I wake up next to my phone, I inevitably start my day by getting sucked into inane phone stuff. This isn’t just a time-waster—the grown-up-ness with which I start my day usually sets the tone for the whole day. And the morning is often when some of the best insights pop up for me— if they have space to pop up. The phone kills that space.],
   [So I came up with a little scheme. Which brings me to:],
-  [style="font-size: 18px;"\> What is the best permanent lifestyle change you made in your life? – Elmar S. (Munich, Germany)],
+  [What is the best permanent lifestyle change you made in your life? – Elmar S. (Munich, Germany)],
   [I dug an old iPhone 6 out of my drawer (I had tried to trade it in but I botched something with the “activation lock” whatever the hell that is and Apple sent it back to me) and this became my bed phone. No SIM card, not signed into iCloud, no apps except Kindle, iBooks, Downcast (podcasts), NYT Crosswords, YouTube, and some practical ones (alarm, calendar, notes and voice recorder for those morning insights). Then I leave my real phone in a different room, as far away and inconveniently located as possible. This has been pretty groundbreaking for me. I find that I actually look forward to saying bye to my normal phone and transitioning to the bed phone stage of the night. Bed phone still has worlds of fun in it—just the healthy-for-night/morning kinds of fun. 7],
-  [style="font-size: 18px;"\> Do you have an inner monologue? – Malaika D. (Groningen, The Netherlands)],
+  [Do you have an inner monologue? – Malaika D. (Groningen, The Netherlands)],
   [I actually wanna talk about this. I kind of think I don’t have an inner monologue. I have certain moments when I’m actually talking to myself in my head, but I find that 90% of the time my head is up in the clouds (which is most of the time) I have a lot of thoughts going on but no specific words in my head. I can’t tell if that’s what everyone is like or if I’m weird. The reason I wonder about it is that when people explain why you should meditate, they say something like, “it’s important to quiet the constant ‘chatter’ in your head.” And I always wonder whether “chatter” is just the word they’re using for the constant stream of thoughts or if there is actually a voice to those thoughts in most people’s head but not mine. Someone tell me what’s up.],
   [Anyway I get your bigger point, Malaika, and I’m with you, but I don’t have a good answer beyond something obvious like “try meditation!” So hopefully a commenter can tell us both how to fix ourselves.],
-  [style="font-size: 18px;"\> What really makes you angry? – Ingrid M.],
+  [What really makes you angry? – Ingrid M.],
   [When I’m late and a person in front of me is going really slowly at the cashier],
   [When I’m late in an Uber and the driver makes a wrong turn],
   [When I’m late at the airport with no margin for error and TSA decides it’s the perfect time to search my bag and there are two other bags that need to be searched in front of mine and no one is searching any of the bags because the woman who searches bags is doing something else],
@@ -289,38 +238,38 @@
   [When I ask someone for the address where I’m going and they tell me directions instead of just giving me the address to put in my phone],
   [When I go on vacation with people who want to wake up early and fill the day with icky activities],
   [Jeans with button flies],
-  [style="font-size: 18px;"\> Are we bigger than we are small, or smaller than we are big? – Jarhead (Toronto, Canada)],
+  [Are we bigger than we are small, or smaller than we are big? – Jarhead (Toronto, Canada)],
   [Biologically, we’re definitely bigger than we are small. A typical blue whale is about 15 times the length of a human and around 2,500 times the mass. A human compared to microbes is many orders of magnitude larger. We’re less big amongst mammals, but even there we’re bigger than we are small. A human is about 35 times the length of the smallest mammal—the adorable bumblebee bat —and 40,000 times more massive.],
   [Moving beyond the realm of biology—if we consider ourselves in relation to well-understood objects , we might make our endpoints a proton (10 -16 m) and the sun (10 8 m), in which case we’re much closer to the size of the sun than the size of a proton. Big again. But if we use the Milky Way (10 20 m) as our upper endpoint, then we become smaller than we are big.],
   [Then there’s the whole range of size. According to my Universe in a Nutshell app (plug!), the smallest known unit of space, the Planck length (maybe our universe’s pixel size), is about 10 -35 m. The largest space we can see is the observable universe, which is around 10 26 m range. If those are our endpoints, the midpoint between them would be a bit smaller than the width of a human hair—making us bigger than we are small.],
   [But the observable universe is probably only a tiny piece of the full universe, and then there’s the multiverse if that’s a thing. So the real upper endpoint is probably high enough, if it exists at all, to make us much smaller than we are big.],
   [My takeaway here is that we’re extremely middling when it comes to size, which I guess isn’t the worst thing to be.],
-  [style="font-size: 18px;"\> How do I get over a breakup if I’m still in love? – Anon],
+  [How do I get over a breakup if I’m still in love? – Anon],
   [There’s no way to make an excruciating loss not excruciating except time, and I’m sorry to hear about the excruciatingness you’re going through.],
   [Maybe it’ll help to remember that everyone you know, everyone you see on the street, everyone who’s ever lived in every place and time, has probably been there too or will be there in the future—because excruciating loss is an unfortunate staple of the human experience.],
   [It might also help to remember that the part of you that feels like this wound will never heal is almost definitely wrong, and being wrong about that is also a staple of the human experience. Make that part of you write a letter to yourself, expressing how it feels. It’ll be fun to read that letter later, when you’re totally in love with someone new.],
-  [style="font-size: 18px;"\> When parking , if both options are available, do you pull into the spot or back in? – Brighid D. (Manchester, NH)],
+  [When parking , if both options are available, do you pull into the spot or back in? – Brighid D. (Manchester, NH)],
   [Pulling in forward is Present You living their best life and treating Future You like their assistant. Backing in is Present You acting like Future You’s assistant. Pulling forward out of a spot you previously backed into is a highly luxurious experience, but as a procrastinator type whose jam it is to fuck over Future Tim, a rare one for me.],
-  [style="font-size: 18px;"\> What is the coolest magic trick that you’ve seen? – Abhinav P. (Jaipur, Rajasthan, India)],
+  [What is the coolest magic trick that you’ve seen? – Abhinav P. (Jaipur, Rajasthan, India)],
   [Professional magic is by far the most underrated form of entertainment. Anytime I hear about a new magic show in NYC getting buzz, I buy tickets (magic over video can also be surprisingly great—check out this incredible show ).],
   [The most inexplicable trick I’ve seen was actually one where I happened to be the chosen subject from the audience. This guy (a “mentalist” not a magician whatever that means) had me go into my phone contacts and scroll and stop randomly somewhere and then remember where my finger was. It was on a friend named Lucy. He told me to put the phone away and concentrate on the name. He then told some fictional story and towards the end revealed that the main character’s name was Lucy. There was no way he could see the phone at any point, and having held it close to me, I’m almost sure no one behind me could see it either. Later in the night he correctly guessed my friend’s ATM PIN number. Nothing he did was okay. I’m upset just talking about this.],
-  [style="font-size: 18px;"\> Why do you live in NYC ? – Yertle T. (New York, NY)],
+  [Why do you live in NYC ? – Yertle T. (New York, NY)],
   [NYC is an extreme place. It’s great at being exceptional and it’s great at being awful. It’s a high-priced filth bucket with great weather 25% of the time. It’s supposedly this world-leading city and yet it’s often behind the innovation curve and feels less futuristic than many other cities. The restaurants are world-class but it can also sometimes be hard to find a fresh salad for lunch. I could go on.],
   [But it’s also a place where within a 20-minute walk of my apartment I can find every cuisine in the world, every type of art, every kind of shop, and a million different cultural experiences (many in secret underground nooks). It feels like the entire world is crammed into this city.],
   [Among US cities, it’s not \#1 for tech (SF), entertainment (LA), politics (DC), medicine (Boston), or a handful of other major industries. But it’s at least top 5 in every industry. NYC has breadth like nowhere else I know (at least in the US). This is especially appealing to me since I like to dig into a lot of totally different areas with my writing.],
   [On a me-specific level, it’s a place where a large portion of my friends and acquaintances live, and of those who don’t live here, a large portion come through the city at least once a year. Nowhere other than NYC would I be able to get this level of in-person contact with such a large percentage of people I care about. (It’s also a quick trip to Boston, where much of my family lives.)],
   [Finally, I really like the historical aspect. 300 years of human ingenuity gives a place a lot of character (I know that sounds paltry to non-Americans but it’s a big deal here!). Every street has an epic story to it. It makes the city like a big history museum to explore, and I like knowing that I’ll never even scratch the surface.],
   [The awful things about NYC suck. A lot. But for me at least, the good things make living here a clear net positive.],
-  [style="font-size: 18px;"\> How are you? Just checking in. – Jake E. (Kristiansand, Norway)],
+  [How are you? Just checking in. – Jake E. (Kristiansand, Norway)],
   [Besides the giant dark “I gotta finish this book” cloud hovering over my entire existence and preventing me from being present or content in any moment ever, great!],
-  [style="font-size: 18px;"\> What is the silliest thing you have placed on top of your tortoise? – Juan],
+  [What is the silliest thing you have placed on top of your tortoise? – Juan],
   [For his 14th birthday, we threw a party for Winston and tied a string around his shell with a helium balloon attached. This was a great way to make sure no one stepped on him because the balloon was at eye level, like another guest at the party. Anyway he doesn’t like parties so he moseyed his way into some little private cove, thinking no one would know where he was, not realizing there was a very obvious balloon giving him away.],
-  [style="font-size: 18px;"\> What should one do if a piece of media (book or movie or song) that holds some nostalgic value to you turns out to have been created by someone who’s a ‘bad’ human being? – Anoushka D. (Delhi, India)],
+  [What should one do if a piece of media (book or movie or song) that holds some nostalgic value to you turns out to have been created by someone who’s a ‘bad’ human being? – Anoushka D. (Delhi, India)],
   [I think in most cases, we should feel fine loving the art we love, regardless of who the artist is, what they did, or what they believed. John Lennon was physically abusive in his early relationships. Picasso and Jackson Pollock were abusive husbands. Walt Disney wasn’t a fan of the Jews, nor is Cat Stevens. Ellen DeGeneres was a dick to her staff. Norman Mailer stabbed his wife. I could have listed 1,000 of these because artists are often messed up, unstable people who do or say bad things (and because most people secretly hold deep-down beliefs you would disapprove of if you knew about them). That a lot of great art emerges from troubled minds shouldn’t be a surprise or invalidate the art as great art to be enjoyed—at least not to me.],
   [In many cases, we’re also talking about artists who lived in different times—times when your own ancestors who lived then almost certainly were doing or saying some things that would make them “bad people” by today’s standards.],
   [For those who generally agree with me about this, there might still be exceptions. Maybe an important part of why you liked The Cosby Show was the belief that Bill Cosby really was a lot like Cliff Huxtable, and knowing what you know now, the show loses its charm. I just find those to be the rare exceptions, not the rule.],
   [Finally, I would say there are two okay views to have here: 1) my view, that you can enjoy art by people you disapprove of, and 2) the opposite view, that not liking the artist ruins the art. What’s not an okay view is 3) “Art by a person I disapprove of should be banned so that no one is allowed to consume it, and any platform that doesn’t ban it should be punished.” There’s way too much \#3 going on right now.],
-  [style="font-size: 18px;"\> What countries were your absolute favorite travel experiences? –  Samantha K. (Singapore)],
+  [What countries were your absolute favorite travel experiences? –  Samantha K. (Singapore)],
   [When I was 20, I took a solo backpacking trip to Thailand and China and became infatuated with traveling. Since then (covid notwithstanding), I’ve tried to visit at least two new places every year. Here are some of my favorite travel experiences and best recommendations (most can be done on a backpacker’s budget):],
   [Taking a commuter boat for three days down the Amazon from Belem to Manaus (Northern Brazil), sleeping in a mess of hammocks   and looking out at the little river communities  along the way.],
   [Riding the Trans-Siberian railway from Moscow to Krasnoyarsk, looking out the window, making friends with passengers, and seeing how the political views changed the further east we got (more on that trip here ).],
@@ -331,37 +280,37 @@
   [Driving from Dubai to Southern UAE and camping out on the softest dunes ever .],
   [Going to Gen Yamamoto’s bar in Tokyo for six of the fanciest little cocktails imaginable (he’s kind of the Jiro of cocktails) over two amazing hours. 8 Also just the entire country of Japan in general.],
   [Taking a boat two hours from a small Greenlandic town to a 46-person village and doing a stay with the town grandmother . More on that trip here .],
-  [style="font-size: 18px;"\> How can I become a higher-rung thinker? –  Avery H. (Zeeland, MI)],
+  [How can I become a higher-rung thinker? –  Avery H. (Zeeland, MI)],
   [(If you don’t know what “high-rung” means, check out chapters 7 and 8 of The Story of Us .)],
   [To borrow a Paul Graham suggestion , keep your identity small. High-rung thinking isn’t some fancy thing. It’s just being self-aware about what you know and what you don’t know—about staying close to the humility sweet spot .],
   [One of the biggest impediments to this is when you start to identify with certain beliefs, stances, or ideologies. Once that happens, your Primitive Mind enters the equation and will do whatever possible to keep you from changing your mind, which cripples your ability to learn. Keeping your identity small is hugely liberating, and a lot less stressful. When your identity is small, you have nothing to cling onto and you can just relax and explore. So start by doing a self-audit and figuring out which ideas you’ve come to hold sacred—we all do this, it’s human—and remind yourself that they’re just ideas, they’re not you.],
-  [style="font-size: 18px;"\> What are your favorite podcasts ? – Laura B. (Amsterdam, The Netherlands)],
+  [What are your favorite podcasts ? – Laura B. (Amsterdam, The Netherlands)],
   [Currently hooked on Dan Carlin’s Hardcore History . 100 people recommended it to me and I kept putting it off and finally listened to the 6-part WWI series and that was that for me. Went back to episode 1 and went through chronologically, currently up to episode 42 and loving every minute. History is so incredibly riveting if told by the right person, and Dan is the right person.],
-  [style="font-size: 18px;"\> What is your favorite form of transportation? –  Sidhi (San Francisco, CA)],
+  [What is your favorite form of transportation? –  Sidhi (San Francisco, CA)],
   [Without question the hoverboard . A few years ago, I was walking in NY and some guy passed by with one and I accosted him and asked him what the fuck that incredibly fun-looking thing was. He told me he actually sells them and gave me his info. A few days later I was the weird guy rolling around NY like a futuristic nerd, having the time of my life. I got really good at it and impressed lots of strangers and everything was great. Then, after a few weeks, the battery, though appearing to be half full, suddenly died and I wiped out in the middle of the street mortifyingly. I carried the board home and charged it up and pretended like nothing had happened and kept riding around. Then a few days later the battery died again out of nowhere and I wiped out mortifyingly in the street again. Turns out I had bought a cheap Chinese-made knockoff without realizing it. Bummer.],
   [I was gonna get a new one, this time online with some research and not from some shady fuck I met on the street—but right around that time, NY decided it didn’t know what a hoverboard was and didn’t know how to categorize it or whether it should need a license or whether they should go in the bike lane or sidewalk and just shrugged and banned them . Disappointing all around.],
   [If I time machined to 2040, one of the things I’d hope to see would be lots of people traveling around on fun hands-free toys like that.],
-  [style="font-size: 18px;"\> How do you feel about advertisements? Do they annoy you, or are you enticed about what they’re trying to sell to you? –  Fred M. (Chicago, IL)],
+  [How do you feel about advertisements? Do they annoy you, or are you enticed about what they’re trying to sell to you? –  Fred M. (Chicago, IL)],
   [I love targeted ads, when the AI is good enough. The problem with targeted ads is normally they’re not really good at targeting, so they’re useless and annoying. But Instagram has gotten pretty good at it and now I own a gravity blanket , a moon pod , stretchy jeans , a great hoodie , and like 19 fidget   toys and physics   toys and other stupid things that make me happy . Buying dumb shit you like is a good thing to do because you’re supporting small businesses (this is the story I tell myself), and effective targeted ads connect supply and demand in an optimal, nuanced way. I hope down the road the targeting gets so good that ads will pop up and be like “your dad’s birthday is coming up, here are five great options for him that we know he wants—click your favorite and it’ll arrive to him, gift-wrapped, on his birthday!”],
   [I know I’m supposed to feel the opposite way about all of this because it’s creepy and non-privacy-y, but I’m gonna be dead at some point for trillions of years so who cares if big companies are manipulating my simple psychology for profit, if it brings me joy?],
-  [style="font-size: 18px;"\> If you were forced to live in a country outside of the top 50 for 5 years, which country would it be and why? – Dom W. (New York, NY)],
+  [If you were forced to live in a country outside of the top 50 for 5 years, which country would it be and why? – Dom W. (New York, NY)],
   [If you ask me when I’m feeling energetic and ambitious, I’d say Nigeria. After visiting there in 2014, I came away feeling excited. With over 200 million people, it’s the 6th-most populous nation, and Lagos is a massive metropolis bustling with energy—somewhere I wouldn’t get bored and where I could find lots of outlets for my own projects.],
   [But Nigeria would also be a hectic choice, and a hard place to live at times, so if you ask me when I’m tired, it would probably seem a bit “much” for a five year stint. In that mood, I’d choose Laos. Never been, but it looks insanely beautiful and the food would make me happy.],
-  [style="font-size: 18px;"\> What is the best piece of advice you have ever received? – Laura H. (New York, NY)],
+  [What is the best piece of advice you have ever received? – Laura H. (New York, NY)],
   [I met Chris Anderson, the head of TED, in 2015. He had read a few WBW posts and offered me the opportunity to give a TED Talk at the 2016 conference (which was six months away). Immediately full of both gratitude/excitement and dread/anxiety, I asked him if it might be better to wait a couple years until I had some more speaking experience. He paused thoughtfully for a few seconds before saying, “There’s no time like the present.” I took his advice. Since then, his voice saying those words has popped into my head again and again during hard decisions, and I’m yet to regret following them.],
   [Great advice is sometimes great because it’s totally original or framed in an original way. But, as in my story, a well-known platitude, at the perfect moment , can also make a huge impact. What makes Chris’s advice so valuable to me wasn’t that it was something new—it was that the lesson I learned from taking the advice in that particular moment turned a cliché into a mantra.],
-  [style="font-size: 18px;"\> What are your thoughts on TikTok? – Annie (Ontario, California)],
+  [What are your thoughts on TikTok? – Annie (Ontario, California)],
   [For a long time, TikTok was this impossibly annoying-seeming thing that wouldn’t go away. Then my friend Isabelle started posting pro-nuclear-energy videos on TikTok, so I finally got the app to watch them. Then I got sucked in.],
   [The thing is, the TikTok algorithm is really good. It knows me better than I know myself. I don’t follow any accounts on TikTok, I just go to the “For You” tab and start scrolling down the video stream TikTok has prepared for me, and the curation quality is strong.],
   [Sometimes there   are   people   being   funny . Sometimes there   are   people   doing   pranks . There’s George and Hector and this squirrel and this drunk chicken and the bees lady . And then there are the trolls. People trolling their boyfriends and girlfriends and husbands and wives and cats and dogs and  babies and teachers and customers . And a   lot   of   people   trolling   their   parents . TikTok isn’t for everyone. But it is for me.],
   [I’ve now created a fun activity, where I “favorite” the best videos during a scroll and at some point beam my phone up to the TV to show my wife the favorites. Highly recommend this activity.],
-  [style="font-size: 18px;"\> Are you a tabletop gamer ? – Ryan M. (Odessa, TX)],
+  [Are you a tabletop gamer ? – Ryan M. (Odessa, TX)],
   [Of the staples, I love Scrabble and have played like 1,000 games of Words With Friends (which has in turn fucked up my Scrabble game). I have periodic chess phases, though they never last long enough for me to become not bad (my chess.com rating peaked in the 900s during my last bout).],
   [My sister is always upsettingly pushing new games on me, which I first resist and then become addicted to. Recently, she’s gotten me into Coup and Codenames (both delightful). I’ve dipped my toe into the Polytopia wormhole and am scared about the possibilities. Not a tabletop game, but a consistent winner with groups is what my friends and I call the Name Game (variations are called Celebrity or Fishbowl)—rules in this footnote. 9],
-  [style="font-size: 18px;"\> What supplements or multivitamins do you take? – Stacey W. (Perth, Australia)],
+  [What supplements or multivitamins do you take? – Stacey W. (Perth, Australia)],
   [I usually take some kind of one-a-day multivitamin that I deep down believe does nothing but I take it just in case. And a spoonful of Metamucil every morning so I can be happy.],
   [And then I like to experiment with work/productivity supplements. I’ve recently been trying a combination of gingko biloba and lion’s mane supplements. I’ve also been trying out Qualia Mind , made by Flow Genome Project , but just started so no verdict yet. Always open to suggestions, so let me know if you use anything that works well for you!],
-  [style="font-size: 18px;"\> What’s a recent embarrassing and/or interesting rabbit hole you’ve found yourself going down semi-unintentionally? – Jace L. (Tulare, CA)],
+  [What’s a recent embarrassing and/or interesting rabbit hole you’ve found yourself going down semi-unintentionally? – Jace L. (Tulare, CA)],
   [I have a love-hate relationship with YouTube. Love the videos, hate myself. The problem is, YouTube spirals happen for me almost exclusively when I’m in the Dark Playground —that place you’re in when you should be working but you’re not working. E ither someone sends me a YouTube link or I go there for genuine research purposes—and then the algorithm pulls me into the pit.],
   [Some of these pits are at least productive, when   I’m   learning   something   about   science   or   history . Others at least are   high   quality   art   or   comedy   or   something   else   interesting .],
   [But then there are the dark moments. When nothing good at all is happening. In order to answer Jace’s question, I decided to play a dangerous game: lifting off the hood of my YouTube history and seeing, staring me in the face, all the places I’ve been. Some of the more disturbing finds from the past few years (each spiral goes up chronologically, with the first video I watched at the bottom):],
@@ -379,48 +328,48 @@
   [Can’t explain this:],
   [Not useful:],
   [Possibly the strangest sequence I found:],
-  [style="font-size: 18px;"\> Would you rather be 11 feet tall or nine inches tall ? – Alexander R. (Windhoek, Namibia)],
+  [Would you rather be 11 feet tall or nine inches tall ? – Alexander R. (Windhoek, Namibia)],
   [Surprisingly hard one. 11 feet seems like the obvious answer. You’re a full “thing” everywhere you go and everyone would flip out, but then they’d get used to it and you could still have an almost normal life. You could still have an almost normal house. You could for sure play in the NBA. You could still have sex.],
   [No one is fucking a nine-inch tall person. And you couldn’t go anywhere without everyone you’re about to see being fully prepped ahead of time for the situation. Your house would be a joke. That said, there would be benefits. You could sneak into anything and hide very easily. Like you could probably smuggle yourself on a plane to Russia without anyone noticing, sneak into the Kremlin, and listen in on the most secretive Putin meetings while hiding behind the curtains or somewhere. But then what?],
   [So I guess my answer is that the nine-inch-tall option would be very fun for a while but then when you got bored of the perks, you’d be confronted with your life as a pencil person and would probably regret the choice. So I’d go with 11 feet tall.],
-  [style="font-size: 18px;"\> Can you suggest methods for dealing with the crushing realization that people you used to have a lot of respect for don’t hold the principles/values you thought they did and therefore might no longer be worthy of your respect? Especially close people like parents, teachers, mentors, and religious leaders? – JD I. (Charleston, SC)],
+  [Can you suggest methods for dealing with the crushing realization that people you used to have a lot of respect for don’t hold the principles/values you thought they did and therefore might no longer be worthy of your respect? Especially close people like parents, teachers, mentors, and religious leaders? – JD I. (Charleston, SC)],
   [I find this to be a pretty reliable graph:],
   [The better I get to know people I’ve previously demonized, the more pleasantly surprised I am. The better I get to know people I’ve previously lionized, the more disappointed I become. This makes sense, because people are neither demons nor angels—they’re humans. The crushing realization you’re experiencing is probably less some awful truths you’re learning about people you admire and more a truth you’re seeing about humans in general. Even the people you look up to are fallible and flawed—but that doesn’t mean they can’t also be worthy of your love and respect.],
   [With all that in mind, I’d consider three things:],
   [First, take a hard look at ways you feel these people are disappointing you, and try asking whether your own judgments might be off. On more than one occasion, I’ve scoffed at those I once considered wise only to later realize that they weren’t all that wrong after all.],
   [Second, think about all the ways a human can be good and wise, and you’ll be reminded of certain ways these people are still very much worthy of your admiration. Focusing on those areas can restore the respect you want to feel towards them.],
   [Finally, where you do firmly believe you have something right that they don’t, remember that wisdom is a multi-generational collaboration. When mentorship works, it raises mentees to be wiser than the mentor—mentees who can then be even better mentors to the next generation. This is how the wisdom trend slopes continually upwards. If your mentors are forever wiser than you, they failed as mentors. So when you do feel wiser, it’s not a bad thing—it means it’s your turn to take the wisdom torch and try to bring it to the next level.],
-  [style="font-size: 18px;"\> What are your most left-wing, and most right-wing, political positions ? – Hannah J. (London, UK)],
+  [What are your most left-wing, and most right-wing, political positions ? – Hannah J. (London, UK)],
   [At the moment I’m feeling progressive about the legalization of drugs and sex work (in both cases, the black markets that result from illegality seem to cause more harm than the thing itself), and conservative about wanting the government to be smaller (bigger government seems to correlate with both less competence and more corruption).],
-  [style="font-size: 18px;"\> Do you plan to write updates for the AI and SpaceX posts? –  Matt J. (Sartell, MN)],
+  [Do you plan to write updates for the AI and SpaceX posts? –  Matt J. (Sartell, MN)],
   [Yes and yes. SpaceX first.],
-  [style="font-size: 18px;"\> What conspiracy theory do you think is most probably true? – Maja (Ottawa, Canada)],
+  [What conspiracy theory do you think is most probably true? – Maja (Ottawa, Canada)],
   [One that I’ve been considering (only a hunch, no actual info) is that big alcohol companies (Anheuser-Busch, etc.) are the new big tobacco companies (Philip Morris, etc.). And instead of trying to suppress evidence that cigarettes are disastrous for your health, the big alcohol companies need to keep all the other fun drugs stigmatized and illegal—and with tens of billions of dollars at stake, they’ll spend billions of dollars to keep the status quo the way it is.],
   [When I grew up, the rules were clear: if a party is a cool party, it has alcohol at it, and if you’re a cool person, you drink alcohol. If your party doesn’t have alcohol, it’s not a cool party, and if you don’t drink alcohol, you’re not a cool person. If you take a step back and think about it, that’s kinda weird. This one particular drug, of so many, has been deemed A) the socially acceptable, non-stigmatized one, and B) the definition of cool. Meanwhile, alcohol is just an alright drug—probably a below average one—while also being one of the most dangerous and harmful ones. It makes no sense—until you remember that cigarettes made no sense either…],
-  [style="font-size: 18px;"\> What’s your best advice for someone moving to NYC ? – Tessa C. (Kansas City, MO; living in Dublin, Ireland; moving to New York, NY)],
+  [What’s your best advice for someone moving to NYC ? – Tessa C. (Kansas City, MO; living in Dublin, Ireland; moving to New York, NY)],
   [Get rid of your stuff (or store it somewhere) unless you really love it. Small apartments can be cozy and great if you don’t have too much stuff.],
   [Do all the touristy things (Statue of Liberty, etc.) while you’re still in the honeymoon phase, because if you don’t, you’ll never do them.],
   [Look up a list of the best pizza places in the city and go to one a month until you’ve tried them all. Lucali and Paulie Gee’s are my top recs.],
   [Look up lists like this and actually do the things. Nowhere has more amazing secret spots than NYC.],
-  [style="font-size: 18px;"\> Why the King of Spades? And are his eyes always looking up that way? – Hector F. (San Antonio, TX)],
+  [Why the King of Spades? And are his eyes always looking up that way? – Hector F. (San Antonio, TX)],
   [When I was tossing around potential names for the site, “Miniature King” was in the running. At least to me it was, before it was promptly vetoed by my wife \/ then girlfriend. But in the process, I had become attached to the visual I had in mind—something with a very small, very tyrannical king who was outraged about being the non-consensual mascot of a random blog. So when it was time to design the eventual site, I stuck with the king as the mascot. He’s looking up because he’s rolling his eyes at the concept of being the WBW mascot and because he’s upset about the little men that are marching up onto his head, which is not a very dignified thing to be happening to a great tyrant king.],
-  [style="font-size: 18px;"\> What’s a view/opinion you were holding for a long time but changed recently (let’s say in the last few years)? – Mike L. (Singapore)],
+  [What’s a view/opinion you were holding for a long time but changed recently (let’s say in the last few years)? – Mike L. (Singapore)],
   [Religion being a generally bad thing overall. Obviously religion can be, and often is, a bad thing that does more harm than good. But what’s become more clear to me is that we’re a religious species, period, and while today’s prominent religions are certainly flawed, the political religions of history or today are often even worse.],
   [It just doesn’t seem like we’re a species that’s ready for widespread atheism quite yet. Until things change, traditional religions are probably more helpful than they are harmful. Still thinking about this one.],
-  [style="font-size: 18px;"\> How do you balance reading the news /staying up to date on current events with avoiding burnout and the feeling that everything is terrible all the time and nothing you do matters so why bother? – Fenway D. (Greensboro, NC )],
+  [How do you balance reading the news /staying up to date on current events with avoiding burnout and the feeling that everything is terrible all the time and nothing you do matters so why bother? – Fenway D. (Greensboro, NC )],
   [A lot of what used to be news has morphed into propaganda, and there’s no shame in ignoring propaganda. The really big stuff will filter its way to you no matter what you do.],
   [If you do want to keep up with the news, it also doesn’t have to happen directly, via the media. Listening regularly to a few good interview-style podcasts, for example, can be a great way to get a feel for the big issues going on in a more indirect way.],
   [As far as feeling like nothing you do matters, I actually think that’s an intuitive but incorrect assumption. In a moment when so many people are afraid to express their real views in public, doing so can make a real difference.],
-  [style="font-size: 18px;"\> You often mention being inspired and challenged by interesting conversations . How have you increased the proportion and/or frequency of these conversations in your life? – Andrew N. (London, UK)],
+  [You often mention being inspired and challenged by interesting conversations . How have you increased the proportion and/or frequency of these conversations in your life? – Andrew N. (London, UK)],
   [One thing that can go a long way: see the people you really like talking to more frequently. This is about more than the obvious point that doing so literally increases the cumulative time you’ll talk to them: When you don’t see someone frequently enough, every time you do hang out ends up being a big catch-up, where both of you update the other on your lives. This doesn’t seem like a problem until you consider that the whole relationship now mostly consists of catching each other up (and reminiscing about old times because you’re not making any new times together). This isn’t actually hanging out. Hanging out means shooting the shit about whatever’s on your mind and exploring new topics together. If I haven’t seen someone in forever and then they’re in town for a week and I see them twice, it’s the second hangout, with the catch-up out of the way, where the more interesting conversation usually happens. 10],
   [Two friends and I started zoom-chatting every Friday during covid and it just turned into a thing that now happens once a week, and the conversations are great because they’re free of big-picture catch-up—they’re either about ongoing keeping up, or more often, just fun divergent conversation about third-party topics. If you have anyone you like talking to enough to do it a few times every month, try to make that happen.],
-  [style="font-size: 18px;"\> Do you have some tips of where and/or how to meet people who tend to think more high-rung, both online and in real life? Or is it more about recognizing them scattered throughout our lives? – Steven D. (Zavantem, Brussels, Belgium)],
-  [style="font-size: 18px;"\> Where’s the entrance to the idea labs? I’m a teenager and right now I’m trying to accumulate knowledge and skills as much as I can. There are quite a few people who inspire me and they all seem to be in a network of other smart/amazing people. The question is – how do you find other people who want to grow and exchange knowledge? – Mikhail I. (Moscow, Russia)],
+  [Do you have some tips of where and/or how to meet people who tend to think more high-rung, both online and in real life? Or is it more about recognizing them scattered throughout our lives? – Steven D. (Zavantem, Brussels, Belgium)],
+  [Where’s the entrance to the idea labs? I’m a teenager and right now I’m trying to accumulate knowledge and skills as much as I can. There are quite a few people who inspire me and they all seem to be in a network of other smart/amazing people. The question is – how do you find other people who want to grow and exchange knowledge? – Mikhail I. (Moscow, Russia)],
   [Three ideas:],
   [1) Mine people you already know for hidden high-rung-ness. Sometimes two people get stuck in a dynamic where both feel like they have to agree with each other, which is kind of boring and stressful and makes it hard to dig deep and explore anything—but neither one actually prefers it to be this way. They’re just stuck in a social rut. In this case, all it might take is one person actually starting to say what they really think and being willing to break the “disagreement” ice, and the whole relationship can transform into something much more interesting and high rung. Of course, there are plenty of other times when an Echo Chamber dynamic is in place because one or both people very much want it to be that way, and an attempt by one party to snap out of that will go over badly (btw, this isn’t the end of the world—it just means that high-rung conversation won’t be a part of that relationship, you can still enjoy the rest of what it has to offer). If you do find that most of your existing relationships are stuck on the intellectual low rungs, you’ll want to supplement things with some new friendships that can better indulge your intellect. This is where the other two points come in.],
   [2) Collect high-rungers you happen upon in the wild. Post-college-age people tend to be really bad at making new friends. But it doesn’t have to be this way. There will be moments—at work, at a dinner party, at some event—when you discover a super interesting-seeming person you really like talking to, and you wish you were friends with them. If you feel this way, there’s a decent chance they feel the same way about you. And if you can fight off your mammoth (who is irrationally horrified by the possibility you may put yourself out there and get rejected) and get in the habit of getting their phone number and sending a “great meeting you! would love to chat again sometime” text—and then if the response is positive, actually scheduling a coffee or lunch or drink (mammoth: “but what if they were just being polite!”), over time you’ll accumulate a whole new basket of high-rung brains to play with. 11 It’s really easy to just not put yourself out there for new friendships as an adult, but those who do are usually rewarded.],
   [3) Actively go out looking for high-rungers. This is the ickiest, most amorphous item, and I don’t have specific suggestions beyond: put yourself in high-rung environments whenever possible. That can mean the place you live, the place you work, the places you spend your free time, the forums you hang out in online, the events you go to. Speaking of which—],
-  [style="font-size: 18px;"\> Do you plan to have another Wait But Hi ? 
+  [Do you plan to have another Wait But Hi ? 
  – Fausto L. (Madrid, Spain)
 – Mini (Perth, Australia)
 – Sam W. (Raleigh, NC)
@@ -428,13 +377,13 @@
 – Kelvin J. (Turku, Finland)
 – Chelsea I. (Perth, Australia)],
   [Yes, definitely. Like everything Wait But Why, this has been on hold because of the Story of Us albatross, but the answer is yes. We consider “Wait But Hi” to be not a single event, or even a single type of event, but the “in-person” category of Wait But Why. The first Wait But Hi centered around a hypothesis that people who read WBW would probably like meeting other people who read WBW, and the event confirmed it. Alicia, Andrew, and I have had many brainstorms about other creative WBH formats, so stay tuned.],
-  [style="font-size: 18px;"\> What animal would you shrink down to pocket size (or the size of a coke can) to keep as a pet? – Tandice U. (New York, NY)],
+  [What animal would you shrink down to pocket size (or the size of a coke can) to keep as a pet? – Tandice U. (New York, NY)],
   [Elephant.],
   [Most other animals already have a mini version (a small tiger or lion is basically a kitten, small alligator is a gecko, small buffalo is like half the weird little dogs I see on the street). But there’s nothing like a small elephant. Plus they’re usually so big so it’s extra funny. Plus they’re smart and have great personalities. And they live like 80 years. The ideal miniature pet.],
-  [style="font-size: 18px;"\> Who is your favorite Tim? – Tim (Auckland, New Zealand)],
+  [Who is your favorite Tim? – Tim (Auckland, New Zealand)],
   [Tim Berners-Lee],
   [Runner-up: Tim Duncan],
-  [style="font-size: 18px;"\> If you had power to dictate what should be taught in schools —things that everyone had to master before they get to enter adulthood—what would you add to the curriculum? – Audrey T. (Toronto, Canada)],
+  [If you had power to dictate what should be taught in schools —things that everyone had to master before they get to enter adulthood—what would you add to the curriculum? – Audrey T. (Toronto, Canada)],
   [General (should be part of many classes):],
   [Independent, first-principles thinking],
   [How to argue and debate productively],
@@ -451,17 +400,17 @@
   [Older students should be able to go deeper in the areas they feel most drawn to or, if resources allow, take electives where they can learn a more specific skill],
   [Indoctrination in the teacher’s particular political ideology],
   [Oh wait definitely not that last one],
-  [style="font-size: 18px;"\> I just started a new relationship . How do I not fuck it up and/or how do I make love stay? – Robert B. (Denver, CO)],
+  [I just started a new relationship . How do I not fuck it up and/or how do I make love stay? – Robert B. (Denver, CO)],
   [A general suggestion: Have your mantra be “I’m gonna show them exactly who I really am and if it turns out they don’t like it, they’re not the right person for me anyway.” Takes all the pressure off.],
   [A specific suggestion: Plan fun, creative, exciting “mystery dates” and refuse to tell them what the plan is until they get there. A mystery date can be any kind of experience or activity—just something outside the box.],
-  [style="font-size: 18px;"\> Do you think, overall, covid accelerated progress of the human colossus or slowed down progress of the human colossus? – Sean M. (New Orleans, LA)],
+  [Do you think, overall, covid accelerated progress of the human colossus or slowed down progress of the human colossus? – Sean M. (New Orleans, LA)],
   [Desperate times call for desperate measures and desperate measures have a knack for wildly accelerating progress and innovation. At least in the modern era, this phenomenon usually outweighs the destruction and lost time caused by desperate times. The classic example would be World War II, which is why we have the computer, the nuclear weapon, and the moon landing—or at least why we got those things as quickly as we did.],
   [Covid certainly slowed down progress in some ways—but a ton of learning and innovation happened in the past year that may have set us way forward in some very important areas. The average person in 1945 knew that the war had advanced certain technologies, but few could have foreseen the amazing ways those advances would be applied in the decades to come. If something like mRNA technology has just taken a major leap forward, the people of 2050 might have covid to thank for some of their most groundbreaking biotech.],
-  [style="font-size: 18px;"\> Are you optimistic about the future of the United States ? – Stephanie W. (Washington, D. C.)],
+  [Are you optimistic about the future of the United States ? – Stephanie W. (Washington, D. C.)],
   [All signs point to “no”. But American history is full of moments when all signs pointed to no. So yes?],
-  [style="font-size: 18px;"\> What do you hope Gen Z does with the world? – Anne Z. (Winnipeg, Manitoba, Canada)],
+  [What do you hope Gen Z does with the world? – Anne Z. (Winnipeg, Manitoba, Canada)],
   [Makes political tribalism a lame thing for lame old people.],
-  [style="font-size: 18px;"\> If you were an omnipotent god for 24 hours , what would you do? After the 24 hours, you’d turn back into your regular self but still remember that day. – Lena S. (Munich, Germany)],
+  [If you were an omnipotent god for 24 hours , what would you do? After the 24 hours, you’d turn back into your regular self but still remember that day. – Lena S. (Munich, Germany)],
   [“Omnipotent god” is a very legit amount of power. Here’s what I’d do:],
   [Restore the level of carbon in the carbon cycle to 1850 levels and invent some insanely powerful and efficient, cheap-to-make, totally safe nuclear fusion reactor that you could fuel with garbage like the Delorean in Back to the Future 2 , and put instructions for how to make it online.],
   [Randomly select a color from the Pantone deck and make all human skin that color.],
@@ -486,19 +435,19 @@
   [Paper straws are banned, plastic straws are back.],
   [Tweak the human body so exercise makes you fat and depressed and stagnation makes you fit and happy.],
   [Create a benevolent superintelligent AI that “just gets it.” This AI ensures that all future AI is friendly and that no one is too big of a dick. The AI is also in charge of making sure that none of my new rules or inventions backfires in unexpected ways.],
-  [style="font-size: 18px;"\> Who is your dog? – Tim Urban (New York, NY)],
+  [Who is your dog? – Tim Urban (New York, NY)],
   [Glad you asked!],
-  [style="font-size: 18px;"\> What are your thoughts on Elon’s controversial side ? – Ekin K. (Izmir, Turkey)],
+  [What are your thoughts on Elon’s controversial side ? – Ekin K. (Izmir, Turkey)],
   [It emerges from the same quality that invents new things, challenges conventions, and changes the world: extreme originality, whether people like it or not. So I’m all for it.],
-  [style="font-size: 18px;"\> How was Burning Man? – Zenon S. (Columbus, MI)],
+  [How was Burning Man? – Zenon S. (Columbus, MI)],
   [Roughly 100X cooler and more fun than I had expected.],
-  [style="font-size: 18px;"\> Why hasn’t anyone created something between a cat and a dog? What would it be called? – Leo L. (London, UK)],
-  [style="font-size: 18px;"\> How has writing Story of Us changed you personally? – Ankit L. (Pune, India)],
+  [Why hasn’t anyone created something between a cat and a dog? What would it be called? – Leo L. (London, UK)],
+  [How has writing Story of Us changed you personally? – Ankit L. (Pune, India)],
   [Writing the Story of Us—first as a series and now as a book—has totally reshaped the way I think. The core mental model in the book has become a lens I use constantly. I’ve also learned a lot about politics, history, psychology, and sociology that I didn’t know before. My goal with the book is to take the most important parts of both the framework and the things I’ve learned and package it in a way that can resonate with many different kinds of minds and actually stick . I want people who read the book to feel 20 years from now like it still impacts the way they think.],
   [There were lots of mailbag questions about both the series and the book, but given that every month, as I get closer to the finish line, what the best plan is seems to shift, I’ll leave it at that big-picture point for now.],
-  [style="font-size: 18px;"\> What’s your favorite thing that has come about because of something you’ve written? – Laura D. (Hampshire, UK)],
+  [What’s your favorite thing that has come about because of something you’ve written? – Laura D. (Hampshire, UK)],
   [Several people have told me that they moved closer to their family after reading The Tail End . That’s a big deal!],
-  [style="font-size: 18px;"\> I’ve been a Patreon for like 4 years now. But now that you will be releasing a book, will you still need my support? What are your plans for the future? – Kyros J.(Barcelona, Spain)],
+  [I’ve been a Patreon for like 4 years now. But now that you will be releasing a book, will you still need my support? What are your plans for the future? – Kyros J.(Barcelona, Spain)],
   [Here’s how I think about Patreon, from our side:],
   [Patreon is a means of creative freedom. Without Patreon, money would be a sizable part of our decision-making process. We’d have to take on sponsorships, sell products, and use paywalls, whether we felt good about it or not. Patreon allows us to do whatever we think actually makes sense for us and what we’re trying to do. It allows us to make a big list of potential projects and to prioritize them based on what we’re most excited about and what we think is the most important, not based on what will make the most money. Patreon means that we’ll do some projects that make money and others that won’t, and we don’t have to worry too much about which ones are which. It allows us to start a podcast without a sponsor and have the “we’ll get a sponsor if and when it feels right” attitude. It allows us to turn the Story of Us into a book, because it makes sense in this case, and to have turned down opportunities to make other post series into books, because it wasn’t something we felt made sense. It allows us to email readers about a product in our store only when we’re actually excited to tell them about that product. Having money as a secondary concern is an unbelievable creative luxury and one that makes Wait But Why a better place.],
   [Here’s how I think about Patreon, from your side:],
@@ -516,14 +465,13 @@
   [At the moment, it’s hard to imagine a time when I will want to be doing anything other than creating new things on this platform. My “future topics list” is longer than I could ever get through in one life, and as long as I’m curious, I’ll be working my way through it.],
   [Within that broader picture, there are a ton of fun possibilities. We plan to expand the platform from just writing to writing, audio, and video. We want to keep trying new things and new collaborations (like the app we made with Kurzgesagt ). We want to dig in deeper with the community with more in-person events. We’ve sketched out plans for a new, much better site.],
   [It’s been a slow few years as I’ve worked on a single, big project, but my excitement and energy have never been higher. I hope I’m still making good things when I’m 80 and I hope you’re still here with me.],
-  [style="text-align: center;"\>—————],
+  [—————],
   [If you like Wait But Why, sign up for our unannoying-I-promise email list  and we’ll send you new posts when they come out.],
   [To support Wait But Why,  visit our Patreon page .],
   [For my daily musings, follow WBW on Twitter and Instagram .],
-  [style="text-align: center;"\>—————],
-  [style="font-size: 17px;"\> Mailbag \#1],
-  [style="font-size: 17px;"\> The Travel Series],
-  [style="font-size: 17px;"\> The Procrastination Matrix],
+  [—————],
+  [Other places to go:],
+  [Mailbag \#1],
   [Depending on how transparent viruses are, we might need to stack a bunch of these virus squares to make it opaque enough to see, which would raise the total number of viruses needed into the millions or even billions. ↩],
   [The NIH does note that most of the human cells are red blood cells (a further rabbit hole reminded me that red blood cells look like delicious gummy candy ), and they admit that red blood cells are kind of just “bags full of hemoglobin.” If you only count human cells with a nucleus, the ratio is 10 bacteria for every human cell. ↩],
   [Zachary got more than he bargained for here. ↩],
@@ -540,16 +488,14 @@
 ),
   insert-map: (:),
   inline-pq: pull-quote([8 Also just the entire country of Japan in general.], [Tim Urban]),
-  inline-pq-idx: 128,
+  inline-pq-idx: 127,
   word-count: 12619,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Ancient Scroll Reveals Lost Miracle Of Christ Correctly Guessing People’s Weights],
   author: [The Onion Staff],
   source-name: [The Onion],
@@ -564,56 +510,53 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([Tom Breihan], source-name: [Stereogum], [Veteran singer-songwriter Ashley Monroe has had a long, checkered run in the Nashville country music business. She’s had a lot of success, partly as one third of Miranda Lambert’s great side project Pistol Annies, but she’s also bounced around from label to label, making her own deep and heartfelt music while singing backup on records…
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([Tom Breihan], source-name: [Stereogum], [Veteran singer-songwriter Ashley Monroe has had a long, checkered run in the Nashville country music business. She’s had a lot of success, partly as one third of Miranda Lambert’s great side project Pistol Annies, but she’s also bounced around from label to label, making her own deep and heartfelt music while singing backup on records…
 
 The post Ashley Monroe Releases Surprise New Concept Album Dear Nashville appeared first on Stereogum .])],
-    [#brief-item([Chris DeVille], source-name: [Stereogum], [Like many bands of yesteryear, the Scottish rockers Big Country, makers of the 1983 hit "In A Big Country," have splintered into various units on the touring circuit over the years. Also like many of those bands, they're now fighting about who gets to use the band name.
+  [#brief-item([Chris DeVille], source-name: [Stereogum], [Like many bands of yesteryear, the Scottish rockers Big Country, makers of the 1983 hit "In A Big Country," have splintered into various units on the touring circuit over the years. Also like many of those bands, they're now fighting about who gets to use the band name.
 
 The post Big Country Drummer Must Stop Touring As Big Country, Say Rest Of Big Country appeared first on Stereogum .])],
-    [#brief-item([Danielle Chelosky], source-name: [Stereogum], [Last year, Dua Lipa was busy touring 2024's Radical Optimism and bringing out guests like Charli XCX and Ben Gibbard in addition to performing covers like Sinead O'Connor's " Nothing Compares 2 U " and Daft Punk's " Get Lucky ." Now, the British singer is getting ready to focus on acting again, as she's joined the cast for Molly Gordon's new movie Peaked .
+  [#brief-item([Danielle Chelosky], source-name: [Stereogum], [Last year, Dua Lipa was busy touring 2024's Radical Optimism and bringing out guests like Charli XCX and Ben Gibbard in addition to performing covers like Sinead O'Connor's " Nothing Compares 2 U " and Daft Punk's " Get Lucky ." Now, the British singer is getting ready to focus on acting again, as she's joined the cast for Molly Gordon's new movie Peaked .
 
 The post Dua Lipa Joins Connor Storrie In Molly Gordon’s New Movie Peaked appeared first on Stereogum .])],
-    [#brief-item([Kieran Fisher], source-name: [/Film], [Everyone has a favorite Western film, but we're highlighting five you might have missed from the 1960s that still hold up today.])],
-    [#brief-item([Andy Swift], source-name: [TVLine], [Virgin River has yet to reveal the name of Mel and Jack's new baby, but after speaking with Alexandra Breckenridge, TVLine has a pretty good idea what it'll be.])],
-    [#brief-item([Rafael Motamayor], source-name: [/Film], [Rebecca Ferguson is the star of Apple TV's sci-fi show Silo, but her involvement as an executive producer means her love runs even deeper.])],
-    [#brief-item([Bill Bria], source-name: [/Film], [Millie Bobby Brown's costume for the final season of Stranger Things was inspired by the Goonies, but she wasn't excited about wearing it.])],
-    [#brief-item([Craig Blair], source-name: [Canon Rumors], [We all know about the current market conditions for various storage solutions. The AI datacenter demand that won't subside for years has already taken Micron out of the consumer market, and now Sony is suspending sales of their CFexpress Type A, Type B and SDXC/SDHC memory cards. Statement from Sony (Translated) Due to the global \[…\]])],
-    [#brief-item([Margaret Farrell], source-name: [Stereogum], [Sometimes a house is more than just a structure. It is a place that holds our desires and taste and the things that we love. It’s both physical space and a dream. Empress Of returns with a silky new single that captures such a building’s many layers. It’s a synth-pop balm where Lorely Rodriguez’ vocals…
+  [#brief-item([Kieran Fisher], source-name: [/Film], [Everyone has a favorite Western film, but we're highlighting five you might have missed from the 1960s that still hold up today.])],
+  [#brief-item([Andy Swift], source-name: [TVLine], [Virgin River has yet to reveal the name of Mel and Jack's new baby, but after speaking with Alexandra Breckenridge, TVLine has a pretty good idea what it'll be.])],
+  [#brief-item([Rafael Motamayor], source-name: [/Film], [Rebecca Ferguson is the star of Apple TV's sci-fi show Silo, but her involvement as an executive producer means her love runs even deeper.])],
+  [#brief-item([Bill Bria], source-name: [/Film], [Millie Bobby Brown's costume for the final season of Stranger Things was inspired by the Goonies, but she wasn't excited about wearing it.])],
+  [#brief-item([Craig Blair], source-name: [Canon Rumors], [We all know about the current market conditions for various storage solutions. The AI datacenter demand that won't subside for years has already taken Micron out of the consumer market, and now Sony is suspending sales of their CFexpress Type A, Type B and SDXC/SDHC memory cards. Statement from Sony (Translated) Due to the global \[…\]])],
+  [#brief-item([Margaret Farrell], source-name: [Stereogum], [Sometimes a house is more than just a structure. It is a place that holds our desires and taste and the things that we love. It’s both physical space and a dream. Empress Of returns with a silky new single that captures such a building’s many layers. It’s a synth-pop balm where Lorely Rodriguez’ vocals…
 
 The post Empress Of – “Dream House” appeared first on Stereogum .])],
-    [#brief-item([Andy Swift], source-name: [TVLine], [After lending her voice to Family Guy for 14 seasons, Alexandra Breckenridge was finally animated into an episode as Virgin River's Mel - and she had no idea.])],
-    [#brief-item([Debopriyaa Dutta], source-name: [/Film], [The Guyver, featuring Mark Hamill, evokes a slightly grown-up version of Power Rangers, which is enjoyable in itself if you completely ignore its manga roots.])],
-    [#brief-item([Jillg366], source-name: [Deadline Hollywood], [Bollywood hit Dhurandhar: The Revenge from Moviegoers. Entertainment is no. 4 in its second weekend on 987 screens with a gross of \$4.9 million and a cume of \$22.9 million. Aditya Dhar directs Ranveer Singh as an undercover agent in Pakistan in a rare Indian film to keep a top ranking for a second weekend. \[…\]])],
-    [#brief-item([PHD Comics], source-name: [PHD Comics], [Piled Higher
+  [#brief-item([Andy Swift], source-name: [TVLine], [After lending her voice to Family Guy for 14 seasons, Alexandra Breckenridge was finally animated into an episode as Virgin River's Mel - and she had no idea.])],
+  [#brief-item([Debopriyaa Dutta], source-name: [/Film], [The Guyver, featuring Mark Hamill, evokes a slightly grown-up version of Power Rangers, which is enjoyable in itself if you completely ignore its manga roots.])],
+  [#brief-item([Jillg366], source-name: [Deadline Hollywood], [Bollywood hit Dhurandhar: The Revenge from Moviegoers. Entertainment is no. 4 in its second weekend on 987 screens with a gross of \$4.9 million and a cume of \$22.9 million. Aditya Dhar directs Ranveer Singh as an undercover agent in Pakistan in a rare Indian film to keep a top ranking for a second weekend. \[…\]])],
+  [#brief-item([PHD Comics], source-name: [PHD Comics], [Piled Higher
  & Deeper by Jorge
  Cham 
  
  
  
 
-align="right"\> www.phdcomics.com 
+www.phdcomics.com 
 
-align="center"\> title:
+title:
  " NEW BOOK! Out of Your Mind! " - originally published 
 1/15/2021 
  
 
  For the latest news in PHD Comics, CLICK HERE!])],
-    [#brief-item([Devin Meenan], source-name: [/Film], [Two of the darkest episodes of Battlestar Galactica were clearly influenced by another sci-fi story's all timer of an ending.])],
-    [#brief-item([Tom Breihan], source-name: [Stereogum], [The veteran rapper/producer Oddisee has been making beautiful music for a very long time now. Last year, he released an EP called En Route. Next month, he’ll team up with Heno., a relatively new rapper from Takoma Park, Maryland, to release a new album called From Takoma With Love. Oddisee is based in Brooklyn these…
+  [#brief-item([Devin Meenan], source-name: [/Film], [Two of the darkest episodes of Battlestar Galactica were clearly influenced by another sci-fi story's all timer of an ending.])],
+  [#brief-item([Tom Breihan], source-name: [Stereogum], [The veteran rapper/producer Oddisee has been making beautiful music for a very long time now. Last year, he released an EP called En Route. Next month, he’ll team up with Heno., a relatively new rapper from Takoma Park, Maryland, to release a new album called From Takoma With Love. Oddisee is based in Brooklyn these…
 
 The post Oddisee & Heno. Announce New Album From Takoma With Love : Hear “MIMS” appeared first on Stereogum .])],
-    [#brief-item([Tom Breihan], source-name: [Stereogum], [For the past few years, rap great Danny Brown has been collaborating heavily with underground hyperpop producers. He loves that stuff! Those collaborations built up to the release of Stardust, the album that Brown released last year, but they didn’t end there. Now, Brown’s got a new collaboration with an artist who I’d never heard…
+  [#brief-item([Tom Breihan], source-name: [Stereogum], [For the past few years, rap great Danny Brown has been collaborating heavily with underground hyperpop producers. He loves that stuff! Those collaborations built up to the release of Stardust, the album that Brown released last year, but they didn’t end there. Now, Brown’s got a new collaboration with an artist who I’d never heard…
 
 The post girl\_irl & Danny Brown – “Magic” appeared first on Stereogum .])],
-    [#brief-item([Kieran Fisher], source-name: [/Film], ['I'm sure none of it was legal,' Renée Zellweger said regarding her time filming Texas Chainsaw Massacre: The Next Generation.])],
-    [#brief-item([Matthew Carey], source-name: [Deadline Hollywood], [“Watch what you eat” used to be a commonly heard expression, typically urged in the context of dieting. But the maxim applies in a different way in the documentary Fork in the Road, which made its world premiere Saturday at the Sonoma International Film Festival in California’s wine country. The film directed by Vivian Sorenson \[…\]])],
-  ))
-}
+  [#brief-item([Kieran Fisher], source-name: [/Film], ['I'm sure none of it was legal,' Renée Zellweger said regarding her time filming Texas Chainsaw Massacre: The Next Generation.])],
+  [#brief-item([Matthew Carey], source-name: [Deadline Hollywood], [“Watch what you eat” used to be a commonly heard expression, typically urged in the context of dieting. But the maxim applies in a different way in the documentary Fork in the Road, which made its world premiere Saturday at the Sonoma International Film Festival in California’s wine country. The film directed by Vivian Sorenson \[…\]])],
+))
 
 #colophon([Curious Standard], [Vol. 1, No. 093], [2026-03-30])

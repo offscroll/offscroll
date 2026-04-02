@@ -21,47 +21,21 @@
 #masthead([Swift Report], [Vol. 1, No. 075], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [The Power of Assumption],
-  kicker: [Cover Story],
-  author: [ysamuels],
-  source-name: [LessWrong],
-  deck: [(First real Lesswrong post! Wow.],
-  lead-pre: [],
-  lead-cap: [T],
-  lead-rest: [his is a post on an idea I thought might be interesting to some people here, and I'd love to hear thoughts on it.)],
-  body-paragraphs: (
-  [Assumption can be used as a communicative tool.],
-  [As a kid I would occasionally, before falling asleep, lie in bed and imagine that I had a very good friend to talk to, or who could cheer me on. Sometimes these were characters from my favorite books, but apparently at some point it occurred to me that presumably someone, somewhere, could be supposed to have anticipated someone else in the world feeling that way at some point, and might actually have wanted to send that someone a message of comfort, love, or support. At this point, all I had to do was imagine roughly what they might say, consider it to be said, and the message would have been received. To put it differently, I was aware that many, probably most, of the people in the world, knowing that I felt lonely, might have wanted to send me their blessings or support, and that presumably, at least one person who felt that way, over all space and time, probably realized that he could send me that message, provided I was smart enough to realize he might try to.],
-  [So I could "communicate" with people, when the purpose was therapeutic in that way - I couldn't actually receive ideas I couldn't have thought of myself (by definition), but when it was the communication itself and not the words that mattered, I could receive the messages left for me by people who had found this mental space that was created by the assumption that others would . If I wanted to give as well as receive, I could "leave" messages too, for any future or past thinker, lonely or otherwise, to assume exist. Despite the obvious drawback of not being able to receive any idea you couldn't have thought of yourself, this communication does allow you to completely bypass constraints of language, time and space.],
-  [Assumption is famously used in problems where the goal is to meet with someone over varying areas when you have no (other) mode of communication. I personally had idly wondered for some years what the best way to meet with someone spoken to by assumption would be (assuming they had also considered the possibility of meeting). I remained stuck for quite some time wondering whether it was the Eiffel Tower or the Empire State Building that would be the best place to go at midnight, January first, with a big sign reading "You know why you're here. Talk to me", before realizing that the appropriate place on the internet was probably a much more logical rendezvous (thought that is not the main motive for me in writing here - I've wanted to contribute to LessWrong for some time now).],
-  [Just as another point of thought, communication through assumption could in theory be used to create intellectual taboos or norms among intelligent people, for example an accepted and implicit censoring of certain ideas or beliefs that could be realized by anyone smart enough to arrive at them as being unsuitable for spreading (I really hope this isn't one of those).],
-  [So:],
-  [1. Do you know anyone who has beaten me to writing about this? Please direct me to the source if so. (I hope not, but I do hope it has been thought about before, otherwise I've been played for quite a fool).],
-  [2. Do you think this idea is worth anything? Other than game theory , in what other fields or ways could it be used?],
-  [3. Have I ever spoken to you telepathically before? If so, please write. That could be a very interesting conversation.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Keypress is bananas],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
   images: (),
   paragraphs: (
   [The keypress event works maddeningly differently in Chrome/Safari and Firefox, and this is the story of how I spent two hours discovering that, so that hopefully you don’t have to.],
-  [id="keypress-what"\>Keypress what?],
+  [Keypress what?],
   [A keypress event is one of the events you get when you mash on the keyboard. It’s special because according to the spec , you should only get a keypress event for keystrokes that produce printable characters. So you’ll get it for things like letters and symbols, but not for backspace and left arrow .],
   [It’s a great event to have if you want to write some as-you-type validation on an input, and you want to be able to dismiss the non-printable characters (which will still generate key events, but are uninteresting to the validation bit).],
   [Chrome, Safari and IE10 agree with this interpretation, which is great news.],
   [To be contrarian, Firefox (38; I don’t know about Aurora) always sends a keypress event for anything you type. It’s basically a keydown event from what I see. Now you have to get rid of control characters yourself and you get write code that doesn’t make sense on the other platforms! Yay! (not yay)],
   [I call shenanigans.],
-  [id="mind-your-keycodes-and-charcodes"\>Mind your keyCodes and charCodes],
+  [Mind your keyCodes and charCodes],
   [From looking at the spec , we expect a keypress event to have:],
   [keyCode , a number code that represents the key you’ve pressed. For example, q is 113 . This is allegedly deprecated, but don’t worry, both Firefox and Chrome implement it, but differently.],
   [charCode , the unicode number of the key. This code only exists for keypress . Like before, it’s deprecated, but like before, it’s implemented by both browsers. Differently.],
@@ -75,7 +49,7 @@
   [this is super because if you’ve been testing on the other browsers and have been using String.fromCharCode() , you’re going to get hilariously bad results if you use the wrong code. Like how arrow left could actually be % .],
   [see how key is kind of nice though? One day, at a browser near you.],
   [There, now you know. And knowing is half the battle.],
-  [id="ps"\>P. S.],
+  [P. S.],
   [If you read this in the future and the future doesn’t work like I said it does, either I was wrong (highly likely), or someone fixed something. Let me know and I can make updates.],
 ),
   insert-map: (:),
@@ -84,10 +58,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Week 11],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -120,10 +92,8 @@ several really productive 4 am YouTube holes of watching Avengers bloopers, ever
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Week 30: this little drummer girl],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -145,11 +115,10 @@ want to sing along in front of people. A lot of singing is relearning how to bre
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Hello magenta],
   author: [Monica Dinculescu],
   source-name: [Monica Dinculescu],
@@ -174,7 +143,7 @@ all the examples, and have fun! 💕],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Drone Wars],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -194,7 +163,7 @@ all the examples, and have fun! 💕],
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([Oisin Kuhnke], source-name: [Rock Paper Shotgun], [I'm going to say it: bullet hells are more stressful than Souls-likes. Why are there 10,000 orbs approaching me, promising me misery and death! And I have to both tactfully dodge them while also staging a front myself? The visual information alone is enough to deteriorate the mind, memorising a list of attack patterns from some big dude with a sword seems like chump change by comparison. So this leaves me quite sweet on DeeSicks, a roguelike take on the game with physics-based dice rolling where god has died and you become your own boss.
 
  Read more])],
@@ -233,7 +202,7 @@ Learn more about sponsor message choices: podcastchoices.com/adchoices
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [The Shadows of the Constitution (2020)],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -253,7 +222,7 @@ Learn more about sponsor message choices: podcastchoices.com/adchoices
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [I was the untitled goose in Big Walk, the balmy new open world co-op puzzler from House House],
   author: [Edwin Evans-Thirlwell],
   source-name: [Rock Paper Shotgun],
@@ -274,7 +243,7 @@ Learn more about sponsor message choices: podcastchoices.com/adchoices
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Crimson Desert might be an open world jumble of loose ends, but I can't resist its sexy towers and ghost trains],
   author: [Mark Warren],
   source-name: [Rock Paper Shotgun],
@@ -292,7 +261,7 @@ Learn more about sponsor message choices: podcastchoices.com/adchoices
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The X On The Map],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -315,7 +284,7 @@ Learn more about sponsor message choices: podcastchoices.com/adchoices
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [A History of Zionism],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -337,7 +306,7 @@ Learn more about sponsor message choices: podcastchoices.com/adchoices
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Rules of War],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -364,7 +333,7 @@ Learn more about sponsor message choices: podcastchoices.com/adchoices
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Crimson Desert can perform well on PC, but you’ll need to win its crash lottery first],
   author: [James Archer],
   source-name: [Rock Paper Shotgun],
@@ -382,7 +351,7 @@ Learn more about sponsor message choices: podcastchoices.com/adchoices
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [When Things Fall Apart (Throwback)],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],

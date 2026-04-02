@@ -21,41 +21,8 @@
 #masthead([The Sun], [Vol. 1, No. 029], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Final Four: Tip-off time, broadcast info for Michigan vs Arizona],
-  kicker: [Cover Story],
-  author: [Yahoo Sports],
-  source-name: [Yahoo Sports],
-  deck: [(Photo by Michael Reaves/Getty Images) | Getty Images 
-
-class="has-text-align-none"\>The No.],
-  lead-pre: [],
-  lead-cap: [C],
-  lead-rest: [HICAGO, ILLINOIS - MARCH 29: Head coach Dusty May of the Michigan Wolverines reacts against the Tennessee Volunteers during the second half in the Elite Eight of the 2026 NCAA Men's Basketball Tournament at the United Center on March 29, 2026 in Chicago, Illinois. (Photo by Michael Reaves/Getty Images) | Getty Images],
-  body-paragraphs: (
-  [class="has-text-align-none"\>The No. 1-seed Michigan Wolverines and No. 1-seed Arizona Wildcats will duke it out on Saturday in the Final Four in Indianapolis with a spot in the National Championship Game on the line. No pressure or anything.],
-  [class="has-text-align-none"\>We are now learning more details about when the game will begin and how we can watch it. The Wolverines and Wildcats will tip-off around 9 p.m. or so and can be viewed on TBS, TNT and truTV. No. 2-seed UConn and No. 3-seed Illinois will be the first game of the day and begin at 6:09 p.m.],
-  [dir="ltr" lang="en"\>2026 NCAA Division I Men’s Basketball Championship Final Four Tips Off Saturday, April 4, on TBS, TNT and truTV pic.twitter.com/OjuL56D0Jn],
-  [— March Madness Men’s Basketball TV (\@MM\_MBB\_TV) March 29, 2026],
-  [No. 16-seed Long Island: 92-58],
-  [No. 9-seed Utah State: 78-66],
-  [No. 4-seed Arkansas: 109-88],
-  [No. 2-seed Purdue: 79-64],
-  [class="has-text-align-none"\>The Wildcats are led by Big 12 Player of the Year, senior guard Jaden Bradley. He averages 13.3 points, 4.4 assists and 3.5 rebounds per game while shooting 46 percent from the field and 39.4 from beyond the arc. Arizona also has a pair of highly talented freshmen in guard Brayden Burries and forward Koa Peat. Burries leads the team in scoring (16.1 points per game, 50 percent from the field, 40.2 percent from three) while Peat isn’t far behind (14.1 points per game, 54.4 percent from the field).],
-  [class="has-text-align-none"\>But Big Ten Player of the Year and Most Outstanding Player of the Midwest Region, Yaxel Lendeborg, is going to give the Wildcats all they can handle. After only scoring nine points in the Round of 64 victory over Howard, he lit up the scoreboard with 25 against Saint Louis, 23 against Alabama and 27 against Tennessee.],
-  [dir="ltr" lang="en"\>YAXEL ARE YOU SERIOUS WITH THAT!? 🤯 pic.twitter.com/0vNPqb9U5x],
-  [— NCAA March Madness (\@MarchMadnessMBB) March 29, 2026],
-),
-  edited-for-length: false,
-)
-
-#pull-quote([class="wp-block-embed\_\_wrapper"\>  class="twitter-tweet"\>  dir="ltr" lang="en"\>2026 NCAA Division I Men’s Basketball Championship Final Four Tips Off Saturday, April 4, on TBS, TNT and truTV pic.], [Yahoo Sports])
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [SRA Status Update],
   author: [PubMed Health],
   source-name: [PubMed Health],
@@ -75,12 +42,11 @@ class="has-text-align-none"\>The No.],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    section-label([Features])
-    standard-article(
+    #section-label([Features])
+    #standard-article(
   title: [dbSNP BUILD 149 Release],
   author: [PubMed Health],
   source-name: [PubMed Health],
@@ -100,13 +66,20 @@ class="has-text-align-none"\>The No.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Build 135: Human SNPSubSNPLinkHistory.bcp.gz FTP  file update],
   author: [PubMed Health],
   source-name: [PubMed Health],
   images: (),
   paragraphs: (
-  [class="MsoNormal" style="margin: 0in 0in 0pt;"\> The database file SNPSubSNPLinkHistory.bcp.gz has been updated on the FTP site to record the history of submitted SNP (ss) numbers that were withdrawn by submitter when build 135 was released.],
+  [The database file SNPSubSNPLinkHistory.bcp.gz has been updated on the FTP site to record the history of submitted SNP (ss) numbers that were withdrawn by submitter when build 135 was released.],
+  [ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/human\_9606/database/organism\_data/SNPSubSNPLinkHistory.bcp.gz],
+  [Please contact snp-admin\@ncbi.nlm.nih.gov if you have any questions or concerns.],
+  [Regards,],
+  [dbSNP Production Team],
+  [February 15, 2012],
+  [National Center for Biotechnology Information (NCBI)],
+  [National Library of Medicine, National Institutes of Health, Bethesda, MD, USA.],
 ),
   insert-map: (:),
   word-count: 120,
@@ -116,14 +89,14 @@ class="has-text-align-none"\>The No.],
 
   ],
   [
-    brief-group((
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass6FABB08708544F2E9BA9594A7FD8A030"\>
+    #brief-group((
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [
  Oral Immunotherapy for Induction of Tolerance and Desensitization in Peanut-Allergic Children (IMPACT)
   
  ( study page 
  |
  release notes )])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClassFEE0D2DAB3054952901477E23BC1E2A2"\> NHLBI TOPMed: MWCCS: Sex Differences in the Role of Multi-Omics in HIV-Associated Carotid Artery Atherosclerosis
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [NHLBI TOPMed: MWCCS: Sex Differences in the Role of Multi-Omics in HIV-Associated Carotid Artery Atherosclerosis
   
  ( 
  study page 
@@ -132,7 +105,7 @@ class="has-text-align-none"\>The No.],
  
  release notes )
 ​])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass5265D3C7AB24406B82293CD12A4FC3F8"\>
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [
 
 New citations are now added to PubMed seven days a week. Previously, PubMed was updated five times a week.])],
       [#brief-item([PubMed Health], source-name: [PubMed Health], [The following new journal from International Scientific Literature, Inc. has been added to PubMed Central:
@@ -146,7 +119,7 @@ New citations are now added to PubMed seven days a week. Previously, PubMed was 
 Thanks,
 
 PubMed Central])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClassAA588A461F8E489F9F56EBCAA8D96E60"\>​ Molecular Signatures of DCIS to Invasive Progression for Basal-Like Breast Cancers: An Integrated Mouse Model and Human Tumor Study
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [​ Molecular Signatures of DCIS to Invasive Progression for Basal-Like Breast Cancers: An Integrated Mouse Model and Human Tumor Study
   
  ( 
  study page 
@@ -162,7 +135,7 @@ ISSN: 1687-7063 (print) 1687-7071 (electronic)
  http:\/\/www.pubmedcentral.nih.gov/tocrender.fcgi?journal=882&action=archive 
 Archive includes: v. 2008(2008). 
 Note: There is no embargo delay for this title.])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClassED58E6F70AE84B388C405038110EB72C"\>International Cancer Proteogenome Consortium (ICPC): Proteogenomics of Oral Squamous Cell Carcinoma in Taiwan
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [International Cancer Proteogenome Consortium (ICPC): Proteogenomics of Oral Squamous Cell Carcinoma in Taiwan
   
  ( study page 
  |
@@ -192,43 +165,43 @@ URL: http:\/\/www.pubmedcentral.gov/tocrender.fcgi?journal=874
 
 Archive includes 8(2007) to the present
 Note: There is no embargo delay for this journal])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="MsoNormal" style="margin: 0in 0in 10pt; vertical-align: top;"\> The Bookshelf's collection of NIH-funded reports from the National Academies has been updated with one new report. 
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [The Bookshelf's collection of NIH-funded reports from the National Academies has been updated with one new report. 
 
-class="MsoNormal" style="margin: 0in 0in 10pt; vertical-align: top;"\> 2012 
+2012 
 
-class="MsoNormal" style="margin: 0in 0in 0pt;"\> Clustering for 21st Century Prosperity: Summary of a Symposium 
+Clustering for 21st Century Prosperity: Summary of a Symposium 
 National Research Council (US)
  PDF only 
 
-class="collection-member" style="margin: auto 0in;"\> See the entire National Academies Collection on Bookshelf \>\>])],
+See the entire National Academies Collection on Bookshelf \>\>])],
       [#brief-item([Laurence Edmondson], source-name: [ESPN Top Stories], [Yes, the timing of a safety car helped Kimi Antonelli to Sunday's win at the Japanese GP, but he was still the fastest car on track when it happened.])],
       [#brief-item([PubMed Health], source-name: [PubMed Health], [The following journal has been added to the PubMed Central archive:
 Journal Title: Gastroenterology and Hepatology
 ISSN: 1554-7914 (print), 
 URL: http:\/\/www.ncbi.nlm.nih.gov/pmc/journals/1204\/ 
 Archive includes: v. 5 (2009) to v. 6  (2010). Prior content is forthcoming and will have no delay.])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="MsoNormal" style="margin: 0in 0in 10pt; vertical-align: top;"\> The Bookshelf's collection of NIH-funded reports from the National Academies has been updated with one report from 1998. 
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [The Bookshelf's collection of NIH-funded reports from the National Academies has been updated with one report from 1998. 
 
-class="MsoNormal" style="margin: 0in 0in 0pt;"\> 
 
-class="MsoNormal" style="margin: 0in 0in 10pt; vertical-align: top;"\> 1998 
 
-class="MsoNormal" style="margin: 0in 0in 0pt;"\> Dietary Reference Intakes for Thiamin, Riboflavin, Niacin, Vitamin B6, Folate, Vitamin B12, Pantothenic Acid, Biotin, and Choline. 
+1998 
 
-class="MsoNormal" style="margin: 0in 0in 0pt;"\> Institute of Medicine (US) Standing Committee on the Scientific Evaluation of Dietary Reference Intakes and its Panel on Folate, Other B Vitamins, and Choline.])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass331A91A8A48643EF8B3751154373D8D2"\> Acute Respiratory Distress Syndrome Clinical Network: Fluid and Catheter Treatment Trial (ARDSNet FACTT-BioLINCC)
+Dietary Reference Intakes for Thiamin, Riboflavin, Niacin, Vitamin B6, Folate, Vitamin B12, Pantothenic Acid, Biotin, and Choline. 
+
+Institute of Medicine (US) Standing Committee on the Scientific Evaluation of Dietary Reference Intakes and its Panel on Folate, Other B Vitamins, and Choline.])],
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [Acute Respiratory Distress Syndrome Clinical Network: Fluid and Catheter Treatment Trial (ARDSNet FACTT-BioLINCC)
   
  ( study page 
  |
  release notes )])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass06FB9B6396824BE09F5CE1BD5033C99C"\>
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [
 
 dbVar December 2014 Release
 
 Summary:
 
  December dbVar data release. Initial release of Forsberg2015, which was renamed to Dumanski2014. Added BioProject and Biosample accessions and links to multiple studies. ​])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass7FF9AA7C981A44CA9D1853EEC08849DD"\> Collaborative Cohort of Cohorts for COVID-19 Research (C4R): Jackson Heart Study (JHS)
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [Collaborative Cohort of Cohorts for COVID-19 Research (C4R): Jackson Heart Study (JHS)
   
  ( 
  study page 
@@ -238,7 +211,7 @@ Summary:
  release notes )
 
 ​])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass2CF2D4586FC3484FA4ED0354F880BE74"\> Contribution of Systemic and Somatic Factors to Clinical Response and Resistance in Urothelial Cancer
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [Contribution of Systemic and Somatic Factors to Clinical Response and Resistance in Urothelial Cancer
   
  ( 
  study page 
@@ -246,7 +219,7 @@ Summary:
  |
  
  release notes )])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClassD90F1C3EB85F4E7B911A9A5342FA73DA"\> Autism Genome Project (AGP) Consortium - GWAS - Stage I and II
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [Autism Genome Project (AGP) Consortium - GWAS - Stage I and II
   
  ( 
  study page 
@@ -255,7 +228,7 @@ Summary:
  
  release notes )])],
       [#brief-item([BBC Sport], source-name: [BBC Sport], [Four-time F1 world champion Max Verstappen tells BBC Sport he is "not enjoying" the sport after changes to the rules this season.])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass2E7FE14216694F7983FA4F6DAA938284"\> Center for Common Disease Genomics \[CCDG\] - Cardiovascular: Cardiology Biobanking for Biomarker Discovery
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [Center for Common Disease Genomics \[CCDG\] - Cardiovascular: Cardiology Biobanking for Biomarker Discovery
   
  ( 
  study page 
@@ -264,7 +237,7 @@ Summary:
  
  release notes )])],
       [#brief-item([PubMed Health], source-name: [PubMed Health], [NIH RECOVER: A Multi-Site Observational Study of Post-Acute Sequelae of SARS-CoV-2 Infection in Adults ( study page | release notes )])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass5CD4102A4D31440881DE637B2C822FC6"\> Slim Initiative in Genomic Medicine for the Americas (SIGMA): Diabetes in Mexico Study (DMS)
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [Slim Initiative in Genomic Medicine for the Americas (SIGMA): Diabetes in Mexico Study (DMS)
   
  ( 
  study page 
@@ -272,7 +245,7 @@ Summary:
  |
  
  release notes )])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass253441D57B104C13B44AD667767F5A75"\>​ Ipilimumab and Decitabine in Treating Patients With Relapsed or Refractory Myelodysplastic Syndrome or Acute Myeloid Leukemia
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [​ Ipilimumab and Decitabine in Treating Patients With Relapsed or Refractory Myelodysplastic Syndrome or Acute Myeloid Leukemia
   
  ( 
  study page 
@@ -293,7 +266,7 @@ ISSN: 1061-1711 (print) 1615-5939 (electronic)
 URL: http:\/\/www.pubmedcentral.gov/tocrender.fcgi?journal=944 
 Archive includes 16(2007) to the present
 Current content is forthcoming and will have a 12-month embargo delay.])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass58941C8B5E09478696687FB5AA105A5E"\>
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [
 
  Announcing New dbVar FTP Directory Structure 
 
@@ -312,7 +285,7 @@ renamed ".tab" files to ".tsv"
 moved old human and all non-human files to  archive 
 
 Refer to  README.ftp  for full details of the new GVF, VCF, TSV, and XML files.])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass25BB58B778724E0E9C78A0FAF89CDB34"\> Genomic and Genetic Characterization of Prostate Tumors Treated with Neoadjuvant Intense Androgen Deprivation Therapy
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [Genomic and Genetic Characterization of Prostate Tumors Treated with Neoadjuvant Intense Androgen Deprivation Therapy
   
  ( 
  study page 
@@ -320,7 +293,7 @@ Refer to  README.ftp  for full details of the new GVF, VCF, TSV, and XML files
  |
  
  release notes )])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass8679A2C10336447999EB5658CC2E80AE"\> Acute Respiratory Distress Network (ARDSNet) Study 04 Assessment of Low Tidal Volume and Elevated End-Expiratory Volume to Obviate Lung Injury (ALVEOLI-BioLINCC)
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [Acute Respiratory Distress Network (ARDSNet) Study 04 Assessment of Low Tidal Volume and Elevated End-Expiratory Volume to Obviate Lung Injury (ALVEOLI-BioLINCC)
   
  ( 
  study page 
@@ -335,7 +308,7 @@ Refer to  README.ftp  for full details of the new GVF, VCF, TSV, and XML files
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [A double prix week],
   author: [Petr Mitrichev],
   source-name: [Petr Mitrichev (competitive programming)],
@@ -354,14 +327,13 @@ Refer to  README.ftp  for full details of the new GVF, VCF, TSV, and XML files
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [New | 7 studies released in batch on 2024-03-08],
   author: [PubMed Health],
   source-name: [PubMed Health],
   images: (),
   paragraphs: (
-  [class="ExternalClass685FC6ED71B047788F9B91143BA46D7C"\>
- phs003362.v1.p1 | 
+  [phs003362.v1.p1 | 
 Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Supported Employment to Create a Community Culture of Rapid Testing Among People Who Inject Drugs: PeerConnect2Test 
 ( 
  study page | 
@@ -412,5 +384,11 @@ Rapid Acceleration of Diagnostics - Underserved Populations (RADx-UP): Impact of
 
   ],
 ), ruled-indices: (1,))
+
+// --- Notable Quotes ---
+#block(above: 0.2in, stroke: (top: 1pt + luma(26)), inset: (top: 0.1in))[
+  #pull-quote([class="twitter-tweet"\> 2026 NCAA Division I Men’s Basketball Championship Final Four Tips Off Saturday, April 4, on TBS, TNT and truTV pic.], [Yahoo Sports])
+
+]
 
 #colophon([The Sun], [Vol. 1, No. 029], [2026-03-30])

@@ -21,86 +21,8 @@
 #masthead([The Journal], [Vol. 1, No. 028], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Darryl McDaniels of Run-DMC on Sobriety: 'I'm Not Afraid to Face Myself'],
-  kicker: [Cover Story],
-  author: [Healthline],
-  source-name: [Healthline],
-  deck: [Twenty years sober, Run-DMC’s Darryl McDaniels opens up about his recovery journey.],
-  lead-pre: [],
-  lead-cap: [C],
-  lead-rest: [ourtesy of Stand Together],
-  body-paragraphs: (
-  [Rock & Roll Hall of Famer Darryl “DMC” McDaniels, of the legendary hip-hop group Run-DMC, is speaking out about sobriety.],
-  [McDaniels shares his journey with addiction, his mental health, and finding sobriety over 20 years ago.],
-  [The iconic rapper teamed up with 1 Million Strong to unite the music, sports, and entertainment industry and its fans to foster meaningful connections at cultural events.],
-  [At the height of global fame, Darryl “DMC” McDaniels from the legendary hip-hop band Run-DMC quietly battled addiction , depression , and identity loss.],
-  [“I never wanted to be in show business… I was just writing rhymes. I was a comic book kid. I had a great imagination. So it was an easy transition from rapping in my basement to rapping onstage in front of a lot of people,” he told Healthline.],
-  [When Run-DMC’s career skyrocketed, and the pressure of churning out hits intensified, McDaniels said the rise to stardom took a toll.],
-  [“\[People\] started saying, ‘You gotta have hit records. You gotta tour. You gotta be on the radio. You gotta make money.’ And I started worrying about their expectations. I started worrying about letting people down instead of worrying about how I was feeling,” he said.],
-  [That’s when anxiety , nervousness, and confusion set in.],
-  [“And I thought, ‘Oh, I need something to help me.’ Olde English 800. Johnny Walker. Jack Daniel’s. Jim Beam. I thought they could be my friends,” said McDaniels. “It wasn’t Run-DMC itself. It was the expectations. I started reaching for things outside of me to help me navigate what I was feeling.”],
-  [After battling addiction, anxiety, and depression for decades, he checked himself into rehab in 2004. Since then, McDaniels has lived a life of sobriety and made it his mission to spread awareness around mental health.],
-  [His latest endeavor is a partnership with 1 Million Strong , an impact initiative working to transform the way society thinks about mental health, addiction, and recovery by building sober-supportive communities within the music world and beyond.],
-  [Substance misuse affects 56% of music industry],
-  [Substance misuse is widespread in the United States. In 2023, nearly 50 million Americans ages 12 and older met criteria for a substance use disorder.],
-  [In the music industry, more than half of professionals report problematic alcohol or drug use. What’s more, around 34% of touring music professionals experience clinical depression.],
-  [“A major misunderstanding is the belief that strength, success, or intelligence protects people from mental illness or addiction,” J. Craig Allen , MD, Vice President of Addiction Services at Hartford HealthCare, told Healthline. “Mental health problems and addiction are health conditions, not a moral flaw.”],
-  [While improvements and setbacks with addiction and mental health occur, he added that for mental health and substance use disorder, there is a misperception that when that happens, a treatment has “failed.”],
-  [“In reality, recovery is best understood as an active maintenance phase, not a cure. Ongoing vulnerability should be normalized without minimizing consequences, and early warning signs should prompt rapid response, not shame or thoughts of defeat,” said Allen.],
-  [Connection is the opposite of addiction],
-  [In addition to medications and psychotherapy , sober-supportive communities are important for recovery and reduce multiple risks for return to use by:],
-  [reducing isolation],
-  [creating early detection systems for increased risk flags],
-  [acting as a safety net network by including peers, family, clinicians, and sponsors],
-  [“It’s often said that the opposite of addiction is connection. Reliable connection is key,” Allen said.],
-  [McDaniels agreed. Providing opportunities for connection is why he teamed up with 1 Million Strong.],
-  [“1 Million Strong lets people know you don’t have to go through this alone. You don’t have to hang with Johnnie Walker and Jack Daniel’s,” McDaniels said.],
-  [“There’s a whole community that’s always been here, but nobody talked about it. They give me a place to be.”],
-  [Darryl McDaniels talks sobriety],
-  [Healthline spoke with the Rock & Roll Hall of Famer to learn more about his journey with addiction and mental health, and what he wants others to know about sobriety and his life’s greatest achievement.],
-  [This interview has been edited and condensed for clarity and length.],
-  [Did you feel pressured to drink and do drugs?],
-  [McDaniels : In my community, and especially in the show business community, harmful, destructive behavior is celebrated. If somebody could take 50 shots at the bar, people would say, “Give him more.”],
-  [When I was growing up, you were celebrated if you smoked a lot of weed or drank a lot. I was drinking a case of Olde English a day, 40-ounce bottles. Nobody said anything was wrong. They thought it was heroic.],
-  [When you get into show business, you can get all the weed, alcohol, and drugs you want, and nobody notices it’s a problem until it’s too late. There was a community that didn’t do all that stuff, but it wasn’t talked about. It was considered uncool.],
-  [Have you always lived with anxiety and depression?],
-  [McDaniels: Yeah. It was always there. But when you’re a kid, you have outlets. For me it was comic books, drawing, imagination. When you get into show business, it’s always one, two, three, this is what you need to do.],
-  [The relief that’s readily available is drugs. You don’t notice all the other things that are there for you, so you don’t have to do that. I’ve always had anxiety. Even today, I still get scared before I go onstage.],
-  [How did therapy and rehab enter your life?],
-  [McDaniels: When I was 35, during my alcoholic, suicidal depression, I found out I was adopted. Everybody knew except me — my mother, my parents, my whole family, my teachers, even the nuns at my Catholic school. That made me drink more because I couldn’t deal with those emotions.],
-  [I felt betrayed and confused. I also had pancreatitis. I was depressed, suicidal, and drinking. What gave me the confidence to go get sober was meeting another adopted person. It made me realize I wasn’t alone.],
-  [I knew if I was going to search for my birth mother, I had to be sober. That pushed me to rehab. Once I got there, I discovered therapy, which is the most powerful thing a person can do. I was diagnosed with suppressed emotions in rehab. Therapy did what Jack Daniel’s and Johnnie Walker couldn’t do for me.],
-  [Did you have any positive influences in the music industry?],
-  [McDaniels: Yeah. The story I always tell is from 1988. We were on tour — Run-DMC, EPMD, Public Enemy — and we were standing on the side of the stage watching Eric B. & Rakim. The conversation came up: what is making hip hop so cool right now and good for us?],
-  [We talked about the money, playing arenas, sneaker deals, making movies. Then it went to, man, we could get all the weed we want, all the beer and liquor and cigarettes and cocaine that we want. We were touring, living a drugs-and-rock-and-roll lifestyle. Everybody’s hotel bathtub was filled with ice and beer. We were all happy.],
-  [Then it was Chuck D’s turn to speak. Chuck was probably like 24 years old. And with that Godly voice, he said, “I never got high a day in my life.” That hit me because he’s my favorite rapper of all time. I went back to my dressing room and sat down thinking, if he never got high a goddamn day in his life, why does he rap so good? That totally blew my mind.],
-  [Fast forward 30 years, and we’re on a panel in New York City talking about sobriety and recovery. The moderator is Henry Rollins. After the panel, I asked Henry how long he’d been sober, and he said, “Oh, DMC, I’ve never gotten high a damn day in my life.”],
-  [That took me right back to Chuck. It made me realize there is a community of people who are powerful, aggressive, creative, and successful, who go through all the ups and downs and never had to get high a damn day in their lives. That community does exist. I needed to know that then. And the funny thing is, Henry said Chuck’s a very good friend of his.],
-  [What do you hope others learn from your experience?],
-  [McDaniels: When you’re going through something, you feel like you’re the only one in the world going through it.],
-  [Once I realized there were other people struggling like me, and doing something about it, I could do something about it too. It took me 30 years to find healing and recovery. I want people to know they don’t have to wait that long.],
-  [Do you hope to address stigma around mental health?],
-  [McDaniels: Yes. Stigma exists because people talk about problems but don’t give solutions. 1 Million Strong says you can still go to concerts, still live your life, and still have support.],
-  [If you remove guilt and shame , you remove stigma.],
-  [Is it rewarding to perform sober?],
-  [McDaniels: Yes. I wasn’t always high when I performed. I was using substances to alter my feelings.],
-  [Now I see things I was too drunk to see before. I’m still scared to go onstage. I’d rather be in my basement rhyming in a mirror, but now I face it instead of numbing it.],
-  [What strategies or self-care techniques do you use now?],
-  [McDaniels: I go to the gym. I exercise . I got back into comic books. All the stuff people thought wasn’t cool when I was young is actually the strongest stuff you can do.],
-  [When I went to rehab, I was diagnosed with suppressed emotions. Now I’m not afraid to face myself.],
-  [Looking back, what’s the biggest lesson you’ve learned?],
-  [McDaniels: There’s something powerful about admitting you’re scared, afraid, or confused. When you admit you need help, everything that exists to help you will come to you.],
-  [My greatest achievement isn’t records or awards; it’s that I’m living proof you can beat whatever you’re struggling against.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [Report from Jerusalem: As Israel Keeps Bombing Iran, Palestinians Face Growing Violence in West Bank],
   author: [Democracy Now!],
   source-name: [Democracy Now!],
@@ -115,11 +37,9 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [This Sunshine Week, Florida reflects an alarming national trend of blocking the public’s access to information],
   author: [David Cuillier, Director of the  Brechner Freedom of Information Project, College of Journalism and Communications, University of Florida],
   source-name: [The Conversation (Politics)],
@@ -160,7 +80,7 @@
   [Patrice McDermott directed Open the Government from 2006 to 2017 and pointed in 2007 to an underlying tension throughout government: “the ability – and willingness – to harness the promise of digital information for public access and accountability while not abusing its potential for control of that information.”],
   [Today, she writes that, as Benjamin Franklin put it, we “have a Republic … if (we) can keep it” and are committed to the fight for our constitutional form of government.],
   [Perhaps advances can be made to reverse the secrecy trend and carry out the intentions of the Freedom of Information Act, as expressed by Lyndon B. Johnson upon its adoption nearly 60 years ago: “I signed this measure with a deep sense of pride that the United States is an open society in which the people’s right to know is cherished and guarded.”],
-  [class="fine-print"\> David Cuillier has received funding from the Democracy Fund and John S. and James L. Knight Foundation to study the state of freedom of information. He is a board member of the National Freedom of Information Coalition and he coordinates national Sunshine Week.],
+  [David Cuillier has received funding from the Democracy Fund and John S. and James L. Knight Foundation to study the state of freedom of information. He is a board member of the National Freedom of Information Coalition and he coordinates national Sunshine Week.],
 ),
   insert-map: (:),
   inline-pq: pull-quote([This led some agencies, such as the Department of Energy, to apply unorthodox practices, including closing out pending requests.], [David Cuillier, Director of the  Brechner Freedom of Information Project, College of Journalism and Communications, University of Florida]),
@@ -170,10 +90,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Pete Hegseth is working hard to make sure the public hears only good news about Iran war],
   author: [Kathy Kiely, Professor and Lee Hills Chair of Free Press Studies, University of Missouri-Columbia],
   source-name: [The Conversation (Politics)],
@@ -221,7 +139,7 @@
   [But restrictions on press freedom have a corrosive effect. We already have seen how Trump, using lawsuits and licensing threats, has used his power to make corporate media owners think twice about pursuing news he doesn’t like.],
   [Seasoned Pentagon reporters will still find ways to get to sources they already have. But Hegseth’s tactic of blocking press access to the military keeps reporters from developing new sources and keeps new reporters from building the relationships they need to become seasoned Pentagon reporters.],
   [Americans have long been able to understand the triumphs and tribulations of American troops at war, and to make intelligent decisions about whether they approve of a war’s cost, because a free press has been able to tell the story – good or bad. That tradition is now at risk.],
-  [class="fine-print"\> Kathy Kiely does not work for, consult, own shares in or receive funding from any company or organization that would benefit from this article, and has disclosed no relevant affiliations beyond their academic appointment.],
+  [Kathy Kiely does not work for, consult, own shares in or receive funding from any company or organization that would benefit from this article, and has disclosed no relevant affiliations beyond their academic appointment.],
 ),
   insert-map: (:),
   word-count: 1527,
@@ -229,10 +147,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [People Who Eat More Red Meat May Have Higher Risk of Type 2 Diabetes],
   author: [Healthline],
   source-name: [Healthline],
@@ -286,11 +202,10 @@
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Meta & Google Found Liable in Landmark Cases for Knowingly Causing Harm to Young People],
   author: [Democracy Now!],
   source-name: [Democracy Now!],
@@ -307,7 +222,7 @@
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Headlines for March 27, 2026],
   author: [Democracy Now!],
   source-name: [Democracy Now!],
@@ -336,7 +251,7 @@
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([Mirit Eyal-Cohen and Jay A. Soled, opinion contributor], source-name: [The Hill (general)], [The tax code should make clear that activities fused with fun, excitement and personal enjoyment are never an occasion for a tax deduction.])],
       [#brief-item([Sarah Davis], source-name: [The Hill (general)], [Reza Pahlavi, the exiled crown prince of Iran, said freedom in Iran is “within reach” in a speech at the Conservative Political Action Conference (CPAC) on Saturday.  “A free Iran is not a fantasy,” Pahlavi said. “A free Iran is within reach right now, but as we all know, freedom never comes free.” The son…])],
       [#brief-item([Jules Yap], source-name: [IKEA Hackers], [A new IKEA study has confirmed what many of us have suspected while staring into cluttered cabinets: our kitchens just aren’t working for us. The good news? You don’t need a full renovation to turn things around. According to the IKEA Cooking & Eating Report 2026, one of the largest studies of its kind, surveying over 31,000 people across 31 countries, fewer than one in three of us are actually happy with our kitchens. And the number one culprit? Space. \[…\]])],
@@ -385,8 +300,7 @@ The photos – which were removed, reinstated and then removed again by the plat
   ],
 ), ruled-indices: (1, 2,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Ground Invasion of Iran Could Be "Suicide Mission" for U.S.: Ex-Army Intelligence Analyst],
   author: [Democracy Now!],
   source-name: [Democracy Now!],
@@ -401,6 +315,5 @@ The photos – which were removed, reinstated and then removed again by the plat
   debug-mode: false,
 )
 
-}
 
 #colophon([The Journal], [Vol. 1, No. 028], [2026-03-30])

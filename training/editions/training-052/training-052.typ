@@ -21,50 +21,8 @@
 #masthead([The Critical Dispatch], [Vol. 1, No. 052], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Meet Esther Jones, The Black Performer Who Inspired ‘Betty Boop’],
-  kicker: [Cover Story],
-  author: [Bernadette Giacomazzo],
-  source-name: [All That's Interesting],
-  deck: [class="dropcaps"\>When it comes to hidden figures in Black history , few have a legacy as instantly recognizable as Esther Jones.],
-  lead-pre: [],
-  lead-cap: [A],
-  lead-rest: [ primarily Harlem-based jazz singer known as “Baby Esther” in the early 1900s, Jones became the inspiration for the character of Betty Boop — but never received a penny in compensation.],
-  body-paragraphs: (
-  [And, despite her relationship to the internationally-known character, Jones’s life — and death — remain shrouded in mystery. In fact, few recordings of her work remain, and what little is known about her came out in a lawsuit that exposed the real Betty Boop’s true origins once and for all.],
-  [This is the little-known true story of “Baby” Esther Jones, the original “Black Betty Boop.”],
-  [The Origins Of Esther Jones, The Black Betty Boop],
-  [Born in 1919 or 1920 in Chicago, Illinois, Esther Jones was a born performer who first took the stage at age 4. Her parents, Gertrude and William, were her original managers. In her performances, Jones danced, made funny faces, and used the phrase, “Boop, Boop-a-Doop.” But word of Jones’s performances quickly swept New York City, and it wasn’t long before she was performing regularly in the Big Apple.],
-  [In 1924, when she was barely 4 years old, Lou Bolton stepped in as her manager, and Jones’ bookings — and profile — increased exponentially. A 1928 article in Variety marveled at Jones — by then 7 years old and going by “Baby Esther” — and her performance at the Everglades Nightclub in New York City.],
-  [“The child is small for her age and said to be an exceptional black-bottom dancer,” read the report. “The crowd in the place continually applauded the little dancer.”],
-  [Jones also had a booking agent named Tony Shayne, who regularly booked another aspiring singer and dancer named Helen Kane. As the Supreme Court of the State of New York would later find out, Kane was in attendance at the aforementioned Everglades Nightclub performance, where she had front-row seats with Shayne and Bolton.],
-  [And Jones’s performance inspired Kane to incorporate it into her own act — an act that would forever be immortalized in the Betty Boop cartoons.],
-  [The Infamous Betty Boop Trial],
-  [In the 1920s — and beyond — it was quite common for white performers to steal the acts of their Black counterparts without credit or compensation. But, whereas the Black performers of today can rally people to their cause using the power of social media, Black performers of yester-year — like Esther Jones — weren’t quite as lucky.],
-  [So, Helen Kane continued to swipe her whole act from “Baby Esther,” and became infinitely more popular than the original. Kane became so popular, in fact, that when the Betty Boop cartoon debuted in 1930, it all but completely mimicked Kane’s style.],
-  [And as the cartoon became wildly successful, Kane felt slighted by the “Boop, Boop-A-Doop” — and without a shred of self-awareness or irony, proceeded to file a \$250,000 lawsuit against Max Fleischer, Betty Boop’s creator, just two years after the cartoon vixen debuted on the big screen.],
-  [But Kane’s lawsuit ultimately backfired on her, because Bolton — Jones’ manager — was called to testify on behalf of Fleischer and the Paramount Publix Corp. A 1934 article in The New York Times reported on Bolton’s testimony, wherein he stated that he coached “a little Negro girl” to sing the “Boop, Boop-A-Doop” that Betty Boop ultimately made famous.],
-  [Interestingly, Kane’s attorney cross-examined Bolton and asked whether “Baby Esther” had been paid for her loss of revenue — and Bolton confirmed that she had not.],
-  [Ultimately, the judge ruled against Kane, and she walked away without a dime. Historian Charles Solomon summed up the judgment succinctly: “The Fleischers won the case by proving that a Black entertainer named Baby Esther had previously used the phrase before either Kane or \[Mae\] Questel \[the voice actress who provided the voice for Betty Boop in the original cartoons\].”],
-  [In other words, Esther Jones was the original Betty Boop.],
-  [Baby Esther Lee Jones’ Tragic Anonymity Despite Being The Original Betty Boop],
-  [class="wp-caption-text" id="caption-attachment-403168"\> Wikimedia Commons A photograph, circa 1930, of a woman often erroneously said to be Esther Lee Jones, while very few confirmed photos of Jones herself are known to exist today.],
-  [Very little is known about Esther Jones’s life, or her death, after the infamous Betty Boop trial. Many photos alleged to be of “Baby Esther” were actually of other performers named Esther, and “Baby Esther” is most commonly confused with jazz singer Little Esther Phillips.],
-  [According to Harlem World , Baby Esther died in 1984 from liver and kidney complications brought on by a drug overdose. But according to Essence , Jones is believed to have died shortly after the Kane vs. Fleischer trial concluded.],
-  [Regardless of the truth about Jones’ later life and death, the fact that her story continues to be so obscure in 2021 is a testament to how truly “hidden” she is as a historical figure. Despite being the original Betty Boop — inspiring one of the most enduring cartoons of the 20th and 21st centuries — Jones’ own life is all but an enigma, and neither she nor her family ever received a penny for their contributions.],
-  [As of 2021, two subsidiaries of Paramount claim ownership to Betty Boop. Olive Films retains the home video rights to the cartoon, while Trifecta retains the television rights. Vintage Betty Boop items can fetch hundreds of dollars on auction sites, and there are various festivals and cosplay conventions that celebrate the cartoon character.],
-  [But none of it would have been possible without Esther Jones, the original Betty Boop, with a voice that reverberates through the ages.],
-  [Now that you’ve read the true story of “Baby Esther” Jones, the “Black Betty Boop,” read all about Rebecca Lee Crumpler , the first Black woman to become a doctor in American history. Then, learn all about the tragic story of Juana Maria , who’s life inspired the classic novel Island of the Blue Dolphins .],
-  [The post Meet Esther Jones, The Black Performer Who Inspired ‘Betty Boop’ appeared first on All That's Interesting .],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [dbVar August 2020 Release],
   author: [PubMed Health],
   source-name: [PubMed Health],
@@ -122,28 +80,205 @@ FTP: https:\/\/ftp.ncbi.nlm.nih.gov/pub/dbVar/data/Homo\_sapiens/by\_study],
   debug-mode: false,
 )
 
-  #pull-quote([See the latest statistics for nstd102 in  \[Summary of nstd102 (Clinical Structural Variants)|/dbvar/content/clinvar\_summary\].], [PubMed Health])
+#pull-quote([See the latest statistics for nstd102 in  \[Summary of nstd102 (Clinical Structural Variants)|/dbvar/content/clinvar\_summary\].], [PubMed Health])
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Build 136: FTP update for build specific SQL files for non-human organisms],
   author: [PubMed Health],
   source-name: [PubMed Health],
   images: (),
-  paragraphs: (),
+  paragraphs: (
+  [The SQL files below have been updated on dbSNP FTP site for the following organisms.],
+  [Arabidopsis (taxid 3702)],
+  [Chimpanzee (taxid 9598)],
+  [Macaque(taxid 9544)],
+  [Nematode (taxid 6239)],
+  [Pig (taxid 9823)],
+  [Rat (taxid 10116)],
+  [Orangutan (taxid 9601)],
+  [Zebrafish (taxid 7955)],
+  [The build specific files (b136\_\*) were missing from the regular build dumps and have been restored for each organism.],
+  [Base FTP URL - ftp:\/\/ftp.ncbi.nih.gov/snp/organisms/],
+  [./arabidopsis\_3702/database/organism\_data],
+  [./arabidopsis\_3702/database/organism\_data/b136\_ContigInfo\_101.bcp.gz],
+  [./arabidopsis\_3702/database/organism\_data/b136\_ContigInfo\_101.bcp.gz.md5],
+  [./arabidopsis\_3702/database/organism\_data/b136\_MapLinkInfo\_101.bcp.gz],
+  [./arabidopsis\_3702/database/organism\_data/b136\_MapLinkInfo\_101.bcp.gz.md5],
+  [./arabidopsis\_3702/database/organism\_data/b136\_MapLink\_101.bcp.gz],
+  [./arabidopsis\_3702/database/organism\_data/b136\_MapLink\_101.bcp.gz.md5],
+  [./arabidopsis\_3702/database/organism\_data/b136\_SNPChrPosOnRef\_101.bcp.gz],
+  [./arabidopsis\_3702/database/organism\_data/b136\_SNPChrPosOnRef\_101.bcp.gz.md5],
+  [./arabidopsis\_3702/database/organism\_data/b136\_SNPContigLoc\_101.bcp.gz],
+  [./arabidopsis\_3702/database/organism\_data/b136\_SNPContigLoc\_101.bcp.gz.md5],
+  [./arabidopsis\_3702/database/organism\_data/b136\_SNPContigLocusId\_101.bcp.gz],
+  [./arabidopsis\_3702/database/organism\_data/b136\_SNPContigLocusId\_101.bcp.gz.md5],
+  [./arabidopsis\_3702/database/organism\_data/b136\_SNPContigProtein\_101.bcp.gz],
+  [./arabidopsis\_3702/database/organism\_data/b136\_SNPContigProtein\_101.bcp.gz.md5],
+  [./arabidopsis\_3702/database/organism\_data/b136\_SNPMapInfo\_101.bcp.gz],
+  [./arabidopsis\_3702/database/organism\_data/b136\_SNPMapInfo\_101.bcp.gz.md5],
+  [./arabidopsis\_3702/database/organism\_data/b136\_SNPMapLinkProtein\_101.bcp.gz],
+  [./arabidopsis\_3702/database/organism\_data/b136\_SNPMapLinkProtein\_101.bcp.gz.md5],
+  [./arabidopsis\_3702/database/organism\_schema],
+  [./arabidopsis\_3702/database/organism\_schema/arabidopsis\_3702\_constraint.sql.gz],
+  [./arabidopsis\_3702/database/organism\_schema/arabidopsis\_3702\_index.sql.gz],
+  [./arabidopsis\_3702/database/organism\_schema/arabidopsis\_3702\_table.sql.gz],
+  [./chimpanzee\_9598/database/organism\_schema],
+  [./chimpanzee\_9598/database/organism\_schema/chimpanzee\_9598\_constraint.sql.gz],
+  [./chimpanzee\_9598/database/organism\_schema/chimpanzee\_9598\_index.sql.gz],
+  [./chimpanzee\_9598/database/organism\_schema/chimpanzee\_9598\_table.sql.gz],
+  [./macaque\_9544/database/organism\_data],
+  [./macaque\_9544/database/organism\_data/b136\_ContigInfo\_101.bcp.gz],
+  [./macaque\_9544/database/organism\_data/b136\_ContigInfo\_101.bcp.gz.md5],
+  [./macaque\_9544/database/organism\_data/b136\_MapLinkInfo\_101.bcp.gz],
+  [./macaque\_9544/database/organism\_data/b136\_MapLinkInfo\_101.bcp.gz.md5],
+  [./macaque\_9544/database/organism\_data/b136\_SNPContigLoc\_101.bcp.gz.md5],
+  [./macaque\_9544/database/organism\_data/b136\_SNPContigLoc\_101.bcp.gz],
+  [./macaque\_9544/database/organism\_data/b136\_SNPChrPosOnRef\_101.bcp.gz.md5],
+  [./macaque\_9544/database/organism\_data/b136\_SNPChrPosOnRef\_101.bcp.gz],
+  [./macaque\_9544/database/organism\_data/b136\_MapLink\_101.bcp.gz],
+  [./macaque\_9544/database/organism\_data/b136\_MapLink\_101.bcp.gz.md5],
+  [./macaque\_9544/database/organism\_data/b136\_SNPContigLocusId\_101.bcp.gz],
+  [./macaque\_9544/database/organism\_data/b136\_SNPContigLocusId\_101.bcp.gz.md5],
+  [./macaque\_9544/database/organism\_data/b136\_SNPContigProtein\_101.bcp.gz],
+  [./macaque\_9544/database/organism\_data/b136\_SNPContigProtein\_101.bcp.gz.md5],
+  [./macaque\_9544/database/organism\_data/b136\_SNPMapInfo\_101.bcp.gz],
+  [./macaque\_9544/database/organism\_data/b136\_SNPMapInfo\_101.bcp.gz.md5],
+  [./macaque\_9544/database/organism\_data/b136\_SNPMapLinkProtein\_101.bcp.gz],
+  [./macaque\_9544/database/organism\_data/b136\_SNPMapLinkProtein\_101.bcp.gz.md5],
+  [./macaque\_9544/database/organism\_schema],
+  [./macaque\_9544/database/organism\_schema/macaque\_9544\_constraint.sql.gz],
+  [./macaque\_9544/database/organism\_schema/macaque\_9544\_index.sql.gz],
+  [./macaque\_9544/database/organism\_schema/macaque\_9544\_table.sql.gz],
+  [./nematode\_6239/database/organism\_data],
+  [./nematode\_6239/database/organism\_data/b136\_ContigInfo\_101.bcp.gz],
+  [./nematode\_6239/database/organism\_data/b136\_ContigInfo\_101.bcp.gz.md5],
+  [./nematode\_6239/database/organism\_data/b136\_MapLinkInfo\_101.bcp.gz],
+  [./nematode\_6239/database/organism\_data/b136\_MapLink\_101.bcp.gz.md5],
+  [./nematode\_6239/database/organism\_data/b136\_SNPChrPosOnRef\_101.bcp.gz],
+  [./nematode\_6239/database/organism\_data/b136\_SNPChrPosOnRef\_101.bcp.gz.md5],
+  [./nematode\_6239/database/organism\_data/b136\_SNPContigLoc\_101.bcp.gz],
+  [./nematode\_6239/database/organism\_data/b136\_SNPContigLoc\_101.bcp.gz.md5],
+  [./nematode\_6239/database/organism\_data/b136\_MapLinkInfo\_101.bcp.gz.md5],
+  [./nematode\_6239/database/organism\_data/b136\_MapLink\_101.bcp.gz],
+  [./nematode\_6239/database/organism\_data/b136\_SNPContigLocusId\_101.bcp.gz],
+  [./nematode\_6239/database/organism\_data/b136\_SNPContigLocusId\_101.bcp.gz.md5],
+  [./nematode\_6239/database/organism\_data/b136\_SNPContigProtein\_101.bcp.gz],
+  [./nematode\_6239/database/organism\_data/b136\_SNPContigProtein\_101.bcp.gz.md5],
+  [./nematode\_6239/database/organism\_data/b136\_SNPMapInfo\_101.bcp.gz],
+  [./nematode\_6239/database/organism\_data/b136\_SNPMapInfo\_101.bcp.gz.md5],
+  [./nematode\_6239/database/organism\_data/b136\_SNPMapLinkProtein\_101.bcp.gz],
+  [./nematode\_6239/database/organism\_data/b136\_SNPMapLinkProtein\_101.bcp.gz.md5],
+  [./nematode\_6239/database/organism\_schema],
+  [./nematode\_6239/database/organism\_schema/nematode\_6239\_constraint.sql.gz],
+  [./nematode\_6239/database/organism\_schema/nematode\_6239\_index.sql.gz],
+  [./nematode\_6239/database/organism\_schema/nematode\_6239\_table.sql.gz],
+  [./pig\_9823/database/organism\_data],
+  [./pig\_9823/database/organism\_data/b136\_ContigInfo\_103.bcp.gz],
+  [./pig\_9823/database/organism\_data/b136\_ContigInfo\_103.bcp.gz.md5],
+  [./pig\_9823/database/organism\_data/b136\_MapLinkInfo\_103.bcp.gz],
+  [./pig\_9823/database/organism\_data/b136\_MapLinkInfo\_103.bcp.gz.md5],
+  [./pig\_9823/database/organism\_data/b136\_MapLink\_103.bcp.gz],
+  [./pig\_9823/database/organism\_data/b136\_MapLink\_103.bcp.gz.md5],
+  [./pig\_9823/database/organism\_data/b136\_SNPChrPosOnRef\_103.bcp.gz],
+  [./pig\_9823/database/organism\_data/b136\_SNPChrPosOnRef\_103.bcp.gz.md5],
+  [./pig\_9823/database/organism\_data/b136\_SNPContigLoc\_103.bcp.gz],
+  [./pig\_9823/database/organism\_data/b136\_SNPContigLoc\_103.bcp.gz.md5],
+  [./pig\_9823/database/organism\_data/b136\_SNPContigLocusId\_103.bcp.gz],
+  [./pig\_9823/database/organism\_data/b136\_SNPContigLocusId\_103.bcp.gz.md5],
+  [./pig\_9823/database/organism\_data/b136\_SNPContigProtein\_103.bcp.gz],
+  [./pig\_9823/database/organism\_data/b136\_SNPContigProtein\_103.bcp.gz.md5],
+  [./pig\_9823/database/organism\_data/b136\_SNPMapInfo\_103.bcp.gz],
+  [./pig\_9823/database/organism\_data/b136\_SNPMapInfo\_103.bcp.gz.md5],
+  [./pig\_9823/database/organism\_data/b136\_SNPMapLinkProtein\_103.bcp.gz],
+  [./pig\_9823/database/organism\_data/b136\_SNPMapLinkProtein\_103.bcp.gz.md5],
+  [./pig\_9823/database/organism\_schema],
+  [./pig\_9823/database/organism\_schema/pig\_9823\_constraint.sql.gz],
+  [./pig\_9823/database/organism\_schema/pig\_9823\_index.sql.gz],
+  [./pig\_9823/database/organism\_schema/pig\_9823\_table.sql.gz],
+  [./rat\_10116/database/organism\_data],
+  [./rat\_10116/database/organism\_data/b136\_ContigInfo\_101.bcp.gz],
+  [./rat\_10116/database/organism\_data/b136\_ContigInfo\_101.bcp.gz.md5],
+  [./rat\_10116/database/organism\_data/b136\_MapLinkInfo\_101.bcp.gz],
+  [./rat\_10116/database/organism\_data/b136\_MapLinkInfo\_101.bcp.gz.md5],
+  [./rat\_10116/database/organism\_data/b136\_MapLink\_101.bcp.gz],
+  [./rat\_10116/database/organism\_data/b136\_MapLink\_101.bcp.gz.md5],
+  [./rat\_10116/database/organism\_data/b136\_Remapped\_101.bcp.gz],
+  [./rat\_10116/database/organism\_data/b136\_Remapped\_101.bcp.gz.md5],
+  [./rat\_10116/database/organism\_data/b136\_SNPChrPosOnRef\_101.bcp.gz],
+  [./rat\_10116/database/organism\_data/b136\_SNPChrPosOnRef\_101.bcp.gz.md5],
+  [./rat\_10116/database/organism\_data/b136\_SNPContigLoc\_101.bcp.gz],
+  [./rat\_10116/database/organism\_data/b136\_SNPContigLoc\_101.bcp.gz.md5],
+  [./rat\_10116/database/organism\_data/b136\_SNPContigLocusId\_101.bcp.gz],
+  [./rat\_10116/database/organism\_data/b136\_SNPContigLocusId\_101.bcp.gz.md5],
+  [./rat\_10116/database/organism\_data/b136\_SNPContigProtein\_101.bcp.gz],
+  [./rat\_10116/database/organism\_data/b136\_SNPContigProtein\_101.bcp.gz.md5],
+  [./rat\_10116/database/organism\_data/b136\_SNPMapInfo\_101.bcp.gz],
+  [./rat\_10116/database/organism\_data/b136\_SNPMapInfo\_101.bcp.gz.md5],
+  [./rat\_10116/database/organism\_data/b136\_SNPMapLinkProtein\_101.bcp.gz],
+  [./rat\_10116/database/organism\_data/b136\_SNPMapLinkProtein\_101.bcp.gz.md5],
+  [./rat\_10116/database/organism\_schema],
+  [./rat\_10116/database/organism\_schema/rat\_10116\_constraint.sql.gz],
+  [./rat\_10116/database/organism\_schema/rat\_10116\_index.sql.gz],
+  [./rat\_10116/database/organism\_schema/rat\_10116\_table.sql.gz],
+  [./zebrafish\_7955/database/organism\_data],
+  [./zebrafish\_7955/database/organism\_data/b136\_ContigInfo\_102.bcp.gz],
+  [./zebrafish\_7955/database/organism\_data/b136\_SNPContigLocusId\_102.bcp.gz.md5],
+  [./zebrafish\_7955/database/organism\_data/b136\_SNPContigProtein\_102.bcp.gz],
+  [./zebrafish\_7955/database/organism\_data/b136\_SNPContigProtein\_102.bcp.gz.md5],
+  [./zebrafish\_7955/database/organism\_data/b136\_SNPMapInfo\_102.bcp.gz],
+  [./zebrafish\_7955/database/organism\_data/b136\_SNPChrPosOnRef\_102.bcp.gz.md5],
+  [./zebrafish\_7955/database/organism\_data/b136\_SNPContigLoc\_102.bcp.gz],
+  [./zebrafish\_7955/database/organism\_data/b136\_SNPContigLoc\_102.bcp.gz.md5],
+  [./zebrafish\_7955/database/organism\_data/b136\_SNPContigLocusId\_102.bcp.gz],
+  [./zebrafish\_7955/database/organism\_data/b136\_Remapped\_102.bcp.gz.md5],
+  [./zebrafish\_7955/database/organism\_data/b136\_SNPChrPosOnRef\_102.bcp.gz],
+  [./zebrafish\_7955/database/organism\_data/b136\_Remapped\_102.bcp.gz],
+  [./zebrafish\_7955/database/organism\_data/b136\_ContigInfo\_102.bcp.gz.md5],
+  [./zebrafish\_7955/database/organism\_data/b136\_MapLinkInfo\_102.bcp.gz],
+  [./zebrafish\_7955/database/organism\_data/b136\_MapLinkInfo\_102.bcp.gz.md5],
+  [./zebrafish\_7955/database/organism\_data/b136\_MapLink\_102.bcp.gz],
+  [./zebrafish\_7955/database/organism\_data/b136\_MapLink\_102.bcp.gz.md5],
+  [./zebrafish\_7955/database/organism\_data/b136\_SNPMapInfo\_102.bcp.gz.md5],
+  [./zebrafish\_7955/database/organism\_data/b136\_SNPMapLinkProtein\_102.bcp.gz],
+  [./zebrafish\_7955/database/organism\_data/b136\_SNPMapLinkProtein\_102.bcp.gz.md5],
+  [./zebrafish\_7955/database/organism\_schema],
+  [./zebrafish\_7955/database/organism\_schema/zebrafish\_7955\_index.sql.gz],
+  [./zebrafish\_7955/database/organism\_schema/zebrafish\_7955\_table.sql.gz],
+  [./zebrafish\_7955/database/organism\_schema/zebrafish\_7955\_constraint.sql.gz],
+  [./orangutan\_9601/database/organism\_schema],
+  [./orangutan\_9601/database/organism\_schema/orangutan\_9601\_constraint.sql.gz],
+  [./orangutan\_9601/database/organism\_schema/orangutan\_9601\_index.sql.gz],
+  [./orangutan\_9601/database/organism\_schema/orangutan\_9601\_table.sql.gz],
+  [./orangutan\_9601/database/organism\_data],
+  [./orangutan\_9601/database/organism\_data/b136\_ContigInfo\_100.bcp.gz],
+  [./orangutan\_9601/database/organism\_data/b136\_ContigInfo\_100.bcp.gz.md5],
+  [./orangutan\_9601/database/organism\_data/b136\_MapLinkInfo\_100.bcp.gz],
+  [./orangutan\_9601/database/organism\_data/b136\_MapLinkInfo\_100.bcp.gz.md5],
+  [./orangutan\_9601/database/organism\_data/b136\_MapLink\_100.bcp.gz],
+  [./orangutan\_9601/database/organism\_data/b136\_MapLink\_100.bcp.gz.md5],
+  [./orangutan\_9601/database/organism\_data/b136\_SNPChrPosOnRef\_100.bcp.gz],
+  [./orangutan\_9601/database/organism\_data/b136\_SNPChrPosOnRef\_100.bcp.gz.md5],
+  [./orangutan\_9601/database/organism\_data/b136\_SNPContigLoc\_100.bcp.gz],
+  [./orangutan\_9601/database/organism\_data/b136\_SNPContigLoc\_100.bcp.gz.md5],
+  [./orangutan\_9601/database/organism\_data/b136\_SNPContigLocusId\_100.bcp.gz],
+  [./orangutan\_9601/database/organism\_data/b136\_SNPContigLocusId\_100.bcp.gz.md5],
+  [./orangutan\_9601/database/organism\_data/b136\_SNPContigProtein\_100.bcp.gz],
+  [./orangutan\_9601/database/organism\_data/b136\_SNPContigProtein\_100.bcp.gz.md5],
+  [./orangutan\_9601/database/organism\_data/b136\_SNPMapInfo\_100.bcp.gz],
+  [./orangutan\_9601/database/organism\_data/b136\_SNPMapInfo\_100.bcp.gz.md5],
+  [./orangutan\_9601/database/organism\_data/b136\_SNPMapLinkProtein\_100.bcp.gz],
+  [./orangutan\_9601/database/organism\_data/b136\_SNPMapLinkProtein\_100.bcp.gz.md5],
+),
   insert-map: (:),
   word-count: 1151,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Apple's Assault on Standards],
   author: [Alex Russell (infrequently noted)],
   source-name: [Alex Russell (infrequently noted)],
@@ -175,11 +310,11 @@ Market competition underlies the enterprise of standards. It creates the only fu
   [Apple has deftly used a false cloak of security and privacy to move the internet, and the web in particular, toward enclosure and irrelevance. Cupertino acts as a corrupted, and indeed incompetent, autocrat in our digital lives, even for folks who don't carry iPhones. It accomplishes this trick through abuse of a unique monopoly, allowing it to extract rents, including on the last remnants of open ecosystems it tolerates.],
   [Worse, Apple's centralisation through the App Store entrenches the positions of peer big tech firms, harming the prospects of competitors in turn. Apple have been, over the course of many years, poisonous to internet standards and the moral commitments of that grand project. 7],
   [Despite near continuous horse-race coverage in the tech press, the consequences of this regression in civic/technical affairs is not well socialised.],
-  [id="the-power-of-interoperability" tabindex="-1"\> The Power of Interoperability],
+  [The Power of Interoperability],
   [Standardisation expands the reach of interoperable technology, pushing firms to innovate, rather than extracting rents on commodities.],
   [Interoperability-in-being gives users choice, forcing competitors to differentiate on quality and not-yet-standard features. Standards expedite interoperability by lowering the costs for implementers and reducing tail risks, e.g. from patent trolls. Over time, a complete enough set of standards can attenuate the power of vendors to extract rents and prevent progress in important domains.],
   [Interoperability is not the only mechanism that can reduce the power of dominant firms, but it is the most powerful. Free and Open Source software ( FOSS ) can provide a counterweight too, but OSS is not a full solution. 8],
-  [id="voluntary-adoption-is-foundational-to-internet-standards" tabindex="-1"\> Voluntary Adoption Is Foundational to Internet Standards],
+  [Voluntary Adoption Is Foundational to Internet Standards],
   [Interoperability, and the economic surpluses that flow from it, are underpinned by voluntary adoption . This is enshrined in the "open stand" principles agreed to by no less than ISOC, IETF , IAB , IEEE, and the W3C . :],
   [...],
   [5. Voluntary Adoption],
@@ -193,7 +328,6 @@ Market competition underlies the enterprise of standards. It creates the only fu
   [Second, this principle outlines a live-and-let-live doctrine, both within standards bodies and in the market. Participants may want their design to win, but are enjoined from procedural shenanigans to prevent competing designs from also being standardised.],
   [Lastly, voluntary adoption marks customers (developers) and suppliers (browser vendors, etc.) as peers and creates norms of mutual respect within the walls of SDOs .],
   [For all of these reasons, voluntary adoption must be defended, and actions taken to undermine it met with resistance and eventual sanction.],
-  [id="apple's-unique-monopoly" tabindex="-1"\> Apple's Unique Monopoly],
   [Regulators have had no difficulty in building market tests that demonstrate the power Apple holds in the lives of users.],
   [Some of these tests have produced comical contortions as Apple has attempted to weasel out of its responsibilities. Consider the Trinitarian claim that Safari is simultaneously one product, and also three. Or that iPadOS, despite sharing nearly all code with iOS, marketed under that brand for years, supporting identical features, running the same third-party software, releasing on the same cadence, and running exclusively on the same hardware architecture is (somehow) an entirely different product. 9],
   [But for as clear and effective as regulator's tests have been in piercing these smoke screens, they do not capture the most important aspects of Apple's influence on the market for smartphone software: the monopoly on wealth.],
@@ -207,13 +341,13 @@ Market competition underlies the enterprise of standards. It creates the only fu
 "Coming Apart? Cultural Distances in the United States Over Time"],
   [Developers are forced into the App Store by missing web capabilities, ensuring an advantage for Apple's proprietary ecosystem. This induces wealthy and influential users to default to the App Store for software, further damping the competitiveness of open platforms.],
   [The monopoly on influence explains why Apple is wedded to legalistic, dissembling tactics in order to prevent the spread of web apps. Should the work of internet and web standards bodies ever become relevant, Cupertino understands the market for software will transform in ways it cannot control or tax.],
-  [id="how-apple-uses-its-monopoly-to-centralise-and-enclose" tabindex="-1"\> How Apple Uses Its Monopoly to Centralise and Enclose],
+  [How Apple Uses Its Monopoly to Centralise and Enclose],
   [Developers are forced into the App Store by a lack of functionality in browsers and web apps. By contrast, Apple has liberally meted out fingerprintable system capabilities to privacy-invading native apps . It has also allowed them to suppress pro-privacy interventions when it serves them. 10],
   [Apple professes that "privacy is a human right" , but this as an attempt to turn the consequences of Apple's own largesse towards data abusers into a marketing asset. Wide-scale privacy erosion has depended, fundamentally, on Apple's own decisions, and it has not recanted.],
   [It was Apple's choice to introduce less safe, less privacy-preserving native apps into iOS. It was also Apple's choice to deny competing browsers engines the freedom of voluntary feature adoption. This has ensured that important underlying capabilities could only ever be accessed through Apple's proprietary APIs, and only ever by those who are willing to agree to Cupertino's extractive terms.],
   [The result has been API enclosure ; appropriation of commodity capabilities that themselves are standards-based — e.g., rich graphics, USB, Bluetooth, NFC, file storage, etc. — by a proprietary ecosystem. Meanwhile, it has delayed and undermined the emergence of safe and privacy-preserving versions of those features on the web.],
   [This, in turn, has created a winner-take-all dynamic inside the app store, harming privacy, security, and competition in the process.],
-  [id="apple's-transgressions-against-voluntary-adoption" tabindex="-1"\> Apple's Transgressions Against Voluntary Adoption],
+  [Apple's Transgressions Against Voluntary Adoption],
   [This strategy relies on interlocking policies that harm competitors, and the sabotage of voluntary standards adoption lies at its heart. A Bill of Particulars for crimes against the internet community springs from a small set of undisputed facts.],
   [Apple has:],
   [Restricted competitors from shipping their own implementations of web and internet standards, depriving them access to influential users.],
@@ -225,7 +359,7 @@ Market competition underlies the enterprise of standards. It creates the only fu
   [Misled regulators and the public when presented with evidence of the harm from these actions.],
   [Through these and other overt acts, Apple has worked to disempower users, depriving them of choice by preventing open platforms from challenging native apps. 12],
   [This isn't just a fierce market participant competing aggressively. Apple has done violence to the founding ethos of internet and web standards development. Instead of honourably withdrawing from those groups, Apple has maintained a charade of engagement, and gaslights other participants while actively sabotaging the principle of voluntary adoption that internet standards rely on.],
-  [id="unilateral-off-ramps" tabindex="-1"\> Unilateral Off-Ramps],
+  [Unilateral Off-Ramps],
   [Apple has never been forced to suppress its competitors, nor to create an anticompetitive landscape. Cupertino's senior management have intellectually consistent options that would allow it to pursue growth of the superior (we are told) native app ecosystem without threatening browser choice or the good functioning of internet standards.],
   [Let's consider two: all safe browsers , and no browsers .],
   [Apple could, of course, simply enable the same sort of level playing field for high-quality browsers that every competing general-purpose OS vendor has for the web's entire history. Apple itself facilitates this sort of ecosystem on macOS. 13 Any plausible restrictions stemming from available system resources have long been overcome by progress in mobile hardware, particularly within Apple's ecosystem. 14],
@@ -233,14 +367,14 @@ Market competition underlies the enterprise of standards. It creates the only fu
   [Lest Apple's defenders worry about the impact on Safari, recall that under true browser choice, Apple retains considerable market advantages, including (but not limited to) pre-installation, lower structural costs 15 , and continued differentiation through integration. 16 Such bulwarks have allowed Safari to retain considerable share on macOS in spite of stiff competition and Safari's poor track record on security and standards conformance.],
   [Alternatively, Apple could withdraw Safari while forbidding web content on iOS. This is a fully consistent position, and has been available to Apple from the moment of the App Store's release. The iPod did not include a browser, and many subsequent Apple OSes lack functional browsers. iOS and visionOS are uniquely deficient in this regard. 17],
   [Either way, the decision to undermine choice and standards rests entirely with Apple. It has always had intellectually honest solutions to the problems it has created. Apple cannot claim the situation is anyone else's fault, or that it has had no alternative.],
-  [id="how-apples-crimes-differ-from-prior-episodes" tabindex="-1"\> How Apples Crimes Differ From Prior Episodes],
+  [How Apples Crimes Differ From Prior Episodes],
   [Under voluntary implementation, every vendor is free to ship what they please, including Apple. It may be sad, or even damaging, when features go missing from important products, but that is not a calamity; just an input to be priced by the market — a reason for a specific browser to gain or lose share.],
   [It's not enough to cite a lack of features, bungled implementations, peevish behaviour in working groups — or even rank dishonesty — as reason for censure. These are, to greater or lesser degrees, players playing the game. Certain tactics may be distasteful, but are squarely inside the "awful but lawful" zone. Standards venues should allow them, with sanctions for poor behaviour meted out in the social realm.],
   [But by undercutting voluntary implementation, Apple has committed a more fundamental and more dangerous outrage. 18],
   [Some will see a parallel to the Paradox of Tolerance , and I do not believe this is mistaken. Standards bodies can, and should, admit many positions by their participants, but granting membership in good standing to those who are actively poison the basis for standards is madness. It ensures that standards, and the ecosystems that depend on them, wither and die.],
   [By subverting the voluntary nature of open standards, Apple has defanged them as tools for users against the totalising power of technology firms in their digital lives. This high-modernist approach is antithetical to the foundational commitments of internet standards bodies and, over time, erode them.],
   [Indeed, no other vendor has achieved what Apple has in suppressing the web through anticompetitive means. We must not imagine that Apple would stop at the Application layer given a chance. The same mechanism threatens voluntary feature adoption in networking and every other layer down the stack, too.],
-  [id="necessary%2C-proportional-responses" tabindex="-1"\> Necessary, Proportional Responses],
+  [Necessary, Proportional Responses],
   [The web and internet communities should understand the threat and clock the cumulative harm done to internet standards and open technology ecosystems. It seems to me that this point has hardly been engaged, let alone won, within the walls of SDOs . But if it were, then what? What can be done?],
   [The founding documents of internet SDOs do not include censure mechanisms for sabotage. The W3C 's bylaws, for example, only relate membership in good standing with paying dues. Regardless, it is possible — and I believe urgent — to do more.],
   [First, proposals can be raised to amend bylaws to include mechanisms for censure by votes of the membership for the kinds of outrages alleged here. These are likely to fail, and will surely be rejected at first, but the act of raising these questions has power. Bringing up these issues in plenary meetings can, at a minimum, elicit a response. That, on its own, is valuable to the community.],
@@ -254,19 +388,20 @@ Market competition underlies the enterprise of standards. It creates the only fu
   [So long as competing vendors are forced into the App Store and required to use Apple's engine, Cupertino owes much more when it comes to completeness and quality. So long as Cupertino compels use of WebKit, the demand should be echoed back: parity with browser features on other Operating Systems is the minimum bar .],
   [Fundamentally, the web and internet community must stop accepting the premise that Apple should benefit from the protections and privileges of voluntary feature adoption while denying it to others. 19],
   [Lastly, and perhaps most controversially, delegates and organisations can use their positions to vote against Apple's personnel in elections to leadership positions within internet and web SDOs . It is inconsistent for Apple to hold positions of influence in organisations it works to sabotage, and fellow participants are under no obligation to pretend otherwise. Handing Apple formal or persuasive power within these groups is a mistake, and one that can be corrected without changes to bylaws.],
-  [id="why-now%3F" tabindex="-1"\> Why Now?],
+  [Why Now?],
   [In raising these questions, colleagues have invariably asked "why now? What changed?"],
   [Beyond the threshold point that the damage is cumulative, and therefore it isn't necessary to identify specific instances to discuss the spreading rot, it's fair to ask why anyone should be agitated tomorrow when they might not have been yesterday.],
   [Most of the factors involved have indeed changed very gradually, and humans are famously poor judges of slowly emergent threats. Apple's monopoly on influence, Cupertino's post-2009 WebKit priorities, the suppression of browser competitors, and the never-ending parade of showstopping bugs are all gradually emergent factors. Despite all of this long-running, unrefuted evidence, many continue to think of Apple an ally of the web for helpful acts now more than 15 years old.],
   [But recent events must shake us awake. Apple's petulant attempt to duck regulations, destroy the web as a competitor for good, and frame regulators for the dirty deed was shocking. In recurring misrepresentations to regulators before and since, it has dissembled about its role in suppressing the web, and through its demand for secrecy in quasi-standards processes, has worked tirelessly to cover its tracks.],
   [Taken individually, and in ignorance of iOS's coerced WebKit use by competing browsers, forced monoculture, habitual security failures, and strategic starvation of the Safari team , these shameful acts would simply indicate another monopolist behaving badly. It is only when considered alongside the wider set of facts that the anti-standards strategy and impact become clear.],
-  [id="do-standards-matter%3F" tabindex="-1"\> Do Standards Matter?],
+  [Do Standards Matter?],
   [Like most who have dedicated the greater proportion of their working lives to the cause of an open and interoperable web, the conclusions offered here shock me as well.],
   [In the end, however, the question "do standards matter any more?" is intrusive, despite my aversion to reconsidering a question whose answer I thought obvious. But in light of the past decade's sidelining of the web, we must grapple with the consequences. To allow Apple to continue to abuse the foundation of standards without acknowledgement would be a failure of honesty towards my own intellectual commitments.],
   [My personal affinity for the many talented and thoughtful people that Apple has sent to standards bodies over the years — including those I think of as friends — has, on reflection, been an emotional blind spot. But here we are. The realisation that they have been an unwitting fifth column against the web is nauseating for me, and I expect many will loudly reject the conclusion. I do not blame them.],
   [For all the harm Apple has done to the web and to competition, I had hoped that it would relent before any of this became necessary. Like most web developers, I harboured hope that, true to Steve Job's promise in '07, Apple would let the web be a "sweet solution" for delivering safe, powerful applications. Piggybacked on that hope was a belief that a relevant mobile web would bolster the relevance of standards. But Cupertino has gone a different way, choosing profit over collaboration and the needs of users.],
   [The web matters too much for the standards-based future it represents to fade without so much as a nod.],
   [Thanks to Kyle Pflug and James Heppell for their thoughtful feedback on drafts of this post.],
+  [FOOTNOTES],
   [Or, if you like, "liberaltarian" . ⇐],
   [A faith I do not share. Markets fail frequently, never mind that most goods are hardly substitutable, thinly traded, and lack reliable public prices. All of this means that the information capacity of markets a priori the rationalising effect of standards and market fairness regulation is heavily suspect.],
   [But even for those that take a market fundamentalist perspective, restrictions on trade such as Apple has imposed are offensive to the basic logic of the market's role in bettering society. Only those who would see markets subjugate all, forever, because of one-time power imbalances can be sanguine about what Apple has done.],
@@ -344,11 +479,10 @@ Market competition underlies the enterprise of standards. It creates the only fu
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Becoming America],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -368,7 +502,7 @@ Market competition underlies the enterprise of standards. It creates the only fu
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [dbVar December 2020 Release],
   author: [PubMed Health],
   source-name: [PubMed Health],
@@ -393,7 +527,6 @@ Non-Redundant Insertions: 1,308,484],
   [Study: nstd186 (NCBI Curated Common Structural Variants)],
   [Description: A curated dataset of all structural variants in dbVar that meet the following criteria: were part],
   [of a study with at least 100 samples; included allele frequency data; had an allele frequency of],
-  [\>=0.01 in at least one population. Data content of this study is subject to change as new data],
   [become available. See Variant Summary counts for nstd186 in \[dbVar Variant],
   [Summary|/dbvar/content/var\_summary/\#nstd186\]. See the latest statistics for nstd186 in \[Summary of],
   [nstd186 (NCBI Curated Common Structural Variants)|/dbvar/content/common\_summary\].],
@@ -457,7 +590,7 @@ FTP: https:\/\/ftp.ncbi.nlm.nih.gov/pub/dbVar/data/Homo\_sapiens/by\_study],
 
   ],
   [
-    brief-group((
+    #brief-group((
       [#brief-item([PubMed Health], source-name: [PubMed Health], [The following journal has been added to the PubMed Central archive:
  
 Journal Title: Canadian Urological Association Journal
@@ -465,16 +598,16 @@ ISSN: 1911-6470 (print)
 URL: http:\/\/www.pubmedcentral.nih.gov/tocrender.fcgi?action=archive&journal=552 
 Archive includes: v. 1 (2007) to the present. There is no embargo delay for this journal.])],
       [#brief-item([PubMed Health], source-name: [PubMed Health], [NHLBI TOPMed: Determining the Association of Chromosomal Variants with Non-PV Triggers and Ablation-Outcome in AF (DECAF) ( study page | release notes )])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClassD1C3FB9C8AC94E1BA160925F893DD459"\>
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [
  NIH RECOVER: A Multi-Site Observational Study of Post-Acute Sequelae of SARS-CoV-2 Infection in Adults
   
  ( study page 
  |
  release notes )])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClassB59A9E3730DD49D481A208FFAE614725"\>
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [
 
 ​The PubMed journals translation table has been updated to include journal names without initial articles such as: the, le, la, a, an, etc. This means that such journal titles can now be searched with or without initial articles and they will map to the appropriate journal.​])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass6FF9C5B68B68427EAB0F7E2F7EE4E83C"\>​ Genomic Data Archive From the Network for Pancreatic Organ Donors With Diabetes
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [​ Genomic Data Archive From the Network for Pancreatic Organ Donors With Diabetes
   
  ( 
  study page 
@@ -542,7 +675,7 @@ reviews on Steam, and triggered the “Overwhelmingly Positive” status.
 On BlueSky, Bloomberg writer Jason Schreier blew me away when he posted :
 
 “Seven days into 2025 and I’ve already played what I suspect will be one of my favorite games of the year: The Roottrees Are Dead.” Wow!])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass01213B0FC02B4328A027DD80FAB8D77C"\> Integrative Clinical Sequencing Analysis of Metastatic Castration Resistant Prostate Cancer Reveals a High Frequency of Clinical Actionability
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [Integrative Clinical Sequencing Analysis of Metastatic Castration Resistant Prostate Cancer Reveals a High Frequency of Clinical Actionability
   
  ( 
  study page 
@@ -551,16 +684,16 @@ On BlueSky, Bloomberg writer Jason Schreier blew me away when he posted :
  
  release notes )])],
       [#brief-item([PubMed Health], source-name: [PubMed Health], [The following new journal from the Association of Chiropractic Colleges has been added to PubMed Central. Journal of Chiropractic Education ISSN: 1042-5055 (print) http:\/\/www.pubmedcentral.nih.gov/tocrender.fcgi?journal=604&action=archive Archive includes v. 20 (2006) to v. 22 (2008) Note: There is no embargo delay for this journal PubMed Central])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass074E26CF7A5C41479EB5DD83F18E60F9"\>
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [
 
 If you use the gene2xml utility to read files from the ASN\_BINARY directory on the Gene FTP site, please download the latest revision (1.5) here . This update will be needed to read new data elements that will be added to the ASN.1 in the near future.
 
 To see which version of gene2xml you are currently using, simply run gene2xml with a single hyphen as a parameter.​])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClassE0346F7AB3294D78B177120187C571FC"\>
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [
 
 ​The ability to create an RSS feed is available in the new PubMed.  The RSS feature returns complete search results and no longer uses the My NCBI "What's New" strategy that is used for saved search alerts.
 ​])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass94CE6CC140A44162B04BCDBCFBE0BECE"\>​ Lineage Plasticity and Immune Cell Heterogeneity Are Coordinately Dysregulated Through Changes in FOXA1 Expression in Bladder Cancers with Squamous Differentiation
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [​ Lineage Plasticity and Immune Cell Heterogeneity Are Coordinately Dysregulated Through Changes in FOXA1 Expression in Bladder Cancers with Squamous Differentiation
   
  ( 
  study page 
@@ -576,7 +709,7 @@ ISSN: 1757-7241 (electronic)
 Archive includes volume 16 (2008)
 Note: There is no embargo delay for this journal])],
       [#brief-item([PubMed Health], source-name: [PubMed Health], [The SRA database contains genome sequence reads for one isolate ( Accession: SRX067313 ) and a preliminary genomic assembly of another isolate in the Nucleotide database ( Accession: AFOB00000000 ).])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClassFBEE335506ED43F094DF0FBC85487B6F"\> NHLBI TOPMed: Genomic Summary Results for the Trans-Omics for Precision Medicine Program
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [NHLBI TOPMed: Genomic Summary Results for the Trans-Omics for Precision Medicine Program
   
  ( 
  study page 
@@ -603,10 +736,10 @@ Modifications to the xsd: clinvar\_public\_diff at ftp:\/\/ftp.ncbi.nlm.nih.gov/
 Current statistics: http:\/\/www.ncbi.nlm.nih.gov/clinvar/submitters\/ 
 
 Please contact us at clinvar\@ncbi.nlm.nih.gov if you have any questions.])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass091F7BAB23384459B701A69944643D09"\>
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [
 
 ​An updated version of PubMed is now available at  https:\/\/pubmed.ncbi.nlm.nih.gov\/ . The new PubMed will become the default in spring 2020 and will ultimately replace the legacy version.])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass2F976F3F589A40EE885CF4D1142C7B3E"\>
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [
 
 ​In order to provide a less-cluttered PubMed results display, the status tag lines, e.g., \[PubMed - as supplied by publisher\], were removed from the Summary results. Other display formats were not modified.])],
       [#brief-item([PubMed Health], source-name: [PubMed Health], [The following new journal from Hindawi has been added to PMC:
@@ -622,7 +755,7 @@ Translational Psychiatry
 URL: http:\/\/www.ncbi.nlm.nih.gov/pmc/journals/1761\/ 
 Archive includes volumes 1-2 (2011-2012) and current content is forthcoming.
 Note: There is no embargo delay for this journal.])],
-      [#brief-item([PubMed Health], source-name: [PubMed Health], [class="ExternalClass56E992EC4D5944808C3E74514EF70932"\> Whole Exome Sequencing and RNA Sequencing of High Grade Serous Ovarian Cancer in Black and White Patients
+      [#brief-item([PubMed Health], source-name: [PubMed Health], [Whole Exome Sequencing and RNA Sequencing of High Grade Serous Ovarian Cancer in Black and White Patients
   
  ( 
  study page 
@@ -636,7 +769,7 @@ Note: There is no embargo delay for this journal.])],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [We The People: Canary in the Coal Mine],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],
@@ -658,7 +791,7 @@ Note: There is no embargo delay for this journal.])],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [What Happened After Civilization Collapsed],
   author: [Throughline (NPR)],
   source-name: [Throughline (NPR)],

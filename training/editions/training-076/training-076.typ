@@ -21,38 +21,8 @@
 #masthead([The Connected Star], [Vol. 1, No. 076], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [National Book Tour for Cindy Cohn’s Memoir, ‘Privacy’s Defender’],
-  kicker: [Cover Story],
-  author: [Josh Richman],
-  source-name: [EFF Deeplinks],
-  deck: [The book will be Cohn’s swansong at EFF as she’s stepping down as executive director later this year after 25 years with the organization.],
-  lead-pre: [],
-  lead-cap: [c],
-  lead-rest: [lass="field field--name-field-pr-subhead field--type-text field--label-hidden"\>],
-  body-paragraphs: (
-  [SAN FRANCISCO – Electronic Frontier Foundation Executive Director Cindy Cohn will launch her memoir, Privacy’s Defender: My Thirty-Year Fight Against Digital Surveillance (MIT Press, March 10), with events in San Francisco and Berkeley before embarking on a national book tour .],
-  [In Privacy’s Defender , Cohn weaves her own personal story with her role as a leading legal voice representing the rights and interests of technology users, innovators, whistleblowers, and researchers during the Crypto Wars of the 1990s, battles over NSA’s dragnet internet spying revealed in the 2000s, and the fight against FBI gag orders.],
-  [The book will be Cohn’s swansong at EFF as she’s stepping down as executive director later this year after 25 years with the organization. And there’s no timelier topic: Everyone should be concerned about privacy right now, as the federal government consolidates and weaponizes data, companies track our every click, and law enforcement from local police to ICE keep tabs on all of us, everywhere we go, every day.],
-  [The Privacy’s Defender tour will begin with a free event at San Francisco’s famed City Lights Bookstore (261 Columbus Ave., San Francisco, CA 94133) moderated by bestselling author and EFF Special Advisor Cory Doctorow, at 7pm PST Tuesday, March 10.],
-  [Then EFF will host a launch party at Berkeley’s Ciel Creative Space (940 Parker St., Berkeley, CA 94710) moderated by bestselling author Annalee Newitz at 7 p.m. PT on Thursday, March 12; tickets cost \$12.50-\$20.],
-  [The book tour will also include events in Portland, OR; Seattle; Denver; Cambridge, MA; Ann Arbor, MI; and Iowa City, IA. Later events are being planned in New York City and Washington, D. C., as well as a May 13 event at Commonwealth Club World Affairs in San Francisco.],
-  [Proceeds from sales of the book benefit EFF.],
-  [“These beautifully written stories show why the fight for privacy is worth having and reveal all that Cindy Cohn and EFF have done to establish the modern privacy doctrine as the essential core of a free society.” -- Lawrence Lessig, Harvard University; author of How to Steal a Presidential Election],
-  [“Cindy Cohn gives readers a first-person window into some of the pivotal legal disputes of the digital era and reminds us that action and activism are crucial to preserving Americans’ freedom.” -- U. S. Sen. Ron Wyden, D-OR, author of It Takes Chutzpah: How to Fight Fearlessly for Progressive Change],
-  [“ Privacy’s Defender is a compelling account of a life well lived and an inspiring call to action for the next generation of civil liberties champions.” -- Edward Snowden, whistleblower; author of Permanent Record],
-  [For the San Francisco event: https:\/\/citylights.com/events/cindy-cohn-launch-party-for-privacys-defender/],
-  [For the Berkeley event: https:\/\/www.eff.org/event/privacys-defender-book-launch-party],
-  [For more on Privacy’s Defender and the book tour: https:\/\/www.eff.org/Privacys-Defender],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [A couple of Jekyll updates],
   author: [Eddie Smith (Practically Efficient)],
   source-name: [Eddie Smith (Practically Efficient)],
@@ -60,20 +30,33 @@
   paragraphs: (
   [Since moving to Jekyll last year, I’ve done relatively little to tweak the inner workings of this site. After all, one of the most appealing things about having a static site is that it doesn’t need to have a lot of moving parts. It just works.],
   [But today I finally got around to a couple of housekeeping items that have been on my list: image captions and MathJax.],
-  [id="image-captions"\>Image captions],
+  [Image captions],
   [For image captions, I settled on a beautifully simple solution posted by Andrew Wei on Stack Overflow :],
+  [!\[\](path\_to\_image)
+\*image\_caption\*],
   [This takes advantage of the fact that you can create CSS for combinations of HTML elements. In this case, I can use],
+  [img + em \{ display: block; text-align: center;\}],
   [to target the \*image\_caption\* text only and center it under images, which are also centered on this site by default. It works perfectly, and this isn’t even Jekyll-specific. Anyone publishing in Markdown could do this.],
   [Agreed.],
-  [id="jekyll--mathjax"\>Jekyll + MathJax],
+  [Jekyll + MathJax],
   [Adding MathJax took a little more time, but not much. It was worth it just to remind me of the brilliance of Jekyll’s architecture. Even though the Jekyll site mentions MathJax , it doesn’t say enough to be of immediate use. It basically points to a blog post that entails switching from the default kramdown Markdown converter to redcarpet . Given that I’m happy with kramdown and not in the mood to backtest a bunch of blog posts with a different converter, I wanted to stick with kramdown .],
   [A series of subsequent web searches lead me to a Github issue thread for a Jekyll theme that I’m not even using, but I found a really efficient implementation of MathJax there by user “mmistakes,” who suggested adding a mathjax variable in each page’s YAML front matter that could be set to true on a post by post basis.],
   [The elegance of this solution is that the MathJax script will only be written into the HTML of posts that actually have MathJax in them. This seemed super appealing to me because it meant that I didn’t have to worry about MathJax being triggered by some accidental combination of characters in an old blog post.],
   [I ended up adding],
+  [\{% if page.mathjax %\}
+ 
+ 
+\{% endif %\}],
   [to my head.html file, which contains Ruby instructions for building the contents of each page’s element. For any page where the YAML front matter has mathjax: true , the MathJax script will be included. I decided to always include it in the site’s index.html file, which shows recent posts. And going forward, I can simply include it in the YAML front matter of any individual post. For example, this post’s front matter is:],
+  [---
+layout: post
+title: A couple of Jekyll updates
+mathjax: true
+---],
   [I just finished up a project where I worked with MathJax a lot, and I continue to be impressed at how many LaTeX commands it handles. MathJax even has a special enclose library that handles special actuarial notation that eludes so many people. For example,],
+  [\$\$\\require\{enclose\} \{\}\_\{17|\}\\ddot\{a\}\_\{x:\\enclose\{actuarial\}\{n\}\}^\{(4)\}\$\$],
   [turns into:],
-  [\\\[\\require{enclose} {}\_{17|}\\ddot{a}\_{x:\\enclose{actuarial}{n}}^{(4)}\\\]],
+  [\\\[\\require\{enclose\} \{\}\_\{17|\}\\ddot\{a\}\_\{x:\\enclose\{actuarial\}\{n\}\}^\{(4)\}\\\]],
   [Fun.],
 ),
   insert-map: (:),
@@ -82,10 +65,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [EFF to Wisconsin Legislature: VPN Bans Are Still a Terrible Idea],
   author: [Rindala Alajaji],
   source-name: [EFF Deeplinks],
@@ -108,10 +89,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Tales From the Beat Episode 130: Competitive Paranoia],
   author: [Ed Garsten, TTAC Creator],
   source-name: [The Truth About Cars],
@@ -163,10 +142,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Alienware's Flagship Area-51 Ryzen X3D Edition RTX 5090 Gaming PC Drops to \$4,450],
   author: [Eric Song],
   source-name: [IGN],
@@ -196,10 +173,8 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Privacy's Defender: Launch Party in Berkeley],
   author: [Melissa Srago],
   source-name: [EFF Deeplinks],
@@ -246,10 +221,8 @@ Entrance located at:
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Super Mario Bros. (1993) Flashback Review],
   author: [Scott Collura],
   source-name: [IGN],
@@ -262,7 +235,6 @@ Entrance located at:
   [It’s a good thing that the dynamic between Mario and Luigi functions as well as it does since nearly everything around them increasingly seems to get more insane, bizarre, and distant from the source material.],
   [This is technically a movie review, so I am now going to attempt to explain the plot. Deep breath: Two brothers living in Brooklyn meet a woman whose job it is to dig up dinosaur bones under the Brooklyn Bridge, because obviously that’s where the most dinosaur bones are, and because the engineers who build bridges somehow didn’t find them despite there being so many bones down there. And also they have no problem with people digging for dinosaur bones under functional bridges because that seems safe and fine for everyone involved. The woman gets kidnapped by two vaguely Italian guys from another dimension and the two slightly less vaguely Italian brothers fall through a magical illusory wall to find her, landing themselves in a manic lizard-themed version of Manhattan where everything is covered in wet webs. From there, a villain leader who orders fast food using a gun pointed at his television makes everyone’s life slightly difficult because he wants the woman’s necklace, and he also does evolution experiments on his employees, which they all seem OK with. The brothers then have to save the woman, defeat the villain, and learn several things about dinosaurs that aren’t applicable to reality.],
   [As the poster describes, this ain’t no game. It is also frequently barely a movie, more a byproduct of the sheer disdain that movie executives frequently have for films aimed at children, treating the audience like passive lab rats who will just consume whatever is dumped into the feeding tubes. Kids deserved and continue to deserve better. That said, Super Mario Bros. is occasionally a fun time for a kids movie despite the fact that dozens and dozens of its moments are completely unrecognizable as a Super Mario Bros. movie. It’s fast-paced, sometimes funny, and has likeable protagonists taking on a big, campy bad guy (played by none other than Dennis Hopper).],
-  [style="text-align: center;"\>],
   [It’s also got lots of stuff that kids thought was cool in the early ’90s, like tyrannosaurs, big vehicles with unnecessary stuff glued on them like they’re from an action-figure line, fireball guns, a zipline, and… prostitutes? More importantly though, it had the benefit of being one of the earliest live-action video game movies ever made, which means audiences didn’t exactly have a strong point of reference for how these things should turn out (and also hadn’t yet suffered through the somehow even worse Double Dragon movie which was released a year later). Watching the Super Mario Bros. movie is sort of like eating a knockoff version of your favorite breakfast cereal. Yes, it has marshmallows and fun oat shapes and a silly character on the packaging, but it all just tastes so fucking weird. These aren’t General Mills Lucky Charms, they’re First Street Magic Shapes where the leprechaun mascot is replaced with a clipart blue dinosaur and an off-putting saccharine paste slowly builds up on the roof of your mouth the longer you spend consuming it.],
   [I don’t hate this movie. I swear. In fact, I try to revisit it every few years and see if there are any redeeming qualities to it. It’s all just so profoundly strange, which – while that’s a more ambitious and occasionally interesting thing for a movie to be than “safe” – does make me wonder what percentage of people in the credits had ever actually played the game. Imagine if me and 200 dogs recorded a song about being astronauts. The end result would be equal parts fascinating and horrible, but real astronauts would sit around for decades wondering why the dogs and I ever thought we were qualified to tell their story. It’s possible that there were actually some people involved in making Super Mario Bros. who had played the games before, but they either never spoke up or were completely ignored, two entirely plausible scenarios for a movie that went both over schedule and over budget and, by all accounts, had a frequently contentious set.],
   [There are nitpicky things to get annoyed about because they seem like the easiest details to get right from the games. Just basic stuff that anyone who had actually played a Mario game could have flagged. Why is Mario wearing yellow for a third of the film? Why is Luigi (who didn’t even bother growing a mustache or gluing one on) wearing red for two thirds of the film? Why are the power-up mushrooms replaced with a disgusting ceiling fungus that turns into a man? Why does Toad play guitar? Wait, the guitar guy was supposed to Toad? Just some of the many things to think about as the film flashes through its 104 minutes of run time at both a breakneck speed and an eternity, like that looping gif of the speeding vehicle that keeps looking like it's about to crash into a wall but never actually does. And if 104 minutes seems like a long time, it’s actually nothing in comparison to the 30 years that it took to see another Super Mario movie in theaters after the 1993 one did nearly irreparable damage to Nintendo’s relationship with Hollywood.],
@@ -286,10 +258,8 @@ Entrance located at:
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Discord Voluntarily Pushes Mandatory Age Verification Despite Recent Data Breach],
   author: [Rindala Alajaji],
   source-name: [EFF Deeplinks],
@@ -314,6 +284,7 @@ Entrance located at:
   [Discord says it is trying to address privacy concerns by using device-based facial age estimation and separating government IDs from user accounts, retaining only a user’s age rather than their identity documents. This is meant to reduce the risks associated with retaining and collecting this sensitive data. However, even when privacy safeguards are in place, we are faced with another problem: There is no current technology that is fully privacy-protective, universally accessible, and consistently accurate. Facial age estimation tools are notoriously unreliable, particularly for people of color, trans and nonbinary people, and people with disabilities. The internet has now proliferated with stories of people bypassing these facial age estimation tools. But when systems get it wrong, users may be forced into appeals processes or required to submit more documentation, such as government-issued IDs, which would exclude those whose appearance doesn’t match their documents and the millions of people around the world who don’t have government-issued identity documents at all.],
   [Even newer approaches (things like age inference, behavior tracking, financial database checks, digital ID systems) expand the web of data collection, and carry their own tradeoffs around access and error. As we mentioned earlier, no current approach is simultaneously privacy-protective, universally accessible, and consistently accurate across all demographics.],
   [That’s the challenge: the technology itself is not fit for the sweeping role platforms are asking it to play.],
+  [That’s the challenge: the technology itself is not fit for the sweeping role platforms are asking it to play.],
   [Discord reports over 200 million monthly active users , and is one of the largest platforms used by gamers to chat. The video game industry is larger than movies, TV, and music combined, and Discord represents an almost-default option for gamers looking to host communities.],
   [Many communities, including open-source projects, sports teams, fandoms, friend groups, and families, use Discord to stay connected. If communities or individuals are wrongly flagged as minors, or asked to complete the age verification process, they may face a difficult choice: submit to facial scans or ID checks, or accept a more restricted “teen” experience. For those who decline to go through the process, the result can mean reduced functionality, limited communication tools, and the chilling effects that follow.],
   [Most importantly, Discord did not have to “comply in advance” by requiring age verification for all users, whether or not they live in a jurisdiction that mandates it. Other social media platforms and their trade groups have fought back against more than a dozen age verification laws in the U. S. , and Reddit has now taken the legal fight internationally . For a platform with as much market power as Discord, voluntarily imposing age verification is unacceptable.],
@@ -335,10 +306,8 @@ Entrance located at:
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [The Foilies 2026],
   author: [Dave Maass],
   source-name: [EFF Deeplinks],
@@ -415,11 +384,10 @@ Entrance located at:
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Samsung's Premium 65" S90 4K OLED Smart TV Drops to Just \$1,099 for the Amazon Spring Sale],
   author: [Eric Song],
   source-name: [IGN],
@@ -448,7 +416,7 @@ Entrance located at:
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [QOTD: Which Designer Should Head To Jaguar Land Rover?],
   author: [Tim Healey],
   source-name: [The Truth About Cars],
@@ -473,8 +441,7 @@ Entrance located at:
 #pull-quote([The S90D also supports variable refresh rate and auto low latency mode.], [Eric Song])
 
 
-{
-  #standard-article(
+#standard-article(
   title: [☺️ Trust Us With Your Face | EFFector 38.4],
   author: [Christian Romero],
   source-name: [EFF Deeplinks],
@@ -483,6 +450,8 @@ Entrance located at:
   [Do you remember the last time you were carded at a bar or restaurant? It was probably such a quick and normal experience, that you barely remember it. But have you ever been carded to use the internet? Being required to present your ID to access content online is becoming a growing reality for many. We're explaining the dangers of age verification laws, and the latest in the fight for privacy and free speech online, with our EFFector newsletter .],
   [For over 35 years, EFFector has been your guide to understanding the intersection of technology, civil liberties, and the law. This issue covers Discord's controversial rollout of mandatory age verification , a leaked Meta memo on face-scanning smart glasses , and a Super Bowl surveillance ad that said the quiet part out loud.],
   [Prefer to listen in? In our audio companion, EFF Associate Director of State Affairs Rin Alajaji explains how online age verification hurts free expression for all users. Find the conversation on YouTube or the Internet Archive .],
+  [LISTEN TO EFFECTOR],
+  [EFFECTOR 38.4 - ☺️ Trust Us With Your Face],
 ),
   insert-map: (:),
   word-count: 200,
@@ -490,24 +459,21 @@ Entrance located at:
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([Car and Driver], source-name: [Car and Driver], [We compare the Charger's Hurricane twin-turbo six with the old-school Hemi V-8 and let the test results do the talking.])],
-    [#brief-item([Nico DeMattia], source-name: [Jalopnik], [Bosch managed to create a timeless design when it introduced spark plugs to the masses. But it would have never come to pass if not for another invention.])],
-    [#brief-item([BBC Sport], source-name: [BBC Sport], [Before Carlos Alcaraz became the youngest man to complete the career Grand Slam, he was simply Carlitos from Murcia. This is his story.])],
-    [#brief-item([Scientific American], source-name: [Scientific American], [During their 10-day mission, this four-person crew will swing around the far side of the moon—and potentially travel farther from Earth than anyone in history])],
-    [#brief-item([BBC Sport], source-name: [BBC Sport], [Wales boss Craig Bellamy discusses everything from football to Balkan history - and playing Ken and Barbie - in an exclusive, in-depth interview with BBC Sport.])],
-    [#brief-item([BBC Sport], source-name: [BBC Sport], [No-one knew what to expect at football's first official penalty shootout - and no-one wanted to go down in history as the first to miss.])],
-    [#brief-item([Scientific American], source-name: [Scientific American], [The COVID pandemic ushered mRNA vaccines into the spotlight, and the technology has even greater potential. Here’s what to know about the way that they work, their safety, and more])],
-    [#brief-item([Car and Driver], source-name: [Car and Driver], [They'll join a new plug-in-hybrid model and a body-on-frame pickup, which are both scheduled to arrive in the next three years.])],
-    [#brief-item([Car and Driver], source-name: [Car and Driver], [It looks like more colorful cars are poised for a comeback, displacing the grayscale ones that currently saturate parking lots.])],
-    [#brief-item([Shane Schmid], source-name: [Jalopnik], [Vortec engines have lasted for over three decades. There are reasons as to why they lasted so long, but there are also reasons as to why they fell out of favor.])],
-    [#brief-item([Alvin Reyes], source-name: [Jalopnik], [Bridgestone used to be a top contender in the world of tires, but can its modern incarnation stand up to Michelin? Consumer Reports has the answer.])],
-    [#brief-item([Bigphoto], source-name: [One Big Photo], [Did you know that approximately 41% — or around four of 10 — of the 50 million or so rental housing units in the U. S. are owned by individual investor landlords?   Owning real estate can be a great investment. You’ll benefit as the property appreciates in value over time, and you can \[…\]])],
-  ))
-}
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([Car and Driver], source-name: [Car and Driver], [We compare the Charger's Hurricane twin-turbo six with the old-school Hemi V-8 and let the test results do the talking.])],
+  [#brief-item([Nico DeMattia], source-name: [Jalopnik], [Bosch managed to create a timeless design when it introduced spark plugs to the masses. But it would have never come to pass if not for another invention.])],
+  [#brief-item([BBC Sport], source-name: [BBC Sport], [Before Carlos Alcaraz became the youngest man to complete the career Grand Slam, he was simply Carlitos from Murcia. This is his story.])],
+  [#brief-item([Scientific American], source-name: [Scientific American], [During their 10-day mission, this four-person crew will swing around the far side of the moon—and potentially travel farther from Earth than anyone in history])],
+  [#brief-item([BBC Sport], source-name: [BBC Sport], [Wales boss Craig Bellamy discusses everything from football to Balkan history - and playing Ken and Barbie - in an exclusive, in-depth interview with BBC Sport.])],
+  [#brief-item([BBC Sport], source-name: [BBC Sport], [No-one knew what to expect at football's first official penalty shootout - and no-one wanted to go down in history as the first to miss.])],
+  [#brief-item([Scientific American], source-name: [Scientific American], [The COVID pandemic ushered mRNA vaccines into the spotlight, and the technology has even greater potential. Here’s what to know about the way that they work, their safety, and more])],
+  [#brief-item([Car and Driver], source-name: [Car and Driver], [They'll join a new plug-in-hybrid model and a body-on-frame pickup, which are both scheduled to arrive in the next three years.])],
+  [#brief-item([Car and Driver], source-name: [Car and Driver], [It looks like more colorful cars are poised for a comeback, displacing the grayscale ones that currently saturate parking lots.])],
+  [#brief-item([Shane Schmid], source-name: [Jalopnik], [Vortec engines have lasted for over three decades. There are reasons as to why they lasted so long, but there are also reasons as to why they fell out of favor.])],
+  [#brief-item([Alvin Reyes], source-name: [Jalopnik], [Bridgestone used to be a top contender in the world of tires, but can its modern incarnation stand up to Michelin? Consumer Reports has the answer.])],
+  [#brief-item([Bigphoto], source-name: [One Big Photo], [Did you know that approximately 41% — or around four of 10 — of the 50 million or so rental housing units in the U. S. are owned by individual investor landlords?   Owning real estate can be a great investment. You’ll benefit as the property appreciates in value over time, and you can \[…\]])],
+))
 
 #colophon([The Connected Star], [Vol. 1, No. 076], [2026-03-30])

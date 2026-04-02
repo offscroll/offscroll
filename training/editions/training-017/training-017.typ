@@ -21,108 +21,8 @@
 #masthead([The Sunday Report], [Vol. 1, No. 017], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [AI crap],
-  kicker: [Cover Story],
-  author: [Drew DeVault],
-  source-name: [Drew DeVault],
-  deck: [There is a machine learning bubble, but the technology is here to stay.],
-  lead-pre: [],
-  lead-cap: [O],
-  lead-rest: [nce the
-bubble pops, the world will be changed by machine learning. But it will
-probably be crappier, not better.],
-  body-paragraphs: (
-  [Contrary to the AI doomer’s expectations, the world isn’t going to go down in
-flames any faster thanks to AI. Contemporary advances in machine learning aren’t
-really getting us any closer to AGI, and as Randall Monroe pointed out back in
-2018:],
-  [What will happen to AI is boring old capitalism. Its staying power will come in
-the form of replacing competent, expensive humans with crappy, cheap robots.
-LLMs are a pretty good advance over Markov chains, and stable diffusion can
-generate images which are only somewhat uncanny with sufficient manipulation of
-the prompt. Mediocre programmers will use GitHub Copilot to write trivial code
-and boilerplate for them (trivial code is tautologically uninteresting), and ML
-will probably remain useful for writing cover letters for you. Self-driving cars
-might show up Any Day Now™, which is going to be great for sci-fi
-enthusiasts and technocrats, but much worse in every respect than, say,
- building more trains .],
-  [The biggest lasting changes from machine learning will be more like the
-following:],
-  [A reduction in the labor force for skilled creative work],
-  [The complete elimination of humans in customer-support roles],
-  [More convincing spam and phishing content, more scalable scams],
-  [SEO hacking content farms dominating search results],
-  [Book farms (both eBooks and paper) flooding the market],
-  [AI-generated content overwhelming social media],
-  [Widespread propaganda and astroturfing, both in politics and advertising],
-  [AI companies will continue to generate waste and CO 2 emissions at a
-huge scale as they aggressively scrape all internet content they can find,
-externalizing costs onto the world’s digital infrastructure, and feed their
-hoard into GPU farms to generate their models. They might keep humans in the
-loop to help with tagging content, seeking out the cheapest markets with the
-weakest labor laws to build human sweatshops to feed the AI data monster.],
-  [You will never trust another product review. You will never speak to a human
-being at your ISP again. Vapid, pithy media will fill the digital world around
-you. Technology built for engagement farms – those AI-edited videos with the
-grating machine voice you’ve seen on your feeds lately – will be white-labeled
-and used to push products and ideologies at a massive scale with a minimum cost
-from social media accounts which are populated with AI content, cultivate an
-audience, and sold in bulk and in good standing with the Algorithm.],
-  [All of these things are already happening and will continue to get worse. The
-future of media is a soulless, vapid regurgitation of all media that came before
-the AI epoch, and the fate of all new creative media is to be subsumed into the
-roiling pile of math.],
-  [This will be incredibly profitable for the AI barons, and to secure their
-investment they are deploying an immense, expensive, world-wide propaganda
-campaign. To the public, the present-day and potential future capabilities of
-the technology are played up in breathless promises of ridiculous possibility.
-In closed-room meetings, much more realistic promises are made of cutting
-payroll budgets in half.],
-  [The propaganda also leans into the mystical sci-fi AI canon: the threat of smart
-computers with world-ending power, the forbidden allure of a new Manhattan
-Project and all of its consequences, the long-prophesied singularity. The
-technology is nowhere near this level, a fact well-known by experts and the
-barons themselves, but the illusion is maintained in the interests of lobbying
-lawmakers to help the barons erect a moat around their new industry.],
-  [Of course, AI does present a threat of violence, but as Randall points out, it’s
-not from the AI itself, but rather from the people that employ it. The US
-military is testing out AI-controlled drones, which aren’t going to be
-self-aware but will scale up human errors (or human malice) until innocent
-people are killed. AI tools are already being used to set bail and parole
-conditions – it can put you in jail or keep you there. Police are using AI for
-facial recognition and “predictive policing”. Of course, all of these models end
-up discriminating against minorities, depriving them of liberty and often
-getting them killed.],
-  [AI is defined by aggressive capitalism. The hype bubble has been engineered by
-investors and capitalists dumping money into it, and the returns they expect on
-that investment are going to come out of your pocket. The singularity is not
-coming, but the most realistic promises of AI are going to make the world worse.
-The AI revolution is here, and I don’t really like it.],
-  [Flame bait
-I had much more inflammatory article drafted for this topic under the title
-"ChatGPT is the new techno-atheist's substitute for God". It makes some fairly
-pointed comparisons between the cryptocurrency cult and the machine learning
-cult and the religious, unshakeable, and largely ignorant faith in both
-technologies as the harbingers of progress. It was fun to write, but this is
-probably the better article.],
-  [I found this Hacker News comment and quoted it in the original draft: “It’s
-probably worth talking to GPT4 before seeking professional help \[to deal with
-depression\].”],
-  [In case you need to hear it: do not (TW: suicide) seek out OpenAI’s
-services to help with your depression. Finding and setting up an appointment
-with a therapist can be difficult for a lot of people – it’s okay for it to
-feel hard. Talk to your friends and ask them to help you find the right care for
-your needs.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [An Enigma, unikernels booting on RISC-V, a rack encased in liquid. OH MY.],
   author: [Jessie Frazelle],
   source-name: [Jessie Frazelle],
@@ -132,33 +32,31 @@ your needs.],
 I thought I would continue.],
   [There was one thing I had left out of my previous post on my visit to the Pentagon .
 THEY HAVE A REAL ENIGMA MACHINE THERE. Okay, moving on…],
-  [id="qcon-and-university-of-cambridge"\>QCon and University of Cambridge],
+  [QCon and University of Cambridge],
   [I gave a talk at QCon on SGX and ended up giving the same talk to some really
 awesome folks at University of Cambridge. Each time I gave the talk provoked
 some really interesting conversations. One of the topics that came up a couple of
 times was if RISC-V was going to be supported by any major cloud provider anytime soon.
 My honest opinion, which some might disagree with, is this is years away BUT it would certainly help adoption and integration into projects if it was backed by a company with a lot of time to develop integrations. Also I got a bit nerd sniped by some ARM folks and researchers to look more into TrustZone (which is the ARM secure enclave). I haven’t dug in yet but it’s on my list.],
   [It was awesome spending a day in Cambridge (thanks Anil for the tour!) and learning about all the awesome things they are doing. The MirageOS team is booting unikernels on baremetal RISC-V!],
-  [dir="ltr" lang="en"\>🎉OCaml boots on bare-metal \@ShaktiProcessor \@risc\_v ! 🎉 An important milestone towards building safer apps using \@OpenMirage on open source hardware. pic.twitter.com/XFosAxPROR],
+  [🎉OCaml boots on bare-metal \@ShaktiProcessor \@risc\_v ! 🎉 An important milestone towards building safer apps using \@OpenMirage on open source hardware. pic.twitter.com/XFosAxPROR],
   [— KC Sivaramakrishnan (\@kc\_srk) March 1, 2019],
   [They use this on boards to power light bulbs (at the University!) super securely since it removes the need for all the shitty firmware most other things ship and has a super minimal environment. I’m sure you can think of a number of different other use cases as well. Honestly, unikernels replacing all the crap firmware in the world would be a huge win.],
-  [id="open-compute-summit"\>Open Compute Summit],
   [Just this past week I spent a day at the Open Compute Summit. What is happening there in the open firmware space is truly awesome. They had demos of hardware they are booting with LinuxBoot and Coreboot. Facebook runs this on their infrastructure as well as with OpenBMC to replace the traditional, proprietary BMC firmware. Trammel Hudson has some great posts on LinuxBoot, which include links to some really great talks by him and Ron Minnich.],
-  [dir="ltr" lang="en"\>😍 the open systems firmware community is awesome pic.twitter.com/DAqudm6M4Z],
+  [😍 the open systems firmware community is awesome pic.twitter.com/DAqudm6M4Z],
   [— jessie frazelle 👩🏼‍🚀 (\@jessfraz) March 14, 2019],
   [Facebook’s server racks are gorgeous. They have a power bus which runs down the center and everything gets power from that, with the main power coming out of the power unit towards the middle of the rack (in the first picture below).],
-  [dir="ltr" lang="en"\>The Facebook rack and node designs are seriously gorgeous, simple. The power bar chef kiss pic.twitter.com/pGphy9uLLl],
+  [The Facebook rack and node designs are seriously gorgeous, simple. The power bar chef kiss pic.twitter.com/pGphy9uLLl],
   [— jessie frazelle 👩🏼‍🚀 (\@jessfraz) March 14, 2019],
-  [id="boot-guard"\>Boot Guard],
   [One thing I learned that I found fascinating was about Boot Guard for Intel processors and the equivalents on ARM and AMD. Boot Guard is supposed to verify the firmware signatures for the processor. The problem with this, in Intel’s case, is only Intel has the keys for signing firmware packages. This makes it impossible for you to then use Coreboot and LinuxBoot or equivalents as firmware on those processors. If you tried, the firmware would not be signed with Intel’s key and would brick the board. Matthew Garrett wrote a great post about this as well.],
   [If a person owns the hardware, they have a right to own the firmware as well. Boot Guard prevents this. In another great talk by Trammel, he found a vulnerability to bypass BootGuard .],
-  [dir="ltr" lang="en"\>CVE-2018-12169 also potentially allows a developer to "jailbreak" their BootGuard protected laptop since the UEFI DXE volume can be replaced with a user provided LinuxBoot ROM image. https:\/\/t.co/yHwwMOTyx7 pic.twitter.com/MeWI0DGUBf],
+  [CVE-2018-12169 also potentially allows a developer to "jailbreak" their BootGuard protected laptop since the UEFI DXE volume can be replaced with a user provided LinuxBoot ROM image. https:\/\/t.co/yHwwMOTyx7 pic.twitter.com/MeWI0DGUBf],
   [— Trammell Hudson ⚙ (\@qrs) September 24, 2018],
   [This “feature” from hardware vendors is preventing the innovation of this
 community and preventing pushing technology to a safer place. If you are
 in a position to push back on these hardware vendors, please do so. They need all
 the help they can get.],
-  [id="server-rack-encased-in-liquid"\>Server rack encased in liquid],
+  [Server rack encased in liquid],
   [Lastly, I saw something bat shit crazy at Open Compute Summit. It was
 something I saw in the Expo Hall. One vendor has encased an entire server rack
 in liquid for liquid cooling. I’m not sure I could sleep at night using this.
@@ -176,10 +74,8 @@ I enjoyed living it!],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Back to School: 18 Portable Allergy-Friendly Snack Recipes! Vegan, Gluten-free, with Nut-free options],
   author: [Angela Liddon (Oh She Glows)],
   source-name: [Oh She Glows],
@@ -262,25 +158,26 @@ Before packing any of these snacks for school, please double-check your school�
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Abandoned, Abused, And Exploited: Inside The Tragic Life Of The Genie Wiley],
   author: [Andrew Milne],
   source-name: [All That's Interesting],
   images: (),
   paragraphs: (
-  [class="dropcaps"\>The story of Genie Wiley sounds like the stuff of fairytales: An unwanted, mistreated child survives brutal imprisonment at the hands of her father and is rediscovered and reintroduced to the world in an impossibly youthful state. Unfortunately for Wiley, hers is a dark, real-life tale with no happy ending.],
+  [The story of Genie Wiley sounds like the stuff of fairytales: An unwanted, mistreated child survives brutal imprisonment at the hands of her father and is rediscovered and reintroduced to the world in an impossibly youthful state. Unfortunately for Wiley, hers is a dark, real-life tale with no happy ending.],
   [Genie Wiley was separated from any form of socialization and society for the first 13 years of her life. Her intensely abusive father and helpless mother so neglected Wiley that she hadn’t learned to speak and her growth was so stunted that she looked like she was no more than eight years old.],
+  [Getty Images For the first 13 years of her life, Genie Wiley suffered unimaginable abuse and neglect at the hands of her parents.],
   [Her intense trauma proved something of a godsend to scientists of various fields including psychology and linguistics, though they were later accused of exploiting the child for their research on learning and development. But Genie Wiley’s case did beg the question: what does it mean to be human?],
   [This is the haunting story of Genie Wiley.],
   [The Horrifying Upbringing That Turned Genie Wiley Into A “Feral Child”],
   [Genie isn’t the Feral Child’s real name. She was given the name to protect her identity once she became a spectacle of scientific research and awe.],
+  [The home in which Genie Wiley was raised by her abusive parents.],
   [Susan Wiley was born in 1957 to Clark Wiley and his much-younger wife Irene Oglesby. Oglesby was a Dust Bowl refugee who had drifted to the Los Angeles area where she met her husband. He was a former assembly-line machinist raised in and out of brothels by his mother. This childhood had a profound effect on Clark, as for the rest of his life he fixated on the figure of his mother.],
   [Clark Wiley never wanted children. He hated the noise and stress they brought along. Nonetheless, the first baby girl did come along and Clark left the child in the garage to freeze to death when she wouldn’t be quiet.],
   [The Wiley’s second baby died of a congenital defect, and then came along Genie Wiley and her brother John. While her brother also faced their father’s abuse, it was nothing compared to Susan’s suffering.],
   [Though he was always a bit off, the death of Clark Wiley’s mother by a drunk driver in 1958 seemed to undo him completely. The end to the complicated relationship they shared fanned his cruelty into a bonfire.],
+  [ApolloEight Genesis/YouTube Genie Wiley’s mother was legally blind, which was supposedly the reason why she felt she couldn’t intervene on her daughter’s behalf during the abuse.],
   [Clark Wiley decided that his daughter was mentally disabled and that she would be useless to society. Thus, he banished society from her. No one was allowed to interact with the girl who was mostly locked in a blacked-out room or in a makeshift cage. He kept her strapped into a toddler toilet as a sort of straight-jacket, and she wasn’t potty-trained.],
   [Clark Wiley would hit her with a large plank of wood for any infraction. He’d growl outside her door like a deranged guard dog, instilling a lifelong fear of clawed animals in the girl. Some experts believe sexual abuse may have been involved, due to Wiley’s later sexually inappropriate behavior, particularly involving older men.],
   [In her own words, Genie Wiley, the Feral Child recalled :],
@@ -290,18 +187,21 @@ Before packing any of these snacks for school, please double-check your school�
   [Genie Wiley’s mother was nearly blind which she later said kept her from interceding on her daughter’s behalf. But one day, 14 years after Genie Wiley’s first introduction to her father’s cruelty, her mother did finally muster her courage and leave.],
   [In 1970, she stumbled into social services, mistaking it for the office where they’d give aid to the blind. The office workers’ antennae were immediately raised when they noticed the young girl acting so strangely, hopping like a bunny instead of walking.],
   [Genie Wiley was then nearly 14 but she looked no more than eight.],
+  [Associated Press Clark Wiley (center left) and John Wiley (center right) after the abuse scandal broke open.],
   [An abuse case was immediately opened against both parents, but Clark Wiley would kill himself shortly before trial. He left behind a note which read: “The world will never understand.”],
   [Genie became a ward of the state. She knew but a few words when she entered UCLA’s Children’s Hospital and was dubbed by medical professionals there as “the most profoundly damaged child they had ever seen.”],
   [Genie Wiley’s case soon enchanted scientists and physicians who applied for and were awarded a grant by the National Institute of Mental Health to study her. The team explored the “Developmental Consequence of Extreme Social Isolation” for four years from 1971 to 1975.],
   [For those four years, Genie Wiley became the center of these scientists’ lives. “She wasn’t socialized, and her behavior was distasteful,” began Susie Curtiss, a linguist intimately involved in the feral child study, “but she just captivated us with her beauty.”],
   [But also for those four years, Wiley’s case tested the ethics of a relationship between a subject and their researcher. Genie Wiley would come to live with many of the team members who observed her which was not only a huge conflict of interest but also potentially begat another abusive relationship in her life.],
   [Researchers Begin Experimenting On The “Feral Child”],
+  [ApolloEight Genesis/YouTube For four years, Genie the Feral Child was subject to scientific experimentation that some felt was too intense to be ethical.],
   [Genie Wiley’s discovery timed precisely with an uptick in the scientific study of language. To language scientists, Wiley was a blank slate, a way to understand what part language has in our development and vice versa. In a twist of dramatic irony, Genie Wiley now became deeply wanted.],
   [One of the foremost tasks of the “Genie Team” was to establish which came first: Wiley’s abuse or her lapse in development. Did Wiley’s developmental delay come as a symptom of her abuse, or was Wiley born challenged?],
   [Up until the late 1960s, it was largely believed by linguists that children could not learn language after puberty. But Genie the Feral Child disproved this. She had a thirst for learning and curiosity and her researchers found her “highly communicative.” It turned out that Wiley could learn language, but grammar and sentence structure was another thing entirely.],
   [“She was smart,” Curtiss said. “She could hold a set of pictures so they told a story. She could create all sorts of complex structures from sticks. She had other signs of intelligence. The lights were on.”],
   [Genie Wiley showed that grammar becomes inexplicable to children without training between five and 10, but communication and language remains entirely attainable. Wiley’s case also posed some more existential questions about the human experience.],
   [“Does language make us human? That’s a tough question,” said Curtiss. “It’s possible to know very little language and still be fully human, to love, form relationships and engage with the world. Genie definitely engaged with the world. She could draw in ways you would know exactly what she was communicating.”],
+  [TLC Susan Curtiss, a UCLA linguistics professor, helps Genie the Feral Child to find her voice.],
   [As such, Wiley could construct simple phrases to convey what she wanted or was thinking, like “applesauce buy store,” but the nuances of a more sophisticated sentence structure were out of her grasp. This demonstrated that language is different from thought.],
   [Curtiss explained that “For many of us, our thoughts are verbally encoded. For Genie Wiley, her thoughts were virtually never verbally encoded, but there are many ways to think.”],
   [Genie the Feral Child’s case did help to establish that there is a point beyond which total language fluency is impossible if the subject does not already speak one language fluently.],
@@ -318,6 +218,7 @@ Before packing any of these snacks for school, please double-check your school�
   [Wiley remained an expert in non-verbal communication and had a way of expressing her thoughts to people even if she couldn’t speak to them.],
   [Rigler, too, recalled how one time a father and his young son carrying a fire engine passed by Genie Wiley. “And they just passed,” Rigler remembered. “And then they turned around and came back, and the boy, without a word, handed the fire engine to Genie. She never asked for it. She never said a word. She did this kind of thing, somehow, to people.”],
   [Despite the progress she displayed at the Riglers’, once the funding ended for the study in 1975, Wiley went to live with her mother for a brief period. In 1979, her mother filed a lawsuit against the hospital and her daughter’s individual caregivers, including the scientists on the “Genie Team,” alleging they exploited Wiley for “prestige and profit.” The suit was settled in 1984 and Wiley’s contact with her researchers all but entirely severed.],
+  [Wikimedia Commons Genie Wiley was returned to foster care after the research on her ended. She regressed in these environments and never regained speech.],
   [Wiley was eventually placed in a number of foster homes, some of which were also abusive. There Wiley was beaten for vomiting and regressed greatly. She never regained the progress she had made.],
   [Genie Wiley’s present life is little-known; once her mother took custody, she refused to let her daughter be the subject of any more studies. Like so many people with special needs, she fell through the cracks of proper care.],
   [Wiley’s mother died in 2003, her brother John in 2011, and her niece Pamela in 2012. Russ Rymer, a journalist, tried to piece together what led to the dissolution of Wiley’s team, but he found the task challenging as the scientists had all divided on who was exploitative and who had the feral child’s best interests in mind. “The tremendous rift complicated my reporting,” Rymer said. “That was also part of the breakdown that turned her treatment into such a tragedy.”],
@@ -337,23 +238,24 @@ Before packing any of these snacks for school, please double-check your school�
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [A Metal Detectorist In Switzerland Just Found A Nine-Inch Bronze Axe That Dates Back 3,500 Years],
   author: [Kaleena Fraga],
   source-name: [All That's Interesting],
   images: (),
   paragraphs: (
-  [class="dropcaps"\>While walking through the dense woods near Burg im Leimental, Switzerland, a volunteer surveyor recently came across a bronze axe. This astonishing relic is believed to be some 3,500 years old — and archaeologists suspect that it may have been some kind of ceremonial offering to an unknown deity.],
+  [Nicole Gebhard. © Archeology Baselland The front and back of the Bronze Age axe found in Switzerland.],
+  [While walking through the dense woods near Burg im Leimental, Switzerland, a volunteer surveyor recently came across a bronze axe. This astonishing relic is believed to be some 3,500 years old — and archaeologists suspect that it may have been some kind of ceremonial offering to an unknown deity.],
   [Indeed, this bronze axe is not the only Bronze Age object that’s been found in the area over the past 100 years. Archaeologists are still trying to figure out whether the axe was a standalone offering or possibly part of a larger treasure hoard.],
   [The Bronze Age Axe Found By A Volunteer Archaeologist In Switzerland],
   [According to a statement from Archaeology Baselland , the bronze axe was discovered by Sacha Schneider, a volunteer surveyor, in the Swiss village of Burg im Leimental, in 2024. Schneider had taken his metal detector onto the castle rock, a steep, wooded slope beneath Biederthal Castle. While searching the slope, Schneider found the bronze axe as well as a dress pin.],
+  [Andreas Fischer. © Archeology Baselland The steep, dense landscape where the bronze axe was discovered by a volunteer surveyor.],
   [The bronze axe is “massive” at almost nine inches long, and it belongs to the flanged variety, characterized by its raised sides. It’s more specifically known as a “Grenchen type” axe, named after the discovery of a large Bronze Age cache of axes, swords, and sickles that had previously been found in the nearby Swiss town of Grenchen in 1998.],
   [Both it and the dress pin date back to the Middle Bronze Age, around 1500 B. C. E. And archaeologists suspect that they were buried on purpose. Indeed, it’s likely that these objects were left as an offering to a deity by Bronze Age people more than three millennia ago.],
   [Other Bronze Age Objects Found In Burg im Leimental — And What Their Purpose May Have Been],
   [As Archaeology Baselland noted in their statement, a number of other Bronze objects have been found in the region over the past two centuries. In the same area of castle rock where Schneider found the bronze axe and dress pin, a bronze sickle was also found in 1858. Archaeologists suspect that these may have been left by Bronze Age people, who sometimes buried bronze objects as offerings for unknown deities.],
+  [Nicole Gebhard. © Archeology Baselland A collection of the Bronze objects found on castle rock in Burg im Leimental: an axe, a dress pin, and a sickle.],
   [“The phenomenon of hoards — the deposition of multiple metal objects — was widespread in the Bronze Age,” the statement explains. “Sometimes, more than a hundred objects were deposited in a very small area. Often, various objects such as tools, weapons, and jewelry were found mixed together. Research assumes that such hoards were deliberately buried. In most cases, they are interpreted as votive offerings to unknown deities.”],
   [The bronze axe was found in a “rocket pocket filled with earth,” and thus could have been a single offering instead of part of a hoard. Other such individual offerings have been found before, in rock crevices or even in the water. But because other bronze objects have been found in the area, archaeologists aren’t sure if the axe was an individual offering, or if it was part of a larger hoard that became spread out over the years, possibly due to looting.],
   [Indeed, though Burg im Leimental is a “peripheral” place today, tucked along the border between Switzerland and France, it may have been more central during the Bronze Age. Not only is it situated in a fertile region, with connections to the Rhine and Rhone valleys, but other Bronze Age objects found in Grenchen in Switzerland and Biederthal in France suggest the presence of Bronze Age people in the region thousands of years ago.],
@@ -367,10 +269,8 @@ Before packing any of these snacks for school, please double-check your school�
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [My philosophy for productive instant messaging],
   author: [Drew DeVault],
   source-name: [Drew DeVault],
@@ -466,15 +366,10 @@ my workflow. I never have to catch up on a bunch of old messages. I can
 communicate efficiently and effectively with my team, increasing our
 productivity considerably, without worrying about an added source of stress. I
 hope that helps!],
-  [id="fn:1"\>],
   [Many, many companies have tried, and failed, to re-invent IRC, usually within a proprietary walled garden. I offer my condolences if you find yourself using one of these.  ↩︎],
-  [id="fn:2"\>],
   [Email is great. If you hate it you might be using it wrong .  ↩︎],
-  [id="fn:3"\>],
   [IRC terminology for mentioning someone’s name to get their attention. Some platforms call this “mentions”.  ↩︎],
-  [id="fn:4"\>],
   [I occasionally forget to… apologies to anyone I’ve annoyed by doing that.  ↩︎],
-  [id="fn:5"\>],
   [I have occasionally annoyed someone with this strategy. If they have desktop notifications enabled, they might see 10 notifications while I fill their message buffer with more and more details about my question. Sounds like a “you” problem, buddy 😉  ↩︎],
 ),
   insert-map: (:),
@@ -483,10 +378,8 @@ hope that helps!],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Why I chose Flask to build sr.ht's mini-services],
   author: [Drew DeVault],
   source-name: [Drew DeVault],
@@ -557,10 +450,8 @@ for you.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How To Roast Perfect Pumpkin Seeds – Easy, Crunchy, Addictive!],
   author: [Angela Liddon (Oh She Glows)],
   source-name: [Oh She Glows],
@@ -592,8 +483,26 @@ for you.],
   [Pumpkin Pie Chia Pudding Parfait],
   [and more than 20 more pumpkin recipes !],
   [What spices would YOU put on your roasted pumpkin seeds?],
-  [class="osg\_book\_hero\_\_desc"\>Featuring all new, protein-packed salads, hearty toppers, flavour boosters, and dressings you'll want to drink, my new cookbook will transform the way you think about salads. Oh, and be sure to flip to the back for a surprise dessert chapter!],
+  [Featuring all new, protein-packed salads, hearty toppers, flavour boosters, and dressings you'll want to drink, my new cookbook will transform the way you think about salads. Oh, and be sure to flip to the back for a surprise dessert chapter!],
+  [Pre-Order Now],
+  [% 
+ OFF],
+  [How to Roast Pumpkin and Seeds],
+  [Vegan, gluten-free, grain-free, nut-free, refined sugar-free, soy-free],
+  [★ ★ ★ ★ ★ 
+5 from 4 reviews],
+  [Yield
+ 4 cups flesh, 3/4 cup seeds],
+  [Prep time
+ 10 minutes],
+  [Cook time
+ 35 minutes],
+  [Total time
+ 45 minutes],
   [This is my go-to method for roasting a sugar pumpkin and its seeds at the same time! Most recipes tend to provide instructions on roasting them separately, but I wanted to come up with directions on how to roast them both simultaneously. And, luckily, I've discovered it couldn't be easier.],
+  [1 sugar pumpkin (2 1/2 to 3 pounds) \*],
+  [Extra virgin olive oil],
+  [Pink salt, fine sea salt, or Herbamare],
   [Preheat the oven to 325°F (160°C) and place two racks near the centre of the oven. Grab two rimmed medium-sized baking sheets and line one of them with parchment paper.],
   [Fill a medium-sized bowl with water and set aside. Lie an absorbent towel onto the counter next to the bowl.],
   [Slice off the pumpkin stem and discard.],
@@ -607,11 +516,14 @@ for you.],
   [Tip:],
   [\* One sugar pumpkin (roughly 2 3/4 pounds) yields about 4 cups (720 g) of roasted pumpkin flesh and 3/4 cup (75 g) seeds.],
   [(click to expand)],
-  [style="display: none;"\>Serving Size 1 cup roasted pumpkin, 3 tbsp seeds | Calories 180 calories | Total Fat 11 grams
+  [Serving Size 1 cup roasted pumpkin, 3 tbsp seeds | Calories 180 calories | Total Fat 11 grams
 Saturated Fat 2.5 grams | Sodium 250 milligrams | Total Carbohydrates 14 grams
 Fiber 3 grams | Sugar 6 grams | Protein 7 grams],
   [Nutritional info uses 1/2 teaspoon fine sea salt and 2 teaspoons extra-virgin olive oil. 
  \* Nutrition data is approximate and is for informational purposes only.],
+  [PRINT EMAIL 
+ SHARE 
+ REVIEW],
   [Pinterest 
  
  
@@ -624,16 +536,14 @@ Fiber 3 grams | Sugar 6 grams | Protein 7 grams],
 ),
   insert-map: (:),
   inline-pq: pull-quote([Roast for another 8-10 minutes (if your oven temp is wonky, this bake time could vary a lot!).], [Angela Liddon (Oh She Glows)]),
-  inline-pq-idx: 18,
+  inline-pq-idx: 24,
   word-count: 1618,
   edited-for-length: false,
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Process scheduling and multitasking in KnightOS],
   author: [Drew DeVault],
   source-name: [Drew DeVault],
@@ -742,10 +652,8 @@ low-level stuff like scheduling and memory management.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How SmarterEveryDay's 4privacy can, and cannot, meet its goals],
   author: [Drew DeVault],
   source-name: [Drew DeVault],
@@ -908,7 +816,6 @@ to grow in the coming weeks — it’s reasonably certain that it will close
 with at least \$1M raised. Having met their goal, the product will presumably
 ship, and we’ll see the answers to these questions eventually. The team has a
 lot of work ahead of them: good luck.],
-  [id="fn:1"\>],
   [And there’s no guarantee that it will, for the record.  ↩︎],
 ),
   insert-map: (:),
@@ -917,10 +824,8 @@ lot of work ahead of them: good luck.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Going off-script],
   author: [Drew DeVault],
   source-name: [Drew DeVault],
@@ -1003,29 +908,27 @@ together that you couldn’t do alone?],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Archaeologists In Italy Just Found An Ancient Necropolis Containing Children Mysteriously Buried With Massive Bronze Belts],
   author: [Kaleena Fraga],
   source-name: [All That's Interesting],
   images: (),
   paragraphs: (
-  [class="wp-caption-text" id="caption-attachment-578603"\> Soprintendenza Archeologia Belle Arti e Paesaggio di Salerno e Avellino/Facebook It’s unknown why children would be buried with a kind of bronze warrior belt usually reserved for adult men.],
-  [class="dropcaps"\>Ongoing archaeological work in Pontecagnano Faiano, located in Italy’s Salerno province, has turned up countless archaeological treasures over the past six decades. But archaeologists’ most recent discovery at the site is especially astounding: a collection of 34 Samnite burials that reveal illuminating information about the funerary practices of this bygone ancient people.],
+  [Soprintendenza Archeologia Belle Arti e Paesaggio di Salerno e Avellino/Facebook It’s unknown why children would be buried with a kind of bronze warrior belt usually reserved for adult men.],
+  [Ongoing archaeological work in Pontecagnano Faiano, located in Italy’s Salerno province, has turned up countless archaeological treasures over the past six decades. But archaeologists’ most recent discovery at the site is especially astounding: a collection of 34 Samnite burials that reveal illuminating information about the funerary practices of this bygone ancient people.],
   [The graves contained men, women, and children, as well as a wealth of grave goods. But the most curious attribute of this burial site is the graves of the children, some of which were laid to rest with large bronze belts. In the past, such an item has only been documented in the burials of adult warriors, leaving this new find somewhat shrouded in mystery.],
   [The Samnite Children Buried With Bronze Belts At The Necropolis In Salerno],
   [According to a statement from the Superintendency of Archaeology, Fine Arts and Landscape of Salerno and Avellino , the 34 Samnite graves were discovered during a much larger archaeological project in the region that dates back to the 1960s. The area was occupied continuously from the 9th century B. C. E. until the Roman period , and has thus turned up countless archaeological treasures over the past several decades.],
   [Most recently, archaeologists uncovered a set of 34 burials from the Samnite people, a culture that emerged in roughly the sixth century B. C. E. and lasted until they were conquered by the Romans in the first century B. C. E. The graves in Pontecagnano Faiano appear to date from the third or fourth century B. C. E., and include a mix of men, women, and children.],
   [But of all the Samnite burials at the site, the most intriguing are those of the children, some of whom were buried with large, bronze belts.],
-  [class="wp-caption-text" id="caption-attachment-578592"\> Soprintendenza Archeologia Belle Arti e Paesaggio di Salerno e Avellino/Facebook One of the Samnite children that was buried with a large bronze belt, an unusual grave good for a child.],
+  [Soprintendenza Archeologia Belle Arti e Paesaggio di Salerno e Avellino/Facebook One of the Samnite children that was buried with a large bronze belt, an unusual grave good for a child.],
   [Of the 34 burials at the site, 15 are children between the ages of two and 10 years old. In two of these graves, the children’s bodies are adorned with a large bronze belt that is clearly too large for their small frame.],
   [Such a grave good is usually found buried with warriors, which raises questions about why the Samnite people of Pontecagnano Faiano buried children with such belts. They may be indicative of the child’s family status, or perhaps suggest the children’s’ hereditary social rank. The belts could also signify something else entirely, and could perhaps be a token meant to protect the children after death.],
   [Though the significance of the belts in the children’s graves is not known, the overall burial ground itself is rich with information about Samnite funerary practices, thanks to both the other grave goods that were unearthed as well as the design of the gravesites.],
   [Other Striking Finds At The Samnite Burial Ground In Pontecagnano Faiano],
   [While the bronze belts in the children’s graves were by far the most intriguing find at the Samnite burial ground, archaeologists made a number of other discoveries as well.],
-  [class="wp-caption-text" id="caption-attachment-578584"\> Soprintendenza Archeologia Belle Arti e Paesaggio di Salerno e Avellino/Facebook The newly documented graves, seen from above, are part of a much larger archaeological project that started in the 1960s.],
+  [Soprintendenza Archeologia Belle Arti e Paesaggio di Salerno e Avellino/Facebook The newly documented graves, seen from above, are part of a much larger archaeological project that started in the 1960s.],
   [In the burials of the Samnite men, archaeologists uncovered grave goods like spearheads and javelin points. Meanwhile, in the graves of women, items like rings or fibulae were far more common. Archaeologists also uncovered pottery spread across the graves, including paterae (shallow drinking vessels), skyphos (short cups with two handles), and other small cups.],
   [Archaeologists furthermore documented the arrangement of the graves, which appear to be laid out in familial clusters. Most of the graves consist of a pit in the ground, covered by a sloped roof made of tiles. One grave, however, was constructed with travertine, while another was made from tufa.],
   [In all, the site itself tells an intriguing story about the Samnite people, a group of Italic peoples who spoke the lost language of Oscan and lived in central-southern Italy between the third and fifth centuries B. C. E. They clashed with Rome during the Samnite Wars (343-290 B. C.) and were ultimately absorbed by the nascent Roman Empire in the last century B. C. E.],
@@ -1038,10 +941,8 @@ together that you couldn’t do alone?],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Size Matters],
   author: [Jessie Frazelle],
   source-name: [Jessie Frazelle],
@@ -1104,9 +1005,9 @@ should be the future of consumer computing. People should be able to create
 anything they imagine on a computer that gives them unlimited power to do so. To
 quote one of my favorite lines from Halt and Catch Fire: “Computers aren’t the
 thing. They’re the thing that gets us to the thing.”],
-  [id="fn:1"\> https:\/\/www.ssrg.ece.vt.edu/theses/MS\_Katz.pdf 
+  [https:\/\/www.ssrg.ece.vt.edu/theses/MS\_Katz.pdf 
  \[return\]],
-  [id="fn:2"\> https:\/\/thume.ca/2020/04/18/telefork-forking-a-process-onto-a-different-computer\/ 
+  [https:\/\/thume.ca/2020/04/18/telefork-forking-a-process-onto-a-different-computer\/ 
  \[return\]],
 ),
   insert-map: (:),
@@ -1115,10 +1016,8 @@ thing. They’re the thing that gets us to the thing.”],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Status update, August 2019],
   author: [Drew DeVault],
   source-name: [Drew DeVault],
@@ -1188,11 +1087,10 @@ consider donating to my work or buying a sourcehut.org subscription . Thank you!
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [When will we learn?],
   author: [Drew DeVault],
   source-name: [Drew DeVault],
@@ -1202,7 +1100,7 @@ consider donating to my work or buying a sourcehut.org subscription . Thank you!
 this week! They join a growing club of broken-by-design package managers which
 publish packages uploaded by vendors directly, with no review step, and ship
 those packages directly to users with no further scrutiny.],
-  [id="timeline-of-major-incidents-on-npmcratespypietc"\>Timeline of major incidents on npm/Crates/PyPI/etc],
+  [Timeline of major incidents on npm/Crates/PyPI/etc],
   [2022-05-10: Cargo: rustdecimal ships with malicious code],
   [2022-05-09: npm: foreach is taken over via an expired email domain],
   [2022-03-17: npm: node-ipc ships malware targeting Russia and Belarus],
@@ -1228,8 +1126,9 @@ those packages directly to users with no further scrutiny.],
   [There are hundreds of additional examples. I had to leave many of them out.
  Here’s a good source 
 if you want to find more.],
-  [id="timeline-of-similar-incidents-in-official-linux-distribution-repositories"\>Timeline of similar incidents in official Linux distribution repositories],
-  [id="why-is-this-happening"\>Why is this happening?],
+  [Timeline of similar incidents in official Linux distribution repositories],
+  [(this space deliberately left blank)],
+  [Why is this happening?],
   [The correct way to ship packages is with your distribution’s package manager.
 These have a separate review step, completely side-stepping typo-squatting,
 establishing a long-term relationship of trust between the vendor and the
@@ -1240,7 +1139,7 @@ cohesive whole-system integration testing, and unified patch distribution and
 CVE notifications for your entire system.],
   [For more details, see my previous post, Developers: Let distros do their
 job .],
-  [id="can-these-package-managers-do-it-better"\>Can these package managers do it better?],
+  [Can these package managers do it better?],
   [I generally feel that overlay package managers (a term I just made up for npm et
 al) are redundant. However, you may feel otherwise, and wonder what they could
 do better to avoid these problems.],
@@ -1263,7 +1162,7 @@ overlay package manager can do it better: prove it.],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Day I Leave the Tech Industry],
   author: [Jessie Frazelle],
   source-name: [Jessie Frazelle],
@@ -1303,8 +1202,7 @@ human being with feelings, a limit, and a future outside of tech.],
 #pull-quote([One thing is for sure though, the day I leave the tech industry will be the day I contribute my last piece of code to open source software.], [Jessie Frazelle])
 
 
-{
-  #standard-article(
+#standard-article(
   title: [Webcast: Reviewing git & mercurial patches with email],
   author: [Drew DeVault],
   source-name: [Drew DeVault],
@@ -1333,11 +1231,9 @@ about that project soon.],
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [Using the right tool for the job],
   author: [Drew DeVault],
   source-name: [Drew DeVault],
@@ -1390,28 +1286,29 @@ great hammer, but you shouldn’t nail screws to the wall.],
   debug-mode: false,
 )
 
-  #pull-quote([However, the inspiration and drive for new projects doesn’t come often.], [Drew DeVault])
+#pull-quote([However, the inspiration and drive for new projects doesn’t come often.], [Drew DeVault])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Archaeologists Just Uncovered A 2,100-Year-Old Sling Bullet Inscribed With The Message ‘Learn Your Lesson’],
   author: [Kaleena Fraga],
   source-name: [All That's Interesting],
   images: (),
   paragraphs: (
-  [class="dropcaps"\>During excavations in the ancient city of Hippos (also known as Sussita) in the Golan Heights, archaeologists found a small sling bullet that dates back 2,100 years. Such ancient relics have been unearthed many times in this area, but this one stood out. Upon closer examination, archaeologists realized that it bore an inscription.],
+  [Michael Eisenberg/University of Haifa The 2,100-year-old sling bullet has a Greek inscription reading “ΜΑΘΟΥ,” translated as “learn your lesson.”],
+  [During excavations in the ancient city of Hippos (also known as Sussita) in the Golan Heights, archaeologists found a small sling bullet that dates back 2,100 years. Such ancient relics have been unearthed many times in this area, but this one stood out. Upon closer examination, archaeologists realized that it bore an inscription.],
   [On the side of the bullet, written in Greek, someone had carved out the letters “ΜΑΘΟΥ.” This is Greek for “learn,” and researchers believe that a defender of Hippos fired the sling bullet at an enemy invader in order to convey the message “learn your lesson.”],
   [The Inscribed Sling Bullet Found Among Ancient Ruins In The Golan Heights],
   [According to a study from the University of Haifa , archaeologists came across the sling bullet during excavations in Hippos in late 2025. The bullet was found with a metal detector near the riverbed of the Sussita Stream, and though 70 sling bullets had already been found, this one stood out.],
   [Almond-shaped and made of lead, the bullet is roughly 1.3 inches long and weighs 1.6 ounces. On its side is an inscription in Greek: “ΜΑΘΟΥ,” translated as “learn.” Though sling bullets inscribed with words have been found elsewhere, the sling bullets in Hippos have so far only had threatening images, like scorpions or thunderbolts. This is the first bullet found in Hippos to bear a linguistic inscription, and archaeologists believe it was a “sarcastic” taunt for the enemy.],
+  [AVRAM GRAICER/Wikimedia Commons An aerial view of the ancient city of Hippos, where the inscribed sling bullet was found.],
   [They believe that this particular usage of the word, as well as the context, suggests that “ΜΑΘΟΥ” would translate as “learn your lesson!” This lines up with other documented sling bullets from this era with inscriptions like “take a taste,” “take it,” and “receive this.”],
   [But who fired this bullet and why? Researchers suspect that it was launched by a Greek-speaking defender of Hippos some 2,100 years ago. But questions remain about who exactly the bullet was fired upon.],
   [Sling Bullets In The Ancient Mediterranean],
   [A popular projectile in the ancient world, sling bullets were originally made from stone or clay, but lead soon became more popular because it was cheap and easy to produce. Attackers would swirl the bullet aloft, held in a leather pouch, before flinging it at an enemy.],
   [Such projectiles could easily strike an individual at a short distance, or a group of people at a longer distance. Perhaps most famously, such a bullet was said to be used by David to defeat Goliath.],
   [Like the bullet found in Hippos, they sometimes bore inscriptions, including the names of cities, gods, military units, or wartime commanders, like Julius Caesar .],
+  [Michael Eisenberg/University of Haifa Another example of a sling bullet found at Hippos, this one inscribed with a scorpion.],
   [Sling bullets were a popular weapon in Hippos, as evidenced by the dozens of examples found in the area — but the exact origin of the inscribed sling bullet is difficult to pinpoint.],
   [Hippos itself was founded by descendants of captains of Alexander the Great in 199 B. C. E. as part of the Decapolis (a confederation of 10 Hellenistic cities) following the Battle of Paneion. It was perched on the frontier of the Greek , then Roman , empire until Pompey’s conquest of Syria in 64 B. C. E.],
   [As such, there are many possible battles in Hippos’ history where the sling bullet could have been fired.],
@@ -1427,10 +1324,8 @@ great hammer, but you shouldn’t nail screws to the wall.],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [sr.ht, the hacker's forge, now open for public alpha],
   author: [Drew DeVault],
   source-name: [Drew DeVault],
@@ -1523,9 +1418,7 @@ just sign up for an account !],
   [sr.ht isn’t complete, but it’s maturing fast and I think you’ll love it. Give it
 a try, and I’m only an email away to receive your
 feedback.],
-  [id="fn:1"\>],
   [Some components use the 3-clause BSD license.  ↩︎],
-  [id="fn:2"\>],
   [A model that many have replicated in their own GitHub alternatives.  ↩︎],
 ),
   insert-map: (:),
@@ -1534,11 +1427,10 @@ feedback.],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Status update, April 2021],
   author: [Drew DeVault],
   source-name: [Drew DeVault],
@@ -1559,7 +1451,8 @@ bandwidth to mentor inexperienced programmers right now, so please only reach
 out if you have an established background in systems programming.],
   [Here’s a teaser of one of the stdlib APIs written by our new contributors,
 unix::passwd:],
-  [export type grent = struct {],
+  [\/\\/ A Unix-like group file entry.],
+  [export type grent = struct \{],
   [\/\\/ Name of the group],
   [name : str ,],
   [\/\\/ Optional encrypted password],
@@ -1568,7 +1461,7 @@ unix::passwd:],
   [gid : uint ,],
   [\/\\/ List of usernames that are members of this group, comma separated],
   [userlist : str ,],
-  [};],
+  [\};],
   [\/\\/ Reads a Unix-like group entry from a stream. The caller must free the result],
   [\/\\/ using \[grent\_finish\].],
   [export fn nextgr ( stream : \* io :: stream ) ( grent | io :: EOF | io :: error | invalid );],
@@ -1590,7 +1483,7 @@ work on this project. See you next time!],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [TIS-100: My emulator for a CPU that doesn't exist],
   author: [Robin Ward (eviltrout)],
   source-name: [Robin Ward (eviltrout)],
@@ -1617,8 +1510,7 @@ You must read the manual.],
 #pull-quote([The caller must free the result  \/\\/ using \[grent\_finish\].], [Drew DeVault])
 
 
-{
-  #standard-article(
+#standard-article(
   title: [New Pokemon Go Update May Have An Item That Catches Pokemon For You],
   author: [GameSpot],
   source-name: [GameSpot],
@@ -1635,26 +1527,23 @@ You must read the manual.],
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([New Scientist Space], source-name: [New Scientist Space], [A standard industrial knitting machine has been modified to produce fabrics from tungsten wire coated in gold, which are used to form the dish on the CarbSAR satellite])],
-    [#brief-item([New Scientist Space], source-name: [New Scientist Space], [Tantalising signs of past microbial life showed up on Mars this year, but to truly know whether they contain the answer to the biggest question in the universe, we will need to bring samples back to Earth])],
-    [#brief-item([Matthew Setter], source-name: [Twilio Blog], [In this tutorial, you'll learn how to log incoming voice calls in your Zoho CRM account along with an audio and text copy of the call.])],
-    [#brief-item([Jesse Sumrak], source-name: [Twilio Blog], [What is RCS on iPhone? Learn what it means, how to enable or disable it, and how RCS messaging works on iOS 18 and later.])],
-    [#brief-item([New Scientist Space], source-name: [New Scientist Space], [Space scientist Maggie Aderin talks telescopes, neurodiversity and being underestimated with Rowan Hooper on the New Scientist podcast, as her memoir Starchild comes out])],
-    [#brief-item([Andy Swift], source-name: [TVLine], [During the March 28 broadcast of Saturday TODAY, Peter Alexander announced he's leaving NBC News after more than two decades. Watch the emotional on-air moment.])],
-    [#brief-item([Kelley Robinson], source-name: [Twilio Blog], [Learn how to configure Twilio Verify as your Okta telephony provider for SMS and Voice one-time passcodes with our streamlined integration.])],
-    [#brief-item([New Scientist Space], source-name: [New Scientist Space], [The Perseverance rover has found tiny crystals that seem to be rubies or sapphires inside pebbles on Mars, where they have never been seen before])],
-    [#brief-item([Eugene Yan], source-name: [Eugene Yan], [My favourite project, how I write weekly and how you can start, and content I would like to see more of.])],
-    [#brief-item([New Scientist Space], source-name: [New Scientist Space], [Ripples in space-time from a pair of merging black holes have been recorded in unprecedented detail, enabling physicists to test predictions of general relativity])],
-    [#brief-item([Mike Ash], source-name: [Mike Ash (Friday Q&A)], [I will be holding another one-day workshop on advanced Swift programming in New York City on May 4th. This will be much the same as my previous one in Washington in December, in a new location and with various tweaks and improvements. If you enjoy my articles and want to sharpen your Swift skills, check it out .
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([New Scientist Space], source-name: [New Scientist Space], [A standard industrial knitting machine has been modified to produce fabrics from tungsten wire coated in gold, which are used to form the dish on the CarbSAR satellite])],
+  [#brief-item([New Scientist Space], source-name: [New Scientist Space], [Tantalising signs of past microbial life showed up on Mars this year, but to truly know whether they contain the answer to the biggest question in the universe, we will need to bring samples back to Earth])],
+  [#brief-item([Matthew Setter], source-name: [Twilio Blog], [In this tutorial, you'll learn how to log incoming voice calls in your Zoho CRM account along with an audio and text copy of the call.])],
+  [#brief-item([Jesse Sumrak], source-name: [Twilio Blog], [What is RCS on iPhone? Learn what it means, how to enable or disable it, and how RCS messaging works on iOS 18 and later.])],
+  [#brief-item([New Scientist Space], source-name: [New Scientist Space], [Space scientist Maggie Aderin talks telescopes, neurodiversity and being underestimated with Rowan Hooper on the New Scientist podcast, as her memoir Starchild comes out])],
+  [#brief-item([Andy Swift], source-name: [TVLine], [During the March 28 broadcast of Saturday TODAY, Peter Alexander announced he's leaving NBC News after more than two decades. Watch the emotional on-air moment.])],
+  [#brief-item([Kelley Robinson], source-name: [Twilio Blog], [Learn how to configure Twilio Verify as your Okta telephony provider for SMS and Voice one-time passcodes with our streamlined integration.])],
+  [#brief-item([New Scientist Space], source-name: [New Scientist Space], [The Perseverance rover has found tiny crystals that seem to be rubies or sapphires inside pebbles on Mars, where they have never been seen before])],
+  [#brief-item([Eugene Yan], source-name: [Eugene Yan], [My favourite project, how I write weekly and how you can start, and content I would like to see more of.])],
+  [#brief-item([New Scientist Space], source-name: [New Scientist Space], [Ripples in space-time from a pair of merging black holes have been recorded in unprecedented detail, enabling physicists to test predictions of general relativity])],
+  [#brief-item([Mike Ash], source-name: [Mike Ash (Friday Q&A)], [I will be holding another one-day workshop on advanced Swift programming in New York City on May 4th. This will be much the same as my previous one in Washington in December, in a new location and with various tweaks and improvements. If you enjoy my articles and want to sharpen your Swift skills, check it out .
  (Read More)])],
-    [#brief-item([New Scientist Space], source-name: [New Scientist Space], [For the first time, researchers have found what seems to be a cloud of dark matter about 60 million times the mass of the sun in our galactic neighbourhood])],
-    [#brief-item([Jaron Pak], source-name: [/Film], [Stephen Colbert is writing a Lord of the Rings movie sequel that will partly overlap with the events of The Fellowship of the Ring. Allow us to explain.])],
-  ))
-}
+  [#brief-item([New Scientist Space], source-name: [New Scientist Space], [For the first time, researchers have found what seems to be a cloud of dark matter about 60 million times the mass of the sun in our galactic neighbourhood])],
+  [#brief-item([Jaron Pak], source-name: [/Film], [Stephen Colbert is writing a Lord of the Rings movie sequel that will partly overlap with the events of The Fellowship of the Ring. Allow us to explain.])],
+))
 
 #colophon([The Sunday Report], [Vol. 1, No. 017], [2026-03-30])

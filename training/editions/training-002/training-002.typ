@@ -21,50 +21,8 @@
 #masthead([The Quiet Courier], [Vol. 1, No. 002], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [The contradiction at the heart of OpenAI],
-  kicker: [Cover Story],
-  author: [Sean Rameswaram],
-  source-name: [Vox],
-  deck: [OpenAI announced plans to invest substantial amounts of money in AI-related causes this year through its nonprofit, increasing its philanthropic efforts months after restructuring with a new for-profit arm.],
-  lead-pre: [| ],
-  lead-cap: [N],
-  lead-rest: [ikolas Kokovlis/NurPhoto/Getty Images],
-  body-paragraphs: (
-  [class="has-text-align-none"\>Big changes are happening at OpenAI. On Wednesday, the company announced that it would be shutting down their AI video creation app Sora only a couple months after its launch. In October, OpenAI completed a massive restructure of its organization that shakes the very foundations it was built on.],
-  [class="has-text-align-none"\>OpenAI, which powers ChatGPT, among other AI products, was originally founded purely as a nonprofit. Now it has a for-profit arm. According to OpenAI CEO Sam Altman , the nonprofit will still guide the work of the for-profit side to ensure that artificial intelligence works for the “benefit of all humanity.” On top of that, the OpenAI Foundation, would be in charge of (theoretically) \$180 billion, making it one of the largest charitable organizations in the world.],
-  [class="has-text-align-none"\>Catherine Bracy, founder of the nonprofit Tech Equity, thinks this restructuring is a blatant attempt to free up the for-profit wing to act like any other AI company. She argues that OpenAI’s for-profit wing will only ever act for the benefit of its investors. Bracy believes the OpenAI Foundation is merely a glorified and toothless corporate social responsibility arm. We reached out to OpenAI for comment and did not receive a response.],
-  [class="has-text-align-none"\>Bracy spoke with Today, Explained host Sean Rameswaram about the legality of OpenAI’s new structure and her concerns about how this all might shake out. An excerpt of their conversation, edited for length and clarity, is below.],
-  [class="has-text-align-none"\>We worked together back in the day and then kind of went out of touch with each other for a few years. Then, when I was writing a book about venture capital, I was really interested in open AI’s nonprofit model. Sam had been very explicit that the reason they founded OpenAI as a nonprofit was to put the technology at arm’s length from investors because they knew investors would exploit it in a way that would make this technology — which they thought was very dangerous — actually live up to that potential danger.],
-  [class="has-text-align-none"\>So I wanted to talk to him about the decision-making process behind that. And he was very forthcoming about that being the explicit reason why OpenAI was founded as a nonprofit. They put a lot of thought and capacity and energy into creating this \[nonprofit\] governance structure that would protect the technology from the whims of investors, the \[profit-generating\] imperatives that investors put on technology companies.],
-  [class="has-text-align-none"\> And when you found out that Open AI was restructuring and going to try to have it both ways — mission-driven nonprofit, but also money-driven for-profit — what was your reaction?],
-  [class="has-text-align-none"\>Disappointment. I would say that was my initial reaction. And then the secondary response was, Well, what can we do about this? And many of us came together into this coalition that really started asking questions about the responsibility of the nonprofit and the responsibility of the attorney general of California to enforce nonprofit law. And things kind of went from there.],
-  [class="has-text-align-none"\>I run a nonprofit. In the tax code, that means that my organization does not need to pay taxes, but in return for that tax exemption, we are required to operate in service of a public service mission. Our mission is to ensure that the tech industry is creating opportunity for everybody. OpenAI’s nonprofit mission is to ensure that AI develops for the benefit of all of humanity. And legally, Sam Altman is required to prioritize OpenAI’s mission above all else.],
-  [class="has-text-align-none"\>So when they decided they were going to split the nonprofit from the for-profit, they found that actually legally they could not do that without divesting the intellectual property that the nonprofit owned, including all of the intellectual property that was created that underlies the ChatGPT model, and the equity stake that the nonprofit owned in the for-profit company.],
-  [class="has-text-align-none"\>I think they looked at that price tag and they said, That’s not a price we’re willing to pay . And so instead of splitting the nonprofit from the for-profit, they decided to continue down this path of nonprofit ownership, which in my mind is completely untenable, unsustainable, and irreconcilable.],
-  [class="has-text-align-none"\>And actually what they’re doing is just daring the attorney general to hold them accountable for it. I think they think they’re too big to be held accountable and they need the AG \[of California\] to assume that he will not win a case. And that’s what they’ve done. They’ve loaded up on lawyers and they are making a bet that the AG will not pursue this in any way that’s actually meaningful.],
-  [class="has-text-align-none"\> Okay. So if I’m following you, despite the fact that OpenAI has split itself into a for-profit arm and a not-for-profit arm, their not-for-profit mission still overrides everything they do. And because of that, they are violating California law — because there’s no way that the nonprofit interests are ever going to be primary in their business .],
-  [class="has-text-align-none"\>Right. I think, as the kids would say, they’re playing in our faces. They expect us to take their word that as they operate, as they make deals with the Defense Department to develop autonomous weapons and surveillance systems on American citizens, as they battle parents in court whose children have committed suicide due to conversations that these kids were having with their chatbots, they expect us to believe that the nonprofit mission is being prioritized over the profit motivation of the company.],
-  [class="has-text-align-none"\>We all know that OpenAI’s overriding priority is to “win” the AI race. It’s to beat out the competition in the marketplace, and it’s to establish the biggest AI company they can create. To the extent that the nonprofit mission ever comes into tension with that, the company will always prioritize profits over the mission.],
-  [class="has-text-align-none"\>A law is only as good as its enforcement. And I think if there’s one rule of Silicon Valley, it is to ask forgiveness and not permission. I think they said, You know, this is worth it. There’s enough money on the line for us to just break the law and do the PR work and the lobbying work and the other work that we need to do to ensure that these laws will never be enforced against us .],
-  [class="has-text-align-none"\>Well, here’s the thing. They announced this week a list of priorities that the foundation would be investing in. They listed as one of their priorities, Alzheimer’s research. My mother is currently dying of Alzheimer’s. I have one copy of the gene that puts me at extreme risk of developing Alzheimer’s when I’m older. So I pray every day that AI helps us find a solution to Alzheimer’s fast enough that I can benefit from it, that my family can benefit from it.],
-  [class="has-text-align-none"\>But let me ask you a question. What happens, do you think, if the research that’s funded by OpenAI’s Foundation finds that actually Anthropic’s models are better at drug discovery or scientific breakthroughs than ChatGPT or any of OpenAI’s other models? What does it mean for the independence of scientific research, if all of this research is funded by an entity that has an irreconcilable conflict of interest?],
-  [“We do not have to take these companies at their word that they know best how to govern this technology. We should have bigger imaginations about what’s possible.”],
-  [class="has-text-align-none"\>We would not accept the science around nicotine that tobacco companies were funding. We do not accept the science around alcohol addiction that the alcohol companies fund. We do not accept the science around sugared beverages from the soda industry. And we should not accept that this scientific research is funded by an entity that has a vested financial interest in the outcome.],
-  [class="has-text-align-none"\>And that is why it is so critically important that the OpenAI Foundation actually be independent, that it have an independent board, that it can deploy its resources independently, that the research that it is funding is independent.],
-  [class="has-text-align-none"\> Do you still think that we’re maybe better off that OpenAI says that they want to give billions away to better society — than say Anthropic, Google, maybe having some pledges to give money away, but not nearly as much?],
-  [class="has-text-align-none"\>Well, Google has a corporate foundation. It’s called Google.org. And I expect in this structure with the tension and the conflict of interest that the OpenAI Foundation has, that it will operate much more like Google.org, which is essentially an arm of the marketing department, a corporate social responsibility program that gives money to innocuous groups — but will never do anything that undercuts Google’s priorities.],
-  [class="has-text-align-none"\>I think if you read between the lines of open AI’s press release, the work they say they want to continue doing with community funding is all about convincing people about the importance and value and benefit in using AI. I mean, that’s a market building opportunity for them. That’s not actually anything that’s going to ensure that AI is developed for the benefit of humanity. And so, no, I don’t think that they’re going to operate any differently than any of the other companies’ corporate social responsibility arms. That’s essentially what they have built here.],
-  [class="has-text-align-none"\>This is the fight of our time. AI is not inevitable. The way it develops is not inevitable. And we do not have to take these companies at their word that they know best how to govern this technology. We should have bigger imaginations about what’s possible. And if anything, this should give us more energy and motivation to fix what’s broken about our democracy than to just sit back and let billionaires control our future.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [4 Business Ideas That Changed the World: Shareholder Value],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -90,11 +48,9 @@
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Chinese Traffic to time.gif],
   author: [Dennis Felsing],
   source-name: [Dennis Felsing],
@@ -104,14 +60,14 @@
   [Now looking at my GoAccess dashboard I can see that it is picking up in popularity rather suddenly:],
   [But strangely I can’t find anything about time.gif being linked on the web. So this might just be an attempted Denial of Service (DoS) attack? At least that would be something I am familiar with from the DDNet direction, but it’s certainly strange on HookRace. But instead of simply shutting down time.gif I decided to try to find out who is accessing it and whether I can keep the server up.],
   [Let’s look into the nginx logs, since I use nginx to proxy the requests to the Haskell program. There I see about 40 new requests per second looking like this:],
-  [class="highlight"\> hookrace.net 123.185. XXX. XXX - - \[21/May/2019:21:21:27 +0200\] "GET /time.gif HTTP/2.0" 200 3335 "XXX" "Mozilla/5.0 (Linux; Android 8.1.0; V1818A Build/OPM1.171019.026; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044681 Mobile Safari/537.36 MMWEBID/XXX MicroMessenger/7.0.4.1420(0x2700043A) Process/tools NetType/WIFI Language/zh\_CN" 8.055],
+  [hookrace.net 123.185. XXX. XXX - - \[21/May/2019:21:21:27 +0200\] "GET /time.gif HTTP/2.0" 200 3335 "XXX" "Mozilla/5.0 (Linux; Android 8.1.0; V1818A Build/OPM1.171019.026; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044681 Mobile Safari/537.36 MMWEBID/XXX MicroMessenger/7.0.4.1420(0x2700043A) Process/tools NetType/WIFI Language/zh\_CN" 8.055],
   [hookrace.net 111.62. XXX. XXX - - \[21/May/2019:21:21:27 +0200\] "GET /time.gif HTTP/2.0" 200 32061 "XXX" "Mozilla/5.0 (Linux; Android 5.1; OPPO A59s Build/LMY47I; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044704 Mobile Safari/537.36 MMWEBID/XXX MicroMessenger/7.0.4.1420(0x2700043B) Process/tools NetType/WIFI Language/zh\_CN" 89.256],
   [hookrace.net 111.29. XXX. XXX - - \[21/May/2019:21:21:27 +0200\] "GET /time.gif HTTP/2.0" 200 543830 "XXX" "Mozilla/5.0 (Linux; Android 7.1.1; OPPO R11 Build/NMF26X; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044704 Mobile Safari/537.36 MMWEBID/XXX MicroMessenger/7.0.4.1420(0x2700043A) Process/tools NetType/WIFI Language/zh\_CN" 1540.238],
   [hookrace.net 112.2. XXX. XXX - - \[21/May/2019:21:21:27 +0200\] "GET /time.gif HTTP/2.0" 200 172102 "XXX" "Mozilla/5.0 (Linux; Android 8.1.0; V1816A Build/OPM1.171019.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044611 Mobile Safari/537.36 MMWEBID/XXX MicroMessenger/7.0.4.1420(0x2700043A) Process/tools NetType/WIFI Language/zh\_CN" 492.600],
   [hookrace.net 123.13. XXX. XXX - - \[21/May/2019:21:21:27 +0200\] "GET /time.gif HTTP/2.0" 200 1275 "XXX" "Mozilla/5.0 (Linux; Android 9; LYA-AL00 Build/HUAWEILYA-AL00L; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044704 Mobile Safari/537.36 MMWEBID/XXX MicroMessenger/7.0.4.1420(0x2700043A) Process/tools NetType/WIFI Language/zh\_CN" 1.888],
   [hookrace.net 117.91. XXX. XXX - - \[21/May/2019:21:21:27 +0200\] "GET /time.gif HTTP/2.0" 200 4684 "XXX" "Mozilla/5.0 (iPhone; CPU iPhone OS 12\_1\_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/16D57 MicroMessenger/7.0.3(0x17000321) NetType/WIFI Language/zh\_CN" 12.123],
   [I checked a few IP addresses and they were all in mobile networks, not data centers. The user agent containing MicroMessenger and MQQBrowser indicates that the source of the traffic are WeChat and/or QQ, popular chinese chat apps.],
-  [id="quantifying-the-traffic"\>Quantifying the Traffic],
+  [Quantifying the Traffic],
   [For reference, the system I’m running on is a simple Debian based VPS with 2 threads and 2 GB of RAM that also functions as the main server for DDNet’s website , database and my HookRace blog.],
   [I already had to do some scaling when posting the initial blog post on Hacker News , optimizing the Haskell application itself to use LZW encoding in the GIF frames, to properly clean up connections to prevent any memory leaks and disable buffering in nginx’s config.],
   [But the current level of traffic is on a different scale with 2.4 million hits on time.gif in the last 23 hours (30 hits per second) resulting in 113 GB of data being transferred. And many of those connections don’t finish quickly, instead they linger for seconds, minutes or even hours.],
@@ -121,25 +77,28 @@
 Packets
  
 CPU],
-  [id="keeping-up-with-the-traffic"\>Keeping Up with the Traffic],
+  [Keeping Up with the Traffic],
   [Regenerating the ranks pages of DDNet usually causes the main CPU load on the server, which can be seen in the above CPU graph as spikes. This task is already set to only run when the server is below a specified load, so that more essential tasks have priority.],
   [The first new problem was nginx running into a limit of 768 worker\_connections:],
-  [class="highlight"\> 2019/05/20 20:41:30 \[alert\] 761\#761: \*3828093 768 worker\_connections are not enough while connecting to upstream, client: 49.114. XXX. XXX, server: hookrace.net, request: "GET /time.gif HTTP/2.0", upstream: "http:\/\/127.0.0.1:5002/", host: "hookrace.net", referrer: "XXX"],
+  [2019/05/20 20:41:30 \[alert\] 761\#761: \*3828093 768 worker\_connections are not enough while connecting to upstream, client: 49.114. XXX. XXX, server: hookrace.net, request: "GET /time.gif HTTP/2.0", upstream: "http:\/\/127.0.0.1:5002/", host: "hookrace.net", referrer: "XXX"],
   [Luckily that is easily fixed in /etc/nginx/nginx.conf by increasing the number of worker\_connections to keep alive, each of which is handling one of the long-lasting time.gif requests:],
-  [events { 
+  [events \{ 
  worker\_connections 20000 ; 
- }],
+ \}],
   [and systemctl reload nginx . No downtime required since nginx will start new worker processes to handle new requests while keeping the old ones alive for a time to keep handling existing connections.],
   [Unfortunately that fix only lasted a few hours until the next problem appeared:],
-  [class="highlight"\> 2019/05/20 23:09:21 \[alert\] 15188\#15188: \*4041619 socket() failed (24: Too many open files) while connecting to upstream, client: 27.207. XXX. XXX, server: hookrace.net, request: "GET /time.gif HTTP/2.0", upstream: "http:\/\/127.0.0.1:5002/", host: "hookrace.net", referrer: "XXX"],
+  [2019/05/20 23:09:21 \[alert\] 15188\#15188: \*4041619 socket() failed (24: Too many open files) while connecting to upstream, client: 27.207. XXX. XXX, server: hookrace.net, request: "GET /time.gif HTTP/2.0", upstream: "http:\/\/127.0.0.1:5002/", host: "hookrace.net", referrer: "XXX"],
   [Increasing the limits in /etc/security/limits.conf for the nginx user fixes this:],
+  [\# 
+nginx soft nofile 1048576
+nginx hard nofile 1048576],
   [The value of 1048576 is chosen since it’s the value set in sysctl fs.file-max and it should be good enough for now.],
   [Next I noticed that the server was running out of memory with both the Haskell application and nginx having to keep track of so many connections at once. For now I increased the swap size on the fly to keep some less commonly used stuff there using dd if=/dev/zero of=/var/swap bs=1M count=5000 && mkswap /var/swap && swapon /var/swap .],
   [When running out of memory I noticed that Python’s msgpack implementation fails quite confusingly when it runs OOM. So I had to add some fixes to the code creating the DDNet ranks pages to handle this possibility.],
   [The Linux Kernel’s TCP buffers ran out of memory next, complaining in dmesg:],
+  [\[1638211.984805\] TCP: out of memory -- consider tuning tcp\_mem],
   [So I increased them with a net.ipv4.tcp\_mem = 116730 155640 233460 in /etc/sysctl.conf and reloaded it with sysctl -p .],
   [A limitation of my current approach is the number of ports nginx can open to proxy to the Haskell application. If that gets blown I’ll have to communicate to the application differently or simply redirect to the application directly instead of proxying it. That would also reduce the CPU load significantly, cutting out nginx which happens to be much more expensive than the Haskell application, probably because it’s also handling TLS.],
-  [id="final-words"\>Final Words],
   [While it was fun to keep time.gif running in the face of this amount of traffic, I still haven’t answered the final question of where this traffic is coming from. It might be that lots of Chinese happen to be spreading time.gif on WeChat and QQ, but for that the traffic looks a bit too sterile. Has anyone seen similar traffic patterns and might know if they are real or some kind of botnet? Maybe someone has embedded traffic.gif on some WeChat-specific page. If anyone has a clue please drop me an email at dennis\@felsing.org .],
   [Hi,],
   [I read your post and this is just my guess:],
@@ -164,10 +123,8 @@ received are really rubbish like.)],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Emerson on Talent vs. Character, Our Resistance to Change, and the Key to True Personal Growth],
   author: [Maria Popova],
   source-name: [The Marginalian (Brain Pickings)],
@@ -197,11 +154,10 @@ received are really rubbish like.)],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [“Hitting Iran hard”: Trump soft-sells “troops on the ground” via Fox News],
   author: [Alex Galbraith],
   source-name: [Salon],
@@ -211,12 +167,15 @@ received are really rubbish like.)],
   [“Watch Mark Levin interview of Brilliant Marc Thiessen tonight,” Trump wrote on Truth Social . “Will discuss the importance of hitting Iran, HARD!!!”],
   [Viewers who took the president’s advice were pitched on sending small teams of “specialized” soldiers to Iran, with the hopes of removing enriched uranium from the country.],
   [“Why would we need troops on the ground? Well, there’s a lot of reasons—and we wouldn’t need 300,000 of them,” Levin said. “\[Trump’s\] not talking about sending regular Army infantry in by the hundreds of thousands. The men he’s talking about, the units he’s talking about, they are specialized.”],
+  [Iran is right: Trump has already lost this war],
   [As the war in Iran stretches past the one-month mark, it’s unclear whether Trump’s hinting indicates a real desire for escalation or a negotiation tactic. Pentagon insiders who spoke to Salon said that the president “might actually think that he can threaten to send in troops without ever having to do it,” betting on the U. S. superior firepower to cause Iran to fold.],
   [“We wouldn’t be the first to mistakenly think a smarter bomb will keep us from putting boots on the ground,” the source said.],
-  [style="text-align: center;"\> Start your day with essential news from Salon.],
+  [Start your day with essential news from Salon.],
   [The speaker of the Iranian parliament warned U. S. officials against the idea of an invasion on Sunday, saying that their military was “waiting” for a “ground attack.”],
   [“Our men are waiting for the arrival of the American soldiers on the ground to set them on fire and punish their regional allies once and for all,” said Mohammad Bagher Qalibaf.],
   [Watch Levin’s pitch via YouTube below:],
+  [Read more],
+  [about this topic],
   [Trump’s Iran war has no clear endgame],
   [Saudi Arabia tells Trump to seize “historic moment” and continue war on Iran: report],
   [How Iran emasculated JD Vance],
@@ -230,7 +189,7 @@ received are really rubbish like.)],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Will the U.S. Enter a Recession in 2026? Here's What the Data Suggests.],
   author: [Katie Brockman],
   source-name: [The Motley Fool],
@@ -238,6 +197,7 @@ received are really rubbish like.)],
   paragraphs: (
   [Recession fears are back, and stock prices continue to slide. The S&P 500 (SNPINDEX: ^GSPC) is down more than 6% over the past month alone, and the tech-heavy Nasdaq Composite (NASDAQINDEX: ^IXIC) just entered correction territory by falling 10% from its peak earlier this year.],
   [Perhaps the worst part of all of this volatility, however, is the uncertainty it's causing. Will the economy worsen? Will the market crash? How long will it take for it to recover? While it's impossible to answer these questions with any certainty right now, here's what the data suggests about the future.],
+  [Image source: Getty Images.],
   [Continue reading],
 ),
   insert-map: (:),
@@ -253,7 +213,7 @@ received are really rubbish like.)],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [How To Talk Yourself Up (Without Turning People Off)],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -269,7 +229,7 @@ received are really rubbish like.)],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Open Digital Platforms to Spur Innovation],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -288,7 +248,7 @@ received are really rubbish like.)],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Brain Tech Is Getting Really Good. Here’s What Managers Need to Know],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -304,7 +264,7 @@ received are really rubbish like.)],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [In Defense of Middle Management],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -323,26 +283,23 @@ received are really rubbish like.)],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Digital Collegium 2025],
   author: [Erik Runyon],
   source-name: [Erik Runyon],
   images: (),
   paragraphs: (
   [My presentation for Digital Collegium 2025 was an overview of many recent and forthcoming additions to the web platform, specifically HTML and CSS.],
-  [id="description"\>Description],
-  [id="roll-for-sanity-surviving-the-ever-expanding-web-feature-bestiary"\>Roll for sanity: Surviving the ever-expanding web feature bestiary],
+  [Roll for sanity: Surviving the ever-expanding web feature bestiary],
   [Are you, brave front-end adventurer, feeling your sanity slipping as the Ever-Expanding Web Feature Bestiary grows with each browser update? Have you encountered strange and powerful creatures like “popovers” and “functions” and wondered how to tame them?],
   [Join us on this perilous quest as we delve into the depths of the latest web platform additions. We will examine these fearsome beasts, dissecting their syntax and revealing their practical applications in the realm of higher ed. We’ll learn to harness their power for real-world encounters, and even glimpse into the future, where new and even more formidable creatures lurk.],
   [Prepare your character sheets, sharpen your coding blades and roll for sanity as we navigate this challenging and ever-evolving landscape. Will you emerge victorious, a master of the modern web, or will the Bestiary claim your mind?],
-  [id="presentation"\>Presentation],
   [Conference presentation details],
   [Presentation/Code],
-  [id="links"\>Links],
   [Interop 2025 Dashboard],
   [2026 interop proposals],
   [CSS Gap Decorations playground],
-  [id="keeping-up-with-new-features"\>Keeping up with new features],
+  [Keeping up with new features],
   [New to the web platform],
   [Kevin Powell (YouTube)],
 ),
@@ -354,7 +311,7 @@ received are really rubbish like.)],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Another Workplace Crisis: Loneliness],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -371,8 +328,7 @@ received are really rubbish like.)],
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Special Series: How Generative AI Changes Everything],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -389,11 +345,9 @@ received are really rubbish like.)],
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Analysis])
-  #standard-article(
+#section-label([Analysis])
+#standard-article(
   title: [Fragments: March 10],
   author: [Martin Fowler],
   source-name: [Martin Fowler],
@@ -438,11 +392,10 @@ received are really rubbish like.)],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [How Companies Can Tap Into Talent Clusters],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -458,7 +411,7 @@ received are really rubbish like.)],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [What Leaders Need to Know About a Looming Recession – and Other Global Threats],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -477,7 +430,7 @@ received are really rubbish like.)],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Tried-and-True Networking Tips from Decades of Experience],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -494,7 +447,7 @@ received are really rubbish like.)],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [A New Way to Combat Bias at Work],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -513,7 +466,7 @@ received are really rubbish like.)],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Could Your Company Benefit from Fastvertising?],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -529,7 +482,7 @@ received are really rubbish like.)],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Why You (and Your Company) Need to Experiment with ChatGPT Now],
   author: [Harvard Business Review],
   source-name: [Harvard Business Review],
@@ -546,81 +499,79 @@ received are really rubbish like.)],
   ],
 ), ruled-indices: (1,))
 
-{
-  #section-label([Briefs])
-  #brief-group((
-    [#brief-item([Sara Rathner], source-name: [NerdWallet], [class="nw-author-box-wp"\>
+#section-label([Briefs])
+#brief-group((
+  [#brief-item([Sara Rathner], source-name: [NerdWallet], [
  
 
-class="nw-author-box-wp--inner"\>
+
  
 
  Sara Rathner writes for NerdWallet. Email: srathner\@nerdwallet.com.
  
 
-class="nw-originally-posted-link"\>The article 5 Things to Know About the Valero Credit Card originally appeared on NerdWallet.])],
-    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Amy Edmondson, professor at Harvard Business School, first identified the concept of psychological safety in work teams in 1999. Since then, she has observed how companies with a trusting workplace perform better. Psychological safety isn't about being nice, she says. It’s about giving candid feedback, openly admitting mistakes, and learning from each other. And she argues that kind of organizational culture is increasingly important in the modern economy. Edmondson is the author of the new book "The Fearless Organization: Creating Psychological Safety in the Workplace for Learning, Innovation, and Growth.”])],
-    [#brief-item([Paresh Dave], source-name: [Wired], [A judge temporarily blocked the Trump administration’s designation, clearing the way for Anthropic to keep doing business without the label starting next week.])],
-    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [At a time when 41% of us are considering quitting our jobs, it’s time for us to understand why and what we can do about it.
+The article 5 Things to Know About the Valero Credit Card originally appeared on NerdWallet.])],
+  [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Amy Edmondson, professor at Harvard Business School, first identified the concept of psychological safety in work teams in 1999. Since then, she has observed how companies with a trusting workplace perform better. Psychological safety isn't about being nice, she says. It’s about giving candid feedback, openly admitting mistakes, and learning from each other. And she argues that kind of organizational culture is increasingly important in the modern economy. Edmondson is the author of the new book "The Fearless Organization: Creating Psychological Safety in the Workplace for Learning, Innovation, and Growth.”])],
+  [#brief-item([Paresh Dave], source-name: [Wired], [A judge temporarily blocked the Trump administration’s designation, clearing the way for Anthropic to keep doing business without the label starting next week.])],
+  [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [At a time when 41% of us are considering quitting our jobs, it’s time for us to understand why and what we can do about it.
 In this special series from HBR, we’re looking at how to craft your current job around the work you really love. In this episode, we’ll explain how to identify which tasks fit that bill and can lead you to a more fulfilling and successful career.
 IdeaCast co-host Alison Beard speaks with Marcus Buckingham, head of research on people and performance at the ADP Research Institute and author of the new book Love + Work.])],
-    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Greg Urban, anthropologist at the University of Pennsylvania, used to study indigenous tribes in Brazil. Now he hangs out in break rooms and boardrooms analyzing how people interact — and create and change culture — in organizations. He shares lessons and tips for managers to better understand and motivate their teams. Urban is the coauthor of the book "The Culture Puzzle: Harnessing the Forces that Drive Your Organization's Success."])],
-    [#brief-item([Stefon Walters], source-name: [The Motley Fool], [It's hard to find a truly recession-proof stock, but some companies are better equipped to weather recessions than others. When it comes to digital payments, Visa (NYSE: V) and Mastercard (NYSE: MA) run a virtual duopoly, but one is much better positioned to endure a recession than the other.
+  [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Greg Urban, anthropologist at the University of Pennsylvania, used to study indigenous tribes in Brazil. Now he hangs out in break rooms and boardrooms analyzing how people interact — and create and change culture — in organizations. He shares lessons and tips for managers to better understand and motivate their teams. Urban is the coauthor of the book "The Culture Puzzle: Harnessing the Forces that Drive Your Organization's Success."])],
+  [#brief-item([Stefon Walters], source-name: [The Motley Fool], [It's hard to find a truly recession-proof stock, but some companies are better equipped to weather recessions than others. When it comes to digital payments, Visa (NYSE: V) and Mastercard (NYSE: MA) run a virtual duopoly, but one is much better positioned to endure a recession than the other.
 
 If you had to choose between the two, my go-to would be Visa because its balance sheet is more rock-solid than Mastercard's.
 
-class="caption"\>Image source: The Motley Fool.
+Image source: The Motley Fool.
 
  Continue reading])],
-    [#brief-item([Molly Higgins], source-name: [Wired], [Explore today’s top DoorDash promo codes for \$25 off your first order, free delivery, and up to 50% off for existing customers.])],
-    [#brief-item([Danielle Paquette], source-name: [The Washington Post (national)], [Frankie Olivieri’s decision to tinker with the classic cheesesteak was driven by a decades-long need to break free of his father’s rigid ways.])],
-    [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [This Short Rib Ragu is deeply flavorful and impressive, but surprisingly low-maintenance. It’s mostly hands-off thanks to a long oven…
+  [#brief-item([Molly Higgins], source-name: [Wired], [Explore today’s top DoorDash promo codes for \$25 off your first order, free delivery, and up to 50% off for existing customers.])],
+  [#brief-item([Danielle Paquette], source-name: [The Washington Post (national)], [Frankie Olivieri’s decision to tinker with the classic cheesesteak was driven by a decades-long need to break free of his father’s rigid ways.])],
+  [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [This Short Rib Ragu is deeply flavorful and impressive, but surprisingly low-maintenance. It’s mostly hands-off thanks to a long oven…
 
  ( Read more... ) 
 
 Tags: Dinner Dinner Party Pasta ragu short ribs 
 
 The post Slow-Braised Short Rib Ragu appeared first on A Cozy Kitchen .])],
-    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Zak Dychtwald, founder of the advisory firm Young China Group, believes that the perception of China as a copycat and not an innovator is outdated. Instead, he argues the willingness of Chinese consumers to try new things is powering the country’s new innovation economy. Technology adoption rates in areas such as mobile payment are extremely high. He says non-Chinese companies can learn important lessons from this rapidly changing market and potentially use it to jump-start their own innovation engines. Dychtwald is the author of the HBR article "China’s New Innovation Advantage."])],
-    [#brief-item([Sergio De Simone], source-name: [InfoQ], [In a move to transform Android into an "agent-first" OS, Google has introduced new early beta features to support a task-centric model in which apps provide functional building blocks users leverage through AI agents or assistants to fulfill their goals.
+  [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Zak Dychtwald, founder of the advisory firm Young China Group, believes that the perception of China as a copycat and not an innovator is outdated. Instead, he argues the willingness of Chinese consumers to try new things is powering the country’s new innovation economy. Technology adoption rates in areas such as mobile payment are extremely high. He says non-Chinese companies can learn important lessons from this rapidly changing market and potentially use it to jump-start their own innovation engines. Dychtwald is the author of the HBR article "China’s New Innovation Advantage."])],
+  [#brief-item([Sergio De Simone], source-name: [InfoQ], [In a move to transform Android into an "agent-first" OS, Google has introduced new early beta features to support a task-centric model in which apps provide functional building blocks users leverage through AI agents or assistants to fulfill their goals.
 
  By Sergio De Simone])],
-    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Even in difficult times, leadership must be about empathy, authenticity, fairness and service. That's according to Darren Walker, the outgoing CEO of the Ford Foundation, a nonprofit with an endowment of billions of dollars and a charge to reduce poverty and injustice. Drawing on his own upbringing in rural Texas to his time at the helm of one of the world’s largest philanthropies, Walker explains how inequality erodes hope, why discomfort is essential for meaningful change, and how leaders can build the courage to speak honestly.])],
-    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Alison Dachner, management professor at John Carroll University, and Erin Makarius, management professor at the University of Akron, say that an organization can become more competitive by implementing a stronger offboarding process. Their research shows that similar to the way universities maintain alumni networks, an offboarding strategy keeps former employees networked, which leads to more employee referrals, new business, expert consulting, or even re-employment. Dachner and Makarius wrote the HBR article "Turn Departing Employees into Loyal Alumni."])],
-    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Senior executives are often told to focus on big-picture strategy while delegating the specifics of execution. But, according to Scott Cook, cofounder and former CEO of Intuit, smart leaders also spend time on the details of how the organization gets work done at every level, including the front lines. Working with Harvard Business School professor Nitin Nohria, he studied companies from Toyota to Amazon to better understand why hands-on leadership, from the CEO down, works and how to do it without micromanaging. They are coauthors of the HBR article "The Surprising Success of Hands-On Leaders."])],
-    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Richard Sheridan, CEO of Menlo Innovations, says it took him years to learn what really mattered at work and how to create that kind of workplace culture. As a company leader today, he works hard to make sure both his job — and the jobs of his employees — are joyful. That doesn't mean they are happy 100% of the time, he argues, but that they feel fulfilled by always putting the customer first. Sheridan is the author of "Chief Joy Officer: How Great Leaders Elevate Human Energy and Eliminate Fear."])],
-    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Julie Zhuo, Facebook’s VP of product design, started at the company as its first intern and became a manager at the age of 25. Like many first-time bosses, she made many missteps and acted how she thought managers were supposed to act. Eventually, she grew to find joy in the role and today she leads hundreds of people. She says that becoming a great manager also helps you know yourself better. Zhuo is the author of the book "The Making of a Manager: What to Do When Everyone Looks to You."])],
-    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Emily Esfahani Smith, author of “The Power of Meaning,” has long studied how people find fulfillment. As the ongoing pandemic causes many of us to rethink how and why we do our jobs, she offers advice on how to find more enjoyment and engagement, avoid burnout, reset ambitions, and, if necessary, change paths. One key is to define - or redefine - your purpose as it relates to work, and Smith explains how to do that wherever you are in your career.])],
-    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Mimi Nicklin, a business coach and executive, has seen many leaders blame poor performance and communication on generational differences. But she argues managers should spend less time forcing Millennial and Gen Z employees to conform to company culture and more time on perspective taking and listening. In her experience, practicing empathy can vastly improve team collaboration and lead to better business and individual outcomes. Nicklin is the author of the book "Softening the Edge: Empathy: How Humanity’s Oldest Leadership Trait is Changing the World."])],
-    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Anne Curzan, English professor at the University of Michigan, studies the evolution of language. While many of us roll our eyes at bizspeak — from synergy to value-add to operationalize — Curzan defends business jargon. She says the words we say around the office speak volumes about our organizations and our working relationships. She shares how to use jargon more deliberately, explains the origin of some annoying or amusing buzzwords, and discusses how English became the global business language and how that could change.])],
-    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Ethan Bernstein, Harvard Business School professor, and John Bunch, holacracy implementation lead at Zappos, discuss the online retailer's transition to a flat, self-managed organization. They are the coauthors of the HBR article "Beyond the Holacracy Hype."])],
-    [#brief-item([Matthew Korfhage], source-name: [Wired], [The best espresso makers can turn your kitchen into a café and help you hone the art of the perfect shot.])],
-    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Richard S. Ruback and Royce Yudkoff, professors at Harvard Business School, spell out an overlooked career path: buying a business and running it as CEO. Purchasing a small company lets you become your own boss and reap financial rewards without the risks of founding a start-up. Still, there are things you need to know. Ruback and Yudkoff are the authors of the “HBR Guide to Buying a Small Business.”])],
-    [#brief-item([Kailey Hagen, CFP], source-name: [The Motley Fool], [Financial emergencies aren't just stressful. They can be genuinely destabilizing if you don't have emergency savings to cover the expense. When you need money quickly, tapping your retirement savings can feel like your only option.
+  [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Even in difficult times, leadership must be about empathy, authenticity, fairness and service. That's according to Darren Walker, the outgoing CEO of the Ford Foundation, a nonprofit with an endowment of billions of dollars and a charge to reduce poverty and injustice. Drawing on his own upbringing in rural Texas to his time at the helm of one of the world’s largest philanthropies, Walker explains how inequality erodes hope, why discomfort is essential for meaningful change, and how leaders can build the courage to speak honestly.])],
+  [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Alison Dachner, management professor at John Carroll University, and Erin Makarius, management professor at the University of Akron, say that an organization can become more competitive by implementing a stronger offboarding process. Their research shows that similar to the way universities maintain alumni networks, an offboarding strategy keeps former employees networked, which leads to more employee referrals, new business, expert consulting, or even re-employment. Dachner and Makarius wrote the HBR article "Turn Departing Employees into Loyal Alumni."])],
+  [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Senior executives are often told to focus on big-picture strategy while delegating the specifics of execution. But, according to Scott Cook, cofounder and former CEO of Intuit, smart leaders also spend time on the details of how the organization gets work done at every level, including the front lines. Working with Harvard Business School professor Nitin Nohria, he studied companies from Toyota to Amazon to better understand why hands-on leadership, from the CEO down, works and how to do it without micromanaging. They are coauthors of the HBR article "The Surprising Success of Hands-On Leaders."])],
+  [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Richard Sheridan, CEO of Menlo Innovations, says it took him years to learn what really mattered at work and how to create that kind of workplace culture. As a company leader today, he works hard to make sure both his job — and the jobs of his employees — are joyful. That doesn't mean they are happy 100% of the time, he argues, but that they feel fulfilled by always putting the customer first. Sheridan is the author of "Chief Joy Officer: How Great Leaders Elevate Human Energy and Eliminate Fear."])],
+  [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Julie Zhuo, Facebook’s VP of product design, started at the company as its first intern and became a manager at the age of 25. Like many first-time bosses, she made many missteps and acted how she thought managers were supposed to act. Eventually, she grew to find joy in the role and today she leads hundreds of people. She says that becoming a great manager also helps you know yourself better. Zhuo is the author of the book "The Making of a Manager: What to Do When Everyone Looks to You."])],
+  [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Emily Esfahani Smith, author of “The Power of Meaning,” has long studied how people find fulfillment. As the ongoing pandemic causes many of us to rethink how and why we do our jobs, she offers advice on how to find more enjoyment and engagement, avoid burnout, reset ambitions, and, if necessary, change paths. One key is to define - or redefine - your purpose as it relates to work, and Smith explains how to do that wherever you are in your career.])],
+  [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Mimi Nicklin, a business coach and executive, has seen many leaders blame poor performance and communication on generational differences. But she argues managers should spend less time forcing Millennial and Gen Z employees to conform to company culture and more time on perspective taking and listening. In her experience, practicing empathy can vastly improve team collaboration and lead to better business and individual outcomes. Nicklin is the author of the book "Softening the Edge: Empathy: How Humanity’s Oldest Leadership Trait is Changing the World."])],
+  [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Anne Curzan, English professor at the University of Michigan, studies the evolution of language. While many of us roll our eyes at bizspeak — from synergy to value-add to operationalize — Curzan defends business jargon. She says the words we say around the office speak volumes about our organizations and our working relationships. She shares how to use jargon more deliberately, explains the origin of some annoying or amusing buzzwords, and discusses how English became the global business language and how that could change.])],
+  [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Ethan Bernstein, Harvard Business School professor, and John Bunch, holacracy implementation lead at Zappos, discuss the online retailer's transition to a flat, self-managed organization. They are the coauthors of the HBR article "Beyond the Holacracy Hype."])],
+  [#brief-item([Matthew Korfhage], source-name: [Wired], [The best espresso makers can turn your kitchen into a café and help you hone the art of the perfect shot.])],
+  [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Richard S. Ruback and Royce Yudkoff, professors at Harvard Business School, spell out an overlooked career path: buying a business and running it as CEO. Purchasing a small company lets you become your own boss and reap financial rewards without the risks of founding a start-up. Still, there are things you need to know. Ruback and Yudkoff are the authors of the “HBR Guide to Buying a Small Business.”])],
+  [#brief-item([Kailey Hagen, CFP], source-name: [The Motley Fool], [Financial emergencies aren't just stressful. They can be genuinely destabilizing if you don't have emergency savings to cover the expense. When you need money quickly, tapping your retirement savings can feel like your only option.
 
 The problem with that is that you'll set your retirement plan back, and you'll probably pay an early withdrawal penalty to the IRS, too. So before you go that route, it's worth exploring the following three ways to get the cash you need.
 
-class="caption"\>Image source: Getty Images.
+Image source: Getty Images.
 
  Continue reading])],
-    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Kabir Sehgal, a corporate strategist, Grammy-winning producer, investment banker, bestselling author, and military reserve officer, talks about building and thriving in a portfolio career. He discusses the benefits of pursuing diverse interests, the tradeoffs and productivity discipline demanded by that career choice, and he offers tips for managing a schedule with multiple work activities. And he argues we should stop calling these second careers "side hustles." Sehgal is the author of the HBR article, “Why You Should Have (at Least) Two Careers.”])],
-    [#brief-item([Selena Maranjian], source-name: [The Motley Fool], [When it comes to building wealth, the stock market can be your best friend -- and you yourself can be your own worst enemy. Our own irrational behaviors are what can destroy a lot of the gains we had or had hoped for in a variety of ways.
+  [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Kabir Sehgal, a corporate strategist, Grammy-winning producer, investment banker, bestselling author, and military reserve officer, talks about building and thriving in a portfolio career. He discusses the benefits of pursuing diverse interests, the tradeoffs and productivity discipline demanded by that career choice, and he offers tips for managing a schedule with multiple work activities. And he argues we should stop calling these second careers "side hustles." Sehgal is the author of the HBR article, “Why You Should Have (at Least) Two Careers.”])],
+  [#brief-item([Selena Maranjian], source-name: [The Motley Fool], [When it comes to building wealth, the stock market can be your best friend -- and you yourself can be your own worst enemy. Our own irrational behaviors are what can destroy a lot of the gains we had or had hoped for in a variety of ways.
 
 Here's a look at some common mistakes related to timing -- and how to avoid them.
 
-class="caption"\>Image source: Getty Images.
+Image source: Getty Images.
 
  Continue reading])],
-    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Dominic Barton, the global managing partner of McKinsey&Company, discusses the firm’s sustainability efforts. He talks about the wake-up call he got about sustainability and how he tries to convince CEOs hesitant to make it part of their business model that doing so will improve company performance. He says he sees companies thinking about the environment. “But the speed and scale of what we need to do — I don’t think it’s sufficient.”])],
-    [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [These Animal Style Fries are crispy, cheesy, and topped with sweet caramelized onions and tangy burger sauce. This recipe is…
+  [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Dominic Barton, the global managing partner of McKinsey&Company, discusses the firm’s sustainability efforts. He talks about the wake-up call he got about sustainability and how he tries to convince CEOs hesitant to make it part of their business model that doing so will improve company performance. He says he sees companies thinking about the environment. “But the speed and scale of what we need to do — I don’t think it’s sufficient.”])],
+  [#brief-item([Adrianna Adarme], source-name: [A Cozy Kitchen], [These Animal Style Fries are crispy, cheesy, and topped with sweet caramelized onions and tangy burger sauce. This recipe is…
 
  ( Read more... ) 
 
 Tags: Comfort Food game day Side Vegetarian 
 
 The post Animal Style Fries (In-N-Out Copycat) appeared first on A Cozy Kitchen .])],
-    [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Jack Zenger and Joseph Folkman have administered thousands of 360-degree assessments through their consulting firm, Zenger/Folkman. This has given them a wealth of information about who benefits from criticism, and how to deliver it.])],
-  ))
-}
+  [#brief-item([Harvard Business Review], source-name: [Harvard Business Review], [Jack Zenger and Joseph Folkman have administered thousands of 360-degree assessments through their consulting firm, Zenger/Folkman. This has given them a wealth of information about who benefits from criticism, and how to deliver it.])],
+))
 
 #colophon([The Quiet Courier], [Vol. 1, No. 002], [2026-03-30])

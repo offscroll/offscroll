@@ -267,9 +267,9 @@ _CAPTION_PATTERNS = [
         r"\(Available\s+as\s+a\s+print",
         re.IGNORECASE,
     ),
-    #  Raw HTML fragment leaking into text
+    #  Raw HTML fragment leaking into text (post-unescape: > not &gt;)
     re.compile(
-        r'(?:^class\s*=\s*"|&gt;)',
+        r'(?:^class\s*=\s*"|(?<!\w)>)',
     ),
     #  Single-word CTA labels
     re.compile(
@@ -384,6 +384,41 @@ def _unescape_html_entities(text: str) -> str:
     if not text:
         return text
     return html_module.unescape(text)
+
+
+# Matches dangling HTML attribute fragments, e.g.:
+#   id="set-up-your-upstream">Set up your upstream      (at line start)
+#   Which brings me on to highfive: id="foo">Highfive   (embedded mid-text)
+#   class="wp-block-heading" id="bar">Heading text      (multiple attrs)
+# These occur when feed HTML tag-stripping removes the opening tag name
+# (<h3, <a, <span) but leaves the attributes behind.
+_HTML_ATTR_PREFIX_RE = re.compile(
+    r"(?m)^(?:[\w][\w-]*\s*=\s*\"[^\"]*\"\s*)+>[ \t]*",
+)
+# Inline variant: attr="value"> embedded mid-text (requires whitespace before)
+_HTML_ATTR_INLINE_RE = re.compile(
+    r"\s+(?:[\w][\w-]*\s*=\s*\"[^\"]*\"\s*)+>",
+)
+
+
+def _strip_html_attr_prefixes(text: str) -> str:
+    """Strip dangling HTML attribute fragments left by incomplete tag stripping.
+
+    Feed ingestion sometimes strips HTML tags imperfectly, removing the tag
+    name but leaving attribute fragments. This handles two cases:
+
+    1. Prefix: ``id="section-name">Heading text`` at the start of a paragraph.
+    2. Inline: ``some text class="foo" id="bar">More text`` mid-sentence.
+
+    Examples:
+        'id="v1-example">v1: Example heading' -> 'v1: Example heading'
+        'highfive: id="foo">Highfive welcomes you' -> 'highfive: Highfive welcomes you'
+    """
+    if not text:
+        return text
+    text = _HTML_ATTR_PREFIX_RE.sub("", text)
+    text = _HTML_ATTR_INLINE_RE.sub(" ", text)
+    return text
 
 
 #  Maximum images per article to prevent clustering.
@@ -1103,6 +1138,7 @@ def _build_html(edition: CuratedEdition, config: dict) -> str:
         for item in section.items:
             if hasattr(item, "display_text") and item.display_text:
                 item.display_text = _unescape_html_entities(item.display_text)
+                item.display_text = _strip_html_attr_prefixes(item.display_text)
                 item.display_text = _strip_display_boilerplate(item.display_text)
                 item.display_text = _fix_subheading_concatenation(item.display_text)
                 item._edited_for_length = _has_editorial_ellipsis(item.display_text)
@@ -1128,9 +1164,17 @@ def _build_html(edition: CuratedEdition, config: dict) -> str:
                 for sub in item.items:
                     if hasattr(sub, "display_text") and sub.display_text:
                         sub.display_text = _unescape_html_entities(sub.display_text)
+                        sub.display_text = _strip_html_attr_prefixes(sub.display_text)
                         sub.display_text = _strip_display_boilerplate(sub.display_text)
                         sub.display_text = _fix_subheading_concatenation(sub.display_text)
                         sub._edited_for_length = _has_editorial_ellipsis(sub.display_text)
+    # Preprocess pull quote text — may contain HTML attribute leakage
+    # extracted from display_text at generation time.
+    for pq in edition.pull_quotes:
+        if pq.text:
+            pq.text = _strip_html_attr_prefixes(_unescape_html_entities(pq.text))
+        if pq.attribution:
+            pq.attribution = _strip_html_attr_prefixes(_unescape_html_entities(pq.attribution))
 
     # Rule 1: Extract front-page feature
     front_feature, _ = _extract_front_page_feature(edition)

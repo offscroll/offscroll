@@ -21,292 +21,8 @@
 #masthead([The Digital Mirror], [Vol. 1, No. 085], [2026-03-30]
 )
 
-// --- Front Page Feature ---
-#feature-article(
-  title: [Rewriting pycparser with the help of an LLM],
-  kicker: [Cover Story],
-  author: [Eli Bendersky],
-  source-name: [Eli Bendersky],
-  deck: [pycparser is my most widely used open
-source project (with ~20M daily downloads from PyPI \[1\] ).],
-  lead-pre: [],
-  lead-cap: [I],
-  lead-rest: [t's a pure-Python
-parser for the C programming language, producing ASTs inspired by Python's
-own . Until very recently, it's
-been using PLY: Python Lex-Yacc for
-the core parsing.],
-  body-paragraphs: (
-  [In this post, I'll describe how I collaborated with an LLM coding agent (Codex)
-to help me rewrite pycparser to use a hand-written recursive-descent parser and
-remove the dependency on PLY. This has been an interesting experience and the
-post contains lots of information and is therefore quite long; if you're just
-interested in the final result, check out the latest code of pycparser - the
- main branch already has the new implementation.],
-  [The issues with the existing parser implementation],
-  [While pycparser has been working well overall, there were a number of nagging
-issues that persisted over years.],
-  [Parsing strategy: YACC vs. hand-written recursive descent],
-  [I began working on pycparser in 2008, and back then using a YACC-based approach
-for parsing a whole language like C seemed like a no-brainer to me. Isn't this
-what everyone does when writing a serious parser? Besides, the K&R2 book
-famously carries the entire grammar of the C99 language in an appendix - so it
-seemed like a simple matter of translating that to PLY-yacc syntax.],
-  [And indeed, it wasn't too hard, though there definitely were some complications
-in building the ASTs for declarations (C's gnarliest part ).],
-  [Shortly after completing pycparser, I got more and more interested in compilation
-and started learning about the different kinds of parsers more seriously. Over
-time, I grew convinced that recursive descent is the way to
-go - producing parsers that are easier to understand and maintain (and are often
-faster!).],
-  [It all ties in to the benefits of dependencies in software projects as a
-function of effort .
-Using parser generators is a heavy conceptual dependency: it's really nice
-when you have to churn out many parsers for small languages. But when you have
-to maintain a single, very complex parser, as part of a large project - the
-benefits quickly dissipate and you're left with a substantial dependency that
-you constantly grapple with.],
-  [The other issue with dependencies],
-  [And then there are the usual problems with dependencies; dependencies get
-abandoned, and they may also develop security issues. Sometimes, both of these
-become true.],
-  [Many years ago, pycparser forked and started vendoring its own version of PLY.
-This was part of transitioning pycparser to a dual Python 2/3 code base when PLY
-was slower to adapt. I believe this was the right decision, since PLY "just
-worked" and I didn't have to deal with active (and very tedious in the Python
-ecosystem, where packaging tools are replaced faster than dirty socks)
-dependency management.],
-  [A couple of weeks ago this issue 
-was opened for pycparser. It turns out the some old PLY code triggers security
-checks used by some Linux distributions; while this code was fixed in a later
-commit of PLY, PLY itself was apparently abandoned and archived in late 2025.
-And guess what? That happened in the middle of a large rewrite of the package,
-so re-vendoring the pre-archiving commit seemed like a risky proposition.],
-  [On the issue it was suggested that "hopefully the dependent packages move on to
-a non-abandoned parser or implement their own"; I originally laughed this idea
-off, but then it got me thinking... which is what this post is all about.],
-  [Growing complexity of parsing a messy language],
-  [The original K&R2 grammar for C99 had - famously - a single shift-reduce
-conflict having to do with dangling else s belonging to the most recent
- if statement. And indeed, other than the famous lexer hack 
-used to deal with C's type name \/ ID ambiguity ,
-pycparser only had this single shift-reduce conflict.],
-  [But things got more complicated. Over the years, features were added that
-weren't strictly in the standard but were supported by all the industrial
-compilers. The more advanced C11 and C23 standards weren't beholden to the
-promises of conflict-free YACC parsing (since almost no industrial-strength
-compilers use YACC at this point), so all caution went out of the window.],
-  [The latest (PLY-based) release of pycparser has many reduce-reduce conflicts
- \[2\] ; these are a severe maintenance hazard because it means the parsing rules
-essentially have to be tie-broken by order of appearance in the code. This is
-very brittle; pycparser has only managed to maintain its stability and quality
-through its comprehensive test suite. Over time, it became harder and harder to
-extend, because YACC parsing rules have all kinds of spooky-action-at-a-distance
-effects. The straw that broke the camel's back was this PR which again proposed to
-increase the number of reduce-reduce conflicts \[3\] .],
-  [This - again - prompted me to think "what if I just dump YACC and switch to
-a hand-written recursive descent parser", and here we are.],
-  [The mental roadblock],
-  [None of the challenges described above are new; I've been pondering them for
-many years now, and yet biting the bullet and rewriting the parser didn't feel
-like something I'd like to get into. By my private estimates it'd take at least
-a week of deep heads-down work to port the gritty 2000 lines of YACC grammar
-rules to a recursive descent parser \[4\] . Moreover, it wouldn't be a
-particularly fun project either - I didn't feel like I'd learn much new and
-my interests have shifted away from this project. In short, the Potential well was just too deep.],
-  [Why would this even work? Tests],
-  [I've definitely noticed the improvement in capabilities of LLM coding
-agents in the past few months, and many reputable people online rave about using
-them for increasingly larger projects. That said, would an LLM agent really be
-able to accomplish such a complex project on its own? This isn't just a toy,
-it's thousands of lines of dense parsing code.],
-  [What gave me hope is the concept of conformance suites mentioned by
-Simon Willison .
-Agents seem to do well when there's a very clear and rigid
-goal function - such as a large, high-coverage conformance test suite.],
-  [And pycparser has an very extensive one .
-Over 2500 lines of test code parsing various C snippets to ASTs with expected
-results, grown over a decade and a half of real issues and bugs reported by
-users.],
-  [I figured the LLM can either succeed or fail and throw its hands up in despair,
-but it's quite unlikely to produce a wrong port that would still pass all
-the tests. So I set it to run.],
-  [The initial port],
-  [I fired up Codex in pycparser's repository, and wrote this prompt just to
-make sure it understands me and can run the tests:],
-  [class="highlight"\> This repository implements a Python parser producing an AST. It has a very
-extensive test suite; can you first verify you successfully run all the tests?
-(with python3 -m unittest discover, from the root dir)],
-  [Codex figured it out (I gave it the exact command, after all!); my next
-prompt was the real thing \[5\] :],
-  [class="highlight"\> pycparser uses the PLY library for its lexer and parser, and its own AST
-package for the ASTs created by the parser. I want to explore replacing the
-Parser component (leaving the Lexer alone for now) with a hand written
-recursive descent parser that will pass all the same tests. Can you try that?],
-  [Here Codex went to work and churned for over an hour . Having never
-observed an agent work for nearly this long, I kind of assumed it went off
-the rails and will fail sooner or later. So I was rather surprised and skeptical
-when it eventually came back with:],
-  [class="highlight"\> Replaced the PLY parse path with a handwritten recursive‑descent parser while
-keeping the existing lexer and AST helpers intact; CParser now points to the
-new RD implementation, with the old PLY version preserved as PLYCParser in
-pycparser/c\_parser.py. The RD parser includes a token stream, declarator/type
-parsing, expression precedence handling, pragmas, and statement parsing to
-match the previous AST output and coordinate behavior.],
-  [It took me a while to poke around the code and run it until I was convinced - it
-had actually done it! It wrote a new recursive descent parser with only
-ancillary dependencies on PLY, and that parser passed the test suite. After a
-few more prompts, we've removed the ancillary dependencies and made the
-structure clearer. I hadn't looked too deeply into code quality at this point,
-but at least on the functional level - it succeeded. This was very impressive!],
-  [A quick note on reviews and branches],
-  [A change like the one described above is impossible to code-review as one PR in
-any meaningful way; so I used a different strategy. Before embarking on this
-path, I created a new branch and once Codex finished the initial rewrite, I
-committed this change, knowing that I will review it in detail, piece-by-piece
-later on.],
-  [Even though coding agents have their own notion of history and can "revert"
-certain changes, I felt much safer relying on Git. In the worst case if all of
-this goes south, I can nuke the branch and it's as if nothing ever happened.
-I was determined to only merge this branch onto main once I was fully
-satisfied with the code. In what follows, I had to git reset several times
-when I didn't like the direction in which Codex was going. In hindsight, doing
-this work in a branch was absolutely the right choice.],
-  [The long tail of goofs],
-  [Once I've sufficiently convinced myself that the new parser is actually working,
-I used Codex to similarly rewrite the lexer and get rid of the PLY dependency
-entirely, deleting it from the repository. Then, I started looking more deeply
-into code quality - reading the code created by Codex and trying to wrap my head
-around it.],
-  [And - oh my - this was quite the journey. Much has been written about the code
-produced by agents, and much of it seems to be true. Maybe it's a setting I'm
-missing (I'm not using my own custom AGENTS.md yet, for instance), but
-Codex seems to be that eager programmer that wants to get from A to B whatever
-the cost. Readability, minimalism and code clarity are very much secondary
-goals.],
-  [Using raise...except for control flow? Yep. Abusing Python's weak typing
-(like having None , false and other values all mean different things
-for a given variable)? For sure. Spreading the logic of a complex function
-all over the place instead of putting all the key parts in a single switch
-statement? You bet.],
-  [Moreover, the agent is hilariously lazy . More than once I had to convince it
-to do something it initially said is impossible, and even insisted again in
-follow-up messages. The anthropomorphization here is mildly concerning, to be
-honest. I could never imagine I would be writing something like the following to
-a computer, and yet - here we are: "Remember how we moved X to Y before? You
-can do it again for Z, definitely. Just try".],
-  [My process was to see how I can instruct Codex to fix things, and intervene
-myself (by rewriting code) as little as possible. I've mostly succeeded in
-this, and did maybe 20% of the work myself.],
-  [My branch grew dozens of commits, falling into roughly these categories:],
-  [The code in X is too complex; why can't we do Y instead?],
-  [The use of X is needlessly convoluted; change Y to Z, and T to V in all
-instances.],
-  [The code in X is unclear; please add a detailed comment - with examples - to
-explain what it does.],
-  [Interestingly, after doing (3), the agent was often more effective in giving
-the code a "fresh look" and succeeding in either (1) or (2).],
-  [The end result],
-  [Eventually, after many hours spent in this process, I was reasonably pleased
-with the code. It's far from perfect, of course, but taking the essential
-complexities into account, it's something I could see myself maintaining (with
-or without the help of an agent). I'm sure I'll find more ways to improve it
-in the future, but I have a reasonable degree of confidence that this will be
-doable.],
-  [It passes all the tests, so I've been able to release a new version (3.00)
-without major issues so far. The only issue I've discovered is that some of
-CFFI's tests are overly precise about the phrasing of errors reported by
-pycparser; this was an easy fix .],
-  [The new parser is also faster, by about 30% based on my benchmarks! This is
-typical of recursive descent when compared with YACC-generated parsers, in my
-experience. After reviewing the initial rewrite of the lexer, I've spent a while
-instructing Codex on how to make it faster, and it worked reasonably well.],
-  [Followup - static typing],
-  [While working on this, it became quite obvious that static typing would make the
-process easier. LLM coding agents really benefit from closed loops with strict
-guardrails (e.g. a test suite to pass), and type-annotations act as such.
-For example, had pycparser already been type annotated, Codex would probably not
-have overloaded values to multiple types (like None vs. False vs.
-others).],
-  [In a followup, I asked Codex to type-annotate pycparser (running checks using
- ty ), and this was also a back-and-forth because the process exposed some
-issues that needed to be refactored. Time will tell, but hopefully it will make
-further changes in the project simpler for the agent.],
-  [Based on this experience, I'd bet that coding agents will be somewhat more
-effective in strongly typed languages like Go, TypeScript and especially Rust.],
-  [Overall, this project has been a really good experience, and I'm impressed with
-what modern LLM coding agents can do! While there's no reason to expect that
-progress in this domain will stop, even if it does - these are already very
-useful tools that can significantly improve programmer productivity.],
-  [Could I have done this myself, without an agent's help? Sure. But it would have
-taken me much longer, assuming that I could even muster the will and
-concentration to engage in this project. I estimate it would take me at least
-a week of full-time work (so 30-40 hours) spread over who knows how long to
-accomplish. With Codex, I put in an order of magnitude less work into this
-(around 4-5 hours, I'd estimate) and I'm happy with the result.],
-  [It was also fun . At least in one sense, my professional life can be described
-as the pursuit of focus, deep work and flow . It's not easy for me to get into
-this state, but when I do I'm highly productive and find it very enjoyable.
-Agents really help me here. When I know I need to write some code and it's
-hard to get started, asking an agent to write a prototype is a great catalyst
-for my motivation. Hence the meme at the beginning of the post.],
-  [Does code quality even matter?],
-  [One can't avoid a nagging question - does the quality of the code produced
-by agents even matter? Clearly, the agents themselves can understand it (if not
-today's agent, then at least next year's). Why worry about future
-maintainability if the agent can maintain it? In other words, does it make sense
-to just go full vibe-coding?],
-  [This is a fair question, and one I don't have an answer to. Right now, for
-projects I maintain and stand behind , it seems obvious to me that the code
-should be fully understandable and accepted by me, and the agent is just a tool
-helping me get to that state more efficiently. It's hard to say what the future
-holds here; it's going to interesting, for sure.],
-  [\[1\] pycparser has a fair number of direct dependents ,
-but the majority of downloads comes through CFFI ,
-which itself is a major building block for much of the Python ecosystem. 
- 
- 
- 
- 
- 
- \[2\] The table-building report says 177, but that's certainly an
-over-dramatization because it's common for a single conflict to
-manifest in several ways. 
- 
- 
- 
- 
- 
- \[3\] It didn't help the PR's case that it was almost certainly vibe coded. 
- 
- 
- 
- 
- 
- \[4\]],
-  [class="first"\>There was also the lexer to consider, but this seemed like a much
-simpler job. My impression is that in the early days of computing,
- lex gained prominence because of strong regexp support which wasn't
-very common yet. These days, with excellent regexp libraries
-existing for pretty much every language, the added value of lex over
-a custom regexp-based lexer 
-isn't very high.],
-  [class="last"\>That said, it wouldn't make much sense to embark on a journey to rewrite
- just the lexer; the dependency on PLY would still remain, and besides,
-PLY's lexer and parser are designed to work well together. So it wouldn't
-help me much without tackling the parser beast.],
-  [\[5\] I've decided to ask it to the port the parser first, leaving the lexer
-alone. This was to split the work into reasonable chunks. Besides, I
-figured that the parser is the hard job anyway - if it succeeds in that,
-the lexer should be easy. That assumption turned out to be correct.],
-),
-  edited-for-length: false,
-)
-
-
-{
-  #section-label([Front Page])
-  #standard-article(
+#section-label([Front Page])
+#standard-article(
   title: [Send Emails In A NativeScript App Via The Mailgun API],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -323,11 +39,9 @@ the lexer should be easy. That assumption turned out to be correct.],
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Features])
-  #standard-article(
+#section-label([Features])
+#standard-article(
   title: [Book Notes: Full Frontal Calculus by Seth Braver — Chapter 1 Review],
   author: [Ruslan Spivak],
   source-name: [Ruslan Spivak],
@@ -372,12 +86,10 @@ the lexer should be easy. That assumption turned out to be correct.],
   debug-mode: false,
 )
 
-  #pull-quote([For that, Seth Braver’s other book Precalculus Made Difficult has excellent material on those topics.], [Ruslan Spivak])
+#pull-quote([For that, Seth Braver’s other book Precalculus Made Difficult has excellent material on those topics.], [Ruslan Spivak])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [How to Split Ranges in C++23],
   author: [Bartlomiej Filipek (C++ Stories)],
   source-name: [Bartlomiej Filipek (C++ Stories)],
@@ -386,82 +98,76 @@ the lexer should be easy. That assumption turned out to be correct.],
   [In this blog post, we’ll continue looking at ranges and this time explore ways to split them into sub-ranges. So we’ll take a look at views::split , views::chunk , and views::chunk\_by .],
   [We’ll walk through two examples for each adaptor: one simple and one slightly more advanced, to highlight their practical uses.],
   [Let’s go.],
-  [id="splitting-ranges-with-viewssplit-c20"\>
-Splitting Ranges with views::split , C++20],
+  [Splitting Ranges with views::split , C++20],
   [If you want to split a range using some “delimeter,” then views::split (or ranges::split\_view ) will do the job.],
   [Both of the ranges V and Pattern have to be forward\_range .],
   [Notice that you need to use a pattern; it cannot be a condition.],
-  [id="example-1-splitting-a-sentence-into-words"\>
-Example 1: Splitting a Sentence into Words],
-  [class="highlight"\> \#include 
+  [Example 1: Splitting a Sentence into Words],
+  [\#include 
  \#include 
  \#include 
  
- int main () { 
+ int main () \{ 
  using namespace std :: string\_view\_literals ; 
  
  constexpr auto text = "C++ is powerful and elegant" sv ; 
  
  for ( auto part : std :: views :: split ( text , ' ' )) 
- std :: print ( "'{}' " , std :: string\_view ( part )); 
- }],
+ std :: print ( "'\{\}' " , std :: string\_view ( part )); 
+ \}],
   [Play \@Compiler Explorer],
   [The output:],
   ['C++' 'is' 'powerful' 'and' 'elegant'],
   [A classic example that splits a sentence into words. We convert each subrange to std::string\_view for easy printing.],
   [We can also extend this and use not just one character:],
-  [class="highlight"\> constexpr auto text = "C++breakisbreakpowerfulbreakandbreakelegant" sv ; 
+  [constexpr auto text = "C++breakisbreakpowerfulbreakandbreakelegant" sv ; 
  
  for ( auto part : std :: views :: split ( text , "break" sv )) 
- std :: print ( "'{}' " , std :: string\_view ( part ));],
-  [id="example-2-splitting-not-just-text"\>
-Example 2: Splitting Not Just Text],
+ std :: print ( "'\{\}' " , std :: string\_view ( part ));],
+  [Example 2: Splitting Not Just Text],
   [split can be applied to any forward range, so not just text:],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  \#include 
  \#include 
  
- int main () { 
+ int main () \{ 
  using Point = std :: pair ; 
  
- std :: vector path = { 
- { 0 , 0 }, { 1 , 1 }, { - 1 , - 1 }, \/\\/ marker: {-1, -1}
- { 2 , 2 }, { 3 , 3 }, { - 1 , - 1 }, 
- { 4 , 4 }, { 5 , 5 } 
- }; 
+ std :: vector path = \{ 
+ \{ 0 , 0 \}, \{ 1 , 1 \}, \{ - 1 , - 1 \}, \/\\/ marker: \{-1, -1\}
+ \{ 2 , 2 \}, \{ 3 , 3 \}, \{ - 1 , - 1 \}, 
+ \{ 4 , 4 \}, \{ 5 , 5 \} 
+ \}; 
  
- for ( auto segment : std :: views :: split ( path , Point { - 1 , - 1 })) 
- std :: print ( "Segment: {} \\n " , segment ); 
- }],
+ for ( auto segment : std :: views :: split ( path , Point \{ - 1 , - 1 \})) 
+ std :: print ( "Segment: \{\} \\n " , segment ); 
+ \}],
   [See \@Compiler Explorer],
   [And the output:],
   [Segment: \[(0, 0), (1, 1)\]
 Segment: \[(2, 2), (3, 3)\]
 Segment: \[(4, 4), (5, 5)\]],
   [In the example, we run through the point list and break at markers that are (-1, -1) . This code also leveraged std::format support for ranges (C++23), so we don’t have to print individual points.],
-  [id="what-about-lazy\_split"\>
-What About lazy\_split ?],
+  [What About lazy\_split ?],
   [You might also encounter views::lazy\_split , introduced in C++20.],
   [This view is specialized for input-only ranges , such as reading from streams or generators.
 It avoids buffering or requiring multiple passes, but its subranges aren’t contiguous and don’t expose .data() or .size() .],
   [Unless you’re processing streams in a single pass, prefer views::split for simplicity.],
   [Here’s a question from Stack Overflow that I recently asked to clarify this view: c++ - What is the use of std::ranges::views::lazy\_split when we have std::ranges::views::split? - Stack Overflow],
-  [id="grouping-with-viewschunk-c23"\>
-Grouping with views::chunk , C++23],
+  [Grouping with views::chunk , C++23],
   [When you need to process data in fixed-size batches, chunk is the perfect tool.],
-  [id="example-1-fixed-size-batches"\>
-Example 1: Fixed-Size Batches],
-  [class="highlight"\> \#include 
+  [Example 1: Fixed-Size Batches],
+  [\#include 
  \#include 
  \#include 
  
- int main () { 
- std :: vector data { 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 }; 
+ int main () \{ 
+ std :: vector data \{ 1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 \}; 
  
  for ( auto chunk : data | std :: views :: chunk ( 3 )) 
- std :: print ( "{} \\n " , chunk ); 
- }],
+ std :: print ( "\{\} \\n " , chunk ); 
+ \}],
   [See \@Compiler Explorer],
   [And the output:],
   [\[ 1 2 3 \]
@@ -469,46 +175,42 @@ Example 1: Fixed-Size Batches],
 \[ 7 8 \]],
   [views::chunk splits the sequence into groups of three elements.
 If the number of elements isn’t divisible by 3, the last chunk will contain fewer elements.],
-  [id="example-2-processing-network-packets-in-chunks"\>
-Example 2: Processing Network Packets in Chunks],
+  [Example 2: Processing Network Packets in Chunks],
   [chunk can work not just with regular containers, but with just input ranges:],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  \#include 
  \#include 
  
- int main () { 
- std :: istringstream stream { "AB CD EF 12 34 56 78 95 FF" }; 
+ int main () \{ 
+ std :: istringstream stream \{ "AB CD EF 12 34 56 78 95 FF" \}; 
  
  auto bytes = std :: ranges :: istream\_view ( stream ); 
  
  for ( auto packet : bytes | std :: views :: chunk ( 4 )) 
- std :: print ( "Packet: {} \\n " , packet ); 
- }],
+ std :: print ( "Packet: \{\} \\n " , packet ); 
+ \}],
   [See \@Compiler Explorer],
   [Output:],
   [Packet: \["AB", "CD", "EF", "12"\]
 Packet: \["34", "56", "78", "95"\]
 Packet: \["FF"\]],
   [This example simulates processing a byte stream in fixed 2-byte packets.],
-  [id="dynamic-grouping-with-viewschunk\_by-c23"\>
-Dynamic Grouping with views::chunk\_by , C++23],
+  [Dynamic Grouping with views::chunk\_by , C++23],
   [When the group size isn’t fixed but defined by a condition, chunk\_by comes into play. This time, the range has to model forward range at least.],
-  [id="example-1-grouping-by-parity-evenodd"\>
-Example 1: Grouping by Parity (Even/Odd)],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  \#include 
  
- int main () { 
- std :: vector values { 1 , 3 , 5 , 2 , 4 , 6 , 7 , 9 , 8 }; 
+ int main () \{ 
+ std :: vector values \{ 1 , 3 , 5 , 2 , 4 , 6 , 7 , 9 , 8 \}; 
  
- for ( auto group : values | std :: views :: chunk\_by (\[\]( int a , int b ) { 
+ for ( auto group : values | std :: views :: chunk\_by (\[\]( int a , int b ) \{ 
  return ( a % 2 ) == ( b % 2 ); \/\\/ Same parity
- })) { 
- std :: print ( "size {}, {} \\n " , group . size (), group ); 
- } 
- }],
+ \})) \{ 
+ std :: print ( "size \{\}, \{\} \\n " , group . size (), group ); 
+ \} 
+ \}],
   [Run \@Compiler Explorer],
   [Output:],
   [size 3, \[1, 3, 5\]
@@ -517,26 +219,25 @@ size 2, \[7, 9\]
 size 1, \[8\]],
   [This code dynamically groups consecutive numbers based on their parity.
 Each group contains either only odd or only even numbers.],
-  [id="example-2-extracting-sentences-from-text"\>
-Example 2: Extracting Sentences from Text],
+  [Example 2: Extracting Sentences from Text],
   [We can use chunk\_by and split at places where a sentence ends.],
   [First try:],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  \#include 
  
- int main () { 
+ int main () \{ 
  using namespace std :: string\_view\_literals ; 
  
  constexpr auto text = "C++ is powerful. Ranges are elegant. This is fun!" sv ; 
  
- for ( auto sentence : text | std :: views :: chunk\_by (\[\]( char a , char b ) { 
+ for ( auto sentence : text | std :: views :: chunk\_by (\[\]( char a , char b ) \{ 
  \/\\/ Group until a dot is found; start a new group after '.'
  return a != '.' && b != '.' ; 
- })) { 
- std :: print ( "Sentence: {} \\n " , sentence ); 
- } 
- }],
+ \})) \{ 
+ std :: print ( "Sentence: \{\} \\n " , sentence ); 
+ \} 
+ \}],
   [And we get:],
   [Sentence: \['C', '+', '+', ' ', 'i', 's', ' ', ...\]
 Sentence: \['.'\]
@@ -544,27 +245,28 @@ Sentence: \[' ', 'R', 'a', 'n', 'g', 'e', 's', ...\]
 Sentence: \['.'\]
 Sentence: \[' ', 'T', 'h', 'i', 's', ' ', 'i', ...\]],
   [Probably not the best… but we can try cleaning the result:],
-  [class="highlight"\> int main () { 
+  [int main () \{ 
  using namespace std :: string\_view\_literals ; 
  
  constexpr auto text = "C++ is powerful. Ranges are elegant. This is fun!" sv ; 
  
- for ( auto sentence : text | std :: views :: chunk\_by (\[\]( char a , char b ) { 
+ for ( auto sentence : text | std :: views :: chunk\_by (\[\]( char a , char b ) \{ 
  \/\\/ Group until a dot is found; start a new group after '.'
  return a != '.' && b != '.' ; 
- })) { 
+ \})) \{ 
  \/\\/ Remove leading spaces if any, and skip dots-only groups
  auto view = std :: string\_view ( &\* sentence . begin (), std :: ranges :: distance ( sentence )); 
  view . remove\_prefix ( std :: min ( view . find\_first\_not\_of ( ' ' ), view . size ())); 
  
  if ( ! view . empty () && view != "." ) 
- std :: print ( "Sentence: \[{}\] \\n " , view ); 
- } 
- }],
+ std :: print ( "Sentence: \[\{\}\] \\n " , view ); 
+ \} 
+ \}],
   [And now we get:],
+  [Sentence: \[C++ is powerful\]
+ Sentence: \[Ranges are elegant\]
+ Sentence: \[This is fun!\]],
   [Experiment \@Compiler Explorer],
-  [id="summary"\>
-Summary],
   [Feature 
  split 
  chunk 
@@ -596,8 +298,7 @@ Summary],
  ❌ 
  ❌],
   [In this text, we explored various ways to split ranges using split , chunk or chunk\_by , we also touched a little bit about lazy\_split .],
-  [id="back-to-you"\>
-Back to you],
+  [Back to you],
   [Which of these adaptors have you already tried?],
   [Which one surprised you the most?],
   [Let me know your thoughts in the comments!],
@@ -608,10 +309,8 @@ Back to you],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [5 to 18: Why Your Count Might Be Off by One],
   author: [Ruslan Spivak],
   source-name: [Ruslan Spivak],
@@ -624,30 +323,30 @@ Back to you],
   [Feels right.],
   [But it’s wrong.],
   [It’s a small thing, and kind of basic, but this mistake got me more times than I’d like to admit. Eventually I learned how to count ranges properly. :)],
-  [id="basic-counting"\>Basic counting],
+  [Basic counting],
   [Let’s start with something simpler.],
   [How many numbers are in this list?],
   [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
   [You’d probably say 13 without counting. And you’d be absolutely right.],
   [That kind of range is easy. Our brain sees the pattern and knows what’s going on. We’ve been counting this way since we were little kids. But that instinct quietly fails in cases like 5 to 18.],
   [So, how many numbers are there between 5 and 18 inclusive?],
-  [id="lets-count-manually"\>Let’s count manually],
+  [Let’s count manually],
   [Here’s the full list from 5 to 18:],
   [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
   [That’s 14 numbers, not 13. So what went wrong with our subtraction?],
-  [id="try-a-quick-trick"\>Try a quick trick],
+  [Try a quick trick],
   [Let’s take the above list from 5 to 18 and turn it into a list that we know how to count by subtracting 4 from every number ( I first saw this approach in David Patrick’s book Introduction to Counting & Probability. A great resource if you enjoy these kinds of problems. ):],
   [Much easier to count! It has 14 items. Since we only shifted the numbers to start at 1 (without changing the count), the original list has 14 numbers too. Nice.],
-  [id="the-formula"\>The formula],
+  [The formula],
   [If you want to count how many numbers are in a list from a to b , inclusive, here’s the rule (given that both a and b are positive and b \>= a ):],
   [That +1 is the key.],
   [So for our original example:],
   [18 - 5 + 1 = 14],
-  [id="for-the-curious-formula-derivation"\>For the curious: formula derivation],
+  [For the curious: formula derivation],
   [Using the same trick, we subtract a - 1 from each number in the range from a to b . This transforms it into a list we can count easily, starting from 1:],
   [Our new list has b - a + 1 numbers, so the original list has the same count.],
   [The +1 rule is simple, but surprisingly easy to overlook. Here’s where it often sneaks in.],
-  [id="where-this-trips-people-up"\>Where this trips people up],
+  [Where this trips people up],
   [This tiny +1 mistake shows up everywhere:],
   [Days between two calendar dates (inclusive)],
   [Characters in a string or line],
@@ -673,12 +372,10 @@ Back to you],
   debug-mode: false,
 )
 
-  #pull-quote([But that instinct quietly fails in cases like 5 to 18.], [Ruslan Spivak])
+#pull-quote([But that instinct quietly fails in cases like 5 to 18.], [Ruslan Spivak])
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Send More Investor Updates],
   author: [Zach Holman],
   source-name: [Zach Holman],
@@ -686,11 +383,11 @@ Back to you],
   paragraphs: (
   [I’ve made like a hundred angel investments over the years, and I get the sneaking suspicion that the most successful startups in my portfolios are the ones that talk to their investors.],
   [Like, that’s it. That’s the nugget for this post.],
-  [id="holy-shit-no-one-can-help-you-if-they-dont-know-you-need-help"\>Holy shit no one can help you if they don’t know you need help],
+  [Holy shit no one can help you if they don’t know you need help],
   [Like most good advice, this is kind of obvious, but writing about it just serves as a reminder and/or a kick in the pants. To wit: it’s hard to give help if you don’t know what help is needed.],
   [Let’s back up a second. First: venture-backed companies are relatively rare, in the grand scheme of things, and that’s fine and dandy. But if you are one of the companies where it makes sense to take outside investment, just cashing the check and moving on is pretty small-minded. The whole point of selling part of your company is to bring on people with a network and experience different from your own. If you’re not doing that… take out a loan or rob a bank.],
   [Lead investors tend to be much more involved in a company- they might have prescheduled check-in periods and have a deeper understanding of what’s going on. But for everyone else, particularly angel investors, the monthly investor update is the only real connection they have to your company, past simply existing on your cap table. Use and leverage them!],
-  [id="less-is-more"\>Less is more],
+  [Less is more],
   [I swear, if I searched in my inbox for “sorry it’s been awhile since we sent an investor update!” the results would be… high. And I get it! It’s kind of stressful, particularly if you have stressful things in your present or your future. And usually it just keeps compounding until the dam bursts and once a year there’s a “OHMYGOD HERE’S A WAR AND PEACE -SIZED TREATISE ON THE COMPANY BECAUSE IT’S BEEN SO LONG ALSO PS: WE’VE PIVOTED TO SELLING SMALL TREES FOR CATS TO PLAY ON”.],
   [So your easy answer: just send a quick paragraph! Nothing needs to be rocket science. I’ve gotten a number of updates that broadly consisted of:],
   [Hi! This is what we did this last month:],
@@ -698,7 +395,7 @@ Back to you],
   [Here’s what we need help with this upcoming month:],
   [Nothing! We’re doing good, just heads-down on the product right now.],
   [I love these! This tells me 1) what you did, 2) what you need help on (nothing!), 3) that you’re still alive, which you’d be shocked at how often that’s a real question. I’ve had a couple investments now where the only communications were “thanks for your investment!” and “we’re shutting down the company!” In hindsight: absolutely not shocked the company died.],
-  [id="better-companies-communicate"\>Better companies communicate],
+  [Better companies communicate],
   [Look: I don’t traffic in shit like “science” or “math”, much less call it “maths” like those weird loveable Brits keep trying to push. I’m an angel investor, baby, so that means all I need are vibes , mannnnn. But I keep getting the feels that founders who are on top of their investor updates are… better.],
   [Almost certainly the best investor updates with the most regular cadence over years was from Sid Sijbrandij , for GitLab’s investor updates. There was a very credible rumor on the street that NIST sets their time servers based on Sid’s email cadence. They were to the point, plaintext (don’t get me started on all the fancy investor updates founders are trying to get by with these days), with clear call-to-actions and jump-off links if I wanted to dig deeper into that particular topic or internal discussion.],
   [I’m not going to say if you take Sid’s same approach you’re also going to also have a \$15B IPO like GitLab did… but I’m also not not saying it.],
@@ -710,10 +407,8 @@ Back to you],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Let’s Build A Simple Interpreter. Part 7: Abstract Syntax Trees],
   author: [Ruslan Spivak],
   source-name: [Ruslan Spivak],
@@ -786,17 +481,23 @@ An abstract syntax tree ( AST ) is a tree that represents the abstract syntactic
   [From the pictures above you can see that operators with higher precedence end up being lower in the tree.],
   [Okay, let’s write some code to implement different AST node types and modify our parser to generate an AST tree composed of those nodes.],
   [First, we’ll create a base node class called AST that other classes will inherit from:],
+  [class AST ( object ): 
+ pass],
   [Not much there, actually. Recall that ASTs represent the operator-operand model. So far, we have four operators and integer operands. The operators are addition, subtraction, multiplication, and division. We could have created a separate class to represent each operator like AddNode, SubNode, MulNode, and DivNode, but instead we’re going to have only one BinOp class to represent all four binary operators (a binary operator is an operator that operates on two operands):],
-  [class="highlight"\> class BinOp ( AST ): 
+  [class BinOp ( AST ): 
  def \_\_init\_\_ ( self , left , op , right ): 
  self . left = left 
  self . token = self . op = op 
  self . right = right],
   [The parameters to the constructor are left , op , and right , where left and right point correspondingly to the node of the left operand and to the node of the right operand. Op holds a token for the operator itself: Token( PLUS , ‘+’) for the plus operator, Token( MINUS , ‘-‘) for the minus operator, and so on.],
   [To represent integers in our AST , we’ll define a class Num that will hold an INTEGER token and the token’s value:],
+  [class Num ( AST ): 
+ def \_\_init\_\_ ( self , token ): 
+ self . token = token 
+ self . value = token . value],
   [As you’ve noticed, all nodes store the token used to create the node. This is mostly for convenience and it will come in handy in the future.],
   [Recall the AST for the expression 2 \* 7 + 3. We’re going to manually create it in code for that expression:],
-  [class="highlight"\> \>\>\> from spi import Token , MUL , PLUS , INTEGER , Num , BinOp 
+  [\>\>\> from spi import Token , MUL , PLUS , INTEGER , Num , BinOp 
  \>\>\> 
  \>\>\> mul\_token = Token ( MUL , '\*' ) 
  \>\>\> plus\_token = Token ( PLUS , '+' ) 
@@ -812,6 +513,8 @@ An abstract syntax tree ( AST ) is a tree that represents the abstract syntactic
  ... )],
   [Here is how an AST will look with our new node classes defined. The picture below also follows the manual construction process above:],
   [Here is our modified parser code that builds and returns an AST as a result of recognizing the input (an arithmetic expression):],
+  [class AST ( object ): 
+ pass],
   [class BinOp ( AST ): 
  def \_\_init\_\_ ( self , left , op , right ): 
  self . left = left 
@@ -888,14 +591,17 @@ An abstract syntax tree ( AST ) is a tree that represents the abstract syntactic
   [Sometimes you might have to execute certain actions at all those points (preorder, inorder, and postorder). You’ll see some examples of that in the source code repository for this article.],
   [Okay, let’s write some code to visit and interpret the abstract syntax trees built by our parser, shall we?],
   [Here is the source code that implements the Visitor pattern :],
-  [class="highlight"\> class NodeVisitor ( object ): 
+  [class NodeVisitor ( object ): 
  def visit ( self , node ): 
  method\_name = 'visit\_' + type ( node ) . \_\_name\_\_ 
  visitor = getattr ( self , method\_name , self . generic\_visit ) 
  return visitor ( node )],
   [def generic\_visit ( self , node ): 
- raise Exception ( 'No visit\_ {} method' . format ( type ( node ) . \_\_name\_\_ ))],
+ raise Exception ( 'No visit\_ \{\} method' . format ( type ( node ) . \_\_name\_\_ ))],
   [And here is the source code of our Interpreter class that inherits from the NodeVisitor class and implements different methods that have the form visit\_NodeType , where NodeType is replaced with the node’s class name like BinOp , Num and so on:],
+  [class Interpreter ( NodeVisitor ): 
+ def \_\_init\_\_ ( self , parser ): 
+ self . parser = parser],
   [def visit\_BinOp ( self , node ): 
  if node . op . type == PLUS : 
  return self . visit ( node . left ) + self . visit ( node . right ) 
@@ -910,7 +616,7 @@ An abstract syntax tree ( AST ) is a tree that represents the abstract syntactic
   [There are two interesting things about the code that are worth mentioning here:
 First, the visitor code that manipulates AST nodes is decoupled from the AST nodes themselves. You can see that none of the AST node classes (BinOp and Num) provide any code to manipulate the data stored in those nodes. That logic is encapsulated in the Interpreter class that implements the NodeVisitor  class.],
   [Second, instead of a giant if statement in the NodeVisitor’s visit method like this:],
-  [class="highlight"\> def visit ( node ): 
+  [def visit ( node ): 
  node\_type = type ( node ) . \_\_name\_\_ 
  if node\_type == 'BinOp' : 
  return self . visit\_BinOp ( node ) 
@@ -919,7 +625,7 @@ First, the visitor code that manipulates AST nodes is decoupled from the AST nod
  elif ... 
  \# ...],
   [or like this:],
-  [class="highlight"\> def visit ( node ): 
+  [def visit ( node ): 
  if isinstance ( node , BinOp ): 
  return self . visit\_BinOp ( node ) 
  elif isinstance ( node , Num ): 
@@ -929,7 +635,7 @@ First, the visitor code that manipulates AST nodes is decoupled from the AST nod
   [Spend some time studying this approach (standard Python module ast uses the same mechanism for node traversal) as we will be extending our interpreter with many new visit\_NodeType methods in the future.],
   [The generic\_visit method is a fallback that raises an exception to indicate that it encountered a node that the implementation class has no corresponding visit\_NodeType method for.],
   [Now, let’s manually build an AST for the expression 2 \* 7 + 3 and pass it to our interpreter to see the visit method in action to evaluate the expression. Here is how you can do it from the Python shell:],
-  [class="highlight"\> \>\>\> from spi import Token , MUL , PLUS , INTEGER , Num , BinOp 
+  [\>\>\> from spi import Token , MUL , PLUS , INTEGER , Num , BinOp 
  \>\>\> 
  \>\>\> mul\_token = Token ( MUL , '\*' ) 
  \>\>\> plus\_token = Token ( PLUS , '+' ) 
@@ -949,6 +655,7 @@ First, the visitor code that manipulates AST nodes is decoupled from the AST nod
  17],
   [As you can see, I passed the root of the expression tree to the visit method and that triggered traversal of the tree by dispatching calls to the correct methods of the Interpreter class( visit\_BinOp and visit\_Num ) and generating the result.],
   [Okay, here is the complete code of our new interpreter for your convenience:],
+  [""" SPI - Simple Pascal Interpreter """],
   [\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\# 
  \# \# 
  \# LEXER \# 
@@ -972,7 +679,7 @@ First, the visitor code that manipulates AST nodes is decoupled from the AST nod
  Token(PLUS, '+') 
  Token(MUL, '\*') 
  """ 
- return 'Token( {type} , {value} )' . format ( 
+ return 'Token( \{type\} , \{value\} )' . format ( 
  type = self . type , 
  value = repr ( self . value ) 
  )],
@@ -1117,7 +824,7 @@ First, the visitor code that manipulates AST nodes is decoupled from the AST nod
  visitor = getattr ( self , method\_name , self . generic\_visit ) 
  return visitor ( node )],
   [def generic\_visit ( self , node ): 
- raise Exception ( 'No visit\_ {} method' . format ( type ( node ) . \_\_name\_\_ ))],
+ raise Exception ( 'No visit\_ \{\} method' . format ( type ( node ) . \_\_name\_\_ ))],
   [class Interpreter ( NodeVisitor ): 
  def \_\_init\_\_ ( self , parser ): 
  self . parser = parser],
@@ -1155,7 +862,7 @@ First, the visitor code that manipulates AST nodes is decoupled from the AST nod
  main ()],
   [Save the above code into the spi.py file or download it directly from GitHub . Try it out and see for yourself that your new tree-based interpreter properly evaluates arithmetic expressions.],
   [Here is a sample session:],
-  [class="highlight"\> \$ python spi.py
+  [\$ python spi.py
 spi\> 7 + 3 \* ( 10 \/ ( 12 \/ ( 3 + 1 ) - 1 )) 
  22 
 spi\> 7 + 3 \* ( 10 \/ ( 12 \/ ( 3 + 1 ) - 1 )) \/ ( 2 + 3 ) - 5 - 3 + ( 8 ) 
@@ -1177,10 +884,8 @@ spi\> 7 + ((( 3 + 2 )))
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [22 Common Filesystem Tasks in C++20],
   author: [Bartlomiej Filipek (C++ Stories)],
   source-name: [Bartlomiej Filipek (C++ Stories)],
@@ -1188,55 +893,51 @@ spi\> 7 + ((( 3 + 2 )))
   paragraphs: (
   [Working with the filesystem can be a daunting task, but it doesn’t have to be. In this post, I’ll walk you through some of the most common filesystem operations using the powerful features introduced in C++17, as well as some new enhancements in C++20/23. Whether you’re creating directories, copying files, or managing permissions, these examples will help you understand and efficiently utilize the std::filesystem library.],
   [Let’s start.],
-  [id="directory-operations"\>
-Directory Operations],
-  [id="1-creating-directories"\>
-1. Creating Directories],
+  [1. Creating Directories],
   [Creating directories is a basic yet essential operation. The std::filesystem library makes this straightforward with the create\_directory function.],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  
- int main () { 
+ int main () \{ 
  std :: filesystem :: path dir = "example\_directory" ; 
  if ( std :: filesystem :: create\_directory ( dir )) 
  std :: cout bool create\_directory ( const std :: filesystem :: path & p , std :: error\_code & ec ) noexcept ;],
   [For example:],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  
- int main () { 
+ int main () \{ 
  std :: filesystem :: path dir = "/abc/cde" ; \/\\/ recursive?
- std :: error\_code ec {}; 
+ std :: error\_code ec \{\}; 
  if ( std :: filesystem :: create\_directory ( dir , ec )) 
  std :: cout Failed to create directory: No such file or directory
  ...],
   [See more \@Cppreference],
-  [id="2-creating-nested-directories"\>
-2. Creating Nested Directories],
+  [2. Creating Nested Directories],
   [When you need to create multiple nested directories, use the create\_directories function.],
   [This function creates directories recursively.],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  \#include 
  
- int main () { 
+ int main () \{ 
  std :: filesystem :: path nested = "a/b/c" ; 
- try { 
+ try \{ 
  if ( std :: filesystem :: create\_directories ( nested )) 
  std :: cout 
 3. Removing a Directory],
   [So far, our example directories were left in a vacuum (and I hope Compiler Explorer can safely remove them :), but we can also do it manually from code: We just need the remove function for this task.],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  \#include 
  
- void ls () { 
+ void ls () \{ 
  ... 
- } 
+ \} 
  
- int main () { 
+ int main () \{ 
  std :: filesystem :: path dir = "test" ; 
- try { 
+ try \{ 
  if ( std :: filesystem :: create\_directory ( dir )) 
  std :: cout Directory created successfully
  "./compilation-result.json"
@@ -1247,15 +948,14 @@ Directory Operations],
  "./compilation-result.json"
  "./output.s"
  "./example.cpp"],
-  [id="4-removing-all-contents-of-a-directory"\>
-4. Removing All Contents of a Directory],
+  [4. Removing All Contents of a Directory],
   [To remove a directory along with all its contents, use the remove\_all function.],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  \#include 
  \#include 
  
- void ls () { 
+ void ls () \{ 
  for ( const auto & entry : std :: filesystem :: recursive\_directory\_iterator ( "." )) 
  std :: cout Directories created successfully
  "./compilation-result.json"
@@ -1271,16 +971,24 @@ Directory Operations],
  "./output.s"
  "./example.cpp"],
   [Notice that we had test/x/y , test/x , test/a/b , test/a and test directories to remove in this case.],
-  [id="5-listing-directory-contents"\>
-5. Listing Directory Contents],
+  [5. Listing Directory Contents],
   [In my previous examples, I’ve used the magical ls() function, but the implementation is quite simple. It uses directory\_iterator to iterate through the directory:],
-  [id="6-listing-directory-contents-recursively"\>
-6. Listing Directory Contents Recursively],
-  [We can use a recursive version of the directory\_iterator to iterate through a whole subtree:],
-  [class="highlight"\> \#include 
+  [\#include 
+ \#include 
+ \#include 
  \#include 
  
- void ls () { 
+ void ls () \{ 
+ for ( const auto & entry : std :: filesystem :: directory\_iterator ( "." )) 
+ std :: cout "./compilation-result.json"
+ "./output.s"
+ "./example.cpp"],
+  [6. Listing Directory Contents Recursively],
+  [We can use a recursive version of the directory\_iterator to iterate through a whole subtree:],
+  [\#include 
+ \#include 
+ 
+ void ls () \{ 
  for ( const auto & entry : std :: filesystem :: recursive\_directory\_iterator ( "." )) 
  std :: cout "./compilation-result.json"
  "./output.s"
@@ -1292,11 +1000,11 @@ Directory Operations],
  "./a/b"
  "./a/b/c"],
   [If we need a nicer output, we can try implementing our own recursive version:],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  
- void ls ( const std :: filesystem :: path & p , unsigned tabs = 0 ) { 
- for ( const auto & entry : std :: filesystem :: directory\_iterator ( p )) { 
+ void ls ( const std :: filesystem :: path & p , unsigned tabs = 0 ) \{ 
+ for ( const auto & entry : std :: filesystem :: directory\_iterator ( p )) \{ 
  if ( tabs \> 0 ) std :: cout "compilation-result"
  "output"
  "x"
@@ -1306,46 +1014,45 @@ Directory Operations],
  "a"
  -"b"
  --"c"],
-  [id="7-creating-and-using-a-temporary-directory"\>
-7. Creating and Using a Temporary Directory],
+  [7. Creating and Using a Temporary Directory],
   [Thus far, I have used the current directory to create new files and test dirs, but the std::filesystem library provides facilities to create and manage temporary directories in a better way. It all comes down to the temp\_directory\_path() function:],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  \#include 
  
- void create\_temp\_file ( const std :: filesystem :: path & dir , const std :: string & filename ) { 
+ void create\_temp\_file ( const std :: filesystem :: path & dir , const std :: string & filename ) \{ 
  std :: filesystem :: path file\_path = dir \/ filename ; 
  std :: ofstream ( file\_path ) Temporary directory created at: "/tmp/my\_temp\_directory"
  Temporary file created at: "/tmp/my\_temp\_directory/temp\_file.txt"
  Contents of the temporary directory:
  "/tmp/my\_temp\_directory/temp\_file.txt"],
   [On Windows (Running and compiling from Visual Studio) I’m getting the following output:],
-  [id="file-operations"\>
-File Operations],
-  [id="7-copying-files"\>
-7. Copying Files],
+  [Temporary directory created at: "C:\\\\Users\\\\Admin\\\\AppData\\\\Local\\\\Temp\\\\my\_temp\_directory"
+ Temporary file created at: "C:\\\\Users\\\\Admin\\\\AppData\\\\Local\\\\Temp\\\\my\_temp\_directory\\\\temp\_file.txt"
+ Contents of the temporary directory:
+ "C:\\\\Users\\\\Admin\\\\AppData\\\\Local\\\\Temp\\\\my\_temp\_directory\\\\temp\_file.txt"],
+  [7. Copying Files],
   [Copying files is a common task, especially when working with backups or file distribution. Use the copy function to achieve this.],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  
- int main () { 
+ int main () \{ 
  std :: filesystem :: path src = "source\_file.txt" ; 
  std :: filesystem :: path dest = "destination\_file.txt" ; 
- try { 
+ try \{ 
  std :: filesystem :: copy ( src , dest ); 
  std :: cout filesystem error: cannot copy: No such file or directory \[source\_file.txt\] \[destination\_file.txt\]],
-  [id="8-copying-files--recursively"\>
-8. Copying Files Recursively],
+  [8. Copying Files Recursively],
   [Copying directories, including their contents, can be done using the copy function with recursive options.],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  \#include 
  
- void create\_temp\_directories\_and\_files () { 
+ void create\_temp\_directories\_and\_files () \{ 
  std :: filesystem :: create\_directories ( "source\_directory/subdir1" ); 
  std :: filesystem :: create\_directories ( "source\_directory/subdir2" ); 
  
- std :: ofstream ( "source\_directory/file1.txt" ) enum class copy\_options { 
+ std :: ofstream ( "source\_directory/file1.txt" ) enum class copy\_options \{ 
  none = /\* unspecified \*\/ , 
  skip\_existing = /\* unspecified \*\/ , 
  overwrite\_existing = /\* unspecified \*\/ , 
@@ -1356,18 +1063,25 @@ File Operations],
  directories\_only = /\* unspecified \*\/ , 
  create\_symlinks = /\* unspecified \*\/ , 
  create\_hard\_links = /\* unspecified \*\/ 
- };],
+ \};],
   [See more examples \@CppReference],
-  [id="9-moving-and-renaming-files"\>
-9. Moving and Renaming Files],
+  [9. Moving and Renaming Files],
   [Moving and renaming files or directories can be done using the rename function.],
+  [\#include 
+ \#include 
+ \#include 
+ 
+ void ls () \{ 
+ for ( const auto & entry : std :: filesystem :: directory\_iterator ( "." )) 
+ std :: cout 
+10. Creating Hard Links],
   [Hard links provide multiple directory entries for a single file. Use the create\_hard\_link function to create them.],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  \#include 
  \#include 
  
- void ls () { 
+ void ls () \{ 
  for ( const auto & entry : std :: filesystem :: directory\_iterator ( "." )) 
  std :: cout Hard link created successfully
  ./compilation-result.json, link count 1
@@ -1375,16 +1089,15 @@ File Operations],
  ./hard\_link\_file.txt, link count 2
  ./output.s, link count 1
  ./example.cpp, link count 1],
-  [id="11-creating-symbolic-links"\>
-11. Creating Symbolic Links],
+  [11. Creating Symbolic Links],
   [Symbolic links (symlinks) are another way to reference files. Use the create\_symlink function for this.],
   [unix - What is the difference between a symbolic link and a hard link? - Stack Overflow],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  \#include 
  
- void display\_file\_content ( const std :: filesystem :: path & path ) { 
- if ( std :: filesystem :: exists ( path )) { 
+ void display\_file\_content ( const std :: filesystem :: path & path ) \{ 
+ if ( std :: filesystem :: exists ( path )) \{ 
  std :: ifstream file ( path ); 
  std :: string content (( std :: istreambuf\_iterator ( file )), std :: istreambuf\_iterator ()); 
  std :: cout Original file created.
@@ -1396,34 +1109,32 @@ File Operations],
  Original file deleted.
  "symlink\_to\_file.txt" does not exist.
  Content of "hardlink\_to\_file.txt": Hello World!],
-  [id="path-and-existence-checks"\>
-Path and Existence Checks],
-  [id="12-checking-file-or-directory-existence"\>
-12. Checking File or Directory Existence],
+  [Path and Existence Checks],
+  [12. Checking File or Directory Existence],
   [Before performing operations on files or directories, it’s often necessary to check their existence using the exists function.],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  
- int main () { 
+ int main () \{ 
  std :: filesystem :: path p = "example\_file.txt" ; 
  if ( std :: filesystem :: exists ( p )) 
  std :: cout 
 13. Checking if a Path is a File or Directory],
   [Differentiating between files and directories is crucial for many file processing tasks. The is\_regular\_file and is\_directory functions help with this.],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  
- int main () { 
+ int main () \{ 
  std :: filesystem :: path p = "example\_path" ; 
  if ( std :: filesystem :: is\_regular\_file ( p )) 
  std :: cout 
 14. Reading Symlink Status],
   [If your application deals with symbolic links, you may need to read the status of these links using the is\_symlink function. To get the target file, you can use read\_symlink() :],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  \#include 
  
- int main () { 
+ int main () \{ 
  std :: filesystem :: path original\_file = "original\_file.txt" ; 
  std :: filesystem :: path symlink = "symlink\_to\_file.txt" ; 
  
@@ -1431,7 +1142,8 @@ Path and Existence Checks],
 15. Getting Absolute Path],
   [Getting the absolute path of a relative path is often necessary for various file operations. Use the absolute function for this.],
   [\#include],
-  [int main () {],
+  [\#include],
+  [int main () \{],
   [\/\\/ Example relative paths],
   [std :: filesystem :: path relative\_path1 = "example\_directory" ;],
   [std :: filesystem :: path relative\_path2 = "../parent\_directory" ;],
@@ -1441,16 +1153,12 @@ Path and Existence Checks],
   [std :: filesystem :: path absolute\_path2 = std :: filesystem :: absolute ( relative\_path2 );],
   [std :: filesystem :: path absolute\_path3 = std :: filesystem :: absolute ( relative\_path3 );],
   [\/\\/ Display the absolute paths],
-  [std :: cout Absolute path: " Absolute path: " Absolute path: " Relative path: "example\_directory" -\> Absolute path: "/app/example\_directory"],
-  [Relative path: "../parent\_directory" -\> Absolute path: "/app/../parent\_directory"],
-  [Relative path: "subdir/another\_file.txt" -\> Absolute path: "/app/subdir/another\_file.txt"],
-  [id="16-getting-relative-path"\>
-16. Getting Relative Path],
+  [16. Getting Relative Path],
   [Sometimes, you need to convert an absolute path to a relative path. The relative function can be used for this purpose.],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  
- int main () { 
+ int main () \{ 
  std :: filesystem :: path base\_path = "/home/user" ; 
  std :: filesystem :: path absolute\_path = "/home/user/example\_directory/file.txt" ; 
  std :: filesystem :: path relative\_path = std :: filesystem :: relative ( absolute\_path , base\_path ); 
@@ -1460,57 +1168,61 @@ Path and Existence Checks],
   [According to CppReference the stream operator for the path class is defined in the following way:],
   [Performs stream input or output on the path p. std::quoted is used so that spaces do not cause truncation when later read by stream input operator.],
   [To remove the quotes, we just need to get the raw string that represents the path. For example:],
+  [void ls () \{ 
+ for ( const auto & entry : std :: filesystem :: directory\_iterator ( "." )) 
+ std :: cout ./compilation-result.json
+ ./output.s
+ ./example.cpp],
   [Rather than:],
-  [id="miscellaneous-operations"\>
-Miscellaneous Operations],
-  [id="18-calculating-directory-size"\>
-18. Calculating Directory Size],
+  ["./compilation-result.json"
+ "./output.s"
+ "./example.cpp"],
+  [18. Calculating Directory Size],
   [Calculating the total size of all files within a directory can be useful for disk usage analysis and cleanup tasks.],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  \#include 
  
  \/\\/ Function to create a test directory with some files and subdirectories
- void create\_test\_directory ( const std :: filesystem :: path & dir ) { 
+ void create\_test\_directory ( const std :: filesystem :: path & dir ) \{ 
  std :: filesystem :: create\_directories ( dir \/ "subdir1" ); 
  std :: filesystem :: create\_directories ( dir \/ "subdir2" ); 
  
  std :: ofstream ( dir \/ "file1.txt" ) 
 19. Determining Free Space on a Filesystem],
   [Knowing the available free space on a filesystem is important for managing storage and preventing errors due to insufficient disk space. The space() function returns a space\_info object that contains information about the free space, available space, and capacity of the filesystem where a given path is located.],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  
- int main () { 
+ int main () \{ 
  std :: filesystem :: path p = "/" ; 
  auto space\_info = std :: filesystem :: space ( p ); 
  std :: cout 
 20. Checking File Permissions],
   [File permissions determine who can read, write, or execute a file. Use the status function to check these permissions.],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  
- int main () { 
+ int main () \{ 
  std :: filesystem :: path file = "example\_file.txt" ; 
  std :: filesystem :: perms p = std :: filesystem :: status ( file ). permissions (); 
  
  std :: cout 
 21. Setting File Permissions],
   [Changing file permissions can be necessary for securing files or enabling certain operations. Use the permissions function to set these permissions.],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  \#include 
  
- void create\_test\_file ( const std :: filesystem :: path & path ) { 
+ void create\_test\_file ( const std :: filesystem :: path & path ) \{ 
  std :: ofstream ( path ) Test file created at: "test\_file.txt"
  Initial Permissions for "test\_file.txt": rw-rw-r--
  Permissions changed successfully
  Updated Permissions for "test\_file.txt": rwx------
  Test file removed.],
-  [id="22-listing-files-in-last-modification-time-order"\>
-22. Listing Files in Last Modification Time Order],
+  [22. Listing Files in Last Modification Time Order],
   [Sorting and listing files based on their last modification time can be useful for many applications, such as finding the most recently modified files. The following example demonstrates how to list files in a directory sorted by their last modification time.],
-  [class="highlight"\> \#include 
+  [\#include 
  \#include 
  \#include 
  \#include 
@@ -1521,7 +1233,7 @@ Miscellaneous Operations],
  
  namespace fs = std :: filesystem ; 
  
- int main () { 
+ int main () \{ 
  std :: map files ; 
  std :: vector toDelete ; 
  
@@ -1530,8 +1242,7 @@ Miscellaneous Operations],
 Summary],
   [In this blog post, we’ve explored a variety of essential filesystem operations using the std::filesystem library in C++17, C++20, and C++23. From creating directories and files to managing symbolic and hard links, and from checking file permissions to calculating directory sizes, we’ve covered the fundamental tasks you need to handle the filesystem efficiently.],
   [I hope this guide has provided you with valuable insights and practical examples to help you navigate the complexities of filesystem operations in C++.],
-  [id="back-to-you"\>
-Back to you],
+  [Back to you],
   [Do you use std::filesystem ?],
   [What other operations are useful when working with the filesystem?],
   [Share your comment below.],
@@ -1542,10 +1253,8 @@ Back to you],
   debug-mode: false,
 )
 
-}
 
-{
-  #standard-article(
+#standard-article(
   title: [Let’s Build A Web Server. Part 1.],
   author: [Ruslan Spivak],
   source-name: [Ruslan Spivak],
@@ -1568,12 +1277,14 @@ Back to you],
   [In a nutshell it’s a networking server that sits on a physical server (oops, a server on a server) and waits for a client to send a request. When it receives a request, it generates a response and sends it back to the client. The communication between a client and a server happens using HTTP protocol. A client can be your browser or any other software that speaks HTTP .],
   [What would a very simple implementation of a Web server look like?
 Here is my take on it. The example is in Python (tested on Python3.7+) but even if you don’t know Python (it’s a very easy language to pick up, try it!) you still should be able to understand concepts from the code and explanations below:],
+  [\# Python3.7+ 
+ import socket],
   [HOST , PORT = '' , 8888],
   [listen\_socket = socket . socket ( socket . AF\_INET , socket . SOCK\_STREAM ) 
  listen\_socket . setsockopt ( socket . SOL\_SOCKET , socket . SO\_REUSEADDR , 1 ) 
  listen\_socket . bind (( HOST , PORT )) 
  listen\_socket . listen ( 1 ) 
- print ( f 'Serving HTTP on port { PORT } ...' ) 
+ print ( f 'Serving HTTP on port \{ PORT \} ...' ) 
  while True : 
  client\_connection , client\_address = listen\_socket . accept () 
  request\_data = client\_connection . recv ( 1024 ) 
@@ -1585,6 +1296,8 @@ Here is my take on it. The example is in Python (tested on Python3.7+) but even 
  client\_connection . sendall ( http\_response ) 
  client\_connection . close ()],
   [Save the above code as webserver1.py or download it directly from GitHub and run it on the command line like this],
+  [\$ python webserver1.py
+Serving HTTP on port 8888 …],
   [Now type in the following URL in your Web browser’s address bar http:\/\/localhost:8888/hello , hit Enter, and see magic in action. You should see “Hello, World!” displayed in your browser like this:],
   [Just do it, seriously. I will wait for you while you’re testing it.],
   [Done? Great. Now let’s discuss how it all actually works.],
@@ -1593,8 +1306,15 @@ Here is my take on it. The example is in Python (tested on Python3.7+) but even 
 Before your browser can send a HTTP request though, it first needs to establish a TCP connection with the Web server. Then it sends an HTTP request over the TCP connection to the server and waits for the server to send an HTTP response back. And when your browser receives the response it displays it, in this case it displays “Hello, World!”],
   [Let’s explore in more detail how the client and the server establish a TCP connection before sending HTTP requests and responses. To do that they both use so-called sockets . Instead of using a browser directly you are going to simulate your browser manually by using telnet on the command line.],
   [On the same computer you’re running the Web server fire up a telnet session on the command line specifying a host to connect to localhost and the port to connect to 8888 and then press Enter:],
+  [\$ telnet localhost 8888 
+Trying 127 .0.0.1 …
+Connected to localhost.],
   [At this point you’ve established a TCP connection with the server running on your local host and ready to send and receive HTTP messages. In the picture below you can see a standard procedure a server has to go through to be able to accept new TCP connections.],
   [In the same telnet session type GET /hello HTTP /1.1 and hit Enter:],
+  [\$ telnet localhost 8888 
+Trying 127 .0.0.1 …
+Connected to localhost.
+GET /hello HTTP/1.1],
   [HTTP/1.1 200 OK
 Hello, World!],
   [You’ve just manually simulated your browser! You sent an HTTP request and got an HTTP response back. This is the basic structure of an HTTP  request:],
@@ -1623,11 +1343,10 @@ Hello, World!],
   debug-mode: false,
 )
 
-}
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Getting Started With Capacitor Using React],
   author: [Roman Akhromieiev],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1646,7 +1365,7 @@ Hello, World!],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Using Socket.io to Create a Multiplayer Game with Angular and Node.js],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1668,7 +1387,7 @@ Hello, World!],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Validating Data Structures And Variables In Golang],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1686,7 +1405,7 @@ Hello, World!],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Add Pagination to Your Eleventy Static Generated Website in Minutes],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1709,7 +1428,7 @@ Hello, World!],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Announcing The Polyglot Developer Courses Portal],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1728,7 +1447,7 @@ Hello, World!],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Backup WordPress Database And Filesystem Data On Linux With Scripts],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1750,7 +1469,7 @@ Hello, World!],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Angular Route Guards For Authorization In A Web And Mobile Application],
   author: [Corbin Crutchley],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1767,7 +1486,7 @@ Hello, World!],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Analyze Stack Overflow Data With Golang And HTTP],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1788,7 +1507,7 @@ Hello, World!],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Upcoming Presentation: Phoenix Mobile Festival],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1809,7 +1528,7 @@ Hello, World!],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [LAMBDA: The ultimate Excel worksheet function],
   author: [Lambda the Ultimate],
   source-name: [Lambda the Ultimate],
@@ -1830,7 +1549,7 @@ Hello, World!],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Display Toast Notifications In A NativeScript Angular Application],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1848,7 +1567,7 @@ Hello, World!],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [TPDP Episode \#23: Being A Freelance Developer Contractor Or Consultant],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1870,7 +1589,7 @@ Hello, World!],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Load A JSON Configuration From File In A Golang Application],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1888,7 +1607,7 @@ Hello, World!],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [My Activity Report For 2020],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1910,7 +1629,7 @@ Hello, World!],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Generate Cryptocurrency Private Keys And Public Addresses With Golang],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1929,7 +1648,7 @@ Hello, World!],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Execute HTTP Requests in JavaScript Applications],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1950,7 +1669,7 @@ Hello, World!],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Send Emails In Ionic Framework Via The Mailgun API],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1969,7 +1688,7 @@ Hello, World!],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [Interact with a GraphQL API from a .NET Core Application],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -1991,7 +1710,7 @@ Hello, World!],
 
 #article-row((
   [
-    standard-article(
+    #standard-article(
   title: [Including Attractive Charts In Your Angular Web Application],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -2009,7 +1728,7 @@ Hello, World!],
 
   ],
   [
-    standard-article(
+    #standard-article(
   title: [The Polyglot Developer is Live on Twitch],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -2030,8 +1749,7 @@ Hello, World!],
   ],
 ), ruled-indices: (1,))
 
-{
-  #standard-article(
+#standard-article(
   title: [Auto Attaching USB Storage To A Raspberry Pi Running Linux],
   author: [Nic Raboy],
   source-name: [Nic Raboy (polyglot developer)],
@@ -2047,48 +1765,45 @@ Hello, World!],
   debug-mode: false,
 )
 
-}
 
-{
-  #section-label([Analysis])
-  #brief-group((
-    [#brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [Previously we’ve explored how to parse XML data using Node.js as well as PHP . Continuing on the trend of parsing data using various programming languages, this time we’re going to take a look at parsing XML data using the dom4j library with Java.
+#section-label([Analysis])
+#brief-group((
+  [#brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [Previously we’ve explored how to parse XML data using Node.js as well as PHP . Continuing on the trend of parsing data using various programming languages, this time we’re going to take a look at parsing XML data using the dom4j library with Java.
 
 Now dom4j, is not the only way to parse XML data in Java. There are many other ways including using the SAX parser. Everyone will have their own opinions on which of the many to use.
 
 The post Parse An XML Response With Java And Dom4J appeared first on The Polyglot Developer .])],
-    [#brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [You might not know this, but I run another blog on a completely different subject material than The Polyglot Developer. This other blog is called Own the Web and it focuses on brand building, searching engine optimization, and boosting your online revenue through the internet. Unlike The Polyglot Developer, Own the Web was actually created using the Hugo Static Website Engine.
+  [#brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [You might not know this, but I run another blog on a completely different subject material than The Polyglot Developer. This other blog is called Own the Web and it focuses on brand building, searching engine optimization, and boosting your online revenue through the internet. Unlike The Polyglot Developer, Own the Web was actually created using the Hugo Static Website Engine.
 
 I want to share information about Hugo , some of the advantages and disadvantages, and my experience using it.
 
 The post Use Hugo To Create Awesome Static Websites And Blogs appeared first on The Polyglot Developer .])],
-    [#brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [You’ll notice previously I did a post regarding the Fibonacci number , a popular interview question for programming jobs. To keep up with this trend of interview questions, we’re going to look into the different ways of finding duplicates in an array.
+  [#brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [You’ll notice previously I did a post regarding the Fibonacci number , a popular interview question for programming jobs. To keep up with this trend of interview questions, we’re going to look into the different ways of finding duplicates in an array.
 
 Finding array duplicates is a good question because it tests your knowledge of algorithm design and your understanding of various time complexities.
 
 The post Calculate If Duplicates Exist In An Array Using JavaScript appeared first on The Polyglot Developer .])],
-    [#brief-item([JEFF GANGEMI, GROWTH MARKETING PRACTICE LEAD \@ TOPTAL], source-name: [Toptal Engineering], [As AI transforms how buyers discover and evaluate solutions, traditional SEO playbooks are being rewritten. In this episode of the Executive Guidance podcast, Kevin White, Head of Marketing at Scrunch, joins Jeff Gangemi to explore how LLMs are reshaping intent, discovery, and conversion, and what marketers should do next.])],
-    [#brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [When I build web applications, my least favorite part is always in the realm of file uploads. They are often complicated to do and take a lot of time. Pretty much every web application lately, regardless of what it is, requires file uploads, even if it is just to upload a profile picture.
+  [#brief-item([JEFF GANGEMI, GROWTH MARKETING PRACTICE LEAD \@ TOPTAL], source-name: [Toptal Engineering], [As AI transforms how buyers discover and evaluate solutions, traditional SEO playbooks are being rewritten. In this episode of the Executive Guidance podcast, Kevin White, Head of Marketing at Scrunch, joins Jeff Gangemi to explore how LLMs are reshaping intent, discovery, and conversion, and what marketers should do next.])],
+  [#brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [When I build web applications, my least favorite part is always in the realm of file uploads. They are often complicated to do and take a lot of time. Pretty much every web application lately, regardless of what it is, requires file uploads, even if it is just to upload a profile picture.
 
 Since I’m all about Angular lately, I figured it would be great to show how to upload images (or any file) to a back-end. In this particular example I’m using Node.js.
 
 The post Upload Files To Node.js Using Angular appeared first on The Polyglot Developer .])],
-    [#brief-item([Andrew Houts], source-name: [Wealthfront Engineering], [Ever been here before? Stuck with a job that needs to be continually revisited because its performance gets worse with every passing day, and each attempt at improving said performance yields diminishing returns? This is the situation we found ourselves in with the portfolio balance calculation system—the code responsible for aggregating data from multiple sources... Read more])],
-    [#brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [It has been exactly seven days since Turbo Prop for Android, iOS, Windows Phone, BlackBerry, and Amazon Kindle Fire went live. This is a status update in regards to downloads as well as ad earnings for my first Unity3D game.
+  [#brief-item([Andrew Houts], source-name: [Wealthfront Engineering], [Ever been here before? Stuck with a job that needs to be continually revisited because its performance gets worse with every passing day, and each attempt at improving said performance yields diminishing returns? This is the situation we found ourselves in with the portfolio balance calculation system—the code responsible for aggregating data from multiple sources... Read more])],
+  [#brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [It has been exactly seven days since Turbo Prop for Android, iOS, Windows Phone, BlackBerry, and Amazon Kindle Fire went live. This is a status update in regards to downloads as well as ad earnings for my first Unity3D game.
 
 The post Seven Day Turbo Prop Stats appeared first on The Polyglot Developer .])],
-    [#brief-item([Lazarus Lazaridis (iridakos)], source-name: [Lazarus Lazaridis (iridakos)], [There are two cat beds, many chairs, a sofa but no. She will sit there.
+  [#brief-item([Lazarus Lazaridis (iridakos)], source-name: [Lazarus Lazaridis (iridakos)], [There are two cat beds, many chairs, a sofa but no. She will sit there.
 
 That’s how I have two step authentication for my Ubuntu.])],
-    [#brief-item([CHRIS DANIEL, GM, CONSUMER PRODUCTS & SERVICES \@ TOPTAL], source-name: [Toptal Engineering], [The biggest obstacle consumer packaged goods (CPG) and retail companies face isn’t technology or capital. It’s finding talent that can bridge the gap between business strategy and technical execution in real time.])],
-    [#brief-item([Lambda the Ultimate], source-name: [Lambda the Ultimate], [LtU has experienced a long period of downtime recently. Its software infrastructure was outdated enough that it became difficult to maintain when problems arose. It has now been migrated to a brand new environment. It should be much more stable from now on.])],
-    [#brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [So you’ve just made an awesome app and you have no idea how to get the word out. This is a problem most app developers have, so you’re not alone.
+  [#brief-item([CHRIS DANIEL, GM, CONSUMER PRODUCTS & SERVICES \@ TOPTAL], source-name: [Toptal Engineering], [The biggest obstacle consumer packaged goods (CPG) and retail companies face isn’t technology or capital. It’s finding talent that can bridge the gap between business strategy and technical execution in real time.])],
+  [#brief-item([Lambda the Ultimate], source-name: [Lambda the Ultimate], [LtU has experienced a long period of downtime recently. Its software infrastructure was outdated enough that it became difficult to maintain when problems arose. It has now been migrated to a brand new environment. It should be much more stable from now on.])],
+  [#brief-item([Nic Raboy], source-name: [Nic Raboy (polyglot developer)], [So you’ve just made an awesome app and you have no idea how to get the word out. This is a problem most app developers have, so you’re not alone.
 
 I’ve released many mobile apps to the app store, most of them Android, but still a diverse collection. It has been tough work, but I’ve established myself by getting many downloads, maintaining a high average rating, and getting a few hundred dollars monthly in app revenue.
 
 The post So You Made An App, Now What? appeared first on The Polyglot Developer .])],
-    [#brief-item([MICHAEL FIGUEROA , .], source-name: [Toptal Engineering], [Tune into this episode of the Executive Guidance podcast for a deep dive into cutting-edge cybersecurity strategies, securing advertising platforms against digital threats, and the challenge of recruiting top cybertalent.])],
-  ))
-}
+  [#brief-item([MICHAEL FIGUEROA , .], source-name: [Toptal Engineering], [Tune into this episode of the Executive Guidance podcast for a deep dive into cutting-edge cybersecurity strategies, securing advertising platforms against digital threats, and the challenge of recruiting top cybertalent.])],
+))
 
 #colophon([The Digital Mirror], [Vol. 1, No. 085], [2026-03-30])
