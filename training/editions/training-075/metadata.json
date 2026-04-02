@@ -3,7 +3,7 @@
   "archetype": "long-reads",
   "date_generated": "2026-03-30T01:50:40.111928+00:00",
   "page_target": 8,
-  "num_pages": 12,
+  "num_pages": 8,
   "num_items": 24,
   "feeds_contributed": [
     "LessWrong",
@@ -69,30 +69,6 @@
     {
       "page_number": 8,
       "png_path": "training-075/pages/page-008.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 9,
-      "png_path": "training-075/pages/page-009.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 10,
-      "png_path": "training-075/pages/page-010.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 11,
-      "png_path": "training-075/pages/page-011.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 12,
-      "png_path": "training-075/pages/page-012.png",
       "width_pt": 612.0,
       "height_pt": 792.0
     }
@@ -171,53 +147,17 @@
     {
       "spread_id": "s-075-005",
       "edition_id": "training-075",
-      "type": "spread",
+      "type": "solo",
       "pages": [
         {
           "page_number": 8,
           "png_path": "training-075/pages/page-008.png",
           "width_pt": 612.0,
           "height_pt": 792.0
-        },
-        {
-          "page_number": 9,
-          "png_path": "training-075/pages/page-009.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-075-006",
-      "edition_id": "training-075",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 10,
-          "png_path": "training-075/pages/page-010.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 11,
-          "png_path": "training-075/pages/page-011.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-075-007",
-      "edition_id": "training-075",
-      "type": "solo",
-      "pages": [
-        {
-          "page_number": 12,
-          "png_path": "training-075/pages/page-012.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
         }
       ]
     }
-  ]
+  ],
+  "num_spreads": 5,
+  "rerendered_at": "2026-04-02T06:49:31.943696+00:00"
 }

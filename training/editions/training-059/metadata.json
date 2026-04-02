@@ -3,7 +3,7 @@
   "archetype": "lifestyle",
   "date_generated": "2026-03-30T01:49:05.858564+00:00",
   "page_target": 12,
-  "num_pages": 28,
+  "num_pages": 21,
   "num_items": 36,
   "feeds_contributed": [
     "Light Stalking",
@@ -143,48 +143,6 @@
     {
       "page_number": 21,
       "png_path": "training-059/pages/page-021.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 22,
-      "png_path": "training-059/pages/page-022.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 23,
-      "png_path": "training-059/pages/page-023.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 24,
-      "png_path": "training-059/pages/page-024.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 25,
-      "png_path": "training-059/pages/page-025.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 26,
-      "png_path": "training-059/pages/page-026.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 27,
-      "png_path": "training-059/pages/page-027.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 28,
-      "png_path": "training-059/pages/page-028.png",
       "width_pt": 612.0,
       "height_pt": 792.0
     }
@@ -392,76 +350,8 @@
           "height_pt": 792.0
         }
       ]
-    },
-    {
-      "spread_id": "s-059-012",
-      "edition_id": "training-059",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 22,
-          "png_path": "training-059/pages/page-022.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 23,
-          "png_path": "training-059/pages/page-023.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-059-013",
-      "edition_id": "training-059",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 24,
-          "png_path": "training-059/pages/page-024.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 25,
-          "png_path": "training-059/pages/page-025.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-059-014",
-      "edition_id": "training-059",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 26,
-          "png_path": "training-059/pages/page-026.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 27,
-          "png_path": "training-059/pages/page-027.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-059-015",
-      "edition_id": "training-059",
-      "type": "solo",
-      "pages": [
-        {
-          "page_number": 28,
-          "png_path": "training-059/pages/page-028.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
     }
-  ]
+  ],
+  "num_spreads": 11,
+  "rerendered_at": "2026-04-02T06:49:31.933879+00:00"
 }

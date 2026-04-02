@@ -3,7 +3,7 @@
   "archetype": "green-planet",
   "date_generated": "2026-03-30T01:44:36.659929+00:00",
   "page_target": 6,
-  "num_pages": 15,
+  "num_pages": 12,
   "num_items": 18,
   "feeds_contributed": [
     "Ensia",
@@ -87,24 +87,6 @@
     {
       "page_number": 12,
       "png_path": "training-019/pages/page-012.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 13,
-      "png_path": "training-019/pages/page-013.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 14,
-      "png_path": "training-019/pages/page-014.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 15,
-      "png_path": "training-019/pages/page-015.png",
       "width_pt": 612.0,
       "height_pt": 792.0
     }
@@ -221,40 +203,17 @@
     {
       "spread_id": "s-019-007",
       "edition_id": "training-019",
-      "type": "spread",
+      "type": "solo",
       "pages": [
         {
           "page_number": 12,
           "png_path": "training-019/pages/page-012.png",
           "width_pt": 612.0,
           "height_pt": 792.0
-        },
-        {
-          "page_number": 13,
-          "png_path": "training-019/pages/page-013.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-019-008",
-      "edition_id": "training-019",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 14,
-          "png_path": "training-019/pages/page-014.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 15,
-          "png_path": "training-019/pages/page-015.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
         }
       ]
     }
-  ]
+  ],
+  "num_spreads": 7,
+  "rerendered_at": "2026-04-02T06:49:31.886010+00:00"
 }

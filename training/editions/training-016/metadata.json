@@ -3,7 +3,7 @@
   "archetype": "eclectic",
   "date_generated": "2026-03-30T01:44:21.791584+00:00",
   "page_target": 10,
-  "num_pages": 21,
+  "num_pages": 15,
   "num_items": 30,
   "feeds_contributed": [
     "Rock Paper Shotgun",
@@ -120,42 +120,6 @@
     {
       "page_number": 15,
       "png_path": "training-016/pages/page-015.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 16,
-      "png_path": "training-016/pages/page-016.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 17,
-      "png_path": "training-016/pages/page-017.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 18,
-      "png_path": "training-016/pages/page-018.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 19,
-      "png_path": "training-016/pages/page-019.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 20,
-      "png_path": "training-016/pages/page-020.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 21,
-      "png_path": "training-016/pages/page-021.png",
       "width_pt": 612.0,
       "height_pt": 792.0
     }
@@ -306,63 +270,8 @@
           "height_pt": 792.0
         }
       ]
-    },
-    {
-      "spread_id": "s-016-009",
-      "edition_id": "training-016",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 16,
-          "png_path": "training-016/pages/page-016.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 17,
-          "png_path": "training-016/pages/page-017.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-016-010",
-      "edition_id": "training-016",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 18,
-          "png_path": "training-016/pages/page-018.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 19,
-          "png_path": "training-016/pages/page-019.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-016-011",
-      "edition_id": "training-016",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 20,
-          "png_path": "training-016/pages/page-020.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 21,
-          "png_path": "training-016/pages/page-021.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
     }
-  ]
+  ],
+  "num_spreads": 8,
+  "rerendered_at": "2026-04-02T06:49:31.883729+00:00"
 }

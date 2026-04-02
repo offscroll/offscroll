@@ -3,7 +3,7 @@
   "archetype": "visual-feed",
   "date_generated": "2026-03-30T01:44:09.081428+00:00",
   "page_target": 16,
-  "num_pages": 24,
+  "num_pages": 18,
   "num_items": 48,
   "feeds_contributed": [
     "Smitten Kitchen",
@@ -130,42 +130,6 @@
     {
       "page_number": 18,
       "png_path": "training-013/pages/page-018.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 19,
-      "png_path": "training-013/pages/page-019.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 20,
-      "png_path": "training-013/pages/page-020.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 21,
-      "png_path": "training-013/pages/page-021.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 22,
-      "png_path": "training-013/pages/page-022.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 23,
-      "png_path": "training-013/pages/page-023.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 24,
-      "png_path": "training-013/pages/page-024.png",
       "width_pt": 612.0,
       "height_pt": 792.0
     }
@@ -339,72 +303,17 @@
     {
       "spread_id": "s-013-010",
       "edition_id": "training-013",
-      "type": "spread",
+      "type": "solo",
       "pages": [
         {
           "page_number": 18,
           "png_path": "training-013/pages/page-018.png",
           "width_pt": 612.0,
           "height_pt": 792.0
-        },
-        {
-          "page_number": 19,
-          "png_path": "training-013/pages/page-019.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-013-011",
-      "edition_id": "training-013",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 20,
-          "png_path": "training-013/pages/page-020.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 21,
-          "png_path": "training-013/pages/page-021.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-013-012",
-      "edition_id": "training-013",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 22,
-          "png_path": "training-013/pages/page-022.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 23,
-          "png_path": "training-013/pages/page-023.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-013-013",
-      "edition_id": "training-013",
-      "type": "solo",
-      "pages": [
-        {
-          "page_number": 24,
-          "png_path": "training-013/pages/page-024.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
         }
       ]
     }
-  ]
+  ],
+  "num_spreads": 10,
+  "rerendered_at": "2026-04-02T06:49:31.881067+00:00"
 }

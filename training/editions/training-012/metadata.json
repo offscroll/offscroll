@@ -3,7 +3,7 @@
   "archetype": "science-journal",
   "date_generated": "2026-03-30T01:44:06.094380+00:00",
   "page_target": 14,
-  "num_pages": 23,
+  "num_pages": 17,
   "num_items": 42,
   "feeds_contributed": [
     "Scientific American",
@@ -124,42 +124,6 @@
     {
       "page_number": 17,
       "png_path": "training-012/pages/page-017.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 18,
-      "png_path": "training-012/pages/page-018.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 19,
-      "png_path": "training-012/pages/page-019.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 20,
-      "png_path": "training-012/pages/page-020.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 21,
-      "png_path": "training-012/pages/page-021.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 22,
-      "png_path": "training-012/pages/page-022.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 23,
-      "png_path": "training-012/pages/page-023.png",
       "width_pt": 612.0,
       "height_pt": 792.0
     }
@@ -329,63 +293,8 @@
           "height_pt": 792.0
         }
       ]
-    },
-    {
-      "spread_id": "s-012-010",
-      "edition_id": "training-012",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 18,
-          "png_path": "training-012/pages/page-018.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 19,
-          "png_path": "training-012/pages/page-019.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-012-011",
-      "edition_id": "training-012",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 20,
-          "png_path": "training-012/pages/page-020.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 21,
-          "png_path": "training-012/pages/page-021.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-012-012",
-      "edition_id": "training-012",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 22,
-          "png_path": "training-012/pages/page-022.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 23,
-          "png_path": "training-012/pages/page-023.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
     }
-  ]
+  ],
+  "num_spreads": 9,
+  "rerendered_at": "2026-04-02T06:49:31.880382+00:00"
 }

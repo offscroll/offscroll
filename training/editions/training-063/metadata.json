@@ -3,7 +3,7 @@
   "archetype": "hacker-news",
   "date_generated": "2026-03-30T01:49:45.963464+00:00",
   "page_target": 12,
-  "num_pages": 17,
+  "num_pages": 14,
   "num_items": 36,
   "feeds_contributed": [
     "Robin Ward (eviltrout)",
@@ -111,24 +111,6 @@
     {
       "page_number": 14,
       "png_path": "training-063/pages/page-014.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 15,
-      "png_path": "training-063/pages/page-015.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 16,
-      "png_path": "training-063/pages/page-016.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 17,
-      "png_path": "training-063/pages/page-017.png",
       "width_pt": 612.0,
       "height_pt": 792.0
     }
@@ -264,40 +246,17 @@
     {
       "spread_id": "s-063-008",
       "edition_id": "training-063",
-      "type": "spread",
+      "type": "solo",
       "pages": [
         {
           "page_number": 14,
           "png_path": "training-063/pages/page-014.png",
           "width_pt": 612.0,
           "height_pt": 792.0
-        },
-        {
-          "page_number": 15,
-          "png_path": "training-063/pages/page-015.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-063-009",
-      "edition_id": "training-063",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 16,
-          "png_path": "training-063/pages/page-016.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 17,
-          "png_path": "training-063/pages/page-017.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
         }
       ]
     }
-  ]
+  ],
+  "num_spreads": 8,
+  "rerendered_at": "2026-04-02T06:49:31.936499+00:00"
 }

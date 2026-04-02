@@ -3,7 +3,7 @@
   "archetype": "finance-focus",
   "date_generated": "2026-03-30T01:43:01.283940+00:00",
   "page_target": 16,
-  "num_pages": 15,
+  "num_pages": 13,
   "num_items": 48,
   "feeds_contributed": [
     "Salon",
@@ -103,18 +103,6 @@
     {
       "page_number": 13,
       "png_path": "training-002/pages/page-013.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 14,
-      "png_path": "training-002/pages/page-014.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 15,
-      "png_path": "training-002/pages/page-015.png",
       "width_pt": 612.0,
       "height_pt": 792.0
     }
@@ -246,25 +234,8 @@
           "height_pt": 792.0
         }
       ]
-    },
-    {
-      "spread_id": "s-002-008",
-      "edition_id": "training-002",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 14,
-          "png_path": "training-002/pages/page-014.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 15,
-          "png_path": "training-002/pages/page-015.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
     }
-  ]
+  ],
+  "num_spreads": 7,
+  "rerendered_at": "2026-04-02T06:49:31.842637+00:00"
 }

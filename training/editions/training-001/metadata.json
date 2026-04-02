@@ -3,7 +3,7 @@
   "archetype": "finance-focus",
   "date_generated": "2026-03-30T01:42:44.687057+00:00",
   "page_target": 16,
-  "num_pages": 15,
+  "num_pages": 20,
   "num_items": 48,
   "feeds_contributed": [
     "Bloomberg",
@@ -107,6 +107,36 @@
     {
       "page_number": 15,
       "png_path": "training-001/pages/page-015.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 16,
+      "png_path": "training-001/pages/page-016.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 17,
+      "png_path": "training-001/pages/page-017.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 18,
+      "png_path": "training-001/pages/page-018.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 19,
+      "png_path": "training-001/pages/page-019.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 20,
+      "png_path": "training-001/pages/page-020.png",
       "width_pt": 612.0,
       "height_pt": 792.0
     }
@@ -257,6 +287,59 @@
           "height_pt": 792.0
         }
       ]
+    },
+    {
+      "spread_id": "s-001-009",
+      "edition_id": "training-001",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 16,
+          "png_path": "training-001/pages/page-016.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 17,
+          "png_path": "training-001/pages/page-017.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-001-010",
+      "edition_id": "training-001",
+      "type": "spread",
+      "pages": [
+        {
+          "page_number": 18,
+          "png_path": "training-001/pages/page-018.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        },
+        {
+          "page_number": 19,
+          "png_path": "training-001/pages/page-019.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
+    },
+    {
+      "spread_id": "s-001-011",
+      "edition_id": "training-001",
+      "type": "solo",
+      "pages": [
+        {
+          "page_number": 20,
+          "png_path": "training-001/pages/page-020.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
+        }
+      ]
     }
-  ]
+  ],
+  "num_spreads": 11,
+  "rerendered_at": "2026-04-02T06:49:31.841817+00:00"
 }

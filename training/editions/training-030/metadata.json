@@ -3,7 +3,7 @@
   "archetype": "design-studio",
   "date_generated": "2026-03-30T01:45:39.541017+00:00",
   "page_target": 14,
-  "num_pages": 15,
+  "num_pages": 13,
   "num_items": 42,
   "feeds_contributed": [
     "Trail Runner Magazine",
@@ -94,18 +94,6 @@
     {
       "page_number": 13,
       "png_path": "training-030/pages/page-013.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 14,
-      "png_path": "training-030/pages/page-014.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 15,
-      "png_path": "training-030/pages/page-015.png",
       "width_pt": 612.0,
       "height_pt": 792.0
     }
@@ -237,25 +225,8 @@
           "height_pt": 792.0
         }
       ]
-    },
-    {
-      "spread_id": "s-030-008",
-      "edition_id": "training-030",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 14,
-          "png_path": "training-030/pages/page-014.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 15,
-          "png_path": "training-030/pages/page-015.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
     }
-  ]
+  ],
+  "num_spreads": 7,
+  "rerendered_at": "2026-04-02T06:49:31.911660+00:00"
 }

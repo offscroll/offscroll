@@ -3,7 +3,7 @@
   "archetype": "news-desk",
   "date_generated": "2026-03-30T01:52:20.801521+00:00",
   "page_target": 6,
-  "num_pages": 7,
+  "num_pages": 6,
   "num_items": 18,
   "feeds_contributed": [
     "Snopes",
@@ -66,12 +66,6 @@
       "png_path": "training-094/pages/page-006.png",
       "width_pt": 612.0,
       "height_pt": 792.0
-    },
-    {
-      "page_number": 7,
-      "png_path": "training-094/pages/page-007.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
     }
   ],
   "spreads": [
@@ -129,21 +123,17 @@
     {
       "spread_id": "s-094-004",
       "edition_id": "training-094",
-      "type": "spread",
+      "type": "solo",
       "pages": [
         {
           "page_number": 6,
           "png_path": "training-094/pages/page-006.png",
           "width_pt": 612.0,
           "height_pt": 792.0
-        },
-        {
-          "page_number": 7,
-          "png_path": "training-094/pages/page-007.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
         }
       ]
     }
-  ]
+  ],
+  "num_spreads": 4,
+  "rerendered_at": "2026-04-02T06:49:31.956475+00:00"
 }

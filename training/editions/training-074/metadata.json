@@ -3,7 +3,7 @@
   "archetype": "education",
   "date_generated": "2026-03-30T01:50:37.488879+00:00",
   "page_target": 14,
-  "num_pages": 20,
+  "num_pages": 21,
   "num_items": 42,
   "feeds_contributed": [
     "PLOS ONE Feed",
@@ -139,6 +139,12 @@
     {
       "page_number": 20,
       "png_path": "training-074/pages/page-020.png",
+      "width_pt": 612.0,
+      "height_pt": 792.0
+    },
+    {
+      "page_number": 21,
+      "png_path": "training-074/pages/page-021.png",
       "width_pt": 612.0,
       "height_pt": 792.0
     }
@@ -331,15 +337,23 @@
     {
       "spread_id": "s-074-011",
       "edition_id": "training-074",
-      "type": "solo",
+      "type": "spread",
       "pages": [
         {
           "page_number": 20,
           "png_path": "training-074/pages/page-020.png",
           "width_pt": 612.0,
           "height_pt": 792.0
+        },
+        {
+          "page_number": 21,
+          "png_path": "training-074/pages/page-021.png",
+          "width_pt": 612.0,
+          "height_pt": 792.0
         }
       ]
     }
-  ]
+  ],
+  "num_spreads": 11,
+  "rerendered_at": "2026-04-02T06:49:31.943117+00:00"
 }

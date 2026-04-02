@@ -3,7 +3,7 @@
   "archetype": "finance-focus",
   "date_generated": "2026-03-30T01:46:19.691816+00:00",
   "page_target": 10,
-  "num_pages": 10,
+  "num_pages": 8,
   "num_items": 30,
   "feeds_contributed": [
     "Ars Technica",
@@ -72,18 +72,6 @@
     {
       "page_number": 8,
       "png_path": "training-036/pages/page-008.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 9,
-      "png_path": "training-036/pages/page-009.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 10,
-      "png_path": "training-036/pages/page-010.png",
       "width_pt": 612.0,
       "height_pt": 792.0
     }
@@ -162,34 +150,17 @@
     {
       "spread_id": "s-036-005",
       "edition_id": "training-036",
-      "type": "spread",
+      "type": "solo",
       "pages": [
         {
           "page_number": 8,
           "png_path": "training-036/pages/page-008.png",
           "width_pt": 612.0,
           "height_pt": 792.0
-        },
-        {
-          "page_number": 9,
-          "png_path": "training-036/pages/page-009.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-036-006",
-      "edition_id": "training-036",
-      "type": "solo",
-      "pages": [
-        {
-          "page_number": 10,
-          "png_path": "training-036/pages/page-010.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
         }
       ]
     }
-  ]
+  ],
+  "num_spreads": 5,
+  "rerendered_at": "2026-04-02T06:49:31.916652+00:00"
 }

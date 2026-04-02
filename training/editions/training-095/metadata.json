@@ -3,7 +3,7 @@
   "archetype": "design-studio",
   "date_generated": "2026-03-30T01:52:23.453499+00:00",
   "page_target": 10,
-  "num_pages": 26,
+  "num_pages": 20,
   "num_items": 30,
   "feeds_contributed": [
     "Dezeen Architecture",
@@ -134,42 +134,6 @@
     {
       "page_number": 20,
       "png_path": "training-095/pages/page-020.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 21,
-      "png_path": "training-095/pages/page-021.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 22,
-      "png_path": "training-095/pages/page-022.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 23,
-      "png_path": "training-095/pages/page-023.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 24,
-      "png_path": "training-095/pages/page-024.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 25,
-      "png_path": "training-095/pages/page-025.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 26,
-      "png_path": "training-095/pages/page-026.png",
       "width_pt": 612.0,
       "height_pt": 792.0
     }
@@ -362,72 +326,17 @@
     {
       "spread_id": "s-095-011",
       "edition_id": "training-095",
-      "type": "spread",
+      "type": "solo",
       "pages": [
         {
           "page_number": 20,
           "png_path": "training-095/pages/page-020.png",
           "width_pt": 612.0,
           "height_pt": 792.0
-        },
-        {
-          "page_number": 21,
-          "png_path": "training-095/pages/page-021.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-095-012",
-      "edition_id": "training-095",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 22,
-          "png_path": "training-095/pages/page-022.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 23,
-          "png_path": "training-095/pages/page-023.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-095-013",
-      "edition_id": "training-095",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 24,
-          "png_path": "training-095/pages/page-024.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 25,
-          "png_path": "training-095/pages/page-025.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-095-014",
-      "edition_id": "training-095",
-      "type": "solo",
-      "pages": [
-        {
-          "page_number": 26,
-          "png_path": "training-095/pages/page-026.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
         }
       ]
     }
-  ]
+  ],
+  "num_spreads": 11,
+  "rerendered_at": "2026-04-02T06:49:31.956927+00:00"
 }

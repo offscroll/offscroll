@@ -3,7 +3,7 @@
   "archetype": "culture-mag",
   "date_generated": "2026-03-30T01:48:35.384589+00:00",
   "page_target": 12,
-  "num_pages": 24,
+  "num_pages": 21,
   "num_items": 36,
   "feeds_contributed": [
     "LessWrong",
@@ -144,24 +144,6 @@
     {
       "page_number": 21,
       "png_path": "training-055/pages/page-021.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 22,
-      "png_path": "training-055/pages/page-022.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 23,
-      "png_path": "training-055/pages/page-023.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 24,
-      "png_path": "training-055/pages/page-024.png",
       "width_pt": 612.0,
       "height_pt": 792.0
     }
@@ -369,38 +351,8 @@
           "height_pt": 792.0
         }
       ]
-    },
-    {
-      "spread_id": "s-055-012",
-      "edition_id": "training-055",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 22,
-          "png_path": "training-055/pages/page-022.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 23,
-          "png_path": "training-055/pages/page-023.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-055-013",
-      "edition_id": "training-055",
-      "type": "solo",
-      "pages": [
-        {
-          "page_number": 24,
-          "png_path": "training-055/pages/page-024.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
     }
-  ]
+  ],
+  "num_spreads": 11,
+  "rerendered_at": "2026-04-02T06:49:31.931134+00:00"
 }

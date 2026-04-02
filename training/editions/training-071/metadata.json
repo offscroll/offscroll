@@ -3,7 +3,7 @@
   "archetype": "tech-daily",
   "date_generated": "2026-03-30T01:50:14.426224+00:00",
   "page_target": 14,
-  "num_pages": 42,
+  "num_pages": 30,
   "num_items": 42,
   "feeds_contributed": [
     "GitHub Engineering",
@@ -201,78 +201,6 @@
     {
       "page_number": 30,
       "png_path": "training-071/pages/page-030.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 31,
-      "png_path": "training-071/pages/page-031.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 32,
-      "png_path": "training-071/pages/page-032.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 33,
-      "png_path": "training-071/pages/page-033.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 34,
-      "png_path": "training-071/pages/page-034.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 35,
-      "png_path": "training-071/pages/page-035.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 36,
-      "png_path": "training-071/pages/page-036.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 37,
-      "png_path": "training-071/pages/page-037.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 38,
-      "png_path": "training-071/pages/page-038.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 39,
-      "png_path": "training-071/pages/page-039.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 40,
-      "png_path": "training-071/pages/page-040.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 41,
-      "png_path": "training-071/pages/page-041.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 42,
-      "png_path": "training-071/pages/page-042.png",
       "width_pt": 612.0,
       "height_pt": 792.0
     }
@@ -560,129 +488,17 @@
     {
       "spread_id": "s-071-016",
       "edition_id": "training-071",
-      "type": "spread",
+      "type": "solo",
       "pages": [
         {
           "page_number": 30,
           "png_path": "training-071/pages/page-030.png",
           "width_pt": 612.0,
           "height_pt": 792.0
-        },
-        {
-          "page_number": 31,
-          "png_path": "training-071/pages/page-031.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-071-017",
-      "edition_id": "training-071",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 32,
-          "png_path": "training-071/pages/page-032.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 33,
-          "png_path": "training-071/pages/page-033.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-071-018",
-      "edition_id": "training-071",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 34,
-          "png_path": "training-071/pages/page-034.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 35,
-          "png_path": "training-071/pages/page-035.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-071-019",
-      "edition_id": "training-071",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 36,
-          "png_path": "training-071/pages/page-036.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 37,
-          "png_path": "training-071/pages/page-037.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-071-020",
-      "edition_id": "training-071",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 38,
-          "png_path": "training-071/pages/page-038.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 39,
-          "png_path": "training-071/pages/page-039.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-071-021",
-      "edition_id": "training-071",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 40,
-          "png_path": "training-071/pages/page-040.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 41,
-          "png_path": "training-071/pages/page-041.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-071-022",
-      "edition_id": "training-071",
-      "type": "solo",
-      "pages": [
-        {
-          "page_number": 42,
-          "png_path": "training-071/pages/page-042.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
         }
       ]
     }
-  ]
+  ],
+  "num_spreads": 16,
+  "rerendered_at": "2026-04-02T06:49:31.941054+00:00"
 }

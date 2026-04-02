@@ -3,7 +3,7 @@
   "archetype": "green-planet",
   "date_generated": "2026-03-30T01:43:45.778710+00:00",
   "page_target": 6,
-  "num_pages": 22,
+  "num_pages": 13,
   "num_items": 18,
   "feeds_contributed": [
     "NYT Food/Dining",
@@ -95,60 +95,6 @@
     {
       "page_number": 13,
       "png_path": "training-010/pages/page-013.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 14,
-      "png_path": "training-010/pages/page-014.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 15,
-      "png_path": "training-010/pages/page-015.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 16,
-      "png_path": "training-010/pages/page-016.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 17,
-      "png_path": "training-010/pages/page-017.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 18,
-      "png_path": "training-010/pages/page-018.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 19,
-      "png_path": "training-010/pages/page-019.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 20,
-      "png_path": "training-010/pages/page-020.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 21,
-      "png_path": "training-010/pages/page-021.png",
-      "width_pt": 612.0,
-      "height_pt": 792.0
-    },
-    {
-      "page_number": 22,
-      "png_path": "training-010/pages/page-022.png",
       "width_pt": 612.0,
       "height_pt": 792.0
     }
@@ -280,95 +226,8 @@
           "height_pt": 792.0
         }
       ]
-    },
-    {
-      "spread_id": "s-010-008",
-      "edition_id": "training-010",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 14,
-          "png_path": "training-010/pages/page-014.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 15,
-          "png_path": "training-010/pages/page-015.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-010-009",
-      "edition_id": "training-010",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 16,
-          "png_path": "training-010/pages/page-016.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 17,
-          "png_path": "training-010/pages/page-017.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-010-010",
-      "edition_id": "training-010",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 18,
-          "png_path": "training-010/pages/page-018.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 19,
-          "png_path": "training-010/pages/page-019.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-010-011",
-      "edition_id": "training-010",
-      "type": "spread",
-      "pages": [
-        {
-          "page_number": 20,
-          "png_path": "training-010/pages/page-020.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        },
-        {
-          "page_number": 21,
-          "png_path": "training-010/pages/page-021.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
-    },
-    {
-      "spread_id": "s-010-012",
-      "edition_id": "training-010",
-      "type": "solo",
-      "pages": [
-        {
-          "page_number": 22,
-          "png_path": "training-010/pages/page-022.png",
-          "width_pt": 612.0,
-          "height_pt": 792.0
-        }
-      ]
     }
-  ]
+  ],
+  "num_spreads": 7,
+  "rerendered_at": "2026-04-02T06:49:31.878855+00:00"
 }
