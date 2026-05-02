@@ -208,9 +208,15 @@ class TestBuildTypstMarkup:
         markup = build_typst_markup(edition, config)
         assert "#colophon(" in markup
 
-    def test_contains_pull_quote(self, edition, config):
+    def test_standalone_pull_quote_suppressed(self, edition, config):
+        """Standalone (row-level) pull quotes are suppressed to prevent
+        pull-quote-only pages (#312). PQs only appear inline within
+        articles that meet the word-count threshold."""
         markup = build_typst_markup(edition, config)
-        assert "A notable quote" in markup
+        # The PQ is matched to feat-001 (word_count=90, below inline
+        # threshold), so it should not appear as a standalone block
+        # or inline.
+        assert "pull-quote(" not in markup or "A notable quote" not in markup
 
     def test_section_label(self, edition, config):
         markup = build_typst_markup(edition, config)
@@ -373,6 +379,230 @@ class TestBuildTypstMarkup:
         debug_config["newspaper"]["debug_mode"] = True
         markup_debug = build_typst_markup(edition, debug_config)
         assert "debug-mode: true" in markup_debug
+
+
+# --- Bug fix regression tests (#312) ---
+
+
+class TestEmptyMastheadFix:
+    """Tests for #312: front pages must always have content below masthead.
+
+    The root cause was a logic inversion in templates.typ:
+    standard-article had breakable: word-count <= 200 (wrong),
+    making long articles non-breakable and bumping them to page 2.
+    """
+
+    @pytest.fixture
+    def config(self, tmp_path) -> dict:
+        data_dir = tmp_path / "data"
+        data_dir.mkdir()
+        return {
+            "output": {"data_dir": str(data_dir)},
+            "newspaper": {"debug_mode": False},
+        }
+
+    def test_no_feature_has_content_after_masthead(self, config):
+        """When no FEATURE item exists, standard articles must follow
+        the masthead directly — not be isolated on page 2."""
+        edition = CuratedEdition(
+            edition=EditionMeta(
+                date="2026-04-01",
+                title="No Feature Gazette",
+                subtitle="Test Edition",
+            ),
+            sections=[
+                Section(
+                    heading="FEATURES",
+                    items=[
+                        CuratedItem(
+                            item_id="std-long-001",
+                            display_text="Long article content. " * 100,
+                            author="Alice",
+                            title="Long Standard Article",
+                            layout_hint=LayoutHint.STANDARD,
+                            word_count=600,
+                        ),
+                        CuratedItem(
+                            item_id="std-002",
+                            display_text="Another article. " * 20,
+                            author="Bob",
+                            title="Second Article",
+                            layout_hint=LayoutHint.STANDARD,
+                            word_count=60,
+                        ),
+                    ],
+                ),
+            ],
+            pull_quotes=[],
+            page_target=4,
+        )
+        markup = build_typst_markup(edition, config)
+        # Masthead should be followed by section content (no feature-article)
+        assert "feature-article(" not in markup
+        # Standard articles must be present after masthead
+        assert "standard-article(" in markup
+        # The long article must render (confirming it wasn't dropped)
+        assert "Long Standard Article" in markup
+
+    def test_feature_renders_on_front_page(self, config):
+        """When a FEATURE exists, it renders right after the masthead."""
+        edition = CuratedEdition(
+            edition=EditionMeta(
+                date="2026-04-01",
+                title="Feature Gazette",
+                subtitle="Test",
+            ),
+            sections=[
+                Section(
+                    heading="FEATURES",
+                    items=[
+                        CuratedItem(
+                            item_id="feat-001",
+                            display_text="The feature article. " * 50,
+                            author="Alice",
+                            title="Front Page Feature",
+                            layout_hint=LayoutHint.FEATURE,
+                            word_count=300,
+                        ),
+                    ],
+                ),
+            ],
+            pull_quotes=[],
+            page_target=4,
+        )
+        markup = build_typst_markup(edition, config)
+        masthead_pos = markup.index("#masthead(")
+        feature_pos = markup.index("feature-article(")
+        # Feature must come after masthead, before any section content
+        assert feature_pos > masthead_pos
+
+
+class TestPullQuoteOnlyFix:
+    """Tests for #312: pull quotes must never be the sole page element.
+
+    Standalone (row-level) pull quotes between rows are suppressed.
+    Pull quotes only appear inline within article bodies.
+    """
+
+    @pytest.fixture
+    def config(self, tmp_path) -> dict:
+        data_dir = tmp_path / "data"
+        data_dir.mkdir()
+        return {
+            "output": {"data_dir": str(data_dir)},
+            "newspaper": {"debug_mode": False},
+        }
+
+    def test_row_level_pull_quotes_suppressed(self, config):
+        """Pull quotes for short articles must not appear as standalone
+        blocks between rows."""
+        edition = CuratedEdition(
+            edition=EditionMeta(
+                date="2026-04-01",
+                title="PQ Test",
+                subtitle="Test",
+            ),
+            sections=[
+                Section(
+                    heading="News",
+                    items=[
+                        CuratedItem(
+                            item_id="short-001",
+                            display_text="Short article text. " * 10,
+                            author="Alice",
+                            title="Short Article",
+                            layout_hint=LayoutHint.STANDARD,
+                            word_count=30,
+                        ),
+                    ],
+                ),
+            ],
+            pull_quotes=[
+                PullQuote(
+                    text="Standalone quote that should not appear.",
+                    attribution="Alice",
+                    source_item_id="short-001",
+                ),
+            ],
+            page_target=2,
+        )
+        markup = build_typst_markup(edition, config)
+        # The PQ is for a short article (30 words < 400 threshold),
+        # so it won't be inlined. Standalone rendering is suppressed.
+        assert "Standalone quote that should not appear" not in markup
+
+    def test_inline_pull_quotes_preserved(self, config):
+        """Pull quotes for long articles appear inline within the body."""
+        long_text = "This is a paragraph of the article.\n\n" * 20
+        edition = CuratedEdition(
+            edition=EditionMeta(
+                date="2026-04-01",
+                title="PQ Inline Test",
+                subtitle="Test",
+            ),
+            sections=[
+                Section(
+                    heading="FEATURES",
+                    items=[
+                        CuratedItem(
+                            item_id="feat-long-001",
+                            display_text=long_text,
+                            author="Alice",
+                            title="Long Feature",
+                            layout_hint=LayoutHint.FEATURE,
+                            word_count=1200,
+                        ),
+                    ],
+                ),
+            ],
+            pull_quotes=[
+                PullQuote(
+                    text="This inline quote should appear.",
+                    attribution="Alice",
+                    source_item_id="feat-long-001",
+                ),
+            ],
+            page_target=4,
+        )
+        markup = build_typst_markup(edition, config)
+        # Long article (1200 words, >2 paragraphs) gets inline PQ
+        assert "This inline quote should appear" in markup
+
+    def test_unmatched_pull_quotes_still_rendered(self, config):
+        """Unmatched pull quotes in the Notable Quotes block are kept."""
+        edition = CuratedEdition(
+            edition=EditionMeta(
+                date="2026-04-01",
+                title="Unmatched PQ Test",
+                subtitle="Test",
+            ),
+            sections=[
+                Section(
+                    heading="News",
+                    items=[
+                        CuratedItem(
+                            item_id="std-001",
+                            display_text="Article text.",
+                            author="Bob",
+                            title="Article",
+                            layout_hint=LayoutHint.STANDARD,
+                            word_count=2,
+                        ),
+                    ],
+                ),
+            ],
+            pull_quotes=[
+                PullQuote(
+                    text="An unmatched notable quote.",
+                    attribution="Unknown",
+                    source_item_id="unknown",
+                ),
+            ],
+            page_target=2,
+        )
+        markup = build_typst_markup(edition, config)
+        # Unmatched PQs render in the Notable Quotes block at the end
+        assert "An unmatched notable quote" in markup
 
 
 # --- Typst CLI compilation test (requires typst binary) ---

@@ -213,7 +213,9 @@ def _render_feature(item, pq_map: dict, data_dir: Path, debug_mode: bool) -> str
     inline_pq_idx = -1
     inline_pq = "none"
     wc = getattr(item, "word_count", 0)
-    if wc > 1000 and item_pqs and len(body_paras) > 3:
+    # Lowered from >1000/>3 to >400/>2 — with standalone row-level PQs
+    # suppressed, inline placement is the only path for pull quotes.
+    if wc > 400 and item_pqs and len(body_paras) > 2:
         inline_pq_idx = (len(body_paras) * 2) // 5
         pq = item_pqs[0]
         inline_pq = f"pull-quote([{_escape_typst(pq.text)}], [{_escape_typst(pq.attribution)}])"
@@ -274,12 +276,13 @@ def _render_standard(item, pq_map: dict, data_dir: Path, debug_mode: bool) -> st
     extra_count = max(0, len(images_data) - 1)
     insert_map = image_insert_indices(len(paragraphs), extra_count)
 
-    # Inline pull quote
+    # Inline pull quote — lowered threshold from >1000/>3 to match
+    # _render_feature; standalone row-level PQs are now suppressed.
     item_id = getattr(item, "item_id", "")
     item_pqs = pq_map.get(item_id, [])
     inline_pq_idx = -1
     inline_pq = "none"
-    if wc > 1000 and item_pqs and len(paragraphs) > 3:
+    if wc > 400 and item_pqs and len(paragraphs) > 2:
         inline_pq_idx = (len(paragraphs) * 2) // 5
         pq = item_pqs[0]
         inline_pq = f"pull-quote([{_escape_typst(pq.text)}], [{_escape_typst(pq.attribution)}])"
@@ -505,18 +508,10 @@ def build_typst_markup(edition: CuratedEdition, config: dict) -> str:
         out.append('// --- Front Page Feature ---')
         out.append('#' + _render_feature(front_feature, pq_map, data_dir, debug_mode))
 
-        # After-feature pull quotes (unless inlined)
-        item_id = front_feature.item_id
-        feat_pqs = pq_map.get(item_id, [])
-        if feat_pqs:
-            text = getattr(front_feature, "display_text", "") or ""
-            _, feat_body = split_feature_text(text)
-            feat_body = _filter_orphaned_captions(feat_body) if feat_body else []
-            wc = getattr(front_feature, "word_count", 0)
-            inline_placed = wc > 1000 and feat_pqs and len(feat_body) > 3
-            if not inline_placed:
-                for pq in feat_pqs:
-                    out.append('#' + _render_pull_quote(pq))
+        # Pull quotes for the front feature are either inlined within the
+        # article body (for long articles) or suppressed. Standalone pull
+        # quotes after the feature cause page-break isolation — a pull quote
+        # as the sole element on a page with ~10% fill.
         out.append('')
 
     # Sections
@@ -557,9 +552,11 @@ def build_typst_markup(edition: CuratedEdition, config: dict) -> str:
                     out.extend(brief_items)
                     out.append('))')
 
-                # Single-column: pull quotes after content
-                for pq in row_pqs:
-                    out.append('#' + _render_pull_quote(pq))
+                # Row-level pull quotes suppressed — standalone PQ blocks
+                # between rows cause page-break isolation (pull-quote-only
+                # pages at ~10% fill). PQs are rendered inline within
+                # article bodies for articles that meet the word-count
+                # threshold.
 
                 out.append('')
             else:
@@ -608,9 +605,7 @@ def build_typst_markup(edition: CuratedEdition, config: dict) -> str:
                     out.append('  ],')
                 out.append(f'), ruled-indices: ({ruled_str}{"," if ruled_indices else ""}))')
 
-                # Multi-column: pull quotes after row (full width)
-                for pq in row_pqs:
-                    out.append('#' + _render_pull_quote(pq))
+                # Row-level pull quotes suppressed (same reason as single-col).
 
                 out.append('')
 

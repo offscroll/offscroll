@@ -177,7 +177,7 @@
   editorial-note: none,
   debug-mode: false,
 ) = {
-  block(breakable: word-count <= 200, below: 0.15in)[
+  block(breakable: word-count > 200, below: 0.15in)[
     // Headline
     #if title != none {
       block(sticky: true)[
@@ -332,7 +332,7 @@
 
 // --- Section Label ---
 #let section-label(heading) = {
-  block(above: 0.15in, below: 0.08in, stroke: (top: dark-rule),
+  block(above: 0.15in, below: 0.08in, sticky: true, stroke: (top: dark-rule),
     inset: (top: 0.06in))[
     #text(14pt, weight: "bold", font: sans-font)[
       #upper(heading)
