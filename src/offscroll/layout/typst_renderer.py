@@ -23,6 +23,7 @@ from offscroll.layout.renderer import (
     MAX_IMAGES_FEATURE,
     MAX_IMAGES_STANDARD,
     _build_pull_quote_map,
+    _collect_unplaced_pull_quotes,
     _compose_section_rows,
     _extract_front_page_feature,
     _filter_orphaned_captions,
@@ -420,7 +421,10 @@ def build_typst_markup(edition: CuratedEdition, config: dict) -> str:
     # Build pull quote map
     pq_map = _build_pull_quote_map(edition.pull_quotes, edition)
 
-    # Unmatched pull quotes
+    # Collect unmatched/unplaced pull quotes for Notable Quotes.
+    # Includes PQs with unknown source, PQs not matching any item,
+    # and matched PQs that won't be inlined (row-level PQs are
+    # suppressed to prevent pull-quote-only pages).
     all_item_ids: set[str] = set()
     for section in edition.sections:
         for item in section.items:
@@ -433,11 +437,10 @@ def build_typst_markup(edition: CuratedEdition, config: dict) -> str:
     if front_feature is not None:
         all_item_ids.add(front_feature.item_id)
 
-    unmatched_pqs = [
-        pq
-        for pq in edition.pull_quotes
-        if pq.source_item_id == "unknown" or pq.source_item_id not in all_item_ids
-    ]
+    front_feature_id = getattr(front_feature, "item_id", None) if front_feature else None
+    unmatched_pqs = _collect_unplaced_pull_quotes(
+        edition, pq_map, all_item_ids, front_feature_id,
+    )
 
     # Kicker labels for remaining features
     for section in edition.sections:

@@ -1343,8 +1343,12 @@ def test_compose_section_rows_only_briefs():
     assert len(rows[0]["columns"][0]["briefs"]) == 2
 
 
-def test_compose_section_rows_pull_quotes_attached():
-    """Row composition: pull quotes attached to correct row."""
+def test_compose_section_rows_pull_quotes_suppressed():
+    """Row-level pull quotes are suppressed to prevent pull-quote-only pages.
+
+    Pull quotes for short articles are no longer attached to rows.
+    They are collected into Notable Quotes by _collect_unplaced_pull_quotes.
+    """
     from offscroll.models import CuratedItem, LayoutHint, PullQuote, Section
 
     section = Section(
@@ -1371,8 +1375,8 @@ def test_compose_section_rows_pull_quotes_attached():
     }
     rows = _compose_section_rows(section, pq_map)
     assert len(rows) == 1
-    assert len(rows[0]["pull_quotes"]) == 1
-    assert rows[0]["pull_quotes"][0].text == "A great quote."
+    # Row-level PQs are suppressed — they go to Notable Quotes instead
+    assert len(rows[0]["pull_quotes"]) == 0
 
 
 def test_feature_body_uses_css_multicolumn(sample_config):
@@ -2779,8 +2783,13 @@ def test_unmatched_pull_quotes_rendered(sample_config):
     assert "A profound thought." in html
 
 
-def test_matched_pull_quotes_not_in_unmatched(sample_config):
-    """12.2: Pull quotes with valid source_item_ids don't go to notable-quotes."""
+def test_matched_pull_quotes_for_short_articles_go_to_notable_quotes(sample_config):
+    """#312: Matched PQs for short articles go to Notable Quotes.
+
+    Row-level pull quotes are suppressed to prevent pull-quote-only
+    pages. Matched PQs that can't be inlined (article too short)
+    now appear in the Notable Quotes section instead.
+    """
     edition = CuratedEdition(
         edition=EditionMeta(
             date="2026-03-08",
@@ -2810,10 +2819,9 @@ def test_matched_pull_quotes_not_in_unmatched(sample_config):
         ],
     )
     html = _build_html(edition, sample_config)
-    # Should NOT have notable-quotes DIV since the quote matches an item.
-    # The CSS class definition is always in the stylesheet, so check
-    # for the actual rendered div element, not just the class name.
-    assert '<div class="notable-quotes">' not in html
+    # Short article can't inline the PQ — it now goes to Notable Quotes
+    assert '<div class="notable-quotes">' in html
+    assert "A specific quote." in html
 
 
 def test_masthead_editorial_note_suppressed_production(sample_curated_edition, sample_config):
@@ -3144,3 +3152,387 @@ def test_select_pull_quote_skips_first_sentence():
     result = _select_pull_quote(text)
     assert result is not None
     assert not result.startswith("This first sentence")
+
+
+# -----------------------------------------------------------------------
+# #312: Empty masthead and pull-quote-only layout fixes
+# -----------------------------------------------------------------------
+
+
+def test_extract_front_page_feature_promotes_standard_when_no_feature():
+    """When no FEATURE item exists, the longest standard article is promoted.
+
+    This prevents empty masthead pages where page 1 has only the
+    masthead + section label at ~15% fill.
+    """
+    from offscroll.layout.renderer import _extract_front_page_feature
+    from offscroll.models import CuratedEdition, CuratedItem, EditionMeta, LayoutHint, Section
+
+    edition = CuratedEdition(
+        edition=EditionMeta(
+            date="2026-05-01",
+            title="Test Gazette",
+            subtitle="Vol. 1",
+        ),
+        sections=[
+            Section(
+                heading="Features",
+                items=[
+                    CuratedItem(
+                        item_id="short-1",
+                        display_text="Short article. " * 10,
+                        author="Alice",
+                        title="Short Article",
+                        layout_hint=LayoutHint.STANDARD,
+                        word_count=100,
+                    ),
+                    CuratedItem(
+                        item_id="long-1",
+                        display_text="Long article. " * 100,
+                        author="Bob",
+                        title="Long Article",
+                        layout_hint=LayoutHint.STANDARD,
+                        word_count=800,
+                    ),
+                    CuratedItem(
+                        item_id="brief-1",
+                        display_text="Brief.",
+                        author="Carol",
+                        layout_hint=LayoutHint.BRIEF,
+                        word_count=5,
+                    ),
+                ],
+            ),
+        ],
+    )
+
+    feature, sec_idx = _extract_front_page_feature(edition)
+
+    assert feature is not None
+    assert feature.item_id == "long-1"
+    assert feature.layout_hint == LayoutHint.FEATURE
+    # The long article was removed from the section
+    remaining_ids = [item.item_id for item in edition.sections[0].items]
+    assert "long-1" not in remaining_ids
+    # Short and brief remain
+    assert "short-1" in remaining_ids
+    assert "brief-1" in remaining_ids
+
+
+def test_extract_front_page_feature_requires_minimum_word_count():
+    """Promotion requires at least 300 words — short articles aren't promoted."""
+    from offscroll.layout.renderer import _extract_front_page_feature
+    from offscroll.models import CuratedEdition, CuratedItem, EditionMeta, LayoutHint, Section
+
+    edition = CuratedEdition(
+        edition=EditionMeta(date="2026-05-01", title="T", subtitle="S"),
+        sections=[
+            Section(
+                heading="News",
+                items=[
+                    CuratedItem(
+                        item_id="tiny-1",
+                        display_text="Very short article.",
+                        author="A",
+                        title="Tiny",
+                        layout_hint=LayoutHint.STANDARD,
+                        word_count=20,
+                    ),
+                ],
+            ),
+        ],
+    )
+
+    feature, _ = _extract_front_page_feature(edition)
+
+    # Too short to promote — returns None
+    assert feature is None
+    # Section unchanged
+    assert len(edition.sections[0].items) == 1
+
+
+def test_extract_front_page_feature_prefers_explicit_feature():
+    """When a FEATURE item exists, it is used even if a standard is longer."""
+    from offscroll.layout.renderer import _extract_front_page_feature
+    from offscroll.models import CuratedEdition, CuratedItem, EditionMeta, LayoutHint, Section
+
+    edition = CuratedEdition(
+        edition=EditionMeta(
+            date="2026-05-01",
+            title="Test Gazette",
+            subtitle="Vol. 1",
+        ),
+        sections=[
+            Section(
+                heading="Features",
+                items=[
+                    CuratedItem(
+                        item_id="feature-1",
+                        display_text="Feature article. " * 20,
+                        author="Alice",
+                        title="Feature",
+                        layout_hint=LayoutHint.FEATURE,
+                        word_count=200,
+                    ),
+                    CuratedItem(
+                        item_id="longer-standard",
+                        display_text="Much longer standard. " * 100,
+                        author="Bob",
+                        title="Long Standard",
+                        layout_hint=LayoutHint.STANDARD,
+                        word_count=1500,
+                    ),
+                ],
+            ),
+        ],
+    )
+
+    feature, _ = _extract_front_page_feature(edition)
+
+    assert feature is not None
+    assert feature.item_id == "feature-1"
+
+
+def test_extract_front_page_feature_skips_briefs_and_threads():
+    """Promotion fallback skips BRIEF items and threads."""
+    from offscroll.layout.renderer import _extract_front_page_feature
+    from offscroll.models import (
+        CuratedEdition,
+        CuratedItem,
+        CuratedThread,
+        EditionMeta,
+        LayoutHint,
+        Section,
+    )
+
+    edition = CuratedEdition(
+        edition=EditionMeta(
+            date="2026-05-01",
+            title="Test Gazette",
+            subtitle="Vol. 1",
+        ),
+        sections=[
+            Section(
+                heading="Features",
+                items=[
+                    CuratedItem(
+                        item_id="brief-1",
+                        display_text="A brief.",
+                        author="Alice",
+                        layout_hint=LayoutHint.BRIEF,
+                        word_count=2000,  # High word count but BRIEF
+                    ),
+                    CuratedThread(
+                        thread_id="thread-1",
+                        headline="A thread",
+                        author="Bob",
+                        items=[
+                            CuratedItem(
+                                item_id="thread-sub-1",
+                                display_text="Thread post.",
+                                author="Bob",
+                                word_count=500,
+                            ),
+                        ],
+                    ),
+                    CuratedItem(
+                        item_id="standard-1",
+                        display_text="Standard article. " * 20,
+                        author="Carol",
+                        title="Standard",
+                        layout_hint=LayoutHint.STANDARD,
+                        word_count=300,
+                    ),
+                ],
+            ),
+        ],
+    )
+
+    feature, _ = _extract_front_page_feature(edition)
+
+    # Should pick the standard, not the brief (even though brief has higher wc)
+    assert feature is not None
+    assert feature.item_id == "standard-1"
+
+
+def test_compose_section_rows_all_rows_have_empty_pull_quotes():
+    """All rows from _compose_section_rows have empty pull_quotes lists.
+
+    Row-level PQs are suppressed to prevent pull-quote-only pages.
+    """
+    from offscroll.models import CuratedItem, LayoutHint, PullQuote, Section
+
+    section = Section(
+        heading="Test",
+        items=[
+            CuratedItem(
+                item_id="s1",
+                display_text="First article. " * 20,
+                author="Alice",
+                title="Article One",
+                layout_hint=LayoutHint.STANDARD,
+                word_count=200,
+            ),
+            CuratedItem(
+                item_id="s2",
+                display_text="Second article. " * 20,
+                author="Bob",
+                title="Article Two",
+                layout_hint=LayoutHint.STANDARD,
+                word_count=200,
+            ),
+        ],
+    )
+    pq_map = {
+        "s1": [PullQuote(text="Quote 1", attribution="Alice", source_item_id="s1")],
+        "s2": [PullQuote(text="Quote 2", attribution="Bob", source_item_id="s2")],
+    }
+
+    rows = _compose_section_rows(section, pq_map)
+
+    for row in rows:
+        assert row["pull_quotes"] == [], (
+            f"Row has non-empty pull_quotes: {row['pull_quotes']}"
+        )
+
+
+def test_collect_unplaced_pull_quotes_basic():
+    """_collect_unplaced_pull_quotes captures matched-but-not-inlined PQs."""
+    from offscroll.layout.renderer import _collect_unplaced_pull_quotes
+    from offscroll.models import (
+        CuratedEdition,
+        CuratedItem,
+        EditionMeta,
+        LayoutHint,
+        PullQuote,
+        Section,
+    )
+
+    edition = CuratedEdition(
+        edition=EditionMeta(date="2026-05-01", title="T", subtitle="S"),
+        sections=[
+            Section(
+                heading="Sec",
+                items=[
+                    # Short article — won't inline PQs
+                    CuratedItem(
+                        item_id="short-1",
+                        display_text="Short article.",
+                        author="A",
+                        title="Short",
+                        layout_hint=LayoutHint.STANDARD,
+                        word_count=50,
+                    ),
+                ],
+            ),
+        ],
+        pull_quotes=[
+            PullQuote(text="A quote", attribution="A", source_item_id="short-1"),
+            PullQuote(text="Unknown", attribution="?", source_item_id="unknown"),
+        ],
+    )
+
+    pq_map = {"short-1": [edition.pull_quotes[0]]}
+    all_ids = {"short-1"}
+
+    unplaced = _collect_unplaced_pull_quotes(edition, pq_map, all_ids, None)
+
+    # Both PQs should be unplaced: one is unknown, one matches but won't inline
+    assert len(unplaced) == 2
+    texts = {pq.text for pq in unplaced}
+    assert "A quote" in texts
+    assert "Unknown" in texts
+
+
+def test_collect_unplaced_excludes_front_feature_pqs():
+    """Front feature PQs are excluded from unplaced (rendered separately)."""
+    from offscroll.layout.renderer import _collect_unplaced_pull_quotes
+    from offscroll.models import (
+        CuratedEdition,
+        CuratedItem,
+        EditionMeta,
+        LayoutHint,
+        PullQuote,
+        Section,
+    )
+
+    edition = CuratedEdition(
+        edition=EditionMeta(date="2026-05-01", title="T", subtitle="S"),
+        sections=[
+            Section(
+                heading="Sec",
+                items=[
+                    CuratedItem(
+                        item_id="std-1",
+                        display_text="Standard.",
+                        author="B",
+                        title="Std",
+                        layout_hint=LayoutHint.STANDARD,
+                        word_count=50,
+                    ),
+                ],
+            ),
+        ],
+        pull_quotes=[
+            PullQuote(text="Feature quote", attribution="A", source_item_id="feat-1"),
+            PullQuote(text="Std quote", attribution="B", source_item_id="std-1"),
+        ],
+    )
+
+    pq_map = {
+        "feat-1": [edition.pull_quotes[0]],
+        "std-1": [edition.pull_quotes[1]],
+    }
+    all_ids = {"feat-1", "std-1"}
+
+    unplaced = _collect_unplaced_pull_quotes(
+        edition, pq_map, all_ids, front_feature_id="feat-1"
+    )
+
+    # Feature PQ excluded, std PQ included (not inlined)
+    assert len(unplaced) == 1
+    assert unplaced[0].text == "Std quote"
+
+
+def test_collect_unplaced_excludes_inlined_pqs():
+    """PQs for long articles (>1000 words, >3 paras) that inline them are excluded."""
+    from offscroll.layout.renderer import _collect_unplaced_pull_quotes
+    from offscroll.models import (
+        CuratedEdition,
+        CuratedItem,
+        EditionMeta,
+        LayoutHint,
+        PullQuote,
+        Section,
+    )
+
+    long_text = "\n\n".join(["Paragraph content. " * 30] * 5)
+    edition = CuratedEdition(
+        edition=EditionMeta(date="2026-05-01", title="T", subtitle="S"),
+        sections=[
+            Section(
+                heading="Sec",
+                items=[
+                    CuratedItem(
+                        item_id="long-1",
+                        display_text=long_text,
+                        author="A",
+                        title="Long Article",
+                        layout_hint=LayoutHint.STANDARD,
+                        word_count=1500,
+                    ),
+                ],
+            ),
+        ],
+        pull_quotes=[
+            PullQuote(text="Inline quote", attribution="A", source_item_id="long-1"),
+        ],
+    )
+
+    pq_map = {"long-1": [edition.pull_quotes[0]]}
+    all_ids = {"long-1"}
+
+    unplaced = _collect_unplaced_pull_quotes(edition, pq_map, all_ids, None)
+
+    # The PQ matches a long article that will inline it — should NOT be unplaced
+    assert len(unplaced) == 0

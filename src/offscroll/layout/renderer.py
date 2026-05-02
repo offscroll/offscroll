@@ -747,6 +747,42 @@ def _extract_front_page_feature(edition: CuratedEdition):
                 if not section.items:
                     edition.sections.pop(sec_idx)
                 return feature, sec_idx
+
+    # No FEATURE item found — promote the longest standard article
+    # to prevent empty masthead pages (page 1 with no content below
+    # the masthead). Without this, Typst pushes all section content
+    # to page 2, leaving page 1 at ~15% fill.
+    best_item = None
+    best_sec_idx = None
+    best_item_idx = None
+    best_wc = 0
+    for sec_idx, section in enumerate(edition.sections):
+        for i, item in enumerate(section.items):
+            if (
+                not isinstance(item, CuratedThread)
+                and hasattr(item, "layout_hint")
+                and item.layout_hint != LayoutHint.BRIEF
+            ):
+                wc = getattr(item, "word_count", 0)
+                if wc > best_wc:
+                    best_item = item
+                    best_sec_idx = sec_idx
+                    best_item_idx = i
+                    best_wc = wc
+    # Require at least 300 words — short articles don't work as
+    # front-page features with drop cap and hero image.
+    if best_item is not None and best_wc >= 300:
+        best_item.layout_hint = LayoutHint.FEATURE
+        feature = edition.sections[best_sec_idx].items.pop(best_item_idx)
+        if not edition.sections[best_sec_idx].items:
+            edition.sections.pop(best_sec_idx)
+        logger.info(
+            "No FEATURE item found; promoted '%s' (%d words) to front feature",
+            getattr(feature, "title", "unknown"),
+            best_wc,
+        )
+        return feature, best_sec_idx
+
     return None, None
 
 
@@ -839,6 +875,43 @@ def _will_inline_pull_quotes(item, pull_quotes_by_item: dict[str, list[PullQuote
         else:
             expanded.append(p)
     return len(expanded) > 3
+
+
+def _collect_unplaced_pull_quotes(
+    edition: CuratedEdition,
+    pq_map: dict[str, list[PullQuote]],
+    all_item_ids: set[str],
+    front_feature_id: str | None,
+) -> list[PullQuote]:
+    """Collect pull quotes that won't be placed inline or with the front feature.
+
+    Row-level pull quotes are suppressed to prevent pull-quote-only pages.
+    This collects PQs that should appear in the Notable Quotes section:
+    - PQs with unknown source
+    - PQs not matching any item in the edition
+    - PQs matching items that are too short to inline them
+
+    Front feature PQs are excluded (rendered separately after the feature).
+    """
+    # Find items that will inline their PQs
+    inlined_ids: set[str] = set()
+    for section in edition.sections:
+        for item in section.items:
+            if _will_inline_pull_quotes(item, pq_map):
+                iid = item.thread_id if isinstance(item, CuratedThread) else item.item_id
+                inlined_ids.add(iid)
+
+    unplaced = []
+    for pq in edition.pull_quotes:
+        if pq.source_item_id == front_feature_id:
+            continue  # Rendered after front feature
+        if (
+            pq.source_item_id == "unknown"
+            or pq.source_item_id not in all_item_ids
+            or pq.source_item_id not in inlined_ids
+        ):
+            unplaced.append(pq)
+    return unplaced
 
 
 def _compose_section_rows(
@@ -1054,6 +1127,15 @@ def _compose_section_rows(
             }
         )
 
+    # Suppress standalone row-level pull quotes to prevent
+    # pull-quote-only pages. When Typst paginates a row that fills
+    # a page, trailing pull quotes get pushed to the next page as
+    # the sole element (~10% fill). Pull quotes are still rendered
+    # inline within long articles (>1000 words, >3 paras) and
+    # non-inlined ones are collected into the Notable Quotes section.
+    for row in rows:
+        row["pull_quotes"] = []
+
     #  Inject section heading into first row for inline rendering.
     # This prevents section headers from being stranded on their own pages
     #  by making the header part of the row content.
@@ -1216,9 +1298,10 @@ def _build_html(edition: CuratedEdition, config: dict) -> str:
     # Rule 2: Build pull quote placement map
     pq_map = _build_pull_quote_map(edition.pull_quotes, edition)
 
-    #  Collect unmatched pull quotes for fallback rendering.
-    # Pull quotes with source_item_id == "unknown" or not matching any
-    # item in the edition are rendered in a Notable Quotes block.
+    #  Collect unmatched/unplaced pull quotes for Notable Quotes.
+    # Includes PQs with unknown source, PQs not matching any item,
+    # and matched PQs that won't be inlined (row-level PQs are
+    # suppressed to prevent pull-quote-only pages).
     all_item_ids: set[str] = set()
     for section in edition.sections:
         for item in section.items:
@@ -1231,11 +1314,10 @@ def _build_html(edition: CuratedEdition, config: dict) -> str:
     if front_feature is not None:
         all_item_ids.add(front_feature.item_id)
 
-    unmatched_pqs = [
-        pq
-        for pq in edition.pull_quotes
-        if pq.source_item_id == "unknown" or pq.source_item_id not in all_item_ids
-    ]
+    front_feature_id = getattr(front_feature, "item_id", None) if front_feature else None
+    unmatched_pqs = _collect_unplaced_pull_quotes(
+        edition, pq_map, all_item_ids, front_feature_id,
+    )
 
     #  Assign kicker labels to feature items.
     # Only the front-page feature (rank 1) gets "Cover Story".
