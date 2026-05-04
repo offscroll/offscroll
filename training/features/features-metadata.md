@@ -1,17 +1,40 @@
 # Feature Metadata — OffScroll Layout Feature Vectors
 
 **Author:** Belle (Systems Architect, IRAS)
-**Date:** 2026-05-04 (Task #341 — n=150 checkpoint; supersedes #329)
-**Source data:** `training/grades/batch-002.csv` + `batch-003.csv` + `batch-004.csv`
-(50 + 50 + 50 = 150 graded spreads, no duplicate IDs)
-**Output:** `training/features/features-003.csv`
-**Seed:** 42 | **Split:** 80% train / 20% val → 120 train, 30 val
+**Date:** 2026-05-04 (Task #343 — n=200 final set; supersedes #341)
+**Source data:** `training/grades/batch-002.csv` + `batch-003.csv` +
+`batch-004.csv` + `batch-005.csv`
+(50 × 4 = 200 graded spreads, no duplicate IDs)
+**Output:** `training/features/features-004.csv`
+**Seed:** 42 | **Split:** 80% train / 20% val → 160 train, 40 val
 **Previous checkpoints:**
   - `features.csv` (batch-001, corrupted by `}{` bug — superseded)
   - `features-002.csv` (batch-002 only, n=50; preserved, do not overwrite)
-**Computation script:** `compute_features_003.py`
-(identical feature pipeline to `compute_features_002.py`; only the
-input batch list and split logic differ)
+  - `features-003.csv` (batches 2+3+4, n=150; preserved, do not overwrite)
+**Computation script:** `compute_features_004.py`
+(identical feature pipeline to `compute_features_003.py`; only the
+input batch list and split logic differ, plus two data-quality
+guards described below)
+
+## Data-quality guards added in Task #343
+
+Two anomalies surfaced during the n=200 merge. Both are handled in
+the loader; the source files are unchanged.
+
+1. **Trailing `COMPLETED` row in `batch-005.csv`.** A runner artifact
+   appended an extra line after the 50 graded spreads. The loader
+   filters any row whose `spread_id` does not start with `s-` or whose
+   `technical`/`style` cells are empty. 1 row filtered.
+
+2. **Six spread IDs missing from `edition-map.json`.** `s-028-004`,
+   `s-045-007`, `s-047-011`, `s-090-023`, `s-093-005`, `s-095-011` are
+   real terminal spreads that exist in their edition's
+   `metadata.json`, but the `edition-map.json` index only covers
+   spreads 1..N−1 for those editions. The loader falls back to
+   deriving `edition_id` from the `s-{nnn}-{idx}` ID format and
+   verifies the edition's `metadata.json` exists before accepting
+   it. All 6 spreads recovered. The map file should be regenerated
+   to cover all spreads — surfaced as a follow-up.
 
 ---
 
@@ -30,17 +53,18 @@ Features are computed from two sources:
    and orphan/widow detection. This was added in Task #329 to fix the
    five features that were previously NA or miscomputed.
 
-**n=150 checkpoint note (Task #341):** `features-003.csv` is the
-combined feature matrix for batches 2 + 3 + 4 (50 spreads each, 150
-total, no duplicate IDs). Computation is identical to `features-002.csv`
-— same script logic in `compute_features_003.py`, same feature set,
-same PDF analysis pass. The train/val split is freshly assigned on the
-150-spread set; it does not preserve the batch-002 assignment. See
-"n=150 Checkpoint Summary Statistics" below for the full n=150 stats.
+**n=200 final-set note (Task #343):** `features-004.csv` is the
+combined feature matrix for batches 2 + 3 + 4 + 5 (50 spreads each,
+200 total, no duplicate IDs). Computation is identical to
+`features-003.csv` — same script logic in `compute_features_004.py`,
+same feature set, same PDF analysis pass. The train/val split is
+freshly assigned on the 200-spread set; it does not preserve the
+n=150 assignment. See "n=200 Final-Set Summary Statistics" below for
+the full n=200 stats.
 
 The remainder of this document describes the batch-002 baseline; the
-n=150 statistics extend (not replace) it. The feature schema and
-methods are unchanged.
+n=150 and n=200 statistics extend (not replace) it. The feature schema
+and methods are unchanged.
 
 **Batch 2 quality note:** This batch uses the re-rendered training set
 (#309), which fixes the `}{` rendering bug that corrupted batch-001.
@@ -324,22 +348,116 @@ Correlations with technical_grade (n=150):
 
 ---
 
-## Comparison: Batch 1 vs Batch 2 vs n=150 Checkpoint
+## n=200 Final-Set Summary Statistics (Task #343 — batches 2+3+4+5)
 
-| Metric | Batch 1 (n=50) | Batch 2 (n=50) | n=150 (b2+b3+b4) | Notes |
-|--------|----------------|----------------|------------------|-------|
-| Technical mean | 3.0 | 4.8 | 4.55 | b3+b4 contain more failures than b2 |
-| Technical median | 2 | 6 | 5 | distribution filling in around the 4-5 gap |
-| Style mean | 2.6 | 2.9 | 3.13 | gradual improvement |
-| Style median | 2 | 3 | 3 | |
-| d5_fill_fraction mean | 1.55 (broken) | 0.53 | 0.47 | spatial fill from PDF (b1 was word-density proxy) |
-| d4_col_balance mean | NA | 159pt | 173pt | wider variation in b3+b4 |
-| d6_dead_space mean | NA | 0.01 | 0.022 | b3+b4 surfaced trapped-whitespace cases |
-| d2_orphans mean | NA | 0.16 | 0.25 | orphan detection picks up real defects |
-| d2_widows | NA | 0.00 | 0.00 | layout engine still produces no widows |
-| d5↔technical r | NA | +0.76 | +0.70 | top signal, stable across batches |
-| d6↔technical r | NA | −0.52 | −0.42 | secondary signal, weakened slightly |
-| d2_orphans↔technical r | NA | (sparse) | −0.45 | promoted to a usable signal at n=150 |
+```
+n_spreads:               200
+train / val:             160 / 40
+technical_grade mean:    4.69  (median 5, std 1.92)
+style_grade mean:        3.25  (median 3, std 1.24)
+
+Rendered-output features:
+  d5_fill_fraction:      min=0.0090  max=0.8430  mean=0.4706
+  d4_col_balance (pt):   min=0.00    max=700.49  mean=167.62
+  d6_dead_space:         min=0.0000  max=0.2424  mean=0.0225
+  d2_orphans:            min=0       max=2       mean=0.245
+  d2_widows:             min=0       max=0       mean=0.000
+
+Metadata-derived features:
+  d7_template_entropy:   min=0.00    max=1.00    mean=0.22
+  d8_word_count_cv:      min=0.00    max=3.99    mean=0.72
+  anchor_strength:       min=1.00    max=18.40   mean=2.42
+  est_items_per_page:    min=0.50    max=20.00   mean=2.70
+  est_words_per_page:    min=363     max=3724    mean=1004
+  page_position_frac:    min=0.00    max=1.00    mean=0.40
+
+Technical grade distribution:
+  1: 5  |  2: 37  |  3: 26  |  4: 17  |  5: 19  |  6: 54  |  7: 42
+
+Style grade distribution:
+  1: 7  |  2: 61  |  3: 54  |  4: 38  |  5: 33  |  6: 7
+
+Per-batch row counts (with split):
+  batch-002: 50 spreads (39 train / 11 val)
+  batch-003: 50 spreads (40 train / 10 val)
+  batch-004: 50 spreads (39 train / 11 val)
+  batch-005: 50 spreads (42 train /  8 val)
+
+Correlations with technical_grade (n=200):
+  d5_fill_fraction:    r = +0.7100   (top signal, stable)
+  d2_orphans:          r = -0.4709   (secondary defect signal)
+  d6_dead_space:       r = -0.3045   (weakened from -0.42 at n=150)
+  est_items_per_page:  r = -0.2429
+  d4_col_balance:      r = +0.1695   (still weak)
+  anchor_strength:     r = -0.1409
+  d8_word_count_cv:    r = -0.0721
+  est_words_per_page:  r = +0.0394
+  d7_template_entropy: r = -0.0540
+
+  d5_fill_fraction vs est_words_per_page: r = +0.1434
+  (independence preserved)
+```
+
+**Notes on n=200 vs n=150:**
+- **Distribution is now well-populated across the full grade range.**
+  Technical grade now covers 1–7 with at least 5 spreads in every
+  bucket; style covers 1–6 similarly. The bimodal shape is still
+  visible (peaks at T:2 and T:6) but the middle is no longer thinly
+  sampled. Mean technical 4.55 → 4.69; mean style 3.13 → 3.25.
+- **Top signal stable.** `d5_fill_fraction` correlation with technical
+  grade is r=+0.71 at n=200 (was +0.70 at n=150, +0.76 at n=50).
+  Convergence across three sample sizes confirms d5 is the strongest
+  metadata-derivable predictor.
+- **`d6_dead_space` correlation weakened** (-0.42 → -0.30). Batch-005
+  contains more masthead/terminal/empty pages where the dead-space
+  signal does not separate broken from intentional sparseness; this
+  matches the protocol's expectation that terminal pages have relaxed
+  fill requirements.
+- **`d2_orphans` correlation stable** at r=-0.47 (was -0.45 at n=150).
+  Orphan detection continues to pick up real defects.
+- **Anchor strength upper bound jumped** from 16.90 → 18.40 — batch-005
+  surfaced one additional outlier-anchor edition.
+- **`d4_col_balance` upper bound jumped** from 637 → 700pt. The signal
+  remains weak overall (r=+0.17) — col-balance alone does not separate
+  high from low grades because many low-grade spreads have a single
+  broken page (huge fill failure) but balanced columns on the working
+  side.
+- **`d8_word_count_cv` upper bound jumped** from 2.91 → 3.99 — at least
+  one batch-005 edition has an extreme length-mix on a single spread.
+- **`est_items_per_page` upper bound** now 20 (was 19). One batch-005
+  spread is dense-brief-heavy.
+- **`d2_widows` remains zero across all 200 spreads.** The Typst
+  layout engine still produces no widow lines under current settings.
+
+---
+
+## Comparison: Batch 1 vs Batch 2 vs n=150 vs n=200
+
+| Metric | Batch 1 (n=50) | Batch 2 (n=50) | n=150 (b2-b4) | n=200 (b2-b5) | Notes |
+|--------|----------------|----------------|----------------|----------------|-------|
+| Technical mean | 3.0 | 4.8 | 4.55 | 4.69 | range now well-populated 1-7 |
+| Technical median | 2 | 6 | 5 | 5 | middle of distribution filling in |
+| Style mean | 2.6 | 2.9 | 3.13 | 3.25 | gradual improvement |
+| Style median | 2 | 3 | 3 | 3 | |
+| d5_fill_fraction mean | 1.55 (broken) | 0.53 | 0.47 | 0.47 | stable across n=150 and n=200 |
+| d4_col_balance mean | NA | 159pt | 173pt | 168pt | |
+| d6_dead_space mean | NA | 0.01 | 0.022 | 0.023 | |
+| d2_orphans mean | NA | 0.16 | 0.25 | 0.25 | |
+| d2_widows | NA | 0.00 | 0.00 | 0.00 | layout engine produces no widows |
+| d5↔technical r | NA | +0.76 | +0.70 | +0.71 | top signal, stable |
+| d6↔technical r | NA | −0.52 | −0.42 | −0.30 | weakening as terminal/masthead spreads fill in |
+| d2_orphans↔technical r | NA | (sparse) | −0.45 | −0.47 | stable secondary signal |
+
+## Follow-up surfaced in Task #343
+
+- `edition-map.json` is missing terminal spreads from at least 6
+  editions (training-028, -045, -047, -090, -093, -095). The
+  feature pipeline now recovers them via ID-format fallback, but
+  the map should be regenerated for use by other consumers. Light
+  task — likely a missing iteration in the map-builder script.
+- `batch-005.csv` ends with a stray `COMPLETED` row from a runner
+  artifact. Filtered at load. Source file should be cleaned by
+  whoever maintains the grading pipeline.
 
 ---
 
