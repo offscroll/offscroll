@@ -1,12 +1,17 @@
 # Feature Metadata — OffScroll Layout Feature Vectors
 
 **Author:** Belle (Systems Architect, IRAS)
-**Date:** 2026-05-03 (Task #329, updated from #310/#238)
-**Source data:** `training/grades/batch-002.csv` (50 graded spreads, clean)
-**Output:** `training/features/features-002.csv`
-**Seed:** 42 | **Split:** 80% train / 20% val → 40 train, 10 val
-**Previous batch:** `features.csv` (batch-001, corrupted by `}{` bug — superseded)
-**Computation script:** `compute_features_002.py`
+**Date:** 2026-05-04 (Task #341 — n=150 checkpoint; supersedes #329)
+**Source data:** `training/grades/batch-002.csv` + `batch-003.csv` + `batch-004.csv`
+(50 + 50 + 50 = 150 graded spreads, no duplicate IDs)
+**Output:** `training/features/features-003.csv`
+**Seed:** 42 | **Split:** 80% train / 20% val → 120 train, 30 val
+**Previous checkpoints:**
+  - `features.csv` (batch-001, corrupted by `}{` bug — superseded)
+  - `features-002.csv` (batch-002 only, n=50; preserved, do not overwrite)
+**Computation script:** `compute_features_003.py`
+(identical feature pipeline to `compute_features_002.py`; only the
+input batch list and split logic differ)
 
 ---
 
@@ -24,6 +29,18 @@ Features are computed from two sources:
    PDF give precise measurements of fill, column balance, dead space,
    and orphan/widow detection. This was added in Task #329 to fix the
    five features that were previously NA or miscomputed.
+
+**n=150 checkpoint note (Task #341):** `features-003.csv` is the
+combined feature matrix for batches 2 + 3 + 4 (50 spreads each, 150
+total, no duplicate IDs). Computation is identical to `features-002.csv`
+— same script logic in `compute_features_003.py`, same feature set,
+same PDF analysis pass. The train/val split is freshly assigned on the
+150-spread set; it does not preserve the batch-002 assignment. See
+"n=150 Checkpoint Summary Statistics" below for the full n=150 stats.
+
+The remainder of this document describes the batch-002 baseline; the
+n=150 statistics extend (not replace) it. The feature schema and
+methods are unchanged.
 
 **Batch 2 quality note:** This batch uses the re-rendered training set
 (#309), which fixes the `}{` rendering bug that corrupted batch-001.
@@ -164,23 +181,36 @@ that metadata alone cannot provide. Added in Task #329.
 
 ## Split Assignment
 
-The 80/20 train/val split was assigned with `random.Random(42)`:
-- 40 spreads in training set
-- 10 spreads in validation set
+The 80/20 train/val split was assigned with `random.Random(42)` over
+the lexicographically-sorted spread ID list (so the split is
+deterministic and independent of CSV row order across the three
+batch files):
+- 120 spreads in training set
+- 30 spreads in validation set
 
-The split is recorded in the `split` column. The specific assignment
-is deterministic: given the same grades CSV and seed, the split will
-be identical.
+The split is recorded in the `split` column.
 
-**Stratification note:** The bimodal technical grade distribution
-(cluster at 2-3 and cluster at 6) means a random split may not
-perfectly balance the failure modes across train/val. With only 50
-spreads, stratification was not applied — the random split is
-acceptable. Consider stratification when the graded set grows.
+**Per-batch split breakdown (n=150):**
+- batch-002: 39 train / 11 val
+- batch-003: 43 train / 7 val
+- batch-004: 38 train / 12 val
+
+Note: `features-003.csv` does not preserve the 40/10 split that was
+in `features-002.csv`. Spreads from batch-002 are re-shuffled into the
+n=150 split — train/val membership for a given spread_id will differ
+between the two files. This is intentional: with three times the data,
+re-shuffling gives a single coherent split rather than carrying forward
+a smaller-population assignment.
+
+**Stratification note:** The technical grade distribution remains
+roughly bimodal (peaks at 2 and 6). With 150 spreads, the random split
+holds up well — both classes are represented in both partitions — but
+stratification by technical grade should be considered as the graded
+set continues to grow.
 
 ---
 
-## Batch 2 Summary Statistics (Task #329 — corrected features)
+## Batch 2 Summary Statistics (Task #329 — corrected features, n=50)
 
 ```
 n_spreads:               50
@@ -218,19 +248,98 @@ Key correlations with technical_grade:
 
 ---
 
-## Comparison: Batch 1 vs Batch 2
+## n=150 Checkpoint Summary Statistics (Task #341 — batches 2+3+4)
 
-| Metric | Batch 1 | Batch 2 (corrected) | Notes |
-|--------|---------|---------------------|-------|
-| Technical mean | 3.0 | 4.8 | Batch 2 is clean data; batch 1 was corrupted by `}{` bug |
-| Technical median | 2 | 6 | Batch 2 has a real competent cluster |
-| Style mean | 2.6 | 2.9 | Style still low — expected per pipeline spec |
-| Style median | 2 | 3 | Slight improvement with clean renders |
-| d5_fill_fraction mean | 1.55 (broken) | 0.53 | Was word-density proxy (r=1.0 with word count). Now spatial fill from PDF. |
-| d4_col_balance | NA | 159pt mean | Computed from PDF text block positions |
-| d6_dead_space | NA | 0.01 mean | Computed from PDF inter-block gaps |
-| d2_orphans | NA | 0.16 mean | Detected from PDF column analysis |
-| d2_widows | NA | 0.00 | Layout engine does not produce widows |
+```
+n_spreads:               150
+train / val:             120 / 30
+technical_grade mean:    4.55  (median 5, std 1.86)
+style_grade mean:        3.13  (median 3, std 1.21)
+
+Rendered-output features:
+  d5_fill_fraction:      min=0.0305  max=0.8430  mean=0.4716
+  d4_col_balance (pt):   min=0.00    max=637.29  mean=173.14
+  d6_dead_space:         min=0.0000  max=0.2424  mean=0.0216
+  d2_orphans:            min=0       max=2       mean=0.25
+  d2_widows:             min=0       max=0       mean=0.00
+
+Metadata-derived features:
+  d7_template_entropy:   min=0.00    max=1.00    mean=0.21
+  d8_word_count_cv:      min=0.00    max=2.91    mean=0.68
+  anchor_strength:       min=1.00    max=16.90   mean=2.33
+  est_items_per_page:    min=0.50    max=19.00   mean=2.68
+  est_words_per_page:    min=363     max=3724    mean=994
+  page_position_frac:    min=0.00    max=0.97    mean=0.39
+
+Technical grade distribution:
+  1: 3  |  2: 31  |  3: 20  |  4: 12  |  5: 15  |  6: 49  |  7: 20
+
+Style grade distribution:
+  1: 5  |  2: 51  |  3: 44  |  4: 26  |  5: 18  |  6: 6
+
+Per-batch row counts (with split):
+  batch-002: 50 spreads (39 train / 11 val)
+  batch-003: 50 spreads (43 train /  7 val)
+  batch-004: 50 spreads (38 train / 12 val)
+
+Correlations with technical_grade (n=150):
+  d5_fill_fraction:    r = +0.6964   (strong, was +0.76 at n=50)
+  d2_orphans:          r = -0.4483   (strengthened from sparse signal at n=50)
+  d6_dead_space:       r = -0.4221   (was -0.52 at n=50)
+  est_items_per_page:  r = -0.2629
+  d4_col_balance:      r = +0.1822   (sign flip from n=50 noise)
+  anchor_strength:     r = -0.1419
+  d8_word_count_cv:    r = -0.0805
+  d7_template_entropy: r = -0.0500
+  est_words_per_page:  r = -0.0080
+
+  d5_fill_fraction vs est_words_per_page: r = +0.1454
+  (independence preserved — d5 measures spatial fill, not word density)
+```
+
+**Notes on n=150 vs n=50:**
+- **Distribution broadened.** Technical grade range now includes 1 and 5;
+  style range now extends to 6. The bimodal (2-3) ∪ (6) shape from n=50
+  has filled in slightly with grade-4 and grade-5 examples (27 spreads
+  combined). Mean dropped from 4.8 to 4.55 — batches 3 and 4 contained
+  more failures than batch 2.
+- **Anchor strength range jumped** from 4.79 → 16.90 max. Batches 3 and 4
+  include editions with one extreme outlier item (max ratio above 16
+  means one item is ~16× the mean length on its spread) — likely
+  long-form items dominating brief-heavy editions.
+- **d6_dead_space upper bound jumped** from 0.06 to 0.24. Batches 3 and 4
+  surfaced spreads with severely under-filled columns containing trapped
+  whitespace — exactly the failure modes the grading protocol calls out.
+- **d2_orphans upper bound jumped** from 1 to 2 — confirming orphan
+  detection picks up on actual spread defects, not just edge noise.
+- **Top correlate is stable.** `d5_fill_fraction` remains the dominant
+  technical-grade signal (r ≈ +0.70 at n=150). `d2_orphans` and
+  `d6_dead_space` are the secondary defect signals.
+- **d4_col_balance correlation flipped sign** (-0.02 at n=50, +0.18 at
+  n=150). At n=50 the value was inside the noise floor; the n=150 value
+  is still weak but suggests col_balance alone does not separate
+  high-grade from low-grade spreads in the current data — many low-grade
+  spreads have a single broken page (large fill failure) but balanced
+  columns on the working page.
+
+---
+
+## Comparison: Batch 1 vs Batch 2 vs n=150 Checkpoint
+
+| Metric | Batch 1 (n=50) | Batch 2 (n=50) | n=150 (b2+b3+b4) | Notes |
+|--------|----------------|----------------|------------------|-------|
+| Technical mean | 3.0 | 4.8 | 4.55 | b3+b4 contain more failures than b2 |
+| Technical median | 2 | 6 | 5 | distribution filling in around the 4-5 gap |
+| Style mean | 2.6 | 2.9 | 3.13 | gradual improvement |
+| Style median | 2 | 3 | 3 | |
+| d5_fill_fraction mean | 1.55 (broken) | 0.53 | 0.47 | spatial fill from PDF (b1 was word-density proxy) |
+| d4_col_balance mean | NA | 159pt | 173pt | wider variation in b3+b4 |
+| d6_dead_space mean | NA | 0.01 | 0.022 | b3+b4 surfaced trapped-whitespace cases |
+| d2_orphans mean | NA | 0.16 | 0.25 | orphan detection picks up real defects |
+| d2_widows | NA | 0.00 | 0.00 | layout engine still produces no widows |
+| d5↔technical r | NA | +0.76 | +0.70 | top signal, stable across batches |
+| d6↔technical r | NA | −0.52 | −0.42 | secondary signal, weakened slightly |
+| d2_orphans↔technical r | NA | (sparse) | −0.45 | promoted to a usable signal at n=150 |
 
 ---
 
