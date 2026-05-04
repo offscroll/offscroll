@@ -1,0 +1,610 @@
+{
+  "task": "#344 (n=200 definitive checkpoint)",
+  "feature_version": "features-004",
+  "n_total": 200,
+  "n_train": 160,
+  "n_val": 40,
+  "n_features_full": 33,
+  "n_features_reduced": 18,
+  "reduced_features": [
+    "is_solo",
+    "edition_page_count",
+    "page_position_frac",
+    "edition_brief_frac",
+    "edition_template_entropy",
+    "est_items_per_page",
+    "est_words_per_page",
+    "est_brief_count",
+    "est_image_count",
+    "est_source_count",
+    "d3_image_fraction",
+    "d5_fill_fraction",
+    "d7_template_entropy",
+    "anchor_strength",
+    "d2_orphans",
+    "d2_widows",
+    "d4_col_balance",
+    "d6_dead_space"
+  ],
+  "remaining_high_corr": [
+    {
+      "a": "est_items_per_page",
+      "b": "est_brief_count",
+      "r": 0.8670426907785149
+    }
+  ],
+  "alpha_sweep_tech": {
+    "0.01": {
+      "train_r2": 0.6467740626600036,
+      "val_r2": 0.4127443160973898
+    },
+    "0.1": {
+      "train_r2": 0.6465336047657547,
+      "val_r2": 0.4128457402976724
+    },
+    "1.0": {
+      "train_r2": 0.6334397561632261,
+      "val_r2": 0.3963033595017935
+    },
+    "10.0": {
+      "train_r2": 0.517114822935378,
+      "val_r2": 0.2633642856615578
+    }
+  },
+  "alpha_sweep_style": {
+    "0.01": {
+      "train_r2": 0.4626552372916216,
+      "val_r2": 0.2638777967257311
+    },
+    "0.1": {
+      "train_r2": 0.4619397820593103,
+      "val_r2": 0.25532523755576697
+    },
+    "1.0": {
+      "train_r2": 0.4474423461877449,
+      "val_r2": 0.2116736368338561
+    },
+    "10.0": {
+      "train_r2": 0.34876783139866496,
+      "val_r2": 0.06831786456665456
+    }
+  },
+  "technical_model": {
+    "ridge_alpha10": {
+      "train_r2": 0.517114822935378,
+      "val_r2": 0.2633642856615578,
+      "train_mae": 1.1111869164352801,
+      "val_mae": 1.4751438688681056
+    },
+    "ridge_alpha01": {
+      "train_r2": 0.6465336047657547,
+      "val_r2": 0.4128457402976724,
+      "train_mae": 0.8695318338754463,
+      "val_mae": 1.1363996718559772
+    },
+    "gbt": {
+      "train_r2": 0.6902830389706407,
+      "val_r2": 0.40343920166075053,
+      "train_mae": 0.8408625205716469,
+      "val_mae": 1.205758075037378
+    },
+    "ridge_top_features": [
+      {
+        "feature": "d5_fill_fraction",
+        "importance": 1.4294865608803096,
+        "coef": 6.292762174794809
+      },
+      {
+        "feature": "est_brief_count",
+        "importance": 0.5638562543490344,
+        "coef": -0.12430971661318198
+      },
+      {
+        "feature": "d4_col_balance",
+        "importance": 0.3613251906755812,
+        "coef": 0.002024331418403209
+      },
+      {
+        "feature": "is_solo",
+        "importance": 0.3273188587670033,
+        "coef": 0.8281620185877108
+      },
+      {
+        "feature": "est_items_per_page",
+        "importance": 0.22106645894342944,
+        "coef": 0.07188024825234429
+      },
+      {
+        "feature": "d2_orphans",
+        "importance": 0.20268868403226006,
+        "coef": -0.4273052649894289
+      },
+      {
+        "feature": "edition_page_count",
+        "importance": 0.19967837597551935,
+        "coef": -0.020707879364521408
+      },
+      {
+        "feature": "anchor_strength",
+        "importance": 0.19725650027222263,
+        "coef": 0.08154540872778554
+      },
+      {
+        "feature": "edition_brief_frac",
+        "importance": 0.18941768230564224,
+        "coef": -0.8786741527693928
+      },
+      {
+        "feature": "page_position_frac",
+        "importance": 0.14608146033725378,
+        "coef": -0.44131178943532356
+      }
+    ],
+    "gbt_top_features": [
+      {
+        "feature": "d5_fill_fraction",
+        "importance": 0.6956740099291696
+      },
+      {
+        "feature": "d4_col_balance",
+        "importance": 0.11516336478509683
+      },
+      {
+        "feature": "page_position_frac",
+        "importance": 0.04853569495086612
+      },
+      {
+        "feature": "est_brief_count",
+        "importance": 0.03803202216155767
+      },
+      {
+        "feature": "d2_orphans",
+        "importance": 0.025327915030988475
+      },
+      {
+        "feature": "edition_brief_frac",
+        "importance": 0.0171672697138548
+      },
+      {
+        "feature": "est_source_count",
+        "importance": 0.01315992431850455
+      },
+      {
+        "feature": "est_items_per_page",
+        "importance": 0.010667305429434238
+      },
+      {
+        "feature": "d6_dead_space",
+        "importance": 0.010035269844308902
+      },
+      {
+        "feature": "edition_page_count",
+        "importance": 0.009503557381174409
+      }
+    ],
+    "top_residuals_val": [
+      {
+        "spread_id": "s-094-003",
+        "actual": 2.0,
+        "predicted": 5.370137455487597,
+        "residual": 3.3701374554875967
+      },
+      {
+        "spread_id": "s-088-008",
+        "actual": 7.0,
+        "predicted": 4.114548096946943,
+        "residual": 2.885451903053057
+      },
+      {
+        "spread_id": "s-051-005",
+        "actual": 3.0,
+        "predicted": 5.883988496114128,
+        "residual": 2.883988496114128
+      },
+      {
+        "spread_id": "s-079-015",
+        "actual": 3.0,
+        "predicted": 5.6250054366614926,
+        "residual": 2.6250054366614926
+      },
+      {
+        "spread_id": "s-002-004",
+        "actual": 3.0,
+        "predicted": 5.409552422726271,
+        "residual": 2.4095524227262706
+      },
+      {
+        "spread_id": "s-096-014",
+        "actual": 1.0,
+        "predicted": 3.406695509270763,
+        "residual": 2.406695509270763
+      },
+      {
+        "spread_id": "s-057-012",
+        "actual": 6.0,
+        "predicted": 3.7619694623169395,
+        "residual": 2.2380305376830605
+      },
+      {
+        "spread_id": "s-001-004",
+        "actual": 7.0,
+        "predicted": 4.8185760677647975,
+        "residual": 2.1814239322352025
+      },
+      {
+        "spread_id": "s-063-006",
+        "actual": 7.0,
+        "predicted": 4.976259955972452,
+        "residual": 2.023740044027548
+      },
+      {
+        "spread_id": "s-084-006",
+        "actual": 7.0,
+        "predicted": 5.174391450696503,
+        "residual": 1.8256085493034968
+      }
+    ]
+  },
+  "style_model": {
+    "ridge_alpha10": {
+      "train_r2": 0.34876783139866496,
+      "val_r2": 0.06831786456665456,
+      "train_mae": 0.8122343448390765,
+      "val_mae": 1.038485880109263
+    },
+    "ridge_alpha01": {
+      "train_r2": 0.4619397820593103,
+      "val_r2": 0.25532523755576697,
+      "train_mae": 0.7298716312936615,
+      "val_mae": 0.8864355821609509
+    },
+    "gbt": {
+      "train_r2": 0.5764441757961926,
+      "val_r2": 0.16598760121962863,
+      "train_mae": 0.6602967995856298,
+      "val_mae": 0.9870740435323728
+    },
+    "ridge_top_features": [
+      {
+        "feature": "d5_fill_fraction",
+        "importance": 0.8281148548463338,
+        "coef": 3.6454556325129586
+      },
+      {
+        "feature": "is_solo",
+        "importance": 0.3903947109441879,
+        "coef": 0.9877526552530467
+      },
+      {
+        "feature": "est_brief_count",
+        "importance": 0.3276248421943902,
+        "coef": -0.07222931549396736
+      },
+      {
+        "feature": "d4_col_balance",
+        "importance": 0.32507555266738775,
+        "coef": 0.0018212421154168166
+      },
+      {
+        "feature": "edition_page_count",
+        "importance": 0.27411674700116845,
+        "coef": -0.028427597635265013
+      },
+      {
+        "feature": "d2_orphans",
+        "importance": 0.11151902291798103,
+        "coef": -0.23510274323822464
+      },
+      {
+        "feature": "edition_brief_frac",
+        "importance": 0.09992647664581253,
+        "coef": -0.4635407377876803
+      },
+      {
+        "feature": "est_items_per_page",
+        "importance": 0.09841329136342647,
+        "coef": 0.03199929943394807
+      },
+      {
+        "feature": "d6_dead_space",
+        "importance": 0.06998831239589327,
+        "coef": 1.6471121014051524
+      },
+      {
+        "feature": "est_words_per_page",
+        "importance": 0.05731431607341733,
+        "coef": -0.00013122056582696285
+      }
+    ],
+    "gbt_top_features": [
+      {
+        "feature": "d5_fill_fraction",
+        "importance": 0.4775137063300454
+      },
+      {
+        "feature": "d4_col_balance",
+        "importance": 0.193237819962035
+      },
+      {
+        "feature": "edition_template_entropy",
+        "importance": 0.08205676302668491
+      },
+      {
+        "feature": "edition_page_count",
+        "importance": 0.07812021577491764
+      },
+      {
+        "feature": "est_brief_count",
+        "importance": 0.0352084325179498
+      },
+      {
+        "feature": "page_position_frac",
+        "importance": 0.02573604687499316
+      },
+      {
+        "feature": "est_words_per_page",
+        "importance": 0.019799385786919345
+      },
+      {
+        "feature": "est_items_per_page",
+        "importance": 0.017978753822233667
+      },
+      {
+        "feature": "edition_brief_frac",
+        "importance": 0.017581144415092786
+      },
+      {
+        "feature": "anchor_strength",
+        "importance": 0.01571440852111978
+      }
+    ],
+    "top_residuals_val": [
+      {
+        "spread_id": "s-089-002",
+        "actual": 2.0,
+        "predicted": 4.186741178962971,
+        "residual": 2.186741178962971
+      },
+      {
+        "spread_id": "s-001-004",
+        "actual": 5.0,
+        "predicted": 2.859758656470467,
+        "residual": 2.140241343529533
+      },
+      {
+        "spread_id": "s-088-008",
+        "actual": 5.0,
+        "predicted": 2.9473292310227586,
+        "residual": 2.0526707689772414
+      },
+      {
+        "spread_id": "s-094-003",
+        "actual": 2.0,
+        "predicted": 3.979403377399834,
+        "residual": 1.979403377399834
+      },
+      {
+        "spread_id": "s-002-004",
+        "actual": 2.0,
+        "predicted": 3.97774903778194,
+        "residual": 1.97774903778194
+      },
+      {
+        "spread_id": "s-079-015",
+        "actual": 2.0,
+        "predicted": 3.614726591339974,
+        "residual": 1.614726591339974
+      },
+      {
+        "spread_id": "s-051-005",
+        "actual": 2.0,
+        "predicted": 3.5770689265250413,
+        "residual": 1.5770689265250413
+      },
+      {
+        "spread_id": "s-096-014",
+        "actual": 1.0,
+        "predicted": 2.5470492995150886,
+        "residual": 1.5470492995150886
+      },
+      {
+        "spread_id": "s-063-006",
+        "actual": 5.0,
+        "predicted": 3.59340409703786,
+        "residual": 1.40659590296214
+      },
+      {
+        "spread_id": "s-011-009",
+        "actual": 5.0,
+        "predicted": 3.5974170804741474,
+        "residual": 1.4025829195258526
+      }
+    ]
+  },
+  "bootstrap_1000_alpha01": {
+    "technical": {
+      "median": 0.4991535661455953,
+      "ci_low": 0.30989813153731033,
+      "ci_high": 0.646412299013884
+    },
+    "style": {
+      "median": 0.27417546740259086,
+      "ci_low": 0.024874132836729995,
+      "ci_high": 0.43660906004225164
+    }
+  },
+  "bootstrap_1000_alpha10": {
+    "technical": {
+      "median": 0.3709316178418108,
+      "ci_low": 0.14643976563146208,
+      "ci_high": 0.5216645480960929
+    },
+    "style": {
+      "median": 0.16449520220936925,
+      "ci_low": -0.07006052812163466,
+      "ci_high": 0.3093306404326952
+    }
+  },
+  "cv_5fold_n200": {
+    "tech_alpha01": {
+      "mean": 0.49770310853293614,
+      "std": 0.1135952800538606
+    },
+    "tech_alpha10": {
+      "mean": 0.38108115552212063,
+      "std": 0.10804627284198093
+    },
+    "style_alpha01": {
+      "mean": 0.2808316214666004,
+      "std": 0.16674071051870895
+    },
+    "style_alpha10": {
+      "mean": 0.17238062467213186,
+      "std": 0.11050694191556253
+    }
+  },
+  "learning_curve_technical": [
+    {
+      "n_train": 40,
+      "val_r2_mean": 0.24917169761139732,
+      "val_r2_std": 0.14498202867923804
+    },
+    {
+      "n_train": 80,
+      "val_r2_mean": 0.352919119882625,
+      "val_r2_std": 0.0738675881059488
+    },
+    {
+      "n_train": 120,
+      "val_r2_mean": 0.39795634452390266,
+      "val_r2_std": 0.04612176065246389
+    },
+    {
+      "n_train": 160,
+      "val_r2_mean": 0.4128457402976721,
+      "val_r2_std": 3.8024125602706314e-16
+    },
+    {
+      "n_train": 200,
+      "val_r2_mean": 0.49770310853293614,
+      "val_r2_std": 0.1135952800538606,
+      "method": "5-fold CV"
+    }
+  ],
+  "learning_curve_style": [
+    {
+      "n_train": 40,
+      "val_r2_mean": -0.00439410442005685,
+      "val_r2_std": 0.1977756459308748
+    },
+    {
+      "n_train": 80,
+      "val_r2_mean": 0.18056460508223832,
+      "val_r2_std": 0.089843932103772
+    },
+    {
+      "n_train": 120,
+      "val_r2_mean": 0.23175358090566192,
+      "val_r2_std": 0.046286808646677245
+    },
+    {
+      "n_train": 160,
+      "val_r2_mean": 0.2553252375557667,
+      "val_r2_std": 2.504777312823609e-16
+    },
+    {
+      "n_train": 200,
+      "val_r2_mean": 0.2808316214666004,
+      "val_r2_std": 0.16674071051870895,
+      "method": "5-fold CV"
+    }
+  ],
+  "bimodal_separation": [
+    {
+      "feature": "d5_fill_fraction",
+      "high_mean": 0.6033332782608695,
+      "low_mean": 0.27010985294117645,
+      "diff": 0.333223425319693,
+      "t": 11.748510407937172,
+      "p": 2.664876050738463e-21
+    },
+    {
+      "feature": "d6_dead_space",
+      "high_mean": 0.014150817391304346,
+      "low_mean": 0.03527452941176471,
+      "diff": -0.021123712020460365,
+      "t": -3.1291584897615037,
+      "p": 0.0022415149130094445
+    },
+    {
+      "feature": "d4_col_balance",
+      "high_mean": 189.904347826087,
+      "low_mean": 129.8970588235294,
+      "diff": 60.0072890025576,
+      "t": 2.3103101411005693,
+      "p": 0.022208604126560737
+    },
+    {
+      "feature": "d2_orphans",
+      "high_mean": 0.0782608695652174,
+      "low_mean": 0.5,
+      "diff": -0.4217391304347826,
+      "t": -5.741995961887653,
+      "p": 1.2440893694628532e-07
+    },
+    {
+      "feature": "est_items_per_page",
+      "high_mean": 2.3,
+      "low_mean": 3.3088235294117645,
+      "diff": -1.0088235294117647,
+      "t": -1.9874045789621206,
+      "p": 0.04998021715158968
+    },
+    {
+      "feature": "est_words_per_page",
+      "high_mean": 1030.5540869565218,
+      "low_mean": 1002.9602941176471,
+      "diff": 27.59379283887472,
+      "t": 0.35902256411877903,
+      "p": 0.72019198055172
+    },
+    {
+      "feature": "anchor_strength",
+      "high_mean": 2.3113664086956516,
+      "low_mean": 2.6695356470588236,
+      "diff": -0.35816923836317205,
+      "t": -0.8888587437742204,
+      "p": 0.37646410193599705
+    },
+    {
+      "feature": "is_solo",
+      "high_mean": 0.0782608695652174,
+      "low_mean": 0.36764705882352944,
+      "diff": -0.28938618925831205,
+      "t": -4.517985487399636,
+      "p": 1.8532301350525342e-05
+    },
+    {
+      "feature": "est_brief_count",
+      "high_mean": 0.9304347826086956,
+      "low_mean": 2.588235294117647,
+      "diff": -1.6578005115089516,
+      "t": -2.165489848861571,
+      "p": 0.03330919778903109
+    },
+    {
+      "feature": "page_position_frac",
+      "high_mean": 0.37911922608695653,
+      "low_mean": 0.41833255882352943,
+      "diff": -0.0392133327365729,
+      "t": -0.7475873333987888,
+      "p": 0.45621853951921576
+    }
+  ],
+  "classification_accuracy": {
+    "val_only_high_correct": 0.8518518518518519,
+    "val_only_low_correct": 0.6923076923076923,
+    "all_high_correct": 0.9304347826086956,
+    "all_low_correct": 0.8088235294117647
+  }
+}
