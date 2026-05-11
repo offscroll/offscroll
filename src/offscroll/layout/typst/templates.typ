@@ -2,19 +2,21 @@
 // Article-type rendering functions for newspaper layout.
 // These are imported by newspaper.typ and called by the Python
 // markup builder via data substitution.
+//
+// Typographic diversity (Neville §3.2, §3.3, §3.4 — Tier 1):
+// The template system is parameterised by an *edition config* carried
+// in Typst state. A scale preset selects the headline hierarchy for the
+// whole edition; a weight preset selects the register strategy; lead
+// amplifications determine how the first item on each section gets
+// differentiated. The Python builder emits #set-edition-config(...) at
+// the top of the generated file. Defaults reproduce the prior layout
+// (standard scale) but always activate small-caps kickers, which the
+// design spec asks for unconditionally.
 
-// --- Design Tokens (must match newspaper.typ) ---
+// --- Static design tokens (font families, colours, gutters) ---
 #let body-font = "Source Serif 4"
 #let sans-font = "Source Sans 3"
 #let mono-font = "Source Code Pro"
-#let body-font-size = 10pt
-#let headline-feature = 28pt
-#let headline-thread = 18pt
-#let headline-standard = 14pt
-#let metadata-size = 9pt
-#let caption-size = 8pt
-#let brief-size = 9pt
-#let pull-quote-size = 14pt
 #let column-gap = 0.25in
 #let rule-stroke = 0.5pt + luma(221)
 #let dark-rule = 2pt + luma(26)
@@ -22,14 +24,148 @@
 #let text-color = luma(26)
 #let meta-color = luma(102)
 #let light-meta = luma(153)
+#let metadata-size = 9pt
+#let caption-size = 8pt
+#let brief-size = 9pt
+
+// --- Scale presets (Neville §3.2) ---
+// Body is fixed at 10pt across all scales — the readability anchor.
+// Sizes above scale with the chosen edition personality.
+#let scale-presets = (
+  tight: (
+    body: 10pt,
+    standard: 13pt,
+    thread: 16pt,
+    feature: 22pt,
+    masthead: 36pt,
+    deck: 10pt,
+    pull-quote: 12pt,
+    section: 11pt,
+    drop-cap: 30pt,
+    drop-cap-baseline: 19pt,
+    lead-bump: 16pt,   // standard headline when amplified as lead (=thread)
+  ),
+  standard: (
+    body: 10pt,
+    standard: 14pt,
+    thread: 18pt,
+    feature: 28pt,
+    masthead: 48pt,
+    deck: 10pt,
+    pull-quote: 14pt,
+    section: 14pt,
+    drop-cap: 36pt,
+    drop-cap-baseline: 22pt,
+    lead-bump: 18pt,
+  ),
+  open: (
+    body: 10pt,
+    standard: 16pt,
+    thread: 22pt,
+    feature: 36pt,
+    masthead: 60pt,
+    deck: 11pt,
+    pull-quote: 16pt,
+    section: 16pt,
+    drop-cap: 44pt,
+    drop-cap-baseline: 26pt,
+    lead-bump: 22pt,
+  ),
+)
+
+// --- Weight presets (Neville §3.3) ---
+// "two" preserves the prior two-register treatment (bold + regular,
+// uppercase kickers). "three" introduces a third register via Source
+// Sans 3 Light + real small caps for kickers, plus italic decks broadly
+// available to standard articles, not just features.
+#let weight-presets = (
+  two: (
+    headline-weight: "bold",
+    kicker-weight: "bold",
+    kicker-style: "upper",
+    kicker-tracking: 0em,
+    deck-style: "italic",
+    deck-applies-to-standards: false,
+  ),
+  three: (
+    headline-weight: "bold",
+    kicker-weight: "light",
+    kicker-style: "smallcaps",
+    kicker-tracking: 0.05em,
+    deck-style: "italic",
+    deck-applies-to-standards: true,
+  ),
+)
+
+// --- Edition config state ---
+// Carried through the document; written by the generated .typ file at
+// the top and read by every template via #context.
+#let edition-config-default = (
+  scale: "standard",
+  weights: "three",
+  lead-amplifications: ("deck", "scale-bump"),
+)
+#let edition-config = state("offscroll-edition-config", edition-config-default)
+
+#let set-edition-config(
+  scale: "standard",
+  weights: "three",
+  lead-amplifications: ("deck", "scale-bump"),
+) = {
+  edition-config.update((
+    scale: scale,
+    weights: weights,
+    lead-amplifications: lead-amplifications,
+  ))
+}
+
+// --- Accessors (must be evaluated inside #context) ---
+#let current-sizes() = {
+  let cfg = edition-config.get()
+  let key = if cfg.scale in scale-presets { cfg.scale } else { "standard" }
+  scale-presets.at(key)
+}
+#let current-weights() = {
+  let cfg = edition-config.get()
+  let key = if cfg.weights in weight-presets { cfg.weights } else { "three" }
+  weight-presets.at(key)
+}
+#let lead-amps() = edition-config.get().lead-amplifications
+
+// --- Kicker renderer (style-aware) ---
+// Renders the kicker text in the active edition's kicker style.
+// Called from inside #context blocks so weights/sizes are current.
+#let kicker-block(kicker-text, sizes, weights, color: meta-color) = {
+  let style = weights.kicker-style
+  let weight = weights.kicker-weight
+  let tracking = weights.kicker-tracking
+  set text(metadata-size, font: sans-font, weight: weight,
+           tracking: tracking, fill: color)
+  if style == "smallcaps" {
+    smallcaps(kicker-text)
+  } else {
+    upper(kicker-text)
+  }
+}
+
+// --- Deck renderer ---
+// Italic serif deck. Used by features unconditionally and by standards
+// when the active edition's weight strategy enables decks for standards
+// AND the article is marked as the page lead.
+#let deck-block(deck-text, sizes, color: luma(68)) = {
+  set text(sizes.deck, font: body-font, style: "italic", fill: color)
+  set par(leading: 0.52em)
+  deck-text
+}
 
 // --- Pull Quote ---
-#let pull-quote(text-content, attribution) = {
+#let pull-quote(text-content, attribution) = context {
+  let sizes = current-sizes()
   block(breakable: false, above: 0.08in, below: 0.08in,
     align(center,
       block(width: 85%, stroke: (top: 1pt + text-color, bottom: 1pt + text-color),
         inset: (y: 0.08in))[
-        #set text(pull-quote-size, font: body-font, style: "italic")
+        #set text(sizes.pull-quote, font: body-font, style: "italic")
         #set par(leading: 0.48em)
         #text-content
         #v(0.04in)
@@ -55,12 +191,13 @@
   ]
 }
 
-// --- Drop Cap ---
-#let drop-cap(letter) = {
+// --- Drop Cap (scale-aware) ---
+#let drop-cap(letter) = context {
+  let sizes = current-sizes()
   box(
-    baseline: 22pt,
+    baseline: sizes.drop-cap-baseline,
     inset: (right: 0.06in, top: 0.02in),
-    text(36pt, weight: "bold", font: sans-font, fill: text-color)[#letter]
+    text(sizes.drop-cap, weight: "bold", font: sans-font, fill: text-color)[#letter]
   )
 }
 
@@ -80,7 +217,10 @@
   inline-pq: none,
   inline-pq-idx: -1,
   edited-for-length: false,
-) = {
+) = context {
+  let sizes = current-sizes()
+  let weights = current-weights()
+
   block(breakable: true, below: 0.2in, stroke: (bottom: 0.5pt + luma(204)),
     inset: (bottom: 0.15in))[
     // Hero image
@@ -94,16 +234,14 @@
       v(0.1in)
     }
 
-    // Kicker
-    #text(metadata-size, weight: "bold", font: sans-font, fill: meta-color)[
-      #upper(kicker)
-    ]
+    // Kicker (real small caps in three-weight strategy)
+    #kicker-block(kicker, sizes, weights)
     #v(0.03in)
 
     // Title
     #if title != none {
       block(sticky: true)[
-        #text(headline-feature, weight: "bold", font: sans-font)[
+        #text(sizes.feature, weight: weights.headline-weight, font: sans-font)[
           #set par(leading: 0.4em)
           #title
         ]
@@ -113,10 +251,7 @@
 
     // Deck
     #if deck != none and deck != "" {
-      text(body-font-size, font: body-font, style: "italic", fill: luma(68))[
-        #set par(leading: 0.52em)
-        #deck
-      ]
+      deck-block(deck, sizes)
       v(0.08in)
     }
 
@@ -144,7 +279,7 @@
     #if body-paragraphs.len() > 0 {
       columns(2, gutter: column-gap)[
         #set par(justify: true)
-        #set text(body-font-size, hyphenate: true)
+        #set text(sizes.body, hyphenate: true)
         #for (idx, para) in body-paragraphs.enumerate() {
           [#para]
           v(0.05in)
@@ -163,6 +298,11 @@
 }
 
 // --- Standard Article ---
+// is-lead: when true, the page lead receives configured amplifications
+// (deck and/or scale-bump). Cf. Neville §3.4.
+// deck: optional 1-sentence summary, only rendered when is-lead AND
+// "deck" is in the edition's lead-amplifications AND the weight strategy
+// permits decks on standards.
 #let standard-article(
   title: none,
   author: "",
@@ -176,17 +316,45 @@
   edited-for-length: false,
   editorial-note: none,
   debug-mode: false,
-) = {
+  is-lead: false,
+  deck: none,
+) = context {
+  let sizes = current-sizes()
+  let weights = current-weights()
+  let amps = lead-amps()
+
+  // Headline size: amplified for the page lead when "scale-bump" is active.
+  let title-size = if is-lead and "scale-bump" in amps {
+    sizes.lead-bump
+  } else {
+    sizes.standard
+  }
+
+  // Decide whether to render a deck.
+  let show-deck = (
+    is-lead
+    and "deck" in amps
+    and weights.deck-applies-to-standards
+    and deck != none
+    and deck != ""
+  )
+
   block(breakable: word-count > 200, below: 0.15in)[
     // Headline
     #if title != none {
       block(sticky: true)[
-        #text(headline-standard, weight: "bold", font: sans-font)[
+        #text(title-size, weight: weights.headline-weight, font: sans-font)[
           #set par(leading: 0.4em)
           #title
         ]
       ]
       v(0.03in)
+    }
+
+    // Lead deck (italic, scale-aware)
+    #if show-deck {
+      deck-block(deck, sizes)
+      v(0.05in)
     }
 
     // Byline
@@ -211,7 +379,7 @@
         let use-multicol = word-count > 200
         let body-content = {
           set par(justify: true)
-          set text(body-font-size, hyphenate: true)
+          set text(sizes.body, hyphenate: true)
           let extra-images = if images.len() > 1 { images.slice(1) } else { () }
           for (idx, para) in paragraphs.enumerate() {
             [#para]
@@ -258,10 +426,13 @@
   source-name: none,
   editorial-note: none,
   posts: (),
-) = {
+) = context {
+  let sizes = current-sizes()
+  let weights = current-weights()
+
   block(breakable: false, below: 0.15in)[
     // Headline
-    #text(headline-thread, weight: "bold", font: sans-font)[
+    #text(sizes.thread, weight: weights.headline-weight, font: sans-font)[
       #set par(leading: 0.4em)
       #headline
     ]
@@ -298,7 +469,7 @@
           ]
           #v(0.02in)
           #set par(justify: true)
-          #set text(body-font-size, hyphenate: true)
+          #set text(sizes.body, hyphenate: true)
           #post
         ]
       }
@@ -317,12 +488,14 @@
 }
 
 // --- Brief Group ---
-#let brief-group(briefs) = {
+// The "In Brief" label uses the active kicker treatment so the typographic
+// register is consistent with article kickers in the same edition.
+#let brief-group(briefs) = context {
+  let sizes = current-sizes()
+  let weights = current-weights()
   block(breakable: false, above: 0.1in, stroke: (top: light-rule),
     inset: (top: 0.05in))[
-    #text(metadata-size, weight: "bold", font: sans-font, fill: meta-color)[
-      #upper[In Brief]
-    ]
+    #kicker-block([In Brief], sizes, weights)
     #v(0.06in)
     #for b in briefs {
       b
@@ -331,26 +504,28 @@
 }
 
 // --- Section Label ---
-#let section-label(heading) = {
+#let section-label(heading) = context {
+  let sizes = current-sizes()
   block(above: 0.15in, below: 0.08in, sticky: true, stroke: (top: dark-rule),
     inset: (top: 0.06in))[
-    #text(14pt, weight: "bold", font: sans-font)[
+    #text(sizes.section, weight: "bold", font: sans-font)[
       #upper(heading)
     ]
   ]
 }
 
 // --- Masthead ---
-#let masthead(title, subtitle, date, editorial-note: none, debug-mode: false) = {
+#let masthead(title, subtitle, date, editorial-note: none, debug-mode: false) = context {
+  let sizes = current-sizes()
   block(below: 0.1in, stroke: (bottom: 3pt + text-color),
     inset: (bottom: 0.08in))[
     #align(center)[
-      #text(48pt, weight: "bold", font: sans-font, tracking: 0.04em)[
+      #text(sizes.masthead, weight: "bold", font: sans-font, tracking: 0.04em)[
         #set par(leading: 0.35em)
         #title
       ]
       #v(0.05in)
-      #text(body-font-size, font: sans-font, fill: luma(68), tracking: 0.05em)[
+      #text(sizes.body, font: sans-font, fill: luma(68), tracking: 0.05em)[
         #upper(subtitle)
       ]
       #v(0.05in)

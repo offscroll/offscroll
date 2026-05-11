@@ -74,6 +74,17 @@ DEFAULTS: dict[str, Any] = {
         "margin_left": 0.5,
         "margin_right": 0.5,
         "column_gap": 0.2,
+        # Typographic diversity (Neville Tier 1, brief #392/#414).
+        # scale: tight | standard | open — selects headline hierarchy.
+        # weights: two | three — register strategy. "three" deploys real
+        #   small caps for kickers and italic decks on standards.
+        # lead_amplifications: list of "deck", "scale-bump" — applied to
+        #   the first item rendered in each section.
+        "typography": {
+            "scale": "standard",
+            "weights": "three",
+            "lead_amplifications": ["deck", "scale-bump"],
+        },
     },
     "email": {
         "enabled": False,

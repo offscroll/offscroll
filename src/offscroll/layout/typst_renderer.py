@@ -252,14 +252,32 @@ def _render_feature(item, pq_map: dict, data_dir: Path, debug_mode: bool) -> str
     return "\n".join(lines)
 
 
-def _render_standard(item, pq_map: dict, data_dir: Path, debug_mode: bool) -> str:
-    """Generate Typst markup for a standard article."""
+def _render_standard(
+    item,
+    pq_map: dict,
+    data_dir: Path,
+    debug_mode: bool,
+    is_lead: bool = False,
+) -> str:
+    """Generate Typst markup for a standard article.
+
+    is_lead: when True, the article is the page lead and receives the
+    edition's configured lead amplifications (deck and/or scale-bump).
+    A deck is generated from the article body and rendered above the
+    byline when the edition's weight strategy permits decks on standards.
+    """
     lines = []
     title = _escape_typst(getattr(item, "title", "") or "")
     author = _escape_typst(getattr(item, "author", "") or "")
     source_name = _escape_typst(getattr(item, "source_name", None) or "")
     text = getattr(item, "display_text", "") or ""
     wc = getattr(item, "word_count", 0)
+
+    # Generate a deck only for lead items (Neville §3.4). The deck
+    # generator may return None for short or unsuitable text — that's
+    # fine; the template falls back to no deck.
+    deck_text = _generate_feature_deck(text) if is_lead else None
+    deck_escaped = _escape_typst(deck_text) if deck_text else ""
 
     # Paragraphs
     paragraphs = _filter_orphaned_captions(split_text_paragraphs(text))
@@ -322,6 +340,10 @@ def _render_standard(item, pq_map: dict, data_dir: Path, debug_mode: bool) -> st
     if editorial and debug_mode:
         lines.append(f"  editorial-note: [{editorial}],")
     lines.append(f"  debug-mode: {'true' if debug_mode else 'false'},")
+    if is_lead:
+        lines.append("  is-lead: true,")
+    if deck_escaped:
+        lines.append(f"  deck: [{deck_escaped}],")
     lines.append(")")
     lines.append("")
 
@@ -367,6 +389,41 @@ def _render_brief(item) -> str:
     return f"brief-item([{author}], [{text}])\n"
 
 
+# Typographic-diversity defaults (Neville Tier 1, brief #392/#414).
+# Selected per edition by config["newspaper"]["typography"]. Values are
+# validated against the presets in templates.typ; unknown values fall
+# back to the default.
+_VALID_SCALES = ("tight", "standard", "open")
+_VALID_WEIGHTS = ("two", "three")
+_VALID_LEAD_AMPS = ("deck", "scale-bump")
+_TYPOGRAPHY_DEFAULTS = {
+    "scale": "standard",
+    "weights": "three",
+    "lead_amplifications": ("deck", "scale-bump"),
+}
+
+
+def _resolve_typography(config: dict) -> dict:
+    """Pull the typography section from config and validate values.
+
+    Returns a dict with keys scale, weights, lead_amplifications. Unknown
+    values are silently replaced with defaults so a malformed config
+    cannot crash rendering.
+    """
+    typo = config.get("newspaper", {}).get("typography", {}) or {}
+    scale = typo.get("scale", _TYPOGRAPHY_DEFAULTS["scale"])
+    if scale not in _VALID_SCALES:
+        logger.warning("Unknown typography.scale %r; using 'standard'", scale)
+        scale = _TYPOGRAPHY_DEFAULTS["scale"]
+    weights = typo.get("weights", _TYPOGRAPHY_DEFAULTS["weights"])
+    if weights not in _VALID_WEIGHTS:
+        logger.warning("Unknown typography.weights %r; using 'three'", weights)
+        weights = _TYPOGRAPHY_DEFAULTS["weights"]
+    raw_amps = typo.get("lead_amplifications", _TYPOGRAPHY_DEFAULTS["lead_amplifications"])
+    amps = tuple(a for a in raw_amps if a in _VALID_LEAD_AMPS)
+    return {"scale": scale, "weights": weights, "lead_amplifications": amps}
+
+
 def build_typst_markup(edition: CuratedEdition, config: dict) -> str:
     """Build a complete Typst document from a CuratedEdition.
 
@@ -384,6 +441,7 @@ def build_typst_markup(edition: CuratedEdition, config: dict) -> str:
         data_dir = data_dir.expanduser()
 
     debug_mode = config.get("newspaper", {}).get("debug_mode", False)
+    typography = _resolve_typography(config)
 
     # Preprocess all text (same as _build_html)
     _preprocess_edition(edition, config)
@@ -488,6 +546,27 @@ def build_typst_markup(edition: CuratedEdition, config: dict) -> str:
     out.append('#set par(justify: true, leading: 0.52em)')
     out.append('')
 
+    # Per-edition typographic configuration (Neville Tier 1).
+    # The scale governs the headline hierarchy; the weight strategy
+    # governs register treatment (e.g., real small caps for kickers);
+    # lead-amplifications govern how the first item in each section is
+    # differentiated visually.
+    amps_typst = "(" + ", ".join(
+        f'"{a}"' for a in typography["lead_amplifications"]
+    )
+    # Typst single-element tuples need a trailing comma; multi-element
+    # tuples must not double the comma. Empty tuples become "()".
+    if len(typography["lead_amplifications"]) == 1:
+        amps_typst += ","
+    amps_typst += ")"
+    out.append(
+        '#set-edition-config('
+        f'scale: "{typography["scale"]}", '
+        f'weights: "{typography["weights"]}", '
+        f'lead-amplifications: {amps_typst})'
+    )
+    out.append('')
+
     # Masthead
     ed_subtitle = _escape_typst(edition.edition.subtitle)
     editorial_note = _escape_typst(getattr(edition.edition, "editorial_note", None) or "")
@@ -524,6 +603,13 @@ def build_typst_markup(edition: CuratedEdition, config: dict) -> str:
             out.append('')
             continue
 
+        # Lead-item differentiation (Neville §3.4): the first standard
+        # article rendered in this section is marked as the section lead.
+        # The template applies the edition's configured amplifications
+        # (deck and/or scale-bump) to that item. Threads and briefs are
+        # not eligible — they already carry distinct typographic identity.
+        section_lead_taken = False
+
         for row_idx, row in enumerate(rows):
             columns = row["columns"]
             row_pqs = row.get("pull_quotes", [])
@@ -541,7 +627,11 @@ def build_typst_markup(edition: CuratedEdition, config: dict) -> str:
                     elif hasattr(item, "layout_hint") and item.layout_hint == LayoutHint.FEATURE:
                         out.append('#' + _render_feature(item, pq_map, data_dir, debug_mode))
                     else:
-                        out.append('#' + _render_standard(item, pq_map, data_dir, debug_mode))
+                        is_lead = not section_lead_taken
+                        section_lead_taken = True
+                        out.append('#' + _render_standard(
+                            item, pq_map, data_dir, debug_mode, is_lead=is_lead
+                        ))
 
                 briefs = col.get("briefs", [])
                 if briefs:
@@ -578,7 +668,11 @@ def build_typst_markup(edition: CuratedEdition, config: dict) -> str:
                         elif hasattr(item, "layout_hint") and item.layout_hint == LayoutHint.FEATURE:
                             col_lines.append('    #' + _render_feature(item, pq_map, data_dir, debug_mode))
                         else:
-                            col_lines.append('    #' + _render_standard(item, pq_map, data_dir, debug_mode))
+                            is_lead = not section_lead_taken
+                            section_lead_taken = True
+                            col_lines.append('    #' + _render_standard(
+                                item, pq_map, data_dir, debug_mode, is_lead=is_lead
+                            ))
 
                     briefs = col.get("briefs", [])
                     if briefs:
